@@ -12,56 +12,28 @@
     }
   ],
   "systems_affected": [
-    {
-      "system": "respiratory",
-      "mechanism_summary": "PM2.5 induces oxidative stress and NF-κB activation in airway epithelium; upregulates IL-33, TSLP, IL-6, IL-8; exacerbates asthma and COPD; impairs mucociliary clearance"
-    },
-    {
-      "system": "cardiovascular",
-      "mechanism_summary": "Systemic inflammation, endothelial dysfunction, increased blood viscosity, autonomic imbalance; contributes to myocardial infarction, stroke, and heart failure"
-    },
-    {
-      "system": "immune",
-      "mechanism_summary": "Modifies dendritic cell function and Th1/Th2 balance; amplifies allergic sensitization and IgE production in susceptible individuals; dampens antiviral defenses"
-    }
+    {"system": "respiratory", "mechanism_summary": "PM2.5 induces oxidative stress and NF-κB activation in airway epithelium; upregulates IL-33, TSLP, IL-6, IL-8; exacerbates asthma and COPD; impairs mucociliary clearance"},
+    {"system": "cardiovascular", "mechanism_summary": "Systemic inflammation, endothelial dysfunction, increased blood viscosity, autonomic imbalance; contributes to myocardial infarction, stroke, and heart failure"},
+    {"system": "immune", "mechanism_summary": "Modifies dendritic cell function and Th1/Th2 balance; amplifies allergic sensitization and IgE production in susceptible individuals; dampens antiviral defenses"}
   ],
   "sensitive_windows": [
-    {
-      "window": "prenatal",
-      "mechanism_rationale": "In utero exposure affects lung development (alveolarization, airway branching); epigenetic modifications may prime inflammatory pathways; maternal inflammation crosses placenta"
-    },
-    {
-      "window": "early childhood",
-      "mechanism_rationale": "Immune system maturation; higher ventilation rates and mouth-breathing increase dose; first allergic sensitization often occurs; airway remodeling initiated"
-    },
-    {
-      "window": "adolescence",
-      "mechanism_rationale": "Lung growth continues into early 20s; behavioral changes (outdoor activity, commuting) alter exposure; occupational exposures may begin; smoking initiation amplifies effects"
-    }
+    {"period": "prenatal", "age_range": "in utero", "mechanism_rationale": "In utero exposure affects lung development (alveolarization, airway branching); epigenetic modifications may prime inflammatory pathways; maternal inflammation crosses placenta", "citations": ["ref4"]},
+    {"period": "early childhood", "age_range": "0-5", "mechanism_rationale": "Immune system maturation; higher ventilation rates and mouth-breathing increase dose; first allergic sensitization often occurs; airway remodeling initiated", "citations": ["ref4"]},
+    {"period": "adolescence", "age_range": "10-24", "mechanism_rationale": "Lung growth continues into early 20s; behavioral changes (outdoor activity, commuting) alter exposure; occupational exposures may begin; smoking initiation amplifies effects", "citations": ["ref4"]}
   ],
   "gxe_highlights": [
-    {
-      "gene": "IL33",
-      "direction": "amplify",
-      "notes": "PM2.5 induces IL-33 release from epithelial cells; genetic variants increasing IL33 expression amplify inflammatory response to PM2.5"
-    },
-    {
-      "gene": "GSTP1",
-      "direction": "amplify",
-      "notes": "GSTP1 rs1138272 and rs1695 minor alleles increase asthma risk with NO2/PM2.5 exposure; reduced antioxidant capacity elevates oxidative stress burden"
-    },
-    {
-      "gene": "TNF",
-      "direction": "amplify",
-      "notes": "TNF rs1800629 (TNF-308) associated with wheeze in air pollution studies; pro-inflammatory TNF amplifies PM2.5-induced NF-κB signaling"
-    }
+    {"gene_slug": "il33", "disease_slug": "asthma", "direction": "amplify", "evidence_type": "literature", "citations": ["ref1", "ref2", "ref3"]}
   ],
   "tissues": [
-    {"name": "bronchial epithelium", "relevance_score": 0.95},
-    {"name": "pulmonary endothelium", "relevance_score": 0.85},
-    {"name": "alveolar macrophages", "relevance_score": 0.88}
+    {"name": "bronchial epithelium", "effect_type": "inflammatory upregulation", "citations": ["ref1", "ref2"]},
+    {"name": "pulmonary endothelium", "effect_type": "activation", "citations": ["ref1"]},
+    {"name": "alveolar macrophages", "effect_type": "cytokine secretion", "citations": ["ref2"]}
   ],
-  "exposure_distribution": "EPA AQS monitors report annual mean PM2.5 concentrations; U.S. national standard is 9 μg/m³ (annual, 2024). Urban and traffic-proximate areas typically exceed 10–15 μg/m³. Wildfire events cause episodic spikes >50 μg/m³. Global WHO guideline: 5 μg/m³ annual mean.",
+  "exposure_distribution": {
+    "data_source": "EPA AQS monitors",
+    "geographic_scope": "United States",
+    "summary_stats": {"mean_annual_ug_m3": 9.0, "urban_typical_ug_m3": 12.0, "wildfire_spike_ug_m3": 50.0}
+  },
   "references": [
     {"id": "ref1", "title": "Exposure to PM2.5 induces aberrant activation of NF-κB in human airway epithelial cells by downregulating miR-331 expression", "authors": "Li R, et al.", "year": 2017, "journal": "Environmental Toxicology and Pharmacology", "doi": "10.1016/j.etap.2017.02.011"},
     {"id": "ref2", "title": "Ambient particulate matter induces an exacerbation of airway inflammation in experimental asthma: role of interleukin-33", "authors": "Brandenburg AH, et al.", "year": 2014, "journal": "Clinical & Experimental Immunology", "doi": "10.1111/cei.12348"},

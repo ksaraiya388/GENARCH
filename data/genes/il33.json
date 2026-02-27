@@ -7,20 +7,29 @@
   "summary": "IL33 encodes interleukin-33, a dual-function cytokine and nuclear factor belonging to the IL-1 family. IL-33 functions as an epithelial alarmin: it is constitutively expressed in barrier tissues (lung, skin, gut) and released upon cell damage or stress, acting as a danger signal to activate innate and adaptive immune cells. Full-length IL-33 binds the ST2 (IL1RL1) receptor on group 2 innate lymphoid cells (ILC2s), mast cells, Th2 lymphocytes, and eosinophils, driving type 2 immunity. Proteolytic cleavage by allergens or inflammatory proteases generates mature forms with enhanced activity. Asthma-associated GWAS variants regulate IL33 expression through an enhancer-blocking element ~2.3 kb upstream, with differential OCT-1 (POU2F1) binding. IL-33 is upregulated by PM2.5, allergens, and viral infections, positioning it at the interface of environmental exposure and genetic susceptibility in asthma.",
   "molecular_function": ["cytokine activity", "alarmin signaling", "innate immune activation"],
   "protein_class": "cytokine",
-  "regulatory_notes": "Asthma-associated variants (e.g., rs1888909) lie in a regulatory region 2.3 kb upstream; chromatin conformation capture shows looping to IL33 promoter. Strong eQTL in lung and bronchial epithelium (GTEx v8). Promoter contains NF-κB and AP-1 binding sites; IL33 expression induced by NF-κB activation.",
+  "regulatory_notes": {
+    "promoter_activity": "Promoter contains NF-κB and AP-1 binding sites; IL33 expression induced by NF-κB activation.",
+    "enhancer_associations": "Asthma-associated variants (e.g., rs1888909) lie in a regulatory region 2.3 kb upstream; chromatin conformation capture shows looping to IL33 promoter.",
+    "methylation_sensitivity": null,
+    "eqtl_tissues": ["lung", "bronchial epithelium"]
+  },
   "expression_context": [
-    {"tissue": "lung", "tpm_range": "5–25", "notes": "Constitutive in stromal and epithelial cells"},
-    {"tissue": "bronchial epithelium", "tpm_range": "10–40", "notes": "Upregulated by PM2.5, allergens, viral infection"},
-    {"tissue": "skin", "tpm_range": "8–30", "notes": "Keratinocytes; atopic dermatitis"},
-    {"tissue": "intestinal epithelium", "tpm_range": "5–20", "notes": "Barrier surveillance; inflammatory bowel disease"}
+    {"tissue": "lung", "tpm_range": "5–25", "gtex_version": "v8", "citations": ["ref5"]},
+    {"tissue": "bronchial epithelium", "tpm_range": "10–40", "gtex_version": "v8", "citations": ["ref1", "ref2"]},
+    {"tissue": "skin", "tpm_range": "8–30", "citations": ["ref4"]},
+    {"tissue": "intestinal epithelium", "tpm_range": "5–20", "citations": ["ref3"]}
   ],
   "pathways": ["nf-kb"],
-  "linked_diseases": ["asthma", "allergic-rhinitis", "atopic-dermatitis"],
-  "linked_exposures": ["air-pollution"],
+  "linked_diseases": [
+    {"disease_slug": "asthma", "evidence_type": "GWAS", "strength": 0.85}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "air-pollution", "evidence_type": "literature", "strength": 0.88}
+  ],
   "mechanistic_hypotheses": [
-    "PM2.5-induced oxidative stress and NF-κB activation drive IL33 transcription and release from bronchial epithelium; genetic variants increasing basal IL33 expression amplify this response, explaining G×E interaction.",
-    "IL-33 released from damaged epithelial cells activates ILC2s and mast cells via ST2; sustained release under chronic PM2.5 exposure promotes eosinophilic inflammation and airway hyperresponsiveness.",
-    "Asthma-risk alleles at the IL33 enhancer increase IL-33 protein in plasma and airway; this genetically determined baseline modulates susceptibility to environmental triggers including allergens and pollution."
+    {"hypothesis": "PM2.5-induced oxidative stress and NF-κB activation drive IL33 transcription and release from bronchial epithelium; genetic variants increasing basal IL33 expression amplify this response, explaining G×E interaction.", "supporting_evidence": "In vitro and in vivo studies show PM2.5 upregulates IL-33; asthma-risk alleles correlate with elevated IL-33.", "confidence": "high"},
+    {"hypothesis": "IL-33 released from damaged epithelial cells activates ILC2s and mast cells via ST2; sustained release under chronic PM2.5 exposure promotes eosinophilic inflammation and airway hyperresponsiveness.", "supporting_evidence": "IL-33/ST2 axis well-characterized; IL-33 blockade attenuates inflammation in models.", "confidence": "high"},
+    {"hypothesis": "Asthma-risk alleles at the IL33 enhancer increase IL-33 protein in plasma and airway; this genetically determined baseline modulates susceptibility to environmental triggers including allergens and pollution.", "supporting_evidence": "Alvarez et al. 2021 show enhancer-blocking mechanism; eQTL data support genotype-expression correlation.", "confidence": "high"}
   ],
   "confidence": "high",
   "references": [
