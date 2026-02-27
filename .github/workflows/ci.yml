@@ -32,4 +32,4 @@ jobs:
         run: python -m pipeline.validate
 
       - name: Build site
-        run: cd site && npx next build
+        run: cd site && npm run build

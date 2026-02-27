@@ -13,7 +13,26 @@ import type {
   AnnualReport,
 } from "./types";
 
-const DATA_DIR = path.join(process.cwd(), "..", "data");
+function resolveDataDir(): string {
+  const cwd = process.cwd();
+
+  // 1. Prebuild-copied data inside site (Vercel / CI)
+  const internalDir = path.join(cwd, "_data");
+  if (fs.existsSync(internalDir)) return internalDir;
+
+  // 2. Sibling data/ when cwd is site/ (local dev)
+  const siblingDir = path.join(cwd, "..", "data");
+  if (fs.existsSync(siblingDir)) return siblingDir;
+
+  // 3. data/ directly under cwd (mono-repo root)
+  const cwdDir = path.join(cwd, "data");
+  if (fs.existsSync(cwdDir)) return cwdDir;
+
+  // Fallback — will produce empty results gracefully
+  return siblingDir;
+}
+
+const DATA_DIR = resolveDataDir();
 
 function readJsonFile<T>(filePath: string): T | null {
   try {
