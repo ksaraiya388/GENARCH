@@ -1,0 +1,29 @@
+**/.DS_Store
+**/.env
+**/.env.*
+
+# Node
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Next.js
+**/.next/
+**/out/
+
+# Python
+__pycache__/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Data/build artifacts (generated deterministically by pipeline)
+genarch/data/**/.cache/
+
