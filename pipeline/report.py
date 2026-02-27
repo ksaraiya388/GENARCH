@@ -34,7 +34,6 @@ def _minimal_pdf_bytes(title: str, body: str) -> bytes:
         f"5 0 obj << /Length {content_length} >> stream\n{content_stream}\nendstream endobj\n"
     )
 
-    offsets = [0]
     running = len(pdf.encode("utf-8"))
     xref = (
         "xref\n0 6\n"

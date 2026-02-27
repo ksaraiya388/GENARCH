@@ -125,24 +125,32 @@ def validate_generated_data() -> tuple[bool, list[str]]:
         _validate_entity_citations(exposure, f"exposure:{exposure.slug}", errors)
 
     for gene in genes:
-        for pathway in gene.pathways:
-            if pathway.slug not in pathway_slugs:
-                errors.append(f"gene:{gene.slug} references missing pathway '{pathway.slug}'")
-        for disease in gene.linked_diseases:
-            if disease.slug not in disease_slugs:
-                errors.append(f"gene:{gene.slug} references missing disease '{disease.slug}'")
-        for exposure in gene.linked_exposures:
-            if exposure.slug not in exposure_slugs:
-                errors.append(f"gene:{gene.slug} references missing exposure '{exposure.slug}'")
+        for linked_pathway in gene.pathways:
+            if linked_pathway.slug not in pathway_slugs:
+                errors.append(f"gene:{gene.slug} references missing pathway '{linked_pathway.slug}'")
+        for linked_disease in gene.linked_diseases:
+            if linked_disease.slug not in disease_slugs:
+                errors.append(
+                    f"gene:{gene.slug} references missing disease '{linked_disease.slug}'"
+                )
+        for linked_exposure in gene.linked_exposures:
+            if linked_exposure.slug not in exposure_slugs:
+                errors.append(
+                    f"gene:{gene.slug} references missing exposure '{linked_exposure.slug}'"
+                )
         _validate_entity_citations(gene, f"gene:{gene.slug}", errors)
 
     for pathway in pathways:
-        for disease in pathway.linked_diseases:
-            if disease.slug not in disease_slugs:
-                errors.append(f"pathway:{pathway.slug} references missing disease '{disease.slug}'")
-        for exposure in pathway.linked_exposures:
-            if exposure.slug not in exposure_slugs:
-                errors.append(f"pathway:{pathway.slug} references missing exposure '{exposure.slug}'")
+        for pathway_linked_disease in pathway.linked_diseases:
+            if pathway_linked_disease.slug not in disease_slugs:
+                errors.append(
+                    f"pathway:{pathway.slug} references missing disease '{pathway_linked_disease.slug}'"
+                )
+        for pathway_linked_exposure in pathway.linked_exposures:
+            if pathway_linked_exposure.slug not in exposure_slugs:
+                errors.append(
+                    f"pathway:{pathway.slug} references missing exposure '{pathway_linked_exposure.slug}'"
+                )
         _validate_entity_citations(pathway, f"pathway:{pathway.slug}", errors)
 
     for community in communities:
@@ -161,8 +169,14 @@ def validate_generated_data() -> tuple[bool, list[str]]:
                 errors.append(f"graph edge {edge.id} has missing target node '{edge.target}'")
 
         available_citations = set[str]()
-        for entity in [*diseases, *exposures, *genes, *pathways]:
-            available_citations.update(collect_reference_ids(entity))
+        for disease_entity in diseases:
+            available_citations.update(collect_reference_ids(disease_entity))
+        for exposure_entity in exposures:
+            available_citations.update(collect_reference_ids(exposure_entity))
+        for gene_entity in genes:
+            available_citations.update(collect_reference_ids(gene_entity))
+        for pathway_entity in pathways:
+            available_citations.update(collect_reference_ids(pathway_entity))
         for edge in graph.edges:
             for citation in edge.attrs.sources:
                 if citation not in available_citations:
