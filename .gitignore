@@ -1,0 +1,22 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+
+node_modules/
+site/node_modules/
+site/.next/
+site/out/
+
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+dist/
+coverage/
+
+# Keep generated atlas artifacts committed.
+!data/

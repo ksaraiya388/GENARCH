@@ -1,0 +1,13 @@
+{
+  "name": "genarch",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "site:dev": "npm --prefix site run dev",
+    "site:build": "python -m pipeline.validate && npm --prefix site run build",
+    "site:export": "npm --prefix site run export",
+    "pipeline:update": "python -m pipeline.update --scope all",
+    "pipeline:validate": "python -m pipeline.validate",
+    "pipeline:report": "python -m pipeline.report --year 2026"
+  }
+}
