@@ -1,0 +1,40 @@
+{
+  "id": "path_nfkb",
+  "slug": "nf-kb",
+  "name": "NF-κB Signaling Pathway",
+  "summary": "NF-κB (nuclear factor kappa-light-chain-enhancer of activated B cells) is a master regulator of inflammatory gene expression, governing immune responses, cell survival, and proliferation. The pathway exists in canonical and non-canonical forms. The canonical pathway is triggered by pro-inflammatory stimuli (TNF, IL-1, LPS, viral RNA): IκB kinase (IKK) phosphorylates IκBα, leading to its ubiquitination and proteasomal degradation, which releases NF-κB dimers (e.g., RelA/p65–p50) for nuclear translocation and target gene activation. Key targets include IL6, IL8, TNF, IL33, COX-2, and adhesion molecules. Environmental pollutants such as PM2.5 activate NF-κB via reactive oxygen species (ROS)–mediated IKK activation; particulate matter downregulates microRNAs that suppress IKK-β. Tissue-specific activity in bronchial epithelium, macrophages, and endothelium underlies respiratory and cardiovascular disease pathogenesis.",
+  "canonical_source": "hsa04064",
+  "canonical_source_name": "KEGG NF-kappa B signaling pathway",
+  "environmental_triggers": [
+    {"trigger": "PM2.5", "mechanism": "ROS-mediated IKK activation; downregulation of miR-331 relieves IKK-β inhibition"},
+    {"trigger": "tobacco smoke", "mechanism": "Oxidative stress and direct activation of IKK"},
+    {"trigger": "bacterial LPS", "mechanism": "TLR4–MyD88 signaling activates IKK complex"},
+    {"trigger": "diesel exhaust", "mechanism": "Particulate and PAH components induce ROS and NF-κB"}
+  ],
+  "key_genes": [
+    {"gene": "RELA", "role": "p65 subunit; transactivation domain"},
+    {"gene": "NFKB1", "role": "p50 subunit; DNA binding"},
+    {"gene": "IKBKG", "role": "NEMO; IKK regulatory subunit"},
+    {"gene": "IL33", "role": "Upstream alarmin; induced by NF-κB"},
+    {"gene": "TNF", "role": "Downstream cytokine; amplifies signaling"},
+    {"gene": "IL6", "role": "Downstream cytokine"},
+    {"gene": "IL8", "role": "Downstream chemokine"}
+  ],
+  "tissue_specificity": [
+    {"tissue": "bronchial epithelium", "relevance": "Primary site of PM2.5-induced NF-κB activation; IL33, IL8 upregulation"},
+    {"tissue": "macrophages", "relevance": "Classical inflammatory response; cytokine production"},
+    {"tissue": "endothelium", "relevance": "Adhesion molecule expression; vascular inflammation"}
+  ],
+  "linked_diseases": ["asthma", "COPD", "cardiovascular-disease", "type-2-diabetes"],
+  "linked_exposures": ["air-pollution"],
+  "diagram_asset": "/diagrams/nfkb-pathway.svg",
+  "references": [
+    {"id": "ref1", "title": "Exposure to PM2.5 induces aberrant activation of NF-κB in human airway epithelial cells by downregulating miR-331 expression", "authors": "Li R, et al.", "year": 2017, "journal": "Environmental Toxicology and Pharmacology", "doi": "10.1016/j.etap.2017.02.011"},
+    {"id": "ref2", "title": "NF-κB and the immune response", "authors": "Hayden MS, Ghosh S", "year": 2004, "journal": "Oncogene", "doi": "10.1038/sj.onc.1207457"},
+    {"id": "ref3", "title": "KEGG: Kyoto Encyclopedia of Genes and Genomes", "authors": "Kanehisa M, et al.", "year": 2023, "journal": "Nucleic Acids Research", "doi": "10.1093/nar/gkac963"},
+    {"id": "ref4", "title": "Particulate matter induces inflammatory cytokine production via activation of NFκB by TLR5-bearing B cells in lung cancer", "authors": "Razani-Boroujerdi S, et al.", "year": 2020, "journal": "Proceedings of the National Academy of Sciences", "doi": "10.1073/pnas.1906806117"},
+    {"id": "ref5", "title": "Regulation of COX-2 Expression and IL-6 Release by Particulate Matter in Airway Epithelial Cells", "authors": "Risom L, et al.", "year": 2003, "journal": "American Journal of Physiology", "doi": "10.1152/ajplung.00109.2003"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}

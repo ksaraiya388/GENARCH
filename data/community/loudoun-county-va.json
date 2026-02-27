@@ -1,0 +1,95 @@
+{
+  "region_id": "51107",
+  "name": "Loudoun County, Virginia",
+  "geo_level": "county",
+  "fips_code": "51107",
+  "health_stats": [
+    {
+      "disease_slug": "asthma",
+      "metric_type": "hospitalization_rate",
+      "value": 42.3,
+      "unit": "per 100,000",
+      "year": 2023,
+      "source": "Virginia Department of Health, Environmental Public Health Tracking",
+      "ci_lower": 35.1,
+      "ci_upper": 50.2,
+      "notes": "Age-adjusted asthma hospitalization rate; ICD-10 J45"
+    },
+    {
+      "disease_slug": "asthma",
+      "metric_type": "prevalence",
+      "value": 8.2,
+      "unit": "percent",
+      "year": 2023,
+      "source": "BRFSS (Behavioral Risk Factor Surveillance System)",
+      "notes": "Adult asthma prevalence estimate"
+    }
+  ],
+  "exposure_layers": [
+    {
+      "layer_name": "PM2.5",
+      "data_source": "EPA AQS",
+      "year": 2023,
+      "summary_stats": {"mean": 9.2, "max": 18.5, "unit": "μg/m³"},
+      "notes": "Northern Virginia experiences moderate PM2.5; occasional wildfire smoke impacts"
+    },
+    {
+      "layer_name": "Industrial/Commercial Proximity",
+      "data_source": "EPA NATA, Census",
+      "year": 2022,
+      "summary_stats": {"high_exposure_pct": 12},
+      "notes": "Areas near Dulles corridor, data centers, and transportation corridors"
+    },
+    {
+      "layer_name": "Food Access",
+      "data_source": "USDA Food Access Research Atlas",
+      "year": 2023,
+      "summary_stats": {"low_access_pct": 4.5},
+      "notes": "Most of Loudoun has adequate food access; pockets of limited access in western areas"
+    }
+  ],
+  "model": {
+    "hotspot_model": true,
+    "features_used": ["PM2.5", "traffic_proximity", "socioeconomic_index", "green_space", "healthcare_access"],
+    "shap_summaries": [
+      {"feature": "PM2.5", "mean_shap_value": 0.28, "direction": "positive"},
+      {"feature": "traffic_proximity", "mean_shap_value": 0.22, "direction": "positive"},
+      {"feature": "socioeconomic_index", "mean_shap_value": -0.18, "direction": "negative"},
+      {"feature": "green_space", "mean_shap_value": -0.12, "direction": "negative"}
+    ],
+    "model_card_version": "1.0",
+    "training_data_cutoff": "2024-06-01",
+    "notes": "State-level model applied to county; local calibration pending"
+  },
+  "resources": [
+    {
+      "name": "Loudoun County Health Department",
+      "type": "link",
+      "url": "https://www.loudoun.gov/4791/Community-Health-Data",
+      "description": "Community health data and programs",
+      "local_relevance": "high"
+    },
+    {
+      "name": "Northern Virginia Asthma Coalition",
+      "type": "link",
+      "url": "https://www.novasthma.org",
+      "description": "Regional asthma awareness and support",
+      "local_relevance": "high"
+    },
+    {
+      "name": "Virginia Asthma Hospitalizations Dashboard",
+      "type": "link",
+      "url": "https://www.vdh.virginia.gov/environmental-public-health-tracking/asthma/asthma-hospitalizations/",
+      "description": "VDH asthma hospitalization rates by county",
+      "local_relevance": "high"
+    }
+  ],
+  "limitations": "Health statistics are derived from state-level surveillance; county-level estimates may have wide confidence intervals due to population size. Exposure layers are modeled or interpolated; local monitoring is limited. Hotspot model is trained on state/regional data and may not fully capture Loudoun-specific drivers (e.g., rapid suburbanization, data center development). Genetic and G×E data are not yet integrated into community-level predictions.",
+  "references": [
+    {"id": "ref1", "title": "Virginia Department of Health Environmental Public Health Tracking", "url": "https://www.vdh.virginia.gov/environmental-public-health-tracking/"},
+    {"id": "ref2", "title": "EPA Air Quality System", "url": "https://www.epa.gov/aqs"},
+    {"id": "ref3", "title": "USDA Food Access Research Atlas", "url": "https://www.ers.usda.gov/data-products/food-access-research-atlas/"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}

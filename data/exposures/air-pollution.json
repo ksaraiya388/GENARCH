@@ -1,0 +1,74 @@
+{
+  "id": "exp_air_pollution",
+  "slug": "air-pollution",
+  "name": "Ambient Air Pollution (PM2.5)",
+  "definition": "PM2.5 (particulate matter with aerodynamic diameter ≤2.5 micrometers) refers to fine inhalable particles that can penetrate deep into the lungs and enter the bloodstream. Sources include combustion (vehicles, power plants, wildfires), industrial processes, and secondary formation from gaseous precursors (e.g., SO2, NOx). PM2.5 composition varies by region but typically includes sulfates, nitrates, ammonium, organic carbon, elemental carbon, and trace metals. The small size enables alveolar deposition and systemic distribution, contributing to respiratory, cardiovascular, and immune effects.",
+  "proxies": [
+    {
+      "name": "PM2.5",
+      "unit": "μg/m³",
+      "measurement_method": "Gravimetric analysis (Federal Reference Method); continuous monitors use beta-attenuation or light scattering",
+      "data_source": "EPA Air Quality System (AQS)"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "respiratory",
+      "mechanism_summary": "PM2.5 induces oxidative stress and NF-κB activation in airway epithelium; upregulates IL-33, TSLP, IL-6, IL-8; exacerbates asthma and COPD; impairs mucociliary clearance"
+    },
+    {
+      "system": "cardiovascular",
+      "mechanism_summary": "Systemic inflammation, endothelial dysfunction, increased blood viscosity, autonomic imbalance; contributes to myocardial infarction, stroke, and heart failure"
+    },
+    {
+      "system": "immune",
+      "mechanism_summary": "Modifies dendritic cell function and Th1/Th2 balance; amplifies allergic sensitization and IgE production in susceptible individuals; dampens antiviral defenses"
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "window": "prenatal",
+      "mechanism_rationale": "In utero exposure affects lung development (alveolarization, airway branching); epigenetic modifications may prime inflammatory pathways; maternal inflammation crosses placenta"
+    },
+    {
+      "window": "early childhood",
+      "mechanism_rationale": "Immune system maturation; higher ventilation rates and mouth-breathing increase dose; first allergic sensitization often occurs; airway remodeling initiated"
+    },
+    {
+      "window": "adolescence",
+      "mechanism_rationale": "Lung growth continues into early 20s; behavioral changes (outdoor activity, commuting) alter exposure; occupational exposures may begin; smoking initiation amplifies effects"
+    }
+  ],
+  "gxe_highlights": [
+    {
+      "gene": "IL33",
+      "direction": "amplify",
+      "notes": "PM2.5 induces IL-33 release from epithelial cells; genetic variants increasing IL33 expression amplify inflammatory response to PM2.5"
+    },
+    {
+      "gene": "GSTP1",
+      "direction": "amplify",
+      "notes": "GSTP1 rs1138272 and rs1695 minor alleles increase asthma risk with NO2/PM2.5 exposure; reduced antioxidant capacity elevates oxidative stress burden"
+    },
+    {
+      "gene": "TNF",
+      "direction": "amplify",
+      "notes": "TNF rs1800629 (TNF-308) associated with wheeze in air pollution studies; pro-inflammatory TNF amplifies PM2.5-induced NF-κB signaling"
+    }
+  ],
+  "tissues": [
+    {"name": "bronchial epithelium", "relevance_score": 0.95},
+    {"name": "pulmonary endothelium", "relevance_score": 0.85},
+    {"name": "alveolar macrophages", "relevance_score": 0.88}
+  ],
+  "exposure_distribution": "EPA AQS monitors report annual mean PM2.5 concentrations; U.S. national standard is 9 μg/m³ (annual, 2024). Urban and traffic-proximate areas typically exceed 10–15 μg/m³. Wildfire events cause episodic spikes >50 μg/m³. Global WHO guideline: 5 μg/m³ annual mean.",
+  "references": [
+    {"id": "ref1", "title": "Exposure to PM2.5 induces aberrant activation of NF-κB in human airway epithelial cells by downregulating miR-331 expression", "authors": "Li R, et al.", "year": 2017, "journal": "Environmental Toxicology and Pharmacology", "doi": "10.1016/j.etap.2017.02.011"},
+    {"id": "ref2", "title": "Ambient particulate matter induces an exacerbation of airway inflammation in experimental asthma: role of interleukin-33", "authors": "Brandenburg AH, et al.", "year": 2014, "journal": "Clinical & Experimental Immunology", "doi": "10.1111/cei.12348"},
+    {"id": "ref3", "title": "GSTP1 and TNF Gene Variants and Associations between Air Pollution and Incident Childhood Asthma", "authors": "Islam T, et al.", "year": 2014, "journal": "Environmental Health Perspectives", "doi": "10.1289/ehp.1307459"},
+    {"id": "ref4", "title": "Traffic-related air pollution exposure and incident asthma in a high-risk birth cohort", "authors": "McConnell R, et al.", "year": 2015, "journal": "Occupational and Environmental Medicine", "doi": "10.1136/oemed-2014-102726"},
+    {"id": "ref5", "title": "EPA Criteria Air Pollutants", "authors": "U.S. EPA", "year": 2024, "url": "https://www.epa.gov/criteria-air-pollutants"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}

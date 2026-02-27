@@ -1,48 +1,213 @@
 {
   "nodes": [
-    { "id": "depression", "type": "disease", "label": "Major Depression", "slug": "depression", "attrs": { "summary": "Mood disorder", "confidence": "high" } },
-    { "id": "anxiety", "type": "disease", "label": "Anxiety", "slug": "anxiety", "attrs": { "summary": "Anxiety disorders", "confidence": "medium" } },
-    { "id": "BDNF", "type": "gene", "label": "BDNF", "slug": "bdnf", "attrs": { "summary": "Brain-derived neurotrophic factor", "confidence": "high" } },
-    { "id": "ELA", "type": "exposure", "label": "Early-life Adversity", "slug": "early-life-adversity", "attrs": { "summary": "Childhood adversity", "confidence": "high" } },
-    { "id": "air-pollution", "type": "exposure", "label": "Air Pollution", "slug": "air-pollution", "attrs": { "summary": "PM2.5 and related", "confidence": "medium" } }
+    {"id": "asthma", "type": "disease", "label": "Asthma", "slug": "asthma", "attrs": {"summary": "Chronic respiratory disease with bronchial hyperresponsiveness and airway inflammation", "confidence": "high"}},
+    {"id": "air-pollution", "type": "exposure", "label": "Ambient Air Pollution (PM2.5)", "slug": "air-pollution", "attrs": {"summary": "Fine particulate matter ≤2.5 μm; respiratory and cardiovascular effects", "confidence": "high"}},
+    {"id": "il33", "type": "gene", "label": "IL33", "slug": "il33", "attrs": {"summary": "Interleukin 33; epithelial alarmin; type 2 immunity", "confidence": "high"}},
+    {"id": "nf-kb", "type": "pathway", "label": "NF-κB Signaling Pathway", "slug": "nf-kb", "attrs": {"summary": "Master regulator of inflammatory gene expression", "confidence": "high"}},
+    {"id": "bronchial-epithelium", "type": "tissue", "label": "Bronchial Epithelium", "slug": "bronchial-epithelium", "attrs": {"summary": "Primary site of IL-33, TSLP release; barrier function"}},
+    {"id": "alveolar-macrophages", "type": "tissue", "label": "Alveolar Macrophages", "slug": "alveolar-macrophages", "attrs": {"summary": "Phagocytosis; cytokine secretion; oxidative stress response"}},
+    {"id": "mast-cells", "type": "tissue", "label": "Mast Cells", "slug": "mast-cells", "attrs": {"summary": "IL-33/ST2 activation; IgE-mediated degranulation"}},
+    {"id": "th2-lymphocytes", "type": "tissue", "label": "T-helper 2 Lymphocytes", "slug": "th2-lymphocytes", "attrs": {"summary": "IL-4, IL-5, IL-13; type 2 inflammation"}}
   ],
   "edges": [
     {
       "id": "e1",
-      "source": "ELA",
-      "target": "depression",
-      "type": "modifier",
+      "source": "air-pollution",
+      "target": "asthma",
+      "type": "modifies",
       "attrs": {
-        "evidence_type": "GWAS",
+        "evidence_type": "epidemiological",
         "direction": "amplify",
-        "tissue": "brain",
-        "strength": 0.8,
+        "tissue": "bronchial-epithelium",
+        "strength": 0.85,
         "confidence": "high",
-        "sources": ["PMID:12345"],
-        "ancestry_rep": "Multi-ancestry"
+        "sources": ["10.1111/cei.12348", "10.1289/ehp.1307459"],
+        "year_first_reported": 2010,
+        "ancestry_rep": "mixed"
       }
     },
     {
       "id": "e2",
-      "source": "BDNF",
-      "target": "depression",
-      "type": "association",
+      "source": "il33",
+      "target": "asthma",
+      "type": "associated_with",
       "attrs": {
-        "evidence_type": "eQTL",
-        "direction": "unknown",
-        "tissue": ["brain"],
-        "strength": 0.7,
-        "confidence": "medium",
-        "sources": ["GTEx"],
+        "evidence_type": "GWAS",
+        "direction": "risk",
+        "tissue": "bronchial-epithelium",
+        "strength": 0.82,
+        "confidence": "high",
+        "sources": ["10.1038/s41467-021-26347-z", "GWAS Catalog"],
+        "year_first_reported": 2010,
         "ancestry_rep": "European-dominated"
+      }
+    },
+    {
+      "id": "e3",
+      "source": "il33",
+      "target": "nf-kb",
+      "type": "participates_in",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "downstream",
+        "tissue": "bronchial-epithelium",
+        "strength": 0.78,
+        "confidence": "high",
+        "sources": ["10.1016/j.etap.2017.02.011"],
+        "year_first_reported": 2014,
+        "ancestry_rep": "N/A"
+      }
+    },
+    {
+      "id": "e4",
+      "source": "air-pollution",
+      "target": "il33",
+      "type": "modifies",
+      "attrs": {
+        "evidence_type": "in_vitro",
+        "direction": "amplify",
+        "tissue": "bronchial-epithelium",
+        "strength": 0.80,
+        "confidence": "high",
+        "sources": ["10.1111/cei.12348"],
+        "year_first_reported": 2014,
+        "ancestry_rep": "N/A"
+      }
+    },
+    {
+      "id": "e5",
+      "source": "air-pollution",
+      "target": "nf-kb",
+      "type": "modifies",
+      "attrs": {
+        "evidence_type": "in_vitro",
+        "direction": "activate",
+        "tissue": "bronchial-epithelium",
+        "strength": 0.88,
+        "confidence": "high",
+        "sources": ["10.1016/j.etap.2017.02.011"],
+        "year_first_reported": 2017,
+        "ancestry_rep": "N/A"
+      }
+    },
+    {
+      "id": "e6",
+      "source": "nf-kb",
+      "target": "asthma",
+      "type": "implicated_in",
+      "attrs": {
+        "evidence_type": "mechanistic",
+        "direction": "causal",
+        "tissue": "bronchial-epithelium",
+        "strength": 0.75,
+        "confidence": "high",
+        "sources": ["10.1016/j.etap.2017.02.011", "KEGG hsa04064"],
+        "year_first_reported": 2000,
+        "ancestry_rep": "N/A"
+      }
+    },
+    {
+      "id": "e7",
+      "source": "il33",
+      "target": "bronchial-epithelium",
+      "type": "expressed_in",
+      "attrs": {
+        "evidence_type": "GTEx",
+        "direction": "constitutive",
+        "tissue": "bronchial-epithelium",
+        "strength": 0.92,
+        "confidence": "high",
+        "sources": ["GTEx v8"],
+        "year_first_reported": 2017,
+        "ancestry_rep": "mixed"
+      }
+    },
+    {
+      "id": "e8",
+      "source": "nf-kb",
+      "target": "bronchial-epithelium",
+      "type": "expressed_in",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "inducible",
+        "tissue": "bronchial-epithelium",
+        "strength": 0.85,
+        "confidence": "high",
+        "sources": ["10.1016/j.etap.2017.02.011"],
+        "year_first_reported": 2017,
+        "ancestry_rep": "N/A"
+      }
+    },
+    {
+      "id": "e9",
+      "source": "air-pollution",
+      "target": "alveolar-macrophages",
+      "type": "interacts_with",
+      "attrs": {
+        "evidence_type": "in_vitro",
+        "direction": "activate",
+        "tissue": "alveolar-macrophages",
+        "strength": 0.78,
+        "confidence": "medium",
+        "sources": ["10.1016/j.chemosphere.2020.126423"],
+        "year_first_reported": 2020,
+        "ancestry_rep": "N/A"
+      }
+    },
+    {
+      "id": "e10",
+      "source": "il33",
+      "target": "mast-cells",
+      "type": "interacts_with",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "activate",
+        "tissue": "mast-cells",
+        "strength": 0.90,
+        "confidence": "high",
+        "sources": ["10.1016/j.cytogfr.2018.01.001"],
+        "year_first_reported": 2010,
+        "ancestry_rep": "N/A"
+      }
+    },
+    {
+      "id": "e11",
+      "source": "il33",
+      "target": "th2-lymphocytes",
+      "type": "interacts_with",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "activate",
+        "tissue": "th2-lymphocytes",
+        "strength": 0.88,
+        "confidence": "high",
+        "sources": ["10.1016/j.cytogfr.2018.01.001"],
+        "year_first_reported": 2008,
+        "ancestry_rep": "N/A"
+      }
+    },
+    {
+      "id": "e12",
+      "source": "bronchial-epithelium",
+      "target": "asthma",
+      "type": "implicated_in",
+      "attrs": {
+        "evidence_type": "pathological",
+        "direction": "site",
+        "tissue": "bronchial-epithelium",
+        "strength": 0.95,
+        "confidence": "high",
+        "sources": ["pathology literature"],
+        "year_first_reported": 1990,
+        "ancestry_rep": "N/A"
       }
     }
   ],
   "metadata": {
-    "generated_at": "2024-01-01",
+    "generated_at": "2026-02-26T00:00:00Z",
     "pipeline_version": "1.0",
-    "node_count": 5,
-    "edge_count": 2,
+    "node_count": 8,
+    "edge_count": 12,
     "schema_version": "1.0"
   }
 }
