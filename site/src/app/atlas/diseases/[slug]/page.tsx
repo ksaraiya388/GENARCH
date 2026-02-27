@@ -9,6 +9,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { EvidenceLimitations } from "@/components/EvidenceLimitations";
 import { CitationRenderer } from "@/components/CitationRenderer";
 import { ConfidenceBadge } from "@/components/ConfidenceBadge";
+import { RiskShiftChart } from "@/components/RiskShiftChart";
+import { TissueRelevanceChart } from "@/components/TissueRelevanceChart";
 
 function toConfidenceTier(c?: string): "LOW" | "MEDIUM" | "HIGH" {
   if (!c) return "LOW";
@@ -261,6 +263,33 @@ export default async function DiseaseDetailPage({
           </ul>
         </section>
       )}
+
+      {/* Required Visualizations */}
+      <section aria-labelledby="visualizations-heading">
+        <h2 id="visualizations-heading" className="text-h2 text-genarch-text mb-3">
+          Visualizations
+        </h2>
+        <div className="space-y-8">
+          <RiskShiftChart
+            diseaseName={disease.slug}
+            modifiers={(disease.exposure_modifiers ?? []).map((m) => ({
+              exposure_slug: m.exposure_slug,
+              direction: m.direction,
+              strength: m.strength,
+              confidence: m.confidence,
+              mechanism_hypothesis: m.mechanism_hypothesis,
+            }))}
+          />
+          <TissueRelevanceChart
+            diseaseName={disease.slug}
+            tissues={(disease.tissues ?? []).map((t) => ({
+              name: t.name,
+              relevance_score: t.relevance_score,
+              evidence_type: t.evidence_type,
+            }))}
+          />
+        </div>
+      </section>
 
       {/* Evidence & Limitations — always visible, never collapsible */}
       <EvidenceLimitations>
