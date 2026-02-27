@@ -9,81 +9,124 @@
     "top_loci": [
       {
         "gene": "IL33",
-        "chromosome": "9p24.1",
-        "rsids": ["rs1888909", "rs928413", "rs16924159"],
-        "p_value": 1.0e-8,
-        "effect_size": "OR ~1.15",
-        "mechanism": "Enhancer-blocking regulatory region upstream of IL33; asthma-risk allele alters OCT-1 binding and IL33 expression in airway epithelium"
+        "variant": "rs1888909",
+        "gwas_p": 1e-8,
+        "effect_size": 1.15,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated in multiple cohorts",
+        "evidence": "Enhancer-blocking regulatory region upstream of IL33; asthma-risk allele alters OCT-1 binding and IL33 expression in airway epithelium",
+        "strength": 0.85,
+        "citations": ["ref1", "ref2"]
       },
       {
         "gene": "TSLP",
-        "chromosome": "5q22.1",
-        "rsids": ["rs1837253", "rs2289276"],
-        "p_value": 7.3e-10,
-        "effect_size": "OR 1.19 (C allele risk)",
-        "mechanism": "Epithelial cytokine; TSLP expression influences Th2 priming and asthma susceptibility"
+        "variant": "rs1837253",
+        "gwas_p": 7.3e-10,
+        "effect_size": 1.19,
+        "evidence": "Epithelial cytokine; TSLP expression influences Th2 priming and asthma susceptibility",
+        "strength": 0.82,
+        "citations": ["ref1"]
       },
       {
-        "gene": "ORMDL3/GSDMB",
-        "chromosome": "17q21",
-        "rsids": ["rs7216389", "rs8067378", "rs6503525"],
-        "p_value": 1.0e-12,
-        "effect_size": "Strong eQTL for ORMDL3 (P<10^-22)",
-        "mechanism": "Variants regulate ORMDL3 expression; affects ER stress, sphingolipid metabolism, and airway remodeling"
+        "gene": "ORMDL3",
+        "variant": "rs7216389",
+        "gwas_p": 1e-12,
+        "effect_size": 1.2,
+        "evidence": "Variants regulate ORMDL3 expression; affects ER stress, sphingolipid metabolism, and airway remodeling; strong eQTL for ORMDL3",
+        "strength": 0.9,
+        "citations": ["ref1"]
       },
       {
         "gene": "IL1RL1",
-        "chromosome": "2q12.1",
-        "rsids": ["rs1420101", "rs11685480"],
-        "p_value": 5.0e-9,
-        "effect_size": "eQTL for sST2; modulates IL-33/ST2 axis",
-        "mechanism": "ST2 receptor variants; rs1420101 eQTL in airway epithelium, rs11685480 in lung parenchyma; sST2 neutralizes IL-33"
+        "variant": "rs1420101",
+        "gwas_p": 5e-9,
+        "effect_size": 1.1,
+        "evidence": "ST2 receptor variants; eQTL in airway epithelium and lung parenchyma; sST2 neutralizes IL-33",
+        "strength": 0.8,
+        "citations": ["ref1"]
       },
       {
         "gene": "RAD50",
-        "chromosome": "5q31.1",
-        "rsids": ["rs2244012"],
-        "p_value": 3.0e-7,
-        "effect_size": "Associated with childhood atopic asthma",
-        "mechanism": "RAD50-IL13 locus; IL13 drives type 2 inflammation"
+        "variant": "rs2244012",
+        "gwas_p": 3e-7,
+        "evidence": "RAD50-IL13 locus; IL13 drives type 2 inflammation; associated with childhood atopic asthma",
+        "strength": 0.7,
+        "citations": ["ref3"]
       }
     ],
-    "heritability_estimate": "h2_snp ~0.15–0.20 (SNP-based); twin study heritability ~60–80%; substantial missing heritability gap",
+    "heritability_estimate": {
+      "h2_snp": 0.175,
+      "h2_narrow_sense": 0.7,
+      "source": "Twin studies and SNP-based GWAS meta-analyses",
+      "year": 2019
+    },
     "prs_notes": "Polygenic risk scores for asthma show modest predictive ability (AUC ~0.60–0.65). Transferability is limited: GWAS discovery cohorts are predominantly European ancestry (~90%); PAGE and TOPMed are expanding multi-ancestry data. PRS performance in African, Hispanic, and Asian populations is reduced. Gene–environment interactions (e.g., PM2.5, tobacco) are not yet incorporated into PRS. Clinical utility for asthma remains investigational."
   },
   "exposure_modifiers": [
     {
       "exposure_slug": "air-pollution",
       "direction": "amplify",
+      "strength": 0.88,
       "confidence": "high",
-      "notes": "PM2.5 and traffic-related pollutants increase asthma incidence, exacerbations, and symptom severity; ROS-mediated NF-κB activation amplifies IL-33 and inflammatory cytokine release"
+      "mechanism_hypothesis": "PM2.5 and traffic-related pollutants increase asthma incidence, exacerbations, and symptom severity; ROS-mediated NF-κB activation amplifies IL-33 and inflammatory cytokine release",
+      "citations": ["ref5", "ref6", "ref7"]
     },
     {
       "exposure_slug": "ozone",
       "direction": "amplify",
+      "strength": 0.7,
       "confidence": "medium",
-      "notes": "Ozone exposure exacerbates airway inflammation and BHR; seasonal and geographic variation in ozone levels"
+      "mechanism_hypothesis": "Ozone exposure exacerbates airway inflammation and BHR; seasonal and geographic variation in ozone levels",
+      "citations": ["ref7"]
     },
     {
       "exposure_slug": "tobacco-smoke-prenatal",
       "direction": "amplify",
+      "strength": 0.85,
       "confidence": "high",
-      "notes": "Prenatal maternal smoking increases childhood asthma risk; epigenetic modifications and impaired lung development"
+      "mechanism_hypothesis": "Prenatal maternal smoking increases childhood asthma risk; epigenetic modifications and impaired lung development",
+      "citations": ["ref7"]
     },
     {
       "exposure_slug": "endotoxin",
       "direction": "buffer",
+      "strength": 0.65,
       "confidence": "medium",
-      "notes": "Farm and endotoxin exposure in early life may protect against atopic asthma via Th1/regulatory immune skewing (hygiene hypothesis)"
+      "mechanism_hypothesis": "Farm and endotoxin exposure in early life may protect against atopic asthma via Th1/regulatory immune skewing (hygiene hypothesis)",
+      "citations": ["ref4"]
     }
   ],
   "tissues": [
-    {"name": "bronchial epithelium", "relevance_score": 0.95, "notes": "Primary site of IL-33, TSLP, barrier disruption; eQTLs active"},
-    {"name": "alveolar macrophages", "relevance_score": 0.85, "notes": "Phagocytosis, cytokine secretion, oxidative stress response to PM2.5"},
-    {"name": "mast cells", "relevance_score": 0.90, "notes": "IL-33/ST2 activation; degranulation; IgE-mediated sensitization"},
-    {"name": "T-helper 2 lymphocytes", "relevance_score": 0.92, "notes": "IL-4, IL-5, IL-13 production; eosinophil recruitment; type 2 inflammation"}
+    {
+      "name": "bronchial epithelium",
+      "relevance_score": 0.95,
+      "evidence_type": "eQTL and expression studies",
+      "citations": ["ref2", "ref5"]
+    },
+    {
+      "name": "alveolar macrophages",
+      "relevance_score": 0.85,
+      "evidence_type": "expression and functional studies",
+      "citations": ["ref5"]
+    },
+    {
+      "name": "mast cells",
+      "relevance_score": 0.9,
+      "evidence_type": "IL-33/ST2 activation studies",
+      "citations": ["ref5"]
+    },
+    {
+      "name": "T-helper 2 lymphocytes",
+      "relevance_score": 0.92,
+      "evidence_type": "cytokine and inflammation studies",
+      "citations": ["ref2", "ref4"]
+    }
   ],
-  "population_equity": "GWAS for asthma are heavily European-ancestry (estimated >85% of discovery samples). Replication in African, Hispanic, and South Asian populations is growing but incomplete. PAGE (Population Architecture using Genomics and Epidemiology) and TOPMed (Trans-Omics for Precision Medicine) are generating multi-ancestry asthma GWAS. Transferability of risk loci and PRS across ancestries requires continued investment in diverse cohorts.",
+  "population_equity": {
+    "gwas_ancestry_breakdown": "GWAS for asthma are heavily European-ancestry (estimated >85% of discovery samples)",
+    "transferability_notes": "Replication in African, Hispanic, and South Asian populations is growing but incomplete. PAGE and TOPMed are generating multi-ancestry asthma GWAS. Transferability of risk loci and PRS across ancestries requires continued investment in diverse cohorts.",
+    "data_gaps": "Multi-ancestry asthma GWAS and PRS validation in under-represented populations; G×E interaction studies across ancestries."
+  },
   "mechanism_briefs": ["pm25-il33-nfkb-asthma"],
   "references": [
     {"id": "ref1", "title": "Genetic variants regulating ORMDL3 expression contribute to the risk of childhood asthma", "authors": "Moffatt MF, et al.", "year": 2007, "journal": "Nature", "doi": "10.1038/nature06014"},
