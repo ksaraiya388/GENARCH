@@ -1,6 +1,6 @@
 node_modules/
 .next/
-out/
+site/out/
 .env
 .env.local
 *.pyc

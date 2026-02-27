@@ -225,6 +225,7 @@ export function SearchBar({
           ) : (
             <li
               role="option"
+              aria-selected={false}
               className="px-4 py-6 text-center text-sm text-genarch-subtext"
             >
               No results found for &quot;{query}&quot;

@@ -118,6 +118,9 @@ export function getSearchIndex(): SearchItem[] {
   const indexPath = path.join(DATA_DIR, "search", "index.json");
   const data = readJsonFile<SearchItem[]>(indexPath);
   if (data !== null && Array.isArray(data)) return data;
+  const altPath = path.join(DATA_DIR, "search-index.json");
+  const altData = readJsonFile<SearchItem[]>(altPath);
+  if (altData !== null && Array.isArray(altData)) return altData;
   return [];
 }
 

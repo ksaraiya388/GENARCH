@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import cytoscape, { type Core, type EdgeSingular, type NodeSingular } from "cytoscape";
+import cytoscape, { type Core, type EdgeSingular, type NodeSingular, type Css } from "cytoscape";
 import type { GraphData, GraphNode, GraphEdge } from "@/lib/types";
 import { saveAs } from "file-saver";
 import { toSvg } from "html-to-image";
@@ -144,9 +144,8 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
           style: {
             "background-color": (ele) =>
               NODE_COLORS[ele.data("type")] ?? "#999",
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            shape: (ele: NodeSingular) =>
-              (NODE_SHAPES[ele.data("type")] ?? "ellipse") as any,
+            shape: ((ele: NodeSingular) =>
+              NODE_SHAPES[ele.data("type")] ?? "ellipse") as unknown as Css.PropertyValueNode<Css.NodeShape>,
             label: "data(label)",
             "text-valign": "bottom",
             "text-margin-y": 4,
