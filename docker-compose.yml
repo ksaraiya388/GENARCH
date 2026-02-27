@@ -1,0 +1,12 @@
+# GENARCH development environment
+# Usage: docker compose up
+
+services:
+  site:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    command: sh -c "cd site && npm ci && npm run dev"
