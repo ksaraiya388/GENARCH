@@ -104,24 +104,28 @@ def build_edges(entities: dict[str, list[dict[str, Any]]]) -> list[dict[str, Any
         eid += 1
         return f"e{eid}"
 
+    seen_edges: set[tuple[str, str, str]] = set()
+
+    def add_edge(source: str, target: str, etype: str, attrs: dict[str, Any]) -> None:
+        key = (source, target, etype)
+        if key in seen_edges:
+            return
+        seen_edges.add(key)
+        edges.append({"id": make_id(), "source": source, "target": target, "type": etype, "attrs": attrs})
+
     for d in entities.get("diseases", []):
         d_slug = d.get("slug", d.get("id", ""))
+        disease_tissues = [t.get("name", "") for t in d.get("tissues", [])]
         for em in d.get("exposure_modifiers", []):
             exp_slug = em.get("exposure_slug", "")
             if exp_slug:
-                edges.append({
-                    "id": make_id(),
-                    "source": exp_slug,
-                    "target": d_slug,
-                    "type": "modifier",
-                    "attrs": {
-                        "evidence_type": "literature",
-                        "direction": em.get("direction", "unknown"),
-                        "tissue": [],
-                        "strength": em.get("strength", 0.5),
-                        "confidence": em.get("confidence", "medium"),
-                        "sources": em.get("citations", []),
-                    },
+                add_edge(exp_slug, d_slug, "modifier", {
+                    "evidence_type": "literature",
+                    "direction": em.get("direction", "unknown"),
+                    "tissue": disease_tissues if disease_tissues else [],
+                    "strength": em.get("strength", 0.5),
+                    "confidence": em.get("confidence", "medium"),
+                    "sources": em.get("citations", []),
                 })
 
         arch = d.get("genetic_architecture") or {}
@@ -132,97 +136,73 @@ def build_edges(entities: dict[str, list[dict[str, Any]]]) -> list[dict[str, Any
                 raw_ev = locus.get("evidence", "GWAS")
                 valid_evidence_types = {"GWAS", "eQTL", "pathway", "literature", "inferred"}
                 evidence_type = raw_ev if raw_ev in valid_evidence_types else "GWAS"
-                edges.append({
-                    "id": make_id(),
-                    "source": gene_slug,
-                    "target": d_slug,
-                    "type": "association",
-                    "attrs": {
-                        "evidence_type": evidence_type,
-                        "direction": "unknown",
-                        "tissue": [],
-                        "strength": locus.get("strength", 0.5),
-                        "confidence": "medium",
-                        "sources": locus.get("citations", []),
-                    },
+                add_edge(gene_slug, d_slug, "association", {
+                    "evidence_type": evidence_type,
+                    "direction": "unknown",
+                    "tissue": disease_tissues if disease_tissues else [],
+                    "strength": locus.get("strength", 0.5),
+                    "confidence": "medium",
+                    "sources": locus.get("citations", []),
                 })
 
     for e in entities.get("exposures", []):
         exp_slug = e.get("slug", e.get("id", ""))
+        exp_tissues = [t.get("name", "") for t in e.get("tissues", [])]
         for gh in e.get("gxe_highlights", []):
             gene_slug = gh.get("gene_slug", "")
             d_slug = gh.get("disease_slug", "")
             if gene_slug and d_slug:
-                edges.append({
-                    "id": make_id(),
-                    "source": exp_slug,
-                    "target": d_slug,
-                    "type": "modifier",
-                    "attrs": {
-                        "evidence_type": gh.get("evidence_type", "literature"),
-                        "direction": gh.get("direction", "unknown"),
-                        "tissue": [],
-                        "strength": 0.5,
-                        "confidence": "medium",
-                        "sources": gh.get("citations", []),
-                    },
+                raw_ev = gh.get("evidence_type", "literature")
+                valid_evidence_types = {"GWAS", "eQTL", "pathway", "literature", "inferred"}
+                evidence_type = raw_ev if raw_ev in valid_evidence_types else "literature"
+                add_edge(exp_slug, d_slug, "modifier", {
+                    "evidence_type": evidence_type,
+                    "direction": gh.get("direction", "unknown"),
+                    "tissue": exp_tissues if exp_tissues else [],
+                    "strength": 0.5,
+                    "confidence": "medium",
+                    "sources": gh.get("citations", []),
                 })
 
     for g in entities.get("genes", []):
         gene_slug = g.get("slug", g.get("symbol", g.get("id", "")))
+        gene_tissues = [ec.get("tissue", "") for ec in g.get("expression_context", [])]
         for ld in g.get("linked_diseases", []):
             d_slug = ld.get("disease_slug", ld) if isinstance(ld, dict) else ld
             if d_slug and isinstance(d_slug, str):
-                edges.append({
-                    "id": make_id(),
-                    "source": gene_slug,
-                    "target": d_slug,
-                    "type": "association",
-                    "attrs": {
-                        "evidence_type": ld.get("evidence_type", "literature") if isinstance(ld, dict) else "literature",
-                        "direction": "unknown",
-                        "tissue": [],
-                        "strength": float(ld.get("strength", 0.5)) if isinstance(ld, dict) else 0.5,
-                        "confidence": "medium",
-                        "sources": [],
-                    },
+                add_edge(gene_slug, d_slug, "association", {
+                    "evidence_type": ld.get("evidence_type", "literature") if isinstance(ld, dict) else "literature",
+                    "direction": "unknown",
+                    "tissue": gene_tissues if gene_tissues else [],
+                    "strength": float(ld.get("strength", 0.5)) if isinstance(ld, dict) else 0.5,
+                    "confidence": "medium",
+                    "sources": [],
                 })
 
     for p in entities.get("pathways", []):
         pw_slug = p.get("slug", p.get("id", ""))
+        pw_tissues = [ts.get("tissue", "") for ts in (p.get("tissue_specificity") or [])]
         for ld in p.get("linked_diseases", []):
             d_slug = ld.get("disease_slug", ld) if isinstance(ld, dict) else ld
             if d_slug and isinstance(d_slug, str):
-                edges.append({
-                    "id": make_id(),
-                    "source": pw_slug,
-                    "target": d_slug,
-                    "type": "pathway",
-                    "attrs": {
-                        "evidence_type": "pathway",
-                        "direction": "unknown",
-                        "tissue": [],
-                        "strength": 0.5,
-                        "confidence": "medium",
-                        "sources": ld.get("citations", []) if isinstance(ld, dict) else [],
-                    },
+                add_edge(pw_slug, d_slug, "pathway", {
+                    "evidence_type": "pathway",
+                    "direction": "unknown",
+                    "tissue": pw_tissues if pw_tissues else [],
+                    "strength": 0.5,
+                    "confidence": "medium",
+                    "sources": ld.get("citations", []) if isinstance(ld, dict) else [],
                 })
         for kg in p.get("key_genes", []):
             gene_slug = kg.get("gene_slug", "") if isinstance(kg, dict) else kg
             if gene_slug:
-                edges.append({
-                    "id": make_id(),
-                    "source": gene_slug,
-                    "target": pw_slug,
-                    "type": "pathway",
-                    "attrs": {
-                        "evidence_type": "pathway",
-                        "direction": "unknown",
-                        "tissue": [],
-                        "strength": 0.5,
-                        "confidence": "medium",
-                        "sources": kg.get("citations", []),
-                    },
+                add_edge(gene_slug, pw_slug, "pathway", {
+                    "evidence_type": "pathway",
+                    "direction": "unknown",
+                    "tissue": pw_tissues if pw_tissues else [],
+                    "strength": 0.5,
+                    "confidence": "medium",
+                    "sources": kg.get("citations", []),
                 })
 
     return edges
