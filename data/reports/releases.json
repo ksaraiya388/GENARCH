@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "v1-0-0",
+    "title": "GENARCH v1.0.0 — Initial Release",
+    "date": "2024-06-01",
+    "summary": "First public release of the GENARCH atlas with diseases, exposures, genes, pathways, and mechanism briefs.",
+    "content": "## GENARCH v1.0.0\n\nThis release marks the first public availability of the GENARCH atlas.\n\n### Highlights\n- Curated disease profiles with genetic architecture and exposure modifiers\n- Exposure definitions and system-level effects\n- Gene and pathway annotations\n- Mechanism briefs explaining GxE hypotheses\n- Knowledge graph of entity relationships\n- Community module foundations\n\n### Data Sources\n- GWAS Catalog, GTEx, literature curation\n- See /methods for full pipeline documentation",
+    "pdf_url": null
+  },
+  {
+    "slug": "v0-9-beta",
+    "title": "GENARCH v0.9 Beta",
+    "date": "2024-04-15",
+    "summary": "Beta release for community feedback.",
+    "content": "## Beta Release\n\nPreliminary release for testing and stakeholder feedback.",
+    "pdf_url": null
+  }
+]

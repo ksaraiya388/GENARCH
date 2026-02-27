@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    { "id": "depression", "type": "disease", "label": "Major Depression", "slug": "depression", "attrs": { "summary": "Mood disorder", "confidence": "high" } },
+    { "id": "anxiety", "type": "disease", "label": "Anxiety", "slug": "anxiety", "attrs": { "summary": "Anxiety disorders", "confidence": "medium" } },
+    { "id": "BDNF", "type": "gene", "label": "BDNF", "slug": "bdnf", "attrs": { "summary": "Brain-derived neurotrophic factor", "confidence": "high" } },
+    { "id": "ELA", "type": "exposure", "label": "Early-life Adversity", "slug": "early-life-adversity", "attrs": { "summary": "Childhood adversity", "confidence": "high" } },
+    { "id": "air-pollution", "type": "exposure", "label": "Air Pollution", "slug": "air-pollution", "attrs": { "summary": "PM2.5 and related", "confidence": "medium" } }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "ELA",
+      "target": "depression",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "amplify",
+        "tissue": "brain",
+        "strength": 0.8,
+        "confidence": "high",
+        "sources": ["PMID:12345"],
+        "ancestry_rep": "Multi-ancestry"
+      }
+    },
+    {
+      "id": "e2",
+      "source": "BDNF",
+      "target": "depression",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "eQTL",
+        "direction": "unknown",
+        "tissue": ["brain"],
+        "strength": 0.7,
+        "confidence": "medium",
+        "sources": ["GTEx"],
+        "ancestry_rep": "European-dominated"
+      }
+    }
+  ],
+  "metadata": {
+    "generated_at": "2024-01-01",
+    "pipeline_version": "1.0",
+    "node_count": 5,
+    "edge_count": 2,
+    "schema_version": "1.0"
+  }
+}
