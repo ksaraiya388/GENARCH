@@ -1,0 +1,60 @@
+{
+  "region_id": "sample-county",
+  "name": "Sample County",
+  "geo_level": "county",
+  "fips_code": "06001",
+  "health_stats": [
+    {
+      "disease_slug": "depression",
+      "metric_type": "incidence_rate",
+      "value": 12.5,
+      "year": 2023,
+      "source": "State health dept",
+      "ci_lower": 11.2,
+      "ci_upper": 13.8
+    },
+    {
+      "disease_slug": "anxiety",
+      "metric_type": "prevalence",
+      "value": 18.2,
+      "year": 2023,
+      "source": "BRFSS"
+    }
+  ],
+  "exposure_layers": [
+    {
+      "layer_name": "PM2.5",
+      "data_source": "EPA",
+      "year": 2022,
+      "summary_stats": { "mean": 8.5, "max": 15.2 }
+    },
+    {
+      "layer_name": "Green Space",
+      "data_source": "NLCD",
+      "year": 2021,
+      "summary_stats": { "coverage_pct": 42 }
+    }
+  ],
+  "model": {
+    "features_used": ["PM2.5", "green_space", "socioeconomic_index"],
+    "shap_summaries": [
+      { "feature": "PM2.5", "mean_shap_value": 0.32, "direction": "positive" },
+      { "feature": "green_space", "mean_shap_value": -0.21, "direction": "negative" }
+    ],
+    "model_card_version": "1.0",
+    "training_data_cutoff": "2022-06-01"
+  },
+  "resources": [
+    {
+      "name": "Local health resources",
+      "type": "link",
+      "url": "https://example.com/health",
+      "description": "County health department",
+      "local_relevance": "high"
+    }
+  ],
+  "limitations": "Model trained on state-level data; local estimates have wide uncertainty.",
+  "references": [],
+  "schema_version": "1.0",
+  "last_updated": "2024-01-15"
+}
