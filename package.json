@@ -1,0 +1,12 @@
+{
+  "name": "genarch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GENARCH — Global Exposome & Genetic Epidemiology Atlas",
+  "scripts": {
+    "site:dev": "npm run dev --prefix site",
+    "site:build": "npm run build --prefix site",
+    "site:lint": "npm run lint --prefix site"
+  },
+  "license": "CC-BY-NC-SA-4.0"
+}
