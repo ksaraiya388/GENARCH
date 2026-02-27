@@ -1,33 +1,303 @@
 {
   "nodes": [
-    {"id": "asthma", "type": "disease", "label": "Asthma", "slug": "asthma", "attrs": {"summary": "Chronic respiratory disease with bronchial hyperresponsiveness and airway inflammation", "confidence": "high"}},
-    {"id": "air-pollution", "type": "exposure", "label": "Ambient Air Pollution (PM2.5)", "slug": "air-pollution", "attrs": {"summary": "Fine particulate matter ≤2.5 μm; respiratory and cardiovascular effects", "confidence": "high"}},
-    {"id": "il33", "type": "gene", "label": "IL33", "slug": "il33", "attrs": {"summary": "Interleukin 33; epithelial alarmin; type 2 immunity", "confidence": "high"}},
-    {"id": "nf-kb", "type": "pathway", "label": "NF-κB Signaling Pathway", "slug": "nf-kb", "attrs": {"summary": "Master regulator of inflammatory gene expression", "confidence": "high"}},
-    {"id": "bronchial-epithelium", "type": "tissue", "label": "Bronchial Epithelium", "slug": "bronchial-epithelium", "attrs": {"summary": "Primary site of IL-33, TSLP release; barrier function"}},
-    {"id": "alveolar-macrophages", "type": "tissue", "label": "Alveolar Macrophages", "slug": "alveolar-macrophages", "attrs": {"summary": "Phagocytosis; cytokine secretion; oxidative stress response"}},
-    {"id": "mast-cells", "type": "tissue", "label": "Mast Cells", "slug": "mast-cells", "attrs": {"summary": "IL-33/ST2 activation; IgE-mediated degranulation"}},
-    {"id": "th2-lymphocytes", "type": "tissue", "label": "T-helper 2 Lymphocytes", "slug": "th2-lymphocytes", "attrs": {"summary": "IL-4, IL-5, IL-13; type 2 inflammation"}}
+    {
+      "id": "asthma",
+      "type": "disease",
+      "label": "Asthma",
+      "slug": "asthma",
+      "attrs": {
+        "summary": "Asthma is a heterogeneous chronic respiratory disease characterized by variable airflow obstruction, bronchial hyperresponsiveness (BHR), and airway inflammation. The disease sits within the atopic march, where allergic sensitization in early life (food allergy, atopic dermatitis) often precedes allergic rhinitis and asthma development. Pathophysiologically, asthma involves T-helper 2 (Th2)–mediated inflammation, eosinophilic infiltration, goblet cell hyperplasia, and airway remodeling. The phenotypic spectrum ranges from mild intermittent disease to severe therapy-resistant asthma, with distinct endotypes including type 2–high (eosinophilic, allergen-driven) and type 2–low (neutrophilic or paucigranulocytic) presentations. Genetic susceptibility contributes substantially: twin studies estimate heritability at ~60–80%, while SNP-based heritability (h²) is ~0.15–0.20, reflecting the polygenic architecture. Prevalence varies globally (5–20%), with higher rates in industrialized nations and urban settings. Asthma onset frequently occurs in childhood or adolescence, making it highly relevant to the 10–24 age group—a period when disease trajectory, medication adherence, and environmental exposures (including smoking initiation and occupational exposures) critically shape long-term outcomes.",
+        "confidence": "high",
+        "last_updated": "2026-02-26"
+      }
+    },
+    {
+      "id": "endotoxin",
+      "type": "exposure",
+      "label": "Endotoxin (Farm/Microbial Exposure)",
+      "slug": "endotoxin",
+      "attrs": {
+        "summary": "Lipopolysaccharide from Gram-negative bacteria; exposure common in farm environments. Early-life exposure may protect against atopic asthma (hygiene hypothesis).",
+        "confidence": "medium",
+        "last_updated": "2026-02-26"
+      }
+    },
+    {
+      "id": "ozone",
+      "type": "exposure",
+      "label": "Ozone",
+      "slug": "ozone",
+      "attrs": {
+        "summary": "Ground-level ozone (O3) is a secondary pollutant formed when nitrogen oxides and volatile organic compounds react in the presence of sunlight. It exacerbates respiratory conditions including asthma.",
+        "confidence": "medium",
+        "last_updated": "2026-02-26"
+      }
+    },
+    {
+      "id": "air-pollution",
+      "type": "exposure",
+      "label": "Ambient Air Pollution (PM2.5)",
+      "slug": "air-pollution",
+      "attrs": {
+        "summary": "PM2.5 (particulate matter with aerodynamic diameter ≤2.5 micrometers) refers to fine inhalable particles that can penetrate deep into the lungs and enter the bloodstream. Sources include combustion (vehicles, power plants, wildfires), industrial processes, and secondary formation from gaseous precursors (e.g., SO2, NOx). PM2.5 composition varies by region but typically includes sulfates, nitrates, ammonium, organic carbon, elemental carbon, and trace metals. The small size enables alveolar deposition and systemic distribution, contributing to respiratory, cardiovascular, and immune effects.",
+        "confidence": "medium",
+        "last_updated": "2026-02-26"
+      }
+    },
+    {
+      "id": "tobacco-smoke-prenatal",
+      "type": "exposure",
+      "label": "Prenatal Tobacco Smoke Exposure",
+      "slug": "tobacco-smoke-prenatal",
+      "attrs": {
+        "summary": "In utero exposure to tobacco smoke from maternal smoking during pregnancy. Associated with impaired lung development and increased childhood asthma risk.",
+        "confidence": "medium",
+        "last_updated": "2026-02-26"
+      }
+    },
+    {
+      "id": "il33",
+      "type": "gene",
+      "label": "IL33",
+      "slug": "il33",
+      "attrs": {
+        "summary": "IL33 encodes interleukin-33, a dual-function cytokine and nuclear factor belonging to the IL-1 family. IL-33 functions as an epithelial alarmin: it is constitutively expressed in barrier tissues (lung, skin, gut) and released upon cell damage or stress, acting as a danger signal to activate innate and adaptive immune cells. Full-length IL-33 binds the ST2 (IL1RL1) receptor on group 2 innate lymphoid cells (ILC2s), mast cells, Th2 lymphocytes, and eosinophils, driving type 2 immunity. Proteolytic cleavage by allergens or inflammatory proteases generates mature forms with enhanced activity. Asthma-associated GWAS variants regulate IL33 expression through an enhancer-blocking element ~2.3 kb upstream, with differential OCT-1 (POU2F1) binding. IL-33 is upregulated by PM2.5, allergens, and viral infections, positioning it at the interface of environmental exposure and genetic susceptibility in asthma.",
+        "confidence": "high",
+        "last_updated": "2026-02-26"
+      }
+    },
+    {
+      "id": "nf-kb",
+      "type": "pathway",
+      "label": "NF-κB Signaling Pathway",
+      "slug": "nf-kb",
+      "attrs": {
+        "summary": "NF-κB (nuclear factor kappa-light-chain-enhancer of activated B cells) is a master regulator of inflammatory gene expression, governing immune responses, cell survival, and proliferation. The pathway exists in canonical and non-canonical forms. The canonical pathway is triggered by pro-inflammatory stimuli (TNF, IL-1, LPS, viral RNA): IκB kinase (IKK) phosphorylates IκBα, leading to its ubiquitination and proteasomal degradation, which releases NF-κB dimers (e.g., RelA/p65–p50) for nuclear translocation and target gene activation. Key targets include IL6, IL8, TNF, IL33, COX-2, and adhesion molecules. Environmental pollutants such as PM2.5 activate NF-κB via reactive oxygen species (ROS)–mediated IKK activation; particulate matter downregulates microRNAs that suppress IKK-β. Tissue-specific activity in bronchial epithelium, macrophages, and endothelium underlies respiratory and cardiovascular disease pathogenesis.",
+        "confidence": "medium",
+        "last_updated": "2026-02-26"
+      }
+    }
   ],
   "edges": [
-    {"id": "e1", "source": "air-pollution", "target": "asthma", "type": "modifies", "attrs": {"evidence_type": "literature", "direction": "amplify", "tissue": "bronchial-epithelium", "strength": 0.85, "confidence": "high", "sources": ["10.1111/cei.12348", "10.1289/ehp.1307459"], "year_first_reported": 2010, "ancestry_rep": "Multi-ancestry"}},
-    {"id": "e2", "source": "il33", "target": "asthma", "type": "associated_with", "attrs": {"evidence_type": "GWAS", "direction": "amplify", "tissue": "bronchial-epithelium", "strength": 0.82, "confidence": "high", "sources": ["10.1038/s41467-021-26347-z", "GWAS Catalog"], "year_first_reported": 2010, "ancestry_rep": "European-dominated"}},
-    {"id": "e3", "source": "il33", "target": "nf-kb", "type": "participates_in", "attrs": {"evidence_type": "literature", "direction": "amplify", "tissue": "bronchial-epithelium", "strength": 0.78, "confidence": "high", "sources": ["10.1016/j.etap.2017.02.011"], "year_first_reported": 2014, "ancestry_rep": "Unknown"}},
-    {"id": "e4", "source": "air-pollution", "target": "il33", "type": "modifies", "attrs": {"evidence_type": "literature", "direction": "amplify", "tissue": "bronchial-epithelium", "strength": 0.8, "confidence": "high", "sources": ["10.1111/cei.12348"], "year_first_reported": 2014, "ancestry_rep": "Unknown"}},
-    {"id": "e5", "source": "air-pollution", "target": "nf-kb", "type": "modifies", "attrs": {"evidence_type": "literature", "direction": "amplify", "tissue": "bronchial-epithelium", "strength": 0.88, "confidence": "high", "sources": ["10.1016/j.etap.2017.02.011"], "year_first_reported": 2017, "ancestry_rep": "Unknown"}},
-    {"id": "e6", "source": "nf-kb", "target": "asthma", "type": "implicated_in", "attrs": {"evidence_type": "pathway", "direction": "amplify", "tissue": "bronchial-epithelium", "strength": 0.75, "confidence": "high", "sources": ["10.1016/j.etap.2017.02.011", "KEGG hsa04064"], "year_first_reported": 2000, "ancestry_rep": "Unknown"}},
-    {"id": "e7", "source": "il33", "target": "bronchial-epithelium", "type": "expressed_in", "attrs": {"evidence_type": "eQTL", "direction": "unknown", "tissue": "bronchial-epithelium", "strength": 0.92, "confidence": "high", "sources": ["GTEx v8"], "year_first_reported": 2017, "ancestry_rep": "Multi-ancestry"}},
-    {"id": "e8", "source": "nf-kb", "target": "bronchial-epithelium", "type": "expressed_in", "attrs": {"evidence_type": "literature", "direction": "amplify", "tissue": "bronchial-epithelium", "strength": 0.85, "confidence": "high", "sources": ["10.1016/j.etap.2017.02.011"], "year_first_reported": 2017, "ancestry_rep": "Unknown"}},
-    {"id": "e9", "source": "air-pollution", "target": "alveolar-macrophages", "type": "interacts_with", "attrs": {"evidence_type": "literature", "direction": "amplify", "tissue": "alveolar-macrophages", "strength": 0.78, "confidence": "medium", "sources": ["10.1016/j.chemosphere.2020.126423"], "year_first_reported": 2020, "ancestry_rep": "Unknown"}},
-    {"id": "e10", "source": "il33", "target": "mast-cells", "type": "interacts_with", "attrs": {"evidence_type": "literature", "direction": "amplify", "tissue": "mast-cells", "strength": 0.9, "confidence": "high", "sources": ["10.1016/j.cytogfr.2018.01.001"], "year_first_reported": 2010, "ancestry_rep": "Unknown"}},
-    {"id": "e11", "source": "il33", "target": "th2-lymphocytes", "type": "interacts_with", "attrs": {"evidence_type": "literature", "direction": "amplify", "tissue": "th2-lymphocytes", "strength": 0.88, "confidence": "high", "sources": ["10.1016/j.cytogfr.2018.01.001"], "year_first_reported": 2008, "ancestry_rep": "Unknown"}},
-    {"id": "e12", "source": "bronchial-epithelium", "target": "asthma", "type": "implicated_in", "attrs": {"evidence_type": "literature", "direction": "unknown", "tissue": "bronchial-epithelium", "strength": 0.95, "confidence": "high", "sources": ["pathology literature"], "year_first_reported": 1990, "ancestry_rep": "Unknown"}}
+    {
+      "id": "e1",
+      "source": "air-pollution",
+      "target": "asthma",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [],
+        "strength": 0.88,
+        "confidence": "high",
+        "sources": [
+          "ref5",
+          "ref6",
+          "ref7"
+        ]
+      }
+    },
+    {
+      "id": "e2",
+      "source": "ozone",
+      "target": "asthma",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [],
+        "strength": 0.7,
+        "confidence": "medium",
+        "sources": [
+          "ref7"
+        ]
+      }
+    },
+    {
+      "id": "e3",
+      "source": "tobacco-smoke-prenatal",
+      "target": "asthma",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [],
+        "strength": 0.85,
+        "confidence": "high",
+        "sources": [
+          "ref7"
+        ]
+      }
+    },
+    {
+      "id": "e4",
+      "source": "endotoxin",
+      "target": "asthma",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "buffer",
+        "tissue": [],
+        "strength": 0.65,
+        "confidence": "medium",
+        "sources": [
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e5",
+      "source": "il33",
+      "target": "asthma",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [],
+        "strength": 0.85,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e6",
+      "source": "tslp",
+      "target": "asthma",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [],
+        "strength": 0.82,
+        "confidence": "medium",
+        "sources": [
+          "ref1"
+        ]
+      }
+    },
+    {
+      "id": "e7",
+      "source": "ormdl3",
+      "target": "asthma",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [],
+        "strength": 0.9,
+        "confidence": "medium",
+        "sources": [
+          "ref1"
+        ]
+      }
+    },
+    {
+      "id": "e8",
+      "source": "il1rl1",
+      "target": "asthma",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [],
+        "strength": 0.8,
+        "confidence": "medium",
+        "sources": [
+          "ref1"
+        ]
+      }
+    },
+    {
+      "id": "e9",
+      "source": "rad50",
+      "target": "asthma",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [],
+        "strength": 0.7,
+        "confidence": "medium",
+        "sources": [
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e10",
+      "source": "air-pollution",
+      "target": "asthma",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref2",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e11",
+      "source": "il33",
+      "target": "asthma",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [],
+        "strength": 0.85,
+        "confidence": "medium",
+        "sources": []
+      }
+    },
+    {
+      "id": "e12",
+      "source": "nf-kb",
+      "target": "asthma",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e13",
+      "source": "il33",
+      "target": "nf-kb",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref4"
+        ]
+      }
+    }
   ],
   "metadata": {
-    "generated_at": "2026-02-26T00:00:00Z",
-    "pipeline_version": "1.0",
-    "node_count": 8,
-    "edge_count": 12,
+    "generated_at": "2026-02-27",
+    "pipeline_version": "1.0.0",
+    "node_count": 7,
+    "edge_count": 13,
     "schema_version": "1.0"
   }
 }

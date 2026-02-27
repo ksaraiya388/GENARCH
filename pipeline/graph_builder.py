@@ -128,14 +128,17 @@ def build_edges(entities: dict[str, list[dict[str, Any]]]) -> list[dict[str, Any
         for locus in arch.get("top_loci", []):
             gene = locus.get("gene", "")
             if gene:
-                gene_slug = gene.lower().replace(" ", "-")
+                gene_slug = gene.lower().replace("/", "-").replace(" ", "-")
+                raw_ev = locus.get("evidence", "GWAS")
+                valid_evidence_types = {"GWAS", "eQTL", "pathway", "literature", "inferred"}
+                evidence_type = raw_ev if raw_ev in valid_evidence_types else "GWAS"
                 edges.append({
                     "id": make_id(),
                     "source": gene_slug,
                     "target": d_slug,
                     "type": "association",
                     "attrs": {
-                        "evidence_type": locus.get("evidence", "GWAS"),
+                        "evidence_type": evidence_type,
                         "direction": "unknown",
                         "tissue": [],
                         "strength": locus.get("strength", 0.5),
