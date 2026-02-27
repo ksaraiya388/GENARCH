@@ -87,7 +87,12 @@
       "attrs": {
         "evidence_type": "literature",
         "direction": "amplify",
-        "tissue": [],
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar macrophages",
+          "mast cells",
+          "T-helper 2 lymphocytes"
+        ],
         "strength": 0.88,
         "confidence": "high",
         "sources": [
@@ -105,7 +110,12 @@
       "attrs": {
         "evidence_type": "literature",
         "direction": "amplify",
-        "tissue": [],
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar macrophages",
+          "mast cells",
+          "T-helper 2 lymphocytes"
+        ],
         "strength": 0.7,
         "confidence": "medium",
         "sources": [
@@ -121,7 +131,12 @@
       "attrs": {
         "evidence_type": "literature",
         "direction": "amplify",
-        "tissue": [],
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar macrophages",
+          "mast cells",
+          "T-helper 2 lymphocytes"
+        ],
         "strength": 0.85,
         "confidence": "high",
         "sources": [
@@ -137,7 +152,12 @@
       "attrs": {
         "evidence_type": "literature",
         "direction": "buffer",
-        "tissue": [],
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar macrophages",
+          "mast cells",
+          "T-helper 2 lymphocytes"
+        ],
         "strength": 0.65,
         "confidence": "medium",
         "sources": [
@@ -153,7 +173,12 @@
       "attrs": {
         "evidence_type": "GWAS",
         "direction": "unknown",
-        "tissue": [],
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar macrophages",
+          "mast cells",
+          "T-helper 2 lymphocytes"
+        ],
         "strength": 0.85,
         "confidence": "medium",
         "sources": [
@@ -170,7 +195,12 @@
       "attrs": {
         "evidence_type": "GWAS",
         "direction": "unknown",
-        "tissue": [],
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar macrophages",
+          "mast cells",
+          "T-helper 2 lymphocytes"
+        ],
         "strength": 0.82,
         "confidence": "medium",
         "sources": [
@@ -186,7 +216,12 @@
       "attrs": {
         "evidence_type": "GWAS",
         "direction": "unknown",
-        "tissue": [],
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar macrophages",
+          "mast cells",
+          "T-helper 2 lymphocytes"
+        ],
         "strength": 0.9,
         "confidence": "medium",
         "sources": [
@@ -202,7 +237,12 @@
       "attrs": {
         "evidence_type": "GWAS",
         "direction": "unknown",
-        "tissue": [],
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar macrophages",
+          "mast cells",
+          "T-helper 2 lymphocytes"
+        ],
         "strength": 0.8,
         "confidence": "medium",
         "sources": [
@@ -218,7 +258,12 @@
       "attrs": {
         "evidence_type": "GWAS",
         "direction": "unknown",
-        "tissue": [],
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar macrophages",
+          "mast cells",
+          "T-helper 2 lymphocytes"
+        ],
         "strength": 0.7,
         "confidence": "medium",
         "sources": [
@@ -228,45 +273,17 @@
     },
     {
       "id": "e10",
-      "source": "air-pollution",
-      "target": "asthma",
-      "type": "modifier",
-      "attrs": {
-        "evidence_type": "literature",
-        "direction": "amplify",
-        "tissue": [],
-        "strength": 0.5,
-        "confidence": "medium",
-        "sources": [
-          "ref1",
-          "ref2",
-          "ref3"
-        ]
-      }
-    },
-    {
-      "id": "e11",
-      "source": "il33",
-      "target": "asthma",
-      "type": "association",
-      "attrs": {
-        "evidence_type": "GWAS",
-        "direction": "unknown",
-        "tissue": [],
-        "strength": 0.85,
-        "confidence": "medium",
-        "sources": []
-      }
-    },
-    {
-      "id": "e12",
       "source": "nf-kb",
       "target": "asthma",
       "type": "pathway",
       "attrs": {
         "evidence_type": "pathway",
         "direction": "unknown",
-        "tissue": [],
+        "tissue": [
+          "bronchial epithelium",
+          "macrophages",
+          "endothelium"
+        ],
         "strength": 0.5,
         "confidence": "medium",
         "sources": [
@@ -276,14 +293,18 @@
       }
     },
     {
-      "id": "e13",
+      "id": "e11",
       "source": "il33",
       "target": "nf-kb",
       "type": "pathway",
       "attrs": {
         "evidence_type": "pathway",
         "direction": "unknown",
-        "tissue": [],
+        "tissue": [
+          "bronchial epithelium",
+          "macrophages",
+          "endothelium"
+        ],
         "strength": 0.5,
         "confidence": "medium",
         "sources": [
@@ -297,7 +318,7 @@
     "generated_at": "2026-02-27",
     "pipeline_version": "1.0.0",
     "node_count": 7,
-    "edge_count": 13,
+    "edge_count": 11,
     "schema_version": "1.0"
   }
 }
