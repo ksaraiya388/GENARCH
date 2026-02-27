@@ -1,0 +1,134 @@
+{
+  "chromosome": "9p24.1",
+  "confidence": "high",
+  "evidence_table": [
+    {
+      "citations": [
+        "gwas_2019_demenais"
+      ],
+      "confidence": "high",
+      "effect_size": 1.18,
+      "evidence_type": "GWAS",
+      "label": "IL33 asthma locus replication",
+      "source": "Meta-analysis",
+      "year": 2019
+    },
+    {
+      "citations": [
+        "gtex_2020_cons"
+      ],
+      "confidence": "high",
+      "effect_size": 0.67,
+      "evidence_type": "eQTL",
+      "label": "IL33 eQTL in lung tissue",
+      "source": "GTEx v8",
+      "year": 2020
+    }
+  ],
+  "expression_context": [
+    {
+      "citations": [
+        "gtex_2020_cons"
+      ],
+      "gtex_version": "v8",
+      "tissue": "Lung",
+      "tpm_range": "8.0-12.0"
+    },
+    {
+      "citations": [
+        "gtex_2020_cons"
+      ],
+      "gtex_version": "v8",
+      "tissue": "Whole blood",
+      "tpm_range": "2.5-4.1"
+    }
+  ],
+  "id": "gene_il33",
+  "last_updated": "2026-02-26",
+  "linked_diseases": [
+    {
+      "evidence_type": "GWAS",
+      "slug": "asthma",
+      "strength": 0.86
+    }
+  ],
+  "linked_exposures": [
+    {
+      "evidence_type": "literature",
+      "slug": "air-pollution",
+      "strength": 0.72
+    }
+  ],
+  "mechanistic_hypotheses": [
+    {
+      "confidence": "high",
+      "hypothesis": "PM2.5-induced oxidative stress increases NF-kB signaling and augments IL33 release in bronchial epithelium.",
+      "supporting_evidence": "Convergent GWAS, eQTL, and pathway literature support exposure-sensitive IL33 biology."
+    }
+  ],
+  "molecular_function": [
+    "cytokine activity",
+    "receptor ligand activity",
+    "positive regulation of immune response"
+  ],
+  "name": "Interleukin 33",
+  "pathways": [
+    {
+      "evidence_type": "pathway",
+      "slug": "nf-kb-signaling",
+      "strength": 0.79
+    }
+  ],
+  "protein_class": "cytokine",
+  "references": [
+    {
+      "authors": [
+        "Demenais F",
+        "et al."
+      ],
+      "doi": "10.1038/s41588-019-0378-6",
+      "id": "gwas_2019_demenais",
+      "journal": "Nature Genetics",
+      "source": "Nature Genetics",
+      "title": "Multiancestry association study identifies new asthma risk loci",
+      "url": "https://www.nature.com/articles/s41588-019-0378-6",
+      "year": 2019
+    },
+    {
+      "authors": [
+        "GTEx Consortium"
+      ],
+      "doi": "10.1126/science.aaz1776",
+      "id": "gtex_2020_cons",
+      "journal": "Science",
+      "source": "Science",
+      "title": "The GTEx consortium atlas of genetic regulatory effects across tissues",
+      "url": "https://www.science.org/doi/10.1126/science.aaz1776",
+      "year": 2020
+    },
+    {
+      "authors": [
+        "Curated synthesis"
+      ],
+      "id": "lit_2023_pm25_il33",
+      "journal": "GENARCH Review",
+      "source": "GENARCH curated review",
+      "title": "PM2.5 exposure and IL-33 mediated airway signaling",
+      "url": "https://example.org/genarch/pm25-il33",
+      "year": 2023
+    }
+  ],
+  "regulatory_notes": {
+    "enhancer_associations": "Enhancer regions near IL33 show inflammatory state-dependent accessibility.",
+    "eqtl_tissues": [
+      "Lung",
+      "Whole blood"
+    ],
+    "methylation_sensitivity": "CpG methylation near IL33 promoter may alter expression under chronic exposure.",
+    "promoter_activity": "Promoter variants alter IL33 baseline transcription in airway tissue."
+  },
+  "schema_version": "1.0",
+  "slug": "il33",
+  "summary": "IL33 encodes an epithelial alarmin cytokine that is released during tissue stress and can initiate type 2 inflammatory cascades. It is strongly implicated in asthma susceptibility and airway inflammatory signaling.",
+  "symbol": "IL33"
+}

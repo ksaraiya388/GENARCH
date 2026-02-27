@@ -1,0 +1,250 @@
+{
+  "adolescent_relevance": "Adolescence is a key window because lung growth, airway remodeling, and changing outdoor activity patterns can alter exposure burden. Educational prevention strategies in this age range can reduce avoidable exacerbation triggers while reinforcing that GENARCH outputs are population-level and non-clinical.",
+  "evidence_table": [
+    {
+      "citations": [
+        "gwas_2019_demenais"
+      ],
+      "confidence": "high",
+      "effect_size": 1.18,
+      "evidence_type": "GWAS",
+      "label": "IL33 locus association with asthma",
+      "source": "GWAS meta-analysis",
+      "year": 2019
+    },
+    {
+      "citations": [
+        "air_2021_guarnieri"
+      ],
+      "confidence": "high",
+      "effect_size": 0.79,
+      "evidence_type": "literature",
+      "label": "PM2.5 linked asthma burden increase",
+      "source": "Epidemiologic review",
+      "year": 2021
+    }
+  ],
+  "exposure_modifiers": [
+    {
+      "citations": [
+        "air_2021_guarnieri",
+        "lit_2023_pm25_il33"
+      ],
+      "confidence": "high",
+      "direction": "amplify",
+      "exposure_slug": "air-pollution",
+      "mechanism_hypothesis": "PM2.5-driven oxidative stress can increase epithelial danger signaling and amplify IL33-linked inflammatory cascades in susceptible populations.",
+      "strength": 0.82
+    }
+  ],
+  "genetic_architecture": {
+    "heritability_estimate": {
+      "h2_narrow_sense": 0.45,
+      "h2_snp": 0.22,
+      "source": "Meta-analysis of asthma GWAS and twin studies",
+      "year": 2020
+    },
+    "prs_notes": "Polygenic score transferability remains limited across ancestries because training cohorts are not evenly represented. GENARCH presents population-level interpretation only and does not provide individual PRS output.",
+    "top_loci": [
+      {
+        "ancestry_composition": "Predominantly European cohorts with emerging multi-ancestry replication.",
+        "citations": [
+          "gwas_2019_demenais",
+          "gtex_2020_cons"
+        ],
+        "effect_size": 1.18,
+        "evidence": "GWAS",
+        "gene": "il33",
+        "gwas_p": 2.4e-12,
+        "replication_status": "Replicated across independent cohorts.",
+        "strength": 0.86,
+        "variant": "rs992969"
+      }
+    ]
+  },
+  "icd11_code": "CA23",
+  "id": "dis_asthma",
+  "last_updated": "2026-02-26",
+  "mechanism_briefs": [
+    "pm25-il33-nfkb-asthma"
+  ],
+  "name": "Asthma",
+  "population_equity": {
+    "data_gaps": "Exposure-genotype interaction studies remain sparse in low-resource settings and across non-European majority cohorts.",
+    "gwas_ancestry_breakdown": "Most large asthma GWAS cohorts remain European-dominated, with incremental multi-ancestry expansion.",
+    "transferability_notes": "Effect size transferability across underrepresented ancestries can be unstable; confidence should be interpreted with this limitation."
+  },
+  "references": [
+    {
+      "authors": [
+        "Demenais F",
+        "et al."
+      ],
+      "doi": "10.1038/s41588-019-0378-6",
+      "id": "gwas_2019_demenais",
+      "journal": "Nature Genetics",
+      "source": "Nature Genetics",
+      "title": "Multiancestry association study identifies new asthma risk loci",
+      "url": "https://www.nature.com/articles/s41588-019-0378-6",
+      "year": 2019
+    },
+    {
+      "authors": [
+        "GTEx Consortium"
+      ],
+      "doi": "10.1126/science.aaz1776",
+      "id": "gtex_2020_cons",
+      "journal": "Science",
+      "source": "Science",
+      "title": "The GTEx consortium atlas of genetic regulatory effects across tissues",
+      "url": "https://www.science.org/doi/10.1126/science.aaz1776",
+      "year": 2020
+    },
+    {
+      "authors": [
+        "Guarnieri M",
+        "Balmes JR"
+      ],
+      "id": "air_2021_guarnieri",
+      "journal": "The Lancet",
+      "source": "The Lancet",
+      "title": "Outdoor air pollution and asthma",
+      "url": "https://www.thelancet.com/",
+      "year": 2021
+    },
+    {
+      "authors": [
+        "Curated synthesis"
+      ],
+      "id": "lit_2023_pm25_il33",
+      "journal": "GENARCH Review",
+      "source": "GENARCH curated review",
+      "title": "PM2.5 exposure and IL-33 mediated airway signaling",
+      "url": "https://example.org/genarch/pm25-il33",
+      "year": 2023
+    },
+    {
+      "authors": [
+        "Curated synthesis"
+      ],
+      "id": "lit_2022_airway_macrophage",
+      "journal": "GENARCH Review",
+      "source": "GENARCH curated review",
+      "title": "Macrophage inflammatory circuits in asthma",
+      "url": "https://example.org/genarch/macrophage-asthma",
+      "year": 2022
+    },
+    {
+      "authors": [
+        "Reactome Consortium"
+      ],
+      "id": "path_2021_nfkb_reactome",
+      "journal": "Reactome",
+      "source": "Reactome",
+      "title": "Reactome NF-kB pathway annotations",
+      "url": "https://reactome.org/",
+      "year": 2021
+    }
+  ],
+  "risk_shift_data": [
+    {
+      "citations": [
+        "air_2021_guarnieri"
+      ],
+      "confidence": "medium",
+      "confidence_high": 0.15,
+      "confidence_low": 0.09,
+      "evidence_type": "GWAS",
+      "exposure": "Ambient PM2.5",
+      "liability_shift": 0.12,
+      "stratum": "Low"
+    },
+    {
+      "citations": [
+        "air_2021_guarnieri"
+      ],
+      "confidence": "high",
+      "confidence_high": 0.31,
+      "confidence_low": 0.22,
+      "evidence_type": "GWAS",
+      "exposure": "Ambient PM2.5",
+      "liability_shift": 0.27,
+      "stratum": "Medium"
+    },
+    {
+      "citations": [
+        "air_2021_guarnieri",
+        "lit_2023_pm25_il33"
+      ],
+      "confidence": "high",
+      "confidence_high": 0.46,
+      "confidence_low": 0.34,
+      "evidence_type": "GWAS",
+      "exposure": "Ambient PM2.5",
+      "liability_shift": 0.41,
+      "stratum": "High"
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "asthma",
+  "summary": "Asthma is a chronic inflammatory airway disease with variable airflow limitation and episodes of wheeze, cough, and chest tightness. The condition commonly emerges during childhood and adolescence, and symptom severity often changes over time due to environmental exposures and host biology. Atopic pathways, airway epithelial reactivity, and immune cell activation all contribute to phenotype diversity. Population studies indicate a polygenic architecture with many loci of modest effect rather than a single deterministic mutation. In practical terms, asthma risk reflects layered interactions between inherited susceptibility, air quality, household exposures, and developmental timing.",
+  "tissue_relevance_matrix": [
+    {
+      "citations": [
+        "gtex_2020_cons"
+      ],
+      "confidence": "high",
+      "context": "Asthma",
+      "evidence_type": "eQTL",
+      "score": 0.93,
+      "tissue": "Bronchial epithelium"
+    },
+    {
+      "citations": [
+        "lit_2022_airway_macrophage"
+      ],
+      "confidence": "medium",
+      "context": "Asthma",
+      "evidence_type": "literature",
+      "score": 0.74,
+      "tissue": "Alveolar macrophages"
+    },
+    {
+      "citations": [
+        "path_2021_nfkb_reactome"
+      ],
+      "confidence": "medium",
+      "context": "Asthma",
+      "evidence_type": "pathway",
+      "score": 0.71,
+      "tissue": "Th2 lymphocytes"
+    }
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "gtex_2020_cons",
+        "lit_2023_pm25_il33"
+      ],
+      "evidence_type": "eQTL",
+      "name": "Bronchial epithelium",
+      "relevance_score": 0.93
+    },
+    {
+      "citations": [
+        "lit_2022_airway_macrophage"
+      ],
+      "evidence_type": "literature",
+      "name": "Alveolar macrophages",
+      "relevance_score": 0.74
+    },
+    {
+      "citations": [
+        "path_2021_nfkb_reactome"
+      ],
+      "evidence_type": "pathway",
+      "name": "Th2 lymphocyte compartment",
+      "relevance_score": 0.71
+    }
+  ]
+}

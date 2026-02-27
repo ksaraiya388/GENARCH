@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 import { EvidenceLimitations } from "@/components/common/EvidenceLimitations";
 import { GraphExplorer } from "@/components/graph/GraphExplorer";
 import { getGraph } from "@/lib/data";
@@ -14,7 +16,9 @@ export default async function GraphPage(): Promise<JSX.Element> {
           and ancestry representation.
         </p>
       </section>
-      <GraphExplorer graph={graph} />
+      <Suspense fallback={<p className="content-card text-sm text-textSecondary">Loading graph controls...</p>}>
+        <GraphExplorer graph={graph} />
+      </Suspense>
       <EvidenceLimitations />
     </div>
   );

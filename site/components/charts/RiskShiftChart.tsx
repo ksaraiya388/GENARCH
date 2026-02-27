@@ -38,8 +38,8 @@ export function RiskShiftChart({ disease }: RiskShiftChartProps): JSX.Element {
             <XAxis dataKey="stratum" />
             <YAxis />
             <Tooltip
-              formatter={(value: number, _name, payload) => [
-                `${Number(value).toFixed(2)}`,
+              formatter={(value: unknown, _name, payload) => [
+                `${Number(value ?? 0).toFixed(2)}`,
                 `Liability shift (${String(payload?.payload?.evidence_type)} / ${String(payload?.payload?.confidence)})`
               ]}
             />

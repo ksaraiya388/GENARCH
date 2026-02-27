@@ -1,17 +1,17 @@
 import Link from "next/link";
 
-import { loadBriefBySlug, listBriefSlugs } from "@/lib/mdx";
+import { type MdxFrontmatter, loadBriefBySlug, listBriefSlugs } from "@/lib/mdx";
 
 export default async function MechanismBriefsIndexPage(): Promise<JSX.Element> {
   const slugs = await listBriefSlugs();
-  const briefs = (
+  const briefs: MdxFrontmatter[] = (
     await Promise.all(
       slugs.map(async (slug) => {
         const brief = await loadBriefBySlug(slug);
         return brief ? brief.frontmatter : null;
       })
     )
-  ).filter(Boolean);
+  ).filter((item): item is MdxFrontmatter => item !== null);
 
   return (
     <div className="space-y-6">

@@ -1,0 +1,183 @@
+{
+  "exposure_layers": [
+    {
+      "data_source": "EPA AQS",
+      "geojson": {
+        "features": [
+          {
+            "geometry": {
+              "coordinates": [
+                [
+                  [
+                    -77.9,
+                    39.3
+                  ],
+                  [
+                    -77.4,
+                    39.3
+                  ],
+                  [
+                    -77.4,
+                    38.9
+                  ],
+                  [
+                    -77.9,
+                    38.9
+                  ],
+                  [
+                    -77.9,
+                    39.3
+                  ]
+                ]
+              ],
+              "type": "Polygon"
+            },
+            "properties": {
+              "food_access_score": 0.55,
+              "industrial_proximity": 0.41,
+              "name": "Loudoun County",
+              "pm25": 9.2,
+              "svi_percentile": 0.38
+            },
+            "type": "Feature"
+          }
+        ],
+        "type": "FeatureCollection"
+      },
+      "layer_name": "PM2.5 annual mean",
+      "summary_stats": {
+        "max_pm25": 11.7,
+        "mean_pm25": 9.2,
+        "min_pm25": 7.8
+      },
+      "year": 2024
+    }
+  ],
+  "fips_code": "51107",
+  "geo_level": "county",
+  "health_stats": [
+    {
+      "ci_lower": 110.2,
+      "ci_upper": 134.1,
+      "disease_slug": "asthma",
+      "metric_type": "hospitalization_rate_per_100k",
+      "source": "CDC WONDER",
+      "value": 123.4,
+      "year": 2024
+    }
+  ],
+  "last_updated": "2026-02-26",
+  "limitations": "Community indicators are aggregate and do not represent individual diagnoses, personal risk, or clinical recommendations.",
+  "model": {
+    "features_used": [
+      "pm25_annual_mean",
+      "industrial_proximity_score",
+      "food_access_score",
+      "svi_percentile"
+    ],
+    "hotspot_scores_geojson": {
+      "features": [
+        {
+          "geometry": {
+            "coordinates": [
+              -77.65,
+              39.15
+            ],
+            "type": "Point"
+          },
+          "properties": {
+            "hotspot_score": 0.62,
+            "subregion": "North"
+          },
+          "type": "Feature"
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              -77.55,
+              39.0
+            ],
+            "type": "Point"
+          },
+          "properties": {
+            "hotspot_score": 0.47,
+            "subregion": "South"
+          },
+          "type": "Feature"
+        }
+      ],
+      "type": "FeatureCollection"
+    },
+    "metrics": {
+      "mae": 0.09,
+      "r2": 0.68
+    },
+    "model_card": "Gradient boosting model estimating relative modeled burden (0-1) using public aggregate indicators only. Not diagnostic, not individual-level.",
+    "model_card_version": "1.0",
+    "shap_summaries": [
+      {
+        "direction": "positive",
+        "feature": "pm25_annual_mean",
+        "impact": 0.23,
+        "plain_language": "Higher PM2.5 values contribute positively to modeled burden in this region."
+      },
+      {
+        "direction": "positive",
+        "feature": "industrial_proximity_score",
+        "impact": 0.17,
+        "plain_language": "Closer industrial proximity is associated with higher modeled burden."
+      },
+      {
+        "direction": "negative",
+        "feature": "food_access_score",
+        "impact": -0.11,
+        "plain_language": "Better food access is associated with lower modeled burden."
+      }
+    ],
+    "training_data_cutoff": "2025-12-31"
+  },
+  "name": "Loudoun County, Virginia",
+  "references": [
+    {
+      "authors": [
+        "CDC"
+      ],
+      "id": "cdc_2024_wonder",
+      "journal": "CDC",
+      "source": "CDC WONDER",
+      "title": "CDC WONDER county-level respiratory indicators",
+      "url": "https://wonder.cdc.gov/",
+      "year": 2024
+    },
+    {
+      "authors": [
+        "EPA"
+      ],
+      "id": "epa_2024_aqs",
+      "journal": "EPA",
+      "source": "EPA AQS",
+      "title": "EPA Air Quality System annual monitoring values",
+      "url": "https://www.epa.gov/aqs",
+      "year": 2024
+    }
+  ],
+  "region_id": "comm_loudoun_county_va",
+  "resources": [
+    {
+      "description": "Educational materials and local support resources for respiratory health.",
+      "local_relevance": "County-specific education and outreach.",
+      "name": "Loudoun County Health Department Asthma Program",
+      "type": "local_program",
+      "url": "https://www.loudoun.gov/health"
+    },
+    {
+      "description": "Regional prevention education and school health toolkits.",
+      "local_relevance": "Regional educational support for families and schools.",
+      "name": "Northern Virginia Asthma Coalition",
+      "type": "coalition",
+      "url": "https://example.org/nova-asthma"
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "loudoun-county-va"
+}

@@ -35,7 +35,9 @@ export function CommunityRegionClient({ region }: CommunityRegionClientProps): J
   }));
 
   const hotspotPoints = (
-    region.model.hotspot_scores_geojson.features as Array<GeoJSON.Feature<GeoJSON.Geometry, { hotspot_score?: number }>>
+    region.model.hotspot_scores_geojson.features as Array<
+      GeoJSON.Feature<GeoJSON.Geometry, { hotspot_score?: number; subregion?: string }>
+    >
   ).map((feature) => ({
     area: String(feature.properties?.subregion ?? "Subregion"),
     score: Number(feature.properties?.hotspot_score ?? 0)

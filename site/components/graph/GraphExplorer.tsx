@@ -306,15 +306,15 @@ export function GraphExplorer({ graph }: GraphExplorerProps): JSX.Element {
         <div className="mt-4 h-[560px] rounded border border-slate-200" aria-label="Interactive gene-environment graph">
           <CytoscapeComponent
             elements={elements}
-            cy={(instance) => {
+            cy={(instance: cytoscape.Core) => {
               setCy(instance);
-              instance.on("tap", "node", (event) => {
+              instance.on("tap", "node", (event: cytoscape.EventObject) => {
                 const nodeId = event.target.id();
                 const node = graph.nodes.find((entry) => entry.id === nodeId) ?? null;
                 setSelectedNode(node);
                 setSelectedEdge(null);
               });
-              instance.on("tap", "edge", (event) => {
+              instance.on("tap", "edge", (event: cytoscape.EventObject) => {
                 const edgeId = event.target.id();
                 const edge = graph.edges.find((entry) => entry.id === edgeId) ?? null;
                 setSelectedEdge(edge);

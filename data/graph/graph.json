@@ -1,0 +1,200 @@
+{
+  "edges": [
+    {
+      "attrs": {
+        "ancestry_rep": "European-dominated",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "gwas_2019_demenais"
+        ],
+        "strength": 0.86,
+        "tissue": [
+          "Bronchial epithelium"
+        ],
+        "year_first_reported": 2019
+      },
+      "id": "e1",
+      "source": "disease_asthma",
+      "target": "gene_il33",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "air_2021_guarnieri"
+        ],
+        "strength": 0.82,
+        "tissue": [
+          "Lung",
+          "Bronchial epithelium"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e2",
+      "source": "exposure_air-pollution",
+      "target": "disease_asthma",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "path_2021_nfkb_reactome"
+        ],
+        "strength": 0.79,
+        "tissue": [
+          "Bronchial epithelium"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e4",
+      "source": "gene_il33",
+      "target": "pathway_nf-kb-signaling",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "path_2021_nfkb_reactome"
+        ],
+        "strength": 0.77,
+        "tissue": [
+          "Lung"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e6",
+      "source": "pathway_nf-kb-signaling",
+      "target": "disease_asthma",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "lit_2023_pm25_il33"
+        ],
+        "strength": 0.72,
+        "tissue": [
+          "Bronchial epithelium"
+        ],
+        "year_first_reported": 2023
+      },
+      "id": "e3",
+      "source": "exposure_air-pollution",
+      "target": "gene_il33",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "unknown",
+        "evidence_type": "eQTL",
+        "sources": [
+          "gtex_2020_cons"
+        ],
+        "strength": 0.68,
+        "tissue": [
+          "Bronchial epithelium"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e5",
+      "source": "gene_il33",
+      "target": "tissue_bronchial-epithelium",
+      "type": "EXPRESSED_IN"
+    }
+  ],
+  "metadata": {
+    "edge_count": 6,
+    "evidence_type_counts": {
+      "GWAS": 1,
+      "eQTL": 1,
+      "literature": 2,
+      "pathway": 2
+    },
+    "generated_at": "2026-02-26",
+    "node_count": 5,
+    "pipeline_version": "1.0.0",
+    "schema_version": "1.0"
+  },
+  "nodes": [
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/diseases/asthma",
+        "last_updated": "2026-02-26",
+        "summary": "Chronic airway inflammatory disease with exposure-sensitive liability shifts."
+      },
+      "id": "disease_asthma",
+      "label": "Asthma",
+      "slug": "asthma",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/exposures/air-pollution",
+        "last_updated": "2026-02-26",
+        "summary": "Ambient PM2.5 and related pollutants associated with inflammatory burden."
+      },
+      "id": "exposure_air-pollution",
+      "label": "Air Pollution",
+      "slug": "air-pollution",
+      "type": "Exposure"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/genes/il33",
+        "last_updated": "2026-02-26",
+        "summary": "Epithelial alarmin cytokine with strong asthma and exposure-linked evidence."
+      },
+      "id": "gene_il33",
+      "label": "IL33",
+      "slug": "il33",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/nf-kb-signaling",
+        "last_updated": "2026-02-26",
+        "summary": "Inflammatory pathway activated by oxidative stress and cytokine signaling."
+      },
+      "id": "pathway_nf-kb-signaling",
+      "label": "NF-kB Signaling",
+      "slug": "nf-kb-signaling",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/diseases/asthma",
+        "last_updated": "2026-02-26",
+        "summary": "Key airway interface where pollutant stress and IL33 signaling converge."
+      },
+      "id": "tissue_bronchial-epithelium",
+      "label": "Bronchial Epithelium",
+      "slug": "bronchial-epithelium",
+      "type": "Tissue"
+    }
+  ]
+}

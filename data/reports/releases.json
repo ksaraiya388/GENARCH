@@ -1,0 +1,15 @@
+{
+  "last_updated": "2026-02-26",
+  "releases": [
+    {
+      "date": "2026-02-26",
+      "pdf_path": "/api/reports/2026/pdf",
+      "report_path": "/updates/2026",
+      "slug": "2026",
+      "summary": "Initial v1 release with asthma-air pollution seed atlas, graph, and community module.",
+      "title": "GENARCH 2026 Annual Report",
+      "type": "report"
+    }
+  ],
+  "schema_version": "1.0"
+}

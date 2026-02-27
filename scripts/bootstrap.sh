@@ -6,11 +6,11 @@ npm install
 npm --prefix site install
 
 echo "Installing Python pipeline package..."
-python -m pip install -e ./pipeline
+python3 -m pip install -e ./pipeline
 
 echo "Generating seed data..."
-python -m pipeline.update --scope all
-python -m pipeline.report --year 2026
-python -m pipeline.validate
+python3 -m pipeline.update --scope all
+python3 -m pipeline.report --year 2026
+python3 -m pipeline.validate
 
 echo "Bootstrap complete."

@@ -1,0 +1,19 @@
+{
+  "air-pollution": [
+    "pm2.5",
+    "particulate matter",
+    "ambient pollution"
+  ],
+  "asthma": [
+    "bronchial asthma",
+    "reactive airway disease"
+  ],
+  "il33": [
+    "interleukin 33",
+    "il-33"
+  ],
+  "nf-kb-signaling": [
+    "nf-kb",
+    "nuclear factor kappa b"
+  ]
+}

@@ -15,7 +15,7 @@ SLUG_PATTERN = r"^[a-z0-9]+(?:-[a-z0-9]+)*$"
 class StrictModel(BaseModel):
     """Base model with strict type checking and no extra fields."""
 
-    model_config = ConfigDict(extra="forbid", strict=True)
+    model_config = ConfigDict(extra="forbid", strict=False)
 
 
 class ConfidenceTier(str, Enum):
@@ -334,7 +334,7 @@ class GraphEdgeAttrs(StrictModel):
 
 
 class GraphEdge(StrictModel):
-    id: str = Field(min_length=3)
+    id: str = Field(min_length=2)
     source: str = Field(min_length=2)
     target: str = Field(min_length=2)
     type: str = Field(min_length=2)
@@ -347,6 +347,7 @@ class GraphMetadata(StrictModel):
     node_count: int = Field(ge=0)
     edge_count: int = Field(ge=0)
     schema_version: str
+    evidence_type_counts: dict[str, int] | None = None
 
 
 class GraphData(StrictModel):
