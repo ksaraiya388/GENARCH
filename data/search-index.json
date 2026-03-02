@@ -1,0 +1,42 @@
+[
+  {
+    "type": "disease",
+    "slug": "asthma",
+    "name": "Asthma",
+    "summary": "Chronic respiratory disease characterized by variable airflow obstruction, bronchial hyperresponsiveness, and airway inflammation. Part of the atopic march. Phenotypic spectrum from mild intermittent to severe therapy-resistant. SNP heritability h²~0.15–0.20.",
+    "confidence": "high",
+    "synonyms": ["bronchial asthma", "reactive airway disease", "asthma bronchiale"]
+  },
+  {
+    "type": "exposure",
+    "slug": "air-pollution",
+    "name": "Ambient Air Pollution (PM2.5)",
+    "summary": "Fine particulate matter ≤2.5 μm from combustion and secondary formation. Induces oxidative stress and NF-κB activation in airways; amplifies IL-33 and inflammatory cytokines. G×E with IL33, GSTP1, TNF.",
+    "confidence": "high",
+    "synonyms": ["PM2.5", "fine particulate matter", "ambient particle pollution"]
+  },
+  {
+    "type": "gene",
+    "slug": "il33",
+    "name": "IL33 — Interleukin 33",
+    "summary": "Epithelial alarmin on chromosome 9p24.1. Released upon cell damage; activates ILC2s, mast cells, Th2 via ST2. Asthma GWAS variants regulate expression via enhancer. Induced by PM2.5 and NF-κB.",
+    "confidence": "high",
+    "synonyms": ["IL-33", "interleukin 33", "nuclear factor from high endothelial venules"]
+  },
+  {
+    "type": "pathway",
+    "slug": "nf-kb",
+    "name": "NF-κB Signaling Pathway",
+    "summary": "Master regulator of inflammatory gene expression. KEGG hsa04064. Activated by PM2.5, tobacco, LPS, diesel. Key genes: RELA, NFKB1, IKBKG, IL33 (upstream), TNF, IL6, IL8 (downstream).",
+    "confidence": "high",
+    "synonyms": ["NF-kappa B", "NFkB", "nuclear factor kappa B"]
+  },
+  {
+    "type": "brief",
+    "slug": "pm25-il33-nfkb-asthma",
+    "name": "PM2.5 + IL33 + NF-κB → Asthma",
+    "summary": "Mechanism brief: PM2.5 amplifies IL-33–mediated airway inflammation via NF-κB in genetically susceptible individuals. Chain: PM2.5 → ROS → NF-κB → IL33 → ST2 → ILC2/mast → Th2 cascade → eosinophilic inflammation → AHR.",
+    "confidence": "high",
+    "synonyms": ["PM2.5 IL33 asthma mechanism", "air pollution asthma genetics"]
+  }
+]

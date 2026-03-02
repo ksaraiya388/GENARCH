@@ -1,0 +1,24 @@
+{
+  "id": "exp_ozone",
+  "slug": "ozone",
+  "name": "Ozone",
+  "definition": "Ground-level ozone (O3) is a secondary pollutant formed when nitrogen oxides and volatile organic compounds react in the presence of sunlight. It exacerbates respiratory conditions including asthma.",
+  "proxies": [
+    {"name": "O3", "unit": "ppb", "measurement_method": "UV absorbance", "data_source": "EPA AQS"}
+  ],
+  "systems_affected": [
+    {"system": "respiratory", "mechanism_summary": "Ozone induces oxidative stress and airway inflammation"}
+  ],
+  "sensitive_windows": [
+    {"period": "childhood", "age_range": "0-18", "mechanism_rationale": "Developing lungs more susceptible", "citations": ["ref1"]}
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {"name": "bronchial epithelium", "effect_type": "inflammatory", "citations": ["ref1"]}
+  ],
+  "references": [
+    {"id": "ref1", "title": "Ozone and respiratory health", "authors": "EPA", "year": 2020, "url": "https://www.epa.gov/ozone-pollution"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}

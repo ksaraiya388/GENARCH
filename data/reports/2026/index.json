@@ -1,0 +1,8 @@
+{
+  "year": "2026",
+  "title": "GENARCH Annual Report 2026",
+  "slug": "2026",
+  "summary": "Annual summary of atlas updates, data sources, and community engagement for 2026.",
+  "content": "## GENARCH Annual Report 2026\n\nThis report summarizes the GENARCH atlas updates for 2026.\n\n### Highlights\n- Curated disease profiles with genetic architecture and exposure modifiers\n- Exposure definitions and system-level effects\n- Gene and pathway annotations\n- Mechanism briefs explaining GxE hypotheses\n- Knowledge graph of entity relationships\n- Community module foundations\n\n### Data Sources\n- GWAS Catalog, GTEx, literature curation\n- See /methods for full pipeline documentation\n",
+  "pdf_path": null
+}

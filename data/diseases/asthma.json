@@ -1,0 +1,143 @@
+{
+  "id": "dis_asthma",
+  "slug": "asthma",
+  "name": "Asthma",
+  "icd11_code": "CA23",
+  "summary": "Asthma is a heterogeneous chronic respiratory disease characterized by variable airflow obstruction, bronchial hyperresponsiveness (BHR), and airway inflammation. The disease sits within the atopic march, where allergic sensitization in early life (food allergy, atopic dermatitis) often precedes allergic rhinitis and asthma development. Pathophysiologically, asthma involves T-helper 2 (Th2)–mediated inflammation, eosinophilic infiltration, goblet cell hyperplasia, and airway remodeling. The phenotypic spectrum ranges from mild intermittent disease to severe therapy-resistant asthma, with distinct endotypes including type 2–high (eosinophilic, allergen-driven) and type 2–low (neutrophilic or paucigranulocytic) presentations. Genetic susceptibility contributes substantially: twin studies estimate heritability at ~60–80%, while SNP-based heritability (h²) is ~0.15–0.20, reflecting the polygenic architecture. Prevalence varies globally (5–20%), with higher rates in industrialized nations and urban settings. Asthma onset frequently occurs in childhood or adolescence, making it highly relevant to the 10–24 age group—a period when disease trajectory, medication adherence, and environmental exposures (including smoking initiation and occupational exposures) critically shape long-term outcomes.",
+  "adolescent_relevance": "Asthma is the most common chronic disease in childhood and adolescence. Ages 10–24 represent a critical window: many individuals experience symptom remission, persistence, or new-onset disease. Poor adherence to inhaled corticosteroids during adolescence leads to increased exacerbations and emergency visits. Smoking initiation in this period amplifies genetic susceptibility and accelerates lung function decline. Occupational and environmental exposures (e.g., cleaning agents, pollen, air pollution) encountered during school, work, or recreational activities modify disease expression. Transition from pediatric to adult care often creates gaps in management. Adolescents with asthma face psychosocial burdens including stigmatization, activity limitation, and increased risk of anxiety and depression. Understanding G×E interactions in this age group is essential for personalized prevention and management.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "IL33",
+        "variant": "rs1888909",
+        "gwas_p": 1e-8,
+        "effect_size": 1.15,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated in multiple cohorts",
+        "evidence": "Enhancer-blocking regulatory region upstream of IL33; asthma-risk allele alters OCT-1 binding and IL33 expression in airway epithelium",
+        "strength": 0.85,
+        "citations": ["ref1", "ref2"]
+      },
+      {
+        "gene": "TSLP",
+        "variant": "rs1837253",
+        "gwas_p": 7.3e-10,
+        "effect_size": 1.19,
+        "evidence": "Epithelial cytokine; TSLP expression influences Th2 priming and asthma susceptibility",
+        "strength": 0.82,
+        "citations": ["ref1"]
+      },
+      {
+        "gene": "ORMDL3",
+        "variant": "rs7216389",
+        "gwas_p": 1e-12,
+        "effect_size": 1.2,
+        "evidence": "Variants regulate ORMDL3 expression; affects ER stress, sphingolipid metabolism, and airway remodeling; strong eQTL for ORMDL3",
+        "strength": 0.9,
+        "citations": ["ref1"]
+      },
+      {
+        "gene": "IL1RL1",
+        "variant": "rs1420101",
+        "gwas_p": 5e-9,
+        "effect_size": 1.1,
+        "evidence": "ST2 receptor variants; eQTL in airway epithelium and lung parenchyma; sST2 neutralizes IL-33",
+        "strength": 0.8,
+        "citations": ["ref1"]
+      },
+      {
+        "gene": "RAD50",
+        "variant": "rs2244012",
+        "gwas_p": 3e-7,
+        "evidence": "RAD50-IL13 locus; IL13 drives type 2 inflammation; associated with childhood atopic asthma",
+        "strength": 0.7,
+        "citations": ["ref3"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.175,
+      "h2_narrow_sense": 0.7,
+      "source": "Twin studies and SNP-based GWAS meta-analyses",
+      "year": 2019
+    },
+    "prs_notes": "Polygenic risk scores for asthma show modest predictive ability (AUC ~0.60–0.65). Transferability is limited: GWAS discovery cohorts are predominantly European ancestry (~90%); PAGE and TOPMed are expanding multi-ancestry data. PRS performance in African, Hispanic, and Asian populations is reduced. Gene–environment interactions (e.g., PM2.5, tobacco) are not yet incorporated into PRS. Clinical utility for asthma remains investigational."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "amplify",
+      "strength": 0.88,
+      "confidence": "high",
+      "mechanism_hypothesis": "PM2.5 and traffic-related pollutants increase asthma incidence, exacerbations, and symptom severity; ROS-mediated NF-κB activation amplifies IL-33 and inflammatory cytokine release",
+      "citations": ["ref5", "ref6", "ref7"]
+    },
+    {
+      "exposure_slug": "ozone",
+      "direction": "amplify",
+      "strength": 0.7,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Ozone exposure exacerbates airway inflammation and BHR; seasonal and geographic variation in ozone levels",
+      "citations": ["ref7"]
+    },
+    {
+      "exposure_slug": "tobacco-smoke-prenatal",
+      "direction": "amplify",
+      "strength": 0.85,
+      "confidence": "high",
+      "mechanism_hypothesis": "Prenatal maternal smoking increases childhood asthma risk; epigenetic modifications and impaired lung development",
+      "citations": ["ref7"]
+    },
+    {
+      "exposure_slug": "endotoxin",
+      "direction": "buffer",
+      "strength": 0.65,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Farm and endotoxin exposure in early life may protect against atopic asthma via Th1/regulatory immune skewing (hygiene hypothesis)",
+      "citations": ["ref4"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "bronchial epithelium",
+      "relevance_score": 0.95,
+      "evidence_type": "eQTL and expression studies",
+      "citations": ["ref2", "ref5"]
+    },
+    {
+      "name": "alveolar macrophages",
+      "relevance_score": 0.85,
+      "evidence_type": "expression and functional studies",
+      "citations": ["ref5"]
+    },
+    {
+      "name": "mast cells",
+      "relevance_score": 0.9,
+      "evidence_type": "IL-33/ST2 activation studies",
+      "citations": ["ref5"]
+    },
+    {
+      "name": "T-helper 2 lymphocytes",
+      "relevance_score": 0.92,
+      "evidence_type": "cytokine and inflammation studies",
+      "citations": ["ref2", "ref4"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "GWAS for asthma are heavily European-ancestry (estimated >85% of discovery samples)",
+    "transferability_notes": "Replication in African, Hispanic, and South Asian populations is growing but incomplete. PAGE and TOPMed are generating multi-ancestry asthma GWAS. Transferability of risk loci and PRS across ancestries requires continued investment in diverse cohorts.",
+    "data_gaps": "Multi-ancestry asthma GWAS and PRS validation in under-represented populations; G×E interaction studies across ancestries."
+  },
+  "mechanism_briefs": ["pm25-il33-nfkb-asthma"],
+  "references": [
+    {"id": "ref1", "title": "Genetic variants regulating ORMDL3 expression contribute to the risk of childhood asthma", "authors": "Moffatt MF, et al.", "year": 2007, "journal": "Nature", "doi": "10.1038/nature06014"},
+    {"id": "ref2", "title": "Asthma-associated genetic variants induce IL33 differential expression through an enhancer-blocking regulatory region", "authors": "Alvarez M, et al.", "year": 2021, "journal": "Nature Communications", "doi": "10.1038/s41467-021-26347-z"},
+    {"id": "ref3", "title": "Genome-wide association study of asthma identifies RAD50-IL13 and HLA-DR/DQ regions", "authors": "Sleiman PM, et al.", "year": 2010, "journal": "Journal of Allergy and Clinical Immunology", "doi": "10.1016/j.jaci.2009.11.037"},
+    {"id": "ref4", "title": "Lessons from ten years of genome-wide association studies of asthma", "authors": "Pividori M, et al.", "year": 2019, "journal": "Clinical and Translational Immunology", "doi": "10.1002/cti2.1066"},
+    {"id": "ref5", "title": "Ambient particulate matter induces an exacerbation of airway inflammation in experimental asthma: role of interleukin-33", "authors": "Saglani S, et al.", "year": 2014, "journal": "Clinical & Experimental Immunology", "doi": "10.1111/cei.12348"},
+    {"id": "ref6", "title": "Exposure to PM2.5 induces aberrant activation of NF-κB in human airway epithelial cells by downregulating miR-331 expression", "authors": "Li R, et al.", "year": 2017, "journal": "Environmental Toxicology and Pharmacology", "doi": "10.1016/j.etap.2017.02.011"},
+    {"id": "ref7", "title": "GSTP1 and TNF Gene Variants and Associations between Air Pollution and Incident Childhood Asthma", "authors": "Islam T, et al.", "year": 2014, "journal": "Environmental Health Perspectives", "doi": "10.1289/ehp.1307459"},
+    {"id": "ref8", "title": "Estimates of asthma heritability in a large twin sample", "authors": "Thomsen SF, et al.", "year": 2010, "journal": "Clinical & Experimental Allergy", "doi": "10.1111/j.1365-2222.2010.03525.x"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
