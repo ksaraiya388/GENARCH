@@ -1,6 +1,5 @@
 # GENARCH
-
-GENARCH (Global Exposome; Genetic Epidemiology Network for At-Risk Community Health) is an educational, read-only scientific atlas linking:
+GENARCH (Genetic Epidemiology Network for At-Risk Community Health) is a next-generation scientific web atlas that links:
 
 - environmental exposures
 - genetic architecture
