@@ -1,0 +1,80 @@
+{
+  "definition": "Tobacco smoking is an exposure involving inhalation of combustion products that can affect respiratory, cardiovascular, immune, and cancer-related biological pathways. GENARCH describes smoking as a population-level environmental driver in gene–environment research; it does not provide medical advice or individual risk prediction.",
+  "exposure_distribution": null,
+  "gxe_highlights": [],
+  "id": "exp_smoking",
+  "last_updated": "2026-02-26",
+  "name": "Tobacco Smoking",
+  "proxies": [
+    {
+      "data_source": "Epidemiological studies (curated)",
+      "measurement_method": "Self-report in cohorts",
+      "name": "Cigarettes per day",
+      "unit": "count/day"
+    },
+    {
+      "data_source": "NHANES and cohort studies (curated)",
+      "measurement_method": "Biomarker assay",
+      "name": "Serum cotinine",
+      "unit": "ng/mL"
+    }
+  ],
+  "references": [
+    {
+      "authors": "World Health Organization",
+      "doi": null,
+      "id": "surv_2020_who_tobacco",
+      "journal": "WHO",
+      "title": "WHO report on the global tobacco epidemic",
+      "url": null,
+      "year": 2020
+    },
+    {
+      "authors": "U.S. Surgeon General",
+      "doi": null,
+      "id": "rev_2018_us_surgeon_general",
+      "journal": "U.S. Department of Health and Human Services",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "url": null,
+      "year": 2018
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "10–18",
+      "citations": [
+        "surv_2020_who_tobacco"
+      ],
+      "mechanism_rationale": "Initiation and cumulative exposure can begin in adolescence, influencing population-level trajectories of respiratory and cardiovascular outcomes.",
+      "period": "Adolescence"
+    }
+  ],
+  "slug": "smoking",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.9,
+      "mechanism_summary": "Smoke exposure contributes to airway irritation, oxidative stress, and chronic inflammatory remodeling in population studies.",
+      "system": "Respiratory"
+    },
+    {
+      "evidence_strength": 0.8,
+      "mechanism_summary": "Smoking is associated with endothelial dysfunction and atherosclerotic processes through inflammatory and oxidative pathways.",
+      "system": "Cardiovascular"
+    },
+    {
+      "evidence_strength": 0.6,
+      "mechanism_summary": "Immune modulation and altered inflammatory signaling can occur; effects are context-dependent across tissues and time.",
+      "system": "Immune"
+    }
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "rev_2018_us_surgeon_general"
+      ],
+      "effect_type": "oxidative stress / inflammation context",
+      "name": "Lung"
+    }
+  ]
+}

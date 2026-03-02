@@ -1,0 +1,55 @@
+{
+  "definition": "Ionizing radiation is an exposure category that can damage DNA and influence cancer risk at the population level. GENARCH includes this exposure as an educational context for gene–environment interaction discussions; it does not provide clinical recommendations.",
+  "exposure_distribution": null,
+  "gxe_highlights": [],
+  "id": "exp_ionizing_radiation",
+  "last_updated": "2026-02-26",
+  "name": "Ionizing Radiation",
+  "proxies": [
+    {
+      "data_source": "Epidemiological studies (curated)",
+      "measurement_method": "Occupational or medical exposure estimates (study-dependent)",
+      "name": "Cumulative effective dose",
+      "unit": "mSv"
+    }
+  ],
+  "references": [
+    {
+      "authors": "UNSCEAR",
+      "doi": null,
+      "id": "epi_2019_radiation_review",
+      "journal": "UNSCEAR Report",
+      "title": "Ionizing radiation and cancer risk: an overview (review)",
+      "url": null,
+      "year": 2019
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "0–5",
+      "citations": [
+        "epi_2019_radiation_review"
+      ],
+      "mechanism_rationale": "Developing tissues can be more sensitive to mutagenic exposures in some study contexts.",
+      "period": "Early childhood"
+    }
+  ],
+  "slug": "ionizing-radiation",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.6,
+      "mechanism_summary": "Ionizing radiation can induce DNA breaks and activate repair pathways; cancer risk effects depend on dose, timing, and tissue context.",
+      "system": "DNA damage response"
+    }
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "epi_2019_radiation_review"
+      ],
+      "effect_type": "mutagenic exposure context",
+      "name": "Breast"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "exp_tobacco_smoke_prenatal",
+  "slug": "tobacco-smoke-prenatal",
+  "name": "Prenatal Tobacco Smoke Exposure",
+  "definition": "Prenatal tobacco smoke exposure refers to maternal smoking or secondhand smoke exposure during pregnancy. In population studies, prenatal exposure is associated with changes in lung development and later respiratory outcomes. GENARCH summarizes this as educational evidence and does not provide clinical guidance.",
+  "proxies": [
+    {
+      "name": "Maternal smoking during pregnancy",
+      "unit": null,
+      "measurement_method": "Self-report or biomarker in cohort studies",
+      "data_source": "Epidemiological cohort datasets (curated)"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "Respiratory",
+      "mechanism_summary": "Prenatal smoke exposure can influence fetal lung growth and airway structure, and may alter immune maturation in cohort studies.",
+      "evidence_strength": 0.7
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "period": "Prenatal",
+      "age_range": "in utero",
+      "mechanism_rationale": "Lung branching morphogenesis and immune development occur during gestation; exposures can have long-lasting cohort-level associations.",
+      "citations": ["epi_2006_burke"]
+    }
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {
+      "name": "Developing lung",
+      "effect_type": "developmental programming",
+      "citations": ["epi_2006_burke"]
+    }
+  ],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "epi_2006_burke",
+      "title": "Prenatal and passive smoke exposure and incidence of asthma and wheeze: systematic review and meta-analysis",
+      "authors": "Burke H et al.",
+      "year": 2006,
+      "journal": "Pediatrics",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

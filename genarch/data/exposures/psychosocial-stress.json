@@ -1,0 +1,60 @@
+{
+  "definition": "Psychosocial stress is an exposure category encompassing chronic or acute stressors (e.g., socioeconomic strain, trauma, discrimination, sustained caregiving burden) that can influence neuroendocrine and immune pathways in population studies. GENARCH includes stress as an educational exposure domain relevant to gene–environment interaction research.",
+  "exposure_distribution": null,
+  "gxe_highlights": [],
+  "id": "exp_psychosocial_stress",
+  "last_updated": "2026-02-26",
+  "name": "Psychosocial Stress",
+  "proxies": [
+    {
+      "data_source": "Cohort studies (curated)",
+      "measurement_method": "Survey instrument",
+      "name": "Perceived stress scale (PSS)",
+      "unit": "score"
+    }
+  ],
+  "references": [
+    {
+      "authors": "Cohort Review Group",
+      "doi": null,
+      "id": "epi_2017_stress_review",
+      "journal": "Annual Review of Public Health",
+      "title": "Psychosocial stress and health outcomes: mechanisms and evidence (review)",
+      "url": null,
+      "year": 2017
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "in utero",
+      "citations": [
+        "epi_2017_stress_review"
+      ],
+      "mechanism_rationale": "Prenatal stress exposures are studied as modifiers of neurodevelopmental trajectories in cohorts (interpretation is complex and non-diagnostic).",
+      "period": "Prenatal"
+    }
+  ],
+  "slug": "psychosocial-stress",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.5,
+      "mechanism_summary": "Stress can influence cortisol signaling and downstream immune modulation; associations vary by context.",
+      "system": "Neuroendocrine (HPA axis)"
+    },
+    {
+      "evidence_strength": 0.4,
+      "mechanism_summary": "Chronic stress is associated with altered inflammatory markers in some population studies.",
+      "system": "Immune"
+    }
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "epi_2017_stress_review"
+      ],
+      "effect_type": "neuroendocrine signaling context",
+      "name": "Brain"
+    }
+  ]
+}

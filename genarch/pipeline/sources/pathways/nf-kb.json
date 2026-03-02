@@ -1,0 +1,86 @@
+{
+  "id": "path_nfkb",
+  "slug": "nf-kb",
+  "name": "NF-κB Signaling",
+  "summary": "NF-κB signaling refers to a family of transcription factor complexes that regulate inflammatory and stress-response gene expression. In many cell types, NF-κB is held inactive in the cytoplasm and becomes activated when upstream signals (such as oxidative stress, cytokines, or microbial products) trigger IκB degradation and nuclear translocation of NF-κB components. Because NF-κB controls broad immune programs, it is frequently implicated in respiratory inflammation and airway remodeling pathways discussed in asthma literature. GENARCH treats NF-κB as a mechanistic bridge that can connect exposure-induced epithelial stress to downstream immune signaling in populations.",
+  "canonical_source": "Reactome: R-HSA-975871",
+  "environmental_triggers": [
+    {
+      "exposure_slug": "air-pollution",
+      "trigger_type": "activation (oxidative stress)",
+      "citations": ["lit_2019_pope"]
+    },
+    {
+      "exposure_slug": "tobacco-smoke-prenatal",
+      "trigger_type": "activation (inflammatory signaling)",
+      "citations": ["epi_2006_burke"]
+    }
+  ],
+  "key_genes": [
+    {
+      "gene_slug": "il33",
+      "role_in_pathway": "Upstream alarmin signaling that can converge on inflammatory transcription programs",
+      "citations": ["lit_2014_zenewicz"]
+    }
+  ],
+  "regulatory_checkpoints": [
+    {
+      "node": "IκB degradation",
+      "modulator_genes": ["ikbkg", "nfkb1"],
+      "potential_therapeutic_target": "Seed content: described for mechanistic context only; not clinical advice."
+    }
+  ],
+  "tissue_specificity": [
+    {
+      "tissue": "Airway epithelium",
+      "expression_evidence": "Inflammatory signaling programs described in respiratory literature; tissue context emphasized in asthma discussions."
+    }
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "asthma",
+      "pathway_role": "Inflammatory transcription program contributing to airway inflammation",
+      "citations": ["lit_2014_zenewicz"]
+    }
+  ],
+  "linked_exposures": [
+    {
+      "exposure_slug": "air-pollution",
+      "pathway_effect": "Oxidative stress and inflammatory activation context",
+      "citations": ["lit_2019_pope"]
+    }
+  ],
+  "diagram_asset": "/diagrams/nf-kb.svg",
+  "references": [
+    {
+      "id": "lit_2019_pope",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2014_zenewicz",
+      "title": "IL-33 and the biology of the epithelial barrier in allergic inflammation",
+      "authors": "Zenewicz LA, Flavell RA",
+      "year": 2014,
+      "journal": "Immunity",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2006_burke",
+      "title": "Prenatal and passive smoke exposure and incidence of asthma and wheeze: systematic review and meta-analysis",
+      "authors": "Burke H et al.",
+      "year": 2006,
+      "journal": "Pediatrics",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

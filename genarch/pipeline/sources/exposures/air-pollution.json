@@ -1,0 +1,128 @@
+{
+  "id": "exp_air_pollution",
+  "slug": "air-pollution",
+  "name": "Ambient Air Pollution (PM2.5)",
+  "definition": "Ambient air pollution refers to a mixture of particles and gases in outdoor air. In GENARCH v1.0 seed content, this page focuses on fine particulate matter (PM2.5: particles ≤ 2.5 μm in diameter), a widely measured proxy associated with respiratory and cardiovascular health outcomes at the population level. PM2.5 is measured in micrograms per cubic meter (μg/m³) using regulatory monitoring networks and modeled surfaces.",
+  "proxies": [
+    {
+      "name": "PM2.5",
+      "unit": "μg/m³",
+      "measurement_method": "Regulatory monitors + modeled estimates (annual or daily averages)",
+      "data_source": "EPA Air Quality System (AQS)"
+    },
+    {
+      "name": "NO2",
+      "unit": "ppb",
+      "measurement_method": "Regulatory monitors (daily averages)",
+      "data_source": "EPA Air Quality System (AQS)"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "Respiratory",
+      "mechanism_summary": "Particles deposit along the airway surface, promoting oxidative stress, epithelial injury, and inflammatory signaling that can worsen airway hyperreactivity in susceptible populations.",
+      "evidence_strength": 0.8
+    },
+    {
+      "system": "Immune",
+      "mechanism_summary": "Exposure can shift immune signaling toward pro-inflammatory programs and alter barrier-immune interactions (context dependent).",
+      "evidence_strength": 0.6
+    },
+    {
+      "system": "Cardiovascular",
+      "mechanism_summary": "Systemic inflammation and endothelial activation are hypothesized pathways linking PM2.5 to cardiovascular burden.",
+      "evidence_strength": 0.6
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "period": "Prenatal",
+      "age_range": "in utero",
+      "mechanism_rationale": "Airway and immune development occur during gestation; exposures during this window may have durable population-level effects on later respiratory outcomes.",
+      "citations": ["epi_2016_guarnieri"]
+    },
+    {
+      "period": "Early childhood",
+      "age_range": "0–5",
+      "mechanism_rationale": "Rapid lung growth and developing immune responses can make early-life exposures disproportionately influential in cohort studies.",
+      "citations": ["epi_2016_guarnieri"]
+    },
+    {
+      "period": "Adolescence",
+      "age_range": "10–18",
+      "mechanism_rationale": "Ongoing airway maturation and changing activity patterns can shape exposure-dose and inflammatory responses in population studies.",
+      "citations": ["lit_2019_pope"]
+    }
+  ],
+  "gxe_highlights": [
+    {
+      "gene_slug": "il33",
+      "disease_slug": "asthma",
+      "direction": "amplify",
+      "evidence_type": "literature",
+      "citations": ["lit_2014_zenewicz"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "Airway epithelium",
+      "effect_type": "oxidative stress response",
+      "citations": ["lit_2019_pope"]
+    },
+    {
+      "name": "Lung",
+      "effect_type": "inflammation / remodeling context",
+      "citations": ["eqtl_2020_gtexv8"]
+    }
+  ],
+  "exposure_distribution": {
+    "data_source": "EPA AQS (illustrative seed placeholder)",
+    "geographic_scope": "United States (county-level summaries; seed placeholder)",
+    "summary_stats": {
+      "mean_ug_m3": 8.5,
+      "p25_ug_m3": 6.2,
+      "p75_ug_m3": 10.9
+    }
+  },
+  "references": [
+    {
+      "id": "epi_2016_guarnieri",
+      "title": "Outdoor air pollution and asthma in children",
+      "authors": "Guarnieri M, Balmes JR",
+      "year": 2016,
+      "journal": "The Lancet",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2019_pope",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2014_zenewicz",
+      "title": "IL-33 and the biology of the epithelial barrier in allergic inflammation",
+      "authors": "Zenewicz LA, Flavell RA",
+      "year": 2014,
+      "journal": "Immunity",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "eqtl_2020_gtexv8",
+      "title": "The GTEx Consortium atlas of genetic regulatory effects across human tissues (v8)",
+      "authors": "GTEx Consortium",
+      "year": 2020,
+      "journal": "Science",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

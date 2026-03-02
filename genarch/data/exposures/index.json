@@ -1,0 +1,100 @@
+{
+  "items": [
+    {
+      "last_updated": "2026-02-26",
+      "name": "Ambient Air Pollution (PM2.5)",
+      "slug": "air-pollution",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Alcohol Use",
+      "slug": "alcohol",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Cannabis Use",
+      "slug": "cannabis-use",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Diet Quality (Dietary Pattern)",
+      "slug": "diet-quality",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Early-Life Nutrition",
+      "slug": "early-life-nutrition",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Endocrine Disruptors (Broad Category)",
+      "slug": "endocrine-disruptors",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Endotoxin (Environmental Microbial Products)",
+      "slug": "endotoxin",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Hormonal Exposures (Endogenous and Exogenous)",
+      "slug": "hormonal-exposures",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Ionizing Radiation",
+      "slug": "ionizing-radiation",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Occupational Dust and Fume Exposure",
+      "slug": "occupational-dust",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Ground-Level Ozone",
+      "slug": "ozone",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Physical Inactivity",
+      "slug": "physical-inactivity",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Psychosocial Stress",
+      "slug": "psychosocial-stress",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Sleep Disruption",
+      "slug": "sleep-disruption",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Tobacco Smoking",
+      "slug": "smoking",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Prenatal Tobacco Smoke Exposure",
+      "slug": "tobacco-smoke-prenatal",
+      "summary": null
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "definition": "Early-life nutrition refers to nutritional exposures during pregnancy, infancy, and early childhood (e.g., maternal diet, breastfeeding patterns, micronutrient adequacy). This category is relevant to developmental origins of health and disease frameworks and can modify population-level cardiometabolic risk trajectories. GENARCH includes this as an educational exposure category.",
+  "exposure_distribution": null,
+  "gxe_highlights": [],
+  "id": "exp_early_life_nutrition",
+  "last_updated": "2026-02-26",
+  "name": "Early-Life Nutrition",
+  "proxies": [
+    {
+      "data_source": "Birth cohort studies (curated)",
+      "measurement_method": "Cohort survey",
+      "name": "Breastfeeding duration",
+      "unit": "months"
+    },
+    {
+      "data_source": "Birth cohort studies (curated)",
+      "measurement_method": "Dietary recall → composite score",
+      "name": "Maternal diet quality index",
+      "unit": "score"
+    }
+  ],
+  "references": [
+    {
+      "authors": "World Health Organization",
+      "doi": null,
+      "id": "rev_2019_who_nutrition",
+      "journal": "WHO",
+      "title": "Healthy diet factsheet and guidance (population-level)",
+      "url": null,
+      "year": 2019
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "in utero",
+      "citations": [
+        "rev_2019_who_nutrition"
+      ],
+      "mechanism_rationale": "Developmental programming hypotheses emphasize prenatal windows for later metabolic outcomes.",
+      "period": "Prenatal"
+    },
+    {
+      "age_range": "0–5",
+      "citations": [
+        "rev_2019_who_nutrition"
+      ],
+      "mechanism_rationale": "Rapid growth and organ maturation can be sensitive to nutritional adequacy and dietary patterns.",
+      "period": "Early childhood"
+    }
+  ],
+  "slug": "early-life-nutrition",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.5,
+      "mechanism_summary": "Early nutrition can influence growth patterns, insulin sensitivity, and long-term metabolic set points in cohort evidence.",
+      "system": "Metabolic"
+    }
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "rev_2019_who_nutrition"
+      ],
+      "effect_type": "metabolic development context",
+      "name": "Pancreas"
+    }
+  ]
+}

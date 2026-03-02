@@ -1,13 +1,12 @@
 from __future__ import annotations
 
-from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Literal
 
 import typer
 from rich.console import Console
 
-from pipeline.models import Community, Disease, Exposure, Gene, Graph, Pathway
+from pipeline.models import Community, Disease, Exposure, Gene, Graph, GraphMetadata, Pathway
 from pipeline.paths import data_root, sources_root
 from pipeline.utils import read_json, write_json
 
@@ -36,58 +35,89 @@ def _emit_index(entity_dir: Path) -> None:
                 "name": data.get("name") or data.get("symbol") or data.get("label"),
                 "summary": data.get("summary"),
                 "last_updated": data.get("last_updated"),
-              }
+            }
         )
     write_json(entity_dir / "index.json", {"items": items})
 
 
 def _update_disease(entity_id: str | None) -> None:
-    src = sources_root() / "diseases" / f"{entity_id or 'asthma'}.json"
-    d = Disease.model_validate(_load_source(src))
-    write_json(data_root() / "diseases" / f"{d.slug}.json", d.model_dump(mode="json"))
-    _emit_index(data_root() / "diseases")
+    src_dir = sources_root() / "diseases"
+    out_dir = data_root() / "diseases"
+    if entity_id:
+        srcs = [src_dir / f"{entity_id}.json"]
+    else:
+        srcs = sorted([p for p in src_dir.glob("*.json") if p.is_file()])
+    for src in srcs:
+        d = Disease.model_validate(_load_source(src))
+        write_json(out_dir / f"{d.slug}.json", d.model_dump(mode="json"))
+    _emit_index(out_dir)
 
 
 def _update_exposure(entity_id: str | None) -> None:
-    src = sources_root() / "exposures" / f"{entity_id or 'air-pollution'}.json"
-    e = Exposure.model_validate(_load_source(src))
-    write_json(data_root() / "exposures" / f"{e.slug}.json", e.model_dump(mode="json"))
-    _emit_index(data_root() / "exposures")
+    src_dir = sources_root() / "exposures"
+    out_dir = data_root() / "exposures"
+    if entity_id:
+        srcs = [src_dir / f"{entity_id}.json"]
+    else:
+        srcs = sorted([p for p in src_dir.glob("*.json") if p.is_file()])
+    for src in srcs:
+        e = Exposure.model_validate(_load_source(src))
+        write_json(out_dir / f"{e.slug}.json", e.model_dump(mode="json"))
+    _emit_index(out_dir)
 
 
 def _update_gene(entity_id: str | None) -> None:
-    src = sources_root() / "genes" / f"{entity_id or 'il33'}.json"
-    g = Gene.model_validate(_load_source(src))
-    write_json(data_root() / "genes" / f"{g.slug}.json", g.model_dump(mode="json"))
-    _emit_index(data_root() / "genes")
+    src_dir = sources_root() / "genes"
+    out_dir = data_root() / "genes"
+    if entity_id:
+        srcs = [src_dir / f"{entity_id}.json"]
+    else:
+        srcs = sorted([p for p in src_dir.glob("*.json") if p.is_file()])
+    for src in srcs:
+        g = Gene.model_validate(_load_source(src))
+        write_json(out_dir / f"{g.slug}.json", g.model_dump(mode="json"))
+    _emit_index(out_dir)
 
 
 def _update_pathway(entity_id: str | None) -> None:
-    src = sources_root() / "pathways" / f"{entity_id or 'nf-kb'}.json"
-    pw = Pathway.model_validate(_load_source(src))
-    write_json(data_root() / "pathways" / f"{pw.slug}.json", pw.model_dump(mode="json"))
-    _emit_index(data_root() / "pathways")
+    src_dir = sources_root() / "pathways"
+    out_dir = data_root() / "pathways"
+    if entity_id:
+        srcs = [src_dir / f"{entity_id}.json"]
+    else:
+        srcs = sorted([p for p in src_dir.glob("*.json") if p.is_file()])
+    for src in srcs:
+        pw = Pathway.model_validate(_load_source(src))
+        write_json(out_dir / f"{pw.slug}.json", pw.model_dump(mode="json"))
+    _emit_index(out_dir)
 
 
 def _update_community(entity_id: str | None) -> None:
-    src = sources_root() / "community" / f"{entity_id or 'loudoun-county-va'}.json"
-    c = Community.model_validate(_load_source(src))
-    write_json(data_root() / "community" / f"{c.slug}.json", c.model_dump(mode="json"))
-    _emit_index(data_root() / "community")
+    src_dir = sources_root() / "community"
+    out_dir = data_root() / "community"
+    if entity_id:
+        srcs = [src_dir / f"{entity_id}.json"]
+    else:
+        srcs = sorted([p for p in src_dir.glob("*.json") if p.is_file()])
+    for src in srcs:
+        c = Community.model_validate(_load_source(src))
+        write_json(out_dir / f"{c.slug}.json", c.model_dump(mode="json"))
+    _emit_index(out_dir)
 
 
 def _update_graph() -> None:
     src = sources_root() / "graph" / "graph.json"
     g = Graph.model_validate(_load_source(src))
-    # Ensure metadata is always current and deterministic.
+    # Ensure counts are correct without introducing non-deterministic timestamps.
     g = g.model_copy(
         update={
-            "metadata": {
-                **g.metadata.model_dump(mode="json"),
-                "generated_at": datetime.now(timezone.utc).isoformat(),
-                "node_count": len(g.nodes),
-                "edge_count": len(g.edges),
-            }
+            "metadata": GraphMetadata.model_validate(
+                {
+                    **g.metadata.model_dump(mode="json"),
+                    "node_count": len(g.nodes),
+                    "edge_count": len(g.edges),
+                }
+            )
         }
     )
     write_json(data_root() / "graph" / "graph.json", g.model_dump(mode="json"))
@@ -102,11 +132,11 @@ def main(
     Run the deterministic GENARCH pipeline for the requested scope.
     """
     if scope == "all":
-        _update_disease("asthma")
-        _update_exposure("air-pollution")
-        _update_gene("il33")
-        _update_pathway("nf-kb")
-        _update_community("loudoun-county-va")
+        _update_disease(None)
+        _update_exposure(None)
+        _update_gene(None)
+        _update_pathway(None)
+        _update_community(None)
         _update_graph()
         console.print("[bold green]Pipeline update complete[/bold green]")
         return

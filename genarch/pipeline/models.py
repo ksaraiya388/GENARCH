@@ -87,7 +87,7 @@ class Disease(StrictModel):
     mechanism_briefs: list[str] = Field(default_factory=list)
     references: list[Reference]
     schema_version: str
-    last_updated: date
+    last_updated: Annotated[date, Field(strict=False)]
 
 
 class ExposureProxy(StrictModel):
@@ -137,7 +137,7 @@ class Exposure(StrictModel):
     exposure_distribution: ExposureDistribution | None = None
     references: list[Reference]
     schema_version: str
-    last_updated: date
+    last_updated: Annotated[date, Field(strict=False)]
 
 
 class RegulatoryNotes(StrictModel):
@@ -184,7 +184,7 @@ class Gene(StrictModel):
     confidence: ConfidenceTier
     references: list[Reference]
     schema_version: str
-    last_updated: date
+    last_updated: Annotated[date, Field(strict=False)]
 
 
 class EnvironmentalTrigger(StrictModel):
@@ -237,13 +237,13 @@ class Pathway(StrictModel):
     diagram_asset: str
     references: list[Reference]
     schema_version: str
-    last_updated: date
+    last_updated: Annotated[date, Field(strict=False)]
 
 
 class GraphNodeAttrs(StrictModel):
     summary: str | None = None
     confidence: ConfidenceTier | None = None
-    last_updated: date | None = None
+    last_updated: Annotated[date | None, Field(strict=False)] = None
 
 
 class GraphNode(StrictModel):
@@ -274,7 +274,7 @@ class GraphEdge(StrictModel):
 
 
 class GraphMetadata(StrictModel):
-    generated_at: datetime
+    generated_at: Annotated[datetime, Field(strict=False)]
     pipeline_version: str
     node_count: int
     edge_count: int
@@ -334,5 +334,5 @@ class Community(StrictModel):
     limitations: str
     references: list[Reference]
     schema_version: str
-    last_updated: date
+    last_updated: Annotated[date, Field(strict=False)]
 

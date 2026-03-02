@@ -1,0 +1,60 @@
+{
+  "definition": "Sleep disruption describes insufficient, irregular, or poor-quality sleep patterns that can influence metabolic, neurocognitive, and immune pathways in population studies. GENARCH includes sleep as an educational exposure domain relevant to gene–environment interaction discussions.",
+  "exposure_distribution": null,
+  "gxe_highlights": [],
+  "id": "exp_sleep_disruption",
+  "last_updated": "2026-02-26",
+  "name": "Sleep Disruption",
+  "proxies": [
+    {
+      "data_source": "Cohort studies (curated)",
+      "measurement_method": "Self-report or wearables",
+      "name": "Sleep duration",
+      "unit": "hours/night"
+    }
+  ],
+  "references": [
+    {
+      "authors": "Sleep Review Group",
+      "doi": null,
+      "id": "epi_2016_sleep_review",
+      "journal": "Sleep Medicine Reviews",
+      "title": "Sleep duration and health outcomes: overview of population evidence (review)",
+      "url": null,
+      "year": 2016
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "10–18",
+      "citations": [
+        "epi_2016_sleep_review"
+      ],
+      "mechanism_rationale": "Circadian shifts and school schedules can shape sleep patterns during adolescence; cohort evidence often evaluates this window.",
+      "period": "Adolescence"
+    }
+  ],
+  "slug": "sleep-disruption",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.4,
+      "mechanism_summary": "Sleep patterns relate to cognition and neuroinflammatory pathways in population evidence; causal direction is complex.",
+      "system": "Neurocognitive"
+    },
+    {
+      "evidence_strength": 0.4,
+      "mechanism_summary": "Sleep disruption is associated with insulin sensitivity and appetite regulation pathways in cohorts.",
+      "system": "Metabolic"
+    }
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "epi_2016_sleep_review"
+      ],
+      "effect_type": "circadian / neuroinflammation context",
+      "name": "Brain"
+    }
+  ]
+}

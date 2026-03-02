@@ -1,0 +1,52 @@
+{
+  "id": "exp_cannabis_use",
+  "slug": "cannabis-use",
+  "name": "Cannabis Use",
+  "definition": "Cannabis use is an exposure category studied in relation to neuropsychiatric outcomes in some epidemiological and genetic epidemiology contexts. GENARCH summarizes evidence at the population level and does not provide medical advice.",
+  "proxies": [
+    {
+      "name": "Frequency of use",
+      "unit": "days/month",
+      "measurement_method": "Self-report in cohorts",
+      "data_source": "Epidemiological cohorts (curated)"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "Neuropsychiatric",
+      "mechanism_summary": "Cannabinoid signaling can affect neurotransmission pathways; population-level associations depend on dose, timing, and confounding context.",
+      "evidence_strength": 0.4
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "period": "Adolescence",
+      "age_range": "10–18",
+      "mechanism_rationale": "Neurodevelopmental timing is often discussed as a modifier in cohort studies (non-diagnostic interpretation).",
+      "citations": ["epi_2019_cannabis_psychosis_review"]
+    }
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {
+      "name": "Brain",
+      "effect_type": "neurotransmission context",
+      "citations": ["epi_2019_cannabis_psychosis_review"]
+    }
+  ],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "epi_2019_cannabis_psychosis_review",
+      "title": "Cannabis use and psychosis outcomes: evidence synthesis (review)",
+      "authors": "Systematic Review Group",
+      "year": 2019,
+      "journal": "Lancet Psychiatry",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

@@ -1,0 +1,72 @@
+{
+  "exposure_layers": [
+    {
+      "data_source": "EPA AQS (seed placeholder)",
+      "geojson_path": "/geo/loudoun-county-va/pm25.geojson",
+      "layer_name": "PM2.5 (annual mean)",
+      "summary_stats": {
+        "mean_ug_m3": 8.1,
+        "p75_ug_m3": 9.4
+      },
+      "year": 2023
+    }
+  ],
+  "fips_code": "51107",
+  "geo_level": "county",
+  "health_stats": [
+    {
+      "ci_lower": 95.0,
+      "ci_upper": 145.0,
+      "disease_slug": "asthma",
+      "metric_type": "hospitalization_rate_per_100k",
+      "source": "CDC WONDER (seed placeholder)",
+      "value": 120.0,
+      "year": 2023
+    }
+  ],
+  "last_updated": "2026-02-26",
+  "limitations": "Seed community dataset is a placeholder example using public-source categories and synthetic values for UI validation. It does not represent real-time estimates, does not include individual-level data, and should not be used for medical decisions. Hotspot scores are relative modeled burden proxies, not diagnoses or risk probabilities.",
+  "model": {
+    "features_used": [
+      "pm25_mean_ug_m3",
+      "traffic_proximity_score",
+      "food_access_score",
+      "svi_percentile"
+    ],
+    "hotspot_scores_geojson": "/geo/loudoun-county-va/hotspots.geojson",
+    "model_card_version": "1.0",
+    "shap_summaries": [
+      {
+        "direction": "increases_modeled_burden",
+        "feature": "pm25_mean_ug_m3",
+        "plain_language": "Higher modeled PM2.5 exposure contributes to higher relative modeled burden.",
+        "shap_value": 0.18
+      }
+    ],
+    "training_data_cutoff": "2023-12-31"
+  },
+  "name": "Loudoun County, Virginia",
+  "references": [
+    {
+      "authors": "Centers for Disease Control and Prevention",
+      "doi": null,
+      "id": "comm_2023_cdc_wonder",
+      "journal": "CDC",
+      "title": "CDC WONDER (public health statistics portal)",
+      "url": "https://wonder.cdc.gov/",
+      "year": 2023
+    }
+  ],
+  "region_id": "reg_loudoun_county_va",
+  "resources": [
+    {
+      "description": "Local public health department information and community health resources.",
+      "local_relevance": "Seed placeholder resource list for Loudoun County, VA.",
+      "name": "Loudoun County Health Department",
+      "type": "local_public_health",
+      "url": "https://www.vdh.virginia.gov/loudoun/"
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "loudoun-county-va"
+}

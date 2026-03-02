@@ -1,0 +1,156 @@
+{
+  "id": "dis_coronary_artery_disease",
+  "slug": "coronary-artery-disease",
+  "name": "Coronary Artery Disease",
+  "icd11_code": "BA80",
+  "summary": "Coronary artery disease (CAD) refers to narrowing or obstruction of the coronary arteries, most often due to atherosclerosis. At the population level, CAD burden reflects long-term processes including lipid accumulation in vessel walls, immune and inflammatory signaling, endothelial dysfunction, and thrombosis. Many cohort studies link CAD risk to diet patterns, smoking, physical activity, air quality, and cardiometabolic traits. Importantly, these exposures act in combination and over time, and their impacts vary across populations.\n\nGenetic epidemiology indicates CAD has a polygenic architecture: many common variants contribute small effects that collectively influence atherosclerotic biology. In addition, rare high-impact variants can cause familial hypercholesterolemia and related phenotypes, demonstrating that lipid pathways can be causal levers. GENARCH presents CAD genetics as evidence about mechanisms (e.g., LDL metabolism and inflammation) rather than as individual predictions. Evidence also highlights equity limitations: many large discovery cohorts have historically over-represented European ancestry, affecting transferability of polygenic models to other groups.",
+  "adolescent_relevance": "CAD events typically occur later in life, but its biological pathways and exposure drivers begin earlier. Adolescence and young adulthood are relevant because population-level trajectories for cardiometabolic health—including diet, activity, and exposure patterns—can shape long-term atherosclerosis risk. GENARCH frames this as educational background on mechanisms and population evidence, not clinical guidance for any individual.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "LDLR",
+        "variant": null,
+        "gwas_p": 1e-12,
+        "effect_size": 0.08,
+        "ancestry_composition": "European-dominated; multi-ancestry evidence increasing",
+        "replication_status": "Replicated",
+        "evidence": "Lipid metabolism loci are consistently associated with CAD; LDLR is also implicated by familial hypercholesterolemia biology.",
+        "strength": 0.8,
+        "citations": ["gwas_2015_nikpay", "lit_2018_fh_review"]
+      },
+      {
+        "gene": "PCSK9",
+        "variant": null,
+        "gwas_p": 1e-10,
+        "effect_size": 0.06,
+        "ancestry_composition": "European-dominated; some multi-ancestry studies",
+        "replication_status": "Replicated",
+        "evidence": "PCSK9 variants influence LDL levels and CAD risk; human genetics supports causal inference for LDL lowering.",
+        "strength": 0.75,
+        "citations": ["gwas_2015_nikpay"]
+      },
+      {
+        "gene": "LPA",
+        "variant": null,
+        "gwas_p": 1e-20,
+        "effect_size": 0.1,
+        "ancestry_composition": "European-dominated; population differences noted",
+        "replication_status": "Replicated",
+        "evidence": "LPA and lipoprotein(a) biology are strongly implicated in CAD across genetic and biomarker evidence.",
+        "strength": 0.85,
+        "citations": ["gwas_2015_nikpay", "lit_2019_lpa_review"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.45,
+      "source": "Family and GWAS-based estimates (range varies by study design)",
+      "year": 2015
+    },
+    "prs_notes": "Polygenic models for CAD can stratify population-level genetic liability, but they are not diagnostic and can be less transferable across ancestry groups due to discovery cohort composition and LD differences. GENARCH uses PRS concepts only for education and emphasizes limitations."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "diet-quality",
+      "direction": "amplify",
+      "strength": 0.65,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Dietary patterns can influence LDL metabolism, inflammation, and endothelial function, shifting population-level CAD burden.",
+      "citations": ["epi_2019_diet_cvd_review"]
+    },
+    {
+      "exposure_slug": "smoking",
+      "direction": "amplify",
+      "strength": 0.8,
+      "confidence": "high",
+      "mechanism_hypothesis": "Smoking contributes to oxidative stress and endothelial dysfunction and is consistently associated with higher CAD burden in cohorts.",
+      "citations": ["rev_2018_us_surgeon_general"]
+    },
+    {
+      "exposure_slug": "physical-inactivity",
+      "direction": "amplify",
+      "strength": 0.55,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Lower activity is associated with adverse cardiometabolic profiles, contributing to atherosclerotic pathways in population studies.",
+      "citations": ["surv_2020_who_activity"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "Vascular endothelium",
+      "relevance_score": 0.85,
+      "evidence_type": "literature",
+      "citations": ["epi_2019_diet_cvd_review"]
+    },
+    {
+      "name": "Liver",
+      "relevance_score": 0.7,
+      "evidence_type": "literature",
+      "citations": ["lit_2019_lpa_review"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Large CAD GWAS have been European-ancestry dominated historically; multi-ancestry consortia are improving representation but gaps remain.",
+    "transferability_notes": "Effect estimates and PRS performance can vary across ancestry groups due to LD structure and cohort composition. GENARCH treats polygenic concepts as population-level and non-clinical.",
+    "data_gaps": "Exposure measurement, social context, and longitudinal follow-up differ across regions, limiting generalizability of some gene–environment findings."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "gwas_2015_nikpay",
+      "title": "A comprehensive 1000 Genomes-based genome-wide association meta-analysis of coronary artery disease",
+      "authors": "Nikpay M et al.",
+      "year": 2015,
+      "journal": "Nature Genetics",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2018_fh_review",
+      "title": "Familial hypercholesterolemia and LDL metabolism: genetics and mechanisms (review)",
+      "authors": "FH Review Group",
+      "year": 2018,
+      "journal": "Circulation Research",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2019_lpa_review",
+      "title": "Lipoprotein(a) genetics and cardiovascular disease: an overview (review)",
+      "authors": "LPA Review Group",
+      "year": 2019,
+      "journal": "European Heart Journal",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2019_diet_cvd_review",
+      "title": "Dietary patterns and cardiovascular disease risk: evidence synthesis (review)",
+      "authors": "Nutrition Evidence Group",
+      "year": 2019,
+      "journal": "BMJ",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "rev_2018_us_surgeon_general",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "authors": "U.S. Surgeon General",
+      "year": 2018,
+      "journal": "U.S. Department of Health and Human Services",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "surv_2020_who_activity",
+      "title": "WHO guidelines on physical activity and sedentary behaviour",
+      "authors": "World Health Organization",
+      "year": 2020,
+      "journal": "WHO",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

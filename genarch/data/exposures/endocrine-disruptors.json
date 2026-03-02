@@ -1,0 +1,55 @@
+{
+  "definition": "Endocrine disruptors are a broad class of chemicals that may interfere with hormonal signaling (e.g., certain plasticizers, pesticides). Evidence quality varies by compound and study design; GENARCH includes this category to support educational discussion of environmental drivers in metabolic and reproductive epidemiology, without making individual-level claims.",
+  "exposure_distribution": null,
+  "gxe_highlights": [],
+  "id": "exp_endocrine_disruptors",
+  "last_updated": "2026-02-26",
+  "name": "Endocrine Disruptors (Broad Category)",
+  "proxies": [
+    {
+      "data_source": "NHANES and biomonitoring studies (curated)",
+      "measurement_method": "Urine/serum biomonitoring assays (study-dependent)",
+      "name": "Representative biomonitoring markers (compound-specific)",
+      "unit": "ng/mL"
+    }
+  ],
+  "references": [
+    {
+      "authors": "Endocrine Review Group",
+      "doi": null,
+      "id": "rev_2017_endocrine_disruptors",
+      "journal": "Endocrine Reviews",
+      "title": "Endocrine disruptors and metabolic outcomes: evidence overview (review)",
+      "url": null,
+      "year": 2017
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "in utero",
+      "citations": [
+        "rev_2017_endocrine_disruptors"
+      ],
+      "mechanism_rationale": "Developmental windows are often hypothesized to be more sensitive to endocrine perturbations in some study frameworks.",
+      "period": "Prenatal"
+    }
+  ],
+  "slug": "endocrine-disruptors",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.3,
+      "mechanism_summary": "Some compounds are hypothesized to affect hormone receptor signaling and metabolic regulation; evidence is heterogeneous.",
+      "system": "Endocrine / metabolic"
+    }
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "rev_2017_endocrine_disruptors"
+      ],
+      "effect_type": "metabolic regulation context",
+      "name": "Adipose tissue"
+    }
+  ]
+}

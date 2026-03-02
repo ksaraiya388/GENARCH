@@ -1,0 +1,55 @@
+{
+  "definition": "Hormonal exposures describe factors that influence lifetime estrogen/progesterone signaling (e.g., age at menarche/menopause, parity, certain therapies). In cancer epidemiology, hormonal context is a population-level modifier that interacts with genetic architecture for hormone-responsive cancers. GENARCH presents this topic in a neutral, educational framing.",
+  "exposure_distribution": null,
+  "gxe_highlights": [],
+  "id": "exp_hormonal_exposures",
+  "last_updated": "2026-02-26",
+  "name": "Hormonal Exposures (Endogenous and Exogenous)",
+  "proxies": [
+    {
+      "data_source": "Cancer epidemiology cohorts (curated)",
+      "measurement_method": "Cohort-derived composite variables",
+      "name": "Lifetime estrogen exposure proxies",
+      "unit": null
+    }
+  ],
+  "references": [
+    {
+      "authors": "Collaborative Group",
+      "doi": null,
+      "id": "epi_2020_breast_hormones_review",
+      "journal": "Cancer Epidemiology",
+      "title": "Hormonal factors and breast cancer risk: an overview (review)",
+      "url": null,
+      "year": 2020
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "10–18",
+      "citations": [
+        "epi_2020_breast_hormones_review"
+      ],
+      "mechanism_rationale": "Pubertal timing affects endocrine milieu; population studies often examine lifetime exposure proxies.",
+      "period": "Adolescence"
+    }
+  ],
+  "slug": "hormonal-exposures",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.6,
+      "mechanism_summary": "Hormone signaling can influence cell proliferation and tissue remodeling in hormone-responsive tissues.",
+      "system": "Endocrine"
+    }
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "epi_2020_breast_hormones_review"
+      ],
+      "effect_type": "hormone-responsive tissue context",
+      "name": "Breast"
+    }
+  ]
+}

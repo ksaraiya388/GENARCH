@@ -1,0 +1,88 @@
+{
+  "chromosome": "9p24.1",
+  "confidence": "high",
+  "expression_context": [
+    {
+      "citations": [
+        "eqtl_2020_gtexv8"
+      ],
+      "gtex_version": "v8",
+      "tissue": "Lung",
+      "tpm_range": "low–moderate (context-dependent)"
+    }
+  ],
+  "id": "gene_il33",
+  "last_updated": "2026-02-26",
+  "linked_diseases": [
+    {
+      "evidence_type": "GWAS",
+      "slug": "asthma",
+      "strength": 0.85
+    }
+  ],
+  "linked_exposures": [
+    {
+      "evidence_type": "literature",
+      "slug": "air-pollution",
+      "strength": 0.6
+    }
+  ],
+  "mechanistic_hypotheses": [
+    {
+      "confidence": "medium",
+      "hypothesis": "Airway particulate exposure increases epithelial stress signaling that promotes IL-33 release, priming type 2 inflammation in asthma-relevant tissues.",
+      "supporting_evidence": "Supported by exposure biology reviews and seed mechanistic brief evidence synthesis; not interpreted as individual risk prediction."
+    }
+  ],
+  "molecular_function": [
+    "cytokine activity",
+    "receptor ligand activity"
+  ],
+  "name": "Interleukin 33",
+  "pathways": [
+    "nf-kb"
+  ],
+  "protein_class": "cytokine",
+  "references": [
+    {
+      "authors": "Moffatt MF et al.",
+      "doi": null,
+      "id": "gwas_2017_moffatt",
+      "journal": "Nature Genetics",
+      "title": "A large-scale, consortium-based genome-wide association study meta-analysis of asthma",
+      "url": null,
+      "year": 2017
+    },
+    {
+      "authors": "GTEx Consortium",
+      "doi": null,
+      "id": "eqtl_2020_gtexv8",
+      "journal": "Science",
+      "title": "The GTEx Consortium atlas of genetic regulatory effects across human tissues (v8)",
+      "url": null,
+      "year": 2020
+    },
+    {
+      "authors": "Zenewicz LA, Flavell RA",
+      "doi": null,
+      "id": "lit_2014_zenewicz",
+      "journal": "Immunity",
+      "title": "IL-33 and the biology of the epithelial barrier in allergic inflammation",
+      "url": null,
+      "year": 2014
+    }
+  ],
+  "regulatory_notes": {
+    "enhancer_associations": "Enhancer context is tissue-specific; seed content summarizes evidence qualitatively.",
+    "eqtl_tissues": [
+      "Lung",
+      "Whole blood"
+    ],
+    "methylation_sensitivity": "Epigenetic regulation is plausible in exposure contexts, but seed evidence is summarized conservatively.",
+    "promoter_activity": "Regulatory variation near IL33 is associated with allergic disease signals in multiple GWAS."
+  },
+  "schema_version": "1.0",
+  "slug": "il33",
+  "summary": "IL33 encodes interleukin-33, an epithelial-derived cytokine often described as an 'alarmin' that can be released during barrier stress or injury. IL-33 can promote type 2 immune responses via signaling through the IL1RL1 (ST2) receptor on immune cells such as ILC2s and mast cells. Population genetic studies repeatedly implicate the IL33/IL1RL1 region in asthma and allergic phenotypes, motivating mechanistic hypotheses that connect airway exposures to epithelial stress signaling and downstream inflammation.",
+  "symbol": "IL33"
+}

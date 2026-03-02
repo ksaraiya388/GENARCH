@@ -1,0 +1,60 @@
+{
+  "definition": "Diet quality describes overall dietary patterns (e.g., high intake of fruits/vegetables vs. highly processed foods) that can influence cardiometabolic, inflammatory, and cancer-related pathways at the population level. GENARCH uses diet quality as an educational exposure category relevant to gene–environment interaction research.",
+  "exposure_distribution": null,
+  "gxe_highlights": [],
+  "id": "exp_diet_quality",
+  "last_updated": "2026-02-26",
+  "name": "Diet Quality (Dietary Pattern)",
+  "proxies": [
+    {
+      "data_source": "NHANES and cohort studies (curated)",
+      "measurement_method": "Dietary recall → composite score",
+      "name": "Healthy Eating Index (HEI)",
+      "unit": "score"
+    }
+  ],
+  "references": [
+    {
+      "authors": "World Health Organization",
+      "doi": null,
+      "id": "rev_2019_who_nutrition",
+      "journal": "WHO",
+      "title": "Healthy diet factsheet and guidance (population-level)",
+      "url": null,
+      "year": 2019
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "0–5",
+      "citations": [
+        "rev_2019_who_nutrition"
+      ],
+      "mechanism_rationale": "Early-life nutrition can shape metabolic development and long-term cohort-level outcomes.",
+      "period": "Early childhood"
+    }
+  ],
+  "slug": "diet-quality",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.7,
+      "mechanism_summary": "Dietary patterns can influence insulin sensitivity, lipid metabolism, and adiposity-related signaling.",
+      "system": "Metabolic"
+    },
+    {
+      "evidence_strength": 0.6,
+      "mechanism_summary": "Diet can modulate inflammatory tone and gut-immune interactions through multiple pathways.",
+      "system": "Immune"
+    }
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "rev_2019_who_nutrition"
+      ],
+      "effect_type": "metabolic signaling context",
+      "name": "Adipose tissue"
+    }
+  ]
+}

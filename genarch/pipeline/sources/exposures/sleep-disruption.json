@@ -1,0 +1,57 @@
+{
+  "id": "exp_sleep_disruption",
+  "slug": "sleep-disruption",
+  "name": "Sleep Disruption",
+  "definition": "Sleep disruption describes insufficient, irregular, or poor-quality sleep patterns that can influence metabolic, neurocognitive, and immune pathways in population studies. GENARCH includes sleep as an educational exposure domain relevant to gene–environment interaction discussions.",
+  "proxies": [
+    {
+      "name": "Sleep duration",
+      "unit": "hours/night",
+      "measurement_method": "Self-report or wearables",
+      "data_source": "Cohort studies (curated)"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "Neurocognitive",
+      "mechanism_summary": "Sleep patterns relate to cognition and neuroinflammatory pathways in population evidence; causal direction is complex.",
+      "evidence_strength": 0.4
+    },
+    {
+      "system": "Metabolic",
+      "mechanism_summary": "Sleep disruption is associated with insulin sensitivity and appetite regulation pathways in cohorts.",
+      "evidence_strength": 0.4
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "period": "Adolescence",
+      "age_range": "10–18",
+      "mechanism_rationale": "Circadian shifts and school schedules can shape sleep patterns during adolescence; cohort evidence often evaluates this window.",
+      "citations": ["epi_2016_sleep_review"]
+    }
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {
+      "name": "Brain",
+      "effect_type": "circadian / neuroinflammation context",
+      "citations": ["epi_2016_sleep_review"]
+    }
+  ],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "epi_2016_sleep_review",
+      "title": "Sleep duration and health outcomes: overview of population evidence (review)",
+      "authors": "Sleep Review Group",
+      "year": 2016,
+      "journal": "Sleep Medicine Reviews",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

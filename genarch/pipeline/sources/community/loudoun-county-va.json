@@ -1,0 +1,73 @@
+{
+  "region_id": "reg_loudoun_county_va",
+  "slug": "loudoun-county-va",
+  "name": "Loudoun County, Virginia",
+  "geo_level": "county",
+  "fips_code": "51107",
+  "health_stats": [
+    {
+      "disease_slug": "asthma",
+      "metric_type": "hospitalization_rate_per_100k",
+      "value": 120.0,
+      "year": 2023,
+      "source": "CDC WONDER (seed placeholder)",
+      "ci_lower": 95.0,
+      "ci_upper": 145.0
+    }
+  ],
+  "exposure_layers": [
+    {
+      "layer_name": "PM2.5 (annual mean)",
+      "data_source": "EPA AQS (seed placeholder)",
+      "year": 2023,
+      "geojson_path": "/geo/loudoun-county-va/pm25.geojson",
+      "summary_stats": {
+        "mean_ug_m3": 8.1,
+        "p75_ug_m3": 9.4
+      }
+    }
+  ],
+  "model": {
+    "features_used": [
+      "pm25_mean_ug_m3",
+      "traffic_proximity_score",
+      "food_access_score",
+      "svi_percentile"
+    ],
+    "hotspot_scores_geojson": "/geo/loudoun-county-va/hotspots.geojson",
+    "shap_summaries": [
+      {
+        "feature": "pm25_mean_ug_m3",
+        "shap_value": 0.18,
+        "direction": "increases_modeled_burden",
+        "plain_language": "Higher modeled PM2.5 exposure contributes to higher relative modeled burden."
+      }
+    ],
+    "model_card_version": "1.0",
+    "training_data_cutoff": "2023-12-31"
+  },
+  "resources": [
+    {
+      "name": "Loudoun County Health Department",
+      "type": "local_public_health",
+      "url": "https://www.vdh.virginia.gov/loudoun/",
+      "description": "Local public health department information and community health resources.",
+      "local_relevance": "Seed placeholder resource list for Loudoun County, VA."
+    }
+  ],
+  "limitations": "Seed community dataset is a placeholder example using public-source categories and synthetic values for UI validation. It does not represent real-time estimates, does not include individual-level data, and should not be used for medical decisions. Hotspot scores are relative modeled burden proxies, not diagnoses or risk probabilities.",
+  "references": [
+    {
+      "id": "comm_2023_cdc_wonder",
+      "title": "CDC WONDER (public health statistics portal)",
+      "authors": "Centers for Disease Control and Prevention",
+      "year": 2023,
+      "journal": "CDC",
+      "doi": null,
+      "url": "https://wonder.cdc.gov/"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

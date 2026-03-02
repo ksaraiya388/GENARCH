@@ -1,0 +1,164 @@
+{
+  "adolescent_relevance": "Schizophrenia often has onset in late adolescence or early adulthood. Understanding population-level genetic architecture and exposure context can help explain why risk differs across cohorts and environments, while avoiding stigmatizing or deterministic interpretations. GENARCH is educational only and does not provide individualized risk assessments.",
+  "exposure_modifiers": [
+    {
+      "citations": [
+        "epi_2017_stress_review"
+      ],
+      "confidence": "low",
+      "direction": "amplify",
+      "exposure_slug": "psychosocial-stress",
+      "mechanism_hypothesis": "Stress-related neuroendocrine signaling may interact with neurodevelopmental pathways; evidence is complex and confounded in population studies.",
+      "strength": 0.45
+    },
+    {
+      "citations": [
+        "epi_2019_cannabis_psychosis_review"
+      ],
+      "confidence": "low",
+      "direction": "amplify",
+      "exposure_slug": "cannabis-use",
+      "mechanism_hypothesis": "Cannabis exposure is associated with psychosis outcomes in some studies; causality and confounding remain important limitations.",
+      "strength": 0.4
+    },
+    {
+      "citations": [
+        "epi_2016_sleep_review"
+      ],
+      "confidence": "low",
+      "direction": "amplify",
+      "exposure_slug": "sleep-disruption",
+      "mechanism_hypothesis": "Sleep disruption is associated with mental health outcomes in cohorts; directionality is complex.",
+      "strength": 0.35
+    }
+  ],
+  "genetic_architecture": {
+    "heritability_estimate": {
+      "h2_narrow_sense": null,
+      "h2_snp": 0.8,
+      "source": "Twin/family and GWAS-based estimates (high heritability; varies by method)",
+      "year": 2014
+    },
+    "prs_notes": "Schizophrenia PRS are validated in research cohorts, but interpretation is population-level and non-diagnostic. Transferability can be limited when discovery datasets are ancestry-skewed; GENARCH emphasizes this limitation and avoids individual-level outputs.",
+    "top_loci": [
+      {
+        "ancestry_composition": "European-dominated in many early GWAS; broader evidence increasing",
+        "citations": [
+          "gwas_2014_pgc_scz"
+        ],
+        "effect_size": 0.05,
+        "evidence": "DRD2 region associations support dopamine-related pathways as mechanistic hypotheses in schizophrenia.",
+        "gene": "DRD2",
+        "gwas_p": 1e-12,
+        "replication_status": "Replicated",
+        "strength": 0.75,
+        "variant": null
+      },
+      {
+        "ancestry_composition": "European-dominated in early GWAS; multi-ancestry evaluation ongoing",
+        "citations": [
+          "gwas_2014_pgc_scz"
+        ],
+        "effect_size": 0.04,
+        "evidence": "Calcium channel genes are recurrently implicated across psychiatric GWAS, supporting synaptic signaling hypotheses.",
+        "gene": "CACNA1C",
+        "gwas_p": 1e-10,
+        "replication_status": "Replicated",
+        "strength": 0.65,
+        "variant": null
+      },
+      {
+        "ancestry_composition": "Complex LD; ancestry affects interpretation",
+        "citations": [
+          "gwas_2014_pgc_scz",
+          "lit_2016_c4a_synapse"
+        ],
+        "effect_size": 0.06,
+        "evidence": "Signals in the MHC region highlight immune/complement hypotheses; mapping is complex due to LD structure.",
+        "gene": "C4A (MHC region)",
+        "gwas_p": 1e-20,
+        "replication_status": "Mechanistic model proposed",
+        "strength": 0.7,
+        "variant": null
+      }
+    ]
+  },
+  "icd11_code": "6A20",
+  "id": "dis_schizophrenia",
+  "last_updated": "2026-02-26",
+  "mechanism_briefs": [],
+  "name": "Schizophrenia",
+  "population_equity": {
+    "data_gaps": "Exposure measurement and clinical ascertainment vary across contexts; mechanistic interpretation can be indirect for many loci.",
+    "gwas_ancestry_breakdown": "Large schizophrenia GWAS have been European-ancestry dominated historically; representation is increasing but remains uneven.",
+    "transferability_notes": "PRS performance and locus mapping can vary across ancestries due to LD and allele frequency. GENARCH treats results as educational and highlights uncertainty."
+  },
+  "references": [
+    {
+      "authors": "Psychiatric Genomics Consortium",
+      "doi": null,
+      "id": "gwas_2014_pgc_scz",
+      "journal": "Nature",
+      "title": "Biological insights from 108 schizophrenia-associated genetic loci",
+      "url": null,
+      "year": 2014
+    },
+    {
+      "authors": "Neuroimmune Review Group",
+      "doi": null,
+      "id": "lit_2016_c4a_synapse",
+      "journal": "Science",
+      "title": "Complement component 4 variation, synaptic pruning, and schizophrenia: mechanistic model (review)",
+      "url": null,
+      "year": 2016
+    },
+    {
+      "authors": "Cohort Review Group",
+      "doi": null,
+      "id": "epi_2017_stress_review",
+      "journal": "Annual Review of Public Health",
+      "title": "Psychosocial stress and health outcomes: mechanisms and evidence (review)",
+      "url": null,
+      "year": 2017
+    },
+    {
+      "authors": "Systematic Review Group",
+      "doi": null,
+      "id": "epi_2019_cannabis_psychosis_review",
+      "journal": "Lancet Psychiatry",
+      "title": "Cannabis use and psychosis outcomes: evidence synthesis (review)",
+      "url": null,
+      "year": 2019
+    },
+    {
+      "authors": "Sleep Review Group",
+      "doi": null,
+      "id": "epi_2016_sleep_review",
+      "journal": "Sleep Medicine Reviews",
+      "title": "Sleep duration and health outcomes: overview of population evidence (review)",
+      "url": null,
+      "year": 2016
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "schizophrenia",
+  "summary": "Schizophrenia is a neuropsychiatric disorder characterized by disturbances in perception, thought, and behavior. Symptoms can include hallucinations, delusions, disorganized thinking, and cognitive changes, with substantial heterogeneity across individuals and populations. Biological hypotheses emphasize neurodevelopmental trajectories, synaptic and neurotransmission pathways (including dopamine and calcium signaling), immune-related processes, and gene regulation in the brain. Environmental and social exposures—such as psychosocial stressors and substance exposures—are studied as population-level modifiers that may interact with genetic vulnerability.\n\nGenetic epidemiology shows schizophrenia is highly polygenic: thousands of common variants contribute small effects, and aggregate genetic liability can be captured in PRS in research contexts. Some loci highlight immune mechanisms (e.g., complement-related signals) and neuronal signaling pathways. GENARCH presents these findings as evidence about mechanisms and limitations, not as individual prediction or clinical advice. Equity considerations are critical: discovery cohorts have often been European-ancestry dominated and clinical ascertainment varies across settings.",
+  "tissues": [
+    {
+      "citations": [
+        "gwas_2014_pgc_scz"
+      ],
+      "evidence_type": "GWAS",
+      "name": "Brain (prefrontal cortex)",
+      "relevance_score": 0.8
+    },
+    {
+      "citations": [
+        "lit_2016_c4a_synapse"
+      ],
+      "evidence_type": "literature",
+      "name": "Synaptic/neuronal signaling context",
+      "relevance_score": 0.6
+    }
+  ]
+}

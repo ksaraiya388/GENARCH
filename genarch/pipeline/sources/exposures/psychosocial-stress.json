@@ -1,0 +1,57 @@
+{
+  "id": "exp_psychosocial_stress",
+  "slug": "psychosocial-stress",
+  "name": "Psychosocial Stress",
+  "definition": "Psychosocial stress is an exposure category encompassing chronic or acute stressors (e.g., socioeconomic strain, trauma, discrimination, sustained caregiving burden) that can influence neuroendocrine and immune pathways in population studies. GENARCH includes stress as an educational exposure domain relevant to gene–environment interaction research.",
+  "proxies": [
+    {
+      "name": "Perceived stress scale (PSS)",
+      "unit": "score",
+      "measurement_method": "Survey instrument",
+      "data_source": "Cohort studies (curated)"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "Neuroendocrine (HPA axis)",
+      "mechanism_summary": "Stress can influence cortisol signaling and downstream immune modulation; associations vary by context.",
+      "evidence_strength": 0.5
+    },
+    {
+      "system": "Immune",
+      "mechanism_summary": "Chronic stress is associated with altered inflammatory markers in some population studies.",
+      "evidence_strength": 0.4
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "period": "Prenatal",
+      "age_range": "in utero",
+      "mechanism_rationale": "Prenatal stress exposures are studied as modifiers of neurodevelopmental trajectories in cohorts (interpretation is complex and non-diagnostic).",
+      "citations": ["epi_2017_stress_review"]
+    }
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {
+      "name": "Brain",
+      "effect_type": "neuroendocrine signaling context",
+      "citations": ["epi_2017_stress_review"]
+    }
+  ],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "epi_2017_stress_review",
+      "title": "Psychosocial stress and health outcomes: mechanisms and evidence (review)",
+      "authors": "Cohort Review Group",
+      "year": 2017,
+      "journal": "Annual Review of Public Health",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

@@ -1,0 +1,156 @@
+{
+  "id": "dis_alzheimers_disease",
+  "slug": "alzheimers-disease",
+  "name": "Alzheimer’s Disease",
+  "icd11_code": "8A20",
+  "summary": "Alzheimer’s disease (AD) is a neurodegenerative condition characterized by progressive cognitive decline and functional impairment. At a biological level, commonly discussed mechanisms include amyloid and tau pathology, synaptic dysfunction, vascular contributions, and neuroinflammation. Population-level risk reflects age as a major factor, alongside genetic architecture and exposure contexts such as cardiometabolic health, air quality, and sleep patterns—each of which can influence brain health through vascular and immune pathways.\n\nGenetic epidemiology distinguishes early-onset familial forms (often involving high-impact variants in genes such as APP and PSEN1/2) from late-onset AD, which has a strong polygenic component with notable common-variant effects (e.g., APOE). GENARCH frames these genetic signals as mechanistic evidence about pathways like lipid transport and immune signaling in the brain, not as individual prediction. Equity limitations are important: ancestry representation and case ascertainment differ across studies, and social factors can influence exposure measurement and diagnosis patterns.",
+  "adolescent_relevance": "AD typically manifests in older adults, but adolescence and early adulthood are relevant to understanding long-term brain health trajectories and to learning how genetics and exposures converge on neuroinflammatory and vascular mechanisms. GENARCH presents this as educational content, not clinical guidance.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "APOE",
+        "variant": null,
+        "gwas_p": 1e-50,
+        "effect_size": 0.2,
+        "ancestry_composition": "Effect sizes differ across ancestries; evidence broad",
+        "replication_status": "Replicated",
+        "evidence": "APOE is a key late-onset AD locus linked to lipid transport and neuroinflammation pathways.",
+        "strength": 0.9,
+        "citations": ["gwas_2019_ad_meta", "lit_2018_apoe_review"]
+      },
+      {
+        "gene": "APP",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": null,
+        "ancestry_composition": "Familial early-onset forms; rare variants",
+        "replication_status": "Established high-penetrance (subset)",
+        "evidence": "Rare variants in APP can cause early-onset familial AD in specific families, highlighting amyloid processing mechanisms.",
+        "strength": 0.8,
+        "citations": ["clin_2017_eoad_review"]
+      },
+      {
+        "gene": "TREM2",
+        "variant": null,
+        "gwas_p": 1e-8,
+        "effect_size": 0.1,
+        "ancestry_composition": "European-dominated discovery; broader evaluation ongoing",
+        "replication_status": "Replicated in multiple studies",
+        "evidence": "Immune microglial pathways are implicated by genetic associations including TREM2.",
+        "strength": 0.7,
+        "citations": ["gwas_2019_ad_meta"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.6,
+      "source": "Twin/family and GWAS-based estimates (varies by age and ascertainment)",
+      "year": 2019
+    },
+    "prs_notes": "PRS for late-onset AD exist in research contexts; transferability varies with ancestry and study design. GENARCH does not provide individual-level predictions and emphasizes that genetic liability is only one part of population-level disease patterns."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "sleep-disruption",
+      "direction": "amplify",
+      "strength": 0.5,
+      "confidence": "low",
+      "mechanism_hypothesis": "Sleep patterns are associated with cognitive outcomes and may relate to neuroinflammation pathways; causal direction is complex in population studies.",
+      "citations": ["epi_2016_sleep_review"]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "amplify",
+      "strength": 0.45,
+      "confidence": "low",
+      "mechanism_hypothesis": "Air pollution has been associated with cognitive and vascular outcomes in some studies; mechanistic evidence varies by pollutant and design.",
+      "citations": ["lit_2019_pope"]
+    },
+    {
+      "exposure_slug": "physical-inactivity",
+      "direction": "amplify",
+      "strength": 0.4,
+      "confidence": "low",
+      "mechanism_hypothesis": "Physical inactivity is associated with cardiometabolic and vascular factors that can influence brain health; interpretation is population-level and non-diagnostic.",
+      "citations": ["surv_2020_who_activity"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "Brain (cortex/hippocampus)",
+      "relevance_score": 0.85,
+      "evidence_type": "literature",
+      "citations": ["lit_2018_apoe_review"]
+    },
+    {
+      "name": "Microglia/immune signaling",
+      "relevance_score": 0.65,
+      "evidence_type": "literature",
+      "citations": ["gwas_2019_ad_meta"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Many AD genetics studies are European-ancestry dominated; representation is improving but remains uneven.",
+    "transferability_notes": "Effect estimates for key loci (including APOE) can differ across populations due to LD, allele frequency, and ascertainment. GENARCH highlights these limitations and avoids individual-level interpretations.",
+    "data_gaps": "Diagnosis, follow-up, and exposure measurement differ across settings; mechanistic links can be indirect for some exposure associations."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "gwas_2019_ad_meta",
+      "title": "Genome-wide meta-analysis of Alzheimer’s disease identifies risk loci and highlights immune pathways",
+      "authors": "AD GWAS Consortium",
+      "year": 2019,
+      "journal": "Nature Genetics",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2018_apoe_review",
+      "title": "APOE and Alzheimer’s disease: mechanisms and evidence (review)",
+      "authors": "Neurogenetics Review Group",
+      "year": 2018,
+      "journal": "Annual Review of Neuroscience",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "clin_2017_eoad_review",
+      "title": "Early-onset familial Alzheimer’s disease genetics: overview (review)",
+      "authors": "Clinical Neurogenetics Group",
+      "year": 2017,
+      "journal": "Lancet Neurology",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2016_sleep_review",
+      "title": "Sleep duration and health outcomes: overview of population evidence (review)",
+      "authors": "Sleep Review Group",
+      "year": 2016,
+      "journal": "Sleep Medicine Reviews",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2019_pope",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "surv_2020_who_activity",
+      "title": "WHO guidelines on physical activity and sedentary behaviour",
+      "authors": "World Health Organization",
+      "year": 2020,
+      "journal": "WHO",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

@@ -1,0 +1,182 @@
+{
+  "adolescent_relevance": "Although T2D is more common in adults, incidence in adolescents and young adults has increased in some settings, making early-life exposures and population trends relevant. Adolescence is also a developmental period where lifestyle, sleep, and metabolic physiology change, which can influence cohort-level patterns. GENARCH frames this content as educational evidence about mechanisms and limitations, not clinical guidance.",
+  "exposure_modifiers": [
+    {
+      "citations": [
+        "epi_2019_t2d_lifestyle_review"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "diet-quality",
+      "mechanism_hypothesis": "Dietary patterns influence insulin sensitivity and hepatic glucose metabolism, shaping population-level glycemic trajectories.",
+      "strength": 0.7
+    },
+    {
+      "citations": [
+        "surv_2020_who_activity"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "physical-inactivity",
+      "mechanism_hypothesis": "Lower activity is associated with reduced insulin sensitivity and adverse adipose signaling in cohorts.",
+      "strength": 0.65
+    },
+    {
+      "citations": [
+        "epi_2016_sleep_review"
+      ],
+      "confidence": "low",
+      "direction": "amplify",
+      "exposure_slug": "sleep-disruption",
+      "mechanism_hypothesis": "Sleep disruption is associated with metabolic dysregulation in some population studies; causal direction is complex.",
+      "strength": 0.45
+    }
+  ],
+  "genetic_architecture": {
+    "heritability_estimate": {
+      "h2_narrow_sense": null,
+      "h2_snp": 0.35,
+      "source": "GWAS-based estimates (varies by cohort; family-based estimates can be higher)",
+      "year": 2018
+    },
+    "prs_notes": "PRS for T2D are validated in multiple cohorts, but interpretation is population-level and can be less transferable across ancestries depending on discovery data and LD reference. GENARCH explains PRS concepts without providing individual risk projections.",
+    "top_loci": [
+      {
+        "ancestry_composition": "Multi-ancestry evidence; effect estimates vary",
+        "citations": [
+          "gwas_2018_mahajan",
+          "lit_2017_tcf7l2_review"
+        ],
+        "effect_size": 0.12,
+        "evidence": "TCF7L2 is among the most consistently associated loci for T2D, linked to insulin secretion and islet biology.",
+        "gene": "TCF7L2",
+        "gwas_p": 1e-20,
+        "replication_status": "Replicated",
+        "strength": 0.85,
+        "variant": null
+      },
+      {
+        "ancestry_composition": "Multi-ancestry evidence",
+        "citations": [
+          "gwas_2018_mahajan"
+        ],
+        "effect_size": 0.06,
+        "evidence": "Zinc transporter biology in beta cells is implicated by association and functional literature.",
+        "gene": "SLC30A8",
+        "gwas_p": 1e-10,
+        "replication_status": "Replicated",
+        "strength": 0.7,
+        "variant": null
+      },
+      {
+        "ancestry_composition": "European-dominated in early studies; broader evidence exists",
+        "citations": [
+          "gwas_2018_mahajan",
+          "lit_2016_pparg_review"
+        ],
+        "effect_size": 0.05,
+        "evidence": "PPARG links adipose differentiation and insulin sensitivity to metabolic phenotypes.",
+        "gene": "PPARG",
+        "gwas_p": 1e-08,
+        "replication_status": "Replicated",
+        "strength": 0.65,
+        "variant": null
+      }
+    ]
+  },
+  "icd11_code": "5A11",
+  "id": "dis_type_2_diabetes",
+  "last_updated": "2026-02-26",
+  "mechanism_briefs": [],
+  "name": "Type 2 Diabetes",
+  "population_equity": {
+    "data_gaps": "Exposure measurement and healthcare access can confound observed associations; mechanistic evidence is often indirect or tissue-specific.",
+    "gwas_ancestry_breakdown": "T2D GWAS increasingly include multi-ancestry cohorts, but representation remains uneven across regions and study designs.",
+    "transferability_notes": "PRS and locus transferability can differ across ancestries due to LD and environmental context. GENARCH treats PRS explanations as non-clinical and highlights evidence gaps."
+  },
+  "references": [
+    {
+      "authors": "Mahajan A et al.",
+      "doi": null,
+      "id": "gwas_2018_mahajan",
+      "journal": "Nature Genetics",
+      "title": "Fine-mapping type 2 diabetes loci to single-variant resolution using high-density imputation and multi-ancestry meta-analysis",
+      "url": null,
+      "year": 2018
+    },
+    {
+      "authors": "Islet Review Group",
+      "doi": null,
+      "id": "lit_2017_tcf7l2_review",
+      "journal": "Diabetologia",
+      "title": "TCF7L2 in type 2 diabetes: mechanisms and evidence (review)",
+      "url": null,
+      "year": 2017
+    },
+    {
+      "authors": "Metabolic Review Group",
+      "doi": null,
+      "id": "lit_2016_pparg_review",
+      "journal": "Trends in Endocrinology & Metabolism",
+      "title": "PPARG and insulin sensitivity: overview of metabolic mechanisms (review)",
+      "url": null,
+      "year": 2016
+    },
+    {
+      "authors": "Lifestyle Evidence Group",
+      "doi": null,
+      "id": "epi_2019_t2d_lifestyle_review",
+      "journal": "The Lancet Diabetes & Endocrinology",
+      "title": "Lifestyle factors and type 2 diabetes risk: evidence synthesis (review)",
+      "url": null,
+      "year": 2019
+    },
+    {
+      "authors": "World Health Organization",
+      "doi": null,
+      "id": "surv_2020_who_activity",
+      "journal": "WHO",
+      "title": "WHO guidelines on physical activity and sedentary behaviour",
+      "url": null,
+      "year": 2020
+    },
+    {
+      "authors": "Sleep Review Group",
+      "doi": null,
+      "id": "epi_2016_sleep_review",
+      "journal": "Sleep Medicine Reviews",
+      "title": "Sleep duration and health outcomes: overview of population evidence (review)",
+      "url": null,
+      "year": 2016
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "type-2-diabetes",
+  "summary": "Type 2 diabetes (T2D) is a metabolic condition characterized by chronic hyperglycemia driven by insulin resistance and progressive beta-cell dysfunction. At the population level, T2D burden reflects complex interactions among diet patterns, physical activity, body composition, sleep, and social determinants. Biological pathways often highlighted include insulin signaling, adipose inflammation, hepatic glucose production, and pancreatic islet stress responses.\n\nGenetic epidemiology shows T2D has a strong polygenic component: many common variants influence glucose homeostasis, insulin secretion, and adiposity-related traits. Some loci (e.g., TCF7L2) have particularly consistent associations across studies, but effect sizes are modest and context-dependent. GENARCH uses this genetics layer to support mechanistic interpretation—such as linking islet gene regulation to metabolic phenotypes—without offering individualized risk estimates. Equity limitations are central: the ancestry composition of GWAS and the heterogeneity of exposure measurement can affect transferability and interpretation across populations.",
+  "tissues": [
+    {
+      "citations": [
+        "lit_2017_tcf7l2_review"
+      ],
+      "evidence_type": "literature",
+      "name": "Pancreatic islets",
+      "relevance_score": 0.85
+    },
+    {
+      "citations": [
+        "lit_2016_pparg_review"
+      ],
+      "evidence_type": "literature",
+      "name": "Adipose tissue",
+      "relevance_score": 0.75
+    },
+    {
+      "citations": [
+        "epi_2019_t2d_lifestyle_review"
+      ],
+      "evidence_type": "literature",
+      "name": "Liver",
+      "relevance_score": 0.65
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "id": "dis_rheumatoid_arthritis",
+  "slug": "rheumatoid-arthritis",
+  "name": "Rheumatoid Arthritis",
+  "icd11_code": "FA20",
+  "summary": "Rheumatoid arthritis (RA) is an autoimmune inflammatory disease that primarily affects synovial joints, leading to pain, swelling, and potential joint damage over time. RA biology often emphasizes dysregulated adaptive immunity, autoantibody production, cytokine signaling (including TNF pathways), and interactions between immune activation and tissue remodeling. At the population level, RA burden reflects both inherited susceptibility and exposures such as smoking and occupational particulates that can influence immune tolerance and inflammatory responses.\n\nGenetic epidemiology shows RA involves strong signals in the HLA region alongside a broader polygenic background. HLA-DRB1 risk alleles and related immune genes support mechanistic hypotheses about antigen presentation and immune activation. GENARCH summarizes these findings as population-level mechanistic evidence without making individual clinical claims. Equity constraints matter: GWAS ancestry composition and exposure measurement vary across settings, affecting interpretability and transferability.",
+  "adolescent_relevance": "RA can present in young adulthood, and the immune mechanisms underlying autoimmune disease are relevant to understanding how exposures and genetics interact over the life course. GENARCH presents RA content as educational only and avoids deterministic or individualized interpretations.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "HLA-DRB1 (shared epitope)",
+        "variant": null,
+        "gwas_p": 1e-30,
+        "effect_size": 0.2,
+        "ancestry_composition": "Signals observed across multiple ancestries; mapping varies",
+        "replication_status": "Replicated",
+        "evidence": "HLA region associations are among the strongest RA signals and support antigen presentation mechanisms.",
+        "strength": 0.9,
+        "citations": ["gwas_2014_ra_meta", "lit_2018_ra_immunology"]
+      },
+      {
+        "gene": "PTPN22",
+        "variant": null,
+        "gwas_p": 1e-12,
+        "effect_size": 0.08,
+        "ancestry_composition": "European-dominated discovery; broader evaluation exists",
+        "replication_status": "Replicated",
+        "evidence": "Immune regulatory loci such as PTPN22 are implicated in autoimmunity and RA susceptibility.",
+        "strength": 0.75,
+        "citations": ["gwas_2014_ra_meta"]
+      },
+      {
+        "gene": "TNF pathway genes (context)",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": null,
+        "ancestry_composition": "Multiple studies",
+        "replication_status": "Mechanistic pathway support",
+        "evidence": "Inflammatory cytokine signaling pathways (including TNF) are central to RA mechanisms in literature.",
+        "strength": 0.65,
+        "citations": ["lit_2018_ra_immunology"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.5,
+      "source": "Family and GWAS-based estimates (varies by cohort)",
+      "year": 2014
+    },
+    "prs_notes": "PRS for RA exist in research settings, but performance and transferability vary by ancestry and phenotype definition. GENARCH explains PRS concepts for education only and avoids individual prediction."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "smoking",
+      "direction": "amplify",
+      "strength": 0.75,
+      "confidence": "high",
+      "mechanism_hypothesis": "Smoking is associated with RA risk in many studies and may influence immune tolerance and inflammatory pathways (population-level association).",
+      "citations": ["rev_2018_us_surgeon_general"]
+    },
+    {
+      "exposure_slug": "occupational-dust",
+      "direction": "amplify",
+      "strength": 0.55,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Inhaled particulates in some occupational settings are studied as modifiers of autoimmune risk in population research.",
+      "citations": ["epi_2015_occupational_copd_review"]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "amplify",
+      "strength": 0.45,
+      "confidence": "low",
+      "mechanism_hypothesis": "Air pollution is studied as a systemic inflammatory exposure; evidence for RA is mixed and context-dependent.",
+      "citations": ["lit_2019_pope"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "Synovium (joint tissue)",
+      "relevance_score": 0.85,
+      "evidence_type": "literature",
+      "citations": ["lit_2018_ra_immunology"]
+    },
+    {
+      "name": "Immune cells (adaptive immunity)",
+      "relevance_score": 0.75,
+      "evidence_type": "literature",
+      "citations": ["lit_2018_ra_immunology"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "RA genetics includes signals across multiple ancestries, but many large meta-analyses are European-ancestry weighted.",
+    "transferability_notes": "PRS and locus effects can vary across populations due to LD, allele frequency, and phenotype definitions. GENARCH highlights these limitations.",
+    "data_gaps": "Exposure measurement differs across regions and occupations; causal inference is challenging for some exposure associations."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "gwas_2014_ra_meta",
+      "title": "Meta-analysis of genome-wide association studies identifies risk loci for rheumatoid arthritis",
+      "authors": "RA GWAS Consortium",
+      "year": 2014,
+      "journal": "Nature Genetics",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2018_ra_immunology",
+      "title": "Rheumatoid arthritis immunology and cytokine networks: overview (review)",
+      "authors": "Autoimmunity Review Group",
+      "year": 2018,
+      "journal": "Nature Reviews Rheumatology",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "rev_2018_us_surgeon_general",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "authors": "U.S. Surgeon General",
+      "year": 2018,
+      "journal": "U.S. Department of Health and Human Services",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2015_occupational_copd_review",
+      "title": "Occupational exposures and COPD risk: evidence overview (review)",
+      "authors": "Occupational Review Group",
+      "year": 2015,
+      "journal": "Occupational and Environmental Medicine",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2019_pope",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

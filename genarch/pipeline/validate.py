@@ -141,10 +141,16 @@ def _validate_citations(
 
 
 def _collect_citation_ids_generic(model: object) -> set[str]:
+    # Prefer walking the dumped structure to avoid Pydantic internals.
+    if hasattr(model, "model_dump"):
+        try:
+            dumped = model.model_dump(mode="json")
+            return _walk_for_citation_ids(dumped)
+        except Exception:
+            pass
+
     used: set[str] = set()
-    if hasattr(model, "references"):
-        pass
-    # Conservatively walk common citation-containing fields that are lists of dicts / models.
+    # Fallback: walk attributes for non-pydantic objects.
     for field_name in dir(model):
         if field_name.startswith("_"):
             continue
@@ -174,6 +180,11 @@ def _walk_for_citation_ids(value: object) -> set[str]:
             used |= _walk_for_citation_ids(v)
         return used
     if isinstance(value, dict):
+        for k, v in value.items():
+            if k in {"citations", "sources"} and isinstance(v, list):
+                for item in v:
+                    if isinstance(item, str):
+                        used.add(item)
         for v in value.values():
             used |= _walk_for_citation_ids(v)
         return used

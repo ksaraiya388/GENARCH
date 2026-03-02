@@ -1,0 +1,52 @@
+{
+  "id": "exp_ionizing_radiation",
+  "slug": "ionizing-radiation",
+  "name": "Ionizing Radiation",
+  "definition": "Ionizing radiation is an exposure category that can damage DNA and influence cancer risk at the population level. GENARCH includes this exposure as an educational context for gene–environment interaction discussions; it does not provide clinical recommendations.",
+  "proxies": [
+    {
+      "name": "Cumulative effective dose",
+      "unit": "mSv",
+      "measurement_method": "Occupational or medical exposure estimates (study-dependent)",
+      "data_source": "Epidemiological studies (curated)"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "DNA damage response",
+      "mechanism_summary": "Ionizing radiation can induce DNA breaks and activate repair pathways; cancer risk effects depend on dose, timing, and tissue context.",
+      "evidence_strength": 0.6
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "period": "Early childhood",
+      "age_range": "0–5",
+      "mechanism_rationale": "Developing tissues can be more sensitive to mutagenic exposures in some study contexts.",
+      "citations": ["epi_2019_radiation_review"]
+    }
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {
+      "name": "Breast",
+      "effect_type": "mutagenic exposure context",
+      "citations": ["epi_2019_radiation_review"]
+    }
+  ],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "epi_2019_radiation_review",
+      "title": "Ionizing radiation and cancer risk: an overview (review)",
+      "authors": "UNSCEAR",
+      "year": 2019,
+      "journal": "UNSCEAR Report",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+
