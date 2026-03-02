@@ -18,6 +18,8 @@ pnpm-debug.log*
 __pycache__/
 **/__pycache__/
 *.pyc
+.egg-info/
+**/*.egg-info/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/

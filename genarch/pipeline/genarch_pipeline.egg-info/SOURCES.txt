@@ -1,7 +1,0 @@
-README.md
-pyproject.toml
-genarch_pipeline.egg-info/PKG-INFO
-genarch_pipeline.egg-info/SOURCES.txt
-genarch_pipeline.egg-info/dependency_links.txt
-genarch_pipeline.egg-info/requires.txt
-genarch_pipeline.egg-info/top_level.txt
