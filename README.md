@@ -34,16 +34,18 @@ ETHICS.md
 
 ```bash
 npm install
-npm --prefix site install
-python -m pip install -e ./pipeline
+python3 -m pip install -e ./pipeline
 ```
+
+> Note: `npm install` at repo root runs `postinstall`, which installs `site/` dependencies automatically.
+> If postinstall scripts are disabled, run `npm --prefix site install` manually.
 
 ### 2) Generate seed data + report
 
 ```bash
-python -m pipeline.update --scope all
-python -m pipeline.report --year 2026
-python -m pipeline.validate
+python3 -m pipeline.update --scope all
+python3 -m pipeline.report --year 2026
+python3 -m pipeline.validate
 ```
 
 ### 3) Run site
@@ -74,7 +76,7 @@ docker compose down
 
 ## Required commands (repo root)
 
-All required commands are wired from root:
+Canonical commands from the PRD:
 
 ```bash
 npm run site:dev
@@ -83,6 +85,15 @@ python -m pipeline.update --scope all
 python -m pipeline.update --scope disease --id asthma
 python -m pipeline.validate
 python -m pipeline.report --year 2026
+```
+
+If your machine does not have `python` aliased, use `python3` for the same commands:
+
+```bash
+python3 -m pipeline.update --scope all
+python3 -m pipeline.update --scope disease --id asthma
+python3 -m pipeline.validate
+python3 -m pipeline.report --year 2026
 ```
 
 ---
