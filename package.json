@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "postinstall": "npm --prefix site install",
+    "build": "npm --prefix site run build",
+    "dev": "npm --prefix site run dev",
+    "lint": "npm --prefix site run lint",
     "site:dev": "npm --prefix site run dev",
     "site:build": "python3 -m pipeline.validate && npm --prefix site run build",
     "site:export": "npm --prefix site run export",
