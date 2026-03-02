@@ -1,0 +1,52 @@
+{
+  "id": "exp_heat_stress",
+  "slug": "heat-stress",
+  "name": "Heat Stress (Climate-Related)",
+  "definition": "Heat stress exposure refers to high ambient temperatures and heat events that can contribute to dehydration and physiological strain. In some conditions (e.g., hemoglobinopathies), hydration and heat can be discussed as context for symptom burden at a population level. GENARCH includes this category for education and does not provide medical advice.",
+  "proxies": [
+    {
+      "name": "Heat index / extreme heat days",
+      "unit": "days/year",
+      "measurement_method": "Meteorological reanalysis",
+      "data_source": "NOAA and climate datasets (curated)"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "Cardiovascular / hydration",
+      "mechanism_summary": "Heat can increase physiological stress and dehydration risk; effects depend on access to cooling and hydration, and are not uniform across communities.",
+      "evidence_strength": 0.3
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "period": "All ages",
+      "age_range": "varies",
+      "mechanism_rationale": "Heat exposure is episodic; vulnerability varies by health status and infrastructure.",
+      "citations": ["epi_2018_heat_health_review"]
+    }
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {
+      "name": "Systemic physiology",
+      "effect_type": "dehydration / stress response context",
+      "citations": ["epi_2018_heat_health_review"]
+    }
+  ],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "epi_2018_heat_health_review",
+      "title": "Extreme heat exposure and health outcomes: overview (review)",
+      "authors": "Climate Health Review Group",
+      "year": 2018,
+      "journal": "The Lancet Planetary Health",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

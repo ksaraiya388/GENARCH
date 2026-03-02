@@ -1,0 +1,116 @@
+{
+  "id": "dis_cystic_fibrosis",
+  "slug": "cystic-fibrosis",
+  "name": "Cystic Fibrosis",
+  "icd11_code": "GA10",
+  "summary": "Cystic fibrosis (CF) is a hereditary disease caused by variants in the CFTR gene, affecting chloride and bicarbonate transport across epithelial surfaces. This can lead to thick mucus, impaired mucociliary clearance, and chronic infections, particularly in the lungs, as well as gastrointestinal and pancreatic involvement. While CF is monogenic in its primary cause, population-level outcomes and symptom burden can still be influenced by exposure context such as air quality and infection burden, along with healthcare access.\n\nGENARCH presents CF as an educational example of monogenic architecture interacting with environment and care context at the population level. It does not provide individualized medical advice or risk estimates.",
+  "adolescent_relevance": "CF often manifests in childhood and continues through adolescence and young adulthood. GENARCH focuses on educational mechanisms and population context, not clinical recommendations.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "CFTR",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": null,
+        "ancestry_composition": "Variant spectrum differs across populations",
+        "replication_status": "Causal (monogenic)",
+        "evidence": "CFTR variants cause CF; many variants exist with varying functional impact across populations.",
+        "strength": 0.95,
+        "citations": ["clin_2017_cf_review"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 1.0,
+      "source": "Monogenic causal architecture (primary variant-driven disease)",
+      "year": 2017
+    },
+    "prs_notes": "PRS is not applicable as a primary risk model for monogenic CF. GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "amplify",
+      "strength": 0.45,
+      "confidence": "low",
+      "mechanism_hypothesis": "Ambient particulates can contribute to respiratory stress; associations with CF outcomes are context-dependent.",
+      "citations": ["lit_2019_pope"]
+    },
+    {
+      "exposure_slug": "infection-burden",
+      "direction": "amplify",
+      "strength": 0.6,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Respiratory infections are central to CF morbidity; population-level infection context influences outcomes (not individualized advice).",
+      "citations": ["epi_2015_infection_immune_review"]
+    },
+    {
+      "exposure_slug": "smoking",
+      "direction": "amplify",
+      "strength": 0.35,
+      "confidence": "low",
+      "mechanism_hypothesis": "Secondhand smoke exposure can worsen respiratory burden; evidence varies and is context-dependent.",
+      "citations": ["rev_2018_us_surgeon_general"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "Airway epithelium",
+      "relevance_score": 0.9,
+      "evidence_type": "literature",
+      "citations": ["clin_2017_cf_review"]
+    },
+    {
+      "name": "Pancreas / gastrointestinal epithelium",
+      "relevance_score": 0.6,
+      "evidence_type": "literature",
+      "citations": ["clin_2017_cf_review"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "CF research and variant catalogs have historically been European-ancestry weighted; variant spectra differ across populations.",
+    "transferability_notes": "Variant interpretation and outcome studies may not generalize across settings with different care access and exposures.",
+    "data_gaps": "Environmental exposure datasets linked to CF outcomes are limited and setting-specific."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "clin_2017_cf_review",
+      "title": "Cystic fibrosis: CFTR biology and clinical manifestations (review)",
+      "authors": "Pulmonary Genetics Review Group",
+      "year": 2017,
+      "journal": "New England Journal of Medicine",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2019_pope",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2015_infection_immune_review",
+      "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)",
+      "authors": "Immunology Review Group",
+      "year": 2015,
+      "journal": "Nature Reviews Immunology",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "rev_2018_us_surgeon_general",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "authors": "U.S. Surgeon General",
+      "year": 2018,
+      "journal": "U.S. Department of Health and Human Services",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

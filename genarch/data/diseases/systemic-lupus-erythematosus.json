@@ -1,0 +1,151 @@
+{
+  "adolescent_relevance": "SLE can present in adolescence and young adulthood. Understanding population-level genetic susceptibility and exposure context is relevant for educational interpretation of autoimmune mechanisms. GENARCH avoids deterministic interpretations and is educational only.",
+  "exposure_modifiers": [
+    {
+      "citations": [
+        "epi_2014_uv_autoimmune_review"
+      ],
+      "confidence": "low",
+      "direction": "amplify",
+      "exposure_slug": "uv-radiation",
+      "mechanism_hypothesis": "UV exposure is discussed as a potential trigger for immune activation and skin manifestations in some SLE contexts; evidence is heterogeneous.",
+      "strength": 0.55
+    },
+    {
+      "citations": [
+        "epi_2015_infection_immune_review"
+      ],
+      "confidence": "low",
+      "direction": "amplify",
+      "exposure_slug": "infection-burden",
+      "mechanism_hypothesis": "Infections can activate immune pathways; relationships to SLE onset/flares are complex and not uniformly causal.",
+      "strength": 0.4
+    },
+    {
+      "citations": [
+        "rev_2018_us_surgeon_general"
+      ],
+      "confidence": "low",
+      "direction": "amplify",
+      "exposure_slug": "smoking",
+      "mechanism_hypothesis": "Smoking is studied as an autoimmune risk modifier and may influence systemic inflammation; evidence varies by cohort.",
+      "strength": 0.45
+    }
+  ],
+  "genetic_architecture": {
+    "heritability_estimate": {
+      "h2_narrow_sense": null,
+      "h2_snp": 0.6,
+      "source": "Family and GWAS-based estimates (varies by cohort)",
+      "year": 2017
+    },
+    "prs_notes": "SLE PRS exist in research settings; transferability varies by ancestry and phenotype definition. GENARCH does not provide individual predictions.",
+    "top_loci": [
+      {
+        "ancestry_composition": "Signals observed across ancestries; mapping varies",
+        "citations": [
+          "gwas_2017_sle_meta",
+          "lit_2018_sle_ifn_review"
+        ],
+        "effect_size": 0.08,
+        "evidence": "HLA associations support antigen presentation and immune activation hypotheses in SLE.",
+        "gene": "HLA region (immune regulation context)",
+        "gwas_p": 1e-12,
+        "replication_status": "Replicated",
+        "strength": 0.75,
+        "variant": null
+      },
+      {
+        "ancestry_composition": "Rare deficiencies in specific families; population variation",
+        "citations": [
+          "lit_2018_sle_ifn_review"
+        ],
+        "effect_size": null,
+        "evidence": "Complement deficiencies illustrate pathways related to immune complex clearance; not all SLE is driven by this mechanism.",
+        "gene": "Complement pathway (C1/C4 context)",
+        "gwas_p": null,
+        "replication_status": "Mechanistic pathway support",
+        "strength": 0.6,
+        "variant": null
+      }
+    ]
+  },
+  "icd11_code": "FA40",
+  "id": "dis_systemic_lupus_erythematosus",
+  "last_updated": "2026-02-26",
+  "mechanism_briefs": [],
+  "name": "Systemic Lupus Erythematosus",
+  "population_equity": {
+    "data_gaps": "Exposure measurement and healthcare access confound observed patterns; mechanistic models differ by organ involvement.",
+    "gwas_ancestry_breakdown": "SLE prevalence and severity differ across populations; GWAS representation has been uneven across ancestries and regions.",
+    "transferability_notes": "PRS and locus effects can vary across populations due to LD and allele frequency. GENARCH highlights limitations and avoids individualized inference."
+  },
+  "references": [
+    {
+      "authors": "SLE GWAS Consortium",
+      "doi": null,
+      "id": "gwas_2017_sle_meta",
+      "journal": "Nature Genetics",
+      "title": "Genome-wide association meta-analysis identifies systemic lupus erythematosus susceptibility loci",
+      "url": null,
+      "year": 2017
+    },
+    {
+      "authors": "Autoimmunity Review Group",
+      "doi": null,
+      "id": "lit_2018_sle_ifn_review",
+      "journal": "Nature Reviews Rheumatology",
+      "title": "Interferon signaling and immune dysregulation in SLE: overview (review)",
+      "url": null,
+      "year": 2018
+    },
+    {
+      "authors": "Autoimmunity Review Group",
+      "doi": null,
+      "id": "epi_2014_uv_autoimmune_review",
+      "journal": "Journal of Autoimmunity",
+      "title": "Ultraviolet radiation and autoimmune disease mechanisms: overview (review)",
+      "url": null,
+      "year": 2014
+    },
+    {
+      "authors": "Immunology Review Group",
+      "doi": null,
+      "id": "epi_2015_infection_immune_review",
+      "journal": "Nature Reviews Immunology",
+      "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)",
+      "url": null,
+      "year": 2015
+    },
+    {
+      "authors": "U.S. Surgeon General",
+      "doi": null,
+      "id": "rev_2018_us_surgeon_general",
+      "journal": "U.S. Department of Health and Human Services",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "url": null,
+      "year": 2018
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "systemic-lupus-erythematosus",
+  "summary": "Systemic lupus erythematosus (SLE) is a systemic autoimmune disease characterized by immune dysregulation, autoantibody production, and inflammation that can affect multiple organs (e.g., skin, joints, kidneys). Biological hypotheses often emphasize interferon signaling, defective clearance of cellular debris, and tolerance breakdown mechanisms. Population-level patterns reflect both genetic susceptibility and exposure context, including environmental triggers that can influence immune activation.\n\nGenetic epidemiology indicates SLE is polygenic with notable signals in immune regulatory pathways (including HLA region and complement-related biology). Rare complement deficiencies can illustrate mechanistic pathways related to immune complex handling. GENARCH presents SLE content as educational and population-level, emphasizing limitations and avoiding individualized risk or clinical guidance.",
+  "tissues": [
+    {
+      "citations": [
+        "lit_2018_sle_ifn_review"
+      ],
+      "evidence_type": "literature",
+      "name": "Immune system (interferon signaling)",
+      "relevance_score": 0.8
+    },
+    {
+      "citations": [
+        "lit_2018_sle_ifn_review"
+      ],
+      "evidence_type": "literature",
+      "name": "Kidney (lupus nephritis context)",
+      "relevance_score": 0.6
+    }
+  ]
+}

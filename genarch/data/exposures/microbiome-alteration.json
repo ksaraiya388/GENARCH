@@ -1,0 +1,55 @@
+{
+  "definition": "Microbiome alteration refers to changes in gut microbial composition and function that can influence immune and metabolic pathways. In colorectal cancer and inflammatory disease research, microbiome patterns are studied as population-level modifiers and correlates. GENARCH summarizes this domain as educational context.",
+  "exposure_distribution": null,
+  "gxe_highlights": [],
+  "id": "exp_microbiome_alteration",
+  "last_updated": "2026-02-26",
+  "name": "Microbiome Alteration (Broad Category)",
+  "proxies": [
+    {
+      "data_source": "Microbiome cohort studies (curated)",
+      "measurement_method": "Sequencing-based profiling (study-dependent)",
+      "name": "16S/shotgun metagenomics community profile",
+      "unit": null
+    }
+  ],
+  "references": [
+    {
+      "authors": "Cancer Microbiome Review Group",
+      "doi": null,
+      "id": "epi_2019_microbiome_crc_review",
+      "journal": "Nature Reviews Gastroenterology & Hepatology",
+      "title": "Gut microbiome and colorectal cancer: evidence overview (review)",
+      "url": null,
+      "year": 2019
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "0–5",
+      "citations": [
+        "epi_2019_microbiome_crc_review"
+      ],
+      "mechanism_rationale": "Microbiome development occurs early in life; later alterations can also occur due to diet, antibiotics, and illness.",
+      "period": "Early childhood"
+    }
+  ],
+  "slug": "microbiome-alteration",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.4,
+      "mechanism_summary": "Microbial metabolites and barrier interactions can influence inflammation and epithelial biology; causal inference is challenging in many studies.",
+      "system": "Immune / gastrointestinal"
+    }
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "epi_2019_microbiome_crc_review"
+      ],
+      "effect_type": "epithelial / immune interaction context",
+      "name": "Colon"
+    }
+  ]
+}

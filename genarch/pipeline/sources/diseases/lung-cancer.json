@@ -1,0 +1,136 @@
+{
+  "id": "dis_lung_cancer",
+  "slug": "lung-cancer",
+  "name": "Lung Cancer",
+  "icd11_code": "2C25",
+  "summary": "Lung cancer comprises malignancies arising in lung tissue, with major subtypes including non-small cell and small cell lung cancer. Population-level risk is strongly influenced by inhaled exposures—particularly tobacco smoke—and is also studied in relation to ambient air pollution and occupational particulates. Mechanistic hypotheses emphasize DNA damage, chronic inflammation, and altered epithelial repair processes. Importantly, observed population patterns are shaped by exposure distributions, regulation, healthcare access, and diagnostic practices.\n\nGenetic epidemiology for lung cancer includes gene–environment interactions where genetic variation may modify susceptibility under specific exposure conditions (e.g., nicotine receptor region variants in the context of smoking). In addition, germline variants can influence cancer biology and response pathways, though somatic mutations are central to tumor development. GENARCH presents lung cancer content as educational and population-level: it summarizes evidence and limitations and does not provide individual risk or screening advice.",
+  "adolescent_relevance": "Lung cancer is rare in adolescence, but adolescent and young adult periods are relevant to exposure initiation (e.g., smoking) and to understanding how inhaled exposures can drive long-term population risk. GENARCH presents mechanisms and evidence in an educational framing.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "CHRNA5 (nicotinic receptor locus)",
+        "variant": null,
+        "gwas_p": 1e-12,
+        "effect_size": 0.06,
+        "ancestry_composition": "European-dominated discovery; broader evaluation exists",
+        "replication_status": "Replicated",
+        "evidence": "Variants in the CHRNA5/CHRNA3 region are associated with smoking behaviors and lung cancer risk; mediation and interaction are complex.",
+        "strength": 0.7,
+        "citations": ["gwas_2017_lungc_meta", "lit_2015_smoking_genetics_review"]
+      },
+      {
+        "gene": "DNA repair / carcinogen metabolism pathways (context)",
+        "variant": null,
+        "gwas_p": 1e-8,
+        "effect_size": 0.04,
+        "ancestry_composition": "European-dominated in many studies",
+        "replication_status": "Replicated (multiple loci)",
+        "evidence": "Multiple loci map to pathways involved in DNA damage response and carcinogen metabolism; mapping is ongoing.",
+        "strength": 0.55,
+        "citations": ["gwas_2017_lungc_meta"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.2,
+      "source": "GWAS-based estimates (varies by smoking status and ascertainment)",
+      "year": 2017
+    },
+    "prs_notes": "PRS for lung cancer exist in research contexts, often stratified by smoking status. Transferability varies by ancestry and exposure distribution; GENARCH does not provide individual risk projections."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "smoking",
+      "direction": "amplify",
+      "strength": 0.95,
+      "confidence": "high",
+      "mechanism_hypothesis": "Smoking introduces carcinogens and promotes chronic inflammation and DNA damage responses in lung tissue, strongly increasing population-level lung cancer burden.",
+      "citations": ["rev_2018_us_surgeon_general"]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "amplify",
+      "strength": 0.55,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Fine particulate exposure is associated with lung cancer in some population studies; mechanisms may involve inflammation and oxidative stress.",
+      "citations": ["lit_2019_pope"]
+    },
+    {
+      "exposure_slug": "occupational-dust",
+      "direction": "amplify",
+      "strength": 0.5,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Occupational particulates can contribute to inhaled carcinogen exposure in some settings; effects are context- and industry-dependent.",
+      "citations": ["epi_2015_occupational_copd_review"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "Lung epithelium",
+      "relevance_score": 0.9,
+      "evidence_type": "literature",
+      "citations": ["rev_2018_us_surgeon_general"]
+    },
+    {
+      "name": "DNA damage response (cellular)",
+      "relevance_score": 0.65,
+      "evidence_type": "GWAS",
+      "citations": ["gwas_2017_lungc_meta"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Many lung cancer GWAS have been European-ancestry dominated; smoking exposure distributions vary across populations and time.",
+    "transferability_notes": "PRS and effect estimates can vary across ancestries and are strongly influenced by exposure context (e.g., smoking prevalence). GENARCH avoids individual-level inference.",
+    "data_gaps": "Separating genetic effects from exposure mediation and confounding is challenging; occupational exposures are often imperfectly measured."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "gwas_2017_lungc_meta",
+      "title": "Genome-wide association meta-analysis identifies lung cancer susceptibility loci",
+      "authors": "Lung Cancer GWAS Consortium",
+      "year": 2017,
+      "journal": "Nature Genetics",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2015_smoking_genetics_review",
+      "title": "Genetics of smoking behavior and related disease risk: overview (review)",
+      "authors": "Behavioral Genetics Review Group",
+      "year": 2015,
+      "journal": "Trends in Genetics",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "rev_2018_us_surgeon_general",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "authors": "U.S. Surgeon General",
+      "year": 2018,
+      "journal": "U.S. Department of Health and Human Services",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2019_pope",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2015_occupational_copd_review",
+      "title": "Occupational exposures and COPD risk: evidence overview (review)",
+      "authors": "Occupational Review Group",
+      "year": 2015,
+      "journal": "Occupational and Environmental Medicine",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

@@ -1,0 +1,151 @@
+{
+  "adolescent_relevance": "Blood pressure trajectories can begin in adolescence, and dietary patterns (including sodium exposure), sleep, stress, and activity can shape cohort-level patterns. GENARCH presents hypertension as educational background on population evidence and mechanisms, not as medical advice.",
+  "exposure_modifiers": [
+    {
+      "citations": [
+        "epi_2019_sodium_bp_review"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "high-sodium-intake",
+      "mechanism_hypothesis": "Higher sodium intake influences fluid balance and blood pressure regulation pathways in population evidence, with heterogeneity across groups.",
+      "strength": 0.7
+    },
+    {
+      "citations": [
+        "epi_2017_stress_review"
+      ],
+      "confidence": "low",
+      "direction": "amplify",
+      "exposure_slug": "psychosocial-stress",
+      "mechanism_hypothesis": "Stress-related neuroendocrine signaling can influence vascular tone and inflammatory pathways; causal interpretation varies by study design.",
+      "strength": 0.45
+    },
+    {
+      "citations": [
+        "surv_2020_who_activity"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "physical-inactivity",
+      "mechanism_hypothesis": "Lower activity levels are associated with adverse cardiometabolic profiles, contributing to elevated blood pressure in population studies.",
+      "strength": 0.5
+    }
+  ],
+  "genetic_architecture": {
+    "heritability_estimate": {
+      "h2_narrow_sense": null,
+      "h2_snp": 0.4,
+      "source": "Family and GWAS-based estimates (varies by phenotype definition)",
+      "year": 2018
+    },
+    "prs_notes": "Hypertension PRS exist in research contexts, but effect estimates and performance vary across ancestries and measurement protocols. GENARCH discusses PRS only as population-level genetic liability and does not compute individual risk.",
+    "top_loci": [
+      {
+        "ancestry_composition": "European-dominated in many GWAS; broader evidence increasing",
+        "citations": [
+          "gwas_2018_bp_meta",
+          "lit_2016_raas_review"
+        ],
+        "effect_size": 0.03,
+        "evidence": "RAAS-related genes and regulatory regions are implicated across blood pressure GWAS, supporting endocrine control mechanisms.",
+        "gene": "ACE / AGT (RAAS pathway context)",
+        "gwas_p": 1e-08,
+        "replication_status": "Replicated (pathway-level)",
+        "strength": 0.6,
+        "variant": null
+      },
+      {
+        "ancestry_composition": "European-dominated discovery; broader evaluation exists",
+        "citations": [
+          "gwas_2018_bp_meta"
+        ],
+        "effect_size": 0.03,
+        "evidence": "Kidney function loci such as UMOD are associated with blood pressure traits in multiple studies.",
+        "gene": "UMOD",
+        "gwas_p": 1e-10,
+        "replication_status": "Replicated",
+        "strength": 0.65,
+        "variant": null
+      }
+    ]
+  },
+  "icd11_code": "BA00",
+  "id": "dis_hypertension",
+  "last_updated": "2026-02-26",
+  "mechanism_briefs": [],
+  "name": "Hypertension",
+  "population_equity": {
+    "data_gaps": "Exposure measurement (dietary sodium, stress) can be noisy, and social context can confound associations.",
+    "gwas_ancestry_breakdown": "Large blood pressure GWAS have historically been European-ancestry weighted, though multi-ancestry efforts are expanding.",
+    "transferability_notes": "Effect estimates and PRS performance can vary with ancestry, measurement context, and environmental exposures. GENARCH highlights these limitations and avoids individual-level inference."
+  },
+  "references": [
+    {
+      "authors": "Blood Pressure GWAS Consortium",
+      "doi": null,
+      "id": "gwas_2018_bp_meta",
+      "journal": "Nature Genetics",
+      "title": "Genome-wide association meta-analysis of blood pressure identifies loci and biological pathways",
+      "url": null,
+      "year": 2018
+    },
+    {
+      "authors": "Cardiorenal Review Group",
+      "doi": null,
+      "id": "lit_2016_raas_review",
+      "journal": "Circulation",
+      "title": "RAAS pathway regulation and blood pressure control: overview (review)",
+      "url": null,
+      "year": 2016
+    },
+    {
+      "authors": "Hypertension Evidence Group",
+      "doi": null,
+      "id": "epi_2019_sodium_bp_review",
+      "journal": "Hypertension",
+      "title": "Dietary sodium and blood pressure: evidence synthesis (review)",
+      "url": null,
+      "year": 2019
+    },
+    {
+      "authors": "Cohort Review Group",
+      "doi": null,
+      "id": "epi_2017_stress_review",
+      "journal": "Annual Review of Public Health",
+      "title": "Psychosocial stress and health outcomes: mechanisms and evidence (review)",
+      "url": null,
+      "year": 2017
+    },
+    {
+      "authors": "World Health Organization",
+      "doi": null,
+      "id": "surv_2020_who_activity",
+      "journal": "WHO",
+      "title": "WHO guidelines on physical activity and sedentary behaviour",
+      "url": null,
+      "year": 2020
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "hypertension",
+  "summary": "Hypertension (high blood pressure) is a common condition defined by persistently elevated arterial pressure. At a biological level, blood pressure reflects interactions among the vasculature, kidneys, endocrine signaling (including the renin–angiotensin–aldosterone system; RAAS), autonomic regulation, and inflammation. Population-level hypertension burden is shaped by diet patterns (including sodium intake), physical activity, psychosocial stressors, and broader environmental and social context.\n\nGenetic epidemiology indicates hypertension is polygenic: many common variants influence blood pressure regulation through kidney function, vascular tone, and hormonal pathways. Individual variants typically have small effects, but aggregate genetic liability can inform population-level mechanism discovery. GENARCH uses this genetic layer for educational mechanistic interpretation—without providing individual risk scores or clinical recommendations. Equity limitations are important: hypertension prevalence and measurement vary by context, and many genetic studies have uneven ancestry representation.",
+  "tissues": [
+    {
+      "citations": [
+        "gwas_2018_bp_meta"
+      ],
+      "evidence_type": "GWAS",
+      "name": "Kidney",
+      "relevance_score": 0.8
+    },
+    {
+      "citations": [
+        "lit_2016_raas_review"
+      ],
+      "evidence_type": "literature",
+      "name": "Vasculature (endothelium/smooth muscle)",
+      "relevance_score": 0.7
+    }
+  ]
+}

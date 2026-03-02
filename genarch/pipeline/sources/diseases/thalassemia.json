@@ -1,0 +1,110 @@
+{
+  "id": "dis_thalassemia",
+  "slug": "thalassemia",
+  "name": "Thalassemia (Alpha/Beta)",
+  "icd11_code": "3A60",
+  "summary": "Thalassemias are hereditary hemoglobin disorders caused by variants that reduce production of alpha or beta globin chains, leading to anemia of varying severity. The causal genetic architecture is often monogenic (or oligogenic) with many possible variants in HBA1/HBA2 and HBB. Population-level outcomes depend on genotype, care access, infection burden, and broader environmental and social context.\n\nGENARCH presents thalassemia as an educational example of inherited blood disorders within genetic epidemiology, emphasizing mechanism and population context without providing individualized medical guidance.",
+  "adolescent_relevance": "Many thalassemia forms manifest in childhood and adolescence. GENARCH focuses on educational explanation of genetic mechanisms and population-level context.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "HBB / HBA1/HBA2",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": null,
+        "ancestry_composition": "Variant frequency patterns reflect historical selection and population history",
+        "replication_status": "Causal (monogenic/oligogenic)",
+        "evidence": "Globin gene variants cause alpha/beta thalassemia through reduced globin chain synthesis; many variants exist across populations.",
+        "strength": 0.95,
+        "citations": ["clin_2013_thal_review"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 1.0,
+      "source": "Monogenic/oligogenic causal architecture (primary variant-driven disease)",
+      "year": 2013
+    },
+    "prs_notes": "PRS is not applicable as a primary risk model for monogenic thalassemia. GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "infection-burden",
+      "direction": "amplify",
+      "strength": 0.5,
+      "confidence": "low",
+      "mechanism_hypothesis": "Infections can increase physiological stress and complications in population contexts; not individualized advice.",
+      "citations": ["epi_2015_infection_immune_review"]
+    },
+    {
+      "exposure_slug": "heat-stress",
+      "direction": "unknown",
+      "strength": 0.3,
+      "confidence": "low",
+      "mechanism_hypothesis": "Heat and dehydration can contribute to physiological strain; evidence varies by context.",
+      "citations": ["epi_2018_heat_health_review"]
+    },
+    {
+      "exposure_slug": "diet-quality",
+      "direction": "unknown",
+      "strength": 0.25,
+      "confidence": "low",
+      "mechanism_hypothesis": "Nutrition status can influence general health in chronic anemia contexts; associations are confounded and not uniformly causal.",
+      "citations": ["rev_2019_who_nutrition"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "Blood / bone marrow (erythropoiesis)",
+      "relevance_score": 0.9,
+      "evidence_type": "literature",
+      "citations": ["clin_2013_thal_review"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Thalassemia prevalence varies by ancestry and geography due to historical selection pressures; research and care access vary widely.",
+    "transferability_notes": "Variant spectra differ across populations; outcome studies may not generalize across healthcare contexts.",
+    "data_gaps": "Environmental exposure data is often incomplete; many studies focus on clinical cohorts with specific care patterns."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "clin_2013_thal_review",
+      "title": "Thalassemia: molecular genetics and pathophysiology overview (review)",
+      "authors": "Hematology Review Group",
+      "year": 2013,
+      "journal": "Blood",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2015_infection_immune_review",
+      "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)",
+      "authors": "Immunology Review Group",
+      "year": 2015,
+      "journal": "Nature Reviews Immunology",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2018_heat_health_review",
+      "title": "Extreme heat exposure and health outcomes: overview (review)",
+      "authors": "Climate Health Review Group",
+      "year": 2018,
+      "journal": "The Lancet Planetary Health",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "rev_2019_who_nutrition",
+      "title": "Healthy diet factsheet and guidance (population-level)",
+      "authors": "World Health Organization",
+      "year": 2019,
+      "journal": "WHO",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

@@ -1,0 +1,52 @@
+{
+  "id": "exp_infection_burden",
+  "slug": "infection-burden",
+  "name": "Infection Burden (Broad Category)",
+  "definition": "Infection burden is a broad exposure category reflecting frequency and severity of infectious exposures in a population (e.g., recurrent respiratory infections, endemic pathogen exposure). Infection can influence immune activation, inflammation, and tissue injury pathways relevant to multiple diseases. GENARCH includes this category to support educational gene–environment discussions without individual-level claims.",
+  "proxies": [
+    {
+      "name": "Community infection incidence proxy",
+      "unit": "cases/100k",
+      "measurement_method": "Public health surveillance summary",
+      "data_source": "Public health dashboards (curated)"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "Immune",
+      "mechanism_summary": "Infections trigger innate and adaptive immune responses; chronic or repeated activation can alter inflammatory signaling in population contexts.",
+      "evidence_strength": 0.4
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "period": "Early childhood",
+      "age_range": "0–5",
+      "mechanism_rationale": "Early-life infections can shape immune maturation; interpretation depends strongly on pathogen, dose, and context.",
+      "citations": ["epi_2015_infection_immune_review"]
+    }
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {
+      "name": "Immune system",
+      "effect_type": "immune activation context",
+      "citations": ["epi_2015_infection_immune_review"]
+    }
+  ],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "epi_2015_infection_immune_review",
+      "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)",
+      "authors": "Immunology Review Group",
+      "year": 2015,
+      "journal": "Nature Reviews Immunology",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

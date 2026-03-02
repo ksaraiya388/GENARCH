@@ -1,0 +1,120 @@
+{
+  "adolescent_relevance": "Many thalassemia forms manifest in childhood and adolescence. GENARCH focuses on educational explanation of genetic mechanisms and population-level context.",
+  "exposure_modifiers": [
+    {
+      "citations": [
+        "epi_2015_infection_immune_review"
+      ],
+      "confidence": "low",
+      "direction": "amplify",
+      "exposure_slug": "infection-burden",
+      "mechanism_hypothesis": "Infections can increase physiological stress and complications in population contexts; not individualized advice.",
+      "strength": 0.5
+    },
+    {
+      "citations": [
+        "epi_2018_heat_health_review"
+      ],
+      "confidence": "low",
+      "direction": "unknown",
+      "exposure_slug": "heat-stress",
+      "mechanism_hypothesis": "Heat and dehydration can contribute to physiological strain; evidence varies by context.",
+      "strength": 0.3
+    },
+    {
+      "citations": [
+        "rev_2019_who_nutrition"
+      ],
+      "confidence": "low",
+      "direction": "unknown",
+      "exposure_slug": "diet-quality",
+      "mechanism_hypothesis": "Nutrition status can influence general health in chronic anemia contexts; associations are confounded and not uniformly causal.",
+      "strength": 0.25
+    }
+  ],
+  "genetic_architecture": {
+    "heritability_estimate": {
+      "h2_narrow_sense": null,
+      "h2_snp": 1.0,
+      "source": "Monogenic/oligogenic causal architecture (primary variant-driven disease)",
+      "year": 2013
+    },
+    "prs_notes": "PRS is not applicable as a primary risk model for monogenic thalassemia. GENARCH does not provide individual predictions.",
+    "top_loci": [
+      {
+        "ancestry_composition": "Variant frequency patterns reflect historical selection and population history",
+        "citations": [
+          "clin_2013_thal_review"
+        ],
+        "effect_size": null,
+        "evidence": "Globin gene variants cause alpha/beta thalassemia through reduced globin chain synthesis; many variants exist across populations.",
+        "gene": "HBB / HBA1/HBA2",
+        "gwas_p": null,
+        "replication_status": "Causal (monogenic/oligogenic)",
+        "strength": 0.95,
+        "variant": null
+      }
+    ]
+  },
+  "icd11_code": "3A60",
+  "id": "dis_thalassemia",
+  "last_updated": "2026-02-26",
+  "mechanism_briefs": [],
+  "name": "Thalassemia (Alpha/Beta)",
+  "population_equity": {
+    "data_gaps": "Environmental exposure data is often incomplete; many studies focus on clinical cohorts with specific care patterns.",
+    "gwas_ancestry_breakdown": "Thalassemia prevalence varies by ancestry and geography due to historical selection pressures; research and care access vary widely.",
+    "transferability_notes": "Variant spectra differ across populations; outcome studies may not generalize across healthcare contexts."
+  },
+  "references": [
+    {
+      "authors": "Hematology Review Group",
+      "doi": null,
+      "id": "clin_2013_thal_review",
+      "journal": "Blood",
+      "title": "Thalassemia: molecular genetics and pathophysiology overview (review)",
+      "url": null,
+      "year": 2013
+    },
+    {
+      "authors": "Immunology Review Group",
+      "doi": null,
+      "id": "epi_2015_infection_immune_review",
+      "journal": "Nature Reviews Immunology",
+      "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)",
+      "url": null,
+      "year": 2015
+    },
+    {
+      "authors": "Climate Health Review Group",
+      "doi": null,
+      "id": "epi_2018_heat_health_review",
+      "journal": "The Lancet Planetary Health",
+      "title": "Extreme heat exposure and health outcomes: overview (review)",
+      "url": null,
+      "year": 2018
+    },
+    {
+      "authors": "World Health Organization",
+      "doi": null,
+      "id": "rev_2019_who_nutrition",
+      "journal": "WHO",
+      "title": "Healthy diet factsheet and guidance (population-level)",
+      "url": null,
+      "year": 2019
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "thalassemia",
+  "summary": "Thalassemias are hereditary hemoglobin disorders caused by variants that reduce production of alpha or beta globin chains, leading to anemia of varying severity. The causal genetic architecture is often monogenic (or oligogenic) with many possible variants in HBA1/HBA2 and HBB. Population-level outcomes depend on genotype, care access, infection burden, and broader environmental and social context.\n\nGENARCH presents thalassemia as an educational example of inherited blood disorders within genetic epidemiology, emphasizing mechanism and population context without providing individualized medical guidance.",
+  "tissues": [
+    {
+      "citations": [
+        "clin_2013_thal_review"
+      ],
+      "evidence_type": "literature",
+      "name": "Blood / bone marrow (erythropoiesis)",
+      "relevance_score": 0.9
+    }
+  ]
+}

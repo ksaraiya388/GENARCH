@@ -1,0 +1,127 @@
+{
+  "id": "dis_tuberculosis_susceptibility",
+  "slug": "tuberculosis-susceptibility",
+  "name": "Tuberculosis Susceptibility (Host Genetics Context)",
+  "icd11_code": "1B10",
+  "summary": "Tuberculosis (TB) is an infectious disease caused by Mycobacterium tuberculosis. Population-level susceptibility and outcomes depend on exposure intensity, socioeconomic context, comorbidities, and healthcare access, alongside host immune response differences. Mechanistic hypotheses emphasize innate immune sensing, interferon and cytokine signaling, and macrophage biology that shape containment vs. progression.\n\nHost genetic studies have identified immune pathway variants associated with TB susceptibility in some cohorts (e.g., genes related to innate immune receptors and interferon signaling), but results can be heterogeneous across populations and study designs. GENARCH presents TB host genetics as educational context for gene–environment reasoning and does not provide individual risk predictions or clinical advice.",
+  "adolescent_relevance": "TB burden can affect adolescents and young adults in many regions, and TB illustrates how exposure context and host immune genetics interact at the population level. GENARCH focuses on education and limitations.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "TLR2 (innate immune sensing context)",
+        "variant": null,
+        "gwas_p": 1e-6,
+        "effect_size": 0.04,
+        "ancestry_composition": "Cohort-specific; heterogeneous evidence",
+        "replication_status": "Mixed",
+        "evidence": "Innate immune receptor variation is studied in TB susceptibility; replication varies across cohorts and pathogen lineages.",
+        "strength": 0.4,
+        "citations": ["lit_2016_tb_host_review"]
+      },
+      {
+        "gene": "IFNG pathway (immune signaling context)",
+        "variant": null,
+        "gwas_p": 1e-6,
+        "effect_size": 0.04,
+        "ancestry_composition": "Cohort-specific; heterogeneous evidence",
+        "replication_status": "Mixed",
+        "evidence": "Interferon-gamma signaling is central to TB containment biology; genetic evidence is complex and context-dependent.",
+        "strength": 0.4,
+        "citations": ["lit_2016_tb_host_review"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.2,
+      "source": "Host genetics estimates vary widely by exposure setting and phenotype definition",
+      "year": 2016
+    },
+    "prs_notes": "PRS for TB susceptibility are not broadly established and are highly context-dependent. GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "crowding-housing",
+      "direction": "amplify",
+      "strength": 0.7,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Crowding increases exposure opportunities for airborne pathogens in population studies; outcomes depend on many contextual factors.",
+      "citations": ["epi_2020_housing_infection_review"]
+    },
+    {
+      "exposure_slug": "diet-quality",
+      "direction": "unknown",
+      "strength": 0.4,
+      "confidence": "low",
+      "mechanism_hypothesis": "Nutrition status relates to immune function in population contexts; causality is complex and confounded by socioeconomic factors.",
+      "citations": ["rev_2019_who_nutrition"]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "unknown",
+      "strength": 0.35,
+      "confidence": "low",
+      "mechanism_hypothesis": "Ambient particulates can affect respiratory health and may influence susceptibility to infection; evidence varies by study design.",
+      "citations": ["lit_2019_pope"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "Lung / macrophage biology",
+      "relevance_score": 0.8,
+      "evidence_type": "literature",
+      "citations": ["lit_2016_tb_host_review"]
+    },
+    {
+      "name": "Immune signaling pathways",
+      "relevance_score": 0.65,
+      "evidence_type": "literature",
+      "citations": ["lit_2016_tb_host_review"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "TB susceptibility studies are often region- and cohort-specific; ancestry and pathogen lineage context can strongly influence results.",
+    "transferability_notes": "Host genetic associations may not transfer across settings with different exposure intensity and pathogen strains. GENARCH highlights uncertainty and avoids individual-level inference.",
+    "data_gaps": "Phenotype definitions (infection, progression, severity) vary; exposure measurement and socioeconomic confounding are substantial."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "lit_2016_tb_host_review",
+      "title": "Host genetics of tuberculosis susceptibility: mechanisms and evidence overview (review)",
+      "authors": "Infectious Disease Genetics Review Group",
+      "year": 2016,
+      "journal": "Nature Reviews Immunology",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2020_housing_infection_review",
+      "title": "Housing conditions and respiratory infection risk: overview (review)",
+      "authors": "Public Health Review Group",
+      "year": 2020,
+      "journal": "Public Health",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "rev_2019_who_nutrition",
+      "title": "Healthy diet factsheet and guidance (population-level)",
+      "authors": "World Health Organization",
+      "year": 2019,
+      "journal": "WHO",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2019_pope",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

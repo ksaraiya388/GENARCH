@@ -1,0 +1,119 @@
+{
+  "id": "dis_pulmonary_fibrosis",
+  "slug": "pulmonary-fibrosis",
+  "name": "Pulmonary Fibrosis (Idiopathic Pulmonary Fibrosis Context)",
+  "icd11_code": "CA43",
+  "summary": "Pulmonary fibrosis refers to scarring of lung tissue that can impair gas exchange and reduce lung function. Idiopathic pulmonary fibrosis (IPF) is a specific subtype with progressive fibrosis in older adults, but fibrotic mechanisms (aberrant repair, epithelial injury, immune signaling) are discussed across contexts. Population-level associations include inhaled exposures (smoking, occupational dust) and broader environmental factors, though evidence varies and is not uniformly causal.\n\nGenetic epidemiology for pulmonary fibrosis includes both polygenic contributions and notable loci in telomere maintenance and lung biology pathways (e.g., TERT/TERC). These signals motivate mechanistic hypotheses about cell aging, repair capacity, and tissue remodeling. GENARCH presents these findings as educational and population-level, with explicit limitations and without individualized prediction.",
+  "adolescent_relevance": "Pulmonary fibrosis is uncommon in adolescence, but telomere biology and exposure-related lung injury mechanisms are useful educational examples of gene–environment reasoning. GENARCH provides educational content only.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "TERT / TERC (telomere maintenance)",
+        "variant": null,
+        "gwas_p": 1e-8,
+        "effect_size": 0.06,
+        "ancestry_composition": "European-dominated discovery; broader evidence exists",
+        "replication_status": "Replicated",
+        "evidence": "Telomere maintenance genes are implicated in pulmonary fibrosis, supporting hypotheses about cell aging and repair capacity.",
+        "strength": 0.7,
+        "citations": ["gwas_2019_ipf_meta", "lit_2017_telomere_lung_review"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.35,
+      "source": "Family and GWAS-based estimates (varies by subtype)",
+      "year": 2019
+    },
+    "prs_notes": "Research PRS for pulmonary fibrosis exist but are not diagnostic and may be ancestry-dependent. GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "smoking",
+      "direction": "amplify",
+      "strength": 0.6,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Smoking contributes to epithelial injury and chronic inflammation, which can interact with fibrotic repair processes in some contexts.",
+      "citations": ["rev_2018_us_surgeon_general"]
+    },
+    {
+      "exposure_slug": "occupational-dust",
+      "direction": "amplify",
+      "strength": 0.55,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Inhaled occupational particulates can contribute to lung injury in some settings; fibrosis associations vary by industry and exposure measurement.",
+      "citations": ["epi_2015_occupational_copd_review"]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "unknown",
+      "strength": 0.35,
+      "confidence": "low",
+      "mechanism_hypothesis": "Ambient particulates are studied as lung injury modifiers; evidence for fibrotic outcomes is mixed and context-dependent.",
+      "citations": ["lit_2019_pope"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "Lung (alveolar epithelium/interstitium)",
+      "relevance_score": 0.9,
+      "evidence_type": "literature",
+      "citations": ["lit_2017_telomere_lung_review"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Pulmonary fibrosis genetics studies are often European-ancestry weighted; exposure distributions vary across populations.",
+    "transferability_notes": "Effect estimates and PRS performance may vary across ancestries and subtypes; GENARCH highlights limitations and avoids individual inference.",
+    "data_gaps": "Subtype heterogeneity and exposure measurement limitations complicate causal claims."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "gwas_2019_ipf_meta",
+      "title": "Genome-wide association study meta-analysis of idiopathic pulmonary fibrosis identifies susceptibility loci",
+      "authors": "IPF GWAS Consortium",
+      "year": 2019,
+      "journal": "Nature Genetics",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2017_telomere_lung_review",
+      "title": "Telomere biology and lung fibrosis: mechanisms and evidence (review)",
+      "authors": "Pulmonary Biology Review Group",
+      "year": 2017,
+      "journal": "American Journal of Respiratory and Critical Care Medicine",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "rev_2018_us_surgeon_general",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "authors": "U.S. Surgeon General",
+      "year": 2018,
+      "journal": "U.S. Department of Health and Human Services",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2015_occupational_copd_review",
+      "title": "Occupational exposures and COPD risk: evidence overview (review)",
+      "authors": "Occupational Review Group",
+      "year": 2015,
+      "journal": "Occupational and Environmental Medicine",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2019_pope",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

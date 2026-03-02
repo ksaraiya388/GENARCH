@@ -20,6 +20,12 @@
     },
     {
       "last_updated": "2026-02-26",
+      "name": "Household Crowding / Housing Density",
+      "slug": "crowding-housing",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
       "name": "Diet Quality (Dietary Pattern)",
       "slug": "diet-quality",
       "summary": null
@@ -44,14 +50,38 @@
     },
     {
       "last_updated": "2026-02-26",
+      "name": "Heat Stress (Climate-Related)",
+      "slug": "heat-stress",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "High Sodium Intake",
+      "slug": "high-sodium-intake",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
       "name": "Hormonal Exposures (Endogenous and Exogenous)",
       "slug": "hormonal-exposures",
       "summary": null
     },
     {
       "last_updated": "2026-02-26",
+      "name": "Infection Burden (Broad Category)",
+      "slug": "infection-burden",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
       "name": "Ionizing Radiation",
       "slug": "ionizing-radiation",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Microbiome Alteration (Broad Category)",
+      "slug": "microbiome-alteration",
       "summary": null
     },
     {
@@ -94,6 +124,18 @@
       "last_updated": "2026-02-26",
       "name": "Prenatal Tobacco Smoke Exposure",
       "slug": "tobacco-smoke-prenatal",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Ultraviolet (UV) Radiation",
+      "slug": "uv-radiation",
+      "summary": null
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Vitamin D Status (Population-Level)",
+      "slug": "vitamin-d-status",
       "summary": null
     }
   ]

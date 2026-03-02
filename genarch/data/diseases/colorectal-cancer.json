@@ -1,0 +1,163 @@
+{
+  "adolescent_relevance": "CRC is rare in adolescence, but hereditary syndromes can be relevant in families and illustrate mechanisms of tumor biology. More broadly, adolescence and young adulthood are relevant to understanding how diet and microbiome exposures can shape long-term population trajectories. GENARCH provides education only and does not give clinical advice.",
+  "exposure_modifiers": [
+    {
+      "citations": [
+        "epi_2019_crc_diet_review"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "diet-quality",
+      "mechanism_hypothesis": "Dietary patterns can influence inflammation, metabolic signaling, and microbiome composition relevant to colorectal epithelial biology in population studies.",
+      "strength": 0.55
+    },
+    {
+      "citations": [
+        "epi_2018_alcohol_cancer"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "alcohol",
+      "mechanism_hypothesis": "Alcohol exposure is associated with cancer risk in multiple observational studies; mechanisms may involve metabolic byproducts and inflammation.",
+      "strength": 0.5
+    },
+    {
+      "citations": [
+        "epi_2019_microbiome_crc_review"
+      ],
+      "confidence": "low",
+      "direction": "unknown",
+      "exposure_slug": "microbiome-alteration",
+      "mechanism_hypothesis": "Microbiome patterns correlate with CRC in some studies; causality and confounding remain major limitations.",
+      "strength": 0.4
+    }
+  ],
+  "genetic_architecture": {
+    "heritability_estimate": {
+      "h2_narrow_sense": null,
+      "h2_snp": 0.3,
+      "source": "Family and GWAS-based estimates (varies by cohort and screening context)",
+      "year": 2018
+    },
+    "prs_notes": "CRC PRS exist in research contexts; performance and transferability vary with ancestry composition and phenotype definition. GENARCH does not provide individual predictions or thresholds.",
+    "top_loci": [
+      {
+        "ancestry_composition": "Hereditary syndrome variants; population spectrum varies",
+        "citations": [
+          "clin_2016_crc_hereditary_review"
+        ],
+        "effect_size": null,
+        "evidence": "APC loss-of-function variants cause familial adenomatous polyposis, illustrating Wnt pathway control of epithelial proliferation.",
+        "gene": "APC",
+        "gwas_p": null,
+        "replication_status": "Established high-penetrance (subset)",
+        "strength": 0.9,
+        "variant": null
+      },
+      {
+        "ancestry_composition": "Hereditary syndrome variants; population spectrum varies",
+        "citations": [
+          "clin_2016_crc_hereditary_review"
+        ],
+        "effect_size": null,
+        "evidence": "Mismatch repair gene variants underlie Lynch syndrome and highlight DNA repair mechanisms relevant to CRC.",
+        "gene": "MLH1 / MSH2 (mismatch repair context)",
+        "gwas_p": null,
+        "replication_status": "Established high-penetrance (subset)",
+        "strength": 0.85,
+        "variant": null
+      },
+      {
+        "ancestry_composition": "European-dominated in many GWAS; broader evidence increasing",
+        "citations": [
+          "gwas_2018_crc_meta"
+        ],
+        "effect_size": 0.05,
+        "evidence": "Multiple common-variant loci contribute small effects; mapping to mechanisms is ongoing.",
+        "gene": "Common-variant CRC loci (polygenic context)",
+        "gwas_p": 1e-10,
+        "replication_status": "Replicated",
+        "strength": 0.6,
+        "variant": null
+      }
+    ]
+  },
+  "icd11_code": "2B90",
+  "id": "dis_colorectal_cancer",
+  "last_updated": "2026-02-26",
+  "mechanism_briefs": [],
+  "name": "Colorectal Cancer",
+  "population_equity": {
+    "data_gaps": "Microbiome studies have heterogeneous designs and can be confounded by diet, medication, and healthcare access.",
+    "gwas_ancestry_breakdown": "CRC GWAS have been European-ancestry dominated historically; representation is improving but remains uneven.",
+    "transferability_notes": "PRS and locus mapping can vary across ancestries due to LD and allele frequency; screening and diagnosis practices also vary by setting."
+  },
+  "references": [
+    {
+      "authors": "Clinical Cancer Genetics Group",
+      "doi": null,
+      "id": "clin_2016_crc_hereditary_review",
+      "journal": "Nature Reviews Gastroenterology & Hepatology",
+      "title": "Hereditary colorectal cancer syndromes: APC and mismatch repair pathways (review)",
+      "url": null,
+      "year": 2016
+    },
+    {
+      "authors": "CRC GWAS Consortium",
+      "doi": null,
+      "id": "gwas_2018_crc_meta",
+      "journal": "Nature Genetics",
+      "title": "Genome-wide association meta-analysis identifies colorectal cancer susceptibility loci",
+      "url": null,
+      "year": 2018
+    },
+    {
+      "authors": "Nutrition Evidence Group",
+      "doi": null,
+      "id": "epi_2019_crc_diet_review",
+      "journal": "BMJ",
+      "title": "Dietary patterns and colorectal cancer risk: evidence synthesis (review)",
+      "url": null,
+      "year": 2019
+    },
+    {
+      "authors": "IARC Working Group",
+      "doi": null,
+      "id": "epi_2018_alcohol_cancer",
+      "journal": "IARC Monographs",
+      "title": "Alcohol consumption and cancer risk: evidence synthesis (review)",
+      "url": null,
+      "year": 2018
+    },
+    {
+      "authors": "Cancer Microbiome Review Group",
+      "doi": null,
+      "id": "epi_2019_microbiome_crc_review",
+      "journal": "Nature Reviews Gastroenterology & Hepatology",
+      "title": "Gut microbiome and colorectal cancer: evidence overview (review)",
+      "url": null,
+      "year": 2019
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "colorectal-cancer",
+  "summary": "Colorectal cancer (CRC) arises from the colon or rectum and often develops over years through accumulation of genetic and epigenetic alterations in colonic epithelium. At the population level, CRC risk is influenced by inherited susceptibility, diet patterns, alcohol use, and gut microbiome context, alongside screening and healthcare access factors that shape observed incidence and outcomes. Mechanistic hypotheses frequently involve inflammation, epithelial barrier interactions, and signaling pathways that regulate cell growth.\n\nGenetic epidemiology includes rare high-impact hereditary syndromes (e.g., APC-related familial adenomatous polyposis and mismatch repair genes in Lynch syndrome) alongside a polygenic background of common variants associated with CRC risk. GENARCH uses these genetic signals to support educational mechanistic narratives about pathways such as DNA repair and Wnt signaling—without individualized risk scoring. Equity limitations are important because both genetic study participation and screening practices vary across populations.",
+  "tissues": [
+    {
+      "citations": [
+        "epi_2019_microbiome_crc_review"
+      ],
+      "evidence_type": "literature",
+      "name": "Colon epithelium",
+      "relevance_score": 0.85
+    },
+    {
+      "citations": [
+        "clin_2016_crc_hereditary_review"
+      ],
+      "evidence_type": "literature",
+      "name": "DNA repair pathways (cellular)",
+      "relevance_score": 0.7
+    }
+  ]
+}
