@@ -37,26 +37,37 @@ export default function HomePage() {
           style={{ backgroundImage: "url('/network-pattern.svg')", backgroundRepeat: "no-repeat", backgroundPosition: "top right", backgroundSize: "60%" }}
           aria-hidden="true"
         />
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center">
-          <div className="animate-fade-in">
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 flex flex-col items-center text-center">
+          {/* Main GENARCH Logo — centered */}
+          <div className="animate-fade-in flex justify-center w-full mb-8">
             <Image
               src="/GENARCH_LOGO.svg"
-              alt="GENARCH"
-              width={380}
-              height={58}
-              className="mx-auto mb-8"
-              style={{ width: "clamp(260px, 50vw, 420px)", height: "auto" }}
+              alt="GENARCH — Genetic Epidemiology Network for At Risk Community Health"
+              width={480}
+              height={86}
+              className="block"
+              style={{ width: "clamp(280px, 55vw, 480px)", height: "auto" }}
               priority
             />
           </div>
-          <p className="animate-slide-up text-lg sm:text-xl text-cool-light font-medium mb-3">
-            A Systems-Level Genetic Epidemiology Atlas
+
+          {/* Full name */}
+          <p className="animate-slide-up text-base sm:text-lg text-cool-light font-medium mb-2 tracking-wide">
+            Genetic Epidemiology Network for At Risk Community Health
           </p>
+
+          {/* Global Exposome tagline */}
+          <p className="animate-slide-up text-xs sm:text-sm text-cool-mid uppercase tracking-[0.2em] font-medium mb-6">
+            Global Exposome
+          </p>
+
+          {/* Description */}
           <p className="animate-slide-up text-sm sm:text-base text-cool-mid max-w-2xl mx-auto mb-10 leading-relaxed">
-            Mapping gene–environment interactions, exposure modifiers, and
-            molecular mechanisms across diseases, pathways, and tissues at
-            population scale.
+            A systems-level atlas mapping gene–environment interactions,
+            exposure modifiers, and molecular mechanisms across diseases,
+            pathways, and tissues at population scale.
           </p>
+
           <div className="animate-slide-up flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/atlas/diseases" className="btn-primary">
               Explore the Atlas

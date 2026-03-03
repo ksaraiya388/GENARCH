@@ -14,7 +14,6 @@ export type { EvidenceLimitationsProps } from "./EvidenceLimitations";
 export { EvidenceTypeBadge } from "./EvidenceTypeBadge";
 export type { EvidenceTypeBadgeProps, EvidenceType } from "./EvidenceTypeBadge";
 export { Footer } from "./Footer";
-export type { FooterProps } from "./Footer";
 export { GraphPageClient } from "./GraphPageClient";
 export type { GraphPageClientProps } from "./GraphPageClient";
 export { Navigation } from "./Navigation";

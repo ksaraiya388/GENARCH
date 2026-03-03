@@ -29,25 +29,28 @@ export function Navigation() {
         className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
         aria-label="Main navigation"
       >
+        {/* Logo: DNA helix G monogram + ENARCH wordmark */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 py-3 no-underline hover:no-underline group"
+          className="flex items-center gap-0 py-3 no-underline hover:no-underline group"
           onClick={closeMenu}
         >
           <Image
             src="/G_GENARCH.svg"
             alt="GENARCH"
-            width={40}
-            height={40}
+            width={36}
+            height={48}
             className="transition-opacity duration-200 opacity-90 group-hover:opacity-100"
+            style={{ width: "auto", height: "36px" }}
             priority
           />
-          <span className="text-lg font-semibold tracking-wide text-surface-white hidden sm:inline">
-            <span className="text-teal-primary">GEN</span>
-            <span className="text-cool-mid">ARCH</span>
+          <span className="text-[17px] font-semibold tracking-[0.06em] hidden sm:inline" style={{ marginLeft: "1px" }}>
+            <span style={{ color: "#2DD4BF" }}>EN</span>
+            <span style={{ color: "#8899A6" }}>ARCH</span>
           </span>
         </Link>
 
+        {/* Desktop navigation */}
         <div className="hidden lg:flex lg:items-center lg:gap-1">
           {NAV_LINKS.map(({ label, href }) => (
             <Link
@@ -60,6 +63,7 @@ export function Navigation() {
           ))}
         </div>
 
+        {/* Mobile menu button */}
         <button
           type="button"
           onClick={toggleMenu}
@@ -78,6 +82,7 @@ export function Navigation() {
         </button>
       </nav>
 
+      {/* Mobile menu */}
       <div
         id="mobile-menu"
         className={`lg:hidden ${mobileMenuOpen ? "block" : "hidden"}`}
