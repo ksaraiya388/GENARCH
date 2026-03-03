@@ -1,7 +1,7 @@
 export function DisclaimerBanner() {
   return (
     <div
-      className="sticky top-0 z-40 w-full bg-amber-50 border-b border-amber-200 px-4 py-2 text-center text-sm text-amber-900"
+      className="disclaimer-banner"
       role="alert"
       aria-live="polite"
     >

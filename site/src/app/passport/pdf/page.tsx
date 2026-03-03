@@ -201,7 +201,7 @@ function PassportPdfContent() {
   return (
     <>
       <div className="card">
-        <p className="text-genarch-text mb-4">
+        <p className="text-cool-light mb-4">
           Summary: Region {region || "—"}, Age {ageBand || "—"}, Ancestry{" "}
           {ancestry || "—"}, {diseases.length} disease(s),{" "}
           {exposures.length} exposure(s).
@@ -211,7 +211,7 @@ function PassportPdfContent() {
             <iframe
               src={blobUrl}
               title="Passport PDF preview"
-              className="w-full h-[600px] border border-gray-200 rounded-sm"
+              className="w-full h-[600px] border border-white/[0.06] rounded-sm"
             />
             <div className="flex gap-4">
               <button type="button" onClick={handleDownload} className="btn-primary">
@@ -227,11 +227,11 @@ function PassportPdfContent() {
             </div>
           </div>
         ) : (
-          <p className="text-genarch-subtext">Generating PDF…</p>
+          <p className="text-cool-mid">Generating PDF…</p>
         )}
       </div>
 
-      <footer className="text-sm text-amber-800 bg-amber-50 p-4 rounded-sm">
+      <footer className="text-sm text-amber-400 bg-amber-900/20 p-4 rounded-sm">
         <strong>Disclaimer:</strong> Population-level data only. This document
         does not constitute medical advice. No individual risk prediction. No
         data has been stored.
@@ -242,24 +242,26 @@ function PassportPdfContent() {
 
 export default function PassportPdfPage() {
   return (
-    <div className="space-y-8">
-      <Breadcrumbs
-        items={[
-          { label: "Passport", href: "/passport/" },
-          { label: "PDF" },
-        ]}
-      />
-      <header>
-        <h1 className="text-h1 text-genarch-text">Educational Passport PDF</h1>
-        <p className="mt-2 text-genarch-subtext">
-          Your stateless educational passport. Preview and download below. No
-          data is stored at any point.
-        </p>
-      </header>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="space-y-8">
+        <Breadcrumbs
+          items={[
+            { label: "Passport", href: "/passport/" },
+            { label: "PDF" },
+          ]}
+        />
+        <header>
+          <h1 className="text-h1 text-surface-white">Educational Passport PDF</h1>
+          <p className="mt-2 text-cool-light">
+            Your stateless educational passport. Preview and download below. No
+            data is stored at any point.
+          </p>
+        </header>
 
-      <Suspense fallback={<div className="card"><p className="text-genarch-subtext">Loading passport…</p></div>}>
-        <PassportPdfContent />
-      </Suspense>
+        <Suspense fallback={<div className="card"><p className="text-cool-mid">Loading passport…</p></div>}>
+          <PassportPdfContent />
+        </Suspense>
+      </div>
     </div>
   );
 }

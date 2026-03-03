@@ -42,33 +42,35 @@ export default function PassportPage() {
   }));
 
   return (
-    <div className="space-y-8">
-      <Breadcrumbs items={[{ label: "Educational Passport" }]} />
-      <header>
-        <h1 className="text-h1 text-genarch-text">Educational Passport</h1>
-        <p className="mt-2 text-genarch-subtext max-w-2xl">
-          Generate a personalized educational PDF summary. All inputs are
-          optional. No data is stored. Population-level information only — never
-          implies individual risk.
-        </p>
-      </header>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="space-y-8">
+        <Breadcrumbs items={[{ label: "Educational Passport" }]} />
+        <header>
+          <h1 className="text-h1 text-surface-white">Educational Passport</h1>
+          <p className="mt-2 text-cool-light max-w-2xl">
+            Generate a personalized educational PDF summary. All inputs are
+            optional. No data is stored. Population-level information only — never
+            implies individual risk.
+          </p>
+        </header>
 
-      <PassportForm
-        regionOptions={regionOptions}
-        ageBands={AGE_BANDS}
-        ancestryOptions={ANCESTRY_OPTIONS}
-        diseaseOptions={diseaseOptions}
-        exposureOptions={exposureOptions}
-      />
+        <PassportForm
+          regionOptions={regionOptions}
+          ageBands={AGE_BANDS}
+          ancestryOptions={ANCESTRY_OPTIONS}
+          diseaseOptions={diseaseOptions}
+          exposureOptions={exposureOptions}
+        />
 
-      <footer className="mt-12 pt-6 border-t border-gray-200">
-        <p className="text-sm text-amber-800 bg-amber-50 p-4 rounded-sm">
-          <strong>Disclaimer:</strong> The Educational Passport provides
-          population-level summaries for learning only. It does not constitute
-          medical advice, predict individual risk, or replace professional
-          guidance. No personal data is stored or transmitted.
-        </p>
-      </footer>
+        <footer className="mt-12 pt-6 border-t border-white/[0.06]">
+          <p className="text-sm text-amber-400 bg-amber-900/20 p-4 rounded-sm">
+            <strong>Disclaimer:</strong> The Educational Passport provides
+            population-level summaries for learning only. It does not constitute
+            medical advice, predict individual risk, or replace professional
+            guidance. No personal data is stored or transmitted.
+          </p>
+        </footer>
+      </div>
     </div>
   );
 }

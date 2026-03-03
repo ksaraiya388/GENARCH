@@ -20,68 +20,70 @@ export default function UpdatesPage() {
   const annualReports = getAnnualReports();
 
   return (
-    <div className="space-y-8">
-      <Breadcrumbs items={[{ label: "Updates" }]} />
-      <header>
-        <h1 className="text-h1 text-genarch-text">Updates & Changelog</h1>
-        <p className="mt-2 text-genarch-subtext max-w-2xl">
-          Versioned changelog and release notes. See annual reports for
-          year-over-year summaries.
-        </p>
-      </header>
-
-      <section aria-labelledby="releases-heading">
-        <h2 id="releases-heading" className="text-h2 text-genarch-text mb-4">
-          Releases (reverse chronological)
-        </h2>
-        <div className="space-y-4">
-          {releases.map((release) => (
-            <Link
-              key={release.slug}
-              href={`/updates/${release.slug}/`}
-              className="card block no-underline transition-shadow hover:shadow-md"
-            >
-              <h3 className="text-h3 text-genarch-text mb-2">
-                {release.title}
-              </h3>
-              {release.summary && (
-                <p className="text-sm text-genarch-subtext mb-2 line-clamp-2">
-                  {release.summary}
-                </p>
-              )}
-              <time
-                dateTime={release.date}
-                className="text-xs text-genarch-subtext"
-              >
-                {formatDate(release.date)}
-              </time>
-            </Link>
-          ))}
-        </div>
-        {releases.length === 0 && (
-          <p className="text-genarch-subtext italic">
-            No releases in changelog yet.
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="space-y-8">
+        <Breadcrumbs items={[{ label: "Updates" }]} />
+        <header>
+          <h1 className="text-h1 text-surface-white">Updates & Changelog</h1>
+          <p className="mt-2 text-cool-light max-w-2xl">
+            Versioned changelog and release notes. See annual reports for
+            year-over-year summaries.
           </p>
-        )}
-      </section>
+        </header>
 
-      {annualReports.length > 0 && (
-        <section>
-          <h2 className="text-h2 text-genarch-text mb-3">Annual Reports</h2>
-          <ul className="space-y-2">
-            {annualReports.map((r) => (
-              <li key={r.year}>
-                <Link
-                  href={`/reports/${r.year}/`}
-                  className="text-genarch-link hover:underline"
+        <section aria-labelledby="releases-heading">
+          <h2 id="releases-heading" className="text-h2 text-surface-white mb-4">
+            Releases (reverse chronological)
+          </h2>
+          <div className="space-y-4">
+            {releases.map((release) => (
+              <Link
+                key={release.slug}
+                href={`/updates/${release.slug}/`}
+                className="card block no-underline transition-shadow hover:shadow-md"
+              >
+                <h3 className="text-h3 text-surface-white mb-2">
+                  {release.title}
+                </h3>
+                {release.summary && (
+                  <p className="text-sm text-cool-light mb-2 line-clamp-2">
+                    {release.summary}
+                  </p>
+                )}
+                <time
+                  dateTime={release.date}
+                  className="text-xs text-cool-mid"
                 >
-                  {r.title}
-                </Link>
-              </li>
+                  {formatDate(release.date)}
+                </time>
+              </Link>
             ))}
-          </ul>
+          </div>
+          {releases.length === 0 && (
+            <p className="text-cool-light italic">
+              No releases in changelog yet.
+            </p>
+          )}
         </section>
-      )}
+
+        {annualReports.length > 0 && (
+          <section>
+            <h2 className="text-h2 text-surface-white mb-3">Annual Reports</h2>
+            <ul className="space-y-2">
+              {annualReports.map((r) => (
+                <li key={r.year}>
+                  <Link
+                    href={`/reports/${r.year}/`}
+                    className="text-teal-primary hover:text-teal-soft hover:underline"
+                  >
+                    {r.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </div>
     </div>
   );
 }

@@ -28,7 +28,7 @@ export function CommunityRegionsList({ regions }: CommunityRegionsListProps) {
   return (
     <>
       <section aria-labelledby="search-regions-heading">
-        <h2 id="search-regions-heading" className="text-h2 text-genarch-text mb-3">
+        <h2 id="search-regions-heading" className="text-h2 text-surface-white mb-3">
           Search Regions
         </h2>
         <input
@@ -36,13 +36,13 @@ export function CommunityRegionsList({ regions }: CommunityRegionsListProps) {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search by region name or ID..."
-          className="w-full max-w-md border border-gray-200 rounded-sm px-4 py-2 text-genarch-text"
+          className="w-full max-w-md border border-white/[0.06] bg-navy-mid rounded-sm px-4 py-2 text-surface-white placeholder:text-cool-mid"
           aria-label="Search regions"
         />
       </section>
 
       <section aria-labelledby="regions-list-heading">
-        <h2 id="regions-list-heading" className="text-h2 text-genarch-text mb-4">
+        <h2 id="regions-list-heading" className="text-h2 text-surface-white mb-4">
           Available Regions
         </h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -52,16 +52,16 @@ export function CommunityRegionsList({ regions }: CommunityRegionsListProps) {
               href={`/community/${region.region_id}/`}
               className="card block no-underline transition-shadow hover:shadow-md"
             >
-              <h3 className="text-h3 text-genarch-text mb-2">{region.name}</h3>
-              <p className="text-sm text-genarch-subtext mb-3 capitalize">
+              <h3 className="text-h3 text-surface-white mb-2">{region.name}</h3>
+              <p className="text-sm text-cool-light mb-3 capitalize">
                 {region.geo_level}
               </p>
-              <div className="flex flex-wrap gap-4 text-xs text-genarch-subtext">
+              <div className="flex flex-wrap gap-4 text-xs text-cool-mid">
                 <span>{region.health_stats_count} health metrics</span>
                 <span>{region.exposure_layers_count} exposure layers</span>
               </div>
               {region.last_updated && (
-                <p className="text-xs text-genarch-subtext mt-2">
+                <p className="text-xs text-cool-mid mt-2">
                   Updated{" "}
                   {new Date(region.last_updated).toLocaleDateString()}
                 </p>
@@ -70,7 +70,7 @@ export function CommunityRegionsList({ regions }: CommunityRegionsListProps) {
           ))}
         </div>
         {filteredRegions.length === 0 && (
-          <p className="text-genarch-subtext italic">
+          <p className="text-cool-light italic">
             No regions match your search.
           </p>
         )}

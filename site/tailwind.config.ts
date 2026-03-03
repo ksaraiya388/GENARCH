@@ -9,29 +9,62 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        navy: {
+          deep: "#0B1F2F",
+          mid: "#132B3C",
+          light: "#1A3A4F",
+        },
+        teal: {
+          primary: "#2DD4BF",
+          soft: "#1FAFA0",
+          dim: "#177A6F",
+        },
+        cool: {
+          light: "#C7D2DA",
+          mid: "#94A3B8",
+          dark: "#64748B",
+        },
+        surface: {
+          white: "#F8FAFC",
+          muted: "#E2E8F0",
+        },
+        /* legacy aliases for components that still reference genarch-* */
         genarch: {
-          primary: "#F2766A",
-          secondary: "#F5C75A",
-          data: "#89E5E6",
-          community: "#D3B3D3",
-          neutral: "#F9C9C9",
-          action: "#F39C6B",
-          passport: "#EFE789",
-          bg: "#F7F7F7",
-          text: "#333333",
-          subtext: "#666666",
-          link: "#0066CC",
+          primary: "#2DD4BF",
+          secondary: "#1FAFA0",
+          data: "#2DD4BF",
+          community: "#94A3B8",
+          neutral: "#132B3C",
+          action: "#2DD4BF",
+          passport: "#1FAFA0",
+          bg: "#0B1F2F",
+          text: "#F8FAFC",
+          subtext: "#C7D2DA",
+          link: "#2DD4BF",
         },
       },
       fontFamily: {
-        sans: ["Inter", "Libre Franklin", "system-ui", "sans-serif"],
-        body: ["Roboto", "Open Sans", "system-ui", "sans-serif"],
-        mono: ["Fira Code", "monospace"],
+        sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+        mono: ["Fira Code", "Consolas", "monospace"],
       },
       fontSize: {
-        h1: ["2rem", { lineHeight: "1.3", fontWeight: "700" }],
-        h2: ["1.5rem", { lineHeight: "1.35", fontWeight: "600" }],
+        h1: ["2.25rem", { lineHeight: "1.2", fontWeight: "700" }],
+        h2: ["1.5rem", { lineHeight: "1.3", fontWeight: "600" }],
         h3: ["1.125rem", { lineHeight: "1.4", fontWeight: "600" }],
+      },
+      animation: {
+        "fade-in": "fadeIn 0.3s ease-out forwards",
+        "slide-up": "slideUp 0.3s ease-out forwards",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        slideUp: {
+          "0%": { opacity: "0", transform: "translateY(4px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
     },
   },

@@ -15,17 +15,19 @@ export default function CommunityPage() {
   }));
 
   return (
-    <div className="space-y-8">
-      <Breadcrumbs items={[{ label: "Community Module" }]} />
-      <header>
-        <h1 className="text-h1 text-genarch-text">Community Module</h1>
-        <p className="mt-2 text-genarch-subtext max-w-2xl">
-          Hyper-local exposure and health burden overlays with interpretable
-          models. Population-level estimates for educational purposes only.
-        </p>
-      </header>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="space-y-8">
+        <Breadcrumbs items={[{ label: "Community Module" }]} />
+        <header>
+          <h1 className="text-h1 text-surface-white">Community Module</h1>
+          <p className="mt-2 text-cool-light max-w-2xl">
+            Hyper-local exposure and health burden overlays with interpretable
+            models. Population-level estimates for educational purposes only.
+          </p>
+        </header>
 
-      <CommunityRegionsList regions={regionSummaries} />
+        <CommunityRegionsList regions={regionSummaries} />
+      </div>
     </div>
   );
 }

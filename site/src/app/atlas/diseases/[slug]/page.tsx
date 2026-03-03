@@ -42,274 +42,267 @@ export default async function DiseaseDetailPage({
   const refs = ensureRefAuthors(disease.references ?? []);
 
   return (
-    <article className="space-y-10">
-      <Breadcrumbs
-        items={[
-          { label: "Atlas", href: "/atlas" },
-          { label: "Diseases", href: "/atlas/diseases" },
-          { label: disease.name },
-        ]}
-      />
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <article className="space-y-10">
+        <Breadcrumbs
+          items={[
+            { label: "Atlas", href: "/atlas" },
+            { label: "Diseases", href: "/atlas/diseases" },
+            { label: disease.name },
+          ]}
+        />
 
-      <header>
-        <h1 className="text-h1 text-genarch-text">{disease.name}</h1>
-        {disease.icd11_code && (
-          <p className="text-genarch-subtext text-sm mt-1">
-            ICD-11: {disease.icd11_code}
-          </p>
-        )}
-      </header>
-
-      {/* Disease Overview (200–300 words) */}
-      <section aria-labelledby="overview-heading">
-        <h2 id="overview-heading" className="text-h2 text-genarch-text mb-3">
-          Disease Overview
-        </h2>
-        <div className="prose prose-sm max-w-none text-genarch-text">
-          <p>{disease.summary}</p>
-          {disease.adolescent_relevance && (
-            <p>{disease.adolescent_relevance}</p>
+        <header>
+          <h1 className="text-h1 text-surface-white">{disease.name}</h1>
+          {disease.icd11_code && (
+            <p className="text-cool-mid text-sm mt-1">
+              ICD-11: {disease.icd11_code}
+            </p>
           )}
-        </div>
-      </section>
+        </header>
 
-      {/* Genetic Architecture Summary */}
-      <section aria-labelledby="genetic-architecture-heading">
-        <h2 id="genetic-architecture-heading" className="text-h2 text-genarch-text mb-3">
-          Genetic Architecture Summary
-        </h2>
-        <div className="space-y-4">
-          {disease.genetic_architecture?.top_loci &&
-            disease.genetic_architecture.top_loci.length > 0 && (
-              <div className="overflow-x-auto">
-                <table className="min-w-full text-sm border border-gray-200 rounded-sm overflow-hidden">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th className="text-left px-4 py-2 font-medium">Gene</th>
-                      <th className="text-left px-4 py-2 font-medium">Variant</th>
-                      <th className="text-left px-4 py-2 font-medium">GWAS p</th>
-                      <th className="text-left px-4 py-2 font-medium">Evidence</th>
-                      <th className="text-left px-4 py-2 font-medium">Strength</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-gray-100">
-                    {disease.genetic_architecture.top_loci.map((locus, i) => (
-                      <tr key={i} className="hover:bg-gray-50/50">
-                        <td className="px-4 py-2">
-                          <Link
-                            href={`/atlas/genes/${locus.gene.toLowerCase()}`}
-                            className="text-genarch-link hover:underline"
-                          >
-                            {locus.gene}
-                          </Link>
-                        </td>
-                        <td className="px-4 py-2 text-genarch-subtext">
-                          {locus.variant ?? "—"}
-                        </td>
-                        <td className="px-4 py-2 text-genarch-subtext">
-                          {locus.gwas_p != null
-                            ? locus.gwas_p.toExponential(1)
-                            : "—"}
-                        </td>
-                        <td className="px-4 py-2">{locus.evidence}</td>
-                        <td className="px-4 py-2">{locus.strength}</td>
+        <section aria-labelledby="overview-heading">
+          <h2 id="overview-heading" className="text-h2 text-surface-white mb-3">
+            Disease Overview
+          </h2>
+          <div className="prose prose-sm max-w-none text-cool-light">
+            <p>{disease.summary}</p>
+            {disease.adolescent_relevance && (
+              <p>{disease.adolescent_relevance}</p>
+            )}
+          </div>
+        </section>
+
+        <section aria-labelledby="genetic-architecture-heading">
+          <h2 id="genetic-architecture-heading" className="text-h2 text-surface-white mb-3">
+            Genetic Architecture Summary
+          </h2>
+          <div className="space-y-4">
+            {disease.genetic_architecture?.top_loci &&
+              disease.genetic_architecture.top_loci.length > 0 && (
+                <div className="overflow-x-auto">
+                  <table className="min-w-full text-sm border border-white/[0.06] rounded-sm overflow-hidden">
+                    <thead className="bg-white/[0.03]">
+                      <tr>
+                        <th className="text-left px-4 py-2 font-medium text-surface-white">Gene</th>
+                        <th className="text-left px-4 py-2 font-medium text-surface-white">Variant</th>
+                        <th className="text-left px-4 py-2 font-medium text-surface-white">GWAS p</th>
+                        <th className="text-left px-4 py-2 font-medium text-surface-white">Evidence</th>
+                        <th className="text-left px-4 py-2 font-medium text-surface-white">Strength</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody className="divide-y divide-white/[0.06]">
+                      {disease.genetic_architecture.top_loci.map((locus, i) => (
+                        <tr key={i} className="hover:bg-white/[0.04]">
+                          <td className="px-4 py-2">
+                            <Link
+                              href={`/atlas/genes/${locus.gene.toLowerCase()}`}
+                              className="text-teal-primary hover:text-teal-soft hover:underline"
+                            >
+                              {locus.gene}
+                            </Link>
+                          </td>
+                          <td className="px-4 py-2 text-cool-mid">
+                            {locus.variant ?? "—"}
+                          </td>
+                          <td className="px-4 py-2 text-cool-mid">
+                            {locus.gwas_p != null
+                              ? locus.gwas_p.toExponential(1)
+                              : "—"}
+                          </td>
+                          <td className="px-4 py-2 text-cool-light">{locus.evidence}</td>
+                          <td className="px-4 py-2 text-cool-light">{locus.strength}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            {disease.genetic_architecture?.heritability_estimate && (
+              <div className="card">
+                <h3 className="text-h3 text-surface-white mb-2">
+                  Heritability
+                </h3>
+                <p className="text-sm text-cool-light">
+                  h² SNP: {disease.genetic_architecture.heritability_estimate.h2_snp}
+                  {disease.genetic_architecture.heritability_estimate.h2_narrow_sense != null &&
+                    `; h² narrow-sense: ${disease.genetic_architecture.heritability_estimate.h2_narrow_sense}`}{" "}
+                  — {disease.genetic_architecture.heritability_estimate.source} (
+                  {disease.genetic_architecture.heritability_estimate.year})
+                </p>
               </div>
             )}
-          {disease.genetic_architecture?.heritability_estimate && (
-            <div className="card bg-genarch-bg/50">
-              <h3 className="text-h3 text-genarch-text mb-2">
-                Heritability
-              </h3>
-              <p className="text-sm text-genarch-subtext">
-                h² SNP: {disease.genetic_architecture.heritability_estimate.h2_snp}
-                {disease.genetic_architecture.heritability_estimate.h2_narrow_sense != null &&
-                  `; h² narrow-sense: ${disease.genetic_architecture.heritability_estimate.h2_narrow_sense}`}{" "}
-                — {disease.genetic_architecture.heritability_estimate.source} (
-                {disease.genetic_architecture.heritability_estimate.year})
+            {disease.genetic_architecture?.prs_notes && (
+              <p className="text-sm text-cool-light">
+                <strong>PRS notes:</strong> {disease.genetic_architecture.prs_notes}
+              </p>
+            )}
+          </div>
+        </section>
+
+        <section aria-labelledby="exposure-modifiers-heading">
+          <h2 id="exposure-modifiers-heading" className="text-h2 text-surface-white mb-3">
+            Exposure Modifier Panel
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full text-sm border border-white/[0.06] rounded-sm overflow-hidden">
+              <thead className="bg-white/[0.03]">
+                <tr>
+                  <th className="text-left px-4 py-2 font-medium text-surface-white">Exposure</th>
+                  <th className="text-left px-4 py-2 font-medium text-surface-white">Direction</th>
+                  <th className="text-left px-4 py-2 font-medium text-surface-white">Strength</th>
+                  <th className="text-left px-4 py-2 font-medium text-surface-white">Confidence</th>
+                  <th className="text-left px-4 py-2 font-medium text-surface-white">Mechanism hypothesis</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/[0.06]">
+                {(disease.exposure_modifiers ?? []).map((em, i) => (
+                  <tr key={i} className="hover:bg-white/[0.04]">
+                    <td className="px-4 py-2">
+                      <Link
+                        href={`/atlas/exposures/${em.exposure_slug}`}
+                        className="text-teal-primary hover:text-teal-soft hover:underline"
+                      >
+                        {em.exposure_slug}
+                      </Link>
+                    </td>
+                    <td className="px-4 py-2 capitalize text-cool-light">{em.direction}</td>
+                    <td className="px-4 py-2 text-cool-light">{em.strength}</td>
+                    <td className="px-4 py-2">
+                      <ConfidenceBadge tier={toConfidenceTier(em.confidence)} />
+                    </td>
+                    <td className="px-4 py-2 text-cool-mid">
+                      {em.mechanism_hypothesis ?? "—"}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {(!disease.exposure_modifiers || disease.exposure_modifiers.length === 0) && (
+            <p className="text-sm text-cool-mid italic">
+              No exposure modifiers recorded for this disease.
+            </p>
+          )}
+        </section>
+
+        {disease.population_equity && (
+          <section aria-labelledby="population-equity-heading">
+            <h2 id="population-equity-heading" className="text-h2 text-surface-white mb-3">
+              Population Equity Notes
+            </h2>
+            <div className="space-y-2 text-sm text-cool-light">
+              <p>
+                <strong>GWAS ancestry breakdown:</strong>{" "}
+                {disease.population_equity.gwas_ancestry_breakdown}
+              </p>
+              <p>
+                <strong>Transferability notes:</strong>{" "}
+                {disease.population_equity.transferability_notes}
+              </p>
+              <p>
+                <strong>Data gaps:</strong>{" "}
+                {disease.population_equity.data_gaps}
               </p>
             </div>
-          )}
-          {disease.genetic_architecture?.prs_notes && (
-            <p className="text-sm text-genarch-subtext">
-              <strong>PRS notes:</strong> {disease.genetic_architecture.prs_notes}
-            </p>
-          )}
-        </div>
-      </section>
-
-      {/* Exposure Modifier Panel */}
-      <section aria-labelledby="exposure-modifiers-heading">
-        <h2 id="exposure-modifiers-heading" className="text-h2 text-genarch-text mb-3">
-          Exposure Modifier Panel
-        </h2>
-        <div className="overflow-x-auto">
-          <table className="min-w-full text-sm border border-gray-200 rounded-sm overflow-hidden">
-            <thead className="bg-gray-50">
-              <tr>
-                <th className="text-left px-4 py-2 font-medium">Exposure</th>
-                <th className="text-left px-4 py-2 font-medium">Direction</th>
-                <th className="text-left px-4 py-2 font-medium">Strength</th>
-                <th className="text-left px-4 py-2 font-medium">Confidence</th>
-                <th className="text-left px-4 py-2 font-medium">Mechanism hypothesis</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-100">
-              {(disease.exposure_modifiers ?? []).map((em, i) => (
-                <tr key={i} className="hover:bg-gray-50/50">
-                  <td className="px-4 py-2">
-                    <Link
-                      href={`/atlas/exposures/${em.exposure_slug}`}
-                      className="text-genarch-link hover:underline"
-                    >
-                      {em.exposure_slug}
-                    </Link>
-                  </td>
-                  <td className="px-4 py-2 capitalize">{em.direction}</td>
-                  <td className="px-4 py-2">{em.strength}</td>
-                  <td className="px-4 py-2">
-                    <ConfidenceBadge tier={toConfidenceTier(em.confidence)} />
-                  </td>
-                  <td className="px-4 py-2 text-genarch-subtext">
-                    {em.mechanism_hypothesis ?? "—"}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        {(!disease.exposure_modifiers || disease.exposure_modifiers.length === 0) && (
-          <p className="text-sm text-genarch-subtext italic">
-            No exposure modifiers recorded for this disease.
-          </p>
+          </section>
         )}
-      </section>
 
-      {/* Population Equity Notes */}
-      {disease.population_equity && (
-        <section aria-labelledby="population-equity-heading">
-          <h2 id="population-equity-heading" className="text-h2 text-genarch-text mb-3">
-            Population Equity Notes
-          </h2>
-          <div className="space-y-2 text-sm text-genarch-text">
-            <p>
-              <strong>GWAS ancestry breakdown:</strong>{" "}
-              {disease.population_equity.gwas_ancestry_breakdown}
-            </p>
-            <p>
-              <strong>Transferability notes:</strong>{" "}
-              {disease.population_equity.transferability_notes}
-            </p>
-            <p>
-              <strong>Data gaps:</strong>{" "}
-              {disease.population_equity.data_gaps}
-            </p>
-          </div>
-        </section>
-      )}
-
-      {/* Tissue Context */}
-      {disease.tissues && disease.tissues.length > 0 && (
-        <section aria-labelledby="tissue-context-heading">
-          <h2 id="tissue-context-heading" className="text-h2 text-genarch-text mb-3">
-            Tissue Context
-          </h2>
-          <div className="flex flex-wrap gap-3">
-            {disease.tissues.map((t, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-2 rounded-sm border border-gray-200 bg-white px-3 py-2"
-              >
-                <span className="text-sm font-medium text-genarch-text">
-                  {t.name}
-                </span>
-                <span
-                  className="inline-block h-4 rounded-sm bg-genarch-data/50 min-w-[48px]"
-                  style={{
-                    width: `${Math.min(100, t.relevance_score * 100)}px`,
-                  }}
-                  title={`Relevance: ${t.relevance_score}`}
-                  aria-hidden
-                />
-                <span className="text-xs text-genarch-subtext">
-                  {t.relevance_score.toFixed(2)}
-                </span>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Mechanism Brief Links */}
-      {disease.mechanism_briefs && disease.mechanism_briefs.length > 0 && (
-        <section aria-labelledby="mechanism-briefs-heading">
-          <h2 id="mechanism-briefs-heading" className="text-h2 text-genarch-text mb-3">
-            Mechanism Brief Links
-          </h2>
-          <ul className="list-disc list-inside space-y-1 text-sm">
-            {disease.mechanism_briefs.map((slug, i) => (
-              <li key={i}>
-                <Link
-                  href={`/mechanism-briefs/${slug}`}
-                  className="text-genarch-link hover:underline"
+        {disease.tissues && disease.tissues.length > 0 && (
+          <section aria-labelledby="tissue-context-heading">
+            <h2 id="tissue-context-heading" className="text-h2 text-surface-white mb-3">
+              Tissue Context
+            </h2>
+            <div className="flex flex-wrap gap-3">
+              {disease.tissues.map((t, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-2 rounded-sm border border-white/[0.06] bg-navy-mid px-3 py-2"
                 >
-                  {slug}
-                </Link>
-              </li>
-            ))}
-          </ul>
+                  <span className="text-sm font-medium text-surface-white">
+                    {t.name}
+                  </span>
+                  <span
+                    className="inline-block h-4 rounded-sm bg-teal-primary/50 min-w-[48px]"
+                    style={{
+                      width: `${Math.min(100, t.relevance_score * 100)}px`,
+                    }}
+                    title={`Relevance: ${t.relevance_score}`}
+                    aria-hidden
+                  />
+                  <span className="text-xs text-cool-mid">
+                    {t.relevance_score.toFixed(2)}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {disease.mechanism_briefs && disease.mechanism_briefs.length > 0 && (
+          <section aria-labelledby="mechanism-briefs-heading">
+            <h2 id="mechanism-briefs-heading" className="text-h2 text-surface-white mb-3">
+              Mechanism Brief Links
+            </h2>
+            <ul className="list-disc list-inside space-y-1 text-sm">
+              {disease.mechanism_briefs.map((slug, i) => (
+                <li key={i}>
+                  <Link
+                    href={`/mechanism-briefs/${slug}`}
+                    className="text-teal-primary hover:text-teal-soft hover:underline"
+                  >
+                    {slug}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        <section aria-labelledby="visualizations-heading">
+          <h2 id="visualizations-heading" className="text-h2 text-surface-white mb-3">
+            Visualizations
+          </h2>
+          <div className="space-y-8">
+            <RiskShiftChart
+              diseaseName={disease.slug}
+              modifiers={(disease.exposure_modifiers ?? []).map((m) => ({
+                exposure_slug: m.exposure_slug,
+                direction: m.direction,
+                strength: m.strength,
+                confidence: m.confidence,
+                mechanism_hypothesis: m.mechanism_hypothesis,
+              }))}
+            />
+            <TissueRelevanceChart
+              diseaseName={disease.slug}
+              tissues={(disease.tissues ?? []).map((t) => ({
+                name: t.name,
+                relevance_score: t.relevance_score,
+                evidence_type: t.evidence_type,
+              }))}
+            />
+          </div>
         </section>
-      )}
 
-      {/* Required Visualizations */}
-      <section aria-labelledby="visualizations-heading">
-        <h2 id="visualizations-heading" className="text-h2 text-genarch-text mb-3">
-          Visualizations
-        </h2>
-        <div className="space-y-8">
-          <RiskShiftChart
-            diseaseName={disease.slug}
-            modifiers={(disease.exposure_modifiers ?? []).map((m) => ({
-              exposure_slug: m.exposure_slug,
-              direction: m.direction,
-              strength: m.strength,
-              confidence: m.confidence,
-              mechanism_hypothesis: m.mechanism_hypothesis,
-            }))}
-          />
-          <TissueRelevanceChart
-            diseaseName={disease.slug}
-            tissues={(disease.tissues ?? []).map((t) => ({
-              name: t.name,
-              relevance_score: t.relevance_score,
-              evidence_type: t.evidence_type,
-            }))}
-          />
-        </div>
-      </section>
+        <EvidenceLimitations>
+          <p className="mb-2">
+            This atlas presents population-level summaries for educational
+            purposes. Findings do not imply individual risk or clinical guidance.
+          </p>
+          <p className="mb-2">
+            Genetic architecture and exposure modifiers are derived from curated
+            literature and may reflect ancestry and sampling biases. Confidence
+            ratings indicate evidence strength, not certainty.
+          </p>
+          <p>
+            Data gaps in population equity notes highlight areas where
+            transferability across ancestries or settings remains uncertain.
+          </p>
+        </EvidenceLimitations>
 
-      {/* Evidence & Limitations — always visible, never collapsible */}
-      <EvidenceLimitations>
-        <p className="mb-2">
-          This atlas presents population-level summaries for educational
-          purposes. Findings do not imply individual risk or clinical guidance.
-        </p>
-        <p className="mb-2">
-          Genetic architecture and exposure modifiers are derived from curated
-          literature and may reflect ancestry and sampling biases. Confidence
-          ratings indicate evidence strength, not certainty.
-        </p>
-        <p>
-          Data gaps in population equity notes highlight areas where
-          transferability across ancestries or settings remains uncertain.
-        </p>
-      </EvidenceLimitations>
-
-      {/* Citations */}
-      <CitationRenderer references={refs} />
-    </article>
+        <CitationRenderer references={refs} />
+      </article>
+    </div>
   );
 }

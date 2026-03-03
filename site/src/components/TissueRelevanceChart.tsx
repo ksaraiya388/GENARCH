@@ -56,7 +56,7 @@ export function TissueRelevanceChart({
       try {
         const fn = format === "png" ? toPng : toSvg;
         const dataUrl = await fn(chartRef.current, {
-          backgroundColor: "#ffffff",
+          backgroundColor: "#0B1F2F",
         });
         if (format === "png") {
           saveAs(dataUrl, `genarch-tissue-relevance-${diseaseName}.png`);
@@ -76,51 +76,57 @@ export function TissueRelevanceChart({
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h3 className="text-h3 text-genarch-text">Tissue Relevance</h3>
+        <h3 className="text-h3 text-surface-white">Tissue Relevance</h3>
         <div className="flex gap-2">
           <button
             onClick={() => handleDownload("png")}
-            className="text-xs px-3 py-1 border border-gray-300 rounded-sm hover:bg-gray-50"
+            className="text-xs px-3 py-1 border border-white/[0.06] rounded-sm text-cool-light hover:bg-white/[0.04]"
             aria-label="Download chart as PNG"
           >
             PNG
           </button>
           <button
             onClick={() => handleDownload("svg")}
-            className="text-xs px-3 py-1 border border-gray-300 rounded-sm hover:bg-gray-50"
+            className="text-xs px-3 py-1 border border-white/[0.06] rounded-sm text-cool-light hover:bg-white/[0.04]"
             aria-label="Download chart as SVG"
           >
             SVG
           </button>
         </div>
       </div>
-      <div ref={chartRef} className="bg-white p-4 rounded-sm border border-gray-100">
+      <div ref={chartRef} className="bg-navy-mid p-4 rounded-sm border border-white/[0.06]">
         <ResponsiveContainer width="100%" height={Math.max(200, data.length * 50)}>
           <BarChart
             data={data}
             layout="vertical"
             margin={{ top: 5, right: 30, left: 120, bottom: 5 }}
           >
-            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+            <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
             <XAxis
               type="number"
               domain={[0, 1]}
-              tick={{ fontSize: 11, fill: "#666666" }}
+              tick={{ fontSize: 11, fill: "#94A3B8" }}
               label={{
                 value: "Relevance Score",
                 position: "insideBottom",
                 offset: -2,
-                style: { fontSize: 11, fill: "#666666" },
+                style: { fontSize: 11, fill: "#94A3B8" },
               }}
             />
             <YAxis
               dataKey="name"
               type="category"
-              tick={{ fontSize: 12, fill: "#333333" }}
+              tick={{ fontSize: 12, fill: "#C7D2DA" }}
               width={110}
             />
             <Tooltip
-              contentStyle={{ fontSize: 12, borderRadius: 2 }}
+              contentStyle={{
+                fontSize: 12,
+                borderRadius: 2,
+                backgroundColor: "#132B3C",
+                border: "1px solid rgba(255,255,255,0.1)",
+                color: "#F8FAFC",
+              }}
               formatter={(value: number) => [
                 value.toFixed(2),
                 "Relevance",
