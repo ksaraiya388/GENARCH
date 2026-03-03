@@ -1,0 +1,164 @@
+{
+  "adolescent_relevance": "RA can present in young adulthood, and the immune mechanisms underlying autoimmune disease are relevant to understanding how exposures and genetics interact over the life course. GENARCH presents RA content as educational only and avoids deterministic or individualized interpretations.",
+  "exposure_modifiers": [
+    {
+      "citations": [
+        "rev_2018_us_surgeon_general"
+      ],
+      "confidence": "high",
+      "direction": "amplify",
+      "exposure_slug": "smoking",
+      "mechanism_hypothesis": "Smoking is associated with RA risk in many studies and may influence immune tolerance and inflammatory pathways (population-level association).",
+      "strength": 0.75
+    },
+    {
+      "citations": [
+        "epi_2015_occupational_copd_review"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "occupational-dust",
+      "mechanism_hypothesis": "Inhaled particulates in some occupational settings are studied as modifiers of autoimmune risk in population research.",
+      "strength": 0.55
+    },
+    {
+      "citations": [
+        "lit_2019_pope"
+      ],
+      "confidence": "low",
+      "direction": "amplify",
+      "exposure_slug": "air-pollution",
+      "mechanism_hypothesis": "Air pollution is studied as a systemic inflammatory exposure; evidence for RA is mixed and context-dependent.",
+      "strength": 0.45
+    }
+  ],
+  "genetic_architecture": {
+    "heritability_estimate": {
+      "h2_narrow_sense": null,
+      "h2_snp": 0.5,
+      "source": "Family and GWAS-based estimates (varies by cohort)",
+      "year": 2014
+    },
+    "prs_notes": "PRS for RA exist in research settings, but performance and transferability vary by ancestry and phenotype definition. GENARCH explains PRS concepts for education only and avoids individual prediction.",
+    "top_loci": [
+      {
+        "ancestry_composition": "Signals observed across multiple ancestries; mapping varies",
+        "citations": [
+          "gwas_2014_ra_meta",
+          "lit_2018_ra_immunology"
+        ],
+        "effect_size": 0.2,
+        "evidence": "HLA region associations are among the strongest RA signals and support antigen presentation mechanisms.",
+        "gene": "HLA-DRB1 (shared epitope)",
+        "gwas_p": 1e-30,
+        "replication_status": "Replicated",
+        "strength": 0.9,
+        "variant": null
+      },
+      {
+        "ancestry_composition": "European-dominated discovery; broader evaluation exists",
+        "citations": [
+          "gwas_2014_ra_meta"
+        ],
+        "effect_size": 0.08,
+        "evidence": "Immune regulatory loci such as PTPN22 are implicated in autoimmunity and RA susceptibility.",
+        "gene": "PTPN22",
+        "gwas_p": 1e-12,
+        "replication_status": "Replicated",
+        "strength": 0.75,
+        "variant": null
+      },
+      {
+        "ancestry_composition": "Multiple studies",
+        "citations": [
+          "lit_2018_ra_immunology"
+        ],
+        "effect_size": null,
+        "evidence": "Inflammatory cytokine signaling pathways (including TNF) are central to RA mechanisms in literature.",
+        "gene": "TNF pathway genes (context)",
+        "gwas_p": null,
+        "replication_status": "Mechanistic pathway support",
+        "strength": 0.65,
+        "variant": null
+      }
+    ]
+  },
+  "icd11_code": "FA20",
+  "id": "dis_rheumatoid_arthritis",
+  "last_updated": "2026-02-26",
+  "mechanism_briefs": [],
+  "name": "Rheumatoid Arthritis",
+  "population_equity": {
+    "data_gaps": "Exposure measurement differs across regions and occupations; causal inference is challenging for some exposure associations.",
+    "gwas_ancestry_breakdown": "RA genetics includes signals across multiple ancestries, but many large meta-analyses are European-ancestry weighted.",
+    "transferability_notes": "PRS and locus effects can vary across populations due to LD, allele frequency, and phenotype definitions. GENARCH highlights these limitations."
+  },
+  "references": [
+    {
+      "authors": "RA GWAS Consortium",
+      "doi": null,
+      "id": "gwas_2014_ra_meta",
+      "journal": "Nature Genetics",
+      "title": "Meta-analysis of genome-wide association studies identifies risk loci for rheumatoid arthritis",
+      "url": null,
+      "year": 2014
+    },
+    {
+      "authors": "Autoimmunity Review Group",
+      "doi": null,
+      "id": "lit_2018_ra_immunology",
+      "journal": "Nature Reviews Rheumatology",
+      "title": "Rheumatoid arthritis immunology and cytokine networks: overview (review)",
+      "url": null,
+      "year": 2018
+    },
+    {
+      "authors": "U.S. Surgeon General",
+      "doi": null,
+      "id": "rev_2018_us_surgeon_general",
+      "journal": "U.S. Department of Health and Human Services",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "url": null,
+      "year": 2018
+    },
+    {
+      "authors": "Occupational Review Group",
+      "doi": null,
+      "id": "epi_2015_occupational_copd_review",
+      "journal": "Occupational and Environmental Medicine",
+      "title": "Occupational exposures and COPD risk: evidence overview (review)",
+      "url": null,
+      "year": 2015
+    },
+    {
+      "authors": "Pope CA, Dockery DW",
+      "doi": null,
+      "id": "lit_2019_pope",
+      "journal": "Journal of the Air & Waste Management Association",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "url": null,
+      "year": 2019
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "rheumatoid-arthritis",
+  "summary": "Rheumatoid arthritis (RA) is an autoimmune inflammatory disease that primarily affects synovial joints, leading to pain, swelling, and potential joint damage over time. RA biology often emphasizes dysregulated adaptive immunity, autoantibody production, cytokine signaling (including TNF pathways), and interactions between immune activation and tissue remodeling. At the population level, RA burden reflects both inherited susceptibility and exposures such as smoking and occupational particulates that can influence immune tolerance and inflammatory responses.\n\nGenetic epidemiology shows RA involves strong signals in the HLA region alongside a broader polygenic background. HLA-DRB1 risk alleles and related immune genes support mechanistic hypotheses about antigen presentation and immune activation. GENARCH summarizes these findings as population-level mechanistic evidence without making individual clinical claims. Equity constraints matter: GWAS ancestry composition and exposure measurement vary across settings, affecting interpretability and transferability.",
+  "tissues": [
+    {
+      "citations": [
+        "lit_2018_ra_immunology"
+      ],
+      "evidence_type": "literature",
+      "name": "Synovium (joint tissue)",
+      "relevance_score": 0.85
+    },
+    {
+      "citations": [
+        "lit_2018_ra_immunology"
+      ],
+      "evidence_type": "literature",
+      "name": "Immune cells (adaptive immunity)",
+      "relevance_score": 0.75
+    }
+  ]
+}

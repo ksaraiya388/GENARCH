@@ -1,0 +1,52 @@
+{
+  "id": "exp_endotoxin",
+  "slug": "endotoxin",
+  "name": "Endotoxin (Environmental Microbial Products)",
+  "definition": "Endotoxin (lipopolysaccharide; LPS) is a component of Gram-negative bacterial cell walls and can be present in indoor and agricultural environments. Some cohort studies suggest early-life microbial exposures may be associated with lower rates of allergic disease in certain contexts, but effects are complex and environment-dependent. GENARCH describes this evidence in a neutral, educational framing.",
+  "proxies": [
+    {
+      "name": "Indoor dust endotoxin concentration",
+      "unit": "EU/mg",
+      "measurement_method": "Dust sampling + LAL assay (study-dependent)",
+      "data_source": "Environmental health studies (curated)"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "Immune",
+      "mechanism_summary": "Microbial products can engage innate immune receptors (e.g., TLR4), potentially shaping immune development; directionality may differ by timing, dose, and co-exposures.",
+      "evidence_strength": 0.4
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "period": "Early childhood",
+      "age_range": "0–5",
+      "mechanism_rationale": "Immune maturation occurs rapidly in early life; microbial exposures during this period are hypothesized to influence allergic sensitization trajectories in some settings.",
+      "citations": ["lit_2011_barnes"]
+    }
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {
+      "name": "Airway mucosa",
+      "effect_type": "innate immune signaling context",
+      "citations": ["lit_2011_barnes"]
+    }
+  ],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "lit_2011_barnes",
+      "title": "Endotoxin exposure and allergic disease: complex context-dependent effects",
+      "authors": "Barnes PJ et al.",
+      "year": 2011,
+      "journal": "Allergy",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

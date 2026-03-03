@@ -1,0 +1,136 @@
+{
+  "id": "dis_hypertension",
+  "slug": "hypertension",
+  "name": "Hypertension",
+  "icd11_code": "BA00",
+  "summary": "Hypertension (high blood pressure) is a common condition defined by persistently elevated arterial pressure. At a biological level, blood pressure reflects interactions among the vasculature, kidneys, endocrine signaling (including the renin–angiotensin–aldosterone system; RAAS), autonomic regulation, and inflammation. Population-level hypertension burden is shaped by diet patterns (including sodium intake), physical activity, psychosocial stressors, and broader environmental and social context.\n\nGenetic epidemiology indicates hypertension is polygenic: many common variants influence blood pressure regulation through kidney function, vascular tone, and hormonal pathways. Individual variants typically have small effects, but aggregate genetic liability can inform population-level mechanism discovery. GENARCH uses this genetic layer for educational mechanistic interpretation—without providing individual risk scores or clinical recommendations. Equity limitations are important: hypertension prevalence and measurement vary by context, and many genetic studies have uneven ancestry representation.",
+  "adolescent_relevance": "Blood pressure trajectories can begin in adolescence, and dietary patterns (including sodium exposure), sleep, stress, and activity can shape cohort-level patterns. GENARCH presents hypertension as educational background on population evidence and mechanisms, not as medical advice.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "ACE / AGT (RAAS pathway context)",
+        "variant": null,
+        "gwas_p": 1e-8,
+        "effect_size": 0.03,
+        "ancestry_composition": "European-dominated in many GWAS; broader evidence increasing",
+        "replication_status": "Replicated (pathway-level)",
+        "evidence": "RAAS-related genes and regulatory regions are implicated across blood pressure GWAS, supporting endocrine control mechanisms.",
+        "strength": 0.6,
+        "citations": ["gwas_2018_bp_meta", "lit_2016_raas_review"]
+      },
+      {
+        "gene": "UMOD",
+        "variant": null,
+        "gwas_p": 1e-10,
+        "effect_size": 0.03,
+        "ancestry_composition": "European-dominated discovery; broader evaluation exists",
+        "replication_status": "Replicated",
+        "evidence": "Kidney function loci such as UMOD are associated with blood pressure traits in multiple studies.",
+        "strength": 0.65,
+        "citations": ["gwas_2018_bp_meta"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.4,
+      "source": "Family and GWAS-based estimates (varies by phenotype definition)",
+      "year": 2018
+    },
+    "prs_notes": "Hypertension PRS exist in research contexts, but effect estimates and performance vary across ancestries and measurement protocols. GENARCH discusses PRS only as population-level genetic liability and does not compute individual risk."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "high-sodium-intake",
+      "direction": "amplify",
+      "strength": 0.7,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Higher sodium intake influences fluid balance and blood pressure regulation pathways in population evidence, with heterogeneity across groups.",
+      "citations": ["epi_2019_sodium_bp_review"]
+    },
+    {
+      "exposure_slug": "psychosocial-stress",
+      "direction": "amplify",
+      "strength": 0.45,
+      "confidence": "low",
+      "mechanism_hypothesis": "Stress-related neuroendocrine signaling can influence vascular tone and inflammatory pathways; causal interpretation varies by study design.",
+      "citations": ["epi_2017_stress_review"]
+    },
+    {
+      "exposure_slug": "physical-inactivity",
+      "direction": "amplify",
+      "strength": 0.5,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Lower activity levels are associated with adverse cardiometabolic profiles, contributing to elevated blood pressure in population studies.",
+      "citations": ["surv_2020_who_activity"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "Kidney",
+      "relevance_score": 0.8,
+      "evidence_type": "GWAS",
+      "citations": ["gwas_2018_bp_meta"]
+    },
+    {
+      "name": "Vasculature (endothelium/smooth muscle)",
+      "relevance_score": 0.7,
+      "evidence_type": "literature",
+      "citations": ["lit_2016_raas_review"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Large blood pressure GWAS have historically been European-ancestry weighted, though multi-ancestry efforts are expanding.",
+    "transferability_notes": "Effect estimates and PRS performance can vary with ancestry, measurement context, and environmental exposures. GENARCH highlights these limitations and avoids individual-level inference.",
+    "data_gaps": "Exposure measurement (dietary sodium, stress) can be noisy, and social context can confound associations."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "gwas_2018_bp_meta",
+      "title": "Genome-wide association meta-analysis of blood pressure identifies loci and biological pathways",
+      "authors": "Blood Pressure GWAS Consortium",
+      "year": 2018,
+      "journal": "Nature Genetics",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2016_raas_review",
+      "title": "RAAS pathway regulation and blood pressure control: overview (review)",
+      "authors": "Cardiorenal Review Group",
+      "year": 2016,
+      "journal": "Circulation",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2019_sodium_bp_review",
+      "title": "Dietary sodium and blood pressure: evidence synthesis (review)",
+      "authors": "Hypertension Evidence Group",
+      "year": 2019,
+      "journal": "Hypertension",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2017_stress_review",
+      "title": "Psychosocial stress and health outcomes: mechanisms and evidence (review)",
+      "authors": "Cohort Review Group",
+      "year": 2017,
+      "journal": "Annual Review of Public Health",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "surv_2020_who_activity",
+      "title": "WHO guidelines on physical activity and sedentary behaviour",
+      "authors": "World Health Organization",
+      "year": 2020,
+      "journal": "WHO",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

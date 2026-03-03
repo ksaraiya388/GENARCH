@@ -1,0 +1,55 @@
+{
+  "definition": "Alcohol use is an exposure category relevant to multiple diseases in population studies, including certain cancers and cardiometabolic outcomes. GENARCH summarizes evidence at the population level and does not provide individual medical guidance.",
+  "exposure_distribution": null,
+  "gxe_highlights": [],
+  "id": "exp_alcohol",
+  "last_updated": "2026-02-26",
+  "name": "Alcohol Use",
+  "proxies": [
+    {
+      "data_source": "Epidemiological cohorts (curated)",
+      "measurement_method": "Self-report in cohorts",
+      "name": "Standard drinks per week",
+      "unit": "drinks/week"
+    }
+  ],
+  "references": [
+    {
+      "authors": "IARC Working Group",
+      "doi": null,
+      "id": "epi_2018_alcohol_cancer",
+      "journal": "IARC Monographs",
+      "title": "Alcohol consumption and cancer risk: evidence synthesis (review)",
+      "url": null,
+      "year": 2018
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "10–18",
+      "citations": [
+        "epi_2018_alcohol_cancer"
+      ],
+      "mechanism_rationale": "Initiation and patterns of use can begin in adolescence, affecting cumulative exposure trajectories in cohorts.",
+      "period": "Adolescence"
+    }
+  ],
+  "slug": "alcohol",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.5,
+      "mechanism_summary": "Alcohol metabolism and related inflammatory pathways can influence systemic physiology; effects vary by dose and context in population studies.",
+      "system": "Liver / metabolic"
+    }
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "epi_2018_alcohol_cancer"
+      ],
+      "effect_type": "cancer epidemiology context",
+      "name": "Breast"
+    }
+  ]
+}

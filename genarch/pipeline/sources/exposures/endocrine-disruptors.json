@@ -1,0 +1,52 @@
+{
+  "id": "exp_endocrine_disruptors",
+  "slug": "endocrine-disruptors",
+  "name": "Endocrine Disruptors (Broad Category)",
+  "definition": "Endocrine disruptors are a broad class of chemicals that may interfere with hormonal signaling (e.g., certain plasticizers, pesticides). Evidence quality varies by compound and study design; GENARCH includes this category to support educational discussion of environmental drivers in metabolic and reproductive epidemiology, without making individual-level claims.",
+  "proxies": [
+    {
+      "name": "Representative biomonitoring markers (compound-specific)",
+      "unit": "ng/mL",
+      "measurement_method": "Urine/serum biomonitoring assays (study-dependent)",
+      "data_source": "NHANES and biomonitoring studies (curated)"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "Endocrine / metabolic",
+      "mechanism_summary": "Some compounds are hypothesized to affect hormone receptor signaling and metabolic regulation; evidence is heterogeneous.",
+      "evidence_strength": 0.3
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "period": "Prenatal",
+      "age_range": "in utero",
+      "mechanism_rationale": "Developmental windows are often hypothesized to be more sensitive to endocrine perturbations in some study frameworks.",
+      "citations": ["rev_2017_endocrine_disruptors"]
+    }
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {
+      "name": "Adipose tissue",
+      "effect_type": "metabolic regulation context",
+      "citations": ["rev_2017_endocrine_disruptors"]
+    }
+  ],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "rev_2017_endocrine_disruptors",
+      "title": "Endocrine disruptors and metabolic outcomes: evidence overview (review)",
+      "authors": "Endocrine Review Group",
+      "year": 2017,
+      "journal": "Endocrine Reviews",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

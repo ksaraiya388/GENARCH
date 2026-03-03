@@ -1,0 +1,52 @@
+{
+  "id": "exp_hormonal_exposures",
+  "slug": "hormonal-exposures",
+  "name": "Hormonal Exposures (Endogenous and Exogenous)",
+  "definition": "Hormonal exposures describe factors that influence lifetime estrogen/progesterone signaling (e.g., age at menarche/menopause, parity, certain therapies). In cancer epidemiology, hormonal context is a population-level modifier that interacts with genetic architecture for hormone-responsive cancers. GENARCH presents this topic in a neutral, educational framing.",
+  "proxies": [
+    {
+      "name": "Lifetime estrogen exposure proxies",
+      "unit": null,
+      "measurement_method": "Cohort-derived composite variables",
+      "data_source": "Cancer epidemiology cohorts (curated)"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "Endocrine",
+      "mechanism_summary": "Hormone signaling can influence cell proliferation and tissue remodeling in hormone-responsive tissues.",
+      "evidence_strength": 0.6
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "period": "Adolescence",
+      "age_range": "10–18",
+      "mechanism_rationale": "Pubertal timing affects endocrine milieu; population studies often examine lifetime exposure proxies.",
+      "citations": ["epi_2020_breast_hormones_review"]
+    }
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {
+      "name": "Breast",
+      "effect_type": "hormone-responsive tissue context",
+      "citations": ["epi_2020_breast_hormones_review"]
+    }
+  ],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "epi_2020_breast_hormones_review",
+      "title": "Hormonal factors and breast cancer risk: an overview (review)",
+      "authors": "Collaborative Group",
+      "year": 2020,
+      "journal": "Cancer Epidemiology",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

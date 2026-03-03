@@ -1,0 +1,55 @@
+{
+  "definition": "High sodium intake is an exposure category studied in relation to blood pressure and cardiovascular outcomes at the population level. GENARCH includes this as educational context for hypertension and cardiometabolic gene–environment research.",
+  "exposure_distribution": null,
+  "gxe_highlights": [],
+  "id": "exp_high_sodium_intake",
+  "last_updated": "2026-02-26",
+  "name": "High Sodium Intake",
+  "proxies": [
+    {
+      "data_source": "Population nutrition studies (curated)",
+      "measurement_method": "Urine collection (study-dependent)",
+      "name": "24-hour urinary sodium",
+      "unit": "mg/day"
+    }
+  ],
+  "references": [
+    {
+      "authors": "Hypertension Evidence Group",
+      "doi": null,
+      "id": "epi_2019_sodium_bp_review",
+      "journal": "Hypertension",
+      "title": "Dietary sodium and blood pressure: evidence synthesis (review)",
+      "url": null,
+      "year": 2019
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "10–18",
+      "citations": [
+        "epi_2019_sodium_bp_review"
+      ],
+      "mechanism_rationale": "Dietary patterns can form during adolescence; population studies examine sodium exposure and early blood pressure trajectories.",
+      "period": "Adolescence"
+    }
+  ],
+  "slug": "high-sodium-intake",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.6,
+      "mechanism_summary": "Sodium intake influences fluid balance and blood pressure regulation pathways; effects vary across individuals and populations.",
+      "system": "Cardiovascular / renal"
+    }
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "epi_2019_sodium_bp_review"
+      ],
+      "effect_type": "fluid balance / RAAS context",
+      "name": "Kidney"
+    }
+  ]
+}

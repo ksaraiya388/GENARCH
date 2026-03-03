@@ -1,0 +1,57 @@
+{
+  "id": "exp_physical_inactivity",
+  "slug": "physical-inactivity",
+  "name": "Physical Inactivity",
+  "definition": "Physical inactivity refers to insufficient moderate-to-vigorous physical activity relative to public health recommendations. It is an exposure category relevant to cardiometabolic and neurocognitive outcomes in population studies and can interact with genetic architecture through metabolic, inflammatory, and vascular pathways. GENARCH presents this content for education, not individualized recommendations.",
+  "proxies": [
+    {
+      "name": "Minutes of moderate-to-vigorous activity per week",
+      "unit": "min/week",
+      "measurement_method": "Questionnaire or wearable accelerometry",
+      "data_source": "Cohort studies (curated)"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "Cardiometabolic",
+      "mechanism_summary": "Lower activity levels are associated with reduced insulin sensitivity and adverse lipid profiles in many cohorts.",
+      "evidence_strength": 0.6
+    },
+    {
+      "system": "Vascular",
+      "mechanism_summary": "Physical activity can influence endothelial function and inflammatory signaling; inactivity shifts these pathways in population-level associations.",
+      "evidence_strength": 0.5
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "period": "Adolescence",
+      "age_range": "10–18",
+      "mechanism_rationale": "Habit formation and ongoing physiological development can affect lifelong activity patterns and cardiometabolic trajectories in cohorts.",
+      "citations": ["surv_2020_who_activity"]
+    }
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {
+      "name": "Skeletal muscle",
+      "effect_type": "glucose handling / insulin sensitivity context",
+      "citations": ["surv_2020_who_activity"]
+    }
+  ],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "surv_2020_who_activity",
+      "title": "WHO guidelines on physical activity and sedentary behaviour",
+      "authors": "World Health Organization",
+      "year": 2020,
+      "journal": "WHO",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

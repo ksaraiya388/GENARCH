@@ -1,0 +1,120 @@
+{
+  "adolescent_relevance": "Marfan syndrome can be identified in childhood or adolescence. GENARCH focuses on educational mechanism explanation and ethical constraints (no individualized risk prediction).",
+  "exposure_modifiers": [
+    {
+      "citations": [
+        "surv_2020_who_activity"
+      ],
+      "confidence": "low",
+      "direction": "unknown",
+      "exposure_slug": "physical-inactivity",
+      "mechanism_hypothesis": "Physical activity relates to cardiovascular physiology broadly; GENARCH does not treat this as medical guidance for Marfan syndrome.",
+      "strength": 0.2
+    },
+    {
+      "citations": [
+        "epi_2017_stress_review"
+      ],
+      "confidence": "low",
+      "direction": "unknown",
+      "exposure_slug": "psychosocial-stress",
+      "mechanism_hypothesis": "Stress affects cardiovascular physiology broadly; relationships to Marfan outcomes are complex and not interpreted as causal advice.",
+      "strength": 0.2
+    },
+    {
+      "citations": [
+        "lit_2019_pope"
+      ],
+      "confidence": "low",
+      "direction": "unknown",
+      "exposure_slug": "air-pollution",
+      "mechanism_hypothesis": "Air pollution is a systemic stressor in population studies; evidence specific to Marfan outcomes is limited.",
+      "strength": 0.2
+    }
+  ],
+  "genetic_architecture": {
+    "heritability_estimate": {
+      "h2_narrow_sense": null,
+      "h2_snp": 1.0,
+      "source": "Monogenic causal architecture (pathogenic variants in FBN1)",
+      "year": 2016
+    },
+    "prs_notes": "PRS is not applicable as a primary risk model for monogenic Marfan syndrome. GENARCH does not provide individual predictions.",
+    "top_loci": [
+      {
+        "ancestry_composition": "Variant spectrum differs across populations",
+        "citations": [
+          "clin_2016_marfan_review"
+        ],
+        "effect_size": null,
+        "evidence": "Pathogenic variants in FBN1 disrupt fibrillin-1 and connective tissue integrity, causing Marfan syndrome.",
+        "gene": "FBN1",
+        "gwas_p": null,
+        "replication_status": "Causal (monogenic)",
+        "strength": 0.95,
+        "variant": null
+      }
+    ]
+  },
+  "icd11_code": "LD26",
+  "id": "dis_marfan_syndrome",
+  "last_updated": "2026-02-26",
+  "mechanism_briefs": [],
+  "name": "Marfan Syndrome",
+  "population_equity": {
+    "data_gaps": "Evidence on environmental modifiers is limited and setting-specific.",
+    "gwas_ancestry_breakdown": "Marfan syndrome is monogenic; variant catalogs and clinical research have uneven representation across populations.",
+    "transferability_notes": "Variant interpretation can be impacted by underrepresentation in reference datasets; care access influences observed outcomes."
+  },
+  "references": [
+    {
+      "authors": "Cardiogenetics Review Group",
+      "doi": null,
+      "id": "clin_2016_marfan_review",
+      "journal": "Nature Reviews Cardiology",
+      "title": "Marfan syndrome: FBN1, connective tissue, and clinical features (review)",
+      "url": null,
+      "year": 2016
+    },
+    {
+      "authors": "World Health Organization",
+      "doi": null,
+      "id": "surv_2020_who_activity",
+      "journal": "WHO",
+      "title": "WHO guidelines on physical activity and sedentary behaviour",
+      "url": null,
+      "year": 2020
+    },
+    {
+      "authors": "Cohort Review Group",
+      "doi": null,
+      "id": "epi_2017_stress_review",
+      "journal": "Annual Review of Public Health",
+      "title": "Psychosocial stress and health outcomes: mechanisms and evidence (review)",
+      "url": null,
+      "year": 2017
+    },
+    {
+      "authors": "Pope CA, Dockery DW",
+      "doi": null,
+      "id": "lit_2019_pope",
+      "journal": "Journal of the Air & Waste Management Association",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "url": null,
+      "year": 2019
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "marfan-syndrome",
+  "summary": "Marfan syndrome is a hereditary connective tissue disorder most commonly caused by pathogenic variants in the FBN1 gene. It can affect multiple organ systems, including the cardiovascular system (aorta), eyes, and skeleton, through altered extracellular matrix structure and signaling. While the genetic cause is primary, population-level outcomes are influenced by surveillance and care access, which can vary across settings.\n\nGENARCH presents Marfan syndrome as an educational example of monogenic architecture and tissue-specific mechanism. It does not provide individualized medical advice or risk prediction.",
+  "tissues": [
+    {
+      "citations": [
+        "clin_2016_marfan_review"
+      ],
+      "evidence_type": "literature",
+      "name": "Aorta / connective tissue",
+      "relevance_score": 0.9
+    }
+  ]
+}

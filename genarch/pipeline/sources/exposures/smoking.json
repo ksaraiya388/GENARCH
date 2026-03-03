@@ -1,0 +1,77 @@
+{
+  "id": "exp_smoking",
+  "slug": "smoking",
+  "name": "Tobacco Smoking",
+  "definition": "Tobacco smoking is an exposure involving inhalation of combustion products that can affect respiratory, cardiovascular, immune, and cancer-related biological pathways. GENARCH describes smoking as a population-level environmental driver in gene–environment research; it does not provide medical advice or individual risk prediction.",
+  "proxies": [
+    {
+      "name": "Cigarettes per day",
+      "unit": "count/day",
+      "measurement_method": "Self-report in cohorts",
+      "data_source": "Epidemiological studies (curated)"
+    },
+    {
+      "name": "Serum cotinine",
+      "unit": "ng/mL",
+      "measurement_method": "Biomarker assay",
+      "data_source": "NHANES and cohort studies (curated)"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "Respiratory",
+      "mechanism_summary": "Smoke exposure contributes to airway irritation, oxidative stress, and chronic inflammatory remodeling in population studies.",
+      "evidence_strength": 0.9
+    },
+    {
+      "system": "Cardiovascular",
+      "mechanism_summary": "Smoking is associated with endothelial dysfunction and atherosclerotic processes through inflammatory and oxidative pathways.",
+      "evidence_strength": 0.8
+    },
+    {
+      "system": "Immune",
+      "mechanism_summary": "Immune modulation and altered inflammatory signaling can occur; effects are context-dependent across tissues and time.",
+      "evidence_strength": 0.6
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "period": "Adolescence",
+      "age_range": "10–18",
+      "mechanism_rationale": "Initiation and cumulative exposure can begin in adolescence, influencing population-level trajectories of respiratory and cardiovascular outcomes.",
+      "citations": ["surv_2020_who_tobacco"]
+    }
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {
+      "name": "Lung",
+      "effect_type": "oxidative stress / inflammation context",
+      "citations": ["rev_2018_us_surgeon_general"]
+    }
+  ],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "surv_2020_who_tobacco",
+      "title": "WHO report on the global tobacco epidemic",
+      "authors": "World Health Organization",
+      "year": 2020,
+      "journal": "WHO",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "rev_2018_us_surgeon_general",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "authors": "U.S. Surgeon General",
+      "year": 2018,
+      "journal": "U.S. Department of Health and Human Services",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

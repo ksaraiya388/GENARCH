@@ -1,0 +1,204 @@
+{
+  "adolescent_relevance": "Asthma frequently appears in childhood and often continues through adolescence and young adulthood, when school, sports, and air quality exposures can meaningfully affect symptoms and quality of life. Adolescence is also a period of ongoing lung development and changing immune regulation, so exposure timing (e.g., prenatal and early-life windows) and social environment can shape population-level patterns. GENARCH emphasizes educational interpretation: the atlas summarizes evidence across studies and highlights limitations (including ancestry representation gaps), rather than offering clinical advice.",
+  "exposure_modifiers": [
+    {
+      "citations": [
+        "epi_2016_guarnieri",
+        "lit_2019_pope"
+      ],
+      "confidence": "high",
+      "direction": "amplify",
+      "exposure_slug": "air-pollution",
+      "mechanism_hypothesis": "Fine particulate matter can induce oxidative stress and epithelial injury, activating inflammatory transcription programs that increase airway reactivity in susceptible populations.",
+      "strength": 0.85
+    },
+    {
+      "citations": [
+        "epi_2016_guarnieri"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "ozone",
+      "mechanism_hypothesis": "Ozone is an oxidant gas that can irritate the airways and promote inflammatory signaling; effects vary by context and study design.",
+      "strength": 0.55
+    },
+    {
+      "citations": [
+        "epi_2006_burke"
+      ],
+      "confidence": "high",
+      "direction": "amplify",
+      "exposure_slug": "tobacco-smoke-prenatal",
+      "mechanism_hypothesis": "Prenatal tobacco smoke exposure can alter lung development and immune maturation, increasing population-level asthma susceptibility in offspring cohorts.",
+      "strength": 0.75
+    },
+    {
+      "citations": [
+        "lit_2011_barnes"
+      ],
+      "confidence": "medium",
+      "direction": "buffer",
+      "exposure_slug": "endotoxin",
+      "mechanism_hypothesis": "Early-life endotoxin exposure may shift immune development toward non-allergic pathways in some environments (context-dependent; not a recommendation).",
+      "strength": 0.45
+    }
+  ],
+  "genetic_architecture": {
+    "heritability_estimate": {
+      "h2_narrow_sense": null,
+      "h2_snp": 0.15,
+      "source": "GWAS-based SNP heritability summary (representative estimate)",
+      "year": 2017
+    },
+    "prs_notes": "Polygenic scores for asthma are derived from population studies and reflect average genetic liability in groups, not an individual diagnosis. Transferability across ancestry groups can be limited because many GWAS are European-ancestry dominated; GENARCH flags this limitation explicitly and prioritizes multi-ancestry evidence when available.",
+    "top_loci": [
+      {
+        "ancestry_composition": "European-dominated; emerging multi-ancestry evidence",
+        "citations": [
+          "gwas_2017_moffatt",
+          "eqtl_2020_gtexv8"
+        ],
+        "effect_size": 0.12,
+        "evidence": "GWAS locus near IL33/IL1RL1 repeatedly associated with asthma and allergic phenotypes; supported by regulatory/eQTL evidence in airway-relevant tissues.",
+        "gene": "IL33",
+        "gwas_p": 1e-12,
+        "replication_status": "Replicated",
+        "strength": 0.85,
+        "variant": "rs1420101"
+      },
+      {
+        "ancestry_composition": "European-dominated",
+        "citations": [
+          "gwas_2017_moffatt",
+          "lit_2014_zenewicz"
+        ],
+        "effect_size": 0.1,
+        "evidence": "TSLP is implicated in type 2 inflammation and asthma susceptibility across multiple association studies and functional literature.",
+        "gene": "TSLP",
+        "gwas_p": 1e-10,
+        "replication_status": "Replicated",
+        "strength": 0.7,
+        "variant": null
+      },
+      {
+        "ancestry_composition": "European-dominated; observed in multiple cohorts",
+        "citations": [
+          "gwas_2017_moffatt"
+        ],
+        "effect_size": 0.18,
+        "evidence": "The 17q21 locus is a consistent asthma signal; mechanistic hypotheses include altered epithelial/immune signaling and viral response pathways.",
+        "gene": "ORMDL3/GSDMB (17q21 locus)",
+        "gwas_p": 1e-20,
+        "replication_status": "Replicated",
+        "strength": 0.8,
+        "variant": null
+      }
+    ]
+  },
+  "icd11_code": "CA23",
+  "id": "dis_asthma",
+  "last_updated": "2026-02-26",
+  "mechanism_briefs": [
+    "pm25-il33-nfkb-asthma"
+  ],
+  "name": "Asthma",
+  "population_equity": {
+    "data_gaps": "Many exposure datasets and mechanistic studies do not cover diverse populations equally. GxE interaction evidence is often sparse outside a few exposures and cohorts.",
+    "gwas_ancestry_breakdown": "Most large asthma GWAS to date have been European-ancestry dominated; multi-ancestry cohorts are increasing but remain uneven across regions.",
+    "transferability_notes": "PRS and locus effect estimates can shift across ancestry groups due to allele frequency, LD structure, and study design differences. GENARCH treats PRS explanations as educational and flags evidence gaps."
+  },
+  "references": [
+    {
+      "authors": "Moffatt MF et al.",
+      "doi": null,
+      "id": "gwas_2017_moffatt",
+      "journal": "Nature Genetics",
+      "title": "A large-scale, consortium-based genome-wide association study meta-analysis of asthma",
+      "url": null,
+      "year": 2017
+    },
+    {
+      "authors": "GTEx Consortium",
+      "doi": null,
+      "id": "eqtl_2020_gtexv8",
+      "journal": "Science",
+      "title": "The GTEx Consortium atlas of genetic regulatory effects across human tissues (v8)",
+      "url": null,
+      "year": 2020
+    },
+    {
+      "authors": "Guarnieri M, Balmes JR",
+      "doi": null,
+      "id": "epi_2016_guarnieri",
+      "journal": "The Lancet",
+      "title": "Outdoor air pollution and asthma in children",
+      "url": null,
+      "year": 2016
+    },
+    {
+      "authors": "Burke H et al.",
+      "doi": null,
+      "id": "epi_2006_burke",
+      "journal": "Pediatrics",
+      "title": "Prenatal and passive smoke exposure and incidence of asthma and wheeze: systematic review and meta-analysis",
+      "url": null,
+      "year": 2006
+    },
+    {
+      "authors": "Zenewicz LA, Flavell RA",
+      "doi": null,
+      "id": "lit_2014_zenewicz",
+      "journal": "Immunity",
+      "title": "IL-33 and the biology of the epithelial barrier in allergic inflammation",
+      "url": null,
+      "year": 2014
+    },
+    {
+      "authors": "Pope CA, Dockery DW",
+      "doi": null,
+      "id": "lit_2019_pope",
+      "journal": "Journal of the Air & Waste Management Association",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "url": null,
+      "year": 2019
+    },
+    {
+      "authors": "Barnes PJ et al.",
+      "doi": null,
+      "id": "lit_2011_barnes",
+      "journal": "Allergy",
+      "title": "Endotoxin exposure and allergic disease: complex context-dependent effects",
+      "url": null,
+      "year": 2011
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "asthma",
+  "summary": "Asthma is a common chronic condition in which the airways become inflamed and overly reactive. Symptoms can include wheeze, cough, chest tightness, and shortness of breath that vary over time. Asthma is not a single disease: it spans allergic and non-allergic forms and can look different across ages and environments. Biologically, asthma often involves airway epithelial stress, immune signaling that favors type 2 inflammation, and changes in mucus production and smooth muscle tone. Many people experience triggers such as viral infections, allergens, tobacco smoke, or air pollution, but triggers do not affect everyone equally.\n\nGENARCH presents asthma as a population-level gene–environment system. Genetic studies show asthma has a polygenic architecture: many variants across the genome each contribute small effects, and these effects can be amplified or buffered by exposure context. This means genetic signals should be interpreted as evidence about mechanisms in populations—not as predictions for any one person. Environmental exposures like fine particulate matter (PM2.5), ozone, and prenatal tobacco smoke are consistently associated with higher asthma burden, and several pathways converge on epithelial damage responses and inflammatory transcription programs (including NF-κB signaling).",
+  "tissues": [
+    {
+      "citations": [
+        "lit_2014_zenewicz"
+      ],
+      "evidence_type": "literature",
+      "name": "Bronchial epithelium",
+      "relevance_score": 0.9
+    },
+    {
+      "citations": [
+        "lit_2019_pope"
+      ],
+      "evidence_type": "literature",
+      "name": "Alveolar macrophages",
+      "relevance_score": 0.7
+    },
+    {
+      "citations": [
+        "lit_2014_zenewicz"
+      ],
+      "evidence_type": "literature",
+      "name": "Type 2 helper T cells / ILC2s",
+      "relevance_score": 0.75
+    }
+  ]
+}

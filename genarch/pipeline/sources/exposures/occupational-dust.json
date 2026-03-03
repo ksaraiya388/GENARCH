@@ -1,0 +1,52 @@
+{
+  "id": "exp_occupational_dust",
+  "slug": "occupational-dust",
+  "name": "Occupational Dust and Fume Exposure",
+  "definition": "Occupational dust and fume exposures include inhaled particulates encountered in certain workplaces (e.g., mining, construction, manufacturing). These exposures are relevant to respiratory outcomes in population studies and can interact with baseline airway biology. GENARCH presents this as educational content.",
+  "proxies": [
+    {
+      "name": "Job-exposure matrix (JEM) classification",
+      "unit": null,
+      "measurement_method": "Occupational classification → exposure category",
+      "data_source": "Occupational epidemiology studies (curated)"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "Respiratory",
+      "mechanism_summary": "Inhaled dust can contribute to airway irritation and chronic inflammatory responses in cohort evidence.",
+      "evidence_strength": 0.6
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "period": "Adult occupational period",
+      "age_range": "varies",
+      "mechanism_rationale": "Exposure often occurs during employment years; effects depend on duration and co-exposures such as smoking.",
+      "citations": ["epi_2015_occupational_copd_review"]
+    }
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {
+      "name": "Lung",
+      "effect_type": "chronic irritation / inflammation context",
+      "citations": ["epi_2015_occupational_copd_review"]
+    }
+  ],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "epi_2015_occupational_copd_review",
+      "title": "Occupational exposures and COPD risk: evidence overview (review)",
+      "authors": "Occupational Review Group",
+      "year": 2015,
+      "journal": "Occupational and Environmental Medicine",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

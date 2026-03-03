@@ -1,0 +1,136 @@
+{
+  "id": "dis_obesity",
+  "slug": "obesity",
+  "name": "Obesity",
+  "icd11_code": "5B81",
+  "summary": "Obesity describes excess adiposity that can influence metabolic, inflammatory, and cardiovascular pathways across the life course. At the population level, obesity prevalence reflects complex interactions among food environments, diet patterns, physical activity, sleep, psychosocial stress, endocrine signaling, and socioeconomic context. Biological mechanisms often discussed include changes in adipose tissue biology (inflammation and endocrine function), insulin resistance, and altered lipid handling.\n\nGenetic epidemiology indicates obesity is strongly polygenic: many common variants each contribute small effects, often via appetite regulation, energy balance, and adipose signaling pathways. Some loci (e.g., FTO and MC4R) have consistent associations across studies. GENARCH uses these signals to build educational mechanistic narratives about energy balance biology and how exposures can modify population-level trajectories—without making individual risk claims. Equity limitations are crucial: both genetic study representation and exposure context (food access, stressors, built environment) vary widely across populations.",
+  "adolescent_relevance": "Adolescence is a key period for growth, metabolic changes, and habit formation. Population studies often examine how diet patterns, sleep, and activity during adolescence relate to later cardiometabolic outcomes. GENARCH frames obesity content as educational, emphasizing evidence limitations and avoiding stigmatizing language or individualized predictions.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "FTO",
+        "variant": null,
+        "gwas_p": 1e-20,
+        "effect_size": 0.06,
+        "ancestry_composition": "European-dominated discovery; broader evidence exists",
+        "replication_status": "Replicated",
+        "evidence": "FTO locus is consistently associated with BMI/adiposity and is linked to appetite/energy balance mechanisms in literature.",
+        "strength": 0.8,
+        "citations": ["gwas_2015_giant_bmi", "lit_2016_obesity_biology"]
+      },
+      {
+        "gene": "MC4R",
+        "variant": null,
+        "gwas_p": 1e-15,
+        "effect_size": 0.05,
+        "ancestry_composition": "Multi-ancestry evidence increasing",
+        "replication_status": "Replicated",
+        "evidence": "MC4R is involved in appetite regulation; both common and rare variants are implicated in adiposity biology.",
+        "strength": 0.75,
+        "citations": ["gwas_2015_giant_bmi", "lit_2016_obesity_biology"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.5,
+      "source": "Family and GWAS-based estimates (varies across cohorts and age)",
+      "year": 2015
+    },
+    "prs_notes": "PRS for BMI/obesity are validated in research cohorts but show ancestry-dependent performance and strong dependence on exposure context. GENARCH does not compute or project individual risk; PRS is discussed only as population-level genetic liability."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "diet-quality",
+      "direction": "amplify",
+      "strength": 0.7,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Dietary patterns influence energy balance and adipose endocrine signaling, shifting population-level adiposity trajectories.",
+      "citations": ["rev_2019_who_nutrition"]
+    },
+    {
+      "exposure_slug": "physical-inactivity",
+      "direction": "amplify",
+      "strength": 0.65,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Lower activity reduces energy expenditure and is associated with metabolic dysregulation in cohorts.",
+      "citations": ["surv_2020_who_activity"]
+    },
+    {
+      "exposure_slug": "endocrine-disruptors",
+      "direction": "unknown",
+      "strength": 0.35,
+      "confidence": "low",
+      "mechanism_hypothesis": "Some endocrine disruptor compounds are hypothesized to affect metabolic regulation; evidence is heterogeneous and compound-specific.",
+      "citations": ["rev_2017_endocrine_disruptors"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "Adipose tissue",
+      "relevance_score": 0.9,
+      "evidence_type": "GWAS",
+      "citations": ["gwas_2015_giant_bmi"]
+    },
+    {
+      "name": "Hypothalamus / appetite regulation circuits",
+      "relevance_score": 0.65,
+      "evidence_type": "literature",
+      "citations": ["lit_2016_obesity_biology"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "BMI/obesity GWAS have been European-ancestry dominated historically; multi-ancestry datasets are expanding but gaps remain.",
+    "transferability_notes": "PRS performance and effect estimates can vary across ancestries and environments. GENARCH emphasizes that exposure context (food environment, stressors) is essential for interpretation.",
+    "data_gaps": "Measurement heterogeneity (BMI vs. body composition), diverse food environments, and socioeconomic confounding limit causal claims for some exposure modifiers."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "gwas_2015_giant_bmi",
+      "title": "Genetic studies of body mass index yield insights into biology and risk loci",
+      "authors": "GIANT Consortium",
+      "year": 2015,
+      "journal": "Nature",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2016_obesity_biology",
+      "title": "Obesity biology: appetite regulation and adipose signaling overview (review)",
+      "authors": "Metabolic Biology Review Group",
+      "year": 2016,
+      "journal": "Cell",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "rev_2019_who_nutrition",
+      "title": "Healthy diet factsheet and guidance (population-level)",
+      "authors": "World Health Organization",
+      "year": 2019,
+      "journal": "WHO",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "surv_2020_who_activity",
+      "title": "WHO guidelines on physical activity and sedentary behaviour",
+      "authors": "World Health Organization",
+      "year": 2020,
+      "journal": "WHO",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "rev_2017_endocrine_disruptors",
+      "title": "Endocrine disruptors and metabolic outcomes: evidence overview (review)",
+      "authors": "Endocrine Review Group",
+      "year": 2017,
+      "journal": "Endocrine Reviews",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

@@ -1,0 +1,127 @@
+{
+  "id": "dis_covid_19_severity",
+  "slug": "covid-19-severity",
+  "name": "COVID-19 Severity (Susceptibility to Severe Outcomes)",
+  "icd11_code": "RA01.0",
+  "summary": "COVID-19 severity refers to the spectrum of outcomes following SARS-CoV-2 infection, ranging from mild illness to hospitalization, intensive care, and death. At the population level, severity patterns reflect age and comorbidities, exposure intensity, healthcare access, viral variants, and social context. Biological mechanisms discussed include innate immune responses, inflammatory cascades, endothelial injury, and thrombosis pathways.\n\nGenetic epidemiology identifies host genetic loci associated with severe COVID-19 outcomes (e.g., a locus on chromosome 3 and immune pathway genes such as OAS1 in some studies). These associations are population-level and can be influenced by case definitions and ancestry representation. GENARCH presents COVID-19 genetics and exposures as educational context for host–environment interaction reasoning and does not provide individual-level risk predictions or clinical recommendations.",
+  "adolescent_relevance": "Most severe COVID-19 outcomes occur in older adults, but adolescents and young adults can still be affected, and population-level exposure patterns and immune mechanisms are relevant for education. GENARCH emphasizes uncertainty and avoids individualized risk claims.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "Chromosome 3p21.31 locus (host response context)",
+        "variant": null,
+        "gwas_p": 1e-12,
+        "effect_size": 0.08,
+        "ancestry_composition": "Multi-ancestry evidence; effect estimates vary",
+        "replication_status": "Replicated",
+        "evidence": "Host genetic associations implicate immune response pathways; mapping to specific causal genes is complex.",
+        "strength": 0.7,
+        "citations": ["gwas_2021_covid_hgi"]
+      },
+      {
+        "gene": "OAS1",
+        "variant": null,
+        "gwas_p": 1e-8,
+        "effect_size": 0.05,
+        "ancestry_composition": "Multi-ancestry evidence",
+        "replication_status": "Replicated in several studies",
+        "evidence": "OAS1 and interferon-related antiviral pathways are implicated in host response genetics.",
+        "strength": 0.6,
+        "citations": ["gwas_2021_covid_hgi"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.2,
+      "source": "GWAS-based estimates for severe outcomes (varies by case definition)",
+      "year": 2021
+    },
+    "prs_notes": "PRS for COVID-19 severity have been explored in research contexts, but performance depends on ancestry, variant, and case definition. GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "crowding-housing",
+      "direction": "amplify",
+      "strength": 0.55,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Crowding can increase exposure opportunities for respiratory pathogens at the population level; severity outcomes depend on many factors including comorbidity and access to care.",
+      "citations": ["epi_2020_housing_infection_review"]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "amplify",
+      "strength": 0.4,
+      "confidence": "low",
+      "mechanism_hypothesis": "Ambient particulates are studied as modifiers of respiratory vulnerability; evidence varies by pollutant and study design.",
+      "citations": ["lit_2019_pope"]
+    },
+    {
+      "exposure_slug": "smoking",
+      "direction": "amplify",
+      "strength": 0.4,
+      "confidence": "low",
+      "mechanism_hypothesis": "Smoking is associated with respiratory vulnerability; causal interpretation in COVID-19 outcomes varies by cohort and measurement.",
+      "citations": ["rev_2018_us_surgeon_general"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "Respiratory epithelium",
+      "relevance_score": 0.8,
+      "evidence_type": "literature",
+      "citations": ["gwas_2021_covid_hgi"]
+    },
+    {
+      "name": "Immune system (innate antiviral response)",
+      "relevance_score": 0.7,
+      "evidence_type": "GWAS",
+      "citations": ["gwas_2021_covid_hgi"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "COVID-19 host genetics studies include multi-ancestry cohorts, but representation and case ascertainment differ across settings.",
+    "transferability_notes": "Effect estimates can vary with ancestry and with changing variants, exposures, and healthcare context. GENARCH highlights uncertainty and avoids individual inference.",
+    "data_gaps": "Rapidly evolving variants, vaccination, and changing testing practices complicate interpretation; exposure variables can be imperfectly measured."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "gwas_2021_covid_hgi",
+      "title": "The COVID-19 Host Genetics Initiative: mapping host genetic determinants of COVID-19 severity",
+      "authors": "COVID-19 Host Genetics Initiative",
+      "year": 2021,
+      "journal": "Nature",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2020_housing_infection_review",
+      "title": "Housing conditions and respiratory infection risk: overview (review)",
+      "authors": "Public Health Review Group",
+      "year": 2020,
+      "journal": "Public Health",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2019_pope",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "rev_2018_us_surgeon_general",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "authors": "U.S. Surgeon General",
+      "year": 2018,
+      "journal": "U.S. Department of Health and Human Services",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

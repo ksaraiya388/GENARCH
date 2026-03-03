@@ -1,0 +1,55 @@
+{
+  "definition": "Infection burden is a broad exposure category reflecting frequency and severity of infectious exposures in a population (e.g., recurrent respiratory infections, endemic pathogen exposure). Infection can influence immune activation, inflammation, and tissue injury pathways relevant to multiple diseases. GENARCH includes this category to support educational gene–environment discussions without individual-level claims.",
+  "exposure_distribution": null,
+  "gxe_highlights": [],
+  "id": "exp_infection_burden",
+  "last_updated": "2026-02-26",
+  "name": "Infection Burden (Broad Category)",
+  "proxies": [
+    {
+      "data_source": "Public health dashboards (curated)",
+      "measurement_method": "Public health surveillance summary",
+      "name": "Community infection incidence proxy",
+      "unit": "cases/100k"
+    }
+  ],
+  "references": [
+    {
+      "authors": "Immunology Review Group",
+      "doi": null,
+      "id": "epi_2015_infection_immune_review",
+      "journal": "Nature Reviews Immunology",
+      "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)",
+      "url": null,
+      "year": 2015
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "0–5",
+      "citations": [
+        "epi_2015_infection_immune_review"
+      ],
+      "mechanism_rationale": "Early-life infections can shape immune maturation; interpretation depends strongly on pathogen, dose, and context.",
+      "period": "Early childhood"
+    }
+  ],
+  "slug": "infection-burden",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.4,
+      "mechanism_summary": "Infections trigger innate and adaptive immune responses; chronic or repeated activation can alter inflammatory signaling in population contexts.",
+      "system": "Immune"
+    }
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "epi_2015_infection_immune_review"
+      ],
+      "effect_type": "immune activation context",
+      "name": "Immune system"
+    }
+  ]
+}

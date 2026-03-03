@@ -1,0 +1,55 @@
+{
+  "definition": "Ultraviolet radiation exposure (from sunlight or artificial sources) can influence skin and immune biology. In autoimmune research, UV exposure is discussed as a potential trigger for disease flares in some conditions (context-dependent). GENARCH presents this as educational, population-level context without clinical recommendations.",
+  "exposure_distribution": null,
+  "gxe_highlights": [],
+  "id": "exp_uv_radiation",
+  "last_updated": "2026-02-26",
+  "name": "Ultraviolet (UV) Radiation",
+  "proxies": [
+    {
+      "data_source": "Meteorological datasets (curated)",
+      "measurement_method": "Geographic modeling or monitoring data",
+      "name": "Ambient UV index / latitude proxy",
+      "unit": "index"
+    }
+  ],
+  "references": [
+    {
+      "authors": "Autoimmunity Review Group",
+      "doi": null,
+      "id": "epi_2014_uv_autoimmune_review",
+      "journal": "Journal of Autoimmunity",
+      "title": "Ultraviolet radiation and autoimmune disease mechanisms: overview (review)",
+      "url": null,
+      "year": 2014
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "varies",
+      "citations": [
+        "epi_2014_uv_autoimmune_review"
+      ],
+      "mechanism_rationale": "UV exposure is episodic and seasonal; autoimmune literature often discusses contextual sensitivity rather than a single developmental window.",
+      "period": "All ages"
+    }
+  ],
+  "slug": "uv-radiation",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.4,
+      "mechanism_summary": "UV can induce skin injury responses and modulate immune signaling; effects are context- and dose-dependent.",
+      "system": "Immune / skin"
+    }
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "epi_2014_uv_autoimmune_review"
+      ],
+      "effect_type": "immune modulation / injury response context",
+      "name": "Skin"
+    }
+  ]
+}

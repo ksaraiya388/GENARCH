@@ -1,0 +1,120 @@
+{
+  "adolescent_relevance": "SCD often manifests in childhood and adolescence. GENARCH provides educational explanations of the genetic mechanism and population-level context, without clinical guidance.",
+  "exposure_modifiers": [
+    {
+      "citations": [
+        "epi_2015_infection_immune_review"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "infection-burden",
+      "mechanism_hypothesis": "Infections can increase inflammatory stress and precipitate complications in population contexts; this is not individualized advice.",
+      "strength": 0.6
+    },
+    {
+      "citations": [
+        "epi_2018_heat_health_review"
+      ],
+      "confidence": "low",
+      "direction": "amplify",
+      "exposure_slug": "heat-stress",
+      "mechanism_hypothesis": "Heat and dehydration are discussed as physiological stressors that may relate to symptom burden; evidence varies and depends on context.",
+      "strength": 0.35
+    },
+    {
+      "citations": [
+        "lit_2019_pope"
+      ],
+      "confidence": "low",
+      "direction": "unknown",
+      "exposure_slug": "air-pollution",
+      "mechanism_hypothesis": "Ambient particulates are studied as respiratory stressors; links to SCD outcomes depend on setting and study design.",
+      "strength": 0.3
+    }
+  ],
+  "genetic_architecture": {
+    "heritability_estimate": {
+      "h2_narrow_sense": null,
+      "h2_snp": 1.0,
+      "source": "Monogenic causal architecture (primary variant-driven disease)",
+      "year": 2014
+    },
+    "prs_notes": "PRS is not applicable as a primary risk model for monogenic SCD. GENARCH does not provide individual predictions.",
+    "top_loci": [
+      {
+        "ancestry_composition": "Ancestry-linked frequency patterns due to historical selection",
+        "citations": [
+          "clin_2014_scd_review"
+        ],
+        "effect_size": null,
+        "evidence": "Specific HBB variants cause sickling hemoglobin and the core SCD phenotype; modifiers exist but the primary cause is well-established.",
+        "gene": "HBB",
+        "gwas_p": null,
+        "replication_status": "Causal (monogenic)",
+        "strength": 0.95,
+        "variant": null
+      }
+    ]
+  },
+  "icd11_code": "3A50",
+  "id": "dis_sickle_cell_disease",
+  "last_updated": "2026-02-26",
+  "mechanism_briefs": [],
+  "name": "Sickle Cell Disease",
+  "population_equity": {
+    "data_gaps": "Many studies are setting-specific; environmental exposure data is often incomplete or indirect.",
+    "gwas_ancestry_breakdown": "SCD is more prevalent in populations with ancestry from malaria-endemic regions; research representation and healthcare access vary by setting.",
+    "transferability_notes": "Genetic modifiers and outcome studies may not generalize across contexts due to differences in care, environment, and measurement."
+  },
+  "references": [
+    {
+      "authors": "Hematology Review Group",
+      "doi": null,
+      "id": "clin_2014_scd_review",
+      "journal": "New England Journal of Medicine",
+      "title": "Sickle cell disease: molecular basis and clinical complications (review)",
+      "url": null,
+      "year": 2014
+    },
+    {
+      "authors": "Immunology Review Group",
+      "doi": null,
+      "id": "epi_2015_infection_immune_review",
+      "journal": "Nature Reviews Immunology",
+      "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)",
+      "url": null,
+      "year": 2015
+    },
+    {
+      "authors": "Climate Health Review Group",
+      "doi": null,
+      "id": "epi_2018_heat_health_review",
+      "journal": "The Lancet Planetary Health",
+      "title": "Extreme heat exposure and health outcomes: overview (review)",
+      "url": null,
+      "year": 2018
+    },
+    {
+      "authors": "Pope CA, Dockery DW",
+      "doi": null,
+      "id": "lit_2019_pope",
+      "journal": "Journal of the Air & Waste Management Association",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "url": null,
+      "year": 2019
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "sickle-cell-disease",
+  "summary": "Sickle cell disease (SCD) is a hereditary hemoglobinopathy caused by specific variants in the HBB gene that alter hemoglobin structure. Under low-oxygen or physiological stress conditions, red blood cells can sickle, leading to hemolysis, vaso-occlusion, pain crises, and multi-organ complications. While the causal genetic basis is well-established, population-level outcomes and symptom burden can still be shaped by exposure context, healthcare access, infection burden, and environmental stressors.\n\nGENARCH presents SCD as an educational example of monogenic architecture interacting with environmental and social context at the population level. It does not provide individualized medical advice or risk estimates. Equity considerations are central because SCD disproportionately affects specific ancestry groups due to historical malaria selection and because healthcare access and structural factors influence observed outcomes.",
+  "tissues": [
+    {
+      "citations": [
+        "clin_2014_scd_review"
+      ],
+      "evidence_type": "literature",
+      "name": "Blood / vasculature",
+      "relevance_score": 0.9
+    }
+  ]
+}

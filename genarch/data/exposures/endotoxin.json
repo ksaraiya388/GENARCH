@@ -1,0 +1,55 @@
+{
+  "definition": "Endotoxin (lipopolysaccharide; LPS) is a component of Gram-negative bacterial cell walls and can be present in indoor and agricultural environments. Some cohort studies suggest early-life microbial exposures may be associated with lower rates of allergic disease in certain contexts, but effects are complex and environment-dependent. GENARCH describes this evidence in a neutral, educational framing.",
+  "exposure_distribution": null,
+  "gxe_highlights": [],
+  "id": "exp_endotoxin",
+  "last_updated": "2026-02-26",
+  "name": "Endotoxin (Environmental Microbial Products)",
+  "proxies": [
+    {
+      "data_source": "Environmental health studies (curated)",
+      "measurement_method": "Dust sampling + LAL assay (study-dependent)",
+      "name": "Indoor dust endotoxin concentration",
+      "unit": "EU/mg"
+    }
+  ],
+  "references": [
+    {
+      "authors": "Barnes PJ et al.",
+      "doi": null,
+      "id": "lit_2011_barnes",
+      "journal": "Allergy",
+      "title": "Endotoxin exposure and allergic disease: complex context-dependent effects",
+      "url": null,
+      "year": 2011
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "0–5",
+      "citations": [
+        "lit_2011_barnes"
+      ],
+      "mechanism_rationale": "Immune maturation occurs rapidly in early life; microbial exposures during this period are hypothesized to influence allergic sensitization trajectories in some settings.",
+      "period": "Early childhood"
+    }
+  ],
+  "slug": "endotoxin",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.4,
+      "mechanism_summary": "Microbial products can engage innate immune receptors (e.g., TLR4), potentially shaping immune development; directionality may differ by timing, dose, and co-exposures.",
+      "system": "Immune"
+    }
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "lit_2011_barnes"
+      ],
+      "effect_type": "innate immune signaling context",
+      "name": "Airway mucosa"
+    }
+  ]
+}

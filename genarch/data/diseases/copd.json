@@ -1,0 +1,150 @@
+{
+  "adolescent_relevance": "COPD is typically diagnosed later in life, but its major exposures and lung biology pathways can be influenced earlier. Adolescence is relevant to understanding initiation of smoking and other exposures that shape long-term lung health trajectories at the population level. GENARCH provides educational summaries rather than individualized guidance.",
+  "exposure_modifiers": [
+    {
+      "citations": [
+        "rev_2018_us_surgeon_general"
+      ],
+      "confidence": "high",
+      "direction": "amplify",
+      "exposure_slug": "smoking",
+      "mechanism_hypothesis": "Smoking is a dominant exposure driver for COPD in many cohorts, contributing to oxidative stress and chronic inflammatory remodeling.",
+      "strength": 0.9
+    },
+    {
+      "citations": [
+        "lit_2019_pope"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "air-pollution",
+      "mechanism_hypothesis": "Fine particulate exposure can contribute to chronic airway irritation and lung function changes; evidence varies across settings.",
+      "strength": 0.55
+    },
+    {
+      "citations": [
+        "epi_2015_occupational_copd_review"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "occupational-dust",
+      "mechanism_hypothesis": "Occupational particulates are associated with COPD risk, often interacting with smoking and cumulative exposure duration.",
+      "strength": 0.6
+    }
+  ],
+  "genetic_architecture": {
+    "heritability_estimate": {
+      "h2_narrow_sense": null,
+      "h2_snp": 0.4,
+      "source": "Family and GWAS-based estimates (varies by phenotype definition)",
+      "year": 2017
+    },
+    "prs_notes": "PRS for COPD exist in research settings and are influenced by both lung function genetics and exposure mediation. Transferability varies across ancestries and exposure patterns; GENARCH treats PRS concepts as educational only.",
+    "top_loci": [
+      {
+        "ancestry_composition": "Variant spectrum differs across populations",
+        "citations": [
+          "clin_2017_a1at_review"
+        ],
+        "effect_size": null,
+        "evidence": "Alpha-1 antitrypsin deficiency illustrates a high-impact genetic pathway relevant to COPD susceptibility and lung tissue damage mechanisms.",
+        "gene": "SERPINA1",
+        "gwas_p": null,
+        "replication_status": "Established high-impact (subset)",
+        "strength": 0.85,
+        "variant": null
+      },
+      {
+        "ancestry_composition": "European-dominated discovery; broader evaluation exists",
+        "citations": [
+          "gwas_2017_copd_meta"
+        ],
+        "effect_size": 0.06,
+        "evidence": "Nicotine receptor locus is implicated in smoking behavior and lung disease associations, with complex mediation through exposure.",
+        "gene": "CHRNA5/CHRNA3 locus",
+        "gwas_p": 1e-10,
+        "replication_status": "Replicated",
+        "strength": 0.65,
+        "variant": null
+      }
+    ]
+  },
+  "icd11_code": "CA40",
+  "id": "dis_copd",
+  "last_updated": "2026-02-26",
+  "mechanism_briefs": [],
+  "name": "Chronic Obstructive Pulmonary Disease (COPD)",
+  "population_equity": {
+    "data_gaps": "Phenotype definition and exposure measurement vary across cohorts; causal attribution is complicated by mediation through smoking.",
+    "gwas_ancestry_breakdown": "Many COPD GWAS are European-ancestry dominated; exposure distributions and smoking patterns differ across populations.",
+    "transferability_notes": "PRS and effect estimates can vary by ancestry and exposure context; GENARCH avoids individual-level interpretations."
+  },
+  "references": [
+    {
+      "authors": "Pulmonary Genetics Review Group",
+      "doi": null,
+      "id": "clin_2017_a1at_review",
+      "journal": "American Journal of Respiratory and Critical Care Medicine",
+      "title": "Alpha-1 antitrypsin deficiency and COPD: genetics and mechanisms (review)",
+      "url": null,
+      "year": 2017
+    },
+    {
+      "authors": "COPD GWAS Consortium",
+      "doi": null,
+      "id": "gwas_2017_copd_meta",
+      "journal": "Nature Genetics",
+      "title": "Genome-wide association meta-analysis of COPD identifies risk loci and pathways",
+      "url": null,
+      "year": 2017
+    },
+    {
+      "authors": "U.S. Surgeon General",
+      "doi": null,
+      "id": "rev_2018_us_surgeon_general",
+      "journal": "U.S. Department of Health and Human Services",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "url": null,
+      "year": 2018
+    },
+    {
+      "authors": "Pope CA, Dockery DW",
+      "doi": null,
+      "id": "lit_2019_pope",
+      "journal": "Journal of the Air & Waste Management Association",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "url": null,
+      "year": 2019
+    },
+    {
+      "authors": "Occupational Review Group",
+      "doi": null,
+      "id": "epi_2015_occupational_copd_review",
+      "journal": "Occupational and Environmental Medicine",
+      "title": "Occupational exposures and COPD risk: evidence overview (review)",
+      "url": null,
+      "year": 2015
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "copd",
+  "summary": "Chronic obstructive pulmonary disease (COPD) is a chronic respiratory condition characterized by persistent airflow limitation, often involving emphysema, chronic bronchitis features, and airway remodeling. At the population level, COPD burden is strongly associated with long-term inhaled exposures such as tobacco smoke and occupational particulates, with air pollution also studied as a modifier. Biological mechanisms commonly discussed include oxidative stress, chronic inflammation, impaired repair processes, mucus hypersecretion, and altered immune responses in the lung.\n\nGenetic epidemiology indicates COPD has a polygenic component and also includes rare high-impact variants that illustrate causal pathways. The classic example is alpha-1 antitrypsin deficiency (SERPINA1), which highlights protease–antiprotease balance and tissue damage mechanisms. GENARCH presents COPD genetics and exposure evidence as population-level mechanistic context and does not provide individual predictions or clinical advice. Equity limitations remain: exposure distributions and study representation vary across populations and regions.",
+  "tissues": [
+    {
+      "citations": [
+        "clin_2017_a1at_review"
+      ],
+      "evidence_type": "literature",
+      "name": "Lung (airways and alveoli)",
+      "relevance_score": 0.9
+    },
+    {
+      "citations": [
+        "lit_2019_pope"
+      ],
+      "evidence_type": "literature",
+      "name": "Alveolar macrophages",
+      "relevance_score": 0.6
+    }
+  ]
+}

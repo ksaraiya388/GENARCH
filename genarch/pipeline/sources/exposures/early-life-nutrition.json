@@ -1,0 +1,64 @@
+{
+  "id": "exp_early_life_nutrition",
+  "slug": "early-life-nutrition",
+  "name": "Early-Life Nutrition",
+  "definition": "Early-life nutrition refers to nutritional exposures during pregnancy, infancy, and early childhood (e.g., maternal diet, breastfeeding patterns, micronutrient adequacy). This category is relevant to developmental origins of health and disease frameworks and can modify population-level cardiometabolic risk trajectories. GENARCH includes this as an educational exposure category.",
+  "proxies": [
+    {
+      "name": "Breastfeeding duration",
+      "unit": "months",
+      "measurement_method": "Cohort survey",
+      "data_source": "Birth cohort studies (curated)"
+    },
+    {
+      "name": "Maternal diet quality index",
+      "unit": "score",
+      "measurement_method": "Dietary recall → composite score",
+      "data_source": "Birth cohort studies (curated)"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "Metabolic",
+      "mechanism_summary": "Early nutrition can influence growth patterns, insulin sensitivity, and long-term metabolic set points in cohort evidence.",
+      "evidence_strength": 0.5
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "period": "Prenatal",
+      "age_range": "in utero",
+      "mechanism_rationale": "Developmental programming hypotheses emphasize prenatal windows for later metabolic outcomes.",
+      "citations": ["rev_2019_who_nutrition"]
+    },
+    {
+      "period": "Early childhood",
+      "age_range": "0–5",
+      "mechanism_rationale": "Rapid growth and organ maturation can be sensitive to nutritional adequacy and dietary patterns.",
+      "citations": ["rev_2019_who_nutrition"]
+    }
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {
+      "name": "Pancreas",
+      "effect_type": "metabolic development context",
+      "citations": ["rev_2019_who_nutrition"]
+    }
+  ],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "rev_2019_who_nutrition",
+      "title": "Healthy diet factsheet and guidance (population-level)",
+      "authors": "World Health Organization",
+      "year": 2019,
+      "journal": "WHO",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

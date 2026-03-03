@@ -1,0 +1,142 @@
+{
+  "items": [
+    {
+      "last_updated": "2026-02-26",
+      "name": "Alzheimer’s Disease",
+      "slug": "alzheimers-disease",
+      "summary": "Alzheimer’s disease (AD) is a neurodegenerative condition characterized by progressive cognitive decline and functional impairment. At a biological level, commonly discussed mechanisms include amyloid and tau pathology, synaptic dysfunction, vascular contributions, and neuroinflammation. Population-level risk reflects age as a major factor, alongside genetic architecture and exposure contexts such as cardiometabolic health, air quality, and sleep patterns—each of which can influence brain health through vascular and immune pathways.\n\nGenetic epidemiology distinguishes early-onset familial forms (often involving high-impact variants in genes such as APP and PSEN1/2) from late-onset AD, which has a strong polygenic component with notable common-variant effects (e.g., APOE). GENARCH frames these genetic signals as mechanistic evidence about pathways like lipid transport and immune signaling in the brain, not as individual prediction. Equity limitations are important: ancestry representation and case ascertainment differ across studies, and social factors can influence exposure measurement and diagnosis patterns."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Asthma",
+      "slug": "asthma",
+      "summary": "Asthma is a common chronic condition in which the airways become inflamed and overly reactive. Symptoms can include wheeze, cough, chest tightness, and shortness of breath that vary over time. Asthma is not a single disease: it spans allergic and non-allergic forms and can look different across ages and environments. Biologically, asthma often involves airway epithelial stress, immune signaling that favors type 2 inflammation, and changes in mucus production and smooth muscle tone. Many people experience triggers such as viral infections, allergens, tobacco smoke, or air pollution, but triggers do not affect everyone equally.\n\nGENARCH presents asthma as a population-level gene–environment system. Genetic studies show asthma has a polygenic architecture: many variants across the genome each contribute small effects, and these effects can be amplified or buffered by exposure context. This means genetic signals should be interpreted as evidence about mechanisms in populations—not as predictions for any one person. Environmental exposures like fine particulate matter (PM2.5), ozone, and prenatal tobacco smoke are consistently associated with higher asthma burden, and several pathways converge on epithelial damage responses and inflammatory transcription programs (including NF-κB signaling)."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Breast Cancer",
+      "slug": "breast-cancer",
+      "summary": "Breast cancer is a heterogeneous set of malignancies arising from breast tissue, with subtypes defined by molecular features such as hormone receptor status and HER2 signaling. At the population level, risk reflects both inherited susceptibility and lifetime exposures that shape hormonal milieu, DNA damage/repair, and tissue microenvironment. Epidemiological evidence highlights hormonal factors, alcohol, and certain forms of radiation exposure as relevant modifiers in many settings, alongside complex social and healthcare factors that influence observed incidence and outcomes.\n\nGenetic epidemiology indicates breast cancer has both rare high-impact inherited variants and a polygenic background of many small-effect loci. High-penetrance genes such as BRCA1 and BRCA2 illustrate DNA repair pathways that can be mechanistically central, while common-variant signals (e.g., near FGFR2) demonstrate broad polygenic architecture. GENARCH presents these findings as mechanistic evidence at the population level, not as individual screening guidance. Equity and representation limitations matter: genetic study participation, access to tumor profiling, and exposure measurement vary across populations."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Colorectal Cancer",
+      "slug": "colorectal-cancer",
+      "summary": "Colorectal cancer (CRC) arises from the colon or rectum and often develops over years through accumulation of genetic and epigenetic alterations in colonic epithelium. At the population level, CRC risk is influenced by inherited susceptibility, diet patterns, alcohol use, and gut microbiome context, alongside screening and healthcare access factors that shape observed incidence and outcomes. Mechanistic hypotheses frequently involve inflammation, epithelial barrier interactions, and signaling pathways that regulate cell growth.\n\nGenetic epidemiology includes rare high-impact hereditary syndromes (e.g., APC-related familial adenomatous polyposis and mismatch repair genes in Lynch syndrome) alongside a polygenic background of common variants associated with CRC risk. GENARCH uses these genetic signals to support educational mechanistic narratives about pathways such as DNA repair and Wnt signaling—without individualized risk scoring. Equity limitations are important because both genetic study participation and screening practices vary across populations."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Chronic Obstructive Pulmonary Disease (COPD)",
+      "slug": "copd",
+      "summary": "Chronic obstructive pulmonary disease (COPD) is a chronic respiratory condition characterized by persistent airflow limitation, often involving emphysema, chronic bronchitis features, and airway remodeling. At the population level, COPD burden is strongly associated with long-term inhaled exposures such as tobacco smoke and occupational particulates, with air pollution also studied as a modifier. Biological mechanisms commonly discussed include oxidative stress, chronic inflammation, impaired repair processes, mucus hypersecretion, and altered immune responses in the lung.\n\nGenetic epidemiology indicates COPD has a polygenic component and also includes rare high-impact variants that illustrate causal pathways. The classic example is alpha-1 antitrypsin deficiency (SERPINA1), which highlights protease–antiprotease balance and tissue damage mechanisms. GENARCH presents COPD genetics and exposure evidence as population-level mechanistic context and does not provide individual predictions or clinical advice. Equity limitations remain: exposure distributions and study representation vary across populations and regions."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Coronary Artery Disease",
+      "slug": "coronary-artery-disease",
+      "summary": "Coronary artery disease (CAD) refers to narrowing or obstruction of the coronary arteries, most often due to atherosclerosis. At the population level, CAD burden reflects long-term processes including lipid accumulation in vessel walls, immune and inflammatory signaling, endothelial dysfunction, and thrombosis. Many cohort studies link CAD risk to diet patterns, smoking, physical activity, air quality, and cardiometabolic traits. Importantly, these exposures act in combination and over time, and their impacts vary across populations.\n\nGenetic epidemiology indicates CAD has a polygenic architecture: many common variants contribute small effects that collectively influence atherosclerotic biology. In addition, rare high-impact variants can cause familial hypercholesterolemia and related phenotypes, demonstrating that lipid pathways can be causal levers. GENARCH presents CAD genetics as evidence about mechanisms (e.g., LDL metabolism and inflammation) rather than as individual predictions. Evidence also highlights equity limitations: many large discovery cohorts have historically over-represented European ancestry, affecting transferability of polygenic models to other groups."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "COVID-19 Severity (Susceptibility to Severe Outcomes)",
+      "slug": "covid-19-severity",
+      "summary": "COVID-19 severity refers to the spectrum of outcomes following SARS-CoV-2 infection, ranging from mild illness to hospitalization, intensive care, and death. At the population level, severity patterns reflect age and comorbidities, exposure intensity, healthcare access, viral variants, and social context. Biological mechanisms discussed include innate immune responses, inflammatory cascades, endothelial injury, and thrombosis pathways.\n\nGenetic epidemiology identifies host genetic loci associated with severe COVID-19 outcomes (e.g., a locus on chromosome 3 and immune pathway genes such as OAS1 in some studies). These associations are population-level and can be influenced by case definitions and ancestry representation. GENARCH presents COVID-19 genetics and exposures as educational context for host–environment interaction reasoning and does not provide individual-level risk predictions or clinical recommendations."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Cystic Fibrosis",
+      "slug": "cystic-fibrosis",
+      "summary": "Cystic fibrosis (CF) is a hereditary disease caused by variants in the CFTR gene, affecting chloride and bicarbonate transport across epithelial surfaces. This can lead to thick mucus, impaired mucociliary clearance, and chronic infections, particularly in the lungs, as well as gastrointestinal and pancreatic involvement. While CF is monogenic in its primary cause, population-level outcomes and symptom burden can still be influenced by exposure context such as air quality and infection burden, along with healthcare access.\n\nGENARCH presents CF as an educational example of monogenic architecture interacting with environment and care context at the population level. It does not provide individualized medical advice or risk estimates."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Huntington Disease",
+      "slug": "huntington-disease",
+      "summary": "Huntington disease (HD) is a hereditary neurodegenerative disorder caused by a CAG repeat expansion in the HTT gene. The expanded polyglutamine tract leads to toxic protein effects and progressive neuronal dysfunction, often affecting movement, cognition, and behavior. While the genetic cause is the primary determinant of disease, population-level outcomes can still be shaped by supportive care access and broader environmental context.\n\nGENARCH presents HD as an educational example of monogenic architecture with clear molecular causation. It does not provide individualized prediction, age-of-onset estimation, or clinical recommendations."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Hypertension",
+      "slug": "hypertension",
+      "summary": "Hypertension (high blood pressure) is a common condition defined by persistently elevated arterial pressure. At a biological level, blood pressure reflects interactions among the vasculature, kidneys, endocrine signaling (including the renin–angiotensin–aldosterone system; RAAS), autonomic regulation, and inflammation. Population-level hypertension burden is shaped by diet patterns (including sodium intake), physical activity, psychosocial stressors, and broader environmental and social context.\n\nGenetic epidemiology indicates hypertension is polygenic: many common variants influence blood pressure regulation through kidney function, vascular tone, and hormonal pathways. Individual variants typically have small effects, but aggregate genetic liability can inform population-level mechanism discovery. GENARCH uses this genetic layer for educational mechanistic interpretation—without providing individual risk scores or clinical recommendations. Equity limitations are important: hypertension prevalence and measurement vary by context, and many genetic studies have uneven ancestry representation."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Lung Cancer",
+      "slug": "lung-cancer",
+      "summary": "Lung cancer comprises malignancies arising in lung tissue, with major subtypes including non-small cell and small cell lung cancer. Population-level risk is strongly influenced by inhaled exposures—particularly tobacco smoke—and is also studied in relation to ambient air pollution and occupational particulates. Mechanistic hypotheses emphasize DNA damage, chronic inflammation, and altered epithelial repair processes. Importantly, observed population patterns are shaped by exposure distributions, regulation, healthcare access, and diagnostic practices.\n\nGenetic epidemiology for lung cancer includes gene–environment interactions where genetic variation may modify susceptibility under specific exposure conditions (e.g., nicotine receptor region variants in the context of smoking). In addition, germline variants can influence cancer biology and response pathways, though somatic mutations are central to tumor development. GENARCH presents lung cancer content as educational and population-level: it summarizes evidence and limitations and does not provide individual risk or screening advice."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Major Depressive Disorder",
+      "slug": "major-depressive-disorder",
+      "summary": "Major depressive disorder (MDD) is a common mental health condition characterized by persistent low mood and/or loss of interest, often accompanied by changes in sleep, appetite, energy, concentration, and functioning. MDD is heterogeneous and influenced by complex interactions among neurobiology, life experiences, and social context. Biological hypotheses span stress-response (HPA axis) regulation, synaptic signaling, neuroinflammatory pathways, and changes in neuroplasticity.\n\nGenetic epidemiology indicates MDD is polygenic with moderate heritability: many common variants contribute small effects, and aggregate liability can be summarized in research PRS. Environmental exposures such as psychosocial stress and sleep disruption are studied as population-level modifiers that may interact with genetic vulnerability. GENARCH presents these findings in a non-stigmatizing, educational framing and does not provide individual-level risk assessment or clinical recommendations."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Marfan Syndrome",
+      "slug": "marfan-syndrome",
+      "summary": "Marfan syndrome is a hereditary connective tissue disorder most commonly caused by pathogenic variants in the FBN1 gene. It can affect multiple organ systems, including the cardiovascular system (aorta), eyes, and skeleton, through altered extracellular matrix structure and signaling. While the genetic cause is primary, population-level outcomes are influenced by surveillance and care access, which can vary across settings.\n\nGENARCH presents Marfan syndrome as an educational example of monogenic architecture and tissue-specific mechanism. It does not provide individualized medical advice or risk prediction."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Multiple Sclerosis",
+      "slug": "multiple-sclerosis",
+      "summary": "Multiple sclerosis (MS) is an immune-mediated disease of the central nervous system characterized by demyelination and neuroinflammation. Population-level patterns suggest interactions among immune genetic susceptibility, environmental context, and timing of exposures across the life course. Mechanistic hypotheses emphasize immune activation, antigen presentation, and inflammatory signaling that can lead to damage of myelin and neural tissue.\n\nGenetic epidemiology shows strong association signals in the HLA region (notably HLA-DRB1*15:01) alongside a polygenic background involving immune regulation pathways. Environmental modifiers commonly discussed include vitamin D status proxies, smoking, and infectious exposures; evidence varies by study design and confounding. GENARCH presents MS content as educational and population-level, with explicit limitations and without individualized risk predictions."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Obesity",
+      "slug": "obesity",
+      "summary": "Obesity describes excess adiposity that can influence metabolic, inflammatory, and cardiovascular pathways across the life course. At the population level, obesity prevalence reflects complex interactions among food environments, diet patterns, physical activity, sleep, psychosocial stress, endocrine signaling, and socioeconomic context. Biological mechanisms often discussed include changes in adipose tissue biology (inflammation and endocrine function), insulin resistance, and altered lipid handling.\n\nGenetic epidemiology indicates obesity is strongly polygenic: many common variants each contribute small effects, often via appetite regulation, energy balance, and adipose signaling pathways. Some loci (e.g., FTO and MC4R) have consistent associations across studies. GENARCH uses these signals to build educational mechanistic narratives about energy balance biology and how exposures can modify population-level trajectories—without making individual risk claims. Equity limitations are crucial: both genetic study representation and exposure context (food access, stressors, built environment) vary widely across populations."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Pulmonary Fibrosis (Idiopathic Pulmonary Fibrosis Context)",
+      "slug": "pulmonary-fibrosis",
+      "summary": "Pulmonary fibrosis refers to scarring of lung tissue that can impair gas exchange and reduce lung function. Idiopathic pulmonary fibrosis (IPF) is a specific subtype with progressive fibrosis in older adults, but fibrotic mechanisms (aberrant repair, epithelial injury, immune signaling) are discussed across contexts. Population-level associations include inhaled exposures (smoking, occupational dust) and broader environmental factors, though evidence varies and is not uniformly causal.\n\nGenetic epidemiology for pulmonary fibrosis includes both polygenic contributions and notable loci in telomere maintenance and lung biology pathways (e.g., TERT/TERC). These signals motivate mechanistic hypotheses about cell aging, repair capacity, and tissue remodeling. GENARCH presents these findings as educational and population-level, with explicit limitations and without individualized prediction."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Rheumatoid Arthritis",
+      "slug": "rheumatoid-arthritis",
+      "summary": "Rheumatoid arthritis (RA) is an autoimmune inflammatory disease that primarily affects synovial joints, leading to pain, swelling, and potential joint damage over time. RA biology often emphasizes dysregulated adaptive immunity, autoantibody production, cytokine signaling (including TNF pathways), and interactions between immune activation and tissue remodeling. At the population level, RA burden reflects both inherited susceptibility and exposures such as smoking and occupational particulates that can influence immune tolerance and inflammatory responses.\n\nGenetic epidemiology shows RA involves strong signals in the HLA region alongside a broader polygenic background. HLA-DRB1 risk alleles and related immune genes support mechanistic hypotheses about antigen presentation and immune activation. GENARCH summarizes these findings as population-level mechanistic evidence without making individual clinical claims. Equity constraints matter: GWAS ancestry composition and exposure measurement vary across settings, affecting interpretability and transferability."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Schizophrenia",
+      "slug": "schizophrenia",
+      "summary": "Schizophrenia is a neuropsychiatric disorder characterized by disturbances in perception, thought, and behavior. Symptoms can include hallucinations, delusions, disorganized thinking, and cognitive changes, with substantial heterogeneity across individuals and populations. Biological hypotheses emphasize neurodevelopmental trajectories, synaptic and neurotransmission pathways (including dopamine and calcium signaling), immune-related processes, and gene regulation in the brain. Environmental and social exposures—such as psychosocial stressors and substance exposures—are studied as population-level modifiers that may interact with genetic vulnerability.\n\nGenetic epidemiology shows schizophrenia is highly polygenic: thousands of common variants contribute small effects, and aggregate genetic liability can be captured in PRS in research contexts. Some loci highlight immune mechanisms (e.g., complement-related signals) and neuronal signaling pathways. GENARCH presents these findings as evidence about mechanisms and limitations, not as individual prediction or clinical advice. Equity considerations are critical: discovery cohorts have often been European-ancestry dominated and clinical ascertainment varies across settings."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Sickle Cell Disease",
+      "slug": "sickle-cell-disease",
+      "summary": "Sickle cell disease (SCD) is a hereditary hemoglobinopathy caused by specific variants in the HBB gene that alter hemoglobin structure. Under low-oxygen or physiological stress conditions, red blood cells can sickle, leading to hemolysis, vaso-occlusion, pain crises, and multi-organ complications. While the causal genetic basis is well-established, population-level outcomes and symptom burden can still be shaped by exposure context, healthcare access, infection burden, and environmental stressors.\n\nGENARCH presents SCD as an educational example of monogenic architecture interacting with environmental and social context at the population level. It does not provide individualized medical advice or risk estimates. Equity considerations are central because SCD disproportionately affects specific ancestry groups due to historical malaria selection and because healthcare access and structural factors influence observed outcomes."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Systemic Lupus Erythematosus",
+      "slug": "systemic-lupus-erythematosus",
+      "summary": "Systemic lupus erythematosus (SLE) is a systemic autoimmune disease characterized by immune dysregulation, autoantibody production, and inflammation that can affect multiple organs (e.g., skin, joints, kidneys). Biological hypotheses often emphasize interferon signaling, defective clearance of cellular debris, and tolerance breakdown mechanisms. Population-level patterns reflect both genetic susceptibility and exposure context, including environmental triggers that can influence immune activation.\n\nGenetic epidemiology indicates SLE is polygenic with notable signals in immune regulatory pathways (including HLA region and complement-related biology). Rare complement deficiencies can illustrate mechanistic pathways related to immune complex handling. GENARCH presents SLE content as educational and population-level, emphasizing limitations and avoiding individualized risk or clinical guidance."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Thalassemia (Alpha/Beta)",
+      "slug": "thalassemia",
+      "summary": "Thalassemias are hereditary hemoglobin disorders caused by variants that reduce production of alpha or beta globin chains, leading to anemia of varying severity. The causal genetic architecture is often monogenic (or oligogenic) with many possible variants in HBA1/HBA2 and HBB. Population-level outcomes depend on genotype, care access, infection burden, and broader environmental and social context.\n\nGENARCH presents thalassemia as an educational example of inherited blood disorders within genetic epidemiology, emphasizing mechanism and population context without providing individualized medical guidance."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Tuberculosis Susceptibility (Host Genetics Context)",
+      "slug": "tuberculosis-susceptibility",
+      "summary": "Tuberculosis (TB) is an infectious disease caused by Mycobacterium tuberculosis. Population-level susceptibility and outcomes depend on exposure intensity, socioeconomic context, comorbidities, and healthcare access, alongside host immune response differences. Mechanistic hypotheses emphasize innate immune sensing, interferon and cytokine signaling, and macrophage biology that shape containment vs. progression.\n\nHost genetic studies have identified immune pathway variants associated with TB susceptibility in some cohorts (e.g., genes related to innate immune receptors and interferon signaling), but results can be heterogeneous across populations and study designs. GENARCH presents TB host genetics as educational context for gene–environment reasoning and does not provide individual risk predictions or clinical advice."
+    },
+    {
+      "last_updated": "2026-02-26",
+      "name": "Type 2 Diabetes",
+      "slug": "type-2-diabetes",
+      "summary": "Type 2 diabetes (T2D) is a metabolic condition characterized by chronic hyperglycemia driven by insulin resistance and progressive beta-cell dysfunction. At the population level, T2D burden reflects complex interactions among diet patterns, physical activity, body composition, sleep, and social determinants. Biological pathways often highlighted include insulin signaling, adipose inflammation, hepatic glucose production, and pancreatic islet stress responses.\n\nGenetic epidemiology shows T2D has a strong polygenic component: many common variants influence glucose homeostasis, insulin secretion, and adiposity-related traits. Some loci (e.g., TCF7L2) have particularly consistent associations across studies, but effect sizes are modest and context-dependent. GENARCH uses this genetics layer to support mechanistic interpretation—such as linking islet gene regulation to metabolic phenotypes—without offering individualized risk estimates. Equity limitations are central: the ancestry composition of GWAS and the heterogeneity of exposure measurement can affect transferability and interpretation across populations."
+    }
+  ]
+}

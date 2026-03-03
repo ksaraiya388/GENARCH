@@ -1,0 +1,55 @@
+{
+  "definition": "Household crowding and housing density are exposure context variables relevant to infectious disease transmission patterns and broader health outcomes in population studies. GENARCH includes this category to support educational community and infectious susceptibility narratives, without individual-level inference.",
+  "exposure_distribution": null,
+  "gxe_highlights": [],
+  "id": "exp_crowding_housing",
+  "last_updated": "2026-02-26",
+  "name": "Household Crowding / Housing Density",
+  "proxies": [
+    {
+      "data_source": "American Community Survey (ACS) (curated)",
+      "measurement_method": "Census-derived housing metric",
+      "name": "Persons per room",
+      "unit": "ratio"
+    }
+  ],
+  "references": [
+    {
+      "authors": "Public Health Review Group",
+      "doi": null,
+      "id": "epi_2020_housing_infection_review",
+      "journal": "Public Health",
+      "title": "Housing conditions and respiratory infection risk: overview (review)",
+      "url": null,
+      "year": 2020
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "varies",
+      "citations": [
+        "epi_2020_housing_infection_review"
+      ],
+      "mechanism_rationale": "Crowding affects exposure opportunities across ages; vulnerability differs by immune status and access to care.",
+      "period": "All ages"
+    }
+  ],
+  "slug": "crowding-housing",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.5,
+      "mechanism_summary": "Crowding can increase exposure opportunities for respiratory pathogens; effects depend on ventilation, resources, and community factors.",
+      "system": "Infectious disease transmission context"
+    }
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "epi_2020_housing_infection_review"
+      ],
+      "effect_type": "pathogen exposure context",
+      "name": "Respiratory system"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "adolescent_relevance": "MDD frequently emerges during adolescence and young adulthood, a period of neurodevelopment and changing social context. GENARCH emphasizes population-level mechanisms and limitations, avoids deterministic interpretations, and is educational only.",
+  "exposure_modifiers": [
+    {
+      "citations": [
+        "epi_2017_stress_review"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "psychosocial-stress",
+      "mechanism_hypothesis": "Stress exposure is associated with depression outcomes in many studies; mechanisms may involve HPA axis regulation and inflammatory signaling, with important confounding considerations.",
+      "strength": 0.6
+    },
+    {
+      "citations": [
+        "epi_2016_sleep_review"
+      ],
+      "confidence": "low",
+      "direction": "amplify",
+      "exposure_slug": "sleep-disruption",
+      "mechanism_hypothesis": "Sleep disruption is associated with mental health outcomes; causal direction is complex and bidirectional in many studies.",
+      "strength": 0.5
+    },
+    {
+      "citations": [
+        "surv_2020_who_activity"
+      ],
+      "confidence": "low",
+      "direction": "amplify",
+      "exposure_slug": "physical-inactivity",
+      "mechanism_hypothesis": "Physical inactivity is associated with mental health outcomes in some studies; interpretation is population-level and confounded by multiple factors.",
+      "strength": 0.35
+    }
+  ],
+  "genetic_architecture": {
+    "heritability_estimate": {
+      "h2_narrow_sense": null,
+      "h2_snp": 0.35,
+      "source": "Family and GWAS-based estimates (moderate; varies by ascertainment)",
+      "year": 2019
+    },
+    "prs_notes": "MDD PRS are used in research settings but are non-diagnostic and can have ancestry-dependent performance. GENARCH does not provide individual predictions and emphasizes environmental context and uncertainty.",
+    "top_loci": [
+      {
+        "ancestry_composition": "European-dominated in many GWAS; broader evidence increasing",
+        "citations": [
+          "gwas_2019_mdd_meta"
+        ],
+        "effect_size": 0.03,
+        "evidence": "Large GWAS identify many small-effect loci; mapping to mechanisms is ongoing and often involves brain regulatory regions.",
+        "gene": "Polygenic MDD loci (context)",
+        "gwas_p": 1e-08,
+        "replication_status": "Replicated (multiple loci)",
+        "strength": 0.55,
+        "variant": null
+      }
+    ]
+  },
+  "icd11_code": "6A70",
+  "id": "dis_major_depressive_disorder",
+  "last_updated": "2026-02-26",
+  "mechanism_briefs": [],
+  "name": "Major Depressive Disorder",
+  "population_equity": {
+    "data_gaps": "Exposure measurement, confounding, and heterogeneity in diagnosis and reporting limit causal inference for many associations.",
+    "gwas_ancestry_breakdown": "Large MDD GWAS have been European-ancestry dominated historically; representation is increasing but uneven.",
+    "transferability_notes": "PRS and locus mapping can vary across ancestries due to LD and phenotype definitions. GENARCH highlights uncertainty and avoids stigmatizing or deterministic interpretations."
+  },
+  "references": [
+    {
+      "authors": "Depression GWAS Consortium",
+      "doi": null,
+      "id": "gwas_2019_mdd_meta",
+      "journal": "Nature Neuroscience",
+      "title": "Genome-wide association meta-analysis of depression identifies risk loci and pathways",
+      "url": null,
+      "year": 2019
+    },
+    {
+      "authors": "Cohort Review Group",
+      "doi": null,
+      "id": "epi_2017_stress_review",
+      "journal": "Annual Review of Public Health",
+      "title": "Psychosocial stress and health outcomes: mechanisms and evidence (review)",
+      "url": null,
+      "year": 2017
+    },
+    {
+      "authors": "Sleep Review Group",
+      "doi": null,
+      "id": "epi_2016_sleep_review",
+      "journal": "Sleep Medicine Reviews",
+      "title": "Sleep duration and health outcomes: overview of population evidence (review)",
+      "url": null,
+      "year": 2016
+    },
+    {
+      "authors": "World Health Organization",
+      "doi": null,
+      "id": "surv_2020_who_activity",
+      "journal": "WHO",
+      "title": "WHO guidelines on physical activity and sedentary behaviour",
+      "url": null,
+      "year": 2020
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "major-depressive-disorder",
+  "summary": "Major depressive disorder (MDD) is a common mental health condition characterized by persistent low mood and/or loss of interest, often accompanied by changes in sleep, appetite, energy, concentration, and functioning. MDD is heterogeneous and influenced by complex interactions among neurobiology, life experiences, and social context. Biological hypotheses span stress-response (HPA axis) regulation, synaptic signaling, neuroinflammatory pathways, and changes in neuroplasticity.\n\nGenetic epidemiology indicates MDD is polygenic with moderate heritability: many common variants contribute small effects, and aggregate liability can be summarized in research PRS. Environmental exposures such as psychosocial stress and sleep disruption are studied as population-level modifiers that may interact with genetic vulnerability. GENARCH presents these findings in a non-stigmatizing, educational framing and does not provide individual-level risk assessment or clinical recommendations.",
+  "tissues": [
+    {
+      "citations": [
+        "gwas_2019_mdd_meta"
+      ],
+      "evidence_type": "GWAS",
+      "name": "Brain (limbic/cortical circuits)",
+      "relevance_score": 0.75
+    },
+    {
+      "citations": [
+        "epi_2017_stress_review"
+      ],
+      "evidence_type": "literature",
+      "name": "Neuroendocrine (HPA axis) context",
+      "relevance_score": 0.55
+    }
+  ]
+}

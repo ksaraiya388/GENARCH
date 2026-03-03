@@ -1,0 +1,128 @@
+{
+  "adolescent_relevance": "CF often manifests in childhood and continues through adolescence and young adulthood. GENARCH focuses on educational mechanisms and population context, not clinical recommendations.",
+  "exposure_modifiers": [
+    {
+      "citations": [
+        "lit_2019_pope"
+      ],
+      "confidence": "low",
+      "direction": "amplify",
+      "exposure_slug": "air-pollution",
+      "mechanism_hypothesis": "Ambient particulates can contribute to respiratory stress; associations with CF outcomes are context-dependent.",
+      "strength": 0.45
+    },
+    {
+      "citations": [
+        "epi_2015_infection_immune_review"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "infection-burden",
+      "mechanism_hypothesis": "Respiratory infections are central to CF morbidity; population-level infection context influences outcomes (not individualized advice).",
+      "strength": 0.6
+    },
+    {
+      "citations": [
+        "rev_2018_us_surgeon_general"
+      ],
+      "confidence": "low",
+      "direction": "amplify",
+      "exposure_slug": "smoking",
+      "mechanism_hypothesis": "Secondhand smoke exposure can worsen respiratory burden; evidence varies and is context-dependent.",
+      "strength": 0.35
+    }
+  ],
+  "genetic_architecture": {
+    "heritability_estimate": {
+      "h2_narrow_sense": null,
+      "h2_snp": 1.0,
+      "source": "Monogenic causal architecture (primary variant-driven disease)",
+      "year": 2017
+    },
+    "prs_notes": "PRS is not applicable as a primary risk model for monogenic CF. GENARCH does not provide individual predictions.",
+    "top_loci": [
+      {
+        "ancestry_composition": "Variant spectrum differs across populations",
+        "citations": [
+          "clin_2017_cf_review"
+        ],
+        "effect_size": null,
+        "evidence": "CFTR variants cause CF; many variants exist with varying functional impact across populations.",
+        "gene": "CFTR",
+        "gwas_p": null,
+        "replication_status": "Causal (monogenic)",
+        "strength": 0.95,
+        "variant": null
+      }
+    ]
+  },
+  "icd11_code": "GA10",
+  "id": "dis_cystic_fibrosis",
+  "last_updated": "2026-02-26",
+  "mechanism_briefs": [],
+  "name": "Cystic Fibrosis",
+  "population_equity": {
+    "data_gaps": "Environmental exposure datasets linked to CF outcomes are limited and setting-specific.",
+    "gwas_ancestry_breakdown": "CF research and variant catalogs have historically been European-ancestry weighted; variant spectra differ across populations.",
+    "transferability_notes": "Variant interpretation and outcome studies may not generalize across settings with different care access and exposures."
+  },
+  "references": [
+    {
+      "authors": "Pulmonary Genetics Review Group",
+      "doi": null,
+      "id": "clin_2017_cf_review",
+      "journal": "New England Journal of Medicine",
+      "title": "Cystic fibrosis: CFTR biology and clinical manifestations (review)",
+      "url": null,
+      "year": 2017
+    },
+    {
+      "authors": "Pope CA, Dockery DW",
+      "doi": null,
+      "id": "lit_2019_pope",
+      "journal": "Journal of the Air & Waste Management Association",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "url": null,
+      "year": 2019
+    },
+    {
+      "authors": "Immunology Review Group",
+      "doi": null,
+      "id": "epi_2015_infection_immune_review",
+      "journal": "Nature Reviews Immunology",
+      "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)",
+      "url": null,
+      "year": 2015
+    },
+    {
+      "authors": "U.S. Surgeon General",
+      "doi": null,
+      "id": "rev_2018_us_surgeon_general",
+      "journal": "U.S. Department of Health and Human Services",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "url": null,
+      "year": 2018
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "cystic-fibrosis",
+  "summary": "Cystic fibrosis (CF) is a hereditary disease caused by variants in the CFTR gene, affecting chloride and bicarbonate transport across epithelial surfaces. This can lead to thick mucus, impaired mucociliary clearance, and chronic infections, particularly in the lungs, as well as gastrointestinal and pancreatic involvement. While CF is monogenic in its primary cause, population-level outcomes and symptom burden can still be influenced by exposure context such as air quality and infection burden, along with healthcare access.\n\nGENARCH presents CF as an educational example of monogenic architecture interacting with environment and care context at the population level. It does not provide individualized medical advice or risk estimates.",
+  "tissues": [
+    {
+      "citations": [
+        "clin_2017_cf_review"
+      ],
+      "evidence_type": "literature",
+      "name": "Airway epithelium",
+      "relevance_score": 0.9
+    },
+    {
+      "citations": [
+        "clin_2017_cf_review"
+      ],
+      "evidence_type": "literature",
+      "name": "Pancreas / gastrointestinal epithelium",
+      "relevance_score": 0.6
+    }
+  ]
+}

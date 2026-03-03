@@ -1,0 +1,141 @@
+{
+  "adolescent_relevance": "Most severe COVID-19 outcomes occur in older adults, but adolescents and young adults can still be affected, and population-level exposure patterns and immune mechanisms are relevant for education. GENARCH emphasizes uncertainty and avoids individualized risk claims.",
+  "exposure_modifiers": [
+    {
+      "citations": [
+        "epi_2020_housing_infection_review"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "crowding-housing",
+      "mechanism_hypothesis": "Crowding can increase exposure opportunities for respiratory pathogens at the population level; severity outcomes depend on many factors including comorbidity and access to care.",
+      "strength": 0.55
+    },
+    {
+      "citations": [
+        "lit_2019_pope"
+      ],
+      "confidence": "low",
+      "direction": "amplify",
+      "exposure_slug": "air-pollution",
+      "mechanism_hypothesis": "Ambient particulates are studied as modifiers of respiratory vulnerability; evidence varies by pollutant and study design.",
+      "strength": 0.4
+    },
+    {
+      "citations": [
+        "rev_2018_us_surgeon_general"
+      ],
+      "confidence": "low",
+      "direction": "amplify",
+      "exposure_slug": "smoking",
+      "mechanism_hypothesis": "Smoking is associated with respiratory vulnerability; causal interpretation in COVID-19 outcomes varies by cohort and measurement.",
+      "strength": 0.4
+    }
+  ],
+  "genetic_architecture": {
+    "heritability_estimate": {
+      "h2_narrow_sense": null,
+      "h2_snp": 0.2,
+      "source": "GWAS-based estimates for severe outcomes (varies by case definition)",
+      "year": 2021
+    },
+    "prs_notes": "PRS for COVID-19 severity have been explored in research contexts, but performance depends on ancestry, variant, and case definition. GENARCH does not provide individual predictions.",
+    "top_loci": [
+      {
+        "ancestry_composition": "Multi-ancestry evidence; effect estimates vary",
+        "citations": [
+          "gwas_2021_covid_hgi"
+        ],
+        "effect_size": 0.08,
+        "evidence": "Host genetic associations implicate immune response pathways; mapping to specific causal genes is complex.",
+        "gene": "Chromosome 3p21.31 locus (host response context)",
+        "gwas_p": 1e-12,
+        "replication_status": "Replicated",
+        "strength": 0.7,
+        "variant": null
+      },
+      {
+        "ancestry_composition": "Multi-ancestry evidence",
+        "citations": [
+          "gwas_2021_covid_hgi"
+        ],
+        "effect_size": 0.05,
+        "evidence": "OAS1 and interferon-related antiviral pathways are implicated in host response genetics.",
+        "gene": "OAS1",
+        "gwas_p": 1e-08,
+        "replication_status": "Replicated in several studies",
+        "strength": 0.6,
+        "variant": null
+      }
+    ]
+  },
+  "icd11_code": "RA01.0",
+  "id": "dis_covid_19_severity",
+  "last_updated": "2026-02-26",
+  "mechanism_briefs": [],
+  "name": "COVID-19 Severity (Susceptibility to Severe Outcomes)",
+  "population_equity": {
+    "data_gaps": "Rapidly evolving variants, vaccination, and changing testing practices complicate interpretation; exposure variables can be imperfectly measured.",
+    "gwas_ancestry_breakdown": "COVID-19 host genetics studies include multi-ancestry cohorts, but representation and case ascertainment differ across settings.",
+    "transferability_notes": "Effect estimates can vary with ancestry and with changing variants, exposures, and healthcare context. GENARCH highlights uncertainty and avoids individual inference."
+  },
+  "references": [
+    {
+      "authors": "COVID-19 Host Genetics Initiative",
+      "doi": null,
+      "id": "gwas_2021_covid_hgi",
+      "journal": "Nature",
+      "title": "The COVID-19 Host Genetics Initiative: mapping host genetic determinants of COVID-19 severity",
+      "url": null,
+      "year": 2021
+    },
+    {
+      "authors": "Public Health Review Group",
+      "doi": null,
+      "id": "epi_2020_housing_infection_review",
+      "journal": "Public Health",
+      "title": "Housing conditions and respiratory infection risk: overview (review)",
+      "url": null,
+      "year": 2020
+    },
+    {
+      "authors": "Pope CA, Dockery DW",
+      "doi": null,
+      "id": "lit_2019_pope",
+      "journal": "Journal of the Air & Waste Management Association",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "url": null,
+      "year": 2019
+    },
+    {
+      "authors": "U.S. Surgeon General",
+      "doi": null,
+      "id": "rev_2018_us_surgeon_general",
+      "journal": "U.S. Department of Health and Human Services",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "url": null,
+      "year": 2018
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "covid-19-severity",
+  "summary": "COVID-19 severity refers to the spectrum of outcomes following SARS-CoV-2 infection, ranging from mild illness to hospitalization, intensive care, and death. At the population level, severity patterns reflect age and comorbidities, exposure intensity, healthcare access, viral variants, and social context. Biological mechanisms discussed include innate immune responses, inflammatory cascades, endothelial injury, and thrombosis pathways.\n\nGenetic epidemiology identifies host genetic loci associated with severe COVID-19 outcomes (e.g., a locus on chromosome 3 and immune pathway genes such as OAS1 in some studies). These associations are population-level and can be influenced by case definitions and ancestry representation. GENARCH presents COVID-19 genetics and exposures as educational context for host–environment interaction reasoning and does not provide individual-level risk predictions or clinical recommendations.",
+  "tissues": [
+    {
+      "citations": [
+        "gwas_2021_covid_hgi"
+      ],
+      "evidence_type": "literature",
+      "name": "Respiratory epithelium",
+      "relevance_score": 0.8
+    },
+    {
+      "citations": [
+        "gwas_2021_covid_hgi"
+      ],
+      "evidence_type": "GWAS",
+      "name": "Immune system (innate antiviral response)",
+      "relevance_score": 0.7
+    }
+  ]
+}

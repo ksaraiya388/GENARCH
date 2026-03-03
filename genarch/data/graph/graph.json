@@ -1,0 +1,90 @@
+{
+  "edges": [
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "high",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "epi_2016_guarnieri",
+          "lit_2019_pope"
+        ],
+        "strength": 0.85,
+        "tissue": [
+          "Lung",
+          "Airway epithelium"
+        ],
+        "year_first_reported": 2016
+      },
+      "id": "edge_modifies_airpollution_asthma",
+      "source": "exp_air_pollution",
+      "target": "dis_asthma",
+      "type": "MODIFIES"
+    }
+  ],
+  "metadata": {
+    "edge_count": 1,
+    "generated_at": "2026-02-26T00:00:00Z",
+    "node_count": 5,
+    "pipeline_version": "0.1.0",
+    "schema_version": "1.0"
+  },
+  "nodes": [
+    {
+      "attrs": {
+        "confidence": "high",
+        "last_updated": "2026-02-26",
+        "summary": "Chronic airway inflammation and hyperreactivity (population-level educational summary)."
+      },
+      "id": "dis_asthma",
+      "label": "Asthma",
+      "slug": "asthma",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "last_updated": "2026-02-26",
+        "summary": "Fine particulate matter proxy (PM2.5) as a population-level exposure context."
+      },
+      "id": "exp_air_pollution",
+      "label": "Ambient Air Pollution (PM2.5)",
+      "slug": "air-pollution",
+      "type": "Exposure"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "last_updated": "2026-02-26",
+        "summary": "Epithelial alarmin cytokine implicated in asthma genetics and airway inflammation mechanisms."
+      },
+      "id": "gene_il33",
+      "label": "IL33",
+      "slug": "il33",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "last_updated": "2026-02-26",
+        "summary": "Inflammatory transcription program linking stress signals to immune gene expression."
+      },
+      "id": "path_nfkb",
+      "label": "NF-κB Signaling",
+      "slug": "nf-kb",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "last_updated": "2026-02-26",
+        "summary": "Tissue context for airway biology and gene regulation."
+      },
+      "id": "tis_lung",
+      "label": "Lung",
+      "slug": null,
+      "type": "Tissue"
+    }
+  ]
+}

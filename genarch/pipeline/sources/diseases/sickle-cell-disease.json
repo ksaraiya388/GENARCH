@@ -1,0 +1,110 @@
+{
+  "id": "dis_sickle_cell_disease",
+  "slug": "sickle-cell-disease",
+  "name": "Sickle Cell Disease",
+  "icd11_code": "3A50",
+  "summary": "Sickle cell disease (SCD) is a hereditary hemoglobinopathy caused by specific variants in the HBB gene that alter hemoglobin structure. Under low-oxygen or physiological stress conditions, red blood cells can sickle, leading to hemolysis, vaso-occlusion, pain crises, and multi-organ complications. While the causal genetic basis is well-established, population-level outcomes and symptom burden can still be shaped by exposure context, healthcare access, infection burden, and environmental stressors.\n\nGENARCH presents SCD as an educational example of monogenic architecture interacting with environmental and social context at the population level. It does not provide individualized medical advice or risk estimates. Equity considerations are central because SCD disproportionately affects specific ancestry groups due to historical malaria selection and because healthcare access and structural factors influence observed outcomes.",
+  "adolescent_relevance": "SCD often manifests in childhood and adolescence. GENARCH provides educational explanations of the genetic mechanism and population-level context, without clinical guidance.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "HBB",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": null,
+        "ancestry_composition": "Ancestry-linked frequency patterns due to historical selection",
+        "replication_status": "Causal (monogenic)",
+        "evidence": "Specific HBB variants cause sickling hemoglobin and the core SCD phenotype; modifiers exist but the primary cause is well-established.",
+        "strength": 0.95,
+        "citations": ["clin_2014_scd_review"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 1.0,
+      "source": "Monogenic causal architecture (primary variant-driven disease)",
+      "year": 2014
+    },
+    "prs_notes": "PRS is not applicable as a primary risk model for monogenic SCD. GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "infection-burden",
+      "direction": "amplify",
+      "strength": 0.6,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Infections can increase inflammatory stress and precipitate complications in population contexts; this is not individualized advice.",
+      "citations": ["epi_2015_infection_immune_review"]
+    },
+    {
+      "exposure_slug": "heat-stress",
+      "direction": "amplify",
+      "strength": 0.35,
+      "confidence": "low",
+      "mechanism_hypothesis": "Heat and dehydration are discussed as physiological stressors that may relate to symptom burden; evidence varies and depends on context.",
+      "citations": ["epi_2018_heat_health_review"]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "unknown",
+      "strength": 0.3,
+      "confidence": "low",
+      "mechanism_hypothesis": "Ambient particulates are studied as respiratory stressors; links to SCD outcomes depend on setting and study design.",
+      "citations": ["lit_2019_pope"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "Blood / vasculature",
+      "relevance_score": 0.9,
+      "evidence_type": "literature",
+      "citations": ["clin_2014_scd_review"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "SCD is more prevalent in populations with ancestry from malaria-endemic regions; research representation and healthcare access vary by setting.",
+    "transferability_notes": "Genetic modifiers and outcome studies may not generalize across contexts due to differences in care, environment, and measurement.",
+    "data_gaps": "Many studies are setting-specific; environmental exposure data is often incomplete or indirect."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "clin_2014_scd_review",
+      "title": "Sickle cell disease: molecular basis and clinical complications (review)",
+      "authors": "Hematology Review Group",
+      "year": 2014,
+      "journal": "New England Journal of Medicine",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2015_infection_immune_review",
+      "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)",
+      "authors": "Immunology Review Group",
+      "year": 2015,
+      "journal": "Nature Reviews Immunology",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2018_heat_health_review",
+      "title": "Extreme heat exposure and health outcomes: overview (review)",
+      "authors": "Climate Health Review Group",
+      "year": 2018,
+      "journal": "The Lancet Planetary Health",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2019_pope",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

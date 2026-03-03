@@ -1,0 +1,139 @@
+{
+  "definition": "Ambient air pollution refers to a mixture of particles and gases in outdoor air. In GENARCH v1.0 seed content, this page focuses on fine particulate matter (PM2.5: particles ≤ 2.5 μm in diameter), a widely measured proxy associated with respiratory and cardiovascular health outcomes at the population level. PM2.5 is measured in micrograms per cubic meter (μg/m³) using regulatory monitoring networks and modeled surfaces.",
+  "exposure_distribution": {
+    "data_source": "EPA AQS (illustrative seed placeholder)",
+    "geographic_scope": "United States (county-level summaries; seed placeholder)",
+    "summary_stats": {
+      "mean_ug_m3": 8.5,
+      "p25_ug_m3": 6.2,
+      "p75_ug_m3": 10.9
+    }
+  },
+  "gxe_highlights": [
+    {
+      "citations": [
+        "lit_2014_zenewicz"
+      ],
+      "direction": "amplify",
+      "disease_slug": "asthma",
+      "evidence_type": "literature",
+      "gene_slug": "il33"
+    }
+  ],
+  "id": "exp_air_pollution",
+  "last_updated": "2026-02-26",
+  "name": "Ambient Air Pollution (PM2.5)",
+  "proxies": [
+    {
+      "data_source": "EPA Air Quality System (AQS)",
+      "measurement_method": "Regulatory monitors + modeled estimates (annual or daily averages)",
+      "name": "PM2.5",
+      "unit": "μg/m³"
+    },
+    {
+      "data_source": "EPA Air Quality System (AQS)",
+      "measurement_method": "Regulatory monitors (daily averages)",
+      "name": "NO2",
+      "unit": "ppb"
+    }
+  ],
+  "references": [
+    {
+      "authors": "Guarnieri M, Balmes JR",
+      "doi": null,
+      "id": "epi_2016_guarnieri",
+      "journal": "The Lancet",
+      "title": "Outdoor air pollution and asthma in children",
+      "url": null,
+      "year": 2016
+    },
+    {
+      "authors": "Pope CA, Dockery DW",
+      "doi": null,
+      "id": "lit_2019_pope",
+      "journal": "Journal of the Air & Waste Management Association",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "url": null,
+      "year": 2019
+    },
+    {
+      "authors": "Zenewicz LA, Flavell RA",
+      "doi": null,
+      "id": "lit_2014_zenewicz",
+      "journal": "Immunity",
+      "title": "IL-33 and the biology of the epithelial barrier in allergic inflammation",
+      "url": null,
+      "year": 2014
+    },
+    {
+      "authors": "GTEx Consortium",
+      "doi": null,
+      "id": "eqtl_2020_gtexv8",
+      "journal": "Science",
+      "title": "The GTEx Consortium atlas of genetic regulatory effects across human tissues (v8)",
+      "url": null,
+      "year": 2020
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "in utero",
+      "citations": [
+        "epi_2016_guarnieri"
+      ],
+      "mechanism_rationale": "Airway and immune development occur during gestation; exposures during this window may have durable population-level effects on later respiratory outcomes.",
+      "period": "Prenatal"
+    },
+    {
+      "age_range": "0–5",
+      "citations": [
+        "epi_2016_guarnieri"
+      ],
+      "mechanism_rationale": "Rapid lung growth and developing immune responses can make early-life exposures disproportionately influential in cohort studies.",
+      "period": "Early childhood"
+    },
+    {
+      "age_range": "10–18",
+      "citations": [
+        "lit_2019_pope"
+      ],
+      "mechanism_rationale": "Ongoing airway maturation and changing activity patterns can shape exposure-dose and inflammatory responses in population studies.",
+      "period": "Adolescence"
+    }
+  ],
+  "slug": "air-pollution",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.8,
+      "mechanism_summary": "Particles deposit along the airway surface, promoting oxidative stress, epithelial injury, and inflammatory signaling that can worsen airway hyperreactivity in susceptible populations.",
+      "system": "Respiratory"
+    },
+    {
+      "evidence_strength": 0.6,
+      "mechanism_summary": "Exposure can shift immune signaling toward pro-inflammatory programs and alter barrier-immune interactions (context dependent).",
+      "system": "Immune"
+    },
+    {
+      "evidence_strength": 0.6,
+      "mechanism_summary": "Systemic inflammation and endothelial activation are hypothesized pathways linking PM2.5 to cardiovascular burden.",
+      "system": "Cardiovascular"
+    }
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "lit_2019_pope"
+      ],
+      "effect_type": "oxidative stress response",
+      "name": "Airway epithelium"
+    },
+    {
+      "citations": [
+        "eqtl_2020_gtexv8"
+      ],
+      "effect_type": "inflammation / remodeling context",
+      "name": "Lung"
+    }
+  ]
+}

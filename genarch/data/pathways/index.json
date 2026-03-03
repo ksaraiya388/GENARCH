@@ -1,0 +1,10 @@
+{
+  "items": [
+    {
+      "last_updated": "2026-02-26",
+      "name": "NF-κB Signaling",
+      "slug": "nf-kb",
+      "summary": "NF-κB signaling refers to a family of transcription factor complexes that regulate inflammatory and stress-response gene expression. In many cell types, NF-κB is held inactive in the cytoplasm and becomes activated when upstream signals (such as oxidative stress, cytokines, or microbial products) trigger IκB degradation and nuclear translocation of NF-κB components. Because NF-κB controls broad immune programs, it is frequently implicated in respiratory inflammation and airway remodeling pathways discussed in asthma literature. GENARCH treats NF-κB as a mechanistic bridge that can connect exposure-induced epithelial stress to downstream immune signaling in populations."
+    }
+  ]
+}

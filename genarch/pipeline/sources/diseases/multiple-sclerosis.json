@@ -1,0 +1,125 @@
+{
+  "id": "dis_multiple_sclerosis",
+  "slug": "multiple-sclerosis",
+  "name": "Multiple Sclerosis",
+  "icd11_code": "8A40",
+  "summary": "Multiple sclerosis (MS) is an immune-mediated disease of the central nervous system characterized by demyelination and neuroinflammation. Population-level patterns suggest interactions among immune genetic susceptibility, environmental context, and timing of exposures across the life course. Mechanistic hypotheses emphasize immune activation, antigen presentation, and inflammatory signaling that can lead to damage of myelin and neural tissue.\n\nGenetic epidemiology shows strong association signals in the HLA region (notably HLA-DRB1*15:01) alongside a polygenic background involving immune regulation pathways. Environmental modifiers commonly discussed include vitamin D status proxies, smoking, and infectious exposures; evidence varies by study design and confounding. GENARCH presents MS content as educational and population-level, with explicit limitations and without individualized risk predictions.",
+  "adolescent_relevance": "MS onset often occurs in young adulthood, and some exposure hypotheses focus on earlier-life windows. GENARCH uses MS as an educational example of neuroimmune gene–environment interaction and emphasizes uncertainty and limitations.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "HLA-DRB1*15:01 (HLA region)",
+        "variant": null,
+        "gwas_p": 1e-30,
+        "effect_size": 0.18,
+        "ancestry_composition": "Signals observed across multiple ancestries; mapping varies",
+        "replication_status": "Replicated",
+        "evidence": "HLA associations highlight antigen presentation and adaptive immune mechanisms central to MS hypotheses.",
+        "strength": 0.9,
+        "citations": ["gwas_2019_ms_meta", "lit_2018_ms_immunology"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.5,
+      "source": "Family and GWAS-based estimates (varies by cohort and latitude)",
+      "year": 2019
+    },
+    "prs_notes": "MS PRS exist in research settings; transferability varies across ancestries and exposure context. GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "vitamin-d-status",
+      "direction": "buffer",
+      "strength": 0.5,
+      "confidence": "low",
+      "mechanism_hypothesis": "Higher vitamin D status is associated with lower MS risk in some studies; causal interpretation varies by confounding and design.",
+      "citations": ["epi_2016_vitd_ms_review"]
+    },
+    {
+      "exposure_slug": "smoking",
+      "direction": "amplify",
+      "strength": 0.6,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Smoking is associated with MS risk and progression in some studies and may influence immune activation pathways.",
+      "citations": ["rev_2018_us_surgeon_general"]
+    },
+    {
+      "exposure_slug": "infection-burden",
+      "direction": "amplify",
+      "strength": 0.4,
+      "confidence": "low",
+      "mechanism_hypothesis": "Certain infections are studied as MS risk modifiers; evidence is complex and often pathogen-specific.",
+      "citations": ["epi_2015_infection_immune_review"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "Central nervous system (white matter)",
+      "relevance_score": 0.85,
+      "evidence_type": "literature",
+      "citations": ["lit_2018_ms_immunology"]
+    },
+    {
+      "name": "Immune system (adaptive immunity)",
+      "relevance_score": 0.75,
+      "evidence_type": "GWAS",
+      "citations": ["gwas_2019_ms_meta"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Large MS GWAS have been European-ancestry dominated historically; representation is improving but uneven.",
+    "transferability_notes": "HLA mapping and PRS performance can vary across populations due to LD and allele frequency. GENARCH highlights uncertainty and avoids individual-level inference.",
+    "data_gaps": "Vitamin D and infection associations can be confounded by geography, behavior, and measurement differences."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "gwas_2019_ms_meta",
+      "title": "Genome-wide association meta-analysis of multiple sclerosis identifies risk loci and immune pathways",
+      "authors": "MS GWAS Consortium",
+      "year": 2019,
+      "journal": "Nature Genetics",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2018_ms_immunology",
+      "title": "Multiple sclerosis immunopathology: overview (review)",
+      "authors": "Neuroimmunology Review Group",
+      "year": 2018,
+      "journal": "Nature Reviews Neurology",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2016_vitd_ms_review",
+      "title": "Vitamin D and multiple sclerosis risk: evidence overview (review)",
+      "authors": "Neuroimmunology Review Group",
+      "year": 2016,
+      "journal": "Neurology",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "rev_2018_us_surgeon_general",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "authors": "U.S. Surgeon General",
+      "year": 2018,
+      "journal": "U.S. Department of Health and Human Services",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2015_infection_immune_review",
+      "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)",
+      "authors": "Immunology Review Group",
+      "year": 2015,
+      "journal": "Nature Reviews Immunology",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

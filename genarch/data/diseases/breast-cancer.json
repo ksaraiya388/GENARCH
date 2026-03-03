@@ -1,0 +1,163 @@
+{
+  "adolescent_relevance": "Breast cancer is uncommon in adolescence, but adolescence and young adulthood are relevant to lifetime exposure trajectories (e.g., pubertal timing, endocrine exposures) and to understanding inherited cancer biology in families at a population level. GENARCH provides educational, non-clinical explanations of mechanisms and evidence limitations.",
+  "exposure_modifiers": [
+    {
+      "citations": [
+        "epi_2020_breast_hormones_review"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "hormonal-exposures",
+      "mechanism_hypothesis": "Hormonal signaling can influence cell proliferation in breast tissue; population studies use lifetime exposure proxies with important confounding considerations.",
+      "strength": 0.6
+    },
+    {
+      "citations": [
+        "epi_2018_alcohol_cancer"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "alcohol",
+      "mechanism_hypothesis": "Alcohol is associated with breast cancer risk in multiple observational studies; mechanisms may involve hormone signaling and metabolic byproducts.",
+      "strength": 0.55
+    },
+    {
+      "citations": [
+        "epi_2019_radiation_review"
+      ],
+      "confidence": "low",
+      "direction": "amplify",
+      "exposure_slug": "ionizing-radiation",
+      "mechanism_hypothesis": "Ionizing radiation can contribute to DNA damage; effects depend on dose, timing, and tissue context.",
+      "strength": 0.5
+    }
+  ],
+  "genetic_architecture": {
+    "heritability_estimate": {
+      "h2_narrow_sense": null,
+      "h2_snp": 0.3,
+      "source": "Family-based and GWAS-based estimates (varies by subtype and cohort)",
+      "year": 2017
+    },
+    "prs_notes": "Breast cancer PRS are validated in multiple cohorts and are used in some research and clinical risk models, but GENARCH does not provide individual predictions or thresholds. Transferability varies across ancestries and subtypes; limitations are emphasized.",
+    "top_loci": [
+      {
+        "ancestry_composition": "Variant spectrum differs across populations",
+        "citations": [
+          "clin_2018_brca_overview"
+        ],
+        "effect_size": null,
+        "evidence": "BRCA1 is a high-penetrance hereditary breast/ovarian cancer gene with strong functional evidence in DNA repair pathways.",
+        "gene": "BRCA1",
+        "gwas_p": null,
+        "replication_status": "Established high-penetrance",
+        "strength": 0.9,
+        "variant": null
+      },
+      {
+        "ancestry_composition": "Variant spectrum differs across populations",
+        "citations": [
+          "clin_2018_brca_overview"
+        ],
+        "effect_size": null,
+        "evidence": "BRCA2 is a high-penetrance gene involved in homologous recombination repair; inherited variants elevate breast cancer susceptibility in families.",
+        "gene": "BRCA2",
+        "gwas_p": null,
+        "replication_status": "Established high-penetrance",
+        "strength": 0.9,
+        "variant": null
+      },
+      {
+        "ancestry_composition": "European-dominated discovery; broader evidence exists",
+        "citations": [
+          "gwas_2017_breast_bcac"
+        ],
+        "effect_size": 0.08,
+        "evidence": "Common-variant associations near FGFR2 are among the most consistent breast cancer GWAS signals.",
+        "gene": "FGFR2",
+        "gwas_p": 1e-20,
+        "replication_status": "Replicated",
+        "strength": 0.75,
+        "variant": null
+      }
+    ]
+  },
+  "icd11_code": "2C61",
+  "id": "dis_breast_cancer",
+  "last_updated": "2026-02-26",
+  "mechanism_briefs": [],
+  "name": "Breast Cancer",
+  "population_equity": {
+    "data_gaps": "Subtype-specific biology and exposure measurement heterogeneity limit generalization; functional validation is incomplete for many common-variant loci.",
+    "gwas_ancestry_breakdown": "Many early breast cancer GWAS were European-ancestry dominated; representation has improved but remains uneven by region and subtype.",
+    "transferability_notes": "PRS and variant interpretation can differ across ancestries due to LD and variant spectrum. GENARCH highlights these limitations and avoids individual-level claims."
+  },
+  "references": [
+    {
+      "authors": "Hereditary Cancer Review Group",
+      "doi": null,
+      "id": "clin_2018_brca_overview",
+      "journal": "Nature Reviews Clinical Oncology",
+      "title": "BRCA1/2 and hereditary breast cancer: clinical genetics and mechanisms (review)",
+      "url": null,
+      "year": 2018
+    },
+    {
+      "authors": "BCAC Consortium",
+      "doi": null,
+      "id": "gwas_2017_breast_bcac",
+      "journal": "Nature Genetics",
+      "title": "Breast Cancer Association Consortium GWAS meta-analysis identifies susceptibility loci",
+      "url": null,
+      "year": 2017
+    },
+    {
+      "authors": "Collaborative Group",
+      "doi": null,
+      "id": "epi_2020_breast_hormones_review",
+      "journal": "Cancer Epidemiology",
+      "title": "Hormonal factors and breast cancer risk: an overview (review)",
+      "url": null,
+      "year": 2020
+    },
+    {
+      "authors": "IARC Working Group",
+      "doi": null,
+      "id": "epi_2018_alcohol_cancer",
+      "journal": "IARC Monographs",
+      "title": "Alcohol consumption and cancer risk: evidence synthesis (review)",
+      "url": null,
+      "year": 2018
+    },
+    {
+      "authors": "UNSCEAR",
+      "doi": null,
+      "id": "epi_2019_radiation_review",
+      "journal": "UNSCEAR Report",
+      "title": "Ionizing radiation and cancer risk: an overview (review)",
+      "url": null,
+      "year": 2019
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "breast-cancer",
+  "summary": "Breast cancer is a heterogeneous set of malignancies arising from breast tissue, with subtypes defined by molecular features such as hormone receptor status and HER2 signaling. At the population level, risk reflects both inherited susceptibility and lifetime exposures that shape hormonal milieu, DNA damage/repair, and tissue microenvironment. Epidemiological evidence highlights hormonal factors, alcohol, and certain forms of radiation exposure as relevant modifiers in many settings, alongside complex social and healthcare factors that influence observed incidence and outcomes.\n\nGenetic epidemiology indicates breast cancer has both rare high-impact inherited variants and a polygenic background of many small-effect loci. High-penetrance genes such as BRCA1 and BRCA2 illustrate DNA repair pathways that can be mechanistically central, while common-variant signals (e.g., near FGFR2) demonstrate broad polygenic architecture. GENARCH presents these findings as mechanistic evidence at the population level, not as individual screening guidance. Equity and representation limitations matter: genetic study participation, access to tumor profiling, and exposure measurement vary across populations.",
+  "tissues": [
+    {
+      "citations": [
+        "epi_2020_breast_hormones_review"
+      ],
+      "evidence_type": "literature",
+      "name": "Breast epithelium",
+      "relevance_score": 0.85
+    },
+    {
+      "citations": [
+        "gwas_2017_breast_bcac"
+      ],
+      "evidence_type": "literature",
+      "name": "Immune microenvironment",
+      "relevance_score": 0.55
+    }
+  ]
+}

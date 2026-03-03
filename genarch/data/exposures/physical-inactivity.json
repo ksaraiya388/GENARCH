@@ -1,0 +1,60 @@
+{
+  "definition": "Physical inactivity refers to insufficient moderate-to-vigorous physical activity relative to public health recommendations. It is an exposure category relevant to cardiometabolic and neurocognitive outcomes in population studies and can interact with genetic architecture through metabolic, inflammatory, and vascular pathways. GENARCH presents this content for education, not individualized recommendations.",
+  "exposure_distribution": null,
+  "gxe_highlights": [],
+  "id": "exp_physical_inactivity",
+  "last_updated": "2026-02-26",
+  "name": "Physical Inactivity",
+  "proxies": [
+    {
+      "data_source": "Cohort studies (curated)",
+      "measurement_method": "Questionnaire or wearable accelerometry",
+      "name": "Minutes of moderate-to-vigorous activity per week",
+      "unit": "min/week"
+    }
+  ],
+  "references": [
+    {
+      "authors": "World Health Organization",
+      "doi": null,
+      "id": "surv_2020_who_activity",
+      "journal": "WHO",
+      "title": "WHO guidelines on physical activity and sedentary behaviour",
+      "url": null,
+      "year": 2020
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "10–18",
+      "citations": [
+        "surv_2020_who_activity"
+      ],
+      "mechanism_rationale": "Habit formation and ongoing physiological development can affect lifelong activity patterns and cardiometabolic trajectories in cohorts.",
+      "period": "Adolescence"
+    }
+  ],
+  "slug": "physical-inactivity",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.6,
+      "mechanism_summary": "Lower activity levels are associated with reduced insulin sensitivity and adverse lipid profiles in many cohorts.",
+      "system": "Cardiometabolic"
+    },
+    {
+      "evidence_strength": 0.5,
+      "mechanism_summary": "Physical activity can influence endothelial function and inflammatory signaling; inactivity shifts these pathways in population-level associations.",
+      "system": "Vascular"
+    }
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "surv_2020_who_activity"
+      ],
+      "effect_type": "glucose handling / insulin sensitivity context",
+      "name": "Skeletal muscle"
+    }
+  ]
+}

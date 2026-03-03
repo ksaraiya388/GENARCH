@@ -1,0 +1,52 @@
+{
+  "id": "exp_vitamin_d_status",
+  "slug": "vitamin-d-status",
+  "name": "Vitamin D Status (Population-Level)",
+  "definition": "Vitamin D status is commonly measured via serum 25(OH)D and is studied as a population-level modifier of immune-related outcomes, including multiple sclerosis risk in some epidemiological contexts. GENARCH treats vitamin D status as an educational exposure/biomarker-linked category and does not provide supplementation advice.",
+  "proxies": [
+    {
+      "name": "Serum 25(OH)D",
+      "unit": "ng/mL",
+      "measurement_method": "Clinical chemistry assay",
+      "data_source": "Cohort and biobank studies (curated)"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "Immune",
+      "mechanism_summary": "Vitamin D signaling is linked to immune regulation; causal interpretation varies by study design and confounding.",
+      "evidence_strength": 0.4
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "period": "Adolescence / young adulthood",
+      "age_range": "10–24",
+      "mechanism_rationale": "MS epidemiology often discusses earlier-life immune exposures and vitamin D proxies; interpretation remains population-level.",
+      "citations": ["epi_2016_vitd_ms_review"]
+    }
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {
+      "name": "Immune cells",
+      "effect_type": "immune regulation context",
+      "citations": ["epi_2016_vitd_ms_review"]
+    }
+  ],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "epi_2016_vitd_ms_review",
+      "title": "Vitamin D and multiple sclerosis risk: evidence overview (review)",
+      "authors": "Neuroimmunology Review Group",
+      "year": 2016,
+      "journal": "Neurology",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

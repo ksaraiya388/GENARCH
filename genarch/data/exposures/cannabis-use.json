@@ -1,0 +1,55 @@
+{
+  "definition": "Cannabis use is an exposure category studied in relation to neuropsychiatric outcomes in some epidemiological and genetic epidemiology contexts. GENARCH summarizes evidence at the population level and does not provide medical advice.",
+  "exposure_distribution": null,
+  "gxe_highlights": [],
+  "id": "exp_cannabis_use",
+  "last_updated": "2026-02-26",
+  "name": "Cannabis Use",
+  "proxies": [
+    {
+      "data_source": "Epidemiological cohorts (curated)",
+      "measurement_method": "Self-report in cohorts",
+      "name": "Frequency of use",
+      "unit": "days/month"
+    }
+  ],
+  "references": [
+    {
+      "authors": "Systematic Review Group",
+      "doi": null,
+      "id": "epi_2019_cannabis_psychosis_review",
+      "journal": "Lancet Psychiatry",
+      "title": "Cannabis use and psychosis outcomes: evidence synthesis (review)",
+      "url": null,
+      "year": 2019
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "10–18",
+      "citations": [
+        "epi_2019_cannabis_psychosis_review"
+      ],
+      "mechanism_rationale": "Neurodevelopmental timing is often discussed as a modifier in cohort studies (non-diagnostic interpretation).",
+      "period": "Adolescence"
+    }
+  ],
+  "slug": "cannabis-use",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.4,
+      "mechanism_summary": "Cannabinoid signaling can affect neurotransmission pathways; population-level associations depend on dose, timing, and confounding context.",
+      "system": "Neuropsychiatric"
+    }
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "epi_2019_cannabis_psychosis_review"
+      ],
+      "effect_type": "neurotransmission context",
+      "name": "Brain"
+    }
+  ]
+}

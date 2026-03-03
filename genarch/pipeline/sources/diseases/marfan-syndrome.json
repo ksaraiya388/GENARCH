@@ -1,0 +1,110 @@
+{
+  "id": "dis_marfan_syndrome",
+  "slug": "marfan-syndrome",
+  "name": "Marfan Syndrome",
+  "icd11_code": "LD26",
+  "summary": "Marfan syndrome is a hereditary connective tissue disorder most commonly caused by pathogenic variants in the FBN1 gene. It can affect multiple organ systems, including the cardiovascular system (aorta), eyes, and skeleton, through altered extracellular matrix structure and signaling. While the genetic cause is primary, population-level outcomes are influenced by surveillance and care access, which can vary across settings.\n\nGENARCH presents Marfan syndrome as an educational example of monogenic architecture and tissue-specific mechanism. It does not provide individualized medical advice or risk prediction.",
+  "adolescent_relevance": "Marfan syndrome can be identified in childhood or adolescence. GENARCH focuses on educational mechanism explanation and ethical constraints (no individualized risk prediction).",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "FBN1",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": null,
+        "ancestry_composition": "Variant spectrum differs across populations",
+        "replication_status": "Causal (monogenic)",
+        "evidence": "Pathogenic variants in FBN1 disrupt fibrillin-1 and connective tissue integrity, causing Marfan syndrome.",
+        "strength": 0.95,
+        "citations": ["clin_2016_marfan_review"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 1.0,
+      "source": "Monogenic causal architecture (pathogenic variants in FBN1)",
+      "year": 2016
+    },
+    "prs_notes": "PRS is not applicable as a primary risk model for monogenic Marfan syndrome. GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "physical-inactivity",
+      "direction": "unknown",
+      "strength": 0.2,
+      "confidence": "low",
+      "mechanism_hypothesis": "Physical activity relates to cardiovascular physiology broadly; GENARCH does not treat this as medical guidance for Marfan syndrome.",
+      "citations": ["surv_2020_who_activity"]
+    },
+    {
+      "exposure_slug": "psychosocial-stress",
+      "direction": "unknown",
+      "strength": 0.2,
+      "confidence": "low",
+      "mechanism_hypothesis": "Stress affects cardiovascular physiology broadly; relationships to Marfan outcomes are complex and not interpreted as causal advice.",
+      "citations": ["epi_2017_stress_review"]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "unknown",
+      "strength": 0.2,
+      "confidence": "low",
+      "mechanism_hypothesis": "Air pollution is a systemic stressor in population studies; evidence specific to Marfan outcomes is limited.",
+      "citations": ["lit_2019_pope"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "Aorta / connective tissue",
+      "relevance_score": 0.9,
+      "evidence_type": "literature",
+      "citations": ["clin_2016_marfan_review"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Marfan syndrome is monogenic; variant catalogs and clinical research have uneven representation across populations.",
+    "transferability_notes": "Variant interpretation can be impacted by underrepresentation in reference datasets; care access influences observed outcomes.",
+    "data_gaps": "Evidence on environmental modifiers is limited and setting-specific."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "clin_2016_marfan_review",
+      "title": "Marfan syndrome: FBN1, connective tissue, and clinical features (review)",
+      "authors": "Cardiogenetics Review Group",
+      "year": 2016,
+      "journal": "Nature Reviews Cardiology",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "surv_2020_who_activity",
+      "title": "WHO guidelines on physical activity and sedentary behaviour",
+      "authors": "World Health Organization",
+      "year": 2020,
+      "journal": "WHO",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2017_stress_review",
+      "title": "Psychosocial stress and health outcomes: mechanisms and evidence (review)",
+      "authors": "Cohort Review Group",
+      "year": 2017,
+      "journal": "Annual Review of Public Health",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2019_pope",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

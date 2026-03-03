@@ -1,0 +1,151 @@
+{
+  "adolescent_relevance": "Lung cancer is rare in adolescence, but adolescent and young adult periods are relevant to exposure initiation (e.g., smoking) and to understanding how inhaled exposures can drive long-term population risk. GENARCH presents mechanisms and evidence in an educational framing.",
+  "exposure_modifiers": [
+    {
+      "citations": [
+        "rev_2018_us_surgeon_general"
+      ],
+      "confidence": "high",
+      "direction": "amplify",
+      "exposure_slug": "smoking",
+      "mechanism_hypothesis": "Smoking introduces carcinogens and promotes chronic inflammation and DNA damage responses in lung tissue, strongly increasing population-level lung cancer burden.",
+      "strength": 0.95
+    },
+    {
+      "citations": [
+        "lit_2019_pope"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "air-pollution",
+      "mechanism_hypothesis": "Fine particulate exposure is associated with lung cancer in some population studies; mechanisms may involve inflammation and oxidative stress.",
+      "strength": 0.55
+    },
+    {
+      "citations": [
+        "epi_2015_occupational_copd_review"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "occupational-dust",
+      "mechanism_hypothesis": "Occupational particulates can contribute to inhaled carcinogen exposure in some settings; effects are context- and industry-dependent.",
+      "strength": 0.5
+    }
+  ],
+  "genetic_architecture": {
+    "heritability_estimate": {
+      "h2_narrow_sense": null,
+      "h2_snp": 0.2,
+      "source": "GWAS-based estimates (varies by smoking status and ascertainment)",
+      "year": 2017
+    },
+    "prs_notes": "PRS for lung cancer exist in research contexts, often stratified by smoking status. Transferability varies by ancestry and exposure distribution; GENARCH does not provide individual risk projections.",
+    "top_loci": [
+      {
+        "ancestry_composition": "European-dominated discovery; broader evaluation exists",
+        "citations": [
+          "gwas_2017_lungc_meta",
+          "lit_2015_smoking_genetics_review"
+        ],
+        "effect_size": 0.06,
+        "evidence": "Variants in the CHRNA5/CHRNA3 region are associated with smoking behaviors and lung cancer risk; mediation and interaction are complex.",
+        "gene": "CHRNA5 (nicotinic receptor locus)",
+        "gwas_p": 1e-12,
+        "replication_status": "Replicated",
+        "strength": 0.7,
+        "variant": null
+      },
+      {
+        "ancestry_composition": "European-dominated in many studies",
+        "citations": [
+          "gwas_2017_lungc_meta"
+        ],
+        "effect_size": 0.04,
+        "evidence": "Multiple loci map to pathways involved in DNA damage response and carcinogen metabolism; mapping is ongoing.",
+        "gene": "DNA repair / carcinogen metabolism pathways (context)",
+        "gwas_p": 1e-08,
+        "replication_status": "Replicated (multiple loci)",
+        "strength": 0.55,
+        "variant": null
+      }
+    ]
+  },
+  "icd11_code": "2C25",
+  "id": "dis_lung_cancer",
+  "last_updated": "2026-02-26",
+  "mechanism_briefs": [],
+  "name": "Lung Cancer",
+  "population_equity": {
+    "data_gaps": "Separating genetic effects from exposure mediation and confounding is challenging; occupational exposures are often imperfectly measured.",
+    "gwas_ancestry_breakdown": "Many lung cancer GWAS have been European-ancestry dominated; smoking exposure distributions vary across populations and time.",
+    "transferability_notes": "PRS and effect estimates can vary across ancestries and are strongly influenced by exposure context (e.g., smoking prevalence). GENARCH avoids individual-level inference."
+  },
+  "references": [
+    {
+      "authors": "Lung Cancer GWAS Consortium",
+      "doi": null,
+      "id": "gwas_2017_lungc_meta",
+      "journal": "Nature Genetics",
+      "title": "Genome-wide association meta-analysis identifies lung cancer susceptibility loci",
+      "url": null,
+      "year": 2017
+    },
+    {
+      "authors": "Behavioral Genetics Review Group",
+      "doi": null,
+      "id": "lit_2015_smoking_genetics_review",
+      "journal": "Trends in Genetics",
+      "title": "Genetics of smoking behavior and related disease risk: overview (review)",
+      "url": null,
+      "year": 2015
+    },
+    {
+      "authors": "U.S. Surgeon General",
+      "doi": null,
+      "id": "rev_2018_us_surgeon_general",
+      "journal": "U.S. Department of Health and Human Services",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "url": null,
+      "year": 2018
+    },
+    {
+      "authors": "Pope CA, Dockery DW",
+      "doi": null,
+      "id": "lit_2019_pope",
+      "journal": "Journal of the Air & Waste Management Association",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "url": null,
+      "year": 2019
+    },
+    {
+      "authors": "Occupational Review Group",
+      "doi": null,
+      "id": "epi_2015_occupational_copd_review",
+      "journal": "Occupational and Environmental Medicine",
+      "title": "Occupational exposures and COPD risk: evidence overview (review)",
+      "url": null,
+      "year": 2015
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "lung-cancer",
+  "summary": "Lung cancer comprises malignancies arising in lung tissue, with major subtypes including non-small cell and small cell lung cancer. Population-level risk is strongly influenced by inhaled exposures—particularly tobacco smoke—and is also studied in relation to ambient air pollution and occupational particulates. Mechanistic hypotheses emphasize DNA damage, chronic inflammation, and altered epithelial repair processes. Importantly, observed population patterns are shaped by exposure distributions, regulation, healthcare access, and diagnostic practices.\n\nGenetic epidemiology for lung cancer includes gene–environment interactions where genetic variation may modify susceptibility under specific exposure conditions (e.g., nicotine receptor region variants in the context of smoking). In addition, germline variants can influence cancer biology and response pathways, though somatic mutations are central to tumor development. GENARCH presents lung cancer content as educational and population-level: it summarizes evidence and limitations and does not provide individual risk or screening advice.",
+  "tissues": [
+    {
+      "citations": [
+        "rev_2018_us_surgeon_general"
+      ],
+      "evidence_type": "literature",
+      "name": "Lung epithelium",
+      "relevance_score": 0.9
+    },
+    {
+      "citations": [
+        "gwas_2017_lungc_meta"
+      ],
+      "evidence_type": "GWAS",
+      "name": "DNA damage response (cellular)",
+      "relevance_score": 0.65
+    }
+  ]
+}

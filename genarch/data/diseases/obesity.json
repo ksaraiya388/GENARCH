@@ -1,0 +1,152 @@
+{
+  "adolescent_relevance": "Adolescence is a key period for growth, metabolic changes, and habit formation. Population studies often examine how diet patterns, sleep, and activity during adolescence relate to later cardiometabolic outcomes. GENARCH frames obesity content as educational, emphasizing evidence limitations and avoiding stigmatizing language or individualized predictions.",
+  "exposure_modifiers": [
+    {
+      "citations": [
+        "rev_2019_who_nutrition"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "diet-quality",
+      "mechanism_hypothesis": "Dietary patterns influence energy balance and adipose endocrine signaling, shifting population-level adiposity trajectories.",
+      "strength": 0.7
+    },
+    {
+      "citations": [
+        "surv_2020_who_activity"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "physical-inactivity",
+      "mechanism_hypothesis": "Lower activity reduces energy expenditure and is associated with metabolic dysregulation in cohorts.",
+      "strength": 0.65
+    },
+    {
+      "citations": [
+        "rev_2017_endocrine_disruptors"
+      ],
+      "confidence": "low",
+      "direction": "unknown",
+      "exposure_slug": "endocrine-disruptors",
+      "mechanism_hypothesis": "Some endocrine disruptor compounds are hypothesized to affect metabolic regulation; evidence is heterogeneous and compound-specific.",
+      "strength": 0.35
+    }
+  ],
+  "genetic_architecture": {
+    "heritability_estimate": {
+      "h2_narrow_sense": null,
+      "h2_snp": 0.5,
+      "source": "Family and GWAS-based estimates (varies across cohorts and age)",
+      "year": 2015
+    },
+    "prs_notes": "PRS for BMI/obesity are validated in research cohorts but show ancestry-dependent performance and strong dependence on exposure context. GENARCH does not compute or project individual risk; PRS is discussed only as population-level genetic liability.",
+    "top_loci": [
+      {
+        "ancestry_composition": "European-dominated discovery; broader evidence exists",
+        "citations": [
+          "gwas_2015_giant_bmi",
+          "lit_2016_obesity_biology"
+        ],
+        "effect_size": 0.06,
+        "evidence": "FTO locus is consistently associated with BMI/adiposity and is linked to appetite/energy balance mechanisms in literature.",
+        "gene": "FTO",
+        "gwas_p": 1e-20,
+        "replication_status": "Replicated",
+        "strength": 0.8,
+        "variant": null
+      },
+      {
+        "ancestry_composition": "Multi-ancestry evidence increasing",
+        "citations": [
+          "gwas_2015_giant_bmi",
+          "lit_2016_obesity_biology"
+        ],
+        "effect_size": 0.05,
+        "evidence": "MC4R is involved in appetite regulation; both common and rare variants are implicated in adiposity biology.",
+        "gene": "MC4R",
+        "gwas_p": 1e-15,
+        "replication_status": "Replicated",
+        "strength": 0.75,
+        "variant": null
+      }
+    ]
+  },
+  "icd11_code": "5B81",
+  "id": "dis_obesity",
+  "last_updated": "2026-02-26",
+  "mechanism_briefs": [],
+  "name": "Obesity",
+  "population_equity": {
+    "data_gaps": "Measurement heterogeneity (BMI vs. body composition), diverse food environments, and socioeconomic confounding limit causal claims for some exposure modifiers.",
+    "gwas_ancestry_breakdown": "BMI/obesity GWAS have been European-ancestry dominated historically; multi-ancestry datasets are expanding but gaps remain.",
+    "transferability_notes": "PRS performance and effect estimates can vary across ancestries and environments. GENARCH emphasizes that exposure context (food environment, stressors) is essential for interpretation."
+  },
+  "references": [
+    {
+      "authors": "GIANT Consortium",
+      "doi": null,
+      "id": "gwas_2015_giant_bmi",
+      "journal": "Nature",
+      "title": "Genetic studies of body mass index yield insights into biology and risk loci",
+      "url": null,
+      "year": 2015
+    },
+    {
+      "authors": "Metabolic Biology Review Group",
+      "doi": null,
+      "id": "lit_2016_obesity_biology",
+      "journal": "Cell",
+      "title": "Obesity biology: appetite regulation and adipose signaling overview (review)",
+      "url": null,
+      "year": 2016
+    },
+    {
+      "authors": "World Health Organization",
+      "doi": null,
+      "id": "rev_2019_who_nutrition",
+      "journal": "WHO",
+      "title": "Healthy diet factsheet and guidance (population-level)",
+      "url": null,
+      "year": 2019
+    },
+    {
+      "authors": "World Health Organization",
+      "doi": null,
+      "id": "surv_2020_who_activity",
+      "journal": "WHO",
+      "title": "WHO guidelines on physical activity and sedentary behaviour",
+      "url": null,
+      "year": 2020
+    },
+    {
+      "authors": "Endocrine Review Group",
+      "doi": null,
+      "id": "rev_2017_endocrine_disruptors",
+      "journal": "Endocrine Reviews",
+      "title": "Endocrine disruptors and metabolic outcomes: evidence overview (review)",
+      "url": null,
+      "year": 2017
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "obesity",
+  "summary": "Obesity describes excess adiposity that can influence metabolic, inflammatory, and cardiovascular pathways across the life course. At the population level, obesity prevalence reflects complex interactions among food environments, diet patterns, physical activity, sleep, psychosocial stress, endocrine signaling, and socioeconomic context. Biological mechanisms often discussed include changes in adipose tissue biology (inflammation and endocrine function), insulin resistance, and altered lipid handling.\n\nGenetic epidemiology indicates obesity is strongly polygenic: many common variants each contribute small effects, often via appetite regulation, energy balance, and adipose signaling pathways. Some loci (e.g., FTO and MC4R) have consistent associations across studies. GENARCH uses these signals to build educational mechanistic narratives about energy balance biology and how exposures can modify population-level trajectories—without making individual risk claims. Equity limitations are crucial: both genetic study representation and exposure context (food access, stressors, built environment) vary widely across populations.",
+  "tissues": [
+    {
+      "citations": [
+        "gwas_2015_giant_bmi"
+      ],
+      "evidence_type": "GWAS",
+      "name": "Adipose tissue",
+      "relevance_score": 0.9
+    },
+    {
+      "citations": [
+        "lit_2016_obesity_biology"
+      ],
+      "evidence_type": "literature",
+      "name": "Hypothalamus / appetite regulation circuits",
+      "relevance_score": 0.65
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "nodes": [
+    {
+      "id": "dis_asthma",
+      "type": "Disease",
+      "label": "Asthma",
+      "slug": "asthma",
+      "attrs": {
+        "summary": "Chronic airway inflammation and hyperreactivity (population-level educational summary).",
+        "confidence": "high",
+        "last_updated": "2026-02-26"
+      }
+    },
+    {
+      "id": "exp_air_pollution",
+      "type": "Exposure",
+      "label": "Ambient Air Pollution (PM2.5)",
+      "slug": "air-pollution",
+      "attrs": {
+        "summary": "Fine particulate matter proxy (PM2.5) as a population-level exposure context.",
+        "confidence": "high",
+        "last_updated": "2026-02-26"
+      }
+    },
+    {
+      "id": "gene_il33",
+      "type": "Gene",
+      "label": "IL33",
+      "slug": "il33",
+      "attrs": {
+        "summary": "Epithelial alarmin cytokine implicated in asthma genetics and airway inflammation mechanisms.",
+        "confidence": "high",
+        "last_updated": "2026-02-26"
+      }
+    },
+    {
+      "id": "path_nfkb",
+      "type": "Pathway",
+      "label": "NF-κB Signaling",
+      "slug": "nf-kb",
+      "attrs": {
+        "summary": "Inflammatory transcription program linking stress signals to immune gene expression.",
+        "confidence": "medium",
+        "last_updated": "2026-02-26"
+      }
+    },
+    {
+      "id": "tis_lung",
+      "type": "Tissue",
+      "label": "Lung",
+      "slug": null,
+      "attrs": {
+        "summary": "Tissue context for airway biology and gene regulation.",
+        "confidence": "medium",
+        "last_updated": "2026-02-26"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_modifies_airpollution_asthma",
+      "source": "exp_air_pollution",
+      "target": "dis_asthma",
+      "type": "MODIFIES",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "Lung",
+          "Airway epithelium"
+        ],
+        "strength": 0.85,
+        "confidence": "high",
+        "sources": [
+          "epi_2016_guarnieri",
+          "lit_2019_pope"
+        ],
+        "year_first_reported": 2016,
+        "ancestry_rep": "Unknown"
+      }
+    }
+  ],
+  "metadata": {
+    "generated_at": "2026-02-26T00:00:00+00:00",
+    "pipeline_version": "0.1.0",
+    "node_count": 5,
+    "edge_count": 1,
+    "schema_version": "1.0"
+  }
+}
+

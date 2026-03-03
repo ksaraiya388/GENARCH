@@ -1,0 +1,85 @@
+{
+  "id": "gene_il33",
+  "slug": "il33",
+  "symbol": "IL33",
+  "name": "Interleukin 33",
+  "chromosome": "9p24.1",
+  "summary": "IL33 encodes interleukin-33, an epithelial-derived cytokine often described as an 'alarmin' that can be released during barrier stress or injury. IL-33 can promote type 2 immune responses via signaling through the IL1RL1 (ST2) receptor on immune cells such as ILC2s and mast cells. Population genetic studies repeatedly implicate the IL33/IL1RL1 region in asthma and allergic phenotypes, motivating mechanistic hypotheses that connect airway exposures to epithelial stress signaling and downstream inflammation.",
+  "molecular_function": [
+    "cytokine activity",
+    "receptor ligand activity"
+  ],
+  "protein_class": "cytokine",
+  "regulatory_notes": {
+    "promoter_activity": "Regulatory variation near IL33 is associated with allergic disease signals in multiple GWAS.",
+    "enhancer_associations": "Enhancer context is tissue-specific; seed content summarizes evidence qualitatively.",
+    "methylation_sensitivity": "Epigenetic regulation is plausible in exposure contexts, but seed evidence is summarized conservatively.",
+    "eqtl_tissues": [
+      "Lung",
+      "Whole blood"
+    ]
+  },
+  "expression_context": [
+    {
+      "tissue": "Lung",
+      "tpm_range": "low–moderate (context-dependent)",
+      "gtex_version": "v8",
+      "citations": ["eqtl_2020_gtexv8"]
+    }
+  ],
+  "pathways": ["nf-kb"],
+  "linked_diseases": [
+    {
+      "slug": "asthma",
+      "evidence_type": "GWAS",
+      "strength": 0.85
+    }
+  ],
+  "linked_exposures": [
+    {
+      "slug": "air-pollution",
+      "evidence_type": "literature",
+      "strength": 0.6
+    }
+  ],
+  "mechanistic_hypotheses": [
+    {
+      "hypothesis": "Airway particulate exposure increases epithelial stress signaling that promotes IL-33 release, priming type 2 inflammation in asthma-relevant tissues.",
+      "supporting_evidence": "Supported by exposure biology reviews and seed mechanistic brief evidence synthesis; not interpreted as individual risk prediction.",
+      "confidence": "medium"
+    }
+  ],
+  "confidence": "high",
+  "references": [
+    {
+      "id": "gwas_2017_moffatt",
+      "title": "A large-scale, consortium-based genome-wide association study meta-analysis of asthma",
+      "authors": "Moffatt MF et al.",
+      "year": 2017,
+      "journal": "Nature Genetics",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "eqtl_2020_gtexv8",
+      "title": "The GTEx Consortium atlas of genetic regulatory effects across human tissues (v8)",
+      "authors": "GTEx Consortium",
+      "year": 2020,
+      "journal": "Science",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "lit_2014_zenewicz",
+      "title": "IL-33 and the biology of the epithelial barrier in allergic inflammation",
+      "authors": "Zenewicz LA, Flavell RA",
+      "year": 2014,
+      "journal": "Immunity",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

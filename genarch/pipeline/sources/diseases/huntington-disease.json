@@ -1,0 +1,110 @@
+{
+  "id": "dis_huntington_disease",
+  "slug": "huntington-disease",
+  "name": "Huntington Disease",
+  "icd11_code": "8A01",
+  "summary": "Huntington disease (HD) is a hereditary neurodegenerative disorder caused by a CAG repeat expansion in the HTT gene. The expanded polyglutamine tract leads to toxic protein effects and progressive neuronal dysfunction, often affecting movement, cognition, and behavior. While the genetic cause is the primary determinant of disease, population-level outcomes can still be shaped by supportive care access and broader environmental context.\n\nGENARCH presents HD as an educational example of monogenic architecture with clear molecular causation. It does not provide individualized prediction, age-of-onset estimation, or clinical recommendations.",
+  "adolescent_relevance": "Classic HD typically manifests in adulthood, though juvenile forms exist. GENARCH uses HD to illustrate genetic causation and ethical constraints: no individual-level prediction or counseling content is provided.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "HTT",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": null,
+        "ancestry_composition": "Repeat expansion distribution varies by population history",
+        "replication_status": "Causal (monogenic)",
+        "evidence": "CAG repeat expansion in HTT is the causal mechanism for HD.",
+        "strength": 0.95,
+        "citations": ["clin_2017_hd_review"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 1.0,
+      "source": "Monogenic causal architecture (repeat expansion in HTT)",
+      "year": 2017
+    },
+    "prs_notes": "PRS is not applicable as a primary risk model for monogenic HD. GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "sleep-disruption",
+      "direction": "unknown",
+      "strength": 0.25,
+      "confidence": "low",
+      "mechanism_hypothesis": "Sleep patterns can affect neurocognitive function broadly; relationships to HD progression are complex and not interpreted as causal guidance.",
+      "citations": ["epi_2016_sleep_review"]
+    },
+    {
+      "exposure_slug": "psychosocial-stress",
+      "direction": "unknown",
+      "strength": 0.25,
+      "confidence": "low",
+      "mechanism_hypothesis": "Stress can influence neuroendocrine and mental health pathways; effects on HD course are complex and context-dependent.",
+      "citations": ["epi_2017_stress_review"]
+    },
+    {
+      "exposure_slug": "physical-inactivity",
+      "direction": "unknown",
+      "strength": 0.2,
+      "confidence": "low",
+      "mechanism_hypothesis": "Physical activity relates to general health and neurocognitive outcomes; GENARCH does not treat this as medical advice for HD.",
+      "citations": ["surv_2020_who_activity"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "Brain (striatal neurons)",
+      "relevance_score": 0.9,
+      "evidence_type": "literature",
+      "citations": ["clin_2017_hd_review"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "HD research representation differs by geography; repeat expansion prevalence varies by population history.",
+    "transferability_notes": "Most mechanistic evidence is not ancestry-specific, but care access and measurement context differ across settings.",
+    "data_gaps": "Environmental modifier evidence is limited and often observational; GENARCH emphasizes uncertainty."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "clin_2017_hd_review",
+      "title": "Huntington disease: genetics and molecular pathogenesis (review)",
+      "authors": "Neurogenetics Review Group",
+      "year": 2017,
+      "journal": "Lancet Neurology",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2016_sleep_review",
+      "title": "Sleep duration and health outcomes: overview of population evidence (review)",
+      "authors": "Sleep Review Group",
+      "year": 2016,
+      "journal": "Sleep Medicine Reviews",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "epi_2017_stress_review",
+      "title": "Psychosocial stress and health outcomes: mechanisms and evidence (review)",
+      "authors": "Cohort Review Group",
+      "year": 2017,
+      "journal": "Annual Review of Public Health",
+      "doi": null,
+      "url": null
+    },
+    {
+      "id": "surv_2020_who_activity",
+      "title": "WHO guidelines on physical activity and sedentary behaviour",
+      "authors": "World Health Organization",
+      "year": 2020,
+      "journal": "WHO",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+

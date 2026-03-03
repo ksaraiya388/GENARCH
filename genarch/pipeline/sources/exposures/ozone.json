@@ -1,0 +1,58 @@
+{
+  "id": "exp_ozone",
+  "slug": "ozone",
+  "name": "Ground-Level Ozone",
+  "definition": "Ground-level ozone (O₃) is a reactive gas formed when pollutants from vehicles and industry react in sunlight. Ozone can irritate the airways and is commonly measured by regulatory monitors. GENARCH summarizes population-level evidence linking ozone exposure to respiratory outcomes without making individual medical claims.",
+  "proxies": [
+    {
+      "name": "Ozone (O₃)",
+      "unit": "ppb",
+      "measurement_method": "Regulatory monitors (daily max 8-hour average)",
+      "data_source": "EPA Air Quality System (AQS)"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "Respiratory",
+      "mechanism_summary": "Ozone is an oxidant that can trigger airway irritation and inflammatory signaling; effects vary by exposure pattern and baseline health in cohort studies.",
+      "evidence_strength": 0.5
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "period": "Adolescence",
+      "age_range": "10–18",
+      "mechanism_rationale": "Outdoor activity patterns and episodic high-ozone events can influence exposure dose; cohort studies often evaluate school-age and adolescent outcomes.",
+      "citations": ["epi_2016_guarnieri"]
+    }
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {
+      "name": "Airway epithelium",
+      "effect_type": "oxidative irritation response",
+      "citations": ["epi_2016_guarnieri"]
+    }
+  ],
+  "exposure_distribution": {
+    "data_source": "EPA AQS (seed placeholder)",
+    "geographic_scope": "United States",
+    "summary_stats": {
+      "mean_ppb": 35.0
+    }
+  },
+  "references": [
+    {
+      "id": "epi_2016_guarnieri",
+      "title": "Outdoor air pollution and asthma in children",
+      "authors": "Guarnieri M, Balmes JR",
+      "year": 2016,
+      "journal": "The Lancet",
+      "doi": null,
+      "url": null
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}
+
