@@ -1,6 +1,83 @@
 {
   "nodes": [
     {
+      "id": "obesity",
+      "type": "disease",
+      "label": "Obesity",
+      "slug": "obesity",
+      "attrs": {
+        "summary": "Obesity is a multifactorial condition characterized by excess adipose tissue accumulation, with body mass index (BMI) ≥30 kg/m² as a common threshold. Pathophysiology involves energy balance dysregulation, leptin–melanocortin signaling, gut–brain axis, adipose biology, and neuroendocrine pathways. Obesity increases risk for type 2 diabetes, cardiovascular disease, cancer, and musculoskeletal disorders. Genetic susceptibility is substantial: heritability for BMI is ~40–70%; SNP-based h² is ~0.21. Over 900 loci have been identified. Key genes include FTO (energy balance, hypothalamic regulation), MC4R (melanocortin-4 receptor, appetite), and loci in gut–brain axis (LEP, LEPR, POMC). Diet, physical activity, built environment, and psychosocial factors interact with genetic risk. Epigenetic programming in early life may influence susceptibility. Adolescence is a critical period for establishing weight trajectory.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "major-depressive-disorder",
+      "type": "disease",
+      "label": "Major Depressive Disorder",
+      "slug": "major-depressive-disorder",
+      "attrs": {
+        "summary": "Major depressive disorder (MDD) is a common mental disorder characterized by persistent low mood, anhedonia, fatigue, and impaired functioning, often with recurring episodes. Neurobiological mechanisms involve dysregulation of monoaminergic systems (serotonin, norepinephrine, dopamine), hypothalamic-pituitary-adrenal (HPA) axis hyperactivation, neuroinflammation, and impaired neuroplasticity. Genetic factors contribute ~37% of variance; SNP heritability ~0.08–0.15, reflecting high polygenicity and substantial environmental influence. Key candidate genes include SLC6A4 (serotonin transporter) and BDNF (brain-derived neurotrophic factor), both implicated in stress response and neural plasticity. Gene–environment interactions are central: childhood adversity and chronic psychosocial stress amplify genetic susceptibility, particularly in 5-HTTLPR and BDNF Val66Met carriers. Adolescence is a critical vulnerability window—onset peaks in late adolescence/early adulthood, and stress exposure during 10–24 years may have lasting effects on HPA axis and neural circuitry.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "schizophrenia",
+      "type": "disease",
+      "label": "Schizophrenia",
+      "slug": "schizophrenia",
+      "attrs": {
+        "summary": "Schizophrenia is a severe psychiatric disorder characterized by positive symptoms (hallucinations, delusions), negative symptoms (avolition, anhedonia), and cognitive impairment. Pathophysiology involves dopamine dysregulation, glutamate hypofunction, neurodevelopmental abnormalities, and neuroinflammation. Onset typically occurs in late adolescence or early adulthood (ages 15–25). Genetic susceptibility is very high: heritability from twin studies is ~80%; SNP-based h² is ~0.24. Over 200 susceptibility loci have been identified. Key genes include DRD2 (dopamine receptor), CACNA1C (calcium channel), and C4A (complement, synaptic pruning). Cannabis use, urban residence, childhood adversity, and migration are environmental risk factors. Gene–environment interactions are active areas of research. Early intervention during prodromal phase may improve outcomes.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "coronary-artery-disease",
+      "type": "disease",
+      "label": "Coronary Artery Disease",
+      "slug": "coronary-artery-disease",
+      "attrs": {
+        "summary": "Coronary artery disease (CAD) is the leading cause of death globally, characterized by atherosclerosis—the progressive buildup of fatty plaques in coronary arteries that supply the heart. Pathophysiology involves endothelial dysfunction, lipid accumulation, chronic inflammation, plaque rupture, and thrombosis. CAD manifests as angina, myocardial infarction, or sudden cardiac death. Genetic susceptibility contributes substantially: heritability estimates range from 40–60% based on twin and family studies. SNP-based heritability (h²) is approximately 0.13–0.16, reflecting highly polygenic architecture. Key Mendelian genes (LDLR, APOB, PCSK9, LPA) illuminate cholesterol metabolism pathways; common-variant GWAS have identified over 300 loci. Prevalence increases with age and varies by population and lifestyle. Modifiable risk factors—hypertension, dyslipidemia, smoking, diabetes, obesity, physical inactivity, and poor diet—interact with genetic predisposition. Early-life and adolescent exposures shape lifelong cardiovascular risk trajectories.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "multiple-sclerosis",
+      "type": "disease",
+      "label": "Multiple Sclerosis",
+      "slug": "multiple-sclerosis",
+      "attrs": {
+        "summary": "Multiple sclerosis (MS) is a chronic autoimmune demyelinating disease of the central nervous system, characterized by inflammation, demyelination, axonal damage, and progressive disability. Pathophysiology involves T-cell-mediated autoimmune attack on myelin and oligodendrocytes, with contributions from B cells, microglia, and innate immunity. Genetic susceptibility is substantial—twin concordance ~25%, SNP heritability ~0.25–0.30. The HLA-DRB1*15:01 allele is the strongest genetic risk factor, conferring ~3-fold increased risk. Non-HLA loci implicate immune regulation, vitamin D metabolism, and neuronal resilience. Environmental factors are critical: low vitamin D (from UV/sun exposure and diet), Epstein-Barr virus infection, and smoking amplify risk. Adolescence and young adulthood represent the peak period for disease onset—age 15–24 is when many individuals experience first symptoms. Vitamin D status and EBV seroconversion during this window may be particularly consequential for MS development.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "type-2-diabetes",
+      "type": "disease",
+      "label": "Type 2 Diabetes",
+      "slug": "type-2-diabetes",
+      "attrs": {
+        "summary": "Type 2 diabetes (T2D) is a metabolic disorder characterized by insulin resistance and progressive beta-cell dysfunction, leading to chronic hyperglycemia. Pathophysiology involves impaired glucose uptake in muscle and adipose tissue, dysregulated hepatic glucose output, and insufficient insulin secretion. Complications include retinopathy, nephropathy, neuropathy, and cardiovascular disease. Genetic susceptibility is substantial: heritability estimates range from 30–70% depending on study design and population. SNP-based heritability (h²) is approximately 0.18–0.25. Over 400 susceptibility loci have been identified; key genes include TCF7L2 (Wnt signaling, beta-cell function), SLC30A8 (zinc transport, insulin secretion), PPARG (adipocyte differentiation, insulin sensitivity), and FTO (energy balance, obesity). T2D is highly modifiable by lifestyle; diet, physical activity, and obesity interact strongly with genetic risk. Onset is increasingly occurring in adolescence and young adulthood.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "rheumatoid-arthritis",
+      "type": "disease",
+      "label": "Rheumatoid Arthritis",
+      "slug": "rheumatoid-arthritis",
+      "attrs": {
+        "summary": "Rheumatoid arthritis (RA) is a chronic autoimmune disorder characterized by symmetric inflammatory polyarthritis, joint destruction, and systemic manifestations. Pathophysiology involves autoimmune attack on synovium, with HLA-DRB1 shared epitope, citrullinated peptide recognition, and TNF/IL-6–driven inflammation. Seropositive RA (RF and/or anti-CCP) has stronger genetic component than seronegative. Heritability is ~60%; SNP-based h² is ~0.13. HLA-DRB1 contributes ~30% of genetic variance. Key genes include HLA-DRB1 (antigen presentation), PTPN22 (T-cell signaling), and loci in TNF pathway. Smoking, particularly in HLA-DRB1 carriers, dramatically increases anti-CCP–positive RA risk via citrullination. Infections, obesity, and reproductive factors may modify risk. Early diagnosis and DMARD therapy prevent joint damage.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
       "id": "asthma",
       "type": "disease",
       "label": "Asthma",
@@ -12,6 +89,116 @@
       }
     },
     {
+      "id": "alzheimers-disease",
+      "type": "disease",
+      "label": "Alzheimer's Disease",
+      "slug": "alzheimers-disease",
+      "attrs": {
+        "summary": "Alzheimer's disease (AD) is the leading cause of dementia, characterized by progressive neurodegeneration, amyloid-beta plaques, and neurofibrillary tau tangles. Pathophysiology involves amyloid cascade, tau pathology, neuroinflammation, synaptic loss, and eventual neuronal death. Onset is typically late life; early-onset familial AD (5–10%) is caused by rare mutations in APP, PSEN1, and PSEN2. Genetic susceptibility in late-onset AD: heritability is ~60–80%; SNP-based h² is ~0.07. APOE ε4 is the strongest common genetic risk factor (3–15-fold depending on copy number). Over 40 susceptibility loci have been identified. Vascular, metabolic, and lifestyle factors modify risk. Disease begins decades before clinical symptoms; preventive interventions may be most effective in mid-life and earlier.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "colorectal-cancer",
+      "type": "disease",
+      "label": "Colorectal Cancer",
+      "slug": "colorectal-cancer",
+      "attrs": {
+        "summary": "Colorectal cancer (CRC) encompasses malignancies arising from the colon or rectum, with adenocarcinoma comprising the majority of cases. Pathogenesis involves the adenoma-carcinoma sequence: accumulated genetic and epigenetic alterations drive progression from normal epithelium through adenomatous polyps to invasive carcinoma. Inherited susceptibility contributes ~35% of CRC risk; major genes include APC (familial adenomatous polyposis), MLH1/MSH2 (Lynch syndrome), and numerous GWAS-identified loci affecting cell-cycle, Wnt signaling, and inflammatory pathways. Diet and the gut microbiome are major environmental modifiers—red meat, processed foods, and low fiber intake increase risk, while the gut microbiota influences inflammation, metabolite production, and DNA damage. Adolescent relevance is emerging: diet quality and obesity established during 10–24 years may shape microbiome composition and epigenetic programming that influences later CRC susceptibility. Early-onset CRC is increasing, highlighting the importance of understanding G×E interactions in younger populations.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "hypertension",
+      "type": "disease",
+      "label": "Hypertension",
+      "slug": "hypertension",
+      "attrs": {
+        "summary": "Hypertension (essential arterial hypertension) is a chronic condition characterized by sustained elevation of blood pressure (≥130/80 mmHg). It is the leading modifiable risk factor for cardiovascular disease, stroke, and chronic kidney disease worldwide. Pathophysiology involves complex interactions between renal sodium handling, the renin-angiotensin-aldosterone system (RAAS), sympathetic nervous system overactivity, vascular remodeling, and endothelial dysfunction. Genetic factors contribute substantially, with twin studies estimating heritability at 30–50% and SNP-based heritability ~0.15–0.25. The disease exhibits strong gene–environment interactions: high sodium intake amplifies genetic susceptibility in salt-sensitive individuals, while psychosocial stress and obesity modulate both onset and severity. Adolescents represent a critical window—early-onset hypertension tracks into adulthood, and blood pressure trajectories established in the 10–24 age range predict long-term cardiovascular risk. Lifestyle factors (diet, physical activity, stress) during adolescence can modify epigenetic programming and disease trajectory.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "breast-cancer",
+      "type": "disease",
+      "label": "Breast Cancer",
+      "slug": "breast-cancer",
+      "attrs": {
+        "summary": "Breast cancer is the most common malignancy in women globally, arising from ductal or lobular epithelium. Pathophysiology involves dysregulated cell proliferation, genomic instability, and hormone receptor signaling (ER, PR, HER2). Subtypes differ in prognosis and therapy. Genetic susceptibility is substantial: heritability from twin studies is ~30%; SNP-based h² is ~0.08–0.15. Rare high-penetrance mutations (BRCA1, BRCA2, TP53) account for ~5–10% of cases; common variants explain additional variance. Key genes include BRCA1/BRCA2 (DNA repair), TP53 (tumor suppressor), and FGFR2 (receptor signaling). Hormonal, reproductive, and lifestyle factors interact with genetic risk. Early menarche, late menopause, nulliparity, and obesity modify risk. Adolescence is a sensitive window for breast development and carcinogen exposure.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "lung-cancer",
+      "type": "disease",
+      "label": "Lung Cancer",
+      "slug": "lung-cancer",
+      "attrs": {
+        "summary": "Lung cancer encompasses carcinomas of the lung, predominantly non-small cell lung cancer (NSCLC) and small cell lung cancer (SCLC). Tobacco smoking is the principal environmental cause, accounting for ~85% of cases; the smoking–genetics interaction is among the best-characterized gene–environment relationships in oncology. Genetic susceptibility modifies both smoking initiation (nicotine dependence) and lung cancer risk among smokers. Key loci include CHRNA5/CHRNA3 (nicotinic acetylcholine receptors influencing smoking behavior and carcinogen susceptibility), TP53, and EGFR (driver mutations in adenocarcinoma). SNP heritability for lung cancer is modest (~0.05) but increases when considering smoking-adjusted models. Adolescent relevance is significant: smoking initiation typically occurs before age 24; genetic variants in CHRNA5 influence both nicotine dependence and lung cancer risk, creating a dual pathway. Never-smoker lung cancer has distinct genetics (stronger EGFR, weaker smoking loci) and rising incidence in some populations.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "copd",
+      "type": "disease",
+      "label": "Chronic Obstructive Pulmonary Disease",
+      "slug": "copd",
+      "attrs": {
+        "summary": "Chronic obstructive pulmonary disease (COPD) is a progressive respiratory disorder characterized by airflow limitation, emphysema, and chronic bronchitis. Pathophysiology involves chronic inflammation, protease–antiprotease imbalance, oxidative stress, and airway remodeling. Alpha-1 antitrypsin deficiency (SERPINA1) causes ~1% of cases but illuminates mechanism. Genetic susceptibility: heritability is ~40–70%; SNP-based h² is ~0.12. Key genes include SERPINA1 (protease inhibitor), HHIP (hedgehog signaling, lung development), FAM13A, and loci near MMP12. Cigarette smoking is the dominant environmental cause; gene–smoking interactions are well-established. Only ~15–20% of smokers develop COPD, highlighting genetic susceptibility. Air pollution and occupational exposures contribute. Early-life lung development and adolescent smoking shape disease trajectory.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "diet-quality",
+      "type": "exposure",
+      "label": "Diet Quality",
+      "slug": "diet-quality",
+      "attrs": {
+        "summary": "Overall dietary pattern and nutritional quality. Includes intake of fruits, vegetables, whole grains, refined carbohydrates, saturated fat, sugar, and ultra-processed foods. Proxy for nutritional exposures affecting metabolic and cardiovascular health.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "heavy-metals",
+      "type": "exposure",
+      "label": "Heavy Metals (Lead, Mercury, Arsenic)",
+      "slug": "heavy-metals",
+      "attrs": {
+        "summary": "Exposure to toxic heavy metals from environmental and occupational sources. Lead: paint, water pipes, soil, industrial emissions; accumulates in bone. Mercury: fish (methylmercury), dental amalgams, industrial; neurotoxic. Arsenic: contaminated groundwater, rice, industrial; carcinogenic. Heavy metals cause oxidative stress, DNA damage, neurotoxicity, and disruption of enzyme function. Susceptibility varies by genetic variants in detoxification and metal-handling pathways.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "uv-radiation",
+      "type": "exposure",
+      "label": "UV Radiation",
+      "slug": "uv-radiation",
+      "attrs": {
+        "summary": "Ultraviolet radiation from sun exposure. Includes UVA and UVB. Primary cause of skin cancer; also enables vitamin D synthesis. Varies by latitude, season, time of day, and behavior.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "endocrine-disruptors",
+      "type": "exposure",
+      "label": "Endocrine Disrupting Chemicals (BPA, Phthalates)",
+      "slug": "endocrine-disruptors",
+      "attrs": {
+        "summary": "Synthetic chemicals that interfere with hormone signaling. Bisphenol A (BPA): found in plastics, food packaging, thermal paper; estrogenic and anti-androgenic. Phthalates: plasticizers in PVC, personal care products; anti-androgenic, affect thyroid. Exposure occurs through ingestion, dermal absorption, and inhalation. These compounds may affect development, reproduction, metabolism, and cancer risk. Genetic variants in hormone receptor pathways may modulate susceptibility.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
       "id": "endotoxin",
       "type": "exposure",
       "label": "Endotoxin (Farm/Microbial Exposure)",
@@ -20,6 +207,39 @@
         "summary": "Lipopolysaccharide from Gram-negative bacteria; exposure common in farm environments. Early-life exposure may protect against atopic asthma (hygiene hypothesis).",
         "confidence": "medium",
         "last_updated": "2026-02-26"
+      }
+    },
+    {
+      "id": "obesity-exposure",
+      "type": "exposure",
+      "label": "Obesogenic Environment",
+      "slug": "obesity-exposure",
+      "attrs": {
+        "summary": "Environmental and contextual factors that promote weight gain and obesity. Includes food environment (access, marketing, portion sizes), built environment (walkability, recreation), sedentary behavior opportunities, and socioeconomic factors affecting diet and activity.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "psychosocial-stress",
+      "type": "exposure",
+      "label": "Psychosocial Stress",
+      "slug": "psychosocial-stress",
+      "attrs": {
+        "summary": "Chronic or acute stress from social, psychological, or environmental sources. Includes childhood adversity, discrimination, social isolation, financial strain, trauma, and major life events. Affects mental health, behavior, and physiologic stress responses.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "tobacco",
+      "type": "exposure",
+      "label": "Tobacco Smoke",
+      "slug": "tobacco",
+      "attrs": {
+        "summary": "Tobacco smoke exposure from active smoking or secondhand smoke. Contains thousands of chemicals including nicotine, tar, and carcinogens. Sources include cigarettes, cigars, electronic nicotine delivery systems, and environmental tobacco smoke.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
       }
     },
     {
@@ -56,6 +276,28 @@
       }
     },
     {
+      "id": "alcohol",
+      "type": "exposure",
+      "label": "Alcohol",
+      "slug": "alcohol",
+      "attrs": {
+        "summary": "Ethanol consumption from alcoholic beverages. Includes beer, wine, spirits. Dose-dependent effects on liver, cardiovascular system, cancer risk, and neuropsychiatric outcomes. Moderate vs heavy use has different risk profiles.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "egfr",
+      "type": "gene",
+      "label": "EGFR",
+      "slug": "egfr",
+      "attrs": {
+        "summary": "EGFR encodes the epidermal growth factor receptor, a receptor tyrosine kinase that binds EGF and related ligands to activate RAS-RAF-MAPK and PI3K-AKT signaling. Somatic EGFR mutations (especially exon 19 deletions and L858R) drive a subset of non-small cell lung cancers, particularly in never-smokers and East Asians. These mutations confer sensitivity to EGFR tyrosine kinase inhibitors (gefitinib, erlotinib, osimertinib). EGFR overexpression occurs in many epithelial cancers. The receptor dimerizes upon ligand binding and autophosphorylates. Expression is highest in epithelial tissues. Germline EGFR variants may modify lung cancer risk. Resistance to TKIs commonly arises through T790M or MET amplification.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
       "id": "il33",
       "type": "gene",
       "label": "IL33",
@@ -64,6 +306,182 @@
         "summary": "IL33 encodes interleukin-33, a dual-function cytokine and nuclear factor belonging to the IL-1 family. IL-33 functions as an epithelial alarmin: it is constitutively expressed in barrier tissues (lung, skin, gut) and released upon cell damage or stress, acting as a danger signal to activate innate and adaptive immune cells. Full-length IL-33 binds the ST2 (IL1RL1) receptor on group 2 innate lymphoid cells (ILC2s), mast cells, Th2 lymphocytes, and eosinophils, driving type 2 immunity. Proteolytic cleavage by allergens or inflammatory proteases generates mature forms with enhanced activity. Asthma-associated GWAS variants regulate IL33 expression through an enhancer-blocking element ~2.3 kb upstream, with differential OCT-1 (POU2F1) binding. IL-33 is upregulated by PM2.5, allergens, and viral infections, positioning it at the interface of environmental exposure and genetic susceptibility in asthma.",
         "confidence": "high",
         "last_updated": "2026-02-26"
+      }
+    },
+    {
+      "id": "brca2",
+      "type": "gene",
+      "label": "BRCA2",
+      "slug": "brca2",
+      "attrs": {
+        "summary": "BRCA2 encodes a tumor suppressor that binds RAD51 and promotes its loading onto single-stranded DNA during homologous recombination. Like BRCA1, germline loss-of-function mutations confer high risk of breast and ovarian cancer; BRCA2 mutations also increase prostate and pancreatic cancer risk. BRCA2 facilitates strand invasion and Holliday junction formation; deficiency causes chromosomal aberrations and sensitivity to crosslinking agents. The gene is cell-cycle regulated and expressed in proliferating tissues. Male BRCA2 carriers have elevated breast cancer risk. Functional domains include the BRC repeats (RAD51 binding) and the DNA-binding domain. PARP inhibitors show efficacy in BRCA2-mutant cancers.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "apoe",
+      "type": "gene",
+      "label": "APOE",
+      "slug": "apoe",
+      "attrs": {
+        "summary": "APOE encodes apolipoprotein E, a lipid-binding protein that mediates cholesterol and triglyceride transport in the brain and periphery. The epsilon4 allele (APOE4) is the strongest genetic risk factor for late-onset Alzheimer disease, conferring ~3-fold increased risk per copy. APOE influences amyloid-beta aggregation, clearance, and neuroinflammation. In the periphery, APOE modulates LDL metabolism and atherosclerosis. Expression is highest in liver, brain (astrocytes, microglia), and macrophages. APOE has three common isoforms (E2, E3, E4) differing in amino acids 112 and 158. E4 carriers show earlier amyloid deposition and faster cognitive decline.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "serpina1",
+      "type": "gene",
+      "label": "SERPINA1",
+      "slug": "serpina1",
+      "attrs": {
+        "summary": "SERPINA1 encodes alpha-1 antitrypsin (A1AT), a serine protease inhibitor that protects lung tissue from neutrophil elastase. The severe Z allele (Glu342Lys) causes protein misfolding and accumulation in hepatocytes, leading to deficiency in lung and liver disease. A1AT deficiency is a major genetic cause of early-onset emphysema and COPD, particularly in smokers. Normal A1AT inhibits neutrophil elastase; deficiency permits unchecked protease activity and alveolar destruction. Expression is hepatic; protein is secreted into serum and reaches lung via circulation. PiZZ homozygotes have ~10-20% of normal A1AT levels. Cigarette smoke oxidatively inactivates A1AT, exacerbating the protease-antiprotease imbalance.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "drd2",
+      "type": "gene",
+      "label": "DRD2",
+      "slug": "drd2",
+      "attrs": {
+        "summary": "DRD2 encodes the dopamine D2 receptor, a G protein-coupled receptor that inhibits adenylyl cyclase and modulates dopaminergic signaling in striatum, cortex, and limbic regions. DRD2 is the primary target of antipsychotic drugs; allelic variation influences treatment response and side effects. GWAS have implicated DRD2 and nearby ANKK1 (rs1800497) in schizophrenia, addiction, and Parkinson disease. The receptor exists in long (D2L) and short (D2S) splice variants with distinct signaling properties. Expression is highest in striatum, substantia nigra, and pituitary. DRD2 antagonism underlies antipsychotic efficacy but also causes extrapyramidal and metabolic side effects.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "hla-drb1",
+      "type": "gene",
+      "label": "HLA-DRB1",
+      "slug": "hla-drb1",
+      "attrs": {
+        "summary": "HLA-DRB1 encodes the beta chain of HLA-DR, an MHC class II molecule that presents exogenous antigens to CD4+ T cells. Specific HLA-DRB1 alleles (e.g., shared epitope: *01, *04, *10) confer strong genetic risk for rheumatoid arthritis; other alleles associate with multiple sclerosis and other autoimmune diseases. The shared epitope alleles present arthritogenic peptides and shape the T cell repertoire. HLA-DRB1 is highly polymorphic with hundreds of alleles. Expression is restricted to antigen-presenting cells: B cells, dendritic cells, macrophages. Risk alleles may influence thymic selection, peptide binding, or T cell activation. The HLA region shows the strongest genetic associations in autoimmune disease.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "ace",
+      "type": "gene",
+      "label": "ACE",
+      "slug": "ace",
+      "attrs": {
+        "summary": "ACE encodes angiotensin-converting enzyme, a zinc metallopeptidase that converts angiotensin I to angiotensin II and inactivates bradykinin. ACE is central to the renin-angiotensin-aldosterone system (RAAS) regulating blood pressure and fluid homeostasis. The insertion/deletion (I/D) polymorphism in intron 16 associates with circulating ACE activity; D allele confers higher enzyme levels. ACE influences vascular tone, aldosterone release, and cardiac remodeling. Expression is high in lung (vascular endothelium), kidney, and heart. ACE inhibitors are first-line antihypertensives. The gene links genetic variation to hypertension susceptibility and response to RAAS-blocking drugs.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "slc6a4",
+      "type": "gene",
+      "label": "SLC6A4",
+      "slug": "slc6a4",
+      "attrs": {
+        "summary": "SLC6A4 encodes the serotonin transporter (5-HTT), which reuptakes serotonin from the synaptic cleft and terminates serotonergic signaling. The promoter polymorphism 5-HTTLPR (short vs long) modulates transporter expression and has been extensively studied in depression, stress response, and suicidal behavior. Short allele carriers show exaggerated amygdala reactivity and may be more vulnerable to depression following adversity. SLC6A4 is the target of SSRIs. Expression is highest in raphe nuclei, platelets, and placenta. Genetic variation influences SSRI response. The gene-denvironment interaction (5-HTTLPR × stress → depression) has been debated but remains influential in psychiatric genetics.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "brca1",
+      "type": "gene",
+      "label": "BRCA1",
+      "slug": "brca1",
+      "attrs": {
+        "summary": "BRCA1 encodes a tumor suppressor protein essential for homologous recombination (HR) DNA double-strand break repair. Germline loss-of-function mutations confer high lifetime risk of breast cancer (up to 72%) and ovarian cancer. BRCA1 forms complexes with PALB2, BRCA2, and RAD51 to promote error-free HR; deficiency leads to genomic instability and reliance on error-prone repair. BRCA1 also regulates transcription, cell cycle checkpoints, and centrosome function. Expression is cell-cycle regulated, peaking in S and G2 phases. Mutations cluster in the RING and BRCT domains. Carriers may have increased sensitivity to DNA-damaging agents including radiation.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "ldlr",
+      "type": "gene",
+      "label": "LDLR",
+      "slug": "ldlr",
+      "attrs": {
+        "summary": "LDLR encodes the low-density lipoprotein receptor, a cell-surface glycoprotein that binds and internalizes LDL cholesterol particles. The receptor mediates endocytosis of cholesterol-carrying lipoproteins, regulating plasma cholesterol homeostasis. Mutations in LDLR cause familial hypercholesterolemia (FH), characterized by severely elevated LDL-C and premature coronary artery disease. GWAS have identified common variants near LDLR that modestly affect LDL-C levels and CAD risk. The gene is transcriptionally regulated by SREBP-2 in response to cellular cholesterol demand. Expression is highest in liver, adrenal cortex, and steroidogenic tissues.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "pcsk9",
+      "type": "gene",
+      "label": "PCSK9",
+      "slug": "pcsk9",
+      "attrs": {
+        "summary": "PCSK9 encodes proprotein convertase subtilisin/kexin type 9, a serine protease that binds the LDL receptor and targets it for lysosomal degradation. By reducing hepatic LDLR abundance, PCSK9 raises plasma LDL cholesterol levels. Gain-of-function mutations cause autosomal dominant hypercholesterolemia, while loss-of-function variants confer lower LDL-C and reduced coronary artery disease risk. PCSK9 inhibitors (evolocumab, alirocumab) have emerged as potent LDL-lowering therapies. The gene is expressed primarily in liver, intestine, and kidney. GWAS consistently implicate PCSK9 in LDL-C and CAD susceptibility.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "tp53",
+      "type": "gene",
+      "label": "TP53",
+      "slug": "tp53",
+      "attrs": {
+        "summary": "TP53 encodes p53, a critical tumor suppressor that coordinates cellular responses to DNA damage, oncogenic stress, and other insults. p53 arrests the cell cycle, promotes DNA repair, or induces apoptosis depending on context. Germline TP53 mutations cause Li-Fraumeni syndrome with high cancer risk. Somatic TP53 mutations occur in >50% of human cancers, including breast and lung. p53 regulates hundreds of targets including p21, PUMA, and Bax. The protein is normally short-lived; stress stabilizes it. MDM2 targets p53 for degradation. Expression is ubiquitous. TP53 status influences therapeutic response; mutant p53 can acquire gain-of-function properties that promote metastasis.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "mc4r",
+      "type": "gene",
+      "label": "MC4R",
+      "slug": "mc4r",
+      "attrs": {
+        "summary": "MC4R encodes the melanocortin 4 receptor, a G protein-coupled receptor in the hypothalamic leptin-melanocortin pathway that regulates energy balance and appetite. MC4R is activated by alpha-MSH (from POMC neurons) and inhibited by AgRP; activation suppresses food intake and increases energy expenditure. Loss-of-function mutations cause severe early-onset obesity; common variants (e.g., rs17782313 near MC4R) associate with BMI and obesity in GWAS. MC4R is expressed in paraventricular and other hypothalamic nuclei. The receptor couples to Gs and activates cAMP; mutations disrupt signaling through varied mechanisms. MC4R agonists are emerging as anti-obesity therapeutics.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "tcf7l2",
+      "type": "gene",
+      "label": "TCF7L2",
+      "slug": "tcf7l2",
+      "attrs": {
+        "summary": "TCF7L2 encodes transcription factor 7-like 2, a nuclear effector of the Wnt signaling pathway that regulates gene expression in pancreatic beta cells, intestinal enteroendocrine cells, and hepatic tissues. The gene harbors the strongest common genetic risk variant for type 2 diabetes (rs7903146), with the T allele conferring ~40% increased risk per copy. TCF7L2 influences insulin secretion, incretin response, and hepatic glucose production. Risk variants associate with impaired beta cell function and blunted glucagon-like peptide-1 (GLP-1) response. Expression is highest in intestine, pancreas, and brain. The Wnt/TCF7L2 axis modulates developmental and metabolic gene networks.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "fto",
+      "type": "gene",
+      "label": "FTO",
+      "slug": "fto",
+      "attrs": {
+        "summary": "FTO encodes fat mass and obesity-associated protein, an alpha-ketoglutarate-dependent dioxygenase that demethylates nucleic acids. The FTO locus harbors the strongest common genetic association with obesity (e.g., rs9939609); risk alleles confer ~3 kg higher body weight per copy. FTO influences energy balance through effects on appetite, food preference, and possibly energy expenditure. Risk variants regulate expression of neighboring genes (RPGRIP1L, IRX3) rather than FTO itself, via long-range regulatory elements. FTO is widely expressed, with high levels in brain (hypothalamus), adipose tissue, and muscle. The gene links genetic susceptibility to obesogenic environmental exposures.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "complement-system",
+      "type": "pathway",
+      "label": "Complement System and Immune Regulation",
+      "slug": "complement-system",
+      "attrs": {
+        "summary": "The complement cascade is part of innate immunity, mediating opsonization, inflammation, and lysis. C3 activation triggers the alternative pathway; C4 participates in classical and lectin pathways. HLA-DRB1 is in the MHC region and associates with complement gene variation; C4A copy number and HLA variants are strongly linked to autoimmune disease. The complement system is implicated in multiple sclerosis (C4-mediated synaptic pruning), rheumatoid arthritis (immune complex deposition), and schizophrenia (complement in synaptic elimination). UV exposure and vitamin D may modulate autoimmune risk via immunomodulation. HLA-DRB1 variants influence susceptibility to rheumatic and neuroinflammatory disease.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "dopamine-signaling",
+      "type": "pathway",
+      "label": "Dopamine Signaling Pathway",
+      "slug": "dopamine-signaling",
+      "attrs": {
+        "summary": "Dopamine signaling regulates reward, motivation, movement, cognition, and psychosis. Dopamine is synthesized in substantia nigra and ventral tegmental area; released into striatum and prefrontal cortex. DRD2 is the primary postsynaptic receptor in mesolimbic and nigrostriatal pathways; D2 antagonists are antipsychotics. Dopamine is metabolized by COMT and MAO. Hyperdopaminergia in striatum is implicated in schizophrenia; hypodopaminergia in addiction. DRD2 variants influence receptor density, antipsychotic response, and addiction vulnerability. Psychosocial stress and substance use (alcohol, tobacco) modulate dopamine signaling and interact with genetic susceptibility.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
       }
     },
     {
@@ -76,11 +494,1174 @@
         "confidence": "medium",
         "last_updated": "2026-02-26"
       }
+    },
+    {
+      "id": "ldl-cholesterol-metabolism",
+      "type": "pathway",
+      "label": "LDL Cholesterol Metabolism Pathway",
+      "slug": "ldl-cholesterol-metabolism",
+      "attrs": {
+        "summary": "The LDL cholesterol pathway governs uptake and clearance of low-density lipoprotein particles from circulation. Hepatocytes synthesize LDL receptors (LDLR) that bind apolipoprotein B (APOB) on LDL particles; internalization delivers cholesterol for regulatory feedback. PCSK9 binds LDLR at the cell surface and targets it for lysosomal degradation, reducing LDL clearance. APOE mediates remnant lipoprotein clearance. Gain-of-function PCSK9 or loss-of-function LDLR variants elevate LDL-C and coronary artery disease risk. Statins upregulate LDLR; PCSK9 inhibitors are therapeutic. Environmental factors including diet quality (saturated fat), smoking, and obesity amplify genetic susceptibility by promoting inflammation and endothelial dysfunction.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "insulin-signaling",
+      "type": "pathway",
+      "label": "Insulin Signaling and Glucose Metabolism",
+      "slug": "insulin-signaling",
+      "attrs": {
+        "summary": "Insulin signaling regulates glucose uptake, glycogen synthesis, lipogenesis, and gene expression. Insulin binds the insulin receptor, activating IRS-PI3K-AKT cascade; AKT phosphorylates substrates including GSK3 and FoxO. In pancreatic beta cells, glucose stimulates insulin secretion; TCF7L2 regulates proglucagon processing and incretin response. Defects cause insulin resistance and type 2 diabetes. FTO and MC4R influence energy balance and adiposity, which drive insulin resistance. Diet quality and obesity are major environmental modulators. TCF7L2 variants impair beta cell function and incretin response; FTO affects hypothalamic energy sensing.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "hpa-axis",
+      "type": "pathway",
+      "label": "Hypothalamic-Pituitary-Adrenal Axis",
+      "slug": "hpa-axis",
+      "attrs": {
+        "summary": "The HPA axis mediates the stress response. Hypothalamic CRH stimulates pituitary ACTH release; ACTH drives adrenal cortisol secretion. Cortisol mobilizes energy, suppresses immune and inflammatory responses, and influences mood and cognition. Chronic stress causes HPA dysregulation: sustained elevation or blunted reactivity. ACE (angiotensin-converting enzyme) participates in blood pressure regulation and may modulate stress-induced hypertension; ACE variants influence cardiovascular stress reactivity. SLC6A4 (serotonin transporter) affects stress sensitivity and depression; gene-environment interaction is well documented. The HPA axis links psychosocial stress to cardiovascular disease, depression, and metabolic dysfunction.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "pi3k-akt-mtor",
+      "type": "pathway",
+      "label": "PI3K-AKT-mTOR Signaling Pathway",
+      "slug": "pi3k-akt-mtor",
+      "attrs": {
+        "summary": "The PI3K-AKT-mTOR pathway regulates cell growth, survival, metabolism, and proliferation. Growth factors (e.g., insulin, EGF) activate receptor tyrosine kinases; PI3K generates PIP3; AKT phosphorylates downstream targets including mTOR. mTOR integrates nutrient and growth signals. The pathway is frequently dysregulated in cancer: PTEN loss, PIK3CA mutations, and EGFR amplification activate the pathway. TP53 can suppress mTOR via AMPK and other mechanisms; TP53 loss releases inhibition. EGFR is a key upstream driver in lung cancer. Therapeutic inhibitors target PI3K, AKT, mTOR, and EGFR. Obesity and diet influence pathway activity via insulin and nutrient sensing.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "dna-damage-repair",
+      "type": "pathway",
+      "label": "DNA Damage Response and Repair",
+      "slug": "dna-damage-repair",
+      "attrs": {
+        "summary": "The DNA damage response (DDR) pathway detects and repairs DNA lesions to maintain genomic integrity. Double-strand breaks activate ATM/ATR kinases, which phosphorylate effectors including p53 (TP53). TP53 induces cell cycle arrest, DNA repair, or apoptosis. BRCA1 and BRCA2 function in homologous recombination repair; mutations cause hereditary breast and ovarian cancer. BRCA1/2 proteins stabilize stalled replication forks and promote error-free repair. TP53 mutations are common in cancers and Li-Fraumeni syndrome. UV radiation and endogenous replication stress trigger the pathway. EGFR signaling can suppress apoptosis and interact with DDR. Defective repair leads to mutation accumulation and cancer.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
     }
   ],
   "edges": [
     {
       "id": "e1",
+      "source": "diet-quality",
+      "target": "obesity",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "hypothalamus",
+          "adipose tissue",
+          "gut (enteroendocrine cells)",
+          "liver"
+        ],
+        "strength": 0.9,
+        "confidence": "high",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e2",
+      "source": "psychosocial-stress",
+      "target": "obesity",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "hypothalamus",
+          "adipose tissue",
+          "gut (enteroendocrine cells)",
+          "liver"
+        ],
+        "strength": 0.7,
+        "confidence": "high",
+        "sources": [
+          "ref3",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e3",
+      "source": "obesity-exposure",
+      "target": "obesity",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "hypothalamus",
+          "adipose tissue",
+          "gut (enteroendocrine cells)",
+          "liver"
+        ],
+        "strength": 0.75,
+        "confidence": "high",
+        "sources": [
+          "ref2",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e4",
+      "source": "alcohol",
+      "target": "obesity",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "hypothalamus",
+          "adipose tissue",
+          "gut (enteroendocrine cells)",
+          "liver"
+        ],
+        "strength": 0.55,
+        "confidence": "medium",
+        "sources": [
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e5",
+      "source": "fto",
+      "target": "obesity",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "hypothalamus",
+          "adipose tissue",
+          "gut (enteroendocrine cells)",
+          "liver"
+        ],
+        "strength": 0.92,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e6",
+      "source": "mc4r",
+      "target": "obesity",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "hypothalamus",
+          "adipose tissue",
+          "gut (enteroendocrine cells)",
+          "liver"
+        ],
+        "strength": 0.9,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e7",
+      "source": "tmem18",
+      "target": "obesity",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "hypothalamus",
+          "adipose tissue",
+          "gut (enteroendocrine cells)",
+          "liver"
+        ],
+        "strength": 0.82,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e8",
+      "source": "bdnf",
+      "target": "obesity",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "hypothalamus",
+          "adipose tissue",
+          "gut (enteroendocrine cells)",
+          "liver"
+        ],
+        "strength": 0.75,
+        "confidence": "medium",
+        "sources": [
+          "ref3",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e9",
+      "source": "psychosocial-stress",
+      "target": "major-depressive-disorder",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "prefrontal cortex",
+          "hippocampus",
+          "amygdala"
+        ],
+        "strength": 0.88,
+        "confidence": "high",
+        "sources": [
+          "ref1",
+          "ref2",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e10",
+      "source": "air-pollution",
+      "target": "major-depressive-disorder",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "prefrontal cortex",
+          "hippocampus",
+          "amygdala"
+        ],
+        "strength": 0.58,
+        "confidence": "medium",
+        "sources": [
+          "ref3",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e11",
+      "source": "obesity-exposure",
+      "target": "major-depressive-disorder",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "bidirectional",
+        "tissue": [
+          "prefrontal cortex",
+          "hippocampus",
+          "amygdala"
+        ],
+        "strength": 0.58,
+        "confidence": "medium",
+        "sources": [
+          "ref4",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e12",
+      "source": "slc6a4",
+      "target": "major-depressive-disorder",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "prefrontal cortex",
+          "hippocampus",
+          "amygdala"
+        ],
+        "strength": 0.72,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e13",
+      "source": "bdnf",
+      "target": "major-depressive-disorder",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "prefrontal cortex",
+          "hippocampus",
+          "amygdala"
+        ],
+        "strength": 0.75,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e14",
+      "source": "htr2a",
+      "target": "major-depressive-disorder",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "prefrontal cortex",
+          "hippocampus",
+          "amygdala"
+        ],
+        "strength": 0.65,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e15",
+      "source": "psychosocial-stress",
+      "target": "schizophrenia",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "prefrontal cortex",
+          "striatum",
+          "hippocampus",
+          "dopaminergic neurons (midbrain)"
+        ],
+        "strength": 0.85,
+        "confidence": "high",
+        "sources": [
+          "ref2",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e16",
+      "source": "tobacco",
+      "target": "schizophrenia",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "prefrontal cortex",
+          "striatum",
+          "hippocampus",
+          "dopaminergic neurons (midbrain)"
+        ],
+        "strength": 0.65,
+        "confidence": "medium",
+        "sources": [
+          "ref3",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e17",
+      "source": "obesity-exposure",
+      "target": "schizophrenia",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "prefrontal cortex",
+          "striatum",
+          "hippocampus",
+          "dopaminergic neurons (midbrain)"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e18",
+      "source": "drd2",
+      "target": "schizophrenia",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "prefrontal cortex",
+          "striatum",
+          "hippocampus",
+          "dopaminergic neurons (midbrain)"
+        ],
+        "strength": 0.9,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e19",
+      "source": "cacna1c",
+      "target": "schizophrenia",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "prefrontal cortex",
+          "striatum",
+          "hippocampus",
+          "dopaminergic neurons (midbrain)"
+        ],
+        "strength": 0.85,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e20",
+      "source": "c4a",
+      "target": "schizophrenia",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "prefrontal cortex",
+          "striatum",
+          "hippocampus",
+          "dopaminergic neurons (midbrain)"
+        ],
+        "strength": 0.88,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e21",
+      "source": "grin2a",
+      "target": "schizophrenia",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "prefrontal cortex",
+          "striatum",
+          "hippocampus",
+          "dopaminergic neurons (midbrain)"
+        ],
+        "strength": 0.78,
+        "confidence": "medium",
+        "sources": [
+          "ref3",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e22",
+      "source": "tobacco",
+      "target": "coronary-artery-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "coronary artery endothelium",
+          "hepatocytes",
+          "vascular smooth muscle",
+          "monocytes and macrophages"
+        ],
+        "strength": 0.95,
+        "confidence": "high",
+        "sources": [
+          "ref2",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e23",
+      "source": "diet-quality",
+      "target": "coronary-artery-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "coronary artery endothelium",
+          "hepatocytes",
+          "vascular smooth muscle",
+          "monocytes and macrophages"
+        ],
+        "strength": 0.85,
+        "confidence": "high",
+        "sources": [
+          "ref3",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e24",
+      "source": "air-pollution",
+      "target": "coronary-artery-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "coronary artery endothelium",
+          "hepatocytes",
+          "vascular smooth muscle",
+          "monocytes and macrophages"
+        ],
+        "strength": 0.7,
+        "confidence": "medium",
+        "sources": [
+          "ref4",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e25",
+      "source": "obesity-exposure",
+      "target": "coronary-artery-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "coronary artery endothelium",
+          "hepatocytes",
+          "vascular smooth muscle",
+          "monocytes and macrophages"
+        ],
+        "strength": 0.8,
+        "confidence": "high",
+        "sources": [
+          "ref2",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e26",
+      "source": "ldlr",
+      "target": "coronary-artery-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "coronary artery endothelium",
+          "hepatocytes",
+          "vascular smooth muscle",
+          "monocytes and macrophages"
+        ],
+        "strength": 0.95,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e27",
+      "source": "apob",
+      "target": "coronary-artery-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "coronary artery endothelium",
+          "hepatocytes",
+          "vascular smooth muscle",
+          "monocytes and macrophages"
+        ],
+        "strength": 0.92,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e28",
+      "source": "pcsk9",
+      "target": "coronary-artery-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "coronary artery endothelium",
+          "hepatocytes",
+          "vascular smooth muscle",
+          "monocytes and macrophages"
+        ],
+        "strength": 0.9,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e29",
+      "source": "lpa",
+      "target": "coronary-artery-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "coronary artery endothelium",
+          "hepatocytes",
+          "vascular smooth muscle",
+          "monocytes and macrophages"
+        ],
+        "strength": 0.88,
+        "confidence": "medium",
+        "sources": [
+          "ref3",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e30",
+      "source": "diet-quality",
+      "target": "multiple-sclerosis",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "buffer",
+        "tissue": [
+          "white matter (CNS)",
+          "oligodendrocytes",
+          "T lymphocytes (peripheral)"
+        ],
+        "strength": 0.75,
+        "confidence": "high",
+        "sources": [
+          "ref2",
+          "ref3",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e31",
+      "source": "tobacco",
+      "target": "multiple-sclerosis",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "white matter (CNS)",
+          "oligodendrocytes",
+          "T lymphocytes (peripheral)"
+        ],
+        "strength": 0.78,
+        "confidence": "high",
+        "sources": [
+          "ref1",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e32",
+      "source": "air-pollution",
+      "target": "multiple-sclerosis",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "white matter (CNS)",
+          "oligodendrocytes",
+          "T lymphocytes (peripheral)"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref3",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e33",
+      "source": "hla-drb1",
+      "target": "multiple-sclerosis",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "white matter (CNS)",
+          "oligodendrocytes",
+          "T lymphocytes (peripheral)"
+        ],
+        "strength": 0.98,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e34",
+      "source": "cyp27b1",
+      "target": "multiple-sclerosis",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "white matter (CNS)",
+          "oligodendrocytes",
+          "T lymphocytes (peripheral)"
+        ],
+        "strength": 0.82,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e35",
+      "source": "il2ra",
+      "target": "multiple-sclerosis",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "white matter (CNS)",
+          "oligodendrocytes",
+          "T lymphocytes (peripheral)"
+        ],
+        "strength": 0.78,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e36",
+      "source": "obesity-exposure",
+      "target": "type-2-diabetes",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "pancreatic beta cells",
+          "adipose tissue",
+          "skeletal muscle",
+          "liver"
+        ],
+        "strength": 0.95,
+        "confidence": "high",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e37",
+      "source": "diet-quality",
+      "target": "type-2-diabetes",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "pancreatic beta cells",
+          "adipose tissue",
+          "skeletal muscle",
+          "liver"
+        ],
+        "strength": 0.8,
+        "confidence": "high",
+        "sources": [
+          "ref3",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e38",
+      "source": "psychosocial-stress",
+      "target": "type-2-diabetes",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "pancreatic beta cells",
+          "adipose tissue",
+          "skeletal muscle",
+          "liver"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref4",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e39",
+      "source": "alcohol",
+      "target": "type-2-diabetes",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "pancreatic beta cells",
+          "adipose tissue",
+          "skeletal muscle",
+          "liver"
+        ],
+        "strength": 0.4,
+        "confidence": "low",
+        "sources": [
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e40",
+      "source": "tcf7l2",
+      "target": "type-2-diabetes",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "pancreatic beta cells",
+          "adipose tissue",
+          "skeletal muscle",
+          "liver"
+        ],
+        "strength": 0.95,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e41",
+      "source": "slc30a8",
+      "target": "type-2-diabetes",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "pancreatic beta cells",
+          "adipose tissue",
+          "skeletal muscle",
+          "liver"
+        ],
+        "strength": 0.88,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e42",
+      "source": "pparg",
+      "target": "type-2-diabetes",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "pancreatic beta cells",
+          "adipose tissue",
+          "skeletal muscle",
+          "liver"
+        ],
+        "strength": 0.85,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e43",
+      "source": "fto",
+      "target": "type-2-diabetes",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "pancreatic beta cells",
+          "adipose tissue",
+          "skeletal muscle",
+          "liver"
+        ],
+        "strength": 0.75,
+        "confidence": "medium",
+        "sources": [
+          "ref3",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e44",
+      "source": "tobacco",
+      "target": "rheumatoid-arthritis",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "synovium",
+          "immune cells (T and B lymphocytes)",
+          "lung (for citrullination)",
+          "adipose tissue"
+        ],
+        "strength": 0.95,
+        "confidence": "high",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e45",
+      "source": "obesity-exposure",
+      "target": "rheumatoid-arthritis",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "synovium",
+          "immune cells (T and B lymphocytes)",
+          "lung (for citrullination)",
+          "adipose tissue"
+        ],
+        "strength": 0.7,
+        "confidence": "high",
+        "sources": [
+          "ref3",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e46",
+      "source": "psychosocial-stress",
+      "target": "rheumatoid-arthritis",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "synovium",
+          "immune cells (T and B lymphocytes)",
+          "lung (for citrullination)",
+          "adipose tissue"
+        ],
+        "strength": 0.55,
+        "confidence": "medium",
+        "sources": [
+          "ref4",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e47",
+      "source": "diet-quality",
+      "target": "rheumatoid-arthritis",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "buffer",
+        "tissue": [
+          "synovium",
+          "immune cells (T and B lymphocytes)",
+          "lung (for citrullination)",
+          "adipose tissue"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e48",
+      "source": "hla-drb1",
+      "target": "rheumatoid-arthritis",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "synovium",
+          "immune cells (T and B lymphocytes)",
+          "lung (for citrullination)",
+          "adipose tissue"
+        ],
+        "strength": 0.98,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e49",
+      "source": "ptpn22",
+      "target": "rheumatoid-arthritis",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "synovium",
+          "immune cells (T and B lymphocytes)",
+          "lung (for citrullination)",
+          "adipose tissue"
+        ],
+        "strength": 0.88,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e50",
+      "source": "tnf",
+      "target": "rheumatoid-arthritis",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "synovium",
+          "immune cells (T and B lymphocytes)",
+          "lung (for citrullination)",
+          "adipose tissue"
+        ],
+        "strength": 0.85,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e51",
+      "source": "ctla4",
+      "target": "rheumatoid-arthritis",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "synovium",
+          "immune cells (T and B lymphocytes)",
+          "lung (for citrullination)",
+          "adipose tissue"
+        ],
+        "strength": 0.75,
+        "confidence": "medium",
+        "sources": [
+          "ref3",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e52",
       "source": "air-pollution",
       "target": "asthma",
       "type": "modifier",
@@ -103,7 +1684,7 @@
       }
     },
     {
-      "id": "e2",
+      "id": "e53",
       "source": "ozone",
       "target": "asthma",
       "type": "modifier",
@@ -124,7 +1705,7 @@
       }
     },
     {
-      "id": "e3",
+      "id": "e54",
       "source": "tobacco-smoke-prenatal",
       "target": "asthma",
       "type": "modifier",
@@ -145,7 +1726,7 @@
       }
     },
     {
-      "id": "e4",
+      "id": "e55",
       "source": "endotoxin",
       "target": "asthma",
       "type": "modifier",
@@ -166,7 +1747,7 @@
       }
     },
     {
-      "id": "e5",
+      "id": "e56",
       "source": "il33",
       "target": "asthma",
       "type": "association",
@@ -188,7 +1769,7 @@
       }
     },
     {
-      "id": "e6",
+      "id": "e57",
       "source": "tslp",
       "target": "asthma",
       "type": "association",
@@ -209,7 +1790,7 @@
       }
     },
     {
-      "id": "e7",
+      "id": "e58",
       "source": "ormdl3",
       "target": "asthma",
       "type": "association",
@@ -230,7 +1811,7 @@
       }
     },
     {
-      "id": "e8",
+      "id": "e59",
       "source": "il1rl1",
       "target": "asthma",
       "type": "association",
@@ -251,7 +1832,7 @@
       }
     },
     {
-      "id": "e9",
+      "id": "e60",
       "source": "rad50",
       "target": "asthma",
       "type": "association",
@@ -272,7 +1853,1351 @@
       }
     },
     {
-      "id": "e10",
+      "id": "e61",
+      "source": "air-pollution",
+      "target": "alzheimers-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "cerebral cortex",
+          "hippocampus",
+          "microglia",
+          "vascular endothelium (blood-brain barrier)"
+        ],
+        "strength": 0.65,
+        "confidence": "medium",
+        "sources": [
+          "ref3",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e62",
+      "source": "psychosocial-stress",
+      "target": "alzheimers-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "cerebral cortex",
+          "hippocampus",
+          "microglia",
+          "vascular endothelium (blood-brain barrier)"
+        ],
+        "strength": 0.55,
+        "confidence": "medium",
+        "sources": [
+          "ref4",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e63",
+      "source": "diet-quality",
+      "target": "alzheimers-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "buffer",
+        "tissue": [
+          "cerebral cortex",
+          "hippocampus",
+          "microglia",
+          "vascular endothelium (blood-brain barrier)"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref3",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e64",
+      "source": "obesity-exposure",
+      "target": "alzheimers-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "cerebral cortex",
+          "hippocampus",
+          "microglia",
+          "vascular endothelium (blood-brain barrier)"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e65",
+      "source": "apoe",
+      "target": "alzheimers-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "cerebral cortex",
+          "hippocampus",
+          "microglia",
+          "vascular endothelium (blood-brain barrier)"
+        ],
+        "strength": 0.98,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e66",
+      "source": "app",
+      "target": "alzheimers-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "cerebral cortex",
+          "hippocampus",
+          "microglia",
+          "vascular endothelium (blood-brain barrier)"
+        ],
+        "strength": 0.95,
+        "confidence": "medium",
+        "sources": [
+          "ref1"
+        ]
+      }
+    },
+    {
+      "id": "e67",
+      "source": "psen1",
+      "target": "alzheimers-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "cerebral cortex",
+          "hippocampus",
+          "microglia",
+          "vascular endothelium (blood-brain barrier)"
+        ],
+        "strength": 0.95,
+        "confidence": "medium",
+        "sources": [
+          "ref1"
+        ]
+      }
+    },
+    {
+      "id": "e68",
+      "source": "psen2",
+      "target": "alzheimers-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "cerebral cortex",
+          "hippocampus",
+          "microglia",
+          "vascular endothelium (blood-brain barrier)"
+        ],
+        "strength": 0.9,
+        "confidence": "medium",
+        "sources": [
+          "ref1"
+        ]
+      }
+    },
+    {
+      "id": "e69",
+      "source": "diet-quality",
+      "target": "colorectal-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "colonic epithelium",
+          "gut-associated lymphoid tissue",
+          "liver (bile acid metabolism)"
+        ],
+        "strength": 0.85,
+        "confidence": "high",
+        "sources": [
+          "ref3",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e70",
+      "source": "obesity-exposure",
+      "target": "colorectal-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "colonic epithelium",
+          "gut-associated lymphoid tissue",
+          "liver (bile acid metabolism)"
+        ],
+        "strength": 0.78,
+        "confidence": "high",
+        "sources": [
+          "ref4",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e71",
+      "source": "tobacco",
+      "target": "colorectal-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "colonic epithelium",
+          "gut-associated lymphoid tissue",
+          "liver (bile acid metabolism)"
+        ],
+        "strength": 0.65,
+        "confidence": "medium",
+        "sources": [
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e72",
+      "source": "apc",
+      "target": "colorectal-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "colonic epithelium",
+          "gut-associated lymphoid tissue",
+          "liver (bile acid metabolism)"
+        ],
+        "strength": 0.92,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e73",
+      "source": "mlh1",
+      "target": "colorectal-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "colonic epithelium",
+          "gut-associated lymphoid tissue",
+          "liver (bile acid metabolism)"
+        ],
+        "strength": 0.9,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e74",
+      "source": "smad7",
+      "target": "colorectal-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "colonic epithelium",
+          "gut-associated lymphoid tissue",
+          "liver (bile acid metabolism)"
+        ],
+        "strength": 0.82,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e75",
+      "source": "diet-quality",
+      "target": "hypertension",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "kidney (renal tubules)",
+          "vascular endothelium",
+          "adrenal cortex"
+        ],
+        "strength": 0.85,
+        "confidence": "high",
+        "sources": [
+          "ref2",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e76",
+      "source": "psychosocial-stress",
+      "target": "hypertension",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "kidney (renal tubules)",
+          "vascular endothelium",
+          "adrenal cortex"
+        ],
+        "strength": 0.72,
+        "confidence": "medium",
+        "sources": [
+          "ref3",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e77",
+      "source": "obesity-exposure",
+      "target": "hypertension",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "kidney (renal tubules)",
+          "vascular endothelium",
+          "adrenal cortex"
+        ],
+        "strength": 0.88,
+        "confidence": "high",
+        "sources": [
+          "ref4",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e78",
+      "source": "ace",
+      "target": "hypertension",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "kidney (renal tubules)",
+          "vascular endothelium",
+          "adrenal cortex"
+        ],
+        "strength": 0.82,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e79",
+      "source": "agt",
+      "target": "hypertension",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "kidney (renal tubules)",
+          "vascular endothelium",
+          "adrenal cortex"
+        ],
+        "strength": 0.85,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e80",
+      "source": "umod",
+      "target": "hypertension",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "kidney (renal tubules)",
+          "vascular endothelium",
+          "adrenal cortex"
+        ],
+        "strength": 0.88,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e81",
+      "source": "alcohol",
+      "target": "breast-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "mammary epithelium",
+          "adipose tissue (breast)",
+          "lymphocytes",
+          "ovary"
+        ],
+        "strength": 0.75,
+        "confidence": "high",
+        "sources": [
+          "ref2",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e82",
+      "source": "obesity-exposure",
+      "target": "breast-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "mammary epithelium",
+          "adipose tissue (breast)",
+          "lymphocytes",
+          "ovary"
+        ],
+        "strength": 0.7,
+        "confidence": "high",
+        "sources": [
+          "ref3",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e83",
+      "source": "uv-radiation",
+      "target": "breast-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "buffer",
+        "tissue": [
+          "mammary epithelium",
+          "adipose tissue (breast)",
+          "lymphocytes",
+          "ovary"
+        ],
+        "strength": 0.5,
+        "confidence": "low",
+        "sources": [
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e84",
+      "source": "psychosocial-stress",
+      "target": "breast-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "mammary epithelium",
+          "adipose tissue (breast)",
+          "lymphocytes",
+          "ovary"
+        ],
+        "strength": 0.45,
+        "confidence": "low",
+        "sources": [
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e85",
+      "source": "brca1",
+      "target": "breast-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "mammary epithelium",
+          "adipose tissue (breast)",
+          "lymphocytes",
+          "ovary"
+        ],
+        "strength": 0.98,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e86",
+      "source": "brca2",
+      "target": "breast-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "mammary epithelium",
+          "adipose tissue (breast)",
+          "lymphocytes",
+          "ovary"
+        ],
+        "strength": 0.98,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e87",
+      "source": "tp53",
+      "target": "breast-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "mammary epithelium",
+          "adipose tissue (breast)",
+          "lymphocytes",
+          "ovary"
+        ],
+        "strength": 0.95,
+        "confidence": "medium",
+        "sources": [
+          "ref1"
+        ]
+      }
+    },
+    {
+      "id": "e88",
+      "source": "fgfr2",
+      "target": "breast-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "mammary epithelium",
+          "adipose tissue (breast)",
+          "lymphocytes",
+          "ovary"
+        ],
+        "strength": 0.88,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e89",
+      "source": "tobacco",
+      "target": "lung-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar type II cells",
+          "lung adenocarcinoma (tumor)"
+        ],
+        "strength": 0.95,
+        "confidence": "high",
+        "sources": [
+          "ref1",
+          "ref2",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e90",
+      "source": "air-pollution",
+      "target": "lung-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar type II cells",
+          "lung adenocarcinoma (tumor)"
+        ],
+        "strength": 0.62,
+        "confidence": "medium",
+        "sources": [
+          "ref3",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e91",
+      "source": "diet-quality",
+      "target": "lung-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "buffer",
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar type II cells",
+          "lung adenocarcinoma (tumor)"
+        ],
+        "strength": 0.45,
+        "confidence": "low",
+        "sources": [
+          "ref4",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e92",
+      "source": "chrna5",
+      "target": "lung-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar type II cells",
+          "lung adenocarcinoma (tumor)"
+        ],
+        "strength": 0.92,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e93",
+      "source": "egfr",
+      "target": "lung-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar type II cells",
+          "lung adenocarcinoma (tumor)"
+        ],
+        "strength": 0.88,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e94",
+      "source": "tp53",
+      "target": "lung-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar type II cells",
+          "lung adenocarcinoma (tumor)"
+        ],
+        "strength": 0.78,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e95",
+      "source": "tobacco",
+      "target": "copd",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar macrophages",
+          "lung parenchyma",
+          "neutrophils"
+        ],
+        "strength": 0.98,
+        "confidence": "high",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e96",
+      "source": "air-pollution",
+      "target": "copd",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar macrophages",
+          "lung parenchyma",
+          "neutrophils"
+        ],
+        "strength": 0.75,
+        "confidence": "high",
+        "sources": [
+          "ref3",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e97",
+      "source": "diet-quality",
+      "target": "copd",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "buffer",
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar macrophages",
+          "lung parenchyma",
+          "neutrophils"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e98",
+      "source": "obesity-exposure",
+      "target": "copd",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar macrophages",
+          "lung parenchyma",
+          "neutrophils"
+        ],
+        "strength": 0.45,
+        "confidence": "low",
+        "sources": [
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e99",
+      "source": "serpina1",
+      "target": "copd",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar macrophages",
+          "lung parenchyma",
+          "neutrophils"
+        ],
+        "strength": 0.98,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e100",
+      "source": "hhip",
+      "target": "copd",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar macrophages",
+          "lung parenchyma",
+          "neutrophils"
+        ],
+        "strength": 0.88,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e101",
+      "source": "fam13a",
+      "target": "copd",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar macrophages",
+          "lung parenchyma",
+          "neutrophils"
+        ],
+        "strength": 0.82,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e102",
+      "source": "mmp12",
+      "target": "copd",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "GWAS",
+        "direction": "unknown",
+        "tissue": [
+          "bronchial epithelium",
+          "alveolar macrophages",
+          "lung parenchyma",
+          "neutrophils"
+        ],
+        "strength": 0.78,
+        "confidence": "medium",
+        "sources": [
+          "ref3",
+          "ref5"
+        ]
+      }
+    },
+    {
+      "id": "e103",
+      "source": "heavy-metals",
+      "target": "alzheimers-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "brain",
+          "kidney",
+          "vascular endothelium"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e104",
+      "source": "heavy-metals",
+      "target": "hypertension",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "amplify",
+        "tissue": [
+          "brain",
+          "kidney",
+          "vascular endothelium"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e105",
+      "source": "endocrine-disruptors",
+      "target": "breast-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "amplify",
+        "tissue": [
+          "adipose tissue",
+          "mammary gland",
+          "thyroid"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e106",
+      "source": "endocrine-disruptors",
+      "target": "obesity",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "adipose tissue",
+          "mammary gland",
+          "thyroid"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref3",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e107",
+      "source": "egfr",
+      "target": "breast-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "lung",
+          "skin"
+        ],
+        "strength": 0.58,
+        "confidence": "medium",
+        "sources": []
+      }
+    },
+    {
+      "id": "e108",
+      "source": "brca2",
+      "target": "colorectal-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "breast",
+          "testis"
+        ],
+        "strength": 0.42,
+        "confidence": "medium",
+        "sources": []
+      }
+    },
+    {
+      "id": "e109",
+      "source": "apoe",
+      "target": "coronary-artery-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "brain",
+          "liver"
+        ],
+        "strength": 0.72,
+        "confidence": "medium",
+        "sources": []
+      }
+    },
+    {
+      "id": "e110",
+      "source": "serpina1",
+      "target": "asthma",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "liver",
+          "lung"
+        ],
+        "strength": 0.38,
+        "confidence": "medium",
+        "sources": []
+      }
+    },
+    {
+      "id": "e111",
+      "source": "drd2",
+      "target": "major-depressive-disorder",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "brain",
+          "pituitary"
+        ],
+        "strength": 0.48,
+        "confidence": "medium",
+        "sources": []
+      }
+    },
+    {
+      "id": "e112",
+      "source": "ace",
+      "target": "coronary-artery-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "lung",
+          "kidney"
+        ],
+        "strength": 0.68,
+        "confidence": "medium",
+        "sources": []
+      }
+    },
+    {
+      "id": "e113",
+      "source": "slc6a4",
+      "target": "schizophrenia",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "brain",
+          "whole blood"
+        ],
+        "strength": 0.42,
+        "confidence": "medium",
+        "sources": []
+      }
+    },
+    {
+      "id": "e114",
+      "source": "brca1",
+      "target": "colorectal-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "breast",
+          "ovary"
+        ],
+        "strength": 0.35,
+        "confidence": "medium",
+        "sources": []
+      }
+    },
+    {
+      "id": "e115",
+      "source": "ldlr",
+      "target": "hypertension",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "liver",
+          "adrenal gland"
+        ],
+        "strength": 0.45,
+        "confidence": "medium",
+        "sources": []
+      }
+    },
+    {
+      "id": "e116",
+      "source": "pcsk9",
+      "target": "hypertension",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "inferred",
+        "direction": "unknown",
+        "tissue": [
+          "liver",
+          "small intestine"
+        ],
+        "strength": 0.35,
+        "confidence": "medium",
+        "sources": []
+      }
+    },
+    {
+      "id": "e117",
+      "source": "mc4r",
+      "target": "type-2-diabetes",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "brain",
+          "hypothalamus"
+        ],
+        "strength": 0.68,
+        "confidence": "medium",
+        "sources": []
+      }
+    },
+    {
+      "id": "e118",
+      "source": "tcf7l2",
+      "target": "obesity",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "eQTL",
+        "direction": "unknown",
+        "tissue": [
+          "pancreas",
+          "small intestine"
+        ],
+        "strength": 0.52,
+        "confidence": "medium",
+        "sources": []
+      }
+    },
+    {
+      "id": "e119",
+      "source": "complement-system",
+      "target": "multiple-sclerosis",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "central nervous system",
+          "synovium"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e120",
+      "source": "complement-system",
+      "target": "rheumatoid-arthritis",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "central nervous system",
+          "synovium"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e121",
+      "source": "hla-drb1",
+      "target": "complement-system",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "central nervous system",
+          "synovium"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e122",
+      "source": "il33",
+      "target": "complement-system",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "central nervous system",
+          "synovium"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e123",
+      "source": "dopamine-signaling",
+      "target": "schizophrenia",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "striatum",
+          "prefrontal cortex"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e124",
+      "source": "dopamine-signaling",
+      "target": "major-depressive-disorder",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "striatum",
+          "prefrontal cortex"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e125",
+      "source": "drd2",
+      "target": "dopamine-signaling",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "striatum",
+          "prefrontal cortex"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e126",
+      "source": "slc6a4",
+      "target": "dopamine-signaling",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "striatum",
+          "prefrontal cortex"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref2"
+        ]
+      }
+    },
+    {
+      "id": "e127",
       "source": "nf-kb",
       "target": "asthma",
       "type": "pathway",
@@ -293,7 +3218,7 @@
       }
     },
     {
-      "id": "e11",
+      "id": "e128",
       "source": "il33",
       "target": "nf-kb",
       "type": "pathway",
@@ -312,13 +3237,549 @@
           "ref4"
         ]
       }
+    },
+    {
+      "id": "e129",
+      "source": "ldl-cholesterol-metabolism",
+      "target": "coronary-artery-disease",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "liver",
+          "adrenal gland"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e130",
+      "source": "ldl-cholesterol-metabolism",
+      "target": "hypertension",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "liver",
+          "adrenal gland"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e131",
+      "source": "ldlr",
+      "target": "ldl-cholesterol-metabolism",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "liver",
+          "adrenal gland"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e132",
+      "source": "pcsk9",
+      "target": "ldl-cholesterol-metabolism",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "liver",
+          "adrenal gland"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e133",
+      "source": "apoe",
+      "target": "ldl-cholesterol-metabolism",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "liver",
+          "adrenal gland"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref3",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e134",
+      "source": "insulin-signaling",
+      "target": "type-2-diabetes",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "pancreas",
+          "liver",
+          "adipose tissue"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e135",
+      "source": "insulin-signaling",
+      "target": "obesity",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "pancreas",
+          "liver",
+          "adipose tissue"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e136",
+      "source": "tcf7l2",
+      "target": "insulin-signaling",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "pancreas",
+          "liver",
+          "adipose tissue"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e137",
+      "source": "fto",
+      "target": "insulin-signaling",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "pancreas",
+          "liver",
+          "adipose tissue"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e138",
+      "source": "mc4r",
+      "target": "insulin-signaling",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "pancreas",
+          "liver",
+          "adipose tissue"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e139",
+      "source": "hpa-axis",
+      "target": "major-depressive-disorder",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "hypothalamus",
+          "anterior pituitary",
+          "adrenal cortex"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e140",
+      "source": "hpa-axis",
+      "target": "hypertension",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "hypothalamus",
+          "anterior pituitary",
+          "adrenal cortex"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e141",
+      "source": "ace",
+      "target": "hpa-axis",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "hypothalamus",
+          "anterior pituitary",
+          "adrenal cortex"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e142",
+      "source": "slc6a4",
+      "target": "hpa-axis",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "hypothalamus",
+          "anterior pituitary",
+          "adrenal cortex"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e143",
+      "source": "pi3k-akt-mtor",
+      "target": "lung-cancer",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "lung",
+          "breast",
+          "colorectum"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e144",
+      "source": "pi3k-akt-mtor",
+      "target": "colorectal-cancer",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "lung",
+          "breast",
+          "colorectum"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e145",
+      "source": "pi3k-akt-mtor",
+      "target": "breast-cancer",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "lung",
+          "breast",
+          "colorectum"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e146",
+      "source": "egfr",
+      "target": "pi3k-akt-mtor",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "lung",
+          "breast",
+          "colorectum"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e147",
+      "source": "tp53",
+      "target": "pi3k-akt-mtor",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "lung",
+          "breast",
+          "colorectum"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e148",
+      "source": "dna-damage-repair",
+      "target": "breast-cancer",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "breast epithelium",
+          "colorectal epithelium",
+          "lung"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e149",
+      "source": "dna-damage-repair",
+      "target": "colorectal-cancer",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "breast epithelium",
+          "colorectal epithelium",
+          "lung"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e150",
+      "source": "dna-damage-repair",
+      "target": "lung-cancer",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "breast epithelium",
+          "colorectal epithelium",
+          "lung"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e151",
+      "source": "brca1",
+      "target": "dna-damage-repair",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "breast epithelium",
+          "colorectal epithelium",
+          "lung"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e152",
+      "source": "brca2",
+      "target": "dna-damage-repair",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "breast epithelium",
+          "colorectal epithelium",
+          "lung"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref2",
+          "ref4"
+        ]
+      }
+    },
+    {
+      "id": "e153",
+      "source": "tp53",
+      "target": "dna-damage-repair",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "breast epithelium",
+          "colorectal epithelium",
+          "lung"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref1",
+          "ref3"
+        ]
+      }
+    },
+    {
+      "id": "e154",
+      "source": "egfr",
+      "target": "dna-damage-repair",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "breast epithelium",
+          "colorectal epithelium",
+          "lung"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref3"
+        ]
+      }
     }
   ],
   "metadata": {
-    "generated_at": "2026-02-27",
+    "generated_at": "2026-03-03",
     "pipeline_version": "1.0.0",
-    "node_count": 7,
-    "edge_count": 11,
+    "node_count": 50,
+    "edge_count": 154,
     "schema_version": "1.0"
   }
 }

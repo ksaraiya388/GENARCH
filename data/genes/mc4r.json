@@ -1,0 +1,39 @@
+{
+  "id": "mc4r",
+  "slug": "mc4r",
+  "symbol": "MC4R",
+  "name": "Melanocortin 4 receptor",
+  "chromosome": "18q21.32",
+  "summary": "MC4R encodes the melanocortin 4 receptor, a G protein-coupled receptor in the hypothalamic leptin-melanocortin pathway that regulates energy balance and appetite. MC4R is activated by alpha-MSH (from POMC neurons) and inhibited by AgRP; activation suppresses food intake and increases energy expenditure. Loss-of-function mutations cause severe early-onset obesity; common variants (e.g., rs17782313 near MC4R) associate with BMI and obesity in GWAS. MC4R is expressed in paraventricular and other hypothalamic nuclei. The receptor couples to Gs and activates cAMP; mutations disrupt signaling through varied mechanisms. MC4R agonists are emerging as anti-obesity therapeutics.",
+  "molecular_function": ["melanocortin binding", "G protein-coupled receptor activity", "cAMP signaling", "appetite regulation"],
+  "protein_class": "melanocortin receptor",
+  "regulatory_notes": {
+    "promoter_activity": "Hypothalamic-enriched transcription factors.",
+    "enhancer_associations": "Obesity GWAS signals near MC4R influence hypothalamic expression.",
+    "methylation_sensitivity": null,
+    "eqtl_tissues": ["brain", "hypothalamus"]
+  },
+  "expression_context": [
+    {"tissue": "brain", "tpm_range": "2-8", "gtex_version": "v8", "citations": ["ref1", "ref2"]},
+    {"tissue": "hypothalamus", "tpm_range": "5-15", "gtex_version": "v8", "citations": ["ref2"]}
+  ],
+  "pathways": ["insulin-signaling"],
+  "linked_diseases": [
+    {"disease_slug": "obesity", "evidence_type": "GWAS", "strength": 0.89},
+    {"disease_slug": "type-2-diabetes", "evidence_type": "pathway", "strength": 0.68}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "obesity-exposure", "evidence_type": "literature", "strength": 0.75}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "MC4R loss or hypofunction disrupts leptin-melanocortin satiety signaling; reduced receptor activity increases food intake and reduces energy expenditure, predisposing to obesity; obesogenic environment amplifies genetic effect.", "supporting_evidence": "MC4R knockout mice are obese; setmelanotide (MC4R agonist) effective in POMC/LEPR deficiency.", "confidence": "high"}
+  ],
+  "confidence": "high",
+  "references": [
+    {"id": "ref1", "title": "Melanocortin-4 receptor is required for acute homeostatic responses to increased dietary fat", "authors": "Butler AA, et al.", "year": 2001, "journal": "Nature Neuroscience", "doi": "10.1038/nn0901-867"},
+    {"id": "ref2", "title": "GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues", "authors": "GTEx Consortium", "year": 2020, "journal": "Science", "doi": "10.1126/science.aaz1776"},
+    {"id": "ref3", "title": "Genome-wide association study for variants that modulate relationships between childhood obesity and plasma metabolite profiles", "authors": "Comuzzie AG, et al.", "year": 2012, "journal": "International Journal of Obesity", "doi": "10.1038/ijo.2011.208"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

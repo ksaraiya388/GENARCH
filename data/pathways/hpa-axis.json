@@ -1,0 +1,42 @@
+{
+  "id": "path_hpa_axis",
+  "slug": "hpa-axis",
+  "name": "Hypothalamic-Pituitary-Adrenal Axis",
+  "summary": "The HPA axis mediates the stress response. Hypothalamic CRH stimulates pituitary ACTH release; ACTH drives adrenal cortisol secretion. Cortisol mobilizes energy, suppresses immune and inflammatory responses, and influences mood and cognition. Chronic stress causes HPA dysregulation: sustained elevation or blunted reactivity. ACE (angiotensin-converting enzyme) participates in blood pressure regulation and may modulate stress-induced hypertension; ACE variants influence cardiovascular stress reactivity. SLC6A4 (serotonin transporter) affects stress sensitivity and depression; gene-environment interaction is well documented. The HPA axis links psychosocial stress to cardiovascular disease, depression, and metabolic dysfunction.",
+  "canonical_source": null,
+  "environmental_triggers": [
+    {"exposure_slug": "psychosocial-stress", "trigger_type": "Primary activator; chronic stress causes sustained HPA activation", "citations": ["ref1", "ref4"]},
+    {"exposure_slug": "obesity-exposure", "trigger_type": "Adiposity alters HPA feedback; cortisol promotes central fat accumulation", "citations": ["ref2", "ref3"]},
+    {"exposure_slug": "alcohol", "trigger_type": "Chronic use disrupts HPA regulation; withdrawal activates stress response", "citations": ["ref4"]}
+  ],
+  "key_genes": [
+    {"gene_slug": "ace", "role_in_pathway": "Angiotensin-converting enzyme; blood pressure regulation; ACE variants modulate stress-induced hypertension and cardiovascular risk", "citations": ["ref1", "ref3"]},
+    {"gene_slug": "slc6a4", "role_in_pathway": "Serotonin transporter; 5-HTTLPR modulates stress sensitivity and HPA reactivity; gene-environment interaction in depression", "citations": ["ref2", "ref4"]}
+  ],
+  "regulatory_checkpoints": [
+    {"node": "Cortisol negative feedback", "modulator_genes": null, "potential_therapeutic_target": true},
+    {"node": "CRH release", "modulator_genes": null, "potential_therapeutic_target": true}
+  ],
+  "tissue_specificity": [
+    {"tissue": "hypothalamus", "expression_evidence": "CRH synthesis and release"},
+    {"tissue": "anterior pituitary", "expression_evidence": "ACTH production"},
+    {"tissue": "adrenal cortex", "expression_evidence": "Cortisol synthesis"}
+  ],
+  "linked_diseases": [
+    {"disease_slug": "major-depressive-disorder", "pathway_role": "HPA hyperactivation in depression; SLC6A4-stress interaction", "citations": ["ref2", "ref4"]},
+    {"disease_slug": "hypertension", "pathway_role": "Chronic stress and ACE pathway; sympathetic-HPA interplay", "citations": ["ref1", "ref3"]}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "psychosocial-stress", "pathway_effect": "Stress is primary HPA activator; chronic activation causes dysregulation", "citations": ["ref1", "ref4"]},
+    {"exposure_slug": "obesity-exposure", "pathway_effect": "Bidirectional: cortisol promotes adiposity; obesity alters HPA", "citations": ["ref2", "ref3"]}
+  ],
+  "diagram_asset": null,
+  "references": [
+    {"id": "ref1", "title": "ACE gene and stress-induced hypertension", "authors": "Flammer AJ, et al.", "year": 2015, "journal": "Hypertension", "doi": "10.1161/HYPERTENSIONAHA.115.05324"},
+    {"id": "ref2", "title": "Stress, 5-HTTLPR, and depression", "authors": "Caspi A, et al.", "year": 2003, "journal": "Science", "doi": "10.1126/science.1083968"},
+    {"id": "ref3", "title": "HPA axis and obesity", "authors": "Björntorp P, Rosmond R", "year": 2000, "journal": "Obesity Research", "doi": "10.1038/oby.2000.64"},
+    {"id": "ref4", "title": "Gene-environment interaction in depression", "authors": "Karg K, et al.", "year": 2011, "journal": "Archives of General Psychiatry", "doi": "10.1001/archgenpsychiatry.2011.73"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

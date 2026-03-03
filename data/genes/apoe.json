@@ -1,0 +1,39 @@
+{
+  "id": "apoe",
+  "slug": "apoe",
+  "symbol": "APOE",
+  "name": "Apolipoprotein E",
+  "chromosome": "19q13.32",
+  "summary": "APOE encodes apolipoprotein E, a lipid-binding protein that mediates cholesterol and triglyceride transport in the brain and periphery. The epsilon4 allele (APOE4) is the strongest genetic risk factor for late-onset Alzheimer disease, conferring ~3-fold increased risk per copy. APOE influences amyloid-beta aggregation, clearance, and neuroinflammation. In the periphery, APOE modulates LDL metabolism and atherosclerosis. Expression is highest in liver, brain (astrocytes, microglia), and macrophages. APOE has three common isoforms (E2, E3, E4) differing in amino acids 112 and 158. E4 carriers show earlier amyloid deposition and faster cognitive decline.",
+  "molecular_function": ["lipid binding", "receptor binding", "amyloid clearance", "cholesterol transport"],
+  "protein_class": "apolipoprotein",
+  "regulatory_notes": {
+    "promoter_activity": "Liver-enriched transcription factors; NF-κB in inflammation.",
+    "enhancer_associations": "AD-associated variants regulate APOE expression in brain cell types.",
+    "methylation_sensitivity": "APOE promoter methylation varies with genotype and AD status.",
+    "eqtl_tissues": ["brain", "liver"]
+  },
+  "expression_context": [
+    {"tissue": "brain", "tpm_range": "15-50", "gtex_version": "v8", "citations": ["ref1", "ref2"]},
+    {"tissue": "liver", "tpm_range": "100-300", "gtex_version": "v8", "citations": ["ref2"]}
+  ],
+  "pathways": ["ldl-cholesterol-metabolism"],
+  "linked_diseases": [
+    {"disease_slug": "alzheimers-disease", "evidence_type": "GWAS", "strength": 0.96},
+    {"disease_slug": "coronary-artery-disease", "evidence_type": "pathway", "strength": 0.72}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "diet-quality", "evidence_type": "literature", "strength": 0.65}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "APOE4 impairs amyloid-beta clearance and promotes aggregation; reduced lipid delivery to neurons and enhanced neuroinflammation contribute to Alzheimer pathogenesis.", "supporting_evidence": "Humanized APOE mouse models replicate AD pathology; APOE4 astrocytes show impaired Abeta phagocytosis.", "confidence": "high"}
+  ],
+  "confidence": "high",
+  "references": [
+    {"id": "ref1", "title": "Gene dose of apolipoprotein E type 4 allele and the risk of Alzheimer's disease in late onset families", "authors": "Corder EH, et al.", "year": 1993, "journal": "Science", "doi": "10.1126/science.8346443"},
+    {"id": "ref2", "title": "GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues", "authors": "GTEx Consortium", "year": 2020, "journal": "Science", "doi": "10.1126/science.aaz1776"},
+    {"id": "ref3", "title": "APOE4 leads to blood-brain barrier dysfunction predicting cognitive decline", "authors": "Montagne A, et al.", "year": 2020, "journal": "Nature", "doi": "10.1038/s41586-020-2247-3"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

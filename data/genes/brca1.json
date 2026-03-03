@@ -1,0 +1,39 @@
+{
+  "id": "brca1",
+  "slug": "brca1",
+  "symbol": "BRCA1",
+  "name": "BRCA1 DNA repair associated",
+  "chromosome": "17q21.31",
+  "summary": "BRCA1 encodes a tumor suppressor protein essential for homologous recombination (HR) DNA double-strand break repair. Germline loss-of-function mutations confer high lifetime risk of breast cancer (up to 72%) and ovarian cancer. BRCA1 forms complexes with PALB2, BRCA2, and RAD51 to promote error-free HR; deficiency leads to genomic instability and reliance on error-prone repair. BRCA1 also regulates transcription, cell cycle checkpoints, and centrosome function. Expression is cell-cycle regulated, peaking in S and G2 phases. Mutations cluster in the RING and BRCT domains. Carriers may have increased sensitivity to DNA-damaging agents including radiation.",
+  "molecular_function": ["homologous recombination", "DNA double-strand break repair", "transcriptional regulation", "ubiquitin ligase activity"],
+  "protein_class": "tumor suppressor",
+  "regulatory_notes": {
+    "promoter_activity": "E2F-responsive elements; p53 and estrogen receptor binding sites.",
+    "enhancer_associations": "Tissue-specific regulation in breast epithelium.",
+    "methylation_sensitivity": "BRCA1 promoter methylation silences expression in subset of sporadic breast cancers.",
+    "eqtl_tissues": ["breast", "ovary"]
+  },
+  "expression_context": [
+    {"tissue": "breast", "tpm_range": "3-12", "gtex_version": "v8", "citations": ["ref1", "ref2"]},
+    {"tissue": "ovary", "tpm_range": "2-10", "gtex_version": "v8", "citations": ["ref2"]}
+  ],
+  "pathways": ["dna-damage-repair"],
+  "linked_diseases": [
+    {"disease_slug": "breast-cancer", "evidence_type": "GWAS", "strength": 0.95},
+    {"disease_slug": "colorectal-cancer", "evidence_type": "literature", "strength": 0.35}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "uv-radiation", "evidence_type": "literature", "strength": 0.58}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "BRCA1 loss impairs HR repair; accumulated DNA damage and replication stress drive malignant transformation; PARP inhibitors exploit synthetic lethality in BRCA-deficient cells.", "supporting_evidence": "BRCA1-deficient cells hypersensitive to PARPi; olaparib approved for BRCA-mutant breast cancer.", "confidence": "high"}
+  ],
+  "confidence": "high",
+  "references": [
+    {"id": "ref1", "title": "A strong candidate for the breast and ovarian cancer susceptibility gene BRCA1", "authors": "Miki Y, et al.", "year": 1994, "journal": "Science", "doi": "10.1126/science.8035792"},
+    {"id": "ref2", "title": "GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues", "authors": "GTEx Consortium", "year": 2020, "journal": "Science", "doi": "10.1126/science.aaz1776"},
+    {"id": "ref3", "title": "Oral poly(ADP-ribose) polymerase inhibitor olaparib in patients with BRCA1 or BRCA2 mutations and advanced breast cancer", "authors": "Tutt A, et al.", "year": 2010, "journal": "Lancet Oncology", "doi": "10.1016/S1470-2045(10)70012-2"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

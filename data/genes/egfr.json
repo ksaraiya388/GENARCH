@@ -1,0 +1,39 @@
+{
+  "id": "egfr",
+  "slug": "egfr",
+  "symbol": "EGFR",
+  "name": "Epidermal growth factor receptor",
+  "chromosome": "7p11.2",
+  "summary": "EGFR encodes the epidermal growth factor receptor, a receptor tyrosine kinase that binds EGF and related ligands to activate RAS-RAF-MAPK and PI3K-AKT signaling. Somatic EGFR mutations (especially exon 19 deletions and L858R) drive a subset of non-small cell lung cancers, particularly in never-smokers and East Asians. These mutations confer sensitivity to EGFR tyrosine kinase inhibitors (gefitinib, erlotinib, osimertinib). EGFR overexpression occurs in many epithelial cancers. The receptor dimerizes upon ligand binding and autophosphorylates. Expression is highest in epithelial tissues. Germline EGFR variants may modify lung cancer risk. Resistance to TKIs commonly arises through T790M or MET amplification.",
+  "molecular_function": ["receptor tyrosine kinase activity", "EGF binding", "signal transduction", "cell proliferation"],
+  "protein_class": "receptor tyrosine kinase",
+  "regulatory_notes": {
+    "promoter_activity": "Epithelial-enriched; STAT and AP-1 elements.",
+    "enhancer_associations": "Lung cancer GWAS variants may influence EGFR expression.",
+    "methylation_sensitivity": null,
+    "eqtl_tissues": ["lung", "skin"]
+  },
+  "expression_context": [
+    {"tissue": "lung", "tpm_range": "15-50", "gtex_version": "v8", "citations": ["ref1", "ref2"]},
+    {"tissue": "skin", "tpm_range": "10-35", "gtex_version": "v8", "citations": ["ref2"]}
+  ],
+  "pathways": ["pi3k-akt-mtor"],
+  "linked_diseases": [
+    {"disease_slug": "lung-cancer", "evidence_type": "GWAS", "strength": 0.86},
+    {"disease_slug": "breast-cancer", "evidence_type": "literature", "strength": 0.58}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "tobacco", "evidence_type": "literature", "strength": 0.78}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "Activating EGFR mutations confer ligand-independent kinase activity; sustained PI3K and MAPK signaling drives proliferation and survival; tobacco exposure may select for EGFR wild-type tumors with different mutational profiles.", "supporting_evidence": "EGFR-mutant NSCLC responsive to TKIs; mutational spectrum differs between smokers and never-smokers.", "confidence": "high"}
+  ],
+  "confidence": "high",
+  "references": [
+    {"id": "ref1", "title": "EGFR mutations in lung cancer: correlation with clinical response to gefitinib therapy", "authors": "Paez JG, et al.", "year": 2004, "journal": "Science", "doi": "10.1126/science.1099314"},
+    {"id": "ref2", "title": "GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues", "authors": "GTEx Consortium", "year": 2020, "journal": "Science", "doi": "10.1126/science.aaz1776"},
+    {"id": "ref3", "title": "Osimertinib in untreated EGFR-mutated advanced non-small-cell lung cancer", "authors": "Soria JC, et al.", "year": 2018, "journal": "New England Journal of Medicine", "doi": "10.1056/NEJMoa1713137"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "exp_psychosocial_stress",
+  "slug": "psychosocial-stress",
+  "name": "Psychosocial Stress",
+  "definition": "Chronic or acute stress from social, psychological, or environmental sources. Includes childhood adversity, discrimination, social isolation, financial strain, trauma, and major life events. Affects mental health, behavior, and physiologic stress responses.",
+  "proxies": [
+    {"name": "Perceived stress scale", "unit": "score", "measurement_method": "PSS-10 questionnaire", "data_source": "Self-report"},
+    {"name": "ACE score", "unit": "0-10", "measurement_method": "Adverse childhood experiences", "data_source": "Retrospective questionnaire"}
+  ],
+  "systems_affected": [
+    {"system": "mental health", "mechanism_summary": "Cortisol, HPA axis; anxiety, depression, psychosis risk"},
+    {"system": "cardiovascular", "mechanism_summary": "Stress-induced hypertension, inflammation"}
+  ],
+  "sensitive_windows": [
+    {"period": "adolescence", "age_range": "10-24", "mechanism_rationale": "Identity formation; stress sensitivity; trauma effects", "citations": ["ref1"]}
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {"name": "brain", "effect_type": "HPA axis", "citations": ["ref1"]}
+  ],
+  "references": [
+    {"id": "ref1", "title": "Stress and health", "authors": "McEwen BS", "year": 2007, "journal": "Nature", "doi": "10.1038/nature05444"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

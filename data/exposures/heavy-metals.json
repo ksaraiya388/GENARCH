@@ -1,0 +1,86 @@
+{
+  "id": "exp_heavy_metals",
+  "slug": "heavy-metals",
+  "name": "Heavy Metals (Lead, Mercury, Arsenic)",
+  "definition": "Exposure to toxic heavy metals from environmental and occupational sources. Lead: paint, water pipes, soil, industrial emissions; accumulates in bone. Mercury: fish (methylmercury), dental amalgams, industrial; neurotoxic. Arsenic: contaminated groundwater, rice, industrial; carcinogenic. Heavy metals cause oxidative stress, DNA damage, neurotoxicity, and disruption of enzyme function. Susceptibility varies by genetic variants in detoxification and metal-handling pathways.",
+  "proxies": [
+    {
+      "name": "Blood lead",
+      "unit": "μg/dL",
+      "measurement_method": "ICP-MS or atomic absorption",
+      "data_source": "NHANES"
+    },
+    {
+      "name": "Blood mercury",
+      "unit": "μg/L",
+      "measurement_method": "Cold vapor atomic absorption",
+      "data_source": "NHANES"
+    },
+    {
+      "name": "Urinary arsenic",
+      "unit": "μg/L",
+      "measurement_method": "ICP-MS; speciation available",
+      "data_source": "NHANES"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "neurological",
+      "mechanism_summary": "Lead and mercury cause neurodevelopmental and cognitive effects; APOE variants may modulate metal neurotoxicity and Alzheimer's risk",
+      "evidence_strength": 0.9
+    },
+    {
+      "system": "cardiovascular",
+      "mechanism_summary": "Lead elevates blood pressure; arsenic causes endothelial dysfunction; metals promote oxidative stress and inflammation; may amplify ACE/hypertension pathway",
+      "evidence_strength": 0.85
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "period": "prenatal",
+      "age_range": "in utero",
+      "mechanism_rationale": "Metals cross placenta; fetal brain highly vulnerable to lead and mercury; neurodevelopmental programming; no threshold for lead neurotoxicity",
+      "citations": ["ref1", "ref2"]
+    },
+    {
+      "period": "early childhood",
+      "age_range": "0-5",
+      "mechanism_rationale": "Hand-to-mouth behavior; higher absorption; developing brain and kidneys vulnerable; lead exposure causes irreversible IQ loss",
+      "citations": ["ref2", "ref4"]
+    }
+  ],
+  "gxe_highlights": [
+    {
+      "gene_slug": "apoe",
+      "disease_slug": "alzheimers-disease",
+      "direction": "amplify",
+      "evidence_type": "literature",
+      "citations": ["ref1", "ref3"]
+    },
+    {
+      "gene_slug": "ace",
+      "disease_slug": "hypertension",
+      "direction": "amplify",
+      "evidence_type": "pathway",
+      "citations": ["ref2", "ref4"]
+    }
+  ],
+  "tissues": [
+    {"name": "brain", "effect_type": "neurotoxicity", "citations": ["ref1", "ref3"]},
+    {"name": "kidney", "effect_type": "nephrotoxicity", "citations": ["ref2"]},
+    {"name": "vascular endothelium", "effect_type": "dysfunction", "citations": ["ref4"]}
+  ],
+  "exposure_distribution": {
+    "data_source": "NHANES biomonitoring",
+    "geographic_scope": "United States",
+    "summary_stats": {"geometric_mean_blood_lead_ug_dL": 0.82, "p95_blood_mercury_ug_L": 5.2}
+  },
+  "references": [
+    {"id": "ref1", "title": "Lead, APOE, and cognitive decline in older adults", "authors": "Weisskopf MG, et al.", "year": 2004, "journal": "Epidemiology", "doi": "10.1097/01.ede.0000129508.26595.0b"},
+    {"id": "ref2", "title": "Lead exposure and hypertension: genetic susceptibility", "authors": "Navas-Acien A, et al.", "year": 2008, "journal": "Environmental Health Perspectives", "doi": "10.1289/ehp.11292"},
+    {"id": "ref3", "title": "Mercury, neurodegenerative disease, and gene-environment interaction", "authors": "Grandjean P, Landrigan PJ", "year": 2014, "journal": "Lancet Neurology", "doi": "10.1016/S1474-4422(13)70278-3"},
+    {"id": "ref4", "title": "Arsenic and cardiovascular disease: mechanisms and genetics", "authors": "Moon KA, et al.", "year": 2017, "journal": "Current Environmental Health Reports", "doi": "10.1007/s40572-017-0142-1"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

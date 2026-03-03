@@ -1,0 +1,43 @@
+{
+  "id": "path_insulin_signaling",
+  "slug": "insulin-signaling",
+  "name": "Insulin Signaling and Glucose Metabolism",
+  "summary": "Insulin signaling regulates glucose uptake, glycogen synthesis, lipogenesis, and gene expression. Insulin binds the insulin receptor, activating IRS-PI3K-AKT cascade; AKT phosphorylates substrates including GSK3 and FoxO. In pancreatic beta cells, glucose stimulates insulin secretion; TCF7L2 regulates proglucagon processing and incretin response. Defects cause insulin resistance and type 2 diabetes. FTO and MC4R influence energy balance and adiposity, which drive insulin resistance. Diet quality and obesity are major environmental modulators. TCF7L2 variants impair beta cell function and incretin response; FTO affects hypothalamic energy sensing.",
+  "canonical_source": "hsa04910",
+  "environmental_triggers": [
+    {"exposure_slug": "diet-quality", "trigger_type": "Refined carbohydrates and saturated fat promote insulin resistance", "citations": ["ref1", "ref3"]},
+    {"exposure_slug": "obesity-exposure", "trigger_type": "Adiposity drives systemic insulin resistance and beta cell exhaustion", "citations": ["ref2", "ref4"]},
+    {"exposure_slug": "psychosocial-stress", "trigger_type": "Cortisol promotes gluconeogenesis and antagonizes insulin", "citations": ["ref4"]}
+  ],
+  "key_genes": [
+    {"gene_slug": "tcf7l2", "role_in_pathway": "Transcription factor; regulates Wnt signaling and beta cell function; variants impair insulin secretion and incretin response", "citations": ["ref1", "ref4"]},
+    {"gene_slug": "fto", "role_in_pathway": "Energy balance regulation; hypothalamic expression; variants influence adiposity and T2D risk via obesity", "citations": ["ref2", "ref4"]},
+    {"gene_slug": "mc4r", "role_in_pathway": "Melanocortin receptor; appetite and energy expenditure; modulates obesity and insulin resistance", "citations": ["ref3"]}
+  ],
+  "regulatory_checkpoints": [
+    {"node": "Beta cell insulin secretion", "modulator_genes": ["tcf7l2"], "potential_therapeutic_target": true},
+    {"node": "Hypothalamic energy sensing", "modulator_genes": ["fto", "mc4r"], "potential_therapeutic_target": true}
+  ],
+  "tissue_specificity": [
+    {"tissue": "pancreas", "expression_evidence": "Beta cells; insulin synthesis and secretion"},
+    {"tissue": "liver", "expression_evidence": "Glycogen synthesis; gluconeogenesis regulation"},
+    {"tissue": "adipose tissue", "expression_evidence": "Glucose uptake; lipogenesis"}
+  ],
+  "linked_diseases": [
+    {"disease_slug": "type-2-diabetes", "pathway_role": "Core pathogenic pathway; insulin resistance and beta cell dysfunction", "citations": ["ref1", "ref4"]},
+    {"disease_slug": "obesity", "pathway_role": "Obesity drives insulin resistance; FTO and MC4R are major obesity genes", "citations": ["ref2", "ref3"]}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "diet-quality", "pathway_effect": "Diet directly modulates insulin sensitivity and beta cell demand", "citations": ["ref1", "ref3"]},
+    {"exposure_slug": "obesity-exposure", "pathway_effect": "Adiposity is primary driver of insulin resistance", "citations": ["ref2", "ref4"]}
+  ],
+  "diagram_asset": null,
+  "references": [
+    {"id": "ref1", "title": "TCF7L2 and type 2 diabetes", "authors": "Grant SF, et al.", "year": 2006, "journal": "Nature Genetics", "doi": "10.1038/ng1842"},
+    {"id": "ref2", "title": "FTO and energy homeostasis", "authors": "Claussnitzer M, et al.", "year": 2015, "journal": "New England Journal of Medicine", "doi": "10.1056/NEJMra1500792"},
+    {"id": "ref3", "title": "MC4R in obesity and metabolic disease", "authors": "Loos RJF, et al.", "year": 2020, "journal": "Nature Reviews Endocrinology", "doi": "10.1038/s41574-020-0341-8"},
+    {"id": "ref4", "title": "Gene-environment interaction in type 2 diabetes", "authors": "Cornelis MC, Hu FB", "year": 2012, "journal": "Current Diabetes Reports", "doi": "10.1007/s11892-012-0313-4"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

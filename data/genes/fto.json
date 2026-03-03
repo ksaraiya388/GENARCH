@@ -1,0 +1,39 @@
+{
+  "id": "fto",
+  "slug": "fto",
+  "symbol": "FTO",
+  "name": "Fat mass and obesity-associated protein",
+  "chromosome": "16q12.2",
+  "summary": "FTO encodes fat mass and obesity-associated protein, an alpha-ketoglutarate-dependent dioxygenase that demethylates nucleic acids. The FTO locus harbors the strongest common genetic association with obesity (e.g., rs9939609); risk alleles confer ~3 kg higher body weight per copy. FTO influences energy balance through effects on appetite, food preference, and possibly energy expenditure. Risk variants regulate expression of neighboring genes (RPGRIP1L, IRX3) rather than FTO itself, via long-range regulatory elements. FTO is widely expressed, with high levels in brain (hypothalamus), adipose tissue, and muscle. The gene links genetic susceptibility to obesogenic environmental exposures.",
+  "molecular_function": ["RNA demethylation", "nucleotide modification", "epigenetic regulation"],
+  "protein_class": "alpha-ketoglutarate dioxygenase",
+  "regulatory_notes": {
+    "promoter_activity": "Obesity-associated variants lie in intron 1; act as distal enhancers for IRX3.",
+    "enhancer_associations": "Risk locus forms chromatin loops to IRX3 and RPGRIP1L promoters; allele-specific enhancer activity.",
+    "methylation_sensitivity": "FTO regulates m6A levels; locus methylation correlates with BMI.",
+    "eqtl_tissues": ["brain", "adipose tissue"]
+  },
+  "expression_context": [
+    {"tissue": "brain", "tpm_range": "8-30", "gtex_version": "v8", "citations": ["ref1", "ref2"]},
+    {"tissue": "adipose tissue", "tpm_range": "12-40", "gtex_version": "v8", "citations": ["ref2"]}
+  ],
+  "pathways": ["insulin-signaling"],
+  "linked_diseases": [
+    {"disease_slug": "obesity", "evidence_type": "GWAS", "strength": 0.92},
+    {"disease_slug": "type-2-diabetes", "evidence_type": "pathway", "strength": 0.75}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "obesity-exposure", "evidence_type": "literature", "strength": 0.68}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "FTO risk variants enhance IRX3 expression in hypothalamic neurons, altering energy balance and food intake; obesogenic diet amplifies genetic predisposition.", "supporting_evidence": "Claussnitzer et al. showed allele-specific enhancer driving IRX3; FTO genotype-diet interaction in weight gain.", "confidence": "high"}
+  ],
+  "confidence": "high",
+  "references": [
+    {"id": "ref1", "title": "FTO obesity variant circuitry and adipocyte browning in humans", "authors": "Claussnitzer M, et al.", "year": 2015, "journal": "New England Journal of Medicine", "doi": "10.1056/NEJMoa1502214"},
+    {"id": "ref2", "title": "GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues", "authors": "GTEx Consortium", "year": 2020, "journal": "Science", "doi": "10.1126/science.aaz1776"},
+    {"id": "ref3", "title": "A common variant in the FTO gene is associated with body mass index and predisposes to childhood and adult obesity", "authors": "Frayling TM, et al.", "year": 2007, "journal": "Science", "doi": "10.1126/science.1141634"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

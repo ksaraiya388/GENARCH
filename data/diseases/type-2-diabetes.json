@@ -1,0 +1,138 @@
+{
+  "id": "dis_type-2-diabetes",
+  "slug": "type-2-diabetes",
+  "name": "Type 2 Diabetes",
+  "icd11_code": "5A11",
+  "summary": "Type 2 diabetes (T2D) is a metabolic disorder characterized by insulin resistance and progressive beta-cell dysfunction, leading to chronic hyperglycemia. Pathophysiology involves impaired glucose uptake in muscle and adipose tissue, dysregulated hepatic glucose output, and insufficient insulin secretion. Complications include retinopathy, nephropathy, neuropathy, and cardiovascular disease. Genetic susceptibility is substantial: heritability estimates range from 30–70% depending on study design and population. SNP-based heritability (h²) is approximately 0.18–0.25. Over 400 susceptibility loci have been identified; key genes include TCF7L2 (Wnt signaling, beta-cell function), SLC30A8 (zinc transport, insulin secretion), PPARG (adipocyte differentiation, insulin sensitivity), and FTO (energy balance, obesity). T2D is highly modifiable by lifestyle; diet, physical activity, and obesity interact strongly with genetic risk. Onset is increasingly occurring in adolescence and young adulthood.",
+  "adolescent_relevance": "T2D onset is shifting younger; adolescent obesity and metabolic syndrome drive early disease. Ages 10–24 represent a critical window for establishing diet and activity patterns that modulate genetic risk. Pubertal insulin resistance is physiologic but may unmask genetic susceptibility in obese youth. Gestational diabetes in adolescent pregnancies increases lifelong T2D risk. Screening and prevention efforts increasingly target high-risk youth. PRS may identify adolescents for intensified lifestyle intervention, though evidence in pediatric populations is limited.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "TCF7L2",
+        "variant": "rs7903146",
+        "gwas_p": 1e-80,
+        "effect_size": 1.4,
+        "ancestry_composition": "Multi-ancestry",
+        "replication_status": "Replicated across ancestries",
+        "evidence": "Transcription factor; Wnt signaling; affects beta-cell function and insulin secretion; strongest common T2D locus",
+        "strength": 0.95,
+        "citations": ["ref1", "ref2"]
+      },
+      {
+        "gene": "SLC30A8",
+        "variant": "rs13266634",
+        "gwas_p": 1e-50,
+        "effect_size": 1.15,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "Zinc transporter in beta-cells; affects insulin granule packaging and secretion",
+        "strength": 0.88,
+        "citations": ["ref1", "ref3"]
+      },
+      {
+        "gene": "PPARG",
+        "variant": "rs1801282",
+        "gwas_p": 1e-25,
+        "effect_size": 1.2,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated; drug target",
+        "evidence": "Nuclear receptor; regulates adipocyte differentiation and insulin sensitivity; thiazolidinedione target",
+        "strength": 0.85,
+        "citations": ["ref2", "ref4"]
+      },
+      {
+        "gene": "FTO",
+        "variant": "rs9939609",
+        "gwas_p": 1e-40,
+        "effect_size": 1.15,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "Obesity-associated; T2D risk largely mediated through BMI; energy balance and appetite regulation",
+        "strength": 0.75,
+        "citations": ["ref3", "ref5"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.21,
+      "h2_narrow_sense": 0.5,
+      "source": "DIAGRAM consortium and twin studies",
+      "year": 2020
+    },
+    "prs_notes": "T2D PRS show moderate predictive ability (AUC ~0.60–0.70). Transferability is limited: European discovery; performance in non-European populations is reduced. PRS adds to clinical risk models; may identify candidates for intensive lifestyle or pharmacologic prevention. G×E (diet, obesity, physical activity) not yet integrated. Utility in adolescent screening is investigational."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "obesity-exposure",
+      "direction": "amplify",
+      "strength": 0.95,
+      "confidence": "high",
+      "mechanism_hypothesis": "Obesity causes insulin resistance and beta-cell stress; amplifies genetic T2D susceptibility; strongest modifiable risk factor",
+      "citations": ["ref1", "ref2"]
+    },
+    {
+      "exposure_slug": "diet-quality",
+      "direction": "amplify",
+      "strength": 0.8,
+      "confidence": "high",
+      "mechanism_hypothesis": "High refined carbohydrate and sugar intake, low fiber; promotes weight gain and insulin resistance; Western diet amplifies risk",
+      "citations": ["ref3", "ref4"]
+    },
+    {
+      "exposure_slug": "psychosocial-stress",
+      "direction": "amplify",
+      "strength": 0.6,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Chronic stress affects cortisol, eating behavior, and activity; may exacerbate insulin resistance",
+      "citations": ["ref4", "ref5"]
+    },
+    {
+      "exposure_slug": "alcohol",
+      "direction": "unknown",
+      "strength": 0.4,
+      "confidence": "low",
+      "mechanism_hypothesis": "Moderate alcohol may have mixed effects; heavy use increases risk; relationship is dose-dependent and complex",
+      "citations": ["ref5"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "pancreatic beta cells",
+      "relevance_score": 0.98,
+      "evidence_type": "GWAS and eQTL",
+      "citations": ["ref1", "ref2"]
+    },
+    {
+      "name": "adipose tissue",
+      "relevance_score": 0.92,
+      "evidence_type": "GWAS and expression",
+      "citations": ["ref2", "ref3"]
+    },
+    {
+      "name": "skeletal muscle",
+      "relevance_score": 0.9,
+      "evidence_type": "pathway",
+      "citations": ["ref1"]
+    },
+    {
+      "name": "liver",
+      "relevance_score": 0.88,
+      "evidence_type": "eQTL and literature",
+      "citations": ["ref3", "ref4"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "T2D GWAS are predominantly European (~70%); multi-ancestry efforts (DIAGRAM, PAGE) are expanding; some loci show ancestry-specific effects",
+    "transferability_notes": "TCF7L2 and many loci transfer across ancestries; allele frequencies and effect sizes vary. PRS performance in African, Hispanic, and Asian populations is reduced. Ancestry-specific PRS improve but require larger diverse cohorts.",
+    "data_gaps": "Under-representation of diverse ancestries; G×E studies across populations; adolescent-onset T2D genetics; gene–diet interactions."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {"id": "ref1", "title": "Type 2 diabetes genetic loci informed by multi-trait associations", "authors": "Mahajan A, et al.", "year": 2018, "journal": "Nature Genetics", "doi": "10.1038/s41588-018-0244-4"},
+    {"id": "ref2", "title": "TCF7L2 polymorphism and progression from prediabetes to type 2 diabetes", "authors": "Florez JC, et al.", "year": 2006, "journal": "New England Journal of Medicine", "doi": "10.1056/NEJMoa062418"},
+    {"id": "ref3", "title": "A genome-wide association study identifies novel risk loci for type 2 diabetes", "authors": "Saxena R, et al.", "year": 2007, "journal": "Nature", "doi": "10.1038/nature05856"},
+    {"id": "ref4", "title": "Genetic predisposition to obesity and type 2 diabetes", "authors": "Loos RJF, Yeo GSH", "year": 2021, "journal": "Nature Reviews Endocrinology", "doi": "10.1038/s41574-021-00491-2"},
+    {"id": "ref5", "title": "Stress and type 2 diabetes: a review of the evidence", "authors": "Hackett RA, Steptoe A", "year": 2017, "journal": "Diabetic Medicine", "doi": "10.1111/dme.13239"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

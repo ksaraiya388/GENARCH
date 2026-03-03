@@ -1,0 +1,39 @@
+{
+  "id": "brca2",
+  "slug": "brca2",
+  "symbol": "BRCA2",
+  "name": "BRCA2 DNA repair associated",
+  "chromosome": "13q13.1",
+  "summary": "BRCA2 encodes a tumor suppressor that binds RAD51 and promotes its loading onto single-stranded DNA during homologous recombination. Like BRCA1, germline loss-of-function mutations confer high risk of breast and ovarian cancer; BRCA2 mutations also increase prostate and pancreatic cancer risk. BRCA2 facilitates strand invasion and Holliday junction formation; deficiency causes chromosomal aberrations and sensitivity to crosslinking agents. The gene is cell-cycle regulated and expressed in proliferating tissues. Male BRCA2 carriers have elevated breast cancer risk. Functional domains include the BRC repeats (RAD51 binding) and the DNA-binding domain. PARP inhibitors show efficacy in BRCA2-mutant cancers.",
+  "molecular_function": ["homologous recombination", "RAD51 loading", "DNA strand exchange", "replication fork stabilization"],
+  "protein_class": "tumor suppressor",
+  "regulatory_notes": {
+    "promoter_activity": "E2F and cell-cycle regulation; p53 response elements.",
+    "enhancer_associations": "Breast cancer risk variants in regulatory regions.",
+    "methylation_sensitivity": null,
+    "eqtl_tissues": ["breast", "ovary", "prostate"]
+  },
+  "expression_context": [
+    {"tissue": "breast", "tpm_range": "2-8", "gtex_version": "v8", "citations": ["ref1", "ref2"]},
+    {"tissue": "testis", "tpm_range": "5-20", "gtex_version": "v8", "citations": ["ref2"]}
+  ],
+  "pathways": ["dna-damage-repair"],
+  "linked_diseases": [
+    {"disease_slug": "breast-cancer", "evidence_type": "GWAS", "strength": 0.93},
+    {"disease_slug": "colorectal-cancer", "evidence_type": "literature", "strength": 0.42}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "uv-radiation", "evidence_type": "literature", "strength": 0.55}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "BRCA2 deficiency prevents RAD51 nucleofilament formation; unrepaired DNA breaks accumulate, enabling malignant transformation; PARP inhibition causes synthetic lethality.", "supporting_evidence": "BRCA2-RAD51 interaction well characterized; PARPi approved for BRCA2-mutant cancers.", "confidence": "high"}
+  ],
+  "confidence": "high",
+  "references": [
+    {"id": "ref1", "title": "Localization of a breast cancer susceptibility gene, BRCA2, to chromosome 13q12-13", "authors": "Wooster R, et al.", "year": 1994, "journal": "Science", "doi": "10.1126/science.8196475"},
+    {"id": "ref2", "title": "GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues", "authors": "GTEx Consortium", "year": 2020, "journal": "Science", "doi": "10.1126/science.aaz1776"},
+    {"id": "ref3", "title": "BRCA2 and homologous recombination in ovarian cancer development", "authors": "Moynahan ME, Jasin M", "year": 2010, "journal": "Cancer Research", "doi": "10.1158/0008-5472.CAN-10-0789"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

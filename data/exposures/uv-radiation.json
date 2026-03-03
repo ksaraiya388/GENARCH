@@ -1,0 +1,26 @@
+{
+  "id": "exp_uv_radiation",
+  "slug": "uv-radiation",
+  "name": "UV Radiation",
+  "definition": "Ultraviolet radiation from sun exposure. Includes UVA and UVB. Primary cause of skin cancer; also enables vitamin D synthesis. Varies by latitude, season, time of day, and behavior.",
+  "proxies": [
+    {"name": "UV index", "unit": "0-11+", "measurement_method": "Meteorological measurement", "data_source": "NOAA/EPA"},
+    {"name": "Vitamin D (25-OH)", "unit": "ng/mL", "measurement_method": "Serum assay", "data_source": "Biomarker"}
+  ],
+  "systems_affected": [
+    {"system": "skin", "mechanism_summary": "DNA damage, skin cancer, photoaging"},
+    {"system": "immune", "mechanism_summary": "Vitamin D; immune regulation"}
+  ],
+  "sensitive_windows": [
+    {"period": "adolescence", "age_range": "10-24", "mechanism_rationale": "Sun exposure behaviors; vitamin D status", "citations": ["ref1"]}
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {"name": "skin", "effect_type": "DNA damage", "citations": ["ref1"]}
+  ],
+  "references": [
+    {"id": "ref1", "title": "UV radiation and health", "authors": "WHO", "year": 2022, "url": "https://www.who.int/uv"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

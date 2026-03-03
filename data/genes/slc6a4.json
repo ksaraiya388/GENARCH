@@ -1,0 +1,39 @@
+{
+  "id": "slc6a4",
+  "slug": "slc6a4",
+  "symbol": "SLC6A4",
+  "name": "Solute carrier family 6 member 4",
+  "chromosome": "17q11.2",
+  "summary": "SLC6A4 encodes the serotonin transporter (5-HTT), which reuptakes serotonin from the synaptic cleft and terminates serotonergic signaling. The promoter polymorphism 5-HTTLPR (short vs long) modulates transporter expression and has been extensively studied in depression, stress response, and suicidal behavior. Short allele carriers show exaggerated amygdala reactivity and may be more vulnerable to depression following adversity. SLC6A4 is the target of SSRIs. Expression is highest in raphe nuclei, platelets, and placenta. Genetic variation influences SSRI response. The gene-denvironment interaction (5-HTTLPR × stress → depression) has been debated but remains influential in psychiatric genetics.",
+  "molecular_function": ["serotonin transport", "neurotransmitter reuptake", "sodium symport"],
+  "protein_class": "solute carrier",
+  "regulatory_notes": {
+    "promoter_activity": "5-HTTLPR length polymorphism affects transcriptional efficiency; short allele reduces expression.",
+    "enhancer_associations": "Depression-associated variants in regulatory region.",
+    "methylation_sensitivity": "SLC6A4 promoter methylation correlates with stress exposure and depression.",
+    "eqtl_tissues": ["brain", "whole blood"]
+  },
+  "expression_context": [
+    {"tissue": "brain", "tpm_range": "3-12", "gtex_version": "v8", "citations": ["ref1", "ref2"]},
+    {"tissue": "whole blood", "tpm_range": "1-5", "gtex_version": "v8", "citations": ["ref2"]}
+  ],
+  "pathways": ["hpa-axis"],
+  "linked_diseases": [
+    {"disease_slug": "major-depressive-disorder", "evidence_type": "GWAS", "strength": 0.72},
+    {"disease_slug": "schizophrenia", "evidence_type": "literature", "strength": 0.42}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "psychosocial-stress", "evidence_type": "literature", "strength": 0.85}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "Short 5-HTTLPR allele reduces SLC6A4 expression and serotonin reuptake; under psychosocial stress, reduced extracellular serotonin clearance may amplify stress reactivity and predispose to depression.", "supporting_evidence": "Meta-analyses support G×E; short allele associated with amygdala reactivity and stress-related depression in some studies.", "confidence": "medium"}
+  ],
+  "confidence": "medium",
+  "references": [
+    {"id": "ref1", "title": "Influence of life stress on depression: moderation by a polymorphism in the 5-HTT gene", "authors": "Caspi A, et al.", "year": 2003, "journal": "Science", "doi": "10.1126/science.1083968"},
+    {"id": "ref2", "title": "GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues", "authors": "GTEx Consortium", "year": 2020, "journal": "Science", "doi": "10.1126/science.aaz1776"},
+    {"id": "ref3", "title": "Serotonin transporter genetic variation and the response of the human amygdala", "authors": "Hariri AR, et al.", "year": 2002, "journal": "Science", "doi": "10.1126/science.1071829"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

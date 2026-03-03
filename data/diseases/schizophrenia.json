@@ -1,0 +1,130 @@
+{
+  "id": "dis_schizophrenia",
+  "slug": "schizophrenia",
+  "name": "Schizophrenia",
+  "icd11_code": "6A20",
+  "summary": "Schizophrenia is a severe psychiatric disorder characterized by positive symptoms (hallucinations, delusions), negative symptoms (avolition, anhedonia), and cognitive impairment. Pathophysiology involves dopamine dysregulation, glutamate hypofunction, neurodevelopmental abnormalities, and neuroinflammation. Onset typically occurs in late adolescence or early adulthood (ages 15–25). Genetic susceptibility is very high: heritability from twin studies is ~80%; SNP-based h² is ~0.24. Over 200 susceptibility loci have been identified. Key genes include DRD2 (dopamine receptor), CACNA1C (calcium channel), and C4A (complement, synaptic pruning). Cannabis use, urban residence, childhood adversity, and migration are environmental risk factors. Gene–environment interactions are active areas of research. Early intervention during prodromal phase may improve outcomes.",
+  "adolescent_relevance": "Ages 10–24 encompass the peak period of schizophrenia onset. Prodromal symptoms often emerge in late adolescence; early detection and intervention are priorities. Cannabis use during adolescence substantially increases risk in genetically susceptible individuals. Psychosocial stress (academic pressure, identity formation, trauma) may trigger onset. Urban upbringing and social adversity are risk factors. Genetic risk scores may identify youth for early monitoring; clinical utility is investigational. Transition-age youth face gaps in mental health care continuity.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "DRD2",
+        "variant": "rs2514218",
+        "gwas_p": 1e-25,
+        "effect_size": 1.08,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "Dopamine D2 receptor; target of antipsychotics; dopamine hypothesis of schizophrenia",
+        "strength": 0.9,
+        "citations": ["ref1", "ref2"]
+      },
+      {
+        "gene": "CACNA1C",
+        "variant": "rs1006737",
+        "gwas_p": 1e-20,
+        "effect_size": 1.1,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated; shared with bipolar disorder",
+        "evidence": "L-type calcium channel; neuronal excitability; psychiatric pleiotropy",
+        "strength": 0.85,
+        "citations": ["ref1", "ref3"]
+      },
+      {
+        "gene": "C4A",
+        "variant": "C4 structural variation",
+        "gwas_p": 1e-30,
+        "effect_size": 1.15,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "Complement C4A; synaptic pruning; excess pruning hypothesis; mechanism linking immune and neurodevelopment",
+        "strength": 0.88,
+        "citations": ["ref2", "ref4"]
+      },
+      {
+        "gene": "GRIN2A",
+        "variant": "rs16970588",
+        "gwas_p": 1e-12,
+        "effect_size": 1.06,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "NMDA receptor subunit; glutamate hypothesis; affects synaptic plasticity",
+        "strength": 0.78,
+        "citations": ["ref3", "ref5"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.24,
+      "h2_narrow_sense": 0.81,
+      "source": "PGC schizophrenia GWAS and twin studies",
+      "year": 2014
+    },
+    "prs_notes": "Schizophrenia PRS show moderate predictive ability (AUC ~0.65–0.72). Transferability is limited: European discovery; performance in non-European populations is reduced. PRS may stratify risk in prodromal cohorts and research; clinical utility for screening is limited. G×E (cannabis, adversity, urbanicity) not yet integrated. Ethical considerations for psychiatric PRS are substantial."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "psychosocial-stress",
+      "direction": "amplify",
+      "strength": 0.85,
+      "confidence": "high",
+      "mechanism_hypothesis": "Childhood trauma, urban upbringing, migration, and social defeat stress increase risk; may trigger onset in genetically susceptible individuals",
+      "citations": ["ref2", "ref4"]
+    },
+    {
+      "exposure_slug": "tobacco",
+      "direction": "amplify",
+      "strength": 0.65,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Smoking is highly prevalent in schizophrenia; nicotine may affect dopaminergic signaling and cognition; bidirectional relationship",
+      "citations": ["ref3", "ref5"]
+    },
+    {
+      "exposure_slug": "obesity-exposure",
+      "direction": "amplify",
+      "strength": 0.5,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Antipsychotic-induced weight gain; metabolic syndrome; bidirectional with sedentary behavior and diet",
+      "citations": ["ref5"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "prefrontal cortex",
+      "relevance_score": 0.95,
+      "evidence_type": "GWAS and imaging",
+      "citations": ["ref1", "ref2"]
+    },
+    {
+      "name": "striatum",
+      "relevance_score": 0.92,
+      "evidence_type": "pathway",
+      "citations": ["ref1"]
+    },
+    {
+      "name": "hippocampus",
+      "relevance_score": 0.88,
+      "evidence_type": "GWAS and literature",
+      "citations": ["ref2", "ref3"]
+    },
+    {
+      "name": "dopaminergic neurons (midbrain)",
+      "relevance_score": 0.9,
+      "evidence_type": "pathway",
+      "citations": ["ref1", "ref4"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Schizophrenia GWAS are predominantly European (~90%); PGC is expanding multi-ancestry efforts",
+    "transferability_notes": "Many loci transfer; allele frequencies vary. PRS performance in African, Asian, and Hispanic populations is reduced. Disparities in diagnosis, treatment, and research participation affect equity.",
+    "data_gaps": "Under-representation of diverse ancestries; G×E (substance use, adversity) across populations; prodromal genetics; gene–stress interactions."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {"id": "ref1", "title": "Biological insights from 108 schizophrenia-associated genetic loci", "authors": "Schizophrenia Working Group of the Psychiatric Genomics Consortium", "year": 2014, "journal": "Nature", "doi": "10.1038/nature13595"},
+    {"id": "ref2", "title": "DRD2 genetic variation and schizophrenia", "authors": "Li T, et al.", "year": 2004, "journal": "Molecular Psychiatry", "doi": "10.1038/sj.mp.4001500"},
+    {"id": "ref3", "title": "CACNA1C and psychiatric disorders", "authors": "Green EK, et al.", "year": 2010, "journal": "Molecular Psychiatry", "doi": "10.1038/mp.2009.117"},
+    {"id": "ref4", "title": "Schizophrenia risk from complex variation of complement component 4", "authors": "Sekar A, et al.", "year": 2016, "journal": "Nature", "doi": "10.1038/nature16549"},
+    {"id": "ref5", "title": "Tobacco use and schizophrenia", "authors": "de Leon J, Diaz FJ", "year": 2005, "journal": "American Journal of Psychiatry", "doi": "10.1176/appi.ajp.162.4.835"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

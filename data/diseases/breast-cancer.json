@@ -1,0 +1,138 @@
+{
+  "id": "dis_breast-cancer",
+  "slug": "breast-cancer",
+  "name": "Breast Cancer",
+  "icd11_code": "2C6",
+  "summary": "Breast cancer is the most common malignancy in women globally, arising from ductal or lobular epithelium. Pathophysiology involves dysregulated cell proliferation, genomic instability, and hormone receptor signaling (ER, PR, HER2). Subtypes differ in prognosis and therapy. Genetic susceptibility is substantial: heritability from twin studies is ~30%; SNP-based h² is ~0.08–0.15. Rare high-penetrance mutations (BRCA1, BRCA2, TP53) account for ~5–10% of cases; common variants explain additional variance. Key genes include BRCA1/BRCA2 (DNA repair), TP53 (tumor suppressor), and FGFR2 (receptor signaling). Hormonal, reproductive, and lifestyle factors interact with genetic risk. Early menarche, late menopause, nulliparity, and obesity modify risk. Adolescence is a sensitive window for breast development and carcinogen exposure.",
+  "adolescent_relevance": "Breast tissue undergoes rapid development during puberty; exposures during ages 10–24 may affect lifetime cancer risk. Early menarche increases risk; diet and body composition in adolescence influence pubertal timing. Alcohol initiation in adolescence may increase risk. Psychosocial stress during this period affects health behaviors. Rare BRCA carriers may consider risk-reducing strategies; genetic testing guidelines are evolving for young women. PRS may inform screening intensity in high-risk families; utility in general adolescent population is limited.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "BRCA1",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": 10.0,
+        "ancestry_composition": "Multi-ancestry",
+        "replication_status": "Established Mendelian",
+        "evidence": "DNA double-strand break repair; hereditary breast-ovarian cancer syndrome; high penetrance",
+        "strength": 0.98,
+        "citations": ["ref1", "ref2"]
+      },
+      {
+        "gene": "BRCA2",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": 8.0,
+        "ancestry_composition": "Multi-ancestry",
+        "replication_status": "Established Mendelian",
+        "evidence": "Homologous recombination repair; hereditary breast-ovarian cancer; high penetrance",
+        "strength": 0.98,
+        "citations": ["ref1", "ref2"]
+      },
+      {
+        "gene": "TP53",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": 15.0,
+        "ancestry_composition": "Multi-ancestry",
+        "replication_status": "Established Mendelian",
+        "evidence": "Li-Fraumeni syndrome; tumor suppressor; cell cycle and DNA damage response",
+        "strength": 0.95,
+        "citations": ["ref1"]
+      },
+      {
+        "gene": "FGFR2",
+        "variant": "rs2981582",
+        "gwas_p": 1e-60,
+        "effect_size": 1.26,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "Receptor tyrosine kinase; ER-positive breast cancer; fibroblast growth factor signaling",
+        "strength": 0.88,
+        "citations": ["ref2", "ref3"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.12,
+      "h2_narrow_sense": 0.31,
+      "source": "Twin studies and BCAC GWAS meta-analyses",
+      "year": 2020
+    },
+    "prs_notes": "Breast cancer PRS show moderate predictive ability (AUC ~0.63–0.70). 313-variant PRS identifies women at substantially elevated risk. Transferability is limited: European discovery; performance in African, Asian, and Hispanic women is reduced. PRS may inform screening frequency and MRI eligibility. G×E (alcohol, obesity, hormone therapy) not yet incorporated. Utility in BRCA-negative families is growing."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "alcohol",
+      "direction": "amplify",
+      "strength": 0.75,
+      "confidence": "high",
+      "mechanism_hypothesis": "Alcohol increases estrogen levels and DNA damage; dose-dependent increase in breast cancer risk",
+      "citations": ["ref2", "ref4"]
+    },
+    {
+      "exposure_slug": "obesity-exposure",
+      "direction": "amplify",
+      "strength": 0.7,
+      "confidence": "high",
+      "mechanism_hypothesis": "Postmenopausal obesity increases estrogen from adipose aromatase; may amplify risk in ER-positive disease",
+      "citations": ["ref3", "ref4"]
+    },
+    {
+      "exposure_slug": "uv-radiation",
+      "direction": "buffer",
+      "strength": 0.5,
+      "confidence": "low",
+      "mechanism_hypothesis": "Vitamin D from sun exposure may modestly reduce breast cancer risk; evidence is observational",
+      "citations": ["ref5"]
+    },
+    {
+      "exposure_slug": "psychosocial-stress",
+      "direction": "amplify",
+      "strength": 0.45,
+      "confidence": "low",
+      "mechanism_hypothesis": "Chronic stress may affect immune surveillance and health behaviors; evidence is limited",
+      "citations": ["ref5"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "mammary epithelium",
+      "relevance_score": 0.98,
+      "evidence_type": "GWAS and expression",
+      "citations": ["ref1", "ref2"]
+    },
+    {
+      "name": "adipose tissue (breast)",
+      "relevance_score": 0.85,
+      "evidence_type": "pathway",
+      "citations": ["ref3", "ref4"]
+    },
+    {
+      "name": "lymphocytes",
+      "relevance_score": 0.7,
+      "evidence_type": "literature",
+      "citations": ["ref4"]
+    },
+    {
+      "name": "ovary",
+      "relevance_score": 0.65,
+      "evidence_type": "pathway",
+      "citations": ["ref2"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Breast cancer GWAS are predominantly European (~85%); BCAC and other consortia are expanding multi-ancestry data",
+    "transferability_notes": "BRCA1/BRCA2 mutations and many common loci transfer; founder mutations vary by ancestry. PRS performance in non-European women is reduced; ancestry-specific PRS are being developed. Incidence and mortality differ by race/ethnicity; equity in genetic testing and screening is a priority.",
+    "data_gaps": "Under-representation of African, Hispanic, and Asian women in GWAS; G×E across ancestries; adolescent exposure effects; male breast cancer genetics."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {"id": "ref1", "title": "Breast and ovarian cancer incidence in BRCA1-mutation carriers", "authors": "Antoniou A, et al.", "year": 2003, "journal": "American Journal of Human Genetics", "doi": "10.1086/375033"},
+    {"id": "ref2", "title": "Genome-wide association study identifies 32 novel breast cancer susceptibility loci", "authors": "Michailidou K, et al.", "year": 2017, "journal": "Nature", "doi": "10.1038/nature24284"},
+    {"id": "ref3", "title": "FGFR2 variants and breast cancer risk", "authors": "Easton DF, et al.", "year": 2007, "journal": "Nature", "doi": "10.1038/nature05887"},
+    {"id": "ref4", "title": "Alcohol consumption and breast cancer risk", "authors": "Key J, et al.", "year": 2006, "journal": "International Journal of Cancer", "doi": "10.1002/ijc.21711"},
+    {"id": "ref5", "title": "Vitamin D and breast cancer risk", "authors": "Yin L, et al.", "year": 2019, "journal": "Cancer Epidemiology, Biomarkers & Prevention", "doi": "10.1158/1055-9965.EPI-18-0877"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

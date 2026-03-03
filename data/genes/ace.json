@@ -1,0 +1,39 @@
+{
+  "id": "ace",
+  "slug": "ace",
+  "symbol": "ACE",
+  "name": "Angiotensin-converting enzyme",
+  "chromosome": "17q23.3",
+  "summary": "ACE encodes angiotensin-converting enzyme, a zinc metallopeptidase that converts angiotensin I to angiotensin II and inactivates bradykinin. ACE is central to the renin-angiotensin-aldosterone system (RAAS) regulating blood pressure and fluid homeostasis. The insertion/deletion (I/D) polymorphism in intron 16 associates with circulating ACE activity; D allele confers higher enzyme levels. ACE influences vascular tone, aldosterone release, and cardiac remodeling. Expression is high in lung (vascular endothelium), kidney, and heart. ACE inhibitors are first-line antihypertensives. The gene links genetic variation to hypertension susceptibility and response to RAAS-blocking drugs.",
+  "molecular_function": ["peptidyl-dipeptidase activity", "angiotensin conversion", "bradykinin degradation"],
+  "protein_class": "zinc metallopeptidase",
+  "regulatory_notes": {
+    "promoter_activity": "Endothelial-enriched; hypoxia-responsive elements.",
+    "enhancer_associations": "ACE I/D polymorphism affects transcriptional efficiency.",
+    "methylation_sensitivity": null,
+    "eqtl_tissues": ["lung", "kidney"]
+  },
+  "expression_context": [
+    {"tissue": "lung", "tpm_range": "40-120", "gtex_version": "v8", "citations": ["ref1", "ref2"]},
+    {"tissue": "kidney", "tpm_range": "25-80", "gtex_version": "v8", "citations": ["ref2"]}
+  ],
+  "pathways": ["nf-kb"],
+  "linked_diseases": [
+    {"disease_slug": "hypertension", "evidence_type": "GWAS", "strength": 0.82},
+    {"disease_slug": "coronary-artery-disease", "evidence_type": "pathway", "strength": 0.68}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "diet-quality", "evidence_type": "literature", "strength": 0.65}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "Elevated ACE activity increases angiotensin II and reduces bradykinin; sustained vasoconstriction and aldosterone release elevate blood pressure; ACE I/D genotype modulates this pathway and hypertensive risk.", "supporting_evidence": "D allele associates with higher ACE levels and hypertension in meta-analyses; ACE inhibitors lower BP and reduce cardiovascular events.", "confidence": "high"}
+  ],
+  "confidence": "high",
+  "references": [
+    {"id": "ref1", "title": "Structure of angiotensin I-converting enzyme", "authors": "Soubrier F, et al.", "year": 1988, "journal": "Proceedings of the National Academy of Sciences", "doi": "10.1073/pnas.85.24.9386"},
+    {"id": "ref2", "title": "GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues", "authors": "GTEx Consortium", "year": 2020, "journal": "Science", "doi": "10.1126/science.aaz1776"},
+    {"id": "ref3", "title": "Angiotensin-converting enzyme gene polymorphism and cardiovascular disease", "authors": "Sayadi M, et al.", "year": 2020, "journal": "Clinical and Experimental Hypertension", "doi": "10.1080/10641963.2019.1649685"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

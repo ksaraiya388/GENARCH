@@ -1,0 +1,26 @@
+{
+  "id": "exp_diet_quality",
+  "slug": "diet-quality",
+  "name": "Diet Quality",
+  "definition": "Overall dietary pattern and nutritional quality. Includes intake of fruits, vegetables, whole grains, refined carbohydrates, saturated fat, sugar, and ultra-processed foods. Proxy for nutritional exposures affecting metabolic and cardiovascular health.",
+  "proxies": [
+    {"name": "Mediterranean diet score", "unit": "score 0-9", "measurement_method": "FFQ-based scoring", "data_source": "Dietary questionnaire"},
+    {"name": "HEI score", "unit": "score 0-100", "measurement_method": "Healthy Eating Index", "data_source": "24-hour recall"}
+  ],
+  "systems_affected": [
+    {"system": "metabolic", "mechanism_summary": "Macronutrient composition affects insulin sensitivity, lipids, obesity"},
+    {"system": "cardiovascular", "mechanism_summary": "Diet influences blood pressure, endothelial function, atherosclerosis"}
+  ],
+  "sensitive_windows": [
+    {"period": "adolescence", "age_range": "10-24", "mechanism_rationale": "Dietary habits established; growth and metabolism", "citations": ["ref1"]}
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {"name": "adipose tissue", "effect_type": "metabolic", "citations": ["ref1"]}
+  ],
+  "references": [
+    {"id": "ref1", "title": "Diet quality and chronic disease", "authors": "Mozaffarian D", "year": 2016, "journal": "JAMA", "doi": "10.1001/jama.2016.17317"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

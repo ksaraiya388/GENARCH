@@ -1,0 +1,44 @@
+{
+  "id": "path_pi3k_akt_mtor",
+  "slug": "pi3k-akt-mtor",
+  "name": "PI3K-AKT-mTOR Signaling Pathway",
+  "summary": "The PI3K-AKT-mTOR pathway regulates cell growth, survival, metabolism, and proliferation. Growth factors (e.g., insulin, EGF) activate receptor tyrosine kinases; PI3K generates PIP3; AKT phosphorylates downstream targets including mTOR. mTOR integrates nutrient and growth signals. The pathway is frequently dysregulated in cancer: PTEN loss, PIK3CA mutations, and EGFR amplification activate the pathway. TP53 can suppress mTOR via AMPK and other mechanisms; TP53 loss releases inhibition. EGFR is a key upstream driver in lung cancer. Therapeutic inhibitors target PI3K, AKT, mTOR, and EGFR. Obesity and diet influence pathway activity via insulin and nutrient sensing.",
+  "canonical_source": "hsa04151",
+  "environmental_triggers": [
+    {"exposure_slug": "obesity-exposure", "trigger_type": "Hyperinsulinemia and adipokines activate PI3K-AKT; promotes cancer growth", "citations": ["ref1", "ref3"]},
+    {"exposure_slug": "diet-quality", "trigger_type": "Nutrient availability and insulin regulate mTOR", "citations": ["ref2"]},
+    {"exposure_slug": "tobacco", "trigger_type": "Tobacco induces EGFR mutations in lung cancer", "citations": ["ref4"]}
+  ],
+  "key_genes": [
+    {"gene_slug": "egfr", "role_in_pathway": "Receptor tyrosine kinase; activates PI3K; mutations common in lung cancer; therapeutic target", "citations": ["ref1", "ref4"]},
+    {"gene_slug": "tp53", "role_in_pathway": "Tumor suppressor; can suppress mTOR via AMPK and other effectors; loss promotes pathway activation", "citations": ["ref2", "ref3"]}
+  ],
+  "regulatory_checkpoints": [
+    {"node": "EGFR signaling", "modulator_genes": ["egfr"], "potential_therapeutic_target": true},
+    {"node": "mTOR complex", "modulator_genes": null, "potential_therapeutic_target": true},
+    {"node": "TP53-mediated suppression", "modulator_genes": ["tp53"], "potential_therapeutic_target": false}
+  ],
+  "tissue_specificity": [
+    {"tissue": "lung", "expression_evidence": "EGFR mutations in NSCLC"},
+    {"tissue": "breast", "expression_evidence": "PI3K pathway in breast cancer"},
+    {"tissue": "colorectum", "expression_evidence": "Pathway mutations in colorectal cancer"}
+  ],
+  "linked_diseases": [
+    {"disease_slug": "lung-cancer", "pathway_role": "EGFR mutations drive NSCLC; PI3K-AKT activation", "citations": ["ref1", "ref4"]},
+    {"disease_slug": "colorectal-cancer", "pathway_role": "PI3K and TP53 mutations; pathway dysregulation", "citations": ["ref2", "ref3"]},
+    {"disease_slug": "breast-cancer", "pathway_role": "PIK3CA mutations; mTOR in hormone-resistant disease", "citations": ["ref3"]}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "tobacco", "pathway_effect": "Smoking associated with EGFR-mutant lung cancer", "citations": ["ref1", "ref4"]},
+    {"exposure_slug": "obesity-exposure", "pathway_effect": "Obesity and hyperinsulinemia activate pathway; cancer risk", "citations": ["ref2", "ref3"]}
+  ],
+  "diagram_asset": null,
+  "references": [
+    {"id": "ref1", "title": "EGFR and lung cancer", "authors": "Lynch TJ, et al.", "year": 2004, "journal": "New England Journal of Medicine", "doi": "10.1056/NEJMoa040938"},
+    {"id": "ref2", "title": "PI3K-AKT-mTOR in cancer", "authors": "Fruman DA, Rommel C", "year": 2014, "journal": "Nature Reviews Drug Discovery", "doi": "10.1038/nrd4201"},
+    {"id": "ref3", "title": "Obesity and PI3K pathway in cancer", "authors": "Hopkins BD, et al.", "year": 2018, "journal": "Nature Reviews Cancer", "doi": "10.1038/s41568-018-0025-4"},
+    {"id": "ref4", "title": "TP53 and mTOR crosstalk", "authors": "Feng Z, Levine AJ", "year": 2010, "journal": "Cell", "doi": "10.1016/j.cell.2010.06.001"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

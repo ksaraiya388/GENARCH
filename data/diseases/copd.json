@@ -1,0 +1,138 @@
+{
+  "id": "dis_copd",
+  "slug": "copd",
+  "name": "Chronic Obstructive Pulmonary Disease",
+  "icd11_code": "CA22",
+  "summary": "Chronic obstructive pulmonary disease (COPD) is a progressive respiratory disorder characterized by airflow limitation, emphysema, and chronic bronchitis. Pathophysiology involves chronic inflammation, protease–antiprotease imbalance, oxidative stress, and airway remodeling. Alpha-1 antitrypsin deficiency (SERPINA1) causes ~1% of cases but illuminates mechanism. Genetic susceptibility: heritability is ~40–70%; SNP-based h² is ~0.12. Key genes include SERPINA1 (protease inhibitor), HHIP (hedgehog signaling, lung development), FAM13A, and loci near MMP12. Cigarette smoking is the dominant environmental cause; gene–smoking interactions are well-established. Only ~15–20% of smokers develop COPD, highlighting genetic susceptibility. Air pollution and occupational exposures contribute. Early-life lung development and adolescent smoking shape disease trajectory.",
+  "adolescent_relevance": "Lung function peaks in early adulthood; exposures during ages 10–24 affect lifetime trajectory. Smoking initiation in adolescence is a major modifiable risk; earlier onset amplifies genetic susceptibility. Alpha-1 antitrypsin deficiency may present in young adults. Asthma in adolescence increases COPD risk (asthma–COPD overlap). Secondhand smoke, air pollution, and occupational exposures during school/early work years matter. Genetic testing for SERPINA1 may be indicated in early-onset or family-history cases. PRS utility in adolescents is limited; smoking cessation remains primary prevention.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "SERPINA1",
+        "variant": "Z allele (Glu342Lys)",
+        "gwas_p": null,
+        "effect_size": 5.0,
+        "ancestry_composition": "Multi-ancestry",
+        "replication_status": "Established Mendelian",
+        "evidence": "Alpha-1 antitrypsin; protease inhibitor; deficiency causes early-onset emphysema; illuminates protease–antiprotease hypothesis",
+        "strength": 0.98,
+        "citations": ["ref1", "ref2"]
+      },
+      {
+        "gene": "HHIP",
+        "variant": "rs1828591",
+        "gwas_p": 1e-25,
+        "effect_size": 1.15,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "Hedgehog-interacting protein; lung development; affects FEV1 and COPD susceptibility",
+        "strength": 0.88,
+        "citations": ["ref1", "ref3"]
+      },
+      {
+        "gene": "FAM13A",
+        "variant": "rs7671167",
+        "gwas_p": 1e-20,
+        "effect_size": 1.1,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "Lung eQTL; Wnt signaling; COPD and lung function",
+        "strength": 0.82,
+        "citations": ["ref2", "ref4"]
+      },
+      {
+        "gene": "MMP12",
+        "variant": "rs626750",
+        "gwas_p": 1e-15,
+        "effect_size": 1.08,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "Matrix metalloproteinase; elastin degradation; emphysema pathogenesis",
+        "strength": 0.78,
+        "citations": ["ref3", "ref5"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.12,
+      "h2_narrow_sense": 0.55,
+      "source": "SpiroMeta and COPDGene consortia",
+      "year": 2019
+    },
+    "prs_notes": "COPD PRS show modest predictive ability (AUC ~0.58–0.65). SERPINA1 testing is clinically indicated for early-onset or family history. Transferability is limited: European discovery; SERPINA1 Z allele frequency varies by ancestry. PRS may stratify risk in smokers; G×E (smoking) is critical but not fully integrated. Clinical utility is investigational; smoking cessation remains paramount."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "tobacco",
+      "direction": "amplify",
+      "strength": 0.98,
+      "confidence": "high",
+      "mechanism_hypothesis": "Cigarette smoke causes inflammation, protease–antiprotease imbalance, oxidative stress; dominant environmental cause; gene–smoking interaction",
+      "citations": ["ref1", "ref2"]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "amplify",
+      "strength": 0.75,
+      "confidence": "high",
+      "mechanism_hypothesis": "PM2.5 and occupational dusts exacerbate COPD; accelerate decline; amplify genetic susceptibility",
+      "citations": ["ref3", "ref4"]
+    },
+    {
+      "exposure_slug": "diet-quality",
+      "direction": "buffer",
+      "strength": 0.5,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Antioxidant-rich diet may reduce oxidative stress; vitamin D and omega-3s; observational evidence",
+      "citations": ["ref5"]
+    },
+    {
+      "exposure_slug": "obesity-exposure",
+      "direction": "unknown",
+      "strength": 0.45,
+      "confidence": "low",
+      "mechanism_hypothesis": "Obesity affects lung mechanics and inflammation; paradoxically some studies show protective effect (obesity paradox) in severe COPD",
+      "citations": ["ref5"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "bronchial epithelium",
+      "relevance_score": 0.95,
+      "evidence_type": "eQTL and expression",
+      "citations": ["ref1", "ref2"]
+    },
+    {
+      "name": "alveolar macrophages",
+      "relevance_score": 0.92,
+      "evidence_type": "pathway",
+      "citations": ["ref2", "ref3"]
+    },
+    {
+      "name": "lung parenchyma",
+      "relevance_score": 0.9,
+      "evidence_type": "GWAS and pathology",
+      "citations": ["ref1"]
+    },
+    {
+      "name": "neutrophils",
+      "relevance_score": 0.85,
+      "evidence_type": "pathway",
+      "citations": ["ref3", "ref4"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "COPD GWAS are predominantly European (~85%); COPDGene and SpiroMeta include some diverse participants",
+    "transferability_notes": "SERPINA1 Z allele is most common in Europeans; S and other variants vary by ancestry. HHIP and other loci may transfer; effect sizes vary. PRS performance in non-European populations is reduced. Smoking prevalence and access to care differ globally.",
+    "data_gaps": "Under-representation of diverse ancestries; G×E (smoking) across populations; early-life determinants; never-smoker COPD genetics."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {"id": "ref1", "title": "Genetic landscape of chronic obstructive pulmonary disease identifies heterogeneous cell-types and phenotypes", "authors": "Sakornsakolpat P, et al.", "year": 2019, "journal": "Nature Genetics", "doi": "10.1038/s41588-019-0541-7"},
+    {"id": "ref2", "title": "Alpha-1 antitrypsin deficiency", "authors": "Stoller JK, Aboussouan LS", "year": 2012, "journal": "The Lancet", "doi": "10.1016/S0140-6736(11)60939-9"},
+    {"id": "ref3", "title": "HHIP haploinsufficiency causes emphysema", "authors": "Zhou X, et al.", "year": 2012, "journal": "Nature Genetics", "doi": "10.1038/ng.2342"},
+    {"id": "ref4", "title": "Air pollution and COPD", "authors": "Schikowski T, et al.", "year": 2014, "journal": "European Respiratory Journal", "doi": "10.1183/09031936.00002914"},
+    {"id": "ref5", "title": "Diet and COPD", "authors": "Varraso R, et al.", "year": 2015, "journal": "BMJ", "doi": "10.1136/bmj.h2862"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}
