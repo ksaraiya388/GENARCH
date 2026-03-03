@@ -1,15 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" fill="none">
   <defs>
-    <linearGradient id="dna-g" x1="16" y1="0" x2="48" y2="64" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#5EEAD4"/>
-      <stop offset="50%" stop-color="#2DD4BF"/>
-      <stop offset="100%" stop-color="#1FAFA0"/>
+    <linearGradient id="strand-a" x1="60" y1="0" x2="60" y2="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7EECD8"/>
+      <stop offset="35%" stop-color="#4DD9C0"/>
+      <stop offset="65%" stop-color="#2BB5A4"/>
+      <stop offset="100%" stop-color="#1E9A8B"/>
+    </linearGradient>
+    <linearGradient id="strand-b" x1="60" y1="0" x2="60" y2="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5EDDC8"/>
+      <stop offset="40%" stop-color="#3BC4AE"/>
+      <stop offset="70%" stop-color="#239E8E"/>
+      <stop offset="100%" stop-color="#1A857A"/>
+    </linearGradient>
+    <linearGradient id="rung-g" x1="30" y1="0" x2="90" y2="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5EDDC8"/>
+      <stop offset="100%" stop-color="#239E8E"/>
     </linearGradient>
   </defs>
-  <!-- DNA double helix forming G shape -->
-  <path d="M40 8C28 8 18 16 18 28L18 36C18 48 28 56 40 56L44 56L44 40L36 40" stroke="url(#dna-g)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <!-- Helix rungs -->
-  <line x1="22" y1="20" x2="36" y2="20" stroke="url(#dna-g)" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
-  <line x1="20" y1="32" x2="38" y2="32" stroke="url(#dna-g)" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
-  <line x1="22" y1="44" x2="36" y2="44" stroke="url(#dna-g)" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  <!-- Left strand of double helix curving in G shape -->
+  <path d="
+    M78 10 C58 10, 30 18, 24 38
+    C18 58, 20 68, 22 80
+    C24 95, 20 108, 24 120
+    C28 134, 44 148, 68 150
+    L80 150
+    L80 100
+    L62 100
+  " stroke="url(#strand-a)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Right strand (partially visible, intertwining) -->
+  <path d="
+    M82 14 C66 12, 42 18, 34 34
+    C26 52, 30 62, 32 76
+  " stroke="url(#strand-b)" stroke-width="5.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <path d="
+    M30 92 C28 104, 30 116, 34 128
+    C40 142, 54 150, 72 152
+  " stroke="url(#strand-b)" stroke-width="5.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <!-- Base-pair rungs -->
+  <line x1="30" y1="30" x2="72" y2="26" stroke="url(#rung-g)" stroke-width="4.5" stroke-linecap="round" opacity="0.55"/>
+  <line x1="24" y1="52" x2="62" y2="48" stroke="url(#rung-g)" stroke-width="4.5" stroke-linecap="round" opacity="0.65"/>
+  <line x1="22" y1="74" x2="56" y2="72" stroke="url(#rung-g)" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+  <line x1="24" y1="96" x2="52" y2="96" stroke="url(#rung-g)" stroke-width="4" stroke-linecap="round" opacity="0.45"/>
+  <line x1="26" y1="118" x2="58" y2="120" stroke="url(#rung-g)" stroke-width="4.5" stroke-linecap="round" opacity="0.55"/>
+  <line x1="36" y1="138" x2="66" y2="142" stroke="url(#rung-g)" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
 </svg>

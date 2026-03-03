@@ -1,18 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 64" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 100" fill="none">
   <defs>
-    <linearGradient id="dna-grad" x1="8" y1="0" x2="48" y2="64" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#5EEAD4"/>
-      <stop offset="50%" stop-color="#2DD4BF"/>
-      <stop offset="100%" stop-color="#1FAFA0"/>
+    <linearGradient id="ls-a" x1="36" y1="0" x2="36" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7EECD8"/>
+      <stop offset="35%" stop-color="#4DD9C0"/>
+      <stop offset="65%" stop-color="#2BB5A4"/>
+      <stop offset="100%" stop-color="#1E9A8B"/>
+    </linearGradient>
+    <linearGradient id="ls-b" x1="36" y1="0" x2="36" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5EDDC8"/>
+      <stop offset="40%" stop-color="#3BC4AE"/>
+      <stop offset="100%" stop-color="#1A857A"/>
+    </linearGradient>
+    <linearGradient id="ls-r" x1="18" y1="0" x2="54" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5EDDC8"/>
+      <stop offset="100%" stop-color="#239E8E"/>
     </linearGradient>
   </defs>
-  <!-- G monogram DNA helix -->
-  <path d="M36 8C24 8 16 16 16 26L16 38C16 48 24 56 36 56L40 56L40 40L32 40" stroke="url(#dna-grad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <line x1="19" y1="20" x2="33" y2="20" stroke="url(#dna-grad)" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
-  <line x1="18" y1="32" x2="35" y2="32" stroke="url(#dna-grad)" stroke-width="2.5" stroke-linecap="round" opacity="0.45"/>
-  <line x1="19" y1="44" x2="33" y2="44" stroke="url(#dna-grad)" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
-  <!-- ENARCH text -->
-  <text x="56" y="46" font-family="Inter, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="2">
-    <tspan fill="#2DD4BF">EN</tspan><tspan fill="#94A3B8">ARCH</tspan>
-  </text>
+
+  <!-- DNA double-helix G monogram -->
+  <g transform="translate(4, 4)">
+    <!-- Primary strand forming G curve -->
+    <path d="
+      M50 4 C36 4, 18 10, 14 24
+      C10 38, 12 44, 13 52
+      C14 62, 12 70, 14 78
+      C18 88, 30 96, 46 96
+      L52 96 L52 62 L40 62
+    " stroke="url(#ls-a)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Secondary strand (intertwining, partially visible) -->
+    <path d="
+      M52 6 C40 6, 26 10, 20 22
+      C16 34, 18 40, 20 50
+    " stroke="url(#ls-b)" stroke-width="3.8" stroke-linecap="round" fill="none" opacity="0.65"/>
+    <path d="
+      M18 60 C16 68, 18 76, 22 84
+      C26 92, 36 96, 48 97
+    " stroke="url(#ls-b)" stroke-width="3.8" stroke-linecap="round" fill="none" opacity="0.55"/>
+    <!-- Base-pair rungs -->
+    <line x1="18" y1="18" x2="44" y2="16" stroke="url(#ls-r)" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+    <line x1="14" y1="34" x2="40" y2="32" stroke="url(#ls-r)" stroke-width="3.2" stroke-linecap="round" opacity="0.6"/>
+    <line x1="13" y1="50" x2="36" y2="49" stroke="url(#ls-r)" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+    <line x1="14" y1="66" x2="34" y2="66" stroke="url(#ls-r)" stroke-width="2.8" stroke-linecap="round" opacity="0.4"/>
+    <line x1="16" y1="80" x2="38" y2="82" stroke="url(#ls-r)" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+    <line x1="24" y1="92" x2="44" y2="93" stroke="url(#ls-r)" stroke-width="2.8" stroke-linecap="round" opacity="0.45"/>
+  </g>
+
+  <!-- "EN" in teal -->
+  <text x="72" y="72" font-family="Inter, -apple-system, system-ui, sans-serif" font-size="56" font-weight="600" letter-spacing="3" fill="#2DD4BF">EN</text>
+  <!-- "ARCH" in cool gray -->
+  <text x="200" y="72" font-family="Inter, -apple-system, system-ui, sans-serif" font-size="56" font-weight="600" letter-spacing="3" fill="#8899A6">ARCH</text>
 </svg>
