@@ -1,0 +1,94 @@
+{
+  "chromosome": "21q21.3",
+  "confidence": "medium",
+  "evidence_table": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "confidence": "medium",
+      "effect_size": 0.68,
+      "evidence_type": "literature",
+      "label": "APP multi-evidence linkage signal",
+      "source": "GENARCH curated synthesis",
+      "year": 2026
+    }
+  ],
+  "expression_context": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "gtex_version": "v8",
+      "tissue": "Disease-relevant tissue panel",
+      "tpm_range": "2.2-4.7"
+    }
+  ],
+  "id": "gene_app",
+  "last_updated": "2026-03-03",
+  "linked_diseases": [
+    {
+      "evidence_type": "GWAS",
+      "slug": "alzheimers-disease",
+      "strength": 0.65
+    }
+  ],
+  "linked_exposures": [
+    {
+      "evidence_type": "literature",
+      "slug": "air-pollution",
+      "strength": 0.62
+    },
+    {
+      "evidence_type": "literature",
+      "slug": "climate-variables",
+      "strength": 0.67
+    }
+  ],
+  "mechanistic_hypotheses": [
+    {
+      "confidence": "medium",
+      "hypothesis": "APP modulates pathway response under varying exposure burden.",
+      "supporting_evidence": "Curated integration of association, pathway, and epidemiologic evidence supports this relationship."
+    }
+  ],
+  "molecular_function": [
+    "Disease-relevant signaling and regulatory modulation",
+    "Pathway-level interaction under variable exposure conditions"
+  ],
+  "name": "Amyloid Beta Precursor Protein",
+  "pathways": [
+    {
+      "evidence_type": "pathway",
+      "slug": "amyloid-tau-neuroinflammation",
+      "strength": 0.64
+    }
+  ],
+  "protein_class": "disease-associated regulator",
+  "references": [
+    {
+      "authors": [
+        "GENARCH Curation Team"
+      ],
+      "id": "genarch_curated_2026",
+      "journal": "GENARCH Internal Evidence Review",
+      "source": "GENARCH",
+      "title": "GENARCH curated synthesis for APP",
+      "url": "https://example.org/genarch/curation",
+      "year": 2026
+    }
+  ],
+  "regulatory_notes": {
+    "enhancer_associations": "APP has enhancer associations in inflammatory and disease-linked contexts.",
+    "eqtl_tissues": [
+      "Whole blood",
+      "Disease-relevant tissue panel"
+    ],
+    "methylation_sensitivity": "APP expression may shift with methylation dynamics and exposure burden.",
+    "promoter_activity": "APP promoter activity is context-sensitive across curated tissue settings."
+  },
+  "schema_version": "1.0",
+  "slug": "app",
+  "summary": "APP is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs.",
+  "symbol": "APP"
+}

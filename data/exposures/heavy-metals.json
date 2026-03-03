@@ -1,0 +1,101 @@
+{
+  "ancestry_modifiers": [
+    "Ancestry-specific baseline burden can change observed effect sizes."
+  ],
+  "biological_mechanism": "Lead, cadmium, and arsenic burden perturbs vascular, immune, and hematologic regulation.",
+  "definition": "Heavy Metals is curated as a population-level modifier in GENARCH for educational gene-environment interpretation across disease models.",
+  "dose_response_model": "Cumulative body burden and co-exposure dependent.",
+  "effect_direction": "amplify",
+  "evidence_table": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "confidence": "high",
+      "effect_size": 0.67,
+      "evidence_type": "literature",
+      "label": "Heavy Metals epidemiologic linkage signal",
+      "source": "GENARCH curated synthesis",
+      "year": 2026
+    }
+  ],
+  "exposure_category": "Heavy metals",
+  "exposure_distribution": {
+    "data_source": "GENARCH harmonized exposure layers",
+    "geographic_scope": "Global regional aggregate",
+    "summary_stats": {
+      "mean": 0.57,
+      "p50": 0.5,
+      "p90": 0.78
+    }
+  },
+  "gxe_highlights": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "direction": "amplify",
+      "disease_slug": "hypertension",
+      "evidence_type": "literature",
+      "gene_slug": "ace"
+    }
+  ],
+  "id": "exp_heavy-metals",
+  "interacting_genes": [
+    "ace",
+    "hbb",
+    "tlr2"
+  ],
+  "last_updated": "2026-03-03",
+  "name": "Heavy Metals",
+  "proxies": [
+    {
+      "data_source": "GENARCH harmonized exposure layers",
+      "measurement_method": "Standardized z-score from harmonized public indicators",
+      "name": "Heavy Metals composite index",
+      "unit": "index"
+    }
+  ],
+  "references": [
+    {
+      "authors": [
+        "GENARCH Curation Team"
+      ],
+      "id": "genarch_curated_2026",
+      "journal": "GENARCH Internal Evidence Review",
+      "source": "GENARCH",
+      "title": "GENARCH curated synthesis for Heavy Metals",
+      "url": "https://example.org/genarch/curation",
+      "year": 2026
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "Adolescence through older adulthood",
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "mechanism_rationale": "Childhood and chronic adulthood vulnerability windows.",
+      "period": "Life-course"
+    }
+  ],
+  "slug": "heavy-metals",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.66,
+      "mechanism_summary": "Lead, cadmium, and arsenic burden perturbs vascular, immune, and hematologic regulation.",
+      "system": "Immune-metabolic interface"
+    }
+  ],
+  "temporal_sensitivity": "Childhood and chronic adulthood vulnerability windows.",
+  "tissues": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "effect_type": "Exposure-sensitive inflammatory and regulatory shift",
+      "name": "Systemic interface tissues"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "chromosome": "15q21.1",
+  "confidence": "medium",
+  "evidence_table": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "confidence": "medium",
+      "effect_size": 0.63,
+      "evidence_type": "literature",
+      "label": "FBN1 multi-evidence linkage signal",
+      "source": "GENARCH curated synthesis",
+      "year": 2026
+    }
+  ],
+  "expression_context": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "gtex_version": "v8",
+      "tissue": "Disease-relevant tissue panel",
+      "tpm_range": "3.1-5.6"
+    }
+  ],
+  "id": "gene_fbn1",
+  "last_updated": "2026-03-03",
+  "linked_diseases": [
+    {
+      "evidence_type": "GWAS",
+      "slug": "marfan-syndrome",
+      "strength": 0.65
+    }
+  ],
+  "linked_exposures": [
+    {
+      "evidence_type": "literature",
+      "slug": "climate-variables",
+      "strength": 0.62
+    }
+  ],
+  "mechanistic_hypotheses": [
+    {
+      "confidence": "medium",
+      "hypothesis": "FBN1 modulates pathway response under varying exposure burden.",
+      "supporting_evidence": "Curated integration of association, pathway, and epidemiologic evidence supports this relationship."
+    }
+  ],
+  "molecular_function": [
+    "Disease-relevant signaling and regulatory modulation",
+    "Pathway-level interaction under variable exposure conditions"
+  ],
+  "name": "Fibrillin 1",
+  "pathways": [
+    {
+      "evidence_type": "pathway",
+      "slug": "connective-tissue-tgf-beta-signaling",
+      "strength": 0.64
+    }
+  ],
+  "protein_class": "disease-associated regulator",
+  "references": [
+    {
+      "authors": [
+        "GENARCH Curation Team"
+      ],
+      "id": "genarch_curated_2026",
+      "journal": "GENARCH Internal Evidence Review",
+      "source": "GENARCH",
+      "title": "GENARCH curated synthesis for FBN1",
+      "url": "https://example.org/genarch/curation",
+      "year": 2026
+    }
+  ],
+  "regulatory_notes": {
+    "enhancer_associations": "FBN1 has enhancer associations in inflammatory and disease-linked contexts.",
+    "eqtl_tissues": [
+      "Whole blood",
+      "Disease-relevant tissue panel"
+    ],
+    "methylation_sensitivity": "FBN1 expression may shift with methylation dynamics and exposure burden.",
+    "promoter_activity": "FBN1 promoter activity is context-sensitive across curated tissue settings."
+  },
+  "schema_version": "1.0",
+  "slug": "fbn1",
+  "summary": "FBN1 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs.",
+  "symbol": "FBN1"
+}

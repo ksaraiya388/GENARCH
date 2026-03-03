@@ -2,5 +2,93 @@
   {
     "name": "NF-kB Signaling",
     "slug": "nf-kb-signaling"
+  },
+  {
+    "name": "LDL Metabolism and Endothelial Inflammation",
+    "slug": "ldl-metabolism-and-endothelial-inflammation"
+  },
+  {
+    "name": "Insulin Secretion and Metabolic Signaling",
+    "slug": "insulin-secretion-and-metabolic-signaling"
+  },
+  {
+    "name": "RAAS Signaling Axis",
+    "slug": "raas-signaling-axis"
+  },
+  {
+    "name": "DNA Repair and Estrogen Signaling",
+    "slug": "dna-repair-and-estrogen-signaling"
+  },
+  {
+    "name": "Colorectal Oncogenesis WNT/MMR Axis",
+    "slug": "colorectal-oncogenesis-wnt-mmr"
+  },
+  {
+    "name": "Nicotinic Receptor and EGFR Axis",
+    "slug": "nicotinic-receptor-egfr-axis"
+  },
+  {
+    "name": "Complement-Neurodevelopment Signaling",
+    "slug": "complement-neurodevelopment-signaling"
+  },
+  {
+    "name": "HPA Axis Stress Response",
+    "slug": "hpa-axis-stress-response"
+  },
+  {
+    "name": "Amyloid-Tau Neuroinflammation",
+    "slug": "amyloid-tau-neuroinflammation"
+  },
+  {
+    "name": "TNF-driven Autoimmune Signaling",
+    "slug": "tnf-driven-autoimmune-signaling"
+  },
+  {
+    "name": "Interferon-Complement Axis",
+    "slug": "interferon-complement-axis"
+  },
+  {
+    "name": "Vitamin D Immune Modulation",
+    "slug": "vitamin-d-immune-modulation"
+  },
+  {
+    "name": "Protease-Antiprotease Lung Remodeling",
+    "slug": "protease-antiprotease-lung-remodeling"
+  },
+  {
+    "name": "Telomere Maintenance and Fibrosis",
+    "slug": "telomere-maintenance-fibrosis"
+  },
+  {
+    "name": "Gut-Brain Metabolic Regulation",
+    "slug": "gut-brain-metabolic-regulation"
+  },
+  {
+    "name": "Innate Antiviral OAS Signaling",
+    "slug": "innate-antiviral-oas-signaling"
+  },
+  {
+    "name": "IFNG Mycobacterial Response",
+    "slug": "ifng-mycobacterial-response"
+  },
+  {
+    "name": "Hemoglobin Structure and Erythropoiesis",
+    "slug": "hemoglobin-structure-erythropoiesis"
+  },
+  {
+    "name": "Globin Synthesis Regulation",
+    "slug": "globin-synthesis-regulation"
+  },
+  {
+    "name": "CFTR Epithelial Transport",
+    "slug": "cftr-epithelial-transport"
+  },
+  {
+    "name": "Huntingtin Neurodegeneration",
+    "slug": "huntingtin-neurodegeneration"
+  },
+  {
+    "name": "Connective Tissue TGF-beta Signaling",
+    "slug": "connective-tissue-tgf-beta-signaling"
   }
 ]

@@ -1,0 +1,131 @@
+{
+  "canonical_source": "GENARCH:RAAS_SIGNALING_AXIS",
+  "diagram_asset": "/diagrams/nf-kb-signaling.svg",
+  "environmental_triggers": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "exposure_slug": "diet-quality",
+      "trigger_type": "Exposure-linked activation pressure on pathway signaling nodes."
+    },
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "exposure_slug": "heavy-metals",
+      "trigger_type": "Exposure-linked activation pressure on pathway signaling nodes."
+    },
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "exposure_slug": "psychosocial-stress",
+      "trigger_type": "Exposure-linked activation pressure on pathway signaling nodes."
+    }
+  ],
+  "evidence_table": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "confidence": "high",
+      "effect_size": 0.7,
+      "evidence_type": "pathway",
+      "label": "RAAS Signaling Axis integrated evidence signal",
+      "source": "GENARCH curated synthesis",
+      "year": 2026
+    }
+  ],
+  "id": "path_raas-signaling-axis",
+  "key_genes": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "gene_slug": "ace",
+      "role_in_pathway": "Mechanistic anchor for disease-context pathway interpretation."
+    },
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "gene_slug": "agt",
+      "role_in_pathway": "Mechanistic anchor for disease-context pathway interpretation."
+    },
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "gene_slug": "umod",
+      "role_in_pathway": "Mechanistic anchor for disease-context pathway interpretation."
+    }
+  ],
+  "last_updated": "2026-03-03",
+  "linked_diseases": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "pathway_role": "Mechanistic conduit between genomic susceptibility and exposure burden.",
+      "slug": "hypertension"
+    }
+  ],
+  "linked_exposures": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "pathway_effect": "Exposure burden may increase pathway activation and downstream inflammatory signaling.",
+      "slug": "diet-quality"
+    },
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "pathway_effect": "Exposure burden may increase pathway activation and downstream inflammatory signaling.",
+      "slug": "heavy-metals"
+    },
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "pathway_effect": "Exposure burden may increase pathway activation and downstream inflammatory signaling.",
+      "slug": "psychosocial-stress"
+    }
+  ],
+  "name": "RAAS Signaling Axis",
+  "references": [
+    {
+      "authors": [
+        "GENARCH Curation Team"
+      ],
+      "id": "genarch_curated_2026",
+      "journal": "GENARCH Internal Evidence Review",
+      "source": "GENARCH",
+      "title": "GENARCH curated synthesis for RAAS Signaling Axis",
+      "url": "https://example.org/genarch/curation",
+      "year": 2026
+    }
+  ],
+  "regulatory_checkpoints": [
+    {
+      "modulator_genes": [
+        "ACE",
+        "AGT",
+        "UMOD"
+      ],
+      "node": "Signal integration checkpoint",
+      "potential_therapeutic_target": "Potential intervention node for translational burden reduction research."
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "raas-signaling-axis",
+  "summary": "RAAS Signaling Axis is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH.",
+  "tissue_specificity": [
+    {
+      "expression_evidence": "Curated transcriptomic and literature evidence supports pathway activity in linked diseases.",
+      "tissue": "Disease-relevant tissue compartments"
+    }
+  ]
+}

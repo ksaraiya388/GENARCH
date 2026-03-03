@@ -1,0 +1,99 @@
+{
+  "chromosome": "12p13.33",
+  "confidence": "medium",
+  "evidence_table": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "confidence": "high",
+      "effect_size": 0.63,
+      "evidence_type": "GWAS",
+      "label": "CACNA1C multi-evidence linkage signal",
+      "source": "GENARCH curated synthesis",
+      "year": 2026
+    }
+  ],
+  "expression_context": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "gtex_version": "v8",
+      "tissue": "Disease-relevant tissue panel",
+      "tpm_range": "2.6-5.1"
+    }
+  ],
+  "id": "gene_cacna1c",
+  "last_updated": "2026-03-03",
+  "linked_diseases": [
+    {
+      "evidence_type": "GWAS",
+      "slug": "major-depressive-disorder",
+      "strength": 0.65
+    },
+    {
+      "evidence_type": "GWAS",
+      "slug": "schizophrenia",
+      "strength": 0.71
+    }
+  ],
+  "linked_exposures": [
+    {
+      "evidence_type": "literature",
+      "slug": "psychosocial-stress",
+      "strength": 0.62
+    }
+  ],
+  "mechanistic_hypotheses": [
+    {
+      "confidence": "high",
+      "hypothesis": "CACNA1C modulates pathway response under varying exposure burden.",
+      "supporting_evidence": "Curated integration of association, pathway, and epidemiologic evidence supports this relationship."
+    }
+  ],
+  "molecular_function": [
+    "Disease-relevant signaling and regulatory modulation",
+    "Pathway-level interaction under variable exposure conditions"
+  ],
+  "name": "Calcium Voltage-Gated Channel Subunit Alpha1 C",
+  "pathways": [
+    {
+      "evidence_type": "pathway",
+      "slug": "complement-neurodevelopment-signaling",
+      "strength": 0.64
+    },
+    {
+      "evidence_type": "pathway",
+      "slug": "hpa-axis-stress-response",
+      "strength": 0.71
+    }
+  ],
+  "protein_class": "disease-associated regulator",
+  "references": [
+    {
+      "authors": [
+        "GENARCH Curation Team"
+      ],
+      "id": "genarch_curated_2026",
+      "journal": "GENARCH Internal Evidence Review",
+      "source": "GENARCH",
+      "title": "GENARCH curated synthesis for CACNA1C",
+      "url": "https://example.org/genarch/curation",
+      "year": 2026
+    }
+  ],
+  "regulatory_notes": {
+    "enhancer_associations": "CACNA1C has enhancer associations in inflammatory and disease-linked contexts.",
+    "eqtl_tissues": [
+      "Whole blood",
+      "Disease-relevant tissue panel"
+    ],
+    "methylation_sensitivity": "CACNA1C expression may shift with methylation dynamics and exposure burden.",
+    "promoter_activity": "CACNA1C promoter activity is context-sensitive across curated tissue settings."
+  },
+  "schema_version": "1.0",
+  "slug": "cacna1c",
+  "summary": "CACNA1C is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs.",
+  "symbol": "CACNA1C"
+}

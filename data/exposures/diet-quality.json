@@ -1,0 +1,101 @@
+{
+  "ancestry_modifiers": [
+    "Ancestry-specific baseline burden can change observed effect sizes."
+  ],
+  "biological_mechanism": "Nutritional patterns alter lipid, glucose, and inflammatory pathways across cardiometabolic diseases.",
+  "definition": "Diet Quality is curated as a population-level modifier in GENARCH for educational gene-environment interpretation across disease models.",
+  "dose_response_model": "Pattern quality and duration dependent.",
+  "effect_direction": "amplify",
+  "evidence_table": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "confidence": "high",
+      "effect_size": 0.61,
+      "evidence_type": "literature",
+      "label": "Diet Quality epidemiologic linkage signal",
+      "source": "GENARCH curated synthesis",
+      "year": 2026
+    }
+  ],
+  "exposure_category": "Diet quality",
+  "exposure_distribution": {
+    "data_source": "GENARCH harmonized exposure layers",
+    "geographic_scope": "Global regional aggregate",
+    "summary_stats": {
+      "mean": 0.51,
+      "p50": 0.46,
+      "p90": 0.74
+    }
+  },
+  "gxe_highlights": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "direction": "amplify",
+      "disease_slug": "type-2-diabetes",
+      "evidence_type": "literature",
+      "gene_slug": "tcf7l2"
+    }
+  ],
+  "id": "exp_diet-quality",
+  "interacting_genes": [
+    "tcf7l2",
+    "pparg",
+    "ldlr"
+  ],
+  "last_updated": "2026-03-03",
+  "name": "Diet Quality",
+  "proxies": [
+    {
+      "data_source": "GENARCH harmonized exposure layers",
+      "measurement_method": "Standardized z-score from harmonized public indicators",
+      "name": "Diet Quality composite index",
+      "unit": "index"
+    }
+  ],
+  "references": [
+    {
+      "authors": [
+        "GENARCH Curation Team"
+      ],
+      "id": "genarch_curated_2026",
+      "journal": "GENARCH Internal Evidence Review",
+      "source": "GENARCH",
+      "title": "GENARCH curated synthesis for Diet Quality",
+      "url": "https://example.org/genarch/curation",
+      "year": 2026
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "Adolescence through older adulthood",
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "mechanism_rationale": "Early-life nutrition and long-term adulthood effects.",
+      "period": "Life-course"
+    }
+  ],
+  "slug": "diet-quality",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.82,
+      "mechanism_summary": "Nutritional patterns alter lipid, glucose, and inflammatory pathways across cardiometabolic diseases.",
+      "system": "Immune-metabolic interface"
+    }
+  ],
+  "temporal_sensitivity": "Early-life nutrition and long-term adulthood effects.",
+  "tissues": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "effect_type": "Exposure-sensitive inflammatory and regulatory shift",
+      "name": "Systemic interface tissues"
+    }
+  ]
+}

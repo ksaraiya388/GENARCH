@@ -1,7 +1,217 @@
 [
   {
+    "name": "ABO Blood Group",
+    "slug": "abo",
+    "symbol": "ABO"
+  },
+  {
+    "name": "Angiotensin Converting Enzyme",
+    "slug": "ace",
+    "symbol": "ACE"
+  },
+  {
+    "name": "Angiotensinogen",
+    "slug": "agt",
+    "symbol": "AGT"
+  },
+  {
+    "name": "APC Regulator of WNT Signaling Pathway",
+    "slug": "apc",
+    "symbol": "APC"
+  },
+  {
+    "name": "Apolipoprotein B",
+    "slug": "apob",
+    "symbol": "APOB"
+  },
+  {
+    "name": "Apolipoprotein E",
+    "slug": "apoe",
+    "symbol": "APOE"
+  },
+  {
+    "name": "Amyloid Beta Precursor Protein",
+    "slug": "app",
+    "symbol": "APP"
+  },
+  {
+    "name": "BRCA1 DNA Repair Associated",
+    "slug": "brca1",
+    "symbol": "BRCA1"
+  },
+  {
+    "name": "BRCA2 DNA Repair Associated",
+    "slug": "brca2",
+    "symbol": "BRCA2"
+  },
+  {
+    "name": "Complement C4A",
+    "slug": "c4a",
+    "symbol": "C4A"
+  },
+  {
+    "name": "Calcium Voltage-Gated Channel Subunit Alpha1 C",
+    "slug": "cacna1c",
+    "symbol": "CACNA1C"
+  },
+  {
+    "name": "CF Transmembrane Conductance Regulator",
+    "slug": "cftr",
+    "symbol": "CFTR"
+  },
+  {
+    "name": "Cholinergic Receptor Nicotinic Alpha 5 Subunit",
+    "slug": "chrna5",
+    "symbol": "CHRNA5"
+  },
+  {
+    "name": "Dopamine Receptor D2",
+    "slug": "drd2",
+    "symbol": "DRD2"
+  },
+  {
+    "name": "Epidermal Growth Factor Receptor",
+    "slug": "egfr",
+    "symbol": "EGFR"
+  },
+  {
+    "name": "Fibrillin 1",
+    "slug": "fbn1",
+    "symbol": "FBN1"
+  },
+  {
+    "name": "Fibroblast Growth Factor Receptor 2",
+    "slug": "fgfr2",
+    "symbol": "FGFR2"
+  },
+  {
+    "name": "FTO Alpha-Ketoglutarate Dependent Dioxygenase",
+    "slug": "fto",
+    "symbol": "FTO"
+  },
+  {
+    "name": "Hemoglobin Subunit Alpha 1",
+    "slug": "hba1",
+    "symbol": "HBA1"
+  },
+  {
+    "name": "Hemoglobin Subunit Alpha 2",
+    "slug": "hba2",
+    "symbol": "HBA2"
+  },
+  {
+    "name": "Hemoglobin Subunit Beta",
+    "slug": "hbb",
+    "symbol": "HBB"
+  },
+  {
+    "name": "MHC Class II DR Beta 1",
+    "slug": "hla-drb1",
+    "symbol": "HLA-DRB1"
+  },
+  {
+    "name": "Huntingtin",
+    "slug": "htt",
+    "symbol": "HTT"
+  },
+  {
+    "name": "Interferon Gamma",
+    "slug": "ifng",
+    "symbol": "IFNG"
+  },
+  {
     "name": "Interleukin 33",
     "slug": "il33",
     "symbol": "IL33"
+  },
+  {
+    "name": "Low Density Lipoprotein Receptor",
+    "slug": "ldlr",
+    "symbol": "LDLR"
+  },
+  {
+    "name": "Lipoprotein(a)",
+    "slug": "lpa",
+    "symbol": "LPA"
+  },
+  {
+    "name": "Melanocortin 4 Receptor",
+    "slug": "mc4r",
+    "symbol": "MC4R"
+  },
+  {
+    "name": "MutL Homolog 1",
+    "slug": "mlh1",
+    "symbol": "MLH1"
+  },
+  {
+    "name": "2-5-Oligoadenylate Synthetase 1",
+    "slug": "oas1",
+    "symbol": "OAS1"
+  },
+  {
+    "name": "Proprotein Convertase Subtilisin/Kexin Type 9",
+    "slug": "pcsk9",
+    "symbol": "PCSK9"
+  },
+  {
+    "name": "Peroxisome Proliferator Activated Receptor Gamma",
+    "slug": "pparg",
+    "symbol": "PPARG"
+  },
+  {
+    "name": "Presenilin 1",
+    "slug": "psen1",
+    "symbol": "PSEN1"
+  },
+  {
+    "name": "Presenilin 2",
+    "slug": "psen2",
+    "symbol": "PSEN2"
+  },
+  {
+    "name": "Serpin Family A Member 1",
+    "slug": "serpina1",
+    "symbol": "SERPINA1"
+  },
+  {
+    "name": "Solute Carrier Family 30 Member 8",
+    "slug": "slc30a8",
+    "symbol": "SLC30A8"
+  },
+  {
+    "name": "Transcription Factor 7 Like 2",
+    "slug": "tcf7l2",
+    "symbol": "TCF7L2"
+  },
+  {
+    "name": "Telomerase RNA Component",
+    "slug": "terc",
+    "symbol": "TERC"
+  },
+  {
+    "name": "Telomerase Reverse Transcriptase",
+    "slug": "tert",
+    "symbol": "TERT"
+  },
+  {
+    "name": "Toll Like Receptor 2",
+    "slug": "tlr2",
+    "symbol": "TLR2"
+  },
+  {
+    "name": "TOX High Mobility Group Box Family Member 3",
+    "slug": "tox3",
+    "symbol": "TOX3"
+  },
+  {
+    "name": "Tumor Protein P53",
+    "slug": "tp53",
+    "symbol": "TP53"
+  },
+  {
+    "name": "Uromodulin",
+    "slug": "umod",
+    "symbol": "UMOD"
   }
 ]

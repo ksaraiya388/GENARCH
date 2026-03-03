@@ -1,0 +1,101 @@
+{
+  "canonical_source": "GENARCH:HEMOGLOBIN_STRUCTURE_ERYTHROPOIESIS",
+  "diagram_asset": "/diagrams/nf-kb-signaling.svg",
+  "environmental_triggers": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "exposure_slug": "climate-variables",
+      "trigger_type": "Exposure-linked activation pressure on pathway signaling nodes."
+    },
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "exposure_slug": "heavy-metals",
+      "trigger_type": "Exposure-linked activation pressure on pathway signaling nodes."
+    }
+  ],
+  "evidence_table": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "confidence": "high",
+      "effect_size": 0.7,
+      "evidence_type": "pathway",
+      "label": "Hemoglobin Structure and Erythropoiesis integrated evidence signal",
+      "source": "GENARCH curated synthesis",
+      "year": 2026
+    }
+  ],
+  "id": "path_hemoglobin-structure-erythropoiesis",
+  "key_genes": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "gene_slug": "hbb",
+      "role_in_pathway": "Mechanistic anchor for disease-context pathway interpretation."
+    }
+  ],
+  "last_updated": "2026-03-03",
+  "linked_diseases": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "pathway_role": "Mechanistic conduit between genomic susceptibility and exposure burden.",
+      "slug": "sickle-cell-disease"
+    }
+  ],
+  "linked_exposures": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "pathway_effect": "Exposure burden may increase pathway activation and downstream inflammatory signaling.",
+      "slug": "climate-variables"
+    },
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "pathway_effect": "Exposure burden may increase pathway activation and downstream inflammatory signaling.",
+      "slug": "heavy-metals"
+    }
+  ],
+  "name": "Hemoglobin Structure and Erythropoiesis",
+  "references": [
+    {
+      "authors": [
+        "GENARCH Curation Team"
+      ],
+      "id": "genarch_curated_2026",
+      "journal": "GENARCH Internal Evidence Review",
+      "source": "GENARCH",
+      "title": "GENARCH curated synthesis for Hemoglobin Structure and Erythropoiesis",
+      "url": "https://example.org/genarch/curation",
+      "year": 2026
+    }
+  ],
+  "regulatory_checkpoints": [
+    {
+      "modulator_genes": [
+        "HBB"
+      ],
+      "node": "Signal integration checkpoint",
+      "potential_therapeutic_target": "Potential intervention node for translational burden reduction research."
+    }
+  ],
+  "schema_version": "1.0",
+  "slug": "hemoglobin-structure-erythropoiesis",
+  "summary": "Hemoglobin Structure and Erythropoiesis is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH.",
+  "tissue_specificity": [
+    {
+      "expression_evidence": "Curated transcriptomic and literature evidence supports pathway activity in linked diseases.",
+      "tissue": "Disease-relevant tissue compartments"
+    }
+  ]
+}

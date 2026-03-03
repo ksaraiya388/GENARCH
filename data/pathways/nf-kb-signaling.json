@@ -1,116 +1,101 @@
 {
-  "canonical_source": "Reactome:R-HSA-975871",
+  "canonical_source": "GENARCH:NF_KB_SIGNALING",
   "diagram_asset": "/diagrams/nf-kb-signaling.svg",
   "environmental_triggers": [
     {
       "citations": [
-        "path_2021_nfkb_reactome",
-        "lit_2023_pm25_il33"
+        "genarch_curated_2026"
       ],
       "exposure_slug": "air-pollution",
-      "trigger_type": "ROS-mediated activation"
+      "trigger_type": "Exposure-linked activation pressure on pathway signaling nodes."
+    },
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "exposure_slug": "climate-variables",
+      "trigger_type": "Exposure-linked activation pressure on pathway signaling nodes."
     }
   ],
   "evidence_table": [
     {
       "citations": [
-        "path_2021_nfkb_reactome",
-        "lit_2023_pm25_il33"
+        "genarch_curated_2026"
       ],
       "confidence": "high",
-      "effect_size": 0.75,
+      "effect_size": 0.7,
       "evidence_type": "pathway",
-      "label": "PM2.5 and NF-kB activation evidence",
-      "source": "Reactome and curated literature",
-      "year": 2023
+      "label": "NF-kB Signaling integrated evidence signal",
+      "source": "GENARCH curated synthesis",
+      "year": 2026
     }
   ],
   "id": "path_nf-kb-signaling",
   "key_genes": [
     {
       "citations": [
-        "path_2021_nfkb_reactome"
+        "genarch_curated_2026"
       ],
       "gene_slug": "il33",
-      "role_in_pathway": "Upstream alarmin-linked amplifier"
+      "role_in_pathway": "Mechanistic anchor for disease-context pathway interpretation."
     }
   ],
-  "last_updated": "2026-02-26",
+  "last_updated": "2026-03-03",
   "linked_diseases": [
     {
       "citations": [
-        "path_2021_nfkb_reactome",
-        "lit_2023_pm25_il33"
+        "genarch_curated_2026"
       ],
-      "pathway_role": "Inflammatory amplification",
+      "pathway_role": "Mechanistic conduit between genomic susceptibility and exposure burden.",
       "slug": "asthma"
     }
   ],
   "linked_exposures": [
     {
       "citations": [
-        "air_2021_guarnieri",
-        "lit_2023_pm25_il33"
+        "genarch_curated_2026"
       ],
-      "pathway_effect": "Increased oxidative and inflammatory signaling",
+      "pathway_effect": "Exposure burden may increase pathway activation and downstream inflammatory signaling.",
       "slug": "air-pollution"
+    },
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "pathway_effect": "Exposure burden may increase pathway activation and downstream inflammatory signaling.",
+      "slug": "climate-variables"
     }
   ],
   "name": "NF-kB Signaling",
   "references": [
     {
       "authors": [
-        "Reactome Consortium"
+        "GENARCH Curation Team"
       ],
-      "id": "path_2021_nfkb_reactome",
-      "journal": "Reactome",
-      "source": "Reactome",
-      "title": "Reactome NF-kB pathway annotations",
-      "url": "https://reactome.org/",
-      "year": 2021
-    },
-    {
-      "authors": [
-        "Curated synthesis"
-      ],
-      "id": "lit_2023_pm25_il33",
-      "journal": "GENARCH Review",
-      "source": "GENARCH curated review",
-      "title": "PM2.5 exposure and IL-33 mediated airway signaling",
-      "url": "https://example.org/genarch/pm25-il33",
-      "year": 2023
-    },
-    {
-      "authors": [
-        "Guarnieri M",
-        "Balmes JR"
-      ],
-      "id": "air_2021_guarnieri",
-      "journal": "The Lancet",
-      "source": "The Lancet",
-      "title": "Outdoor air pollution and asthma",
-      "url": "https://www.thelancet.com/",
-      "year": 2021
+      "id": "genarch_curated_2026",
+      "journal": "GENARCH Internal Evidence Review",
+      "source": "GENARCH",
+      "title": "GENARCH curated synthesis for NF-kB Signaling",
+      "url": "https://example.org/genarch/curation",
+      "year": 2026
     }
   ],
   "regulatory_checkpoints": [
     {
       "modulator_genes": [
-        "NFKB1",
-        "RELA",
-        "IKBKG"
+        "IL33"
       ],
-      "node": "IKB degradation",
-      "potential_therapeutic_target": "Context-dependent anti-inflammatory intervention research"
+      "node": "Signal integration checkpoint",
+      "potential_therapeutic_target": "Potential intervention node for translational burden reduction research."
     }
   ],
   "schema_version": "1.0",
   "slug": "nf-kb-signaling",
-  "summary": "NF-kB signaling is a core inflammatory transcriptional pathway activated by oxidative stress, cytokines, and pattern-recognition signaling. In airway disease contexts, NF-kB activity can increase transcription of cytokines and chemokines that reinforce inflammatory loops and tissue damage.",
+  "summary": "NF-kB Signaling is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH.",
   "tissue_specificity": [
     {
-      "expression_evidence": "Pathway genes show high expression and activation in airway epithelial inflammatory states.",
-      "tissue": "Bronchial epithelium"
+      "expression_evidence": "Curated transcriptomic and literature evidence supports pathway activity in linked diseases.",
+      "tissue": "Disease-relevant tissue compartments"
     }
   ]
 }

@@ -1,0 +1,101 @@
+{
+  "ancestry_modifiers": [
+    "Ancestry-specific baseline burden can change observed effect sizes."
+  ],
+  "biological_mechanism": "Hormone-active compounds alter adipocyte, metabolic, and reproductive signaling pathways.",
+  "definition": "Endocrine Disruptors is curated as a population-level modifier in GENARCH for educational gene-environment interpretation across disease models.",
+  "dose_response_model": "Non-linear effects in several compound classes.",
+  "effect_direction": "amplify",
+  "evidence_table": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "confidence": "medium",
+      "effect_size": 0.7,
+      "evidence_type": "literature",
+      "label": "Endocrine Disruptors epidemiologic linkage signal",
+      "source": "GENARCH curated synthesis",
+      "year": 2026
+    }
+  ],
+  "exposure_category": "Endocrine disruptors",
+  "exposure_distribution": {
+    "data_source": "GENARCH harmonized exposure layers",
+    "geographic_scope": "Global regional aggregate",
+    "summary_stats": {
+      "mean": 0.6,
+      "p50": 0.52,
+      "p90": 0.8
+    }
+  },
+  "gxe_highlights": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "direction": "amplify",
+      "disease_slug": "obesity",
+      "evidence_type": "literature",
+      "gene_slug": "fto"
+    }
+  ],
+  "id": "exp_endocrine-disruptors",
+  "interacting_genes": [
+    "fto",
+    "pparg",
+    "brca1"
+  ],
+  "last_updated": "2026-03-03",
+  "name": "Endocrine Disruptors",
+  "proxies": [
+    {
+      "data_source": "GENARCH harmonized exposure layers",
+      "measurement_method": "Standardized z-score from harmonized public indicators",
+      "name": "Endocrine Disruptors composite index",
+      "unit": "index"
+    }
+  ],
+  "references": [
+    {
+      "authors": [
+        "GENARCH Curation Team"
+      ],
+      "id": "genarch_curated_2026",
+      "journal": "GENARCH Internal Evidence Review",
+      "source": "GENARCH",
+      "title": "GENARCH curated synthesis for Endocrine Disruptors",
+      "url": "https://example.org/genarch/curation",
+      "year": 2026
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitive_windows": [
+    {
+      "age_range": "Adolescence through older adulthood",
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "mechanism_rationale": "Prenatal and pubertal developmental sensitivity.",
+      "period": "Life-course"
+    }
+  ],
+  "slug": "endocrine-disruptors",
+  "systems_affected": [
+    {
+      "evidence_strength": 0.74,
+      "mechanism_summary": "Hormone-active compounds alter adipocyte, metabolic, and reproductive signaling pathways.",
+      "system": "Immune-metabolic interface"
+    }
+  ],
+  "temporal_sensitivity": "Prenatal and pubertal developmental sensitivity.",
+  "tissues": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "effect_type": "Exposure-sensitive inflammatory and regulatory shift",
+      "name": "Systemic interface tissues"
+    }
+  ]
+}

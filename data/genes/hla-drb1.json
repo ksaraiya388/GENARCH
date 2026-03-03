@@ -1,0 +1,129 @@
+{
+  "chromosome": "6p21.32",
+  "confidence": "medium",
+  "evidence_table": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "confidence": "high",
+      "effect_size": 0.68,
+      "evidence_type": "GWAS",
+      "label": "HLA-DRB1 multi-evidence linkage signal",
+      "source": "GENARCH curated synthesis",
+      "year": 2026
+    }
+  ],
+  "expression_context": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "gtex_version": "v8",
+      "tissue": "Disease-relevant tissue panel",
+      "tpm_range": "3.7-6.2"
+    }
+  ],
+  "id": "gene_hla-drb1",
+  "last_updated": "2026-03-03",
+  "linked_diseases": [
+    {
+      "evidence_type": "GWAS",
+      "slug": "multiple-sclerosis",
+      "strength": 0.65
+    },
+    {
+      "evidence_type": "GWAS",
+      "slug": "rheumatoid-arthritis",
+      "strength": 0.71
+    },
+    {
+      "evidence_type": "GWAS",
+      "slug": "systemic-lupus-erythematosus",
+      "strength": 0.77
+    }
+  ],
+  "linked_exposures": [
+    {
+      "evidence_type": "literature",
+      "slug": "climate-variables",
+      "strength": 0.62
+    },
+    {
+      "evidence_type": "literature",
+      "slug": "endocrine-disruptors",
+      "strength": 0.67
+    },
+    {
+      "evidence_type": "literature",
+      "slug": "psychosocial-stress",
+      "strength": 0.72
+    },
+    {
+      "evidence_type": "literature",
+      "slug": "tobacco",
+      "strength": 0.77
+    },
+    {
+      "evidence_type": "literature",
+      "slug": "uv-radiation",
+      "strength": 0.82
+    }
+  ],
+  "mechanistic_hypotheses": [
+    {
+      "confidence": "high",
+      "hypothesis": "HLA-DRB1 modulates pathway response under varying exposure burden.",
+      "supporting_evidence": "Curated integration of association, pathway, and epidemiologic evidence supports this relationship."
+    }
+  ],
+  "molecular_function": [
+    "Disease-relevant signaling and regulatory modulation",
+    "Pathway-level interaction under variable exposure conditions"
+  ],
+  "name": "MHC Class II DR Beta 1",
+  "pathways": [
+    {
+      "evidence_type": "pathway",
+      "slug": "interferon-complement-axis",
+      "strength": 0.64
+    },
+    {
+      "evidence_type": "pathway",
+      "slug": "tnf-driven-autoimmune-signaling",
+      "strength": 0.71
+    },
+    {
+      "evidence_type": "pathway",
+      "slug": "vitamin-d-immune-modulation",
+      "strength": 0.78
+    }
+  ],
+  "protein_class": "disease-associated regulator",
+  "references": [
+    {
+      "authors": [
+        "GENARCH Curation Team"
+      ],
+      "id": "genarch_curated_2026",
+      "journal": "GENARCH Internal Evidence Review",
+      "source": "GENARCH",
+      "title": "GENARCH curated synthesis for HLA-DRB1",
+      "url": "https://example.org/genarch/curation",
+      "year": 2026
+    }
+  ],
+  "regulatory_notes": {
+    "enhancer_associations": "HLA-DRB1 has enhancer associations in inflammatory and disease-linked contexts.",
+    "eqtl_tissues": [
+      "Whole blood",
+      "Disease-relevant tissue panel"
+    ],
+    "methylation_sensitivity": "HLA-DRB1 expression may shift with methylation dynamics and exposure burden.",
+    "promoter_activity": "HLA-DRB1 promoter activity is context-sensitive across curated tissue settings."
+  },
+  "schema_version": "1.0",
+  "slug": "hla-drb1",
+  "summary": "HLA-DRB1 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs.",
+  "symbol": "HLA-DRB1"
+}

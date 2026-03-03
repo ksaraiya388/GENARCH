@@ -2,5 +2,93 @@
   {
     "name": "Asthma",
     "slug": "asthma"
+  },
+  {
+    "name": "Coronary Artery Disease",
+    "slug": "coronary-artery-disease"
+  },
+  {
+    "name": "Type 2 Diabetes",
+    "slug": "type-2-diabetes"
+  },
+  {
+    "name": "Hypertension",
+    "slug": "hypertension"
+  },
+  {
+    "name": "Breast Cancer",
+    "slug": "breast-cancer"
+  },
+  {
+    "name": "Colorectal Cancer",
+    "slug": "colorectal-cancer"
+  },
+  {
+    "name": "Lung Cancer",
+    "slug": "lung-cancer"
+  },
+  {
+    "name": "Schizophrenia",
+    "slug": "schizophrenia"
+  },
+  {
+    "name": "Major Depressive Disorder",
+    "slug": "major-depressive-disorder"
+  },
+  {
+    "name": "Alzheimers Disease",
+    "slug": "alzheimers-disease"
+  },
+  {
+    "name": "Rheumatoid Arthritis",
+    "slug": "rheumatoid-arthritis"
+  },
+  {
+    "name": "Systemic Lupus Erythematosus",
+    "slug": "systemic-lupus-erythematosus"
+  },
+  {
+    "name": "Multiple Sclerosis",
+    "slug": "multiple-sclerosis"
+  },
+  {
+    "name": "Chronic Obstructive Pulmonary Disease",
+    "slug": "copd"
+  },
+  {
+    "name": "Pulmonary Fibrosis",
+    "slug": "pulmonary-fibrosis"
+  },
+  {
+    "name": "Obesity",
+    "slug": "obesity"
+  },
+  {
+    "name": "COVID-19 Severity",
+    "slug": "covid-19-severity"
+  },
+  {
+    "name": "Tuberculosis Susceptibility",
+    "slug": "tuberculosis-susceptibility"
+  },
+  {
+    "name": "Sickle Cell Disease",
+    "slug": "sickle-cell-disease"
+  },
+  {
+    "name": "Thalassemia",
+    "slug": "thalassemia"
+  },
+  {
+    "name": "Cystic Fibrosis",
+    "slug": "cystic-fibrosis"
+  },
+  {
+    "name": "Huntington Disease",
+    "slug": "huntington-disease"
+  },
+  {
+    "name": "Marfan Syndrome",
+    "slug": "marfan-syndrome"
   }
 ]

@@ -2,18 +2,1418 @@
   "edges": [
     {
       "attrs": {
-        "ancestry_rep": "European-dominated",
+        "ancestry_rep": "Multi-ancestry",
         "confidence": "medium",
         "direction": "amplify",
         "evidence_type": "GWAS",
         "sources": [
-          "gwas_2019_demenais"
+          "genarch_curated_2026"
         ],
-        "strength": 0.86,
+        "strength": 0.84,
         "tissue": [
-          "Bronchial epithelium"
+          "Systemic"
         ],
-        "year_first_reported": 2019
+        "year_first_reported": 2020
+      },
+      "id": "e105",
+      "source": "disease_thalassemia",
+      "target": "gene_hbb",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.84,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e15",
+      "source": "disease_type-2-diabetes",
+      "target": "gene_pparg",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.84,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e16",
+      "source": "disease_type-2-diabetes",
+      "target": "gene_fto",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.84,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e22",
+      "source": "disease_hypertension",
+      "target": "gene_umod",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.84,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e29",
+      "source": "disease_breast-cancer",
+      "target": "gene_tp53",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.84,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e30",
+      "source": "disease_breast-cancer",
+      "target": "gene_fgfr2",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.84,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e31",
+      "source": "disease_breast-cancer",
+      "target": "gene_tox3",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.84,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e46",
+      "source": "disease_schizophrenia",
+      "target": "gene_c4a",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.84,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e55",
+      "source": "disease_alzheimers-disease",
+      "target": "gene_psen2",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.84,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e56",
+      "source": "disease_alzheimers-disease",
+      "target": "gene_apoe",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.84,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e7",
+      "source": "disease_coronary-artery-disease",
+      "target": "gene_pcsk9",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.84,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e8",
+      "source": "disease_coronary-artery-disease",
+      "target": "gene_lpa",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.77,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e104",
+      "source": "disease_thalassemia",
+      "target": "gene_hba2",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.77,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e14",
+      "source": "disease_type-2-diabetes",
+      "target": "gene_slc30a8",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.77,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e21",
+      "source": "disease_hypertension",
+      "target": "gene_agt",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.77,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e28",
+      "source": "disease_breast-cancer",
+      "target": "gene_brca2",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.77,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e35",
+      "source": "disease_colorectal-cancer",
+      "target": "gene_mlh1",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.77,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e40",
+      "source": "disease_lung-cancer",
+      "target": "gene_egfr",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.77,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e45",
+      "source": "disease_schizophrenia",
+      "target": "gene_cacna1c",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.77,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e50",
+      "source": "disease_major-depressive-disorder",
+      "target": "gene_drd2",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.77,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e54",
+      "source": "disease_alzheimers-disease",
+      "target": "gene_psen1",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.77,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e6",
+      "source": "disease_coronary-artery-disease",
+      "target": "gene_apob",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.77,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e65",
+      "source": "disease_systemic-lupus-erythematosus",
+      "target": "gene_c4a",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.77,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e79",
+      "source": "disease_pulmonary-fibrosis",
+      "target": "gene_terc",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.77,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e84",
+      "source": "disease_obesity",
+      "target": "gene_mc4r",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.77,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e90",
+      "source": "disease_covid-19-severity",
+      "target": "gene_abo",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.77,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e95",
+      "source": "disease_tuberculosis-susceptibility",
+      "target": "gene_ifng",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.76,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e11",
+      "source": "exposure_air-pollution",
+      "target": "disease_coronary-artery-disease",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.76,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e25",
+      "source": "exposure_heavy-metals",
+      "target": "disease_hypertension",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.76,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e76",
+      "source": "exposure_climate-variables",
+      "target": "disease_copd",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.76,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e87",
+      "source": "exposure_microbiome-alteration",
+      "target": "disease_obesity",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.72,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e128",
+      "source": "gene_c4a",
+      "target": "pathway_interferon-complement-axis",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.72,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e130",
+      "source": "gene_cacna1c",
+      "target": "pathway_hpa-axis-stress-response",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.72,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e134",
+      "source": "gene_drd2",
+      "target": "pathway_hpa-axis-stress-response",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.72,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e139",
+      "source": "gene_fto",
+      "target": "pathway_insulin-secretion-and-metabolic-signaling",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.72,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e143",
+      "source": "gene_hbb",
+      "target": "pathway_hemoglobin-structure-erythropoiesis",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.72,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e145",
+      "source": "gene_hla-drb1",
+      "target": "pathway_tnf-driven-autoimmune-signaling",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.72,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e146",
+      "source": "gene_hla-drb1",
+      "target": "pathway_vitamin-d-immune-modulation",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e102",
+      "source": "pathway_hemoglobin-structure-erythropoiesis",
+      "target": "disease_sickle-cell-disease",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e107",
+      "source": "pathway_globin-synthesis-regulation",
+      "target": "disease_thalassemia",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e111",
+      "source": "pathway_cftr-epithelial-transport",
+      "target": "disease_cystic-fibrosis",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e114",
+      "source": "pathway_huntingtin-neurodegeneration",
+      "target": "disease_huntington-disease",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e117",
+      "source": "pathway_connective-tissue-tgf-beta-signaling",
+      "target": "disease_marfan-syndrome",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e12",
+      "source": "pathway_ldl-metabolism-and-endothelial-inflammation",
+      "target": "disease_coronary-artery-disease",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e170",
+      "source": "exposure_air-pollution",
+      "target": "gene_apoe",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e173",
+      "source": "exposure_tobacco",
+      "target": "gene_hla-drb1",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e176",
+      "source": "exposure_diet-quality",
+      "target": "gene_ldlr",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e179",
+      "source": "exposure_uv-radiation",
+      "target": "gene_tp53",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e182",
+      "source": "exposure_heavy-metals",
+      "target": "gene_tlr2",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e185",
+      "source": "exposure_endocrine-disruptors",
+      "target": "gene_brca1",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e188",
+      "source": "exposure_psychosocial-stress",
+      "target": "gene_ifng",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e19",
+      "source": "pathway_insulin-secretion-and-metabolic-signaling",
+      "target": "disease_type-2-diabetes",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e191",
+      "source": "exposure_microbiome-alteration",
+      "target": "gene_cftr",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e194",
+      "source": "exposure_climate-variables",
+      "target": "gene_fbn1",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e26",
+      "source": "pathway_raas-signaling-axis",
+      "target": "disease_hypertension",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e33",
+      "source": "pathway_dna-repair-and-estrogen-signaling",
+      "target": "disease_breast-cancer",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e38",
+      "source": "pathway_colorectal-oncogenesis-wnt-mmr",
+      "target": "disease_colorectal-cancer",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e4",
+      "source": "pathway_nf-kb-signaling",
+      "target": "disease_asthma",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e43",
+      "source": "pathway_nicotinic-receptor-egfr-axis",
+      "target": "disease_lung-cancer",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e48",
+      "source": "pathway_complement-neurodevelopment-signaling",
+      "target": "disease_schizophrenia",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e52",
+      "source": "pathway_hpa-axis-stress-response",
+      "target": "disease_major-depressive-disorder",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e59",
+      "source": "pathway_amyloid-tau-neuroinflammation",
+      "target": "disease_alzheimers-disease",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e63",
+      "source": "pathway_tnf-driven-autoimmune-signaling",
+      "target": "disease_rheumatoid-arthritis",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e68",
+      "source": "pathway_interferon-complement-axis",
+      "target": "disease_systemic-lupus-erythematosus",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e72",
+      "source": "pathway_vitamin-d-immune-modulation",
+      "target": "disease_multiple-sclerosis",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e77",
+      "source": "pathway_protease-antiprotease-lung-remodeling",
+      "target": "disease_copd",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e82",
+      "source": "pathway_telomere-maintenance-fibrosis",
+      "target": "disease_pulmonary-fibrosis",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e88",
+      "source": "pathway_gut-brain-metabolic-regulation",
+      "target": "disease_obesity",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e93",
+      "source": "pathway_innate-antiviral-oas-signaling",
+      "target": "disease_covid-19-severity",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.71,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e98",
+      "source": "pathway_ifng-mycobacterial-response",
+      "target": "disease_tuberculosis-susceptibility",
+      "type": "IMPLICATED_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
       },
       "id": "e1",
       "source": "disease_asthma",
@@ -27,12 +1427,1951 @@
         "direction": "amplify",
         "evidence_type": "literature",
         "sources": [
-          "air_2021_guarnieri"
+          "genarch_curated_2026"
         ],
-        "strength": 0.82,
+        "strength": 0.7,
         "tissue": [
-          "Lung",
-          "Bronchial epithelium"
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e10",
+      "source": "exposure_tobacco",
+      "target": "disease_coronary-artery-disease",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e101",
+      "source": "exposure_heavy-metals",
+      "target": "disease_sickle-cell-disease",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e103",
+      "source": "disease_thalassemia",
+      "target": "gene_hba1",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e108",
+      "source": "disease_cystic-fibrosis",
+      "target": "gene_cftr",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e110",
+      "source": "exposure_microbiome-alteration",
+      "target": "disease_cystic-fibrosis",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e112",
+      "source": "disease_huntington-disease",
+      "target": "gene_htt",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e115",
+      "source": "disease_marfan-syndrome",
+      "target": "gene_fbn1",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e13",
+      "source": "disease_type-2-diabetes",
+      "target": "gene_tcf7l2",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e18",
+      "source": "exposure_endocrine-disruptors",
+      "target": "disease_type-2-diabetes",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e20",
+      "source": "disease_hypertension",
+      "target": "gene_ace",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e24",
+      "source": "exposure_psychosocial-stress",
+      "target": "disease_hypertension",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e27",
+      "source": "disease_breast-cancer",
+      "target": "gene_brca1",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e3",
+      "source": "exposure_climate-variables",
+      "target": "disease_asthma",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e34",
+      "source": "disease_colorectal-cancer",
+      "target": "gene_apc",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e37",
+      "source": "exposure_microbiome-alteration",
+      "target": "disease_colorectal-cancer",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e39",
+      "source": "disease_lung-cancer",
+      "target": "gene_chrna5",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e42",
+      "source": "exposure_air-pollution",
+      "target": "disease_lung-cancer",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e44",
+      "source": "disease_schizophrenia",
+      "target": "gene_drd2",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e49",
+      "source": "disease_major-depressive-disorder",
+      "target": "gene_cacna1c",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e5",
+      "source": "disease_coronary-artery-disease",
+      "target": "gene_ldlr",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e53",
+      "source": "disease_alzheimers-disease",
+      "target": "gene_app",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e58",
+      "source": "exposure_climate-variables",
+      "target": "disease_alzheimers-disease",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e60",
+      "source": "disease_rheumatoid-arthritis",
+      "target": "gene_hla-drb1",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e62",
+      "source": "exposure_psychosocial-stress",
+      "target": "disease_rheumatoid-arthritis",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e64",
+      "source": "disease_systemic-lupus-erythematosus",
+      "target": "gene_hla-drb1",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e67",
+      "source": "exposure_endocrine-disruptors",
+      "target": "disease_systemic-lupus-erythematosus",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e69",
+      "source": "disease_multiple-sclerosis",
+      "target": "gene_hla-drb1",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e71",
+      "source": "exposure_climate-variables",
+      "target": "disease_multiple-sclerosis",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e73",
+      "source": "disease_copd",
+      "target": "gene_serpina1",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e75",
+      "source": "exposure_air-pollution",
+      "target": "disease_copd",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e78",
+      "source": "disease_pulmonary-fibrosis",
+      "target": "gene_tert",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e81",
+      "source": "exposure_heavy-metals",
+      "target": "disease_pulmonary-fibrosis",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e83",
+      "source": "disease_obesity",
+      "target": "gene_fto",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e86",
+      "source": "exposure_endocrine-disruptors",
+      "target": "disease_obesity",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e89",
+      "source": "disease_covid-19-severity",
+      "target": "gene_oas1",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e92",
+      "source": "exposure_climate-variables",
+      "target": "disease_covid-19-severity",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e94",
+      "source": "disease_tuberculosis-susceptibility",
+      "target": "gene_tlr2",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e97",
+      "source": "exposure_psychosocial-stress",
+      "target": "disease_tuberculosis-susceptibility",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Multi-ancestry",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "GWAS",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.7,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2020
+      },
+      "id": "e99",
+      "source": "disease_sickle-cell-disease",
+      "target": "gene_hbb",
+      "type": "ASSOCIATED_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e118",
+      "source": "gene_abo",
+      "target": "pathway_innate-antiviral-oas-signaling",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e119",
+      "source": "gene_ace",
+      "target": "pathway_raas-signaling-axis",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e120",
+      "source": "gene_agt",
+      "target": "pathway_raas-signaling-axis",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e121",
+      "source": "gene_apc",
+      "target": "pathway_colorectal-oncogenesis-wnt-mmr",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e122",
+      "source": "gene_apob",
+      "target": "pathway_ldl-metabolism-and-endothelial-inflammation",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e123",
+      "source": "gene_apoe",
+      "target": "pathway_amyloid-tau-neuroinflammation",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e124",
+      "source": "gene_app",
+      "target": "pathway_amyloid-tau-neuroinflammation",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e125",
+      "source": "gene_brca1",
+      "target": "pathway_dna-repair-and-estrogen-signaling",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e126",
+      "source": "gene_brca2",
+      "target": "pathway_dna-repair-and-estrogen-signaling",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e127",
+      "source": "gene_c4a",
+      "target": "pathway_complement-neurodevelopment-signaling",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e129",
+      "source": "gene_cacna1c",
+      "target": "pathway_complement-neurodevelopment-signaling",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e131",
+      "source": "gene_cftr",
+      "target": "pathway_cftr-epithelial-transport",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e132",
+      "source": "gene_chrna5",
+      "target": "pathway_nicotinic-receptor-egfr-axis",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e133",
+      "source": "gene_drd2",
+      "target": "pathway_complement-neurodevelopment-signaling",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e135",
+      "source": "gene_egfr",
+      "target": "pathway_nicotinic-receptor-egfr-axis",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e136",
+      "source": "gene_fbn1",
+      "target": "pathway_connective-tissue-tgf-beta-signaling",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e137",
+      "source": "gene_fgfr2",
+      "target": "pathway_dna-repair-and-estrogen-signaling",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e138",
+      "source": "gene_fto",
+      "target": "pathway_gut-brain-metabolic-regulation",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e140",
+      "source": "gene_hba1",
+      "target": "pathway_globin-synthesis-regulation",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e141",
+      "source": "gene_hba2",
+      "target": "pathway_globin-synthesis-regulation",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e142",
+      "source": "gene_hbb",
+      "target": "pathway_globin-synthesis-regulation",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e144",
+      "source": "gene_hla-drb1",
+      "target": "pathway_interferon-complement-axis",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e147",
+      "source": "gene_htt",
+      "target": "pathway_huntingtin-neurodegeneration",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e148",
+      "source": "gene_ifng",
+      "target": "pathway_ifng-mycobacterial-response",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e149",
+      "source": "gene_il33",
+      "target": "pathway_nf-kb-signaling",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e150",
+      "source": "gene_ldlr",
+      "target": "pathway_ldl-metabolism-and-endothelial-inflammation",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e151",
+      "source": "gene_lpa",
+      "target": "pathway_ldl-metabolism-and-endothelial-inflammation",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e152",
+      "source": "gene_mc4r",
+      "target": "pathway_gut-brain-metabolic-regulation",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e153",
+      "source": "gene_mlh1",
+      "target": "pathway_colorectal-oncogenesis-wnt-mmr",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e154",
+      "source": "gene_oas1",
+      "target": "pathway_innate-antiviral-oas-signaling",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e155",
+      "source": "gene_pcsk9",
+      "target": "pathway_ldl-metabolism-and-endothelial-inflammation",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e156",
+      "source": "gene_pparg",
+      "target": "pathway_insulin-secretion-and-metabolic-signaling",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e157",
+      "source": "gene_psen1",
+      "target": "pathway_amyloid-tau-neuroinflammation",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e158",
+      "source": "gene_psen2",
+      "target": "pathway_amyloid-tau-neuroinflammation",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e159",
+      "source": "gene_serpina1",
+      "target": "pathway_protease-antiprotease-lung-remodeling",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e160",
+      "source": "gene_slc30a8",
+      "target": "pathway_insulin-secretion-and-metabolic-signaling",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e161",
+      "source": "gene_tcf7l2",
+      "target": "pathway_insulin-secretion-and-metabolic-signaling",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e162",
+      "source": "gene_terc",
+      "target": "pathway_telomere-maintenance-fibrosis",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e163",
+      "source": "gene_tert",
+      "target": "pathway_telomere-maintenance-fibrosis",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e164",
+      "source": "gene_tlr2",
+      "target": "pathway_ifng-mycobacterial-response",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e165",
+      "source": "gene_tox3",
+      "target": "pathway_dna-repair-and-estrogen-signaling",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e166",
+      "source": "gene_tp53",
+      "target": "pathway_dna-repair-and-estrogen-signaling",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "pathway",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e167",
+      "source": "gene_umod",
+      "target": "pathway_raas-signaling-axis",
+      "type": "PARTICIPATES_IN"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e169",
+      "source": "exposure_air-pollution",
+      "target": "gene_egfr",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e172",
+      "source": "exposure_tobacco",
+      "target": "gene_serpina1",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e175",
+      "source": "exposure_diet-quality",
+      "target": "gene_pparg",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e178",
+      "source": "exposure_uv-radiation",
+      "target": "gene_c4a",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e181",
+      "source": "exposure_heavy-metals",
+      "target": "gene_hbb",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e184",
+      "source": "exposure_endocrine-disruptors",
+      "target": "gene_pparg",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e187",
+      "source": "exposure_psychosocial-stress",
+      "target": "gene_drd2",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e190",
+      "source": "exposure_microbiome-alteration",
+      "target": "gene_mc4r",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.66,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e193",
+      "source": "exposure_climate-variables",
+      "target": "gene_oas1",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e100",
+      "source": "exposure_climate-variables",
+      "target": "disease_sickle-cell-disease",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e106",
+      "source": "exposure_heavy-metals",
+      "target": "disease_thalassemia",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e109",
+      "source": "exposure_air-pollution",
+      "target": "disease_cystic-fibrosis",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e113",
+      "source": "exposure_psychosocial-stress",
+      "target": "disease_huntington-disease",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e116",
+      "source": "exposure_climate-variables",
+      "target": "disease_marfan-syndrome",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e17",
+      "source": "exposure_diet-quality",
+      "target": "disease_type-2-diabetes",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
         ],
         "year_first_reported": 2021
       },
@@ -46,40 +3385,20 @@
         "ancestry_rep": "Unknown",
         "confidence": "medium",
         "direction": "amplify",
-        "evidence_type": "pathway",
+        "evidence_type": "literature",
         "sources": [
-          "path_2021_nfkb_reactome"
+          "genarch_curated_2026"
         ],
-        "strength": 0.79,
+        "strength": 0.64,
         "tissue": [
-          "Bronchial epithelium"
+          "Systemic"
         ],
         "year_first_reported": 2021
       },
-      "id": "e4",
-      "source": "gene_il33",
-      "target": "pathway_nf-kb-signaling",
-      "type": "PARTICIPATES_IN"
-    },
-    {
-      "attrs": {
-        "ancestry_rep": "Unknown",
-        "confidence": "medium",
-        "direction": "amplify",
-        "evidence_type": "pathway",
-        "sources": [
-          "path_2021_nfkb_reactome"
-        ],
-        "strength": 0.77,
-        "tissue": [
-          "Lung"
-        ],
-        "year_first_reported": 2021
-      },
-      "id": "e6",
-      "source": "pathway_nf-kb-signaling",
-      "target": "disease_asthma",
-      "type": "IMPLICATED_IN"
+      "id": "e23",
+      "source": "exposure_diet-quality",
+      "target": "disease_hypertension",
+      "type": "MODIFIES"
     },
     {
       "attrs": {
@@ -88,15 +3407,315 @@
         "direction": "amplify",
         "evidence_type": "literature",
         "sources": [
-          "lit_2023_pm25_il33"
+          "genarch_curated_2026"
         ],
-        "strength": 0.72,
+        "strength": 0.64,
         "tissue": [
-          "Bronchial epithelium"
+          "Systemic"
         ],
-        "year_first_reported": 2023
+        "year_first_reported": 2021
       },
-      "id": "e3",
+      "id": "e32",
+      "source": "exposure_endocrine-disruptors",
+      "target": "disease_breast-cancer",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e36",
+      "source": "exposure_diet-quality",
+      "target": "disease_colorectal-cancer",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e41",
+      "source": "exposure_tobacco",
+      "target": "disease_lung-cancer",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e47",
+      "source": "exposure_psychosocial-stress",
+      "target": "disease_schizophrenia",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e51",
+      "source": "exposure_psychosocial-stress",
+      "target": "disease_major-depressive-disorder",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e57",
+      "source": "exposure_air-pollution",
+      "target": "disease_alzheimers-disease",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e61",
+      "source": "exposure_tobacco",
+      "target": "disease_rheumatoid-arthritis",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e66",
+      "source": "exposure_uv-radiation",
+      "target": "disease_systemic-lupus-erythematosus",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e70",
+      "source": "exposure_uv-radiation",
+      "target": "disease_multiple-sclerosis",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e74",
+      "source": "exposure_tobacco",
+      "target": "disease_copd",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e80",
+      "source": "exposure_air-pollution",
+      "target": "disease_pulmonary-fibrosis",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e85",
+      "source": "exposure_diet-quality",
+      "target": "disease_obesity",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e9",
+      "source": "exposure_diet-quality",
+      "target": "disease_coronary-artery-disease",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e91",
+      "source": "exposure_air-pollution",
+      "target": "disease_covid-19-severity",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.64,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2021
+      },
+      "id": "e96",
+      "source": "exposure_heavy-metals",
+      "target": "disease_tuberculosis-susceptibility",
+      "type": "MODIFIES"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.61,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e168",
       "source": "exposure_air-pollution",
       "target": "gene_il33",
       "type": "INTERACTS_WITH"
@@ -105,33 +3724,172 @@
       "attrs": {
         "ancestry_rep": "Unknown",
         "confidence": "medium",
-        "direction": "unknown",
-        "evidence_type": "eQTL",
+        "direction": "amplify",
+        "evidence_type": "literature",
         "sources": [
-          "gtex_2020_cons"
+          "genarch_curated_2026"
         ],
-        "strength": 0.68,
+        "strength": 0.61,
         "tissue": [
-          "Bronchial epithelium"
+          "Systemic"
         ],
-        "year_first_reported": 2020
+        "year_first_reported": 2022
       },
-      "id": "e5",
-      "source": "gene_il33",
-      "target": "tissue_bronchial-epithelium",
-      "type": "EXPRESSED_IN"
+      "id": "e171",
+      "source": "exposure_tobacco",
+      "target": "gene_chrna5",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.61,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e174",
+      "source": "exposure_diet-quality",
+      "target": "gene_tcf7l2",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.61,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e177",
+      "source": "exposure_uv-radiation",
+      "target": "gene_hla-drb1",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.61,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e180",
+      "source": "exposure_heavy-metals",
+      "target": "gene_ace",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.61,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e183",
+      "source": "exposure_endocrine-disruptors",
+      "target": "gene_fto",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.61,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e186",
+      "source": "exposure_psychosocial-stress",
+      "target": "gene_cacna1c",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.61,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e189",
+      "source": "exposure_microbiome-alteration",
+      "target": "gene_apc",
+      "type": "INTERACTS_WITH"
+    },
+    {
+      "attrs": {
+        "ancestry_rep": "Unknown",
+        "confidence": "medium",
+        "direction": "amplify",
+        "evidence_type": "literature",
+        "sources": [
+          "genarch_curated_2026"
+        ],
+        "strength": 0.61,
+        "tissue": [
+          "Systemic"
+        ],
+        "year_first_reported": 2022
+      },
+      "id": "e192",
+      "source": "exposure_climate-variables",
+      "target": "gene_serpina1",
+      "type": "INTERACTS_WITH"
     }
   ],
   "metadata": {
-    "edge_count": 6,
+    "edge_count": 194,
     "evidence_type_counts": {
-      "GWAS": 1,
-      "eQTL": 1,
-      "literature": 2,
-      "pathway": 2
+      "GWAS": 50,
+      "literature": 71,
+      "pathway": 73
     },
-    "generated_at": "2026-02-26",
-    "node_count": 5,
+    "generated_at": "2026-03-03",
+    "node_count": 98,
     "pipeline_version": "1.0.0",
     "schema_version": "1.0"
   },
@@ -140,8 +3898,8 @@
       "attrs": {
         "confidence": "high",
         "entity_route": "/atlas/diseases/asthma",
-        "last_updated": "2026-02-26",
-        "summary": "Chronic airway inflammatory disease with exposure-sensitive liability shifts."
+        "last_updated": "2026-03-03",
+        "summary": "Asthma is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epidemiologic variat"
       },
       "id": "disease_asthma",
       "label": "Asthma",
@@ -151,21 +3909,669 @@
     {
       "attrs": {
         "confidence": "high",
+        "entity_route": "/atlas/diseases/coronary-artery-disease",
+        "last_updated": "2026-03-03",
+        "summary": "Coronary Artery Disease is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epi"
+      },
+      "id": "disease_coronary-artery-disease",
+      "label": "Coronary Artery Disease",
+      "slug": "coronary-artery-disease",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/diseases/type-2-diabetes",
+        "last_updated": "2026-03-03",
+        "summary": "Type 2 Diabetes is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epidemiolog"
+      },
+      "id": "disease_type-2-diabetes",
+      "label": "Type 2 Diabetes",
+      "slug": "type-2-diabetes",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/diseases/hypertension",
+        "last_updated": "2026-03-03",
+        "summary": "Hypertension is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epidemiologic "
+      },
+      "id": "disease_hypertension",
+      "label": "Hypertension",
+      "slug": "hypertension",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/diseases/breast-cancer",
+        "last_updated": "2026-03-03",
+        "summary": "Breast Cancer is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epidemiologic"
+      },
+      "id": "disease_breast-cancer",
+      "label": "Breast Cancer",
+      "slug": "breast-cancer",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/diseases/colorectal-cancer",
+        "last_updated": "2026-03-03",
+        "summary": "Colorectal Cancer is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epidemiol"
+      },
+      "id": "disease_colorectal-cancer",
+      "label": "Colorectal Cancer",
+      "slug": "colorectal-cancer",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/diseases/lung-cancer",
+        "last_updated": "2026-03-03",
+        "summary": "Lung Cancer is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epidemiologic v"
+      },
+      "id": "disease_lung-cancer",
+      "label": "Lung Cancer",
+      "slug": "lung-cancer",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/diseases/schizophrenia",
+        "last_updated": "2026-03-03",
+        "summary": "Schizophrenia is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epidemiologic"
+      },
+      "id": "disease_schizophrenia",
+      "label": "Schizophrenia",
+      "slug": "schizophrenia",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/diseases/major-depressive-disorder",
+        "last_updated": "2026-03-03",
+        "summary": "Major Depressive Disorder is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed e"
+      },
+      "id": "disease_major-depressive-disorder",
+      "label": "Major Depressive Disorder",
+      "slug": "major-depressive-disorder",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/diseases/alzheimers-disease",
+        "last_updated": "2026-03-03",
+        "summary": "Alzheimers Disease is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epidemio"
+      },
+      "id": "disease_alzheimers-disease",
+      "label": "Alzheimers Disease",
+      "slug": "alzheimers-disease",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/diseases/rheumatoid-arthritis",
+        "last_updated": "2026-03-03",
+        "summary": "Rheumatoid Arthritis is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epidem"
+      },
+      "id": "disease_rheumatoid-arthritis",
+      "label": "Rheumatoid Arthritis",
+      "slug": "rheumatoid-arthritis",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/diseases/systemic-lupus-erythematosus",
+        "last_updated": "2026-03-03",
+        "summary": "Systemic Lupus Erythematosus is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observe"
+      },
+      "id": "disease_systemic-lupus-erythematosus",
+      "label": "Systemic Lupus Erythematosus",
+      "slug": "systemic-lupus-erythematosus",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/diseases/multiple-sclerosis",
+        "last_updated": "2026-03-03",
+        "summary": "Multiple Sclerosis is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epidemio"
+      },
+      "id": "disease_multiple-sclerosis",
+      "label": "Multiple Sclerosis",
+      "slug": "multiple-sclerosis",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/diseases/copd",
+        "last_updated": "2026-03-03",
+        "summary": "Chronic Obstructive Pulmonary Disease is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shap"
+      },
+      "id": "disease_copd",
+      "label": "Chronic Obstructive Pulmonary Disease",
+      "slug": "copd",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/diseases/pulmonary-fibrosis",
+        "last_updated": "2026-03-03",
+        "summary": "Pulmonary Fibrosis is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epidemio"
+      },
+      "id": "disease_pulmonary-fibrosis",
+      "label": "Pulmonary Fibrosis",
+      "slug": "pulmonary-fibrosis",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/diseases/obesity",
+        "last_updated": "2026-03-03",
+        "summary": "Obesity is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epidemiologic varia"
+      },
+      "id": "disease_obesity",
+      "label": "Obesity",
+      "slug": "obesity",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/diseases/covid-19-severity",
+        "last_updated": "2026-03-03",
+        "summary": "COVID-19 Severity is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epidemiol"
+      },
+      "id": "disease_covid-19-severity",
+      "label": "COVID-19 Severity",
+      "slug": "covid-19-severity",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/diseases/tuberculosis-susceptibility",
+        "last_updated": "2026-03-03",
+        "summary": "Tuberculosis Susceptibility is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed"
+      },
+      "id": "disease_tuberculosis-susceptibility",
+      "label": "Tuberculosis Susceptibility",
+      "slug": "tuberculosis-susceptibility",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/diseases/sickle-cell-disease",
+        "last_updated": "2026-03-03",
+        "summary": "Sickle Cell Disease is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epidemi"
+      },
+      "id": "disease_sickle-cell-disease",
+      "label": "Sickle Cell Disease",
+      "slug": "sickle-cell-disease",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/diseases/thalassemia",
+        "last_updated": "2026-03-03",
+        "summary": "Thalassemia is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epidemiologic v"
+      },
+      "id": "disease_thalassemia",
+      "label": "Thalassemia",
+      "slug": "thalassemia",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/diseases/cystic-fibrosis",
+        "last_updated": "2026-03-03",
+        "summary": "Cystic Fibrosis is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epidemiolog"
+      },
+      "id": "disease_cystic-fibrosis",
+      "label": "Cystic Fibrosis",
+      "slug": "cystic-fibrosis",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/diseases/huntington-disease",
+        "last_updated": "2026-03-03",
+        "summary": "Huntington Disease is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epidemio"
+      },
+      "id": "disease_huntington-disease",
+      "label": "Huntington Disease",
+      "slug": "huntington-disease",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/diseases/marfan-syndrome",
+        "last_updated": "2026-03-03",
+        "summary": "Marfan Syndrome is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epidemiolog"
+      },
+      "id": "disease_marfan-syndrome",
+      "label": "Marfan Syndrome",
+      "slug": "marfan-syndrome",
+      "type": "Disease"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
         "entity_route": "/atlas/exposures/air-pollution",
-        "last_updated": "2026-02-26",
-        "summary": "Ambient PM2.5 and related pollutants associated with inflammatory burden."
+        "last_updated": "2026-03-03",
+        "summary": "Air Pollution (PM2.5 and NO2) is curated as a population-level modifier in GENARCH for educational gene-environment interpretation across disease models."
       },
       "id": "exposure_air-pollution",
-      "label": "Air Pollution",
+      "label": "Air Pollution (PM2.5 and NO2)",
       "slug": "air-pollution",
       "type": "Exposure"
     },
     {
       "attrs": {
         "confidence": "high",
+        "entity_route": "/atlas/exposures/tobacco",
+        "last_updated": "2026-03-03",
+        "summary": "Tobacco Smoke Exposure is curated as a population-level modifier in GENARCH for educational gene-environment interpretation across disease models."
+      },
+      "id": "exposure_tobacco",
+      "label": "Tobacco Smoke Exposure",
+      "slug": "tobacco",
+      "type": "Exposure"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/exposures/diet-quality",
+        "last_updated": "2026-03-03",
+        "summary": "Diet Quality is curated as a population-level modifier in GENARCH for educational gene-environment interpretation across disease models."
+      },
+      "id": "exposure_diet-quality",
+      "label": "Diet Quality",
+      "slug": "diet-quality",
+      "type": "Exposure"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/exposures/uv-radiation",
+        "last_updated": "2026-03-03",
+        "summary": "UV Radiation is curated as a population-level modifier in GENARCH for educational gene-environment interpretation across disease models."
+      },
+      "id": "exposure_uv-radiation",
+      "label": "UV Radiation",
+      "slug": "uv-radiation",
+      "type": "Exposure"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/exposures/heavy-metals",
+        "last_updated": "2026-03-03",
+        "summary": "Heavy Metals is curated as a population-level modifier in GENARCH for educational gene-environment interpretation across disease models."
+      },
+      "id": "exposure_heavy-metals",
+      "label": "Heavy Metals",
+      "slug": "heavy-metals",
+      "type": "Exposure"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/exposures/endocrine-disruptors",
+        "last_updated": "2026-03-03",
+        "summary": "Endocrine Disruptors is curated as a population-level modifier in GENARCH for educational gene-environment interpretation across disease models."
+      },
+      "id": "exposure_endocrine-disruptors",
+      "label": "Endocrine Disruptors",
+      "slug": "endocrine-disruptors",
+      "type": "Exposure"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/exposures/psychosocial-stress",
+        "last_updated": "2026-03-03",
+        "summary": "Psychosocial Stress is curated as a population-level modifier in GENARCH for educational gene-environment interpretation across disease models."
+      },
+      "id": "exposure_psychosocial-stress",
+      "label": "Psychosocial Stress",
+      "slug": "psychosocial-stress",
+      "type": "Exposure"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/exposures/microbiome-alteration",
+        "last_updated": "2026-03-03",
+        "summary": "Microbiome Alteration is curated as a population-level modifier in GENARCH for educational gene-environment interpretation across disease models."
+      },
+      "id": "exposure_microbiome-alteration",
+      "label": "Microbiome Alteration",
+      "slug": "microbiome-alteration",
+      "type": "Exposure"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/exposures/climate-variables",
+        "last_updated": "2026-03-03",
+        "summary": "Climate Variables is curated as a population-level modifier in GENARCH for educational gene-environment interpretation across disease models."
+      },
+      "id": "exposure_climate-variables",
+      "label": "Climate Variables",
+      "slug": "climate-variables",
+      "type": "Exposure"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/abo",
+        "last_updated": "2026-03-03",
+        "summary": "ABO is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_abo",
+      "label": "ABO",
+      "slug": "abo",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/ace",
+        "last_updated": "2026-03-03",
+        "summary": "ACE is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_ace",
+      "label": "ACE",
+      "slug": "ace",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/agt",
+        "last_updated": "2026-03-03",
+        "summary": "AGT is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_agt",
+      "label": "AGT",
+      "slug": "agt",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/apc",
+        "last_updated": "2026-03-03",
+        "summary": "APC is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_apc",
+      "label": "APC",
+      "slug": "apc",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/apob",
+        "last_updated": "2026-03-03",
+        "summary": "APOB is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_apob",
+      "label": "APOB",
+      "slug": "apob",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/apoe",
+        "last_updated": "2026-03-03",
+        "summary": "APOE is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_apoe",
+      "label": "APOE",
+      "slug": "apoe",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/app",
+        "last_updated": "2026-03-03",
+        "summary": "APP is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_app",
+      "label": "APP",
+      "slug": "app",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/brca1",
+        "last_updated": "2026-03-03",
+        "summary": "BRCA1 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_brca1",
+      "label": "BRCA1",
+      "slug": "brca1",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/brca2",
+        "last_updated": "2026-03-03",
+        "summary": "BRCA2 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_brca2",
+      "label": "BRCA2",
+      "slug": "brca2",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/genes/c4a",
+        "last_updated": "2026-03-03",
+        "summary": "C4A is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_c4a",
+      "label": "C4A",
+      "slug": "c4a",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/genes/cacna1c",
+        "last_updated": "2026-03-03",
+        "summary": "CACNA1C is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_cacna1c",
+      "label": "CACNA1C",
+      "slug": "cacna1c",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/cftr",
+        "last_updated": "2026-03-03",
+        "summary": "CFTR is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_cftr",
+      "label": "CFTR",
+      "slug": "cftr",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/chrna5",
+        "last_updated": "2026-03-03",
+        "summary": "CHRNA5 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_chrna5",
+      "label": "CHRNA5",
+      "slug": "chrna5",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/genes/drd2",
+        "last_updated": "2026-03-03",
+        "summary": "DRD2 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_drd2",
+      "label": "DRD2",
+      "slug": "drd2",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/egfr",
+        "last_updated": "2026-03-03",
+        "summary": "EGFR is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_egfr",
+      "label": "EGFR",
+      "slug": "egfr",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/fbn1",
+        "last_updated": "2026-03-03",
+        "summary": "FBN1 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_fbn1",
+      "label": "FBN1",
+      "slug": "fbn1",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/fgfr2",
+        "last_updated": "2026-03-03",
+        "summary": "FGFR2 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_fgfr2",
+      "label": "FGFR2",
+      "slug": "fgfr2",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/genes/fto",
+        "last_updated": "2026-03-03",
+        "summary": "FTO is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_fto",
+      "label": "FTO",
+      "slug": "fto",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/hba1",
+        "last_updated": "2026-03-03",
+        "summary": "HBA1 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_hba1",
+      "label": "HBA1",
+      "slug": "hba1",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/hba2",
+        "last_updated": "2026-03-03",
+        "summary": "HBA2 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_hba2",
+      "label": "HBA2",
+      "slug": "hba2",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/genes/hbb",
+        "last_updated": "2026-03-03",
+        "summary": "HBB is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_hbb",
+      "label": "HBB",
+      "slug": "hbb",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/genes/hla-drb1",
+        "last_updated": "2026-03-03",
+        "summary": "HLA-DRB1 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_hla-drb1",
+      "label": "HLA-DRB1",
+      "slug": "hla-drb1",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/htt",
+        "last_updated": "2026-03-03",
+        "summary": "HTT is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_htt",
+      "label": "HTT",
+      "slug": "htt",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/ifng",
+        "last_updated": "2026-03-03",
+        "summary": "IFNG is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_ifng",
+      "label": "IFNG",
+      "slug": "ifng",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
         "entity_route": "/atlas/genes/il33",
-        "last_updated": "2026-02-26",
-        "summary": "Epithelial alarmin cytokine with strong asthma and exposure-linked evidence."
+        "last_updated": "2026-03-03",
+        "summary": "IL33 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
       },
       "id": "gene_il33",
       "label": "IL33",
@@ -174,10 +4580,226 @@
     },
     {
       "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/ldlr",
+        "last_updated": "2026-03-03",
+        "summary": "LDLR is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_ldlr",
+      "label": "LDLR",
+      "slug": "ldlr",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/lpa",
+        "last_updated": "2026-03-03",
+        "summary": "LPA is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_lpa",
+      "label": "LPA",
+      "slug": "lpa",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/mc4r",
+        "last_updated": "2026-03-03",
+        "summary": "MC4R is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_mc4r",
+      "label": "MC4R",
+      "slug": "mc4r",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/mlh1",
+        "last_updated": "2026-03-03",
+        "summary": "MLH1 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_mlh1",
+      "label": "MLH1",
+      "slug": "mlh1",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/oas1",
+        "last_updated": "2026-03-03",
+        "summary": "OAS1 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_oas1",
+      "label": "OAS1",
+      "slug": "oas1",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/pcsk9",
+        "last_updated": "2026-03-03",
+        "summary": "PCSK9 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_pcsk9",
+      "label": "PCSK9",
+      "slug": "pcsk9",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/pparg",
+        "last_updated": "2026-03-03",
+        "summary": "PPARG is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_pparg",
+      "label": "PPARG",
+      "slug": "pparg",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/psen1",
+        "last_updated": "2026-03-03",
+        "summary": "PSEN1 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_psen1",
+      "label": "PSEN1",
+      "slug": "psen1",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/psen2",
+        "last_updated": "2026-03-03",
+        "summary": "PSEN2 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_psen2",
+      "label": "PSEN2",
+      "slug": "psen2",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/serpina1",
+        "last_updated": "2026-03-03",
+        "summary": "SERPINA1 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_serpina1",
+      "label": "SERPINA1",
+      "slug": "serpina1",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/slc30a8",
+        "last_updated": "2026-03-03",
+        "summary": "SLC30A8 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_slc30a8",
+      "label": "SLC30A8",
+      "slug": "slc30a8",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/tcf7l2",
+        "last_updated": "2026-03-03",
+        "summary": "TCF7L2 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_tcf7l2",
+      "label": "TCF7L2",
+      "slug": "tcf7l2",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/terc",
+        "last_updated": "2026-03-03",
+        "summary": "TERC is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_terc",
+      "label": "TERC",
+      "slug": "terc",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/tert",
+        "last_updated": "2026-03-03",
+        "summary": "TERT is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_tert",
+      "label": "TERT",
+      "slug": "tert",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/tlr2",
+        "last_updated": "2026-03-03",
+        "summary": "TLR2 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_tlr2",
+      "label": "TLR2",
+      "slug": "tlr2",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/tox3",
+        "last_updated": "2026-03-03",
+        "summary": "TOX3 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_tox3",
+      "label": "TOX3",
+      "slug": "tox3",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/tp53",
+        "last_updated": "2026-03-03",
+        "summary": "TP53 is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_tp53",
+      "label": "TP53",
+      "slug": "tp53",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
+        "confidence": "medium",
+        "entity_route": "/atlas/genes/umod",
+        "last_updated": "2026-03-03",
+        "summary": "UMOD is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs."
+      },
+      "id": "gene_umod",
+      "label": "UMOD",
+      "slug": "umod",
+      "type": "Gene"
+    },
+    {
+      "attrs": {
         "confidence": "high",
         "entity_route": "/atlas/pathways/nf-kb-signaling",
-        "last_updated": "2026-02-26",
-        "summary": "Inflammatory pathway activated by oxidative stress and cytokine signaling."
+        "last_updated": "2026-03-03",
+        "summary": "NF-kB Signaling is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
       },
       "id": "pathway_nf-kb-signaling",
       "label": "NF-kB Signaling",
@@ -186,15 +4808,267 @@
     },
     {
       "attrs": {
-        "confidence": "medium",
-        "entity_route": "/atlas/diseases/asthma",
-        "last_updated": "2026-02-26",
-        "summary": "Key airway interface where pollutant stress and IL33 signaling converge."
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/ldl-metabolism-and-endothelial-inflammation",
+        "last_updated": "2026-03-03",
+        "summary": "LDL Metabolism and Endothelial Inflammation is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
       },
-      "id": "tissue_bronchial-epithelium",
-      "label": "Bronchial Epithelium",
-      "slug": "bronchial-epithelium",
-      "type": "Tissue"
+      "id": "pathway_ldl-metabolism-and-endothelial-inflammation",
+      "label": "LDL Metabolism and Endothelial Inflammation",
+      "slug": "ldl-metabolism-and-endothelial-inflammation",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/insulin-secretion-and-metabolic-signaling",
+        "last_updated": "2026-03-03",
+        "summary": "Insulin Secretion and Metabolic Signaling is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_insulin-secretion-and-metabolic-signaling",
+      "label": "Insulin Secretion and Metabolic Signaling",
+      "slug": "insulin-secretion-and-metabolic-signaling",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/raas-signaling-axis",
+        "last_updated": "2026-03-03",
+        "summary": "RAAS Signaling Axis is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_raas-signaling-axis",
+      "label": "RAAS Signaling Axis",
+      "slug": "raas-signaling-axis",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/dna-repair-and-estrogen-signaling",
+        "last_updated": "2026-03-03",
+        "summary": "DNA Repair and Estrogen Signaling is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_dna-repair-and-estrogen-signaling",
+      "label": "DNA Repair and Estrogen Signaling",
+      "slug": "dna-repair-and-estrogen-signaling",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/colorectal-oncogenesis-wnt-mmr",
+        "last_updated": "2026-03-03",
+        "summary": "Colorectal Oncogenesis WNT/MMR Axis is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_colorectal-oncogenesis-wnt-mmr",
+      "label": "Colorectal Oncogenesis WNT/MMR Axis",
+      "slug": "colorectal-oncogenesis-wnt-mmr",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/nicotinic-receptor-egfr-axis",
+        "last_updated": "2026-03-03",
+        "summary": "Nicotinic Receptor and EGFR Axis is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_nicotinic-receptor-egfr-axis",
+      "label": "Nicotinic Receptor and EGFR Axis",
+      "slug": "nicotinic-receptor-egfr-axis",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/complement-neurodevelopment-signaling",
+        "last_updated": "2026-03-03",
+        "summary": "Complement-Neurodevelopment Signaling is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_complement-neurodevelopment-signaling",
+      "label": "Complement-Neurodevelopment Signaling",
+      "slug": "complement-neurodevelopment-signaling",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/hpa-axis-stress-response",
+        "last_updated": "2026-03-03",
+        "summary": "HPA Axis Stress Response is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_hpa-axis-stress-response",
+      "label": "HPA Axis Stress Response",
+      "slug": "hpa-axis-stress-response",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/amyloid-tau-neuroinflammation",
+        "last_updated": "2026-03-03",
+        "summary": "Amyloid-Tau Neuroinflammation is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_amyloid-tau-neuroinflammation",
+      "label": "Amyloid-Tau Neuroinflammation",
+      "slug": "amyloid-tau-neuroinflammation",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/tnf-driven-autoimmune-signaling",
+        "last_updated": "2026-03-03",
+        "summary": "TNF-driven Autoimmune Signaling is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_tnf-driven-autoimmune-signaling",
+      "label": "TNF-driven Autoimmune Signaling",
+      "slug": "tnf-driven-autoimmune-signaling",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/interferon-complement-axis",
+        "last_updated": "2026-03-03",
+        "summary": "Interferon-Complement Axis is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_interferon-complement-axis",
+      "label": "Interferon-Complement Axis",
+      "slug": "interferon-complement-axis",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/vitamin-d-immune-modulation",
+        "last_updated": "2026-03-03",
+        "summary": "Vitamin D Immune Modulation is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_vitamin-d-immune-modulation",
+      "label": "Vitamin D Immune Modulation",
+      "slug": "vitamin-d-immune-modulation",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/protease-antiprotease-lung-remodeling",
+        "last_updated": "2026-03-03",
+        "summary": "Protease-Antiprotease Lung Remodeling is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_protease-antiprotease-lung-remodeling",
+      "label": "Protease-Antiprotease Lung Remodeling",
+      "slug": "protease-antiprotease-lung-remodeling",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/telomere-maintenance-fibrosis",
+        "last_updated": "2026-03-03",
+        "summary": "Telomere Maintenance and Fibrosis is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_telomere-maintenance-fibrosis",
+      "label": "Telomere Maintenance and Fibrosis",
+      "slug": "telomere-maintenance-fibrosis",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/gut-brain-metabolic-regulation",
+        "last_updated": "2026-03-03",
+        "summary": "Gut-Brain Metabolic Regulation is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_gut-brain-metabolic-regulation",
+      "label": "Gut-Brain Metabolic Regulation",
+      "slug": "gut-brain-metabolic-regulation",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/innate-antiviral-oas-signaling",
+        "last_updated": "2026-03-03",
+        "summary": "Innate Antiviral OAS Signaling is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_innate-antiviral-oas-signaling",
+      "label": "Innate Antiviral OAS Signaling",
+      "slug": "innate-antiviral-oas-signaling",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/ifng-mycobacterial-response",
+        "last_updated": "2026-03-03",
+        "summary": "IFNG Mycobacterial Response is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_ifng-mycobacterial-response",
+      "label": "IFNG Mycobacterial Response",
+      "slug": "ifng-mycobacterial-response",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/hemoglobin-structure-erythropoiesis",
+        "last_updated": "2026-03-03",
+        "summary": "Hemoglobin Structure and Erythropoiesis is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_hemoglobin-structure-erythropoiesis",
+      "label": "Hemoglobin Structure and Erythropoiesis",
+      "slug": "hemoglobin-structure-erythropoiesis",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/globin-synthesis-regulation",
+        "last_updated": "2026-03-03",
+        "summary": "Globin Synthesis Regulation is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_globin-synthesis-regulation",
+      "label": "Globin Synthesis Regulation",
+      "slug": "globin-synthesis-regulation",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/cftr-epithelial-transport",
+        "last_updated": "2026-03-03",
+        "summary": "CFTR Epithelial Transport is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_cftr-epithelial-transport",
+      "label": "CFTR Epithelial Transport",
+      "slug": "cftr-epithelial-transport",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/huntingtin-neurodegeneration",
+        "last_updated": "2026-03-03",
+        "summary": "Huntingtin Neurodegeneration is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_huntingtin-neurodegeneration",
+      "label": "Huntingtin Neurodegeneration",
+      "slug": "huntingtin-neurodegeneration",
+      "type": "Pathway"
+    },
+    {
+      "attrs": {
+        "confidence": "high",
+        "entity_route": "/atlas/pathways/connective-tissue-tgf-beta-signaling",
+        "last_updated": "2026-03-03",
+        "summary": "Connective Tissue TGF-beta Signaling is curated as a mechanistic bridge linking inherited susceptibility to exposure-sensitive disease burden patterns in GENARCH."
+      },
+      "id": "pathway_connective-tissue-tgf-beta-signaling",
+      "label": "Connective Tissue TGF-beta Signaling",
+      "slug": "connective-tissue-tgf-beta-signaling",
+      "type": "Pathway"
     }
   ]
 }

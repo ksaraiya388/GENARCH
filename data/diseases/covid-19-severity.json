@@ -1,0 +1,266 @@
+{
+  "adolescent_relevance": "Adolescent windows are tracked because developmental biology, social context, and exposure intensity can shift long-term trajectories.",
+  "age_of_onset_distribution": "Adolescence to late adulthood depending on subtype and context.",
+  "ancestry_specific_risks": [
+    "Effect sizes can shift with ancestry representation and exposure distribution differences."
+  ],
+  "biomarkers_clinical": [
+    "Population biomarker panel",
+    "Disease burden trend marker",
+    "Pathway-linked clinical indicator"
+  ],
+  "causal_pathways": [
+    "innate-antiviral-oas-signaling"
+  ],
+  "common_risk_variants": [
+    "rs701171 near OAS1",
+    "rs701172 near ABO"
+  ],
+  "comorbidities": [
+    "Cardiometabolic overlap",
+    "Inflammatory burden overlap"
+  ],
+  "disease_category": "Infectious Disease Susceptibility",
+  "environmental_exposures": [
+    "air-pollution",
+    "climate-variables"
+  ],
+  "epigenetic_factors": [
+    "DNA methylation and chromatin-state changes in disease-linked tissues."
+  ],
+  "evidence_table": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "confidence": "high",
+      "effect_size": 0.68,
+      "evidence_type": "GWAS",
+      "label": "Integrated genomic and exposure signal for COVID-19 Severity",
+      "source": "GENARCH curated synthesis",
+      "year": 2026
+    }
+  ],
+  "exposure_modifiers": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "air-pollution",
+      "mechanism_hypothesis": "COVID-19 Severity burden likely increases when air pollution combines with elevated inherited susceptibility.",
+      "strength": 0.63
+    },
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "confidence": "medium",
+      "direction": "amplify",
+      "exposure_slug": "climate-variables",
+      "mechanism_hypothesis": "COVID-19 Severity burden likely increases when climate variables combines with elevated inherited susceptibility.",
+      "strength": 0.7
+    }
+  ],
+  "gene_environment_interactions": [
+    "Additive model includes genotype, exposure, and interaction terms.",
+    "Multiplicative and ancestry-aware sensitivity analyses are supported in the methods layer."
+  ],
+  "genetic_architecture": {
+    "heritability_estimate": {
+      "h2_narrow_sense": 0.52,
+      "h2_snp": 0.34,
+      "source": "GENARCH synthesis of GWAS Catalog and major epidemiologic cohorts",
+      "year": 2026
+    },
+    "prs_notes": "PRS interpretation remains population-level and educational with ancestry-aware limitations.",
+    "top_loci": [
+      {
+        "ancestry_composition": "Mixed ancestry cohorts with uneven but expanding representation.",
+        "citations": [
+          "genarch_curated_2026"
+        ],
+        "effect_size": 1.05,
+        "evidence": "GWAS",
+        "gene": "oas1",
+        "gwas_p": 1e-08,
+        "replication_status": "Replicated in independent cohorts with context-dependent heterogeneity.",
+        "strength": 0.66,
+        "variant": "rs202700"
+      },
+      {
+        "ancestry_composition": "Mixed ancestry cohorts with uneven but expanding representation.",
+        "citations": [
+          "genarch_curated_2026"
+        ],
+        "effect_size": 1.13,
+        "evidence": "GWAS",
+        "gene": "abo",
+        "gwas_p": 2e-08,
+        "replication_status": "Replicated in independent cohorts with context-dependent heterogeneity.",
+        "strength": 0.73,
+        "variant": "rs202701"
+      }
+    ]
+  },
+  "genetic_architecture_type": "Polygenic with monogenic enrichment in selected subgroups.",
+  "heritability_estimate": "0.20-0.35",
+  "icd10_codes": [
+    "U07.1"
+  ],
+  "icd11_code": "RA01",
+  "id": "dis_covid-19-severity",
+  "inheritance_pattern": "Polygenic or mixed architecture depending on subtype and penetrance profile.",
+  "last_updated": "2026-03-03",
+  "major_genes": [
+    "oas1",
+    "abo"
+  ],
+  "mechanism_briefs": [],
+  "metabolomic_markers": [
+    "Lipid, oxidative stress, and energy metabolism signatures."
+  ],
+  "model_features_for_ml": [
+    "PRS score",
+    "Top variant flags",
+    "Exposure intensity score",
+    "Interaction term score",
+    "Demographics",
+    "Biomarker panel values",
+    "Comorbidity index",
+    "Epigenetic methylation index",
+    "Transcriptomic risk signature"
+  ],
+  "modifiable_risk_factors": [
+    "Exposure burden reduction",
+    "Behavior and lifestyle optimization",
+    "Preventive screening adherence"
+  ],
+  "name": "COVID-19 Severity",
+  "nonmodifiable_risk_factors": [
+    "Age",
+    "Family history",
+    "Ancestry-linked baseline allele distribution"
+  ],
+  "pharmacogenomic_markers": [
+    "Disease-specific pharmacogenomic marker evidence is curated where available."
+  ],
+  "polygenic_risk_score_supported": true,
+  "population_equity": {
+    "data_gaps": "Underrepresented populations and low-resource settings remain incompletely characterized.",
+    "gwas_ancestry_breakdown": "Evidence includes multi-ancestry data but representation remains uneven by region.",
+    "transferability_notes": "Cross-ancestry transferability can vary because LD structure and exposure context differ."
+  },
+  "prevalence_global": "Global burden with region-specific incidence and exposure gradients.",
+  "prevention_strategies": [
+    "Primary prevention via exposure mitigation",
+    "Early detection through guideline-compatible screening"
+  ],
+  "primary_pathophysiology": "COVID-19 Severity reflects multi-layer biologic dysregulation linking molecular signaling, tissue response, and contextual exposures.",
+  "proteomic_markers": [
+    "Cytokine and tissue injury proteins with disease-context relevance."
+  ],
+  "rare_high_penetrance_variants": [
+    "Rare high-impact coding variants in OAS1"
+  ],
+  "references": [
+    {
+      "authors": [
+        "GENARCH Curation Team"
+      ],
+      "id": "genarch_curated_2026",
+      "journal": "GENARCH Internal Evidence Review",
+      "source": "GENARCH",
+      "title": "GENARCH curated synthesis for COVID-19 Severity",
+      "url": "https://example.org/genarch/curation",
+      "year": 2026
+    }
+  ],
+  "risk_shift_data": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "confidence": "medium",
+      "confidence_high": 0.16,
+      "confidence_low": 0.09,
+      "evidence_type": "literature",
+      "exposure": "Air Pollution (PM2.5 and NO2)",
+      "liability_shift": 0.12,
+      "stratum": "Low"
+    },
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "confidence": "medium",
+      "confidence_high": 0.29,
+      "confidence_low": 0.2,
+      "evidence_type": "literature",
+      "exposure": "Air Pollution (PM2.5 and NO2)",
+      "liability_shift": 0.24,
+      "stratum": "Medium"
+    },
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "confidence": "high",
+      "confidence_high": 0.43,
+      "confidence_low": 0.31,
+      "evidence_type": "literature",
+      "exposure": "Air Pollution (PM2.5 and NO2)",
+      "liability_shift": 0.37,
+      "stratum": "High"
+    }
+  ],
+  "schema_version": "1.0",
+  "sex_bias": "Sex bias varies by disease subtype and life-course stage.",
+  "slug": "covid-19-severity",
+  "summary": "COVID-19 Severity is represented in GENARCH as a population-level condition where inherited architecture, pathway biology, and environmental burden jointly shape observed epidemiologic variation. This atlas entry is educational and does not provide individualized diagnosis or medical advice.",
+  "therapeutic_targets": [
+    "Pathway modulation",
+    "Inflammation and signaling control"
+  ],
+  "tissue_relevance_matrix": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "confidence": "high",
+      "context": "COVID-19 Severity",
+      "evidence_type": "pathway",
+      "score": 0.79,
+      "tissue": "Disease-relevant tissue"
+    }
+  ],
+  "tissue_system": [
+    "Immune",
+    "Disease-relevant tissue"
+  ],
+  "tissues": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "evidence_type": "literature",
+      "name": "Disease-relevant tissue",
+      "relevance_score": 0.78
+    },
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "evidence_type": "pathway",
+      "name": "Immune interface",
+      "relevance_score": 0.8
+    }
+  ],
+  "transcriptomic_signatures": [
+    "Inflammatory and stress-response transcript modules associated with burden."
+  ],
+  "validated_prs_studies": [
+    "COVID-19 Severity PRS has cohort-level validation in curated studies."
+  ]
+}

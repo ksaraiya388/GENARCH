@@ -1,19 +1,292 @@
 {
-  "air-pollution": [
-    "pm2.5",
-    "particulate matter",
-    "ambient pollution"
+  "abo": [
+    "abo blood group"
   ],
-  "asthma": [
-    "bronchial asthma",
-    "reactive airway disease"
+  "ace": [
+    "angiotensin converting enzyme"
+  ],
+  "agt": [
+    "angiotensinogen"
+  ],
+  "air-pollution": [
+    "air pollution (pm2.5 & no2)",
+    "air pollution (pm2.5 and no2)",
+    "air pollution pm2.5 and no2"
+  ],
+  "alzheimers-disease": [
+    "alzheimers disease"
+  ],
+  "amyloid-tau-neuroinflammation": [
+    "amyloid tau neuroinflammation",
+    "amyloid-tau neuroinflammation"
+  ],
+  "apc": [
+    "apc regulator of wnt signaling pathway"
+  ],
+  "apob": [
+    "apolipoprotein b"
+  ],
+  "apoe": [
+    "apolipoprotein e"
+  ],
+  "app": [
+    "amyloid beta precursor protein"
+  ],
+  "brca1": [
+    "brca1 dna repair associated"
+  ],
+  "brca2": [
+    "brca2 dna repair associated"
+  ],
+  "breast-cancer": [
+    "breast cancer"
+  ],
+  "c4a": [
+    "complement c4a"
+  ],
+  "cacna1c": [
+    "calcium voltage-gated channel subunit alpha1 c"
+  ],
+  "cftr": [
+    "cf transmembrane conductance regulator"
+  ],
+  "cftr-epithelial-transport": [
+    "cftr epithelial transport"
+  ],
+  "chrna5": [
+    "cholinergic receptor nicotinic alpha 5 subunit"
+  ],
+  "climate-variables": [
+    "climate variables"
+  ],
+  "colorectal-cancer": [
+    "colorectal cancer"
+  ],
+  "colorectal-oncogenesis-wnt-mmr": [
+    "colorectal oncogenesis wnt/mmr axis"
+  ],
+  "complement-neurodevelopment-signaling": [
+    "complement neurodevelopment signaling",
+    "complement-neurodevelopment signaling"
+  ],
+  "connective-tissue-tgf-beta-signaling": [
+    "connective tissue tgf beta signaling",
+    "connective tissue tgf-beta signaling"
+  ],
+  "copd": [
+    "chronic obstructive pulmonary disease"
+  ],
+  "coronary-artery-disease": [
+    "coronary artery disease"
+  ],
+  "covid-19-severity": [
+    "covid-19 severity"
+  ],
+  "cystic-fibrosis": [
+    "cystic fibrosis"
+  ],
+  "diet-quality": [
+    "diet quality"
+  ],
+  "dna-repair-and-estrogen-signaling": [
+    "dna repair and estrogen signaling"
+  ],
+  "drd2": [
+    "dopamine receptor d2"
+  ],
+  "egfr": [
+    "epidermal growth factor receptor"
+  ],
+  "endocrine-disruptors": [
+    "endocrine disruptors"
+  ],
+  "fbn1": [
+    "fibrillin 1"
+  ],
+  "fgfr2": [
+    "fibroblast growth factor receptor 2"
+  ],
+  "fto": [
+    "fto alpha-ketoglutarate dependent dioxygenase"
+  ],
+  "globin-synthesis-regulation": [
+    "globin synthesis regulation"
+  ],
+  "gut-brain-metabolic-regulation": [
+    "gut brain metabolic regulation",
+    "gut-brain metabolic regulation"
+  ],
+  "hba1": [
+    "hemoglobin subunit alpha 1"
+  ],
+  "hba2": [
+    "hemoglobin subunit alpha 2"
+  ],
+  "hbb": [
+    "hemoglobin subunit beta"
+  ],
+  "heavy-metals": [
+    "heavy metals"
+  ],
+  "hemoglobin-structure-erythropoiesis": [
+    "hemoglobin structure and erythropoiesis"
+  ],
+  "hla-drb1": [
+    "hladrb1",
+    "mhc class ii dr beta 1"
+  ],
+  "hpa-axis-stress-response": [
+    "hpa axis stress response"
+  ],
+  "htt": [
+    "huntingtin"
+  ],
+  "huntingtin-neurodegeneration": [
+    "huntingtin neurodegeneration"
+  ],
+  "huntington-disease": [
+    "huntington disease"
+  ],
+  "ifng": [
+    "interferon gamma"
+  ],
+  "ifng-mycobacterial-response": [
+    "ifng mycobacterial response"
   ],
   "il33": [
-    "interleukin 33",
-    "il-33"
+    "interleukin 33"
+  ],
+  "innate-antiviral-oas-signaling": [
+    "innate antiviral oas signaling"
+  ],
+  "insulin-secretion-and-metabolic-signaling": [
+    "insulin secretion and metabolic signaling"
+  ],
+  "interferon-complement-axis": [
+    "interferon complement axis",
+    "interferon-complement axis"
+  ],
+  "ldl-metabolism-and-endothelial-inflammation": [
+    "ldl metabolism and endothelial inflammation"
+  ],
+  "ldlr": [
+    "low density lipoprotein receptor"
+  ],
+  "lpa": [
+    "lipoprotein(a)"
+  ],
+  "lung-cancer": [
+    "lung cancer"
+  ],
+  "major-depressive-disorder": [
+    "major depressive disorder"
+  ],
+  "marfan-syndrome": [
+    "marfan syndrome"
+  ],
+  "mc4r": [
+    "melanocortin 4 receptor"
+  ],
+  "microbiome-alteration": [
+    "microbiome alteration"
+  ],
+  "mlh1": [
+    "mutl homolog 1"
+  ],
+  "multiple-sclerosis": [
+    "multiple sclerosis"
   ],
   "nf-kb-signaling": [
-    "nf-kb",
-    "nuclear factor kappa b"
+    "nf kb signaling",
+    "nf-kb signaling"
+  ],
+  "nicotinic-receptor-egfr-axis": [
+    "nicotinic receptor and egfr axis"
+  ],
+  "oas1": [
+    "2-5-oligoadenylate synthetase 1"
+  ],
+  "pcsk9": [
+    "proprotein convertase subtilisin/kexin type 9"
+  ],
+  "pparg": [
+    "peroxisome proliferator activated receptor gamma"
+  ],
+  "protease-antiprotease-lung-remodeling": [
+    "protease antiprotease lung remodeling",
+    "protease-antiprotease lung remodeling"
+  ],
+  "psen1": [
+    "presenilin 1"
+  ],
+  "psen2": [
+    "presenilin 2"
+  ],
+  "psychosocial-stress": [
+    "psychosocial stress"
+  ],
+  "pulmonary-fibrosis": [
+    "pulmonary fibrosis"
+  ],
+  "raas-signaling-axis": [
+    "raas signaling axis"
+  ],
+  "rheumatoid-arthritis": [
+    "rheumatoid arthritis"
+  ],
+  "serpina1": [
+    "serpin family a member 1"
+  ],
+  "sickle-cell-disease": [
+    "sickle cell disease"
+  ],
+  "slc30a8": [
+    "solute carrier family 30 member 8"
+  ],
+  "systemic-lupus-erythematosus": [
+    "systemic lupus erythematosus"
+  ],
+  "tcf7l2": [
+    "transcription factor 7 like 2"
+  ],
+  "telomere-maintenance-fibrosis": [
+    "telomere maintenance and fibrosis"
+  ],
+  "terc": [
+    "telomerase rna component"
+  ],
+  "tert": [
+    "telomerase reverse transcriptase"
+  ],
+  "tlr2": [
+    "toll like receptor 2"
+  ],
+  "tnf-driven-autoimmune-signaling": [
+    "tnf driven autoimmune signaling",
+    "tnf-driven autoimmune signaling"
+  ],
+  "tobacco": [
+    "tobacco smoke exposure"
+  ],
+  "tox3": [
+    "tox high mobility group box family member 3"
+  ],
+  "tp53": [
+    "tumor protein p53"
+  ],
+  "tuberculosis-susceptibility": [
+    "tuberculosis susceptibility"
+  ],
+  "type-2-diabetes": [
+    "type 2 diabetes"
+  ],
+  "umod": [
+    "uromodulin"
+  ],
+  "uv-radiation": [
+    "uv radiation"
+  ],
+  "vitamin-d-immune-modulation": [
+    "vitamin d immune modulation"
   ]
 }

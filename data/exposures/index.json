@@ -1,6 +1,38 @@
 [
   {
-    "name": "Ambient Air Pollution (PM2.5)",
+    "name": "Air Pollution (PM2.5 and NO2)",
     "slug": "air-pollution"
+  },
+  {
+    "name": "Tobacco Smoke Exposure",
+    "slug": "tobacco"
+  },
+  {
+    "name": "Diet Quality",
+    "slug": "diet-quality"
+  },
+  {
+    "name": "UV Radiation",
+    "slug": "uv-radiation"
+  },
+  {
+    "name": "Heavy Metals",
+    "slug": "heavy-metals"
+  },
+  {
+    "name": "Endocrine Disruptors",
+    "slug": "endocrine-disruptors"
+  },
+  {
+    "name": "Psychosocial Stress",
+    "slug": "psychosocial-stress"
+  },
+  {
+    "name": "Microbiome Alteration",
+    "slug": "microbiome-alteration"
+  },
+  {
+    "name": "Climate Variables",
+    "slug": "climate-variables"
   }
 ]

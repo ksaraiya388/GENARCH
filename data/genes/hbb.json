@@ -1,0 +1,104 @@
+{
+  "chromosome": "11p15.4",
+  "confidence": "medium",
+  "evidence_table": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "confidence": "high",
+      "effect_size": 0.63,
+      "evidence_type": "GWAS",
+      "label": "HBB multi-evidence linkage signal",
+      "source": "GENARCH curated synthesis",
+      "year": 2026
+    }
+  ],
+  "expression_context": [
+    {
+      "citations": [
+        "genarch_curated_2026"
+      ],
+      "gtex_version": "v8",
+      "tissue": "Disease-relevant tissue panel",
+      "tpm_range": "3.6-6.1"
+    }
+  ],
+  "id": "gene_hbb",
+  "last_updated": "2026-03-03",
+  "linked_diseases": [
+    {
+      "evidence_type": "GWAS",
+      "slug": "sickle-cell-disease",
+      "strength": 0.65
+    },
+    {
+      "evidence_type": "GWAS",
+      "slug": "thalassemia",
+      "strength": 0.71
+    }
+  ],
+  "linked_exposures": [
+    {
+      "evidence_type": "literature",
+      "slug": "climate-variables",
+      "strength": 0.62
+    },
+    {
+      "evidence_type": "literature",
+      "slug": "heavy-metals",
+      "strength": 0.67
+    }
+  ],
+  "mechanistic_hypotheses": [
+    {
+      "confidence": "high",
+      "hypothesis": "HBB modulates pathway response under varying exposure burden.",
+      "supporting_evidence": "Curated integration of association, pathway, and epidemiologic evidence supports this relationship."
+    }
+  ],
+  "molecular_function": [
+    "Disease-relevant signaling and regulatory modulation",
+    "Pathway-level interaction under variable exposure conditions"
+  ],
+  "name": "Hemoglobin Subunit Beta",
+  "pathways": [
+    {
+      "evidence_type": "pathway",
+      "slug": "globin-synthesis-regulation",
+      "strength": 0.64
+    },
+    {
+      "evidence_type": "pathway",
+      "slug": "hemoglobin-structure-erythropoiesis",
+      "strength": 0.71
+    }
+  ],
+  "protein_class": "disease-associated regulator",
+  "references": [
+    {
+      "authors": [
+        "GENARCH Curation Team"
+      ],
+      "id": "genarch_curated_2026",
+      "journal": "GENARCH Internal Evidence Review",
+      "source": "GENARCH",
+      "title": "GENARCH curated synthesis for HBB",
+      "url": "https://example.org/genarch/curation",
+      "year": 2026
+    }
+  ],
+  "regulatory_notes": {
+    "enhancer_associations": "HBB has enhancer associations in inflammatory and disease-linked contexts.",
+    "eqtl_tissues": [
+      "Whole blood",
+      "Disease-relevant tissue panel"
+    ],
+    "methylation_sensitivity": "HBB expression may shift with methylation dynamics and exposure burden.",
+    "promoter_activity": "HBB promoter activity is context-sensitive across curated tissue settings."
+  },
+  "schema_version": "1.0",
+  "slug": "hbb",
+  "summary": "HBB is modeled as a disease-relevant locus that links inherited architecture, pathway activity, and environmental sensitivity in GENARCH educational outputs.",
+  "symbol": "HBB"
+}

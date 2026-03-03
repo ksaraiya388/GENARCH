@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-02-26",
+  "last_updated": "2026-03-03",
   "releases": [
     {
       "date": "2026-02-26",
       "pdf_path": "/api/reports/2026/pdf",
       "report_path": "/updates/2026",
       "slug": "2026",
-      "summary": "Initial v1 release with asthma-air pollution seed atlas, graph, and community module.",
+      "summary": "Expanded multi-disease atlas release with 23 diseases, 9 exposures, 43 genes, and 23 pathways.",
       "title": "GENARCH 2026 Annual Report",
       "type": "report"
     }
