@@ -150,6 +150,7 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
             "text-valign": "bottom",
             "text-margin-y": 4,
             "font-size": 10,
+            color: "#C7D2DA",
             width: 36,
             height: 36,
           },
@@ -159,15 +160,15 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
           style: {
             "curve-style": "bezier",
             "target-arrow-shape": "triangle",
-            "line-color": "#999",
-            "target-arrow-color": "#999",
+            "line-color": "#94A3B8",
+            "target-arrow-color": "#94A3B8",
           },
         },
         {
           selector: ":selected",
           style: {
             "border-width": 3,
-            "border-color": "#0066CC",
+            "border-color": "#2DD4BF",
           },
         },
       ],
@@ -268,7 +269,6 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
       const blob = await fetch(dataUrl).then((r) => r.blob());
       saveAs(blob, "genarch-graph.svg");
     } catch {
-      // Fallback: offer PNG if SVG fails
       exportPNG();
     }
   };
@@ -284,7 +284,7 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
   if (!initialData) {
     return (
       <div className="card">
-        <p className="text-genarch-subtext">No graph data available.</p>
+        <p className="text-cool-mid">No graph data available.</p>
       </div>
     );
   }
@@ -301,17 +301,17 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
   return (
     <div className="space-y-4">
       <details className="card">
-        <summary className="cursor-pointer font-medium text-genarch-text">
+        <summary className="cursor-pointer font-medium text-surface-white">
           Filters
         </summary>
         <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div>
-            <label htmlFor="filter-entity" className="block text-sm text-genarch-subtext mb-1">Entity type</label>
+            <label htmlFor="filter-entity" className="block text-sm text-cool-mid mb-1">Entity type</label>
             <select
               id="filter-entity"
               value={filters.entityType}
               onChange={(e) => setFilters((f) => ({ ...f, entityType: e.target.value }))}
-              className="w-full text-sm border border-gray-200 rounded-sm px-2 py-1.5"
+              className="w-full text-sm border border-white/[0.06] bg-navy-deep text-surface-white rounded-sm px-2 py-1.5"
             >
               <option value="">All</option>
               {entityTypes.map((t) => (
@@ -320,12 +320,12 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
             </select>
           </div>
           <div>
-            <label htmlFor="filter-evidence" className="block text-sm text-genarch-subtext mb-1">Evidence type</label>
+            <label htmlFor="filter-evidence" className="block text-sm text-cool-mid mb-1">Evidence type</label>
             <select
               id="filter-evidence"
               value={filters.evidenceType}
               onChange={(e) => setFilters((f) => ({ ...f, evidenceType: e.target.value }))}
-              className="w-full text-sm border border-gray-200 rounded-sm px-2 py-1.5"
+              className="w-full text-sm border border-white/[0.06] bg-navy-deep text-surface-white rounded-sm px-2 py-1.5"
             >
               <option value="">All</option>
               {evidenceTypes.map((t) => (
@@ -334,12 +334,12 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
             </select>
           </div>
           <div>
-            <label htmlFor="filter-confidence" className="block text-sm text-genarch-subtext mb-1">Confidence</label>
+            <label htmlFor="filter-confidence" className="block text-sm text-cool-mid mb-1">Confidence</label>
             <select
               id="filter-confidence"
               value={filters.confidence}
               onChange={(e) => setFilters((f) => ({ ...f, confidence: e.target.value }))}
-              className="w-full text-sm border border-gray-200 rounded-sm px-2 py-1.5"
+              className="w-full text-sm border border-white/[0.06] bg-navy-deep text-surface-white rounded-sm px-2 py-1.5"
             >
               <option value="">All</option>
               {confidences.map((c) => (
@@ -348,12 +348,12 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
             </select>
           </div>
           <div>
-            <label htmlFor="filter-ancestry" className="block text-sm text-genarch-subtext mb-1">Ancestry rep.</label>
+            <label htmlFor="filter-ancestry" className="block text-sm text-cool-mid mb-1">Ancestry rep.</label>
             <select
               id="filter-ancestry"
               value={filters.ancestryRep}
               onChange={(e) => setFilters((f) => ({ ...f, ancestryRep: e.target.value }))}
-              className="w-full text-sm border border-gray-200 rounded-sm px-2 py-1.5"
+              className="w-full text-sm border border-white/[0.06] bg-navy-deep text-surface-white rounded-sm px-2 py-1.5"
             >
               <option value="">All</option>
               {ancestryReps.map((a) => (
@@ -370,8 +370,8 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
             onClick={() => setLayoutType("force")}
             className={`px-3 py-1.5 text-sm rounded-sm ${
               layoutType === "force"
-                ? "bg-genarch-action text-white"
-                : "bg-gray-100 text-genarch-text"
+                ? "bg-teal-primary text-navy-deep"
+                : "bg-white/[0.03] text-cool-light"
             }`}
           >
             Force-directed
@@ -381,8 +381,8 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
             onClick={() => setLayoutType("hierarchical")}
             className={`px-3 py-1.5 text-sm rounded-sm ${
               layoutType === "hierarchical"
-                ? "bg-genarch-action text-white"
-                : "bg-gray-100 text-genarch-text"
+                ? "bg-teal-primary text-navy-deep"
+                : "bg-white/[0.03] text-cool-light"
             }`}
           >
             Hierarchical
@@ -392,8 +392,8 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
             onClick={() => setLayoutType("circular")}
             className={`px-3 py-1.5 text-sm rounded-sm ${
               layoutType === "circular"
-                ? "bg-genarch-action text-white"
-                : "bg-gray-100 text-genarch-text"
+                ? "bg-teal-primary text-navy-deep"
+                : "bg-white/[0.03] text-cool-light"
             }`}
           >
             Circular
@@ -427,27 +427,27 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
       <div className="flex gap-4">
         <div
           ref={containerRef}
-          className="flex-1 min-h-[500px] border border-gray-200 rounded-sm bg-white"
+          className="flex-1 min-h-[500px] border border-white/[0.06] rounded-sm bg-navy-mid"
           style={{ height: "600px" }}
           aria-label="Knowledge graph"
         />
         <aside className="w-80 flex-shrink-0 space-y-4">
           {selectedNode && (
             <div className="card">
-              <h3 className="text-h3 text-genarch-text mb-2">
+              <h3 className="text-h3 text-surface-white mb-2">
                 {selectedNode.label}
               </h3>
-              <p className="text-xs text-genarch-subtext mb-2">
+              <p className="text-xs text-cool-mid mb-2">
                 {selectedNode.type}
               </p>
               {selectedNode.attrs?.summary && (
-                <p className="text-sm text-genarch-text mb-4">
+                <p className="text-sm text-cool-light mb-4">
                   {selectedNode.attrs.summary}
                 </p>
               )}
               <Link
                 href={getNodeHref(selectedNode)}
-                className="text-genarch-link text-sm hover:underline"
+                className="text-teal-primary text-sm hover:text-teal-soft hover:underline"
               >
                 View full page →
               </Link>
@@ -455,34 +455,34 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
           )}
           {selectedEdge && (
             <div className="card">
-              <h3 className="text-h3 text-genarch-text mb-2">Edge Detail</h3>
-              <p className="text-sm text-genarch-text mb-2">
+              <h3 className="text-h3 text-surface-white mb-2">Edge Detail</h3>
+              <p className="text-sm text-cool-light mb-2">
                 {selectedEdge.source.label} → {selectedEdge.target.label}
               </p>
               <dl className="text-sm space-y-1">
-                <dt className="text-genarch-subtext">Evidence type</dt>
-                <dd>{selectedEdge.edge.attrs.evidence_type}</dd>
-                <dt className="text-genarch-subtext mt-2">Confidence</dt>
-                <dd>{selectedEdge.edge.attrs.confidence}</dd>
-                <dt className="text-genarch-subtext mt-2">Direction</dt>
-                <dd>{selectedEdge.edge.attrs.direction}</dd>
+                <dt className="text-cool-mid">Evidence type</dt>
+                <dd className="text-surface-white">{selectedEdge.edge.attrs.evidence_type}</dd>
+                <dt className="text-cool-mid mt-2">Confidence</dt>
+                <dd className="text-surface-white">{selectedEdge.edge.attrs.confidence}</dd>
+                <dt className="text-cool-mid mt-2">Direction</dt>
+                <dd className="text-surface-white">{selectedEdge.edge.attrs.direction}</dd>
                 {selectedEdge.edge.attrs.ancestry_rep && (
                   <>
-                    <dt className="text-genarch-subtext mt-2">Ancestry</dt>
-                    <dd>{selectedEdge.edge.attrs.ancestry_rep}</dd>
+                    <dt className="text-cool-mid mt-2">Ancestry</dt>
+                    <dd className="text-surface-white">{selectedEdge.edge.attrs.ancestry_rep}</dd>
                   </>
                 )}
                 {selectedEdge.edge.attrs.sources?.length > 0 && (
                   <>
-                    <dt className="text-genarch-subtext mt-2">Sources</dt>
-                    <dd>{selectedEdge.edge.attrs.sources.join(", ")}</dd>
+                    <dt className="text-cool-mid mt-2">Sources</dt>
+                    <dd className="text-surface-white">{selectedEdge.edge.attrs.sources.join(", ")}</dd>
                   </>
                 )}
               </dl>
             </div>
           )}
           <div className="card">
-            <h3 className="text-h3 text-genarch-text mb-3">Legend</h3>
+            <h3 className="text-h3 text-surface-white mb-3">Legend</h3>
             <ul className="space-y-2 text-sm">
               {Object.entries(NODE_COLORS).map(([type, color]) => (
                 <li key={type} className="flex items-center gap-2">
@@ -495,7 +495,7 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
                     }}
                     aria-hidden
                   />
-                  <span className="capitalize">{type}</span>
+                  <span className="capitalize text-cool-light">{type}</span>
                 </li>
               ))}
             </ul>

@@ -99,66 +99,68 @@ export default function AtlasPage() {
   );
 
   return (
-    <div className="space-y-8">
-      <Breadcrumbs items={[{ label: "Atlas", href: "/atlas" }]} />
-      <div className="mb-6">
-        <SearchBar items={searchItems} placeholder="Search atlas…" />
-      </div>
-      <h1 className="text-h1 text-genarch-text">Atlas</h1>
-      <p className="text-genarch-subtext max-w-2xl">
-        Explore the GENARCH atlas — diseases, environmental exposures, genes,
-        and pathways. All content is population-level and for educational
-        purposes only; not for individual risk assessment.
-      </p>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <Link
-          href="/atlas/diseases"
-          className="card block no-underline transition-shadow hover:shadow-md"
-        >
-          <div className="text-3xl font-bold text-genarch-primary">
-            {diseases.length}
-          </div>
-          <h2 className="text-h3 text-genarch-text mt-2">Diseases</h2>
-          <p className="text-sm text-genarch-subtext mt-1">
-            Browse diseases with genetic architecture and exposure modifiers
-          </p>
-        </Link>
-        <Link
-          href="/atlas/exposures"
-          className="card block no-underline transition-shadow hover:shadow-md"
-        >
-          <div className="text-3xl font-bold text-genarch-action">
-            {exposures.length}
-          </div>
-          <h2 className="text-h3 text-genarch-text mt-2">Exposures</h2>
-          <p className="text-sm text-genarch-subtext mt-1">
-            Environmental exposures, proxies, and GxE highlights
-          </p>
-        </Link>
-        <Link
-          href="/atlas/genes-pathways"
-          className="card block no-underline transition-shadow hover:shadow-md"
-        >
-          <div className="text-3xl font-bold text-genarch-data">
-            {genes.length}
-          </div>
-          <h2 className="text-h3 text-genarch-text mt-2">Genes</h2>
-          <p className="text-sm text-genarch-subtext mt-1">
-            Molecular function, regulation, and pathway links
-          </p>
-        </Link>
-        <Link
-          href="/atlas/genes-pathways"
-          className="card block no-underline transition-shadow hover:shadow-md"
-        >
-          <div className="text-3xl font-bold text-genarch-community">
-            {pathways.length}
-          </div>
-          <h2 className="text-h3 text-genarch-text mt-2">Pathways</h2>
-          <p className="text-sm text-genarch-subtext mt-1">
-            Biological pathways and genetic modulation points
-          </p>
-        </Link>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="space-y-8">
+        <Breadcrumbs items={[{ label: "Atlas", href: "/atlas" }]} />
+        <div className="mb-6">
+          <SearchBar items={searchItems} placeholder="Search atlas…" />
+        </div>
+        <h1 className="text-h1 text-surface-white">Atlas</h1>
+        <p className="text-cool-light max-w-2xl">
+          Explore the GENARCH atlas — diseases, environmental exposures, genes,
+          and pathways. All content is population-level and for educational
+          purposes only; not for individual risk assessment.
+        </p>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <Link
+            href="/atlas/diseases"
+            className="card block no-underline transition-shadow hover:shadow-md"
+          >
+            <div className="text-3xl font-bold text-teal-primary">
+              {diseases.length}
+            </div>
+            <h2 className="text-h3 text-surface-white mt-2">Diseases</h2>
+            <p className="text-sm text-cool-light mt-1">
+              Browse diseases with genetic architecture and exposure modifiers
+            </p>
+          </Link>
+          <Link
+            href="/atlas/exposures"
+            className="card block no-underline transition-shadow hover:shadow-md"
+          >
+            <div className="text-3xl font-bold text-teal-primary">
+              {exposures.length}
+            </div>
+            <h2 className="text-h3 text-surface-white mt-2">Exposures</h2>
+            <p className="text-sm text-cool-light mt-1">
+              Environmental exposures, proxies, and GxE highlights
+            </p>
+          </Link>
+          <Link
+            href="/atlas/genes-pathways"
+            className="card block no-underline transition-shadow hover:shadow-md"
+          >
+            <div className="text-3xl font-bold text-teal-primary">
+              {genes.length}
+            </div>
+            <h2 className="text-h3 text-surface-white mt-2">Genes</h2>
+            <p className="text-sm text-cool-light mt-1">
+              Molecular function, regulation, and pathway links
+            </p>
+          </Link>
+          <Link
+            href="/atlas/genes-pathways"
+            className="card block no-underline transition-shadow hover:shadow-md"
+          >
+            <div className="text-3xl font-bold text-cool-mid">
+              {pathways.length}
+            </div>
+            <h2 className="text-h3 text-surface-white mt-2">Pathways</h2>
+            <p className="text-sm text-cool-light mt-1">
+              Biological pathways and genetic modulation points
+            </p>
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -18,45 +18,47 @@ export default function AtlasDiseasesPage() {
   const diseases = getAllDiseases();
 
   return (
-    <div className="space-y-8">
-      <Breadcrumbs
-        items={[
-          { label: "Atlas", href: "/atlas" },
-          { label: "Diseases", href: "/atlas/diseases" },
-        ]}
-      />
-      <h1 className="text-h1 text-genarch-text">Diseases</h1>
-      <p className="text-genarch-subtext max-w-2xl">
-        Browse diseases in the GENARCH atlas with population-level genetic
-        architecture, exposure modifiers, and tissue context. This information
-        is for educational purposes and does not imply individual risk.
-      </p>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {diseases.map((disease) => (
-          <Link
-            key={disease.slug}
-            href={`/atlas/diseases/${disease.slug}`}
-            className="card block no-underline transition-shadow hover:shadow-md"
-          >
-            <h2 className="text-h3 text-genarch-text mb-2">{disease.name}</h2>
-            <p className="text-sm text-genarch-subtext line-clamp-2 mb-4">
-              {disease.summary}
-            </p>
-            <div className="flex flex-wrap items-center gap-2 text-xs">
-              <span className="text-genarch-subtext">
-                {disease.exposure_modifiers?.length ?? 0} exposure modifier
-                {(disease.exposure_modifiers?.length ?? 0) !== 1 ? "s" : ""}
-              </span>
-              <ConfidenceBadge
-                tier={summarizeConfidence(disease)}
-              />
-            </div>
-          </Link>
-        ))}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="space-y-8">
+        <Breadcrumbs
+          items={[
+            { label: "Atlas", href: "/atlas" },
+            { label: "Diseases", href: "/atlas/diseases" },
+          ]}
+        />
+        <h1 className="text-h1 text-surface-white">Diseases</h1>
+        <p className="text-cool-light max-w-2xl">
+          Browse diseases in the GENARCH atlas with population-level genetic
+          architecture, exposure modifiers, and tissue context. This information
+          is for educational purposes and does not imply individual risk.
+        </p>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {diseases.map((disease) => (
+            <Link
+              key={disease.slug}
+              href={`/atlas/diseases/${disease.slug}`}
+              className="card block no-underline transition-shadow hover:shadow-md"
+            >
+              <h2 className="text-h3 text-surface-white mb-2">{disease.name}</h2>
+              <p className="text-sm text-cool-light line-clamp-2 mb-4">
+                {disease.summary}
+              </p>
+              <div className="flex flex-wrap items-center gap-2 text-xs">
+                <span className="text-cool-mid">
+                  {disease.exposure_modifiers?.length ?? 0} exposure modifier
+                  {(disease.exposure_modifiers?.length ?? 0) !== 1 ? "s" : ""}
+                </span>
+                <ConfidenceBadge
+                  tier={summarizeConfidence(disease)}
+                />
+              </div>
+            </Link>
+          ))}
+        </div>
+        {diseases.length === 0 && (
+          <p className="text-cool-light italic">No diseases in the atlas yet.</p>
+        )}
       </div>
-      {diseases.length === 0 && (
-        <p className="text-genarch-subtext italic">No diseases in the atlas yet.</p>
-      )}
     </div>
   );
 }

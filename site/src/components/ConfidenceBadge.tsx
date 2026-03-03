@@ -4,20 +4,17 @@ export interface ConfidenceBadgeProps {
   tier: ConfidenceTier;
 }
 
-const TIER_STYLES: Record<
-  ConfidenceTier,
-  { className: string; label: string }
-> = {
+const TIER_STYLES: Record<ConfidenceTier, { className: string; label: string }> = {
   LOW: {
-    className: "bg-red-100 text-red-800 border-red-200",
+    className: "badge-low",
     label: "Low confidence",
   },
   MEDIUM: {
-    className: "bg-amber-100 text-amber-800 border-amber-200",
+    className: "badge-medium",
     label: "Medium confidence",
   },
   HIGH: {
-    className: "bg-green-100 text-green-800 border-green-200",
+    className: "badge-high",
     label: "High confidence",
   },
 };
@@ -27,7 +24,7 @@ export function ConfidenceBadge({ tier }: ConfidenceBadgeProps) {
 
   return (
     <span
-      className={`inline-flex items-center rounded-sm border px-2 py-0.5 text-xs font-medium ${className}`}
+      className={`badge ${className}`}
       role="status"
       aria-label={label}
     >

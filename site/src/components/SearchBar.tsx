@@ -151,11 +151,11 @@ export function SearchBar({
             ? `search-result-${selectedIndex}`
             : undefined
         }
-        className="w-full rounded-sm border border-gray-200 bg-white py-2.5 pl-4 pr-10 text-sm text-genarch-text placeholder:text-genarch-subtext focus:border-genarch-primary focus:outline-none focus:ring-2 focus:ring-genarch-primary/20"
+        className="w-full rounded-sm border border-white/[0.06] bg-navy-mid py-2.5 pl-4 pr-10 text-sm text-surface-white placeholder:text-cool-mid focus:border-teal-primary focus:outline-none focus:ring-2 focus:ring-teal-primary/20"
         autoComplete="off"
       />
       <span
-        className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-genarch-subtext"
+        className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-cool-mid"
         aria-hidden="true"
       >
         <svg
@@ -177,7 +177,7 @@ export function SearchBar({
         <ul
           id="search-results"
           role="listbox"
-          className="absolute top-full left-0 right-0 z-50 mt-1 max-h-96 overflow-auto rounded-sm border border-gray-200 bg-white shadow-lg"
+          className="absolute top-full left-0 right-0 z-50 mt-1 max-h-96 overflow-auto rounded-sm border border-white/[0.06] bg-navy-mid shadow-lg"
         >
           {hasResults ? (
             searchResults.map((result, index) => {
@@ -189,32 +189,32 @@ export function SearchBar({
                   id={`search-result-${index}`}
                   role="option"
                   aria-selected={isSelected}
-                  className={isSelected ? "bg-genarch-bg" : ""}
+                  className={isSelected ? "bg-white/[0.04]" : ""}
                 >
                   <Link
                     href={item.href}
-                    className="block px-4 py-3 hover:bg-genarch-bg focus:bg-genarch-bg focus:outline-none"
+                    className="block px-4 py-3 hover:bg-white/[0.04] focus:bg-white/[0.04] focus:outline-none"
                     onMouseEnter={() => setSelectedIndex(index)}
                   >
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="font-medium text-genarch-text">
+                      <span className="font-medium text-surface-white">
                         {item.label}
                       </span>
                       <span
-                        className="inline-flex items-center rounded-sm px-2 py-0.5 text-xs font-medium bg-genarch-data/20 text-genarch-text"
+                        className="inline-flex items-center rounded-sm px-2 py-0.5 text-xs font-medium bg-teal-primary/20 text-teal-primary"
                         aria-label={`Type: ${getEntityTypeLabel(item.entityType)}`}
                       >
                         {getEntityTypeLabel(item.entityType)}
                       </span>
                       {item.evidenceType && (
-                        <EvidenceTypeBadge type={item.evidenceType.toLowerCase() as "gwas" | "eqtl" | "pathway" | "literature" | "inferred"} />
+                        <EvidenceTypeBadge type={item.evidenceType as "GWAS" | "eQTL" | "pathway" | "literature" | "inferred"} />
                       )}
                       {item.confidenceTier && (
                         <ConfidenceBadge tier={item.confidenceTier} />
                       )}
                     </div>
                     {item.summary && (
-                      <p className="mt-1 line-clamp-2 text-xs text-genarch-subtext">
+                      <p className="mt-1 line-clamp-2 text-xs text-cool-mid">
                         {truncateWithEllipsis(item.summary, 120)}
                       </p>
                     )}
@@ -226,7 +226,7 @@ export function SearchBar({
             <li
               role="option"
               aria-selected={false}
-              className="px-4 py-6 text-center text-sm text-genarch-subtext"
+              className="px-4 py-6 text-center text-sm text-cool-mid"
             >
               No results found for &quot;{query}&quot;
             </li>

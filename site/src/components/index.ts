@@ -1,7 +1,7 @@
 export { Breadcrumbs } from "./Breadcrumbs";
 export type { BreadcrumbItem, BreadcrumbsProps } from "./Breadcrumbs";
 export { CitationRenderer, InlineCitation } from "./CitationRenderer";
-export type { CitationRendererProps, InlineCitationProps, Reference } from "./CitationRenderer";
+export type { CitationRendererProps } from "./CitationRenderer";
 export { CommunityRegionsList } from "./CommunityRegionsList";
 export type { CommunityRegionsListProps, RegionSummary } from "./CommunityRegionsList";
 export { CommunityRegionDetail } from "./CommunityRegionDetail";

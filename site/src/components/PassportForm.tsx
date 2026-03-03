@@ -63,22 +63,21 @@ export function PassportForm({
           <div
             key={i}
             className={`h-2 flex-1 rounded-sm ${
-              i + 1 <= step ? "bg-genarch-action" : "bg-gray-200"
+              i + 1 <= step ? "bg-teal-primary" : "bg-white/[0.06]"
             }`}
           />
         ))}
       </div>
 
-      {/* Step 1: Region */}
       {step === 1 && (
         <section className="card">
-          <h2 className="text-h2 text-genarch-text mb-4">
+          <h2 className="text-h2 text-surface-white mb-4">
             Step 1: Region (optional)
           </h2>
           <select
             value={region}
             onChange={(e) => setRegion(e.target.value)}
-            className="w-full max-w-md border border-gray-200 rounded-sm px-4 py-2 text-genarch-text"
+            className="w-full max-w-md border border-white/[0.06] bg-navy-deep rounded-sm px-4 py-2 text-surface-white"
             aria-label="Select region"
           >
             <option value="">— Select region (optional) —</option>
@@ -89,24 +88,23 @@ export function PassportForm({
             ))}
           </select>
           {regionOptions.length === 0 && (
-            <p className="text-sm text-genarch-subtext mt-2">
+            <p className="text-sm text-cool-mid mt-2">
               No regions available. Leave blank to skip.
             </p>
           )}
         </section>
       )}
 
-      {/* Step 2: Age band */}
       {step === 2 && (
         <section className="card">
-          <h2 className="text-h2 text-genarch-text mb-4">
+          <h2 className="text-h2 text-surface-white mb-4">
             Step 2: Age band (optional)
           </h2>
           <div className="flex flex-wrap gap-3">
             {ageBands.map((b) => (
               <label
                 key={b.value}
-                className="flex items-center gap-2 cursor-pointer"
+                className="flex items-center gap-2 cursor-pointer text-cool-light"
               >
                 <input
                   type="radio"
@@ -114,7 +112,7 @@ export function PassportForm({
                   value={b.value}
                   checked={ageBand === b.value}
                   onChange={() => setAgeBand(b.value)}
-                  className="border-gray-300"
+                  className="border-white/[0.06]"
                 />
                 <span>{b.label}</span>
               </label>
@@ -123,16 +121,15 @@ export function PassportForm({
         </section>
       )}
 
-      {/* Step 3: Ancestry */}
       {step === 3 && (
         <section className="card">
-          <h2 className="text-h2 text-genarch-text mb-4">
+          <h2 className="text-h2 text-surface-white mb-4">
             Step 3: Ancestry category (optional)
           </h2>
           <select
             value={ancestry}
             onChange={(e) => setAncestry(e.target.value)}
-            className="w-full max-w-md border border-gray-200 rounded-sm px-4 py-2 text-genarch-text"
+            className="w-full max-w-md border border-white/[0.06] bg-navy-deep rounded-sm px-4 py-2 text-surface-white"
             aria-label="Select ancestry category"
           >
             {ancestryOptions.map((o) => (
@@ -144,32 +141,31 @@ export function PassportForm({
         </section>
       )}
 
-      {/* Step 4: Disease interests */}
       {step === 4 && (
         <section className="card">
-          <h2 className="text-h2 text-genarch-text mb-4">
+          <h2 className="text-h2 text-surface-white mb-4">
             Step 4: Disease interests (optional)
           </h2>
-          <p className="text-sm text-genarch-subtext mb-3">
+          <p className="text-sm text-cool-mid mb-3">
             Select diseases you want to learn about. Multi-select.
           </p>
-          <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto border border-gray-200 rounded-sm p-3">
+          <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto border border-white/[0.06] rounded-sm p-3">
             {diseaseOptions.map((o) => (
               <label
                 key={o.value}
-                className="flex items-center gap-2 cursor-pointer"
+                className="flex items-center gap-2 cursor-pointer text-cool-light"
               >
                 <input
                   type="checkbox"
                   checked={diseases.includes(o.value)}
                   onChange={() => toggleMultiSelect(o.value, diseases, setDiseases)}
-                  className="rounded border-gray-300"
+                  className="rounded border-white/[0.06]"
                 />
                 <span className="text-sm">{o.label}</span>
               </label>
             ))}
             {diseaseOptions.length === 0 && (
-              <p className="text-genarch-subtext italic text-sm">
+              <p className="text-cool-mid italic text-sm">
                 No diseases in atlas yet.
               </p>
             )}
@@ -177,32 +173,31 @@ export function PassportForm({
         </section>
       )}
 
-      {/* Step 5: Exposure interests */}
       {step === 5 && (
         <section className="card">
-          <h2 className="text-h2 text-genarch-text mb-4">
+          <h2 className="text-h2 text-surface-white mb-4">
             Step 5: Exposure interests (optional)
           </h2>
-          <p className="text-sm text-genarch-subtext mb-3">
+          <p className="text-sm text-cool-mid mb-3">
             Select exposures you want to learn about. Multi-select.
           </p>
-          <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto border border-gray-200 rounded-sm p-3">
+          <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto border border-white/[0.06] rounded-sm p-3">
             {exposureOptions.map((o) => (
               <label
                 key={o.value}
-                className="flex items-center gap-2 cursor-pointer"
+                className="flex items-center gap-2 cursor-pointer text-cool-light"
               >
                 <input
                   type="checkbox"
                   checked={exposures.includes(o.value)}
                   onChange={() => toggleMultiSelect(o.value, exposures, setExposures)}
-                  className="rounded border-gray-300"
+                  className="rounded border-white/[0.06]"
                 />
                 <span className="text-sm">{o.label}</span>
               </label>
             ))}
             {exposureOptions.length === 0 && (
-              <p className="text-genarch-subtext italic text-sm">
+              <p className="text-cool-mid italic text-sm">
                 No exposures in atlas yet.
               </p>
             )}
@@ -210,33 +205,32 @@ export function PassportForm({
         </section>
       )}
 
-      {/* Step 6: Summary + Generate */}
       {step === 6 && (
         <section className="card">
-          <h2 className="text-h2 text-genarch-text mb-4">
+          <h2 className="text-h2 text-surface-white mb-4">
             Summary & Generate
           </h2>
           <dl className="space-y-2 mb-6">
-            <dt className="text-genarch-subtext">Region</dt>
-            <dd>{region || "—"}</dd>
-            <dt className="text-genarch-subtext mt-2">Age band</dt>
-            <dd>{ageBand || "—"}</dd>
-            <dt className="text-genarch-subtext mt-2">Ancestry</dt>
-            <dd>
+            <dt className="text-cool-mid">Region</dt>
+            <dd className="text-surface-white">{region || "—"}</dd>
+            <dt className="text-cool-mid mt-2">Age band</dt>
+            <dd className="text-surface-white">{ageBand || "—"}</dd>
+            <dt className="text-cool-mid mt-2">Ancestry</dt>
+            <dd className="text-surface-white">
               {ancestry
                 ? ancestryOptions.find((o) => o.value === ancestry)?.label ?? ancestry
                 : "—"}
             </dd>
-            <dt className="text-genarch-subtext mt-2">Disease interests</dt>
-            <dd>
+            <dt className="text-cool-mid mt-2">Disease interests</dt>
+            <dd className="text-surface-white">
               {diseases.length > 0
                 ? diseases
                     .map((d) => diseaseOptions.find((o) => o.value === d)?.label ?? d)
                     .join(", ")
                 : "—"}
             </dd>
-            <dt className="text-genarch-subtext mt-2">Exposure interests</dt>
-            <dd>
+            <dt className="text-cool-mid mt-2">Exposure interests</dt>
+            <dd className="text-surface-white">
               {exposures.length > 0
                 ? exposures
                     .map((e) => exposureOptions.find((o) => o.value === e)?.label ?? e)
@@ -254,7 +248,6 @@ export function PassportForm({
         </section>
       )}
 
-      {/* Navigation */}
       <div className="flex justify-between">
         <button
           type="button"

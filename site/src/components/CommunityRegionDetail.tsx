@@ -41,22 +41,20 @@ export function CommunityRegionDetail({ region }: CommunityRegionDetailProps) {
 
   return (
     <div className="space-y-8">
-      {/* Map placeholder with Leaflet loaded dynamically */}
       <section aria-labelledby="map-heading">
-        <h2 id="map-heading" className="text-h2 text-genarch-text mb-3">
+        <h2 id="map-heading" className="text-h2 text-surface-white mb-3">
           Map
         </h2>
         <div
           ref={mapRef}
-          className="h-80 w-full border border-gray-200 rounded-sm bg-gray-50"
+          className="h-80 w-full border border-white/[0.06] rounded-sm bg-navy-mid"
           aria-label="Region map"
         />
       </section>
 
-      {/* Exposure layer toggles */}
       {(region.exposure_layers?.length ?? 0) > 0 && (
         <section aria-labelledby="exposure-layers-heading">
-          <h2 id="exposure-layers-heading" className="text-h2 text-genarch-text mb-3">
+          <h2 id="exposure-layers-heading" className="text-h2 text-surface-white mb-3">
             Exposure Layers
           </h2>
           <div className="flex flex-wrap gap-4">
@@ -74,12 +72,12 @@ export function CommunityRegionDetail({ region }: CommunityRegionDetailProps) {
                       [layer.layer_name]: e.target.checked,
                     }))
                   }
-                  className="rounded border-gray-300"
+                  className="rounded border-white/[0.06]"
                 />
-                <span className="text-sm text-genarch-text">
+                <span className="text-sm text-surface-white">
                   {layer.layer_name}
                 </span>
-                <span className="text-xs text-genarch-subtext">
+                <span className="text-xs text-cool-mid">
                   ({layer.data_source}, {layer.year})
                 </span>
               </label>
@@ -88,55 +86,54 @@ export function CommunityRegionDetail({ region }: CommunityRegionDetailProps) {
         </section>
       )}
 
-      {/* Health burden charts */}
       {(region.health_stats?.length ?? 0) > 0 && (
         <section aria-labelledby="health-burden-heading">
-          <h2 id="health-burden-heading" className="text-h2 text-genarch-text mb-3">
+          <h2 id="health-burden-heading" className="text-h2 text-surface-white mb-3">
             Health Burden (vs State & National)
           </h2>
           <div className="space-y-4">
             {region.health_stats!.map((stat, i) => (
               <div key={i} className="card">
-                <h3 className="text-h3 text-genarch-text mb-3">
+                <h3 className="text-h3 text-surface-white mb-3">
                   {stat.disease_slug} — {stat.metric_type}
                 </h3>
                 <div className="flex items-end gap-2 h-24">
                   <div className="flex-1 flex flex-col items-center">
                     <div
-                      className="w-full max-w-[60px] bg-genarch-primary rounded-t-sm"
+                      className="w-full max-w-[60px] bg-teal-primary rounded-t-sm"
                       style={{
                         height: `${Math.min(100, (stat.value / 25) * 100)}%`,
                       }}
                       title={`Region: ${stat.value}`}
                     />
-                    <span className="text-xs mt-2">Region</span>
-                    <span className="text-xs font-medium">{stat.value}</span>
+                    <span className="text-xs mt-2 text-cool-light">Region</span>
+                    <span className="text-xs font-medium text-surface-white">{stat.value}</span>
                   </div>
                   <div className="flex-1 flex flex-col items-center">
                     <div
-                      className="w-full max-w-[60px] bg-genarch-data/70 rounded-t-sm"
+                      className="w-full max-w-[60px] bg-teal-soft rounded-t-sm"
                       style={{
                         height: `${Math.min(100, (stateComparison / 25) * 100)}%`,
                       }}
                       title={`State: ${stateComparison}`}
                     />
-                    <span className="text-xs mt-2">State</span>
-                    <span className="text-xs font-medium">{stateComparison}</span>
+                    <span className="text-xs mt-2 text-cool-light">State</span>
+                    <span className="text-xs font-medium text-surface-white">{stateComparison}</span>
                   </div>
                   <div className="flex-1 flex flex-col items-center">
                     <div
-                      className="w-full max-w-[60px] bg-genarch-neutral rounded-t-sm"
+                      className="w-full max-w-[60px] bg-cool-mid rounded-t-sm"
                       style={{
                         height: `${Math.min(100, (nationalComparison / 25) * 100)}%`,
                       }}
                       title={`National: ${nationalComparison}`}
                     />
-                    <span className="text-xs mt-2">National</span>
-                    <span className="text-xs font-medium">{nationalComparison}</span>
+                    <span className="text-xs mt-2 text-cool-light">National</span>
+                    <span className="text-xs font-medium text-surface-white">{nationalComparison}</span>
                   </div>
                 </div>
                 {stat.ci_lower != null && stat.ci_upper != null && (
-                  <p className="text-xs text-genarch-subtext mt-2">
+                  <p className="text-xs text-cool-mid mt-2">
                     95% CI: [{stat.ci_lower}, {stat.ci_upper}]
                   </p>
                 )}
@@ -146,22 +143,21 @@ export function CommunityRegionDetail({ region }: CommunityRegionDetailProps) {
         </section>
       )}
 
-      {/* SHAP drivers panel */}
       {region.model?.shap_summaries && region.model.shap_summaries.length > 0 && (
         <section aria-labelledby="shap-drivers-heading">
-          <h2 id="shap-drivers-heading" className="text-h2 text-genarch-text mb-3">
+          <h2 id="shap-drivers-heading" className="text-h2 text-surface-white mb-3">
             Model Drivers (SHAP)
           </h2>
           <div className="card">
             <ul className="space-y-2">
               {region.model.shap_summaries.map((s, i) => (
                 <li key={i} className="flex justify-between items-center">
-                  <span className="font-medium">{s.feature}</span>
+                  <span className="font-medium text-surface-white">{s.feature}</span>
                   <span
                     className={
                       s.direction === "positive"
-                        ? "text-green-700"
-                        : "text-red-700"
+                        ? "text-green-400"
+                        : "text-red-400"
                     }
                   >
                     {s.direction} (mean SHAP: {s.mean_shap_value.toFixed(3)})
@@ -173,32 +169,30 @@ export function CommunityRegionDetail({ region }: CommunityRegionDetailProps) {
         </section>
       )}
 
-      {/* Model card section */}
       {region.model && (
         <section aria-labelledby="model-card-heading">
-          <h2 id="model-card-heading" className="text-h2 text-genarch-text mb-3">
+          <h2 id="model-card-heading" className="text-h2 text-surface-white mb-3">
             Model Card
           </h2>
           <div className="card">
             <dl className="grid gap-2 sm:grid-cols-2">
-              <dt className="text-genarch-subtext">Version</dt>
-              <dd>{region.model.model_card_version}</dd>
-              <dt className="text-genarch-subtext">Training cutoff</dt>
-              <dd>{region.model.training_data_cutoff}</dd>
-              <dt className="text-genarch-subtext">Features used</dt>
-              <dd>{(region.model.features_used ?? []).join(", ")}</dd>
+              <dt className="text-cool-mid">Version</dt>
+              <dd className="text-surface-white">{region.model.model_card_version}</dd>
+              <dt className="text-cool-mid">Training cutoff</dt>
+              <dd className="text-surface-white">{region.model.training_data_cutoff}</dd>
+              <dt className="text-cool-mid">Features used</dt>
+              <dd className="text-surface-white">{(region.model.features_used ?? []).join(", ")}</dd>
             </dl>
-            <Link href="/methods/" className="text-genarch-link text-sm mt-4 inline-block hover:underline">
+            <Link href="/methods/" className="text-teal-primary text-sm mt-4 inline-block hover:text-teal-soft hover:underline">
               Full model card →
             </Link>
           </div>
         </section>
       )}
 
-      {/* Educational resources */}
       {(region.resources?.length ?? 0) > 0 && (
         <section aria-labelledby="resources-heading">
-          <h2 id="resources-heading" className="text-h2 text-genarch-text mb-3">
+          <h2 id="resources-heading" className="text-h2 text-surface-white mb-3">
             Educational Resources
           </h2>
           <ul className="space-y-2">
@@ -208,12 +202,12 @@ export function CommunityRegionDetail({ region }: CommunityRegionDetailProps) {
                   href={r.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-genarch-link hover:underline"
+                  className="text-teal-primary hover:text-teal-soft hover:underline"
                 >
                   {r.name}
                 </a>
                 {r.description && (
-                  <span className="text-genarch-subtext text-sm ml-2">
+                  <span className="text-cool-mid text-sm ml-2">
                     — {r.description}
                   </span>
                 )}

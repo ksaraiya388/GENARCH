@@ -1,120 +1,68 @@
-import Link from "next/link";
-
-export interface Reference {
-  id: string;
-  title: string;
-  authors: string;
-  year: number;
-  journal?: string;
-  doi?: string;
-  url?: string;
-}
+import type { Reference } from "@/lib/types";
 
 export interface CitationRendererProps {
-  references: Reference[];
+  references: { id: string; title: string; authors: string; year: number; journal?: string; doi?: string; url?: string }[];
 }
 
-export interface InlineCitationProps {
-  id: string;
-  references: Reference[];
-}
-
-function formatAuthorsAPA(authors: string): string {
-  const names = authors.split(/,\s*|\s+and\s+/i).filter(Boolean);
-  if (names.length === 0) return "";
-  if (names.length === 1) return names[0];
-  if (names.length <= 7)
-    return names.join(", ").replace(/, ([^,]*)$/, ", & $1");
-  return `${names.slice(0, 6).join(", ")}, et al.`;
-}
-
-function formatReferenceAPA(ref: Reference): string {
-  const authors = formatAuthorsAPA(ref.authors);
-  const base = `${authors} (${ref.year}). ${ref.title}.`;
-  return ref.journal ? `${base} ${ref.journal}.` : `${base}`;
+export function InlineCitation({ id }: { id: string }) {
+  return (
+    <sup>
+      <a href={`#ref-${id}`} className="text-teal-primary no-underline hover:underline text-xs">
+        [{id}]
+      </a>
+    </sup>
+  );
 }
 
 export function CitationRenderer({ references }: CitationRendererProps) {
-  if (references.length === 0) return null;
+  if (!references || references.length === 0) return null;
 
   return (
-    <section
-      className="mt-12 border-t border-gray-200 pt-8"
-      aria-labelledby="references-heading"
-    >
-      <h2
-        id="references-heading"
-        className="mb-4 font-sans text-lg font-semibold text-genarch-text"
-      >
+    <section aria-labelledby="references-heading" className="mt-10">
+      <h2 id="references-heading" className="text-h2 text-surface-white mb-4">
         References
       </h2>
-      <ol
-        className="list-decimal space-y-4 pl-5"
-        style={{ listStylePosition: "outside" }}
-      >
-        {references.map((ref) => (
+      <ol className="space-y-3 text-sm">
+        {references.map((ref, i) => (
           <li
             key={ref.id}
             id={`ref-${ref.id}`}
-            className="text-sm text-genarch-text leading-relaxed"
+            className="text-cool-light leading-relaxed pl-6 relative"
           >
-            <span className="font-medium">
-              {formatReferenceAPA(ref)}
-            </span>
-            {(ref.doi || ref.url) && (
-              <span className="ml-1">
-                {ref.doi && (
-                  <>
-                    {" "}
-                    <Link
-                      href={`https://doi.org/${ref.doi.replace(/^https?:\/\/doi\.org\//i, "")}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-genarch-link hover:underline"
-                    >
-                      https://doi.org/{ref.doi.replace(/^https?:\/\/doi\.org\//i, "")}
-                    </Link>
-                  </>
-                )}
-                {ref.url && !ref.doi && (
-                  <>
-                    {" "}
-                    <Link
-                      href={ref.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-genarch-link hover:underline"
-                    >
-                      {ref.url}
-                    </Link>
-                  </>
-                )}
-              </span>
+            <span className="absolute left-0 text-cool-mid font-mono text-xs">{i + 1}.</span>
+            <span className="text-cool-mid">{ref.authors}</span>
+            {" "}({ref.year}).{" "}
+            <span className="text-surface-white">{ref.title}.</span>
+            {ref.journal && <span className="text-cool-mid italic"> {ref.journal}.</span>}
+            {ref.doi && (
+              <>
+                {" "}
+                <a
+                  href={`https://doi.org/${ref.doi}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-teal-primary hover:text-teal-soft text-xs no-underline hover:underline"
+                >
+                  doi:{ref.doi}
+                </a>
+              </>
+            )}
+            {ref.url && !ref.doi && (
+              <>
+                {" "}
+                <a
+                  href={ref.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-teal-primary hover:text-teal-soft text-xs no-underline hover:underline"
+                >
+                  [link]
+                </a>
+              </>
             )}
           </li>
         ))}
       </ol>
     </section>
-  );
-}
-
-export function InlineCitation({ id, references }: InlineCitationProps) {
-  const ref = references.find((r) => r.id === id);
-  const index = ref ? references.indexOf(ref) + 1 : null;
-
-  if (index === null) return null;
-
-  return (
-    <sup
-      className="ml-0.5 align-baseline"
-      aria-label={`Citation ${index}`}
-    >
-      <a
-        href={`#ref-${id}`}
-        className="text-genarch-link hover:underline focus:outline-none focus:ring-2 focus:ring-genarch-primary focus:ring-offset-1 rounded"
-      >
-        [<span aria-hidden="true">{index}</span>]
-      </a>
-    </sup>
   );
 }
