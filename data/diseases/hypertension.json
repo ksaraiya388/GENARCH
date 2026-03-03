@@ -1,0 +1,101 @@
+{
+  "id": "dis_hypertension",
+  "slug": "hypertension",
+  "name": "Hypertension",
+  "icd11_code": "BA00",
+  "summary": "Hypertension (essential arterial hypertension) is a chronic condition characterized by sustained elevation of blood pressure (≥130/80 mmHg). It is the leading modifiable risk factor for cardiovascular disease, stroke, and chronic kidney disease worldwide. Pathophysiology involves complex interactions between renal sodium handling, the renin-angiotensin-aldosterone system (RAAS), sympathetic nervous system overactivity, vascular remodeling, and endothelial dysfunction. Genetic factors contribute substantially, with twin studies estimating heritability at 30–50% and SNP-based heritability ~0.15–0.25. The disease exhibits strong gene–environment interactions: high sodium intake amplifies genetic susceptibility in salt-sensitive individuals, while psychosocial stress and obesity modulate both onset and severity. Adolescents represent a critical window—early-onset hypertension tracks into adulthood, and blood pressure trajectories established in the 10–24 age range predict long-term cardiovascular risk. Lifestyle factors (diet, physical activity, stress) during adolescence can modify epigenetic programming and disease trajectory.",
+  "adolescent_relevance": "Essential hypertension increasingly presents in adolescence due to rising obesity and sedentary behavior. Blood pressure tracking from childhood predicts adult disease; adolescents with elevated BP or family history warrant early intervention. Sodium sensitivity and stress reactivity may be particularly modifiable during this developmental window. Transition from pediatric to adult care creates management gaps.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "ACE",
+        "variant": "rs4341",
+        "gwas_p": 1.2e-9,
+        "effect_size": 0.08,
+        "evidence": "ACE insertion/deletion polymorphism and regulatory variants; angiotensin-converting enzyme regulates RAAS; variants alter blood pressure and treatment response",
+        "strength": 0.82,
+        "citations": ["ref1", "ref2"]
+      },
+      {
+        "gene": "AGT",
+        "variant": "rs699",
+        "gwas_p": 2.5e-10,
+        "effect_size": 0.12,
+        "evidence": "Angiotensinogen variants; M235T polymorphism associated with plasma AGT levels and hypertension; key substrate for RAAS",
+        "strength": 0.85,
+        "citations": ["ref1", "ref3"]
+      },
+      {
+        "gene": "UMOD",
+        "variant": "rs13333226",
+        "gwas_p": 8.0e-12,
+        "effect_size": -0.15,
+        "evidence": "Uromodulin (Tamm-Horsfall protein) variants; affects renal tubular sodium handling and susceptibility to salt-sensitive hypertension",
+        "strength": 0.88,
+        "citations": ["ref2", "ref4"]
+      }
+    ],
+    "prs_notes": "PRS for hypertension show modest discrimination (AUC ~0.62–0.68). European ancestry-dominated discovery limits transferability. G×E interactions with sodium and stress not yet integrated into clinical PRS."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "diet-quality",
+      "direction": "amplify",
+      "strength": 0.85,
+      "confidence": "high",
+      "mechanism_hypothesis": "High sodium intake amplifies genetic susceptibility in salt-sensitive individuals; DASH-style diet buffers risk; sodium-sensitivity varies by ACE/AGT genotype",
+      "citations": ["ref2", "ref5"]
+    },
+    {
+      "exposure_slug": "psychosocial-stress",
+      "direction": "amplify",
+      "strength": 0.72,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Chronic stress activates sympathetic nervous system and RAAS; stress-induced cortisol may amplify genetic susceptibility; adolescent stress exposure influences BP trajectory",
+      "citations": ["ref3", "ref5"]
+    },
+    {
+      "exposure_slug": "obesity-exposure",
+      "direction": "amplify",
+      "strength": 0.88,
+      "confidence": "high",
+      "mechanism_hypothesis": "Adiposity amplifies hypertension risk via insulin resistance, renal compression, and inflammatory pathways; obesity-epigenetic interactions during adolescence",
+      "citations": ["ref4", "ref5"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "kidney (renal tubules)",
+      "relevance_score": 0.95,
+      "evidence_type": "GWAS and eQTL",
+      "citations": ["ref2", "ref4"]
+    },
+    {
+      "name": "vascular endothelium",
+      "relevance_score": 0.88,
+      "evidence_type": "pathway and literature",
+      "citations": ["ref1", "ref3"]
+    },
+    {
+      "name": "adrenal cortex",
+      "relevance_score": 0.82,
+      "evidence_type": "literature",
+      "citations": ["ref1", "ref5"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "GWAS predominantly European (~80%); African ancestry cohorts underrepresented despite higher hypertension burden",
+    "transferability_notes": "ACE and AGT variants show variable effects across ancestry; UMOD associations replicated in some non-European cohorts but validation incomplete",
+    "data_gaps": "Multi-ancestry GWAS; G×E studies for sodium and stress across diverse populations; adolescent-specific genetic architecture"
+  },
+  "mechanism_briefs": ["raas-sodium-hypertension", "umod-renal-sodium-handling"],
+  "references": [
+    {"id": "ref1", "title": "Genome-wide association study of blood pressure and hypertension", "authors": "Levy D, et al.", "year": 2009, "journal": "Nature Genetics", "doi": "10.1038/ng.384"},
+    {"id": "ref2", "title": "Genetic variants in novel pathways influence blood pressure and cardiovascular disease risk", "authors": "Ehret GB, et al.", "year": 2011, "journal": "Nature", "doi": "10.1038/nature10405"},
+    {"id": "ref3", "title": "The genetics of hypertension", "authors": "Padmanabhan S, et al.", "year": 2017, "journal": "Current Opinion in Cardiology", "doi": "10.1097/HCO.0000000000000384"},
+    {"id": "ref4", "title": "UMOD variants and blood pressure: novel insights", "authors": "Trudu M, et al.", "year": 2013, "journal": "Kidney International", "doi": "10.1038/ki.2012.411"},
+    {"id": "ref5", "title": "Gene-environment interactions in blood pressure", "authors": "Munroe PB, Barnes MR.", "year": 2019, "journal": "Current Hypertension Reports", "doi": "10.1007/s11906-019-0930-2"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

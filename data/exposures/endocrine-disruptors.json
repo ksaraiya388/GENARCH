@@ -1,0 +1,80 @@
+{
+  "id": "exp_endocrine_disruptors",
+  "slug": "endocrine-disruptors",
+  "name": "Endocrine Disrupting Chemicals (BPA, Phthalates)",
+  "definition": "Synthetic chemicals that interfere with hormone signaling. Bisphenol A (BPA): found in plastics, food packaging, thermal paper; estrogenic and anti-androgenic. Phthalates: plasticizers in PVC, personal care products; anti-androgenic, affect thyroid. Exposure occurs through ingestion, dermal absorption, and inhalation. These compounds may affect development, reproduction, metabolism, and cancer risk. Genetic variants in hormone receptor pathways may modulate susceptibility.",
+  "proxies": [
+    {
+      "name": "Urinary BPA",
+      "unit": "μg/L",
+      "measurement_method": "LC-MS/MS",
+      "data_source": "NHANES"
+    },
+    {
+      "name": "Urinary phthalate metabolites",
+      "unit": "μg/L",
+      "measurement_method": "GC-MS or LC-MS/MS",
+      "data_source": "NHANES"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "reproductive",
+      "mechanism_summary": "BPA and phthalates bind estrogen/androgen receptors; disrupt steroidogenesis; BRCA1/2 pathway may interact with estrogen signaling in breast cancer",
+      "evidence_strength": 0.82
+    },
+    {
+      "system": "metabolic",
+      "mechanism_summary": "EDCs promote adiposity and insulin resistance; may amplify obesity and type 2 diabetes susceptibility via FTO and TCF7L2 pathways",
+      "evidence_strength": 0.7
+    }
+  ],
+  "sensitive_windows": [
+    {
+      "period": "prenatal",
+      "age_range": "in utero",
+      "mechanism_rationale": "Development highly sensitive to hormone disruption; organogenesis; epigenetic programming; fetal exposure linked to childhood obesity and neurodevelopment",
+      "citations": ["ref1", "ref3"]
+    },
+    {
+      "period": "early childhood",
+      "age_range": "0-8",
+      "mechanism_rationale": "Hand-to-mouth behavior; higher exposure per body weight; developmental windows for reproductive system and metabolism; may affect puberty timing",
+      "citations": ["ref2", "ref4"]
+    }
+  ],
+  "gxe_highlights": [
+    {
+      "gene_slug": "brca1",
+      "disease_slug": "breast-cancer",
+      "direction": "amplify",
+      "evidence_type": "pathway",
+      "citations": ["ref1", "ref2"]
+    },
+    {
+      "gene_slug": "fto",
+      "disease_slug": "obesity",
+      "direction": "amplify",
+      "evidence_type": "literature",
+      "citations": ["ref3", "ref4"]
+    }
+  ],
+  "tissues": [
+    {"name": "adipose tissue", "effect_type": "adipogenesis", "citations": ["ref3", "ref4"]},
+    {"name": "mammary gland", "effect_type": "developmental disruption", "citations": ["ref1", "ref2"]},
+    {"name": "thyroid", "effect_type": "hormone disruption", "citations": ["ref2"]}
+  ],
+  "exposure_distribution": {
+    "data_source": "NHANES biomonitoring",
+    "geographic_scope": "United States",
+    "summary_stats": {"detectable_bpa_pct": 93, "geometric_mean_mep_ug_L": 25.4}
+  },
+  "references": [
+    {"id": "ref1", "title": "BPA, estrogen receptor, and breast cancer risk", "authors": "Rudel RA, et al.", "year": 2011, "journal": "Environmental Health Perspectives", "doi": "10.1289/ehp.1103380"},
+    {"id": "ref2", "title": "Phthalates and breast cancer: mechanisms", "authors": "Lopez-Carrillo L, et al.", "year": 2010, "journal": "Environmental Health Perspectives", "doi": "10.1289/ehp.0901091"},
+    {"id": "ref3", "title": "Prenatal phthalate exposure and childhood obesity", "authors": "Trasande L, et al.", "year": 2013, "journal": "Environmental Health Perspectives", "doi": "10.1289/ehp.1206366"},
+    {"id": "ref4", "title": "BPA and metabolic syndrome: gene-environment interaction", "authors": "Ranciere F, et al.", "year": 2015, "journal": "Journal of Clinical Endocrinology & Metabolism", "doi": "10.1210/jc.2015-1340"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

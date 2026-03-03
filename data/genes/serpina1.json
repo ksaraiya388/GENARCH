@@ -1,0 +1,39 @@
+{
+  "id": "serpina1",
+  "slug": "serpina1",
+  "symbol": "SERPINA1",
+  "name": "Alpha-1 antitrypsin",
+  "chromosome": "14q32.13",
+  "summary": "SERPINA1 encodes alpha-1 antitrypsin (A1AT), a serine protease inhibitor that protects lung tissue from neutrophil elastase. The severe Z allele (Glu342Lys) causes protein misfolding and accumulation in hepatocytes, leading to deficiency in lung and liver disease. A1AT deficiency is a major genetic cause of early-onset emphysema and COPD, particularly in smokers. Normal A1AT inhibits neutrophil elastase; deficiency permits unchecked protease activity and alveolar destruction. Expression is hepatic; protein is secreted into serum and reaches lung via circulation. PiZZ homozygotes have ~10-20% of normal A1AT levels. Cigarette smoke oxidatively inactivates A1AT, exacerbating the protease-antiprotease imbalance.",
+  "molecular_function": ["serine protease inhibition", "elastase inhibition", "acute phase response"],
+  "protein_class": "serine protease inhibitor (serpin)",
+  "regulatory_notes": {
+    "promoter_activity": "Acute-phase responsive; IL-6 and inflammation upregulate expression.",
+    "enhancer_associations": null,
+    "methylation_sensitivity": null,
+    "eqtl_tissues": ["liver"]
+  },
+  "expression_context": [
+    {"tissue": "liver", "tpm_range": "800-2500", "gtex_version": "v8", "citations": ["ref1", "ref2"]},
+    {"tissue": "lung", "tpm_range": "1-5", "gtex_version": "v8", "citations": ["ref2"]}
+  ],
+  "pathways": ["complement-system"],
+  "linked_diseases": [
+    {"disease_slug": "copd", "evidence_type": "GWAS", "strength": 0.94},
+    {"disease_slug": "asthma", "evidence_type": "literature", "strength": 0.38}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "tobacco", "evidence_type": "literature", "strength": 0.91}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "A1AT deficiency allows neutrophil elastase to degrade lung elastin unchecked; tobacco smoke further inactivates A1AT and stimulates neutrophil recruitment, creating a protease-antiprotease imbalance that drives emphysema.", "supporting_evidence": "PiZZ smokers develop severe emphysema; augmentation therapy reduces lung density loss.", "confidence": "high"}
+  ],
+  "confidence": "high",
+  "references": [
+    {"id": "ref1", "title": "Alpha-1-antitrypsin deficiency", "authors": "Stoller JK, Aboussouan LS", "year": 2005, "journal": "Lancet", "doi": "10.1016/S0140-6736(05)67736-6"},
+    {"id": "ref2", "title": "GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues", "authors": "GTEx Consortium", "year": 2020, "journal": "Science", "doi": "10.1126/science.aaz1776"},
+    {"id": "ref3", "title": "Effect of recombinant alpha1-antitrypsin on pulmonary exacerbations in COPD", "authors": "Stoller JK, et al.", "year": 2009, "journal": "Thorax", "doi": "10.1136/thx.2008.102871"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

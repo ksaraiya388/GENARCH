@@ -1,0 +1,26 @@
+{
+  "id": "exp_alcohol",
+  "slug": "alcohol",
+  "name": "Alcohol",
+  "definition": "Ethanol consumption from alcoholic beverages. Includes beer, wine, spirits. Dose-dependent effects on liver, cardiovascular system, cancer risk, and neuropsychiatric outcomes. Moderate vs heavy use has different risk profiles.",
+  "proxies": [
+    {"name": "Drinks per week", "unit": "standard drinks", "measurement_method": "Self-report questionnaire", "data_source": "AUDIT or similar"},
+    {"name": "Blood alcohol", "unit": "g/dL", "measurement_method": "Assay", "data_source": "Biomarker"}
+  ],
+  "systems_affected": [
+    {"system": "hepatic", "mechanism_summary": "Steatosis, cirrhosis, hepatocellular carcinoma"},
+    {"system": "cardiovascular", "mechanism_summary": "J-shaped curve; moderate may have different effects than heavy"}
+  ],
+  "sensitive_windows": [
+    {"period": "adolescence", "age_range": "10-24", "mechanism_rationale": "Alcohol initiation; brain development; addiction risk", "citations": ["ref1"]}
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {"name": "liver", "effect_type": "metabolism", "citations": ["ref1"]}
+  ],
+  "references": [
+    {"id": "ref1", "title": "Alcohol and global health", "authors": "Rehm J, et al.", "year": 2017, "journal": "The Lancet", "doi": "10.1016/S0140-6736(17)32366-9"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

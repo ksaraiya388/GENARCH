@@ -1,0 +1,39 @@
+{
+  "id": "pcsk9",
+  "slug": "pcsk9",
+  "symbol": "PCSK9",
+  "name": "Proprotein convertase subtilisin/kexin type 9",
+  "chromosome": "1p32.3",
+  "summary": "PCSK9 encodes proprotein convertase subtilisin/kexin type 9, a serine protease that binds the LDL receptor and targets it for lysosomal degradation. By reducing hepatic LDLR abundance, PCSK9 raises plasma LDL cholesterol levels. Gain-of-function mutations cause autosomal dominant hypercholesterolemia, while loss-of-function variants confer lower LDL-C and reduced coronary artery disease risk. PCSK9 inhibitors (evolocumab, alirocumab) have emerged as potent LDL-lowering therapies. The gene is expressed primarily in liver, intestine, and kidney. GWAS consistently implicate PCSK9 in LDL-C and CAD susceptibility.",
+  "molecular_function": ["proteolytic activity", "LDLR binding", "receptor degradation", "cholesterol regulation"],
+  "protein_class": "proprotein convertase",
+  "regulatory_notes": {
+    "promoter_activity": "SREBP-2 regulates PCSK9 transcription; sterol depletion increases expression.",
+    "enhancer_associations": "CAD-associated variants influence PCSK9 expression in hepatocytes.",
+    "methylation_sensitivity": null,
+    "eqtl_tissues": ["liver"]
+  },
+  "expression_context": [
+    {"tissue": "liver", "tpm_range": "25-80", "gtex_version": "v8", "citations": ["ref1", "ref2"]},
+    {"tissue": "small intestine", "tpm_range": "5-20", "gtex_version": "v8", "citations": ["ref2"]}
+  ],
+  "pathways": ["ldl-cholesterol-metabolism"],
+  "linked_diseases": [
+    {"disease_slug": "coronary-artery-disease", "evidence_type": "GWAS", "strength": 0.88},
+    {"disease_slug": "hypertension", "evidence_type": "inferred", "strength": 0.35}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "diet-quality", "evidence_type": "literature", "strength": 0.72}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "PCSK9-mediated LDLR degradation limits hepatic cholesterol clearance; elevated PCSK9 increases LDL-C and atherosclerosis risk; inhibition restores LDLR and reduces cardiovascular events.", "supporting_evidence": "Clinical trials show PCSK9 inhibitors lower LDL-C and CAD events; loss-of-function carriers have reduced MI risk.", "confidence": "high"}
+  ],
+  "confidence": "high",
+  "references": [
+    {"id": "ref1", "title": "Mutations in PCSK9 cause autosomal dominant hypercholesterolemia", "authors": "Abifadel M, et al.", "year": 2003, "journal": "Nature Genetics", "doi": "10.1038/ng1161"},
+    {"id": "ref2", "title": "GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues", "authors": "GTEx Consortium", "year": 2020, "journal": "Science", "doi": "10.1126/science.aaz1776"},
+    {"id": "ref3", "title": "Evolocumab and clinical outcomes in patients with cardiovascular disease", "authors": "Sabatine MS, et al.", "year": 2017, "journal": "New England Journal of Medicine", "doi": "10.1056/NEJMoa1615664"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

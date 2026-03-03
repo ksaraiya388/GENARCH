@@ -1,0 +1,39 @@
+{
+  "id": "tcf7l2",
+  "slug": "tcf7l2",
+  "symbol": "TCF7L2",
+  "name": "Transcription factor 7-like 2",
+  "chromosome": "10q25.2",
+  "summary": "TCF7L2 encodes transcription factor 7-like 2, a nuclear effector of the Wnt signaling pathway that regulates gene expression in pancreatic beta cells, intestinal enteroendocrine cells, and hepatic tissues. The gene harbors the strongest common genetic risk variant for type 2 diabetes (rs7903146), with the T allele conferring ~40% increased risk per copy. TCF7L2 influences insulin secretion, incretin response, and hepatic glucose production. Risk variants associate with impaired beta cell function and blunted glucagon-like peptide-1 (GLP-1) response. Expression is highest in intestine, pancreas, and brain. The Wnt/TCF7L2 axis modulates developmental and metabolic gene networks.",
+  "molecular_function": ["Wnt signaling", "transcriptional regulation", "DNA binding", "beta cell function"],
+  "protein_class": "HMG-box transcription factor",
+  "regulatory_notes": {
+    "promoter_activity": "Wnt-responsive elements; multiple tissue-specific promoters.",
+    "enhancer_associations": "T2D-associated rs7903146 lies in intron 4; affects chromatin accessibility in pancreatic and intestinal cells.",
+    "methylation_sensitivity": "Differential methylation at risk locus correlates with T2D.",
+    "eqtl_tissues": ["pancreas", "liver", "adipose tissue"]
+  },
+  "expression_context": [
+    {"tissue": "pancreas", "tpm_range": "15-45", "gtex_version": "v8", "citations": ["ref1", "ref2"]},
+    {"tissue": "small intestine", "tpm_range": "20-60", "gtex_version": "v8", "citations": ["ref2"]}
+  ],
+  "pathways": ["insulin-signaling"],
+  "linked_diseases": [
+    {"disease_slug": "type-2-diabetes", "evidence_type": "GWAS", "strength": 0.95},
+    {"disease_slug": "obesity", "evidence_type": "eQTL", "strength": 0.52}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "diet-quality", "evidence_type": "literature", "strength": 0.78}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "TCF7L2 risk variants impair beta cell insulin secretion and incretin responsiveness; reduced Wnt signaling in enteroendocrine L-cells blunts GLP-1 release, contributing to hyperglycemia.", "supporting_evidence": "Functional studies show risk allele reduces insulin secretion; GLP-1 receptor agonists partially overcome TCF7L2-associated defect.", "confidence": "high"}
+  ],
+  "confidence": "high",
+  "references": [
+    {"id": "ref1", "title": "Variant of transcription factor 7-like 2 (TCF7L2) gene confers risk of type 2 diabetes", "authors": "Grant SF, et al.", "year": 2006, "journal": "Nature Genetics", "doi": "10.1038/ng1732"},
+    {"id": "ref2", "title": "GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues", "authors": "GTEx Consortium", "year": 2020, "journal": "Science", "doi": "10.1126/science.aaz1776"},
+    {"id": "ref3", "title": "TCF7L2 polymorphisms and progression to diabetes in the Diabetes Prevention Program", "authors": "Florez JC, et al.", "year": 2006, "journal": "New England Journal of Medicine", "doi": "10.1056/NEJMoa062418"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "path_dopamine_signaling",
+  "slug": "dopamine-signaling",
+  "name": "Dopamine Signaling Pathway",
+  "summary": "Dopamine signaling regulates reward, motivation, movement, cognition, and psychosis. Dopamine is synthesized in substantia nigra and ventral tegmental area; released into striatum and prefrontal cortex. DRD2 is the primary postsynaptic receptor in mesolimbic and nigrostriatal pathways; D2 antagonists are antipsychotics. Dopamine is metabolized by COMT and MAO. Hyperdopaminergia in striatum is implicated in schizophrenia; hypodopaminergia in addiction. DRD2 variants influence receptor density, antipsychotic response, and addiction vulnerability. Psychosocial stress and substance use (alcohol, tobacco) modulate dopamine signaling and interact with genetic susceptibility.",
+  "canonical_source": "hsa04728",
+  "environmental_triggers": [
+    {"exposure_slug": "psychosocial-stress", "trigger_type": "Chronic stress alters dopaminergic tone and prefrontal-striatal balance", "citations": ["ref1", "ref3"]},
+    {"exposure_slug": "alcohol", "trigger_type": "Alcohol acutely increases dopamine; chronic use causes neuroadaptation", "citations": ["ref2", "ref4"]},
+    {"exposure_slug": "tobacco", "trigger_type": "Nicotine stimulates dopaminergic reward circuitry", "citations": ["ref4"]}
+  ],
+  "key_genes": [
+    {"gene_slug": "drd2", "role_in_pathway": "D2 dopamine receptor; primary target of antipsychotics; variants affect receptor function and addiction risk", "citations": ["ref1", "ref4"]},
+    {"gene_slug": "slc6a4", "role_in_pathway": "Serotonin transporter; modulates dopamine-serotonin interaction; relevant to comorbid depression and addiction", "citations": ["ref2"]}
+  ],
+  "regulatory_checkpoints": [
+    {"node": "D2 receptor signaling", "modulator_genes": ["drd2"], "potential_therapeutic_target": true},
+    {"node": "Dopamine reuptake", "modulator_genes": ["slc6a4"], "potential_therapeutic_target": true}
+  ],
+  "tissue_specificity": [
+    {"tissue": "striatum", "expression_evidence": "Primary site of DRD2; reward and movement"},
+    {"tissue": "prefrontal cortex", "expression_evidence": "Executive function; working memory"}
+  ],
+  "linked_diseases": [
+    {"disease_slug": "schizophrenia", "pathway_role": "Hyperdopaminergia hypothesis; DRD2 is antipsychotic target", "citations": ["ref1", "ref4"]},
+    {"disease_slug": "major-depressive-disorder", "pathway_role": "Dopamine-serotonin interaction; anhedonia and motivation", "citations": ["ref2", "ref3"]}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "alcohol", "pathway_effect": "Alcohol dependence involves dopamine dysregulation; DRD2 variants", "citations": ["ref2", "ref4"]},
+    {"exposure_slug": "psychosocial-stress", "pathway_effect": "Stress precipitates psychosis and depression; gene-environment interaction", "citations": ["ref1", "ref3"]}
+  ],
+  "diagram_asset": null,
+  "references": [
+    {"id": "ref1", "title": "DRD2 and schizophrenia", "authors": "Howes OD, Kapur S", "year": 2009, "journal": "Schizophrenia Bulletin", "doi": "10.1093/schbul/sbp075"},
+    {"id": "ref2", "title": "Dopamine and addiction", "authors": "Volkow ND, et al.", "year": 2007, "journal": "Nature Reviews Neuroscience", "doi": "10.1038/nrn2339"},
+    {"id": "ref3", "title": "Stress, dopamine, and psychiatric illness", "authors": "Cabib S, Puglisi-Allegra S", "year": 2012, "journal": "Neuroscience & Biobehavioral Reviews", "doi": "10.1016/j.neubiorev.2011.09.008"},
+    {"id": "ref4", "title": "DRD2 polymorphisms and substance use", "authors": "Munafo MR, et al.", "year": 2007, "journal": "Addiction Biology", "doi": "10.1111/j.1369-1600.2006.00041.x"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

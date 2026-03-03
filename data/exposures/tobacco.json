@@ -1,0 +1,26 @@
+{
+  "id": "exp_tobacco",
+  "slug": "tobacco",
+  "name": "Tobacco Smoke",
+  "definition": "Tobacco smoke exposure from active smoking or secondhand smoke. Contains thousands of chemicals including nicotine, tar, and carcinogens. Sources include cigarettes, cigars, electronic nicotine delivery systems, and environmental tobacco smoke.",
+  "proxies": [
+    {"name": "Cotinine", "unit": "ng/mL", "measurement_method": "Serum or urine cotinine", "data_source": "Biomarker assays"},
+    {"name": "Pack-years", "unit": "pack-years", "measurement_method": "Self-reported smoking history", "data_source": "Questionnaire"}
+  ],
+  "systems_affected": [
+    {"system": "respiratory", "mechanism_summary": "Inflammation, oxidative stress, impaired mucociliary clearance, emphysema, COPD, lung cancer"},
+    {"system": "cardiovascular", "mechanism_summary": "Endothelial dysfunction, thrombosis, atherosclerosis, CAD, stroke"}
+  ],
+  "sensitive_windows": [
+    {"period": "adolescence", "age_range": "10-24", "mechanism_rationale": "Smoking initiation; addiction establishment; lung development", "citations": ["ref1"]}
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {"name": "lung", "effect_type": "inflammation", "citations": ["ref1"]}
+  ],
+  "references": [
+    {"id": "ref1", "title": "Tobacco smoking and health", "authors": "WHO", "year": 2023, "url": "https://www.who.int/health-topics/tobacco"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

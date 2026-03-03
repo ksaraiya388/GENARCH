@@ -1,0 +1,138 @@
+{
+  "id": "dis_alzheimers-disease",
+  "slug": "alzheimers-disease",
+  "name": "Alzheimer's Disease",
+  "icd11_code": "8A20",
+  "summary": "Alzheimer's disease (AD) is the leading cause of dementia, characterized by progressive neurodegeneration, amyloid-beta plaques, and neurofibrillary tau tangles. Pathophysiology involves amyloid cascade, tau pathology, neuroinflammation, synaptic loss, and eventual neuronal death. Onset is typically late life; early-onset familial AD (5–10%) is caused by rare mutations in APP, PSEN1, and PSEN2. Genetic susceptibility in late-onset AD: heritability is ~60–80%; SNP-based h² is ~0.07. APOE ε4 is the strongest common genetic risk factor (3–15-fold depending on copy number). Over 40 susceptibility loci have been identified. Vascular, metabolic, and lifestyle factors modify risk. Disease begins decades before clinical symptoms; preventive interventions may be most effective in mid-life and earlier.",
+  "adolescent_relevance": "AD pathology accumulates over decades; adolescence is distant from clinical onset but brain development and cognitive reserve may be shaped during this period. Education, cognitive stimulation, and physical activity in youth may build reserve. Traumatic brain injury in adolescence increases later AD risk. APOE genotype affects brain development and response to injury. Psychosocial stress during development may affect brain structure. Early identification of high genetic risk could enable future prevention trials; current clinical utility in adolescents is nil.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "APOE",
+        "variant": "rs429358",
+        "gwas_p": 1e-200,
+        "effect_size": 3.5,
+        "ancestry_composition": "Multi-ancestry",
+        "replication_status": "Replicated across ancestries",
+        "evidence": "Lipoprotein receptor; ε4 allele increases amyloid deposition and risk; ε2 protective; strongest common AD locus",
+        "strength": 0.98,
+        "citations": ["ref1", "ref2"]
+      },
+      {
+        "gene": "APP",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": 50.0,
+        "ancestry_composition": "Multi-ancestry",
+        "replication_status": "Established Mendelian",
+        "evidence": "Amyloid precursor protein; familial AD mutations increase amyloid production",
+        "strength": 0.95,
+        "citations": ["ref1"]
+      },
+      {
+        "gene": "PSEN1",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": 50.0,
+        "ancestry_composition": "Multi-ancestry",
+        "replication_status": "Established Mendelian",
+        "evidence": "Presenilin 1; gamma-secretase component; familial AD; alters amyloid processing",
+        "strength": 0.95,
+        "citations": ["ref1"]
+      },
+      {
+        "gene": "PSEN2",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": 30.0,
+        "ancestry_composition": "Multi-ancestry",
+        "replication_status": "Established Mendelian",
+        "evidence": "Presenilin 2; gamma-secretase component; familial AD",
+        "strength": 0.9,
+        "citations": ["ref1"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.07,
+      "h2_narrow_sense": 0.7,
+      "source": "IGAP and twin studies",
+      "year": 2019
+    },
+    "prs_notes": "AD PRS show moderate predictive ability (AUC ~0.60–0.75); APOE alone contributes substantially. Transferability is limited: European discovery; APOE effects vary by ancestry (ε4 prevalence differs). PRS may stratify risk for prevention trials and research; clinical utility for asymptomatic individuals is limited. G×E (education, vascular factors, head injury) not yet integrated."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "amplify",
+      "strength": 0.65,
+      "confidence": "medium",
+      "mechanism_hypothesis": "PM2.5 and ultrafine particles may enter brain via olfactory or circulatory routes; oxidative stress and neuroinflammation; epidemiologic associations emerging",
+      "citations": ["ref3", "ref4"]
+    },
+    {
+      "exposure_slug": "psychosocial-stress",
+      "direction": "amplify",
+      "strength": 0.55,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Chronic stress and depression may accelerate cognitive decline; cortisol effects on hippocampus; bidirectional with dementia",
+      "citations": ["ref4", "ref5"]
+    },
+    {
+      "exposure_slug": "diet-quality",
+      "direction": "buffer",
+      "strength": 0.6,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Mediterranean-style diet; antioxidants, omega-3s; may reduce inflammation and support brain health",
+      "citations": ["ref3", "ref5"]
+    },
+    {
+      "exposure_slug": "obesity-exposure",
+      "direction": "amplify",
+      "strength": 0.6,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Mid-life obesity increases AD risk; vascular and metabolic pathways; late-life weight loss may reflect prodromal disease",
+      "citations": ["ref2", "ref4"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "cerebral cortex",
+      "relevance_score": 0.98,
+      "evidence_type": "GWAS and pathology",
+      "citations": ["ref1", "ref2"]
+    },
+    {
+      "name": "hippocampus",
+      "relevance_score": 0.95,
+      "evidence_type": "pathway",
+      "citations": ["ref1"]
+    },
+    {
+      "name": "microglia",
+      "relevance_score": 0.88,
+      "evidence_type": "GWAS and literature",
+      "citations": ["ref2", "ref3"]
+    },
+    {
+      "name": "vascular endothelium (blood-brain barrier)",
+      "relevance_score": 0.82,
+      "evidence_type": "pathway",
+      "citations": ["ref4"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "AD GWAS are predominantly European (~90%); multi-ancestry efforts are expanding",
+    "transferability_notes": "APOE effects vary by ancestry: ε4 prevalence is lower in some populations; risk estimates differ. Other loci may not transfer. PRS performance in non-European populations is reduced. Under-representation of diverse groups limits generalizability.",
+    "data_gaps": "Under-representation of African, Hispanic, and Asian populations; G×E across ancestries; early-life determinants; biomarker validation in diverse populations."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {"id": "ref1", "title": "Genetic meta-analysis of diagnosed Alzheimer's disease identifies new risk loci", "authors": "Kunkle BW, et al.", "year": 2019, "journal": "Nature Genetics", "doi": "10.1038/s41588-019-0358-2"},
+    {"id": "ref2", "title": "APOE and Alzheimer disease: a major gene with semi-dominant inheritance", "authors": "Corder EH, et al.", "year": 1994, "journal": "Molecular Psychiatry", "doi": "10.1038/sj.mp.4000473"},
+    {"id": "ref3", "title": "Association of air pollution with dementia", "authors": "Shi L, et al.", "year": 2020, "journal": "JAMA Neurology", "doi": "10.1001/jamaneurol.2020.3962"},
+    {"id": "ref4", "title": "Midlife obesity and dementia: meta-analysis", "authors": "Anstey KJ, et al.", "year": 2011, "journal": "Obesity Reviews", "doi": "10.1111/j.1467-789X.2010.00775.x"},
+    {"id": "ref5", "title": "Mediterranean diet and cognitive decline", "authors": "Lourida I, et al.", "year": 2013, "journal": "Epidemiology", "doi": "10.1097/EDE.0b013e3182944410"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

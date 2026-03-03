@@ -1,0 +1,41 @@
+{
+  "id": "path_complement_system",
+  "slug": "complement-system",
+  "name": "Complement System and Immune Regulation",
+  "summary": "The complement cascade is part of innate immunity, mediating opsonization, inflammation, and lysis. C3 activation triggers the alternative pathway; C4 participates in classical and lectin pathways. HLA-DRB1 is in the MHC region and associates with complement gene variation; C4A copy number and HLA variants are strongly linked to autoimmune disease. The complement system is implicated in multiple sclerosis (C4-mediated synaptic pruning), rheumatoid arthritis (immune complex deposition), and schizophrenia (complement in synaptic elimination). UV exposure and vitamin D may modulate autoimmune risk via immunomodulation. HLA-DRB1 variants influence susceptibility to rheumatic and neuroinflammatory disease.",
+  "canonical_source": "hsa04610",
+  "environmental_triggers": [
+    {"exposure_slug": "uv-radiation", "trigger_type": "UV and vitamin D modulate immune function; latitude gradient in MS", "citations": ["ref1", "ref3"]},
+    {"exposure_slug": "tobacco", "trigger_type": "Smoking increases rheumatoid arthritis risk; may trigger citrullination and immune activation", "citations": ["ref2", "ref4"]},
+    {"exposure_slug": "endocrine-disruptors", "trigger_type": "Hormone disruption may affect autoimmune disease onset", "citations": ["ref4"]}
+  ],
+  "key_genes": [
+    {"gene_slug": "hla-drb1", "role_in_pathway": "MHC class II; antigen presentation; shared epitope in rheumatoid arthritis; strongest genetic risk factor for MS", "citations": ["ref1", "ref4"]},
+    {"gene_slug": "il33", "role_in_pathway": "Alarmin; bridges innate and adaptive immunity; relevant to inflammatory and allergic disease", "citations": ["ref2"]}
+  ],
+  "regulatory_checkpoints": [
+    {"node": "C3 convertase", "modulator_genes": null, "potential_therapeutic_target": true},
+    {"node": "Antigen presentation", "modulator_genes": ["hla-drb1"], "potential_therapeutic_target": false}
+  ],
+  "tissue_specificity": [
+    {"tissue": "central nervous system", "expression_evidence": "Complement in synaptic pruning; MS pathogenesis"},
+    {"tissue": "synovium", "expression_evidence": "Rheumatoid arthritis; immune complex deposition"}
+  ],
+  "linked_diseases": [
+    {"disease_slug": "multiple-sclerosis", "pathway_role": "HLA-DRB1 and C4; complement-mediated synaptic elimination; vitamin D interaction", "citations": ["ref1", "ref3"]},
+    {"disease_slug": "rheumatoid-arthritis", "pathway_role": "HLA-DRB1 shared epitope; smoking-citrullination axis; complement in inflammation", "citations": ["ref2", "ref4"]}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "uv-radiation", "pathway_effect": "Vitamin D from UV may protect against MS; immunomodulation", "citations": ["ref1", "ref3"]},
+    {"exposure_slug": "tobacco", "pathway_effect": "Smoking increases RA risk; interacts with HLA-DRB1", "citations": ["ref2", "ref4"]}
+  ],
+  "diagram_asset": null,
+  "references": [
+    {"id": "ref1", "title": "HLA-DRB1, vitamin D, and multiple sclerosis", "authors": "Ramagopalan SV, et al.", "year": 2009, "journal": "PLoS Genetics", "doi": "10.1371/journal.pgen.1000369"},
+    {"id": "ref2", "title": "Smoking and HLA-DRB1 in rheumatoid arthritis", "authors": "Källberg H, et al.", "year": 2011, "journal": "Annals of the Rheumatic Diseases", "doi": "10.1136/ard.2010.129924"},
+    {"id": "ref3", "title": "UV exposure and multiple sclerosis", "authors": "Lucas RM, et al.", "year": 2011, "journal": "Neuroepidemiology", "doi": "10.1159/000328158"},
+    {"id": "ref4", "title": "Complement in autoimmune disease", "authors": "Ricklin D, et al.", "year": 2016, "journal": "Nature Immunology", "doi": "10.1038/ni.3481"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

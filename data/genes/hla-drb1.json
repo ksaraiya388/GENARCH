@@ -1,0 +1,39 @@
+{
+  "id": "hla-drb1",
+  "slug": "hla-drb1",
+  "symbol": "HLA-DRB1",
+  "name": "Major histocompatibility complex, class II, DR beta 1",
+  "chromosome": "6p21.32",
+  "summary": "HLA-DRB1 encodes the beta chain of HLA-DR, an MHC class II molecule that presents exogenous antigens to CD4+ T cells. Specific HLA-DRB1 alleles (e.g., shared epitope: *01, *04, *10) confer strong genetic risk for rheumatoid arthritis; other alleles associate with multiple sclerosis and other autoimmune diseases. The shared epitope alleles present arthritogenic peptides and shape the T cell repertoire. HLA-DRB1 is highly polymorphic with hundreds of alleles. Expression is restricted to antigen-presenting cells: B cells, dendritic cells, macrophages. Risk alleles may influence thymic selection, peptide binding, or T cell activation. The HLA region shows the strongest genetic associations in autoimmune disease.",
+  "molecular_function": ["antigen presentation", "peptide binding", "T cell activation", "immune recognition"],
+  "protein_class": "MHC class II",
+  "regulatory_notes": {
+    "promoter_activity": "CIITA-dependent; IFN-gamma inducible.",
+    "enhancer_associations": "Disease-associated variants in linkage disequilibrium with coding alleles.",
+    "methylation_sensitivity": null,
+    "eqtl_tissues": ["whole blood", "spleen"]
+  },
+  "expression_context": [
+    {"tissue": "whole blood", "tpm_range": "10-50", "gtex_version": "v8", "citations": ["ref1", "ref2"]},
+    {"tissue": "spleen", "tpm_range": "20-80", "gtex_version": "v8", "citations": ["ref2"]}
+  ],
+  "pathways": ["nf-kb"],
+  "linked_diseases": [
+    {"disease_slug": "rheumatoid-arthritis", "evidence_type": "GWAS", "strength": 0.94},
+    {"disease_slug": "multiple-sclerosis", "evidence_type": "GWAS", "strength": 0.88}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "tobacco", "evidence_type": "literature", "strength": 0.65}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "Shared epitope HLA-DRB1 alleles present citrullinated peptides to CD4+ T cells; smoking promotes citrullination; G×E interaction between genotype and tobacco amplifies RA risk through adaptive immune activation.", "supporting_evidence": "Anti-CCP antibodies in RA; gene-environment interaction between HLA and smoking in seropositive RA.", "confidence": "high"}
+  ],
+  "confidence": "high",
+  "references": [
+    {"id": "ref1", "title": "A new model for an etiology of rheumatoid arthritis: smoking may trigger HLA-DR (shared epitope)-restricted immune reactions to autoantigens modified by citrullination", "authors": "Klareskog L, et al.", "year": 2006, "journal": "Arthritis & Rheumatism", "doi": "10.1002/art.21575"},
+    {"id": "ref2", "title": "GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues", "authors": "GTEx Consortium", "year": 2020, "journal": "Science", "doi": "10.1126/science.aaz1776"},
+    {"id": "ref3", "title": "Genetic risk and a primary role for cell-mediated immune mechanisms in multiple sclerosis", "authors": "International Multiple Sclerosis Genetics Consortium", "year": 2011, "journal": "Nature", "doi": "10.1038/nature10251"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "drd2",
+  "slug": "drd2",
+  "symbol": "DRD2",
+  "name": "Dopamine receptor D2",
+  "chromosome": "11q23.2",
+  "summary": "DRD2 encodes the dopamine D2 receptor, a G protein-coupled receptor that inhibits adenylyl cyclase and modulates dopaminergic signaling in striatum, cortex, and limbic regions. DRD2 is the primary target of antipsychotic drugs; allelic variation influences treatment response and side effects. GWAS have implicated DRD2 and nearby ANKK1 (rs1800497) in schizophrenia, addiction, and Parkinson disease. The receptor exists in long (D2L) and short (D2S) splice variants with distinct signaling properties. Expression is highest in striatum, substantia nigra, and pituitary. DRD2 antagonism underlies antipsychotic efficacy but also causes extrapyramidal and metabolic side effects.",
+  "molecular_function": ["dopamine binding", "G protein-coupled receptor activity", "adenylyl cyclase inhibition", "neurotransmitter signaling"],
+  "protein_class": "dopamine receptor",
+  "regulatory_notes": {
+    "promoter_activity": "Tissue-specific promoters for neuronal vs pituitary expression.",
+    "enhancer_associations": "Schizophrenia-associated variants affect DRD2 expression in striatal neurons.",
+    "methylation_sensitivity": "DRD2 promoter methylation correlates with antipsychotic response.",
+    "eqtl_tissues": ["brain", "striatum"]
+  },
+  "expression_context": [
+    {"tissue": "brain", "tpm_range": "5-25", "gtex_version": "v8", "citations": ["ref1", "ref2"]},
+    {"tissue": "pituitary", "tpm_range": "20-60", "gtex_version": "v8", "citations": ["ref2"]}
+  ],
+  "pathways": ["dopamine-signaling"],
+  "linked_diseases": [
+    {"disease_slug": "schizophrenia", "evidence_type": "GWAS", "strength": 0.82},
+    {"disease_slug": "major-depressive-disorder", "evidence_type": "literature", "strength": 0.48}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "psychosocial-stress", "evidence_type": "literature", "strength": 0.62}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "Reduced DRD2 signaling in striatum contributes to positive symptoms of schizophrenia; antipsychotics restore dopamine balance via D2 antagonism; genetic variants influence receptor density and drug response.", "supporting_evidence": "D2 occupancy by antipsychotics correlates with clinical response; DRD2 polymorphisms affect binding affinity.", "confidence": "high"}
+  ],
+  "confidence": "high",
+  "references": [
+    {"id": "ref1", "title": "Dopamine D2 receptor gene (DRD2) and its association with striatal dopamine binding", "authors": "Ritchie T, Noble EP", "year": 2003, "journal": "American Journal of Medical Genetics", "doi": "10.1002/ajmg.b.10019"},
+    {"id": "ref2", "title": "GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues", "authors": "GTEx Consortium", "year": 2020, "journal": "Science", "doi": "10.1126/science.aaz1776"},
+    {"id": "ref3", "title": "Biological insights from 108 schizophrenia-associated genetic loci", "authors": "Schizophrenia Working Group of the Psychiatric Genomics Consortium", "year": 2014, "journal": "Nature", "doi": "10.1038/nature13595"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

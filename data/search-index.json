@@ -1,42 +1,410 @@
 [
   {
     "type": "disease",
+    "slug": "alzheimers-disease",
+    "name": "Alzheimer's Disease",
+    "summary": "Alzheimer's disease (AD) is the leading cause of dementia, characterized by progressive neurodegeneration, amyloid-beta plaques, and neurofibrillary tau tangles. Pathophysiology involves amyloid casca",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "disease",
     "slug": "asthma",
     "name": "Asthma",
-    "summary": "Chronic respiratory disease characterized by variable airflow obstruction, bronchial hyperresponsiveness, and airway inflammation. Part of the atopic march. Phenotypic spectrum from mild intermittent to severe therapy-resistant. SNP heritability h²~0.15–0.20.",
+    "summary": "Asthma is a heterogeneous chronic respiratory disease characterized by variable airflow obstruction, bronchial hyperresponsiveness (BHR), and airway inflammation. The disease sits within the atopic ma",
     "confidence": "high",
-    "synonyms": ["bronchial asthma", "reactive airway disease", "asthma bronchiale"]
+    "synonyms": []
+  },
+  {
+    "type": "disease",
+    "slug": "breast-cancer",
+    "name": "Breast Cancer",
+    "summary": "Breast cancer is the most common malignancy in women globally, arising from ductal or lobular epithelium. Pathophysiology involves dysregulated cell proliferation, genomic instability, and hormone rec",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "disease",
+    "slug": "colorectal-cancer",
+    "name": "Colorectal Cancer",
+    "summary": "Colorectal cancer (CRC) encompasses malignancies arising from the colon or rectum, with adenocarcinoma comprising the majority of cases. Pathogenesis involves the adenoma-carcinoma sequence: accumulat",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "disease",
+    "slug": "copd",
+    "name": "Chronic Obstructive Pulmonary Disease",
+    "summary": "Chronic obstructive pulmonary disease (COPD) is a progressive respiratory disorder characterized by airflow limitation, emphysema, and chronic bronchitis. Pathophysiology involves chronic inflammation",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "disease",
+    "slug": "coronary-artery-disease",
+    "name": "Coronary Artery Disease",
+    "summary": "Coronary artery disease (CAD) is the leading cause of death globally, characterized by atherosclerosis\u2014the progressive buildup of fatty plaques in coronary arteries that supply the heart. Pathophysiol",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "disease",
+    "slug": "hypertension",
+    "name": "Hypertension",
+    "summary": "Hypertension (essential arterial hypertension) is a chronic condition characterized by sustained elevation of blood pressure (\u2265130/80 mmHg). It is the leading modifiable risk factor for cardiovascular",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "disease",
+    "slug": "lung-cancer",
+    "name": "Lung Cancer",
+    "summary": "Lung cancer encompasses carcinomas of the lung, predominantly non-small cell lung cancer (NSCLC) and small cell lung cancer (SCLC). Tobacco smoking is the principal environmental cause, accounting for",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "disease",
+    "slug": "major-depressive-disorder",
+    "name": "Major Depressive Disorder",
+    "summary": "Major depressive disorder (MDD) is a common mental disorder characterized by persistent low mood, anhedonia, fatigue, and impaired functioning, often with recurring episodes. Neurobiological mechanism",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "disease",
+    "slug": "multiple-sclerosis",
+    "name": "Multiple Sclerosis",
+    "summary": "Multiple sclerosis (MS) is a chronic autoimmune demyelinating disease of the central nervous system, characterized by inflammation, demyelination, axonal damage, and progressive disability. Pathophysi",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "disease",
+    "slug": "obesity",
+    "name": "Obesity",
+    "summary": "Obesity is a multifactorial condition characterized by excess adipose tissue accumulation, with body mass index (BMI) \u226530 kg/m\u00b2 as a common threshold. Pathophysiology involves energy balance dysregula",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "disease",
+    "slug": "rheumatoid-arthritis",
+    "name": "Rheumatoid Arthritis",
+    "summary": "Rheumatoid arthritis (RA) is a chronic autoimmune disorder characterized by symmetric inflammatory polyarthritis, joint destruction, and systemic manifestations. Pathophysiology involves autoimmune at",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "disease",
+    "slug": "schizophrenia",
+    "name": "Schizophrenia",
+    "summary": "Schizophrenia is a severe psychiatric disorder characterized by positive symptoms (hallucinations, delusions), negative symptoms (avolition, anhedonia), and cognitive impairment. Pathophysiology invol",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "disease",
+    "slug": "type-2-diabetes",
+    "name": "Type 2 Diabetes",
+    "summary": "Type 2 diabetes (T2D) is a metabolic disorder characterized by insulin resistance and progressive beta-cell dysfunction, leading to chronic hyperglycemia. Pathophysiology involves impaired glucose upt",
+    "confidence": "high",
+    "synonyms": []
   },
   {
     "type": "exposure",
     "slug": "air-pollution",
     "name": "Ambient Air Pollution (PM2.5)",
-    "summary": "Fine particulate matter ≤2.5 μm from combustion and secondary formation. Induces oxidative stress and NF-κB activation in airways; amplifies IL-33 and inflammatory cytokines. G×E with IL33, GSTP1, TNF.",
+    "summary": "PM2.5 (particulate matter with aerodynamic diameter \u22642.5 micrometers) refers to fine inhalable particles that can penetrate deep into the lungs and enter the bloodstream. Sources include combustion (v",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "exposure",
+    "slug": "alcohol",
+    "name": "Alcohol",
+    "summary": "Ethanol consumption from alcoholic beverages. Includes beer, wine, spirits. Dose-dependent effects on liver, cardiovascular system, cancer risk, and neuropsychiatric outcomes. Moderate vs heavy use ha",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "exposure",
+    "slug": "diet-quality",
+    "name": "Diet Quality",
+    "summary": "Overall dietary pattern and nutritional quality. Includes intake of fruits, vegetables, whole grains, refined carbohydrates, saturated fat, sugar, and ultra-processed foods. Proxy for nutritional expo",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "exposure",
+    "slug": "endocrine-disruptors",
+    "name": "Endocrine Disrupting Chemicals (BPA, Phthalates)",
+    "summary": "Synthetic chemicals that interfere with hormone signaling. Bisphenol A (BPA): found in plastics, food packaging, thermal paper; estrogenic and anti-androgenic. Phthalates: plasticizers in PVC, persona",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "exposure",
+    "slug": "endotoxin",
+    "name": "Endotoxin (Farm/Microbial Exposure)",
+    "summary": "Lipopolysaccharide from Gram-negative bacteria; exposure common in farm environments. Early-life exposure may protect against atopic asthma (hygiene hypothesis).",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "exposure",
+    "slug": "heavy-metals",
+    "name": "Heavy Metals (Lead, Mercury, Arsenic)",
+    "summary": "Exposure to toxic heavy metals from environmental and occupational sources. Lead: paint, water pipes, soil, industrial emissions; accumulates in bone. Mercury: fish (methylmercury), dental amalgams, i",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "exposure",
+    "slug": "obesity-exposure",
+    "name": "Obesogenic Environment",
+    "summary": "Environmental and contextual factors that promote weight gain and obesity. Includes food environment (access, marketing, portion sizes), built environment (walkability, recreation), sedentary behavior",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "exposure",
+    "slug": "ozone",
+    "name": "Ozone",
+    "summary": "Ground-level ozone (O3) is a secondary pollutant formed when nitrogen oxides and volatile organic compounds react in the presence of sunlight. It exacerbates respiratory conditions including asthma.",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "exposure",
+    "slug": "psychosocial-stress",
+    "name": "Psychosocial Stress",
+    "summary": "Chronic or acute stress from social, psychological, or environmental sources. Includes childhood adversity, discrimination, social isolation, financial strain, trauma, and major life events. Affects m",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "exposure",
+    "slug": "tobacco",
+    "name": "Tobacco Smoke",
+    "summary": "Tobacco smoke exposure from active smoking or secondhand smoke. Contains thousands of chemicals including nicotine, tar, and carcinogens. Sources include cigarettes, cigars, electronic nicotine delive",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "exposure",
+    "slug": "tobacco-smoke-prenatal",
+    "name": "Prenatal Tobacco Smoke Exposure",
+    "summary": "In utero exposure to tobacco smoke from maternal smoking during pregnancy. Associated with impaired lung development and increased childhood asthma risk.",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "exposure",
+    "slug": "uv-radiation",
+    "name": "UV Radiation",
+    "summary": "Ultraviolet radiation from sun exposure. Includes UVA and UVB. Primary cause of skin cancer; also enables vitamin D synthesis. Varies by latitude, season, time of day, and behavior.",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "ace",
+    "name": "ACE \u2014 Angiotensin-converting enzyme",
+    "summary": "ACE encodes angiotensin-converting enzyme, a zinc metallopeptidase that converts angiotensin I to angiotensin II and inactivates bradykinin. ACE is central to the renin-angiotensin-aldosterone system ",
     "confidence": "high",
-    "synonyms": ["PM2.5", "fine particulate matter", "ambient particle pollution"]
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "apoe",
+    "name": "APOE \u2014 Apolipoprotein E",
+    "summary": "APOE encodes apolipoprotein E, a lipid-binding protein that mediates cholesterol and triglyceride transport in the brain and periphery. The epsilon4 allele (APOE4) is the strongest genetic risk factor",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "brca1",
+    "name": "BRCA1 \u2014 BRCA1 DNA repair associated",
+    "summary": "BRCA1 encodes a tumor suppressor protein essential for homologous recombination (HR) DNA double-strand break repair. Germline loss-of-function mutations confer high lifetime risk of breast cancer (up ",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "brca2",
+    "name": "BRCA2 \u2014 BRCA2 DNA repair associated",
+    "summary": "BRCA2 encodes a tumor suppressor that binds RAD51 and promotes its loading onto single-stranded DNA during homologous recombination. Like BRCA1, germline loss-of-function mutations confer high risk of",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "drd2",
+    "name": "DRD2 \u2014 Dopamine receptor D2",
+    "summary": "DRD2 encodes the dopamine D2 receptor, a G protein-coupled receptor that inhibits adenylyl cyclase and modulates dopaminergic signaling in striatum, cortex, and limbic regions. DRD2 is the primary tar",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "egfr",
+    "name": "EGFR \u2014 Epidermal growth factor receptor",
+    "summary": "EGFR encodes the epidermal growth factor receptor, a receptor tyrosine kinase that binds EGF and related ligands to activate RAS-RAF-MAPK and PI3K-AKT signaling. Somatic EGFR mutations (especially exo",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "fto",
+    "name": "FTO \u2014 Fat mass and obesity-associated protein",
+    "summary": "FTO encodes fat mass and obesity-associated protein, an alpha-ketoglutarate-dependent dioxygenase that demethylates nucleic acids. The FTO locus harbors the strongest common genetic association with o",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "hla-drb1",
+    "name": "HLA-DRB1 \u2014 Major histocompatibility complex, class II, DR beta 1",
+    "summary": "HLA-DRB1 encodes the beta chain of HLA-DR, an MHC class II molecule that presents exogenous antigens to CD4+ T cells. Specific HLA-DRB1 alleles (e.g., shared epitope: *01, *04, *10) confer strong gene",
+    "confidence": "high",
+    "synonyms": []
   },
   {
     "type": "gene",
     "slug": "il33",
-    "name": "IL33 — Interleukin 33",
-    "summary": "Epithelial alarmin on chromosome 9p24.1. Released upon cell damage; activates ILC2s, mast cells, Th2 via ST2. Asthma GWAS variants regulate expression via enhancer. Induced by PM2.5 and NF-κB.",
+    "name": "IL33 \u2014 Interleukin 33",
+    "summary": "IL33 encodes interleukin-33, a dual-function cytokine and nuclear factor belonging to the IL-1 family. IL-33 functions as an epithelial alarmin: it is constitutively expressed in barrier tissues (lung",
     "confidence": "high",
-    "synonyms": ["IL-33", "interleukin 33", "nuclear factor from high endothelial venules"]
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "ldlr",
+    "name": "LDLR \u2014 LDL receptor",
+    "summary": "LDLR encodes the low-density lipoprotein receptor, a cell-surface glycoprotein that binds and internalizes LDL cholesterol particles. The receptor mediates endocytosis of cholesterol-carrying lipoprot",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "mc4r",
+    "name": "MC4R \u2014 Melanocortin 4 receptor",
+    "summary": "MC4R encodes the melanocortin 4 receptor, a G protein-coupled receptor in the hypothalamic leptin-melanocortin pathway that regulates energy balance and appetite. MC4R is activated by alpha-MSH (from ",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "pcsk9",
+    "name": "PCSK9 \u2014 Proprotein convertase subtilisin/kexin type 9",
+    "summary": "PCSK9 encodes proprotein convertase subtilisin/kexin type 9, a serine protease that binds the LDL receptor and targets it for lysosomal degradation. By reducing hepatic LDLR abundance, PCSK9 raises pl",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "serpina1",
+    "name": "SERPINA1 \u2014 Alpha-1 antitrypsin",
+    "summary": "SERPINA1 encodes alpha-1 antitrypsin (A1AT), a serine protease inhibitor that protects lung tissue from neutrophil elastase. The severe Z allele (Glu342Lys) causes protein misfolding and accumulation ",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "slc6a4",
+    "name": "SLC6A4 \u2014 Solute carrier family 6 member 4",
+    "summary": "SLC6A4 encodes the serotonin transporter (5-HTT), which reuptakes serotonin from the synaptic cleft and terminates serotonergic signaling. The promoter polymorphism 5-HTTLPR (short vs long) modulates ",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "tcf7l2",
+    "name": "TCF7L2 \u2014 Transcription factor 7-like 2",
+    "summary": "TCF7L2 encodes transcription factor 7-like 2, a nuclear effector of the Wnt signaling pathway that regulates gene expression in pancreatic beta cells, intestinal enteroendocrine cells, and hepatic tis",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "tp53",
+    "name": "TP53 \u2014 Tumor protein p53",
+    "summary": "TP53 encodes p53, a critical tumor suppressor that coordinates cellular responses to DNA damage, oncogenic stress, and other insults. p53 arrests the cell cycle, promotes DNA repair, or induces apopto",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "pathway",
+    "slug": "complement-system",
+    "name": "Complement System and Immune Regulation",
+    "summary": "The complement cascade is part of innate immunity, mediating opsonization, inflammation, and lysis. C3 activation triggers the alternative pathway; C4 participates in classical and lectin pathways. HL",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "pathway",
+    "slug": "dna-damage-repair",
+    "name": "DNA Damage Response and Repair",
+    "summary": "The DNA damage response (DDR) pathway detects and repairs DNA lesions to maintain genomic integrity. Double-strand breaks activate ATM/ATR kinases, which phosphorylate effectors including p53 (TP53). ",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "pathway",
+    "slug": "dopamine-signaling",
+    "name": "Dopamine Signaling Pathway",
+    "summary": "Dopamine signaling regulates reward, motivation, movement, cognition, and psychosis. Dopamine is synthesized in substantia nigra and ventral tegmental area; released into striatum and prefrontal corte",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "pathway",
+    "slug": "hpa-axis",
+    "name": "Hypothalamic-Pituitary-Adrenal Axis",
+    "summary": "The HPA axis mediates the stress response. Hypothalamic CRH stimulates pituitary ACTH release; ACTH drives adrenal cortisol secretion. Cortisol mobilizes energy, suppresses immune and inflammatory res",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "pathway",
+    "slug": "insulin-signaling",
+    "name": "Insulin Signaling and Glucose Metabolism",
+    "summary": "Insulin signaling regulates glucose uptake, glycogen synthesis, lipogenesis, and gene expression. Insulin binds the insulin receptor, activating IRS-PI3K-AKT cascade; AKT phosphorylates substrates inc",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "pathway",
+    "slug": "ldl-cholesterol-metabolism",
+    "name": "LDL Cholesterol Metabolism Pathway",
+    "summary": "The LDL cholesterol pathway governs uptake and clearance of low-density lipoprotein particles from circulation. Hepatocytes synthesize LDL receptors (LDLR) that bind apolipoprotein B (APOB) on LDL par",
+    "confidence": "medium",
+    "synonyms": []
   },
   {
     "type": "pathway",
     "slug": "nf-kb",
-    "name": "NF-κB Signaling Pathway",
-    "summary": "Master regulator of inflammatory gene expression. KEGG hsa04064. Activated by PM2.5, tobacco, LPS, diesel. Key genes: RELA, NFKB1, IKBKG, IL33 (upstream), TNF, IL6, IL8 (downstream).",
-    "confidence": "high",
-    "synonyms": ["NF-kappa B", "NFkB", "nuclear factor kappa B"]
+    "name": "NF-\u03baB Signaling Pathway",
+    "summary": "NF-\u03baB (nuclear factor kappa-light-chain-enhancer of activated B cells) is a master regulator of inflammatory gene expression, governing immune responses, cell survival, and proliferation. The pathway ",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "pathway",
+    "slug": "pi3k-akt-mtor",
+    "name": "PI3K-AKT-mTOR Signaling Pathway",
+    "summary": "The PI3K-AKT-mTOR pathway regulates cell growth, survival, metabolism, and proliferation. Growth factors (e.g., insulin, EGF) activate receptor tyrosine kinases; PI3K generates PIP3; AKT phosphorylate",
+    "confidence": "medium",
+    "synonyms": []
   },
   {
     "type": "brief",
     "slug": "pm25-il33-nfkb-asthma",
-    "name": "PM2.5 + IL33 + NF-κB → Asthma",
-    "summary": "Mechanism brief: PM2.5 amplifies IL-33–mediated airway inflammation via NF-κB in genetically susceptible individuals. Chain: PM2.5 → ROS → NF-κB → IL33 → ST2 → ILC2/mast → Th2 cascade → eosinophilic inflammation → AHR.",
+    "name": "PM2.5 Exposure Amplifies IL-33-Mediated Airway Inflammation via NF-kB Signaling in Genetically Susceptible Individuals",
+    "summary": "How does ambient PM2.5 exposure interact with genetic variation in IL33 and NF-\u03baB pathway genes to amplify airway inflammation and asthma risk?",
     "confidence": "high",
-    "synonyms": ["PM2.5 IL33 asthma mechanism", "air pollution asthma genetics"]
+    "synonyms": []
   }
 ]

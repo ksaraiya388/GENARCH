@@ -1,0 +1,42 @@
+{
+  "id": "path_ldl_cholesterol",
+  "slug": "ldl-cholesterol-metabolism",
+  "name": "LDL Cholesterol Metabolism Pathway",
+  "summary": "The LDL cholesterol pathway governs uptake and clearance of low-density lipoprotein particles from circulation. Hepatocytes synthesize LDL receptors (LDLR) that bind apolipoprotein B (APOB) on LDL particles; internalization delivers cholesterol for regulatory feedback. PCSK9 binds LDLR at the cell surface and targets it for lysosomal degradation, reducing LDL clearance. APOE mediates remnant lipoprotein clearance. Gain-of-function PCSK9 or loss-of-function LDLR variants elevate LDL-C and coronary artery disease risk. Statins upregulate LDLR; PCSK9 inhibitors are therapeutic. Environmental factors including diet quality (saturated fat), smoking, and obesity amplify genetic susceptibility by promoting inflammation and endothelial dysfunction.",
+  "canonical_source": "hsa04979",
+  "environmental_triggers": [
+    {"exposure_slug": "diet-quality", "trigger_type": "Saturated fat elevates LDL-C; fiber and phytosterols reduce absorption", "citations": ["ref1", "ref2"]},
+    {"exposure_slug": "tobacco", "trigger_type": "Oxidative stress and endothelial dysfunction amplify atherogenic effects", "citations": ["ref2", "ref3"]},
+    {"exposure_slug": "obesity-exposure", "trigger_type": "Dyslipidemia and insulin resistance perturb cholesterol homeostasis", "citations": ["ref3"]}
+  ],
+  "key_genes": [
+    {"gene_slug": "ldlr", "role_in_pathway": "Cell surface receptor; binds and internalizes LDL particles; central to cholesterol homeostasis", "citations": ["ref1", "ref4"]},
+    {"gene_slug": "pcsk9", "role_in_pathway": "Proprotein convertase; degrades LDLR; gain-of-function increases LDL-C", "citations": ["ref2", "ref4"]},
+    {"gene_slug": "apoe", "role_in_pathway": "Mediates remnant lipoprotein clearance; isoforms influence LDL levels and CAD risk", "citations": ["ref3", "ref4"]}
+  ],
+  "regulatory_checkpoints": [
+    {"node": "LDLR synthesis", "modulator_genes": ["ldlr"], "potential_therapeutic_target": true},
+    {"node": "PCSK9-LDLR binding", "modulator_genes": ["pcsk9"], "potential_therapeutic_target": true}
+  ],
+  "tissue_specificity": [
+    {"tissue": "liver", "expression_evidence": "Primary site of LDLR and PCSK9 expression; hepatic clearance"},
+    {"tissue": "adrenal gland", "expression_evidence": "Cholesterol for steroid synthesis"}
+  ],
+  "linked_diseases": [
+    {"disease_slug": "coronary-artery-disease", "pathway_role": "Core pathogenic pathway; elevated LDL-C drives atherosclerosis", "citations": ["ref1", "ref4"]},
+    {"disease_slug": "hypertension", "pathway_role": "Shared risk factors; dyslipidemia accompanies metabolic syndrome", "citations": ["ref3"]}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "diet-quality", "pathway_effect": "Dietary lipids directly affect LDL levels; Mediterranean diet buffers risk", "citations": ["ref1", "ref2"]},
+    {"exposure_slug": "obesity-exposure", "pathway_effect": "Obesity drives dyslipidemia and amplifies genetic susceptibility", "citations": ["ref3", "ref4"]}
+  ],
+  "diagram_asset": null,
+  "references": [
+    {"id": "ref1", "title": "LDL cholesterol metabolism and coronary artery disease", "authors": "Horton JD, et al.", "year": 2009, "journal": "Journal of Clinical Investigation", "doi": "10.1172/JCI38630"},
+    {"id": "ref2", "title": "PCSK9 and LDL cholesterol: therapeutic targeting", "authors": "Cohen JC, et al.", "year": 2006, "journal": "Nature Genetics", "doi": "10.1038/ng1836"},
+    {"id": "ref3", "title": "Gene-environment interaction in dyslipidemia", "authors": "Ordovas JM, et al.", "year": 2018, "journal": "Circulation Research", "doi": "10.1161/CIRCRESAHA.118.311366"},
+    {"id": "ref4", "title": "APOE and cardiovascular disease", "authors": "Mahley RW, Rall SC Jr", "year": 2000, "journal": "Annual Review of Genomics and Human Genetics", "doi": "10.1146/annurev.genom.1.1.507"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

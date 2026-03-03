@@ -1,0 +1,26 @@
+{
+  "id": "exp_obesity_exposure",
+  "slug": "obesity-exposure",
+  "name": "Obesogenic Environment",
+  "definition": "Environmental and contextual factors that promote weight gain and obesity. Includes food environment (access, marketing, portion sizes), built environment (walkability, recreation), sedentary behavior opportunities, and socioeconomic factors affecting diet and activity.",
+  "proxies": [
+    {"name": "Fast food density", "unit": "per capita", "measurement_method": "Geographic data", "data_source": "Business census"},
+    {"name": "Walkability index", "unit": "score", "measurement_method": "Built environment metrics", "data_source": "Geographic GIS"}
+  ],
+  "systems_affected": [
+    {"system": "metabolic", "mechanism_summary": "Energy balance; diet and activity patterns"},
+    {"system": "cardiovascular", "mechanism_summary": "Obesity mediates cardiovascular risk"}
+  ],
+  "sensitive_windows": [
+    {"period": "adolescence", "age_range": "10-24", "mechanism_rationale": "Behavioral patterns; food environment exposure", "citations": ["ref1"]}
+  ],
+  "gxe_highlights": [],
+  "tissues": [
+    {"name": "adipose tissue", "effect_type": "energy storage", "citations": ["ref1"]}
+  ],
+  "references": [
+    {"id": "ref1", "title": "Obesogenic environments", "authors": "Swinburn BA, et al.", "year": 2011, "journal": "The Lancet", "doi": "10.1016/S0140-6736(11)60813-1"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

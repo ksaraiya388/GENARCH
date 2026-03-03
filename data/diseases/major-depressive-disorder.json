@@ -1,0 +1,98 @@
+{
+  "id": "dis_major-depressive-disorder",
+  "slug": "major-depressive-disorder",
+  "name": "Major Depressive Disorder",
+  "icd11_code": "6A70",
+  "summary": "Major depressive disorder (MDD) is a common mental disorder characterized by persistent low mood, anhedonia, fatigue, and impaired functioning, often with recurring episodes. Neurobiological mechanisms involve dysregulation of monoaminergic systems (serotonin, norepinephrine, dopamine), hypothalamic-pituitary-adrenal (HPA) axis hyperactivation, neuroinflammation, and impaired neuroplasticity. Genetic factors contribute ~37% of variance; SNP heritability ~0.08–0.15, reflecting high polygenicity and substantial environmental influence. Key candidate genes include SLC6A4 (serotonin transporter) and BDNF (brain-derived neurotrophic factor), both implicated in stress response and neural plasticity. Gene–environment interactions are central: childhood adversity and chronic psychosocial stress amplify genetic susceptibility, particularly in 5-HTTLPR and BDNF Val66Met carriers. Adolescence is a critical vulnerability window—onset peaks in late adolescence/early adulthood, and stress exposure during 10–24 years may have lasting effects on HPA axis and neural circuitry.",
+  "adolescent_relevance": "MDD onset peaks in adolescence and young adulthood. Stress sensitivity and HPA axis programming during this window influence lifetime trajectories. Social media, academic pressure, and identity formation create unique psychosocial stressors. Early intervention and stress-buffering strategies may modify genetic vulnerability.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "SLC6A4",
+        "variant": "5-HTTLPR",
+        "evidence": "Serotonin transporter; short allele associated with stress sensitivity and depression in G×E context; moderates effect of adversity",
+        "strength": 0.72,
+        "citations": ["ref1", "ref2"]
+      },
+      {
+        "gene": "BDNF",
+        "variant": "rs6265",
+        "gwas_p": 1.5e-8,
+        "effect_size": 0.05,
+        "evidence": "Val66Met polymorphism affects BDNF secretion and activity-dependent release; neuroplasticity; stress × genotype interactions",
+        "strength": 0.75,
+        "citations": ["ref2", "ref3"]
+      },
+      {
+        "gene": "HTR2A",
+        "variant": "rs6311",
+        "gwas_p": 2.0e-7,
+        "evidence": "Serotonin 2A receptor; implicated in mood regulation and treatment response; pathway complement to SLC6A4",
+        "strength": 0.65,
+        "citations": ["ref1", "ref4"]
+      }
+    ],
+    "prs_notes": "MDD PRS show weak discrimination (AUC ~0.55–0.58) due to polygenicity and environmental dominance. G×E models with stress improve prediction but not yet standardized. Transferability across ancestry and environment limited."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "psychosocial-stress",
+      "direction": "amplify",
+      "strength": 0.88,
+      "confidence": "high",
+      "mechanism_hypothesis": "Childhood adversity and chronic stress amplify genetic risk; 5-HTTLPR short allele × stress interaction; HPA axis dysregulation; BDNF Val66Met × stress",
+      "citations": ["ref1", "ref2", "ref5"]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "amplify",
+      "strength": 0.58,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Particulate matter exposure linked to depression; neuroinflammation; oxidative stress; emerging epidemiological evidence",
+      "citations": ["ref3", "ref5"]
+    },
+    {
+      "exposure_slug": "obesity-exposure",
+      "direction": "bidirectional",
+      "strength": 0.58,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Obesity-depression bidirectional relationship; inflammatory pathways; shared genetic liability; stigma and psychosocial pathways",
+      "citations": ["ref4", "ref5"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "prefrontal cortex",
+      "relevance_score": 0.92,
+      "evidence_type": "eQTL and literature",
+      "citations": ["ref1", "ref2"]
+    },
+    {
+      "name": "hippocampus",
+      "relevance_score": 0.9,
+      "evidence_type": "literature",
+      "citations": ["ref2", "ref3"]
+    },
+    {
+      "name": "amygdala",
+      "relevance_score": 0.85,
+      "evidence_type": "literature",
+      "citations": ["ref1", "ref4"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "MDD GWAS predominantly European-ancestry; East Asian cohorts growing; other ancestries underrepresented",
+    "transferability_notes": "5-HTTLPR × stress replication inconsistent across populations; PRS transferability to non-European ancestry poor; cultural variation in stress exposure and depression phenotype",
+    "data_gaps": "Multi-ancestry MDD GWAS; G×E validation across diverse populations; adolescent-specific genetic and environmental models"
+  },
+  "mechanism_briefs": ["slc6a4-stress-depression", "bdnf-neuroplasticity-mdd"],
+  "references": [
+    {"id": "ref1", "title": "Influence of life stress on depression: moderation by a polymorphism in the 5-HTT gene", "authors": "Caspi A, et al.", "year": 2003, "journal": "Science", "doi": "10.1126/science.1083968"},
+    {"id": "ref2", "title": "The BDNF Val66Met polymorphism moderates the relationship between stress and depressive symptoms", "authors": "Hosang GM, et al.", "year": 2014, "journal": "Journal of Psychiatric Research", "doi": "10.1016/j.jpsychires.2014.03.007"},
+    {"id": "ref3", "title": "Genome-wide association analyses identify 44 risk variants and refine the genetic architecture of major depression", "authors": "Wray NR, et al.", "year": 2018, "journal": "Nature Genetics", "doi": "10.1038/s41588-018-0090-3"},
+    {"id": "ref4", "title": "Serotonin 2A receptor gene and depression", "authors": "Kato T, Serretti A.", "year": 2010, "journal": "Progress in Neuro-Psychopharmacology & Biological Psychiatry", "doi": "10.1016/j.pnpbp.2009.10.016"},
+    {"id": "ref5", "title": "Gene-environment interactions in depression", "authors": "Uher R.", "year": 2014, "journal": "Current Opinion in Psychiatry", "doi": "10.1097/YCO.0000000000000071"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

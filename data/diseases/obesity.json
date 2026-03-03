@@ -1,0 +1,138 @@
+{
+  "id": "dis_obesity",
+  "slug": "obesity",
+  "name": "Obesity",
+  "icd11_code": "5B81",
+  "summary": "Obesity is a multifactorial condition characterized by excess adipose tissue accumulation, with body mass index (BMI) ≥30 kg/m² as a common threshold. Pathophysiology involves energy balance dysregulation, leptin–melanocortin signaling, gut–brain axis, adipose biology, and neuroendocrine pathways. Obesity increases risk for type 2 diabetes, cardiovascular disease, cancer, and musculoskeletal disorders. Genetic susceptibility is substantial: heritability for BMI is ~40–70%; SNP-based h² is ~0.21. Over 900 loci have been identified. Key genes include FTO (energy balance, hypothalamic regulation), MC4R (melanocortin-4 receptor, appetite), and loci in gut–brain axis (LEP, LEPR, POMC). Diet, physical activity, built environment, and psychosocial factors interact with genetic risk. Epigenetic programming in early life may influence susceptibility. Adolescence is a critical period for establishing weight trajectory.",
+  "adolescent_relevance": "Ages 10–24 represent a critical window for weight trajectory. Pubertal timing and growth affect body composition. Diet and activity patterns established in adolescence persist. Screen time, sleep disruption, and psychosocial stress affect weight. Genetic risk manifests partly through appetite and satiety; adolescents with high PRS may benefit from structured lifestyle intervention. Bariatric surgery is increasingly considered for severe adolescent obesity. Stigma and mental health are significant concerns. Early intervention may prevent adult obesity and comorbidities.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "FTO",
+        "variant": "rs9939609",
+        "gwas_p": 1e-50,
+        "effect_size": 0.39,
+        "ancestry_composition": "Multi-ancestry",
+        "replication_status": "Replicated across ancestries",
+        "evidence": "Fat mass and obesity-associated; hypothalamic energy balance; affects food intake and preference; strongest common BMI locus",
+        "strength": 0.92,
+        "citations": ["ref1", "ref2"]
+      },
+      {
+        "gene": "MC4R",
+        "variant": "rs17782313",
+        "gwas_p": 1e-40,
+        "effect_size": 0.35,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated; Mendelian obesity",
+        "evidence": "Melanocortin-4 receptor; leptin–melanocortin pathway; appetite regulation; monogenic obesity when mutated",
+        "strength": 0.9,
+        "citations": ["ref1", "ref3"]
+      },
+      {
+        "gene": "TMEM18",
+        "variant": "rs6548238",
+        "gwas_p": 1e-25,
+        "effect_size": 0.25,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "Hypothalamic expression; energy balance; gut–brain axis",
+        "strength": 0.82,
+        "citations": ["ref2", "ref4"]
+      },
+      {
+        "gene": "BDNF",
+        "variant": "rs6265",
+        "gwas_p": 1e-15,
+        "effect_size": 0.2,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "Brain-derived neurotrophic factor; hypothalamic energy homeostasis; synaptic plasticity",
+        "strength": 0.75,
+        "citations": ["ref3", "ref5"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.21,
+      "h2_narrow_sense": 0.55,
+      "source": "GIANT consortium and twin studies",
+      "year": 2019
+    },
+    "prs_notes": "BMI/obesity PRS show moderate predictive ability (AUC ~0.60–0.68). Transferability is limited: European discovery; performance in non-European populations is reduced. PRS may identify individuals for intensified prevention; clinical utility is investigational. G×E (diet, physical activity, built environment) not yet integrated. PRS explain variance but lifestyle remains modifiable."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "diet-quality",
+      "direction": "amplify",
+      "strength": 0.9,
+      "confidence": "high",
+      "mechanism_hypothesis": "Energy-dense, low-satiety diets (ultra-processed foods, sugar-sweetened beverages) amplify genetic susceptibility; diet is primary modifiable factor",
+      "citations": ["ref1", "ref2"]
+    },
+    {
+      "exposure_slug": "psychosocial-stress",
+      "direction": "amplify",
+      "strength": 0.7,
+      "confidence": "high",
+      "mechanism_hypothesis": "Chronic stress affects cortisol, reward circuitry, and eating behavior; stress-induced eating; bidirectional with depression",
+      "citations": ["ref3", "ref4"]
+    },
+    {
+      "exposure_slug": "obesity-exposure",
+      "direction": "amplify",
+      "strength": 0.75,
+      "confidence": "high",
+      "mechanism_hypothesis": "Obesogenic environment (food access, marketing, physical inactivity) amplifies genetic risk; built environment and policy",
+      "citations": ["ref2", "ref4"]
+    },
+    {
+      "exposure_slug": "alcohol",
+      "direction": "amplify",
+      "strength": 0.55,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Alcohol provides empty calories; affects appetite and fat metabolism; contributes to weight gain",
+      "citations": ["ref5"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "hypothalamus",
+      "relevance_score": 0.98,
+      "evidence_type": "GWAS and pathway",
+      "citations": ["ref1", "ref2"]
+    },
+    {
+      "name": "adipose tissue",
+      "relevance_score": 0.95,
+      "evidence_type": "eQTL and expression",
+      "citations": ["ref2", "ref3"]
+    },
+    {
+      "name": "gut (enteroendocrine cells)",
+      "relevance_score": 0.88,
+      "evidence_type": "pathway",
+      "citations": ["ref3", "ref4"]
+    },
+    {
+      "name": "liver",
+      "relevance_score": 0.82,
+      "evidence_type": "pathway",
+      "citations": ["ref4"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "BMI GWAS are predominantly European (~80%); GIANT and others are expanding multi-ancestry data",
+    "transferability_notes": "FTO and many loci transfer across ancestries; effect sizes and allele frequencies vary. PRS performance in African, Hispanic, and Asian populations is reduced. Obesity prevalence and sequelae differ by race/ethnicity and socioeconomic status; equity in prevention and care is critical.",
+    "data_gaps": "Under-representation of diverse ancestries; G×E (diet, built environment) across populations; childhood/adolescent obesity genetics; epigenetic contributions."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {"id": "ref1", "title": "Genome-wide association study for obesity", "authors": "Speliotes EK, et al.", "year": 2010, "journal": "Nature Genetics", "doi": "10.1038/ng.620"},
+    {"id": "ref2", "title": "FTO and the genetics of obesity", "authors": "Loos RJF, Yeo GSH", "year": 2014, "journal": "Trends in Genetics", "doi": "10.1016/j.tig.2014.06.002"},
+    {"id": "ref3", "title": "MC4R and body weight regulation", "authors": "Loos RJF, et al.", "year": 2008, "journal": "Nature Genetics", "doi": "10.1038/ng.277"},
+    {"id": "ref4", "title": "Stress and obesity", "authors": "Dallman MF, et al.", "year": 2003, "journal": "Proceedings of the National Academy of Sciences", "doi": "10.1073/pnas.1934666100"},
+    {"id": "ref5", "title": "Alcohol consumption and obesity", "authors": "Traversy G, Chaput JP", "year": 2015, "journal": "Current Obesity Reports", "doi": "10.1007/s13679-015-0147-x"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

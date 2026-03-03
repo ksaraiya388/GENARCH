@@ -1,0 +1,138 @@
+{
+  "id": "dis_rheumatoid-arthritis",
+  "slug": "rheumatoid-arthritis",
+  "name": "Rheumatoid Arthritis",
+  "icd11_code": "FA20",
+  "summary": "Rheumatoid arthritis (RA) is a chronic autoimmune disorder characterized by symmetric inflammatory polyarthritis, joint destruction, and systemic manifestations. Pathophysiology involves autoimmune attack on synovium, with HLA-DRB1 shared epitope, citrullinated peptide recognition, and TNF/IL-6–driven inflammation. Seropositive RA (RF and/or anti-CCP) has stronger genetic component than seronegative. Heritability is ~60%; SNP-based h² is ~0.13. HLA-DRB1 contributes ~30% of genetic variance. Key genes include HLA-DRB1 (antigen presentation), PTPN22 (T-cell signaling), and loci in TNF pathway. Smoking, particularly in HLA-DRB1 carriers, dramatically increases anti-CCP–positive RA risk via citrullination. Infections, obesity, and reproductive factors may modify risk. Early diagnosis and DMARD therapy prevent joint damage.",
+  "adolescent_relevance": "RA onset typically occurs in adulthood but juvenile idiopathic arthritis (JIA) presents in childhood. Ages 10–24 may see JIA persistence or transition to adult RA. Smoking initiation during adolescence increases future RA risk, especially in genetically susceptible individuals. Obesity in youth may amplify risk. Psychosocial stress and physical activity patterns established in adolescence may influence disease course. Genetic risk assessment in adolescents is generally not indicated; family history may inform monitoring.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "HLA-DRB1",
+        "variant": "Shared epitope alleles",
+        "gwas_p": 1e-100,
+        "effect_size": 2.5,
+        "ancestry_composition": "Multi-ancestry",
+        "replication_status": "Replicated across ancestries",
+        "evidence": "MHC class II; antigen presentation; shared epitope hypothesis; citrullinated peptide presentation; strongest RA locus",
+        "strength": 0.98,
+        "citations": ["ref1", "ref2"]
+      },
+      {
+        "gene": "PTPN22",
+        "variant": "rs2476601",
+        "gwas_p": 1e-40,
+        "effect_size": 1.8,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "Lymphoid tyrosine phosphatase; T-cell receptor signaling; multiple autoimmune diseases",
+        "strength": 0.88,
+        "citations": ["ref1", "ref3"]
+      },
+      {
+        "gene": "TNF",
+        "variant": "rs1800629",
+        "gwas_p": 1e-15,
+        "effect_size": 1.2,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated; drug target",
+        "evidence": "TNF-alpha; central cytokine in RA pathogenesis; anti-TNF therapeutics",
+        "strength": 0.85,
+        "citations": ["ref2", "ref4"]
+      },
+      {
+        "gene": "CTLA4",
+        "variant": "rs3087243",
+        "gwas_p": 1e-10,
+        "effect_size": 1.1,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "T-cell costimulation; immune checkpoint; autoimmune susceptibility",
+        "strength": 0.75,
+        "citations": ["ref3", "ref5"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.13,
+      "h2_narrow_sense": 0.6,
+      "source": "EIRA and large RA GWAS meta-analyses",
+      "year": 2019
+    },
+    "prs_notes": "RA PRS show moderate predictive ability (AUC ~0.65–0.72). HLA contributes substantially. Transferability is limited: European discovery; HLA structure varies by ancestry. PRS may stratify risk in preclinical phases; utility for screening in general population is limited. G×E (smoking–HLA interaction) is well-established but not fully integrated into PRS."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "tobacco",
+      "direction": "amplify",
+      "strength": 0.95,
+      "confidence": "high",
+      "mechanism_hypothesis": "Smoking induces citrullination in lungs; in HLA-DRB1 carriers, dramatically increases anti-CCP–positive RA risk; gene–environment interaction",
+      "citations": ["ref1", "ref2"]
+    },
+    {
+      "exposure_slug": "obesity-exposure",
+      "direction": "amplify",
+      "strength": 0.7,
+      "confidence": "high",
+      "mechanism_hypothesis": "Adipose-derived cytokines (leptin, adiponectin) promote inflammation; obesity increases RA risk and reduces treatment response",
+      "citations": ["ref3", "ref4"]
+    },
+    {
+      "exposure_slug": "psychosocial-stress",
+      "direction": "amplify",
+      "strength": 0.55,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Stress may trigger or exacerbate RA flares; affects disease activity and treatment adherence",
+      "citations": ["ref4", "ref5"]
+    },
+    {
+      "exposure_slug": "diet-quality",
+      "direction": "buffer",
+      "strength": 0.5,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Mediterranean diet, omega-3 fatty acids may reduce inflammation; observational evidence for symptom improvement",
+      "citations": ["ref5"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "synovium",
+      "relevance_score": 0.98,
+      "evidence_type": "GWAS and pathology",
+      "citations": ["ref1", "ref2"]
+    },
+    {
+      "name": "immune cells (T and B lymphocytes)",
+      "relevance_score": 0.95,
+      "evidence_type": "pathway",
+      "citations": ["ref1", "ref3"]
+    },
+    {
+      "name": "lung (for citrullination)",
+      "relevance_score": 0.85,
+      "evidence_type": "literature",
+      "citations": ["ref2"]
+    },
+    {
+      "name": "adipose tissue",
+      "relevance_score": 0.75,
+      "evidence_type": "pathway",
+      "citations": ["ref3", "ref4"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "RA GWAS are predominantly European (~85%); multi-ancestry efforts are expanding",
+    "transferability_notes": "HLA associations vary by ancestry; shared epitope alleles differ in frequency. PTPN22 risk allele is rare in East Asians. PRS performance in non-European populations is reduced.",
+    "data_gaps": "Under-representation of diverse ancestries; G×E (smoking–HLA) across populations; seronegative RA genetics; preclinical phase prediction."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {"id": "ref1", "title": "Genetics of rheumatoid arthritis contributes to biology and drug discovery", "authors": "Okada Y, et al.", "year": 2014, "journal": "Nature", "doi": "10.1038/nature12873"},
+    {"id": "ref2", "title": "A gene-environment interaction between smoking and shared epitope genes in HLA-DR provides a high risk of seropositive rheumatoid arthritis", "authors": "Källberg H, et al.", "year": 2007, "journal": "Arthritis & Rheumatology", "doi": "10.1002/art.22795"},
+    {"id": "ref3", "title": "PTPN22 and autoimmune disease", "authors": "Bottini N, Peterson EJ", "year": 2014, "journal": "Nature Reviews Immunology", "doi": "10.1038/nri3660"},
+    {"id": "ref4", "title": "Obesity and rheumatoid arthritis", "authors": "Stavropoulos-Kalinoglou A, et al.", "year": 2013, "journal": "Nature Reviews Rheumatology", "doi": "10.1038/nrrheum.2013.36"},
+    {"id": "ref5", "title": "Stress and rheumatoid arthritis", "authors": "Matcham F, et al.", "year": 2014, "journal": "Journal of Psychosomatic Research", "doi": "10.1016/j.jpsychores.2014.03.002"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

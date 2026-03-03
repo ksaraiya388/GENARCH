@@ -1,0 +1,39 @@
+{
+  "id": "tp53",
+  "slug": "tp53",
+  "symbol": "TP53",
+  "name": "Tumor protein p53",
+  "chromosome": "17p13.1",
+  "summary": "TP53 encodes p53, a critical tumor suppressor that coordinates cellular responses to DNA damage, oncogenic stress, and other insults. p53 arrests the cell cycle, promotes DNA repair, or induces apoptosis depending on context. Germline TP53 mutations cause Li-Fraumeni syndrome with high cancer risk. Somatic TP53 mutations occur in >50% of human cancers, including breast and lung. p53 regulates hundreds of targets including p21, PUMA, and Bax. The protein is normally short-lived; stress stabilizes it. MDM2 targets p53 for degradation. Expression is ubiquitous. TP53 status influences therapeutic response; mutant p53 can acquire gain-of-function properties that promote metastasis.",
+  "molecular_function": ["transcriptional activation", "DNA binding", "cell cycle arrest", "apoptosis induction"],
+  "protein_class": "tumor suppressor",
+  "regulatory_notes": {
+    "promoter_activity": "Constitutive transcription; p53 autoregulation.",
+    "enhancer_associations": "Cancer-associated variants in regulatory regions.",
+    "methylation_sensitivity": "Rare promoter methylation in some cancers.",
+    "eqtl_tissues": ["lung", "breast"]
+  },
+  "expression_context": [
+    {"tissue": "lung", "tpm_range": "5-20", "gtex_version": "v8", "citations": ["ref1", "ref2"]},
+    {"tissue": "breast", "tpm_range": "4-18", "gtex_version": "v8", "citations": ["ref2"]}
+  ],
+  "pathways": ["dna-damage-repair", "pi3k-akt-mtor"],
+  "linked_diseases": [
+    {"disease_slug": "breast-cancer", "evidence_type": "GWAS", "strength": 0.85},
+    {"disease_slug": "lung-cancer", "evidence_type": "GWAS", "strength": 0.88}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "tobacco", "evidence_type": "literature", "strength": 0.92}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "TP53 loss permits survival of cells with DNA damage; in tobacco-exposed lung, p53 mutations enable clonal expansion of damaged epithelial cells; combined genetic and environmental DNA damage drives carcinogenesis.", "supporting_evidence": "TP53 mutations frequent in smoking-related lung cancer; characteristic G→T transversions at smoke-derived adducts.", "confidence": "high"}
+  ],
+  "confidence": "high",
+  "references": [
+    {"id": "ref1", "title": "p53 in health and disease", "authors": "Vousden KH, Prives C", "year": 2009, "journal": "Nature Reviews Molecular Cell Biology", "doi": "10.1038/nrm2716"},
+    {"id": "ref2", "title": "GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues", "authors": "GTEx Consortium", "year": 2020, "journal": "Science", "doi": "10.1126/science.aaz1776"},
+    {"id": "ref3", "title": "Mutational signatures of tobacco smoking in human cancer", "authors": "Alexandrov LB, et al.", "year": 2016, "journal": "Science", "doi": "10.1126/science.aag0299"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

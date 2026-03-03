@@ -1,0 +1,39 @@
+{
+  "id": "ldlr",
+  "slug": "ldlr",
+  "symbol": "LDLR",
+  "name": "LDL receptor",
+  "chromosome": "19p13.2",
+  "summary": "LDLR encodes the low-density lipoprotein receptor, a cell-surface glycoprotein that binds and internalizes LDL cholesterol particles. The receptor mediates endocytosis of cholesterol-carrying lipoproteins, regulating plasma cholesterol homeostasis. Mutations in LDLR cause familial hypercholesterolemia (FH), characterized by severely elevated LDL-C and premature coronary artery disease. GWAS have identified common variants near LDLR that modestly affect LDL-C levels and CAD risk. The gene is transcriptionally regulated by SREBP-2 in response to cellular cholesterol demand. Expression is highest in liver, adrenal cortex, and steroidogenic tissues.",
+  "molecular_function": ["LDL binding", "receptor-mediated endocytosis", "cholesterol uptake", "apoB-100 recognition"],
+  "protein_class": "LDL receptor family",
+  "regulatory_notes": {
+    "promoter_activity": "SREBP-2 binding elements drive cholesterol-responsive transcription; sterol regulatory element (SRE) in promoter.",
+    "enhancer_associations": "CAD-associated variants map to regulatory regions modulating LDLR expression in hepatic and vascular cell types.",
+    "methylation_sensitivity": "CpG methylation inversely correlates with LDLR expression in some tissues.",
+    "eqtl_tissues": ["liver", "adipose tissue"]
+  },
+  "expression_context": [
+    {"tissue": "liver", "tpm_range": "80-250", "gtex_version": "v8", "citations": ["ref1", "ref2"]},
+    {"tissue": "adrenal gland", "tpm_range": "40-120", "gtex_version": "v8", "citations": ["ref1"]}
+  ],
+  "pathways": ["ldl-cholesterol-metabolism"],
+  "linked_diseases": [
+    {"disease_slug": "coronary-artery-disease", "evidence_type": "GWAS", "strength": 0.92},
+    {"disease_slug": "hypertension", "evidence_type": "pathway", "strength": 0.45}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "diet-quality", "evidence_type": "literature", "strength": 0.78}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "Reduced LDLR function elevates circulating LDL-C; oxidized LDL accumulates in arterial intima, triggering foam cell formation and atherosclerosis progression.", "supporting_evidence": "FH patients and LDLR-deficient mice develop accelerated atherosclerosis; statins upregulate LDLR and reduce CAD events.", "confidence": "high"}
+  ],
+  "confidence": "high",
+  "references": [
+    {"id": "ref1", "title": "The LDL receptor", "authors": "Brown MS, Goldstein JL", "year": 1986, "journal": "Science", "doi": "10.1126/science.3513311"},
+    {"id": "ref2", "title": "GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues", "authors": "GTEx Consortium", "year": 2020, "journal": "Science", "doi": "10.1126/science.aaz1776"},
+    {"id": "ref3", "title": "Genetic risk, adherence to a healthy lifestyle, and coronary disease", "authors": "Khera AV, et al.", "year": 2016, "journal": "New England Journal of Medicine", "doi": "10.1056/NEJMoa1605086"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

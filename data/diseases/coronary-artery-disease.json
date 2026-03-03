@@ -1,0 +1,138 @@
+{
+  "id": "dis_coronary-artery-disease",
+  "slug": "coronary-artery-disease",
+  "name": "Coronary Artery Disease",
+  "icd11_code": "BA80",
+  "summary": "Coronary artery disease (CAD) is the leading cause of death globally, characterized by atherosclerosis—the progressive buildup of fatty plaques in coronary arteries that supply the heart. Pathophysiology involves endothelial dysfunction, lipid accumulation, chronic inflammation, plaque rupture, and thrombosis. CAD manifests as angina, myocardial infarction, or sudden cardiac death. Genetic susceptibility contributes substantially: heritability estimates range from 40–60% based on twin and family studies. SNP-based heritability (h²) is approximately 0.13–0.16, reflecting highly polygenic architecture. Key Mendelian genes (LDLR, APOB, PCSK9, LPA) illuminate cholesterol metabolism pathways; common-variant GWAS have identified over 300 loci. Prevalence increases with age and varies by population and lifestyle. Modifiable risk factors—hypertension, dyslipidemia, smoking, diabetes, obesity, physical inactivity, and poor diet—interact with genetic predisposition. Early-life and adolescent exposures shape lifelong cardiovascular risk trajectories.",
+  "adolescent_relevance": "Ages 10–24 represent a critical period for CAD risk trajectory. Atherosclerosis begins in adolescence; fatty streaks visible in teen autopsies. Smoking initiation, poor diet, and sedentary behavior established in adolescence amplify genetic susceptibility. Metabolic syndrome components (obesity, insulin resistance, dyslipidemia) often emerge during puberty. Psychosocial stress during academic transitions and identity formation affects health behaviors. Early intervention on modifiable factors can shift lifetime risk. Polygenic risk scores may identify adolescents warranting intensified prevention, though clinical utility in youth remains investigational.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "LDLR",
+        "variant": "rs688",
+        "gwas_p": 1e-50,
+        "effect_size": 1.35,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated across ancestries",
+        "evidence": "LDL receptor; familial hypercholesterolemia; central to LDL clearance; common variants contribute to CAD risk",
+        "strength": 0.95,
+        "citations": ["ref1", "ref2"]
+      },
+      {
+        "gene": "APOB",
+        "variant": "rs1367117",
+        "gwas_p": 1e-40,
+        "effect_size": 1.2,
+        "ancestry_composition": "Multi-ancestry",
+        "replication_status": "Replicated",
+        "evidence": "Apolipoprotein B; ligand for LDL receptor; variants affect LDL levels and CAD",
+        "strength": 0.92,
+        "citations": ["ref1", "ref3"]
+      },
+      {
+        "gene": "PCSK9",
+        "variant": "rs11206510",
+        "gwas_p": 1e-35,
+        "effect_size": 1.15,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated; therapeutic target",
+        "evidence": "Proprotein convertase; degrades LDLR; loss-of-function variants lower LDL and CAD risk",
+        "strength": 0.9,
+        "citations": ["ref2", "ref4"]
+      },
+      {
+        "gene": "LPA",
+        "variant": "rs10455872",
+        "gwas_p": 1e-30,
+        "effect_size": 1.25,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "Lipoprotein(a); proatherogenic; independent of LDL-C; varies by ancestry",
+        "strength": 0.88,
+        "citations": ["ref3", "ref5"]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.14,
+      "h2_narrow_sense": 0.5,
+      "source": "Large-scale GWAS meta-analyses and twin studies",
+      "year": 2021
+    },
+    "prs_notes": "CAD polygenic risk scores show strong predictive ability (AUC ~0.75–0.82). Transferability is limited: discovery cohorts are predominantly European; performance in African, Hispanic, and South Asian populations is reduced. PRS combined with clinical risk factors improves risk stratification. G×E interactions (smoking, diet, air pollution) are not yet incorporated. Clinical guidelines are evolving; PRS may inform primary prevention decisions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "tobacco",
+      "direction": "amplify",
+      "strength": 0.95,
+      "confidence": "high",
+      "mechanism_hypothesis": "Smoking promotes endothelial dysfunction, oxidative stress, inflammation, and thrombosis; amplifies genetic CAD risk",
+      "citations": ["ref2", "ref4"]
+    },
+    {
+      "exposure_slug": "diet-quality",
+      "direction": "amplify",
+      "strength": 0.85,
+      "confidence": "high",
+      "mechanism_hypothesis": "Western diet (saturated fat, refined carbs, low fiber) elevates LDL-C and inflammation; Mediterranean-style diet buffers risk",
+      "citations": ["ref3", "ref5"]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "amplify",
+      "strength": 0.7,
+      "confidence": "medium",
+      "mechanism_hypothesis": "PM2.5 induces systemic inflammation, oxidative stress, and endothelial dysfunction; increases acute coronary events",
+      "citations": ["ref4", "ref5"]
+    },
+    {
+      "exposure_slug": "obesity-exposure",
+      "direction": "amplify",
+      "strength": 0.8,
+      "confidence": "high",
+      "mechanism_hypothesis": "Obesity drives dyslipidemia, insulin resistance, inflammation, and hypertension; amplifies genetic CAD susceptibility",
+      "citations": ["ref2", "ref3"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "coronary artery endothelium",
+      "relevance_score": 0.98,
+      "evidence_type": "GWAS and pathway",
+      "citations": ["ref1", "ref2"]
+    },
+    {
+      "name": "hepatocytes",
+      "relevance_score": 0.92,
+      "evidence_type": "eQTL and expression",
+      "citations": ["ref2", "ref3"]
+    },
+    {
+      "name": "vascular smooth muscle",
+      "relevance_score": 0.88,
+      "evidence_type": "pathway",
+      "citations": ["ref1"]
+    },
+    {
+      "name": "monocytes and macrophages",
+      "relevance_score": 0.85,
+      "evidence_type": "GWAS and literature",
+      "citations": ["ref4"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "CAD GWAS discovery is predominantly European ancestry (~75–80%); multi-ancestry efforts (e.g., PAGE, TOPMed) are expanding",
+    "transferability_notes": "Key loci (LDLR, APOB, PCSK9) transfer across ancestries; effect sizes and allele frequencies vary. LPA risk varies substantially by ancestry. PRS performance degrades in non-European populations without ancestry-specific training.",
+    "data_gaps": "Under-representation of African, Hispanic, Indigenous, and South Asian populations in GWAS; G×E studies across ancestries; adolescent-onset CAD genetics."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {"id": "ref1", "title": "Large-scale association analysis identifies new risk loci for coronary artery disease", "authors": "Coronary Artery Disease (C4D) Genetics Consortium", "year": 2013, "journal": "Nature Genetics", "doi": "10.1038/ng.2480"},
+    {"id": "ref2", "title": "Comprehensive analysis of genetic risk for coronary artery disease", "authors": "Nikpay M, et al.", "year": 2015, "journal": "Nature Genetics", "doi": "10.1038/ng.3396"},
+    {"id": "ref3", "title": "Genetic risk, coronary heart disease events, and the clinical benefit of statin therapy", "authors": "Inouye M, et al.", "year": 2016, "journal": "The Lancet", "doi": "10.1016/S0140-6736(15)01222-2"},
+    {"id": "ref4", "title": "Genome-wide association of coronary artery disease with genetically determined lipids and lipoproteins", "authors": "Willer CJ, et al.", "year": 2013, "journal": "Nature Genetics", "doi": "10.1038/ng.2797"},
+    {"id": "ref5", "title": "Lipoprotein(a) concentrations, rosuvastatin therapy, and residual vascular risk", "authors": "Nordestgaard BG, et al.", "year": 2014, "journal": "Journal of the American College of Cardiology", "doi": "10.1016/j.jacc.2013.11.029"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

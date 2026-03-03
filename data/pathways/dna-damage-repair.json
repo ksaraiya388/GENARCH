@@ -1,0 +1,45 @@
+{
+  "id": "path_dna_damage_repair",
+  "slug": "dna-damage-repair",
+  "name": "DNA Damage Response and Repair",
+  "summary": "The DNA damage response (DDR) pathway detects and repairs DNA lesions to maintain genomic integrity. Double-strand breaks activate ATM/ATR kinases, which phosphorylate effectors including p53 (TP53). TP53 induces cell cycle arrest, DNA repair, or apoptosis. BRCA1 and BRCA2 function in homologous recombination repair; mutations cause hereditary breast and ovarian cancer. BRCA1/2 proteins stabilize stalled replication forks and promote error-free repair. TP53 mutations are common in cancers and Li-Fraumeni syndrome. UV radiation and endogenous replication stress trigger the pathway. EGFR signaling can suppress apoptosis and interact with DDR. Defective repair leads to mutation accumulation and cancer.",
+  "canonical_source": "hsa03400",
+  "environmental_triggers": [
+    {"exposure_slug": "uv-radiation", "trigger_type": "Direct DNA damage; cyclobutane dimers and 6-4 photoproducts activate DDR", "citations": ["ref1", "ref3"]},
+    {"exposure_slug": "tobacco", "trigger_type": "Carcinogens cause adducts and double-strand breaks; oxidative stress", "citations": ["ref2", "ref4"]},
+    {"exposure_slug": "heavy-metals", "trigger_type": "Oxidative stress and DNA damage; arsenic is carcinogenic", "citations": ["ref4"]}
+  ],
+  "key_genes": [
+    {"gene_slug": "brca1", "role_in_pathway": "Homologous recombination; DNA end resection; replication fork protection; tumor suppressor", "citations": ["ref1", "ref4"]},
+    {"gene_slug": "brca2", "role_in_pathway": "Recruits RAD51 for strand invasion; homologous recombination; replication fork stability", "citations": ["ref2", "ref4"]},
+    {"gene_slug": "tp53", "role_in_pathway": "Transcription factor; cell cycle arrest, DNA repair, apoptosis; guardian of genome", "citations": ["ref1", "ref3"]},
+    {"gene_slug": "egfr", "role_in_pathway": "Growth signaling; can suppress apoptosis; mutations common in lung cancer", "citations": ["ref3"]}
+  ],
+  "regulatory_checkpoints": [
+    {"node": "DNA damage sensing", "modulator_genes": ["tp53"], "potential_therapeutic_target": true},
+    {"node": "Homologous recombination", "modulator_genes": ["brca1", "brca2"], "potential_therapeutic_target": true}
+  ],
+  "tissue_specificity": [
+    {"tissue": "breast epithelium", "expression_evidence": "BRCA1/2 loss drives breast cancer"},
+    {"tissue": "colorectal epithelium", "expression_evidence": "TP53 mutations in colorectal cancer"},
+    {"tissue": "lung", "expression_evidence": "EGFR and TP53 in lung cancer"}
+  ],
+  "linked_diseases": [
+    {"disease_slug": "breast-cancer", "pathway_role": "BRCA1/2 mutations cause hereditary breast cancer; pathway defects common in sporadic cases", "citations": ["ref1", "ref4"]},
+    {"disease_slug": "colorectal-cancer", "pathway_role": "TP53 mutations and mismatch repair defects; chromosomal instability", "citations": ["ref2", "ref3"]},
+    {"disease_slug": "lung-cancer", "pathway_role": "TP53 and EGFR mutations; tobacco-induced damage", "citations": ["ref3"]}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "uv-radiation", "pathway_effect": "UV causes lesions requiring nucleotide excision repair; TP53 mutations in skin cancer", "citations": ["ref1", "ref3"]},
+    {"exposure_slug": "endocrine-disruptors", "pathway_effect": "Estrogenic compounds may interact with BRCA pathway in breast cancer", "citations": ["ref4"]}
+  ],
+  "diagram_asset": null,
+  "references": [
+    {"id": "ref1", "title": "BRCA1 and BRCA2 in DNA repair", "authors": "Roy R, et al.", "year": 2012, "journal": "Nature Reviews Molecular Cell Biology", "doi": "10.1038/nrm3251"},
+    {"id": "ref2", "title": "TP53 and cancer", "authors": "Levine AJ, Oren M", "year": 2009, "journal": "Nature Reviews Cancer", "doi": "10.1038/nrc2723"},
+    {"id": "ref3", "title": "DNA damage and UV radiation", "authors": "Brash DE", "year": 2015, "journal": "Journal of Investigative Dermatology", "doi": "10.1038/jid.2015.219"},
+    {"id": "ref4", "title": "Hereditary breast cancer: BRCA and beyond", "authors": "Narod SA, et al.", "year": 2015, "journal": "Nature Reviews Clinical Oncology", "doi": "10.1038/nrclinonc.2015.125"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

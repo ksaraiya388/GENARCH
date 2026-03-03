@@ -1,0 +1,101 @@
+{
+  "id": "dis_multiple-sclerosis",
+  "slug": "multiple-sclerosis",
+  "name": "Multiple Sclerosis",
+  "icd11_code": "8A40",
+  "summary": "Multiple sclerosis (MS) is a chronic autoimmune demyelinating disease of the central nervous system, characterized by inflammation, demyelination, axonal damage, and progressive disability. Pathophysiology involves T-cell-mediated autoimmune attack on myelin and oligodendrocytes, with contributions from B cells, microglia, and innate immunity. Genetic susceptibility is substantial—twin concordance ~25%, SNP heritability ~0.25–0.30. The HLA-DRB1*15:01 allele is the strongest genetic risk factor, conferring ~3-fold increased risk. Non-HLA loci implicate immune regulation, vitamin D metabolism, and neuronal resilience. Environmental factors are critical: low vitamin D (from UV/sun exposure and diet), Epstein-Barr virus infection, and smoking amplify risk. Adolescence and young adulthood represent the peak period for disease onset—age 15–24 is when many individuals experience first symptoms. Vitamin D status and EBV seroconversion during this window may be particularly consequential for MS development.",
+  "adolescent_relevance": "MS commonly presents between ages 15–40; adolescent-onset MS may have distinct trajectory. Vitamin D deficiency and low sun exposure in youth are modifiable risk factors. EBV seroconversion timing (often in adolescence) influences MS risk. Smoking initiation in adolescence amplifies genetic susceptibility.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "HLA-DRB1",
+        "variant": "rs3135388",
+        "gwas_p": 1e-50,
+        "effect_size": 2.8,
+        "evidence": "HLA-DRB1*15:01 is the dominant MS risk allele; antigen presentation and T-cell repertoire; strongest GWAS signal",
+        "strength": 0.98,
+        "citations": ["ref1", "ref2"]
+      },
+      {
+        "gene": "CYP27B1",
+        "variant": "rs703842",
+        "gwas_p": 5.0e-9,
+        "effect_size": 1.15,
+        "evidence": "Vitamin D 1α-hydroxylase; converts 25-OH-D to active 1,25-(OH)2D; links UV/vitamin D to MS genetics",
+        "strength": 0.82,
+        "citations": ["ref2", "ref3"]
+      },
+      {
+        "gene": "IL2RA",
+        "variant": "rs2104286",
+        "gwas_p": 2.1e-8,
+        "effect_size": 1.12,
+        "evidence": "IL-2 receptor α; regulatory T-cell function; immune tolerance pathway",
+        "strength": 0.78,
+        "citations": ["ref1", "ref4"]
+      }
+    ],
+    "prs_notes": "PRS for MS achieve good discrimination (AUC ~0.72) due to strong HLA contribution. Vitamin D-G×E interactions documented but not in PRS. European-ancestry dominated; transferability limited."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "diet-quality",
+      "direction": "buffer",
+      "strength": 0.75,
+      "confidence": "high",
+      "mechanism_hypothesis": "Vitamin D and omega-3 intake buffer MS risk; diet influences vitamin D status; CYP27B1 genotype may modify vitamin D responsiveness; low vitamin D amplifies risk",
+      "citations": ["ref2", "ref3", "ref5"]
+    },
+    {
+      "exposure_slug": "tobacco",
+      "direction": "amplify",
+      "strength": 0.78,
+      "confidence": "high",
+      "mechanism_hypothesis": "Smoking increases MS risk and accelerates disability; oxidative stress and immune modulation; G×E with HLA documented",
+      "citations": ["ref1", "ref4"]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "amplify",
+      "strength": 0.5,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Particulate matter and traffic pollution may amplify neuroinflammation; oxidative stress; emerging epidemiological links",
+      "citations": ["ref3", "ref5"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "white matter (CNS)",
+      "relevance_score": 0.98,
+      "evidence_type": "GWAS and pathway",
+      "citations": ["ref1", "ref2"]
+    },
+    {
+      "name": "oligodendrocytes",
+      "relevance_score": 0.92,
+      "evidence_type": "literature",
+      "citations": ["ref2", "ref4"]
+    },
+    {
+      "name": "T lymphocytes (peripheral)",
+      "relevance_score": 0.95,
+      "evidence_type": "GWAS and eQTL",
+      "citations": ["ref1", "ref3"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "MS GWAS overwhelmingly European-ancestry (>95%); disease prevalence and HLA associations differ by ancestry",
+    "transferability_notes": "HLA-DRB1*15:01 association varies—strong in Northern European, weaker in Southern European, different alleles in African; non-HLA PRS transferability poor",
+    "data_gaps": "Multi-ancestry MS GWAS; African and Latin American representation; G×E validation across populations"
+  },
+  "mechanism_briefs": ["hla-drb1-ms-autoimmunity", "vitamin-d-cyp27b1-ms"],
+  "references": [
+    {"id": "ref1", "title": "Genetic risk and a primary role for cell-mediated immune mechanisms in multiple sclerosis", "authors": "International Multiple Sclerosis Genetics Consortium", "year": 2011, "journal": "Nature", "doi": "10.1038/nature10251"},
+    {"id": "ref2", "title": "Multiple sclerosis genomic map implicates peripheral immune cells and microglia in susceptibility", "authors": "International Multiple Sclerosis Genetics Consortium", "year": 2019, "journal": "Science", "doi": "10.1126/science.aav7188"},
+    {"id": "ref3", "title": "Vitamin D and multiple sclerosis: an update", "authors": "Pierrot-Deseilligny C, Souberbielle JC.", "year": 2017, "journal": "Multiple Sclerosis Journal", "doi": "10.1177/1352458517713386"},
+    {"id": "ref4", "title": "Smoking and multiple sclerosis: evidence for gene-environment interaction", "authors": "Hedström AK, et al.", "year": 2016, "journal": "Neurology", "doi": "10.1212/WNL.0000000000002645"},
+    {"id": "ref5", "title": "Sun exposure over the life course and associations with multiple sclerosis", "authors": "Lucas RM, et al.", "year": 2011, "journal": "Neurology", "doi": "10.1212/WNL.0b013e31822c7f45"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

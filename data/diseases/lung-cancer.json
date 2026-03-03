@@ -1,0 +1,97 @@
+{
+  "id": "dis_lung-cancer",
+  "slug": "lung-cancer",
+  "name": "Lung Cancer",
+  "icd11_code": "2C25",
+  "summary": "Lung cancer encompasses carcinomas of the lung, predominantly non-small cell lung cancer (NSCLC) and small cell lung cancer (SCLC). Tobacco smoking is the principal environmental cause, accounting for ~85% of cases; the smoking–genetics interaction is among the best-characterized gene–environment relationships in oncology. Genetic susceptibility modifies both smoking initiation (nicotine dependence) and lung cancer risk among smokers. Key loci include CHRNA5/CHRNA3 (nicotinic acetylcholine receptors influencing smoking behavior and carcinogen susceptibility), TP53, and EGFR (driver mutations in adenocarcinoma). SNP heritability for lung cancer is modest (~0.05) but increases when considering smoking-adjusted models. Adolescent relevance is significant: smoking initiation typically occurs before age 24; genetic variants in CHRNA5 influence both nicotine dependence and lung cancer risk, creating a dual pathway. Never-smoker lung cancer has distinct genetics (stronger EGFR, weaker smoking loci) and rising incidence in some populations.",
+  "adolescent_relevance": "Smoking initiation peaks in adolescence; CHRNA5 variants influence both uptake and persistence. Genetic susceptibility established early may inform prevention messaging. Never-smoker lung cancer in young adults has distinct etiology; EGFR-driven cases may present earlier.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "CHRNA5",
+        "variant": "rs16969968",
+        "gwas_p": 1e-25,
+        "effect_size": 1.31,
+        "evidence": "Nicotinic acetylcholine receptor α5; influences nicotine dependence, smoking heaviness, and lung cancer risk; smoking × genetics interaction",
+        "strength": 0.92,
+        "citations": ["ref1", "ref2"]
+      },
+      {
+        "gene": "EGFR",
+        "evidence": "Epidermal growth factor receptor; driver mutations in adenocarcinoma; stronger in never-smokers; treatment target",
+        "strength": 0.88,
+        "citations": ["ref2", "ref3"]
+      },
+      {
+        "gene": "TP53",
+        "variant": "rs1042522",
+        "gwas_p": 3.0e-7,
+        "evidence": "Tumor suppressor; somatic mutations common; germline variants may modify susceptibility to tobacco carcinogens",
+        "strength": 0.78,
+        "citations": ["ref1", "ref4"]
+      }
+    ],
+    "prs_notes": "Lung cancer PRS perform better in smokers; CHRNA5 dominates. Never-smoker PRS distinct. Smoking-G×E critical for interpretation. European ancestry-dominated; limited transferability."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "tobacco",
+      "direction": "amplify",
+      "strength": 0.95,
+      "confidence": "high",
+      "mechanism_hypothesis": "Tobacco carcinogens (PAHs, nitrosamines) cause DNA damage; CHRNA5 genotype amplifies both smoking heaviness and cancer risk; smoking × genetics multiplicative",
+      "citations": ["ref1", "ref2", "ref5"]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "amplify",
+      "strength": 0.62,
+      "confidence": "medium",
+      "mechanism_hypothesis": "PM2.5 and diesel exhaust increase lung cancer; oxidative stress and inflammation; may amplify risk in never-smokers",
+      "citations": ["ref3", "ref5"]
+    },
+    {
+      "exposure_slug": "diet-quality",
+      "direction": "buffer",
+      "strength": 0.45,
+      "confidence": "low",
+      "mechanism_hypothesis": "Fruit/vegetable intake may modestly buffer risk; antioxidants; evidence less strong than tobacco",
+      "citations": ["ref4", "ref5"]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "bronchial epithelium",
+      "relevance_score": 0.98,
+      "evidence_type": "GWAS and pathway",
+      "citations": ["ref1", "ref2"]
+    },
+    {
+      "name": "alveolar type II cells",
+      "relevance_score": 0.85,
+      "evidence_type": "literature",
+      "citations": ["ref2", "ref3"]
+    },
+    {
+      "name": "lung adenocarcinoma (tumor)",
+      "relevance_score": 0.92,
+      "evidence_type": "GWAS and literature",
+      "citations": ["ref2", "ref4"]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Lung cancer GWAS predominantly European and East Asian; African ancestry underrepresented; smoking patterns vary by population",
+    "transferability_notes": "CHRNA5 association replicates across ancestry; EGFR mutation prevalence higher in East Asian never-smokers; PRS transferability limited",
+    "data_gaps": "Multi-ancestry lung cancer GWAS; never-smoker specific genetics; G×E for air pollution and tobacco across populations"
+  },
+  "mechanism_briefs": ["chrna5-smoking-lung-cancer", "egfr-adenocarcinoma"],
+  "references": [
+    {"id": "ref1", "title": "A susceptibility locus for lung cancer maps to nicotinic acetylcholine receptor subunit genes on 15q25", "authors": "Amos CI, et al.", "year": 2008, "journal": "Nature", "doi": "10.1038/nature06885"},
+    {"id": "ref2", "title": "Genome-wide association study identifies multiple loci associated with lung cancer", "authors": "McKay JD, et al.", "year": 2017, "journal": "Nature Genetics", "doi": "10.1038/ng.3892"},
+    {"id": "ref3", "title": "EGFR mutations in lung cancer: correlation with clinical response to gefitinib therapy", "authors": "Paez JG, et al.", "year": 2004, "journal": "Science", "doi": "10.1126/science.1099314"},
+    {"id": "ref4", "title": "TP53 mutations and lung cancer", "authors": "Olivier M, et al.", "year": 2010, "journal": "Human Mutation", "doi": "10.1002/humu.21275"},
+    {"id": "ref5", "title": "Gene-environment interaction in lung cancer", "authors": "Hung RJ, et al.", "year": 2013, "journal": "Carcinogenesis", "doi": "10.1093/carcin/bgt040"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}
