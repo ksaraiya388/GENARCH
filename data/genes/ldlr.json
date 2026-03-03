@@ -1,0 +1,42 @@
+{
+  "id": "gene_ldlr",
+  "slug": "ldlr",
+  "symbol": "LDLR",
+  "name": "Low Density Lipoprotein Receptor",
+  "chromosome": null,
+  "summary": "LDLR is central to LDL clearance and is implicated in coronary artery disease biology through lipid metabolism pathways.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "ldl-metabolism"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "coronary-artery-disease",
+      "evidence_type": "GWAS",
+      "strength": 0.7
+    }
+  ],
+  "linked_exposures": [
+    {
+      "exposure_slug": "diet-quality",
+      "evidence_type": "literature",
+      "strength": 0.5
+    }
+  ],
+  "mechanistic_hypotheses": [],
+  "confidence": "medium",
+  "references": [
+    {
+      "id": "ref_cad_gwas_2015",
+      "title": "Genome-wide association meta-analysis of coronary artery disease identifies loci and pathways",
+      "authors": "CAD GWAS Consortium",
+      "year": 2015,
+      "journal": "Nature Genetics"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

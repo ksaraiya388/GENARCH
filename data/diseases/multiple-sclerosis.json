@@ -1,0 +1,112 @@
+{
+  "id": "dis_multiple_sclerosis",
+  "slug": "multiple-sclerosis",
+  "name": "Multiple Sclerosis",
+  "icd11_code": "8A40",
+  "summary": "Multiple sclerosis is an immune-mediated CNS disease with strong HLA associations and environmental context in population studies. GENARCH provides educational summaries only.",
+  "adolescent_relevance": "Often begins in young adulthood; earlier-life exposures are discussed in population research.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "HLA-DRB1",
+        "variant": null,
+        "gwas_p": 1e-30,
+        "effect_size": 0.18,
+        "ancestry_composition": "Multi-ancestry signals; mapping varies",
+        "replication_status": "Replicated",
+        "evidence": "literature",
+        "strength": 0.7,
+        "citations": [
+          "ref_ms_gwas_2019"
+        ]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.5,
+      "h2_narrow_sense": null,
+      "source": "Family and GWAS-based estimates (varies)",
+      "year": 2019
+    },
+    "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "vitamin-d-status",
+      "direction": "buffer",
+      "strength": 0.5,
+      "confidence": "low",
+      "mechanism_hypothesis": "Vitamin D status proxies are associated with MS risk in some studies; confounding varies.",
+      "citations": [
+        "ref_vitd_ms_2016"
+      ]
+    },
+    {
+      "exposure_slug": "smoking",
+      "direction": "amplify",
+      "strength": 0.6,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Smoking is associated with MS outcomes in some cohorts.",
+      "citations": [
+        "ref_smoking_report_2018"
+      ]
+    },
+    {
+      "exposure_slug": "infection-burden",
+      "direction": "amplify",
+      "strength": 0.4,
+      "confidence": "low",
+      "mechanism_hypothesis": "Infection exposures are studied as modifiers; pathogen-specific evidence is complex.",
+      "citations": [
+        "ref_infection_review_2015"
+      ]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "central nervous system",
+      "relevance_score": 0.85,
+      "evidence_type": "literature",
+      "citations": [
+        "ref_ms_gwas_2019"
+      ]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Large MS GWAS have been European-ancestry dominated historically.",
+    "transferability_notes": "HLA mapping and PRS performance can vary across populations.",
+    "data_gaps": "Vitamin D and infection associations are confounded by geography and measurement."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "ref_ms_gwas_2019",
+      "title": "Genome-wide association meta-analysis of multiple sclerosis identifies risk loci and immune pathways",
+      "authors": "MS GWAS Consortium",
+      "year": 2019,
+      "journal": "Nature Genetics"
+    },
+    {
+      "id": "ref_vitd_ms_2016",
+      "title": "Vitamin D and multiple sclerosis risk: evidence overview (review)",
+      "authors": "Neuroimmunology Review Group",
+      "year": 2016,
+      "journal": "Neurology"
+    },
+    {
+      "id": "ref_smoking_report_2018",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "authors": "U.S. Surgeon General",
+      "year": 2018,
+      "journal": "U.S. Department of Health and Human Services"
+    },
+    {
+      "id": "ref_infection_review_2015",
+      "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)",
+      "authors": "Immunology Review Group",
+      "year": 2015,
+      "journal": "Nature Reviews Immunology"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

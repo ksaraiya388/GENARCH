@@ -1,0 +1,35 @@
+{
+  "id": "exp_microbiome_alteration",
+  "slug": "microbiome-alteration",
+  "name": "Microbiome Alteration (Broad Category)",
+  "definition": "Changes in gut microbial composition/function studied as population-level modifiers/correlates in metabolic and cancer research.",
+  "proxies": [
+    {
+      "name": "microbiome profile",
+      "unit": "n/a",
+      "measurement_method": "16S/metagenomics",
+      "data_source": "microbiome cohorts"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "gastrointestinal/immune",
+      "mechanism_summary": "Barrier-immune interactions and microbial metabolite signaling context."
+    }
+  ],
+  "sensitive_windows": [],
+  "gxe_highlights": [],
+  "tissues": [],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "ref_microbiome_crc_2019",
+      "title": "Gut microbiome and colorectal cancer: evidence overview (review)",
+      "authors": "Cancer Microbiome Review Group",
+      "year": 2019,
+      "journal": "Nature Reviews Gastroenterology & Hepatology"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

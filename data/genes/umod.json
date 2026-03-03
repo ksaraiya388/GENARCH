@@ -1,0 +1,36 @@
+{
+  "id": "gene_umod",
+  "slug": "umod",
+  "symbol": "UMOD",
+  "name": "Uromodulin",
+  "chromosome": null,
+  "summary": "UMOD is a kidney-related locus implicated in blood pressure GWAS in some studies; included for hypertension polygenic context.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "raas"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "hypertension",
+      "evidence_type": "GWAS",
+      "strength": 0.4
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "low",
+  "references": [
+    {
+      "id": "ref_bp_gwas_2018",
+      "title": "Genome-wide association meta-analysis of blood pressure identifies loci and pathways",
+      "authors": "Blood Pressure GWAS Consortium",
+      "year": 2018,
+      "journal": "Nature Genetics"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

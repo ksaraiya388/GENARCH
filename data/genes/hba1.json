@@ -1,0 +1,36 @@
+{
+  "id": "gene_hba1",
+  "slug": "hba1",
+  "symbol": "HBA1",
+  "name": "Hemoglobin Subunit Alpha 1",
+  "chromosome": null,
+  "summary": "HBA1/HBA2 variants contribute to alpha thalassemia; included as monogenic/oligogenic architecture example.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "nf-kb"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "thalassemia",
+      "evidence_type": "literature",
+      "strength": 0.9
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "high",
+  "references": [
+    {
+      "id": "ref_thal_review_2013",
+      "title": "Thalassemia: molecular genetics and pathophysiology overview (review)",
+      "authors": "Hematology Review Group",
+      "year": 2013,
+      "journal": "Blood"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

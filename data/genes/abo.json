@@ -1,0 +1,36 @@
+{
+  "id": "gene_abo",
+  "slug": "abo",
+  "symbol": "ABO",
+  "name": "ABO Blood Group",
+  "chromosome": null,
+  "summary": "ABO blood group locus has been reported in some COVID-19 host genetics studies; included for educational context.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "nf-kb"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "covid-19-severity",
+      "evidence_type": "GWAS",
+      "strength": 0.4
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "low",
+  "references": [
+    {
+      "id": "ref_covid_hgi_2021",
+      "title": "The COVID-19 Host Genetics Initiative: mapping host genetic determinants of COVID-19 severity",
+      "authors": "COVID-19 Host Genetics Initiative",
+      "year": 2021,
+      "journal": "Nature"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

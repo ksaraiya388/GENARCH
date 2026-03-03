@@ -1,0 +1,36 @@
+{
+  "id": "gene_tp53",
+  "slug": "tp53",
+  "symbol": "TP53",
+  "name": "Tumor Protein P53",
+  "chromosome": null,
+  "summary": "TP53 is a tumor suppressor implicated in hereditary cancer syndromes; included for educational context.",
+  "molecular_function": [],
+  "protein_class": "transcription_factor",
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "dna-repair"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "breast-cancer",
+      "evidence_type": "literature",
+      "strength": 0.6
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "medium",
+  "references": [
+    {
+      "id": "ref_brca_review_2018",
+      "title": "BRCA1/2 and hereditary breast cancer: mechanisms overview (review)",
+      "authors": "Hereditary Cancer Review Group",
+      "year": 2018,
+      "journal": "Nature Reviews Clinical Oncology"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

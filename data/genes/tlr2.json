@@ -1,0 +1,36 @@
+{
+  "id": "gene_tlr2",
+  "slug": "tlr2",
+  "symbol": "TLR2",
+  "name": "Toll Like Receptor 2",
+  "chromosome": null,
+  "summary": "TLR2 is an innate immune receptor studied in infectious disease susceptibility including TB; evidence is heterogeneous across cohorts.",
+  "molecular_function": [],
+  "protein_class": "receptor",
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "nf-kb"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "tuberculosis-susceptibility",
+      "evidence_type": "literature",
+      "strength": 0.3
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "low",
+  "references": [
+    {
+      "id": "ref_tb_host_review_2016",
+      "title": "Host genetics of tuberculosis susceptibility: overview (review)",
+      "authors": "Infectious Disease Genetics Review Group",
+      "year": 2016,
+      "journal": "Nature Reviews Immunology"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

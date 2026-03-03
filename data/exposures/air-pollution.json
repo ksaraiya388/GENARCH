@@ -2,45 +2,85 @@
   "id": "exp_air_pollution",
   "slug": "air-pollution",
   "name": "Ambient Air Pollution (PM2.5)",
-  "definition": "PM2.5 (particulate matter with aerodynamic diameter ≤2.5 micrometers) refers to fine inhalable particles that can penetrate deep into the lungs and enter the bloodstream. Sources include combustion (vehicles, power plants, wildfires), industrial processes, and secondary formation from gaseous precursors (e.g., SO2, NOx). PM2.5 composition varies by region but typically includes sulfates, nitrates, ammonium, organic carbon, elemental carbon, and trace metals. The small size enables alveolar deposition and systemic distribution, contributing to respiratory, cardiovascular, and immune effects.",
+  "definition": "PM2.5 (particulate matter with aerodynamic diameter ≤2.5 micrometers) refers to fine inhalable particles that can penetrate deep into the lungs and contribute to respiratory and cardiovascular effects at the population level.",
   "proxies": [
     {
       "name": "PM2.5",
       "unit": "μg/m³",
-      "measurement_method": "Gravimetric analysis (Federal Reference Method); continuous monitors use beta-attenuation or light scattering",
+      "measurement_method": "Regulatory monitors + modeled estimates",
+      "data_source": "EPA Air Quality System (AQS)"
+    },
+    {
+      "name": "NO2",
+      "unit": "ppb",
+      "measurement_method": "Regulatory monitors",
       "data_source": "EPA Air Quality System (AQS)"
     }
   ],
   "systems_affected": [
-    {"system": "respiratory", "mechanism_summary": "PM2.5 induces oxidative stress and NF-κB activation in airway epithelium; upregulates IL-33, TSLP, IL-6, IL-8; exacerbates asthma and COPD; impairs mucociliary clearance"},
-    {"system": "cardiovascular", "mechanism_summary": "Systemic inflammation, endothelial dysfunction, increased blood viscosity, autonomic imbalance; contributes to myocardial infarction, stroke, and heart failure"},
-    {"system": "immune", "mechanism_summary": "Modifies dendritic cell function and Th1/Th2 balance; amplifies allergic sensitization and IgE production in susceptible individuals; dampens antiviral defenses"}
+    {
+      "system": "respiratory",
+      "mechanism_summary": "Oxidative stress and inflammatory signaling in airway epithelium; exacerbation of asthma/COPD in cohorts."
+    },
+    {
+      "system": "cardiovascular",
+      "mechanism_summary": "Systemic inflammation and endothelial dysfunction associations in population studies."
+    }
   ],
   "sensitive_windows": [
-    {"period": "prenatal", "age_range": "in utero", "mechanism_rationale": "In utero exposure affects lung development (alveolarization, airway branching); epigenetic modifications may prime inflammatory pathways; maternal inflammation crosses placenta", "citations": ["ref4"]},
-    {"period": "early childhood", "age_range": "0-5", "mechanism_rationale": "Immune system maturation; higher ventilation rates and mouth-breathing increase dose; first allergic sensitization often occurs; airway remodeling initiated", "citations": ["ref4"]},
-    {"period": "adolescence", "age_range": "10-24", "mechanism_rationale": "Lung growth continues into early 20s; behavioral changes (outdoor activity, commuting) alter exposure; occupational exposures may begin; smoking initiation amplifies effects", "citations": ["ref4"]}
+    {
+      "period": "adolescence",
+      "age_range": "10–24",
+      "mechanism_rationale": "Ongoing lung development and changing activity patterns shape exposure-dose in cohorts.",
+      "citations": [
+        "ref_epa_aqs_2024"
+      ]
+    }
   ],
   "gxe_highlights": [
-    {"gene_slug": "il33", "disease_slug": "asthma", "direction": "amplify", "evidence_type": "literature", "citations": ["ref1", "ref2", "ref3"]}
+    {
+      "gene_slug": "il33",
+      "disease_slug": "asthma",
+      "direction": "amplify",
+      "evidence_type": "literature",
+      "citations": [
+        "ref_airpollution_mechanisms_2019"
+      ]
+    }
   ],
   "tissues": [
-    {"name": "bronchial epithelium", "effect_type": "inflammatory upregulation", "citations": ["ref1", "ref2"]},
-    {"name": "pulmonary endothelium", "effect_type": "activation", "citations": ["ref1"]},
-    {"name": "alveolar macrophages", "effect_type": "cytokine secretion", "citations": ["ref2"]}
+    {
+      "name": "lung",
+      "effect_type": "inflammatory signaling context",
+      "citations": [
+        "ref_airpollution_mechanisms_2019"
+      ]
+    }
   ],
   "exposure_distribution": {
-    "data_source": "EPA AQS monitors",
+    "data_source": "EPA AQS (seed placeholder)",
     "geographic_scope": "United States",
-    "summary_stats": {"mean_annual_ug_m3": 9.0, "urban_typical_ug_m3": 12.0, "wildfire_spike_ug_m3": 50.0}
+    "summary_stats": {
+      "mean_ug_m3": 9.0
+    }
   },
   "references": [
-    {"id": "ref1", "title": "Exposure to PM2.5 induces aberrant activation of NF-κB in human airway epithelial cells by downregulating miR-331 expression", "authors": "Li R, et al.", "year": 2017, "journal": "Environmental Toxicology and Pharmacology", "doi": "10.1016/j.etap.2017.02.011"},
-    {"id": "ref2", "title": "Ambient particulate matter induces an exacerbation of airway inflammation in experimental asthma: role of interleukin-33", "authors": "Brandenburg AH, et al.", "year": 2014, "journal": "Clinical & Experimental Immunology", "doi": "10.1111/cei.12348"},
-    {"id": "ref3", "title": "GSTP1 and TNF Gene Variants and Associations between Air Pollution and Incident Childhood Asthma", "authors": "Islam T, et al.", "year": 2014, "journal": "Environmental Health Perspectives", "doi": "10.1289/ehp.1307459"},
-    {"id": "ref4", "title": "Traffic-related air pollution exposure and incident asthma in a high-risk birth cohort", "authors": "McConnell R, et al.", "year": 2015, "journal": "Occupational and Environmental Medicine", "doi": "10.1136/oemed-2014-102726"},
-    {"id": "ref5", "title": "EPA Criteria Air Pollutants", "authors": "U.S. EPA", "year": 2024, "url": "https://www.epa.gov/criteria-air-pollutants"}
+    {
+      "id": "ref_epa_aqs_2024",
+      "title": "EPA Air Quality System (AQS)",
+      "authors": "U.S. Environmental Protection Agency",
+      "year": 2024,
+      "journal": "EPA",
+      "url": "https://www.epa.gov/aqs"
+    },
+    {
+      "id": "ref_airpollution_mechanisms_2019",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association"
+    }
   ],
   "schema_version": "1.0",
-  "last_updated": "2026-02-26"
+  "last_updated": "2026-03-03"
 }

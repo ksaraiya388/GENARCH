@@ -1,0 +1,36 @@
+{
+  "id": "gene_agt",
+  "slug": "agt",
+  "symbol": "AGT",
+  "name": "Angiotensinogen",
+  "chromosome": null,
+  "summary": "AGT is a RAAS pathway component included for hypertension educational context.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "raas"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "hypertension",
+      "evidence_type": "GWAS",
+      "strength": 0.4
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "low",
+  "references": [
+    {
+      "id": "ref_raas_review_2016",
+      "title": "RAAS pathway regulation and blood pressure control: overview (review)",
+      "authors": "Cardiorenal Review Group",
+      "year": 2016,
+      "journal": "Circulation"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

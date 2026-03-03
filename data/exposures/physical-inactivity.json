@@ -1,0 +1,35 @@
+{
+  "id": "exp_physical_inactivity",
+  "slug": "physical-inactivity",
+  "name": "Physical Inactivity",
+  "definition": "Insufficient moderate-to-vigorous physical activity; studied as a population-level modifier of cardiometabolic outcomes.",
+  "proxies": [
+    {
+      "name": "activity minutes/week",
+      "unit": "min/week",
+      "measurement_method": "questionnaire/wearable",
+      "data_source": "cohorts"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "cardiometabolic",
+      "mechanism_summary": "Insulin sensitivity and vascular health context."
+    }
+  ],
+  "sensitive_windows": [],
+  "gxe_highlights": [],
+  "tissues": [],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "ref_who_activity_2020",
+      "title": "WHO guidelines on physical activity and sedentary behaviour",
+      "authors": "World Health Organization",
+      "year": 2020,
+      "journal": "WHO"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

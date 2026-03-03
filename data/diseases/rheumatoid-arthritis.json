@@ -1,0 +1,119 @@
+{
+  "id": "dis_rheumatoid_arthritis",
+  "slug": "rheumatoid-arthritis",
+  "name": "Rheumatoid Arthritis",
+  "icd11_code": "FA20",
+  "summary": "Rheumatoid arthritis is an autoimmune inflammatory joint disease with strong HLA associations and polygenic background. GENARCH provides educational summaries only.",
+  "adolescent_relevance": "Can present in young adulthood; included for autoimmune mechanism education only.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "HLA-DRB1",
+        "variant": null,
+        "gwas_p": 1e-30,
+        "effect_size": 0.2,
+        "ancestry_composition": "Multi-ancestry signals; mapping varies",
+        "replication_status": "Replicated",
+        "evidence": "literature",
+        "strength": 0.7,
+        "citations": [
+          "ref_ra_gwas_2014"
+        ]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.5,
+      "h2_narrow_sense": null,
+      "source": "Family and GWAS-based estimates (varies)",
+      "year": 2014
+    },
+    "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "smoking",
+      "direction": "amplify",
+      "strength": 0.75,
+      "confidence": "high",
+      "mechanism_hypothesis": "Smoking is associated with RA in multiple studies; mechanisms may involve immune tolerance pathways.",
+      "citations": [
+        "ref_smoking_report_2018"
+      ]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "unknown",
+      "strength": 0.4,
+      "confidence": "low",
+      "mechanism_hypothesis": "Systemic inflammatory exposure context; evidence is mixed.",
+      "citations": [
+        "ref_airpollution_mechanisms_2019"
+      ]
+    },
+    {
+      "exposure_slug": "occupational-dust",
+      "direction": "amplify",
+      "strength": 0.45,
+      "confidence": "low",
+      "mechanism_hypothesis": "Inhaled particulates studied as autoimmune modifiers in some settings.",
+      "citations": [
+        "ref_occupational_exposure_2015"
+      ]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "synovium",
+      "relevance_score": 0.85,
+      "evidence_type": "literature",
+      "citations": [
+        "ref_ra_immunology_2018"
+      ]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "RA GWAS include multiple ancestries but many analyses are European-weighted.",
+    "transferability_notes": "Effect sizes and PRS can vary across ancestries due to LD and allele frequency.",
+    "data_gaps": "Exposure measurement differs across settings."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "ref_ra_gwas_2014",
+      "title": "Meta-analysis of genome-wide association studies identifies risk loci for rheumatoid arthritis",
+      "authors": "RA GWAS Consortium",
+      "year": 2014,
+      "journal": "Nature Genetics"
+    },
+    {
+      "id": "ref_ra_immunology_2018",
+      "title": "Rheumatoid arthritis immunology and cytokine networks: overview (review)",
+      "authors": "Autoimmunity Review Group",
+      "year": 2018,
+      "journal": "Nature Reviews Rheumatology"
+    },
+    {
+      "id": "ref_smoking_report_2018",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "authors": "U.S. Surgeon General",
+      "year": 2018,
+      "journal": "U.S. Department of Health and Human Services"
+    },
+    {
+      "id": "ref_airpollution_mechanisms_2019",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association"
+    },
+    {
+      "id": "ref_occupational_exposure_2015",
+      "title": "Occupational exposures and chronic lung disease risk: overview (review)",
+      "authors": "Occupational Review Group",
+      "year": 2015,
+      "journal": "Occupational and Environmental Medicine"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

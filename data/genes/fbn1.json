@@ -1,0 +1,36 @@
+{
+  "id": "gene_fbn1",
+  "slug": "fbn1",
+  "symbol": "FBN1",
+  "name": "Fibrillin 1",
+  "chromosome": null,
+  "summary": "FBN1 pathogenic variants cause Marfan syndrome; included as monogenic architecture example.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "nf-kb"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "marfan-syndrome",
+      "evidence_type": "literature",
+      "strength": 0.95
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "high",
+  "references": [
+    {
+      "id": "ref_marfan_review_2016",
+      "title": "Marfan syndrome: FBN1, connective tissue, and clinical features (review)",
+      "authors": "Cardiogenetics Review Group",
+      "year": 2016,
+      "journal": "Nature Reviews Cardiology"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

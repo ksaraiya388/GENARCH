@@ -1,0 +1,42 @@
+{
+  "id": "gene_apob",
+  "slug": "apob",
+  "symbol": "APOB",
+  "name": "Apolipoprotein B",
+  "chromosome": null,
+  "summary": "APOB is a key component of LDL particles and is implicated in cardiometabolic genetic architecture.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "ldl-metabolism"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "coronary-artery-disease",
+      "evidence_type": "GWAS",
+      "strength": 0.6
+    }
+  ],
+  "linked_exposures": [
+    {
+      "exposure_slug": "diet-quality",
+      "evidence_type": "literature",
+      "strength": 0.4
+    }
+  ],
+  "mechanistic_hypotheses": [],
+  "confidence": "medium",
+  "references": [
+    {
+      "id": "ref_cad_gwas_2015",
+      "title": "Genome-wide association meta-analysis of coronary artery disease identifies loci and pathways",
+      "authors": "CAD GWAS Consortium",
+      "year": 2015,
+      "journal": "Nature Genetics"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

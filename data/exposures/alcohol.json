@@ -1,0 +1,35 @@
+{
+  "id": "exp_alcohol",
+  "slug": "alcohol",
+  "name": "Alcohol Use",
+  "definition": "Alcohol use is an exposure category studied across multiple health outcomes, including certain cancers and cardiometabolic outcomes, in population research.",
+  "proxies": [
+    {
+      "name": "standard drinks/week",
+      "unit": "drinks/week",
+      "measurement_method": "self-report",
+      "data_source": "cohorts"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "metabolic",
+      "mechanism_summary": "Dose- and context-dependent metabolic and inflammatory effects in population studies."
+    }
+  ],
+  "sensitive_windows": [],
+  "gxe_highlights": [],
+  "tissues": [],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "ref_alcohol_cancer_2018",
+      "title": "Alcohol consumption and cancer risk: evidence synthesis (review)",
+      "authors": "IARC Working Group",
+      "year": 2018,
+      "journal": "IARC Monographs"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

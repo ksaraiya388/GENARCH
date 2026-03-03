@@ -1,0 +1,35 @@
+{
+  "id": "exp_occupational_dust",
+  "slug": "occupational-dust",
+  "name": "Occupational Dust and Fume Exposure",
+  "definition": "Occupational dust/fume exposures include inhaled particulates encountered in some workplaces; studied in relation to chronic lung disease risk in population research.",
+  "proxies": [
+    {
+      "name": "job-exposure matrix category",
+      "unit": "categorical",
+      "measurement_method": "occupation → exposure class",
+      "data_source": "occupational studies"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "respiratory",
+      "mechanism_summary": "Chronic irritation and inflammation context."
+    }
+  ],
+  "sensitive_windows": [],
+  "gxe_highlights": [],
+  "tissues": [],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "ref_occupational_exposure_2015",
+      "title": "Occupational exposures and chronic lung disease risk: overview (review)",
+      "authors": "Occupational Review Group",
+      "year": 2015,
+      "journal": "Occupational and Environmental Medicine"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

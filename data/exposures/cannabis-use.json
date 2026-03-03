@@ -1,0 +1,35 @@
+{
+  "id": "exp_cannabis_use",
+  "slug": "cannabis-use",
+  "name": "Cannabis Use",
+  "definition": "Cannabis use is studied in relation to neuropsychiatric outcomes in some epidemiological and genetic epidemiology contexts; evidence is heterogeneous and confounded.",
+  "proxies": [
+    {
+      "name": "frequency of use",
+      "unit": "days/month",
+      "measurement_method": "self-report",
+      "data_source": "cohorts"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "neuropsychiatric",
+      "mechanism_summary": "Neurotransmission context; causal inference is complex."
+    }
+  ],
+  "sensitive_windows": [],
+  "gxe_highlights": [],
+  "tissues": [],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "ref_cannabis_psychosis_2019",
+      "title": "Cannabis use and psychosis outcomes: evidence synthesis (review)",
+      "authors": "Systematic Review Group",
+      "year": 2019,
+      "journal": "Lancet Psychiatry"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

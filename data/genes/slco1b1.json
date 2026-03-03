@@ -1,0 +1,37 @@
+{
+  "id": "gene_slco1b1",
+  "slug": "slco1b1",
+  "symbol": "SLCO1B1",
+  "name": "Solute Carrier Organic Anion Transporter Family Member 1B1",
+  "chromosome": null,
+  "summary": "SLCO1B1 is a pharmacogenomic marker associated with statin-related myopathy risk in some settings; included for educational pharmacogenomics context.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "ldl-metabolism"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "coronary-artery-disease",
+      "evidence_type": "literature",
+      "strength": 0.4
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "low",
+  "references": [
+    {
+      "id": "ref_pharmgkb_2024",
+      "title": "PharmGKB: pharmacogenomics knowledge base",
+      "authors": "PharmGKB",
+      "year": 2024,
+      "journal": "PharmGKB",
+      "url": "https://www.pharmgkb.org/"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

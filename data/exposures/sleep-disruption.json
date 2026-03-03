@@ -1,0 +1,35 @@
+{
+  "id": "exp_sleep_disruption",
+  "slug": "sleep-disruption",
+  "name": "Sleep Disruption",
+  "definition": "Sleep disruption (insufficient, irregular, or poor-quality sleep) is studied as a population-level modifier for metabolic and mental health outcomes.",
+  "proxies": [
+    {
+      "name": "sleep duration",
+      "unit": "hours/night",
+      "measurement_method": "self-report/wearable",
+      "data_source": "cohorts"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "neurocognitive",
+      "mechanism_summary": "Circadian and neuroinflammation context in population studies."
+    }
+  ],
+  "sensitive_windows": [],
+  "gxe_highlights": [],
+  "tissues": [],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "ref_sleep_review_2016",
+      "title": "Sleep duration and health outcomes: overview of population evidence (review)",
+      "authors": "Sleep Review Group",
+      "year": 2016,
+      "journal": "Sleep Medicine Reviews"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

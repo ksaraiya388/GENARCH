@@ -1,0 +1,36 @@
+{
+  "id": "gene_hbb",
+  "slug": "hbb",
+  "symbol": "HBB",
+  "name": "Hemoglobin Subunit Beta",
+  "chromosome": null,
+  "summary": "HBB pathogenic variants cause sickle cell disease; included as a monogenic architecture example.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "nf-kb"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "sickle-cell-disease",
+      "evidence_type": "literature",
+      "strength": 0.95
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "high",
+  "references": [
+    {
+      "id": "ref_scd_review_2014",
+      "title": "Sickle cell disease: molecular basis and complications (review)",
+      "authors": "Hematology Review Group",
+      "year": 2014,
+      "journal": "New England Journal of Medicine"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "exp_heat_stress",
+  "slug": "heat-stress",
+  "name": "Heat Stress (Climate-Related)",
+  "definition": "Heat stress exposure refers to high ambient temperatures and heat events that can contribute to dehydration and physiological strain in population contexts.",
+  "proxies": [
+    {
+      "name": "extreme heat days",
+      "unit": "days/year",
+      "measurement_method": "meteorological summary",
+      "data_source": "NOAA/climate datasets"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "systemic physiology",
+      "mechanism_summary": "Dehydration and stress response context; vulnerability varies by infrastructure."
+    }
+  ],
+  "sensitive_windows": [],
+  "gxe_highlights": [],
+  "tissues": [],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "ref_heat_health_2018",
+      "title": "Extreme heat exposure and health outcomes: overview (review)",
+      "authors": "Climate Health Review Group",
+      "year": 2018,
+      "journal": "The Lancet Planetary Health"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

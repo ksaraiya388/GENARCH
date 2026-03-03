@@ -1,0 +1,36 @@
+{
+  "id": "gene_cftr",
+  "slug": "cftr",
+  "symbol": "CFTR",
+  "name": "CF Transmembrane Conductance Regulator",
+  "chromosome": null,
+  "summary": "CFTR variants cause cystic fibrosis; included as monogenic architecture example.",
+  "molecular_function": [],
+  "protein_class": "channel",
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "nf-kb"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "cystic-fibrosis",
+      "evidence_type": "literature",
+      "strength": 0.95
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "high",
+  "references": [
+    {
+      "id": "ref_cf_review_2017",
+      "title": "Cystic fibrosis: CFTR biology and clinical manifestations (review)",
+      "authors": "Pulmonary Genetics Review Group",
+      "year": 2017,
+      "journal": "New England Journal of Medicine"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

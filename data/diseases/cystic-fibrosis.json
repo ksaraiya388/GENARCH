@@ -1,0 +1,112 @@
+{
+  "id": "dis_cystic_fibrosis",
+  "slug": "cystic-fibrosis",
+  "name": "Cystic Fibrosis",
+  "icd11_code": "GA10",
+  "summary": "Cystic fibrosis is caused by pathogenic CFTR variants affecting epithelial ion transport. GENARCH provides educational summaries only.",
+  "adolescent_relevance": "Manifests in childhood/adolescence; included as monogenic architecture example (educational only).",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "CFTR",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": null,
+        "ancestry_composition": "Variant spectrum varies",
+        "replication_status": "Causal",
+        "evidence": "literature",
+        "strength": 0.1,
+        "citations": [
+          "ref_cf_review_2017"
+        ]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 1.0,
+      "h2_narrow_sense": null,
+      "source": "Monogenic causal architecture",
+      "year": 2017
+    },
+    "prs_notes": "PRS not applicable as primary model for monogenic CF."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "amplify",
+      "strength": 0.45,
+      "confidence": "low",
+      "mechanism_hypothesis": "Respiratory stressor context; associations vary.",
+      "citations": [
+        "ref_airpollution_mechanisms_2019"
+      ]
+    },
+    {
+      "exposure_slug": "infection-burden",
+      "direction": "amplify",
+      "strength": 0.6,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Respiratory infection context influences outcomes (population-level).",
+      "citations": [
+        "ref_infection_review_2015"
+      ]
+    },
+    {
+      "exposure_slug": "smoking",
+      "direction": "amplify",
+      "strength": 0.35,
+      "confidence": "low",
+      "mechanism_hypothesis": "Secondhand smoke can worsen respiratory burden; evidence varies by context.",
+      "citations": [
+        "ref_smoking_report_2018"
+      ]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "airway epithelium",
+      "relevance_score": 0.9,
+      "evidence_type": "literature",
+      "citations": [
+        "ref_cf_review_2017"
+      ]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "CF variant catalogs have been European-ancestry weighted historically; variant spectrum differs across populations.",
+    "transferability_notes": "Variant interpretation can be impacted by reference dataset representation.",
+    "data_gaps": "Environmental exposure datasets linked to CF outcomes are limited."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "ref_cf_review_2017",
+      "title": "Cystic fibrosis: CFTR biology and clinical manifestations (review)",
+      "authors": "Pulmonary Genetics Review Group",
+      "year": 2017,
+      "journal": "New England Journal of Medicine"
+    },
+    {
+      "id": "ref_airpollution_mechanisms_2019",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association"
+    },
+    {
+      "id": "ref_infection_review_2015",
+      "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)",
+      "authors": "Immunology Review Group",
+      "year": 2015,
+      "journal": "Nature Reviews Immunology"
+    },
+    {
+      "id": "ref_smoking_report_2018",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "authors": "U.S. Surgeon General",
+      "year": 2018,
+      "journal": "U.S. Department of Health and Human Services"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

@@ -1,0 +1,159 @@
+{
+  "id": "dis_coronary_artery_disease",
+  "slug": "coronary-artery-disease",
+  "name": "Coronary Artery Disease",
+  "icd11_code": "BA80",
+  "summary": "Coronary artery disease reflects atherosclerotic narrowing of coronary arteries. GENARCH summarizes population-level genetic architecture and exposure modifiers for education only.",
+  "adolescent_relevance": "CAD events occur later in life, but exposure and cardiometabolic trajectories begin earlier; GENARCH content is educational only.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "LDLR",
+        "variant": null,
+        "gwas_p": 1e-12,
+        "effect_size": 0.08,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "literature",
+        "strength": 0.6,
+        "citations": [
+          "ref_cad_gwas_2015"
+        ]
+      },
+      {
+        "gene": "APOB",
+        "variant": null,
+        "gwas_p": 1e-10,
+        "effect_size": 0.06,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "literature",
+        "strength": 0.6,
+        "citations": [
+          "ref_cad_gwas_2015"
+        ]
+      },
+      {
+        "gene": "PCSK9",
+        "variant": null,
+        "gwas_p": 1e-10,
+        "effect_size": 0.06,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "literature",
+        "strength": 0.6,
+        "citations": [
+          "ref_cad_gwas_2015"
+        ]
+      },
+      {
+        "gene": "LPA",
+        "variant": null,
+        "gwas_p": 1e-20,
+        "effect_size": 0.1,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "literature",
+        "strength": 0.6,
+        "citations": [
+          "ref_cad_gwas_2015"
+        ]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.45,
+      "h2_narrow_sense": null,
+      "source": "Family and GWAS-based estimates (range varies)",
+      "year": 2015
+    },
+    "prs_notes": "PRS is discussed as population-level genetic liability; GENARCH does not project individual risk."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "diet-quality",
+      "direction": "amplify",
+      "strength": 0.65,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Diet patterns influence LDL metabolism and inflammation.",
+      "citations": [
+        "ref_who_nutrition_2019"
+      ]
+    },
+    {
+      "exposure_slug": "smoking",
+      "direction": "amplify",
+      "strength": 0.8,
+      "confidence": "high",
+      "mechanism_hypothesis": "Smoking is strongly associated with CAD burden in cohorts.",
+      "citations": [
+        "ref_smoking_report_2018"
+      ]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "amplify",
+      "strength": 0.5,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Ambient particulates are associated with cardiovascular outcomes in population studies.",
+      "citations": [
+        "ref_airpollution_mechanisms_2019"
+      ]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "vasculature",
+      "relevance_score": 0.8,
+      "evidence_type": "literature",
+      "citations": [
+        "ref_cad_gwas_2015"
+      ]
+    },
+    {
+      "name": "liver",
+      "relevance_score": 0.65,
+      "evidence_type": "literature",
+      "citations": [
+        "ref_cad_gwas_2015"
+      ]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Many large CAD GWAS have been European-ancestry dominated historically.",
+    "transferability_notes": "PRS performance can vary across ancestries due to LD and cohort composition.",
+    "data_gaps": "Exposure measurement differs across settings; GxE evidence is incomplete."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "ref_cad_gwas_2015",
+      "title": "Genome-wide association meta-analysis of coronary artery disease identifies loci and pathways",
+      "authors": "CAD GWAS Consortium",
+      "year": 2015,
+      "journal": "Nature Genetics"
+    },
+    {
+      "id": "ref_who_nutrition_2019",
+      "title": "Healthy diet factsheet and guidance",
+      "authors": "World Health Organization",
+      "year": 2019,
+      "journal": "WHO"
+    },
+    {
+      "id": "ref_smoking_report_2018",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "authors": "U.S. Surgeon General",
+      "year": 2018,
+      "journal": "U.S. Department of Health and Human Services"
+    },
+    {
+      "id": "ref_airpollution_mechanisms_2019",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "gene_htt",
+  "slug": "htt",
+  "symbol": "HTT",
+  "name": "Huntingtin",
+  "chromosome": null,
+  "summary": "HTT CAG repeat expansions cause Huntington disease; included as monogenic architecture example.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "nf-kb"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "huntington-disease",
+      "evidence_type": "literature",
+      "strength": 0.95
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "high",
+  "references": [
+    {
+      "id": "ref_hd_review_2017",
+      "title": "Huntington disease: genetics and molecular pathogenesis (review)",
+      "authors": "Neurogenetics Review Group",
+      "year": 2017,
+      "journal": "Lancet Neurology"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

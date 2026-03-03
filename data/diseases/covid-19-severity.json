@@ -1,0 +1,125 @@
+{
+  "id": "dis_covid_19_severity",
+  "slug": "covid-19-severity",
+  "name": "COVID-19 Severity",
+  "icd11_code": "RA01.0",
+  "summary": "COVID-19 severity reflects host–pathogen interactions and population-level outcomes shaped by age, comorbidities, exposure intensity, and healthcare access. GENARCH provides educational summaries only.",
+  "adolescent_relevance": "Severe outcomes are less common in adolescents but occur; included for educational host genetics and exposure context only.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "OAS1",
+        "variant": null,
+        "gwas_p": 1e-08,
+        "effect_size": 0.05,
+        "ancestry_composition": "Multi-ancestry",
+        "replication_status": "Replicated",
+        "evidence": "literature",
+        "strength": 0.7,
+        "citations": [
+          "ref_covid_hgi_2021"
+        ]
+      },
+      {
+        "gene": "ABO",
+        "variant": null,
+        "gwas_p": 1e-06,
+        "effect_size": 0.04,
+        "ancestry_composition": "Multi-ancestry",
+        "replication_status": "Replicated",
+        "evidence": "literature",
+        "strength": 0.5,
+        "citations": [
+          "ref_covid_hgi_2021"
+        ]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.2,
+      "h2_narrow_sense": null,
+      "source": "GWAS-based estimates for severe outcomes (varies by definition)",
+      "year": 2021
+    },
+    "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "crowding-housing",
+      "direction": "amplify",
+      "strength": 0.55,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Crowding increases exposure opportunity; outcomes depend on many factors.",
+      "citations": [
+        "ref_housing_infection_2020"
+      ]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "amplify",
+      "strength": 0.4,
+      "confidence": "low",
+      "mechanism_hypothesis": "Respiratory vulnerability context; evidence varies.",
+      "citations": [
+        "ref_airpollution_mechanisms_2019"
+      ]
+    },
+    {
+      "exposure_slug": "smoking",
+      "direction": "amplify",
+      "strength": 0.4,
+      "confidence": "low",
+      "mechanism_hypothesis": "Respiratory vulnerability context; evidence varies by cohort.",
+      "citations": [
+        "ref_smoking_report_2018"
+      ]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "respiratory epithelium",
+      "relevance_score": 0.8,
+      "evidence_type": "GWAS/literature",
+      "citations": [
+        "ref_covid_hgi_2021"
+      ]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Host genetics studies include multi-ancestry cohorts, but ascertainment varies.",
+    "transferability_notes": "Effect estimates can change with variants, vaccination, and context.",
+    "data_gaps": "Rapidly evolving epidemiology complicates interpretation."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "ref_covid_hgi_2021",
+      "title": "The COVID-19 Host Genetics Initiative: mapping host genetic determinants of COVID-19 severity",
+      "authors": "COVID-19 Host Genetics Initiative",
+      "year": 2021,
+      "journal": "Nature"
+    },
+    {
+      "id": "ref_housing_infection_2020",
+      "title": "Housing conditions and respiratory infection risk: overview (review)",
+      "authors": "Public Health Review Group",
+      "year": 2020,
+      "journal": "Public Health"
+    },
+    {
+      "id": "ref_airpollution_mechanisms_2019",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association"
+    },
+    {
+      "id": "ref_smoking_report_2018",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "authors": "U.S. Surgeon General",
+      "year": 2018,
+      "journal": "U.S. Department of Health and Human Services"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

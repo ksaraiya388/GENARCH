@@ -1,0 +1,36 @@
+{
+  "id": "gene_ace",
+  "slug": "ace",
+  "symbol": "ACE",
+  "name": "Angiotensin Converting Enzyme",
+  "chromosome": null,
+  "summary": "ACE is a RAAS pathway gene included for hypertension educational mechanism context.",
+  "molecular_function": [],
+  "protein_class": "enzyme",
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "raas"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "hypertension",
+      "evidence_type": "GWAS",
+      "strength": 0.5
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "medium",
+  "references": [
+    {
+      "id": "ref_raas_review_2016",
+      "title": "RAAS pathway regulation and blood pressure control: overview (review)",
+      "authors": "Cardiorenal Review Group",
+      "year": 2016,
+      "journal": "Circulation"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

@@ -1,0 +1,171 @@
+{
+  "id": "dis_breast_cancer",
+  "slug": "breast-cancer",
+  "name": "Breast Cancer",
+  "icd11_code": "2C61",
+  "summary": "Breast cancer is a heterogeneous malignancy with hereditary high-penetrance variants and polygenic background. GENARCH provides educational population-level summaries.",
+  "adolescent_relevance": "Rare in adolescence; included for educational oncogenetics and inheritance context only.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "BRCA1",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": null,
+        "ancestry_composition": "Variant spectrum differs by population",
+        "replication_status": "Established",
+        "evidence": "literature",
+        "strength": 0.1,
+        "citations": [
+          "ref_brca_review_2018"
+        ]
+      },
+      {
+        "gene": "BRCA2",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": null,
+        "ancestry_composition": "Variant spectrum differs by population",
+        "replication_status": "Established",
+        "evidence": "literature",
+        "strength": 0.1,
+        "citations": [
+          "ref_brca_review_2018"
+        ]
+      },
+      {
+        "gene": "TP53",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": null,
+        "ancestry_composition": "Rare syndromic variants",
+        "replication_status": "Established",
+        "evidence": "literature",
+        "strength": 0.1,
+        "citations": [
+          "ref_brca_review_2018"
+        ]
+      },
+      {
+        "gene": "FGFR2",
+        "variant": null,
+        "gwas_p": 1e-20,
+        "effect_size": 0.08,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "literature",
+        "strength": 0.6,
+        "citations": [
+          "ref_breast_gwas_2017"
+        ]
+      },
+      {
+        "gene": "TOX3",
+        "variant": null,
+        "gwas_p": 1e-12,
+        "effect_size": 0.06,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "literature",
+        "strength": 0.6,
+        "citations": [
+          "ref_breast_gwas_2017"
+        ]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.3,
+      "h2_narrow_sense": null,
+      "source": "Family and GWAS-based estimates (varies)",
+      "year": 2017
+    },
+    "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions or thresholds."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "alcohol",
+      "direction": "amplify",
+      "strength": 0.55,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Alcohol is associated with breast cancer risk in observational studies.",
+      "citations": [
+        "ref_alcohol_cancer_2018"
+      ]
+    },
+    {
+      "exposure_slug": "ionizing-radiation",
+      "direction": "amplify",
+      "strength": 0.5,
+      "confidence": "low",
+      "mechanism_hypothesis": "DNA damage context; depends on dose and timing.",
+      "citations": [
+        "ref_radiation_review_2019"
+      ]
+    },
+    {
+      "exposure_slug": "endocrine-disruptors",
+      "direction": "unknown",
+      "strength": 0.35,
+      "confidence": "low",
+      "mechanism_hypothesis": "Evidence is heterogeneous and compound-specific.",
+      "citations": [
+        "ref_endocrine_disruptors_2017"
+      ]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "breast epithelium",
+      "relevance_score": 0.85,
+      "evidence_type": "literature",
+      "citations": [
+        "ref_brca_review_2018"
+      ]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Early breast cancer GWAS were European-ancestry dominated; representation is improving.",
+    "transferability_notes": "PRS transferability varies across ancestries and subtypes.",
+    "data_gaps": "Subtype and exposure measurement heterogeneity limit generalization."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "ref_brca_review_2018",
+      "title": "BRCA1/2 and hereditary breast cancer: mechanisms overview (review)",
+      "authors": "Hereditary Cancer Review Group",
+      "year": 2018,
+      "journal": "Nature Reviews Clinical Oncology"
+    },
+    {
+      "id": "ref_breast_gwas_2017",
+      "title": "Breast cancer GWAS meta-analysis identifies susceptibility loci",
+      "authors": "BCAC Consortium",
+      "year": 2017,
+      "journal": "Nature Genetics"
+    },
+    {
+      "id": "ref_alcohol_cancer_2018",
+      "title": "Alcohol consumption and cancer risk: evidence synthesis (review)",
+      "authors": "IARC Working Group",
+      "year": 2018,
+      "journal": "IARC Monographs"
+    },
+    {
+      "id": "ref_radiation_review_2019",
+      "title": "Ionizing radiation and cancer risk: overview (review)",
+      "authors": "UNSCEAR",
+      "year": 2019,
+      "journal": "UNSCEAR Report"
+    },
+    {
+      "id": "ref_endocrine_disruptors_2017",
+      "title": "Endocrine disruptors and metabolic outcomes: evidence overview (review)",
+      "authors": "Endocrine Review Group",
+      "year": 2017,
+      "journal": "Endocrine Reviews"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

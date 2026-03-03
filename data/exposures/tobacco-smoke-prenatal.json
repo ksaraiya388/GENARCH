@@ -1,24 +1,44 @@
 {
-  "id": "exp_tobacco_prenatal",
+  "id": "exp_tobacco_smoke_prenatal",
   "slug": "tobacco-smoke-prenatal",
   "name": "Prenatal Tobacco Smoke Exposure",
-  "definition": "In utero exposure to tobacco smoke from maternal smoking during pregnancy. Associated with impaired lung development and increased childhood asthma risk.",
+  "definition": "Maternal smoking or secondhand smoke during pregnancy; studied as a population-level modifier of later respiratory outcomes.",
   "proxies": [
-    {"name": "Cotinine", "unit": "ng/mL", "measurement_method": "Biomarker", "data_source": "Cohort studies"}
+    {
+      "name": "maternal smoking",
+      "unit": "categorical",
+      "measurement_method": "self-report",
+      "data_source": "birth cohorts"
+    }
   ],
   "systems_affected": [
-    {"system": "respiratory", "mechanism_summary": "Epigenetic modifications and impaired lung development"}
+    {
+      "system": "respiratory",
+      "mechanism_summary": "Developmental programming and lung growth context."
+    }
   ],
   "sensitive_windows": [
-    {"period": "prenatal", "age_range": "in utero", "mechanism_rationale": "Critical period for lung development", "citations": ["ref1"]}
+    {
+      "period": "prenatal",
+      "age_range": "in utero",
+      "mechanism_rationale": "Fetal lung and immune development windows.",
+      "citations": [
+        "ref_prenatal_smoke_2006"
+      ]
+    }
   ],
   "gxe_highlights": [],
-  "tissues": [
-    {"name": "developing lung", "effect_type": "developmental", "citations": ["ref1"]}
-  ],
+  "tissues": [],
+  "exposure_distribution": null,
   "references": [
-    {"id": "ref1", "title": "Prenatal smoke and asthma", "authors": "Multiple", "year": 2019, "journal": "Epidemiologic Reviews"}
+    {
+      "id": "ref_prenatal_smoke_2006",
+      "title": "Prenatal and passive smoke exposure and incidence of asthma and wheeze: systematic review and meta-analysis",
+      "authors": "Burke H et al.",
+      "year": 2006,
+      "journal": "Pediatrics"
+    }
   ],
   "schema_version": "1.0",
-  "last_updated": "2026-02-26"
+  "last_updated": "2026-03-03"
 }

@@ -1,0 +1,125 @@
+{
+  "id": "dis_colorectal_cancer",
+  "slug": "colorectal-cancer",
+  "name": "Colorectal Cancer",
+  "icd11_code": "2B90",
+  "summary": "Colorectal cancer arises from colon/rectum epithelium and involves hereditary syndromes and polygenic background. GENARCH provides educational population-level summaries.",
+  "adolescent_relevance": "Rare in adolescence; hereditary syndromes illustrate mechanism and inheritance in an educational framing.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "APC",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": null,
+        "ancestry_composition": "Hereditary syndrome variants",
+        "replication_status": "Established",
+        "evidence": "literature",
+        "strength": 0.1,
+        "citations": [
+          "ref_crc_hereditary_2016"
+        ]
+      },
+      {
+        "gene": "MLH1",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": null,
+        "ancestry_composition": "Hereditary syndrome variants",
+        "replication_status": "Established",
+        "evidence": "literature",
+        "strength": 0.1,
+        "citations": [
+          "ref_crc_hereditary_2016"
+        ]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.3,
+      "h2_narrow_sense": null,
+      "source": "Family and GWAS-based estimates (varies)",
+      "year": 2018
+    },
+    "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "diet-quality",
+      "direction": "amplify",
+      "strength": 0.55,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Diet patterns influence metabolic/inflammatory context in cohorts.",
+      "citations": [
+        "ref_who_nutrition_2019"
+      ]
+    },
+    {
+      "exposure_slug": "microbiome-alteration",
+      "direction": "unknown",
+      "strength": 0.4,
+      "confidence": "low",
+      "mechanism_hypothesis": "Microbiome patterns correlate with CRC; causality is complex.",
+      "citations": [
+        "ref_microbiome_crc_2019"
+      ]
+    },
+    {
+      "exposure_slug": "alcohol",
+      "direction": "amplify",
+      "strength": 0.5,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Alcohol is associated with cancer outcomes in population studies.",
+      "citations": [
+        "ref_alcohol_cancer_2018"
+      ]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "colon epithelium",
+      "relevance_score": 0.85,
+      "evidence_type": "literature",
+      "citations": [
+        "ref_microbiome_crc_2019"
+      ]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "CRC GWAS have been European-ancestry dominated historically; representation improving.",
+    "transferability_notes": "PRS performance varies by ancestry and screening context.",
+    "data_gaps": "Microbiome study heterogeneity and confounding limit inference."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "ref_crc_hereditary_2016",
+      "title": "Hereditary colorectal cancer syndromes: APC and mismatch repair pathways (review)",
+      "authors": "Clinical Cancer Genetics Group",
+      "year": 2016,
+      "journal": "Nature Reviews Gastroenterology & Hepatology"
+    },
+    {
+      "id": "ref_microbiome_crc_2019",
+      "title": "Gut microbiome and colorectal cancer: evidence overview (review)",
+      "authors": "Cancer Microbiome Review Group",
+      "year": 2019,
+      "journal": "Nature Reviews Gastroenterology & Hepatology"
+    },
+    {
+      "id": "ref_who_nutrition_2019",
+      "title": "Healthy diet factsheet and guidance",
+      "authors": "World Health Organization",
+      "year": 2019,
+      "journal": "WHO"
+    },
+    {
+      "id": "ref_alcohol_cancer_2018",
+      "title": "Alcohol consumption and cancer risk: evidence synthesis (review)",
+      "authors": "IARC Working Group",
+      "year": 2018,
+      "journal": "IARC Monographs"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

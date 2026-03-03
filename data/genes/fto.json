@@ -1,0 +1,41 @@
+{
+  "id": "gene_fto",
+  "slug": "fto",
+  "symbol": "FTO",
+  "name": "FTO Alpha-Ketoglutarate Dependent Dioxygenase",
+  "chromosome": null,
+  "summary": "FTO is a locus associated with BMI/adiposity in population genetics and is included for obesity/T2D polygenic context.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "insulin-signaling"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "obesity",
+      "evidence_type": "GWAS",
+      "strength": 0.75
+    },
+    {
+      "disease_slug": "type-2-diabetes",
+      "evidence_type": "GWAS",
+      "strength": 0.4
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "medium",
+  "references": [
+    {
+      "id": "ref_bmi_gwas_2015",
+      "title": "Genetic studies of body mass index yield insights into biology and risk loci",
+      "authors": "GIANT Consortium",
+      "year": 2015,
+      "journal": "Nature"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "gene_mlh1",
+  "slug": "mlh1",
+  "symbol": "MLH1",
+  "name": "MutL Homolog 1",
+  "chromosome": null,
+  "summary": "MLH1 is a mismatch repair gene implicated in Lynch syndrome; included for educational context.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "dna-repair"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "colorectal-cancer",
+      "evidence_type": "literature",
+      "strength": 0.75
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "high",
+  "references": [
+    {
+      "id": "ref_crc_hereditary_2016",
+      "title": "Hereditary colorectal cancer syndromes: APC and mismatch repair pathways (review)",
+      "authors": "Clinical Cancer Genetics Group",
+      "year": 2016,
+      "journal": "Nature Reviews Gastroenterology & Hepatology"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

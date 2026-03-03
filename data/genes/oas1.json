@@ -1,0 +1,36 @@
+{
+  "id": "gene_oas1",
+  "slug": "oas1",
+  "symbol": "OAS1",
+  "name": "2'-5'-Oligoadenylate Synthetase 1",
+  "chromosome": null,
+  "summary": "OAS1 is an antiviral pathway gene implicated in host genetics studies of COVID-19 severity.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "nf-kb"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "covid-19-severity",
+      "evidence_type": "GWAS",
+      "strength": 0.5
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "medium",
+  "references": [
+    {
+      "id": "ref_covid_hgi_2021",
+      "title": "The COVID-19 Host Genetics Initiative: mapping host genetic determinants of COVID-19 severity",
+      "authors": "COVID-19 Host Genetics Initiative",
+      "year": 2021,
+      "journal": "Nature"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

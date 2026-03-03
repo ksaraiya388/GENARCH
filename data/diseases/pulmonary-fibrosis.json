@@ -1,0 +1,125 @@
+{
+  "id": "dis_pulmonary_fibrosis",
+  "slug": "pulmonary-fibrosis",
+  "name": "Pulmonary Fibrosis",
+  "icd11_code": "CA43",
+  "summary": "Pulmonary fibrosis involves lung scarring and impaired gas exchange; telomere maintenance loci are implicated in some studies. GENARCH provides educational summaries only.",
+  "adolescent_relevance": "Rare in adolescence; included for educational telomere/repair pathway context.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "TERT",
+        "variant": null,
+        "gwas_p": 1e-08,
+        "effect_size": 0.06,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "literature",
+        "strength": 0.6,
+        "citations": [
+          "ref_ipf_gwas_2019"
+        ]
+      },
+      {
+        "gene": "TERC",
+        "variant": null,
+        "gwas_p": 1e-08,
+        "effect_size": 0.05,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "literature",
+        "strength": 0.6,
+        "citations": [
+          "ref_ipf_gwas_2019"
+        ]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.35,
+      "h2_narrow_sense": null,
+      "source": "Family and GWAS-based estimates (varies)",
+      "year": 2019
+    },
+    "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "smoking",
+      "direction": "amplify",
+      "strength": 0.6,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Epithelial injury and chronic inflammation context.",
+      "citations": [
+        "ref_smoking_report_2018"
+      ]
+    },
+    {
+      "exposure_slug": "occupational-dust",
+      "direction": "amplify",
+      "strength": 0.55,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Inhaled particulates as injury context in some settings.",
+      "citations": [
+        "ref_occupational_exposure_2015"
+      ]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "unknown",
+      "strength": 0.35,
+      "confidence": "low",
+      "mechanism_hypothesis": "Evidence varies by pollutant and design.",
+      "citations": [
+        "ref_airpollution_mechanisms_2019"
+      ]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "lung",
+      "relevance_score": 0.9,
+      "evidence_type": "GWAS/literature",
+      "citations": [
+        "ref_ipf_gwas_2019"
+      ]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Pulmonary fibrosis genetics studies are often European-ancestry weighted.",
+    "transferability_notes": "Effect estimates may vary across populations and subtypes.",
+    "data_gaps": "Subtype heterogeneity and exposure measurement limitations."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "ref_ipf_gwas_2019",
+      "title": "Genome-wide association meta-analysis of idiopathic pulmonary fibrosis identifies susceptibility loci",
+      "authors": "IPF GWAS Consortium",
+      "year": 2019,
+      "journal": "Nature Genetics"
+    },
+    {
+      "id": "ref_smoking_report_2018",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "authors": "U.S. Surgeon General",
+      "year": 2018,
+      "journal": "U.S. Department of Health and Human Services"
+    },
+    {
+      "id": "ref_occupational_exposure_2015",
+      "title": "Occupational exposures and chronic lung disease risk: overview (review)",
+      "authors": "Occupational Review Group",
+      "year": 2015,
+      "journal": "Occupational and Environmental Medicine"
+    },
+    {
+      "id": "ref_airpollution_mechanisms_2019",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

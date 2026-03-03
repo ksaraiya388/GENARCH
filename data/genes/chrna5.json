@@ -1,0 +1,42 @@
+{
+  "id": "gene_chrna5",
+  "slug": "chrna5",
+  "symbol": "CHRNA5",
+  "name": "Cholinergic Receptor Nicotinic Alpha 5 Subunit",
+  "chromosome": null,
+  "summary": "CHRNA5 locus is implicated in smoking behavior genetics and lung cancer susceptibility in population studies.",
+  "molecular_function": [],
+  "protein_class": "receptor",
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "dna-repair"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "lung-cancer",
+      "evidence_type": "GWAS",
+      "strength": 0.6
+    }
+  ],
+  "linked_exposures": [
+    {
+      "exposure_slug": "smoking",
+      "evidence_type": "GWAS",
+      "strength": 0.5
+    }
+  ],
+  "mechanistic_hypotheses": [],
+  "confidence": "medium",
+  "references": [
+    {
+      "id": "ref_lung_gwas_2017",
+      "title": "Genome-wide association meta-analysis identifies lung cancer susceptibility loci",
+      "authors": "Lung Cancer GWAS Consortium",
+      "year": 2017,
+      "journal": "Nature Genetics"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

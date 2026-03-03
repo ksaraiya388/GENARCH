@@ -1,0 +1,104 @@
+{
+  "id": "path_dna_repair",
+  "slug": "dna-repair",
+  "name": "DNA Repair (Homologous Recombination / Mismatch Repair)",
+  "summary": "DNA repair pathways implicated in hereditary cancer genes and tumor susceptibility mechanisms.",
+  "canonical_source": "Pathway:DNARepair",
+  "environmental_triggers": [
+    {
+      "exposure_slug": "ionizing-radiation",
+      "trigger_type": "DNA damage context",
+      "citations": [
+        "ref_radiation_review_2019"
+      ]
+    }
+  ],
+  "key_genes": [
+    {
+      "gene_slug": "brca1",
+      "role_in_pathway": "homologous recombination repair",
+      "citations": [
+        "ref_brca_review_2018"
+      ]
+    },
+    {
+      "gene_slug": "brca2",
+      "role_in_pathway": "homologous recombination repair",
+      "citations": [
+        "ref_brca_review_2018"
+      ]
+    },
+    {
+      "gene_slug": "mlh1",
+      "role_in_pathway": "mismatch repair",
+      "citations": [
+        "ref_crc_hereditary_2016"
+      ]
+    },
+    {
+      "gene_slug": "apc",
+      "role_in_pathway": "genome stability context",
+      "citations": [
+        "ref_crc_hereditary_2016"
+      ]
+    }
+  ],
+  "regulatory_checkpoints": [],
+  "tissue_specificity": [
+    {
+      "tissue": "epithelium",
+      "expression_evidence": "cell cycle / repair context"
+    }
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "breast-cancer",
+      "pathway_role": "hereditary susceptibility context",
+      "citations": [
+        "ref_brca_review_2018"
+      ]
+    },
+    {
+      "disease_slug": "colorectal-cancer",
+      "pathway_role": "hereditary susceptibility context",
+      "citations": [
+        "ref_crc_hereditary_2016"
+      ]
+    }
+  ],
+  "linked_exposures": [
+    {
+      "exposure_slug": "ionizing-radiation",
+      "pathway_effect": "DNA damage response context",
+      "citations": [
+        "ref_radiation_review_2019"
+      ]
+    }
+  ],
+  "diagram_asset": null,
+  "references": [
+    {
+      "id": "ref_brca_review_2018",
+      "title": "BRCA1/2 and hereditary breast cancer: mechanisms overview (review)",
+      "authors": "Hereditary Cancer Review Group",
+      "year": 2018,
+      "journal": "Nature Reviews Clinical Oncology"
+    },
+    {
+      "id": "ref_crc_hereditary_2016",
+      "title": "Hereditary colorectal cancer syndromes: APC and mismatch repair pathways (review)",
+      "authors": "Clinical Cancer Genetics Group",
+      "year": 2016,
+      "journal": "Nature Reviews Gastroenterology & Hepatology"
+    },
+    {
+      "id": "ref_radiation_review_2019",
+      "title": "Ionizing radiation and cancer risk: overview (review)",
+      "authors": "UNSCEAR",
+      "year": 2019,
+      "journal": "UNSCEAR Report"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26"
+}

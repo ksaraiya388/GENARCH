@@ -1,0 +1,42 @@
+{
+  "id": "gene_serpina1",
+  "slug": "serpina1",
+  "symbol": "SERPINA1",
+  "name": "Serpin Family A Member 1",
+  "chromosome": null,
+  "summary": "SERPINA1 variants cause alpha-1 antitrypsin deficiency; included for COPD educational mechanism context.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "nf-kb"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "copd",
+      "evidence_type": "literature",
+      "strength": 0.8
+    }
+  ],
+  "linked_exposures": [
+    {
+      "exposure_slug": "smoking",
+      "evidence_type": "literature",
+      "strength": 0.6
+    }
+  ],
+  "mechanistic_hypotheses": [],
+  "confidence": "high",
+  "references": [
+    {
+      "id": "ref_a1at_review_2017",
+      "title": "Alpha-1 antitrypsin deficiency and COPD: genetics and mechanisms (review)",
+      "authors": "Pulmonary Genetics Review Group",
+      "year": 2017,
+      "journal": "American Journal of Respiratory and Critical Care Medicine"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

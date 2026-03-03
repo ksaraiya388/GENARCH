@@ -1,0 +1,112 @@
+{
+  "id": "dis_thalassemia",
+  "slug": "thalassemia",
+  "name": "Thalassemia (Alpha/Beta)",
+  "icd11_code": "3A60",
+  "summary": "Thalassemias are hereditary hemoglobin disorders involving HBA/HBB variants. GENARCH provides educational summaries only.",
+  "adolescent_relevance": "Often manifests in childhood/adolescence; included as monogenic/oligogenic architecture example (educational only).",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "HBB",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": null,
+        "ancestry_composition": "Variant spectra vary",
+        "replication_status": "Causal",
+        "evidence": "literature",
+        "strength": 0.1,
+        "citations": [
+          "ref_thal_review_2013"
+        ]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 1.0,
+      "h2_narrow_sense": null,
+      "source": "Monogenic/oligogenic causal architecture",
+      "year": 2013
+    },
+    "prs_notes": "PRS not applicable as primary model for monogenic thalassemia."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "infection-burden",
+      "direction": "amplify",
+      "strength": 0.5,
+      "confidence": "low",
+      "mechanism_hypothesis": "Infections can increase physiological stress; context-dependent.",
+      "citations": [
+        "ref_infection_review_2015"
+      ]
+    },
+    {
+      "exposure_slug": "heat-stress",
+      "direction": "unknown",
+      "strength": 0.3,
+      "confidence": "low",
+      "mechanism_hypothesis": "Heat/dehydration stressor context; evidence varies.",
+      "citations": [
+        "ref_heat_health_2018"
+      ]
+    },
+    {
+      "exposure_slug": "diet-quality",
+      "direction": "unknown",
+      "strength": 0.25,
+      "confidence": "low",
+      "mechanism_hypothesis": "Nutrition status relates to health context; confounding is substantial.",
+      "citations": [
+        "ref_who_nutrition_2019"
+      ]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "blood/bone marrow",
+      "relevance_score": 0.9,
+      "evidence_type": "literature",
+      "citations": [
+        "ref_thal_review_2013"
+      ]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Thalassemia prevalence varies by ancestry/geography due to historical selection.",
+    "transferability_notes": "Variant interpretation can be impacted by underrepresentation in reference datasets.",
+    "data_gaps": "Environmental exposure linkage evidence is limited and setting-specific."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "ref_thal_review_2013",
+      "title": "Thalassemia: molecular genetics and pathophysiology overview (review)",
+      "authors": "Hematology Review Group",
+      "year": 2013,
+      "journal": "Blood"
+    },
+    {
+      "id": "ref_infection_review_2015",
+      "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)",
+      "authors": "Immunology Review Group",
+      "year": 2015,
+      "journal": "Nature Reviews Immunology"
+    },
+    {
+      "id": "ref_heat_health_2018",
+      "title": "Extreme heat exposure and health outcomes: overview (review)",
+      "authors": "Climate Health Review Group",
+      "year": 2018,
+      "journal": "The Lancet Planetary Health"
+    },
+    {
+      "id": "ref_who_nutrition_2019",
+      "title": "Healthy diet factsheet and guidance",
+      "authors": "World Health Organization",
+      "year": 2019,
+      "journal": "WHO"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

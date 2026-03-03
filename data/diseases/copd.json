@@ -1,0 +1,112 @@
+{
+  "id": "dis_copd",
+  "slug": "copd",
+  "name": "Chronic Obstructive Pulmonary Disease (COPD)",
+  "icd11_code": "CA40",
+  "summary": "COPD is characterized by persistent airflow limitation and chronic lung inflammation. GENARCH provides educational population-level summaries only.",
+  "adolescent_relevance": "Typically diagnosed later in life; included to illustrate exposure-driven lung remodeling mechanisms at a population level.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "SERPINA1",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": null,
+        "ancestry_composition": "Variant spectrum varies",
+        "replication_status": "Established",
+        "evidence": "literature",
+        "strength": 0.1,
+        "citations": [
+          "ref_a1at_review_2017"
+        ]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.4,
+      "h2_narrow_sense": null,
+      "source": "Family and GWAS-based estimates (varies)",
+      "year": 2017
+    },
+    "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "smoking",
+      "direction": "amplify",
+      "strength": 0.9,
+      "confidence": "high",
+      "mechanism_hypothesis": "Smoking is a dominant population-level driver of COPD burden.",
+      "citations": [
+        "ref_smoking_report_2018"
+      ]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "amplify",
+      "strength": 0.55,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Ambient particulates can contribute to chronic airway irritation in cohorts.",
+      "citations": [
+        "ref_airpollution_mechanisms_2019"
+      ]
+    },
+    {
+      "exposure_slug": "occupational-dust",
+      "direction": "amplify",
+      "strength": 0.6,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Occupational particulates contribute in some settings, often interacting with smoking.",
+      "citations": [
+        "ref_occupational_exposure_2015"
+      ]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "lung",
+      "relevance_score": 0.9,
+      "evidence_type": "literature",
+      "citations": [
+        "ref_a1at_review_2017"
+      ]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Many COPD GWAS are European-ancestry dominated historically.",
+    "transferability_notes": "Exposure distributions vary across populations, affecting interpretation.",
+    "data_gaps": "Phenotype definitions and exposure measurement vary across cohorts."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "ref_a1at_review_2017",
+      "title": "Alpha-1 antitrypsin deficiency and COPD: genetics and mechanisms (review)",
+      "authors": "Pulmonary Genetics Review Group",
+      "year": 2017,
+      "journal": "American Journal of Respiratory and Critical Care Medicine"
+    },
+    {
+      "id": "ref_smoking_report_2018",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "authors": "U.S. Surgeon General",
+      "year": 2018,
+      "journal": "U.S. Department of Health and Human Services"
+    },
+    {
+      "id": "ref_airpollution_mechanisms_2019",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association"
+    },
+    {
+      "id": "ref_occupational_exposure_2015",
+      "title": "Occupational exposures and chronic lung disease risk: overview (review)",
+      "authors": "Occupational Review Group",
+      "year": 2015,
+      "journal": "Occupational and Environmental Medicine"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "exp_endocrine_disruptors",
+  "slug": "endocrine-disruptors",
+  "name": "Endocrine Disruptors (Broad Category)",
+  "definition": "Broad category of chemicals that may interfere with hormonal signaling; evidence varies by compound and study design.",
+  "proxies": [
+    {
+      "name": "biomonitoring marker",
+      "unit": "ng/mL",
+      "measurement_method": "assay",
+      "data_source": "NHANES/biomonitoring"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "endocrine/metabolic",
+      "mechanism_summary": "Hormone receptor signaling and metabolic regulation context (heterogeneous evidence)."
+    }
+  ],
+  "sensitive_windows": [],
+  "gxe_highlights": [],
+  "tissues": [],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "ref_endocrine_disruptors_2017",
+      "title": "Endocrine disruptors and metabolic outcomes: evidence overview (review)",
+      "authors": "Endocrine Review Group",
+      "year": 2017,
+      "journal": "Endocrine Reviews"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

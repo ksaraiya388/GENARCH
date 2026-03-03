@@ -1,0 +1,36 @@
+{
+  "id": "gene_slc30a8",
+  "slug": "slc30a8",
+  "symbol": "SLC30A8",
+  "name": "Solute Carrier Family 30 Member 8",
+  "chromosome": null,
+  "summary": "SLC30A8 is implicated in beta-cell zinc transport and type 2 diabetes genetic architecture in population studies.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "insulin-signaling"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "type-2-diabetes",
+      "evidence_type": "GWAS",
+      "strength": 0.6
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "medium",
+  "references": [
+    {
+      "id": "ref_t2d_gwas_2018",
+      "title": "Multi-ancestry meta-analysis of type 2 diabetes identifies loci",
+      "authors": "T2D GWAS Consortium",
+      "year": 2018,
+      "journal": "Nature Genetics"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

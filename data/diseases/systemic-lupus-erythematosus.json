@@ -1,0 +1,91 @@
+{
+  "id": "dis_systemic_lupus_erythematosus",
+  "slug": "systemic-lupus-erythematosus",
+  "name": "Systemic Lupus Erythematosus",
+  "icd11_code": "FA00",
+  "summary": "Systemic lupus erythematosus is a multisystem autoimmune disease with polygenic architecture and heterogeneous clinical presentation. GENARCH provides educational population-level summaries only.",
+  "adolescent_relevance": "SLE can present in adolescence/young adulthood; GENARCH avoids individualized risk or clinical advice.",
+  "genetic_architecture": {
+    "top_loci": [],
+    "heritability_estimate": {
+      "h2_snp": 0.5,
+      "h2_narrow_sense": null,
+      "source": "Family and GWAS-based estimates (varies)",
+      "year": 2017
+    },
+    "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "uv-radiation",
+      "direction": "amplify",
+      "strength": 0.4,
+      "confidence": "low",
+      "mechanism_hypothesis": "UV exposure is discussed as a flare trigger in clinical and observational contexts; evidence varies.",
+      "citations": [
+        "ref_uv_autoimmune_2014"
+      ]
+    },
+    {
+      "exposure_slug": "infection-burden",
+      "direction": "amplify",
+      "strength": 0.35,
+      "confidence": "low",
+      "mechanism_hypothesis": "Infections can influence immune activation; pathogen-specific evidence is complex.",
+      "citations": [
+        "ref_infection_review_2015"
+      ]
+    },
+    {
+      "exposure_slug": "smoking",
+      "direction": "unknown",
+      "strength": 0.3,
+      "confidence": "low",
+      "mechanism_hypothesis": "Smoking is studied in autoimmune outcomes; evidence varies by cohort.",
+      "citations": [
+        "ref_smoking_report_2018"
+      ]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "immune system",
+      "relevance_score": 0.8,
+      "evidence_type": "literature",
+      "citations": [
+        "ref_uv_autoimmune_2014"
+      ]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "SLE genetics studies include multiple ancestries but sample sizes vary across groups.",
+    "transferability_notes": "PRS and locus mapping can vary across ancesries due to LD and allele frequency differences.",
+    "data_gaps": "Exposure measurement and outcome definitions differ across cohorts."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "ref_uv_autoimmune_2014",
+      "title": "Ultraviolet radiation and autoimmune disease mechanisms: overview (review)",
+      "authors": "Autoimmunity Review Group",
+      "year": 2014,
+      "journal": "Journal of Autoimmunity"
+    },
+    {
+      "id": "ref_infection_review_2015",
+      "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)",
+      "authors": "Immunology Review Group",
+      "year": 2015,
+      "journal": "Nature Reviews Immunology"
+    },
+    {
+      "id": "ref_smoking_report_2018",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "authors": "U.S. Surgeon General",
+      "year": 2018,
+      "journal": "U.S. Department of Health and Human Services"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

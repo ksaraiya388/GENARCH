@@ -1,0 +1,166 @@
+{
+  "id": "dis_type_2_diabetes",
+  "slug": "type-2-diabetes",
+  "name": "Type 2 Diabetes",
+  "icd11_code": "5A11",
+  "summary": "Type 2 diabetes is characterized by chronic hyperglycemia due to insulin resistance and beta-cell dysfunction. GENARCH provides population-level educational summaries.",
+  "adolescent_relevance": "Adolescent/young adult onset is increasing in some settings; GENARCH content is educational only.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "TCF7L2",
+        "variant": null,
+        "gwas_p": 1e-20,
+        "effect_size": 0.12,
+        "ancestry_composition": "Multi-ancestry",
+        "replication_status": "Replicated",
+        "evidence": "literature",
+        "strength": 0.7,
+        "citations": [
+          "ref_t2d_gwas_2018"
+        ]
+      },
+      {
+        "gene": "SLC30A8",
+        "variant": null,
+        "gwas_p": 1e-10,
+        "effect_size": 0.06,
+        "ancestry_composition": "Multi-ancestry",
+        "replication_status": "Replicated",
+        "evidence": "literature",
+        "strength": 0.7,
+        "citations": [
+          "ref_t2d_gwas_2018"
+        ]
+      },
+      {
+        "gene": "PPARG",
+        "variant": null,
+        "gwas_p": 1e-08,
+        "effect_size": 0.05,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "literature",
+        "strength": 0.6,
+        "citations": [
+          "ref_t2d_gwas_2018"
+        ]
+      },
+      {
+        "gene": "FTO",
+        "variant": null,
+        "gwas_p": 1e-20,
+        "effect_size": 0.06,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "literature",
+        "strength": 0.6,
+        "citations": [
+          "ref_bmi_gwas_2015"
+        ]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.35,
+      "h2_narrow_sense": null,
+      "source": "GWAS-based estimates (varies by cohort)",
+      "year": 2018
+    },
+    "prs_notes": "PRS is discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "diet-quality",
+      "direction": "amplify",
+      "strength": 0.7,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Diet patterns influence insulin resistance and glucose homeostasis.",
+      "citations": [
+        "ref_who_nutrition_2019"
+      ]
+    },
+    {
+      "exposure_slug": "physical-inactivity",
+      "direction": "amplify",
+      "strength": 0.65,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Lower activity is associated with insulin resistance in cohorts.",
+      "citations": [
+        "ref_who_activity_2020"
+      ]
+    },
+    {
+      "exposure_slug": "endocrine-disruptors",
+      "direction": "unknown",
+      "strength": 0.35,
+      "confidence": "low",
+      "mechanism_hypothesis": "Evidence is heterogeneous and compound-specific.",
+      "citations": [
+        "ref_endocrine_disruptors_2017"
+      ]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "pancreatic islets",
+      "relevance_score": 0.8,
+      "evidence_type": "GWAS/literature",
+      "citations": [
+        "ref_t2d_gwas_2018"
+      ]
+    },
+    {
+      "name": "adipose",
+      "relevance_score": 0.75,
+      "evidence_type": "literature",
+      "citations": [
+        "ref_who_nutrition_2019"
+      ]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "T2D GWAS increasingly include multi-ancestry cohorts, but representation remains uneven.",
+    "transferability_notes": "PRS performance can vary by ancestry and exposure context.",
+    "data_gaps": "Exposure and phenotype measurement heterogeneity limits inference."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "ref_t2d_gwas_2018",
+      "title": "Multi-ancestry meta-analysis of type 2 diabetes identifies loci",
+      "authors": "T2D GWAS Consortium",
+      "year": 2018,
+      "journal": "Nature Genetics"
+    },
+    {
+      "id": "ref_bmi_gwas_2015",
+      "title": "Genetic studies of body mass index yield insights into biology and risk loci",
+      "authors": "GIANT Consortium",
+      "year": 2015,
+      "journal": "Nature"
+    },
+    {
+      "id": "ref_who_nutrition_2019",
+      "title": "Healthy diet factsheet and guidance",
+      "authors": "World Health Organization",
+      "year": 2019,
+      "journal": "WHO"
+    },
+    {
+      "id": "ref_who_activity_2020",
+      "title": "WHO guidelines on physical activity and sedentary behaviour",
+      "authors": "World Health Organization",
+      "year": 2020,
+      "journal": "WHO"
+    },
+    {
+      "id": "ref_endocrine_disruptors_2017",
+      "title": "Endocrine disruptors and metabolic outcomes: evidence overview (review)",
+      "authors": "Endocrine Review Group",
+      "year": 2017,
+      "journal": "Endocrine Reviews"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

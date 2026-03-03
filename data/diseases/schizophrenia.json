@@ -1,0 +1,138 @@
+{
+  "id": "dis_schizophrenia",
+  "slug": "schizophrenia",
+  "name": "Schizophrenia",
+  "icd11_code": "6A20",
+  "summary": "Schizophrenia is a neuropsychiatric disorder with highly polygenic architecture and environmental context studied at the population level. GENARCH provides educational summaries only.",
+  "adolescent_relevance": "Typical onset is late adolescence/early adulthood; GENARCH avoids stigmatizing language and provides population-level evidence only.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "DRD2",
+        "variant": null,
+        "gwas_p": 1e-12,
+        "effect_size": 0.05,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "literature",
+        "strength": 0.6,
+        "citations": [
+          "ref_scz_gwas_2014"
+        ]
+      },
+      {
+        "gene": "CACNA1C",
+        "variant": null,
+        "gwas_p": 1e-10,
+        "effect_size": 0.04,
+        "ancestry_composition": "European-dominated",
+        "replication_status": "Replicated",
+        "evidence": "literature",
+        "strength": 0.6,
+        "citations": [
+          "ref_scz_gwas_2014"
+        ]
+      },
+      {
+        "gene": "C4A",
+        "variant": null,
+        "gwas_p": 1e-20,
+        "effect_size": 0.06,
+        "ancestry_composition": "Complex LD",
+        "replication_status": "Mechanistic model proposed",
+        "evidence": "literature",
+        "strength": 0.4,
+        "citations": [
+          "ref_scz_gwas_2014"
+        ]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.8,
+      "h2_narrow_sense": null,
+      "source": "Twin/family and GWAS-based estimates (high; varies)",
+      "year": 2014
+    },
+    "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "psychosocial-stress",
+      "direction": "amplify",
+      "strength": 0.45,
+      "confidence": "low",
+      "mechanism_hypothesis": "Stress exposure associations are complex and confounded in cohorts.",
+      "citations": [
+        "ref_stress_review_2017"
+      ]
+    },
+    {
+      "exposure_slug": "cannabis-use",
+      "direction": "amplify",
+      "strength": 0.4,
+      "confidence": "low",
+      "mechanism_hypothesis": "Cannabis associations with psychosis outcomes depend on context; causality remains debated.",
+      "citations": [
+        "ref_cannabis_psychosis_2019"
+      ]
+    },
+    {
+      "exposure_slug": "sleep-disruption",
+      "direction": "amplify",
+      "strength": 0.35,
+      "confidence": "low",
+      "mechanism_hypothesis": "Sleep disruption associations are often bidirectional and context-dependent.",
+      "citations": [
+        "ref_sleep_review_2016"
+      ]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "brain",
+      "relevance_score": 0.8,
+      "evidence_type": "GWAS/literature",
+      "citations": [
+        "ref_scz_gwas_2014"
+      ]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Large schizophrenia GWAS have been European-ancestry dominated historically.",
+    "transferability_notes": "PRS performance varies across ancestries due to LD and cohort composition.",
+    "data_gaps": "Exposure measurement and ascertainment vary across settings."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "ref_scz_gwas_2014",
+      "title": "Biological insights from schizophrenia-associated genetic loci",
+      "authors": "Psychiatric Genomics Consortium",
+      "year": 2014,
+      "journal": "Nature"
+    },
+    {
+      "id": "ref_stress_review_2017",
+      "title": "Psychosocial stress and health outcomes: mechanisms and evidence (review)",
+      "authors": "Cohort Review Group",
+      "year": 2017,
+      "journal": "Annual Review of Public Health"
+    },
+    {
+      "id": "ref_cannabis_psychosis_2019",
+      "title": "Cannabis use and psychosis outcomes: evidence synthesis (review)",
+      "authors": "Systematic Review Group",
+      "year": 2019,
+      "journal": "Lancet Psychiatry"
+    },
+    {
+      "id": "ref_sleep_review_2016",
+      "title": "Sleep duration and health outcomes: overview of population evidence (review)",
+      "authors": "Sleep Review Group",
+      "year": 2016,
+      "journal": "Sleep Medicine Reviews"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

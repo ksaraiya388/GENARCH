@@ -1,0 +1,36 @@
+{
+  "id": "gene_fgfr2",
+  "slug": "fgfr2",
+  "symbol": "FGFR2",
+  "name": "Fibroblast Growth Factor Receptor 2",
+  "chromosome": null,
+  "summary": "FGFR2 is a common-variant breast cancer GWAS locus included for polygenic context.",
+  "molecular_function": [],
+  "protein_class": "receptor",
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "dna-repair"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "breast-cancer",
+      "evidence_type": "GWAS",
+      "strength": 0.6
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "medium",
+  "references": [
+    {
+      "id": "ref_breast_gwas_2017",
+      "title": "Breast cancer GWAS meta-analysis identifies susceptibility loci",
+      "authors": "BCAC Consortium",
+      "year": 2017,
+      "journal": "Nature Genetics"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "exp_uv_radiation",
+  "slug": "uv-radiation",
+  "name": "Ultraviolet (UV) Radiation",
+  "definition": "Ultraviolet radiation exposure; discussed as contextual trigger/modifier in autoimmune literature (population-level).",
+  "proxies": [
+    {
+      "name": "ambient UV index",
+      "unit": "index",
+      "measurement_method": "modeled/monitor",
+      "data_source": "meteorological datasets"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "immune/skin",
+      "mechanism_summary": "Immune modulation and skin injury response context."
+    }
+  ],
+  "sensitive_windows": [],
+  "gxe_highlights": [],
+  "tissues": [],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "ref_uv_autoimmune_2014",
+      "title": "Ultraviolet radiation and autoimmune disease mechanisms: overview (review)",
+      "authors": "Autoimmunity Review Group",
+      "year": 2014,
+      "journal": "Journal of Autoimmunity"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

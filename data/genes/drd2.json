@@ -1,0 +1,36 @@
+{
+  "id": "gene_drd2",
+  "slug": "drd2",
+  "symbol": "DRD2",
+  "name": "Dopamine Receptor D2",
+  "chromosome": null,
+  "summary": "DRD2 is a schizophrenia-associated locus in GWAS and supports dopamine signaling hypotheses in population research.",
+  "molecular_function": [],
+  "protein_class": "receptor",
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "nf-kb"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "schizophrenia",
+      "evidence_type": "GWAS",
+      "strength": 0.6
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "medium",
+  "references": [
+    {
+      "id": "ref_scz_gwas_2014",
+      "title": "Biological insights from schizophrenia-associated loci",
+      "authors": "Psychiatric Genomics Consortium",
+      "year": 2014,
+      "journal": "Nature"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

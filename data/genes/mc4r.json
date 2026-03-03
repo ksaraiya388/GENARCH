@@ -1,0 +1,36 @@
+{
+  "id": "gene_mc4r",
+  "slug": "mc4r",
+  "symbol": "MC4R",
+  "name": "Melanocortin 4 Receptor",
+  "chromosome": null,
+  "summary": "MC4R is implicated in appetite regulation and obesity biology in population genetics.",
+  "molecular_function": [],
+  "protein_class": "receptor",
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "insulin-signaling"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "obesity",
+      "evidence_type": "GWAS",
+      "strength": 0.7
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "medium",
+  "references": [
+    {
+      "id": "ref_bmi_gwas_2015",
+      "title": "Genetic studies of body mass index yield insights into biology and risk loci",
+      "authors": "GIANT Consortium",
+      "year": 2015,
+      "journal": "Nature"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

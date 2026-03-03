@@ -1,0 +1,91 @@
+{
+  "id": "dis_major_depressive_disorder",
+  "slug": "major-depressive-disorder",
+  "name": "Major Depressive Disorder",
+  "icd11_code": "6A70",
+  "summary": "Major depressive disorder is a common condition with moderate heritability and strong environmental context in population studies. GENARCH provides educational summaries only.",
+  "adolescent_relevance": "Often emerges in adolescence/young adulthood; GENARCH avoids individualized risk or clinical advice.",
+  "genetic_architecture": {
+    "top_loci": [],
+    "heritability_estimate": {
+      "h2_snp": 0.35,
+      "h2_narrow_sense": null,
+      "source": "Family and GWAS-based estimates (moderate; varies)",
+      "year": 2019
+    },
+    "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "psychosocial-stress",
+      "direction": "amplify",
+      "strength": 0.6,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Stress exposure is associated with depression outcomes in cohorts; causal direction is complex.",
+      "citations": [
+        "ref_stress_review_2017"
+      ]
+    },
+    {
+      "exposure_slug": "sleep-disruption",
+      "direction": "amplify",
+      "strength": 0.5,
+      "confidence": "low",
+      "mechanism_hypothesis": "Sleep disruption is associated with mental health outcomes; bidirectionality is common.",
+      "citations": [
+        "ref_sleep_review_2016"
+      ]
+    },
+    {
+      "exposure_slug": "physical-inactivity",
+      "direction": "amplify",
+      "strength": 0.35,
+      "confidence": "low",
+      "mechanism_hypothesis": "Associations vary and can be confounded by multiple factors.",
+      "citations": [
+        "ref_who_activity_2020"
+      ]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "brain",
+      "relevance_score": 0.75,
+      "evidence_type": "literature",
+      "citations": [
+        "ref_stress_review_2017"
+      ]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Large MDD GWAS have been European-ancestry dominated historically.",
+    "transferability_notes": "PRS performance varies across ancestries due to LD and phenotype definitions.",
+    "data_gaps": "Exposure measurement heterogeneity and confounding are substantial."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "ref_stress_review_2017",
+      "title": "Psychosocial stress and health outcomes: mechanisms and evidence (review)",
+      "authors": "Cohort Review Group",
+      "year": 2017,
+      "journal": "Annual Review of Public Health"
+    },
+    {
+      "id": "ref_sleep_review_2016",
+      "title": "Sleep duration and health outcomes: overview of population evidence (review)",
+      "authors": "Sleep Review Group",
+      "year": 2016,
+      "journal": "Sleep Medicine Reviews"
+    },
+    {
+      "id": "ref_who_activity_2020",
+      "title": "WHO guidelines on physical activity and sedentary behaviour",
+      "authors": "World Health Organization",
+      "year": 2020,
+      "journal": "WHO"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

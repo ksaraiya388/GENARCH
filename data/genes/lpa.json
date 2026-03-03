@@ -1,0 +1,36 @@
+{
+  "id": "gene_lpa",
+  "slug": "lpa",
+  "symbol": "LPA",
+  "name": "Lipoprotein(a)",
+  "chromosome": null,
+  "summary": "LPA is associated with lipoprotein(a) biology and coronary artery disease susceptibility in population genetics.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "ldl-metabolism"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "coronary-artery-disease",
+      "evidence_type": "GWAS",
+      "strength": 0.65
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "medium",
+  "references": [
+    {
+      "id": "ref_cad_gwas_2015",
+      "title": "Genome-wide association meta-analysis of coronary artery disease identifies loci and pathways",
+      "authors": "CAD GWAS Consortium",
+      "year": 2015,
+      "journal": "Nature Genetics"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

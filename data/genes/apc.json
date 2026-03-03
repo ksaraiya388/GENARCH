@@ -1,0 +1,36 @@
+{
+  "id": "gene_apc",
+  "slug": "apc",
+  "symbol": "APC",
+  "name": "APC Regulator Of WNT Signaling Pathway",
+  "chromosome": null,
+  "summary": "APC is a hereditary colorectal cancer gene (FAP) included for educational context.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "dna-repair"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "colorectal-cancer",
+      "evidence_type": "literature",
+      "strength": 0.8
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "high",
+  "references": [
+    {
+      "id": "ref_crc_hereditary_2016",
+      "title": "Hereditary colorectal cancer syndromes: APC and mismatch repair pathways (review)",
+      "authors": "Clinical Cancer Genetics Group",
+      "year": 2016,
+      "journal": "Nature Reviews Gastroenterology & Hepatology"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "gene_psen1",
+  "slug": "psen1",
+  "symbol": "PSEN1",
+  "name": "Presenilin 1",
+  "chromosome": null,
+  "summary": "PSEN1 is implicated in early-onset familial Alzheimer’s disease; included for educational context.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "nf-kb"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "alzheimers-disease",
+      "evidence_type": "literature",
+      "strength": 0.6
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "medium",
+  "references": [
+    {
+      "id": "ref_ad_gwas_2019",
+      "title": "Genome-wide meta-analysis of Alzheimer’s disease identifies risk loci and highlights immune pathways",
+      "authors": "AD GWAS Consortium",
+      "year": 2019,
+      "journal": "Nature Genetics"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

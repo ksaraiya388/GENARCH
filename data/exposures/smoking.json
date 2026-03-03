@@ -1,0 +1,55 @@
+{
+  "id": "exp_smoking",
+  "slug": "smoking",
+  "name": "Tobacco Smoking",
+  "definition": "Tobacco smoking is an inhaled combustion exposure strongly associated with respiratory and cardiovascular outcomes in population studies.",
+  "proxies": [
+    {
+      "name": "cigarettes per day",
+      "unit": "count/day",
+      "measurement_method": "self-report",
+      "data_source": "cohort studies"
+    },
+    {
+      "name": "cotinine",
+      "unit": "ng/mL",
+      "measurement_method": "biomarker assay",
+      "data_source": "NHANES/cohorts"
+    }
+  ],
+  "systems_affected": [
+    {
+      "system": "respiratory",
+      "mechanism_summary": "Oxidative stress, inflammation, and remodeling pathways."
+    },
+    {
+      "system": "cardiovascular",
+      "mechanism_summary": "Endothelial dysfunction and atherogenesis pathways."
+    }
+  ],
+  "sensitive_windows": [],
+  "gxe_highlights": [
+    {
+      "gene_slug": "chrna5",
+      "disease_slug": "lung-cancer",
+      "direction": "amplify",
+      "evidence_type": "GWAS",
+      "citations": [
+        "ref_smoking_report_2018"
+      ]
+    }
+  ],
+  "tissues": [],
+  "exposure_distribution": null,
+  "references": [
+    {
+      "id": "ref_smoking_report_2018",
+      "title": "The Health Consequences of Smoking—50 Years of Progress",
+      "authors": "U.S. Surgeon General",
+      "year": 2018,
+      "journal": "U.S. Department of Health and Human Services"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

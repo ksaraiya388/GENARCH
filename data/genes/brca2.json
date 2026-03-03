@@ -1,0 +1,36 @@
+{
+  "id": "gene_brca2",
+  "slug": "brca2",
+  "symbol": "BRCA2",
+  "name": "BRCA2 DNA Repair Associated",
+  "chromosome": null,
+  "summary": "BRCA2 is a high-penetrance hereditary breast cancer gene included for educational DNA repair pathway context.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "dna-repair"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "breast-cancer",
+      "evidence_type": "literature",
+      "strength": 0.9
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "high",
+  "references": [
+    {
+      "id": "ref_brca_review_2018",
+      "title": "BRCA1/2 and hereditary breast cancer: mechanisms overview (review)",
+      "authors": "Hereditary Cancer Review Group",
+      "year": 2018,
+      "journal": "Nature Reviews Clinical Oncology"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

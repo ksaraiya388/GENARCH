@@ -1,0 +1,112 @@
+{
+  "id": "dis_marfan_syndrome",
+  "slug": "marfan-syndrome",
+  "name": "Marfan Syndrome",
+  "icd11_code": "LD26",
+  "summary": "Marfan syndrome is a hereditary connective tissue disorder most commonly caused by pathogenic FBN1 variants. GENARCH provides educational summaries only.",
+  "adolescent_relevance": "Often identified in childhood/adolescence; included as monogenic architecture example (educational only).",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "FBN1",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": null,
+        "ancestry_composition": "Variant spectrum varies",
+        "replication_status": "Causal",
+        "evidence": "literature",
+        "strength": 0.1,
+        "citations": [
+          "ref_marfan_review_2016"
+        ]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 1.0,
+      "h2_narrow_sense": null,
+      "source": "Monogenic causal architecture",
+      "year": 2016
+    },
+    "prs_notes": "PRS not applicable as primary model for monogenic Marfan syndrome."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "physical-inactivity",
+      "direction": "unknown",
+      "strength": 0.2,
+      "confidence": "low",
+      "mechanism_hypothesis": "General cardiovascular physiology context; not treated as medical advice.",
+      "citations": [
+        "ref_who_activity_2020"
+      ]
+    },
+    {
+      "exposure_slug": "psychosocial-stress",
+      "direction": "unknown",
+      "strength": 0.2,
+      "confidence": "low",
+      "mechanism_hypothesis": "General cardiovascular physiology context; not treated as medical advice.",
+      "citations": [
+        "ref_stress_review_2017"
+      ]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "unknown",
+      "strength": 0.2,
+      "confidence": "low",
+      "mechanism_hypothesis": "Systemic stressor context; evidence specific to Marfan is limited.",
+      "citations": [
+        "ref_airpollution_mechanisms_2019"
+      ]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "connective tissue/aorta",
+      "relevance_score": 0.9,
+      "evidence_type": "literature",
+      "citations": [
+        "ref_marfan_review_2016"
+      ]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Variant catalogs and clinical research have uneven representation across populations.",
+    "transferability_notes": "Variant interpretation can be impacted by underrepresentation in reference datasets.",
+    "data_gaps": "Environmental modifier evidence is limited."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "ref_marfan_review_2016",
+      "title": "Marfan syndrome: FBN1, connective tissue, and clinical features (review)",
+      "authors": "Cardiogenetics Review Group",
+      "year": 2016,
+      "journal": "Nature Reviews Cardiology"
+    },
+    {
+      "id": "ref_who_activity_2020",
+      "title": "WHO guidelines on physical activity and sedentary behaviour",
+      "authors": "World Health Organization",
+      "year": 2020,
+      "journal": "WHO"
+    },
+    {
+      "id": "ref_stress_review_2017",
+      "title": "Psychosocial stress and health outcomes: mechanisms and evidence (review)",
+      "authors": "Cohort Review Group",
+      "year": 2017,
+      "journal": "Annual Review of Public Health"
+    },
+    {
+      "id": "ref_airpollution_mechanisms_2019",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

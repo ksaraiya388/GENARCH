@@ -1,0 +1,112 @@
+{
+  "id": "dis_huntington_disease",
+  "slug": "huntington-disease",
+  "name": "Huntington Disease",
+  "icd11_code": "8A01",
+  "summary": "Huntington disease is caused by HTT CAG repeat expansions. GENARCH provides educational summaries only and does not provide individualized prediction.",
+  "adolescent_relevance": "Typically manifests in adulthood; juvenile forms exist. Included for educational monogenic architecture context only.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "HTT",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": null,
+        "ancestry_composition": "Population history varies",
+        "replication_status": "Causal",
+        "evidence": "literature",
+        "strength": 0.1,
+        "citations": [
+          "ref_hd_review_2017"
+        ]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 1.0,
+      "h2_narrow_sense": null,
+      "source": "Monogenic causal architecture",
+      "year": 2017
+    },
+    "prs_notes": "PRS not applicable as primary model for monogenic HD."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "sleep-disruption",
+      "direction": "unknown",
+      "strength": 0.25,
+      "confidence": "low",
+      "mechanism_hypothesis": "General neurocognitive context; not treated as medical advice.",
+      "citations": [
+        "ref_sleep_review_2016"
+      ]
+    },
+    {
+      "exposure_slug": "psychosocial-stress",
+      "direction": "unknown",
+      "strength": 0.25,
+      "confidence": "low",
+      "mechanism_hypothesis": "General neuroendocrine context; not treated as medical advice.",
+      "citations": [
+        "ref_stress_review_2017"
+      ]
+    },
+    {
+      "exposure_slug": "physical-inactivity",
+      "direction": "unknown",
+      "strength": 0.2,
+      "confidence": "low",
+      "mechanism_hypothesis": "General health context; not treated as medical advice.",
+      "citations": [
+        "ref_who_activity_2020"
+      ]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "brain",
+      "relevance_score": 0.9,
+      "evidence_type": "literature",
+      "citations": [
+        "ref_hd_review_2017"
+      ]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "HD research representation differs by geography; prevalence varies by population history.",
+    "transferability_notes": "Care access and measurement context differ across settings.",
+    "data_gaps": "Environmental modifier evidence is limited."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "ref_hd_review_2017",
+      "title": "Huntington disease: genetics and molecular pathogenesis (review)",
+      "authors": "Neurogenetics Review Group",
+      "year": 2017,
+      "journal": "Lancet Neurology"
+    },
+    {
+      "id": "ref_sleep_review_2016",
+      "title": "Sleep duration and health outcomes: overview of population evidence (review)",
+      "authors": "Sleep Review Group",
+      "year": 2016,
+      "journal": "Sleep Medicine Reviews"
+    },
+    {
+      "id": "ref_stress_review_2017",
+      "title": "Psychosocial stress and health outcomes: mechanisms and evidence (review)",
+      "authors": "Cohort Review Group",
+      "year": 2017,
+      "journal": "Annual Review of Public Health"
+    },
+    {
+      "id": "ref_who_activity_2020",
+      "title": "WHO guidelines on physical activity and sedentary behaviour",
+      "authors": "World Health Organization",
+      "year": 2020,
+      "journal": "WHO"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

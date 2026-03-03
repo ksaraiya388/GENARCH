@@ -1,36 +1,454 @@
 {
   "nodes": [
     {
+      "id": "obesity",
+      "type": "disease",
+      "label": "Obesity",
+      "slug": "obesity",
+      "attrs": {
+        "summary": "Obesity reflects excess adiposity with strong polygenic architecture and environmental context. GENARCH provides population-level educational summaries only.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "major-depressive-disorder",
+      "type": "disease",
+      "label": "Major Depressive Disorder",
+      "slug": "major-depressive-disorder",
+      "attrs": {
+        "summary": "Major depressive disorder is a common condition with moderate heritability and strong environmental context in population studies. GENARCH provides educational summaries only.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "schizophrenia",
+      "type": "disease",
+      "label": "Schizophrenia",
+      "slug": "schizophrenia",
+      "attrs": {
+        "summary": "Schizophrenia is a neuropsychiatric disorder with highly polygenic architecture and environmental context studied at the population level. GENARCH provides educational summaries only.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "tuberculosis-susceptibility",
+      "type": "disease",
+      "label": "Tuberculosis Susceptibility",
+      "slug": "tuberculosis-susceptibility",
+      "attrs": {
+        "summary": "Tuberculosis susceptibility and outcomes depend on exposure intensity and host immune response; host genetics evidence is heterogeneous across settings. GENARCH provides educational summaries only.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "coronary-artery-disease",
+      "type": "disease",
+      "label": "Coronary Artery Disease",
+      "slug": "coronary-artery-disease",
+      "attrs": {
+        "summary": "Coronary artery disease reflects atherosclerotic narrowing of coronary arteries. GENARCH summarizes population-level genetic architecture and exposure modifiers for education only.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "multiple-sclerosis",
+      "type": "disease",
+      "label": "Multiple Sclerosis",
+      "slug": "multiple-sclerosis",
+      "attrs": {
+        "summary": "Multiple sclerosis is an immune-mediated CNS disease with strong HLA associations and environmental context in population studies. GENARCH provides educational summaries only.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "type-2-diabetes",
+      "type": "disease",
+      "label": "Type 2 Diabetes",
+      "slug": "type-2-diabetes",
+      "attrs": {
+        "summary": "Type 2 diabetes is characterized by chronic hyperglycemia due to insulin resistance and beta-cell dysfunction. GENARCH provides population-level educational summaries.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "rheumatoid-arthritis",
+      "type": "disease",
+      "label": "Rheumatoid Arthritis",
+      "slug": "rheumatoid-arthritis",
+      "attrs": {
+        "summary": "Rheumatoid arthritis is an autoimmune inflammatory joint disease with strong HLA associations and polygenic background. GENARCH provides educational summaries only.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
       "id": "asthma",
       "type": "disease",
       "label": "Asthma",
       "slug": "asthma",
       "attrs": {
-        "summary": "Asthma is a heterogeneous chronic respiratory disease characterized by variable airflow obstruction, bronchial hyperresponsiveness (BHR), and airway inflammation. The disease sits within the atopic march, where allergic sensitization in early life (food allergy, atopic dermatitis) often precedes allergic rhinitis and asthma development. Pathophysiologically, asthma involves T-helper 2 (Th2)–mediated inflammation, eosinophilic infiltration, goblet cell hyperplasia, and airway remodeling. The phenotypic spectrum ranges from mild intermittent disease to severe therapy-resistant asthma, with distinct endotypes including type 2–high (eosinophilic, allergen-driven) and type 2–low (neutrophilic or paucigranulocytic) presentations. Genetic susceptibility contributes substantially: twin studies estimate heritability at ~60–80%, while SNP-based heritability (h²) is ~0.15–0.20, reflecting the polygenic architecture. Prevalence varies globally (5–20%), with higher rates in industrialized nations and urban settings. Asthma onset frequently occurs in childhood or adolescence, making it highly relevant to the 10–24 age group—a period when disease trajectory, medication adherence, and environmental exposures (including smoking initiation and occupational exposures) critically shape long-term outcomes.",
+        "summary": "Asthma is a chronic respiratory disease characterized by variable airflow obstruction and airway inflammation. GENARCH presents asthma as a population-level gene–environment system (educational only; not medical advice).",
         "confidence": "high",
-        "last_updated": "2026-02-26"
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "systemic-lupus-erythematosus",
+      "type": "disease",
+      "label": "Systemic Lupus Erythematosus",
+      "slug": "systemic-lupus-erythematosus",
+      "attrs": {
+        "summary": "Systemic lupus erythematosus is a multisystem autoimmune disease with polygenic architecture and heterogeneous clinical presentation. GENARCH provides educational population-level summaries only.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "cystic-fibrosis",
+      "type": "disease",
+      "label": "Cystic Fibrosis",
+      "slug": "cystic-fibrosis",
+      "attrs": {
+        "summary": "Cystic fibrosis is caused by pathogenic CFTR variants affecting epithelial ion transport. GENARCH provides educational summaries only.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "sickle-cell-disease",
+      "type": "disease",
+      "label": "Sickle Cell Disease",
+      "slug": "sickle-cell-disease",
+      "attrs": {
+        "summary": "Sickle cell disease is a monogenic hemoglobinopathy caused by pathogenic HBB variants; population-level outcomes depend on care access and exposure context. GENARCH provides educational summaries only.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "thalassemia",
+      "type": "disease",
+      "label": "Thalassemia (Alpha/Beta)",
+      "slug": "thalassemia",
+      "attrs": {
+        "summary": "Thalassemias are hereditary hemoglobin disorders involving HBA/HBB variants. GENARCH provides educational summaries only.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "alzheimers-disease",
+      "type": "disease",
+      "label": "Alzheimer’s Disease",
+      "slug": "alzheimers-disease",
+      "attrs": {
+        "summary": "Alzheimer’s disease is a neurodegenerative condition with late-onset polygenic architecture and notable loci such as APOE. GENARCH provides population-level educational summaries only.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "colorectal-cancer",
+      "type": "disease",
+      "label": "Colorectal Cancer",
+      "slug": "colorectal-cancer",
+      "attrs": {
+        "summary": "Colorectal cancer arises from colon/rectum epithelium and involves hereditary syndromes and polygenic background. GENARCH provides educational population-level summaries.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "marfan-syndrome",
+      "type": "disease",
+      "label": "Marfan Syndrome",
+      "slug": "marfan-syndrome",
+      "attrs": {
+        "summary": "Marfan syndrome is a hereditary connective tissue disorder most commonly caused by pathogenic FBN1 variants. GENARCH provides educational summaries only.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "hypertension",
+      "type": "disease",
+      "label": "Hypertension",
+      "slug": "hypertension",
+      "attrs": {
+        "summary": "Hypertension is persistently elevated blood pressure influenced by kidney, vascular, endocrine, and autonomic regulation. GENARCH provides population-level educational summaries.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "pulmonary-fibrosis",
+      "type": "disease",
+      "label": "Pulmonary Fibrosis",
+      "slug": "pulmonary-fibrosis",
+      "attrs": {
+        "summary": "Pulmonary fibrosis involves lung scarring and impaired gas exchange; telomere maintenance loci are implicated in some studies. GENARCH provides educational summaries only.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "breast-cancer",
+      "type": "disease",
+      "label": "Breast Cancer",
+      "slug": "breast-cancer",
+      "attrs": {
+        "summary": "Breast cancer is a heterogeneous malignancy with hereditary high-penetrance variants and polygenic background. GENARCH provides educational population-level summaries.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "lung-cancer",
+      "type": "disease",
+      "label": "Lung Cancer",
+      "slug": "lung-cancer",
+      "attrs": {
+        "summary": "Lung cancer risk is strongly influenced by inhaled exposures (especially smoking) and has gene–environment components in population studies. GENARCH provides educational summaries only.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "copd",
+      "type": "disease",
+      "label": "Chronic Obstructive Pulmonary Disease (COPD)",
+      "slug": "copd",
+      "attrs": {
+        "summary": "COPD is characterized by persistent airflow limitation and chronic lung inflammation. GENARCH provides educational population-level summaries only.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "huntington-disease",
+      "type": "disease",
+      "label": "Huntington Disease",
+      "slug": "huntington-disease",
+      "attrs": {
+        "summary": "Huntington disease is caused by HTT CAG repeat expansions. GENARCH provides educational summaries only and does not provide individualized prediction.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "covid-19-severity",
+      "type": "disease",
+      "label": "COVID-19 Severity",
+      "slug": "covid-19-severity",
+      "attrs": {
+        "summary": "COVID-19 severity reflects host–pathogen interactions and population-level outcomes shaped by age, comorbidities, exposure intensity, and healthcare access. GENARCH provides educational summaries only.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "no2",
+      "type": "exposure",
+      "label": "Nitrogen Dioxide (NO2)",
+      "slug": "no2",
+      "attrs": {
+        "summary": "Nitrogen dioxide (NO2) is a traffic-related air pollutant often used as a proxy for roadway emissions exposure in population studies.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "occupational-dust",
+      "type": "exposure",
+      "label": "Occupational Dust and Fume Exposure",
+      "slug": "occupational-dust",
+      "attrs": {
+        "summary": "Occupational dust/fume exposures include inhaled particulates encountered in some workplaces; studied in relation to chronic lung disease risk in population research.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "sleep-disruption",
+      "type": "exposure",
+      "label": "Sleep Disruption",
+      "slug": "sleep-disruption",
+      "attrs": {
+        "summary": "Sleep disruption (insufficient, irregular, or poor-quality sleep) is studied as a population-level modifier for metabolic and mental health outcomes.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "diet-quality",
+      "type": "exposure",
+      "label": "Diet Quality (Dietary Pattern)",
+      "slug": "diet-quality",
+      "attrs": {
+        "summary": "Dietary pattern exposure (e.g., minimally processed vs. highly processed diets) relevant to cardiometabolic outcomes in population studies.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "heavy-metals",
+      "type": "exposure",
+      "label": "Heavy Metals (Broad Category)",
+      "slug": "heavy-metals",
+      "attrs": {
+        "summary": "Heavy metal exposure category (e.g., lead, mercury, cadmium) studied across multiple health outcomes; evidence is compound- and context-specific.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "ionizing-radiation",
+      "type": "exposure",
+      "label": "Ionizing Radiation",
+      "slug": "ionizing-radiation",
+      "attrs": {
+        "summary": "Ionizing radiation is a mutagenic exposure category discussed in cancer epidemiology; risk depends on dose, timing, and tissue context.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "microbiome-alteration",
+      "type": "exposure",
+      "label": "Microbiome Alteration (Broad Category)",
+      "slug": "microbiome-alteration",
+      "attrs": {
+        "summary": "Changes in gut microbial composition/function studied as population-level modifiers/correlates in metabolic and cancer research.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "uv-radiation",
+      "type": "exposure",
+      "label": "Ultraviolet (UV) Radiation",
+      "slug": "uv-radiation",
+      "attrs": {
+        "summary": "Ultraviolet radiation exposure; discussed as contextual trigger/modifier in autoimmune literature (population-level).",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "endocrine-disruptors",
+      "type": "exposure",
+      "label": "Endocrine Disruptors (Broad Category)",
+      "slug": "endocrine-disruptors",
+      "attrs": {
+        "summary": "Broad category of chemicals that may interfere with hormonal signaling; evidence varies by compound and study design.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "smoking",
+      "type": "exposure",
+      "label": "Tobacco Smoking",
+      "slug": "smoking",
+      "attrs": {
+        "summary": "Tobacco smoking is an inhaled combustion exposure strongly associated with respiratory and cardiovascular outcomes in population studies.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
       }
     },
     {
       "id": "endotoxin",
       "type": "exposure",
-      "label": "Endotoxin (Farm/Microbial Exposure)",
+      "label": "Endotoxin (Environmental Microbial Products)",
       "slug": "endotoxin",
       "attrs": {
-        "summary": "Lipopolysaccharide from Gram-negative bacteria; exposure common in farm environments. Early-life exposure may protect against atopic asthma (hygiene hypothesis).",
+        "summary": "Endotoxin (LPS) exposure in certain environments; studied as context-dependent modifier of allergic outcomes in population research.",
         "confidence": "medium",
-        "last_updated": "2026-02-26"
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "heat-stress",
+      "type": "exposure",
+      "label": "Heat Stress (Climate-Related)",
+      "slug": "heat-stress",
+      "attrs": {
+        "summary": "Heat stress exposure refers to high ambient temperatures and heat events that can contribute to dehydration and physiological strain in population contexts.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "psychosocial-stress",
+      "type": "exposure",
+      "label": "Psychosocial Stress",
+      "slug": "psychosocial-stress",
+      "attrs": {
+        "summary": "Stress exposure category (chronic/acute) relevant to neuroendocrine and immune pathways in population studies.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "high-sodium-intake",
+      "type": "exposure",
+      "label": "High Sodium Intake",
+      "slug": "high-sodium-intake",
+      "attrs": {
+        "summary": "Dietary sodium intake is a population-level exposure category studied in relation to blood pressure regulation and cardiovascular outcomes.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "crowding-housing",
+      "type": "exposure",
+      "label": "Household Crowding / Housing Density",
+      "slug": "crowding-housing",
+      "attrs": {
+        "summary": "Crowding and housing density are exposure-context variables relevant to respiratory infection transmission patterns in population studies.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "physical-inactivity",
+      "type": "exposure",
+      "label": "Physical Inactivity",
+      "slug": "physical-inactivity",
+      "attrs": {
+        "summary": "Insufficient moderate-to-vigorous physical activity; studied as a population-level modifier of cardiometabolic outcomes.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "cannabis-use",
+      "type": "exposure",
+      "label": "Cannabis Use",
+      "slug": "cannabis-use",
+      "attrs": {
+        "summary": "Cannabis use is studied in relation to neuropsychiatric outcomes in some epidemiological and genetic epidemiology contexts; evidence is heterogeneous and confounded.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
       }
     },
     {
       "id": "ozone",
       "type": "exposure",
-      "label": "Ozone",
+      "label": "Ground-Level Ozone",
       "slug": "ozone",
       "attrs": {
-        "summary": "Ground-level ozone (O3) is a secondary pollutant formed when nitrogen oxides and volatile organic compounds react in the presence of sunlight. It exacerbates respiratory conditions including asthma.",
+        "summary": "Ozone (O3) is a reactive gas formed via photochemical reactions; studied as a population-level modifier of respiratory outcomes.",
         "confidence": "medium",
-        "last_updated": "2026-02-26"
+        "last_updated": "2026-03-03"
       }
     },
     {
@@ -39,9 +457,9 @@
       "label": "Ambient Air Pollution (PM2.5)",
       "slug": "air-pollution",
       "attrs": {
-        "summary": "PM2.5 (particulate matter with aerodynamic diameter ≤2.5 micrometers) refers to fine inhalable particles that can penetrate deep into the lungs and enter the bloodstream. Sources include combustion (vehicles, power plants, wildfires), industrial processes, and secondary formation from gaseous precursors (e.g., SO2, NOx). PM2.5 composition varies by region but typically includes sulfates, nitrates, ammonium, organic carbon, elemental carbon, and trace metals. The small size enables alveolar deposition and systemic distribution, contributing to respiratory, cardiovascular, and immune effects.",
+        "summary": "PM2.5 (particulate matter with aerodynamic diameter ≤2.5 micrometers) refers to fine inhalable particles that can penetrate deep into the lungs and contribute to respiratory and cardiovascular effects at the population level.",
         "confidence": "medium",
-        "last_updated": "2026-02-26"
+        "last_updated": "2026-03-03"
       }
     },
     {
@@ -50,9 +468,229 @@
       "label": "Prenatal Tobacco Smoke Exposure",
       "slug": "tobacco-smoke-prenatal",
       "attrs": {
-        "summary": "In utero exposure to tobacco smoke from maternal smoking during pregnancy. Associated with impaired lung development and increased childhood asthma risk.",
+        "summary": "Maternal smoking or secondhand smoke during pregnancy; studied as a population-level modifier of later respiratory outcomes.",
         "confidence": "medium",
-        "last_updated": "2026-02-26"
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "vitamin-d-status",
+      "type": "exposure",
+      "label": "Vitamin D Status (Population-Level)",
+      "slug": "vitamin-d-status",
+      "attrs": {
+        "summary": "Vitamin D status (often measured by serum 25(OH)D) is studied as a population-level modifier of immune-related outcomes including multiple sclerosis in some contexts.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "alcohol",
+      "type": "exposure",
+      "label": "Alcohol Use",
+      "slug": "alcohol",
+      "attrs": {
+        "summary": "Alcohol use is an exposure category studied across multiple health outcomes, including certain cancers and cardiometabolic outcomes, in population research.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "infection-burden",
+      "type": "exposure",
+      "label": "Infection Burden (Broad Category)",
+      "slug": "infection-burden",
+      "attrs": {
+        "summary": "Broad exposure category representing frequency and severity of infectious exposures in a population; impacts immune activation context.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "fgfr2",
+      "type": "gene",
+      "label": "FGFR2",
+      "slug": "fgfr2",
+      "attrs": {
+        "summary": "FGFR2 is a common-variant breast cancer GWAS locus included for polygenic context.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "slco1b1",
+      "type": "gene",
+      "label": "SLCO1B1",
+      "slug": "slco1b1",
+      "attrs": {
+        "summary": "SLCO1B1 is a pharmacogenomic marker associated with statin-related myopathy risk in some settings; included for educational pharmacogenomics context.",
+        "confidence": "low",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "app",
+      "type": "gene",
+      "label": "APP",
+      "slug": "app",
+      "attrs": {
+        "summary": "APP is implicated in early-onset familial Alzheimer’s disease in specific families; included for educational context.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "apob",
+      "type": "gene",
+      "label": "APOB",
+      "slug": "apob",
+      "attrs": {
+        "summary": "APOB is a key component of LDL particles and is implicated in cardiometabolic genetic architecture.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "ifng",
+      "type": "gene",
+      "label": "IFNG",
+      "slug": "ifng",
+      "attrs": {
+        "summary": "IFNG signaling is central to TB containment biology; genetic association evidence varies by cohort and setting.",
+        "confidence": "low",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "c4a",
+      "type": "gene",
+      "label": "C4A",
+      "slug": "c4a",
+      "attrs": {
+        "summary": "C4A-related signals in the MHC region are implicated in schizophrenia mechanistic hypotheses; mapping is complex due to LD.",
+        "confidence": "low",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "htt",
+      "type": "gene",
+      "label": "HTT",
+      "slug": "htt",
+      "attrs": {
+        "summary": "HTT CAG repeat expansions cause Huntington disease; included as monogenic architecture example.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "abo",
+      "type": "gene",
+      "label": "ABO",
+      "slug": "abo",
+      "attrs": {
+        "summary": "ABO blood group locus has been reported in some COVID-19 host genetics studies; included for educational context.",
+        "confidence": "low",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "umod",
+      "type": "gene",
+      "label": "UMOD",
+      "slug": "umod",
+      "attrs": {
+        "summary": "UMOD is a kidney-related locus implicated in blood pressure GWAS in some studies; included for hypertension polygenic context.",
+        "confidence": "low",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "egfr",
+      "type": "gene",
+      "label": "EGFR",
+      "slug": "egfr",
+      "attrs": {
+        "summary": "EGFR is a key oncogene in lung cancer biology; included here as educational germline/somatic context reference.",
+        "confidence": "low",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "mlh1",
+      "type": "gene",
+      "label": "MLH1",
+      "slug": "mlh1",
+      "attrs": {
+        "summary": "MLH1 is a mismatch repair gene implicated in Lynch syndrome; included for educational context.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "tert",
+      "type": "gene",
+      "label": "TERT",
+      "slug": "tert",
+      "attrs": {
+        "summary": "TERT is implicated in pulmonary fibrosis susceptibility via telomere maintenance biology in some studies.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "psen2",
+      "type": "gene",
+      "label": "PSEN2",
+      "slug": "psen2",
+      "attrs": {
+        "summary": "PSEN2 is implicated in early-onset familial Alzheimer’s disease; included for educational context.",
+        "confidence": "low",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "tlr2",
+      "type": "gene",
+      "label": "TLR2",
+      "slug": "tlr2",
+      "attrs": {
+        "summary": "TLR2 is an innate immune receptor studied in infectious disease susceptibility including TB; evidence is heterogeneous across cohorts.",
+        "confidence": "low",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "hba2",
+      "type": "gene",
+      "label": "HBA2",
+      "slug": "hba2",
+      "attrs": {
+        "summary": "HBA2 variants contribute to alpha thalassemia; included as monogenic/oligogenic architecture example.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "apc",
+      "type": "gene",
+      "label": "APC",
+      "slug": "apc",
+      "attrs": {
+        "summary": "APC is a hereditary colorectal cancer gene (FAP) included for educational context.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "fbn1",
+      "type": "gene",
+      "label": "FBN1",
+      "slug": "fbn1",
+      "attrs": {
+        "summary": "FBN1 pathogenic variants cause Marfan syndrome; included as monogenic architecture example.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
       }
     },
     {
@@ -61,8 +699,305 @@
       "label": "IL33",
       "slug": "il33",
       "attrs": {
-        "summary": "IL33 encodes interleukin-33, a dual-function cytokine and nuclear factor belonging to the IL-1 family. IL-33 functions as an epithelial alarmin: it is constitutively expressed in barrier tissues (lung, skin, gut) and released upon cell damage or stress, acting as a danger signal to activate innate and adaptive immune cells. Full-length IL-33 binds the ST2 (IL1RL1) receptor on group 2 innate lymphoid cells (ILC2s), mast cells, Th2 lymphocytes, and eosinophils, driving type 2 immunity. Proteolytic cleavage by allergens or inflammatory proteases generates mature forms with enhanced activity. Asthma-associated GWAS variants regulate IL33 expression through an enhancer-blocking element ~2.3 kb upstream, with differential OCT-1 (POU2F1) binding. IL-33 is upregulated by PM2.5, allergens, and viral infections, positioning it at the interface of environmental exposure and genetic susceptibility in asthma.",
+        "summary": "IL33 encodes an epithelial-derived cytokine (alarmin) implicated in allergic inflammation and asthma genetic architecture.",
         "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "chrna5",
+      "type": "gene",
+      "label": "CHRNA5",
+      "slug": "chrna5",
+      "attrs": {
+        "summary": "CHRNA5 locus is implicated in smoking behavior genetics and lung cancer susceptibility in population studies.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "brca2",
+      "type": "gene",
+      "label": "BRCA2",
+      "slug": "brca2",
+      "attrs": {
+        "summary": "BRCA2 is a high-penetrance hereditary breast cancer gene included for educational DNA repair pathway context.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "apoe",
+      "type": "gene",
+      "label": "APOE",
+      "slug": "apoe",
+      "attrs": {
+        "summary": "APOE is the major late-onset Alzheimer’s disease risk locus in population genetics; included for educational context.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "serpina1",
+      "type": "gene",
+      "label": "SERPINA1",
+      "slug": "serpina1",
+      "attrs": {
+        "summary": "SERPINA1 variants cause alpha-1 antitrypsin deficiency; included for COPD educational mechanism context.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "oas1",
+      "type": "gene",
+      "label": "OAS1",
+      "slug": "oas1",
+      "attrs": {
+        "summary": "OAS1 is an antiviral pathway gene implicated in host genetics studies of COVID-19 severity.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "drd2",
+      "type": "gene",
+      "label": "DRD2",
+      "slug": "drd2",
+      "attrs": {
+        "summary": "DRD2 is a schizophrenia-associated locus in GWAS and supports dopamine signaling hypotheses in population research.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "hla-drb1",
+      "type": "gene",
+      "label": "HLA-DRB1",
+      "slug": "hla-drb1",
+      "attrs": {
+        "summary": "HLA-DRB1 alleles are associated with multiple autoimmune diseases including RA and MS in population genetics.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "ace",
+      "type": "gene",
+      "label": "ACE",
+      "slug": "ace",
+      "attrs": {
+        "summary": "ACE is a RAAS pathway gene included for hypertension educational mechanism context.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "cftr",
+      "type": "gene",
+      "label": "CFTR",
+      "slug": "cftr",
+      "attrs": {
+        "summary": "CFTR variants cause cystic fibrosis; included as monogenic architecture example.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "brca1",
+      "type": "gene",
+      "label": "BRCA1",
+      "slug": "brca1",
+      "attrs": {
+        "summary": "BRCA1 is a high-penetrance hereditary breast cancer gene included for educational DNA repair pathway context.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "ldlr",
+      "type": "gene",
+      "label": "LDLR",
+      "slug": "ldlr",
+      "attrs": {
+        "summary": "LDLR is central to LDL clearance and is implicated in coronary artery disease biology through lipid metabolism pathways.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "hbb",
+      "type": "gene",
+      "label": "HBB",
+      "slug": "hbb",
+      "attrs": {
+        "summary": "HBB pathogenic variants cause sickle cell disease; included as a monogenic architecture example.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "psen1",
+      "type": "gene",
+      "label": "PSEN1",
+      "slug": "psen1",
+      "attrs": {
+        "summary": "PSEN1 is implicated in early-onset familial Alzheimer’s disease; included for educational context.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "pcsk9",
+      "type": "gene",
+      "label": "PCSK9",
+      "slug": "pcsk9",
+      "attrs": {
+        "summary": "PCSK9 modulates LDLR levels and is implicated in lipid pathways relevant to coronary artery disease biology.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "pparg",
+      "type": "gene",
+      "label": "PPARG",
+      "slug": "pparg",
+      "attrs": {
+        "summary": "PPARG is implicated in adipose biology and insulin sensitivity; included for type 2 diabetes educational mechanism context.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "lpa",
+      "type": "gene",
+      "label": "LPA",
+      "slug": "lpa",
+      "attrs": {
+        "summary": "LPA is associated with lipoprotein(a) biology and coronary artery disease susceptibility in population genetics.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "cacna1c",
+      "type": "gene",
+      "label": "CACNA1C",
+      "slug": "cacna1c",
+      "attrs": {
+        "summary": "CACNA1C is implicated across psychiatric GWAS including schizophrenia; included for neurodevelopmental signaling context.",
+        "confidence": "low",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "tp53",
+      "type": "gene",
+      "label": "TP53",
+      "slug": "tp53",
+      "attrs": {
+        "summary": "TP53 is a tumor suppressor implicated in hereditary cancer syndromes; included for educational context.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "tox3",
+      "type": "gene",
+      "label": "TOX3",
+      "slug": "tox3",
+      "attrs": {
+        "summary": "TOX3 is a breast cancer susceptibility locus in GWAS; included for polygenic context.",
+        "confidence": "low",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "mc4r",
+      "type": "gene",
+      "label": "MC4R",
+      "slug": "mc4r",
+      "attrs": {
+        "summary": "MC4R is implicated in appetite regulation and obesity biology in population genetics.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "tcf7l2",
+      "type": "gene",
+      "label": "TCF7L2",
+      "slug": "tcf7l2",
+      "attrs": {
+        "summary": "TCF7L2 is among the most consistently associated loci for type 2 diabetes in GWAS and is linked to islet biology.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "slc30a8",
+      "type": "gene",
+      "label": "SLC30A8",
+      "slug": "slc30a8",
+      "attrs": {
+        "summary": "SLC30A8 is implicated in beta-cell zinc transport and type 2 diabetes genetic architecture in population studies.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "fto",
+      "type": "gene",
+      "label": "FTO",
+      "slug": "fto",
+      "attrs": {
+        "summary": "FTO is a locus associated with BMI/adiposity in population genetics and is included for obesity/T2D polygenic context.",
+        "confidence": "medium",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "agt",
+      "type": "gene",
+      "label": "AGT",
+      "slug": "agt",
+      "attrs": {
+        "summary": "AGT is a RAAS pathway component included for hypertension educational context.",
+        "confidence": "low",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "terc",
+      "type": "gene",
+      "label": "TERC",
+      "slug": "terc",
+      "attrs": {
+        "summary": "TERC is included for telomere maintenance context in pulmonary fibrosis mechanisms.",
+        "confidence": "low",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "hba1",
+      "type": "gene",
+      "label": "HBA1",
+      "slug": "hba1",
+      "attrs": {
+        "summary": "HBA1/HBA2 variants contribute to alpha thalassemia; included as monogenic/oligogenic architecture example.",
+        "confidence": "high",
+        "last_updated": "2026-03-03"
+      }
+    },
+    {
+      "id": "dna-repair",
+      "type": "pathway",
+      "label": "DNA Repair (Homologous Recombination / Mismatch Repair)",
+      "slug": "dna-repair",
+      "attrs": {
+        "summary": "DNA repair pathways implicated in hereditary cancer genes and tumor susceptibility mechanisms.",
+        "confidence": "medium",
         "last_updated": "2026-02-26"
       }
     },
@@ -72,7 +1007,40 @@
       "label": "NF-κB Signaling Pathway",
       "slug": "nf-kb",
       "attrs": {
-        "summary": "NF-κB (nuclear factor kappa-light-chain-enhancer of activated B cells) is a master regulator of inflammatory gene expression, governing immune responses, cell survival, and proliferation. The pathway exists in canonical and non-canonical forms. The canonical pathway is triggered by pro-inflammatory stimuli (TNF, IL-1, LPS, viral RNA): IκB kinase (IKK) phosphorylates IκBα, leading to its ubiquitination and proteasomal degradation, which releases NF-κB dimers (e.g., RelA/p65–p50) for nuclear translocation and target gene activation. Key targets include IL6, IL8, TNF, IL33, COX-2, and adhesion molecules. Environmental pollutants such as PM2.5 activate NF-κB via reactive oxygen species (ROS)–mediated IKK activation; particulate matter downregulates microRNAs that suppress IKK-β. Tissue-specific activity in bronchial epithelium, macrophages, and endothelium underlies respiratory and cardiovascular disease pathogenesis.",
+        "summary": "NF-κB is a core inflammatory transcription program connecting stress signals to immune gene expression across tissues. Included as a mechanistic bridge for multiple exposure–disease contexts.",
+        "confidence": "medium",
+        "last_updated": "2026-02-26"
+      }
+    },
+    {
+      "id": "raas",
+      "type": "pathway",
+      "label": "Renin–Angiotensin–Aldosterone System (RAAS)",
+      "slug": "raas",
+      "attrs": {
+        "summary": "Hormonal system regulating blood pressure and fluid balance; commonly referenced in hypertension biology.",
+        "confidence": "medium",
+        "last_updated": "2026-02-26"
+      }
+    },
+    {
+      "id": "insulin-signaling",
+      "type": "pathway",
+      "label": "Insulin Signaling",
+      "slug": "insulin-signaling",
+      "attrs": {
+        "summary": "Core metabolic signaling pathway relevant to type 2 diabetes mechanisms.",
+        "confidence": "medium",
+        "last_updated": "2026-02-26"
+      }
+    },
+    {
+      "id": "ldl-metabolism",
+      "type": "pathway",
+      "label": "LDL Metabolism",
+      "slug": "ldl-metabolism",
+      "attrs": {
+        "summary": "Lipid transport and LDL clearance pathways central to coronary artery disease biology.",
         "confidence": "medium",
         "last_updated": "2026-02-26"
       }
@@ -81,6 +1049,758 @@
   "edges": [
     {
       "id": "e1",
+      "source": "diet-quality",
+      "target": "obesity",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "adipose"
+        ],
+        "strength": 0.7,
+        "confidence": "medium",
+        "sources": [
+          "ref_who_nutrition_2019"
+        ]
+      }
+    },
+    {
+      "id": "e2",
+      "source": "physical-inactivity",
+      "target": "obesity",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "adipose"
+        ],
+        "strength": 0.65,
+        "confidence": "medium",
+        "sources": [
+          "ref_who_activity_2020"
+        ]
+      }
+    },
+    {
+      "id": "e3",
+      "source": "endocrine-disruptors",
+      "target": "obesity",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "adipose"
+        ],
+        "strength": 0.35,
+        "confidence": "low",
+        "sources": [
+          "ref_endocrine_disruptors_2017"
+        ]
+      }
+    },
+    {
+      "id": "e4",
+      "source": "fto",
+      "target": "obesity",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "adipose"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_bmi_gwas_2015"
+        ]
+      }
+    },
+    {
+      "id": "e5",
+      "source": "mc4r",
+      "target": "obesity",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "adipose"
+        ],
+        "strength": 0.7,
+        "confidence": "medium",
+        "sources": [
+          "ref_bmi_gwas_2015"
+        ]
+      }
+    },
+    {
+      "id": "e6",
+      "source": "psychosocial-stress",
+      "target": "major-depressive-disorder",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "brain"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_stress_review_2017"
+        ]
+      }
+    },
+    {
+      "id": "e7",
+      "source": "sleep-disruption",
+      "target": "major-depressive-disorder",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "brain"
+        ],
+        "strength": 0.5,
+        "confidence": "low",
+        "sources": [
+          "ref_sleep_review_2016"
+        ]
+      }
+    },
+    {
+      "id": "e8",
+      "source": "physical-inactivity",
+      "target": "major-depressive-disorder",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "brain"
+        ],
+        "strength": 0.35,
+        "confidence": "low",
+        "sources": [
+          "ref_who_activity_2020"
+        ]
+      }
+    },
+    {
+      "id": "e9",
+      "source": "psychosocial-stress",
+      "target": "schizophrenia",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "brain"
+        ],
+        "strength": 0.45,
+        "confidence": "low",
+        "sources": [
+          "ref_stress_review_2017"
+        ]
+      }
+    },
+    {
+      "id": "e10",
+      "source": "cannabis-use",
+      "target": "schizophrenia",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "brain"
+        ],
+        "strength": 0.4,
+        "confidence": "low",
+        "sources": [
+          "ref_cannabis_psychosis_2019"
+        ]
+      }
+    },
+    {
+      "id": "e11",
+      "source": "sleep-disruption",
+      "target": "schizophrenia",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "brain"
+        ],
+        "strength": 0.35,
+        "confidence": "low",
+        "sources": [
+          "ref_sleep_review_2016"
+        ]
+      }
+    },
+    {
+      "id": "e12",
+      "source": "drd2",
+      "target": "schizophrenia",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "brain"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_scz_gwas_2014"
+        ]
+      }
+    },
+    {
+      "id": "e13",
+      "source": "cacna1c",
+      "target": "schizophrenia",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "brain"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_scz_gwas_2014"
+        ]
+      }
+    },
+    {
+      "id": "e14",
+      "source": "c4a",
+      "target": "schizophrenia",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "brain"
+        ],
+        "strength": 0.4,
+        "confidence": "medium",
+        "sources": [
+          "ref_scz_gwas_2014"
+        ]
+      }
+    },
+    {
+      "id": "e15",
+      "source": "crowding-housing",
+      "target": "tuberculosis-susceptibility",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "lung/immune system"
+        ],
+        "strength": 0.7,
+        "confidence": "medium",
+        "sources": [
+          "ref_housing_infection_2020"
+        ]
+      }
+    },
+    {
+      "id": "e16",
+      "source": "diet-quality",
+      "target": "tuberculosis-susceptibility",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "lung/immune system"
+        ],
+        "strength": 0.4,
+        "confidence": "low",
+        "sources": [
+          "ref_who_nutrition_2019"
+        ]
+      }
+    },
+    {
+      "id": "e17",
+      "source": "air-pollution",
+      "target": "tuberculosis-susceptibility",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "lung/immune system"
+        ],
+        "strength": 0.35,
+        "confidence": "low",
+        "sources": [
+          "ref_airpollution_mechanisms_2019"
+        ]
+      }
+    },
+    {
+      "id": "e18",
+      "source": "tlr2",
+      "target": "tuberculosis-susceptibility",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "lung/immune system"
+        ],
+        "strength": 0.2,
+        "confidence": "medium",
+        "sources": [
+          "ref_tb_host_review_2016"
+        ]
+      }
+    },
+    {
+      "id": "e19",
+      "source": "ifng",
+      "target": "tuberculosis-susceptibility",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "lung/immune system"
+        ],
+        "strength": 0.2,
+        "confidence": "medium",
+        "sources": [
+          "ref_tb_host_review_2016"
+        ]
+      }
+    },
+    {
+      "id": "e20",
+      "source": "diet-quality",
+      "target": "coronary-artery-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "vasculature",
+          "liver"
+        ],
+        "strength": 0.65,
+        "confidence": "medium",
+        "sources": [
+          "ref_who_nutrition_2019"
+        ]
+      }
+    },
+    {
+      "id": "e21",
+      "source": "smoking",
+      "target": "coronary-artery-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "vasculature",
+          "liver"
+        ],
+        "strength": 0.8,
+        "confidence": "high",
+        "sources": [
+          "ref_smoking_report_2018"
+        ]
+      }
+    },
+    {
+      "id": "e22",
+      "source": "air-pollution",
+      "target": "coronary-artery-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "vasculature",
+          "liver"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_airpollution_mechanisms_2019"
+        ]
+      }
+    },
+    {
+      "id": "e23",
+      "source": "ldlr",
+      "target": "coronary-artery-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "vasculature",
+          "liver"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_cad_gwas_2015"
+        ]
+      }
+    },
+    {
+      "id": "e24",
+      "source": "apob",
+      "target": "coronary-artery-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "vasculature",
+          "liver"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_cad_gwas_2015"
+        ]
+      }
+    },
+    {
+      "id": "e25",
+      "source": "pcsk9",
+      "target": "coronary-artery-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "vasculature",
+          "liver"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_cad_gwas_2015"
+        ]
+      }
+    },
+    {
+      "id": "e26",
+      "source": "lpa",
+      "target": "coronary-artery-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "vasculature",
+          "liver"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_cad_gwas_2015"
+        ]
+      }
+    },
+    {
+      "id": "e27",
+      "source": "vitamin-d-status",
+      "target": "multiple-sclerosis",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "buffer",
+        "tissue": [
+          "central nervous system"
+        ],
+        "strength": 0.5,
+        "confidence": "low",
+        "sources": [
+          "ref_vitd_ms_2016"
+        ]
+      }
+    },
+    {
+      "id": "e28",
+      "source": "smoking",
+      "target": "multiple-sclerosis",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "central nervous system"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_smoking_report_2018"
+        ]
+      }
+    },
+    {
+      "id": "e29",
+      "source": "infection-burden",
+      "target": "multiple-sclerosis",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "central nervous system"
+        ],
+        "strength": 0.4,
+        "confidence": "low",
+        "sources": [
+          "ref_infection_review_2015"
+        ]
+      }
+    },
+    {
+      "id": "e30",
+      "source": "hla-drb1",
+      "target": "multiple-sclerosis",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "central nervous system"
+        ],
+        "strength": 0.7,
+        "confidence": "medium",
+        "sources": [
+          "ref_ms_gwas_2019"
+        ]
+      }
+    },
+    {
+      "id": "e31",
+      "source": "diet-quality",
+      "target": "type-2-diabetes",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "pancreatic islets",
+          "adipose"
+        ],
+        "strength": 0.7,
+        "confidence": "medium",
+        "sources": [
+          "ref_who_nutrition_2019"
+        ]
+      }
+    },
+    {
+      "id": "e32",
+      "source": "physical-inactivity",
+      "target": "type-2-diabetes",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "pancreatic islets",
+          "adipose"
+        ],
+        "strength": 0.65,
+        "confidence": "medium",
+        "sources": [
+          "ref_who_activity_2020"
+        ]
+      }
+    },
+    {
+      "id": "e33",
+      "source": "endocrine-disruptors",
+      "target": "type-2-diabetes",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "pancreatic islets",
+          "adipose"
+        ],
+        "strength": 0.35,
+        "confidence": "low",
+        "sources": [
+          "ref_endocrine_disruptors_2017"
+        ]
+      }
+    },
+    {
+      "id": "e34",
+      "source": "tcf7l2",
+      "target": "type-2-diabetes",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "pancreatic islets",
+          "adipose"
+        ],
+        "strength": 0.7,
+        "confidence": "medium",
+        "sources": [
+          "ref_t2d_gwas_2018"
+        ]
+      }
+    },
+    {
+      "id": "e35",
+      "source": "slc30a8",
+      "target": "type-2-diabetes",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "pancreatic islets",
+          "adipose"
+        ],
+        "strength": 0.7,
+        "confidence": "medium",
+        "sources": [
+          "ref_t2d_gwas_2018"
+        ]
+      }
+    },
+    {
+      "id": "e36",
+      "source": "pparg",
+      "target": "type-2-diabetes",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "pancreatic islets",
+          "adipose"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_t2d_gwas_2018"
+        ]
+      }
+    },
+    {
+      "id": "e37",
+      "source": "fto",
+      "target": "type-2-diabetes",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "pancreatic islets",
+          "adipose"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_bmi_gwas_2015"
+        ]
+      }
+    },
+    {
+      "id": "e38",
+      "source": "smoking",
+      "target": "rheumatoid-arthritis",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "synovium"
+        ],
+        "strength": 0.75,
+        "confidence": "high",
+        "sources": [
+          "ref_smoking_report_2018"
+        ]
+      }
+    },
+    {
+      "id": "e39",
+      "source": "air-pollution",
+      "target": "rheumatoid-arthritis",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "synovium"
+        ],
+        "strength": 0.4,
+        "confidence": "low",
+        "sources": [
+          "ref_airpollution_mechanisms_2019"
+        ]
+      }
+    },
+    {
+      "id": "e40",
+      "source": "occupational-dust",
+      "target": "rheumatoid-arthritis",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "synovium"
+        ],
+        "strength": 0.45,
+        "confidence": "low",
+        "sources": [
+          "ref_occupational_exposure_2015"
+        ]
+      }
+    },
+    {
+      "id": "e41",
+      "source": "hla-drb1",
+      "target": "rheumatoid-arthritis",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "synovium"
+        ],
+        "strength": 0.7,
+        "confidence": "medium",
+        "sources": [
+          "ref_ra_gwas_2014"
+        ]
+      }
+    },
+    {
+      "id": "e42",
       "source": "air-pollution",
       "target": "asthma",
       "type": "modifier",
@@ -88,22 +1808,17 @@
         "evidence_type": "literature",
         "direction": "amplify",
         "tissue": [
-          "bronchial epithelium",
-          "alveolar macrophages",
-          "mast cells",
-          "T-helper 2 lymphocytes"
+          "lung"
         ],
         "strength": 0.88,
         "confidence": "high",
         "sources": [
-          "ref5",
-          "ref6",
-          "ref7"
+          "ref_airpollution_mechanisms_2019"
         ]
       }
     },
     {
-      "id": "e2",
+      "id": "e43",
       "source": "ozone",
       "target": "asthma",
       "type": "modifier",
@@ -111,20 +1826,17 @@
         "evidence_type": "literature",
         "direction": "amplify",
         "tissue": [
-          "bronchial epithelium",
-          "alveolar macrophages",
-          "mast cells",
-          "T-helper 2 lymphocytes"
+          "lung"
         ],
         "strength": 0.7,
         "confidence": "medium",
         "sources": [
-          "ref7"
+          "ref_epa_aqs_2024"
         ]
       }
     },
     {
-      "id": "e3",
+      "id": "e44",
       "source": "tobacco-smoke-prenatal",
       "target": "asthma",
       "type": "modifier",
@@ -132,147 +1844,1407 @@
         "evidence_type": "literature",
         "direction": "amplify",
         "tissue": [
-          "bronchial epithelium",
-          "alveolar macrophages",
-          "mast cells",
-          "T-helper 2 lymphocytes"
+          "lung"
         ],
         "strength": 0.85,
         "confidence": "high",
         "sources": [
-          "ref7"
+          "ref_prenatal_smoke_2006"
         ]
       }
     },
     {
-      "id": "e4",
-      "source": "endotoxin",
-      "target": "asthma",
-      "type": "modifier",
-      "attrs": {
-        "evidence_type": "literature",
-        "direction": "buffer",
-        "tissue": [
-          "bronchial epithelium",
-          "alveolar macrophages",
-          "mast cells",
-          "T-helper 2 lymphocytes"
-        ],
-        "strength": 0.65,
-        "confidence": "medium",
-        "sources": [
-          "ref4"
-        ]
-      }
-    },
-    {
-      "id": "e5",
+      "id": "e45",
       "source": "il33",
       "target": "asthma",
       "type": "association",
       "attrs": {
-        "evidence_type": "GWAS",
+        "evidence_type": "literature",
         "direction": "unknown",
         "tissue": [
-          "bronchial epithelium",
-          "alveolar macrophages",
-          "mast cells",
-          "T-helper 2 lymphocytes"
+          "lung"
         ],
-        "strength": 0.85,
+        "strength": 0.6,
         "confidence": "medium",
         "sources": [
-          "ref1",
-          "ref2"
+          "ref_airpollution_mechanisms_2019"
         ]
       }
     },
     {
-      "id": "e6",
-      "source": "tslp",
-      "target": "asthma",
-      "type": "association",
+      "id": "e46",
+      "source": "uv-radiation",
+      "target": "systemic-lupus-erythematosus",
+      "type": "modifier",
       "attrs": {
-        "evidence_type": "GWAS",
-        "direction": "unknown",
+        "evidence_type": "literature",
+        "direction": "amplify",
         "tissue": [
-          "bronchial epithelium",
-          "alveolar macrophages",
-          "mast cells",
-          "T-helper 2 lymphocytes"
+          "immune system"
         ],
-        "strength": 0.82,
-        "confidence": "medium",
+        "strength": 0.4,
+        "confidence": "low",
         "sources": [
-          "ref1"
+          "ref_uv_autoimmune_2014"
         ]
       }
     },
     {
-      "id": "e7",
-      "source": "ormdl3",
-      "target": "asthma",
-      "type": "association",
+      "id": "e47",
+      "source": "infection-burden",
+      "target": "systemic-lupus-erythematosus",
+      "type": "modifier",
       "attrs": {
-        "evidence_type": "GWAS",
-        "direction": "unknown",
+        "evidence_type": "literature",
+        "direction": "amplify",
         "tissue": [
-          "bronchial epithelium",
-          "alveolar macrophages",
-          "mast cells",
-          "T-helper 2 lymphocytes"
+          "immune system"
         ],
-        "strength": 0.9,
-        "confidence": "medium",
+        "strength": 0.35,
+        "confidence": "low",
         "sources": [
-          "ref1"
+          "ref_infection_review_2015"
         ]
       }
     },
     {
-      "id": "e8",
-      "source": "il1rl1",
-      "target": "asthma",
-      "type": "association",
+      "id": "e48",
+      "source": "smoking",
+      "target": "systemic-lupus-erythematosus",
+      "type": "modifier",
       "attrs": {
-        "evidence_type": "GWAS",
+        "evidence_type": "literature",
         "direction": "unknown",
         "tissue": [
-          "bronchial epithelium",
-          "alveolar macrophages",
-          "mast cells",
-          "T-helper 2 lymphocytes"
+          "immune system"
         ],
-        "strength": 0.8,
-        "confidence": "medium",
+        "strength": 0.3,
+        "confidence": "low",
         "sources": [
-          "ref1"
+          "ref_smoking_report_2018"
         ]
       }
     },
     {
-      "id": "e9",
-      "source": "rad50",
-      "target": "asthma",
+      "id": "e49",
+      "source": "air-pollution",
+      "target": "cystic-fibrosis",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "airway epithelium"
+        ],
+        "strength": 0.45,
+        "confidence": "low",
+        "sources": [
+          "ref_airpollution_mechanisms_2019"
+        ]
+      }
+    },
+    {
+      "id": "e50",
+      "source": "infection-burden",
+      "target": "cystic-fibrosis",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "airway epithelium"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_infection_review_2015"
+        ]
+      }
+    },
+    {
+      "id": "e51",
+      "source": "smoking",
+      "target": "cystic-fibrosis",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "airway epithelium"
+        ],
+        "strength": 0.35,
+        "confidence": "low",
+        "sources": [
+          "ref_smoking_report_2018"
+        ]
+      }
+    },
+    {
+      "id": "e52",
+      "source": "cftr",
+      "target": "cystic-fibrosis",
       "type": "association",
       "attrs": {
-        "evidence_type": "GWAS",
+        "evidence_type": "literature",
         "direction": "unknown",
         "tissue": [
-          "bronchial epithelium",
-          "alveolar macrophages",
-          "mast cells",
-          "T-helper 2 lymphocytes"
+          "airway epithelium"
+        ],
+        "strength": 0.1,
+        "confidence": "medium",
+        "sources": [
+          "ref_cf_review_2017"
+        ]
+      }
+    },
+    {
+      "id": "e53",
+      "source": "infection-burden",
+      "target": "sickle-cell-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "blood/vasculature"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_infection_review_2015"
+        ]
+      }
+    },
+    {
+      "id": "e54",
+      "source": "heat-stress",
+      "target": "sickle-cell-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "blood/vasculature"
+        ],
+        "strength": 0.35,
+        "confidence": "low",
+        "sources": [
+          "ref_heat_health_2018"
+        ]
+      }
+    },
+    {
+      "id": "e55",
+      "source": "air-pollution",
+      "target": "sickle-cell-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "blood/vasculature"
+        ],
+        "strength": 0.3,
+        "confidence": "low",
+        "sources": [
+          "ref_airpollution_mechanisms_2019"
+        ]
+      }
+    },
+    {
+      "id": "e56",
+      "source": "hbb",
+      "target": "sickle-cell-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "blood/vasculature"
+        ],
+        "strength": 0.1,
+        "confidence": "medium",
+        "sources": [
+          "ref_scd_review_2014"
+        ]
+      }
+    },
+    {
+      "id": "e57",
+      "source": "infection-burden",
+      "target": "thalassemia",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "blood/bone marrow"
+        ],
+        "strength": 0.5,
+        "confidence": "low",
+        "sources": [
+          "ref_infection_review_2015"
+        ]
+      }
+    },
+    {
+      "id": "e58",
+      "source": "heat-stress",
+      "target": "thalassemia",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "blood/bone marrow"
+        ],
+        "strength": 0.3,
+        "confidence": "low",
+        "sources": [
+          "ref_heat_health_2018"
+        ]
+      }
+    },
+    {
+      "id": "e59",
+      "source": "diet-quality",
+      "target": "thalassemia",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "blood/bone marrow"
+        ],
+        "strength": 0.25,
+        "confidence": "low",
+        "sources": [
+          "ref_who_nutrition_2019"
+        ]
+      }
+    },
+    {
+      "id": "e60",
+      "source": "hbb",
+      "target": "thalassemia",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "blood/bone marrow"
+        ],
+        "strength": 0.1,
+        "confidence": "medium",
+        "sources": [
+          "ref_thal_review_2013"
+        ]
+      }
+    },
+    {
+      "id": "e61",
+      "source": "sleep-disruption",
+      "target": "alzheimers-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "brain"
+        ],
+        "strength": 0.5,
+        "confidence": "low",
+        "sources": [
+          "ref_sleep_review_2016"
+        ]
+      }
+    },
+    {
+      "id": "e62",
+      "source": "air-pollution",
+      "target": "alzheimers-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "brain"
+        ],
+        "strength": 0.45,
+        "confidence": "low",
+        "sources": [
+          "ref_airpollution_mechanisms_2019"
+        ]
+      }
+    },
+    {
+      "id": "e63",
+      "source": "physical-inactivity",
+      "target": "alzheimers-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "brain"
+        ],
+        "strength": 0.4,
+        "confidence": "low",
+        "sources": [
+          "ref_who_activity_2020"
+        ]
+      }
+    },
+    {
+      "id": "e64",
+      "source": "apoe",
+      "target": "alzheimers-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "brain"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_ad_gwas_2019"
+        ]
+      }
+    },
+    {
+      "id": "e65",
+      "source": "app",
+      "target": "alzheimers-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "brain"
+        ],
+        "strength": 0.1,
+        "confidence": "medium",
+        "sources": [
+          "ref_ad_gwas_2019"
+        ]
+      }
+    },
+    {
+      "id": "e66",
+      "source": "diet-quality",
+      "target": "colorectal-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "colon epithelium"
+        ],
+        "strength": 0.55,
+        "confidence": "medium",
+        "sources": [
+          "ref_who_nutrition_2019"
+        ]
+      }
+    },
+    {
+      "id": "e67",
+      "source": "microbiome-alteration",
+      "target": "colorectal-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "colon epithelium"
+        ],
+        "strength": 0.4,
+        "confidence": "low",
+        "sources": [
+          "ref_microbiome_crc_2019"
+        ]
+      }
+    },
+    {
+      "id": "e68",
+      "source": "alcohol",
+      "target": "colorectal-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "colon epithelium"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_alcohol_cancer_2018"
+        ]
+      }
+    },
+    {
+      "id": "e69",
+      "source": "apc",
+      "target": "colorectal-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "colon epithelium"
+        ],
+        "strength": 0.1,
+        "confidence": "medium",
+        "sources": [
+          "ref_crc_hereditary_2016"
+        ]
+      }
+    },
+    {
+      "id": "e70",
+      "source": "mlh1",
+      "target": "colorectal-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "colon epithelium"
+        ],
+        "strength": 0.1,
+        "confidence": "medium",
+        "sources": [
+          "ref_crc_hereditary_2016"
+        ]
+      }
+    },
+    {
+      "id": "e71",
+      "source": "physical-inactivity",
+      "target": "marfan-syndrome",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "connective tissue/aorta"
+        ],
+        "strength": 0.2,
+        "confidence": "low",
+        "sources": [
+          "ref_who_activity_2020"
+        ]
+      }
+    },
+    {
+      "id": "e72",
+      "source": "psychosocial-stress",
+      "target": "marfan-syndrome",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "connective tissue/aorta"
+        ],
+        "strength": 0.2,
+        "confidence": "low",
+        "sources": [
+          "ref_stress_review_2017"
+        ]
+      }
+    },
+    {
+      "id": "e73",
+      "source": "air-pollution",
+      "target": "marfan-syndrome",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "connective tissue/aorta"
+        ],
+        "strength": 0.2,
+        "confidence": "low",
+        "sources": [
+          "ref_airpollution_mechanisms_2019"
+        ]
+      }
+    },
+    {
+      "id": "e74",
+      "source": "fbn1",
+      "target": "marfan-syndrome",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "connective tissue/aorta"
+        ],
+        "strength": 0.1,
+        "confidence": "medium",
+        "sources": [
+          "ref_marfan_review_2016"
+        ]
+      }
+    },
+    {
+      "id": "e75",
+      "source": "high-sodium-intake",
+      "target": "hypertension",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "kidney",
+          "vasculature"
         ],
         "strength": 0.7,
         "confidence": "medium",
         "sources": [
-          "ref3"
+          "ref_sodium_bp_2019"
         ]
       }
     },
     {
-      "id": "e10",
+      "id": "e76",
+      "source": "psychosocial-stress",
+      "target": "hypertension",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "kidney",
+          "vasculature"
+        ],
+        "strength": 0.45,
+        "confidence": "low",
+        "sources": [
+          "ref_stress_review_2017"
+        ]
+      }
+    },
+    {
+      "id": "e77",
+      "source": "physical-inactivity",
+      "target": "hypertension",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "kidney",
+          "vasculature"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_who_activity_2020"
+        ]
+      }
+    },
+    {
+      "id": "e78",
+      "source": "ace",
+      "target": "hypertension",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "kidney",
+          "vasculature"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_bp_gwas_2018"
+        ]
+      }
+    },
+    {
+      "id": "e79",
+      "source": "agt",
+      "target": "hypertension",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "kidney",
+          "vasculature"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_bp_gwas_2018"
+        ]
+      }
+    },
+    {
+      "id": "e80",
+      "source": "umod",
+      "target": "hypertension",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "kidney",
+          "vasculature"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_bp_gwas_2018"
+        ]
+      }
+    },
+    {
+      "id": "e81",
+      "source": "smoking",
+      "target": "pulmonary-fibrosis",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "lung"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_smoking_report_2018"
+        ]
+      }
+    },
+    {
+      "id": "e82",
+      "source": "occupational-dust",
+      "target": "pulmonary-fibrosis",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "lung"
+        ],
+        "strength": 0.55,
+        "confidence": "medium",
+        "sources": [
+          "ref_occupational_exposure_2015"
+        ]
+      }
+    },
+    {
+      "id": "e83",
+      "source": "air-pollution",
+      "target": "pulmonary-fibrosis",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "lung"
+        ],
+        "strength": 0.35,
+        "confidence": "low",
+        "sources": [
+          "ref_airpollution_mechanisms_2019"
+        ]
+      }
+    },
+    {
+      "id": "e84",
+      "source": "tert",
+      "target": "pulmonary-fibrosis",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "lung"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_ipf_gwas_2019"
+        ]
+      }
+    },
+    {
+      "id": "e85",
+      "source": "terc",
+      "target": "pulmonary-fibrosis",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "lung"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_ipf_gwas_2019"
+        ]
+      }
+    },
+    {
+      "id": "e86",
+      "source": "alcohol",
+      "target": "breast-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "breast epithelium"
+        ],
+        "strength": 0.55,
+        "confidence": "medium",
+        "sources": [
+          "ref_alcohol_cancer_2018"
+        ]
+      }
+    },
+    {
+      "id": "e87",
+      "source": "ionizing-radiation",
+      "target": "breast-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "breast epithelium"
+        ],
+        "strength": 0.5,
+        "confidence": "low",
+        "sources": [
+          "ref_radiation_review_2019"
+        ]
+      }
+    },
+    {
+      "id": "e88",
+      "source": "endocrine-disruptors",
+      "target": "breast-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "breast epithelium"
+        ],
+        "strength": 0.35,
+        "confidence": "low",
+        "sources": [
+          "ref_endocrine_disruptors_2017"
+        ]
+      }
+    },
+    {
+      "id": "e89",
+      "source": "brca1",
+      "target": "breast-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "breast epithelium"
+        ],
+        "strength": 0.1,
+        "confidence": "medium",
+        "sources": [
+          "ref_brca_review_2018"
+        ]
+      }
+    },
+    {
+      "id": "e90",
+      "source": "brca2",
+      "target": "breast-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "breast epithelium"
+        ],
+        "strength": 0.1,
+        "confidence": "medium",
+        "sources": [
+          "ref_brca_review_2018"
+        ]
+      }
+    },
+    {
+      "id": "e91",
+      "source": "tp53",
+      "target": "breast-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "breast epithelium"
+        ],
+        "strength": 0.1,
+        "confidence": "medium",
+        "sources": [
+          "ref_brca_review_2018"
+        ]
+      }
+    },
+    {
+      "id": "e92",
+      "source": "fgfr2",
+      "target": "breast-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "breast epithelium"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_breast_gwas_2017"
+        ]
+      }
+    },
+    {
+      "id": "e93",
+      "source": "tox3",
+      "target": "breast-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "breast epithelium"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_breast_gwas_2017"
+        ]
+      }
+    },
+    {
+      "id": "e94",
+      "source": "smoking",
+      "target": "lung-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "lung epithelium"
+        ],
+        "strength": 0.95,
+        "confidence": "high",
+        "sources": [
+          "ref_smoking_report_2018"
+        ]
+      }
+    },
+    {
+      "id": "e95",
+      "source": "air-pollution",
+      "target": "lung-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "lung epithelium"
+        ],
+        "strength": 0.55,
+        "confidence": "medium",
+        "sources": [
+          "ref_airpollution_mechanisms_2019"
+        ]
+      }
+    },
+    {
+      "id": "e96",
+      "source": "occupational-dust",
+      "target": "lung-cancer",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "lung epithelium"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_occupational_exposure_2015"
+        ]
+      }
+    },
+    {
+      "id": "e97",
+      "source": "chrna5",
+      "target": "lung-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "lung epithelium"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_lung_gwas_2017"
+        ]
+      }
+    },
+    {
+      "id": "e98",
+      "source": "egfr",
+      "target": "lung-cancer",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "lung epithelium"
+        ],
+        "strength": 0.1,
+        "confidence": "medium",
+        "sources": [
+          "ref_lung_gwas_2017"
+        ]
+      }
+    },
+    {
+      "id": "e99",
+      "source": "smoking",
+      "target": "copd",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "lung"
+        ],
+        "strength": 0.9,
+        "confidence": "high",
+        "sources": [
+          "ref_smoking_report_2018"
+        ]
+      }
+    },
+    {
+      "id": "e100",
+      "source": "air-pollution",
+      "target": "copd",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "lung"
+        ],
+        "strength": 0.55,
+        "confidence": "medium",
+        "sources": [
+          "ref_airpollution_mechanisms_2019"
+        ]
+      }
+    },
+    {
+      "id": "e101",
+      "source": "occupational-dust",
+      "target": "copd",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "lung"
+        ],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": [
+          "ref_occupational_exposure_2015"
+        ]
+      }
+    },
+    {
+      "id": "e102",
+      "source": "serpina1",
+      "target": "copd",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "lung"
+        ],
+        "strength": 0.1,
+        "confidence": "medium",
+        "sources": [
+          "ref_a1at_review_2017"
+        ]
+      }
+    },
+    {
+      "id": "e103",
+      "source": "sleep-disruption",
+      "target": "huntington-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "brain"
+        ],
+        "strength": 0.25,
+        "confidence": "low",
+        "sources": [
+          "ref_sleep_review_2016"
+        ]
+      }
+    },
+    {
+      "id": "e104",
+      "source": "psychosocial-stress",
+      "target": "huntington-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "brain"
+        ],
+        "strength": 0.25,
+        "confidence": "low",
+        "sources": [
+          "ref_stress_review_2017"
+        ]
+      }
+    },
+    {
+      "id": "e105",
+      "source": "physical-inactivity",
+      "target": "huntington-disease",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "brain"
+        ],
+        "strength": 0.2,
+        "confidence": "low",
+        "sources": [
+          "ref_who_activity_2020"
+        ]
+      }
+    },
+    {
+      "id": "e106",
+      "source": "htt",
+      "target": "huntington-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "brain"
+        ],
+        "strength": 0.1,
+        "confidence": "medium",
+        "sources": [
+          "ref_hd_review_2017"
+        ]
+      }
+    },
+    {
+      "id": "e107",
+      "source": "crowding-housing",
+      "target": "covid-19-severity",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "respiratory epithelium"
+        ],
+        "strength": 0.55,
+        "confidence": "medium",
+        "sources": [
+          "ref_housing_infection_2020"
+        ]
+      }
+    },
+    {
+      "id": "e108",
+      "source": "air-pollution",
+      "target": "covid-19-severity",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "respiratory epithelium"
+        ],
+        "strength": 0.4,
+        "confidence": "low",
+        "sources": [
+          "ref_airpollution_mechanisms_2019"
+        ]
+      }
+    },
+    {
+      "id": "e109",
+      "source": "smoking",
+      "target": "covid-19-severity",
+      "type": "modifier",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "amplify",
+        "tissue": [
+          "respiratory epithelium"
+        ],
+        "strength": 0.4,
+        "confidence": "low",
+        "sources": [
+          "ref_smoking_report_2018"
+        ]
+      }
+    },
+    {
+      "id": "e110",
+      "source": "oas1",
+      "target": "covid-19-severity",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "respiratory epithelium"
+        ],
+        "strength": 0.7,
+        "confidence": "medium",
+        "sources": [
+          "ref_covid_hgi_2021"
+        ]
+      }
+    },
+    {
+      "id": "e111",
+      "source": "abo",
+      "target": "covid-19-severity",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [
+          "respiratory epithelium"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_covid_hgi_2021"
+        ]
+      }
+    },
+    {
+      "id": "e112",
+      "source": "slco1b1",
+      "target": "coronary-artery-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [],
+        "strength": 0.4,
+        "confidence": "medium",
+        "sources": []
+      }
+    },
+    {
+      "id": "e113",
+      "source": "psen2",
+      "target": "alzheimers-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": []
+      }
+    },
+    {
+      "id": "e114",
+      "source": "hba2",
+      "target": "thalassemia",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [],
+        "strength": 0.9,
+        "confidence": "medium",
+        "sources": []
+      }
+    },
+    {
+      "id": "e115",
+      "source": "psen1",
+      "target": "alzheimers-disease",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [],
+        "strength": 0.6,
+        "confidence": "medium",
+        "sources": []
+      }
+    },
+    {
+      "id": "e116",
+      "source": "hba1",
+      "target": "thalassemia",
+      "type": "association",
+      "attrs": {
+        "evidence_type": "literature",
+        "direction": "unknown",
+        "tissue": [],
+        "strength": 0.9,
+        "confidence": "medium",
+        "sources": []
+      }
+    },
+    {
+      "id": "e117",
+      "source": "dna-repair",
+      "target": "breast-cancer",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "epithelium"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_brca_review_2018"
+        ]
+      }
+    },
+    {
+      "id": "e118",
+      "source": "dna-repair",
+      "target": "colorectal-cancer",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "epithelium"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_crc_hereditary_2016"
+        ]
+      }
+    },
+    {
+      "id": "e119",
+      "source": "brca1",
+      "target": "dna-repair",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "epithelium"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_brca_review_2018"
+        ]
+      }
+    },
+    {
+      "id": "e120",
+      "source": "brca2",
+      "target": "dna-repair",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "epithelium"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_brca_review_2018"
+        ]
+      }
+    },
+    {
+      "id": "e121",
+      "source": "mlh1",
+      "target": "dna-repair",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "epithelium"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_crc_hereditary_2016"
+        ]
+      }
+    },
+    {
+      "id": "e122",
+      "source": "apc",
+      "target": "dna-repair",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "epithelium"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_crc_hereditary_2016"
+        ]
+      }
+    },
+    {
+      "id": "e123",
       "source": "nf-kb",
       "target": "asthma",
       "type": "pathway",
@@ -280,20 +3252,35 @@
         "evidence_type": "pathway",
         "direction": "unknown",
         "tissue": [
-          "bronchial epithelium",
-          "macrophages",
-          "endothelium"
+          "lung"
         ],
         "strength": 0.5,
         "confidence": "medium",
         "sources": [
-          "ref1",
-          "ref4"
+          "ref_airpollution_mechanisms_2019"
         ]
       }
     },
     {
-      "id": "e11",
+      "id": "e124",
+      "source": "nf-kb",
+      "target": "rheumatoid-arthritis",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "lung"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_ra_immunology_2018"
+        ]
+      }
+    },
+    {
+      "id": "e125",
       "source": "il33",
       "target": "nf-kb",
       "type": "pathway",
@@ -301,24 +3288,219 @@
         "evidence_type": "pathway",
         "direction": "unknown",
         "tissue": [
-          "bronchial epithelium",
-          "macrophages",
-          "endothelium"
+          "lung"
         ],
         "strength": 0.5,
         "confidence": "medium",
         "sources": [
-          "ref1",
-          "ref4"
+          "ref_airpollution_mechanisms_2019"
+        ]
+      }
+    },
+    {
+      "id": "e126",
+      "source": "raas",
+      "target": "hypertension",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "kidney"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_raas_review_2016"
+        ]
+      }
+    },
+    {
+      "id": "e127",
+      "source": "ace",
+      "target": "raas",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "kidney"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_raas_review_2016"
+        ]
+      }
+    },
+    {
+      "id": "e128",
+      "source": "agt",
+      "target": "raas",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "kidney"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_raas_review_2016"
+        ]
+      }
+    },
+    {
+      "id": "e129",
+      "source": "insulin-signaling",
+      "target": "type-2-diabetes",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "pancreatic islets"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_t2d_gwas_2018"
+        ]
+      }
+    },
+    {
+      "id": "e130",
+      "source": "tcf7l2",
+      "target": "insulin-signaling",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "pancreatic islets"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_t2d_gwas_2018"
+        ]
+      }
+    },
+    {
+      "id": "e131",
+      "source": "pparg",
+      "target": "insulin-signaling",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "pancreatic islets"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_t2d_gwas_2018"
+        ]
+      }
+    },
+    {
+      "id": "e132",
+      "source": "ldl-metabolism",
+      "target": "coronary-artery-disease",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "liver"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_cad_gwas_2015"
+        ]
+      }
+    },
+    {
+      "id": "e133",
+      "source": "ldlr",
+      "target": "ldl-metabolism",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "liver"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_cad_gwas_2015"
+        ]
+      }
+    },
+    {
+      "id": "e134",
+      "source": "apob",
+      "target": "ldl-metabolism",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "liver"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_cad_gwas_2015"
+        ]
+      }
+    },
+    {
+      "id": "e135",
+      "source": "pcsk9",
+      "target": "ldl-metabolism",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "liver"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_cad_gwas_2015"
+        ]
+      }
+    },
+    {
+      "id": "e136",
+      "source": "lpa",
+      "target": "ldl-metabolism",
+      "type": "pathway",
+      "attrs": {
+        "evidence_type": "pathway",
+        "direction": "unknown",
+        "tissue": [
+          "liver"
+        ],
+        "strength": 0.5,
+        "confidence": "medium",
+        "sources": [
+          "ref_cad_gwas_2015"
         ]
       }
     }
   ],
   "metadata": {
-    "generated_at": "2026-02-27",
+    "generated_at": "2026-03-03",
     "pipeline_version": "1.0.0",
-    "node_count": 7,
-    "edge_count": 11,
+    "node_count": 95,
+    "edge_count": 136,
     "schema_version": "1.0"
   }
 }

@@ -1,0 +1,36 @@
+{
+  "id": "gene_tert",
+  "slug": "tert",
+  "symbol": "TERT",
+  "name": "Telomerase Reverse Transcriptase",
+  "chromosome": null,
+  "summary": "TERT is implicated in pulmonary fibrosis susceptibility via telomere maintenance biology in some studies.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "nf-kb"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "pulmonary-fibrosis",
+      "evidence_type": "GWAS",
+      "strength": 0.6
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "medium",
+  "references": [
+    {
+      "id": "ref_ipf_gwas_2019",
+      "title": "Genome-wide association meta-analysis of idiopathic pulmonary fibrosis identifies susceptibility loci",
+      "authors": "IPF GWAS Consortium",
+      "year": 2019,
+      "journal": "Nature Genetics"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

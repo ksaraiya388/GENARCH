@@ -1,0 +1,36 @@
+{
+  "id": "gene_pcsk9",
+  "slug": "pcsk9",
+  "symbol": "PCSK9",
+  "name": "Proprotein Convertase Subtilisin/Kexin Type 9",
+  "chromosome": null,
+  "summary": "PCSK9 modulates LDLR levels and is implicated in lipid pathways relevant to coronary artery disease biology.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "ldl-metabolism"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "coronary-artery-disease",
+      "evidence_type": "GWAS",
+      "strength": 0.6
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "medium",
+  "references": [
+    {
+      "id": "ref_cad_gwas_2015",
+      "title": "Genome-wide association meta-analysis of coronary artery disease identifies loci and pathways",
+      "authors": "CAD GWAS Consortium",
+      "year": 2015,
+      "journal": "Nature Genetics"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

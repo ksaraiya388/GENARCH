@@ -1,0 +1,41 @@
+{
+  "id": "gene_hla_drb1",
+  "slug": "hla-drb1",
+  "symbol": "HLA-DRB1",
+  "name": "Major Histocompatibility Complex, Class II, DR Beta 1",
+  "chromosome": null,
+  "summary": "HLA-DRB1 alleles are associated with multiple autoimmune diseases including RA and MS in population genetics.",
+  "molecular_function": [],
+  "protein_class": null,
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "nf-kb"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "rheumatoid-arthritis",
+      "evidence_type": "GWAS",
+      "strength": 0.8
+    },
+    {
+      "disease_slug": "multiple-sclerosis",
+      "evidence_type": "GWAS",
+      "strength": 0.8
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "high",
+  "references": [
+    {
+      "id": "ref_ra_gwas_2014",
+      "title": "Meta-analysis of genome-wide association studies identifies risk loci for rheumatoid arthritis",
+      "authors": "RA GWAS Consortium",
+      "year": 2014,
+      "journal": "Nature Genetics"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

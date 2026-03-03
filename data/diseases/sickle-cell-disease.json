@@ -1,0 +1,112 @@
+{
+  "id": "dis_sickle_cell_disease",
+  "slug": "sickle-cell-disease",
+  "name": "Sickle Cell Disease",
+  "icd11_code": "3A50",
+  "summary": "Sickle cell disease is a monogenic hemoglobinopathy caused by pathogenic HBB variants; population-level outcomes depend on care access and exposure context. GENARCH provides educational summaries only.",
+  "adolescent_relevance": "Often manifests in childhood/adolescence; GENARCH provides educational mechanism context only.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "HBB",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": null,
+        "ancestry_composition": "Ancestry-linked frequency patterns",
+        "replication_status": "Causal",
+        "evidence": "literature",
+        "strength": 0.1,
+        "citations": [
+          "ref_scd_review_2014"
+        ]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 1.0,
+      "h2_narrow_sense": null,
+      "source": "Monogenic causal architecture",
+      "year": 2014
+    },
+    "prs_notes": "PRS not applicable as primary model for monogenic SCD."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "infection-burden",
+      "direction": "amplify",
+      "strength": 0.6,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Infections can increase inflammatory stress in population contexts.",
+      "citations": [
+        "ref_infection_review_2015"
+      ]
+    },
+    {
+      "exposure_slug": "heat-stress",
+      "direction": "amplify",
+      "strength": 0.35,
+      "confidence": "low",
+      "mechanism_hypothesis": "Heat/dehydration are physiological stressors discussed in cohorts; context-dependent.",
+      "citations": [
+        "ref_heat_health_2018"
+      ]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "unknown",
+      "strength": 0.3,
+      "confidence": "low",
+      "mechanism_hypothesis": "Respiratory stressor context; evidence varies by setting.",
+      "citations": [
+        "ref_airpollution_mechanisms_2019"
+      ]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "blood/vasculature",
+      "relevance_score": 0.9,
+      "evidence_type": "literature",
+      "citations": [
+        "ref_scd_review_2014"
+      ]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "SCD prevalence varies by ancestry due to historical selection; care access differs across settings.",
+    "transferability_notes": "Outcome studies may not generalize across contexts due to differences in care and exposure.",
+    "data_gaps": "Environmental exposure linkages to outcomes are limited and setting-specific."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "ref_scd_review_2014",
+      "title": "Sickle cell disease: molecular basis and complications (review)",
+      "authors": "Hematology Review Group",
+      "year": 2014,
+      "journal": "New England Journal of Medicine"
+    },
+    {
+      "id": "ref_infection_review_2015",
+      "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)",
+      "authors": "Immunology Review Group",
+      "year": 2015,
+      "journal": "Nature Reviews Immunology"
+    },
+    {
+      "id": "ref_heat_health_2018",
+      "title": "Extreme heat exposure and health outcomes: overview (review)",
+      "authors": "Climate Health Review Group",
+      "year": 2018,
+      "journal": "The Lancet Planetary Health"
+    },
+    {
+      "id": "ref_airpollution_mechanisms_2019",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

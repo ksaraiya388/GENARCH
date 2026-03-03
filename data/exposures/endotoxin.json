@@ -1,24 +1,35 @@
 {
   "id": "exp_endotoxin",
   "slug": "endotoxin",
-  "name": "Endotoxin (Farm/Microbial Exposure)",
-  "definition": "Lipopolysaccharide from Gram-negative bacteria; exposure common in farm environments. Early-life exposure may protect against atopic asthma (hygiene hypothesis).",
+  "name": "Endotoxin (Environmental Microbial Products)",
+  "definition": "Endotoxin (LPS) exposure in certain environments; studied as context-dependent modifier of allergic outcomes in population research.",
   "proxies": [
-    {"name": "Endotoxin", "unit": "EU/m³", "measurement_method": "LAL assay", "data_source": "Environmental sampling"}
+    {
+      "name": "dust endotoxin",
+      "unit": "EU/mg",
+      "measurement_method": "LAL assay",
+      "data_source": "environmental studies"
+    }
   ],
   "systems_affected": [
-    {"system": "immune", "mechanism_summary": "Th1/regulatory skewing may protect against atopic asthma"}
+    {
+      "system": "immune",
+      "mechanism_summary": "Innate immune receptor activation context (TLR4)."
+    }
   ],
-  "sensitive_windows": [
-    {"period": "early childhood", "age_range": "0-5", "mechanism_rationale": "Immune maturation window", "citations": ["ref1"]}
-  ],
+  "sensitive_windows": [],
   "gxe_highlights": [],
-  "tissues": [
-    {"name": "airway mucosa", "effect_type": "immune modulation", "citations": ["ref1"]}
-  ],
+  "tissues": [],
+  "exposure_distribution": null,
   "references": [
-    {"id": "ref1", "title": "Farm exposure and asthma", "authors": "von Mutius E, et al.", "year": 2000, "journal": "Lancet"}
+    {
+      "id": "ref_endotoxin_allergy_2011",
+      "title": "Endotoxin exposure and allergic disease: complex context-dependent effects",
+      "authors": "Barnes PJ et al.",
+      "year": 2011,
+      "journal": "Allergy"
+    }
   ],
   "schema_version": "1.0",
-  "last_updated": "2026-02-26"
+  "last_updated": "2026-03-03"
 }

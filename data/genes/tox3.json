@@ -1,0 +1,36 @@
+{
+  "id": "gene_tox3",
+  "slug": "tox3",
+  "symbol": "TOX3",
+  "name": "TOX High Mobility Group Box Family Member 3",
+  "chromosome": null,
+  "summary": "TOX3 is a breast cancer susceptibility locus in GWAS; included for polygenic context.",
+  "molecular_function": [],
+  "protein_class": "transcription_factor",
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "dna-repair"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "breast-cancer",
+      "evidence_type": "GWAS",
+      "strength": 0.5
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "low",
+  "references": [
+    {
+      "id": "ref_breast_gwas_2017",
+      "title": "Breast cancer GWAS meta-analysis identifies susceptibility loci",
+      "authors": "BCAC Consortium",
+      "year": 2017,
+      "journal": "Nature Genetics"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

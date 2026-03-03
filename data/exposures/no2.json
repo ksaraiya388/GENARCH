@@ -1,20 +1,20 @@
 {
-  "id": "exp_ozone",
-  "slug": "ozone",
-  "name": "Ground-Level Ozone",
-  "definition": "Ozone (O3) is a reactive gas formed via photochemical reactions; studied as a population-level modifier of respiratory outcomes.",
+  "id": "exp_no2",
+  "slug": "no2",
+  "name": "Nitrogen Dioxide (NO2)",
+  "definition": "Nitrogen dioxide (NO2) is a traffic-related air pollutant often used as a proxy for roadway emissions exposure in population studies.",
   "proxies": [
     {
-      "name": "O3 (8-hr max)",
+      "name": "NO2",
       "unit": "ppb",
-      "measurement_method": "monitor",
+      "measurement_method": "Regulatory monitors or modeled surfaces",
       "data_source": "EPA AQS"
     }
   ],
   "systems_affected": [
     {
       "system": "respiratory",
-      "mechanism_summary": "Oxidative irritation and airway inflammation context."
+      "mechanism_summary": "Airway irritation and oxidative stress associations in cohorts."
     }
   ],
   "sensitive_windows": [],

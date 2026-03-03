@@ -1,0 +1,36 @@
+{
+  "id": "gene_tcf7l2",
+  "slug": "tcf7l2",
+  "symbol": "TCF7L2",
+  "name": "Transcription Factor 7 Like 2",
+  "chromosome": null,
+  "summary": "TCF7L2 is among the most consistently associated loci for type 2 diabetes in GWAS and is linked to islet biology.",
+  "molecular_function": [],
+  "protein_class": "transcription_factor",
+  "regulatory_notes": null,
+  "expression_context": [],
+  "pathways": [
+    "insulin-signaling"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "type-2-diabetes",
+      "evidence_type": "GWAS",
+      "strength": 0.8
+    }
+  ],
+  "linked_exposures": [],
+  "mechanistic_hypotheses": [],
+  "confidence": "high",
+  "references": [
+    {
+      "id": "ref_t2d_gwas_2018",
+      "title": "Multi-ancestry meta-analysis of type 2 diabetes identifies loci",
+      "authors": "T2D GWAS Consortium",
+      "year": 2018,
+      "journal": "Nature Genetics"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

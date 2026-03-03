@@ -1,0 +1,125 @@
+{
+  "id": "dis_tuberculosis_susceptibility",
+  "slug": "tuberculosis-susceptibility",
+  "name": "Tuberculosis Susceptibility",
+  "icd11_code": "1B10",
+  "summary": "Tuberculosis susceptibility and outcomes depend on exposure intensity and host immune response; host genetics evidence is heterogeneous across settings. GENARCH provides educational summaries only.",
+  "adolescent_relevance": "TB affects adolescents/young adults in many regions; included for educational host genetics and exposure context only.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "TLR2",
+        "variant": null,
+        "gwas_p": 1e-06,
+        "effect_size": 0.04,
+        "ancestry_composition": "Cohort-specific",
+        "replication_status": "Mixed",
+        "evidence": "literature",
+        "strength": 0.2,
+        "citations": [
+          "ref_tb_host_review_2016"
+        ]
+      },
+      {
+        "gene": "IFNG",
+        "variant": null,
+        "gwas_p": 1e-06,
+        "effect_size": 0.04,
+        "ancestry_composition": "Cohort-specific",
+        "replication_status": "Mixed",
+        "evidence": "literature",
+        "strength": 0.2,
+        "citations": [
+          "ref_tb_host_review_2016"
+        ]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.2,
+      "h2_narrow_sense": null,
+      "source": "Estimates vary widely by exposure setting and phenotype definition",
+      "year": 2016
+    },
+    "prs_notes": "PRS not broadly established; highly context-dependent."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "crowding-housing",
+      "direction": "amplify",
+      "strength": 0.7,
+      "confidence": "medium",
+      "mechanism_hypothesis": "Crowding increases exposure opportunity for airborne pathogens.",
+      "citations": [
+        "ref_housing_infection_2020"
+      ]
+    },
+    {
+      "exposure_slug": "diet-quality",
+      "direction": "unknown",
+      "strength": 0.4,
+      "confidence": "low",
+      "mechanism_hypothesis": "Nutrition status relates to immune function; confounding is substantial.",
+      "citations": [
+        "ref_who_nutrition_2019"
+      ]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "unknown",
+      "strength": 0.35,
+      "confidence": "low",
+      "mechanism_hypothesis": "Respiratory vulnerability context; evidence varies.",
+      "citations": [
+        "ref_airpollution_mechanisms_2019"
+      ]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "lung/immune system",
+      "relevance_score": 0.8,
+      "evidence_type": "literature",
+      "citations": [
+        "ref_tb_host_review_2016"
+      ]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "TB studies are region- and cohort-specific; ancestry and pathogen lineage context matters.",
+    "transferability_notes": "Host genetics may not transfer across settings with different exposure intensity.",
+    "data_gaps": "Phenotype definitions and exposure measurement vary widely."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "ref_tb_host_review_2016",
+      "title": "Host genetics of tuberculosis susceptibility: overview (review)",
+      "authors": "Infectious Disease Genetics Review Group",
+      "year": 2016,
+      "journal": "Nature Reviews Immunology"
+    },
+    {
+      "id": "ref_housing_infection_2020",
+      "title": "Housing conditions and respiratory infection risk: overview (review)",
+      "authors": "Public Health Review Group",
+      "year": 2020,
+      "journal": "Public Health"
+    },
+    {
+      "id": "ref_who_nutrition_2019",
+      "title": "Healthy diet factsheet and guidance",
+      "authors": "World Health Organization",
+      "year": 2019,
+      "journal": "WHO"
+    },
+    {
+      "id": "ref_airpollution_mechanisms_2019",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}

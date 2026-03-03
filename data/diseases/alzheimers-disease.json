@@ -1,0 +1,125 @@
+{
+  "id": "dis_alzheimers_disease",
+  "slug": "alzheimers-disease",
+  "name": "Alzheimer’s Disease",
+  "icd11_code": "8A20",
+  "summary": "Alzheimer’s disease is a neurodegenerative condition with late-onset polygenic architecture and notable loci such as APOE. GENARCH provides population-level educational summaries only.",
+  "adolescent_relevance": "Typically manifests later in life; included to illustrate neuroinflammation and genetic architecture concepts in an educational framing.",
+  "genetic_architecture": {
+    "top_loci": [
+      {
+        "gene": "APOE",
+        "variant": null,
+        "gwas_p": 1e-50,
+        "effect_size": 0.2,
+        "ancestry_composition": "Effect differs by ancestry",
+        "replication_status": "Replicated",
+        "evidence": "literature",
+        "strength": 0.6,
+        "citations": [
+          "ref_ad_gwas_2019"
+        ]
+      },
+      {
+        "gene": "APP",
+        "variant": null,
+        "gwas_p": null,
+        "effect_size": null,
+        "ancestry_composition": "Rare familial",
+        "replication_status": "Established",
+        "evidence": "literature",
+        "strength": 0.1,
+        "citations": [
+          "ref_ad_gwas_2019"
+        ]
+      }
+    ],
+    "heritability_estimate": {
+      "h2_snp": 0.6,
+      "h2_narrow_sense": null,
+      "source": "Twin/family and GWAS-based estimates (varies)",
+      "year": 2019
+    },
+    "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+  },
+  "exposure_modifiers": [
+    {
+      "exposure_slug": "sleep-disruption",
+      "direction": "amplify",
+      "strength": 0.5,
+      "confidence": "low",
+      "mechanism_hypothesis": "Sleep patterns are associated with cognitive outcomes in population studies; causal direction is complex.",
+      "citations": [
+        "ref_sleep_review_2016"
+      ]
+    },
+    {
+      "exposure_slug": "air-pollution",
+      "direction": "amplify",
+      "strength": 0.45,
+      "confidence": "low",
+      "mechanism_hypothesis": "Air pollution is studied in relation to neurocognitive outcomes; evidence varies by design.",
+      "citations": [
+        "ref_airpollution_mechanisms_2019"
+      ]
+    },
+    {
+      "exposure_slug": "physical-inactivity",
+      "direction": "amplify",
+      "strength": 0.4,
+      "confidence": "low",
+      "mechanism_hypothesis": "Vascular and cardiometabolic factors influence brain health in cohorts.",
+      "citations": [
+        "ref_who_activity_2020"
+      ]
+    }
+  ],
+  "tissues": [
+    {
+      "name": "brain",
+      "relevance_score": 0.85,
+      "evidence_type": "literature",
+      "citations": [
+        "ref_ad_gwas_2019"
+      ]
+    }
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Many AD genetics studies are European-ancestry dominated historically.",
+    "transferability_notes": "Effect estimates can vary across populations due to LD and ascertainment.",
+    "data_gaps": "Diagnosis and exposure measurement differ across settings."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {
+      "id": "ref_ad_gwas_2019",
+      "title": "Genome-wide meta-analysis of Alzheimer’s disease identifies risk loci and highlights immune pathways",
+      "authors": "AD GWAS Consortium",
+      "year": 2019,
+      "journal": "Nature Genetics"
+    },
+    {
+      "id": "ref_sleep_review_2016",
+      "title": "Sleep duration and health outcomes: overview of population evidence (review)",
+      "authors": "Sleep Review Group",
+      "year": 2016,
+      "journal": "Sleep Medicine Reviews"
+    },
+    {
+      "id": "ref_airpollution_mechanisms_2019",
+      "title": "Air pollution and health: evidence and mechanisms (review)",
+      "authors": "Pope CA, Dockery DW",
+      "year": 2019,
+      "journal": "Journal of the Air & Waste Management Association"
+    },
+    {
+      "id": "ref_who_activity_2020",
+      "title": "WHO guidelines on physical activity and sedentary behaviour",
+      "authors": "World Health Organization",
+      "year": 2020,
+      "journal": "WHO"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-03"
+}
