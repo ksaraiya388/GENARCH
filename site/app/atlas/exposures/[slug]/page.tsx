@@ -30,6 +30,21 @@ export default async function ExposureDetailPage({
       <section className="content-card">
         <h1 className="text-3xl font-bold">{exposure.name}</h1>
         <p className="mt-3 text-textSecondary">{exposure.definition}</p>
+        <div className="mt-3 grid gap-2 text-sm text-textSecondary md:grid-cols-2">
+          <p>
+            <strong>Category:</strong> {exposure.exposure_category}
+          </p>
+          <p>
+            <strong>Effect direction:</strong> {exposure.effect_direction}
+          </p>
+          <p>
+            <strong>Dose-response model:</strong> {exposure.dose_response_model}
+          </p>
+          <p>
+            <strong>Temporal sensitivity:</strong> {exposure.temporal_sensitivity}
+          </p>
+        </div>
+        <p className="mt-2 text-sm text-textSecondary">{exposure.biological_mechanism}</p>
       </section>
 
       <section className="content-card">
@@ -74,6 +89,12 @@ export default async function ExposureDetailPage({
 
       <section className="content-card">
         <h2 className="section-title">GxE highlights</h2>
+        <p className="mt-2 text-sm text-textSecondary">
+          Interacting genes:{" "}
+          {exposure.interacting_genes
+            .map((slug) => geneMap.get(slug)?.symbol ?? slug)
+            .join(", ")}
+        </p>
         <ul className="mt-3 space-y-2 text-sm">
           {exposure.gxe_highlights.map((highlight) => (
             <li key={`${highlight.gene_slug}-${highlight.disease_slug}`} className="rounded border border-slate-200 p-3">

@@ -22,7 +22,9 @@ export default async function DiseasesIndexPage(): Promise<JSX.Element> {
           >
             <h2 className="section-title">{disease.name}</h2>
             <p className="mt-2 text-sm text-textSecondary">{disease.summary.slice(0, 160)}...</p>
-            <p className="mt-2 text-xs text-textSecondary">ICD-11: {disease.icd11_code}</p>
+            <p className="mt-2 text-xs text-textSecondary">
+              {disease.disease_category} • ICD-11: {disease.icd11_code}
+            </p>
           </Link>
         ))}
       </section>

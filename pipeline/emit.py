@@ -71,15 +71,43 @@ def emit_bundle(bundle: dict[str, Any]) -> None:
         [{"slug": entity["slug"], "name": entity["name"]} for entity in communities],
     )
 
-    _write_json(
-        Path("data/synonyms.json"),
-        {
-            "asthma": ["bronchial asthma", "reactive airway disease"],
-            "air-pollution": ["pm2.5", "particulate matter", "ambient pollution"],
-            "il33": ["interleukin 33", "il-33"],
-            "nf-kb-signaling": ["nf-kb", "nuclear factor kappa b"]
-        },
-    )
+    synonyms: dict[str, list[str]] = {}
+
+    def add_synonyms(key: str, values: list[str]) -> None:
+        normalized_values = sorted(
+            {
+                value.strip().lower()
+                for value in values
+                if value and value.strip() and value.strip().lower() != key.lower()
+            }
+        )
+        if normalized_values:
+            synonyms[key] = normalized_values
+
+    for disease in diseases:
+        add_synonyms(
+            disease["slug"],
+            [
+                disease["name"],
+                disease["name"].replace("&", "and"),
+                disease["name"].replace("disease", "").strip(),
+            ],
+        )
+    for exposure in exposures:
+        add_synonyms(
+            exposure["slug"],
+            [
+                exposure["name"],
+                exposure["name"].replace("(", "").replace(")", ""),
+                exposure["name"].replace("and", "&"),
+            ],
+        )
+    for gene in genes:
+        add_synonyms(gene["slug"], [gene["name"], gene["symbol"], gene["symbol"].replace("-", "")])
+    for pathway in pathways:
+        add_synonyms(pathway["slug"], [pathway["name"], pathway["name"].replace("-", " ")])
+
+    _write_json(Path("data/synonyms.json"), synonyms)
 
     releases = {
         "schema_version": "1.0",
@@ -88,7 +116,10 @@ def emit_bundle(bundle: dict[str, Any]) -> None:
             {
                 "slug": "2026",
                 "title": "GENARCH 2026 Annual Report",
-                "summary": "Initial v1 release with asthma-air pollution seed atlas, graph, and community module.",
+                "summary": (
+                    f"Expanded multi-disease atlas release with {len(diseases)} diseases, "
+                    f"{len(exposures)} exposures, {len(genes)} genes, and {len(pathways)} pathways."
+                ),
                 "date": "2026-02-26",
                 "pdf_path": "/api/reports/2026/pdf",
                 "report_path": "/updates/2026",

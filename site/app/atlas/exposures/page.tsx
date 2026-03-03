@@ -21,6 +21,7 @@ export default async function ExposureIndexPage(): Promise<JSX.Element> {
           >
             <h2 className="section-title">{exposure.name}</h2>
             <p className="mt-2 text-sm text-textSecondary">{exposure.definition.slice(0, 180)}...</p>
+            <p className="mt-2 text-xs text-textSecondary">{exposure.exposure_category}</p>
           </Link>
         ))}
       </section>

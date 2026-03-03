@@ -104,6 +104,17 @@ def validate_generated_data() -> tuple[bool, list[str]]:
 
     # Cross-link checks
     for disease in diseases:
+        for gene_slug in disease.major_genes:
+            if gene_slug not in gene_slugs:
+                errors.append(f"disease:{disease.slug} major_genes references missing gene '{gene_slug}'")
+        for exposure_slug in disease.environmental_exposures:
+            if exposure_slug not in exposure_slugs:
+                errors.append(
+                    f"disease:{disease.slug} environmental_exposures references missing exposure '{exposure_slug}'"
+                )
+        for pathway_slug in disease.causal_pathways:
+            if pathway_slug not in pathway_slugs:
+                errors.append(f"disease:{disease.slug} causal_pathways references missing pathway '{pathway_slug}'")
         for modifier in disease.exposure_modifiers:
             if modifier.exposure_slug not in exposure_slugs:
                 errors.append(
@@ -115,6 +126,9 @@ def validate_generated_data() -> tuple[bool, list[str]]:
         _validate_entity_citations(disease, f"disease:{disease.slug}", errors)
 
     for exposure in exposures:
+        for gene_slug in exposure.interacting_genes:
+            if gene_slug not in gene_slugs:
+                errors.append(f"exposure:{exposure.slug} interacting_genes references missing gene '{gene_slug}'")
         for highlight in exposure.gxe_highlights:
             if highlight.gene_slug not in gene_slugs:
                 errors.append(f"exposure:{exposure.slug} references missing gene '{highlight.gene_slug}'")
