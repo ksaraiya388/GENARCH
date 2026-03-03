@@ -1,109 +1,157 @@
 # GENARCH
 
-**GENARCH** (Genetic Epidemiology Network for At-Risk Community Health) is a next-generation scientific web atlas designed to close one of the most persistent gaps in modern biology: the disconnect between genetic architecture and environmental exposure science.
+GENARCH (Genetic Epidemiology Network for At-Risk Community Health) is a next-generation scientific web atlas that links:
 
-The atlas integrates genetic epidemiology, pathway biology, and community-level environmental data to support public understanding and informed action. It does **not** provide individual risk scores or clinical advice.
+- environmental exposures
+- genetic architecture
+- molecular pathways and tissues
+- community-level public health context
 
----
-
-## Project Description
-
-GENARCH combines:
-
-- **Atlas**: Curated diseases, exposures, genes, and pathways with evidence scoring and cross-references
-- **Graph**: Interactive knowledge graph of entity relationships
-- **Community**: County/census-tract-level hotspot model and exposure layers for environmental justice context
-- **Passport**: User-generated summary document (stateless, no accounts)
-- **Mechanism Briefs**: Narrative explanations of gene–environment mechanisms
-- **Reports**: Annual GENARCH reports
+> **Educational only; not medical advice.**
+> GENARCH does not provide individual risk scores, diagnosis, or treatment recommendations.
 
 ---
 
-## Setup
+## Repository structure
 
-### Local Development
+```text
+site/        # Next.js TypeScript web app
+pipeline/    # Python ETL + strict schema validation + report generation
+data/        # generated canonical artifacts
+docs/        # DB models + implementation checklists
+scripts/     # convenience scripts
+PRD.md
+METHODS.md
+MODEL_CARD.md
+ETHICS.md
+```
 
-**Prerequisites**: Python 3.11+, Node.js 20+, npm
+---
 
-1. **Clone the repository**
-   ```bash
-   git clone <repo-url>
-   cd genarch
-   ```
+## Quick start (local)
 
-2. **Install pipeline dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Install site dependencies**
-   ```bash
-   cd site && npm ci
-   cd ..
-   ```
-
-### Docker Compose
-
-A `docker-compose.yml` can be used for containerized development. Run:
+### 1) Install dependencies
 
 ```bash
-docker compose up --build
+npm install
+python3 -m pip install -e ./pipeline
 ```
 
-(Add `docker-compose.yml` as needed for your environment.)
+> `npm install` at repo root runs `postinstall`, which installs `site/` dependencies.
+> If postinstall scripts are disabled, run `npm --prefix site install`.
+
+### 2) Generate seed data + report
+
+```bash
+python3 -m pipeline.update --scope all
+python3 -m pipeline.report --year 2026
+python3 -m pipeline.validate
+```
+
+### 3) Run site
+
+```bash
+npm run site:dev
+```
+
+Open `http://localhost:3000`.
 
 ---
 
-## Required Commands
+## Docker compose (infrastructure services)
 
-| Command | Description |
-|---------|-------------|
-| `npm run site:dev` | Start Next.js development server |
-| `npm run site:build` | Build static site for production |
-| `npm run site:lint` | Lint the site with ESLint |
-| `python -m pipeline validate` | Validate pipeline schemas and cross-links |
-| `python -m pipeline update` | Run full pipeline (ingest → normalize → annotate → score → emit → validate) |
-| `python -m pipeline report --year 2026` | Generate annual report |
+Start PostgreSQL, Neo4j, and Redis:
+
+```bash
+docker compose up -d
+```
+
+Stop services:
+
+```bash
+docker compose down
+```
 
 ---
 
-## Directory Structure
+## Required commands (repo root)
 
+Canonical commands from the PRD:
+
+```bash
+npm run site:dev
+npm run site:build
+python -m pipeline.update --scope all
+python -m pipeline.update --scope disease --id asthma
+python -m pipeline.validate
+python -m pipeline.report --year 2026
 ```
-genarch/
-├── data/                 # Emitted JSON (diseases, exposures, genes, pathways, graph, community)
-├── docs/                 # Documentation (METHODS, ETHICS, MODEL_CARD, PRD)
-├── pipeline/             # Python pipeline
-│   ├── sources/          # Source TSV/JSON for ingest
-│   ├── ingest.py         # Stage 1: Ingest
-│   ├── normalize.py      # Stage 2: Normalize
-│   ├── annotate.py       # Stage 3: Annotate
-│   ├── score.py          # Stage 4: Score
-│   ├── emit.py           # Stage 5: Emit
-│   ├── validate.py       # Stage 6: Validate
-│   ├── graph_builder.py  # Build knowledge graph
-│   └── schemas.py        # Pydantic models
-├── site/                 # Next.js static site
-│   ├── app/              # App router pages
-│   └── package.json
-├── .github/workflows/    # CI/CD
-├── requirements.txt
-└── package.json
+
+If your machine does not have `python` aliased, use `python3`:
+
+```bash
+python3 -m pipeline.update --scope all
+python3 -m pipeline.update --scope disease --id asthma
+python3 -m pipeline.validate
+python3 -m pipeline.report --year 2026
 ```
+
+---
+
+## API surfaces
+
+### Next route handlers
+
+- `GET /api/search?q=...`
+- `POST /api/passport`
+- `GET /api/reports/:year/pdf`
+- `GET /api/community/:region/exposures`
+- `GET /api/healthstats/:region`
+
+### Express + Apollo server
+
+In `site/api-server/index.ts`:
+
+- GraphQL: `POST /api/graphql`
+- REST: `/search`, `/passport`, `/reports/:year/pdf`, `/community/:regionSlug/exposures`, `/healthstats/:regionSlug`
+
+Start local API server:
+
+```bash
+npm --prefix site run api:dev
+```
+
+---
+
+## Security controls
+
+- strict schema validation and sanitization on endpoint inputs
+- rate limiting on public endpoints (Redis-ready; memory fallback)
+- secure env-based key handling (`site/.env.example`)
+- hardened headers via `helmet` (Express) and Next middleware
+- no personal data persistence in passport flow
+
+---
+
+## CI
+
+`.github/workflows/ci.yml` enforces:
+
+1. pipeline lint/type checks
+2. `python -m pipeline.validate`
+3. `npm run site:build`
 
 ---
 
 ## Contributing
 
-1. Create a feature branch from `main`
-2. Make changes; ensure `python -m pipeline.validate` and `npm run site:build` pass
-3. Submit a pull request
-4. CI will run validation and build automatically
+1. Branch from `main`
+2. Keep pipeline and site checks green
+3. Open a PR and verify CI + Vercel checks
 
 ---
 
 ## License
 
-**CC BY-NC-SA 4.0** (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International)
-
+CC BY-NC-SA 4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International).
 You may share and adapt the work for non-commercial purposes, with attribution and under the same license.

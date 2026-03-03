@@ -7,6 +7,7 @@ node_modules/
 site/node_modules/
 site/.next/
 site/out/
+.next/
 
 __pycache__/
 .pytest_cache/
@@ -15,9 +16,12 @@ __pycache__/
 .venv/
 venv/
 pipeline/*.egg-info/
+*.egg-info/
 
 dist/
+build/
 coverage/
+*.log
 
 # Keep generated atlas artifacts committed.
 !data/

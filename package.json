@@ -1,12 +1,20 @@
 {
   "name": "genarch",
   "version": "1.0.0",
+  "description": "GENARCH — Global Exposome and Genetic Epidemiology Atlas",
   "private": true,
-  "description": "GENARCH — Global Exposome & Genetic Epidemiology Atlas",
+  "license": "CC-BY-NC-SA-4.0",
   "scripts": {
-    "site:dev": "npm run dev --prefix site",
-    "site:build": "npm run build --prefix site",
-    "site:lint": "npm run lint --prefix site"
-  },
-  "license": "CC-BY-NC-SA-4.0"
+    "postinstall": "npm --prefix site install",
+    "build": "npm --prefix site run build",
+    "dev": "npm --prefix site run dev",
+    "lint": "npm --prefix site run lint",
+    "site:dev": "npm --prefix site run dev",
+    "site:build": "python3 -m pipeline.validate && npm --prefix site run build",
+    "site:lint": "npm --prefix site run lint",
+    "site:export": "npm --prefix site run export",
+    "pipeline:update": "python3 -m pipeline.update --scope all",
+    "pipeline:validate": "python3 -m pipeline.validate",
+    "pipeline:report": "python3 -m pipeline.report --year 2026"
+  }
 }
