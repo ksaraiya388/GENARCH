@@ -1,5 +1,4 @@
 # GENARCH
-
 GENARCH (Genetic Epidemiology Network for At-Risk Community Health) is a next-generation scientific web atlas that links:
 
 - environmental exposures
@@ -37,8 +36,8 @@ npm install
 python3 -m pip install -e ./pipeline
 ```
 
-> `npm install` at repo root runs `postinstall`, which installs `site/` dependencies.
-> If postinstall scripts are disabled, run `npm --prefix site install`.
+> Note: `npm install` at repo root runs `postinstall`, which installs `site/` dependencies automatically.
+> If postinstall scripts are disabled, run `npm --prefix site install` manually.
 
 ### 2) Generate seed data + report
 
@@ -87,7 +86,7 @@ python -m pipeline.validate
 python -m pipeline.report --year 2026
 ```
 
-If your machine does not have `python` aliased, use `python3`:
+If your machine does not have `python` aliased, use `python3` for the same commands:
 
 ```bash
 python3 -m pipeline.update --scope all
@@ -154,4 +153,3 @@ npm --prefix site run api:dev
 ## License
 
 CC BY-NC-SA 4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International).
-You may share and adapt the work for non-commercial purposes, with attribution and under the same license.

@@ -1,0 +1,870 @@
+{
+  "schema_version": "1.0",
+  "last_updated": "2026-02-26",
+  "diseases": [
+    {
+      "id": "dis_asthma",
+      "slug": "asthma",
+      "name": "Asthma",
+      "icd11_code": "CA23",
+      "summary": "Asthma is a chronic inflammatory airway disease with variable airflow limitation and episodes of wheeze, cough, and chest tightness. The condition commonly emerges during childhood and adolescence, and symptom severity often changes over time due to environmental exposures and host biology. Atopic pathways, airway epithelial reactivity, and immune cell activation all contribute to phenotype diversity. Population studies indicate a polygenic architecture with many loci of modest effect rather than a single deterministic mutation. In practical terms, asthma risk reflects layered interactions between inherited susceptibility, air quality, household exposures, and developmental timing.",
+      "adolescent_relevance": "Adolescence is a key window because lung growth, airway remodeling, and changing outdoor activity patterns can alter exposure burden. Educational prevention strategies in this age range can reduce avoidable exacerbation triggers while reinforcing that GENARCH outputs are population-level and non-clinical.",
+      "genetic_architecture": {
+        "top_loci": [
+          {
+            "gene": "il33",
+            "variant": "rs992969",
+            "gwas_p": 2.4e-12,
+            "effect_size": 1.18,
+            "ancestry_composition": "Predominantly European cohorts with emerging multi-ancestry replication.",
+            "replication_status": "Replicated across independent cohorts.",
+            "evidence": "GWAS",
+            "strength": 0.86,
+            "citations": ["gwas_2019_demenais", "gtex_2020_cons"]
+          }
+        ],
+        "heritability_estimate": {
+          "h2_snp": 0.22,
+          "h2_narrow_sense": 0.45,
+          "source": "Meta-analysis of asthma GWAS and twin studies",
+          "year": 2020
+        },
+        "prs_notes": "Polygenic score transferability remains limited across ancestries because training cohorts are not evenly represented. GENARCH presents population-level interpretation only and does not provide individual PRS output."
+      },
+      "exposure_modifiers": [
+        {
+          "exposure_slug": "air-pollution",
+          "direction": "amplify",
+          "strength": 0.82,
+          "confidence": "high",
+          "mechanism_hypothesis": "PM2.5-driven oxidative stress can increase epithelial danger signaling and amplify IL33-linked inflammatory cascades in susceptible populations.",
+          "citations": ["air_2021_guarnieri", "lit_2023_pm25_il33"]
+        }
+      ],
+      "tissues": [
+        {
+          "name": "Bronchial epithelium",
+          "relevance_score": 0.93,
+          "evidence_type": "eQTL",
+          "citations": ["gtex_2020_cons", "lit_2023_pm25_il33"]
+        },
+        {
+          "name": "Alveolar macrophages",
+          "relevance_score": 0.74,
+          "evidence_type": "literature",
+          "citations": ["lit_2022_airway_macrophage"]
+        },
+        {
+          "name": "Th2 lymphocyte compartment",
+          "relevance_score": 0.71,
+          "evidence_type": "pathway",
+          "citations": ["path_2021_nfkb_reactome"]
+        }
+      ],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "Most large asthma GWAS cohorts remain European-dominated, with incremental multi-ancestry expansion.",
+        "transferability_notes": "Effect size transferability across underrepresented ancestries can be unstable; confidence should be interpreted with this limitation.",
+        "data_gaps": "Exposure-genotype interaction studies remain sparse in low-resource settings and across non-European majority cohorts."
+      },
+      "mechanism_briefs": ["pm25-il33-nfkb-asthma"],
+      "risk_shift_data": [
+        {
+          "exposure": "Ambient PM2.5",
+          "stratum": "Low",
+          "liability_shift": 0.12,
+          "confidence_low": 0.09,
+          "confidence_high": 0.15,
+          "evidence_type": "GWAS",
+          "confidence": "medium",
+          "citations": ["air_2021_guarnieri"]
+        },
+        {
+          "exposure": "Ambient PM2.5",
+          "stratum": "Medium",
+          "liability_shift": 0.27,
+          "confidence_low": 0.22,
+          "confidence_high": 0.31,
+          "evidence_type": "GWAS",
+          "confidence": "high",
+          "citations": ["air_2021_guarnieri"]
+        },
+        {
+          "exposure": "Ambient PM2.5",
+          "stratum": "High",
+          "liability_shift": 0.41,
+          "confidence_low": 0.34,
+          "confidence_high": 0.46,
+          "evidence_type": "GWAS",
+          "confidence": "high",
+          "citations": ["air_2021_guarnieri", "lit_2023_pm25_il33"]
+        }
+      ],
+      "tissue_relevance_matrix": [
+        {
+          "tissue": "Bronchial epithelium",
+          "context": "Asthma",
+          "score": 0.93,
+          "evidence_type": "eQTL",
+          "confidence": "high",
+          "citations": ["gtex_2020_cons"]
+        },
+        {
+          "tissue": "Alveolar macrophages",
+          "context": "Asthma",
+          "score": 0.74,
+          "evidence_type": "literature",
+          "confidence": "medium",
+          "citations": ["lit_2022_airway_macrophage"]
+        },
+        {
+          "tissue": "Th2 lymphocytes",
+          "context": "Asthma",
+          "score": 0.71,
+          "evidence_type": "pathway",
+          "confidence": "medium",
+          "citations": ["path_2021_nfkb_reactome"]
+        }
+      ],
+      "evidence_table": [
+        {
+          "label": "IL33 locus association with asthma",
+          "evidence_type": "GWAS",
+          "source": "GWAS meta-analysis",
+          "year": 2019,
+          "effect_size": 1.18,
+          "confidence": "high",
+          "citations": ["gwas_2019_demenais"]
+        },
+        {
+          "label": "PM2.5 linked asthma burden increase",
+          "evidence_type": "literature",
+          "source": "Epidemiologic review",
+          "year": 2021,
+          "effect_size": 0.79,
+          "confidence": "high",
+          "citations": ["air_2021_guarnieri"]
+        }
+      ],
+      "references": [
+        {
+          "id": "gwas_2019_demenais",
+          "title": "Multiancestry association study identifies new asthma risk loci",
+          "authors": ["Demenais F", "et al."],
+          "year": 2019,
+          "source": "Nature Genetics",
+          "journal": "Nature Genetics",
+          "doi": "10.1038/s41588-019-0378-6",
+          "url": "https://www.nature.com/articles/s41588-019-0378-6"
+        },
+        {
+          "id": "gtex_2020_cons",
+          "title": "The GTEx consortium atlas of genetic regulatory effects across tissues",
+          "authors": ["GTEx Consortium"],
+          "year": 2020,
+          "source": "Science",
+          "journal": "Science",
+          "doi": "10.1126/science.aaz1776",
+          "url": "https://www.science.org/doi/10.1126/science.aaz1776"
+        },
+        {
+          "id": "air_2021_guarnieri",
+          "title": "Outdoor air pollution and asthma",
+          "authors": ["Guarnieri M", "Balmes JR"],
+          "year": 2021,
+          "source": "The Lancet",
+          "journal": "The Lancet",
+          "url": "https://www.thelancet.com/"
+        },
+        {
+          "id": "lit_2023_pm25_il33",
+          "title": "PM2.5 exposure and IL-33 mediated airway signaling",
+          "authors": ["Curated synthesis"],
+          "year": 2023,
+          "source": "GENARCH curated review",
+          "journal": "GENARCH Review",
+          "url": "https://example.org/genarch/pm25-il33"
+        },
+        {
+          "id": "lit_2022_airway_macrophage",
+          "title": "Macrophage inflammatory circuits in asthma",
+          "authors": ["Curated synthesis"],
+          "year": 2022,
+          "source": "GENARCH curated review",
+          "journal": "GENARCH Review",
+          "url": "https://example.org/genarch/macrophage-asthma"
+        },
+        {
+          "id": "path_2021_nfkb_reactome",
+          "title": "Reactome NF-kB pathway annotations",
+          "authors": ["Reactome Consortium"],
+          "year": 2021,
+          "source": "Reactome",
+          "journal": "Reactome",
+          "url": "https://reactome.org/"
+        }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    }
+  ],
+  "exposures": [
+    {
+      "id": "exp_air-pollution",
+      "slug": "air-pollution",
+      "name": "Ambient Air Pollution (PM2.5)",
+      "definition": "Ambient air pollution refers to airborne particulate and gaseous pollutants generated by traffic, industrial activity, and combustion sources. PM2.5 is a key proxy because fine particles penetrate deep into airways and can trigger oxidative stress and immune activation.",
+      "proxies": [
+        {
+          "name": "PM2.5",
+          "unit": "µg/m³",
+          "measurement_method": "EPA AQS monitor annual average",
+          "data_source": "EPA AQS"
+        },
+        {
+          "name": "NO2",
+          "unit": "ppb",
+          "measurement_method": "Station-level annual average",
+          "data_source": "EPA AQS"
+        }
+      ],
+      "systems_affected": [
+        {
+          "system": "Respiratory",
+          "mechanism_summary": "Fine particulate exposure disrupts epithelial integrity and amplifies airway inflammation.",
+          "evidence_strength": 0.86
+        },
+        {
+          "system": "Immune",
+          "mechanism_summary": "Oxidative stress can bias innate and adaptive immune signaling toward pro-inflammatory pathways.",
+          "evidence_strength": 0.73
+        }
+      ],
+      "sensitive_windows": [
+        {
+          "period": "Prenatal",
+          "age_range": "In utero",
+          "mechanism_rationale": "Developing lung tissue is vulnerable to pollutant-associated inflammatory priming.",
+          "citations": ["air_2021_guarnieri"]
+        },
+        {
+          "period": "Adolescence",
+          "age_range": "10-18",
+          "mechanism_rationale": "Airway maturation during adolescence may amplify response to sustained pollutant load.",
+          "citations": ["air_2021_guarnieri", "lit_2023_pm25_il33"]
+        }
+      ],
+      "gxe_highlights": [
+        {
+          "gene_slug": "il33",
+          "disease_slug": "asthma",
+          "direction": "amplify",
+          "evidence_type": "literature",
+          "citations": ["lit_2023_pm25_il33"]
+        }
+      ],
+      "tissues": [
+        {
+          "name": "Bronchial epithelium",
+          "effect_type": "Upregulated danger signaling",
+          "citations": ["lit_2023_pm25_il33"]
+        },
+        {
+          "name": "Vascular endothelium",
+          "effect_type": "Inflammatory activation",
+          "citations": ["air_2021_guarnieri"]
+        }
+      ],
+      "exposure_distribution": {
+        "data_source": "EPA AQS",
+        "geographic_scope": "US county-level aggregate",
+        "summary_stats": {
+          "mean": 9.8,
+          "p50": 9.4,
+          "p90": 14.2
+        }
+      },
+      "evidence_table": [
+        {
+          "label": "PM2.5 and asthma burden",
+          "evidence_type": "literature",
+          "source": "Population-level meta-analysis",
+          "year": 2021,
+          "effect_size": 0.79,
+          "confidence": "high",
+          "citations": ["air_2021_guarnieri"]
+        },
+        {
+          "label": "PM2.5, IL33, and airway inflammation",
+          "evidence_type": "pathway",
+          "source": "Mechanistic review",
+          "year": 2023,
+          "effect_size": 0.71,
+          "confidence": "medium",
+          "citations": ["lit_2023_pm25_il33"]
+        }
+      ],
+      "references": [
+        {
+          "id": "air_2021_guarnieri",
+          "title": "Outdoor air pollution and asthma",
+          "authors": ["Guarnieri M", "Balmes JR"],
+          "year": 2021,
+          "source": "The Lancet",
+          "journal": "The Lancet",
+          "url": "https://www.thelancet.com/"
+        },
+        {
+          "id": "lit_2023_pm25_il33",
+          "title": "PM2.5 exposure and IL-33 mediated airway signaling",
+          "authors": ["Curated synthesis"],
+          "year": 2023,
+          "source": "GENARCH curated review",
+          "journal": "GENARCH Review",
+          "url": "https://example.org/genarch/pm25-il33"
+        }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    }
+  ],
+  "genes": [
+    {
+      "id": "gene_il33",
+      "slug": "il33",
+      "symbol": "IL33",
+      "name": "Interleukin 33",
+      "chromosome": "9p24.1",
+      "summary": "IL33 encodes an epithelial alarmin cytokine that is released during tissue stress and can initiate type 2 inflammatory cascades. It is strongly implicated in asthma susceptibility and airway inflammatory signaling.",
+      "molecular_function": [
+        "cytokine activity",
+        "receptor ligand activity",
+        "positive regulation of immune response"
+      ],
+      "protein_class": "cytokine",
+      "regulatory_notes": {
+        "promoter_activity": "Promoter variants alter IL33 baseline transcription in airway tissue.",
+        "enhancer_associations": "Enhancer regions near IL33 show inflammatory state-dependent accessibility.",
+        "methylation_sensitivity": "CpG methylation near IL33 promoter may alter expression under chronic exposure.",
+        "eqtl_tissues": ["Lung", "Whole blood"]
+      },
+      "expression_context": [
+        {
+          "tissue": "Lung",
+          "tpm_range": "8.0-12.0",
+          "gtex_version": "v8",
+          "citations": ["gtex_2020_cons"]
+        },
+        {
+          "tissue": "Whole blood",
+          "tpm_range": "2.5-4.1",
+          "gtex_version": "v8",
+          "citations": ["gtex_2020_cons"]
+        }
+      ],
+      "pathways": [
+        {
+          "slug": "nf-kb-signaling",
+          "evidence_type": "pathway",
+          "strength": 0.79
+        }
+      ],
+      "linked_diseases": [
+        {
+          "slug": "asthma",
+          "evidence_type": "GWAS",
+          "strength": 0.86
+        }
+      ],
+      "linked_exposures": [
+        {
+          "slug": "air-pollution",
+          "evidence_type": "literature",
+          "strength": 0.72
+        }
+      ],
+      "mechanistic_hypotheses": [
+        {
+          "hypothesis": "PM2.5-induced oxidative stress increases NF-kB signaling and augments IL33 release in bronchial epithelium.",
+          "supporting_evidence": "Convergent GWAS, eQTL, and pathway literature support exposure-sensitive IL33 biology.",
+          "confidence": "high"
+        }
+      ],
+      "confidence": "high",
+      "evidence_table": [
+        {
+          "label": "IL33 asthma locus replication",
+          "evidence_type": "GWAS",
+          "source": "Meta-analysis",
+          "year": 2019,
+          "effect_size": 1.18,
+          "confidence": "high",
+          "citations": ["gwas_2019_demenais"]
+        },
+        {
+          "label": "IL33 eQTL in lung tissue",
+          "evidence_type": "eQTL",
+          "source": "GTEx v8",
+          "year": 2020,
+          "effect_size": 0.67,
+          "confidence": "high",
+          "citations": ["gtex_2020_cons"]
+        }
+      ],
+      "references": [
+        {
+          "id": "gwas_2019_demenais",
+          "title": "Multiancestry association study identifies new asthma risk loci",
+          "authors": ["Demenais F", "et al."],
+          "year": 2019,
+          "source": "Nature Genetics",
+          "journal": "Nature Genetics",
+          "doi": "10.1038/s41588-019-0378-6",
+          "url": "https://www.nature.com/articles/s41588-019-0378-6"
+        },
+        {
+          "id": "gtex_2020_cons",
+          "title": "The GTEx consortium atlas of genetic regulatory effects across tissues",
+          "authors": ["GTEx Consortium"],
+          "year": 2020,
+          "source": "Science",
+          "journal": "Science",
+          "doi": "10.1126/science.aaz1776",
+          "url": "https://www.science.org/doi/10.1126/science.aaz1776"
+        },
+        {
+          "id": "lit_2023_pm25_il33",
+          "title": "PM2.5 exposure and IL-33 mediated airway signaling",
+          "authors": ["Curated synthesis"],
+          "year": 2023,
+          "source": "GENARCH curated review",
+          "journal": "GENARCH Review",
+          "url": "https://example.org/genarch/pm25-il33"
+        }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    }
+  ],
+  "pathways": [
+    {
+      "id": "path_nf-kb-signaling",
+      "slug": "nf-kb-signaling",
+      "name": "NF-kB Signaling",
+      "summary": "NF-kB signaling is a core inflammatory transcriptional pathway activated by oxidative stress, cytokines, and pattern-recognition signaling. In airway disease contexts, NF-kB activity can increase transcription of cytokines and chemokines that reinforce inflammatory loops and tissue damage.",
+      "canonical_source": "Reactome:R-HSA-975871",
+      "environmental_triggers": [
+        {
+          "exposure_slug": "air-pollution",
+          "trigger_type": "ROS-mediated activation",
+          "citations": ["path_2021_nfkb_reactome", "lit_2023_pm25_il33"]
+        }
+      ],
+      "key_genes": [
+        {
+          "gene_slug": "il33",
+          "role_in_pathway": "Upstream alarmin-linked amplifier",
+          "citations": ["path_2021_nfkb_reactome"]
+        }
+      ],
+      "regulatory_checkpoints": [
+        {
+          "node": "IKB degradation",
+          "modulator_genes": ["NFKB1", "RELA", "IKBKG"],
+          "potential_therapeutic_target": "Context-dependent anti-inflammatory intervention research"
+        }
+      ],
+      "tissue_specificity": [
+        {
+          "tissue": "Bronchial epithelium",
+          "expression_evidence": "Pathway genes show high expression and activation in airway epithelial inflammatory states."
+        }
+      ],
+      "linked_diseases": [
+        {
+          "slug": "asthma",
+          "pathway_role": "Inflammatory amplification",
+          "citations": ["path_2021_nfkb_reactome", "lit_2023_pm25_il33"]
+        }
+      ],
+      "linked_exposures": [
+        {
+          "slug": "air-pollution",
+          "pathway_effect": "Increased oxidative and inflammatory signaling",
+          "citations": ["air_2021_guarnieri", "lit_2023_pm25_il33"]
+        }
+      ],
+      "diagram_asset": "/diagrams/nf-kb-signaling.svg",
+      "evidence_table": [
+        {
+          "label": "PM2.5 and NF-kB activation evidence",
+          "evidence_type": "pathway",
+          "source": "Reactome and curated literature",
+          "year": 2023,
+          "effect_size": 0.75,
+          "confidence": "high",
+          "citations": ["path_2021_nfkb_reactome", "lit_2023_pm25_il33"]
+        }
+      ],
+      "references": [
+        {
+          "id": "path_2021_nfkb_reactome",
+          "title": "Reactome NF-kB pathway annotations",
+          "authors": ["Reactome Consortium"],
+          "year": 2021,
+          "source": "Reactome",
+          "journal": "Reactome",
+          "url": "https://reactome.org/"
+        },
+        {
+          "id": "lit_2023_pm25_il33",
+          "title": "PM2.5 exposure and IL-33 mediated airway signaling",
+          "authors": ["Curated synthesis"],
+          "year": 2023,
+          "source": "GENARCH curated review",
+          "journal": "GENARCH Review",
+          "url": "https://example.org/genarch/pm25-il33"
+        },
+        {
+          "id": "air_2021_guarnieri",
+          "title": "Outdoor air pollution and asthma",
+          "authors": ["Guarnieri M", "Balmes JR"],
+          "year": 2021,
+          "source": "The Lancet",
+          "journal": "The Lancet",
+          "url": "https://www.thelancet.com/"
+        }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "disease_asthma",
+        "type": "Disease",
+        "label": "Asthma",
+        "slug": "asthma",
+        "attrs": {
+          "summary": "Chronic airway inflammatory disease with exposure-sensitive liability shifts.",
+          "confidence": "high",
+          "last_updated": "2026-02-26",
+          "entity_route": "/atlas/diseases/asthma"
+        }
+      },
+      {
+        "id": "exposure_air-pollution",
+        "type": "Exposure",
+        "label": "Air Pollution",
+        "slug": "air-pollution",
+        "attrs": {
+          "summary": "Ambient PM2.5 and related pollutants associated with inflammatory burden.",
+          "confidence": "high",
+          "last_updated": "2026-02-26",
+          "entity_route": "/atlas/exposures/air-pollution"
+        }
+      },
+      {
+        "id": "gene_il33",
+        "type": "Gene",
+        "label": "IL33",
+        "slug": "il33",
+        "attrs": {
+          "summary": "Epithelial alarmin cytokine with strong asthma and exposure-linked evidence.",
+          "confidence": "high",
+          "last_updated": "2026-02-26",
+          "entity_route": "/atlas/genes/il33"
+        }
+      },
+      {
+        "id": "pathway_nf-kb-signaling",
+        "type": "Pathway",
+        "label": "NF-kB Signaling",
+        "slug": "nf-kb-signaling",
+        "attrs": {
+          "summary": "Inflammatory pathway activated by oxidative stress and cytokine signaling.",
+          "confidence": "high",
+          "last_updated": "2026-02-26",
+          "entity_route": "/atlas/pathways/nf-kb-signaling"
+        }
+      },
+      {
+        "id": "tissue_bronchial-epithelium",
+        "type": "Tissue",
+        "label": "Bronchial Epithelium",
+        "slug": "bronchial-epithelium",
+        "attrs": {
+          "summary": "Key airway interface where pollutant stress and IL33 signaling converge.",
+          "confidence": "medium",
+          "last_updated": "2026-02-26",
+          "entity_route": "/atlas/diseases/asthma"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "disease_asthma",
+        "target": "gene_il33",
+        "type": "ASSOCIATED_WITH",
+        "attrs": {
+          "evidence_type": "GWAS",
+          "direction": "amplify",
+          "tissue": ["Bronchial epithelium"],
+          "strength": 0.86,
+          "confidence": "high",
+          "sources": ["gwas_2019_demenais"],
+          "year_first_reported": 2019,
+          "ancestry_rep": "European-dominated"
+        }
+      },
+      {
+        "id": "e2",
+        "source": "exposure_air-pollution",
+        "target": "disease_asthma",
+        "type": "MODIFIES",
+        "attrs": {
+          "evidence_type": "literature",
+          "direction": "amplify",
+          "tissue": ["Lung", "Bronchial epithelium"],
+          "strength": 0.82,
+          "confidence": "high",
+          "sources": ["air_2021_guarnieri"],
+          "year_first_reported": 2021,
+          "ancestry_rep": "Unknown"
+        }
+      },
+      {
+        "id": "e3",
+        "source": "exposure_air-pollution",
+        "target": "gene_il33",
+        "type": "INTERACTS_WITH",
+        "attrs": {
+          "evidence_type": "literature",
+          "direction": "amplify",
+          "tissue": ["Bronchial epithelium"],
+          "strength": 0.72,
+          "confidence": "medium",
+          "sources": ["lit_2023_pm25_il33"],
+          "year_first_reported": 2023,
+          "ancestry_rep": "Unknown"
+        }
+      },
+      {
+        "id": "e4",
+        "source": "gene_il33",
+        "target": "pathway_nf-kb-signaling",
+        "type": "PARTICIPATES_IN",
+        "attrs": {
+          "evidence_type": "pathway",
+          "direction": "amplify",
+          "tissue": ["Bronchial epithelium"],
+          "strength": 0.79,
+          "confidence": "high",
+          "sources": ["path_2021_nfkb_reactome"],
+          "year_first_reported": 2021,
+          "ancestry_rep": "Unknown"
+        }
+      },
+      {
+        "id": "e5",
+        "source": "gene_il33",
+        "target": "tissue_bronchial-epithelium",
+        "type": "EXPRESSED_IN",
+        "attrs": {
+          "evidence_type": "eQTL",
+          "direction": "unknown",
+          "tissue": ["Bronchial epithelium"],
+          "strength": 0.68,
+          "confidence": "high",
+          "sources": ["gtex_2020_cons"],
+          "year_first_reported": 2020,
+          "ancestry_rep": "Unknown"
+        }
+      },
+      {
+        "id": "e6",
+        "source": "pathway_nf-kb-signaling",
+        "target": "disease_asthma",
+        "type": "IMPLICATED_IN",
+        "attrs": {
+          "evidence_type": "pathway",
+          "direction": "amplify",
+          "tissue": ["Lung"],
+          "strength": 0.77,
+          "confidence": "high",
+          "sources": ["path_2021_nfkb_reactome"],
+          "year_first_reported": 2021,
+          "ancestry_rep": "Unknown"
+        }
+      }
+    ],
+    "metadata": {
+      "generated_at": "2026-02-26",
+      "pipeline_version": "1.0.0",
+      "node_count": 5,
+      "edge_count": 6,
+      "schema_version": "1.0"
+    }
+  },
+  "community": [
+    {
+      "region_id": "comm_loudoun_county_va",
+      "slug": "loudoun-county-va",
+      "name": "Loudoun County, Virginia",
+      "geo_level": "county",
+      "fips_code": "51107",
+      "health_stats": [
+        {
+          "disease_slug": "asthma",
+          "metric_type": "hospitalization_rate_per_100k",
+          "value": 123.4,
+          "year": 2024,
+          "source": "CDC WONDER",
+          "ci_lower": 110.2,
+          "ci_upper": 134.1
+        }
+      ],
+      "exposure_layers": [
+        {
+          "layer_name": "PM2.5 annual mean",
+          "data_source": "EPA AQS",
+          "year": 2024,
+          "geojson": {
+            "type": "FeatureCollection",
+            "features": [
+              {
+                "type": "Feature",
+                "properties": {
+                  "name": "Loudoun County",
+                  "pm25": 9.2,
+                  "industrial_proximity": 0.41,
+                  "food_access_score": 0.55,
+                  "svi_percentile": 0.38
+                },
+                "geometry": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [-77.9, 39.3],
+                      [-77.4, 39.3],
+                      [-77.4, 38.9],
+                      [-77.9, 38.9],
+                      [-77.9, 39.3]
+                    ]
+                  ]
+                }
+              }
+            ]
+          },
+          "summary_stats": {
+            "mean_pm25": 9.2,
+            "max_pm25": 11.7,
+            "min_pm25": 7.8
+          }
+        }
+      ],
+      "model": {
+        "features_used": [
+          "pm25_annual_mean",
+          "industrial_proximity_score",
+          "food_access_score",
+          "svi_percentile"
+        ],
+        "hotspot_scores_geojson": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "subregion": "North",
+                "hotspot_score": 0.62
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [-77.65, 39.15]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "subregion": "South",
+                "hotspot_score": 0.47
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [-77.55, 39.0]
+              }
+            }
+          ]
+        },
+        "shap_summaries": [
+          {
+            "feature": "pm25_annual_mean",
+            "impact": 0.23,
+            "direction": "positive",
+            "plain_language": "Higher PM2.5 values contribute positively to modeled burden in this region."
+          },
+          {
+            "feature": "industrial_proximity_score",
+            "impact": 0.17,
+            "direction": "positive",
+            "plain_language": "Closer industrial proximity is associated with higher modeled burden."
+          },
+          {
+            "feature": "food_access_score",
+            "impact": -0.11,
+            "direction": "negative",
+            "plain_language": "Better food access is associated with lower modeled burden."
+          }
+        ],
+        "model_card": "Gradient boosting model estimating relative modeled burden (0-1) using public aggregate indicators only. Not diagnostic, not individual-level.",
+        "model_card_version": "1.0",
+        "training_data_cutoff": "2025-12-31",
+        "metrics": {
+          "r2": 0.68,
+          "mae": 0.09
+        }
+      },
+      "resources": [
+        {
+          "name": "Loudoun County Health Department Asthma Program",
+          "type": "local_program",
+          "url": "https://www.loudoun.gov/health",
+          "description": "Educational materials and local support resources for respiratory health.",
+          "local_relevance": "County-specific education and outreach."
+        },
+        {
+          "name": "Northern Virginia Asthma Coalition",
+          "type": "coalition",
+          "url": "https://example.org/nova-asthma",
+          "description": "Regional prevention education and school health toolkits.",
+          "local_relevance": "Regional educational support for families and schools."
+        }
+      ],
+      "limitations": "Community indicators are aggregate and do not represent individual diagnoses, personal risk, or clinical recommendations.",
+      "references": [
+        {
+          "id": "cdc_2024_wonder",
+          "title": "CDC WONDER county-level respiratory indicators",
+          "authors": ["CDC"],
+          "year": 2024,
+          "source": "CDC WONDER",
+          "journal": "CDC",
+          "url": "https://wonder.cdc.gov/"
+        },
+        {
+          "id": "epa_2024_aqs",
+          "title": "EPA Air Quality System annual monitoring values",
+          "authors": ["EPA"],
+          "year": 2024,
+          "source": "EPA AQS",
+          "journal": "EPA",
+          "url": "https://www.epa.gov/aqs"
+        }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    }
+  ]
+}
