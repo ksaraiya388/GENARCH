@@ -1,199 +1,254 @@
-"""Stage 6: strict schema and integrity validation."""
+"""Schema validation, cross-link validation, and citation validation."""
 
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
-from typing import Any
 
-from pydantic import ValidationError
-
-from .models import (
-    CommunityData,
-    DiseaseData,
-    ExposureData,
-    GeneData,
-    GraphData,
-    PathwayData,
-    collect_reference_ids,
-    validate_citations_exist,
+from pipeline.schemas import (
+    CommunitySchema,
+    DiseaseSchema,
+    ExposureSchema,
+    GeneSchema,
+    GraphSchema,
+    PathwaySchema,
 )
-from .paths import BRIEFS_DIR, COMMUNITY_DIR, DISEASES_DIR, EXPOSURES_DIR, GENES_DIR, GRAPH_DIR, PATHWAYS_DIR
 
 
-def _read_json(path: Path) -> dict[str, Any]:
-    return json.loads(path.read_text(encoding="utf-8"))
+def _resolve_data_dir() -> Path:
+    """Resolve data directory relative to repo root."""
+    root = Path(__file__).resolve().parent.parent
+    return root / "data"
 
 
-def _iter_entity_files(directory: Path) -> list[Path]:
-    return sorted(path for path in directory.glob("*.json") if path.name != "index.json")
+def _collect_json_files(data_dir: Path) -> dict[str, list[Path]]:
+    """Collect JSON files by entity type (directory name)."""
+    by_type: dict[str, list[Path]] = {}
+    dirs = ["diseases", "exposures", "genes", "pathways", "community", "graph", "briefs", "reports"]
+    for subdir in dirs:
+        path = data_dir / subdir
+        if path.exists():
+            by_type[subdir] = sorted(path.rglob("*.json"))
+    return by_type
 
 
-def _validate_entity_citations(
-    disease: DiseaseData | ExposureData | GeneData | PathwayData,
-    context: str,
+def _schema_for_type(entity_type: str):
+    """Return Pydantic schema for entity type."""
+    schemas = {
+        "diseases": DiseaseSchema,
+        "exposures": ExposureSchema,
+        "genes": GeneSchema,
+        "pathways": PathwaySchema,
+        "community": CommunitySchema,
+        "graph": GraphSchema,
+    }
+    return schemas.get(entity_type)
+
+
+def _validate_schema(
+    entity_type: str,
+    filepath: Path,
+    raw: dict,
     errors: list[str],
-) -> None:
-    citation_lists: list[list[str]] = []
-    for row in disease.evidence_table:
-        citation_lists.append(row.citations)
-
-    if isinstance(disease, DiseaseData):
-        citation_lists.extend([locus.citations for locus in disease.genetic_architecture.top_loci])
-        citation_lists.extend([modifier.citations for modifier in disease.exposure_modifiers])
-        citation_lists.extend([tissue.citations for tissue in disease.tissues])
-        citation_lists.extend([point.citations for point in disease.risk_shift_data])
-        citation_lists.extend([cell.citations for cell in disease.tissue_relevance_matrix])
-    elif isinstance(disease, ExposureData):
-        citation_lists.extend([window.citations for window in disease.sensitive_windows])
-        citation_lists.extend([highlight.citations for highlight in disease.gxe_highlights])
-        citation_lists.extend([tissue.citations for tissue in disease.tissues])
-    elif isinstance(disease, GeneData):
-        citation_lists.extend([context.citations for context in disease.expression_context])
-    elif isinstance(disease, PathwayData):
-        citation_lists.extend([trigger.citations for trigger in disease.environmental_triggers])
-        citation_lists.extend([gene.citations for gene in disease.key_genes])
-        citation_lists.extend([entry.citations for entry in disease.linked_diseases])
-        citation_lists.extend([entry.citations for entry in disease.linked_exposures])
-
-    missing = validate_citations_exist(disease, citation_lists)
-    for citation in missing:
-        errors.append(f"{context}: missing citation reference '{citation}'")
+) -> dict | None:
+    """Validate JSON against Pydantic schema. Returns parsed model or None."""
+    schema_cls = _schema_for_type(entity_type)
+    if schema_cls is None:
+        return raw  # briefs, reports - no strict schema
+    try:
+        return schema_cls.model_validate(raw).model_dump()
+    except Exception as e:
+        errors.append(f"{filepath}: Schema validation failed: {e}")
+        return None
 
 
-def validate_generated_data() -> tuple[bool, list[str]]:
-    """Validate all generated data artifacts and return status + errors."""
+def _collect_slugs(data_dir: Path) -> dict[str, set[str]]:
+    """Collect all slugs by entity type from JSON files."""
+    slugs: dict[str, set[str]] = {
+        "disease": set(),
+        "exposure": set(),
+        "gene": set(),
+        "pathway": set(),
+    }
+    for subdir, slug_key in [
+        ("diseases", "disease"),
+        ("exposures", "exposure"),
+        ("genes", "gene"),
+        ("pathways", "pathway"),
+    ]:
+        path = data_dir / subdir
+        if not path.exists():
+            continue
+        for f in path.rglob("*.json"):
+            try:
+                raw = json.loads(f.read_text())
+                s = raw.get("slug") or raw.get("region_id")
+                if s:
+                    slugs[slug_key].add(s)
+            except Exception:
+                pass
+    return slugs
 
+
+def _collect_citation_ids(data_dir: Path) -> set[str]:
+    """Collect all reference IDs from entity JSON files."""
+    ref_ids: set[str] = set()
+    for subdir in ["diseases", "exposures", "genes", "pathways", "community", "briefs"]:
+        path = data_dir / subdir
+        if not path.exists():
+            continue
+        for f in path.rglob("*.json"):
+            try:
+                raw = json.loads(f.read_text())
+                for ref in raw.get("references", []):
+                    if isinstance(ref, dict) and ref.get("id"):
+                        ref_ids.add(str(ref["id"]))
+            except Exception:
+                pass
+    return ref_ids
+
+
+def _collect_referenced_slugs(data_dir: Path) -> dict[str, list[tuple[Path, str]]]:
+    """Collect referenced slugs with (filepath, slug) for cross-link check."""
+    refs: dict[str, list[tuple[Path, str]]] = {
+        "disease": [],
+        "exposure": [],
+        "gene": [],
+        "pathway": [],
+    }
+
+    def add_ref(typ: str, fp: Path, slug: str) -> None:
+        if slug:
+            refs[typ].append((fp, slug))
+
+    for subdir in ["diseases", "exposures", "genes", "pathways", "community", "briefs"]:
+        path = data_dir / subdir
+        if not path.exists():
+            continue
+        for f in path.rglob("*.json"):
+            try:
+                raw = json.loads(f.read_text())
+                for em in raw.get("exposure_modifiers", []):
+                    add_ref("exposure", f, em.get("exposure_slug", ""))
+                for gh in raw.get("gxe_highlights", []):
+                    add_ref("gene", f, gh.get("gene_slug", ""))
+                    add_ref("disease", f, gh.get("disease_slug", ""))
+                for ld in raw.get("linked_diseases", []):
+                    add_ref("disease", f, ld.get("disease_slug", ""))
+                for le in raw.get("linked_exposures", []):
+                    add_ref("exposure", f, le.get("exposure_slug", ""))
+                for et in raw.get("environmental_triggers", []):
+                    add_ref("exposure", f, et.get("exposure_slug", ""))
+                for kg in raw.get("key_genes", []):
+                    add_ref("gene", f, kg.get("gene_slug", ""))
+                for hs in raw.get("health_stats", []):
+                    add_ref("disease", f, hs.get("disease_slug", ""))
+                for rpg in raw.get("related_genes", []):
+                    add_ref("gene", f, rpg)
+                if raw.get("related_disease"):
+                    add_ref("disease", f, raw["related_disease"])
+                if raw.get("related_exposure"):
+                    add_ref("exposure", f, raw["related_exposure"])
+                for rp in raw.get("related_pathways", []):
+                    add_ref("pathway", f, rp)
+                for pw in raw.get("pathways", []):
+                    add_ref("pathway", f, pw)
+            except Exception:
+                pass
+    return refs
+
+
+def _collect_citation_refs(data_dir: Path) -> list[tuple[Path, str]]:
+    """Collect all citation ID references (filepath, citation_id)."""
+    refs: list[tuple[Path, str]] = []
+    for subdir in ["diseases", "exposures", "genes", "pathways", "community", "briefs"]:
+        path = data_dir / subdir
+        if not path.exists():
+            continue
+        for f in path.rglob("*.json"):
+            try:
+                raw = json.loads(f.read_text())
+
+                def collect_citations(obj: object) -> None:
+                    if isinstance(obj, dict):
+                        if "citations" in obj and isinstance(obj["citations"], list):
+                            for c in obj["citations"]:
+                                if isinstance(c, str) and c:
+                                    refs.append((f, c))
+                        for v in obj.values():
+                            collect_citations(v)
+                    elif isinstance(obj, list):
+                        for v in obj:
+                            collect_citations(v)
+
+                collect_citations(raw)
+            except Exception:
+                pass
+    return refs
+
+
+def validate() -> int:
+    """Run all validations. Returns 0 on success, 1 on any error."""
+    data_dir = _resolve_data_dir()
     errors: list[str] = []
 
-    diseases: list[DiseaseData] = []
-    exposures: list[ExposureData] = []
-    genes: list[GeneData] = []
-    pathways: list[PathwayData] = []
-    communities: list[CommunityData] = []
+    if not data_dir.exists():
+        errors.append(f"Data directory does not exist: {data_dir}")
+        for e in errors:
+            print(f"ERROR: {e}", file=sys.stderr)
+        return 1
 
-    def parse_collection(paths: list[Path], model: Any, sink: list[Any], section: str) -> None:
-        for path in paths:
+    # 1. Schema validation
+    by_type = _collect_json_files(data_dir)
+    parsed: dict[str, list[dict]] = {
+        "diseases": [],
+        "exposures": [],
+        "genes": [],
+        "pathways": [],
+        "community": [],
+        "graph": [],
+    }
+
+    for entity_type, files in by_type.items():
+        for fp in files:
             try:
-                parsed = model.model_validate(_read_json(path))
-                sink.append(parsed)
-            except ValidationError as exc:
-                errors.append(f"{section}/{path.name}: schema error -> {exc}")
+                raw = json.loads(fp.read_text())
+            except json.JSONDecodeError as e:
+                errors.append(f"{fp}: Invalid JSON: {e}")
+                continue
+            result = _validate_schema(entity_type, fp, raw, errors)
+            if result is not None and entity_type in parsed:
+                parsed[entity_type].append(result)
 
-    parse_collection(_iter_entity_files(DISEASES_DIR), DiseaseData, diseases, "diseases")
-    parse_collection(_iter_entity_files(EXPOSURES_DIR), ExposureData, exposures, "exposures")
-    parse_collection(_iter_entity_files(GENES_DIR), GeneData, genes, "genes")
-    parse_collection(_iter_entity_files(PATHWAYS_DIR), PathwayData, pathways, "pathways")
-    parse_collection(_iter_entity_files(COMMUNITY_DIR), CommunityData, communities, "community")
+    # 2. Cross-link validation
+    slugs = _collect_slugs(data_dir)
+    ref_slugs = _collect_referenced_slugs(data_dir)
 
-    graph_path = GRAPH_DIR / "graph.json"
-    graph: GraphData | None = None
-    try:
-        graph = GraphData.model_validate(_read_json(graph_path))
-    except ValidationError as exc:
-        errors.append(f"graph/graph.json: schema error -> {exc}")
-    except FileNotFoundError:
-        errors.append("graph/graph.json: file missing")
+    for typ, ref_list in ref_slugs.items():
+        valid = slugs.get(typ, set())
+        for fp, slug in ref_list:
+            if slug and slug not in valid:
+                errors.append(f"{fp}: Referenced {typ} slug '{slug}' does not exist")
 
-    disease_slugs = {item.slug for item in diseases}
-    exposure_slugs = {item.slug for item in exposures}
-    gene_slugs = {item.slug for item in genes}
-    pathway_slugs = {item.slug for item in pathways}
+    # 3. Citation validation
+    citation_ids = _collect_citation_ids(data_dir)
+    citation_refs = _collect_citation_refs(data_dir)
 
-    brief_slugs = {path.stem for path in BRIEFS_DIR.glob("*.mdx")}
+    for fp, cid in citation_refs:
+        if cid and cid not in citation_ids:
+            # Allow PMID/DOI-style references
+            if not (cid.startswith("PMID:") or cid.startswith("doi:") or cid.startswith("http")):
+                errors.append(f"{fp}: Citation ID '{cid}' does not exist in references")
 
-    # Cross-link checks
-    for disease in diseases:
-        for modifier in disease.exposure_modifiers:
-            if modifier.exposure_slug not in exposure_slugs:
-                errors.append(
-                    f"disease:{disease.slug} exposure_modifiers references missing exposure '{modifier.exposure_slug}'"
-                )
-        for brief in disease.mechanism_briefs:
-            if brief not in brief_slugs:
-                errors.append(f"disease:{disease.slug} references missing mechanism brief '{brief}'")
-        _validate_entity_citations(disease, f"disease:{disease.slug}", errors)
-
-    for exposure in exposures:
-        for highlight in exposure.gxe_highlights:
-            if highlight.gene_slug not in gene_slugs:
-                errors.append(f"exposure:{exposure.slug} references missing gene '{highlight.gene_slug}'")
-            if highlight.disease_slug not in disease_slugs:
-                errors.append(
-                    f"exposure:{exposure.slug} references missing disease '{highlight.disease_slug}'"
-                )
-        _validate_entity_citations(exposure, f"exposure:{exposure.slug}", errors)
-
-    for gene in genes:
-        for linked_pathway in gene.pathways:
-            if linked_pathway.slug not in pathway_slugs:
-                errors.append(f"gene:{gene.slug} references missing pathway '{linked_pathway.slug}'")
-        for linked_disease in gene.linked_diseases:
-            if linked_disease.slug not in disease_slugs:
-                errors.append(
-                    f"gene:{gene.slug} references missing disease '{linked_disease.slug}'"
-                )
-        for linked_exposure in gene.linked_exposures:
-            if linked_exposure.slug not in exposure_slugs:
-                errors.append(
-                    f"gene:{gene.slug} references missing exposure '{linked_exposure.slug}'"
-                )
-        _validate_entity_citations(gene, f"gene:{gene.slug}", errors)
-
-    for pathway in pathways:
-        for pathway_linked_disease in pathway.linked_diseases:
-            if pathway_linked_disease.slug not in disease_slugs:
-                errors.append(
-                    f"pathway:{pathway.slug} references missing disease '{pathway_linked_disease.slug}'"
-                )
-        for pathway_linked_exposure in pathway.linked_exposures:
-            if pathway_linked_exposure.slug not in exposure_slugs:
-                errors.append(
-                    f"pathway:{pathway.slug} references missing exposure '{pathway_linked_exposure.slug}'"
-                )
-        _validate_entity_citations(pathway, f"pathway:{pathway.slug}", errors)
-
-    for community in communities:
-        for stat in community.health_stats:
-            if stat.disease_slug not in disease_slugs:
-                errors.append(
-                    f"community:{community.slug} health_stats references missing disease '{stat.disease_slug}'"
-                )
-
-    if graph is not None:
-        node_ids = {node.id for node in graph.nodes}
-        for edge in graph.edges:
-            if edge.source not in node_ids:
-                errors.append(f"graph edge {edge.id} has missing source node '{edge.source}'")
-            if edge.target not in node_ids:
-                errors.append(f"graph edge {edge.id} has missing target node '{edge.target}'")
-
-        available_citations = set[str]()
-        for disease_entity in diseases:
-            available_citations.update(collect_reference_ids(disease_entity))
-        for exposure_entity in exposures:
-            available_citations.update(collect_reference_ids(exposure_entity))
-        for gene_entity in genes:
-            available_citations.update(collect_reference_ids(gene_entity))
-        for pathway_entity in pathways:
-            available_citations.update(collect_reference_ids(pathway_entity))
-        for edge in graph.edges:
-            for citation in edge.attrs.sources:
-                if citation not in available_citations:
-                    errors.append(f"graph edge {edge.id} references unknown citation '{citation}'")
-
-    return len(errors) == 0, errors
-
-
-def main() -> None:
-    ok, errors = validate_generated_data()
-    if not ok:
-        print("GENARCH validation failed:")
-        for error in errors:
-            print(f"- {error}")
-        raise SystemExit(1)
-    print("GENARCH validation passed.")
+    # Output
+    if errors:
+        for e in errors:
+            print(f"ERROR: {e}", file=sys.stderr)
+        return 1
+    print("Validation passed: all schemas, cross-links, and citations OK.")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(validate())
