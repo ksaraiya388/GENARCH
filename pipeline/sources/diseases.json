@@ -1,0 +1,884 @@
+{
+  "diseases": [
+    {
+      "id": "dis_asthma",
+      "slug": "asthma",
+      "name": "Asthma",
+      "icd11_code": "CA23",
+      "summary": "Asthma is a chronic respiratory disease characterized by variable airflow obstruction and airway inflammation. GENARCH presents asthma as a population-level gene–environment system (educational only; not medical advice).",
+      "adolescent_relevance": "Asthma commonly affects adolescents and young adults and is sensitive to environmental exposures in population studies.",
+      "genetic_architecture": {
+        "top_loci": [
+          {
+            "gene": "IL33",
+            "variant": "rs1420101",
+            "gwas_p": 1e-12,
+            "effect_size": 0.12,
+            "ancestry_composition": "European-dominated",
+            "replication_status": "Replicated",
+            "evidence": "GWAS locus implicating IL33/IL1RL1 region",
+            "strength": 0.85,
+            "citations": ["ref_airpollution_mechanisms_2019"]
+          }
+        ],
+        "heritability_estimate": { "h2_snp": 0.175, "source": "GWAS-based SNP heritability (representative)", "year": 2019 },
+        "prs_notes": "PRS concepts are discussed for education only; GENARCH does not provide individual risk prediction."
+      },
+      "exposure_modifiers": [
+        {
+          "exposure_slug": "air-pollution",
+          "direction": "amplify",
+          "strength": 0.88,
+          "confidence": "high",
+          "mechanism_hypothesis": "Oxidative stress and inflammatory signaling in airway epithelium.",
+          "citations": ["ref_airpollution_mechanisms_2019"]
+        },
+        {
+          "exposure_slug": "ozone",
+          "direction": "amplify",
+          "strength": 0.7,
+          "confidence": "medium",
+          "mechanism_hypothesis": "Airway irritation context in population studies.",
+          "citations": ["ref_epa_aqs_2024"]
+        },
+        {
+          "exposure_slug": "tobacco-smoke-prenatal",
+          "direction": "amplify",
+          "strength": 0.85,
+          "confidence": "high",
+          "mechanism_hypothesis": "Developmental programming context in cohorts.",
+          "citations": ["ref_prenatal_smoke_2006"]
+        }
+      ],
+      "tissues": [
+        { "name": "lung", "relevance_score": 0.9, "evidence_type": "literature", "citations": ["ref_airpollution_mechanisms_2019"] }
+      ],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "Many asthma GWAS have been European-ancestry dominated historically.",
+        "transferability_notes": "Transferability varies across ancestries due to LD and cohort composition.",
+        "data_gaps": "GxE evidence is sparse for many exposures and populations."
+      },
+      "mechanism_briefs": ["pm25-il33-nfkb-asthma"],
+      "references": [
+        { "id": "ref_airpollution_mechanisms_2019", "title": "Air pollution and health: evidence and mechanisms (review)", "authors": "Pope CA, Dockery DW", "year": 2019, "journal": "Journal of the Air & Waste Management Association" },
+        { "id": "ref_epa_aqs_2024", "title": "EPA Air Quality System (AQS)", "authors": "U.S. Environmental Protection Agency", "year": 2024, "journal": "EPA", "url": "https://www.epa.gov/aqs" },
+        { "id": "ref_prenatal_smoke_2006", "title": "Prenatal and passive smoke exposure and incidence of asthma and wheeze: systematic review and meta-analysis", "authors": "Burke H et al.", "year": 2006, "journal": "Pediatrics" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_coronary_artery_disease",
+      "slug": "coronary-artery-disease",
+      "name": "Coronary Artery Disease",
+      "icd11_code": "BA80",
+      "summary": "Coronary artery disease reflects atherosclerotic narrowing of coronary arteries. GENARCH summarizes population-level genetic architecture and exposure modifiers for education only.",
+      "adolescent_relevance": "CAD events occur later in life, but exposure and cardiometabolic trajectories begin earlier; GENARCH content is educational only.",
+      "genetic_architecture": {
+        "top_loci": [
+          { "gene": "LDLR", "variant": null, "gwas_p": 1e-12, "effect_size": 0.08, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "Lipid metabolism locus", "strength": 0.8, "citations": ["ref_cad_gwas_2015"] },
+          { "gene": "APOB", "variant": null, "gwas_p": 1e-10, "effect_size": 0.06, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "Lipid particle biology", "strength": 0.7, "citations": ["ref_cad_gwas_2015"] },
+          { "gene": "PCSK9", "variant": null, "gwas_p": 1e-10, "effect_size": 0.06, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "LDLR regulation", "strength": 0.7, "citations": ["ref_cad_gwas_2015"] },
+          { "gene": "LPA", "variant": null, "gwas_p": 1e-20, "effect_size": 0.1, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "Lipoprotein(a) locus", "strength": 0.85, "citations": ["ref_cad_gwas_2015"] }
+        ],
+        "heritability_estimate": { "h2_snp": 0.45, "source": "Family and GWAS-based estimates (range varies)", "year": 2015 },
+        "prs_notes": "PRS is discussed as population-level genetic liability; GENARCH does not project individual risk."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "diet-quality", "direction": "amplify", "strength": 0.65, "confidence": "medium", "mechanism_hypothesis": "Diet patterns influence LDL metabolism and inflammation.", "citations": ["ref_who_nutrition_2019"] },
+        { "exposure_slug": "smoking", "direction": "amplify", "strength": 0.8, "confidence": "high", "mechanism_hypothesis": "Smoking is strongly associated with CAD burden in cohorts.", "citations": ["ref_smoking_report_2018"] },
+        { "exposure_slug": "air-pollution", "direction": "amplify", "strength": 0.5, "confidence": "medium", "mechanism_hypothesis": "Ambient particulates are associated with cardiovascular outcomes in population studies.", "citations": ["ref_airpollution_mechanisms_2019"] }
+      ],
+      "tissues": [
+        { "name": "vasculature", "relevance_score": 0.8, "evidence_type": "literature", "citations": ["ref_cad_gwas_2015"] },
+        { "name": "liver", "relevance_score": 0.65, "evidence_type": "literature", "citations": ["ref_cad_gwas_2015"] }
+      ],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "Many large CAD GWAS have been European-ancestry dominated historically.",
+        "transferability_notes": "PRS performance can vary across ancestries due to LD and cohort composition.",
+        "data_gaps": "Exposure measurement differs across settings; GxE evidence is incomplete."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_cad_gwas_2015", "title": "Genome-wide association meta-analysis of coronary artery disease identifies loci and pathways", "authors": "CAD GWAS Consortium", "year": 2015, "journal": "Nature Genetics" },
+        { "id": "ref_who_nutrition_2019", "title": "Healthy diet factsheet and guidance", "authors": "World Health Organization", "year": 2019, "journal": "WHO" },
+        { "id": "ref_smoking_report_2018", "title": "The Health Consequences of Smoking—50 Years of Progress", "authors": "U.S. Surgeon General", "year": 2018, "journal": "U.S. Department of Health and Human Services" },
+        { "id": "ref_airpollution_mechanisms_2019", "title": "Air pollution and health: evidence and mechanisms (review)", "authors": "Pope CA, Dockery DW", "year": 2019, "journal": "Journal of the Air & Waste Management Association" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_type_2_diabetes",
+      "slug": "type-2-diabetes",
+      "name": "Type 2 Diabetes",
+      "icd11_code": "5A11",
+      "summary": "Type 2 diabetes is characterized by chronic hyperglycemia due to insulin resistance and beta-cell dysfunction. GENARCH provides population-level educational summaries.",
+      "adolescent_relevance": "Adolescent/young adult onset is increasing in some settings; GENARCH content is educational only.",
+      "genetic_architecture": {
+        "top_loci": [
+          { "gene": "TCF7L2", "variant": null, "gwas_p": 1e-20, "effect_size": 0.12, "ancestry_composition": "Multi-ancestry", "replication_status": "Replicated", "evidence": "Islet biology locus", "strength": 0.85, "citations": ["ref_t2d_gwas_2018"] },
+          { "gene": "SLC30A8", "variant": null, "gwas_p": 1e-10, "effect_size": 0.06, "ancestry_composition": "Multi-ancestry", "replication_status": "Replicated", "evidence": "Beta-cell zinc transport", "strength": 0.7, "citations": ["ref_t2d_gwas_2018"] },
+          { "gene": "PPARG", "variant": null, "gwas_p": 1e-8, "effect_size": 0.05, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "Adipose insulin sensitivity", "strength": 0.65, "citations": ["ref_t2d_gwas_2018"] },
+          { "gene": "FTO", "variant": null, "gwas_p": 1e-20, "effect_size": 0.06, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "BMI/adiposity locus (mediated pathways)", "strength": 0.6, "citations": ["ref_bmi_gwas_2015"] }
+        ],
+        "heritability_estimate": { "h2_snp": 0.35, "source": "GWAS-based estimates (varies by cohort)", "year": 2018 },
+        "prs_notes": "PRS is discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "diet-quality", "direction": "amplify", "strength": 0.7, "confidence": "medium", "mechanism_hypothesis": "Diet patterns influence insulin resistance and glucose homeostasis.", "citations": ["ref_who_nutrition_2019"] },
+        { "exposure_slug": "physical-inactivity", "direction": "amplify", "strength": 0.65, "confidence": "medium", "mechanism_hypothesis": "Lower activity is associated with insulin resistance in cohorts.", "citations": ["ref_who_activity_2020"] },
+        { "exposure_slug": "endocrine-disruptors", "direction": "unknown", "strength": 0.35, "confidence": "low", "mechanism_hypothesis": "Evidence is heterogeneous and compound-specific.", "citations": ["ref_endocrine_disruptors_2017"] }
+      ],
+      "tissues": [
+        { "name": "pancreatic islets", "relevance_score": 0.8, "evidence_type": "GWAS/literature", "citations": ["ref_t2d_gwas_2018"] },
+        { "name": "adipose", "relevance_score": 0.75, "evidence_type": "literature", "citations": ["ref_who_nutrition_2019"] }
+      ],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "T2D GWAS increasingly include multi-ancestry cohorts, but representation remains uneven.",
+        "transferability_notes": "PRS performance can vary by ancestry and exposure context.",
+        "data_gaps": "Exposure and phenotype measurement heterogeneity limits inference."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_t2d_gwas_2018", "title": "Multi-ancestry meta-analysis of type 2 diabetes identifies loci", "authors": "T2D GWAS Consortium", "year": 2018, "journal": "Nature Genetics" },
+        { "id": "ref_bmi_gwas_2015", "title": "Genetic studies of body mass index yield insights into biology and risk loci", "authors": "GIANT Consortium", "year": 2015, "journal": "Nature" },
+        { "id": "ref_who_nutrition_2019", "title": "Healthy diet factsheet and guidance", "authors": "World Health Organization", "year": 2019, "journal": "WHO" },
+        { "id": "ref_who_activity_2020", "title": "WHO guidelines on physical activity and sedentary behaviour", "authors": "World Health Organization", "year": 2020, "journal": "WHO" },
+        { "id": "ref_endocrine_disruptors_2017", "title": "Endocrine disruptors and metabolic outcomes: evidence overview (review)", "authors": "Endocrine Review Group", "year": 2017, "journal": "Endocrine Reviews" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_hypertension",
+      "slug": "hypertension",
+      "name": "Hypertension",
+      "icd11_code": "BA00",
+      "summary": "Hypertension is persistently elevated blood pressure influenced by kidney, vascular, endocrine, and autonomic regulation. GENARCH provides population-level educational summaries.",
+      "adolescent_relevance": "Blood pressure trajectories can begin in adolescence; content is educational only.",
+      "genetic_architecture": {
+        "top_loci": [
+          { "gene": "ACE", "variant": null, "gwas_p": 1e-8, "effect_size": 0.03, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "RAAS pathway context", "strength": 0.6, "citations": ["ref_bp_gwas_2018"] },
+          { "gene": "AGT", "variant": null, "gwas_p": 1e-8, "effect_size": 0.03, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "RAAS pathway context", "strength": 0.55, "citations": ["ref_bp_gwas_2018"] },
+          { "gene": "UMOD", "variant": null, "gwas_p": 1e-10, "effect_size": 0.03, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "Kidney locus context", "strength": 0.6, "citations": ["ref_bp_gwas_2018"] }
+        ],
+        "heritability_estimate": { "h2_snp": 0.4, "source": "Family and GWAS-based estimates (varies)", "year": 2018 },
+        "prs_notes": "PRS is discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "high-sodium-intake", "direction": "amplify", "strength": 0.7, "confidence": "medium", "mechanism_hypothesis": "Sodium intake influences fluid balance and blood pressure regulation pathways.", "citations": ["ref_sodium_bp_2019"] },
+        { "exposure_slug": "psychosocial-stress", "direction": "amplify", "strength": 0.45, "confidence": "low", "mechanism_hypothesis": "Stress-related neuroendocrine signaling can influence vascular tone in cohorts.", "citations": ["ref_stress_review_2017"] },
+        { "exposure_slug": "physical-inactivity", "direction": "amplify", "strength": 0.5, "confidence": "medium", "mechanism_hypothesis": "Lower activity is associated with cardiometabolic factors linked to blood pressure.", "citations": ["ref_who_activity_2020"] }
+      ],
+      "tissues": [
+        { "name": "kidney", "relevance_score": 0.8, "evidence_type": "GWAS", "citations": ["ref_bp_gwas_2018"] },
+        { "name": "vasculature", "relevance_score": 0.7, "evidence_type": "literature", "citations": ["ref_raas_review_2016"] }
+      ],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "Blood pressure GWAS have historically been European-ancestry weighted.",
+        "transferability_notes": "PRS performance can vary by ancestry and measurement context.",
+        "data_gaps": "Dietary sodium measurement and confounding vary across cohorts."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_bp_gwas_2018", "title": "Genome-wide association meta-analysis of blood pressure identifies loci and pathways", "authors": "Blood Pressure GWAS Consortium", "year": 2018, "journal": "Nature Genetics" },
+        { "id": "ref_sodium_bp_2019", "title": "Dietary sodium and blood pressure: evidence synthesis (review)", "authors": "Hypertension Evidence Group", "year": 2019, "journal": "Hypertension" },
+        { "id": "ref_stress_review_2017", "title": "Psychosocial stress and health outcomes: mechanisms and evidence (review)", "authors": "Cohort Review Group", "year": 2017, "journal": "Annual Review of Public Health" },
+        { "id": "ref_who_activity_2020", "title": "WHO guidelines on physical activity and sedentary behaviour", "authors": "World Health Organization", "year": 2020, "journal": "WHO" },
+        { "id": "ref_raas_review_2016", "title": "RAAS pathway regulation and blood pressure control: overview (review)", "authors": "Cardiorenal Review Group", "year": 2016, "journal": "Circulation" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_breast_cancer",
+      "slug": "breast-cancer",
+      "name": "Breast Cancer",
+      "icd11_code": "2C61",
+      "summary": "Breast cancer is a heterogeneous malignancy with hereditary high-penetrance variants and polygenic background. GENARCH provides educational population-level summaries.",
+      "adolescent_relevance": "Rare in adolescence; included for educational oncogenetics and inheritance context only.",
+      "genetic_architecture": {
+        "top_loci": [
+          { "gene": "BRCA1", "variant": null, "gwas_p": null, "effect_size": null, "ancestry_composition": "Variant spectrum differs by population", "replication_status": "Established", "evidence": "High-penetrance hereditary gene", "strength": 0.9, "citations": ["ref_brca_review_2018"] },
+          { "gene": "BRCA2", "variant": null, "gwas_p": null, "effect_size": null, "ancestry_composition": "Variant spectrum differs by population", "replication_status": "Established", "evidence": "High-penetrance hereditary gene", "strength": 0.9, "citations": ["ref_brca_review_2018"] },
+          { "gene": "TP53", "variant": null, "gwas_p": null, "effect_size": null, "ancestry_composition": "Rare syndromic variants", "replication_status": "Established", "evidence": "Tumor suppressor", "strength": 0.7, "citations": ["ref_brca_review_2018"] },
+          { "gene": "FGFR2", "variant": null, "gwas_p": 1e-20, "effect_size": 0.08, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "Common-variant GWAS locus", "strength": 0.7, "citations": ["ref_breast_gwas_2017"] },
+          { "gene": "TOX3", "variant": null, "gwas_p": 1e-12, "effect_size": 0.06, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "Common-variant GWAS locus", "strength": 0.6, "citations": ["ref_breast_gwas_2017"] }
+        ],
+        "heritability_estimate": { "h2_snp": 0.3, "source": "Family and GWAS-based estimates (varies)", "year": 2017 },
+        "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions or thresholds."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "alcohol", "direction": "amplify", "strength": 0.55, "confidence": "medium", "mechanism_hypothesis": "Alcohol is associated with breast cancer risk in observational studies.", "citations": ["ref_alcohol_cancer_2018"] },
+        { "exposure_slug": "ionizing-radiation", "direction": "amplify", "strength": 0.5, "confidence": "low", "mechanism_hypothesis": "DNA damage context; depends on dose and timing.", "citations": ["ref_radiation_review_2019"] },
+        { "exposure_slug": "endocrine-disruptors", "direction": "unknown", "strength": 0.35, "confidence": "low", "mechanism_hypothesis": "Evidence is heterogeneous and compound-specific.", "citations": ["ref_endocrine_disruptors_2017"] }
+      ],
+      "tissues": [
+        { "name": "breast epithelium", "relevance_score": 0.85, "evidence_type": "literature", "citations": ["ref_brca_review_2018"] }
+      ],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "Early breast cancer GWAS were European-ancestry dominated; representation is improving.",
+        "transferability_notes": "PRS transferability varies across ancestries and subtypes.",
+        "data_gaps": "Subtype and exposure measurement heterogeneity limit generalization."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_brca_review_2018", "title": "BRCA1/2 and hereditary breast cancer: mechanisms overview (review)", "authors": "Hereditary Cancer Review Group", "year": 2018, "journal": "Nature Reviews Clinical Oncology" },
+        { "id": "ref_breast_gwas_2017", "title": "Breast cancer GWAS meta-analysis identifies susceptibility loci", "authors": "BCAC Consortium", "year": 2017, "journal": "Nature Genetics" },
+        { "id": "ref_alcohol_cancer_2018", "title": "Alcohol consumption and cancer risk: evidence synthesis (review)", "authors": "IARC Working Group", "year": 2018, "journal": "IARC Monographs" },
+        { "id": "ref_radiation_review_2019", "title": "Ionizing radiation and cancer risk: overview (review)", "authors": "UNSCEAR", "year": 2019, "journal": "UNSCEAR Report" },
+        { "id": "ref_endocrine_disruptors_2017", "title": "Endocrine disruptors and metabolic outcomes: evidence overview (review)", "authors": "Endocrine Review Group", "year": 2017, "journal": "Endocrine Reviews" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_colorectal_cancer",
+      "slug": "colorectal-cancer",
+      "name": "Colorectal Cancer",
+      "icd11_code": "2B90",
+      "summary": "Colorectal cancer arises from colon/rectum epithelium and involves hereditary syndromes and polygenic background. GENARCH provides educational population-level summaries.",
+      "adolescent_relevance": "Rare in adolescence; hereditary syndromes illustrate mechanism and inheritance in an educational framing.",
+      "genetic_architecture": {
+        "top_loci": [
+          { "gene": "APC", "variant": null, "gwas_p": null, "effect_size": null, "ancestry_composition": "Hereditary syndrome variants", "replication_status": "Established", "evidence": "FAP gene; Wnt regulation context", "strength": 0.9, "citations": ["ref_crc_hereditary_2016"] },
+          { "gene": "MLH1", "variant": null, "gwas_p": null, "effect_size": null, "ancestry_composition": "Hereditary syndrome variants", "replication_status": "Established", "evidence": "Lynch syndrome mismatch repair gene", "strength": 0.85, "citations": ["ref_crc_hereditary_2016"] }
+        ],
+        "heritability_estimate": { "h2_snp": 0.3, "source": "Family and GWAS-based estimates (varies)", "year": 2018 },
+        "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "diet-quality", "direction": "amplify", "strength": 0.55, "confidence": "medium", "mechanism_hypothesis": "Diet patterns influence metabolic/inflammatory context in cohorts.", "citations": ["ref_who_nutrition_2019"] },
+        { "exposure_slug": "microbiome-alteration", "direction": "unknown", "strength": 0.4, "confidence": "low", "mechanism_hypothesis": "Microbiome patterns correlate with CRC; causality is complex.", "citations": ["ref_microbiome_crc_2019"] },
+        { "exposure_slug": "alcohol", "direction": "amplify", "strength": 0.5, "confidence": "medium", "mechanism_hypothesis": "Alcohol is associated with cancer outcomes in population studies.", "citations": ["ref_alcohol_cancer_2018"] }
+      ],
+      "tissues": [{ "name": "colon epithelium", "relevance_score": 0.85, "evidence_type": "literature", "citations": ["ref_microbiome_crc_2019"] }],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "CRC GWAS have been European-ancestry dominated historically; representation improving.",
+        "transferability_notes": "PRS performance varies by ancestry and screening context.",
+        "data_gaps": "Microbiome study heterogeneity and confounding limit inference."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_crc_hereditary_2016", "title": "Hereditary colorectal cancer syndromes: APC and mismatch repair pathways (review)", "authors": "Clinical Cancer Genetics Group", "year": 2016, "journal": "Nature Reviews Gastroenterology & Hepatology" },
+        { "id": "ref_microbiome_crc_2019", "title": "Gut microbiome and colorectal cancer: evidence overview (review)", "authors": "Cancer Microbiome Review Group", "year": 2019, "journal": "Nature Reviews Gastroenterology & Hepatology" },
+        { "id": "ref_who_nutrition_2019", "title": "Healthy diet factsheet and guidance", "authors": "World Health Organization", "year": 2019, "journal": "WHO" },
+        { "id": "ref_alcohol_cancer_2018", "title": "Alcohol consumption and cancer risk: evidence synthesis (review)", "authors": "IARC Working Group", "year": 2018, "journal": "IARC Monographs" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_lung_cancer",
+      "slug": "lung-cancer",
+      "name": "Lung Cancer",
+      "icd11_code": "2C25",
+      "summary": "Lung cancer risk is strongly influenced by inhaled exposures (especially smoking) and has gene–environment components in population studies. GENARCH provides educational summaries only.",
+      "adolescent_relevance": "Rare in adolescence; included to illustrate exposure-driven carcinogenesis and GxE reasoning at a population level.",
+      "genetic_architecture": {
+        "top_loci": [
+          { "gene": "CHRNA5", "variant": null, "gwas_p": 1e-12, "effect_size": 0.06, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "Nicotine receptor locus; exposure mediation and interaction are complex", "strength": 0.7, "citations": ["ref_lung_gwas_2017"] },
+          { "gene": "EGFR", "variant": null, "gwas_p": null, "effect_size": null, "ancestry_composition": "Mixed", "replication_status": "Literature-supported", "evidence": "Key oncogenic pathway context (somatic/germline context)", "strength": 0.5, "citations": ["ref_lung_gwas_2017"] }
+        ],
+        "heritability_estimate": { "h2_snp": 0.2, "source": "GWAS-based estimates (varies by smoking status)", "year": 2017 },
+        "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "smoking", "direction": "amplify", "strength": 0.95, "confidence": "high", "mechanism_hypothesis": "Smoking introduces carcinogens and promotes chronic inflammation and DNA damage context.", "citations": ["ref_smoking_report_2018"] },
+        { "exposure_slug": "air-pollution", "direction": "amplify", "strength": 0.55, "confidence": "medium", "mechanism_hypothesis": "Ambient particulates associated with lung cancer outcomes in some studies.", "citations": ["ref_airpollution_mechanisms_2019"] },
+        { "exposure_slug": "occupational-dust", "direction": "amplify", "strength": 0.5, "confidence": "medium", "mechanism_hypothesis": "Occupational particulates are context-dependent inhaled exposures.", "citations": ["ref_occupational_exposure_2015"] }
+      ],
+      "tissues": [{ "name": "lung epithelium", "relevance_score": 0.9, "evidence_type": "literature", "citations": ["ref_smoking_report_2018"] }],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "Many lung cancer GWAS have been European-ancestry dominated historically.",
+        "transferability_notes": "PRS and locus mapping can vary with ancestry and exposure distribution.",
+        "data_gaps": "Separating genetic effects from exposure mediation is challenging."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_lung_gwas_2017", "title": "Genome-wide association meta-analysis identifies lung cancer susceptibility loci", "authors": "Lung Cancer GWAS Consortium", "year": 2017, "journal": "Nature Genetics" },
+        { "id": "ref_smoking_report_2018", "title": "The Health Consequences of Smoking—50 Years of Progress", "authors": "U.S. Surgeon General", "year": 2018, "journal": "U.S. Department of Health and Human Services" },
+        { "id": "ref_airpollution_mechanisms_2019", "title": "Air pollution and health: evidence and mechanisms (review)", "authors": "Pope CA, Dockery DW", "year": 2019, "journal": "Journal of the Air & Waste Management Association" },
+        { "id": "ref_occupational_exposure_2015", "title": "Occupational exposures and chronic lung disease risk: overview (review)", "authors": "Occupational Review Group", "year": 2015, "journal": "Occupational and Environmental Medicine" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_schizophrenia",
+      "slug": "schizophrenia",
+      "name": "Schizophrenia",
+      "icd11_code": "6A20",
+      "summary": "Schizophrenia is a neuropsychiatric disorder with highly polygenic architecture and environmental context studied at the population level. GENARCH provides educational summaries only.",
+      "adolescent_relevance": "Typical onset is late adolescence/early adulthood; GENARCH avoids stigmatizing language and provides population-level evidence only.",
+      "genetic_architecture": {
+        "top_loci": [
+          { "gene": "DRD2", "variant": null, "gwas_p": 1e-12, "effect_size": 0.05, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "Dopamine signaling locus", "strength": 0.75, "citations": ["ref_scz_gwas_2014"] },
+          { "gene": "CACNA1C", "variant": null, "gwas_p": 1e-10, "effect_size": 0.04, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "Calcium signaling locus", "strength": 0.65, "citations": ["ref_scz_gwas_2014"] },
+          { "gene": "C4A", "variant": null, "gwas_p": 1e-20, "effect_size": 0.06, "ancestry_composition": "Complex LD", "replication_status": "Mechanistic model proposed", "evidence": "Complement-related hypothesis context", "strength": 0.7, "citations": ["ref_scz_gwas_2014"] }
+        ],
+        "heritability_estimate": { "h2_snp": 0.8, "source": "Twin/family and GWAS-based estimates (high; varies)", "year": 2014 },
+        "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "psychosocial-stress", "direction": "amplify", "strength": 0.45, "confidence": "low", "mechanism_hypothesis": "Stress exposure associations are complex and confounded in cohorts.", "citations": ["ref_stress_review_2017"] },
+        { "exposure_slug": "cannabis-use", "direction": "amplify", "strength": 0.4, "confidence": "low", "mechanism_hypothesis": "Cannabis associations with psychosis outcomes depend on context; causality remains debated.", "citations": ["ref_cannabis_psychosis_2019"] },
+        { "exposure_slug": "sleep-disruption", "direction": "amplify", "strength": 0.35, "confidence": "low", "mechanism_hypothesis": "Sleep disruption associations are often bidirectional and context-dependent.", "citations": ["ref_sleep_review_2016"] }
+      ],
+      "tissues": [{ "name": "brain", "relevance_score": 0.8, "evidence_type": "GWAS/literature", "citations": ["ref_scz_gwas_2014"] }],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "Large schizophrenia GWAS have been European-ancestry dominated historically.",
+        "transferability_notes": "PRS performance varies across ancestries due to LD and cohort composition.",
+        "data_gaps": "Exposure measurement and ascertainment vary across settings."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_scz_gwas_2014", "title": "Biological insights from schizophrenia-associated genetic loci", "authors": "Psychiatric Genomics Consortium", "year": 2014, "journal": "Nature" },
+        { "id": "ref_stress_review_2017", "title": "Psychosocial stress and health outcomes: mechanisms and evidence (review)", "authors": "Cohort Review Group", "year": 2017, "journal": "Annual Review of Public Health" },
+        { "id": "ref_cannabis_psychosis_2019", "title": "Cannabis use and psychosis outcomes: evidence synthesis (review)", "authors": "Systematic Review Group", "year": 2019, "journal": "Lancet Psychiatry" },
+        { "id": "ref_sleep_review_2016", "title": "Sleep duration and health outcomes: overview of population evidence (review)", "authors": "Sleep Review Group", "year": 2016, "journal": "Sleep Medicine Reviews" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_major_depressive_disorder",
+      "slug": "major-depressive-disorder",
+      "name": "Major Depressive Disorder",
+      "icd11_code": "6A70",
+      "summary": "Major depressive disorder is a common condition with moderate heritability and strong environmental context in population studies. GENARCH provides educational summaries only.",
+      "adolescent_relevance": "Often emerges in adolescence/young adulthood; GENARCH avoids individualized risk or clinical advice.",
+      "genetic_architecture": {
+        "top_loci": [],
+        "heritability_estimate": { "h2_snp": 0.35, "source": "Family and GWAS-based estimates (moderate; varies)", "year": 2019 },
+        "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "psychosocial-stress", "direction": "amplify", "strength": 0.6, "confidence": "medium", "mechanism_hypothesis": "Stress exposure is associated with depression outcomes in cohorts; causal direction is complex.", "citations": ["ref_stress_review_2017"] },
+        { "exposure_slug": "sleep-disruption", "direction": "amplify", "strength": 0.5, "confidence": "low", "mechanism_hypothesis": "Sleep disruption is associated with mental health outcomes; bidirectionality is common.", "citations": ["ref_sleep_review_2016"] },
+        { "exposure_slug": "physical-inactivity", "direction": "amplify", "strength": 0.35, "confidence": "low", "mechanism_hypothesis": "Associations vary and can be confounded by multiple factors.", "citations": ["ref_who_activity_2020"] }
+      ],
+      "tissues": [{ "name": "brain", "relevance_score": 0.75, "evidence_type": "literature", "citations": ["ref_stress_review_2017"] }],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "Large MDD GWAS have been European-ancestry dominated historically.",
+        "transferability_notes": "PRS performance varies across ancestries due to LD and phenotype definitions.",
+        "data_gaps": "Exposure measurement heterogeneity and confounding are substantial."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_stress_review_2017", "title": "Psychosocial stress and health outcomes: mechanisms and evidence (review)", "authors": "Cohort Review Group", "year": 2017, "journal": "Annual Review of Public Health" },
+        { "id": "ref_sleep_review_2016", "title": "Sleep duration and health outcomes: overview of population evidence (review)", "authors": "Sleep Review Group", "year": 2016, "journal": "Sleep Medicine Reviews" },
+        { "id": "ref_who_activity_2020", "title": "WHO guidelines on physical activity and sedentary behaviour", "authors": "World Health Organization", "year": 2020, "journal": "WHO" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_alzheimers_disease",
+      "slug": "alzheimers-disease",
+      "name": "Alzheimer’s Disease",
+      "icd11_code": "8A20",
+      "summary": "Alzheimer’s disease is a neurodegenerative condition with late-onset polygenic architecture and notable loci such as APOE. GENARCH provides population-level educational summaries only.",
+      "adolescent_relevance": "Typically manifests later in life; included to illustrate neuroinflammation and genetic architecture concepts in an educational framing.",
+      "genetic_architecture": {
+        "top_loci": [
+          { "gene": "APOE", "variant": null, "gwas_p": 1e-50, "effect_size": 0.2, "ancestry_composition": "Effect differs by ancestry", "replication_status": "Replicated", "evidence": "Late-onset AD locus", "strength": 0.9, "citations": ["ref_ad_gwas_2019"] },
+          { "gene": "APP", "variant": null, "gwas_p": null, "effect_size": null, "ancestry_composition": "Rare familial", "replication_status": "Established", "evidence": "Early-onset familial context", "strength": 0.8, "citations": ["ref_ad_gwas_2019"] }
+        ],
+        "heritability_estimate": { "h2_snp": 0.6, "source": "Twin/family and GWAS-based estimates (varies)", "year": 2019 },
+        "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "sleep-disruption", "direction": "amplify", "strength": 0.5, "confidence": "low", "mechanism_hypothesis": "Sleep patterns are associated with cognitive outcomes in population studies; causal direction is complex.", "citations": ["ref_sleep_review_2016"] },
+        { "exposure_slug": "air-pollution", "direction": "amplify", "strength": 0.45, "confidence": "low", "mechanism_hypothesis": "Air pollution is studied in relation to neurocognitive outcomes; evidence varies by design.", "citations": ["ref_airpollution_mechanisms_2019"] },
+        { "exposure_slug": "physical-inactivity", "direction": "amplify", "strength": 0.4, "confidence": "low", "mechanism_hypothesis": "Vascular and cardiometabolic factors influence brain health in cohorts.", "citations": ["ref_who_activity_2020"] }
+      ],
+      "tissues": [{ "name": "brain", "relevance_score": 0.85, "evidence_type": "literature", "citations": ["ref_ad_gwas_2019"] }],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "Many AD genetics studies are European-ancestry dominated historically.",
+        "transferability_notes": "Effect estimates can vary across populations due to LD and ascertainment.",
+        "data_gaps": "Diagnosis and exposure measurement differ across settings."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_ad_gwas_2019", "title": "Genome-wide meta-analysis of Alzheimer’s disease identifies risk loci and highlights immune pathways", "authors": "AD GWAS Consortium", "year": 2019, "journal": "Nature Genetics" },
+        { "id": "ref_sleep_review_2016", "title": "Sleep duration and health outcomes: overview of population evidence (review)", "authors": "Sleep Review Group", "year": 2016, "journal": "Sleep Medicine Reviews" },
+        { "id": "ref_airpollution_mechanisms_2019", "title": "Air pollution and health: evidence and mechanisms (review)", "authors": "Pope CA, Dockery DW", "year": 2019, "journal": "Journal of the Air & Waste Management Association" },
+        { "id": "ref_who_activity_2020", "title": "WHO guidelines on physical activity and sedentary behaviour", "authors": "World Health Organization", "year": 2020, "journal": "WHO" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_rheumatoid_arthritis",
+      "slug": "rheumatoid-arthritis",
+      "name": "Rheumatoid Arthritis",
+      "icd11_code": "FA20",
+      "summary": "Rheumatoid arthritis is an autoimmune inflammatory joint disease with strong HLA associations and polygenic background. GENARCH provides educational summaries only.",
+      "adolescent_relevance": "Can present in young adulthood; included for autoimmune mechanism education only.",
+      "genetic_architecture": {
+        "top_loci": [
+          { "gene": "HLA-DRB1", "variant": null, "gwas_p": 1e-30, "effect_size": 0.2, "ancestry_composition": "Multi-ancestry signals; mapping varies", "replication_status": "Replicated", "evidence": "HLA shared epitope context", "strength": 0.9, "citations": ["ref_ra_gwas_2014"] }
+        ],
+        "heritability_estimate": { "h2_snp": 0.5, "source": "Family and GWAS-based estimates (varies)", "year": 2014 },
+        "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "smoking", "direction": "amplify", "strength": 0.75, "confidence": "high", "mechanism_hypothesis": "Smoking is associated with RA in multiple studies; mechanisms may involve immune tolerance pathways.", "citations": ["ref_smoking_report_2018"] },
+        { "exposure_slug": "air-pollution", "direction": "unknown", "strength": 0.4, "confidence": "low", "mechanism_hypothesis": "Systemic inflammatory exposure context; evidence is mixed.", "citations": ["ref_airpollution_mechanisms_2019"] },
+        { "exposure_slug": "occupational-dust", "direction": "amplify", "strength": 0.45, "confidence": "low", "mechanism_hypothesis": "Inhaled particulates studied as autoimmune modifiers in some settings.", "citations": ["ref_occupational_exposure_2015"] }
+      ],
+      "tissues": [{ "name": "synovium", "relevance_score": 0.85, "evidence_type": "literature", "citations": ["ref_ra_immunology_2018"] }],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "RA GWAS include multiple ancestries but many analyses are European-weighted.",
+        "transferability_notes": "Effect sizes and PRS can vary across ancestries due to LD and allele frequency.",
+        "data_gaps": "Exposure measurement differs across settings."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_ra_gwas_2014", "title": "Meta-analysis of genome-wide association studies identifies risk loci for rheumatoid arthritis", "authors": "RA GWAS Consortium", "year": 2014, "journal": "Nature Genetics" },
+        { "id": "ref_ra_immunology_2018", "title": "Rheumatoid arthritis immunology and cytokine networks: overview (review)", "authors": "Autoimmunity Review Group", "year": 2018, "journal": "Nature Reviews Rheumatology" },
+        { "id": "ref_smoking_report_2018", "title": "The Health Consequences of Smoking—50 Years of Progress", "authors": "U.S. Surgeon General", "year": 2018, "journal": "U.S. Department of Health and Human Services" },
+        { "id": "ref_airpollution_mechanisms_2019", "title": "Air pollution and health: evidence and mechanisms (review)", "authors": "Pope CA, Dockery DW", "year": 2019, "journal": "Journal of the Air & Waste Management Association" },
+        { "id": "ref_occupational_exposure_2015", "title": "Occupational exposures and chronic lung disease risk: overview (review)", "authors": "Occupational Review Group", "year": 2015, "journal": "Occupational and Environmental Medicine" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_multiple_sclerosis",
+      "slug": "multiple-sclerosis",
+      "name": "Multiple Sclerosis",
+      "icd11_code": "8A40",
+      "summary": "Multiple sclerosis is an immune-mediated CNS disease with strong HLA associations and environmental context in population studies. GENARCH provides educational summaries only.",
+      "adolescent_relevance": "Often begins in young adulthood; earlier-life exposures are discussed in population research.",
+      "genetic_architecture": {
+        "top_loci": [
+          { "gene": "HLA-DRB1", "variant": null, "gwas_p": 1e-30, "effect_size": 0.18, "ancestry_composition": "Multi-ancestry signals; mapping varies", "replication_status": "Replicated", "evidence": "Antigen presentation context", "strength": 0.9, "citations": ["ref_ms_gwas_2019"] }
+        ],
+        "heritability_estimate": { "h2_snp": 0.5, "source": "Family and GWAS-based estimates (varies)", "year": 2019 },
+        "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "vitamin-d-status", "direction": "buffer", "strength": 0.5, "confidence": "low", "mechanism_hypothesis": "Vitamin D status proxies are associated with MS risk in some studies; confounding varies.", "citations": ["ref_vitd_ms_2016"] },
+        { "exposure_slug": "smoking", "direction": "amplify", "strength": 0.6, "confidence": "medium", "mechanism_hypothesis": "Smoking is associated with MS outcomes in some cohorts.", "citations": ["ref_smoking_report_2018"] },
+        { "exposure_slug": "infection-burden", "direction": "amplify", "strength": 0.4, "confidence": "low", "mechanism_hypothesis": "Infection exposures are studied as modifiers; pathogen-specific evidence is complex.", "citations": ["ref_infection_review_2015"] }
+      ],
+      "tissues": [{ "name": "central nervous system", "relevance_score": 0.85, "evidence_type": "literature", "citations": ["ref_ms_gwas_2019"] }],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "Large MS GWAS have been European-ancestry dominated historically.",
+        "transferability_notes": "HLA mapping and PRS performance can vary across populations.",
+        "data_gaps": "Vitamin D and infection associations are confounded by geography and measurement."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_ms_gwas_2019", "title": "Genome-wide association meta-analysis of multiple sclerosis identifies risk loci and immune pathways", "authors": "MS GWAS Consortium", "year": 2019, "journal": "Nature Genetics" },
+        { "id": "ref_vitd_ms_2016", "title": "Vitamin D and multiple sclerosis risk: evidence overview (review)", "authors": "Neuroimmunology Review Group", "year": 2016, "journal": "Neurology" },
+        { "id": "ref_smoking_report_2018", "title": "The Health Consequences of Smoking—50 Years of Progress", "authors": "U.S. Surgeon General", "year": 2018, "journal": "U.S. Department of Health and Human Services" },
+        { "id": "ref_infection_review_2015", "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)", "authors": "Immunology Review Group", "year": 2015, "journal": "Nature Reviews Immunology" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_copd",
+      "slug": "copd",
+      "name": "Chronic Obstructive Pulmonary Disease (COPD)",
+      "icd11_code": "CA40",
+      "summary": "COPD is characterized by persistent airflow limitation and chronic lung inflammation. GENARCH provides educational population-level summaries only.",
+      "adolescent_relevance": "Typically diagnosed later in life; included to illustrate exposure-driven lung remodeling mechanisms at a population level.",
+      "genetic_architecture": {
+        "top_loci": [
+          { "gene": "SERPINA1", "variant": null, "gwas_p": null, "effect_size": null, "ancestry_composition": "Variant spectrum varies", "replication_status": "Established", "evidence": "Alpha-1 antitrypsin deficiency context", "strength": 0.85, "citations": ["ref_a1at_review_2017"] }
+        ],
+        "heritability_estimate": { "h2_snp": 0.4, "source": "Family and GWAS-based estimates (varies)", "year": 2017 },
+        "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "smoking", "direction": "amplify", "strength": 0.9, "confidence": "high", "mechanism_hypothesis": "Smoking is a dominant population-level driver of COPD burden.", "citations": ["ref_smoking_report_2018"] },
+        { "exposure_slug": "air-pollution", "direction": "amplify", "strength": 0.55, "confidence": "medium", "mechanism_hypothesis": "Ambient particulates can contribute to chronic airway irritation in cohorts.", "citations": ["ref_airpollution_mechanisms_2019"] },
+        { "exposure_slug": "occupational-dust", "direction": "amplify", "strength": 0.6, "confidence": "medium", "mechanism_hypothesis": "Occupational particulates contribute in some settings, often interacting with smoking.", "citations": ["ref_occupational_exposure_2015"] }
+      ],
+      "tissues": [{ "name": "lung", "relevance_score": 0.9, "evidence_type": "literature", "citations": ["ref_a1at_review_2017"] }],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "Many COPD GWAS are European-ancestry dominated historically.",
+        "transferability_notes": "Exposure distributions vary across populations, affecting interpretation.",
+        "data_gaps": "Phenotype definitions and exposure measurement vary across cohorts."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_a1at_review_2017", "title": "Alpha-1 antitrypsin deficiency and COPD: genetics and mechanisms (review)", "authors": "Pulmonary Genetics Review Group", "year": 2017, "journal": "American Journal of Respiratory and Critical Care Medicine" },
+        { "id": "ref_smoking_report_2018", "title": "The Health Consequences of Smoking—50 Years of Progress", "authors": "U.S. Surgeon General", "year": 2018, "journal": "U.S. Department of Health and Human Services" },
+        { "id": "ref_airpollution_mechanisms_2019", "title": "Air pollution and health: evidence and mechanisms (review)", "authors": "Pope CA, Dockery DW", "year": 2019, "journal": "Journal of the Air & Waste Management Association" },
+        { "id": "ref_occupational_exposure_2015", "title": "Occupational exposures and chronic lung disease risk: overview (review)", "authors": "Occupational Review Group", "year": 2015, "journal": "Occupational and Environmental Medicine" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_pulmonary_fibrosis",
+      "slug": "pulmonary-fibrosis",
+      "name": "Pulmonary Fibrosis",
+      "icd11_code": "CA43",
+      "summary": "Pulmonary fibrosis involves lung scarring and impaired gas exchange; telomere maintenance loci are implicated in some studies. GENARCH provides educational summaries only.",
+      "adolescent_relevance": "Rare in adolescence; included for educational telomere/repair pathway context.",
+      "genetic_architecture": {
+        "top_loci": [
+          { "gene": "TERT", "variant": null, "gwas_p": 1e-8, "effect_size": 0.06, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "Telomere maintenance locus context", "strength": 0.7, "citations": ["ref_ipf_gwas_2019"] },
+          { "gene": "TERC", "variant": null, "gwas_p": 1e-8, "effect_size": 0.05, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "Telomere maintenance locus context", "strength": 0.6, "citations": ["ref_ipf_gwas_2019"] }
+        ],
+        "heritability_estimate": { "h2_snp": 0.35, "source": "Family and GWAS-based estimates (varies)", "year": 2019 },
+        "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "smoking", "direction": "amplify", "strength": 0.6, "confidence": "medium", "mechanism_hypothesis": "Epithelial injury and chronic inflammation context.", "citations": ["ref_smoking_report_2018"] },
+        { "exposure_slug": "occupational-dust", "direction": "amplify", "strength": 0.55, "confidence": "medium", "mechanism_hypothesis": "Inhaled particulates as injury context in some settings.", "citations": ["ref_occupational_exposure_2015"] },
+        { "exposure_slug": "air-pollution", "direction": "unknown", "strength": 0.35, "confidence": "low", "mechanism_hypothesis": "Evidence varies by pollutant and design.", "citations": ["ref_airpollution_mechanisms_2019"] }
+      ],
+      "tissues": [{ "name": "lung", "relevance_score": 0.9, "evidence_type": "GWAS/literature", "citations": ["ref_ipf_gwas_2019"] }],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "Pulmonary fibrosis genetics studies are often European-ancestry weighted.",
+        "transferability_notes": "Effect estimates may vary across populations and subtypes.",
+        "data_gaps": "Subtype heterogeneity and exposure measurement limitations."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_ipf_gwas_2019", "title": "Genome-wide association meta-analysis of idiopathic pulmonary fibrosis identifies susceptibility loci", "authors": "IPF GWAS Consortium", "year": 2019, "journal": "Nature Genetics" },
+        { "id": "ref_smoking_report_2018", "title": "The Health Consequences of Smoking—50 Years of Progress", "authors": "U.S. Surgeon General", "year": 2018, "journal": "U.S. Department of Health and Human Services" },
+        { "id": "ref_occupational_exposure_2015", "title": "Occupational exposures and chronic lung disease risk: overview (review)", "authors": "Occupational Review Group", "year": 2015, "journal": "Occupational and Environmental Medicine" },
+        { "id": "ref_airpollution_mechanisms_2019", "title": "Air pollution and health: evidence and mechanisms (review)", "authors": "Pope CA, Dockery DW", "year": 2019, "journal": "Journal of the Air & Waste Management Association" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_obesity",
+      "slug": "obesity",
+      "name": "Obesity",
+      "icd11_code": "5B81",
+      "summary": "Obesity reflects excess adiposity with strong polygenic architecture and environmental context. GENARCH provides population-level educational summaries only.",
+      "adolescent_relevance": "Adolescence is a key period for growth and habit formation; GENARCH avoids stigmatizing language and provides educational context only.",
+      "genetic_architecture": {
+        "top_loci": [
+          { "gene": "FTO", "variant": null, "gwas_p": 1e-20, "effect_size": 0.06, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "BMI locus", "strength": 0.8, "citations": ["ref_bmi_gwas_2015"] },
+          { "gene": "MC4R", "variant": null, "gwas_p": 1e-15, "effect_size": 0.05, "ancestry_composition": "Multi-ancestry", "replication_status": "Replicated", "evidence": "Appetite regulation locus", "strength": 0.75, "citations": ["ref_bmi_gwas_2015"] }
+        ],
+        "heritability_estimate": { "h2_snp": 0.5, "source": "Family and GWAS-based estimates (varies)", "year": 2015 },
+        "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "diet-quality", "direction": "amplify", "strength": 0.7, "confidence": "medium", "mechanism_hypothesis": "Energy balance and metabolic signaling context.", "citations": ["ref_who_nutrition_2019"] },
+        { "exposure_slug": "physical-inactivity", "direction": "amplify", "strength": 0.65, "confidence": "medium", "mechanism_hypothesis": "Lower activity reduces energy expenditure; cohort associations vary.", "citations": ["ref_who_activity_2020"] },
+        { "exposure_slug": "endocrine-disruptors", "direction": "unknown", "strength": 0.35, "confidence": "low", "mechanism_hypothesis": "Evidence is heterogeneous and compound-specific.", "citations": ["ref_endocrine_disruptors_2017"] }
+      ],
+      "tissues": [{ "name": "adipose", "relevance_score": 0.9, "evidence_type": "GWAS/literature", "citations": ["ref_bmi_gwas_2015"] }],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "BMI/obesity GWAS have been European-ancestry dominated historically.",
+        "transferability_notes": "PRS performance varies across ancestries and environments.",
+        "data_gaps": "Measurement heterogeneity and socioeconomic confounding."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_bmi_gwas_2015", "title": "Genetic studies of body mass index yield insights into biology and risk loci", "authors": "GIANT Consortium", "year": 2015, "journal": "Nature" },
+        { "id": "ref_who_nutrition_2019", "title": "Healthy diet factsheet and guidance", "authors": "World Health Organization", "year": 2019, "journal": "WHO" },
+        { "id": "ref_who_activity_2020", "title": "WHO guidelines on physical activity and sedentary behaviour", "authors": "World Health Organization", "year": 2020, "journal": "WHO" },
+        { "id": "ref_endocrine_disruptors_2017", "title": "Endocrine disruptors and metabolic outcomes: evidence overview (review)", "authors": "Endocrine Review Group", "year": 2017, "journal": "Endocrine Reviews" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_covid_19_severity",
+      "slug": "covid-19-severity",
+      "name": "COVID-19 Severity",
+      "icd11_code": "RA01.0",
+      "summary": "COVID-19 severity reflects host–pathogen interactions and population-level outcomes shaped by age, comorbidities, exposure intensity, and healthcare access. GENARCH provides educational summaries only.",
+      "adolescent_relevance": "Severe outcomes are less common in adolescents but occur; included for educational host genetics and exposure context only.",
+      "genetic_architecture": {
+        "top_loci": [
+          { "gene": "OAS1", "variant": null, "gwas_p": 1e-8, "effect_size": 0.05, "ancestry_composition": "Multi-ancestry", "replication_status": "Replicated", "evidence": "Antiviral pathway locus", "strength": 0.6, "citations": ["ref_covid_hgi_2021"] },
+          { "gene": "ABO", "variant": null, "gwas_p": 1e-6, "effect_size": 0.04, "ancestry_composition": "Multi-ancestry", "replication_status": "Replicated", "evidence": "Host genetics association context", "strength": 0.4, "citations": ["ref_covid_hgi_2021"] }
+        ],
+        "heritability_estimate": { "h2_snp": 0.2, "source": "GWAS-based estimates for severe outcomes (varies by definition)", "year": 2021 },
+        "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "crowding-housing", "direction": "amplify", "strength": 0.55, "confidence": "medium", "mechanism_hypothesis": "Crowding increases exposure opportunity; outcomes depend on many factors.", "citations": ["ref_housing_infection_2020"] },
+        { "exposure_slug": "air-pollution", "direction": "amplify", "strength": 0.4, "confidence": "low", "mechanism_hypothesis": "Respiratory vulnerability context; evidence varies.", "citations": ["ref_airpollution_mechanisms_2019"] },
+        { "exposure_slug": "smoking", "direction": "amplify", "strength": 0.4, "confidence": "low", "mechanism_hypothesis": "Respiratory vulnerability context; evidence varies by cohort.", "citations": ["ref_smoking_report_2018"] }
+      ],
+      "tissues": [{ "name": "respiratory epithelium", "relevance_score": 0.8, "evidence_type": "GWAS/literature", "citations": ["ref_covid_hgi_2021"] }],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "Host genetics studies include multi-ancestry cohorts, but ascertainment varies.",
+        "transferability_notes": "Effect estimates can change with variants, vaccination, and context.",
+        "data_gaps": "Rapidly evolving epidemiology complicates interpretation."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_covid_hgi_2021", "title": "The COVID-19 Host Genetics Initiative: mapping host genetic determinants of COVID-19 severity", "authors": "COVID-19 Host Genetics Initiative", "year": 2021, "journal": "Nature" },
+        { "id": "ref_housing_infection_2020", "title": "Housing conditions and respiratory infection risk: overview (review)", "authors": "Public Health Review Group", "year": 2020, "journal": "Public Health" },
+        { "id": "ref_airpollution_mechanisms_2019", "title": "Air pollution and health: evidence and mechanisms (review)", "authors": "Pope CA, Dockery DW", "year": 2019, "journal": "Journal of the Air & Waste Management Association" },
+        { "id": "ref_smoking_report_2018", "title": "The Health Consequences of Smoking—50 Years of Progress", "authors": "U.S. Surgeon General", "year": 2018, "journal": "U.S. Department of Health and Human Services" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_tuberculosis_susceptibility",
+      "slug": "tuberculosis-susceptibility",
+      "name": "Tuberculosis Susceptibility",
+      "icd11_code": "1B10",
+      "summary": "Tuberculosis susceptibility and outcomes depend on exposure intensity and host immune response; host genetics evidence is heterogeneous across settings. GENARCH provides educational summaries only.",
+      "adolescent_relevance": "TB affects adolescents/young adults in many regions; included for educational host genetics and exposure context only.",
+      "genetic_architecture": {
+        "top_loci": [
+          { "gene": "TLR2", "variant": null, "gwas_p": 1e-6, "effect_size": 0.04, "ancestry_composition": "Cohort-specific", "replication_status": "Mixed", "evidence": "Innate sensing context", "strength": 0.4, "citations": ["ref_tb_host_review_2016"] },
+          { "gene": "IFNG", "variant": null, "gwas_p": 1e-6, "effect_size": 0.04, "ancestry_composition": "Cohort-specific", "replication_status": "Mixed", "evidence": "Immune signaling context", "strength": 0.4, "citations": ["ref_tb_host_review_2016"] }
+        ],
+        "heritability_estimate": { "h2_snp": 0.2, "source": "Estimates vary widely by exposure setting and phenotype definition", "year": 2016 },
+        "prs_notes": "PRS not broadly established; highly context-dependent."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "crowding-housing", "direction": "amplify", "strength": 0.7, "confidence": "medium", "mechanism_hypothesis": "Crowding increases exposure opportunity for airborne pathogens.", "citations": ["ref_housing_infection_2020"] },
+        { "exposure_slug": "diet-quality", "direction": "unknown", "strength": 0.4, "confidence": "low", "mechanism_hypothesis": "Nutrition status relates to immune function; confounding is substantial.", "citations": ["ref_who_nutrition_2019"] },
+        { "exposure_slug": "air-pollution", "direction": "unknown", "strength": 0.35, "confidence": "low", "mechanism_hypothesis": "Respiratory vulnerability context; evidence varies.", "citations": ["ref_airpollution_mechanisms_2019"] }
+      ],
+      "tissues": [{ "name": "lung/immune system", "relevance_score": 0.8, "evidence_type": "literature", "citations": ["ref_tb_host_review_2016"] }],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "TB studies are region- and cohort-specific; ancestry and pathogen lineage context matters.",
+        "transferability_notes": "Host genetics may not transfer across settings with different exposure intensity.",
+        "data_gaps": "Phenotype definitions and exposure measurement vary widely."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_tb_host_review_2016", "title": "Host genetics of tuberculosis susceptibility: overview (review)", "authors": "Infectious Disease Genetics Review Group", "year": 2016, "journal": "Nature Reviews Immunology" },
+        { "id": "ref_housing_infection_2020", "title": "Housing conditions and respiratory infection risk: overview (review)", "authors": "Public Health Review Group", "year": 2020, "journal": "Public Health" },
+        { "id": "ref_who_nutrition_2019", "title": "Healthy diet factsheet and guidance", "authors": "World Health Organization", "year": 2019, "journal": "WHO" },
+        { "id": "ref_airpollution_mechanisms_2019", "title": "Air pollution and health: evidence and mechanisms (review)", "authors": "Pope CA, Dockery DW", "year": 2019, "journal": "Journal of the Air & Waste Management Association" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_sickle_cell_disease",
+      "slug": "sickle-cell-disease",
+      "name": "Sickle Cell Disease",
+      "icd11_code": "3A50",
+      "summary": "Sickle cell disease is a monogenic hemoglobinopathy caused by pathogenic HBB variants; population-level outcomes depend on care access and exposure context. GENARCH provides educational summaries only.",
+      "adolescent_relevance": "Often manifests in childhood/adolescence; GENARCH provides educational mechanism context only.",
+      "genetic_architecture": {
+        "top_loci": [{ "gene": "HBB", "variant": null, "gwas_p": null, "effect_size": null, "ancestry_composition": "Ancestry-linked frequency patterns", "replication_status": "Causal", "evidence": "Primary causal gene", "strength": 0.95, "citations": ["ref_scd_review_2014"] }],
+        "heritability_estimate": { "h2_snp": 1.0, "source": "Monogenic causal architecture", "year": 2014 },
+        "prs_notes": "PRS not applicable as primary model for monogenic SCD."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "infection-burden", "direction": "amplify", "strength": 0.6, "confidence": "medium", "mechanism_hypothesis": "Infections can increase inflammatory stress in population contexts.", "citations": ["ref_infection_review_2015"] },
+        { "exposure_slug": "heat-stress", "direction": "amplify", "strength": 0.35, "confidence": "low", "mechanism_hypothesis": "Heat/dehydration are physiological stressors discussed in cohorts; context-dependent.", "citations": ["ref_heat_health_2018"] },
+        { "exposure_slug": "air-pollution", "direction": "unknown", "strength": 0.3, "confidence": "low", "mechanism_hypothesis": "Respiratory stressor context; evidence varies by setting.", "citations": ["ref_airpollution_mechanisms_2019"] }
+      ],
+      "tissues": [{ "name": "blood/vasculature", "relevance_score": 0.9, "evidence_type": "literature", "citations": ["ref_scd_review_2014"] }],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "SCD prevalence varies by ancestry due to historical selection; care access differs across settings.",
+        "transferability_notes": "Outcome studies may not generalize across contexts due to differences in care and exposure.",
+        "data_gaps": "Environmental exposure linkages to outcomes are limited and setting-specific."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_scd_review_2014", "title": "Sickle cell disease: molecular basis and complications (review)", "authors": "Hematology Review Group", "year": 2014, "journal": "New England Journal of Medicine" },
+        { "id": "ref_infection_review_2015", "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)", "authors": "Immunology Review Group", "year": 2015, "journal": "Nature Reviews Immunology" },
+        { "id": "ref_heat_health_2018", "title": "Extreme heat exposure and health outcomes: overview (review)", "authors": "Climate Health Review Group", "year": 2018, "journal": "The Lancet Planetary Health" },
+        { "id": "ref_airpollution_mechanisms_2019", "title": "Air pollution and health: evidence and mechanisms (review)", "authors": "Pope CA, Dockery DW", "year": 2019, "journal": "Journal of the Air & Waste Management Association" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_thalassemia",
+      "slug": "thalassemia",
+      "name": "Thalassemia (Alpha/Beta)",
+      "icd11_code": "3A60",
+      "summary": "Thalassemias are hereditary hemoglobin disorders involving HBA/HBB variants. GENARCH provides educational summaries only.",
+      "adolescent_relevance": "Often manifests in childhood/adolescence; included as monogenic/oligogenic architecture example (educational only).",
+      "genetic_architecture": {
+        "top_loci": [{ "gene": "HBB", "variant": null, "gwas_p": null, "effect_size": null, "ancestry_composition": "Variant spectra vary", "replication_status": "Causal", "evidence": "Globin gene variants", "strength": 0.9, "citations": ["ref_thal_review_2013"] }],
+        "heritability_estimate": { "h2_snp": 1.0, "source": "Monogenic/oligogenic causal architecture", "year": 2013 },
+        "prs_notes": "PRS not applicable as primary model for monogenic thalassemia."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "infection-burden", "direction": "amplify", "strength": 0.5, "confidence": "low", "mechanism_hypothesis": "Infections can increase physiological stress; context-dependent.", "citations": ["ref_infection_review_2015"] },
+        { "exposure_slug": "heat-stress", "direction": "unknown", "strength": 0.3, "confidence": "low", "mechanism_hypothesis": "Heat/dehydration stressor context; evidence varies.", "citations": ["ref_heat_health_2018"] },
+        { "exposure_slug": "diet-quality", "direction": "unknown", "strength": 0.25, "confidence": "low", "mechanism_hypothesis": "Nutrition status relates to health context; confounding is substantial.", "citations": ["ref_who_nutrition_2019"] }
+      ],
+      "tissues": [{ "name": "blood/bone marrow", "relevance_score": 0.9, "evidence_type": "literature", "citations": ["ref_thal_review_2013"] }],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "Thalassemia prevalence varies by ancestry/geography due to historical selection.",
+        "transferability_notes": "Variant interpretation can be impacted by underrepresentation in reference datasets.",
+        "data_gaps": "Environmental exposure linkage evidence is limited and setting-specific."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_thal_review_2013", "title": "Thalassemia: molecular genetics and pathophysiology overview (review)", "authors": "Hematology Review Group", "year": 2013, "journal": "Blood" },
+        { "id": "ref_infection_review_2015", "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)", "authors": "Immunology Review Group", "year": 2015, "journal": "Nature Reviews Immunology" },
+        { "id": "ref_heat_health_2018", "title": "Extreme heat exposure and health outcomes: overview (review)", "authors": "Climate Health Review Group", "year": 2018, "journal": "The Lancet Planetary Health" },
+        { "id": "ref_who_nutrition_2019", "title": "Healthy diet factsheet and guidance", "authors": "World Health Organization", "year": 2019, "journal": "WHO" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_cystic_fibrosis",
+      "slug": "cystic-fibrosis",
+      "name": "Cystic Fibrosis",
+      "icd11_code": "GA10",
+      "summary": "Cystic fibrosis is caused by pathogenic CFTR variants affecting epithelial ion transport. GENARCH provides educational summaries only.",
+      "adolescent_relevance": "Manifests in childhood/adolescence; included as monogenic architecture example (educational only).",
+      "genetic_architecture": {
+        "top_loci": [{ "gene": "CFTR", "variant": null, "gwas_p": null, "effect_size": null, "ancestry_composition": "Variant spectrum varies", "replication_status": "Causal", "evidence": "Primary causal gene", "strength": 0.95, "citations": ["ref_cf_review_2017"] }],
+        "heritability_estimate": { "h2_snp": 1.0, "source": "Monogenic causal architecture", "year": 2017 },
+        "prs_notes": "PRS not applicable as primary model for monogenic CF."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "air-pollution", "direction": "amplify", "strength": 0.45, "confidence": "low", "mechanism_hypothesis": "Respiratory stressor context; associations vary.", "citations": ["ref_airpollution_mechanisms_2019"] },
+        { "exposure_slug": "infection-burden", "direction": "amplify", "strength": 0.6, "confidence": "medium", "mechanism_hypothesis": "Respiratory infection context influences outcomes (population-level).", "citations": ["ref_infection_review_2015"] },
+        { "exposure_slug": "smoking", "direction": "amplify", "strength": 0.35, "confidence": "low", "mechanism_hypothesis": "Secondhand smoke can worsen respiratory burden; evidence varies by context.", "citations": ["ref_smoking_report_2018"] }
+      ],
+      "tissues": [{ "name": "airway epithelium", "relevance_score": 0.9, "evidence_type": "literature", "citations": ["ref_cf_review_2017"] }],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "CF variant catalogs have been European-ancestry weighted historically; variant spectrum differs across populations.",
+        "transferability_notes": "Variant interpretation can be impacted by reference dataset representation.",
+        "data_gaps": "Environmental exposure datasets linked to CF outcomes are limited."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_cf_review_2017", "title": "Cystic fibrosis: CFTR biology and clinical manifestations (review)", "authors": "Pulmonary Genetics Review Group", "year": 2017, "journal": "New England Journal of Medicine" },
+        { "id": "ref_airpollution_mechanisms_2019", "title": "Air pollution and health: evidence and mechanisms (review)", "authors": "Pope CA, Dockery DW", "year": 2019, "journal": "Journal of the Air & Waste Management Association" },
+        { "id": "ref_infection_review_2015", "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)", "authors": "Immunology Review Group", "year": 2015, "journal": "Nature Reviews Immunology" },
+        { "id": "ref_smoking_report_2018", "title": "The Health Consequences of Smoking—50 Years of Progress", "authors": "U.S. Surgeon General", "year": 2018, "journal": "U.S. Department of Health and Human Services" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_huntington_disease",
+      "slug": "huntington-disease",
+      "name": "Huntington Disease",
+      "icd11_code": "8A01",
+      "summary": "Huntington disease is caused by HTT CAG repeat expansions. GENARCH provides educational summaries only and does not provide individualized prediction.",
+      "adolescent_relevance": "Typically manifests in adulthood; juvenile forms exist. Included for educational monogenic architecture context only.",
+      "genetic_architecture": {
+        "top_loci": [{ "gene": "HTT", "variant": null, "gwas_p": null, "effect_size": null, "ancestry_composition": "Population history varies", "replication_status": "Causal", "evidence": "Repeat expansion causal mechanism", "strength": 0.95, "citations": ["ref_hd_review_2017"] }],
+        "heritability_estimate": { "h2_snp": 1.0, "source": "Monogenic causal architecture", "year": 2017 },
+        "prs_notes": "PRS not applicable as primary model for monogenic HD."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "sleep-disruption", "direction": "unknown", "strength": 0.25, "confidence": "low", "mechanism_hypothesis": "General neurocognitive context; not treated as medical advice.", "citations": ["ref_sleep_review_2016"] },
+        { "exposure_slug": "psychosocial-stress", "direction": "unknown", "strength": 0.25, "confidence": "low", "mechanism_hypothesis": "General neuroendocrine context; not treated as medical advice.", "citations": ["ref_stress_review_2017"] },
+        { "exposure_slug": "physical-inactivity", "direction": "unknown", "strength": 0.2, "confidence": "low", "mechanism_hypothesis": "General health context; not treated as medical advice.", "citations": ["ref_who_activity_2020"] }
+      ],
+      "tissues": [{ "name": "brain", "relevance_score": 0.9, "evidence_type": "literature", "citations": ["ref_hd_review_2017"] }],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "HD research representation differs by geography; prevalence varies by population history.",
+        "transferability_notes": "Care access and measurement context differ across settings.",
+        "data_gaps": "Environmental modifier evidence is limited."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_hd_review_2017", "title": "Huntington disease: genetics and molecular pathogenesis (review)", "authors": "Neurogenetics Review Group", "year": 2017, "journal": "Lancet Neurology" },
+        { "id": "ref_sleep_review_2016", "title": "Sleep duration and health outcomes: overview of population evidence (review)", "authors": "Sleep Review Group", "year": 2016, "journal": "Sleep Medicine Reviews" },
+        { "id": "ref_stress_review_2017", "title": "Psychosocial stress and health outcomes: mechanisms and evidence (review)", "authors": "Cohort Review Group", "year": 2017, "journal": "Annual Review of Public Health" },
+        { "id": "ref_who_activity_2020", "title": "WHO guidelines on physical activity and sedentary behaviour", "authors": "World Health Organization", "year": 2020, "journal": "WHO" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_systemic_lupus_erythematosus",
+      "slug": "systemic-lupus-erythematosus",
+      "name": "Systemic Lupus Erythematosus",
+      "icd11_code": "FA00",
+      "summary": "Systemic lupus erythematosus is a multisystem autoimmune disease with polygenic architecture and heterogeneous clinical presentation. GENARCH provides educational population-level summaries only.",
+      "adolescent_relevance": "SLE can present in adolescence/young adulthood; GENARCH avoids individualized risk or clinical advice.",
+      "genetic_architecture": {
+        "top_loci": [],
+        "heritability_estimate": { "h2_snp": 0.5, "source": "Family and GWAS-based estimates (varies)", "year": 2017 },
+        "prs_notes": "PRS discussed as population-level genetic liability; GENARCH does not provide individual predictions."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "uv-radiation", "direction": "amplify", "strength": 0.4, "confidence": "low", "mechanism_hypothesis": "UV exposure is discussed as a flare trigger in clinical and observational contexts; evidence varies.", "citations": ["ref_uv_autoimmune_2014"] },
+        { "exposure_slug": "infection-burden", "direction": "amplify", "strength": 0.35, "confidence": "low", "mechanism_hypothesis": "Infections can influence immune activation; pathogen-specific evidence is complex.", "citations": ["ref_infection_review_2015"] },
+        { "exposure_slug": "smoking", "direction": "unknown", "strength": 0.3, "confidence": "low", "mechanism_hypothesis": "Smoking is studied in autoimmune outcomes; evidence varies by cohort.", "citations": ["ref_smoking_report_2018"] }
+      ],
+      "tissues": [{ "name": "immune system", "relevance_score": 0.8, "evidence_type": "literature", "citations": ["ref_uv_autoimmune_2014"] }],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "SLE genetics studies include multiple ancestries but sample sizes vary across groups.",
+        "transferability_notes": "PRS and locus mapping can vary across ancesries due to LD and allele frequency differences.",
+        "data_gaps": "Exposure measurement and outcome definitions differ across cohorts."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_uv_autoimmune_2014", "title": "Ultraviolet radiation and autoimmune disease mechanisms: overview (review)", "authors": "Autoimmunity Review Group", "year": 2014, "journal": "Journal of Autoimmunity" },
+        { "id": "ref_infection_review_2015", "title": "Infection exposure and immune-mediated disease mechanisms: overview (review)", "authors": "Immunology Review Group", "year": 2015, "journal": "Nature Reviews Immunology" },
+        { "id": "ref_smoking_report_2018", "title": "The Health Consequences of Smoking—50 Years of Progress", "authors": "U.S. Surgeon General", "year": 2018, "journal": "U.S. Department of Health and Human Services" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+
+    {
+      "id": "dis_marfan_syndrome",
+      "slug": "marfan-syndrome",
+      "name": "Marfan Syndrome",
+      "icd11_code": "LD26",
+      "summary": "Marfan syndrome is a hereditary connective tissue disorder most commonly caused by pathogenic FBN1 variants. GENARCH provides educational summaries only.",
+      "adolescent_relevance": "Often identified in childhood/adolescence; included as monogenic architecture example (educational only).",
+      "genetic_architecture": {
+        "top_loci": [{ "gene": "FBN1", "variant": null, "gwas_p": null, "effect_size": null, "ancestry_composition": "Variant spectrum varies", "replication_status": "Causal", "evidence": "Primary causal gene", "strength": 0.95, "citations": ["ref_marfan_review_2016"] }],
+        "heritability_estimate": { "h2_snp": 1.0, "source": "Monogenic causal architecture", "year": 2016 },
+        "prs_notes": "PRS not applicable as primary model for monogenic Marfan syndrome."
+      },
+      "exposure_modifiers": [
+        { "exposure_slug": "physical-inactivity", "direction": "unknown", "strength": 0.2, "confidence": "low", "mechanism_hypothesis": "General cardiovascular physiology context; not treated as medical advice.", "citations": ["ref_who_activity_2020"] },
+        { "exposure_slug": "psychosocial-stress", "direction": "unknown", "strength": 0.2, "confidence": "low", "mechanism_hypothesis": "General cardiovascular physiology context; not treated as medical advice.", "citations": ["ref_stress_review_2017"] },
+        { "exposure_slug": "air-pollution", "direction": "unknown", "strength": 0.2, "confidence": "low", "mechanism_hypothesis": "Systemic stressor context; evidence specific to Marfan is limited.", "citations": ["ref_airpollution_mechanisms_2019"] }
+      ],
+      "tissues": [{ "name": "connective tissue/aorta", "relevance_score": 0.9, "evidence_type": "literature", "citations": ["ref_marfan_review_2016"] }],
+      "population_equity": {
+        "gwas_ancestry_breakdown": "Variant catalogs and clinical research have uneven representation across populations.",
+        "transferability_notes": "Variant interpretation can be impacted by underrepresentation in reference datasets.",
+        "data_gaps": "Environmental modifier evidence is limited."
+      },
+      "mechanism_briefs": [],
+      "references": [
+        { "id": "ref_marfan_review_2016", "title": "Marfan syndrome: FBN1, connective tissue, and clinical features (review)", "authors": "Cardiogenetics Review Group", "year": 2016, "journal": "Nature Reviews Cardiology" },
+        { "id": "ref_who_activity_2020", "title": "WHO guidelines on physical activity and sedentary behaviour", "authors": "World Health Organization", "year": 2020, "journal": "WHO" },
+        { "id": "ref_stress_review_2017", "title": "Psychosocial stress and health outcomes: mechanisms and evidence (review)", "authors": "Cohort Review Group", "year": 2017, "journal": "Annual Review of Public Health" },
+        { "id": "ref_airpollution_mechanisms_2019", "title": "Air pollution and health: evidence and mechanisms (review)", "authors": "Pope CA, Dockery DW", "year": 2019, "journal": "Journal of the Air & Waste Management Association" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    }
+  ]
+}
+

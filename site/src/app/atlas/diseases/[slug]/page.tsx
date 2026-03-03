@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   getDisease,
   getAllDiseases,
+  getAllGenes,
 } from "@/lib/data";
 import type { Reference } from "@/lib/types";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -25,6 +26,14 @@ function ensureRefAuthors(refs: Reference[]) {
   }));
 }
 
+function geneSlugFromSymbol(symbol: string): string {
+  return symbol
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
 export async function generateStaticParams() {
   const diseases = getAllDiseases();
   return diseases.map((d) => ({ slug: d.slug }));
@@ -40,6 +49,7 @@ export default async function DiseaseDetailPage({
   if (!disease) notFound();
 
   const refs = ensureRefAuthors(disease.references ?? []);
+  const geneSlugSet = new Set(getAllGenes().map((g) => g.slug));
 
   return (
     <article className="space-y-10">
@@ -96,12 +106,20 @@ export default async function DiseaseDetailPage({
                     {disease.genetic_architecture.top_loci.map((locus, i) => (
                       <tr key={i} className="hover:bg-gray-50/50">
                         <td className="px-4 py-2">
-                          <Link
-                            href={`/atlas/genes/${locus.gene.toLowerCase()}`}
-                            className="text-genarch-link hover:underline"
-                          >
-                            {locus.gene}
-                          </Link>
+                          {(() => {
+                            const geneSlug = geneSlugFromSymbol(locus.gene);
+                            const canLink = geneSlugSet.has(geneSlug);
+                            return canLink ? (
+                              <Link
+                                href={`/atlas/genes/${geneSlug}`}
+                                className="text-genarch-link hover:underline"
+                              >
+                                {locus.gene}
+                              </Link>
+                            ) : (
+                              <span className="text-genarch-text">{locus.gene}</span>
+                            );
+                          })()}
                         </td>
                         <td className="px-4 py-2 text-genarch-subtext">
                           {locus.variant ?? "—"}

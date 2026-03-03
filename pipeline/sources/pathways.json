@@ -1,0 +1,184 @@
+{
+  "pathways": [
+    {
+      "id": "path_nfkb",
+      "slug": "nf-kb",
+      "name": "NF-κB Signaling Pathway",
+      "summary": "NF-κB is a core inflammatory transcription program connecting stress signals to immune gene expression across tissues. Included as a mechanistic bridge for multiple exposure–disease contexts.",
+      "canonical_source": "KEGG:hsa04064",
+      "environmental_triggers": [
+        { "exposure_slug": "air-pollution", "trigger_type": "oxidative stress", "citations": ["ref_airpollution_mechanisms_2019"] },
+        { "exposure_slug": "smoking", "trigger_type": "oxidative stress", "citations": ["ref_smoking_report_2018"] }
+      ],
+      "key_genes": [
+        { "gene_slug": "il33", "role_in_pathway": "upstream alarmin context", "citations": ["ref_airpollution_mechanisms_2019"] }
+      ],
+      "regulatory_checkpoints": [],
+      "tissue_specificity": [
+        { "tissue": "lung", "expression_evidence": "inflammatory signaling context" }
+      ],
+      "linked_diseases": [
+        { "disease_slug": "asthma", "pathway_role": "airway inflammation context", "citations": ["ref_airpollution_mechanisms_2019"] },
+        { "disease_slug": "rheumatoid-arthritis", "pathway_role": "inflammatory signaling context", "citations": ["ref_ra_immunology_2018"] }
+      ],
+      "linked_exposures": [
+        { "exposure_slug": "air-pollution", "pathway_effect": "oxidative stress activation context", "citations": ["ref_airpollution_mechanisms_2019"] }
+      ],
+      "diagram_asset": null,
+      "references": [
+        {
+          "id": "ref_airpollution_mechanisms_2019",
+          "title": "Air pollution and health: evidence and mechanisms (review)",
+          "authors": "Pope CA, Dockery DW",
+          "year": 2019,
+          "journal": "Journal of the Air & Waste Management Association"
+        },
+        {
+          "id": "ref_smoking_report_2018",
+          "title": "The Health Consequences of Smoking—50 Years of Progress",
+          "authors": "U.S. Surgeon General",
+          "year": 2018,
+          "journal": "U.S. Department of Health and Human Services"
+        },
+        {
+          "id": "ref_ra_immunology_2018",
+          "title": "Rheumatoid arthritis immunology and cytokine networks: overview (review)",
+          "authors": "Autoimmunity Review Group",
+          "year": 2018,
+          "journal": "Nature Reviews Rheumatology"
+        }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+    {
+      "id": "path_raas",
+      "slug": "raas",
+      "name": "Renin–Angiotensin–Aldosterone System (RAAS)",
+      "summary": "Hormonal system regulating blood pressure and fluid balance; commonly referenced in hypertension biology.",
+      "canonical_source": "Pathway:RAAS",
+      "environmental_triggers": [
+        { "exposure_slug": "high-sodium-intake", "trigger_type": "fluid balance context", "citations": ["ref_sodium_bp_2019"] },
+        { "exposure_slug": "psychosocial-stress", "trigger_type": "autonomic/endocrine context", "citations": ["ref_stress_review_2017"] }
+      ],
+      "key_genes": [
+        { "gene_slug": "ace", "role_in_pathway": "angiotensin converting enzyme", "citations": ["ref_raas_review_2016"] },
+        { "gene_slug": "agt", "role_in_pathway": "angiotensinogen", "citations": ["ref_raas_review_2016"] }
+      ],
+      "regulatory_checkpoints": [],
+      "tissue_specificity": [
+        { "tissue": "kidney", "expression_evidence": "blood pressure regulation context" }
+      ],
+      "linked_diseases": [
+        { "disease_slug": "hypertension", "pathway_role": "core blood pressure regulation context", "citations": ["ref_raas_review_2016"] }
+      ],
+      "linked_exposures": [
+        { "exposure_slug": "high-sodium-intake", "pathway_effect": "volume/pressure modulation context", "citations": ["ref_sodium_bp_2019"] }
+      ],
+      "diagram_asset": null,
+      "references": [
+        { "id": "ref_raas_review_2016", "title": "RAAS pathway regulation and blood pressure control: overview (review)", "authors": "Cardiorenal Review Group", "year": 2016, "journal": "Circulation" },
+        { "id": "ref_sodium_bp_2019", "title": "Dietary sodium and blood pressure: evidence synthesis (review)", "authors": "Hypertension Evidence Group", "year": 2019, "journal": "Hypertension" },
+        { "id": "ref_stress_review_2017", "title": "Psychosocial stress and health outcomes: mechanisms and evidence (review)", "authors": "Cohort Review Group", "year": 2017, "journal": "Annual Review of Public Health" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+    {
+      "id": "path_ldl_metabolism",
+      "slug": "ldl-metabolism",
+      "name": "LDL Metabolism",
+      "summary": "Lipid transport and LDL clearance pathways central to coronary artery disease biology.",
+      "canonical_source": "Pathway:LDL",
+      "environmental_triggers": [
+        { "exposure_slug": "diet-quality", "trigger_type": "lipid intake pattern context", "citations": ["ref_who_nutrition_2019"] }
+      ],
+      "key_genes": [
+        { "gene_slug": "ldlr", "role_in_pathway": "LDL receptor", "citations": ["ref_cad_gwas_2015"] },
+        { "gene_slug": "apob", "role_in_pathway": "apolipoprotein B", "citations": ["ref_cad_gwas_2015"] },
+        { "gene_slug": "pcsk9", "role_in_pathway": "LDLR regulation", "citations": ["ref_cad_gwas_2015"] },
+        { "gene_slug": "lpa", "role_in_pathway": "lipoprotein(a) biology", "citations": ["ref_cad_gwas_2015"] }
+      ],
+      "regulatory_checkpoints": [],
+      "tissue_specificity": [{ "tissue": "liver", "expression_evidence": "lipid metabolism context" }],
+      "linked_diseases": [
+        { "disease_slug": "coronary-artery-disease", "pathway_role": "atherosclerosis risk biology context", "citations": ["ref_cad_gwas_2015"] }
+      ],
+      "linked_exposures": [
+        { "exposure_slug": "diet-quality", "pathway_effect": "lipid profile modulation context", "citations": ["ref_who_nutrition_2019"] }
+      ],
+      "diagram_asset": null,
+      "references": [
+        { "id": "ref_cad_gwas_2015", "title": "Genome-wide association meta-analysis of coronary artery disease identifies loci and pathways", "authors": "CAD GWAS Consortium", "year": 2015, "journal": "Nature Genetics" },
+        { "id": "ref_who_nutrition_2019", "title": "Healthy diet factsheet and guidance", "authors": "World Health Organization", "year": 2019, "journal": "WHO" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+    {
+      "id": "path_insulin_signaling",
+      "slug": "insulin-signaling",
+      "name": "Insulin Signaling",
+      "summary": "Core metabolic signaling pathway relevant to type 2 diabetes mechanisms.",
+      "canonical_source": "Pathway:Insulin",
+      "environmental_triggers": [
+        { "exposure_slug": "diet-quality", "trigger_type": "metabolic intake pattern context", "citations": ["ref_who_nutrition_2019"] },
+        { "exposure_slug": "physical-inactivity", "trigger_type": "insulin sensitivity context", "citations": ["ref_who_activity_2020"] }
+      ],
+      "key_genes": [
+        { "gene_slug": "tcf7l2", "role_in_pathway": "islet regulation context", "citations": ["ref_t2d_gwas_2018"] },
+        { "gene_slug": "pparg", "role_in_pathway": "adipose insulin sensitivity context", "citations": ["ref_t2d_gwas_2018"] }
+      ],
+      "regulatory_checkpoints": [],
+      "tissue_specificity": [{ "tissue": "pancreatic islets", "expression_evidence": "glucose homeostasis context" }],
+      "linked_diseases": [
+        { "disease_slug": "type-2-diabetes", "pathway_role": "insulin resistance / secretion context", "citations": ["ref_t2d_gwas_2018"] }
+      ],
+      "linked_exposures": [
+        { "exposure_slug": "diet-quality", "pathway_effect": "metabolic regulation context", "citations": ["ref_who_nutrition_2019"] }
+      ],
+      "diagram_asset": null,
+      "references": [
+        { "id": "ref_t2d_gwas_2018", "title": "Multi-ancestry meta-analysis of type 2 diabetes identifies loci", "authors": "T2D GWAS Consortium", "year": 2018, "journal": "Nature Genetics" },
+        { "id": "ref_who_activity_2020", "title": "WHO guidelines on physical activity and sedentary behaviour", "authors": "World Health Organization", "year": 2020, "journal": "WHO" },
+        { "id": "ref_who_nutrition_2019", "title": "Healthy diet factsheet and guidance", "authors": "World Health Organization", "year": 2019, "journal": "WHO" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    },
+    {
+      "id": "path_dna_repair",
+      "slug": "dna-repair",
+      "name": "DNA Repair (Homologous Recombination / Mismatch Repair)",
+      "summary": "DNA repair pathways implicated in hereditary cancer genes and tumor susceptibility mechanisms.",
+      "canonical_source": "Pathway:DNARepair",
+      "environmental_triggers": [
+        { "exposure_slug": "ionizing-radiation", "trigger_type": "DNA damage context", "citations": ["ref_radiation_review_2019"] }
+      ],
+      "key_genes": [
+        { "gene_slug": "brca1", "role_in_pathway": "homologous recombination repair", "citations": ["ref_brca_review_2018"] },
+        { "gene_slug": "brca2", "role_in_pathway": "homologous recombination repair", "citations": ["ref_brca_review_2018"] },
+        { "gene_slug": "mlh1", "role_in_pathway": "mismatch repair", "citations": ["ref_crc_hereditary_2016"] },
+        { "gene_slug": "apc", "role_in_pathway": "genome stability context", "citations": ["ref_crc_hereditary_2016"] }
+      ],
+      "regulatory_checkpoints": [],
+      "tissue_specificity": [{ "tissue": "epithelium", "expression_evidence": "cell cycle / repair context" }],
+      "linked_diseases": [
+        { "disease_slug": "breast-cancer", "pathway_role": "hereditary susceptibility context", "citations": ["ref_brca_review_2018"] },
+        { "disease_slug": "colorectal-cancer", "pathway_role": "hereditary susceptibility context", "citations": ["ref_crc_hereditary_2016"] }
+      ],
+      "linked_exposures": [
+        { "exposure_slug": "ionizing-radiation", "pathway_effect": "DNA damage response context", "citations": ["ref_radiation_review_2019"] }
+      ],
+      "diagram_asset": null,
+      "references": [
+        { "id": "ref_brca_review_2018", "title": "BRCA1/2 and hereditary breast cancer: mechanisms overview (review)", "authors": "Hereditary Cancer Review Group", "year": 2018, "journal": "Nature Reviews Clinical Oncology" },
+        { "id": "ref_crc_hereditary_2016", "title": "Hereditary colorectal cancer syndromes: APC and mismatch repair pathways (review)", "authors": "Clinical Cancer Genetics Group", "year": 2016, "journal": "Nature Reviews Gastroenterology & Hepatology" },
+        { "id": "ref_radiation_review_2019", "title": "Ionizing radiation and cancer risk: overview (review)", "authors": "UNSCEAR", "year": 2019, "journal": "UNSCEAR Report" }
+      ],
+      "schema_version": "1.0",
+      "last_updated": "2026-02-26"
+    }
+  ]
+}
+
