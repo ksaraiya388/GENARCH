@@ -1,7 +1,0 @@
-{
-  "asthma": ["bronchial asthma", "reactive airway disease"],
-  "pm25": ["PM2.5", "particulate matter", "fine particulate matter", "particulate matter 2.5 micrometers"],
-  "air-pollution": ["air pollution", "ambient air pollution", "outdoor air pollution"],
-  "il33": ["IL-33", "interleukin-33", "interleukin 33"],
-  "nf-kb": ["NF-kB", "NF-κB", "nuclear factor kappa B", "NFkB"]
-}

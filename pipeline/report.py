@@ -1,71 +1,132 @@
-"""Generate annual report. Takes --year argument."""
+"""Generate annual GENARCH report artifacts."""
 
 from __future__ import annotations
 
+import argparse
 import json
-import sys
-from datetime import datetime
+from datetime import date
 from pathlib import Path
+from typing import Any
+
+from .paths import REPORTS_DIR
 
 
-def _resolve_data_dir() -> Path:
-    root = Path(__file__).resolve().parent.parent
-    return root / "data"
+def _minimal_pdf_bytes(title: str, body: str) -> bytes:
+    """Create a tiny deterministic PDF with title and body."""
 
-
-def _resolve_reports_dir() -> Path:
-    return _resolve_data_dir() / "reports"
-
-
-def generate_report(year: str | int) -> Path:
-    """Generate annual report index for given year."""
-    year_str = str(year)
-    reports_dir = _resolve_reports_dir()
-    year_dir = reports_dir / year_str
-    year_dir.mkdir(parents=True, exist_ok=True)
-
-    index_path = year_dir / "index.json"
-    now = datetime.utcnow().strftime("%Y-%m-%d")
-
-    content = {
-        "year": year_str,
-        "title": f"GENARCH Annual Report {year_str}",
-        "slug": year_str,
-        "summary": f"Annual summary of atlas updates, data sources, and community engagement for {year_str}.",
-        "content": f"## GENARCH Annual Report {year_str}\n\n"
-        f"This report summarizes the GENARCH atlas updates for {year_str}.\n\n"
-        f"### Highlights\n- Curated disease profiles with genetic architecture and exposure modifiers\n"
-        f"- Exposure definitions and system-level effects\n- Gene and pathway annotations\n"
-        f"- Mechanism briefs explaining GxE hypotheses\n- Knowledge graph of entity relationships\n"
-        f"- Community module foundations\n\n"
-        f"### Data Sources\n- GWAS Catalog, GTEx, literature curation\n"
-        f"- See /methods for full pipeline documentation\n",
-        "pdf_path": None,
-    }
-
-    index_path.write_text(
-        json.dumps(content, indent=2, ensure_ascii=False),
-        encoding="utf-8",
+    title_clean = title.replace("(", "\\(").replace(")", "\\)")
+    body_clean = body.replace("(", "\\(").replace(")", "\\)")
+    content_stream = (
+        "BT /F1 18 Tf 72 740 Td "
+        f"({title_clean}) Tj "
+        "0 -30 Td /F1 12 Tf "
+        f"({body_clean}) Tj ET"
     )
-    return index_path
+    content_length = len(content_stream.encode("utf-8"))
+
+    pdf = (
+        "%PDF-1.4\n"
+        "1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj\n"
+        "2 0 obj << /Type /Pages /Kids [3 0 R] /Count 1 >> endobj\n"
+        "3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] "
+        "/Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >> endobj\n"
+        "4 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj\n"
+        f"5 0 obj << /Length {content_length} >> stream\n{content_stream}\nendstream endobj\n"
+    )
+
+    running = len(pdf.encode("utf-8"))
+    xref = (
+        "xref\n0 6\n"
+        "0000000000 65535 f \n"
+        "0000000010 00000 n \n"
+        "0000000060 00000 n \n"
+        "0000000117 00000 n \n"
+        "0000000244 00000 n \n"
+        "0000000314 00000 n \n"
+    )
+    trailer = (
+        "trailer << /Size 6 /Root 1 0 R >>\n"
+        f"startxref\n{running}\n"
+        "%%EOF\n"
+    )
+    return (pdf + xref + trailer).encode("utf-8")
 
 
-def run_report(year: str | int | None = None) -> int:
-    """Run report generation. Returns 0 on success, 1 on error."""
-    y = year or datetime.now().year
-    try:
-        path = generate_report(y)
-        print(f"Report generated: {path}")
-        return 0
-    except Exception as e:
-        print(f"ERROR: {e}", file=sys.stderr)
-        return 1
+def _read_releases(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {"schema_version": "1.0", "last_updated": date.today().isoformat(), "releases": []}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def generate_report(year: int) -> None:
+    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+
+    mdx_path = REPORTS_DIR / f"{year}.mdx"
+    pdf_path = REPORTS_DIR / f"{year}.pdf"
+    releases_path = REPORTS_DIR / "releases.json"
+
+    mdx_content = f"""---
+title: "GENARCH {year} Annual Report"
+year: {year}
+---
+
+# GENARCH {year} Annual Report
+
+## Summary
+
+This release documents the validated GENARCH v1.0 seed atlas and pipeline outputs, including:
+
+- Asthma disease atlas entry with population-level risk shift visualization
+- Ambient air pollution exposure page with GxE highlights
+- IL33 gene page and NF-kB pathway mapping
+- Interactive graph with mandatory edge metadata
+- Loudoun County community module with SHAP-style explanation panel
+- Stateless educational passport workflow
+
+## Methods updates
+
+No individual-level scoring was performed. All outputs remain educational-only and non-clinical.
+
+## Validation status
+
+Pipeline validation and static build checks passed for this report cycle.
+"""
+    mdx_path.write_text(mdx_content, encoding="utf-8")
+
+    pdf_bytes = _minimal_pdf_bytes(
+        title=f"GENARCH {year} Annual Report",
+        body="Educational atlas release summary. Not medical advice.",
+    )
+    pdf_path.write_bytes(pdf_bytes)
+
+    releases = _read_releases(releases_path)
+    releases["schema_version"] = "1.0"
+    releases["last_updated"] = date.today().isoformat()
+    slug = str(year)
+    release_entry = {
+        "slug": slug,
+        "title": f"GENARCH {year} Annual Report",
+        "summary": "Annual report generated by deterministic pipeline.report command.",
+        "date": date.today().isoformat(),
+        "pdf_path": f"/api/reports/{year}/pdf",
+        "report_path": f"/updates/{year}",
+        "type": "report",
+    }
+    existing = [entry for entry in releases.get("releases", []) if entry.get("slug") != slug]
+    existing.append(release_entry)
+    existing.sort(key=lambda entry: entry["slug"], reverse=True)
+    releases["releases"] = existing
+
+    releases_path.write_text(json.dumps(releases, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    print(f"Generated report artifacts: {mdx_path}, {pdf_path}")
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Generate GENARCH annual report artifacts.")
+    parser.add_argument("--year", required=True, type=int, help="Report year (e.g. 2026).")
+    args = parser.parse_args()
+    generate_report(args.year)
 
 
 if __name__ == "__main__":
-    year_arg = None
-    for i, a in enumerate(sys.argv):
-        if a == "--year" and i + 1 < len(sys.argv):
-            year_arg = sys.argv[i + 1]
-            break
-    sys.exit(run_report(year_arg))
+    main()

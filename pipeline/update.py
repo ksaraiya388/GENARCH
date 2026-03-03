@@ -1,86 +1,77 @@
-"""Orchestrate pipeline stages: ingest → normalize → annotate → score → emit → validate."""
+"""Pipeline orchestrator entrypoint."""
 
 from __future__ import annotations
 
-import sys
-from pathlib import Path
+import argparse
+from typing import Any
 
-from pipeline import __version__
-from pipeline.annotate import annotate_all
-from pipeline.emit import emit_all
-from pipeline.graph_builder import build_graph, write_graph
-from pipeline.ingest import ingest_all
-from pipeline.normalize import normalize_all
-from pipeline.score import score_all
-from pipeline.validate import validate
+from .annotate import annotate_bundle
+from .emit import emit_bundle
+from .ingest import load_seed_source, source_hash
+from .normalize import normalize_bundle
+from .paths import SOURCES_DIR
+from .score import score_bundle
 
 
-def _resolve_data_dir() -> Path:
-    root = Path(__file__).resolve().parent.parent
-    return root / "data"
+def _filter_scope(bundle: dict[str, Any], scope: str, entity_id: str | None) -> dict[str, Any]:
+    """Apply a narrow update scope while preserving deterministic output."""
+
+    if scope == "all":
+        return bundle
+    if entity_id is None:
+        raise ValueError(f"--id is required when scope is '{scope}'")
+
+    scoped = dict(bundle)
+    section_map = {
+        "disease": "diseases",
+        "exposure": "exposures",
+        "gene": "genes",
+        "pathway": "pathways",
+        "community": "community",
+    }
+
+    if scope not in section_map:
+        return bundle
+
+    section_name = section_map[scope]
+    items = scoped.get(section_name, [])
+    filtered = [item for item in items if item.get("slug") == entity_id or item.get("id") == entity_id]
+    if not filtered:
+        raise ValueError(f"No {scope} entity matched --id '{entity_id}'")
+    scoped[section_name] = filtered
+    return scoped
 
 
-def run_update(scope: str = "all", entity_id: str | None = None) -> int:
-    """
-    Run full pipeline. scope: all | disease | exposure | gene | pathway.
-    entity_id: optional filter (e.g. asthma for disease).
-    """
-    # Ingest
-    ingested = ingest_all()
+def run(scope: str, entity_id: str | None) -> None:
+    source_path = SOURCES_DIR / "seed.json"
+    print(f"Loading source: {source_path}")
+    print(f"Source SHA256: {source_hash(source_path)}")
 
-    # Filter by scope/id if requested
-    if scope != "all" and entity_id:
-        key = f"{scope}s"  # diseases, exposures, genes, pathways
-        if key in ingested and ingested[key]:
-            filtered = [x for x in ingested[key] if (x.get("slug") or x.get("id") or x.get("name", "")) == entity_id]
-            if filtered:
-                ingested[key] = filtered
-            else:
-                # Try slug match
-                ingested[key] = [
-                    x for x in ingested[key]
-                    if (x.get("slug") or "").lower() == entity_id.lower()
-                    or (x.get("id") or "").lower() == entity_id.lower()
-                ]
+    bundle = load_seed_source()
+    bundle = normalize_bundle(bundle)
+    bundle = annotate_bundle(bundle)
+    bundle = score_bundle(bundle)
 
-    # Normalize
-    normalized = normalize_all(ingested)
+    if scope != "all":
+        bundle = _filter_scope(bundle, scope, entity_id)
 
-    # Annotate
-    annotated = annotate_all(normalized)
+    emit_bundle(bundle)
+    print(f"Pipeline update completed for scope='{scope}' id='{entity_id or 'N/A'}'.")
 
-    # Score
-    scored = score_all(annotated)
 
-    # Emit
-    written = emit_all(scored)
-    for p in written:
-        print(f"Emitted: {p}")
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Run GENARCH ETL update pipeline.")
+    parser.add_argument(
+        "--scope",
+        default="all",
+        choices=["all", "disease", "exposure", "gene", "pathway", "community"],
+        help="Scope of update run.",
+    )
+    parser.add_argument("--id", default=None, help="Entity slug or id for scoped updates.")
+    args = parser.parse_args()
 
-    # Build graph (from emitted data)
-    data_dir = _resolve_data_dir()
-    graph = build_graph()
-    graph_path = write_graph(graph)
-    print(f"Graph built: {graph_path}")
-
-    # Validate (returns 0 or 1)
-    return validate()
+    run(scope=args.scope, entity_id=args.id)
 
 
 if __name__ == "__main__":
-    scope = "all"
-    entity_id = None
-    args = sys.argv[1:]
-    i = 0
-    while i < len(args):
-        if args[i] == "--scope" and i + 1 < len(args):
-            scope = args[i + 1]
-            i += 2
-            continue
-        if args[i] == "--id" and i + 1 < len(args):
-            entity_id = args[i + 1]
-            i += 2
-            continue
-        i += 1
-
-    sys.exit(run_update(scope=scope, entity_id=entity_id))
+    main()

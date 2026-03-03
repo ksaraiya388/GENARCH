@@ -1,35 +1,58 @@
-name: GENARCH CI
+name: ci
 
 on:
   push:
-    branches: [main, 'cursor/*']
+    branches: ["**"]
   pull_request:
-    branches: [main]
 
 jobs:
-  validate-and-build:
+  validate-build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: site/package-lock.json
+          python-version: "3.11"
 
       - name: Install pipeline dependencies
-        run: pip install pydantic pandas
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ./pipeline
+          python -m pip install ruff mypy
 
-      - name: Install site dependencies
-        run: cd site && npm ci
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: |
+            package-lock.json
+            site/package-lock.json
 
-      - name: Validate pipeline schemas
+      - name: Install Node dependencies
+        run: |
+          npm install
+          npm --prefix site install
+
+      - name: Ruff (pipeline)
+        run: ruff check pipeline
+
+      - name: mypy (pipeline)
+        run: mypy pipeline
+
+      - name: ESLint (site)
+        run: npm --prefix site run lint
+
+      - name: Generate seed artifacts
+        run: |
+          python -m pipeline.update --scope all
+          python -m pipeline.report --year 2026
+
+      - name: Validate pipeline outputs
         run: python -m pipeline.validate
 
       - name: Build site
-        run: cd site && npm run build
+        run: npm run site:build

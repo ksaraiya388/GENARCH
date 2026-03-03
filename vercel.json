@@ -1,6 +1,10 @@
 {
-  "buildCommand": "cd site && npm run build",
-  "outputDirectory": "site/out",
-  "installCommand": "cd site && npm install",
-  "framework": null
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "builds": [
+    {
+      "src": "site/package.json",
+      "use": "@vercel/next"
+    }
+  ]
 }
