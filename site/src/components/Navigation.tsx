@@ -36,18 +36,14 @@ export function Navigation() {
           onClick={closeMenu}
         >
           <Image
-            src="/G_GENARCH.svg"
+            src="/GENARCH_Official_Logo.png"
             alt="GENARCH"
-            width={36}
-            height={48}
+            width={160}
+            height={36}
             className="transition-opacity duration-200 opacity-90 group-hover:opacity-100"
             style={{ width: "auto", height: "36px" }}
             priority
           />
-          <span className="text-[17px] font-semibold tracking-[0.06em] hidden sm:inline" style={{ marginLeft: "1px" }}>
-            <span style={{ color: "#2DD4BF" }}>EN</span>
-            <span style={{ color: "#8899A6" }}>ARCH</span>
-          </span>
         </Link>
 
         {/* Desktop navigation */}

@@ -14,17 +14,13 @@ export function Footer() {
           <div className="space-y-3">
             <Link href="/" className="flex items-center gap-0 no-underline hover:no-underline group">
               <Image
-                src="/G_GENARCH.svg"
-                alt=""
-                width={24}
-                height={32}
+                src="/GENARCH_Official_Logo.png"
+                alt="GENARCH"
+                width={107}
+                height={24}
                 style={{ width: "auto", height: "24px" }}
                 aria-hidden="true"
               />
-              <span className="text-sm font-semibold tracking-[0.05em]" style={{ marginLeft: "1px" }}>
-                <span style={{ color: "#2DD4BF" }}>EN</span>
-                <span style={{ color: "#8899A6" }}>ARCH</span>
-              </span>
             </Link>
             <p className="text-xs text-cool-mid max-w-xs leading-relaxed">
               Genetic Epidemiology Network for At Risk Community Health.
