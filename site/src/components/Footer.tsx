@@ -23,7 +23,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-xs text-cool-mid max-w-xs leading-relaxed">
-              Genetic Epidemiology Network for At Risk Community Health.
+              <span className="whitespace-nowrap">Genetic Epidemiology Network for At Risk Community Health.</span>{" "}
               A systems-level atlas mapping gene–environment interactions
               at population scale.
             </p>
