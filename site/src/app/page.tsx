@@ -41,7 +41,7 @@ export default function HomePage() {
           {/* Main GENARCH Logo — centered */}
           <div className="animate-fade-in flex justify-center w-full mb-8">
             <Image
-              src="/GENARCH_LOGO.svg"
+              src="/GENARCH_Official_Logo.png"
               alt="GENARCH — Genetic Epidemiology Network for At Risk Community Health"
               width={480}
               height={86}
