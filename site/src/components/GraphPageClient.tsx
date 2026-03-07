@@ -80,19 +80,19 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
       );
     }
     if (filters.evidenceType) {
-      edges = edges.filter((e) => e.attrs.evidence_type === filters.evidenceType);
+      edges = edges.filter((e) => e.attrs?.evidence_type === filters.evidenceType);
       const nodeIds = new Set(edges.flatMap((e) => [e.source, e.target]));
       nodes = nodes.filter((n) => nodeIds.has(n.id));
     }
     if (filters.confidence) {
-      nodes = nodes.filter((n) => n.attrs.confidence === filters.confidence);
+      nodes = nodes.filter((n) => n.attrs?.confidence === filters.confidence);
       const nodeIds = new Set(nodes.map((n) => n.id));
       edges = edges.filter(
         (e) => nodeIds.has(e.source) && nodeIds.has(e.target)
       );
     }
     if (filters.ancestryRep) {
-      edges = edges.filter((e) => e.attrs.ancestry_rep === filters.ancestryRep);
+      edges = edges.filter((e) => e.attrs?.ancestry_rep === filters.ancestryRep);
       const nodeIds = new Set(edges.flatMap((e) => [e.source, e.target]));
       nodes = nodes.filter((n) => nodeIds.has(n.id));
     }
@@ -289,14 +289,28 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
     );
   }
 
-  const entityTypes = Array.from(new Set(initialData.nodes.map((n) => n.type)));
-  const evidenceTypes = Array.from(new Set(initialData.edges.map((e) => e.attrs.evidence_type)));
+  const entityTypes = Array.from(new Set(initialData.nodes.map((n) => n.type).filter(Boolean)));
+  const evidenceTypes = Array.from(
+    new Set(
+      initialData.edges
+        .map((e) => e.attrs?.evidence_type)
+        .filter(Boolean)
+    )
+  ) as string[];
   const confidences = Array.from(
-    new Set(initialData.nodes.map((n) => n.attrs.confidence).filter(Boolean))
-  );
+    new Set(
+      initialData.nodes
+        .map((n) => n.attrs?.confidence)
+        .filter(Boolean)
+    )
+  ) as string[];
   const ancestryReps = Array.from(
-    new Set(initialData.edges.map((e) => e.attrs.ancestry_rep).filter(Boolean))
-  );
+    new Set(
+      initialData.edges
+        .map((e) => e.attrs?.ancestry_rep)
+        .filter(Boolean)
+    )
+  ) as string[];
 
   return (
     <div className="space-y-4">
@@ -461,21 +475,21 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
               </p>
               <dl className="text-sm space-y-1">
                 <dt className="text-cool-mid">Evidence type</dt>
-                <dd className="text-surface-white">{selectedEdge.edge.attrs.evidence_type}</dd>
+                <dd className="text-surface-white">{selectedEdge.edge.attrs?.evidence_type ?? "—"}</dd>
                 <dt className="text-cool-mid mt-2">Confidence</dt>
-                <dd className="text-surface-white">{selectedEdge.edge.attrs.confidence}</dd>
+                <dd className="text-surface-white">{selectedEdge.edge.attrs?.confidence ?? "—"}</dd>
                 <dt className="text-cool-mid mt-2">Direction</dt>
-                <dd className="text-surface-white">{selectedEdge.edge.attrs.direction}</dd>
-                {selectedEdge.edge.attrs.ancestry_rep && (
+                <dd className="text-surface-white">{selectedEdge.edge.attrs?.direction ?? "—"}</dd>
+                {selectedEdge.edge.attrs?.ancestry_rep && (
                   <>
                     <dt className="text-cool-mid mt-2">Ancestry</dt>
                     <dd className="text-surface-white">{selectedEdge.edge.attrs.ancestry_rep}</dd>
                   </>
                 )}
-                {selectedEdge.edge.attrs.sources?.length > 0 && (
+                {(selectedEdge.edge.attrs?.sources?.length ?? 0) > 0 && (
                   <>
                     <dt className="text-cool-mid mt-2">Sources</dt>
-                    <dd className="text-surface-white">{selectedEdge.edge.attrs.sources.join(", ")}</dd>
+                    <dd className="text-surface-white">{(selectedEdge.edge.attrs?.sources ?? []).join(", ")}</dd>
                   </>
                 )}
               </dl>

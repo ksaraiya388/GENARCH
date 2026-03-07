@@ -1,0 +1,37 @@
+{
+  "slug": "leptin-melanocortin-obesity-environment",
+  "title": "Leptin–Melanocortin Axis and Obesogenic Environment in Polygenic Obesity",
+  "question": "How do genes in the leptin–melanocortin pathway (LEP, LEPR, MC4R, FTO) interact with diet and physical activity to influence obesity risk?",
+  "background": "Energy balance is regulated by the leptin–melanocortin pathway: leptin from adipose tissue signals energy sufficiency to the hypothalamus; MC4R and POMC neurons integrate signals to suppress appetite. Rare mutations in LEP, LEPR, POMC, and MC4R cause severe early-onset obesity. Common variants at FTO and near MC4R are the strongest GWAS hits for BMI. The obesogenic environment—high-calorie diet, sedentary behavior, built environment—strongly modulates genetic risk. Physical activity can buffer the effect of FTO and other risk alleles. This brief summarizes the mechanistic link between leptin–melanocortin genetics and environmental modifiers of obesity.",
+  "evidence_summary": [
+    "Mendelian: LEP, LEPR, POMC, MC4R loss-of-function cause severe obesity; leptin replacement effective in LEP deficiency.",
+    "GWAS: FTO (rs9939609) and MC4R region are top BMI loci; effect sizes are modified by diet and physical activity in observational and intervention studies.",
+    "Meta-analyses: Higher physical activity attenuates FTO–obesity association; high-calorie diet amplifies genetic risk."
+  ],
+  "mechanistic_chain": [
+    "1. Adipose tissue secretes leptin in proportion to fat mass; leptin binds LEPR in hypothalamus.",
+    "2. Leptin activates POMC neurons and inhibits AgRP neurons; alpha-MSH activates MC4R to suppress appetite.",
+    "3. FTO risk variants alter hypothalamic gene expression (e.g., IRX3) and energy balance.",
+    "4. Obesogenic diet and low activity increase energy intake and reduce expenditure, amplifying genetic susceptibility.",
+    "5. Physical activity and dietary quality can partially offset genetic risk through energy balance and possibly leptin sensitivity."
+  ],
+  "tissue_specificity": "Primary regulation in hypothalamus (arcuate nucleus, paraventricular nucleus); leptin is secreted from adipose tissue; MC4R and FTO effects are central. Peripheral tissues (muscle, liver) contribute to energy expenditure and metabolism.",
+  "counterarguments": [
+    "Effect sizes for G×E (e.g., FTO × activity) are modest; individual-level prediction remains limited.",
+    "Leptin resistance in common obesity complicates translation from rare LEP/LEPR biology."
+  ],
+  "validation_criteria": [
+    "Randomized trial of diet/activity intervention stratified by FTO or MC4R genotype; test for genotype × intervention effect on weight change.",
+    "Mechanistic studies of leptin sensitivity and hypothalamic signaling in carriers of common risk alleles under controlled diet."
+  ],
+  "related_disease": "obesity",
+  "related_exposure": "obesity-exposure",
+  "related_genes": ["lep", "mc4r", "fto"],
+  "related_pathways": ["insulin-signaling"],
+  "references": [
+    {"id": "ref1", "title": "Leptin and the regulation of body weight", "authors": "Friedman JM", "year": 2019, "journal": "Nature Medicine", "doi": "10.1038/s41591-018-0307-4"},
+    {"id": "ref2", "title": "FTO and energy homeostasis", "authors": "Claussnitzer M, et al.", "year": 2015, "journal": "New England Journal of Medicine", "doi": "10.1056/NEJMra1500792"}
+  ],
+  "published_at": "2026-03-07",
+  "schema_version": "1.0"
+}

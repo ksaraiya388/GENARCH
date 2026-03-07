@@ -85,7 +85,7 @@
     "transferability_notes": "5-HTTLPR × stress replication inconsistent across populations; PRS transferability to non-European ancestry poor; cultural variation in stress exposure and depression phenotype",
     "data_gaps": "Multi-ancestry MDD GWAS; G×E validation across diverse populations; adolescent-specific genetic and environmental models"
   },
-  "mechanism_briefs": ["slc6a4-stress-depression", "bdnf-neuroplasticity-mdd"],
+  "mechanism_briefs": ["slc6a4-stress-depression", "bdnf-neuroplasticity-mdd", "bdnf-stress-major-depressive-disorder", "sleep-deprivation-metabolic-mental-health"],
   "references": [
     {"id": "ref1", "title": "Influence of life stress on depression: moderation by a polymorphism in the 5-HTT gene", "authors": "Caspi A, et al.", "year": 2003, "journal": "Science", "doi": "10.1126/science.1083968"},
     {"id": "ref2", "title": "The BDNF Val66Met polymorphism moderates the relationship between stress and depressive symptoms", "authors": "Hosang GM, et al.", "year": 2014, "journal": "Journal of Psychiatric Research", "doi": "10.1016/j.jpsychires.2014.03.007"},
