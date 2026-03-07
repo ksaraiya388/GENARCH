@@ -3,10 +3,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import cytoscape, { type Core, type EdgeSingular, type NodeSingular, type Css } from "cytoscape";
 import type { GraphData, GraphNode, GraphEdge } from "@/lib/types";
-import { saveAs } from "file-saver";
-import { toSvg } from "html-to-image";
+import type { Core, EdgeSingular, NodeSingular } from "cytoscape";
 
 type LayoutType = "force" | "hierarchical" | "circular";
 
@@ -135,88 +133,99 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
     const elements = buildElements();
     if (elements.nodes.length === 0 && elements.edges.length === 0) return;
 
-    const cy = cytoscape({
-      container: containerRef.current,
-      elements: [...elements.nodes, ...elements.edges],
-      style: [
-        {
-          selector: "node",
-          style: {
-            "background-color": (ele) =>
-              NODE_COLORS[ele.data("type")] ?? "#999",
-            shape: ((ele: NodeSingular) =>
-              NODE_SHAPES[ele.data("type")] ?? "ellipse") as unknown as Css.PropertyValueNode<Css.NodeShape>,
-            label: "data(label)",
-            "text-valign": "bottom",
-            "text-margin-y": 4,
-            "font-size": 10,
-            color: "#C7D2DA",
-            width: 36,
-            height: 36,
-          },
-        },
-        {
-          selector: "edge",
-          style: {
-            "curve-style": "bezier",
-            "target-arrow-shape": "triangle",
-            "line-color": "#94A3B8",
-            "target-arrow-color": "#94A3B8",
-          },
-        },
-        {
-          selector: ":selected",
-          style: {
-            "border-width": 3,
-            "border-color": "#2DD4BF",
-          },
-        },
-      ],
-      layout: { name: "cose", animate: true },
-      minZoom: 0.2,
-      maxZoom: 4,
-    });
+    let cancelled = false;
+    const container = containerRef.current;
 
-    cyRef.current = cy;
+    import("cytoscape").then((cytoscapeModule) => {
+      const cytoscape = cytoscapeModule.default;
+      if (cancelled || !containerRef.current) return;
 
-    const handleNodeTap = (ev: { target: NodeSingular }) => {
-      const target = ev.target;
-      if (target.isNode()) {
-        const node = displayData.nodes.find((n) => n.id === target.id());
-        setSelectedNode(node ?? null);
-        setSelectedEdge(null);
-      }
-    };
+      const cy = cytoscape({
+        container: container,
+        elements: [...elements.nodes, ...elements.edges],
+        style: [
+          {
+            selector: "node",
+            style: {
+              "background-color": (ele: { data: (k: string) => string }) =>
+                NODE_COLORS[ele.data("type")] ?? "#999",
+              shape: (ele: { data: (k: string) => string }) =>
+                (NODE_SHAPES[ele.data("type")] ?? "ellipse") as "ellipse" | "hexagon" | "diamond" | "roundrectangle" | "triangle",
+              label: "data(label)",
+              "text-valign": "bottom",
+              "text-margin-y": 4,
+              "font-size": 10,
+              color: "#C7D2DA",
+              width: 36,
+              height: 36,
+            },
+          },
+          {
+            selector: "edge",
+            style: {
+              "curve-style": "bezier",
+              "target-arrow-shape": "triangle",
+              "line-color": "#94A3B8",
+              "target-arrow-color": "#94A3B8",
+            },
+          },
+          {
+            selector: ":selected",
+            style: {
+              "border-width": 3,
+              "border-color": "#2DD4BF",
+            },
+          },
+        ],
+        layout: { name: "cose", animate: true },
+        minZoom: 0.2,
+        maxZoom: 4,
+      });
 
-    const handleEdgeTap = (ev: { target: EdgeSingular }) => {
-      const target = ev.target;
-      if (target.isEdge()) {
-        const edge = displayData.edges.find((e) => e.id === target.id());
-        if (edge) {
-          const source = displayData.nodes.find((n) => n.id === edge.source);
-          const targetNode = displayData.nodes.find((n) => n.id === edge.target);
-          setSelectedEdge(
-            source && targetNode
-              ? { edge, source, target: targetNode }
-              : null
-          );
-          setSelectedNode(null);
+      cyRef.current = cy;
+
+      const handleNodeTap = (ev: { target: NodeSingular }) => {
+        const target = ev.target;
+        if (target.isNode()) {
+          const node = displayData.nodes.find((n) => n.id === target.id());
+          setSelectedNode(node ?? null);
+          setSelectedEdge(null);
         }
-      }
-    };
+      };
 
-    cy.on("tap", "node", handleNodeTap);
-    cy.on("tap", "edge", handleEdgeTap);
-    cy.on("tap", (ev) => {
-      if (ev.target === cy) {
-        setSelectedNode(null);
-        setSelectedEdge(null);
-      }
+      const handleEdgeTap = (ev: { target: EdgeSingular }) => {
+        const target = ev.target;
+        if (target.isEdge()) {
+          const edge = displayData.edges.find((e) => e.id === target.id());
+          if (edge) {
+            const source = displayData.nodes.find((n) => n.id === edge.source);
+            const targetNode = displayData.nodes.find((n) => n.id === edge.target);
+            setSelectedEdge(
+              source && targetNode
+                ? { edge, source, target: targetNode }
+                : null
+            );
+            setSelectedNode(null);
+          }
+        }
+      };
+
+      cy.on("tap", "node", handleNodeTap);
+      cy.on("tap", "edge", handleEdgeTap);
+      cy.on("tap", (ev) => {
+        if (ev.target === cy) {
+          setSelectedNode(null);
+          setSelectedEdge(null);
+        }
+      });
     });
 
     return () => {
-      cy.destroy();
-      cyRef.current = null;
+      cancelled = true;
+      if (cyRef.current) {
+        cyRef.current.destroy();
+        cyRef.current = null;
+      }
     };
   }, [displayData, buildElements]);
 
@@ -265,6 +274,8 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
   const exportSVG = async () => {
     if (!containerRef.current || !cyRef.current) return;
     try {
+      const { toSvg } = await import("html-to-image");
+      const { saveAs } = await import("file-saver");
       const dataUrl = await toSvg(containerRef.current, { pixelRatio: 2 });
       const blob = await fetch(dataUrl).then((r) => r.blob());
       saveAs(blob, "genarch-graph.svg");
@@ -273,8 +284,9 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
     }
   };
 
-  const exportJSON = () => {
+  const exportJSON = async () => {
     if (!initialData) return;
+    const { saveAs } = await import("file-saver");
     const blob = new Blob([JSON.stringify(initialData, null, 2)], {
       type: "application/json",
     });
