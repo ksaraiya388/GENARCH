@@ -125,7 +125,7 @@
     "transferability_notes": "TCF7L2 and many loci transfer across ancestries; allele frequencies and effect sizes vary. PRS performance in African, Hispanic, and Asian populations is reduced. Ancestry-specific PRS improve but require larger diverse cohorts.",
     "data_gaps": "Under-representation of diverse ancestries; G×E studies across populations; adolescent-onset T2D genetics; gene–diet interactions."
   },
-  "mechanism_briefs": [],
+  "mechanism_briefs": ["pparg-diet-type2diabetes"],
   "references": [
     {"id": "ref1", "title": "Type 2 diabetes genetic loci informed by multi-trait associations", "authors": "Mahajan A, et al.", "year": 2018, "journal": "Nature Genetics", "doi": "10.1038/s41588-018-0244-4"},
     {"id": "ref2", "title": "TCF7L2 polymorphism and progression from prediabetes to type 2 diabetes", "authors": "Florez JC, et al.", "year": 2006, "journal": "New England Journal of Medicine", "doi": "10.1056/NEJMoa062418"},

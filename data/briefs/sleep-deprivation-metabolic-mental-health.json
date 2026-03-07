@@ -1,0 +1,37 @@
+{
+  "slug": "sleep-deprivation-metabolic-mental-health",
+  "title": "Sleep Deprivation and Circadian Disruption in Metabolic and Mental Health: Gene–Environment Interactions",
+  "question": "How do sleep deprivation and circadian disruption interact with genetic susceptibility to affect metabolic disease and depression risk?",
+  "background": "Short sleep duration and poor sleep quality are associated with obesity, type 2 diabetes, cardiovascular disease, and depression. Circadian genes (CLOCK, PER, CRY) and stress-related genes (BDNF) may modify susceptibility. Adolescence is a period of natural circadian shift and often insufficient sleep; shift work in adulthood increases metabolic and cardiovascular risk. Mechanisms include effects on leptin/ghrelin, glucose metabolism, HPA axis, and neuroplasticity. This brief synthesizes evidence for sleep as an environmental modifier of genetic risk for metabolic and mental health outcomes.",
+  "evidence_summary": [
+    "Epidemiological: Short sleep (<7 h) and shift work associated with higher BMI, T2D, and depression risk; meta-analyses support causal inference.",
+    "Experimental: Sleep restriction impairs glucose tolerance and alters leptin and ghrelin; circadian misalignment worsens metabolic parameters.",
+    "G×E: BDNF Val66Met and sleep/circadian disruption may interact in depression; circadian gene variants and shift work in metabolic disease under study."
+  ],
+  "mechanistic_chain": [
+    "1. Sleep restriction and circadian misalignment alter hypothalamic and endocrine regulation.",
+    "2. Leptin decreases and ghrelin increases with short sleep; appetite and weight gain may follow.",
+    "3. Glucose metabolism and insulin sensitivity are impaired by sleep loss and shift work.",
+    "4. Sleep deprivation affects BDNF and HPA axis; may amplify stress-related depression risk in susceptible genotypes.",
+    "5. Adolescence: biological delay in circadian phase and early school start times create vulnerability; long-term metabolic and mental health consequences."
+  ],
+  "tissue_specificity": "Central pacemaker in suprachiasmatic nucleus; systemic effects on adipose (leptin), gut (ghrelin), liver (glucose), and brain (BDNF, HPA).",
+  "counterarguments": [
+    "Observational studies confounded by reverse causation (depression or obesity causing poor sleep) and lifestyle factors.",
+    "Rigorous G×E evidence for sleep × genotype in metabolic/mental disease is still limited."
+  ],
+  "validation_criteria": [
+    "Randomized trial of sleep extension or circadian alignment; stratify by genotype for metabolic and mood outcomes.",
+    "Prospective cohort with actigraphy and genotype; test sleep × BDNF or circadian genes on depression incidence."
+  ],
+  "related_disease": "major-depressive-disorder",
+  "related_exposure": "sleep-deprivation",
+  "related_genes": ["bdnf", "fto"],
+  "related_pathways": ["hpa-axis"],
+  "references": [
+    {"id": "ref1", "title": "Sleep and metabolic function", "authors": "Spiegel K, et al.", "year": 2009, "journal": "Lancet Neurology", "doi": "10.1016/S1474-4422(09)70136-0"},
+    {"id": "ref2", "title": "Adolescent sleep and mental health", "authors": "Short MA, et al.", "year": 2013, "journal": "Sleep Medicine Reviews", "doi": "10.1016/j.smrv.2012.03.007"}
+  ],
+  "published_at": "2026-03-07",
+  "schema_version": "1.0"
+}

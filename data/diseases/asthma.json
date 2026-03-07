@@ -127,7 +127,7 @@
     "transferability_notes": "Replication in African, Hispanic, and South Asian populations is growing but incomplete. PAGE and TOPMed are generating multi-ancestry asthma GWAS. Transferability of risk loci and PRS across ancestries requires continued investment in diverse cohorts.",
     "data_gaps": "Multi-ancestry asthma GWAS and PRS validation in under-represented populations; G×E interaction studies across ancestries."
   },
-  "mechanism_briefs": ["pm25-il33-nfkb-asthma"],
+  "mechanism_briefs": ["pm25-il33-nfkb-asthma", "oxidative-stress-air-pollution-asthma-cvd"],
   "references": [
     {"id": "ref1", "title": "Genetic variants regulating ORMDL3 expression contribute to the risk of childhood asthma", "authors": "Moffatt MF, et al.", "year": 2007, "journal": "Nature", "doi": "10.1038/nature06014"},
     {"id": "ref2", "title": "Asthma-associated genetic variants induce IL33 differential expression through an enhancer-blocking regulatory region", "authors": "Alvarez M, et al.", "year": 2021, "journal": "Nature Communications", "doi": "10.1038/s41467-021-26347-z"},

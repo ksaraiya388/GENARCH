@@ -1,0 +1,37 @@
+{
+  "slug": "oxidative-stress-air-pollution-asthma-cvd",
+  "title": "Oxidative Stress Response Genes (GSTP1, SOD2) and Air Pollution in Asthma and Cardiovascular Susceptibility",
+  "question": "How do genetic variants in antioxidant defense genes (GSTP1, SOD2) modify the association between air pollution exposure and asthma or cardiovascular disease?",
+  "background": "Ambient air pollution (PM2.5) induces reactive oxygen species (ROS) in the lung and systemically. Antioxidant enzymes—glutathione S-transferases (e.g., GSTP1) and superoxide dismutases (SOD2)—detoxify ROS and protect against oxidative damage. The GSTP1 Ile105Val polymorphism alters enzyme activity; epidemiological studies show that GSTP1 genotype modifies the association between PM2.5 and asthma and lung function. SOD2 Ala16Val affects mitochondrial targeting and may modify cardiovascular and respiratory responses to pollution. This brief synthesizes the G×E evidence for oxidative stress pathway genes and air pollution in asthma and CAD.",
+  "evidence_summary": [
+    "GSTP1: Val105 variant associated with reduced enzyme activity; multiple studies show stronger PM2.5–asthma and PM2.5–lung function associations in Val carriers (EHP 2014 and others).",
+    "SOD2: Ala16Val and air pollution–cardiovascular or –respiratory outcomes; evidence mixed but supports role of oxidative stress in pollution effects.",
+    "Pathway: NF-κB and oxidative stress response are activated by PM2.5; antioxidant genotype may buffer or exacerbate inflammatory response."
+  ],
+  "mechanistic_chain": [
+    "1. PM2.5 deposits in airways and generates ROS; systemic inflammation may follow.",
+    "2. GSTP1 conjugates glutathione to electrophiles and ROS; Val105 reduces activity and may increase oxidative damage.",
+    "3. SOD2 dismutates superoxide in mitochondria; Ala16Val may affect mitochondrial ROS handling.",
+    "4. In asthma: oxidative stress in epithelium amplifies NF-κB and type 2 inflammation; GSTP1 genotype modifies this pathway.",
+    "5. In cardiovascular: systemic oxidative stress and endothelial dysfunction; SOD2 and GSTP1 may modify susceptibility to pollution-induced CAD."
+  ],
+  "tissue_specificity": "GSTP1 highly expressed in lung, liver, airway epithelium; SOD2 in mitochondria of heart, lung, liver. Primary G×E evidence in respiratory outcomes; cardiovascular evidence growing.",
+  "counterarguments": [
+    "Effect sizes for G×E are modest; replication across populations and pollution profiles variable.",
+    "SOD2 × pollution evidence less consistent than GSTP1 × pollution for asthma."
+  ],
+  "validation_criteria": [
+    "Prospective cohort with genotype and repeated PM2.5 assessment; test GSTP1/SOD2 × PM2.5 on asthma incidence and cardiovascular events.",
+    "Controlled exposure studies in humans with genotype; measure oxidative stress and inflammatory biomarkers."
+  ],
+  "related_disease": "asthma",
+  "related_exposure": "air-pollution",
+  "related_genes": ["gstp1", "sod2", "il33"],
+  "related_pathways": ["oxidative-stress-response", "nf-kb"],
+  "references": [
+    {"id": "ref1", "title": "GSTP1 and TNF Gene Variants and Associations between Air Pollution and Incident Childhood Asthma", "authors": "Islam T, et al.", "year": 2014, "journal": "Environmental Health Perspectives", "doi": "10.1289/ehp.1307459"},
+    {"id": "ref2", "title": "Oxidative stress in disease and aging", "authors": "Sies H, Jones DP", "year": 2020, "journal": "Nature Reviews Molecular Cell Biology", "doi": "10.1038/s41580-020-00306-8"}
+  ],
+  "published_at": "2026-03-07",
+  "schema_version": "1.0"
+}

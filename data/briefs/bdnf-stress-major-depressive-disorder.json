@@ -1,0 +1,37 @@
+{
+  "slug": "bdnf-stress-major-depressive-disorder",
+  "title": "BDNF Val66Met and Psychosocial Stress in Major Depressive Disorder Susceptibility",
+  "question": "How does the BDNF Val66Met polymorphism interact with psychosocial stress to influence risk of major depressive disorder and neural plasticity?",
+  "background": "Brain-derived neurotrophic factor (BDNF) supports neuronal survival, synaptic plasticity, and neurogenesis. The Val66Met variant (rs6265) affects activity-dependent secretion of BDNF and has been associated with depression, anxiety, and stress-related phenotypes in meta-analyses. Psychosocial stress—including childhood adversity, chronic stress, and life events—is a well-established risk factor for MDD. Gene–environment interaction (G×E) hypotheses propose that Met carriers show heightened stress sensitivity and greater depression risk following adversity, with implications for hippocampal structure and function. This brief synthesizes evidence for the BDNF × stress interaction in MDD and adolescent vulnerability.",
+  "evidence_summary": [
+    "Meta-analyses support a small main effect of BDNF Val66Met on depression risk and a stronger G×E effect: Met carriers show elevated depression risk following childhood adversity or recent stress (Mol Psychiatry, multiple cohorts).",
+    "Neuroimaging: Met allele associated with reduced hippocampal volume and altered stress-related amygdala reactivity; effects may be moderated by early-life stress.",
+    "Sleep deprivation and circadian disruption (common in adolescence) interact with BDNF genotype and HPA axis; sleep loss impairs BDNF expression and may amplify stress vulnerability in Met carriers."
+  ],
+  "mechanistic_chain": [
+    "1. Psychosocial stress activates the HPA axis and increases cortisol.",
+    "2. Chronic stress and cortisol can reduce BDNF expression and impair hippocampal plasticity.",
+    "3. Val66Met reduces activity-dependent BDNF release; Met carriers may have lower compensatory BDNF availability under stress.",
+    "4. Impaired neuroplasticity and hippocampal volume loss contribute to depressive symptomatology.",
+    "5. Adolescence is a critical window: stress exposure during 10–24 years may have lasting effects on HPA and neural circuitry."
+  ],
+  "tissue_specificity": "BDNF is widely expressed in brain with high levels in hippocampus and prefrontal cortex. Stress–BDNF interactions are most relevant in limbic and cortical regions; HPA axis (hypothalamus, pituitary, adrenal) mediates stress response.",
+  "counterarguments": [
+    "Effect sizes for BDNF × stress in depression are modest and replication has been inconsistent; publication bias and heterogeneity across studies remain concerns.",
+    "Val66Met may have different effects by ancestry and by type of stressor; rigorous prospective designs with standardized stress assessment are needed."
+  ],
+  "validation_criteria": [
+    "Large prospective cohort with genotype and repeated stress/depression assessment; test for BDNF × stress interaction on MDD incidence.",
+    "Experimental stress paradigm in Val/Val vs Met carriers; measure cortisol, BDNF, and mood outcomes."
+  ],
+  "related_disease": "major-depressive-disorder",
+  "related_exposure": "psychosocial-stress",
+  "related_genes": ["bdnf", "slc6a4"],
+  "related_pathways": ["hpa-axis"],
+  "references": [
+    {"id": "ref1", "title": "The BDNF Val66Met polymorphism and stress", "authors": "Hosang GM, et al.", "year": 2014, "journal": "Molecular Psychiatry", "doi": "10.1038/mp.2013.123"},
+    {"id": "ref2", "title": "Gene–environment interactions in depression", "authors": "Dunn EC, et al.", "year": 2015, "journal": "Current Psychiatry Reports", "doi": "10.1007/s11920-015-0564-2"}
+  ],
+  "published_at": "2026-03-07",
+  "schema_version": "1.0"
+}

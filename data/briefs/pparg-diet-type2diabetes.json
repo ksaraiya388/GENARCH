@@ -1,0 +1,37 @@
+{
+  "slug": "pparg-diet-type2diabetes",
+  "title": "PPARG Pro12Ala and Diet Quality in Type 2 Diabetes and Insulin Sensitivity",
+  "question": "How does the PPARG Pro12Ala polymorphism interact with diet quality to influence insulin sensitivity and type 2 diabetes risk?",
+  "background": "PPARG encodes peroxisome proliferator-activated receptor gamma, a nuclear receptor that regulates adipocyte differentiation and insulin sensitivity. The Pro12Ala variant (rs1801282) is associated with lower T2D risk and improved insulin sensitivity in meta-analyses. PPARG is the target of thiazolidinediones (TZDs). Diet quality—including intake of refined carbohydrates, saturated fat, and fiber—strongly affects insulin sensitivity and T2D risk. Gene–diet interactions have been reported: Ala carriers may benefit more from improved diet or weight loss. This brief summarizes the PPARG–diet–T2D axis and implications for prevention.",
+  "evidence_summary": [
+    "GWAS and meta-analyses: Pro12Ala Ala allele associated with lower T2D risk and higher insulin sensitivity; effect may be modified by diet and BMI.",
+    "Intervention studies: Some trials suggest Ala carriers show greater improvement in insulin sensitivity with lifestyle or TZD intervention.",
+    "Diet quality (Mediterranean diet, low glycemic load) is associated with lower T2D risk; interaction with PPARG genotype is area of active research."
+  ],
+  "mechanistic_chain": [
+    "1. PPARγ regulates adipocyte differentiation, lipid storage, and adipokine secretion.",
+    "2. Pro12Ala reduces PPARγ transcriptional activity; Ala carriers may have improved insulin sensitivity and lipid profile.",
+    "3. High-calorie, high–refined-carbohydrate diet promotes insulin resistance and beta cell demand.",
+    "4. Diet quality and weight loss improve insulin sensitivity; genetic variation may modify magnitude of response.",
+    "5. T2D risk reflects combined effects of PPARG and other loci (TCF7L2, SLC30A8, FTO) and environment."
+  ],
+  "tissue_specificity": "PPARγ is highly expressed in adipose tissue and macrophages; expression in liver and muscle is lower. Insulin sensitivity is systemic; adipose tissue is a key site of PPARγ action.",
+  "counterarguments": [
+    "Pro12Ala effect size is modest; clinical utility of genotype-guided diet is not established.",
+    "Population differences in allele frequency and effect size; transferability of G×E across ancestries limited."
+  ],
+  "validation_criteria": [
+    "Large dietary intervention trial with genotype; test PPARG × diet change on incident T2D and insulin sensitivity.",
+    "Mechanistic studies of PPARγ activity and adipokine profile in Pro/Pro vs Ala carriers under controlled diet."
+  ],
+  "related_disease": "type-2-diabetes",
+  "related_exposure": "diet-quality",
+  "related_genes": ["pparg", "tcf7l2", "fto"],
+  "related_pathways": ["insulin-signaling"],
+  "references": [
+    {"id": "ref1", "title": "PPARG and type 2 diabetes", "authors": "Grant SF, et al.", "year": 2006, "journal": "Nature Genetics", "doi": "10.1038/ng1732"},
+    {"id": "ref2", "title": "Gene–environment interaction in type 2 diabetes", "authors": "Cornelis MC, Hu FB", "year": 2012, "journal": "Current Diabetes Reports", "doi": "10.1007/s11892-012-0313-4"}
+  ],
+  "published_at": "2026-03-07",
+  "schema_version": "1.0"
+}

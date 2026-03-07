@@ -125,7 +125,7 @@
     "transferability_notes": "FTO and many loci transfer across ancestries; effect sizes and allele frequencies vary. PRS performance in African, Hispanic, and Asian populations is reduced. Obesity prevalence and sequelae differ by race/ethnicity and socioeconomic status; equity in prevention and care is critical.",
     "data_gaps": "Under-representation of diverse ancestries; G×E (diet, built environment) across populations; childhood/adolescent obesity genetics; epigenetic contributions."
   },
-  "mechanism_briefs": [],
+  "mechanism_briefs": ["leptin-melanocortin-obesity-environment"],
   "references": [
     {"id": "ref1", "title": "Genome-wide association study for obesity", "authors": "Speliotes EK, et al.", "year": 2010, "journal": "Nature Genetics", "doi": "10.1038/ng.620"},
     {"id": "ref2", "title": "FTO and the genetics of obesity", "authors": "Loos RJF, Yeo GSH", "year": 2014, "journal": "Trends in Genetics", "doi": "10.1016/j.tig.2014.06.002"},

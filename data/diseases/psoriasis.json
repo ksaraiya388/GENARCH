@@ -26,7 +26,7 @@
     "transferability_notes": "HLA-C*06:02 replicated across ancestries; non-HLA loci vary.",
     "data_gaps": "Multi-ancestry GWAS and G×E."
   },
-  "mechanism_briefs": [],
+  "mechanism_briefs": ["jak-stat-psoriasis-ibd-environment"],
   "references": [
     {"id": "ref1", "title": "Psoriasis genome-wide association study", "authors": "Tsoi LC, et al.", "year": 2017, "journal": "Nature Communications", "doi": "10.1038/s41467-017-01978-8"},
     {"id": "ref2", "title": "Environmental triggers in psoriasis", "authors": "Armstrong AW, et al.", "year": 2021, "journal": "JAMA Dermatology", "doi": "10.1001/jamadermatol.2020.4838"}

@@ -1,0 +1,37 @@
+{
+  "slug": "jak-stat-psoriasis-ibd-environment",
+  "title": "JAK-STAT and IL-23/Th17 Pathway in Psoriasis and IBD: Environmental Triggers and Therapeutic Targets",
+  "question": "How do environmental factors interact with the JAK-STAT and IL-23/Th17 pathway in psoriasis and inflammatory bowel disease?",
+  "background": "The JAK-STAT pathway transduces signals from cytokines including IL-23, which drives Th17 differentiation and is central to psoriasis and inflammatory bowel disease (Crohn disease, ulcerative colitis). HLA-C*06:02 and IL23R are major genetic risk factors. Environmental triggers—stress, infection, diet, smoking (with opposite effects in Crohn vs UC), and medications—can precipitate or exacerbate disease. JAK inhibitors and anti–IL-23 biologics are effective therapies. This brief summarizes the mechanistic link between JAK-STAT/IL-23 genetics, environmental modifiers, and autoimmune disease expression.",
+  "evidence_summary": [
+    "GWAS: IL23R and JAK-STAT pathway genes are shared between psoriasis and IBD; HLA and other loci are disease-specific.",
+    "Environmental: Stress and infection can trigger psoriasis flares; smoking increases Crohn risk but may decrease UC risk; diet and microbiome modulate IBD.",
+    "Therapeutic: JAK inhibitors and anti–IL-23/IL-12 agents are approved for psoriasis and IBD; support central role of pathway."
+  ],
+  "mechanistic_chain": [
+    "1. IL-23 from dendritic cells and macrophages binds IL-23R on T cells and ILCs.",
+    "2. JAK-STAT signaling drives Th17 differentiation and production of IL-17, IL-22.",
+    "3. In psoriasis: Th17 cytokines promote keratinocyte proliferation and skin inflammation; stress and infection can amplify cytokine release.",
+    "4. In IBD: Th17 response to gut microbiota and barrier breach; diet and smoking alter microbiome and barrier.",
+    "5. Genetic risk (IL23R, HLA) sets susceptibility; environmental triggers determine timing and severity of flares."
+  ],
+  "tissue_specificity": "Psoriasis: skin (epidermis, dermis). IBD: intestinal epithelium and lamina propria. JAK-STAT and IL-23/Th17 are active in lymphoid and barrier tissues.",
+  "counterarguments": [
+    "Precise G×E (e.g., IL23R × specific trigger) is not well characterized; most evidence is genetic main effects and environmental main effects.",
+    "Smoking paradox in CD vs UC suggests complex, disease-specific environmental effects."
+  ],
+  "validation_criteria": [
+    "Prospective cohort with genotype and environmental exposure assessment; test for G×E on psoriasis/IBD incidence and flare.",
+    "Mechanistic studies of IL-23/Th17 response under stress or dietary intervention in risk genotype carriers."
+  ],
+  "related_disease": "psoriasis",
+  "related_exposure": "psychosocial-stress",
+  "related_genes": ["hla-drb1"],
+  "related_pathways": ["jak-stat-signaling", "tnf-signaling"],
+  "references": [
+    {"id": "ref1", "title": "JAK-STAT signaling in immune regulation", "authors": "O'Shea JJ, et al.", "year": 2015, "journal": "Immunity", "doi": "10.1016/j.immuni.2015.02.010"},
+    {"id": "ref2", "title": "Targeting the JAK/STAT pathway in autoimmune disease", "authors": "Schwartz DM, et al.", "year": 2017, "journal": "Nature Reviews Drug Discovery", "doi": "10.1038/nrd.2017.201"}
+  ],
+  "published_at": "2026-03-07",
+  "schema_version": "1.0"
+}
