@@ -15,6 +15,13 @@ export const metadata: Metadata = {
       "Systems-level atlas of gene–environment interactions and population-level genetic architecture.",
     type: "website",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/GENARCH_Official_Logo.png", type: "image/png", sizes: "32x32" },
+    ],
+    apple: "/GENARCH_Official_Logo.png",
+  },
 };
 
 export default function RootLayout({

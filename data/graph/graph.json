@@ -549,7 +549,24 @@
         "confidence": "medium",
         "last_updated": "2026-03-03"
       }
-    }
+    },
+    {"id": "bipolar-disorder", "type": "disease", "label": "Bipolar Disorder", "slug": "bipolar-disorder", "attrs": {"summary": "Mood disorder with mania and depression; high heritability; stress and sleep are triggers.", "confidence": "high", "last_updated": "2026-03-07"}},
+    {"id": "psoriasis", "type": "disease", "label": "Psoriasis", "slug": "psoriasis", "attrs": {"summary": "Chronic immune-mediated skin disease; IL-23/Th17 axis; HLA-C and IL23R.", "confidence": "high", "last_updated": "2026-03-07"}},
+    {"id": "inflammatory-bowel-disease", "type": "disease", "label": "Inflammatory Bowel Disease", "slug": "inflammatory-bowel-disease", "attrs": {"summary": "Crohn disease and ulcerative colitis; NOD2, IL23R; microbiome and diet.", "confidence": "high", "last_updated": "2026-03-07"}},
+    {"id": "ischemic-stroke", "type": "disease", "label": "Ischemic Stroke", "slug": "ischemic-stroke", "attrs": {"summary": "Cerebral artery occlusion; PITX2, HDAC9; hypertension and smoking are major risk factors.", "confidence": "high", "last_updated": "2026-03-07"}},
+    {"id": "atopic-dermatitis", "type": "disease", "label": "Atopic Dermatitis", "slug": "atopic-dermatitis", "attrs": {"summary": "Chronic inflammatory skin disease; FLG, IL13; atopic march.", "confidence": "high", "last_updated": "2026-03-07"}},
+    {"id": "bdnf", "type": "gene", "label": "BDNF", "slug": "bdnf", "attrs": {"summary": "Brain-derived neurotrophic factor; Val66Met and stress–depression G×E.", "confidence": "high", "last_updated": "2026-03-07"}},
+    {"id": "gstp1", "type": "gene", "label": "GSTP1", "slug": "gstp1", "attrs": {"summary": "Glutathione S-transferase; G×E with air pollution and asthma.", "confidence": "high", "last_updated": "2026-03-07"}},
+    {"id": "lep", "type": "gene", "label": "LEP", "slug": "lep", "attrs": {"summary": "Leptin; energy homeostasis; obesity and T2D.", "confidence": "high", "last_updated": "2026-03-07"}},
+    {"id": "pparg", "type": "gene", "label": "PPARG", "slug": "pparg", "attrs": {"summary": "Nuclear receptor; adipogenesis and insulin sensitivity; T2D drug target.", "confidence": "high", "last_updated": "2026-03-07"}},
+    {"id": "mthfr", "type": "gene", "label": "MTHFR", "slug": "mthfr", "attrs": {"summary": "Folate metabolism; homocysteine; gene–nutrient interactions.", "confidence": "medium", "last_updated": "2026-03-07"}},
+    {"id": "sod2", "type": "gene", "label": "SOD2", "slug": "sod2", "attrs": {"summary": "Mitochondrial superoxide dismutase; oxidative stress; G×E with pollution.", "confidence": "medium", "last_updated": "2026-03-07"}},
+    {"id": "jak-stat-signaling", "type": "pathway", "label": "JAK-STAT Signaling", "slug": "jak-stat-signaling", "attrs": {"summary": "Cytokine signaling; autoimmune disease and cancer.", "confidence": "medium", "last_updated": "2026-03-07"}},
+    {"id": "oxidative-stress-response", "type": "pathway", "label": "Oxidative Stress Response", "slug": "oxidative-stress-response", "attrs": {"summary": "Antioxidant defenses; GSTP1, SOD2; air pollution G×E.", "confidence": "medium", "last_updated": "2026-03-07"}},
+    {"id": "tnf-signaling", "type": "pathway", "label": "TNF Signaling", "slug": "tnf-signaling", "attrs": {"summary": "TNF inflammation; RA, IBD, psoriasis; air pollution–asthma G×E.", "confidence": "medium", "last_updated": "2026-03-07"}},
+    {"id": "physical-activity", "type": "exposure", "label": "Physical Activity", "slug": "physical-activity", "attrs": {"summary": "Movement and exercise; buffers obesity and T2D risk.", "confidence": "high", "last_updated": "2026-03-07"}},
+    {"id": "greenspace", "type": "exposure", "label": "Greenspace", "slug": "greenspace", "attrs": {"summary": "Natural environments; mental health and stress reduction.", "confidence": "medium", "last_updated": "2026-03-07"}},
+    {"id": "sleep-deprivation", "type": "exposure", "label": "Sleep Deprivation", "slug": "sleep-deprivation", "attrs": {"summary": "Insufficient sleep and circadian disruption; metabolic and mental health.", "confidence": "high", "last_updated": "2026-03-07"}}
   ],
   "edges": [
     {
@@ -3773,13 +3790,24 @@
           "ref3"
         ]
       }
-    }
+    },
+    {"id": "e155", "source": "gstp1", "target": "asthma", "type": "G×E", "attrs": {"evidence_type": "literature", "direction": "amplify", "tissue": "lung", "strength": 0.75, "confidence": "high", "sources": ["ref1"], "ancestry_rep": "Multi-ancestry"}},
+    {"id": "e156", "source": "air-pollution", "target": "gstp1", "type": "G×E", "attrs": {"evidence_type": "literature", "direction": "amplify", "tissue": "airway epithelium", "strength": 0.85, "confidence": "high", "sources": ["ref1"]}},
+    {"id": "e157", "source": "bdnf", "target": "major-depressive-disorder", "type": "GWAS", "attrs": {"evidence_type": "literature", "direction": "unknown", "tissue": "brain", "strength": 0.78, "confidence": "high", "sources": ["ref2"]}},
+    {"id": "e158", "source": "psychosocial-stress", "target": "bdnf", "type": "G×E", "attrs": {"evidence_type": "literature", "direction": "amplify", "tissue": "brain", "strength": 0.82, "confidence": "high", "sources": ["ref2"]}},
+    {"id": "e159", "source": "gstp1", "target": "oxidative-stress-response", "type": "pathway", "attrs": {"evidence_type": "pathway", "direction": "unknown", "tissue": "lung", "strength": 0.8, "confidence": "high", "sources": ["ref1"]}},
+    {"id": "e160", "source": "sod2", "target": "oxidative-stress-response", "type": "pathway", "attrs": {"evidence_type": "pathway", "direction": "unknown", "tissue": "heart", "strength": 0.85, "confidence": "high", "sources": ["ref1"]}},
+    {"id": "e161", "source": "air-pollution", "target": "oxidative-stress-response", "type": "pathway", "attrs": {"evidence_type": "literature", "direction": "amplify", "tissue": "lung", "strength": 0.88, "confidence": "high", "sources": ["ref1"]}},
+    {"id": "e162", "source": "pparg", "target": "type-2-diabetes", "type": "GWAS", "attrs": {"evidence_type": "GWAS", "direction": "unknown", "tissue": "adipose tissue", "strength": 0.88, "confidence": "high", "sources": ["ref3"]}},
+    {"id": "e163", "source": "lep", "target": "obesity", "type": "pathway", "attrs": {"evidence_type": "literature", "direction": "unknown", "tissue": "adipose tissue", "strength": 0.9, "confidence": "high", "sources": ["ref3"]}},
+    {"id": "e164", "source": "physical-activity", "target": "obesity", "type": "modifier", "attrs": {"evidence_type": "literature", "direction": "buffer", "tissue": "muscle", "strength": 0.7, "confidence": "high", "sources": ["ref3"]}},
+    {"id": "e165", "source": "sleep-deprivation", "target": "major-depressive-disorder", "type": "modifier", "attrs": {"evidence_type": "literature", "direction": "amplify", "tissue": "brain", "strength": 0.75, "confidence": "high", "sources": ["ref2"]}}
   ],
   "metadata": {
-    "generated_at": "2026-03-03",
+    "generated_at": "2026-03-07",
     "pipeline_version": "1.0.0",
-    "node_count": 50,
-    "edge_count": 154,
+    "node_count": 69,
+    "edge_count": 165,
     "schema_version": "1.0"
   }
 }

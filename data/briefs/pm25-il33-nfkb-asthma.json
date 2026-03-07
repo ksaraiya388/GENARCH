@@ -32,8 +32,8 @@
   ],
   "related_disease": "asthma",
   "related_exposure": "air-pollution",
-  "related_genes": ["il33"],
-  "related_pathways": ["nf-kb"],
+  "related_genes": ["il33", "gstp1"],
+  "related_pathways": ["nf-kb", "oxidative-stress-response"],
   "references": [
     {"id": "ref1", "title": "Exposure to PM2.5 induces aberrant activation of NF-κB in human airway epithelial cells by downregulating miR-331 expression", "authors": "Li R, et al.", "year": 2017, "journal": "Environmental Toxicology and Pharmacology", "doi": "10.1016/j.etap.2017.02.011"},
     {"id": "ref2", "title": "Ambient particulate matter induces an exacerbation of airway inflammation in experimental asthma: role of interleukin-33", "authors": "Brandenburg AH, et al.", "year": 2014, "journal": "Clinical & Experimental Immunology", "doi": "10.1111/cei.12348"},

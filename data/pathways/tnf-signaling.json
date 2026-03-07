@@ -1,0 +1,26 @@
+{
+  "id": "path_tnf",
+  "slug": "tnf-signaling",
+  "name": "TNF Signaling Pathway",
+  "summary": "Tumor necrosis factor (TNF) signaling mediates inflammation, cell survival, and apoptosis. TNF binds TNFR1/TNFR2; downstream cascades include NF-κB and MAPK. TNF is central to rheumatoid arthritis, inflammatory bowel disease, and psoriasis; anti-TNF biologics are first-line in many autoimmune conditions. Environmental triggers (infection, stress, diet) can modulate TNF production. TNF gene variants have been studied in G×E with air pollution and asthma.",
+  "canonical_source": "KEGG hsa04668",
+  "environmental_triggers": [
+    {"exposure_slug": "air-pollution", "trigger_type": "PM2.5 can induce TNF in airway and systemic inflammation", "citations": ["ref1"]},
+    {"exposure_slug": "psychosocial-stress", "trigger_type": "Stress-immune axis; inflammatory cytokines", "citations": ["ref2"]}
+  ],
+  "key_genes": [],
+  "linked_diseases": [
+    {"disease_slug": "rheumatoid-arthritis", "pathway_role": "Core therapeutic target; anti-TNF", "citations": ["ref2"]},
+    {"disease_slug": "inflammatory-bowel-disease", "pathway_role": "Anti-TNF in Crohn and UC", "citations": ["ref2"]},
+    {"disease_slug": "asthma", "pathway_role": "TNF variants modify air pollution–asthma association", "citations": ["ref1"]}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "air-pollution", "pathway_effect": "TNF G×E with PM2.5 in asthma", "citations": ["ref1"]}
+  ],
+  "references": [
+    {"id": "ref1", "title": "GSTP1 and TNF Gene Variants and Associations between Air Pollution and Incident Childhood Asthma", "authors": "Islam T, et al.", "year": 2014, "journal": "Environmental Health Perspectives", "doi": "10.1289/ehp.1307459"},
+    {"id": "ref2", "title": "TNF and inflammatory disease", "authors": "Bradley JR", "year": 2008, "journal": "Journal of Pathology", "doi": "10.1002/path.2318"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-07"
+}

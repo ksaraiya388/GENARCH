@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { getReleases, getAnnualReports } from "@/lib/data";
+import { getReleases } from "@/lib/data";
 
 function formatDate(dateStr: string): string {
   try {
@@ -17,7 +17,6 @@ function formatDate(dateStr: string): string {
 
 export default function UpdatesPage() {
   const releases = getReleases();
-  const annualReports = getAnnualReports();
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -66,23 +65,10 @@ export default function UpdatesPage() {
           )}
         </section>
 
-        {annualReports.length > 0 && (
-          <section>
-            <h2 className="text-h2 text-surface-white mb-3">Annual Reports</h2>
-            <ul className="space-y-2">
-              {annualReports.map((r) => (
-                <li key={r.year}>
-                  <Link
-                    href={`/reports/${r.year}/`}
-                    className="text-teal-primary hover:text-teal-soft hover:underline"
-                  >
-                    {r.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
+        <section>
+          <h2 className="text-h2 text-surface-white mb-3">Annual Reports</h2>
+          <p className="text-cool-light">Coming soon!</p>
+        </section>
       </div>
     </div>
   );

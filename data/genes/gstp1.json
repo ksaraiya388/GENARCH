@@ -1,0 +1,37 @@
+{
+  "id": "gene_gstp1",
+  "slug": "gstp1",
+  "symbol": "GSTP1",
+  "name": "Glutathione S-transferase pi 1",
+  "chromosome": "11q13.2",
+  "summary": "GSTP1 encodes glutathione S-transferase pi 1, which conjugates glutathione to electrophilic compounds and reactive oxygen species, detoxifying oxidative stress. The Ile105Val (rs1695) polymorphism alters enzyme activity and has been widely studied in gene–environment interactions with air pollution, tobacco smoke, and other oxidative exposures. GSTP1 variants modify associations between PM2.5 and asthma, and smoking and lung function. Expression is high in lung, liver, and epithelial tissues.",
+  "molecular_function": ["glutathione transferase activity", "detoxification", "oxidative stress response"],
+  "protein_class": "glutathione transferase",
+  "regulatory_notes": {
+    "promoter_activity": "Inducible by Nrf2 under oxidative stress.",
+    "eqtl_tissues": ["lung", "liver", "airway epithelium"]
+  },
+  "expression_context": [
+    {"tissue": "lung", "tpm_range": "30-100", "gtex_version": "v8", "citations": ["ref1"]},
+    {"tissue": "liver", "tpm_range": "50-150", "citations": ["ref1"]}
+  ],
+  "pathways": ["nf-kb", "oxidative-stress-response"],
+  "linked_diseases": [
+    {"disease_slug": "asthma", "evidence_type": "G×E", "strength": 0.75},
+    {"disease_slug": "lung-cancer", "evidence_type": "G×E", "strength": 0.65}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "air-pollution", "evidence_type": "G×E", "strength": 0.85},
+    {"exposure_slug": "tobacco", "evidence_type": "G×E", "strength": 0.8}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "GSTP1 Val105 variant confers reduced detoxification capacity; under high PM2.5 or smoking, asthma and lung function associations are amplified.", "supporting_evidence": "Islam et al. EHP 2014; multiple G×E cohorts.", "confidence": "high"}
+  ],
+  "confidence": "high",
+  "references": [
+    {"id": "ref1", "title": "GSTP1 and TNF Gene Variants and Associations between Air Pollution and Incident Childhood Asthma", "authors": "Islam T, et al.", "year": 2014, "journal": "Environmental Health Perspectives", "doi": "10.1289/ehp.1307459"},
+    {"id": "ref2", "title": "Glutathione S-transferase genotypes and asthma", "authors": "Romieu I, et al.", "year": 2006, "journal": "Thorax", "doi": "10.1136/thx.2005.052399"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-07"
+}

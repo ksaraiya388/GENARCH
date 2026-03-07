@@ -1,0 +1,36 @@
+{
+  "id": "gene_sod2",
+  "slug": "sod2",
+  "symbol": "SOD2",
+  "name": "Superoxide dismutase 2, mitochondrial",
+  "chromosome": "6q25.3",
+  "summary": "SOD2 encodes manganese superoxide dismutase, a mitochondrial enzyme that converts superoxide to hydrogen peroxide and protects against oxidative stress. The Ala16Val (rs4880) polymorphism affects mitochondrial targeting and activity. SOD2 is implicated in aging, cardiovascular disease, and conditions driven by oxidative stress; air pollution and smoking increase oxidative burden and may interact with genotype. Expressed in metabolically active tissues.",
+  "molecular_function": ["superoxide dismutase activity", "antioxidant defense", "mitochondrial protection"],
+  "protein_class": "oxidoreductase",
+  "regulatory_notes": {
+    "promoter_activity": "Inducible by oxidative stress and cytokines.",
+    "eqtl_tissues": ["heart", "lung", "liver"]
+  },
+  "expression_context": [
+    {"tissue": "heart", "tpm_range": "100-250", "gtex_version": "v8", "citations": ["ref1"]},
+    {"tissue": "lung", "tpm_range": "40-120", "citations": ["ref1"]}
+  ],
+  "pathways": ["oxidative-stress-response"],
+  "linked_diseases": [
+    {"disease_slug": "coronary-artery-disease", "evidence_type": "literature", "strength": 0.55},
+    {"disease_slug": "asthma", "evidence_type": "G×E", "strength": 0.5}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "air-pollution", "evidence_type": "G×E", "strength": 0.65},
+    {"exposure_slug": "tobacco", "evidence_type": "literature", "strength": 0.6}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "Val16 allele may confer lower mitochondrial SOD activity under stress; in high oxidative environments (PM2.5, smoking), cardiovascular and respiratory risk may be amplified.", "supporting_evidence": "In vitro and some cohort data; evidence mixed.", "confidence": "medium"}
+  ],
+  "confidence": "medium",
+  "references": [
+    {"id": "ref1", "title": "SOD2 Ala16Val and oxidative stress phenotypes", "authors": "Sutton A, et al.", "year": 2003, "journal": "Free Radical Biology and Medicine", "doi": "10.1016/S0891-5849(03)00423-0"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-07"
+}

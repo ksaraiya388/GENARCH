@@ -1,5 +1,13 @@
 [
   {
+    "slug": "genarch-launch",
+    "title": "GENARCH – Launch",
+    "date": "2026-03-07",
+    "summary": "Platform launch with expanded research database: genes, pathways, diseases, and environmental exposures from peer-reviewed biomedical and genomic studies. Community and Knowledge Graph modules are live. Follow us @genarch_offcial on Instagram.",
+    "content": "## GENARCH – Launch\n\nThis release marks the official launch of the GENARCH platform.\n\n### Expanded datasets\n- **Diseases**: Significantly expanded entries from peer-reviewed biomedical literature, with consistent schema and scientifically accurate terminology.\n- **Genes**: Extended gene catalog with molecular function, expression context, and linked diseases and exposures.\n- **Pathways**: Pathway entries with environmental triggers, key genes, and tissue specificity.\n- **Environmental exposures**: Broadened exposure definitions, proxies, sensitive windows, and G×E highlights.\n\n### Platform launch\n- Atlas, Mechanism Briefs, Knowledge Graph, Community module, Methods, and Passport are live.\n- Cross-linking across mechanisms, passport pages, and region-specific exposure pages is maintained.\n\n### Connect with us\n- Official Instagram: **@genarch_offcial**\n\nAll content is for educational purposes. Population-level estimates do not imply individual risk.",
+    "schema_version": "1.0"
+  },
+  {
     "slug": "v1-0-initial-release",
     "title": "GENARCH v1.0 — Initial Atlas Release",
     "date": "2026-02-26",

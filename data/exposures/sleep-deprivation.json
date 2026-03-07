@@ -1,0 +1,31 @@
+{
+  "id": "exp_sleep_deprivation",
+  "slug": "sleep-deprivation",
+  "name": "Sleep Deprivation and Circadian Disruption",
+  "definition": "Insufficient sleep duration or quality, and misalignment of sleep with circadian rhythm (e.g., shift work, social jet lag). Short sleep (<7 h in adults) and poor sleep are associated with obesity, type 2 diabetes, cardiovascular disease, and mental health disorders. Circadian genes (e.g., CLOCK, PER, CRY) interact with sleep and light exposure. Adolescence is a period of natural circadian shift and often insufficient sleep; shift work in adulthood increases metabolic and cardiovascular risk.",
+  "proxies": [
+    {"name": "Sleep duration", "unit": "hours/night", "measurement_method": "Self-report or actigraphy", "data_source": "Surveys, cohorts"},
+    {"name": "Sleep quality", "unit": "scale", "measurement_method": "Pittsburgh Sleep Quality Index", "data_source": "Surveys"}
+  ],
+  "systems_affected": [
+    {"system": "metabolic", "mechanism_summary": "Sleep restriction impairs glucose metabolism and appetite regulation; increases obesity and T2D risk"},
+    {"system": "cardiovascular", "mechanism_summary": "Short sleep and shift work associated with hypertension and CAD"},
+    {"system": "mental health", "mechanism_summary": "Sleep disruption is a trigger and symptom in depression and bipolar disorder"}
+  ],
+  "sensitive_windows": [
+    {"period": "adolescence", "age_range": "10-24", "mechanism_rationale": "Biological delay in circadian phase; early school start times; vulnerability to mood and metabolic effects", "citations": ["ref1", "ref2"]}
+  ],
+  "gxe_highlights": [
+    {"gene_slug": "bdnf", "disease_slug": "major-depressive-disorder", "direction": "amplify", "evidence_type": "literature", "citations": ["ref2"]}
+  ],
+  "tissues": [
+    {"name": "brain", "effect_type": "circadian and sleep regulation", "citations": ["ref1"]},
+    {"name": "adipose tissue", "effect_type": "leptin and appetite", "citations": ["ref1"]}
+  ],
+  "references": [
+    {"id": "ref1", "title": "Sleep and metabolic function", "authors": "Spiegel K, et al.", "year": 2009, "journal": "Lancet Neurology", "doi": "10.1016/S1474-4422(09)70136-0"},
+    {"id": "ref2", "title": "Adolescent sleep and mental health", "authors": "Short MA, et al.", "year": 2013, "journal": "Sleep Medicine Reviews", "doi": "10.1016/j.smrv.2012.03.007"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-07"
+}

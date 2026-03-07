@@ -1,0 +1,37 @@
+{
+  "id": "dis_stroke",
+  "slug": "ischemic-stroke",
+  "name": "Ischemic Stroke",
+  "icd11_code": "8B11",
+  "summary": "Ischemic stroke results from occlusion of cerebral arteries, causing focal brain ischemia and infarction. Etiologic subtypes include large-artery atherosclerosis, cardioembolism, small-vessel disease, and other causes. Heritability ~30–40%; SNP-based h² ~0.12. Key loci include PITX2 (atrial fibrillation), HDAC9 (large-vessel), and genes in blood pressure and lipid pathways. Hypertension, smoking, diabetes, and obesity are major modifiable risk factors; they interact with genetic susceptibility.",
+  "adolescent_relevance": "Rare in adolescence; risk factors (hypertension, obesity, smoking) established in youth influence lifetime risk.",
+  "genetic_architecture": {
+    "top_loci": [
+      {"gene": "PITX2", "variant": "rs2200733", "gwas_p": 1e-60, "effect_size": 1.4, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "Atrial fibrillation; cardioembolic stroke", "strength": 0.88, "citations": ["ref1"]},
+      {"gene": "HDAC9", "variant": "rs11984041", "gwas_p": 1e-15, "effect_size": 1.25, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "Large-vessel atherosclerotic stroke", "strength": 0.75, "citations": ["ref1"]}
+    ],
+    "heritability_estimate": {"h2_snp": 0.12, "source": "MEGASTROKE consortium", "year": 2018},
+    "prs_notes": "Stroke PRS adds to clinical risk factors; subtype-specific PRS under development."
+  },
+  "exposure_modifiers": [
+    {"exposure_slug": "tobacco", "direction": "amplify", "strength": 0.85, "confidence": "high", "citations": ["ref2"]},
+    {"exposure_slug": "diet-quality", "direction": "buffer", "strength": 0.6, "confidence": "medium", "citations": ["ref2"]},
+    {"exposure_slug": "air-pollution", "direction": "amplify", "strength": 0.55, "confidence": "medium", "citations": ["ref2"]}
+  ],
+  "tissues": [
+    {"name": "brain", "relevance_score": 0.95, "citations": ["ref1"]},
+    {"name": "vascular endothelium", "relevance_score": 0.9, "citations": ["ref1"]}
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "MEGASTROKE included multi-ancestry; European-weighted.",
+    "transferability_notes": "Subtype-specific loci replicate with variation; PRS transferability limited.",
+    "data_gaps": "Diverse stroke GWAS; G×E for modifiable risk factors."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {"id": "ref1", "title": "Multiancestry genome-wide association study of 520,000 subjects identifies 32 loci associated with stroke", "authors": "Malik R, et al.", "year": 2018, "journal": "Nature", "doi": "10.1038/s41586-018-0178-3"},
+    {"id": "ref2", "title": "Modifiable risk factors, cardiovascular disease, and stroke", "authors": "O'Donnell MJ, et al.", "year": 2016, "journal": "Lancet", "doi": "10.1016/S0140-6736(16)30169-6"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-07"
+}

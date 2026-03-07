@@ -406,5 +406,22 @@
     "summary": "How does ambient PM2.5 exposure interact with genetic variation in IL33 and NF-\u03baB pathway genes to amplify airway inflammation and asthma risk?",
     "confidence": "high",
     "synonyms": []
-  }
+  },
+  {"type": "disease", "slug": "bipolar-disorder", "name": "Bipolar Disorder", "summary": "Mood disorder with mania and depression; high heritability; stress and sleep are triggers.", "confidence": "high", "synonyms": []},
+  {"type": "disease", "slug": "psoriasis", "name": "Psoriasis", "summary": "Chronic immune-mediated skin disease; IL-23/Th17 axis; HLA-C and IL23R.", "confidence": "high", "synonyms": []},
+  {"type": "disease", "slug": "inflammatory-bowel-disease", "name": "Inflammatory Bowel Disease", "summary": "Crohn disease and ulcerative colitis; NOD2, IL23R; microbiome and diet.", "confidence": "high", "synonyms": []},
+  {"type": "disease", "slug": "ischemic-stroke", "name": "Ischemic Stroke", "summary": "Cerebral artery occlusion; PITX2, HDAC9; hypertension and smoking are major risk factors.", "confidence": "high", "synonyms": []},
+  {"type": "disease", "slug": "atopic-dermatitis", "name": "Atopic Dermatitis", "summary": "Chronic inflammatory skin disease; FLG, IL13; atopic march.", "confidence": "high", "synonyms": []},
+  {"type": "gene", "slug": "bdnf", "name": "BDNF — Brain-derived neurotrophic factor", "summary": "Neurotrophin; Val66Met and stress–depression G×E.", "confidence": "high", "synonyms": []},
+  {"type": "gene", "slug": "gstp1", "name": "GSTP1 — Glutathione S-transferase pi 1", "summary": "Antioxidant enzyme; G×E with air pollution and asthma.", "confidence": "high", "synonyms": []},
+  {"type": "gene", "slug": "lep", "name": "LEP — Leptin", "summary": "Adipokine; energy homeostasis; obesity and T2D.", "confidence": "high", "synonyms": []},
+  {"type": "gene", "slug": "pparg", "name": "PPARG — Peroxisome proliferator-activated receptor gamma", "summary": "Nuclear receptor; adipogenesis and insulin sensitivity; T2D drug target.", "confidence": "high", "synonyms": []},
+  {"type": "gene", "slug": "mthfr", "name": "MTHFR — Methylenetetrahydrofolate reductase", "summary": "Folate metabolism; homocysteine; gene–nutrient interactions.", "confidence": "medium", "synonyms": []},
+  {"type": "gene", "slug": "sod2", "name": "SOD2 — Superoxide dismutase 2", "summary": "Mitochondrial antioxidant; oxidative stress; G×E with pollution.", "confidence": "medium", "synonyms": []},
+  {"type": "pathway", "slug": "jak-stat-signaling", "name": "JAK-STAT Signaling Pathway", "summary": "Cytokine signaling; autoimmune disease and cancer.", "confidence": "medium", "synonyms": []},
+  {"type": "pathway", "slug": "oxidative-stress-response", "name": "Oxidative Stress Response", "summary": "Antioxidant defenses; GSTP1, SOD2; air pollution G×E.", "confidence": "medium", "synonyms": []},
+  {"type": "pathway", "slug": "tnf-signaling", "name": "TNF Signaling Pathway", "summary": "TNF inflammation; RA, IBD, psoriasis; air pollution–asthma G×E.", "confidence": "medium", "synonyms": []},
+  {"type": "exposure", "slug": "physical-activity", "name": "Physical Activity", "summary": "Movement and exercise; buffers obesity and T2D risk.", "confidence": "high", "synonyms": []},
+  {"type": "exposure", "slug": "greenspace", "name": "Greenspace", "summary": "Natural environments; mental health and stress reduction.", "confidence": "medium", "synonyms": []},
+  {"type": "exposure", "slug": "sleep-deprivation", "name": "Sleep Deprivation", "summary": "Insufficient sleep and circadian disruption; metabolic and mental health.", "confidence": "high", "synonyms": []}
 ]

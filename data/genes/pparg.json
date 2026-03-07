@@ -1,0 +1,35 @@
+{
+  "id": "gene_pparg",
+  "slug": "pparg",
+  "symbol": "PPARG",
+  "name": "Peroxisome proliferator-activated receptor gamma",
+  "chromosome": "3p25.2",
+  "summary": "PPARG encodes a nuclear receptor that regulates adipocyte differentiation, lipid metabolism, and insulin sensitivity. The Pro12Ala variant (rs1801282) is associated with lower T2D risk and improved insulin sensitivity. PPARG is the target of thiazolidinediones (TZDs). It is central to metabolic and inflammatory pathways; diet and obesity strongly interact with genetic variation. Expression is highest in adipose tissue and macrophages.",
+  "molecular_function": ["nuclear receptor activity", "adipogenesis", "insulin sensitivity"],
+  "protein_class": "nuclear receptor",
+  "regulatory_notes": {
+    "promoter_activity": "Ligand-activated; fatty acids and TZDs.",
+    "eqtl_tissues": ["adipose tissue", "macrophages"]
+  },
+  "expression_context": [
+    {"tissue": "adipose tissue", "tpm_range": "80-200", "gtex_version": "v8", "citations": ["ref1"]}
+  ],
+  "pathways": ["insulin-signaling", "pi3k-akt-mtor"],
+  "linked_diseases": [
+    {"disease_slug": "type-2-diabetes", "evidence_type": "GWAS; drug target", "strength": 0.88},
+    {"disease_slug": "obesity", "evidence_type": "pathway", "strength": 0.75}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "diet-quality", "evidence_type": "literature", "strength": 0.8},
+    {"exposure_slug": "obesity-exposure", "evidence_type": "literature", "strength": 0.78}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "Pro12Ala reduces PPARγ activity; in the presence of high caloric intake, Ala carriers have lower T2D risk via improved insulin sensitivity.", "supporting_evidence": "GWAS; diet–gene interaction studies.", "confidence": "high"}
+  ],
+  "confidence": "high",
+  "references": [
+    {"id": "ref1", "title": "PPARG and type 2 diabetes", "authors": "Grant SF, et al.", "year": 2006, "journal": "Nature Genetics", "doi": "10.1038/ng1732"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-07"
+}
