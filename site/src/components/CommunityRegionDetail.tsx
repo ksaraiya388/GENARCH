@@ -4,6 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { CommunityRegion } from "@/lib/types";
 
+import "leaflet/dist/leaflet.css";
+
+// Default center for Loudoun County, Virginia (fallback when region has no bounds)
+const DEFAULT_MAP_CENTER: [number, number] = [39.08, -77.64];
+const DEFAULT_MAP_ZOOM = 10;
+
 export interface CommunityRegionDetailProps {
   region: CommunityRegion;
 }
@@ -21,8 +27,10 @@ export function CommunityRegionDetail({ region }: CommunityRegionDetailProps) {
 
   useEffect(() => {
     if (!mapRef.current || typeof window === "undefined") return;
+    const container = mapRef.current;
     import("leaflet").then((L) => {
-      const map = L.default.map(mapRef.current!).setView([37.5, -122], 8);
+      if (!container.parentElement) return;
+      const map = L.default.map(container).setView(DEFAULT_MAP_CENTER, DEFAULT_MAP_ZOOM);
       mapInstanceRef.current = map;
       L.default.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: "© OpenStreetMap",
@@ -41,15 +49,18 @@ export function CommunityRegionDetail({ region }: CommunityRegionDetailProps) {
 
   return (
     <div className="space-y-8">
-      <section aria-labelledby="map-heading">
+      <section aria-labelledby="map-heading" className="overflow-hidden">
         <h2 id="map-heading" className="text-h2 text-surface-white mb-3">
           Map
         </h2>
-        <div
-          ref={mapRef}
-          className="h-80 w-full border border-white/[0.06] rounded-sm bg-navy-mid"
-          aria-label="Region map"
-        />
+        <div className="relative w-full rounded-lg border border-white/[0.08] bg-navy-mid" style={{ height: "320px" }}>
+          <div
+            ref={mapRef}
+            className="absolute inset-0 z-0 h-full w-full rounded-lg"
+            style={{ minHeight: "320px" }}
+            aria-label="Region map"
+          />
+        </div>
       </section>
 
       {(region.exposure_layers?.length ?? 0) > 0 && (

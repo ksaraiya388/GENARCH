@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { Suspense } from "react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { getGraphData } from "@/lib/data";
 
@@ -29,7 +30,15 @@ export default function GraphPage() {
             Population-level relationships for educational purposes only.
           </p>
         </header>
-        <GraphPageClient initialData={graphData} />
+        <Suspense
+          fallback={
+            <div className="min-h-[600px] flex items-center justify-center text-cool-mid border border-white/[0.06] rounded-sm bg-navy-mid">
+              Loading graph...
+            </div>
+          }
+        >
+          <GraphPageClient initialData={graphData} />
+        </Suspense>
       </div>
     </div>
   );
