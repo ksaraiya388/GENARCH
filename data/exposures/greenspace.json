@@ -1,0 +1,25 @@
+{
+  "id": "exp_greenspace",
+  "slug": "greenspace",
+  "name": "Greenspace and Natural Environments",
+  "definition": "Exposure to vegetated land (parks, forests, street trees, gardens) and natural environments. Measured by NDVI (Normalized Difference Vegetation Index), distance to parks, or percentage of green land use. Greenspace is associated with improved mental health, reduced cardiovascular risk, and potentially lower air pollution and heat exposure. Mechanisms may include stress reduction, physical activity promotion, and microbiome diversity. Urban planning and equity in access are modifiers.",
+  "proxies": [
+    {"name": "NDVI", "unit": "unitless index", "measurement_method": "Satellite imagery", "data_source": "Landsat, MODIS"},
+    {"name": "Distance to nearest park", "unit": "meters", "measurement_method": "GIS", "data_source": "Local land use"}
+  ],
+  "systems_affected": [
+    {"system": "mental health", "mechanism_summary": "Stress reduction; attention restoration; social cohesion"},
+    {"system": "cardiovascular", "mechanism_summary": "Possible via physical activity and stress; mixed evidence"},
+    {"system": "immune", "mechanism_summary": "Microbiome and immune regulation (e.g., hygiene hypothesis); speculative"}
+  ],
+  "sensitive_windows": [
+    {"period": "childhood", "age_range": "0-18", "mechanism_rationale": "Early-life exposure may shape immune and mental health trajectories", "citations": ["ref1"]}
+  ],
+  "gxe_highlights": [],
+  "tissues": [],
+  "references": [
+    {"id": "ref1", "title": "Green space and health", "authors": "Twohig-Bennett C, Jones A", "year": 2018, "journal": "Environmental Research", "doi": "10.1016/j.envres.2018.06.030"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-07"
+}

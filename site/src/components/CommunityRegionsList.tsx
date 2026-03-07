@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 export interface RegionSummary {
+  slug: string;
   region_id: string;
   name: string;
   geo_level: string;
@@ -22,7 +23,8 @@ export function CommunityRegionsList({ regions }: CommunityRegionsListProps) {
   const filteredRegions = regions.filter(
     (r) =>
       r.name.toLowerCase().includes(search.toLowerCase()) ||
-      r.region_id.toLowerCase().includes(search.toLowerCase())
+      r.region_id.toLowerCase().includes(search.toLowerCase()) ||
+      r.slug.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
@@ -48,8 +50,8 @@ export function CommunityRegionsList({ regions }: CommunityRegionsListProps) {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filteredRegions.map((region) => (
             <Link
-              key={region.region_id}
-              href={`/community/${region.region_id}/`}
+              key={region.slug}
+              href={`/community/${region.slug}/`}
               className="card block no-underline transition-shadow hover:shadow-md"
             >
               <h3 className="text-h3 text-surface-white mb-2">{region.name}</h3>

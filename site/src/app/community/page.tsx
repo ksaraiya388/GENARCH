@@ -1,18 +1,24 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { getAllCommunityRegions } from "@/lib/data";
+import { getCommunityRegionSlugs, getCommunityRegion } from "@/lib/data";
 import { CommunityRegionsList } from "@/components/CommunityRegionsList";
 
 export default function CommunityPage() {
-  const regions = getAllCommunityRegions();
-
-  const regionSummaries = regions.map((r) => ({
-    region_id: r.region_id,
-    name: r.name,
-    geo_level: r.geo_level,
-    health_stats_count: r.health_stats?.length ?? 0,
-    exposure_layers_count: r.exposure_layers?.length ?? 0,
-    last_updated: r.last_updated ?? "",
-  }));
+  const slugs = getCommunityRegionSlugs();
+  const regionSummaries = slugs
+    .map((slug) => {
+      const r = getCommunityRegion(slug);
+      if (!r) return null;
+      return {
+        slug,
+        region_id: r.region_id,
+        name: r.name,
+        geo_level: r.geo_level,
+        health_stats_count: r.health_stats?.length ?? 0,
+        exposure_layers_count: r.exposure_layers?.length ?? 0,
+        last_updated: r.last_updated ?? "",
+      };
+    })
+    .filter((r): r is NonNullable<typeof r> => r !== null);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

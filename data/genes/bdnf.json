@@ -1,0 +1,37 @@
+{
+  "id": "gene_bdnf",
+  "slug": "bdnf",
+  "symbol": "BDNF",
+  "name": "Brain-derived neurotrophic factor",
+  "chromosome": "11p14.1",
+  "summary": "BDNF encodes brain-derived neurotrophic factor, a neurotrophin that supports neuronal survival, synaptic plasticity, and neurogenesis. The Val66Met variant (rs6265) affects activity-dependent secretion and is associated with depression, anxiety, and stress-related phenotypes. BDNF is implicated in the pathophysiology of major depressive disorder and schizophrenia; stress and early adversity interact with genotype. Expression is regulated by exercise, antidepressants, and environmental enrichment.",
+  "molecular_function": ["neurotrophin signaling", "synaptic plasticity", "neurogenesis"],
+  "protein_class": "neurotrophin",
+  "regulatory_notes": {
+    "promoter_activity": "Activity-dependent transcription; CREB and calcium signaling.",
+    "enhancer_associations": "Val66Met affects BDNF trafficking and secretion.",
+    "eqtl_tissues": ["brain", "hippocampus", "prefrontal cortex"]
+  },
+  "expression_context": [
+    {"tissue": "brain", "tpm_range": "20-80", "gtex_version": "v8", "citations": ["ref1"]},
+    {"tissue": "hippocampus", "tpm_range": "high", "citations": ["ref2"]}
+  ],
+  "pathways": ["hpa-axis"],
+  "linked_diseases": [
+    {"disease_slug": "major-depressive-disorder", "evidence_type": "GWAS/literature", "strength": 0.78},
+    {"disease_slug": "schizophrenia", "evidence_type": "literature", "strength": 0.6}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "psychosocial-stress", "evidence_type": "G×E literature", "strength": 0.82}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "Val66Met carriers show heightened stress sensitivity and reduced hippocampal volume; childhood adversity amplifies depression risk.", "supporting_evidence": "Meta-analyses of G×E; neuroimaging.", "confidence": "high"}
+  ],
+  "confidence": "high",
+  "references": [
+    {"id": "ref1", "title": "GTEx Consortium atlas of genetic regulatory effects", "authors": "GTEx Consortium", "year": 2020, "journal": "Science", "doi": "10.1126/science.aaz1776"},
+    {"id": "ref2", "title": "The BDNF Val66Met polymorphism and stress", "authors": "Hosang GM, et al.", "year": 2014, "journal": "Molecular Psychiatry", "doi": "10.1038/mp.2013.123"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-07"
+}

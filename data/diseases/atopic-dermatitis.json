@@ -1,0 +1,37 @@
+{
+  "id": "dis_atopic_derm",
+  "slug": "atopic-dermatitis",
+  "name": "Atopic Dermatitis",
+  "icd11_code": "EA80",
+  "summary": "Atopic dermatitis (eczema) is a chronic inflammatory skin disease characterized by pruritus, erythema, and barrier dysfunction. It is a component of the atopic march (often preceding asthma and allergic rhinitis). Th2 skewing, filaggrin (FLG) deficiency, and epithelial barrier defects are central. Heritability ~75%; SNP-based h² ~0.15. Key genes include FLG (loss-of-function), IL4/IL13 (Th2), and TSLP. Allergens, irritants, climate, and stress trigger flares; microbiome and diet may modify risk.",
+  "adolescent_relevance": "Often begins in infancy/childhood; can persist or onset in adolescence. Psychosocial burden and transition to adult care are relevant.",
+  "genetic_architecture": {
+    "top_loci": [
+      {"gene": "FLG", "variant": "loss-of-function", "gwas_p": 1e-50, "effect_size": 2.0, "ancestry_composition": "Multi-ancestry", "replication_status": "Replicated", "evidence": "Filaggrin; barrier protein; null alleles strongly increase risk", "strength": 0.95, "citations": ["ref1"]},
+      {"gene": "IL13", "variant": "rs20541", "gwas_p": 1e-20, "effect_size": 1.2, "ancestry_composition": "European-dominated", "replication_status": "Replicated; drug target", "evidence": "Th2 cytokine; type 2 inflammation", "strength": 0.85, "citations": ["ref1"]}
+    ],
+    "heritability_estimate": {"h2_snp": 0.15, "source": "Eczema GWAS", "year": 2020},
+    "prs_notes": "FLG status and PRS inform severity; transferability across ancestries variable."
+  },
+  "exposure_modifiers": [
+    {"exposure_slug": "air-pollution", "direction": "amplify", "strength": 0.6, "confidence": "medium", "citations": ["ref2"]},
+    {"exposure_slug": "psychosocial-stress", "direction": "amplify", "strength": 0.7, "confidence": "high", "citations": ["ref2"]},
+    {"exposure_slug": "endotoxin", "direction": "buffer", "strength": 0.5, "confidence": "low", "mechanism_hypothesis": "Early-life microbial exposure may protect", "citations": ["ref2"]}
+  ],
+  "tissues": [
+    {"name": "skin", "relevance_score": 0.98, "citations": ["ref1"]},
+    {"name": "epidermis", "relevance_score": 0.95, "citations": ["ref1"]}
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "European-dominated; FLG effects vary by ancestry.",
+    "transferability_notes": "FLG and IL13 replicate; PRS performance in non-European populations limited.",
+    "data_gaps": "Multi-ancestry GWAS; G×E for allergens and microbiome."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {"id": "ref1", "title": "Multi-ancestry genome-wide association study of 21,000 cases and 95,000 controls identifies new risk loci for atopic dermatitis", "authors": "Paternoster L, et al.", "year": 2015, "journal": "Nature Genetics", "doi": "10.1038/ng.3424"},
+    {"id": "ref2", "title": "Environmental and lifestyle factors in atopic dermatitis", "authors": "Kantor R, Silverberg JI", "year": 2016, "journal": "Clinical Reviews in Allergy & Immunology", "doi": "10.1007/s12016-016-8548-5"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-07"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "gene_lep",
+  "slug": "lep",
+  "symbol": "LEP",
+  "name": "Leptin",
+  "chromosome": "7q32.1",
+  "summary": "LEP encodes leptin, an adipokine secreted by adipose tissue that signals energy sufficiency to the hypothalamus via the leptin receptor (LEPR). Leptin suppresses appetite and promotes energy expenditure through melanocortin and other pathways. Rare LEP mutations cause severe early-onset obesity; common variants contribute to polygenic obesity. Circulating leptin correlates with fat mass; diet and physical activity modulate levels. Leptin resistance in obesity is a therapeutic target.",
+  "molecular_function": ["hormone activity", "appetite regulation", "energy homeostasis"],
+  "protein_class": "cytokine",
+  "regulatory_notes": {
+    "promoter_activity": "Expressed in adipocytes; regulated by insulin and glucocorticoids.",
+    "eqtl_tissues": ["adipose tissue", "subcutaneous fat"]
+  },
+  "expression_context": [
+    {"tissue": "adipose tissue", "tpm_range": "50-300", "gtex_version": "v8", "citations": ["ref1"]}
+  ],
+  "pathways": ["insulin-signaling"],
+  "linked_diseases": [
+    {"disease_slug": "obesity", "evidence_type": "Mendelian and GWAS", "strength": 0.9},
+    {"disease_slug": "type-2-diabetes", "evidence_type": "pathway", "strength": 0.7}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "obesity-exposure", "evidence_type": "literature", "strength": 0.85},
+    {"exposure_slug": "diet-quality", "evidence_type": "literature", "strength": 0.75}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "Leptin–melanocortin axis defects (LEP, LEPR, POMC, MC4R) cause monogenic or severe obesity; common variants add to polygenic risk; diet and activity modulate leptin sensitivity.", "supporting_evidence": "Mendelian genetics; GWAS; intervention studies.", "confidence": "high"}
+  ],
+  "confidence": "high",
+  "references": [
+    {"id": "ref1", "title": "Leptin and the regulation of body weight", "authors": "Friedman JM", "year": 2019, "journal": "Nature Medicine", "doi": "10.1038/s41591-018-0307-4"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-07"
+}

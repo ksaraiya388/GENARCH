@@ -1,0 +1,34 @@
+{
+  "id": "gene_mthfr",
+  "slug": "mthfr",
+  "symbol": "MTHFR",
+  "name": "Methylenetetrahydrofolate reductase",
+  "chromosome": "1p36.22",
+  "summary": "MTHFR encodes methylenetetrahydrofolate reductase, which converts 5,10-methylenetetrahydrofolate to 5-methyltetrahydrofolate, the methyl donor for homocysteine remethylation. The C677T variant (rs1801133) reduces enzyme activity and raises homocysteine, especially when folate intake is low. Associated with cardiovascular disease, neural tube defects, and (controversially) depression. Folate and B-vitamin status are key environmental modifiers; gene–nutrient interactions are well documented.",
+  "molecular_function": ["folate metabolism", "homocysteine remethylation", "one-carbon metabolism"],
+  "protein_class": "oxidoreductase",
+  "regulatory_notes": {
+    "promoter_activity": "Constitutively expressed; nutrient-sensitive.",
+    "eqtl_tissues": ["liver", "blood"]
+  },
+  "expression_context": [
+    {"tissue": "liver", "tpm_range": "15-40", "gtex_version": "v8", "citations": ["ref1"]}
+  ],
+  "pathways": [],
+  "linked_diseases": [
+    {"disease_slug": "coronary-artery-disease", "evidence_type": "meta-analysis", "strength": 0.55},
+    {"disease_slug": "hypertension", "evidence_type": "literature", "strength": 0.5}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "diet-quality", "evidence_type": "folate intake G×E", "strength": 0.85}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "TT genotype increases homocysteine; low folate intake amplifies the effect and cardiovascular risk.", "supporting_evidence": "Meta-analyses; folate fortification studies.", "confidence": "medium"}
+  ],
+  "confidence": "medium",
+  "references": [
+    {"id": "ref1", "title": "MTHFR 677C>T and cardiovascular disease", "authors": "Clarke R, et al.", "year": 2012, "journal": "Journal of the American Medical Association", "doi": "10.1001/jama.2012.1058"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-07"
+}

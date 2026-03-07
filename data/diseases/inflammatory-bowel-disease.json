@@ -1,0 +1,36 @@
+{
+  "id": "dis_ibd",
+  "slug": "inflammatory-bowel-disease",
+  "name": "Inflammatory Bowel Disease",
+  "icd11_code": "DD70",
+  "summary": "Inflammatory bowel disease (IBD) comprises Crohn disease and ulcerative colitis, chronic disorders of the gastrointestinal tract with dysregulated immune response to gut microbiota. Pathophysiology involves barrier dysfunction, innate and adaptive immunity, and microbiome interactions. Heritability ~50–60%; SNP-based h² ~0.25. Over 200 loci identified; key genes include NOD2, IL23R, ATG16L1, and IRGM. Diet, smoking (divergent effects in CD vs UC), antibiotics, and stress modify risk.",
+  "adolescent_relevance": "Peak onset in late adolescence and early adulthood (15–30). Transition to adult care and adherence are challenges.",
+  "genetic_architecture": {
+    "top_loci": [
+      {"gene": "NOD2", "variant": "rs2066847", "gwas_p": 1e-50, "effect_size": 1.4, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "Intracellular bacterial sensing; Crohn-specific", "strength": 0.92, "citations": ["ref1"]},
+      {"gene": "IL23R", "variant": "rs11209026", "gwas_p": 1e-40, "effect_size": 1.2, "ancestry_composition": "Multi-ancestry", "replication_status": "Replicated; drug target", "evidence": "Th17 pathway; shared CD and UC", "strength": 0.88, "citations": ["ref1"]}
+    ],
+    "heritability_estimate": {"h2_snp": 0.25, "source": "IBD Genetics Consortium", "year": 2017},
+    "prs_notes": "PRS differentiates CD vs UC; clinical utility under evaluation."
+  },
+  "exposure_modifiers": [
+    {"exposure_slug": "diet-quality", "direction": "amplify", "strength": 0.65, "confidence": "medium", "citations": ["ref2"]},
+    {"exposure_slug": "tobacco", "direction": "amplify", "strength": 0.8, "confidence": "high", "mechanism_hypothesis": "Smoking increases Crohn risk; may decrease UC risk", "citations": ["ref2"]}
+  ],
+  "tissues": [
+    {"name": "intestinal epithelium", "relevance_score": 0.95, "citations": ["ref1"]},
+    {"name": "lamina propria", "relevance_score": 0.9, "citations": ["ref1"]}
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "European-dominated; non-European cohorts growing.",
+    "transferability_notes": "NOD2 and IL23R replicate; effect sizes vary by ancestry.",
+    "data_gaps": "African and South Asian GWAS; microbiome G×E."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {"id": "ref1", "title": "Association analyses identify 38 susceptibility loci for inflammatory bowel disease", "authors": "Liu JZ, et al.", "year": 2015, "journal": "Nature Genetics", "doi": "10.1038/ng.3359"},
+    {"id": "ref2", "title": "Environmental risk factors for inflammatory bowel disease", "authors": "Ananthakrishnan AN", "year": 2015, "journal": "Gastroenterology", "doi": "10.1053/j.gastro.2014.07.064"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-07"
+}

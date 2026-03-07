@@ -1,0 +1,32 @@
+{
+  "id": "exp_physical_activity",
+  "slug": "physical-activity",
+  "name": "Physical Activity",
+  "definition": "Bodily movement produced by skeletal muscles that requires energy expenditure. Includes occupational, transport, household, and leisure-time activity. Measured by duration, intensity (e.g., METs), and frequency. Physical activity improves cardiorespiratory fitness, insulin sensitivity, and mental health; reduces risk of obesity, type 2 diabetes, cardiovascular disease, and some cancers. Sedentary behavior is a related but distinct exposure. Genetic variation in fitness and motivation may modify response to activity interventions.",
+  "proxies": [
+    {"name": "Self-reported leisure-time activity", "unit": "minutes/week or MET-min/week", "measurement_method": "Questionnaires (e.g., IPAQ)", "data_source": "Surveys"},
+    {"name": "Accelerometry", "unit": "counts/min or mg", "measurement_method": "Wearable devices", "data_source": "Cohort studies"}
+  ],
+  "systems_affected": [
+    {"system": "cardiovascular", "mechanism_summary": "Improves endothelial function, blood pressure, lipid profile; reduces CAD and stroke risk"},
+    {"system": "metabolic", "mechanism_summary": "Enhances insulin sensitivity; reduces T2D and obesity risk"},
+    {"system": "musculoskeletal", "mechanism_summary": "Maintains bone density and muscle mass"}
+  ],
+  "sensitive_windows": [
+    {"period": "childhood and adolescence", "age_range": "5-24", "mechanism_rationale": "Establishes lifelong habits; bone and muscle development", "citations": ["ref1"]}
+  ],
+  "gxe_highlights": [
+    {"gene_slug": "fto", "disease_slug": "obesity", "direction": "buffer", "evidence_type": "intervention", "citations": ["ref2"]},
+    {"gene_slug": "tcf7l2", "disease_slug": "type-2-diabetes", "direction": "buffer", "evidence_type": "literature", "citations": ["ref2"]}
+  ],
+  "tissues": [
+    {"name": "skeletal muscle", "effect_type": "glucose uptake; insulin sensitivity", "citations": ["ref1"]},
+    {"name": "adipose tissue", "effect_type": "lipolysis; metabolic health", "citations": ["ref1"]}
+  ],
+  "references": [
+    {"id": "ref1", "title": "Physical activity and health", "authors": "Warburton DER, Bredin SSD", "year": 2017, "journal": "Lancet", "doi": "10.1016/S0140-6736(16)30570-8"},
+    {"id": "ref2", "title": "Gene–physical activity interactions in obesity and type 2 diabetes", "authors": "Loos RJF, Kilpeläinen TO", "year": 2018, "journal": "Progress in Molecular Biology and Translational Science", "doi": "10.1016/bs.pmbts.2018.01.004"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-07"
+}

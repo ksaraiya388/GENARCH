@@ -1,0 +1,36 @@
+{
+  "id": "dis_psoriasis",
+  "slug": "psoriasis",
+  "name": "Psoriasis",
+  "icd11_code": "EA90",
+  "summary": "Psoriasis is a chronic immune-mediated skin disease characterized by hyperproliferation of keratinocytes, epidermal thickening, and inflammatory infiltrate. IL-23/Th17 axis is central; TNF and NF-κB pathways are therapeutic targets. Heritability ~60–70%; SNP-based h² ~0.28. Key genes include HLA-C*06:02, IL23R, and genes in the IL-23/Th17 pathway. Trauma, infection, stress, and medications can trigger flares. Comorbidities include psoriatic arthritis, cardiovascular disease, and metabolic syndrome.",
+  "adolescent_relevance": "Onset can occur in adolescence; psychosocial impact is substantial. UV and topical treatments are first-line.",
+  "genetic_architecture": {
+    "top_loci": [
+      {"gene": "HLA-C", "variant": "rs10484554", "gwas_p": 1e-100, "effect_size": 1.5, "ancestry_composition": "Multi-ancestry", "replication_status": "Replicated", "evidence": "HLA-C*06:02 strongest risk allele; antigen presentation", "strength": 0.95, "citations": ["ref1"]},
+      {"gene": "IL23R", "variant": "rs11209026", "gwas_p": 1e-30, "effect_size": 1.2, "ancestry_composition": "European-dominated", "replication_status": "Replicated; drug target", "evidence": "IL-23 receptor; Th17 differentiation", "strength": 0.9, "citations": ["ref1"]}
+    ],
+    "heritability_estimate": {"h2_snp": 0.28, "source": "Psoriasis GWAS meta-analyses", "year": 2020},
+    "prs_notes": "PRS correlates with severity; transferability across ancestries limited."
+  },
+  "exposure_modifiers": [
+    {"exposure_slug": "psychosocial-stress", "direction": "amplify", "strength": 0.75, "confidence": "high", "citations": ["ref2"]},
+    {"exposure_slug": "uv-radiation", "direction": "buffer", "strength": 0.7, "confidence": "high", "mechanism_hypothesis": "Phototherapy improves lesions", "citations": ["ref2"]}
+  ],
+  "tissues": [
+    {"name": "skin", "relevance_score": 0.98, "evidence_type": "primary site", "citations": ["ref1"]},
+    {"name": "synovium", "relevance_score": 0.6, "evidence_type": "psoriatic arthritis", "citations": ["ref2"]}
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "European-dominated discovery.",
+    "transferability_notes": "HLA-C*06:02 replicated across ancestries; non-HLA loci vary.",
+    "data_gaps": "Multi-ancestry GWAS and G×E."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {"id": "ref1", "title": "Psoriasis genome-wide association study", "authors": "Tsoi LC, et al.", "year": 2017, "journal": "Nature Communications", "doi": "10.1038/s41467-017-01978-8"},
+    {"id": "ref2", "title": "Environmental triggers in psoriasis", "authors": "Armstrong AW, et al.", "year": 2021, "journal": "JAMA Dermatology", "doi": "10.1001/jamadermatol.2020.4838"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-07"
+}

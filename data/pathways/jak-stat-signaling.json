@@ -1,0 +1,26 @@
+{
+  "id": "path_jak_stat",
+  "slug": "jak-stat-signaling",
+  "name": "JAK-STAT Signaling Pathway",
+  "summary": "The JAK-STAT pathway transduces signals from cytokines (e.g., IL-6, interferons, IL-23) and growth factors to the nucleus, regulating immune responses, cell proliferation, and hematopoiesis. JAKs phosphorylate STATs; STAT dimers translocate and drive transcription. Dysregulation contributes to autoimmune disease (e.g., psoriasis, IBD) and cancer. Environmental triggers include infections and inflammatory stimuli. Key genes include JAK2, STAT3, and cytokine receptors; therapeutics target JAK-STAT in psoriasis and rheumatoid arthritis.",
+  "canonical_source": "KEGG hsa04630",
+  "environmental_triggers": [
+    {"exposure_slug": "psychosocial-stress", "trigger_type": "Chronic stress can modulate inflammatory cytokines", "citations": ["ref1"]},
+    {"exposure_slug": "diet-quality", "trigger_type": "Dietary components may affect systemic inflammation", "citations": ["ref1"]}
+  ],
+  "key_genes": [],
+  "linked_diseases": [
+    {"disease_slug": "psoriasis", "pathway_role": "IL-23/Th17 axis; therapeutic target", "citations": ["ref2"]},
+    {"disease_slug": "rheumatoid-arthritis", "pathway_role": "Cytokine-driven inflammation", "citations": ["ref2"]},
+    {"disease_slug": "inflammatory-bowel-disease", "pathway_role": "IL-23/Th17; JAK inhibitors in development", "citations": ["ref2"]}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "psychosocial-stress", "pathway_effect": "Stress-immune axis", "citations": ["ref1"]}
+  ],
+  "references": [
+    {"id": "ref1", "title": "JAK-STAT signaling in immune regulation", "authors": "O'Shea JJ, et al.", "year": 2015, "journal": "Immunity", "doi": "10.1016/j.immuni.2015.02.010"},
+    {"id": "ref2", "title": "Targeting the JAK/STAT pathway in autoimmune disease", "authors": "Schwartz DM, et al.", "year": 2017, "journal": "Nature Reviews Drug Discovery", "doi": "10.1038/nrd.2017.201"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-07"
+}

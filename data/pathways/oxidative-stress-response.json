@@ -1,0 +1,30 @@
+{
+  "id": "path_oxidative_stress",
+  "slug": "oxidative-stress-response",
+  "name": "Oxidative Stress Response",
+  "summary": "The oxidative stress response encompasses enzymatic and non-enzymatic defenses against reactive oxygen species (ROS). Key enzymes include superoxide dismutases (SOD1, SOD2), catalase, glutathione peroxidases, and glutathione S-transferases (e.g., GSTP1). Nrf2 regulates many antioxidant genes. Air pollution, tobacco smoke, and UV radiation increase ROS; genetic variation in antioxidant enzymes modifies susceptibility to asthma, cardiovascular disease, and cancer. Tissue-specific expression and G×E are active research areas.",
+  "canonical_source": "Reactome R-HSA-3299685",
+  "environmental_triggers": [
+    {"exposure_slug": "air-pollution", "trigger_type": "PM2.5 and ROS generation in airways", "citations": ["ref1", "ref2"]},
+    {"exposure_slug": "tobacco", "trigger_type": "Smoke-derived ROS and oxidative damage", "citations": ["ref1"]},
+    {"exposure_slug": "uv-radiation", "trigger_type": "UV-induced ROS in skin", "citations": ["ref1"]}
+  ],
+  "key_genes": [
+    {"gene_slug": "sod2", "role_in_pathway": "Mitochondrial superoxide dismutation", "citations": ["ref1"]},
+    {"gene_slug": "gstp1", "role_in_pathway": "Glutathione conjugation; detoxification", "citations": ["ref2"]}
+  ],
+  "linked_diseases": [
+    {"disease_slug": "asthma", "pathway_role": "G×E with air pollution; GSTP1, SOD2", "citations": ["ref2"]},
+    {"disease_slug": "coronary-artery-disease", "pathway_role": "Oxidative stress in endothelium", "citations": ["ref1"]}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "air-pollution", "pathway_effect": "PM2.5 induces ROS; antioxidant genes modify response", "citations": ["ref2"]},
+    {"exposure_slug": "tobacco", "pathway_effect": "Smoke increases ROS burden", "citations": ["ref1"]}
+  ],
+  "references": [
+    {"id": "ref1", "title": "Oxidative stress in disease and aging", "authors": "Sies H, Jones DP", "year": 2020, "journal": "Nature Reviews Molecular Cell Biology", "doi": "10.1038/s41580-020-00306-8"},
+    {"id": "ref2", "title": "GSTP1 and air pollution–asthma associations", "authors": "Islam T, et al.", "year": 2014, "journal": "Environmental Health Perspectives", "doi": "10.1289/ehp.1307459"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-07"
+}

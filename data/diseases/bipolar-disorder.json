@@ -1,0 +1,36 @@
+{
+  "id": "dis_bipolar",
+  "slug": "bipolar-disorder",
+  "name": "Bipolar Disorder",
+  "icd11_code": "6A60",
+  "summary": "Bipolar disorder is a mood disorder characterized by recurrent episodes of mania or hypomania and depression. Pathophysiology involves dysregulation of monoaminergic and glutamatergic systems, circadian rhythm disruption, and neuroplasticity deficits. Heritability is high (~70–80%); SNP-based h² ~0.25. Key loci include CACNA1C (calcium signaling), ANK3 (ankyrin-G), and genes in dopamine and circadian pathways. Stress, sleep deprivation, and substance use are environmental triggers. Adolescence and early adulthood are peak onset periods.",
+  "adolescent_relevance": "Onset peaks in late adolescence (15–24). Sleep disruption and substance use in this window amplify risk. Early intervention improves long-term outcomes.",
+  "genetic_architecture": {
+    "top_loci": [
+      {"gene": "CACNA1C", "variant": "rs1006737", "gwas_p": 1e-8, "effect_size": 1.12, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "Voltage-gated calcium channel; neuronal excitability and mood regulation", "strength": 0.82, "citations": ["ref1"]},
+      {"gene": "ANK3", "variant": "rs10994336", "gwas_p": 5e-9, "effect_size": 1.1, "ancestry_composition": "European-dominated", "replication_status": "Replicated", "evidence": "Ankyrin-G; axon initial segment; neuronal firing", "strength": 0.78, "citations": ["ref1"]}
+    ],
+    "heritability_estimate": {"h2_snp": 0.25, "source": "PGC bipolar GWAS", "year": 2019},
+    "prs_notes": "PRS shows modest discrimination; clinical utility under study."
+  },
+  "exposure_modifiers": [
+    {"exposure_slug": "psychosocial-stress", "direction": "amplify", "strength": 0.85, "confidence": "high", "mechanism_hypothesis": "Stress triggers episodes; HPA axis and circadian disruption", "citations": ["ref2"]},
+    {"exposure_slug": "alcohol", "direction": "amplify", "strength": 0.7, "confidence": "medium", "citations": ["ref2"]}
+  ],
+  "tissues": [
+    {"name": "prefrontal cortex", "relevance_score": 0.9, "evidence_type": "imaging and expression", "citations": ["ref1"]},
+    {"name": "hippocampus", "relevance_score": 0.85, "citations": ["ref1"]}
+  ],
+  "population_equity": {
+    "gwas_ancestry_breakdown": "Discovery predominantly European.",
+    "transferability_notes": "Multi-ancestry efforts ongoing.",
+    "data_gaps": "Diverse cohorts; G×E in bipolar disorder."
+  },
+  "mechanism_briefs": [],
+  "references": [
+    {"id": "ref1", "title": "Genome-wide association study of bipolar disorder", "authors": "Stahl EA, et al.", "year": 2019, "journal": "Nature Genetics", "doi": "10.1038/s41588-019-0397-8"},
+    {"id": "ref2", "title": "Environmental risk factors for bipolar disorder", "authors": "Rowland TA, Marwaha S", "year": 2018, "journal": "British Journal of Psychiatry", "doi": "10.1192/bjp.2018.132"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-03-07"
+}
