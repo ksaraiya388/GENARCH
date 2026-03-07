@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { getGraphData } from "@/lib/data";
+import { GraphErrorBoundary } from "@/components/GraphErrorBoundary";
 
 const GraphPageClient = dynamic(
   () => import("@/components/GraphPageClient").then((m) => m.GraphPageClient),
@@ -30,15 +31,17 @@ export default function GraphPage() {
             Population-level relationships for educational purposes only.
           </p>
         </header>
-        <Suspense
-          fallback={
-            <div className="min-h-[600px] flex items-center justify-center text-cool-mid border border-white/[0.06] rounded-sm bg-navy-mid">
-              Loading graph...
-            </div>
-          }
-        >
-          <GraphPageClient initialData={graphData} />
-        </Suspense>
+        <GraphErrorBoundary>
+          <Suspense
+            fallback={
+              <div className="min-h-[600px] flex items-center justify-center text-cool-mid border border-white/[0.06] rounded-sm bg-navy-mid">
+                Loading graph...
+              </div>
+            }
+          >
+            <GraphPageClient initialData={graphData} />
+          </Suspense>
+        </GraphErrorBoundary>
       </div>
     </div>
   );
