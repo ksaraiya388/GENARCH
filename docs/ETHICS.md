@@ -97,9 +97,6 @@ Users can browse the atlas without creating an account. No email, name, or ident
 ### No PII
 We do not collect, store, or process personally identifiable information. Site analytics, if used, should be aggregate-only and privacy-preserving.
 
-### Stateless Passport
-The "Passport" feature generates a document summarizing user-selected content. It is generated client-side or via ephemeral processing; no selections are persisted or linked to identities.
-
 ---
 
 ## 8. Community Module Ethical Guidelines

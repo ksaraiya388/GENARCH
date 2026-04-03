@@ -28,6 +28,11 @@ const config: Config = {
           white: "#F8FAFC",
           muted: "#E2E8F0",
         },
+        direction: {
+          amplify: "#C53030",
+          buffer: "#2F855A",
+          unknown: "#A0AEC0",
+        },
         /* legacy aliases for components that still reference genarch-* */
         genarch: {
           primary: "#2DD4BF",
@@ -36,7 +41,6 @@ const config: Config = {
           community: "#94A3B8",
           neutral: "#132B3C",
           action: "#2DD4BF",
-          passport: "#1FAFA0",
           bg: "#0B1F2F",
           text: "#F8FAFC",
           subtext: "#C7D2DA",

@@ -28,7 +28,7 @@ export function Footer() {
               at population scale.
             </p>
             <p className="text-[10px] text-cool-dark uppercase tracking-[0.15em]">
-              Global Exposome
+              Loudoun County, Virginia
             </p>
           </div>
 

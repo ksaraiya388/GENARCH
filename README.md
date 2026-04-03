@@ -12,8 +12,7 @@ GENARCH combines:
 
 - **Atlas**: Curated diseases, exposures, genes, and pathways with evidence scoring and cross-references
 - **Graph**: Interactive knowledge graph of entity relationships
-- **Community**: County/census-tract-level hotspot model and exposure layers for environmental justice context
-- **Passport**: User-generated summary document (stateless, no accounts)
+- **Community**: County/census-tract-level hotspot model and exposure layers for Loudoun County, Virginia
 - **Mechanism Briefs**: Narrative explanations of gene–environment mechanisms
 - **Reports**: Annual GENARCH reports
 

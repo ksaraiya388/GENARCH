@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getAllDiseases, getAllExposures, getAllGenes, getAllPathways } from "@/lib/data";
+import { getAllDiseases, getAllExposures, getAllGenes, getAllPathways, getReleases } from "@/lib/data";
 
 const PILLAR_ICONS = {
   architecture: (
@@ -27,6 +27,7 @@ export default function HomePage() {
   const exposures = getAllExposures();
   const genes = getAllGenes();
   const pathways = getAllPathways();
+  const releases = getReleases();
 
   return (
     <div>
@@ -56,16 +57,16 @@ export default function HomePage() {
             Genetic Epidemiology Network for At Risk Community Health
           </p>
 
-          {/* Global Exposome tagline */}
+          {/* Geographic focus tagline */}
           <p className="animate-slide-up text-xs sm:text-sm text-cool-mid uppercase tracking-[0.2em] font-medium mb-6">
-            Global Exposome
+            A Gene–Environment Interaction Atlas for Loudoun County, Virginia
           </p>
 
           {/* Description */}
           <p className="animate-slide-up text-sm sm:text-base text-cool-mid max-w-2xl mx-auto mb-10 leading-relaxed">
             A systems-level atlas mapping gene–environment interactions,
             exposure modifiers, and molecular mechanisms across diseases,
-            pathways, and tissues at population scale.
+            pathways, and tissues — focused on Loudoun County, Virginia.
           </p>
 
           <div className="animate-slide-up flex flex-col sm:flex-row gap-4 justify-center">
@@ -109,8 +110,8 @@ export default function HomePage() {
             {[
               { count: diseases.length, label: "Diseases", href: "/atlas/diseases" },
               { count: exposures.length, label: "Exposures", href: "/atlas/exposures" },
-              { count: genes.length, label: "Genes", href: "/atlas/genes-pathways" },
-              { count: pathways.length, label: "Pathways", href: "/atlas/genes-pathways" },
+              { count: genes.length, label: "Genes", href: "/atlas/genes" },
+              { count: pathways.length, label: "Pathways", href: "/atlas/pathways" },
             ].map((s) => (
               <Link key={s.label} href={s.href} className="card text-center no-underline hover:no-underline group">
                 <div className="text-3xl font-bold text-teal-primary group-hover:text-teal-soft transition-colors">{s.count}</div>
@@ -164,9 +165,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
               { title: "Knowledge Graph", href: "/graph", desc: "Interactive network of entity relationships with filters, side panels, and subgraph export." },
-              { title: "Mechanism Briefs", href: "/mechanism-briefs", desc: "In-depth mini-reviews explaining mechanistic hypotheses linking exposures to disease." },
-              { title: "Community Module", href: "/community", desc: "County-level exposure and health burden overlays with interpretable model explanations." },
-              { title: "Educational Passport", href: "/passport", desc: "Generate a personalized educational summary PDF. Completely stateless — no data stored." },
+              { title: "Mechanism Briefs", href: "/mechanism-briefs", desc: "Read 2,000-word mechanistic explainers connecting GWAS signals to molecular biology through tissue-resolved pathways." },
+              { title: "Community Module", href: "/community", desc: "Explore Loudoun County environmental and health data overlaid on census tract maps with exposure hotspot analysis." },
               { title: "Methods & Ethics", href: "/methods", desc: "Scoring rules, data sources, pipeline architecture, ethical framework, and model cards." },
               { title: "Updates", href: "/updates", desc: "Versioned changelog and annual reports tracking atlas evolution over time." },
             ].map((m) => (
@@ -178,6 +178,59 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* What is GENARCH? */}
+      <section className="section-alt py-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-surface-white mb-4">What is GENARCH?</h2>
+          <p className="text-cool-light text-sm leading-relaxed mb-6">
+            GENARCH is a read-only scientific atlas that maps how genetic
+            susceptibility and environmental exposures interact at the molecular
+            level — focused specifically on Loudoun County, Virginia. It
+            integrates GWAS data, tissue-resolved gene expression, biological
+            pathways, and local environmental conditions into a navigable
+            knowledge graph. All data points are scored, cited, and transparent.
+            GENARCH is not a health tool, risk calculator, or clinical decision
+            support system.
+          </p>
+          <Link href="/about" className="btn-secondary text-sm">
+            Learn More About GENARCH
+          </Link>
+        </div>
+      </section>
+
+      {/* Latest Updates */}
+      {releases.length > 0 && (
+        <section className="py-20" style={{ backgroundColor: "#0B1F2F" }}>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-center text-surface-white mb-8">Latest Updates</h2>
+            <div className="space-y-4">
+              {releases.slice(0, 3).map((r) => (
+                <Link
+                  key={r.slug}
+                  href={`/updates/${r.slug}`}
+                  className="block card no-underline hover:no-underline group"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-xs text-cool-dark font-mono">{r.date}</span>
+                    <h3 className="text-surface-white font-semibold group-hover:text-teal-primary transition-colors">
+                      {r.title}
+                    </h3>
+                  </div>
+                  {r.summary && (
+                    <p className="text-cool-mid text-sm line-clamp-2">{r.summary}</p>
+                  )}
+                </Link>
+              ))}
+            </div>
+            <div className="text-center mt-6">
+              <Link href="/updates" className="btn-secondary text-sm">
+                View All Updates
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
     </div>
   );
 }

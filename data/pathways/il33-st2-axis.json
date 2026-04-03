@@ -1,0 +1,45 @@
+{
+  "id": "pathway:il33-st2-axis",
+  "slug": "il33-st2-axis",
+  "name": "IL-33/ST2 Signaling Axis",
+  "summary": "The IL-33/ST2 signaling axis is a critical epithelial-derived alarmin pathway that bridges innate and adaptive immunity. IL-33, constitutively expressed in epithelial barrier tissues, is released upon cellular damage or necrosis. It binds the ST2 receptor (encoded by IL1RL1) on type 2 innate lymphoid cells (ILC2s), mast cells, and Th2 cells, driving production of type 2 cytokines (IL-5, IL-13) that orchestrate eosinophilic inflammation, mucus hypersecretion, and airway remodeling. This pathway represents a key node where environmental exposures (particularly PM2.5) converge with genetic susceptibility to amplify allergic airway disease.",
+  "canonical_source": "Reactome R-HSA-9660821",
+  "environmental_triggers": [
+    {"exposure_slug": "air-pollution", "trigger_type": "Oxidative epithelial damage releases IL-33", "citations": ["ref1", "ref2"]},
+    {"exposure_slug": "endotoxin", "trigger_type": "Microbial pattern recognition triggers epithelial alarmin release", "citations": ["ref1"]},
+    {"exposure_slug": "tobacco", "trigger_type": "Cigarette smoke-induced epithelial necrosis", "citations": ["ref4"]}
+  ],
+  "key_genes": [
+    {"gene_slug": "il33", "role_in_pathway": "Ligand; epithelial alarmin released upon damage", "citations": ["ref1", "ref5"]},
+    {"gene_slug": "il1rl1", "role_in_pathway": "ST2 receptor; primary receptor for IL-33 on ILC2s, mast cells, and Th2 cells", "citations": ["ref1", "ref5"]},
+    {"gene_slug": "tslp", "role_in_pathway": "Co-alarmin amplifying epithelial danger signaling", "citations": ["ref2", "ref4"]},
+    {"gene_slug": "hla-drb1", "role_in_pathway": "Antigen presentation modulating downstream adaptive immune response", "citations": ["ref3"]}
+  ],
+  "regulatory_checkpoints": [
+    {"node": "IL-33 release", "modulator_genes": ["ORMDL3", "GSDMB"], "potential_therapeutic_target": true},
+    {"node": "ST2 receptor", "modulator_genes": ["IL1RL1"], "potential_therapeutic_target": true}
+  ],
+  "tissue_specificity": [
+    {"tissue": "bronchial epithelium", "expression_evidence": "Primary IL-33 source"},
+    {"tissue": "type 2 innate lymphoid cells", "expression_evidence": "Primary responder"},
+    {"tissue": "airway smooth muscle", "expression_evidence": "Downstream remodeling"}
+  ],
+  "linked_diseases": [
+    {"disease_slug": "asthma", "pathway_role": "IL-33/ST2 drives eosinophilic airway inflammation and airway hyperresponsiveness", "citations": ["ref1", "ref2", "ref5"]},
+    {"disease_slug": "atopic-dermatitis", "pathway_role": "Skin barrier-driven IL-33 release activates cutaneous ILC2s", "citations": ["ref1", "ref4"]}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "air-pollution", "pathway_effect": "PM2.5 oxidative damage triggers IL-33 release from bronchial epithelium", "citations": ["ref1", "ref2"]},
+    {"exposure_slug": "tobacco-smoke-prenatal", "pathway_effect": "Prenatal tobacco smoke exposure may prime IL-33 axis in developing airways", "citations": ["ref4"]}
+  ],
+  "diagram_asset": null,
+  "references": [
+    {"id": "ref1", "title": "IL-33: an alarmin cytokine with crucial roles in innate immunity, inflammation and allergy", "authors": "Cayrol C, Girard JP", "year": 2014, "journal": "Current Opinion in Immunology", "doi": "10.1016/j.coi.2013.11.010"},
+    {"id": "ref2", "title": "A large-scale, consortium-based genomewide association study of asthma", "authors": "Moffatt MF, et al.", "year": 2010, "journal": "New England Journal of Medicine", "doi": "10.1056/NEJMoa0906312"},
+    {"id": "ref3", "title": "Meta-analysis of genome-wide association studies of asthma in ethnically diverse North American populations", "authors": "Torgerson DG, et al.", "year": 2011, "journal": "Nature Genetics", "doi": "10.1038/ng.888"},
+    {"id": "ref4", "title": "Gene–environment interactions in human diseases", "authors": "Ober C, Yao TC", "year": 2011, "journal": "Immunological Reviews", "doi": "10.1111/j.1600-065X.2011.01029.x"},
+    {"id": "ref5", "title": "IL-33, an interleukin-1-like cytokine that signals via the IL-1 receptor-related protein ST2 and induces T helper type 2-associated cytokines", "authors": "Schmitz J, et al.", "year": 2005, "journal": "Immunity", "doi": "10.1016/j.immuni.2005.09.015"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-04-02"
+}
