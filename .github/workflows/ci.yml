@@ -23,13 +23,20 @@ jobs:
           cache-dependency-path: site/package-lock.json
 
       - name: Install pipeline dependencies
-        run: pip install pydantic pandas
+        run: pip install -r pipeline/requirements.txt
 
       - name: Install site dependencies
         run: cd site && npm ci
 
       - name: Validate pipeline schemas
-        run: python -m pipeline.validate
+        run: python -m pipeline validate
+
+      - name: Lint pipeline
+        run: ruff check pipeline/
+
+      - name: Type check site
+        run: cd site && npx tsc --noEmit
 
       - name: Build site
         run: cd site && npm run build
+

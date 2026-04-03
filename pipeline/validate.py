@@ -225,11 +225,20 @@ def validate() -> int:
     slugs = _collect_slugs(data_dir)
     ref_slugs = _collect_referenced_slugs(data_dir)
 
+    warnings: list[str] = []
     for typ, ref_list in ref_slugs.items():
         valid = slugs.get(typ, set())
         for fp, slug in ref_list:
             if slug and slug not in valid:
-                errors.append(f"{fp}: Referenced {typ} slug '{slug}' does not exist")
+                # Gene references from pathway key_genes are warnings (pathways may reference
+                # genes that don't have standalone data files yet)
+                if typ == "gene" and "pathways" in str(fp):
+                    warnings.append(f"{fp}: Referenced {typ} slug '{slug}' has no data file (warning)")
+                else:
+                    errors.append(f"{fp}: Referenced {typ} slug '{slug}' does not exist")
+
+    for w in warnings:
+        print(f"WARNING: {w}", file=sys.stderr)
 
     # 3. Citation validation
     citation_ids = _collect_citation_ids(data_dir)
@@ -241,12 +250,61 @@ def validate() -> int:
             if not (cid.startswith("PMID:") or cid.startswith("doi:") or cid.startswith("http")):
                 errors.append(f"{fp}: Citation ID '{cid}' does not exist in references")
 
+    # 4. Graph integrity: edge endpoints must exist as node IDs
+    graph_path = data_dir / "graph" / "graph.json"
+    if graph_path.exists():
+        try:
+            graph_raw = json.loads(graph_path.read_text())
+            node_ids = {n["id"] for n in graph_raw.get("nodes", []) if isinstance(n, dict)}
+            for edge in graph_raw.get("edges", []):
+                if not isinstance(edge, dict):
+                    continue
+                src = edge.get("source", "")
+                tgt = edge.get("target", "")
+                if src and src not in node_ids:
+                    errors.append(f"graph.json: Edge source '{src}' not found in nodes")
+                if tgt and tgt not in node_ids:
+                    errors.append(f"graph.json: Edge target '{tgt}' not found in nodes")
+        except Exception as e:
+            errors.append(f"graph.json: Failed to validate graph integrity: {e}")
+
+    # 5. Slug-filename consistency
+    for subdir in ["diseases", "exposures", "genes", "pathways", "community"]:
+        path = data_dir / subdir
+        if not path.exists():
+            continue
+        for fp in path.rglob("*.json"):
+            try:
+                raw = json.loads(fp.read_text())
+                slug = raw.get("slug") or raw.get("region_id")
+                expected = fp.stem
+                if slug and slug != expected:
+                    errors.append(f"{fp}: Slug '{slug}' does not match filename '{expected}'")
+            except Exception:
+                pass
+
+    # 6. Disease completeness checks
+    for fp in by_type.get("diseases", []):
+        try:
+            raw = json.loads(fp.read_text())
+            if not raw.get("exposure_modifiers"):
+                errors.append(f"{fp}: Disease has no exposure modifiers")
+            if not raw.get("genetic_architecture", {}).get("top_loci"):
+                errors.append(f"{fp}: Disease has no top loci")
+            if not raw.get("tissues"):
+                errors.append(f"{fp}: Disease has no tissues")
+            pe = raw.get("population_equity", {})
+            if not pe.get("gwas_ancestry_breakdown") and not pe.get("transferability_notes"):
+                errors.append(f"{fp}: Disease missing population equity notes")
+        except Exception:
+            pass
+
     # Output
     if errors:
         for e in errors:
             print(f"ERROR: {e}", file=sys.stderr)
         return 1
-    print("Validation passed: all schemas, cross-links, and citations OK.")
+    print("Validation passed: all schemas, cross-links, citations, graph integrity, and completeness OK.")
     return 0
 
 

@@ -15,7 +15,7 @@ GENARCH (Genetic Epidemiology Network for At-Risk Community Health) is a next-ge
 | Section | Summary |
 |---------|---------|
 | **Mission** | Bridge genetic and environmental health science for public benefit |
-| **Modules** | Atlas (diseases, exposures, genes, pathways), Graph, Community, Passport, Mechanism Briefs, Reports |
+| **Modules** | Atlas (diseases, exposures, genes, pathways), Graph, Community, Mechanism Briefs, Reports |
 | **Safety Constraints** | No individual risk scores; no clinical advice; no diagnosis; community content for education only |
 | **Acceptance Criteria** | Schema validation passes; cross-links valid; site builds; CI green |
 
@@ -25,8 +25,7 @@ GENARCH (Genetic Epidemiology Network for At-Risk Community Health) is a next-ge
 
 - **Atlas**: Curated entities (diseases, exposures, genes, pathways) with evidence scoring and cross-references
 - **Graph**: Interactive knowledge graph of entity relationships
-- **Community**: County/tract-level hotspot model and exposure layers for environmental justice context
-- **Passport**: User-generated summary document (stateless, no accounts)
+- **Community**: County/tract-level hotspot model and exposure layers for Loudoun County, Virginia
 - **Mechanism Briefs**: Narrative explanations of gene–environment mechanisms
 - **Reports**: Annual GENARCH reports
 

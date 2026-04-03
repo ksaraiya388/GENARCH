@@ -11,7 +11,6 @@ const NAV_LINKS = [
   { label: "Community", href: "/community" },
   { label: "Methods", href: "/methods" },
   { label: "Updates", href: "/updates" },
-  { label: "Passport", href: "/passport" },
 ] as const;
 
 export function Navigation() {

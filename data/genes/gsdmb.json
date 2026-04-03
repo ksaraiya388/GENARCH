@@ -1,0 +1,40 @@
+{
+  "id": "gene_gsdmb",
+  "slug": "gsdmb",
+  "symbol": "GSDMB",
+  "name": "Gasdermin B",
+  "chromosome": "17q21",
+  "summary": "GSDMB encodes Gasdermin B, a member of the gasdermin family of pore-forming proteins involved in pyroptosis and inflammatory cell death. GSDMB is cleaved by inflammatory caspases and granzyme A, releasing an N-terminal domain that oligomerizes and inserts into cell membranes to form large transmembrane pores, leading to cell lysis and release of pro-inflammatory cytokines. In the airway epithelium, GSDMB is highly expressed and its overexpression has been linked to epithelial cell pyroptosis, airway remodeling, and bronchial hyperresponsiveness. The GSDMB gene resides at the 17q21 asthma susceptibility locus, and asthma-risk SNPs at this locus are associated with increased GSDMB expression and alternative splicing. GSDMB has also been implicated in inflammatory bowel disease through its role in intestinal epithelial cell death and barrier dysfunction.",
+  "molecular_function": ["pyroptosis", "cell membrane pore formation", "epithelial cell death"],
+  "protein_class": "pore-forming protein",
+  "regulatory_notes": {
+    "promoter_activity": "GSDMB promoter activity is upregulated by inflammatory stimuli including TNF-α and IFN-γ; asthma-risk alleles influence promoter usage and alternative splicing.",
+    "enhancer_associations": "Shared regulatory region at 17q21 with ORMDL3; rs2305480 and rs2290400 influence GSDMB transcript levels and isoform ratios in bronchial epithelium.",
+    "methylation_sensitivity": null,
+    "eqtl_tissues": ["lung", "bronchial epithelium", "esophagus"]
+  },
+  "expression_context": [
+    {"tissue": "bronchial epithelium", "tpm_range": "10–45", "gtex_version": "v8", "citations": ["ref1", "ref3"]},
+    {"tissue": "esophageal epithelium", "tpm_range": "8–35", "gtex_version": "v8", "citations": ["ref2"]},
+    {"tissue": "GI tract", "tpm_range": "5–25", "gtex_version": "v8", "citations": ["ref2"]}
+  ],
+  "pathways": ["nf-kb"],
+  "linked_diseases": [
+    {"disease_slug": "asthma", "evidence_type": "GWAS", "strength": 0.78},
+    {"disease_slug": "inflammatory-bowel-disease", "evidence_type": "GWAS", "strength": 0.50}
+  ],
+  "linked_exposures": [
+    {"exposure_slug": "air-pollution", "evidence_type": "literature", "strength": 0.55}
+  ],
+  "mechanistic_hypotheses": [
+    {"hypothesis": "GSDMB overexpression in asthma-associated genotypes promotes epithelial cell pyroptosis upon exposure to particulate matter, amplifying airway damage. Risk alleles at 17q21 increase GSDMB transcript levels and favor pro-pyroptotic splice isoforms, lowering the threshold for pore formation in bronchial epithelial cells exposed to environmental insults.", "supporting_evidence": "Das et al. showed GSDMB N-terminal domain forms membrane pores and induces pyroptosis; Panganiban et al. demonstrated asthma-risk alleles increase GSDMB expression in airway epithelium; Verlaan et al. identified allele-specific chromatin remodeling at the locus.", "confidence": "low"}
+  ],
+  "confidence": "medium",
+  "references": [
+    {"id": "ref1", "title": "Allele-specific chromatin remodeling in the ZPBP2/GSDMB/ORMDL3 locus associated with the risk of asthma and autoimmune disease", "authors": "Verlaan DJ, et al.", "year": 2009, "journal": "Nature Genetics", "doi": "10.1038/ng.381"},
+    {"id": "ref2", "title": "GSDMB induces an asthma phenotype characterized by increased airway responsiveness and remodeling without lung inflammation", "authors": "Das S, et al.", "year": 2016, "journal": "Nature Communications", "doi": "10.1038/ncomms11514"},
+    {"id": "ref3", "title": "A functional splice variant associated with decreased asthma risk abolishes the ability of gasdermin B to induce epithelial cell pyroptosis", "authors": "Panganiban RA, et al.", "year": 2018, "journal": "Journal of Allergy and Clinical Immunology", "doi": "10.1016/j.jaci.2017.02.030"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-04-02"
+}
