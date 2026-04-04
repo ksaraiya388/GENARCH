@@ -16,7 +16,10 @@
         "replication_status": "Replicated across ancestries",
         "evidence": "Transcription factor; Wnt signaling; affects beta-cell function and insulin secretion; strongest common T2D locus",
         "strength": 0.95,
-        "citations": ["ref1", "ref2"]
+        "citations": [
+          "ref1",
+          "ref2"
+        ]
       },
       {
         "gene": "SLC30A8",
@@ -27,7 +30,10 @@
         "replication_status": "Replicated",
         "evidence": "Zinc transporter in beta-cells; affects insulin granule packaging and secretion",
         "strength": 0.88,
-        "citations": ["ref1", "ref3"]
+        "citations": [
+          "ref1",
+          "ref3"
+        ]
       },
       {
         "gene": "PPARG",
@@ -38,7 +44,10 @@
         "replication_status": "Replicated; drug target",
         "evidence": "Nuclear receptor; regulates adipocyte differentiation and insulin sensitivity; thiazolidinedione target",
         "strength": 0.85,
-        "citations": ["ref2", "ref4"]
+        "citations": [
+          "ref2",
+          "ref4"
+        ]
       },
       {
         "gene": "FTO",
@@ -49,7 +58,10 @@
         "replication_status": "Replicated",
         "evidence": "Obesity-associated; T2D risk largely mediated through BMI; energy balance and appetite regulation",
         "strength": 0.75,
-        "citations": ["ref3", "ref5"]
+        "citations": [
+          "ref3",
+          "ref5"
+        ]
       }
     ],
     "heritability_estimate": {
@@ -67,7 +79,10 @@
       "strength": 0.95,
       "confidence": "high",
       "mechanism_hypothesis": "Obesity causes insulin resistance and beta-cell stress; amplifies genetic T2D susceptibility; strongest modifiable risk factor",
-      "citations": ["ref1", "ref2"]
+      "citations": [
+        "ref1",
+        "ref2"
+      ]
     },
     {
       "exposure_slug": "diet-quality",
@@ -75,7 +90,10 @@
       "strength": 0.8,
       "confidence": "high",
       "mechanism_hypothesis": "High refined carbohydrate and sugar intake, low fiber; promotes weight gain and insulin resistance; Western diet amplifies risk",
-      "citations": ["ref3", "ref4"]
+      "citations": [
+        "ref3",
+        "ref4"
+      ]
     },
     {
       "exposure_slug": "psychosocial-stress",
@@ -83,7 +101,10 @@
       "strength": 0.6,
       "confidence": "medium",
       "mechanism_hypothesis": "Chronic stress affects cortisol, eating behavior, and activity; may exacerbate insulin resistance",
-      "citations": ["ref4", "ref5"]
+      "citations": [
+        "ref4",
+        "ref5"
+      ]
     },
     {
       "exposure_slug": "alcohol",
@@ -91,7 +112,9 @@
       "strength": 0.4,
       "confidence": "low",
       "mechanism_hypothesis": "Moderate alcohol may have mixed effects; heavy use increases risk; relationship is dose-dependent and complex",
-      "citations": ["ref5"]
+      "citations": [
+        "ref5"
+      ]
     }
   ],
   "tissues": [
@@ -99,25 +122,36 @@
       "name": "pancreatic beta cells",
       "relevance_score": 0.98,
       "evidence_type": "GWAS and eQTL",
-      "citations": ["ref1", "ref2"]
+      "citations": [
+        "ref1",
+        "ref2"
+      ]
     },
     {
       "name": "adipose tissue",
       "relevance_score": 0.92,
       "evidence_type": "GWAS and expression",
-      "citations": ["ref2", "ref3"]
+      "citations": [
+        "ref2",
+        "ref3"
+      ]
     },
     {
       "name": "skeletal muscle",
       "relevance_score": 0.9,
       "evidence_type": "pathway",
-      "citations": ["ref1"]
+      "citations": [
+        "ref1"
+      ]
     },
     {
       "name": "liver",
       "relevance_score": 0.88,
       "evidence_type": "eQTL and literature",
-      "citations": ["ref3", "ref4"]
+      "citations": [
+        "ref3",
+        "ref4"
+      ]
     }
   ],
   "population_equity": {
@@ -125,14 +159,66 @@
     "transferability_notes": "TCF7L2 and many loci transfer across ancestries; allele frequencies and effect sizes vary. PRS performance in African, Hispanic, and Asian populations is reduced. Ancestry-specific PRS improve but require larger diverse cohorts.",
     "data_gaps": "Under-representation of diverse ancestries; G×E studies across populations; adolescent-onset T2D genetics; gene–diet interactions."
   },
-  "mechanism_briefs": ["pparg-diet-type2diabetes"],
+  "mechanism_briefs": [
+    "pparg-diet-type2diabetes"
+  ],
   "references": [
-    {"id": "ref1", "title": "Type 2 diabetes genetic loci informed by multi-trait associations", "authors": "Mahajan A, et al.", "year": 2018, "journal": "Nature Genetics", "doi": "10.1038/s41588-018-0244-4"},
-    {"id": "ref2", "title": "TCF7L2 polymorphism and progression from prediabetes to type 2 diabetes", "authors": "Florez JC, et al.", "year": 2006, "journal": "New England Journal of Medicine", "doi": "10.1056/NEJMoa062418"},
-    {"id": "ref3", "title": "A genome-wide association study identifies novel risk loci for type 2 diabetes", "authors": "Saxena R, et al.", "year": 2007, "journal": "Nature", "doi": "10.1038/nature05856"},
-    {"id": "ref4", "title": "Genetic predisposition to obesity and type 2 diabetes", "authors": "Loos RJF, Yeo GSH", "year": 2021, "journal": "Nature Reviews Endocrinology", "doi": "10.1038/s41574-021-00491-2"},
-    {"id": "ref5", "title": "Stress and type 2 diabetes: a review of the evidence", "authors": "Hackett RA, Steptoe A", "year": 2017, "journal": "Diabetic Medicine", "doi": "10.1111/dme.13239"}
+    {
+      "id": "ref1",
+      "title": "Type 2 diabetes genetic loci informed by multi-trait associations",
+      "authors": "Mahajan A, et al.",
+      "year": 2018,
+      "journal": "Nature Genetics",
+      "doi": "10.1038/s41588-018-0244-4"
+    },
+    {
+      "id": "ref2",
+      "title": "TCF7L2 polymorphism and progression from prediabetes to type 2 diabetes",
+      "authors": "Florez JC, et al.",
+      "year": 2006,
+      "journal": "New England Journal of Medicine",
+      "doi": "10.1056/NEJMoa062418"
+    },
+    {
+      "id": "ref3",
+      "title": "A genome-wide association study identifies novel risk loci for type 2 diabetes",
+      "authors": "Saxena R, et al.",
+      "year": 2007,
+      "journal": "Nature",
+      "doi": "10.1038/nature05856"
+    },
+    {
+      "id": "ref4",
+      "title": "Genetic predisposition to obesity and type 2 diabetes",
+      "authors": "Loos RJF, Yeo GSH",
+      "year": 2021,
+      "journal": "Nature Reviews Endocrinology",
+      "doi": "10.1038/s41574-021-00491-2"
+    },
+    {
+      "id": "ref5",
+      "title": "Stress and type 2 diabetes: a review of the evidence",
+      "authors": "Hackett RA, Steptoe A",
+      "year": 2017,
+      "journal": "Diabetic Medicine",
+      "doi": "10.1111/dme.13239"
+    }
   ],
   "schema_version": "1.0",
-  "last_updated": "2026-03-03"
+  "last_updated": "2026-03-03",
+  "ancestry_context": {
+    "discovery_ancestry": "European (>85%)",
+    "replication_ancestries": [
+      "European",
+      "East Asian",
+      "South Asian",
+      "African American"
+    ],
+    "transferability_rating": "medium",
+    "multi_ancestry_studies": [
+      "DIAGRAM",
+      "AGEN"
+    ],
+    "notes": "East Asian and South Asian cohorts have identified ancestry-specific loci. PRS transferability improving but still limited."
+  }
 }

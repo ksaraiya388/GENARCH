@@ -44,9 +44,6 @@ export function CommunityRegionDetail({ region }: CommunityRegionDetailProps) {
     };
   }, []);
 
-  const stateComparison = 10.5;
-  const nationalComparison = 9.8;
-
   return (
     <div className="space-y-8">
       <section aria-labelledby="map-heading" className="overflow-hidden">
@@ -103,53 +100,70 @@ export function CommunityRegionDetail({ region }: CommunityRegionDetailProps) {
             Health Burden (vs State & National)
           </h2>
           <div className="space-y-4">
-            {region.health_stats!.map((stat, i) => (
-              <div key={i} className="card">
-                <h3 className="text-h3 text-surface-white mb-3">
-                  {stat.disease_slug} — {stat.metric_type}
-                </h3>
-                <div className="flex items-end gap-2 h-24">
-                  <div className="flex-1 flex flex-col items-center">
-                    <div
-                      className="w-full max-w-[60px] bg-teal-primary rounded-t-sm"
-                      style={{
-                        height: `${Math.min(100, (stat.value / 25) * 100)}%`,
-                      }}
-                      title={`Region: ${stat.value}`}
-                    />
-                    <span className="text-xs mt-2 text-cool-light">Region</span>
-                    <span className="text-xs font-medium text-surface-white">{stat.value}</span>
+            {region.health_stats!.map((stat, i) => {
+              const maxVal = Math.max(
+                stat.value,
+                stat.comparison_state ?? 0,
+                stat.comparison_national ?? 0,
+                1
+              );
+              return (
+                <div key={i} className="card">
+                  <h3 className="text-h3 text-surface-white mb-1">
+                    {stat.disease_slug} — {stat.metric_type}
+                  </h3>
+                  {stat.unit && (
+                    <p className="text-xs text-cool-mid mb-3">
+                      Unit: {stat.unit} | Source: {stat.source} ({stat.year})
+                    </p>
+                  )}
+                  <div className="flex items-end gap-2 h-24">
+                    <div className="flex-1 flex flex-col items-center">
+                      <div
+                        className="w-full max-w-[60px] bg-teal-primary rounded-t-sm"
+                        style={{
+                          height: `${Math.min(100, (stat.value / maxVal) * 80)}%`,
+                        }}
+                        title={`Region: ${stat.value}`}
+                      />
+                      <span className="text-xs mt-2 text-cool-light">Region</span>
+                      <span className="text-xs font-medium text-surface-white">{stat.value}</span>
+                    </div>
+                    {stat.comparison_state != null && (
+                      <div className="flex-1 flex flex-col items-center">
+                        <div
+                          className="w-full max-w-[60px] bg-teal-soft rounded-t-sm"
+                          style={{
+                            height: `${Math.min(100, (stat.comparison_state / maxVal) * 80)}%`,
+                          }}
+                          title={`State: ${stat.comparison_state}`}
+                        />
+                        <span className="text-xs mt-2 text-cool-light">State</span>
+                        <span className="text-xs font-medium text-surface-white">{stat.comparison_state}</span>
+                      </div>
+                    )}
+                    {stat.comparison_national != null && (
+                      <div className="flex-1 flex flex-col items-center">
+                        <div
+                          className="w-full max-w-[60px] bg-cool-mid rounded-t-sm"
+                          style={{
+                            height: `${Math.min(100, (stat.comparison_national / maxVal) * 80)}%`,
+                          }}
+                          title={`National: ${stat.comparison_national}`}
+                        />
+                        <span className="text-xs mt-2 text-cool-light">National</span>
+                        <span className="text-xs font-medium text-surface-white">{stat.comparison_national}</span>
+                      </div>
+                    )}
                   </div>
-                  <div className="flex-1 flex flex-col items-center">
-                    <div
-                      className="w-full max-w-[60px] bg-teal-soft rounded-t-sm"
-                      style={{
-                        height: `${Math.min(100, (stateComparison / 25) * 100)}%`,
-                      }}
-                      title={`State: ${stateComparison}`}
-                    />
-                    <span className="text-xs mt-2 text-cool-light">State</span>
-                    <span className="text-xs font-medium text-surface-white">{stateComparison}</span>
-                  </div>
-                  <div className="flex-1 flex flex-col items-center">
-                    <div
-                      className="w-full max-w-[60px] bg-cool-mid rounded-t-sm"
-                      style={{
-                        height: `${Math.min(100, (nationalComparison / 25) * 100)}%`,
-                      }}
-                      title={`National: ${nationalComparison}`}
-                    />
-                    <span className="text-xs mt-2 text-cool-light">National</span>
-                    <span className="text-xs font-medium text-surface-white">{nationalComparison}</span>
-                  </div>
+                  {stat.ci_lower != null && stat.ci_upper != null && (
+                    <p className="text-xs text-cool-mid mt-2">
+                      95% CI: [{stat.ci_lower}, {stat.ci_upper}]
+                    </p>
+                  )}
                 </div>
-                {stat.ci_lower != null && stat.ci_upper != null && (
-                  <p className="text-xs text-cool-mid mt-2">
-                    95% CI: [{stat.ci_lower}, {stat.ci_upper}]
-                  </p>
-                )}
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       )}

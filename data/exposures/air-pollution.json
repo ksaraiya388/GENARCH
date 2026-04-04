@@ -17,12 +17,37 @@
     {"system": "immune", "mechanism_summary": "Modifies dendritic cell function and Th1/Th2 balance; amplifies allergic sensitization and IgE production in susceptible individuals; dampens antiviral defenses"}
   ],
   "sensitive_windows": [
-    {"period": "prenatal", "age_range": "in utero", "mechanism_rationale": "In utero exposure affects lung development (alveolarization, airway branching); epigenetic modifications may prime inflammatory pathways; maternal inflammation crosses placenta", "citations": ["ref4"]},
-    {"period": "early childhood", "age_range": "0-5", "mechanism_rationale": "Immune system maturation; higher ventilation rates and mouth-breathing increase dose; first allergic sensitization often occurs; airway remodeling initiated", "citations": ["ref4"]},
-    {"period": "adolescence", "age_range": "10-24", "mechanism_rationale": "Lung growth continues into early 20s; behavioral changes (outdoor activity, commuting) alter exposure; occupational exposures may begin; smoking initiation amplifies effects", "citations": ["ref4"]}
+    {
+      "period": "prenatal (in utero)",
+      "age_range": "gestational weeks 0-40",
+      "mechanism_rationale": "In utero exposure affects lung development (alveolarization, airway branching); epigenetic modifications may prime inflammatory pathways; maternal inflammation crosses placenta.",
+      "developmental_context": "Lung branching morphogenesis (weeks 5-17) and early alveolarization are vulnerable to PM2.5-induced oxidative stress. Epigenetic modifications (DNA methylation at IL33, TSLP promoters) may be programmed during this period. Maternal systemic inflammation crosses the placenta and can alter fetal immune priming.",
+      "key_processes": ["lung branching morphogenesis", "alveolarization", "epigenetic programming", "immune priming"],
+      "citations": ["ref4"]
+    },
+    {
+      "period": "early childhood (0-5)",
+      "age_range": "0-5 years",
+      "mechanism_rationale": "Immune system maturation; higher ventilation rates and mouth-breathing increase dose; first allergic sensitization often occurs; airway remodeling initiated.",
+      "developmental_context": "Immune system maturation and first allergic sensitization occur during this window. Higher ventilation rates per body weight increase effective PM2.5 dose. Alveolar septation continues through age 2-3. First IgE sensitization to aeroallergens often occurs during this window, establishing atopic trajectories.",
+      "key_processes": ["immune maturation", "alveolar septation", "allergic sensitization", "IgE class switching"],
+      "citations": ["ref4"]
+    },
+    {
+      "period": "adolescence (10-24)",
+      "age_range": "10-24 years",
+      "mechanism_rationale": "Lung growth continues into early 20s; behavioral changes (outdoor activity, commuting) alter exposure; occupational exposures may begin; smoking initiation amplifies effects.",
+      "developmental_context": "Lung growth continues into early 20s (total lung capacity not reached until age 20-22). Behavioral changes (commuting, outdoor sports, occupational exposure) alter exposure patterns. Smoking initiation in this period creates additive oxidative burden. Hormonal changes may modulate immune responses and airway reactivity.",
+      "key_processes": ["alveolar maturation", "behavioral exposure changes", "hormonal immune modulation", "smoking initiation"],
+      "citations": ["ref4"]
+    }
   ],
   "gxe_highlights": [
-    {"gene_slug": "il33", "disease_slug": "asthma", "direction": "amplify", "evidence_type": "literature", "citations": ["ref1", "ref2", "ref3"]}
+    {"gene_slug": "il33", "disease_slug": "asthma", "direction": "amplify", "evidence_type": "literature", "strength": 0.78, "confidence": "high", "mechanism_summary": "IL33 promoter variants increase epithelial alarmin release under PM2.5-induced NF-kB activation; carriers show amplified Th2 airway inflammation in exposed populations.", "citations": ["ref1", "ref2", "ref3"]},
+    {"gene_slug": "gstp1", "disease_slug": "asthma", "direction": "amplify", "evidence_type": "literature", "strength": 0.72, "confidence": "medium", "mechanism_summary": "GSTP1 Ile105Val variant reduces glutathione conjugation of PM2.5-derived ROS; carriers show stronger air pollution-asthma associations in childhood cohorts.", "citations": ["ref3"]},
+    {"gene_slug": "tnf", "disease_slug": "asthma", "direction": "amplify", "evidence_type": "literature", "strength": 0.65, "confidence": "medium", "mechanism_summary": "TNF-308 promoter variant increases TNF-alpha production under PM2.5 exposure; amplifies NF-kB-driven airway inflammation in genetically susceptible individuals.", "citations": ["ref3"]},
+    {"gene_slug": "ormdl3", "disease_slug": "asthma", "direction": "amplify", "evidence_type": "GWAS", "strength": 0.70, "confidence": "low", "mechanism_summary": "ORMDL3 17q21 variants regulate sphingolipid metabolism and ER stress; PM2.5 exposure may amplify ER stress in carriers, though direct GxE evidence is emerging.", "citations": ["ref6"]},
+    {"gene_slug": "gsdmb", "disease_slug": "asthma", "direction": "amplify", "evidence_type": "GWAS", "strength": 0.60, "confidence": "low", "mechanism_summary": "GSDMB 17q21 variants associated with pyroptosis and epithelial barrier disruption; PM2.5-induced epithelial damage may be amplified in risk-allele carriers.", "citations": ["ref6"]}
   ],
   "tissues": [
     {"name": "bronchial epithelium", "effect_type": "inflammatory upregulation", "citations": ["ref1", "ref2"]},
@@ -39,7 +64,8 @@
     {"id": "ref2", "title": "Ambient particulate matter induces an exacerbation of airway inflammation in experimental asthma: role of interleukin-33", "authors": "Brandenburg AH, et al.", "year": 2014, "journal": "Clinical & Experimental Immunology", "doi": "10.1111/cei.12348"},
     {"id": "ref3", "title": "GSTP1 and TNF Gene Variants and Associations between Air Pollution and Incident Childhood Asthma", "authors": "Islam T, et al.", "year": 2014, "journal": "Environmental Health Perspectives", "doi": "10.1289/ehp.1307459"},
     {"id": "ref4", "title": "Traffic-related air pollution exposure and incident asthma in a high-risk birth cohort", "authors": "McConnell R, et al.", "year": 2015, "journal": "Occupational and Environmental Medicine", "doi": "10.1136/oemed-2014-102726"},
-    {"id": "ref5", "title": "EPA Criteria Air Pollutants", "authors": "U.S. EPA", "year": 2024, "url": "https://www.epa.gov/criteria-air-pollutants"}
+    {"id": "ref5", "title": "EPA Criteria Air Pollutants", "authors": "U.S. EPA", "year": 2024, "url": "https://www.epa.gov/criteria-air-pollutants"},
+    {"id": "ref6", "title": "Genetic variants regulating ORMDL3 expression contribute to the risk of childhood asthma", "authors": "Moffatt MF, et al.", "year": 2007, "journal": "Nature", "doi": "10.1038/nature06014"}
   ],
   "schema_version": "1.0",
   "last_updated": "2026-02-26"

@@ -6,7 +6,7 @@
       "label": "Obesity",
       "slug": "obesity",
       "attrs": {
-        "summary": "Obesity is a multifactorial condition characterized by excess adipose tissue accumulation, with body mass index (BMI) \u00e2\u2030\u00a530 kg/m\u00c2\u00b2 as a common threshold. Pathophysiology involves energy balance dysregulation, leptin\u00e2\u20ac\u201cmelanocortin signaling, gut\u00e2\u20ac\u201cbrain axis, adipose biology, and neuroendocrine pathways. Obesity increases risk for type 2 diabetes, cardiovascular disease, cancer, and musculoskeletal disorders. Genetic susceptibility is substantial: heritability for BMI is ~40\u00e2\u20ac\u201c70%; SNP-based h\u00c2\u00b2 is ~0.21. Over 900 loci have been identified. Key genes include FTO (energy balance, hypothalamic regulation), MC4R (melanocortin-4 receptor, appetite), and loci in gut\u00e2\u20ac\u201cbrain axis (LEP, LEPR, POMC). Diet, physical activity, built environment, and psychosocial factors interact with genetic risk. Epigenetic programming in early life may influence susceptibility. Adolescence is a critical period for establishing weight trajectory.",
+        "summary": "Obesity is a multifactorial condition characterized by excess adipose tissue accumulation, with body mass index (BMI) â‰¥30 kg/mÂ² as a common threshold. Pathophysiology involves energy balance dysregulation, leptinâ€“melanocortin signaling, gutâ€“brain axis, adipose biology, and neuroendocrine pathways. Obesity increases risk for type 2 diabetes, cardiovascular disease, cancer, and musculoskeletal disorders. Genetic susceptibility is substantial: heritability for BMI is ~40â€“70%; SNP-based hÂ² is ~0.21. Over 900 loci have been identified. Key genes include FTO (energy balance, hypothalamic regulation), MC4R (melanocortin-4 receptor, appetite), and loci in gutâ€“brain axis (LEP, LEPR, POMC). Diet, physical activity, built environment, and psychosocial factors interact with genetic risk. Epigenetic programming in early life may influence susceptibility. Adolescence is a critical period for establishing weight trajectory.",
         "confidence": "high",
         "last_updated": "2026-03-03"
       }
@@ -17,7 +17,7 @@
       "label": "Major Depressive Disorder",
       "slug": "major-depressive-disorder",
       "attrs": {
-        "summary": "Major depressive disorder (MDD) is a common mental disorder characterized by persistent low mood, anhedonia, fatigue, and impaired functioning, often with recurring episodes. Neurobiological mechanisms involve dysregulation of monoaminergic systems (serotonin, norepinephrine, dopamine), hypothalamic-pituitary-adrenal (HPA) axis hyperactivation, neuroinflammation, and impaired neuroplasticity. Genetic factors contribute ~37% of variance; SNP heritability ~0.08\u00e2\u20ac\u201c0.15, reflecting high polygenicity and substantial environmental influence. Key candidate genes include SLC6A4 (serotonin transporter) and BDNF (brain-derived neurotrophic factor), both implicated in stress response and neural plasticity. Gene\u00e2\u20ac\u201cenvironment interactions are central: childhood adversity and chronic psychosocial stress amplify genetic susceptibility, particularly in 5-HTTLPR and BDNF Val66Met carriers. Adolescence is a critical vulnerability window\u00e2\u20ac\u201donset peaks in late adolescence/early adulthood, and stress exposure during 10\u00e2\u20ac\u201c24 years may have lasting effects on HPA axis and neural circuitry.",
+        "summary": "Major depressive disorder (MDD) is a common mental disorder characterized by persistent low mood, anhedonia, fatigue, and impaired functioning, often with recurring episodes. Neurobiological mechanisms involve dysregulation of monoaminergic systems (serotonin, norepinephrine, dopamine), hypothalamic-pituitary-adrenal (HPA) axis hyperactivation, neuroinflammation, and impaired neuroplasticity. Genetic factors contribute ~37% of variance; SNP heritability ~0.08â€“0.15, reflecting high polygenicity and substantial environmental influence. Key candidate genes include SLC6A4 (serotonin transporter) and BDNF (brain-derived neurotrophic factor), both implicated in stress response and neural plasticity. Geneâ€“environment interactions are central: childhood adversity and chronic psychosocial stress amplify genetic susceptibility, particularly in 5-HTTLPR and BDNF Val66Met carriers. Adolescence is a critical vulnerability windowâ€”onset peaks in late adolescence/early adulthood, and stress exposure during 10â€“24 years may have lasting effects on HPA axis and neural circuitry.",
         "confidence": "high",
         "last_updated": "2026-03-03"
       }
@@ -28,7 +28,7 @@
       "label": "Schizophrenia",
       "slug": "schizophrenia",
       "attrs": {
-        "summary": "Schizophrenia is a severe psychiatric disorder characterized by positive symptoms (hallucinations, delusions), negative symptoms (avolition, anhedonia), and cognitive impairment. Pathophysiology involves dopamine dysregulation, glutamate hypofunction, neurodevelopmental abnormalities, and neuroinflammation. Onset typically occurs in late adolescence or early adulthood (ages 15\u00e2\u20ac\u201c25). Genetic susceptibility is very high: heritability from twin studies is ~80%; SNP-based h\u00c2\u00b2 is ~0.24. Over 200 susceptibility loci have been identified. Key genes include DRD2 (dopamine receptor), CACNA1C (calcium channel), and C4A (complement, synaptic pruning). Cannabis use, urban residence, childhood adversity, and migration are environmental risk factors. Gene\u00e2\u20ac\u201cenvironment interactions are active areas of research. Early intervention during prodromal phase may improve outcomes.",
+        "summary": "Schizophrenia is a severe psychiatric disorder characterized by positive symptoms (hallucinations, delusions), negative symptoms (avolition, anhedonia), and cognitive impairment. Pathophysiology involves dopamine dysregulation, glutamate hypofunction, neurodevelopmental abnormalities, and neuroinflammation. Onset typically occurs in late adolescence or early adulthood (ages 15â€“25). Genetic susceptibility is very high: heritability from twin studies is ~80%; SNP-based hÂ² is ~0.24. Over 200 susceptibility loci have been identified. Key genes include DRD2 (dopamine receptor), CACNA1C (calcium channel), and C4A (complement, synaptic pruning). Cannabis use, urban residence, childhood adversity, and migration are environmental risk factors. Geneâ€“environment interactions are active areas of research. Early intervention during prodromal phase may improve outcomes.",
         "confidence": "high",
         "last_updated": "2026-03-03"
       }
@@ -39,7 +39,7 @@
       "label": "Coronary Artery Disease",
       "slug": "coronary-artery-disease",
       "attrs": {
-        "summary": "Coronary artery disease (CAD) is the leading cause of death globally, characterized by atherosclerosis\u00e2\u20ac\u201dthe progressive buildup of fatty plaques in coronary arteries that supply the heart. Pathophysiology involves endothelial dysfunction, lipid accumulation, chronic inflammation, plaque rupture, and thrombosis. CAD manifests as angina, myocardial infarction, or sudden cardiac death. Genetic susceptibility contributes substantially: heritability estimates range from 40\u00e2\u20ac\u201c60% based on twin and family studies. SNP-based heritability (h\u00c2\u00b2) is approximately 0.13\u00e2\u20ac\u201c0.16, reflecting highly polygenic architecture. Key Mendelian genes (LDLR, APOB, PCSK9, LPA) illuminate cholesterol metabolism pathways; common-variant GWAS have identified over 300 loci. Prevalence increases with age and varies by population and lifestyle. Modifiable risk factors\u00e2\u20ac\u201dhypertension, dyslipidemia, smoking, diabetes, obesity, physical inactivity, and poor diet\u00e2\u20ac\u201dinteract with genetic predisposition. Early-life and adolescent exposures shape lifelong cardiovascular risk trajectories.",
+        "summary": "Coronary artery disease (CAD) is the leading cause of death globally, characterized by atherosclerosisâ€”the progressive buildup of fatty plaques in coronary arteries that supply the heart. Pathophysiology involves endothelial dysfunction, lipid accumulation, chronic inflammation, plaque rupture, and thrombosis. CAD manifests as angina, myocardial infarction, or sudden cardiac death. Genetic susceptibility contributes substantially: heritability estimates range from 40â€“60% based on twin and family studies. SNP-based heritability (hÂ²) is approximately 0.13â€“0.16, reflecting highly polygenic architecture. Key Mendelian genes (LDLR, APOB, PCSK9, LPA) illuminate cholesterol metabolism pathways; common-variant GWAS have identified over 300 loci. Prevalence increases with age and varies by population and lifestyle. Modifiable risk factorsâ€”hypertension, dyslipidemia, smoking, diabetes, obesity, physical inactivity, and poor dietâ€”interact with genetic predisposition. Early-life and adolescent exposures shape lifelong cardiovascular risk trajectories.",
         "confidence": "high",
         "last_updated": "2026-03-03"
       }
@@ -50,7 +50,7 @@
       "label": "Multiple Sclerosis",
       "slug": "multiple-sclerosis",
       "attrs": {
-        "summary": "Multiple sclerosis (MS) is a chronic autoimmune demyelinating disease of the central nervous system, characterized by inflammation, demyelination, axonal damage, and progressive disability. Pathophysiology involves T-cell-mediated autoimmune attack on myelin and oligodendrocytes, with contributions from B cells, microglia, and innate immunity. Genetic susceptibility is substantial\u00e2\u20ac\u201dtwin concordance ~25%, SNP heritability ~0.25\u00e2\u20ac\u201c0.30. The HLA-DRB1*15:01 allele is the strongest genetic risk factor, conferring ~3-fold increased risk. Non-HLA loci implicate immune regulation, vitamin D metabolism, and neuronal resilience. Environmental factors are critical: low vitamin D (from UV/sun exposure and diet), Epstein-Barr virus infection, and smoking amplify risk. Adolescence and young adulthood represent the peak period for disease onset\u00e2\u20ac\u201dage 15\u00e2\u20ac\u201c24 is when many individuals experience first symptoms. Vitamin D status and EBV seroconversion during this window may be particularly consequential for MS development.",
+        "summary": "Multiple sclerosis (MS) is a chronic autoimmune demyelinating disease of the central nervous system, characterized by inflammation, demyelination, axonal damage, and progressive disability. Pathophysiology involves T-cell-mediated autoimmune attack on myelin and oligodendrocytes, with contributions from B cells, microglia, and innate immunity. Genetic susceptibility is substantialâ€”twin concordance ~25%, SNP heritability ~0.25â€“0.30. The HLA-DRB1*15:01 allele is the strongest genetic risk factor, conferring ~3-fold increased risk. Non-HLA loci implicate immune regulation, vitamin D metabolism, and neuronal resilience. Environmental factors are critical: low vitamin D (from UV/sun exposure and diet), Epstein-Barr virus infection, and smoking amplify risk. Adolescence and young adulthood represent the peak period for disease onsetâ€”age 15â€“24 is when many individuals experience first symptoms. Vitamin D status and EBV seroconversion during this window may be particularly consequential for MS development.",
         "confidence": "high",
         "last_updated": "2026-03-03"
       }
@@ -61,7 +61,7 @@
       "label": "Type 2 Diabetes",
       "slug": "type-2-diabetes",
       "attrs": {
-        "summary": "Type 2 diabetes (T2D) is a metabolic disorder characterized by insulin resistance and progressive beta-cell dysfunction, leading to chronic hyperglycemia. Pathophysiology involves impaired glucose uptake in muscle and adipose tissue, dysregulated hepatic glucose output, and insufficient insulin secretion. Complications include retinopathy, nephropathy, neuropathy, and cardiovascular disease. Genetic susceptibility is substantial: heritability estimates range from 30\u00e2\u20ac\u201c70% depending on study design and population. SNP-based heritability (h\u00c2\u00b2) is approximately 0.18\u00e2\u20ac\u201c0.25. Over 400 susceptibility loci have been identified; key genes include TCF7L2 (Wnt signaling, beta-cell function), SLC30A8 (zinc transport, insulin secretion), PPARG (adipocyte differentiation, insulin sensitivity), and FTO (energy balance, obesity). T2D is highly modifiable by lifestyle; diet, physical activity, and obesity interact strongly with genetic risk. Onset is increasingly occurring in adolescence and young adulthood.",
+        "summary": "Type 2 diabetes (T2D) is a metabolic disorder characterized by insulin resistance and progressive beta-cell dysfunction, leading to chronic hyperglycemia. Pathophysiology involves impaired glucose uptake in muscle and adipose tissue, dysregulated hepatic glucose output, and insufficient insulin secretion. Complications include retinopathy, nephropathy, neuropathy, and cardiovascular disease. Genetic susceptibility is substantial: heritability estimates range from 30â€“70% depending on study design and population. SNP-based heritability (hÂ²) is approximately 0.18â€“0.25. Over 400 susceptibility loci have been identified; key genes include TCF7L2 (Wnt signaling, beta-cell function), SLC30A8 (zinc transport, insulin secretion), PPARG (adipocyte differentiation, insulin sensitivity), and FTO (energy balance, obesity). T2D is highly modifiable by lifestyle; diet, physical activity, and obesity interact strongly with genetic risk. Onset is increasingly occurring in adolescence and young adulthood.",
         "confidence": "high",
         "last_updated": "2026-03-03"
       }
@@ -72,7 +72,7 @@
       "label": "Rheumatoid Arthritis",
       "slug": "rheumatoid-arthritis",
       "attrs": {
-        "summary": "Rheumatoid arthritis (RA) is a chronic autoimmune disorder characterized by symmetric inflammatory polyarthritis, joint destruction, and systemic manifestations. Pathophysiology involves autoimmune attack on synovium, with HLA-DRB1 shared epitope, citrullinated peptide recognition, and TNF/IL-6\u00e2\u20ac\u201cdriven inflammation. Seropositive RA (RF and/or anti-CCP) has stronger genetic component than seronegative. Heritability is ~60%; SNP-based h\u00c2\u00b2 is ~0.13. HLA-DRB1 contributes ~30% of genetic variance. Key genes include HLA-DRB1 (antigen presentation), PTPN22 (T-cell signaling), and loci in TNF pathway. Smoking, particularly in HLA-DRB1 carriers, dramatically increases anti-CCP\u00e2\u20ac\u201cpositive RA risk via citrullination. Infections, obesity, and reproductive factors may modify risk. Early diagnosis and DMARD therapy prevent joint damage.",
+        "summary": "Rheumatoid arthritis (RA) is a chronic autoimmune disorder characterized by symmetric inflammatory polyarthritis, joint destruction, and systemic manifestations. Pathophysiology involves autoimmune attack on synovium, with HLA-DRB1 shared epitope, citrullinated peptide recognition, and TNF/IL-6â€“driven inflammation. Seropositive RA (RF and/or anti-CCP) has stronger genetic component than seronegative. Heritability is ~60%; SNP-based hÂ² is ~0.13. HLA-DRB1 contributes ~30% of genetic variance. Key genes include HLA-DRB1 (antigen presentation), PTPN22 (T-cell signaling), and loci in TNF pathway. Smoking, particularly in HLA-DRB1 carriers, dramatically increases anti-CCPâ€“positive RA risk via citrullination. Infections, obesity, and reproductive factors may modify risk. Early diagnosis and DMARD therapy prevent joint damage.",
         "confidence": "high",
         "last_updated": "2026-03-03"
       }
@@ -83,7 +83,7 @@
       "label": "Asthma",
       "slug": "asthma",
       "attrs": {
-        "summary": "Asthma is a heterogeneous chronic respiratory disease characterized by variable airflow obstruction, bronchial hyperresponsiveness (BHR), and airway inflammation. The disease sits within the atopic march, where allergic sensitization in early life (food allergy, atopic dermatitis) often precedes allergic rhinitis and asthma development. Pathophysiologically, asthma involves T-helper 2 (Th2)\u00e2\u20ac\u201cmediated inflammation, eosinophilic infiltration, goblet cell hyperplasia, and airway remodeling. The phenotypic spectrum ranges from mild intermittent disease to severe therapy-resistant asthma, with distinct endotypes including type 2\u00e2\u20ac\u201chigh (eosinophilic, allergen-driven) and type 2\u00e2\u20ac\u201clow (neutrophilic or paucigranulocytic) presentations. Genetic susceptibility contributes substantially: twin studies estimate heritability at ~60\u00e2\u20ac\u201c80%, while SNP-based heritability (h\u00c2\u00b2) is ~0.15\u00e2\u20ac\u201c0.20, reflecting the polygenic architecture. Prevalence varies globally (5\u00e2\u20ac\u201c20%), with higher rates in industrialized nations and urban settings. Asthma onset frequently occurs in childhood or adolescence, making it highly relevant to the 10\u00e2\u20ac\u201c24 age group\u00e2\u20ac\u201da period when disease trajectory, medication adherence, and environmental exposures (including smoking initiation and occupational exposures) critically shape long-term outcomes.",
+        "summary": "Asthma is a heterogeneous chronic respiratory disease characterized by variable airflow obstruction, bronchial hyperresponsiveness (BHR), and airway inflammation. The disease sits within the atopic march, where allergic sensitization in early life (food allergy, atopic dermatitis) often precedes allergic rhinitis and asthma development. Pathophysiologically, asthma involves T-helper 2 (Th2)â€“mediated inflammation, eosinophilic infiltration, goblet cell hyperplasia, and airway remodeling. The phenotypic spectrum ranges from mild intermittent disease to severe therapy-resistant asthma, with distinct endotypes including type 2â€“high (eosinophilic, allergen-driven) and type 2â€“low (neutrophilic or paucigranulocytic) presentations. Genetic susceptibility contributes substantially: twin studies estimate heritability at ~60â€“80%, while SNP-based heritability (hÂ²) is ~0.15â€“0.20, reflecting the polygenic architecture. Prevalence varies globally (5â€“20%), with higher rates in industrialized nations and urban settings. Asthma onset frequently occurs in childhood or adolescence, making it highly relevant to the 10â€“24 age groupâ€”a period when disease trajectory, medication adherence, and environmental exposures (including smoking initiation and occupational exposures) critically shape long-term outcomes.",
         "confidence": "high",
         "last_updated": "2026-02-26"
       }
@@ -94,7 +94,7 @@
       "label": "Alzheimer's Disease",
       "slug": "alzheimers-disease",
       "attrs": {
-        "summary": "Alzheimer's disease (AD) is the leading cause of dementia, characterized by progressive neurodegeneration, amyloid-beta plaques, and neurofibrillary tau tangles. Pathophysiology involves amyloid cascade, tau pathology, neuroinflammation, synaptic loss, and eventual neuronal death. Onset is typically late life; early-onset familial AD (5\u00e2\u20ac\u201c10%) is caused by rare mutations in APP, PSEN1, and PSEN2. Genetic susceptibility in late-onset AD: heritability is ~60\u00e2\u20ac\u201c80%; SNP-based h\u00c2\u00b2 is ~0.07. APOE \u00ce\u00b54 is the strongest common genetic risk factor (3\u00e2\u20ac\u201c15-fold depending on copy number). Over 40 susceptibility loci have been identified. Vascular, metabolic, and lifestyle factors modify risk. Disease begins decades before clinical symptoms; preventive interventions may be most effective in mid-life and earlier.",
+        "summary": "Alzheimer's disease (AD) is the leading cause of dementia, characterized by progressive neurodegeneration, amyloid-beta plaques, and neurofibrillary tau tangles. Pathophysiology involves amyloid cascade, tau pathology, neuroinflammation, synaptic loss, and eventual neuronal death. Onset is typically late life; early-onset familial AD (5â€“10%) is caused by rare mutations in APP, PSEN1, and PSEN2. Genetic susceptibility in late-onset AD: heritability is ~60â€“80%; SNP-based hÂ² is ~0.07. APOE Îµ4 is the strongest common genetic risk factor (3â€“15-fold depending on copy number). Over 40 susceptibility loci have been identified. Vascular, metabolic, and lifestyle factors modify risk. Disease begins decades before clinical symptoms; preventive interventions may be most effective in mid-life and earlier.",
         "confidence": "high",
         "last_updated": "2026-03-03"
       }
@@ -105,7 +105,7 @@
       "label": "Colorectal Cancer",
       "slug": "colorectal-cancer",
       "attrs": {
-        "summary": "Colorectal cancer (CRC) encompasses malignancies arising from the colon or rectum, with adenocarcinoma comprising the majority of cases. Pathogenesis involves the adenoma-carcinoma sequence: accumulated genetic and epigenetic alterations drive progression from normal epithelium through adenomatous polyps to invasive carcinoma. Inherited susceptibility contributes ~35% of CRC risk; major genes include APC (familial adenomatous polyposis), MLH1/MSH2 (Lynch syndrome), and numerous GWAS-identified loci affecting cell-cycle, Wnt signaling, and inflammatory pathways. Diet and the gut microbiome are major environmental modifiers\u00e2\u20ac\u201dred meat, processed foods, and low fiber intake increase risk, while the gut microbiota influences inflammation, metabolite production, and DNA damage. Adolescent relevance is emerging: diet quality and obesity established during 10\u00e2\u20ac\u201c24 years may shape microbiome composition and epigenetic programming that influences later CRC susceptibility. Early-onset CRC is increasing, highlighting the importance of understanding G\u00c3\u2014E interactions in younger populations.",
+        "summary": "Colorectal cancer (CRC) encompasses malignancies arising from the colon or rectum, with adenocarcinoma comprising the majority of cases. Pathogenesis involves the adenoma-carcinoma sequence: accumulated genetic and epigenetic alterations drive progression from normal epithelium through adenomatous polyps to invasive carcinoma. Inherited susceptibility contributes ~35% of CRC risk; major genes include APC (familial adenomatous polyposis), MLH1/MSH2 (Lynch syndrome), and numerous GWAS-identified loci affecting cell-cycle, Wnt signaling, and inflammatory pathways. Diet and the gut microbiome are major environmental modifiersâ€”red meat, processed foods, and low fiber intake increase risk, while the gut microbiota influences inflammation, metabolite production, and DNA damage. Adolescent relevance is emerging: diet quality and obesity established during 10â€“24 years may shape microbiome composition and epigenetic programming that influences later CRC susceptibility. Early-onset CRC is increasing, highlighting the importance of understanding GÃ—E interactions in younger populations.",
         "confidence": "high",
         "last_updated": "2026-03-03"
       }
@@ -116,7 +116,7 @@
       "label": "Hypertension",
       "slug": "hypertension",
       "attrs": {
-        "summary": "Hypertension (essential arterial hypertension) is a chronic condition characterized by sustained elevation of blood pressure (\u00e2\u2030\u00a5130/80 mmHg). It is the leading modifiable risk factor for cardiovascular disease, stroke, and chronic kidney disease worldwide. Pathophysiology involves complex interactions between renal sodium handling, the renin-angiotensin-aldosterone system (RAAS), sympathetic nervous system overactivity, vascular remodeling, and endothelial dysfunction. Genetic factors contribute substantially, with twin studies estimating heritability at 30\u00e2\u20ac\u201c50% and SNP-based heritability ~0.15\u00e2\u20ac\u201c0.25. The disease exhibits strong gene\u00e2\u20ac\u201cenvironment interactions: high sodium intake amplifies genetic susceptibility in salt-sensitive individuals, while psychosocial stress and obesity modulate both onset and severity. Adolescents represent a critical window\u00e2\u20ac\u201dearly-onset hypertension tracks into adulthood, and blood pressure trajectories established in the 10\u00e2\u20ac\u201c24 age range predict long-term cardiovascular risk. Lifestyle factors (diet, physical activity, stress) during adolescence can modify epigenetic programming and disease trajectory.",
+        "summary": "Hypertension (essential arterial hypertension) is a chronic condition characterized by sustained elevation of blood pressure (â‰¥130/80 mmHg). It is the leading modifiable risk factor for cardiovascular disease, stroke, and chronic kidney disease worldwide. Pathophysiology involves complex interactions between renal sodium handling, the renin-angiotensin-aldosterone system (RAAS), sympathetic nervous system overactivity, vascular remodeling, and endothelial dysfunction. Genetic factors contribute substantially, with twin studies estimating heritability at 30â€“50% and SNP-based heritability ~0.15â€“0.25. The disease exhibits strong geneâ€“environment interactions: high sodium intake amplifies genetic susceptibility in salt-sensitive individuals, while psychosocial stress and obesity modulate both onset and severity. Adolescents represent a critical windowâ€”early-onset hypertension tracks into adulthood, and blood pressure trajectories established in the 10â€“24 age range predict long-term cardiovascular risk. Lifestyle factors (diet, physical activity, stress) during adolescence can modify epigenetic programming and disease trajectory.",
         "confidence": "high",
         "last_updated": "2026-03-03"
       }
@@ -127,7 +127,7 @@
       "label": "Breast Cancer",
       "slug": "breast-cancer",
       "attrs": {
-        "summary": "Breast cancer is the most common malignancy in women globally, arising from ductal or lobular epithelium. Pathophysiology involves dysregulated cell proliferation, genomic instability, and hormone receptor signaling (ER, PR, HER2). Subtypes differ in prognosis and therapy. Genetic susceptibility is substantial: heritability from twin studies is ~30%; SNP-based h\u00c2\u00b2 is ~0.08\u00e2\u20ac\u201c0.15. Rare high-penetrance mutations (BRCA1, BRCA2, TP53) account for ~5\u00e2\u20ac\u201c10% of cases; common variants explain additional variance. Key genes include BRCA1/BRCA2 (DNA repair), TP53 (tumor suppressor), and FGFR2 (receptor signaling). Hormonal, reproductive, and lifestyle factors interact with genetic risk. Early menarche, late menopause, nulliparity, and obesity modify risk. Adolescence is a sensitive window for breast development and carcinogen exposure.",
+        "summary": "Breast cancer is the most common malignancy in women globally, arising from ductal or lobular epithelium. Pathophysiology involves dysregulated cell proliferation, genomic instability, and hormone receptor signaling (ER, PR, HER2). Subtypes differ in prognosis and therapy. Genetic susceptibility is substantial: heritability from twin studies is ~30%; SNP-based hÂ² is ~0.08â€“0.15. Rare high-penetrance mutations (BRCA1, BRCA2, TP53) account for ~5â€“10% of cases; common variants explain additional variance. Key genes include BRCA1/BRCA2 (DNA repair), TP53 (tumor suppressor), and FGFR2 (receptor signaling). Hormonal, reproductive, and lifestyle factors interact with genetic risk. Early menarche, late menopause, nulliparity, and obesity modify risk. Adolescence is a sensitive window for breast development and carcinogen exposure.",
         "confidence": "high",
         "last_updated": "2026-03-03"
       }
@@ -138,7 +138,7 @@
       "label": "Lung Cancer",
       "slug": "lung-cancer",
       "attrs": {
-        "summary": "Lung cancer encompasses carcinomas of the lung, predominantly non-small cell lung cancer (NSCLC) and small cell lung cancer (SCLC). Tobacco smoking is the principal environmental cause, accounting for ~85% of cases; the smoking\u00e2\u20ac\u201cgenetics interaction is among the best-characterized gene\u00e2\u20ac\u201cenvironment relationships in oncology. Genetic susceptibility modifies both smoking initiation (nicotine dependence) and lung cancer risk among smokers. Key loci include CHRNA5/CHRNA3 (nicotinic acetylcholine receptors influencing smoking behavior and carcinogen susceptibility), TP53, and EGFR (driver mutations in adenocarcinoma). SNP heritability for lung cancer is modest (~0.05) but increases when considering smoking-adjusted models. Adolescent relevance is significant: smoking initiation typically occurs before age 24; genetic variants in CHRNA5 influence both nicotine dependence and lung cancer risk, creating a dual pathway. Never-smoker lung cancer has distinct genetics (stronger EGFR, weaker smoking loci) and rising incidence in some populations.",
+        "summary": "Lung cancer encompasses carcinomas of the lung, predominantly non-small cell lung cancer (NSCLC) and small cell lung cancer (SCLC). Tobacco smoking is the principal environmental cause, accounting for ~85% of cases; the smokingâ€“genetics interaction is among the best-characterized geneâ€“environment relationships in oncology. Genetic susceptibility modifies both smoking initiation (nicotine dependence) and lung cancer risk among smokers. Key loci include CHRNA5/CHRNA3 (nicotinic acetylcholine receptors influencing smoking behavior and carcinogen susceptibility), TP53, and EGFR (driver mutations in adenocarcinoma). SNP heritability for lung cancer is modest (~0.05) but increases when considering smoking-adjusted models. Adolescent relevance is significant: smoking initiation typically occurs before age 24; genetic variants in CHRNA5 influence both nicotine dependence and lung cancer risk, creating a dual pathway. Never-smoker lung cancer has distinct genetics (stronger EGFR, weaker smoking loci) and rising incidence in some populations.",
         "confidence": "high",
         "last_updated": "2026-03-03"
       }
@@ -149,7 +149,7 @@
       "label": "Chronic Obstructive Pulmonary Disease",
       "slug": "copd",
       "attrs": {
-        "summary": "Chronic obstructive pulmonary disease (COPD) is a progressive respiratory disorder characterized by airflow limitation, emphysema, and chronic bronchitis. Pathophysiology involves chronic inflammation, protease\u00e2\u20ac\u201cantiprotease imbalance, oxidative stress, and airway remodeling. Alpha-1 antitrypsin deficiency (SERPINA1) causes ~1% of cases but illuminates mechanism. Genetic susceptibility: heritability is ~40\u00e2\u20ac\u201c70%; SNP-based h\u00c2\u00b2 is ~0.12. Key genes include SERPINA1 (protease inhibitor), HHIP (hedgehog signaling, lung development), FAM13A, and loci near MMP12. Cigarette smoking is the dominant environmental cause; gene\u00e2\u20ac\u201csmoking interactions are well-established. Only ~15\u00e2\u20ac\u201c20% of smokers develop COPD, highlighting genetic susceptibility. Air pollution and occupational exposures contribute. Early-life lung development and adolescent smoking shape disease trajectory.",
+        "summary": "Chronic obstructive pulmonary disease (COPD) is a progressive respiratory disorder characterized by airflow limitation, emphysema, and chronic bronchitis. Pathophysiology involves chronic inflammation, proteaseâ€“antiprotease imbalance, oxidative stress, and airway remodeling. Alpha-1 antitrypsin deficiency (SERPINA1) causes ~1% of cases but illuminates mechanism. Genetic susceptibility: heritability is ~40â€“70%; SNP-based hÂ² is ~0.12. Key genes include SERPINA1 (protease inhibitor), HHIP (hedgehog signaling, lung development), FAM13A, and loci near MMP12. Cigarette smoking is the dominant environmental cause; geneâ€“smoking interactions are well-established. Only ~15â€“20% of smokers develop COPD, highlighting genetic susceptibility. Air pollution and occupational exposures contribute. Early-life lung development and adolescent smoking shape disease trajectory.",
         "confidence": "high",
         "last_updated": "2026-03-03"
       }
@@ -259,7 +259,7 @@
       "label": "Ambient Air Pollution (PM2.5)",
       "slug": "air-pollution",
       "attrs": {
-        "summary": "PM2.5 (particulate matter with aerodynamic diameter \u00e2\u2030\u00a42.5 micrometers) refers to fine inhalable particles that can penetrate deep into the lungs and enter the bloodstream. Sources include combustion (vehicles, power plants, wildfires), industrial processes, and secondary formation from gaseous precursors (e.g., SO2, NOx). PM2.5 composition varies by region but typically includes sulfates, nitrates, ammonium, organic carbon, elemental carbon, and trace metals. The small size enables alveolar deposition and systemic distribution, contributing to respiratory, cardiovascular, and immune effects.",
+        "summary": "PM2.5 (particulate matter with aerodynamic diameter â‰¤2.5 micrometers) refers to fine inhalable particles that can penetrate deep into the lungs and enter the bloodstream. Sources include combustion (vehicles, power plants, wildfires), industrial processes, and secondary formation from gaseous precursors (e.g., SO2, NOx). PM2.5 composition varies by region but typically includes sulfates, nitrates, ammonium, organic carbon, elemental carbon, and trace metals. The small size enables alveolar deposition and systemic distribution, contributing to respiratory, cardiovascular, and immune effects.",
         "confidence": "medium",
         "last_updated": "2026-02-26"
       }
@@ -380,7 +380,7 @@
       "label": "SLC6A4",
       "slug": "slc6a4",
       "attrs": {
-        "summary": "SLC6A4 encodes the serotonin transporter (5-HTT), which reuptakes serotonin from the synaptic cleft and terminates serotonergic signaling. The promoter polymorphism 5-HTTLPR (short vs long) modulates transporter expression and has been extensively studied in depression, stress response, and suicidal behavior. Short allele carriers show exaggerated amygdala reactivity and may be more vulnerable to depression following adversity. SLC6A4 is the target of SSRIs. Expression is highest in raphe nuclei, platelets, and placenta. Genetic variation influences SSRI response. The gene-denvironment interaction (5-HTTLPR \u00c3\u2014 stress \u00e2\u2020\u2019 depression) has been debated but remains influential in psychiatric genetics.",
+        "summary": "SLC6A4 encodes the serotonin transporter (5-HTT), which reuptakes serotonin from the synaptic cleft and terminates serotonergic signaling. The promoter polymorphism 5-HTTLPR (short vs long) modulates transporter expression and has been extensively studied in depression, stress response, and suicidal behavior. Short allele carriers show exaggerated amygdala reactivity and may be more vulnerable to depression following adversity. SLC6A4 is the target of SSRIs. Expression is highest in raphe nuclei, platelets, and placenta. Genetic variation influences SSRI response. The gene-denvironment interaction (5-HTTLPR Ã— stress â†’ depression) has been debated but remains influential in psychiatric genetics.",
         "confidence": "medium",
         "last_updated": "2026-03-03"
       }
@@ -487,10 +487,10 @@
     {
       "id": "nf-kb",
       "type": "pathway",
-      "label": "NF-\u00ce\u00baB Signaling Pathway",
+      "label": "NF-ÎºB Signaling Pathway",
       "slug": "nf-kb",
       "attrs": {
-        "summary": "NF-\u00ce\u00baB (nuclear factor kappa-light-chain-enhancer of activated B cells) is a master regulator of inflammatory gene expression, governing immune responses, cell survival, and proliferation. The pathway exists in canonical and non-canonical forms. The canonical pathway is triggered by pro-inflammatory stimuli (TNF, IL-1, LPS, viral RNA): I\u00ce\u00baB kinase (IKK) phosphorylates I\u00ce\u00baB\u00ce\u00b1, leading to its ubiquitination and proteasomal degradation, which releases NF-\u00ce\u00baB dimers (e.g., RelA/p65\u00e2\u20ac\u201cp50) for nuclear translocation and target gene activation. Key targets include IL6, IL8, TNF, IL33, COX-2, and adhesion molecules. Environmental pollutants such as PM2.5 activate NF-\u00ce\u00baB via reactive oxygen species (ROS)\u00e2\u20ac\u201cmediated IKK activation; particulate matter downregulates microRNAs that suppress IKK-\u00ce\u00b2. Tissue-specific activity in bronchial epithelium, macrophages, and endothelium underlies respiratory and cardiovascular disease pathogenesis.",
+        "summary": "NF-ÎºB (nuclear factor kappa-light-chain-enhancer of activated B cells) is a master regulator of inflammatory gene expression, governing immune responses, cell survival, and proliferation. The pathway exists in canonical and non-canonical forms. The canonical pathway is triggered by pro-inflammatory stimuli (TNF, IL-1, LPS, viral RNA): IÎºB kinase (IKK) phosphorylates IÎºBÎ±, leading to its ubiquitination and proteasomal degradation, which releases NF-ÎºB dimers (e.g., RelA/p65â€“p50) for nuclear translocation and target gene activation. Key targets include IL6, IL8, TNF, IL33, COX-2, and adhesion molecules. Environmental pollutants such as PM2.5 activate NF-ÎºB via reactive oxygen species (ROS)â€“mediated IKK activation; particulate matter downregulates microRNAs that suppress IKK-Î². Tissue-specific activity in bronchial epithelium, macrophages, and endothelium underlies respiratory and cardiovascular disease pathogenesis.",
         "confidence": "medium",
         "last_updated": "2026-02-26"
       }
@@ -611,7 +611,7 @@
       "label": "BDNF",
       "slug": "bdnf",
       "attrs": {
-        "summary": "Brain-derived neurotrophic factor; Val66Met and stress\u00e2\u20ac\u201cdepression G\u00c3\u2014E.",
+        "summary": "Brain-derived neurotrophic factor; Val66Met and stressâ€“depression GÃ—E.",
         "confidence": "high",
         "last_updated": "2026-03-07"
       }
@@ -622,7 +622,7 @@
       "label": "GSTP1",
       "slug": "gstp1",
       "attrs": {
-        "summary": "Glutathione S-transferase; G\u00c3\u2014E with air pollution and asthma.",
+        "summary": "Glutathione S-transferase; GÃ—E with air pollution and asthma.",
         "confidence": "high",
         "last_updated": "2026-03-07"
       }
@@ -655,7 +655,7 @@
       "label": "MTHFR",
       "slug": "mthfr",
       "attrs": {
-        "summary": "Folate metabolism; homocysteine; gene\u00e2\u20ac\u201cnutrient interactions.",
+        "summary": "Folate metabolism; homocysteine; geneâ€“nutrient interactions.",
         "confidence": "medium",
         "last_updated": "2026-03-07"
       }
@@ -666,7 +666,7 @@
       "label": "SOD2",
       "slug": "sod2",
       "attrs": {
-        "summary": "Mitochondrial superoxide dismutase; oxidative stress; G\u00c3\u2014E with pollution.",
+        "summary": "Mitochondrial superoxide dismutase; oxidative stress; GÃ—E with pollution.",
         "confidence": "medium",
         "last_updated": "2026-03-07"
       }
@@ -688,7 +688,7 @@
       "label": "Oxidative Stress Response",
       "slug": "oxidative-stress-response",
       "attrs": {
-        "summary": "Antioxidant defenses; GSTP1, SOD2; air pollution G\u00c3\u2014E.",
+        "summary": "Antioxidant defenses; GSTP1, SOD2; air pollution GÃ—E.",
         "confidence": "medium",
         "last_updated": "2026-03-07"
       }
@@ -699,7 +699,7 @@
       "label": "TNF Signaling",
       "slug": "tnf-signaling",
       "attrs": {
-        "summary": "TNF inflammation; RA, IBD, psoriasis; air pollution\u00e2\u20ac\u201casthma G\u00c3\u2014E.",
+        "summary": "TNF inflammation; RA, IBD, psoriasis; air pollutionâ€“asthma GÃ—E.",
         "confidence": "medium",
         "last_updated": "2026-03-07"
       }
@@ -743,7 +743,7 @@
       "label": "AGT",
       "slug": "agt",
       "attrs": {
-        "summary": "AGT gene \u2014 referenced in knowledge graph edges.",
+        "summary": "AGT gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -754,7 +754,7 @@
       "label": "APC",
       "slug": "apc",
       "attrs": {
-        "summary": "APC gene \u2014 referenced in knowledge graph edges.",
+        "summary": "APC gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -765,7 +765,7 @@
       "label": "APOB",
       "slug": "apob",
       "attrs": {
-        "summary": "APOB gene \u2014 referenced in knowledge graph edges.",
+        "summary": "APOB gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -776,7 +776,7 @@
       "label": "APP",
       "slug": "app",
       "attrs": {
-        "summary": "APP gene \u2014 referenced in knowledge graph edges.",
+        "summary": "APP gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -787,7 +787,7 @@
       "label": "C4A",
       "slug": "c4a",
       "attrs": {
-        "summary": "C4A gene \u2014 referenced in knowledge graph edges.",
+        "summary": "C4A gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -798,7 +798,7 @@
       "label": "CACNA1C",
       "slug": "cacna1c",
       "attrs": {
-        "summary": "CACNA1C gene \u2014 referenced in knowledge graph edges.",
+        "summary": "CACNA1C gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -809,7 +809,7 @@
       "label": "CHRNA5",
       "slug": "chrna5",
       "attrs": {
-        "summary": "CHRNA5 gene \u2014 referenced in knowledge graph edges.",
+        "summary": "CHRNA5 gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -820,7 +820,7 @@
       "label": "CTLA4",
       "slug": "ctla4",
       "attrs": {
-        "summary": "CTLA4 gene \u2014 referenced in knowledge graph edges.",
+        "summary": "CTLA4 gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -831,7 +831,7 @@
       "label": "CYP27B1",
       "slug": "cyp27b1",
       "attrs": {
-        "summary": "CYP27B1 gene \u2014 referenced in knowledge graph edges.",
+        "summary": "CYP27B1 gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -842,7 +842,7 @@
       "label": "FAM13A",
       "slug": "fam13a",
       "attrs": {
-        "summary": "FAM13A gene \u2014 referenced in knowledge graph edges.",
+        "summary": "FAM13A gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -853,7 +853,7 @@
       "label": "FGFR2",
       "slug": "fgfr2",
       "attrs": {
-        "summary": "FGFR2 gene \u2014 referenced in knowledge graph edges.",
+        "summary": "FGFR2 gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -864,7 +864,7 @@
       "label": "GRIN2A",
       "slug": "grin2a",
       "attrs": {
-        "summary": "GRIN2A gene \u2014 referenced in knowledge graph edges.",
+        "summary": "GRIN2A gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -875,7 +875,7 @@
       "label": "HHIP",
       "slug": "hhip",
       "attrs": {
-        "summary": "HHIP gene \u2014 referenced in knowledge graph edges.",
+        "summary": "HHIP gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -886,7 +886,7 @@
       "label": "HTR2A",
       "slug": "htr2a",
       "attrs": {
-        "summary": "HTR2A gene \u2014 referenced in knowledge graph edges.",
+        "summary": "HTR2A gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -897,7 +897,7 @@
       "label": "IL1RL1",
       "slug": "il1rl1",
       "attrs": {
-        "summary": "IL1RL1 gene \u2014 referenced in knowledge graph edges.",
+        "summary": "IL1RL1 gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -908,7 +908,7 @@
       "label": "IL2RA",
       "slug": "il2ra",
       "attrs": {
-        "summary": "IL2RA gene \u2014 referenced in knowledge graph edges.",
+        "summary": "IL2RA gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -919,7 +919,7 @@
       "label": "LPA",
       "slug": "lpa",
       "attrs": {
-        "summary": "LPA gene \u2014 referenced in knowledge graph edges.",
+        "summary": "LPA gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -930,7 +930,7 @@
       "label": "MLH1",
       "slug": "mlh1",
       "attrs": {
-        "summary": "MLH1 gene \u2014 referenced in knowledge graph edges.",
+        "summary": "MLH1 gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -941,7 +941,7 @@
       "label": "MMP12",
       "slug": "mmp12",
       "attrs": {
-        "summary": "MMP12 gene \u2014 referenced in knowledge graph edges.",
+        "summary": "MMP12 gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -952,7 +952,7 @@
       "label": "ORMDL3",
       "slug": "ormdl3",
       "attrs": {
-        "summary": "ORMDL3 gene \u2014 referenced in knowledge graph edges.",
+        "summary": "ORMDL3 gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -963,7 +963,7 @@
       "label": "PSEN1",
       "slug": "psen1",
       "attrs": {
-        "summary": "PSEN1 gene \u2014 referenced in knowledge graph edges.",
+        "summary": "PSEN1 gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -974,7 +974,7 @@
       "label": "PSEN2",
       "slug": "psen2",
       "attrs": {
-        "summary": "PSEN2 gene \u2014 referenced in knowledge graph edges.",
+        "summary": "PSEN2 gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -985,7 +985,7 @@
       "label": "PTPN22",
       "slug": "ptpn22",
       "attrs": {
-        "summary": "PTPN22 gene \u2014 referenced in knowledge graph edges.",
+        "summary": "PTPN22 gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -996,7 +996,7 @@
       "label": "RAD50",
       "slug": "rad50",
       "attrs": {
-        "summary": "RAD50 gene \u2014 referenced in knowledge graph edges.",
+        "summary": "RAD50 gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -1007,7 +1007,7 @@
       "label": "SLC30A8",
       "slug": "slc30a8",
       "attrs": {
-        "summary": "SLC30A8 gene \u2014 referenced in knowledge graph edges.",
+        "summary": "SLC30A8 gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -1018,7 +1018,7 @@
       "label": "SMAD7",
       "slug": "smad7",
       "attrs": {
-        "summary": "SMAD7 gene \u2014 referenced in knowledge graph edges.",
+        "summary": "SMAD7 gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -1029,7 +1029,7 @@
       "label": "TMEM18",
       "slug": "tmem18",
       "attrs": {
-        "summary": "TMEM18 gene \u2014 referenced in knowledge graph edges.",
+        "summary": "TMEM18 gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -1040,7 +1040,7 @@
       "label": "TNF",
       "slug": "tnf",
       "attrs": {
-        "summary": "TNF gene \u2014 referenced in knowledge graph edges.",
+        "summary": "TNF gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -1051,7 +1051,7 @@
       "label": "TSLP",
       "slug": "tslp",
       "attrs": {
-        "summary": "TSLP gene \u2014 referenced in knowledge graph edges.",
+        "summary": "TSLP gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -1062,7 +1062,7 @@
       "label": "UMOD",
       "slug": "umod",
       "attrs": {
-        "summary": "UMOD gene \u2014 referenced in knowledge graph edges.",
+        "summary": "UMOD gene — referenced in knowledge graph edges.",
         "confidence": "low",
         "last_updated": "2026-04-02"
       }
@@ -2197,7 +2197,15 @@
           "ref5",
           "ref6",
           "ref7"
-        ]
+        ],
+        "raw_statistics": {
+          "p_value": null,
+          "odds_ratio": 1.3,
+          "ci_lower": 1.15,
+          "ci_upper": 1.47,
+          "sample_size": 12000,
+          "source_study": "li-2017-a"
+        }
       }
     },
     {
@@ -2282,7 +2290,15 @@
         "sources": [
           "ref1",
           "ref2"
-        ]
+        ],
+        "raw_statistics": {
+          "p_value": 2.5e-12,
+          "odds_ratio": 1.2,
+          "ci_lower": 1.14,
+          "ci_upper": 1.27,
+          "sample_size": 26475,
+          "source_study": "moffatt-2010-a"
+        }
       }
     },
     {
@@ -2303,7 +2319,15 @@
         "confidence": "medium",
         "sources": [
           "ref1"
-        ]
+        ],
+        "raw_statistics": {
+          "p_value": 1.1e-10,
+          "odds_ratio": 1.18,
+          "ci_lower": 1.12,
+          "ci_upper": 1.24,
+          "sample_size": 26475,
+          "source_study": "moffatt-2010-a"
+        }
       }
     },
     {
@@ -2324,7 +2348,15 @@
         "confidence": "medium",
         "sources": [
           "ref1"
-        ]
+        ],
+        "raw_statistics": {
+          "p_value": 9e-20,
+          "odds_ratio": 1.35,
+          "ci_lower": 1.28,
+          "ci_upper": 1.43,
+          "sample_size": 26475,
+          "source_study": "moffatt-2007-a"
+        }
       }
     },
     {
@@ -2345,7 +2377,15 @@
         "confidence": "medium",
         "sources": [
           "ref1"
-        ]
+        ],
+        "raw_statistics": {
+          "p_value": 4.2e-9,
+          "odds_ratio": 1.15,
+          "ci_lower": 1.1,
+          "ci_upper": 1.21,
+          "sample_size": 26475,
+          "source_study": "moffatt-2010-a"
+        }
       }
     },
     {
@@ -2366,7 +2406,15 @@
         "confidence": "medium",
         "sources": [
           "ref3"
-        ]
+        ],
+        "raw_statistics": {
+          "p_value": 3.8e-8,
+          "odds_ratio": 1.12,
+          "ci_lower": 1.07,
+          "ci_upper": 1.17,
+          "sample_size": 26475,
+          "source_study": "moffatt-2010-a"
+        }
       }
     },
     {
@@ -4295,7 +4343,7 @@
       "id": "e155",
       "source": "gstp1",
       "target": "asthma",
-      "type": "G\u00c3\u2014E",
+      "type": "GÃ—E",
       "attrs": {
         "evidence_type": "literature",
         "direction": "amplify",
@@ -4305,14 +4353,23 @@
         "sources": [
           "ref1"
         ],
-        "ancestry_rep": "Multi-ancestry"
+        "ancestry_rep": "Multi-ancestry",
+        "raw_statistics": {
+          "p_value": 0.003,
+          "odds_ratio": 1.45,
+          "ci_lower": 1.13,
+          "ci_upper": 1.86,
+          "interaction_p": 0.01,
+          "sample_size": 3699,
+          "source_study": "islam-2014-a"
+        }
       }
     },
     {
       "id": "e156",
       "source": "air-pollution",
       "target": "gstp1",
-      "type": "G\u00c3\u2014E",
+      "type": "GÃ—E",
       "attrs": {
         "evidence_type": "literature",
         "direction": "amplify",
@@ -4344,7 +4401,7 @@
       "id": "e158",
       "source": "psychosocial-stress",
       "target": "bdnf",
-      "type": "G\u00c3\u2014E",
+      "type": "GÃ—E",
       "attrs": {
         "evidence_type": "literature",
         "direction": "amplify",

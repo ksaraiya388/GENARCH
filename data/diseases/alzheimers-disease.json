@@ -16,40 +16,49 @@
         "replication_status": "Replicated across ancestries",
         "evidence": "Lipoprotein receptor; ε4 allele increases amyloid deposition and risk; ε2 protective; strongest common AD locus",
         "strength": 0.98,
-        "citations": ["ref1", "ref2"]
+        "citations": [
+          "ref1",
+          "ref2"
+        ]
       },
       {
         "gene": "APP",
         "variant": null,
         "gwas_p": null,
-        "effect_size": 50.0,
+        "effect_size": 50,
         "ancestry_composition": "Multi-ancestry",
         "replication_status": "Established Mendelian",
         "evidence": "Amyloid precursor protein; familial AD mutations increase amyloid production",
         "strength": 0.95,
-        "citations": ["ref1"]
+        "citations": [
+          "ref1"
+        ]
       },
       {
         "gene": "PSEN1",
         "variant": null,
         "gwas_p": null,
-        "effect_size": 50.0,
+        "effect_size": 50,
         "ancestry_composition": "Multi-ancestry",
         "replication_status": "Established Mendelian",
         "evidence": "Presenilin 1; gamma-secretase component; familial AD; alters amyloid processing",
         "strength": 0.95,
-        "citations": ["ref1"]
+        "citations": [
+          "ref1"
+        ]
       },
       {
         "gene": "PSEN2",
         "variant": null,
         "gwas_p": null,
-        "effect_size": 30.0,
+        "effect_size": 30,
         "ancestry_composition": "Multi-ancestry",
         "replication_status": "Established Mendelian",
         "evidence": "Presenilin 2; gamma-secretase component; familial AD",
         "strength": 0.9,
-        "citations": ["ref1"]
+        "citations": [
+          "ref1"
+        ]
       }
     ],
     "heritability_estimate": {
@@ -67,7 +76,10 @@
       "strength": 0.65,
       "confidence": "medium",
       "mechanism_hypothesis": "PM2.5 and ultrafine particles may enter brain via olfactory or circulatory routes; oxidative stress and neuroinflammation; epidemiologic associations emerging",
-      "citations": ["ref3", "ref4"]
+      "citations": [
+        "ref3",
+        "ref4"
+      ]
     },
     {
       "exposure_slug": "psychosocial-stress",
@@ -75,7 +87,10 @@
       "strength": 0.55,
       "confidence": "medium",
       "mechanism_hypothesis": "Chronic stress and depression may accelerate cognitive decline; cortisol effects on hippocampus; bidirectional with dementia",
-      "citations": ["ref4", "ref5"]
+      "citations": [
+        "ref4",
+        "ref5"
+      ]
     },
     {
       "exposure_slug": "diet-quality",
@@ -83,7 +98,10 @@
       "strength": 0.6,
       "confidence": "medium",
       "mechanism_hypothesis": "Mediterranean-style diet; antioxidants, omega-3s; may reduce inflammation and support brain health",
-      "citations": ["ref3", "ref5"]
+      "citations": [
+        "ref3",
+        "ref5"
+      ]
     },
     {
       "exposure_slug": "obesity-exposure",
@@ -91,7 +109,10 @@
       "strength": 0.6,
       "confidence": "medium",
       "mechanism_hypothesis": "Mid-life obesity increases AD risk; vascular and metabolic pathways; late-life weight loss may reflect prodromal disease",
-      "citations": ["ref2", "ref4"]
+      "citations": [
+        "ref2",
+        "ref4"
+      ]
     }
   ],
   "tissues": [
@@ -99,25 +120,35 @@
       "name": "cerebral cortex",
       "relevance_score": 0.98,
       "evidence_type": "GWAS and pathology",
-      "citations": ["ref1", "ref2"]
+      "citations": [
+        "ref1",
+        "ref2"
+      ]
     },
     {
       "name": "hippocampus",
       "relevance_score": 0.95,
       "evidence_type": "pathway",
-      "citations": ["ref1"]
+      "citations": [
+        "ref1"
+      ]
     },
     {
       "name": "microglia",
       "relevance_score": 0.88,
       "evidence_type": "GWAS and literature",
-      "citations": ["ref2", "ref3"]
+      "citations": [
+        "ref2",
+        "ref3"
+      ]
     },
     {
       "name": "vascular endothelium (blood-brain barrier)",
       "relevance_score": 0.82,
       "evidence_type": "pathway",
-      "citations": ["ref4"]
+      "citations": [
+        "ref4"
+      ]
     }
   ],
   "population_equity": {
@@ -127,12 +158,56 @@
   },
   "mechanism_briefs": [],
   "references": [
-    {"id": "ref1", "title": "Genetic meta-analysis of diagnosed Alzheimer's disease identifies new risk loci", "authors": "Kunkle BW, et al.", "year": 2019, "journal": "Nature Genetics", "doi": "10.1038/s41588-019-0358-2"},
-    {"id": "ref2", "title": "APOE and Alzheimer disease: a major gene with semi-dominant inheritance", "authors": "Corder EH, et al.", "year": 1994, "journal": "Molecular Psychiatry", "doi": "10.1038/sj.mp.4000473"},
-    {"id": "ref3", "title": "Association of air pollution with dementia", "authors": "Shi L, et al.", "year": 2020, "journal": "JAMA Neurology", "doi": "10.1001/jamaneurol.2020.3962"},
-    {"id": "ref4", "title": "Midlife obesity and dementia: meta-analysis", "authors": "Anstey KJ, et al.", "year": 2011, "journal": "Obesity Reviews", "doi": "10.1111/j.1467-789X.2010.00775.x"},
-    {"id": "ref5", "title": "Mediterranean diet and cognitive decline", "authors": "Lourida I, et al.", "year": 2013, "journal": "Epidemiology", "doi": "10.1097/EDE.0b013e3182944410"}
+    {
+      "id": "ref1",
+      "title": "Genetic meta-analysis of diagnosed Alzheimer's disease identifies new risk loci",
+      "authors": "Kunkle BW, et al.",
+      "year": 2019,
+      "journal": "Nature Genetics",
+      "doi": "10.1038/s41588-019-0358-2"
+    },
+    {
+      "id": "ref2",
+      "title": "APOE and Alzheimer disease: a major gene with semi-dominant inheritance",
+      "authors": "Corder EH, et al.",
+      "year": 1994,
+      "journal": "Molecular Psychiatry",
+      "doi": "10.1038/sj.mp.4000473"
+    },
+    {
+      "id": "ref3",
+      "title": "Association of air pollution with dementia",
+      "authors": "Shi L, et al.",
+      "year": 2020,
+      "journal": "JAMA Neurology",
+      "doi": "10.1001/jamaneurol.2020.3962"
+    },
+    {
+      "id": "ref4",
+      "title": "Midlife obesity and dementia: meta-analysis",
+      "authors": "Anstey KJ, et al.",
+      "year": 2011,
+      "journal": "Obesity Reviews",
+      "doi": "10.1111/j.1467-789X.2010.00775.x"
+    },
+    {
+      "id": "ref5",
+      "title": "Mediterranean diet and cognitive decline",
+      "authors": "Lourida I, et al.",
+      "year": 2013,
+      "journal": "Epidemiology",
+      "doi": "10.1097/EDE.0b013e3182944410"
+    }
   ],
   "schema_version": "1.0",
-  "last_updated": "2026-03-03"
+  "last_updated": "2026-03-03",
+  "ancestry_context": {
+    "discovery_ancestry": "European (>85%)",
+    "replication_ancestries": [
+      "European"
+    ],
+    "transferability_rating": "low",
+    "multi_ancestry_studies": [],
+    "notes": "Discovery cohorts predominantly European-ancestry. Cross-ancestry replication limited."
+  }
 }

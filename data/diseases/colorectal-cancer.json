@@ -14,13 +14,19 @@
         "effect_size": 1.18,
         "evidence": "Wnt signaling regulator; germline mutations cause FAP; common variants at 8q24 modify CRC risk via enhancer effects on MYC",
         "strength": 0.92,
-        "citations": ["ref1", "ref2"]
+        "citations": [
+          "ref1",
+          "ref2"
+        ]
       },
       {
         "gene": "MLH1",
         "evidence": "DNA mismatch repair; germline mutations cause Lynch syndrome; somatic MLH1 silencing in sporadic CRC",
         "strength": 0.9,
-        "citations": ["ref2", "ref3"]
+        "citations": [
+          "ref2",
+          "ref3"
+        ]
       },
       {
         "gene": "SMAD7",
@@ -29,7 +35,10 @@
         "effect_size": 0.85,
         "evidence": "TGF-β signaling inhibitor; variants alter TGF-β pathway and colorectal epithelial homeostasis",
         "strength": 0.82,
-        "citations": ["ref1", "ref4"]
+        "citations": [
+          "ref1",
+          "ref4"
+        ]
       }
     ],
     "prs_notes": "PRS for CRC show moderate discrimination; Lynch syndrome genes excluded from common-variant PRS. Diet-microbiome interactions not incorporated. Transferability to non-European ancestry limited."
@@ -41,7 +50,10 @@
       "strength": 0.85,
       "confidence": "high",
       "mechanism_hypothesis": "Low fiber, high red/processed meat amplifies risk; diet shapes gut microbiome and metabolite profile (e.g., secondary bile acids, TMAO); fiber supports butyrate production",
-      "citations": ["ref3", "ref5"]
+      "citations": [
+        "ref3",
+        "ref5"
+      ]
     },
     {
       "exposure_slug": "obesity-exposure",
@@ -49,7 +61,10 @@
       "strength": 0.78,
       "confidence": "high",
       "mechanism_hypothesis": "Obesity-driven insulin resistance, adipokines, and chronic low-grade inflammation promote colorectal carcinogenesis; obesity-microbiome interactions",
-      "citations": ["ref4", "ref5"]
+      "citations": [
+        "ref4",
+        "ref5"
+      ]
     },
     {
       "exposure_slug": "tobacco",
@@ -57,7 +72,9 @@
       "strength": 0.65,
       "confidence": "medium",
       "mechanism_hypothesis": "Smoking increases CRC risk; carcinogens reach colonic mucosa; inflammatory and metabolic pathways",
-      "citations": ["ref5"]
+      "citations": [
+        "ref5"
+      ]
     }
   ],
   "tissues": [
@@ -65,19 +82,28 @@
       "name": "colonic epithelium",
       "relevance_score": 0.98,
       "evidence_type": "GWAS and pathway",
-      "citations": ["ref1", "ref2"]
+      "citations": [
+        "ref1",
+        "ref2"
+      ]
     },
     {
       "name": "gut-associated lymphoid tissue",
       "relevance_score": 0.82,
       "evidence_type": "literature",
-      "citations": ["ref3", "ref5"]
+      "citations": [
+        "ref3",
+        "ref5"
+      ]
     },
     {
       "name": "liver (bile acid metabolism)",
       "relevance_score": 0.75,
       "evidence_type": "inferred",
-      "citations": ["ref4", "ref5"]
+      "citations": [
+        "ref4",
+        "ref5"
+      ]
     }
   ],
   "population_equity": {
@@ -85,14 +111,62 @@
     "transferability_notes": "APC region associations replicate broadly; Lynch syndrome prevalence varies by ancestry; PRS performance in non-European populations reduced",
     "data_gaps": "Multi-ancestry CRC GWAS; microbiome-diet-G×E studies; early-onset CRC genetic architecture"
   },
-  "mechanism_briefs": ["wnt-apc-colorectal", "lynch-mmr-pathway", "diet-microbiome-crc"],
+  "mechanism_briefs": [
+    "wnt-apc-colorectal",
+    "lynch-mmr-pathway",
+    "diet-microbiome-crc"
+  ],
   "references": [
-    {"id": "ref1", "title": "Genome-wide association scan identifies a colorectal cancer susceptibility locus on 11q23", "authors": "Houlston RS, et al.", "year": 2008, "journal": "Nature Genetics", "doi": "10.1038/ng.221"},
-    {"id": "ref2", "title": "Meta-analysis of genome-wide association data identifies four new susceptibility loci for colorectal cancer", "authors": "Houlston RS, et al.", "year": 2010, "journal": "Nature Genetics", "doi": "10.1038/ng.533"},
-    {"id": "ref3", "title": "The gut microbiome and colorectal cancer", "authors": "Gagnière J, et al.", "year": 2016, "journal": "Gut", "doi": "10.1136/gutjnl-2015-309897"},
-    {"id": "ref4", "title": "Diet, gut microbiota, and colorectal cancer", "authors": "O’Keefe SJ.", "year": 2016, "journal": "Gastroenterology", "doi": "10.1053/j.gastro.2016.02.068"},
-    {"id": "ref5", "title": "Gene-environment interactions in colorectal cancer", "authors": "Chan AT, Giovannucci EL.", "year": 2010, "journal": "Gastroenterology", "doi": "10.1053/j.gastro.2010.04.012"}
+    {
+      "id": "ref1",
+      "title": "Genome-wide association scan identifies a colorectal cancer susceptibility locus on 11q23",
+      "authors": "Houlston RS, et al.",
+      "year": 2008,
+      "journal": "Nature Genetics",
+      "doi": "10.1038/ng.221"
+    },
+    {
+      "id": "ref2",
+      "title": "Meta-analysis of genome-wide association data identifies four new susceptibility loci for colorectal cancer",
+      "authors": "Houlston RS, et al.",
+      "year": 2010,
+      "journal": "Nature Genetics",
+      "doi": "10.1038/ng.533"
+    },
+    {
+      "id": "ref3",
+      "title": "The gut microbiome and colorectal cancer",
+      "authors": "Gagnière J, et al.",
+      "year": 2016,
+      "journal": "Gut",
+      "doi": "10.1136/gutjnl-2015-309897"
+    },
+    {
+      "id": "ref4",
+      "title": "Diet, gut microbiota, and colorectal cancer",
+      "authors": "O’Keefe SJ.",
+      "year": 2016,
+      "journal": "Gastroenterology",
+      "doi": "10.1053/j.gastro.2016.02.068"
+    },
+    {
+      "id": "ref5",
+      "title": "Gene-environment interactions in colorectal cancer",
+      "authors": "Chan AT, Giovannucci EL.",
+      "year": 2010,
+      "journal": "Gastroenterology",
+      "doi": "10.1053/j.gastro.2010.04.012"
+    }
   ],
   "schema_version": "1.0",
-  "last_updated": "2026-03-03"
+  "last_updated": "2026-03-03",
+  "ancestry_context": {
+    "discovery_ancestry": "European (>85%)",
+    "replication_ancestries": [
+      "European"
+    ],
+    "transferability_rating": "low",
+    "multi_ancestry_studies": [],
+    "notes": "Discovery cohorts predominantly European-ancestry. Cross-ancestry replication limited."
+  }
 }

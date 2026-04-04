@@ -260,6 +260,29 @@ export default async function GeneDetailPage({
           </p>
         </section>
 
+        {gene.ancestry_context && (
+          <section aria-labelledby="ancestry-context-heading">
+            <h2 id="ancestry-context-heading" className="text-h2 text-surface-white mb-3">
+              Ancestry Context
+            </h2>
+            <div className="card text-sm text-cool-light">
+              {gene.ancestry_context.allele_frequency_note && (
+                <p className="mb-2">{gene.ancestry_context.allele_frequency_note}</p>
+              )}
+              {gene.ancestry_context.ancestry_specific_eqtl && (
+                <p className="text-cool-mid">
+                  <strong>Cross-ancestry eQTL replication:</strong>{" "}
+                  {gene.ancestry_context.ancestry_specific_eqtl === "true"
+                    ? "Yes"
+                    : gene.ancestry_context.ancestry_specific_eqtl === "false"
+                      ? "No"
+                      : "Unknown"}
+                </p>
+              )}
+            </div>
+          </section>
+        )}
+
         <EvidenceLimitations>
           <p className="mb-2">
             Gene summaries are population-level and for educational use only. They

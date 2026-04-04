@@ -45,6 +45,13 @@ export interface Disease {
     transferability_notes: string;
     data_gaps: string;
   };
+  ancestry_context?: {
+    discovery_ancestry: string;
+    replication_ancestries?: string[];
+    transferability_rating?: "low" | "medium" | "high";
+    multi_ancestry_studies?: string[];
+    notes?: string;
+  };
   mechanism_briefs: string[];
   references: Reference[];
   schema_version: string;
@@ -71,6 +78,8 @@ export interface Exposure {
     period: string;
     age_range: string;
     mechanism_rationale: string;
+    developmental_context?: string;
+    key_processes?: string[];
     citations: string[];
   }>;
   gxe_highlights: Array<{
@@ -78,6 +87,9 @@ export interface Exposure {
     disease_slug: string;
     direction: "amplify" | "buffer" | "unknown";
     evidence_type: string;
+    strength?: number;
+    confidence?: "low" | "medium" | "high";
+    mechanism_summary?: string;
     citations: string[];
   }>;
   tissues: Array<{
@@ -132,6 +144,10 @@ export interface Gene {
     supporting_evidence: string;
     confidence: "low" | "medium" | "high";
   }>;
+  ancestry_context?: {
+    allele_frequency_note?: string;
+    ancestry_specific_eqtl?: "true" | "false" | "unknown";
+  };
   confidence: "low" | "medium" | "high";
   references: Reference[];
   schema_version: string;
@@ -220,6 +236,17 @@ export interface GraphEdge {
       | "European-dominated"
       | "Multi-ancestry"
       | "Unknown";
+    raw_statistics?: {
+      p_value?: number;
+      odds_ratio?: number;
+      beta?: number;
+      ci_lower?: number;
+      ci_upper?: number;
+      interaction_p?: number;
+      reri?: number;
+      sample_size?: number;
+      source_study?: string;
+    };
   };
 }
 
@@ -232,8 +259,11 @@ export interface CommunityRegion {
     disease_slug: string;
     metric_type: string;
     value: number;
+    unit?: string;
     year: number;
     source: string;
+    comparison_state?: number;
+    comparison_national?: number;
     ci_lower?: number;
     ci_upper?: number;
   }>;

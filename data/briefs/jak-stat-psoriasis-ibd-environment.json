@@ -25,13 +25,13 @@
     "Mechanistic studies of IL-23/Th17 response under stress or dietary intervention in risk genotype carriers."
   ],
   "related_disease": "psoriasis",
-  "related_exposure": "psychosocial-stress",
+  "related_exposure": "tobacco",
   "related_genes": ["hla-drb1"],
   "related_pathways": ["jak-stat-signaling", "tnf-signaling"],
   "references": [
     {"id": "ref1", "title": "JAK-STAT signaling in immune regulation", "authors": "O'Shea JJ, et al.", "year": 2015, "journal": "Immunity", "doi": "10.1016/j.immuni.2015.02.010"},
     {"id": "ref2", "title": "Targeting the JAK/STAT pathway in autoimmune disease", "authors": "Schwartz DM, et al.", "year": 2017, "journal": "Nature Reviews Drug Discovery", "doi": "10.1038/nrd.2017.201"}
   ],
-  "published_at": "2026-03-07",
+  "published_at": "2026-03-20",
   "schema_version": "1.0"
 }

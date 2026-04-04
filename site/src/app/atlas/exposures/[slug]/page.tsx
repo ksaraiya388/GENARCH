@@ -145,6 +145,24 @@ export default async function ExposureDetailPage({
                     {w.period} ({w.age_range})
                   </p>
                   <p className="text-sm text-cool-light">{w.mechanism_rationale}</p>
+                  {w.developmental_context && (
+                    <p className="text-sm text-cool-light mt-2 border-t border-white/[0.06] pt-2">
+                      <strong className="text-surface-white">Developmental context:</strong>{" "}
+                      {w.developmental_context}
+                    </p>
+                  )}
+                  {w.key_processes && w.key_processes.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 mt-2">
+                      {w.key_processes.map((p) => (
+                        <span
+                          key={p}
+                          className="text-xs px-2 py-0.5 rounded-sm bg-teal-primary/10 text-teal-primary"
+                        >
+                          {p}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -167,7 +185,9 @@ export default async function ExposureDetailPage({
                     <th className="text-left px-4 py-2 font-medium text-surface-white">Gene</th>
                     <th className="text-left px-4 py-2 font-medium text-surface-white">Disease</th>
                     <th className="text-left px-4 py-2 font-medium text-surface-white">Direction</th>
-                    <th className="text-left px-4 py-2 font-medium text-surface-white">Evidence type</th>
+                    <th className="text-left px-4 py-2 font-medium text-surface-white">Strength</th>
+                    <th className="text-left px-4 py-2 font-medium text-surface-white">Confidence</th>
+                    <th className="text-left px-4 py-2 font-medium text-surface-white">Evidence</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/[0.06]">
@@ -176,7 +196,7 @@ export default async function ExposureDetailPage({
                       <td className="px-4 py-2">
                         <Link
                           href={`/atlas/genes/${g.gene_slug}`}
-                          className="text-teal-primary hover:text-teal-soft hover:underline"
+                          className="text-teal-primary hover:text-teal-soft hover:underline uppercase"
                         >
                           {g.gene_slug}
                         </Link>
@@ -190,11 +210,31 @@ export default async function ExposureDetailPage({
                         </Link>
                       </td>
                       <td className="px-4 py-2 capitalize text-cool-light">{g.direction}</td>
+                      <td className="px-4 py-2 text-cool-light">{g.strength != null ? g.strength.toFixed(2) : "—"}</td>
+                      <td className="px-4 py-2">
+                        {g.confidence ? (
+                          <span className={`badge badge-${g.confidence}`}>{g.confidence}</span>
+                        ) : (
+                          <span className="text-cool-mid">—</span>
+                        )}
+                      </td>
                       <td className="px-4 py-2 text-cool-light">{g.evidence_type}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
+              {exposure.gxe_highlights.some((g) => g.mechanism_summary) && (
+                <div className="mt-4 space-y-2">
+                  {exposure.gxe_highlights.filter((g) => g.mechanism_summary).map((g, i) => (
+                    <div key={i} className="card text-sm">
+                      <span className="font-medium text-surface-white uppercase">{g.gene_slug}</span>
+                      <span className="text-cool-mid"> &times; </span>
+                      <span className="text-surface-white">{g.disease_slug}</span>
+                      <p className="text-cool-light mt-1">{g.mechanism_summary}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           ) : (
             <p className="text-sm text-cool-mid italic">

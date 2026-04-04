@@ -1,0 +1,116 @@
+{
+  "id": "gene_tnf",
+  "slug": "tnf",
+  "symbol": "TNF",
+  "name": "Tumor necrosis factor",
+  "chromosome": "6p21.33",
+  "summary": "TNF encodes tumor necrosis factor alpha, a pro-inflammatory cytokine central to innate immunity and the acute-phase response. TNF-alpha activates NF-kB, MAPK, and apoptotic signaling cascades. The TNF-308G>A (rs1800629) promoter polymorphism increases transcriptional activity and TNF-alpha production. Elevated TNF-alpha levels are implicated in asthma, COPD, rheumatoid arthritis, inflammatory bowel disease, and cardiovascular inflammation. Gene-environment interactions with PM2.5 and tobacco smoke amplify airway inflammation in carriers of the high-expression allele.",
+  "molecular_function": [
+    "cytokine activity",
+    "pro-inflammatory signaling",
+    "NF-kB activation",
+    "apoptosis regulation"
+  ],
+  "protein_class": "cytokine",
+  "regulatory_notes": {
+    "promoter_activity": "TNF-308A allele increases promoter activity 2-3 fold; responsive to NF-kB, AP-1, and NFAT transcription factors.",
+    "methylation_sensitivity": "Promoter methylation inversely correlated with TNF expression in airway epithelium.",
+    "eqtl_tissues": [
+      "lung",
+      "blood",
+      "adipose tissue",
+      "liver"
+    ]
+  },
+  "expression_context": [
+    {
+      "tissue": "lung",
+      "tpm_range": "5-40",
+      "gtex_version": "v8",
+      "citations": [
+        "ref1"
+      ]
+    },
+    {
+      "tissue": "whole blood",
+      "tpm_range": "10-60",
+      "gtex_version": "v8",
+      "citations": [
+        "ref1"
+      ]
+    },
+    {
+      "tissue": "adipose subcutaneous",
+      "tpm_range": "3-20",
+      "gtex_version": "v8",
+      "citations": [
+        "ref1"
+      ]
+    }
+  ],
+  "pathways": [
+    "nf-kb",
+    "tnf-signaling"
+  ],
+  "linked_diseases": [
+    {
+      "disease_slug": "asthma",
+      "evidence_type": "G×E",
+      "strength": 0.7
+    },
+    {
+      "disease_slug": "rheumatoid-arthritis",
+      "evidence_type": "GWAS",
+      "strength": 0.65
+    },
+    {
+      "disease_slug": "inflammatory-bowel-disease",
+      "evidence_type": "GWAS",
+      "strength": 0.6
+    }
+  ],
+  "linked_exposures": [
+    {
+      "exposure_slug": "air-pollution",
+      "evidence_type": "G×E",
+      "strength": 0.75
+    },
+    {
+      "exposure_slug": "tobacco",
+      "evidence_type": "G×E",
+      "strength": 0.7
+    }
+  ],
+  "mechanistic_hypotheses": [
+    {
+      "hypothesis": "TNF-308A carriers produce higher TNF-alpha levels under PM2.5 exposure, amplifying NF-kB-driven airway inflammation and increasing asthma susceptibility in exposed populations.",
+      "supporting_evidence": "Islam et al. EHP 2014; Li et al. Environ Toxicol Pharmacol 2017.",
+      "confidence": "medium"
+    }
+  ],
+  "confidence": "medium",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "GSTP1 and TNF Gene Variants and Associations between Air Pollution and Incident Childhood Asthma",
+      "authors": "Islam T, et al.",
+      "year": 2014,
+      "journal": "Environmental Health Perspectives",
+      "doi": "10.1289/ehp.1307459"
+    },
+    {
+      "id": "ref2",
+      "title": "The role of TNF-alpha in asthma",
+      "authors": "Berry MA, et al.",
+      "year": 2007,
+      "journal": "Current Opinion in Pharmacology",
+      "doi": "10.1016/j.coph.2007.01.008"
+    }
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-04-03",
+  "ancestry_context": {
+    "allele_frequency_note": "TNF-308A allele frequency: ~20% European, ~10% East Asian, ~15% African-ancestry. Effect on TNF-alpha levels consistent across ancestries.",
+    "ancestry_specific_eqtl": "true"
+  }
+}
