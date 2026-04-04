@@ -100,6 +100,23 @@ class PopulationEquity(BaseModel):
     data_gaps: str
 
 
+class DiseaseAncestryContext(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    discovery_ancestry: str
+    replication_ancestries: Optional[list[str]] = None
+    transferability_rating: Optional[Confidence] = None
+    multi_ancestry_studies: Optional[list[str]] = None
+    notes: Optional[str] = None
+
+
+class GeneAncestryContext(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    allele_frequency_note: Optional[str] = None
+    ancestry_specific_eqtl: Optional[str] = None
+
+
 class DiseaseSchema(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -113,6 +130,7 @@ class DiseaseSchema(BaseModel):
     exposure_modifiers: list[ExposureModifier]
     tissues: list[TissueEntry]
     population_equity: PopulationEquity
+    ancestry_context: Optional[DiseaseAncestryContext] = None
     mechanism_briefs: list[str]
     references: list[Reference]
     schema_version: str
@@ -250,6 +268,7 @@ class GeneSchema(BaseModel):
     linked_diseases: list[LinkedDisease]
     linked_exposures: list[LinkedExposure]
     mechanistic_hypotheses: list[MechanisticHypothesis]
+    ancestry_context: Optional[GeneAncestryContext] = None
     confidence: Confidence
     references: list[Reference]
     schema_version: str
