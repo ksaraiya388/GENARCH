@@ -59,14 +59,14 @@ export default function HomePage() {
 
           {/* Geographic focus tagline */}
           <p className="animate-slide-up text-xs sm:text-sm text-cool-mid uppercase tracking-[0.2em] font-medium mb-6">
-            A Gene–Environment Interaction Atlas for Loudoun County, Virginia
+            A Gene–Environment Interaction Atlas for Northern Virginia
           </p>
 
           {/* Description */}
           <p className="animate-slide-up text-sm sm:text-base text-cool-mid max-w-2xl mx-auto mb-10 leading-relaxed">
             A systems-level atlas mapping gene–environment interactions,
             exposure modifiers, and molecular mechanisms across diseases,
-            pathways, and tissues — focused on Loudoun County, Virginia.
+            pathways, and tissues — focused on Northern Virginia.
           </p>
 
           <div className="animate-slide-up flex flex-col sm:flex-row gap-4 justify-center">
@@ -186,7 +186,7 @@ export default function HomePage() {
           <p className="text-cool-light text-sm leading-relaxed mb-6">
             GENARCH is a read-only scientific atlas that maps how genetic
             susceptibility and environmental exposures interact at the molecular
-            level — focused specifically on Loudoun County, Virginia. It
+            level — focused specifically on Northern Virginia. It
             integrates GWAS data, tissue-resolved gene expression, biological
             pathways, and local environmental conditions into a navigable
             knowledge graph. All data points are scored, cited, and transparent.
