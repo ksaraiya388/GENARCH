@@ -1,0 +1,95 @@
+{
+  "region_id": "fairfax-county-va",
+  "name": "Fairfax County, Virginia",
+  "geo_level": "county",
+  "fips_code": "51059",
+  "health_stats": [
+    {
+      "disease_slug": "asthma",
+      "metric_type": "prevalence",
+      "value": 9.1,
+      "unit": "percent",
+      "year": 2023,
+      "source": "CDC PLACES",
+      "comparison_state": 9.4,
+      "comparison_national": 8.0
+    },
+    {
+      "disease_slug": "asthma",
+      "metric_type": "hospitalization_rate",
+      "value": 3.8,
+      "unit": "per 10,000 population",
+      "year": 2023,
+      "source": "Virginia Department of Health, Environmental Public Health Tracking",
+      "comparison_state": 5.1,
+      "comparison_national": 4.9,
+      "ci_lower": 3.1,
+      "ci_upper": 4.6
+    },
+    {
+      "disease_slug": "coronary-artery-disease",
+      "metric_type": "prevalence",
+      "value": 4.8,
+      "unit": "percent",
+      "year": 2023,
+      "source": "CDC PLACES",
+      "comparison_state": 6.1,
+      "comparison_national": 5.8
+    }
+  ],
+  "exposure_layers": [
+    {
+      "layer_name": "PM2.5",
+      "data_source": "EPA AQS",
+      "year": 2023,
+      "summary_stats": {"mean": 8.7, "max": 16.2}
+    },
+    {
+      "layer_name": "Food Access",
+      "data_source": "USDA Food Access Research Atlas",
+      "year": 2023,
+      "summary_stats": {"low_access_pct": 12.3}
+    },
+    {
+      "layer_name": "Traffic Proximity",
+      "data_source": "EPA EJScreen",
+      "year": 2023,
+      "summary_stats": {"high_exposure_pct": 18.5}
+    }
+  ],
+  "model": {
+    "features_used": ["PM2.5", "traffic_proximity", "socioeconomic_index", "green_space", "healthcare_access"],
+    "shap_summaries": [
+      {"feature": "traffic_proximity", "mean_shap_value": 0.31, "direction": "positive"},
+      {"feature": "PM2.5", "mean_shap_value": 0.24, "direction": "positive"},
+      {"feature": "socioeconomic_index", "mean_shap_value": -0.22, "direction": "negative"},
+      {"feature": "green_space", "mean_shap_value": -0.15, "direction": "negative"},
+      {"feature": "healthcare_access", "mean_shap_value": -0.10, "direction": "negative"}
+    ],
+    "model_card_version": "1.0",
+    "training_data_cutoff": "2024-06-01"
+  },
+  "resources": [
+    {
+      "name": "Fairfax County Health Department",
+      "type": "link",
+      "url": "https://www.fairfaxcounty.gov/health/",
+      "description": "Community health services, data, and programs for Fairfax County residents"
+    },
+    {
+      "name": "Northern Virginia Health District",
+      "type": "link",
+      "url": "https://www.vdh.virginia.gov/northern-virginia/",
+      "description": "Virginia Department of Health regional office serving Northern Virginia counties"
+    }
+  ],
+  "limitations": "Health statistics are derived from CDC PLACES model-based estimates at the county level. County-level averages may mask significant within-county variation across census tracts, particularly in a large and diverse county like Fairfax. Exposure layers are modeled or interpolated from monitoring stations; local spatial resolution is limited. Traffic proximity data from EJScreen reflects proximity to major roads, not individual exposure. Model predictions are trained on state/regional data and may not capture Fairfax-specific drivers such as data center growth, rapid transit development, and changing demographics.",
+  "references": [
+    {"id": "ref1", "title": "CDC PLACES: Local Data for Better Health", "year": 2023, "url": "https://www.cdc.gov/places/"},
+    {"id": "ref2", "title": "EPA Air Quality System", "year": 2024, "url": "https://www.epa.gov/aqs"},
+    {"id": "ref3", "title": "USDA Food Access Research Atlas", "year": 2023, "url": "https://www.ers.usda.gov/data-products/food-access-research-atlas/"},
+    {"id": "ref4", "title": "Virginia Department of Health Environmental Public Health Tracking", "year": 2023, "url": "https://www.vdh.virginia.gov/environmental-public-health-tracking/"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-04-01"
+}

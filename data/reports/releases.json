@@ -1,5 +1,47 @@
 [
   {
+    "slug": "brief-sleep-circadian",
+    "title": "Mechanism Brief: Sleep/Circadian Disruption in Metabolic and Mental Health",
+    "date": "2026-03-25",
+    "summary": "Published mechanism brief on sleep deprivation and circadian gene disruption (CLOCK, PER2) in metabolic syndrome and depression.",
+    "schema_version": "1.0"
+  },
+  {
+    "slug": "brief-jak-stat",
+    "title": "Mechanism Brief: JAK-STAT/IL-23/Th17 in Psoriasis and IBD",
+    "date": "2026-03-20",
+    "summary": "Published mechanism brief on JAK-STAT pathway environmental triggers (tobacco, infection, diet) in psoriasis and inflammatory bowel disease.",
+    "schema_version": "1.0"
+  },
+  {
+    "slug": "brief-bdnf-stress",
+    "title": "Mechanism Brief: BDNF and Psychosocial Stress in Depression",
+    "date": "2026-03-15",
+    "summary": "Published mechanism brief on BDNF Val66Met variant and stress-mediated epigenetic repression in major depressive disorder.",
+    "schema_version": "1.0"
+  },
+  {
+    "slug": "brief-leptin-melanocortin",
+    "title": "Mechanism Brief: Leptin-Melanocortin Pathway in Obesity",
+    "date": "2026-03-10",
+    "summary": "Published mechanism brief on FTO/MC4R variants and diet-gene interaction in obesity through leptin signaling and energy homeostasis.",
+    "schema_version": "1.0"
+  },
+  {
+    "slug": "brief-pparg-diet",
+    "title": "Mechanism Brief: PPARG and Diet Quality in Type 2 Diabetes",
+    "date": "2026-03-05",
+    "summary": "Published mechanism brief on PPARG Pro12Ala variant and dietary fat/fiber gene-environment interaction in type 2 diabetes risk.",
+    "schema_version": "1.0"
+  },
+  {
+    "slug": "brief-oxidative-stress",
+    "title": "Mechanism Brief: Oxidative Stress Response Genes in Air Pollution",
+    "date": "2026-03-01",
+    "summary": "Published mechanism brief on GSTP1 and SOD2 variants in oxidative stress response to PM2.5 exposure, linking to asthma and cardiovascular disease.",
+    "schema_version": "1.0"
+  },
+  {
     "slug": "genarch-launch",
     "title": "GENARCH – Launch",
     "date": "2026-03-07",

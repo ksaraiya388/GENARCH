@@ -26,6 +26,33 @@ const NODE_SHAPES: Record<string, string> = {
   tissue: "ellipse",
 };
 
+const EDGE_COLORS: Record<string, string> = {
+  GWAS: "#89E5E6",
+  eQTL: "#4ADE80",
+  pathway: "#A855F7",
+  literature: "#94A3B8",
+  inferred: "#FBBF24",
+};
+
+const DIRECTION_COLORS: Record<string, string> = {
+  amplify: "#C53030",
+  buffer: "#2F855A",
+  unknown: "#A0AEC0",
+  bidirectional: "#94A3B8",
+};
+
+const CONFIDENCE_OPACITY: Record<string, number> = {
+  high: 1.0,
+  medium: 0.7,
+  low: 0.4,
+};
+
+function edgeWidth(strength: number): number {
+  if (strength >= 0.6) return 3;
+  if (strength >= 0.3) return 2;
+  return 1;
+}
+
 export interface GraphPageClientProps {
   initialData: GraphData | null;
 }
@@ -49,6 +76,7 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
     confidence: "",
     ancestryRep: "",
   });
+  const tooltipRef = useRef<HTMLDivElement>(null);
   const searchParams = useSearchParams();
 
   const getNodeHref = useCallback((node: GraphNode) => {
@@ -165,8 +193,30 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
             style: {
               "curve-style": "bezier",
               "target-arrow-shape": "triangle",
-              "line-color": "#94A3B8",
-              "target-arrow-color": "#94A3B8",
+              "line-color": ((ele: { data: (k: string) => string }) => {
+                const dir = ele.data("direction");
+                if (dir && dir !== "unknown" && dir !== "bidirectional") {
+                  return DIRECTION_COLORS[dir] ?? "#94A3B8";
+                }
+                const et = ele.data("evidence_type");
+                return EDGE_COLORS[et] ?? "#94A3B8";
+              }) as unknown as string,
+              "target-arrow-color": ((ele: { data: (k: string) => string }) => {
+                const dir = ele.data("direction");
+                if (dir && dir !== "unknown" && dir !== "bidirectional") {
+                  return DIRECTION_COLORS[dir] ?? "#94A3B8";
+                }
+                const et = ele.data("evidence_type");
+                return EDGE_COLORS[et] ?? "#94A3B8";
+              }) as unknown as string,
+              width: ((ele: { data: (k: string) => number }) => {
+                const s = ele.data("strength");
+                return edgeWidth(typeof s === "number" ? s : 0);
+              }) as unknown as number,
+              opacity: ((ele: { data: (k: string) => string }) => {
+                const c = ele.data("confidence");
+                return CONFIDENCE_OPACITY[c] ?? 0.7;
+              }) as unknown as number,
             },
           },
           {
@@ -217,6 +267,38 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
           setSelectedNode(null);
           setSelectedEdge(null);
         }
+      });
+
+      cy.on("mouseover", "edge", (ev) => {
+        const tip = tooltipRef.current;
+        if (!tip) return;
+        const d = ev.target.data();
+        const pos = ev.renderedPosition ?? ev.position;
+        tip.style.left = `${(pos?.x ?? 0) + 12}px`;
+        tip.style.top = `${(pos?.y ?? 0) + 12}px`;
+        tip.style.display = "block";
+        const dirColor = DIRECTION_COLORS[d.direction] ?? "#94A3B8";
+        const tissue = Array.isArray(d.tissue) ? d.tissue.join(", ") : (d.tissue ?? "—");
+        const rawStats = d.raw_statistics;
+        const rawHtml = rawStats ? `
+          <div class="mt-1 pt-1 border-t border-white/10">
+            ${rawStats.p_value != null ? `<div>p: ${rawStats.p_value.toExponential(1)}</div>` : ""}
+            ${rawStats.odds_ratio != null ? `<div>OR: ${rawStats.odds_ratio}${rawStats.ci_lower != null ? ` [${rawStats.ci_lower}, ${rawStats.ci_upper}]` : ""}</div>` : ""}
+            ${rawStats.sample_size != null ? `<div>N: ${rawStats.sample_size.toLocaleString()}</div>` : ""}
+          </div>` : "";
+        tip.innerHTML = `<div class="text-xs space-y-1">
+          <div class="font-medium text-surface-white">${d.evidence_type ?? "—"}</div>
+          <div>Direction: <span style="color:${dirColor}">${d.direction ?? "—"}</span></div>
+          <div>Tissue: ${tissue}</div>
+          <div>Strength: ${typeof d.strength === "number" ? d.strength.toFixed(2) : "—"}</div>
+          <div>Confidence: <span class="badge badge-${d.confidence ?? "low"}">${d.confidence ?? "—"}</span></div>
+          <div>Sources: ${(d.sources?.length ?? 0)}</div>
+          ${rawHtml}
+        </div>`;
+      });
+      cy.on("mouseout", "edge", () => {
+        const tip = tooltipRef.current;
+        if (tip) tip.style.display = "none";
       });
     });
 
@@ -451,12 +533,19 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
       </div>
 
       <div className="flex gap-4">
-        <div
-          ref={containerRef}
-          className="flex-1 min-h-[500px] border border-white/[0.06] rounded-sm bg-navy-mid"
-          style={{ height: "600px" }}
-          aria-label="Knowledge graph"
-        />
+        <div className="relative flex-1">
+          <div
+            ref={containerRef}
+            className="min-h-[500px] border border-white/[0.06] rounded-sm bg-navy-mid"
+            style={{ height: "600px" }}
+            aria-label="Knowledge graph"
+          />
+          <div
+            ref={tooltipRef}
+            className="absolute z-10 pointer-events-none rounded-md border border-white/[0.1] bg-navy-deep px-3 py-2 shadow-lg"
+            style={{ display: "none" }}
+          />
+        </div>
         <aside className="w-80 flex-shrink-0 space-y-4">
           {selectedNode && (
             <div className="card">
@@ -488,10 +577,14 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
               <dl className="text-sm space-y-1">
                 <dt className="text-cool-mid">Evidence type</dt>
                 <dd className="text-surface-white">{selectedEdge.edge.attrs?.evidence_type ?? "—"}</dd>
-                <dt className="text-cool-mid mt-2">Confidence</dt>
-                <dd className="text-surface-white">{selectedEdge.edge.attrs?.confidence ?? "—"}</dd>
                 <dt className="text-cool-mid mt-2">Direction</dt>
-                <dd className="text-surface-white">{selectedEdge.edge.attrs?.direction ?? "—"}</dd>
+                <dd className="text-surface-white" style={{ color: DIRECTION_COLORS[selectedEdge.edge.attrs?.direction] }}>{selectedEdge.edge.attrs?.direction ?? "—"}</dd>
+                <dt className="text-cool-mid mt-2">Tissue</dt>
+                <dd className="text-surface-white">{Array.isArray(selectedEdge.edge.attrs?.tissue) ? selectedEdge.edge.attrs.tissue.join(", ") : (selectedEdge.edge.attrs?.tissue ?? "—")}</dd>
+                <dt className="text-cool-mid mt-2">Strength</dt>
+                <dd className="text-surface-white">{typeof selectedEdge.edge.attrs?.strength === "number" ? selectedEdge.edge.attrs.strength.toFixed(2) : "—"}</dd>
+                <dt className="text-cool-mid mt-2">Confidence</dt>
+                <dd className="text-surface-white"><span className={`badge badge-${selectedEdge.edge.attrs?.confidence ?? "low"}`}>{selectedEdge.edge.attrs?.confidence ?? "—"}</span></dd>
                 {selectedEdge.edge.attrs?.ancestry_rep && (
                   <>
                     <dt className="text-cool-mid mt-2">Ancestry</dt>
@@ -504,11 +597,35 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
                     <dd className="text-surface-white">{(selectedEdge.edge.attrs?.sources ?? []).join(", ")}</dd>
                   </>
                 )}
+                {selectedEdge.edge.attrs?.raw_statistics && (
+                  <>
+                    <dt className="text-cool-mid mt-2">Raw Statistics</dt>
+                    <dd className="text-surface-white text-xs space-y-0.5">
+                      {selectedEdge.edge.attrs.raw_statistics.p_value != null && (
+                        <div>p-value: {selectedEdge.edge.attrs.raw_statistics.p_value.toExponential(1)}</div>
+                      )}
+                      {selectedEdge.edge.attrs.raw_statistics.odds_ratio != null && (
+                        <div>
+                          OR: {selectedEdge.edge.attrs.raw_statistics.odds_ratio}
+                          {selectedEdge.edge.attrs.raw_statistics.ci_lower != null && (
+                            <> [{selectedEdge.edge.attrs.raw_statistics.ci_lower}, {selectedEdge.edge.attrs.raw_statistics.ci_upper}]</>
+                          )}
+                        </div>
+                      )}
+                      {selectedEdge.edge.attrs.raw_statistics.sample_size != null && (
+                        <div>N: {selectedEdge.edge.attrs.raw_statistics.sample_size.toLocaleString()}</div>
+                      )}
+                      {selectedEdge.edge.attrs.raw_statistics.source_study && (
+                        <div>Study: {selectedEdge.edge.attrs.raw_statistics.source_study}</div>
+                      )}
+                    </dd>
+                  </>
+                )}
               </dl>
             </div>
           )}
           <div className="card">
-            <h3 className="text-h3 text-surface-white mb-3">Legend</h3>
+            <h3 className="text-h3 text-surface-white mb-3">Node Legend</h3>
             <ul className="space-y-2 text-sm">
               {Object.entries(NODE_COLORS).map(([type, color]) => (
                 <li key={type} className="flex items-center gap-2">
@@ -525,6 +642,30 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
                 </li>
               ))}
             </ul>
+            <h3 className="text-h3 text-surface-white mt-4 mb-3">Edge Legend</h3>
+            <ul className="space-y-2 text-sm">
+              {Object.entries(EDGE_COLORS).map(([type, color]) => (
+                <li key={type} className="flex items-center gap-2">
+                  <span className="inline-block w-6 h-0.5" style={{ backgroundColor: color }} aria-hidden />
+                  <span className="text-cool-light">{type}</span>
+                </li>
+              ))}
+            </ul>
+            <h4 className="text-xs text-cool-mid mt-3 mb-1">Direction</h4>
+            <ul className="space-y-1 text-sm">
+              <li className="flex items-center gap-2">
+                <span className="inline-block w-6 h-0.5" style={{ backgroundColor: "#C53030" }} aria-hidden />
+                <span className="text-cool-light">amplify</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="inline-block w-6 h-0.5" style={{ backgroundColor: "#2F855A" }} aria-hidden />
+                <span className="text-cool-light">buffer</span>
+              </li>
+            </ul>
+            <h4 className="text-xs text-cool-mid mt-3 mb-1">Width = strength</h4>
+            <p className="text-xs text-cool-mid">Thin (0&ndash;0.3) &middot; Medium (0.3&ndash;0.6) &middot; Thick (0.6&ndash;1.0)</p>
+            <h4 className="text-xs text-cool-mid mt-2 mb-1">Opacity = confidence</h4>
+            <p className="text-xs text-cool-mid">Low (40%) &middot; Medium (70%) &middot; High (100%)</p>
           </div>
         </aside>
       </div>

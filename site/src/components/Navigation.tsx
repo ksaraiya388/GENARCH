@@ -56,6 +56,15 @@ export function Navigation() {
               {label}
             </Link>
           ))}
+          <Link
+            href="/search"
+            className="ml-1 p-2 text-cool-light no-underline rounded-md transition-colors duration-150 hover:text-teal-primary hover:bg-white/[0.04] hover:no-underline"
+            aria-label="Search"
+          >
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+          </Link>
         </div>
 
         {/* Mobile menu button */}
@@ -95,6 +104,16 @@ export function Navigation() {
               {label}
             </Link>
           ))}
+          <Link
+            href="/search"
+            onClick={closeMenu}
+            className="flex items-center gap-2 rounded-md px-3 py-2.5 text-base font-medium text-cool-light no-underline hover:text-teal-primary hover:bg-white/[0.04]"
+          >
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+            Search
+          </Link>
         </div>
       </div>
     </header>

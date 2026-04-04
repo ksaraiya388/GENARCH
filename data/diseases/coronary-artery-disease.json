@@ -16,7 +16,10 @@
         "replication_status": "Replicated across ancestries",
         "evidence": "LDL receptor; familial hypercholesterolemia; central to LDL clearance; common variants contribute to CAD risk",
         "strength": 0.95,
-        "citations": ["ref1", "ref2"]
+        "citations": [
+          "ref1",
+          "ref2"
+        ]
       },
       {
         "gene": "APOB",
@@ -27,7 +30,10 @@
         "replication_status": "Replicated",
         "evidence": "Apolipoprotein B; ligand for LDL receptor; variants affect LDL levels and CAD",
         "strength": 0.92,
-        "citations": ["ref1", "ref3"]
+        "citations": [
+          "ref1",
+          "ref3"
+        ]
       },
       {
         "gene": "PCSK9",
@@ -38,7 +44,10 @@
         "replication_status": "Replicated; therapeutic target",
         "evidence": "Proprotein convertase; degrades LDLR; loss-of-function variants lower LDL and CAD risk",
         "strength": 0.9,
-        "citations": ["ref2", "ref4"]
+        "citations": [
+          "ref2",
+          "ref4"
+        ]
       },
       {
         "gene": "LPA",
@@ -49,7 +58,10 @@
         "replication_status": "Replicated",
         "evidence": "Lipoprotein(a); proatherogenic; independent of LDL-C; varies by ancestry",
         "strength": 0.88,
-        "citations": ["ref3", "ref5"]
+        "citations": [
+          "ref3",
+          "ref5"
+        ]
       }
     ],
     "heritability_estimate": {
@@ -67,7 +79,10 @@
       "strength": 0.95,
       "confidence": "high",
       "mechanism_hypothesis": "Smoking promotes endothelial dysfunction, oxidative stress, inflammation, and thrombosis; amplifies genetic CAD risk",
-      "citations": ["ref2", "ref4"]
+      "citations": [
+        "ref2",
+        "ref4"
+      ]
     },
     {
       "exposure_slug": "diet-quality",
@@ -75,7 +90,10 @@
       "strength": 0.85,
       "confidence": "high",
       "mechanism_hypothesis": "Western diet (saturated fat, refined carbs, low fiber) elevates LDL-C and inflammation; Mediterranean-style diet buffers risk",
-      "citations": ["ref3", "ref5"]
+      "citations": [
+        "ref3",
+        "ref5"
+      ]
     },
     {
       "exposure_slug": "air-pollution",
@@ -83,7 +101,10 @@
       "strength": 0.7,
       "confidence": "medium",
       "mechanism_hypothesis": "PM2.5 induces systemic inflammation, oxidative stress, and endothelial dysfunction; increases acute coronary events",
-      "citations": ["ref4", "ref5"]
+      "citations": [
+        "ref4",
+        "ref5"
+      ]
     },
     {
       "exposure_slug": "obesity-exposure",
@@ -91,7 +112,10 @@
       "strength": 0.8,
       "confidence": "high",
       "mechanism_hypothesis": "Obesity drives dyslipidemia, insulin resistance, inflammation, and hypertension; amplifies genetic CAD susceptibility",
-      "citations": ["ref2", "ref3"]
+      "citations": [
+        "ref2",
+        "ref3"
+      ]
     }
   ],
   "tissues": [
@@ -99,25 +123,35 @@
       "name": "coronary artery endothelium",
       "relevance_score": 0.98,
       "evidence_type": "GWAS and pathway",
-      "citations": ["ref1", "ref2"]
+      "citations": [
+        "ref1",
+        "ref2"
+      ]
     },
     {
       "name": "hepatocytes",
       "relevance_score": 0.92,
       "evidence_type": "eQTL and expression",
-      "citations": ["ref2", "ref3"]
+      "citations": [
+        "ref2",
+        "ref3"
+      ]
     },
     {
       "name": "vascular smooth muscle",
       "relevance_score": 0.88,
       "evidence_type": "pathway",
-      "citations": ["ref1"]
+      "citations": [
+        "ref1"
+      ]
     },
     {
       "name": "monocytes and macrophages",
       "relevance_score": 0.85,
       "evidence_type": "GWAS and literature",
-      "citations": ["ref4"]
+      "citations": [
+        "ref4"
+      ]
     }
   ],
   "population_equity": {
@@ -127,12 +161,60 @@
   },
   "mechanism_briefs": [],
   "references": [
-    {"id": "ref1", "title": "Large-scale association analysis identifies new risk loci for coronary artery disease", "authors": "Coronary Artery Disease (C4D) Genetics Consortium", "year": 2013, "journal": "Nature Genetics", "doi": "10.1038/ng.2480"},
-    {"id": "ref2", "title": "Comprehensive analysis of genetic risk for coronary artery disease", "authors": "Nikpay M, et al.", "year": 2015, "journal": "Nature Genetics", "doi": "10.1038/ng.3396"},
-    {"id": "ref3", "title": "Genetic risk, coronary heart disease events, and the clinical benefit of statin therapy", "authors": "Inouye M, et al.", "year": 2016, "journal": "The Lancet", "doi": "10.1016/S0140-6736(15)01222-2"},
-    {"id": "ref4", "title": "Genome-wide association of coronary artery disease with genetically determined lipids and lipoproteins", "authors": "Willer CJ, et al.", "year": 2013, "journal": "Nature Genetics", "doi": "10.1038/ng.2797"},
-    {"id": "ref5", "title": "Lipoprotein(a) concentrations, rosuvastatin therapy, and residual vascular risk", "authors": "Nordestgaard BG, et al.", "year": 2014, "journal": "Journal of the American College of Cardiology", "doi": "10.1016/j.jacc.2013.11.029"}
+    {
+      "id": "ref1",
+      "title": "Large-scale association analysis identifies new risk loci for coronary artery disease",
+      "authors": "Coronary Artery Disease (C4D) Genetics Consortium",
+      "year": 2013,
+      "journal": "Nature Genetics",
+      "doi": "10.1038/ng.2480"
+    },
+    {
+      "id": "ref2",
+      "title": "Comprehensive analysis of genetic risk for coronary artery disease",
+      "authors": "Nikpay M, et al.",
+      "year": 2015,
+      "journal": "Nature Genetics",
+      "doi": "10.1038/ng.3396"
+    },
+    {
+      "id": "ref3",
+      "title": "Genetic risk, coronary heart disease events, and the clinical benefit of statin therapy",
+      "authors": "Inouye M, et al.",
+      "year": 2016,
+      "journal": "The Lancet",
+      "doi": "10.1016/S0140-6736(15)01222-2"
+    },
+    {
+      "id": "ref4",
+      "title": "Genome-wide association of coronary artery disease with genetically determined lipids and lipoproteins",
+      "authors": "Willer CJ, et al.",
+      "year": 2013,
+      "journal": "Nature Genetics",
+      "doi": "10.1038/ng.2797"
+    },
+    {
+      "id": "ref5",
+      "title": "Lipoprotein(a) concentrations, rosuvastatin therapy, and residual vascular risk",
+      "authors": "Nordestgaard BG, et al.",
+      "year": 2014,
+      "journal": "Journal of the American College of Cardiology",
+      "doi": "10.1016/j.jacc.2013.11.029"
+    }
   ],
   "schema_version": "1.0",
-  "last_updated": "2026-03-03"
+  "last_updated": "2026-03-03",
+  "ancestry_context": {
+    "discovery_ancestry": "European (>85%)",
+    "replication_ancestries": [
+      "European",
+      "East Asian",
+      "South Asian"
+    ],
+    "transferability_rating": "medium",
+    "multi_ancestry_studies": [
+      "CARDIoGRAMplusC4D"
+    ],
+    "notes": "9p21 locus replicated across ancestries. South Asian cohorts show higher CAD burden but limited GWAS representation."
+  }
 }

@@ -16,7 +16,10 @@
         "replication_status": "Replicated across ancestries",
         "evidence": "Fat mass and obesity-associated; hypothalamic energy balance; affects food intake and preference; strongest common BMI locus",
         "strength": 0.92,
-        "citations": ["ref1", "ref2"]
+        "citations": [
+          "ref1",
+          "ref2"
+        ]
       },
       {
         "gene": "MC4R",
@@ -27,7 +30,10 @@
         "replication_status": "Replicated; Mendelian obesity",
         "evidence": "Melanocortin-4 receptor; leptin–melanocortin pathway; appetite regulation; monogenic obesity when mutated",
         "strength": 0.9,
-        "citations": ["ref1", "ref3"]
+        "citations": [
+          "ref1",
+          "ref3"
+        ]
       },
       {
         "gene": "TMEM18",
@@ -38,7 +44,10 @@
         "replication_status": "Replicated",
         "evidence": "Hypothalamic expression; energy balance; gut–brain axis",
         "strength": 0.82,
-        "citations": ["ref2", "ref4"]
+        "citations": [
+          "ref2",
+          "ref4"
+        ]
       },
       {
         "gene": "BDNF",
@@ -49,7 +58,10 @@
         "replication_status": "Replicated",
         "evidence": "Brain-derived neurotrophic factor; hypothalamic energy homeostasis; synaptic plasticity",
         "strength": 0.75,
-        "citations": ["ref3", "ref5"]
+        "citations": [
+          "ref3",
+          "ref5"
+        ]
       }
     ],
     "heritability_estimate": {
@@ -67,7 +79,10 @@
       "strength": 0.9,
       "confidence": "high",
       "mechanism_hypothesis": "Energy-dense, low-satiety diets (ultra-processed foods, sugar-sweetened beverages) amplify genetic susceptibility; diet is primary modifiable factor",
-      "citations": ["ref1", "ref2"]
+      "citations": [
+        "ref1",
+        "ref2"
+      ]
     },
     {
       "exposure_slug": "psychosocial-stress",
@@ -75,7 +90,10 @@
       "strength": 0.7,
       "confidence": "high",
       "mechanism_hypothesis": "Chronic stress affects cortisol, reward circuitry, and eating behavior; stress-induced eating; bidirectional with depression",
-      "citations": ["ref3", "ref4"]
+      "citations": [
+        "ref3",
+        "ref4"
+      ]
     },
     {
       "exposure_slug": "obesity-exposure",
@@ -83,7 +101,10 @@
       "strength": 0.75,
       "confidence": "high",
       "mechanism_hypothesis": "Obesogenic environment (food access, marketing, physical inactivity) amplifies genetic risk; built environment and policy",
-      "citations": ["ref2", "ref4"]
+      "citations": [
+        "ref2",
+        "ref4"
+      ]
     },
     {
       "exposure_slug": "alcohol",
@@ -91,7 +112,9 @@
       "strength": 0.55,
       "confidence": "medium",
       "mechanism_hypothesis": "Alcohol provides empty calories; affects appetite and fat metabolism; contributes to weight gain",
-      "citations": ["ref5"]
+      "citations": [
+        "ref5"
+      ]
     }
   ],
   "tissues": [
@@ -99,25 +122,36 @@
       "name": "hypothalamus",
       "relevance_score": 0.98,
       "evidence_type": "GWAS and pathway",
-      "citations": ["ref1", "ref2"]
+      "citations": [
+        "ref1",
+        "ref2"
+      ]
     },
     {
       "name": "adipose tissue",
       "relevance_score": 0.95,
       "evidence_type": "eQTL and expression",
-      "citations": ["ref2", "ref3"]
+      "citations": [
+        "ref2",
+        "ref3"
+      ]
     },
     {
       "name": "gut (enteroendocrine cells)",
       "relevance_score": 0.88,
       "evidence_type": "pathway",
-      "citations": ["ref3", "ref4"]
+      "citations": [
+        "ref3",
+        "ref4"
+      ]
     },
     {
       "name": "liver",
       "relevance_score": 0.82,
       "evidence_type": "pathway",
-      "citations": ["ref4"]
+      "citations": [
+        "ref4"
+      ]
     }
   ],
   "population_equity": {
@@ -125,14 +159,64 @@
     "transferability_notes": "FTO and many loci transfer across ancestries; effect sizes and allele frequencies vary. PRS performance in African, Hispanic, and Asian populations is reduced. Obesity prevalence and sequelae differ by race/ethnicity and socioeconomic status; equity in prevention and care is critical.",
     "data_gaps": "Under-representation of diverse ancestries; G×E (diet, built environment) across populations; childhood/adolescent obesity genetics; epigenetic contributions."
   },
-  "mechanism_briefs": ["leptin-melanocortin-obesity-environment"],
+  "mechanism_briefs": [
+    "leptin-melanocortin-obesity-environment"
+  ],
   "references": [
-    {"id": "ref1", "title": "Genome-wide association study for obesity", "authors": "Speliotes EK, et al.", "year": 2010, "journal": "Nature Genetics", "doi": "10.1038/ng.620"},
-    {"id": "ref2", "title": "FTO and the genetics of obesity", "authors": "Loos RJF, Yeo GSH", "year": 2014, "journal": "Trends in Genetics", "doi": "10.1016/j.tig.2014.06.002"},
-    {"id": "ref3", "title": "MC4R and body weight regulation", "authors": "Loos RJF, et al.", "year": 2008, "journal": "Nature Genetics", "doi": "10.1038/ng.277"},
-    {"id": "ref4", "title": "Stress and obesity", "authors": "Dallman MF, et al.", "year": 2003, "journal": "Proceedings of the National Academy of Sciences", "doi": "10.1073/pnas.1934666100"},
-    {"id": "ref5", "title": "Alcohol consumption and obesity", "authors": "Traversy G, Chaput JP", "year": 2015, "journal": "Current Obesity Reports", "doi": "10.1007/s13679-015-0147-x"}
+    {
+      "id": "ref1",
+      "title": "Genome-wide association study for obesity",
+      "authors": "Speliotes EK, et al.",
+      "year": 2010,
+      "journal": "Nature Genetics",
+      "doi": "10.1038/ng.620"
+    },
+    {
+      "id": "ref2",
+      "title": "FTO and the genetics of obesity",
+      "authors": "Loos RJF, Yeo GSH",
+      "year": 2014,
+      "journal": "Trends in Genetics",
+      "doi": "10.1016/j.tig.2014.06.002"
+    },
+    {
+      "id": "ref3",
+      "title": "MC4R and body weight regulation",
+      "authors": "Loos RJF, et al.",
+      "year": 2008,
+      "journal": "Nature Genetics",
+      "doi": "10.1038/ng.277"
+    },
+    {
+      "id": "ref4",
+      "title": "Stress and obesity",
+      "authors": "Dallman MF, et al.",
+      "year": 2003,
+      "journal": "Proceedings of the National Academy of Sciences",
+      "doi": "10.1073/pnas.1934666100"
+    },
+    {
+      "id": "ref5",
+      "title": "Alcohol consumption and obesity",
+      "authors": "Traversy G, Chaput JP",
+      "year": 2015,
+      "journal": "Current Obesity Reports",
+      "doi": "10.1007/s13679-015-0147-x"
+    }
   ],
   "schema_version": "1.0",
-  "last_updated": "2026-03-03"
+  "last_updated": "2026-03-03",
+  "ancestry_context": {
+    "discovery_ancestry": "European (>85%)",
+    "replication_ancestries": [
+      "European",
+      "African American",
+      "East Asian"
+    ],
+    "transferability_rating": "medium",
+    "multi_ancestry_studies": [
+      "GIANT"
+    ],
+    "notes": "FTO locus replicated across ancestries but effect sizes vary. African American cohorts show distinct LD patterns at FTO."
+  }
 }

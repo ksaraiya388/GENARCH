@@ -16,7 +16,10 @@
         "replication_status": "Replicated",
         "evidence": "Dopamine D2 receptor; target of antipsychotics; dopamine hypothesis of schizophrenia",
         "strength": 0.9,
-        "citations": ["ref1", "ref2"]
+        "citations": [
+          "ref1",
+          "ref2"
+        ]
       },
       {
         "gene": "CACNA1C",
@@ -27,7 +30,10 @@
         "replication_status": "Replicated; shared with bipolar disorder",
         "evidence": "L-type calcium channel; neuronal excitability; psychiatric pleiotropy",
         "strength": 0.85,
-        "citations": ["ref1", "ref3"]
+        "citations": [
+          "ref1",
+          "ref3"
+        ]
       },
       {
         "gene": "C4A",
@@ -38,7 +44,10 @@
         "replication_status": "Replicated",
         "evidence": "Complement C4A; synaptic pruning; excess pruning hypothesis; mechanism linking immune and neurodevelopment",
         "strength": 0.88,
-        "citations": ["ref2", "ref4"]
+        "citations": [
+          "ref2",
+          "ref4"
+        ]
       },
       {
         "gene": "GRIN2A",
@@ -49,7 +58,10 @@
         "replication_status": "Replicated",
         "evidence": "NMDA receptor subunit; glutamate hypothesis; affects synaptic plasticity",
         "strength": 0.78,
-        "citations": ["ref3", "ref5"]
+        "citations": [
+          "ref3",
+          "ref5"
+        ]
       }
     ],
     "heritability_estimate": {
@@ -67,7 +79,10 @@
       "strength": 0.85,
       "confidence": "high",
       "mechanism_hypothesis": "Childhood trauma, urban upbringing, migration, and social defeat stress increase risk; may trigger onset in genetically susceptible individuals",
-      "citations": ["ref2", "ref4"]
+      "citations": [
+        "ref2",
+        "ref4"
+      ]
     },
     {
       "exposure_slug": "tobacco",
@@ -75,7 +90,10 @@
       "strength": 0.65,
       "confidence": "medium",
       "mechanism_hypothesis": "Smoking is highly prevalent in schizophrenia; nicotine may affect dopaminergic signaling and cognition; bidirectional relationship",
-      "citations": ["ref3", "ref5"]
+      "citations": [
+        "ref3",
+        "ref5"
+      ]
     },
     {
       "exposure_slug": "obesity-exposure",
@@ -83,7 +101,9 @@
       "strength": 0.5,
       "confidence": "medium",
       "mechanism_hypothesis": "Antipsychotic-induced weight gain; metabolic syndrome; bidirectional with sedentary behavior and diet",
-      "citations": ["ref5"]
+      "citations": [
+        "ref5"
+      ]
     }
   ],
   "tissues": [
@@ -91,25 +111,36 @@
       "name": "prefrontal cortex",
       "relevance_score": 0.95,
       "evidence_type": "GWAS and imaging",
-      "citations": ["ref1", "ref2"]
+      "citations": [
+        "ref1",
+        "ref2"
+      ]
     },
     {
       "name": "striatum",
       "relevance_score": 0.92,
       "evidence_type": "pathway",
-      "citations": ["ref1"]
+      "citations": [
+        "ref1"
+      ]
     },
     {
       "name": "hippocampus",
       "relevance_score": 0.88,
       "evidence_type": "GWAS and literature",
-      "citations": ["ref2", "ref3"]
+      "citations": [
+        "ref2",
+        "ref3"
+      ]
     },
     {
       "name": "dopaminergic neurons (midbrain)",
       "relevance_score": 0.9,
       "evidence_type": "pathway",
-      "citations": ["ref1", "ref4"]
+      "citations": [
+        "ref1",
+        "ref4"
+      ]
     }
   ],
   "population_equity": {
@@ -119,12 +150,56 @@
   },
   "mechanism_briefs": [],
   "references": [
-    {"id": "ref1", "title": "Biological insights from 108 schizophrenia-associated genetic loci", "authors": "Schizophrenia Working Group of the Psychiatric Genomics Consortium", "year": 2014, "journal": "Nature", "doi": "10.1038/nature13595"},
-    {"id": "ref2", "title": "DRD2 genetic variation and schizophrenia", "authors": "Li T, et al.", "year": 2004, "journal": "Molecular Psychiatry", "doi": "10.1038/sj.mp.4001500"},
-    {"id": "ref3", "title": "CACNA1C and psychiatric disorders", "authors": "Green EK, et al.", "year": 2010, "journal": "Molecular Psychiatry", "doi": "10.1038/mp.2009.117"},
-    {"id": "ref4", "title": "Schizophrenia risk from complex variation of complement component 4", "authors": "Sekar A, et al.", "year": 2016, "journal": "Nature", "doi": "10.1038/nature16549"},
-    {"id": "ref5", "title": "Tobacco use and schizophrenia", "authors": "de Leon J, Diaz FJ", "year": 2005, "journal": "American Journal of Psychiatry", "doi": "10.1176/appi.ajp.162.4.835"}
+    {
+      "id": "ref1",
+      "title": "Biological insights from 108 schizophrenia-associated genetic loci",
+      "authors": "Schizophrenia Working Group of the Psychiatric Genomics Consortium",
+      "year": 2014,
+      "journal": "Nature",
+      "doi": "10.1038/nature13595"
+    },
+    {
+      "id": "ref2",
+      "title": "DRD2 genetic variation and schizophrenia",
+      "authors": "Li T, et al.",
+      "year": 2004,
+      "journal": "Molecular Psychiatry",
+      "doi": "10.1038/sj.mp.4001500"
+    },
+    {
+      "id": "ref3",
+      "title": "CACNA1C and psychiatric disorders",
+      "authors": "Green EK, et al.",
+      "year": 2010,
+      "journal": "Molecular Psychiatry",
+      "doi": "10.1038/mp.2009.117"
+    },
+    {
+      "id": "ref4",
+      "title": "Schizophrenia risk from complex variation of complement component 4",
+      "authors": "Sekar A, et al.",
+      "year": 2016,
+      "journal": "Nature",
+      "doi": "10.1038/nature16549"
+    },
+    {
+      "id": "ref5",
+      "title": "Tobacco use and schizophrenia",
+      "authors": "de Leon J, Diaz FJ",
+      "year": 2005,
+      "journal": "American Journal of Psychiatry",
+      "doi": "10.1176/appi.ajp.162.4.835"
+    }
   ],
   "schema_version": "1.0",
-  "last_updated": "2026-03-03"
+  "last_updated": "2026-03-03",
+  "ancestry_context": {
+    "discovery_ancestry": "European (>85%)",
+    "replication_ancestries": [
+      "European"
+    ],
+    "transferability_rating": "low",
+    "multi_ancestry_studies": [],
+    "notes": "Discovery cohorts predominantly European-ancestry. Cross-ancestry replication limited."
+  }
 }

@@ -11,12 +11,15 @@
         "gene": "SERPINA1",
         "variant": "Z allele (Glu342Lys)",
         "gwas_p": null,
-        "effect_size": 5.0,
+        "effect_size": 5,
         "ancestry_composition": "Multi-ancestry",
         "replication_status": "Established Mendelian",
         "evidence": "Alpha-1 antitrypsin; protease inhibitor; deficiency causes early-onset emphysema; illuminates protease–antiprotease hypothesis",
         "strength": 0.98,
-        "citations": ["ref1", "ref2"]
+        "citations": [
+          "ref1",
+          "ref2"
+        ]
       },
       {
         "gene": "HHIP",
@@ -27,7 +30,10 @@
         "replication_status": "Replicated",
         "evidence": "Hedgehog-interacting protein; lung development; affects FEV1 and COPD susceptibility",
         "strength": 0.88,
-        "citations": ["ref1", "ref3"]
+        "citations": [
+          "ref1",
+          "ref3"
+        ]
       },
       {
         "gene": "FAM13A",
@@ -38,7 +44,10 @@
         "replication_status": "Replicated",
         "evidence": "Lung eQTL; Wnt signaling; COPD and lung function",
         "strength": 0.82,
-        "citations": ["ref2", "ref4"]
+        "citations": [
+          "ref2",
+          "ref4"
+        ]
       },
       {
         "gene": "MMP12",
@@ -49,7 +58,10 @@
         "replication_status": "Replicated",
         "evidence": "Matrix metalloproteinase; elastin degradation; emphysema pathogenesis",
         "strength": 0.78,
-        "citations": ["ref3", "ref5"]
+        "citations": [
+          "ref3",
+          "ref5"
+        ]
       }
     ],
     "heritability_estimate": {
@@ -67,7 +79,10 @@
       "strength": 0.98,
       "confidence": "high",
       "mechanism_hypothesis": "Cigarette smoke causes inflammation, protease–antiprotease imbalance, oxidative stress; dominant environmental cause; gene–smoking interaction",
-      "citations": ["ref1", "ref2"]
+      "citations": [
+        "ref1",
+        "ref2"
+      ]
     },
     {
       "exposure_slug": "air-pollution",
@@ -75,7 +90,10 @@
       "strength": 0.75,
       "confidence": "high",
       "mechanism_hypothesis": "PM2.5 and occupational dusts exacerbate COPD; accelerate decline; amplify genetic susceptibility",
-      "citations": ["ref3", "ref4"]
+      "citations": [
+        "ref3",
+        "ref4"
+      ]
     },
     {
       "exposure_slug": "diet-quality",
@@ -83,7 +101,9 @@
       "strength": 0.5,
       "confidence": "medium",
       "mechanism_hypothesis": "Antioxidant-rich diet may reduce oxidative stress; vitamin D and omega-3s; observational evidence",
-      "citations": ["ref5"]
+      "citations": [
+        "ref5"
+      ]
     },
     {
       "exposure_slug": "obesity-exposure",
@@ -91,7 +111,9 @@
       "strength": 0.45,
       "confidence": "low",
       "mechanism_hypothesis": "Obesity affects lung mechanics and inflammation; paradoxically some studies show protective effect (obesity paradox) in severe COPD",
-      "citations": ["ref5"]
+      "citations": [
+        "ref5"
+      ]
     }
   ],
   "tissues": [
@@ -99,25 +121,36 @@
       "name": "bronchial epithelium",
       "relevance_score": 0.95,
       "evidence_type": "eQTL and expression",
-      "citations": ["ref1", "ref2"]
+      "citations": [
+        "ref1",
+        "ref2"
+      ]
     },
     {
       "name": "alveolar macrophages",
       "relevance_score": 0.92,
       "evidence_type": "pathway",
-      "citations": ["ref2", "ref3"]
+      "citations": [
+        "ref2",
+        "ref3"
+      ]
     },
     {
       "name": "lung parenchyma",
       "relevance_score": 0.9,
       "evidence_type": "GWAS and pathology",
-      "citations": ["ref1"]
+      "citations": [
+        "ref1"
+      ]
     },
     {
       "name": "neutrophils",
       "relevance_score": 0.85,
       "evidence_type": "pathway",
-      "citations": ["ref3", "ref4"]
+      "citations": [
+        "ref3",
+        "ref4"
+      ]
     }
   ],
   "population_equity": {
@@ -127,12 +160,56 @@
   },
   "mechanism_briefs": [],
   "references": [
-    {"id": "ref1", "title": "Genetic landscape of chronic obstructive pulmonary disease identifies heterogeneous cell-types and phenotypes", "authors": "Sakornsakolpat P, et al.", "year": 2019, "journal": "Nature Genetics", "doi": "10.1038/s41588-019-0541-7"},
-    {"id": "ref2", "title": "Alpha-1 antitrypsin deficiency", "authors": "Stoller JK, Aboussouan LS", "year": 2012, "journal": "The Lancet", "doi": "10.1016/S0140-6736(11)60939-9"},
-    {"id": "ref3", "title": "HHIP haploinsufficiency causes emphysema", "authors": "Zhou X, et al.", "year": 2012, "journal": "Nature Genetics", "doi": "10.1038/ng.2342"},
-    {"id": "ref4", "title": "Air pollution and COPD", "authors": "Schikowski T, et al.", "year": 2014, "journal": "European Respiratory Journal", "doi": "10.1183/09031936.00002914"},
-    {"id": "ref5", "title": "Diet and COPD", "authors": "Varraso R, et al.", "year": 2015, "journal": "BMJ", "doi": "10.1136/bmj.h2862"}
+    {
+      "id": "ref1",
+      "title": "Genetic landscape of chronic obstructive pulmonary disease identifies heterogeneous cell-types and phenotypes",
+      "authors": "Sakornsakolpat P, et al.",
+      "year": 2019,
+      "journal": "Nature Genetics",
+      "doi": "10.1038/s41588-019-0541-7"
+    },
+    {
+      "id": "ref2",
+      "title": "Alpha-1 antitrypsin deficiency",
+      "authors": "Stoller JK, Aboussouan LS",
+      "year": 2012,
+      "journal": "The Lancet",
+      "doi": "10.1016/S0140-6736(11)60939-9"
+    },
+    {
+      "id": "ref3",
+      "title": "HHIP haploinsufficiency causes emphysema",
+      "authors": "Zhou X, et al.",
+      "year": 2012,
+      "journal": "Nature Genetics",
+      "doi": "10.1038/ng.2342"
+    },
+    {
+      "id": "ref4",
+      "title": "Air pollution and COPD",
+      "authors": "Schikowski T, et al.",
+      "year": 2014,
+      "journal": "European Respiratory Journal",
+      "doi": "10.1183/09031936.00002914"
+    },
+    {
+      "id": "ref5",
+      "title": "Diet and COPD",
+      "authors": "Varraso R, et al.",
+      "year": 2015,
+      "journal": "BMJ",
+      "doi": "10.1136/bmj.h2862"
+    }
   ],
   "schema_version": "1.0",
-  "last_updated": "2026-03-03"
+  "last_updated": "2026-03-03",
+  "ancestry_context": {
+    "discovery_ancestry": "European (>85%)",
+    "replication_ancestries": [
+      "European"
+    ],
+    "transferability_rating": "low",
+    "multi_ancestry_studies": [],
+    "notes": "Discovery cohorts predominantly European-ancestry. Cross-ancestry replication limited."
+  }
 }

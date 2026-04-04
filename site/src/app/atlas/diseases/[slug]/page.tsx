@@ -205,6 +205,36 @@ export default async function DiseaseDetailPage({
                 {disease.population_equity.data_gaps}
               </p>
             </div>
+            {disease.ancestry_context && (
+              <div className="card mt-4 text-sm">
+                <h3 className="text-h3 text-surface-white mb-2">Ancestry Context</h3>
+                <dl className="grid gap-2 sm:grid-cols-2 text-cool-light">
+                  <dt className="text-cool-mid">Discovery ancestry</dt>
+                  <dd>{disease.ancestry_context.discovery_ancestry}</dd>
+                  {disease.ancestry_context.replication_ancestries && disease.ancestry_context.replication_ancestries.length > 0 && (
+                    <>
+                      <dt className="text-cool-mid">Replication ancestries</dt>
+                      <dd>{disease.ancestry_context.replication_ancestries.join(", ")}</dd>
+                    </>
+                  )}
+                  {disease.ancestry_context.transferability_rating && (
+                    <>
+                      <dt className="text-cool-mid">Transferability rating</dt>
+                      <dd><span className={`badge badge-${disease.ancestry_context.transferability_rating}`}>{disease.ancestry_context.transferability_rating}</span></dd>
+                    </>
+                  )}
+                  {disease.ancestry_context.multi_ancestry_studies && disease.ancestry_context.multi_ancestry_studies.length > 0 && (
+                    <>
+                      <dt className="text-cool-mid">Multi-ancestry studies</dt>
+                      <dd>{disease.ancestry_context.multi_ancestry_studies.join(", ")}</dd>
+                    </>
+                  )}
+                </dl>
+                {disease.ancestry_context.notes && (
+                  <p className="mt-2 text-cool-mid text-xs">{disease.ancestry_context.notes}</p>
+                )}
+              </div>
+            )}
           </section>
         )}
 

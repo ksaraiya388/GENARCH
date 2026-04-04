@@ -16,7 +16,10 @@
         "replication_status": "Replicated across ancestries",
         "evidence": "MHC class II; antigen presentation; shared epitope hypothesis; citrullinated peptide presentation; strongest RA locus",
         "strength": 0.98,
-        "citations": ["ref1", "ref2"]
+        "citations": [
+          "ref1",
+          "ref2"
+        ]
       },
       {
         "gene": "PTPN22",
@@ -27,7 +30,10 @@
         "replication_status": "Replicated",
         "evidence": "Lymphoid tyrosine phosphatase; T-cell receptor signaling; multiple autoimmune diseases",
         "strength": 0.88,
-        "citations": ["ref1", "ref3"]
+        "citations": [
+          "ref1",
+          "ref3"
+        ]
       },
       {
         "gene": "TNF",
@@ -38,7 +44,10 @@
         "replication_status": "Replicated; drug target",
         "evidence": "TNF-alpha; central cytokine in RA pathogenesis; anti-TNF therapeutics",
         "strength": 0.85,
-        "citations": ["ref2", "ref4"]
+        "citations": [
+          "ref2",
+          "ref4"
+        ]
       },
       {
         "gene": "CTLA4",
@@ -49,7 +58,10 @@
         "replication_status": "Replicated",
         "evidence": "T-cell costimulation; immune checkpoint; autoimmune susceptibility",
         "strength": 0.75,
-        "citations": ["ref3", "ref5"]
+        "citations": [
+          "ref3",
+          "ref5"
+        ]
       }
     ],
     "heritability_estimate": {
@@ -67,7 +79,10 @@
       "strength": 0.95,
       "confidence": "high",
       "mechanism_hypothesis": "Smoking induces citrullination in lungs; in HLA-DRB1 carriers, dramatically increases anti-CCP–positive RA risk; gene–environment interaction",
-      "citations": ["ref1", "ref2"]
+      "citations": [
+        "ref1",
+        "ref2"
+      ]
     },
     {
       "exposure_slug": "obesity-exposure",
@@ -75,7 +90,10 @@
       "strength": 0.7,
       "confidence": "high",
       "mechanism_hypothesis": "Adipose-derived cytokines (leptin, adiponectin) promote inflammation; obesity increases RA risk and reduces treatment response",
-      "citations": ["ref3", "ref4"]
+      "citations": [
+        "ref3",
+        "ref4"
+      ]
     },
     {
       "exposure_slug": "psychosocial-stress",
@@ -83,7 +101,10 @@
       "strength": 0.55,
       "confidence": "medium",
       "mechanism_hypothesis": "Stress may trigger or exacerbate RA flares; affects disease activity and treatment adherence",
-      "citations": ["ref4", "ref5"]
+      "citations": [
+        "ref4",
+        "ref5"
+      ]
     },
     {
       "exposure_slug": "diet-quality",
@@ -91,7 +112,9 @@
       "strength": 0.5,
       "confidence": "medium",
       "mechanism_hypothesis": "Mediterranean diet, omega-3 fatty acids may reduce inflammation; observational evidence for symptom improvement",
-      "citations": ["ref5"]
+      "citations": [
+        "ref5"
+      ]
     }
   ],
   "tissues": [
@@ -99,25 +122,36 @@
       "name": "synovium",
       "relevance_score": 0.98,
       "evidence_type": "GWAS and pathology",
-      "citations": ["ref1", "ref2"]
+      "citations": [
+        "ref1",
+        "ref2"
+      ]
     },
     {
       "name": "immune cells (T and B lymphocytes)",
       "relevance_score": 0.95,
       "evidence_type": "pathway",
-      "citations": ["ref1", "ref3"]
+      "citations": [
+        "ref1",
+        "ref3"
+      ]
     },
     {
       "name": "lung (for citrullination)",
       "relevance_score": 0.85,
       "evidence_type": "literature",
-      "citations": ["ref2"]
+      "citations": [
+        "ref2"
+      ]
     },
     {
       "name": "adipose tissue",
       "relevance_score": 0.75,
       "evidence_type": "pathway",
-      "citations": ["ref3", "ref4"]
+      "citations": [
+        "ref3",
+        "ref4"
+      ]
     }
   ],
   "population_equity": {
@@ -127,12 +161,56 @@
   },
   "mechanism_briefs": [],
   "references": [
-    {"id": "ref1", "title": "Genetics of rheumatoid arthritis contributes to biology and drug discovery", "authors": "Okada Y, et al.", "year": 2014, "journal": "Nature", "doi": "10.1038/nature12873"},
-    {"id": "ref2", "title": "A gene-environment interaction between smoking and shared epitope genes in HLA-DR provides a high risk of seropositive rheumatoid arthritis", "authors": "Källberg H, et al.", "year": 2007, "journal": "Arthritis & Rheumatology", "doi": "10.1002/art.22795"},
-    {"id": "ref3", "title": "PTPN22 and autoimmune disease", "authors": "Bottini N, Peterson EJ", "year": 2014, "journal": "Nature Reviews Immunology", "doi": "10.1038/nri3660"},
-    {"id": "ref4", "title": "Obesity and rheumatoid arthritis", "authors": "Stavropoulos-Kalinoglou A, et al.", "year": 2013, "journal": "Nature Reviews Rheumatology", "doi": "10.1038/nrrheum.2013.36"},
-    {"id": "ref5", "title": "Stress and rheumatoid arthritis", "authors": "Matcham F, et al.", "year": 2014, "journal": "Journal of Psychosomatic Research", "doi": "10.1016/j.jpsychores.2014.03.002"}
+    {
+      "id": "ref1",
+      "title": "Genetics of rheumatoid arthritis contributes to biology and drug discovery",
+      "authors": "Okada Y, et al.",
+      "year": 2014,
+      "journal": "Nature",
+      "doi": "10.1038/nature12873"
+    },
+    {
+      "id": "ref2",
+      "title": "A gene-environment interaction between smoking and shared epitope genes in HLA-DR provides a high risk of seropositive rheumatoid arthritis",
+      "authors": "Källberg H, et al.",
+      "year": 2007,
+      "journal": "Arthritis & Rheumatology",
+      "doi": "10.1002/art.22795"
+    },
+    {
+      "id": "ref3",
+      "title": "PTPN22 and autoimmune disease",
+      "authors": "Bottini N, Peterson EJ",
+      "year": 2014,
+      "journal": "Nature Reviews Immunology",
+      "doi": "10.1038/nri3660"
+    },
+    {
+      "id": "ref4",
+      "title": "Obesity and rheumatoid arthritis",
+      "authors": "Stavropoulos-Kalinoglou A, et al.",
+      "year": 2013,
+      "journal": "Nature Reviews Rheumatology",
+      "doi": "10.1038/nrrheum.2013.36"
+    },
+    {
+      "id": "ref5",
+      "title": "Stress and rheumatoid arthritis",
+      "authors": "Matcham F, et al.",
+      "year": 2014,
+      "journal": "Journal of Psychosomatic Research",
+      "doi": "10.1016/j.jpsychores.2014.03.002"
+    }
   ],
   "schema_version": "1.0",
-  "last_updated": "2026-03-03"
+  "last_updated": "2026-03-03",
+  "ancestry_context": {
+    "discovery_ancestry": "European (>85%)",
+    "replication_ancestries": [
+      "European"
+    ],
+    "transferability_rating": "low",
+    "multi_ancestry_studies": [],
+    "notes": "Discovery cohorts predominantly European-ancestry. Cross-ancestry replication limited."
+  }
 }

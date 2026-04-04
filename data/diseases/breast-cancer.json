@@ -11,34 +11,42 @@
         "gene": "BRCA1",
         "variant": null,
         "gwas_p": null,
-        "effect_size": 10.0,
+        "effect_size": 10,
         "ancestry_composition": "Multi-ancestry",
         "replication_status": "Established Mendelian",
         "evidence": "DNA double-strand break repair; hereditary breast-ovarian cancer syndrome; high penetrance",
         "strength": 0.98,
-        "citations": ["ref1", "ref2"]
+        "citations": [
+          "ref1",
+          "ref2"
+        ]
       },
       {
         "gene": "BRCA2",
         "variant": null,
         "gwas_p": null,
-        "effect_size": 8.0,
+        "effect_size": 8,
         "ancestry_composition": "Multi-ancestry",
         "replication_status": "Established Mendelian",
         "evidence": "Homologous recombination repair; hereditary breast-ovarian cancer; high penetrance",
         "strength": 0.98,
-        "citations": ["ref1", "ref2"]
+        "citations": [
+          "ref1",
+          "ref2"
+        ]
       },
       {
         "gene": "TP53",
         "variant": null,
         "gwas_p": null,
-        "effect_size": 15.0,
+        "effect_size": 15,
         "ancestry_composition": "Multi-ancestry",
         "replication_status": "Established Mendelian",
         "evidence": "Li-Fraumeni syndrome; tumor suppressor; cell cycle and DNA damage response",
         "strength": 0.95,
-        "citations": ["ref1"]
+        "citations": [
+          "ref1"
+        ]
       },
       {
         "gene": "FGFR2",
@@ -49,7 +57,10 @@
         "replication_status": "Replicated",
         "evidence": "Receptor tyrosine kinase; ER-positive breast cancer; fibroblast growth factor signaling",
         "strength": 0.88,
-        "citations": ["ref2", "ref3"]
+        "citations": [
+          "ref2",
+          "ref3"
+        ]
       }
     ],
     "heritability_estimate": {
@@ -67,7 +78,10 @@
       "strength": 0.75,
       "confidence": "high",
       "mechanism_hypothesis": "Alcohol increases estrogen levels and DNA damage; dose-dependent increase in breast cancer risk",
-      "citations": ["ref2", "ref4"]
+      "citations": [
+        "ref2",
+        "ref4"
+      ]
     },
     {
       "exposure_slug": "obesity-exposure",
@@ -75,7 +89,10 @@
       "strength": 0.7,
       "confidence": "high",
       "mechanism_hypothesis": "Postmenopausal obesity increases estrogen from adipose aromatase; may amplify risk in ER-positive disease",
-      "citations": ["ref3", "ref4"]
+      "citations": [
+        "ref3",
+        "ref4"
+      ]
     },
     {
       "exposure_slug": "uv-radiation",
@@ -83,7 +100,9 @@
       "strength": 0.5,
       "confidence": "low",
       "mechanism_hypothesis": "Vitamin D from sun exposure may modestly reduce breast cancer risk; evidence is observational",
-      "citations": ["ref5"]
+      "citations": [
+        "ref5"
+      ]
     },
     {
       "exposure_slug": "psychosocial-stress",
@@ -91,7 +110,9 @@
       "strength": 0.45,
       "confidence": "low",
       "mechanism_hypothesis": "Chronic stress may affect immune surveillance and health behaviors; evidence is limited",
-      "citations": ["ref5"]
+      "citations": [
+        "ref5"
+      ]
     }
   ],
   "tissues": [
@@ -99,25 +120,35 @@
       "name": "mammary epithelium",
       "relevance_score": 0.98,
       "evidence_type": "GWAS and expression",
-      "citations": ["ref1", "ref2"]
+      "citations": [
+        "ref1",
+        "ref2"
+      ]
     },
     {
       "name": "adipose tissue (breast)",
       "relevance_score": 0.85,
       "evidence_type": "pathway",
-      "citations": ["ref3", "ref4"]
+      "citations": [
+        "ref3",
+        "ref4"
+      ]
     },
     {
       "name": "lymphocytes",
       "relevance_score": 0.7,
       "evidence_type": "literature",
-      "citations": ["ref4"]
+      "citations": [
+        "ref4"
+      ]
     },
     {
       "name": "ovary",
       "relevance_score": 0.65,
       "evidence_type": "pathway",
-      "citations": ["ref2"]
+      "citations": [
+        "ref2"
+      ]
     }
   ],
   "population_equity": {
@@ -127,12 +158,60 @@
   },
   "mechanism_briefs": [],
   "references": [
-    {"id": "ref1", "title": "Breast and ovarian cancer incidence in BRCA1-mutation carriers", "authors": "Antoniou A, et al.", "year": 2003, "journal": "American Journal of Human Genetics", "doi": "10.1086/375033"},
-    {"id": "ref2", "title": "Genome-wide association study identifies 32 novel breast cancer susceptibility loci", "authors": "Michailidou K, et al.", "year": 2017, "journal": "Nature", "doi": "10.1038/nature24284"},
-    {"id": "ref3", "title": "FGFR2 variants and breast cancer risk", "authors": "Easton DF, et al.", "year": 2007, "journal": "Nature", "doi": "10.1038/nature05887"},
-    {"id": "ref4", "title": "Alcohol consumption and breast cancer risk", "authors": "Key J, et al.", "year": 2006, "journal": "International Journal of Cancer", "doi": "10.1002/ijc.21711"},
-    {"id": "ref5", "title": "Vitamin D and breast cancer risk", "authors": "Yin L, et al.", "year": 2019, "journal": "Cancer Epidemiology, Biomarkers & Prevention", "doi": "10.1158/1055-9965.EPI-18-0877"}
+    {
+      "id": "ref1",
+      "title": "Breast and ovarian cancer incidence in BRCA1-mutation carriers",
+      "authors": "Antoniou A, et al.",
+      "year": 2003,
+      "journal": "American Journal of Human Genetics",
+      "doi": "10.1086/375033"
+    },
+    {
+      "id": "ref2",
+      "title": "Genome-wide association study identifies 32 novel breast cancer susceptibility loci",
+      "authors": "Michailidou K, et al.",
+      "year": 2017,
+      "journal": "Nature",
+      "doi": "10.1038/nature24284"
+    },
+    {
+      "id": "ref3",
+      "title": "FGFR2 variants and breast cancer risk",
+      "authors": "Easton DF, et al.",
+      "year": 2007,
+      "journal": "Nature",
+      "doi": "10.1038/nature05887"
+    },
+    {
+      "id": "ref4",
+      "title": "Alcohol consumption and breast cancer risk",
+      "authors": "Key J, et al.",
+      "year": 2006,
+      "journal": "International Journal of Cancer",
+      "doi": "10.1002/ijc.21711"
+    },
+    {
+      "id": "ref5",
+      "title": "Vitamin D and breast cancer risk",
+      "authors": "Yin L, et al.",
+      "year": 2019,
+      "journal": "Cancer Epidemiology, Biomarkers & Prevention",
+      "doi": "10.1158/1055-9965.EPI-18-0877"
+    }
   ],
   "schema_version": "1.0",
-  "last_updated": "2026-03-03"
+  "last_updated": "2026-03-03",
+  "ancestry_context": {
+    "discovery_ancestry": "European (>85%)",
+    "replication_ancestries": [
+      "European",
+      "East Asian",
+      "African American"
+    ],
+    "transferability_rating": "medium",
+    "multi_ancestry_studies": [
+      "BCAC"
+    ],
+    "notes": "BRCA1/2 pathogenic variants well-characterized across ancestries. PRS performance drops significantly in non-European populations."
+  }
 }

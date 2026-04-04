@@ -90,12 +90,12 @@ export default function HomePage() {
               { icon: PILLAR_ICONS.environment, title: "Environmental Modifiers", desc: "Exposure characterization from air pollution to psychosocial stress, with dose-response patterns, sensitive windows, and population-level effect modification." },
               { icon: PILLAR_ICONS.interaction, title: "Gene–Environment Interaction", desc: "Tissue-resolved mechanistic hypotheses connecting statistical associations to biological pathways through curated mechanism briefs and network analysis." },
             ].map((p) => (
-              <div key={p.title} className="card text-center group">
+              <div key={p.title} className="card text-center group min-w-0">
                 <div className="w-16 h-16 mx-auto mb-5 rounded-xl flex items-center justify-center bg-teal-primary/[0.08] group-hover:bg-teal-primary/[0.12] transition-colors">
                   {p.icon}
                 </div>
                 <h3 className="text-surface-white mb-2">{p.title}</h3>
-                <p className="text-cool-mid text-sm leading-relaxed">{p.desc}</p>
+                <p className="text-cool-mid text-sm leading-relaxed break-words">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -159,7 +159,7 @@ export default function HomePage() {
       </section>
 
       {/* Explore Modules */}
-      <section className="py-20" style={{ backgroundColor: "#0B1F2F" }}>
+      <section className="py-12" style={{ backgroundColor: "#0B1F2F" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-center text-surface-white mb-12">Explore Modules</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -180,7 +180,7 @@ export default function HomePage() {
       </section>
 
       {/* What is GENARCH? */}
-      <section className="section-alt py-20">
+      <section className="section-alt py-12">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-surface-white mb-4">What is GENARCH?</h2>
           <p className="text-cool-light text-sm leading-relaxed mb-6">

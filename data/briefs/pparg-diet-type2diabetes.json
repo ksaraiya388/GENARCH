@@ -32,6 +32,6 @@
     {"id": "ref1", "title": "PPARG and type 2 diabetes", "authors": "Grant SF, et al.", "year": 2006, "journal": "Nature Genetics", "doi": "10.1038/ng1732"},
     {"id": "ref2", "title": "Gene–environment interaction in type 2 diabetes", "authors": "Cornelis MC, Hu FB", "year": 2012, "journal": "Current Diabetes Reports", "doi": "10.1007/s11892-012-0313-4"}
   ],
-  "published_at": "2026-03-07",
+  "published_at": "2026-03-05",
   "schema_version": "1.0"
 }
