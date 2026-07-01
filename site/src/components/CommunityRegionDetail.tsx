@@ -179,11 +179,9 @@ export function CommunityRegionDetail({ region }: CommunityRegionDetailProps) {
                 <li key={i} className="flex justify-between items-center">
                   <span className="font-medium text-surface-white">{s.feature}</span>
                   <span
-                    className={
-                      s.direction === "positive"
-                        ? "text-green-400"
-                        : "text-red-400"
-                    }
+                    style={{
+                      color: s.direction === "positive" ? "#C53030" : "#2F855A",
+                    }}
                   >
                     {s.direction} (mean SHAP: {s.mean_shap_value.toFixed(3)})
                   </span>
