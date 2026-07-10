@@ -8,11 +8,11 @@ import { Analytics } from "@vercel/analytics/next";
 export const metadata: Metadata = {
   title: "GENARCH — Genetic Epidemiology Atlas",
   description:
-    "A systems-level genetic epidemiology atlas mapping gene–environment interactions, exposure modifiers, and molecular mechanisms at population scale.",
+    "A systems-level genetic epidemiology atlas mapping gene–environment interactions, exposure modifiers, and molecular mechanisms at population scale. Built for Loudoun County, Virginia and expanding across Northern Virginia.",
   openGraph: {
     title: "GENARCH — Genetic Epidemiology Atlas",
     description:
-      "Systems-level atlas of gene–environment interactions and population-level genetic architecture.",
+      "Systems-level atlas of gene–environment interactions and population-level genetic architecture. Built for Loudoun County, Virginia and expanding across Northern Virginia.",
     type: "website",
   },
   icons: {

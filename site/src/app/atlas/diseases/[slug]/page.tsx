@@ -11,6 +11,39 @@ import { CitationRenderer } from "@/components/CitationRenderer";
 import { ConfidenceBadge } from "@/components/ConfidenceBadge";
 import { RiskShiftChart } from "@/components/RiskShiftChart";
 import { TissueRelevanceChart } from "@/components/TissueRelevanceChart";
+import { TldrBox } from "@/components/TldrBox";
+
+// Plain-language TL;DR shown only on the three flagship disease pages.
+// Gene names verified against each disease's top_loci in data/diseases/.
+const TLDR_BY_SLUG: Record<
+  string,
+  { whatItIs: string; whyItMatters: string; whatScienceSays: string }
+> = {
+  asthma: {
+    whatItIs:
+      "Asthma is a long-term lung condition where the airways swell and tighten, which makes breathing hard and brings on wheezing, coughing, and flare-ups.",
+    whyItMatters:
+      "Eastern Loudoun sits beside heavy traffic and industry along the Route 28 and Dulles corridor, and the fine particles in that air can set off attacks and make them worse.",
+    whatScienceSays:
+      "Some people carry gene variants near ORMDL3, IL33, and IL1RL1 that make their airways overreact to that pollution, so the same air hits one person harder than another.",
+  },
+  "type-2-diabetes": {
+    whatItIs:
+      "Type 2 diabetes is a condition where the body stops using insulin well, so sugar builds up in the blood instead of fueling the body.",
+    whyItMatters:
+      "Parts of Loudoun have few grocery stores and long drives to fresh food, and when healthy eating is hard for a whole neighborhood, risk climbs across it.",
+    whatScienceSays:
+      "Common variants like TCF7L2 change how the body handles blood sugar, and a food-poor environment pushes that inherited tendency further in the wrong direction.",
+  },
+  "coronary-artery-disease": {
+    whatItIs:
+      "Coronary artery disease is the slow buildup of fatty plaque in the arteries that feed the heart, which can lead to chest pain or a heart attack.",
+    whyItMatters:
+      "Air pollution, everyday diet, and uneven access to preventive care across Loudoun all add strain to the heart over the years.",
+    whatScienceSays:
+      "Many small genetic differences, including cholesterol genes like LDLR, PCSK9, and APOB, stack up to set a person's baseline risk, which the local environment then raises or lowers.",
+  },
+};
 
 function toConfidenceTier(c?: string): "LOW" | "MEDIUM" | "HIGH" {
   if (!c) return "LOW";
@@ -60,6 +93,8 @@ export default async function DiseaseDetailPage({
             </p>
           )}
         </header>
+
+        {TLDR_BY_SLUG[slug] && <TldrBox {...TLDR_BY_SLUG[slug]} />}
 
         <section aria-labelledby="overview-heading">
           <h2 id="overview-heading" className="text-h2 text-surface-white mb-3">

@@ -64,7 +64,9 @@ export default function AboutPage() {
               GENARCH is hyperlocal by design. Loudoun County, Virginia is one
               of the fastest-growing and most demographically diverse counties
               in the United States, with a population that has shifted rapidly
-              from rural to suburban over the past two decades.
+              from rural to suburban over the past two decades. Loudoun is the
+              core the atlas is built for, and the model is expanding across
+              Northern Virginia as data and mechanisms are added.
             </p>
             <p>
               The county presents a compelling case study for gene–environment

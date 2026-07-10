@@ -28,7 +28,7 @@ export function Footer() {
               at population scale.
             </p>
             <p className="text-[10px] text-cool-dark uppercase tracking-[0.15em]">
-              Loudoun County, Virginia
+              Loudoun County, Virginia · Expanding across Northern Virginia
             </p>
           </div>
 
@@ -45,6 +45,7 @@ export function Footer() {
               <Link href="/methods" className="block text-cool-light hover:text-teal-primary text-sm no-underline">Methods</Link>
               <Link href="/ethics" className="block text-cool-light hover:text-teal-primary text-sm no-underline">Ethics</Link>
               <Link href="/graph" className="block text-cool-light hover:text-teal-primary text-sm no-underline">Knowledge Graph</Link>
+              <Link href="/glossary" className="block text-cool-light hover:text-teal-primary text-sm no-underline">Glossary</Link>
             </div>
             <div className="space-y-2">
               <p className="text-xs font-semibold uppercase tracking-wider text-cool-mid">About</p>
