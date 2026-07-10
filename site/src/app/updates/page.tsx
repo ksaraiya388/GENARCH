@@ -28,6 +28,16 @@ export default function UpdatesPage() {
             Versioned changelog and release notes. See annual reports for
             year-over-year summaries.
           </p>
+          <p className="mt-2 text-sm text-cool-mid">
+            Looking for the story behind the work? See{" "}
+            <Link
+              href="/field-notes"
+              className="text-teal-primary hover:text-teal-soft hover:underline"
+            >
+              Field Notes
+            </Link>
+            .
+          </p>
         </header>
 
         <section aria-labelledby="releases-heading">

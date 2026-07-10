@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { label: "Graph", href: "/graph" },
   { label: "Community", href: "/community" },
   { label: "Methods", href: "/methods" },
+  { label: "Field Notes", href: "/field-notes" },
   { label: "Updates", href: "/updates" },
 ] as const;
 

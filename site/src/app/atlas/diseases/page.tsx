@@ -32,6 +32,15 @@ export default function AtlasDiseasesPage() {
           architecture, exposure modifiers, and tissue context. This information
           is for educational purposes and does not imply individual risk.
         </p>
+        <p className="text-sm text-cool-mid">
+          New here?{" "}
+          <Link
+            href="/guide/how-to-read-a-disease-page"
+            className="text-teal-primary hover:text-teal-soft hover:underline"
+          >
+            How to read a disease page
+          </Link>
+        </p>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {diseases.map((disease) => (
             <Link

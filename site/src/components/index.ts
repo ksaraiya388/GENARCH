@@ -23,3 +23,5 @@ export type { GraphPageClientProps } from "./GraphPageClient";
 export { Navigation } from "./Navigation";
 export { SearchBar } from "./SearchBar";
 export type { SearchableItem, SearchBarProps, SearchEntityType } from "./SearchBar";
+export { TldrBox } from "./TldrBox";
+export type { TldrBoxProps } from "./TldrBox";
