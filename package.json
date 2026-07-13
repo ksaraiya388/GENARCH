@@ -6,10 +6,14 @@
   "scripts": {
     "site:dev": "npm run dev --prefix site",
     "site:build": "npm run build --prefix site",
-    "site:lint": "npm run lint --prefix site"
+    "site:lint": "npm run lint --prefix site",
+    "figures:export": "node scripts/export-figures.mjs"
   },
   "license": "CC-BY-NC-SA-4.0",
   "dependencies": {
     "@vercel/analytics": "^1.6.1"
+  },
+  "devDependencies": {
+    "playwright": "^1.48.0"
   }
 }
