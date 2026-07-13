@@ -161,6 +161,8 @@ class SensitiveWindow(BaseModel):
     period: str
     age_range: str
     mechanism_rationale: str
+    developmental_context: Optional[str] = None
+    key_processes: Optional[list[str]] = None
     citations: list[str]
 
 
@@ -171,6 +173,9 @@ class GxeHighlight(BaseModel):
     disease_slug: str
     direction: Direction
     evidence_type: str
+    strength: Optional[float] = None
+    confidence: Optional[Confidence] = None
+    mechanism_summary: Optional[str] = None
     citations: list[str]
 
 
@@ -381,6 +386,7 @@ class GraphEdgeAttrs(BaseModel):
     sources: list[str]
     year_first_reported: Optional[int] = None
     ancestry_rep: Optional[str] = None
+    raw_statistics: Optional[dict] = None
 
     @field_validator("evidence_type")
     @classmethod
@@ -450,6 +456,9 @@ class HealthStat(BaseModel):
     value: float
     year: int
     source: str
+    unit: Optional[str] = None
+    comparison_state: Optional[float] = None
+    comparison_national: Optional[float] = None
     ci_lower: Optional[float] = None
     ci_upper: Optional[float] = None
 

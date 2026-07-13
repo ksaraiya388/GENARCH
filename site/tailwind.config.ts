@@ -27,6 +27,7 @@ const config: Config = {
         surface: {
           white: "#F8FAFC",
           muted: "#E2E8F0",
+          light: "#F1F5F9",
         },
         direction: {
           amplify: "#C53030",

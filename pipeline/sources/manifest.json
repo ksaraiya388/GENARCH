@@ -1,0 +1,26 @@
+{
+  "description": "Provenance manifest for curated source files under pipeline/sources/. These files are not ingested by the pipeline (ingest.py reads only the named entity files); they document the origin of data used by the figure system and record what still needs curation.",
+  "sources": [
+    {
+      "file": "gwas_ancestry_breakdown.csv",
+      "purpose": "Figure C3 (gwas-ancestry-imbalance): share of GWAS participants by ancestry group.",
+      "origin_urls": [
+        "https://gwasdiversitymonitor.com/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11770215/"
+      ],
+      "download_date": "2026-07-13",
+      "license": "GWAS Catalog data is distributed by EMBL-EBI under open terms; the 2023 snapshot is quoted from the Cell Genomics 2024 diversity-gap review (citation, not redistribution).",
+      "format": "CSV",
+      "columns": ["ancestry_group", "gwas_participant_pct", "as_of", "denominator_note", "source", "source_url"],
+      "status": "PARTIAL. Figure C3 is NOT shipped.",
+      "blocker": "The figure needs a matched world/global population share by the SAME ancestry categories (the Morales et al. 2018 framework the GWAS Diversity Monitor uses). Neither the GWAS Diversity Monitor nor the Cell Genomics 2024 review publishes matched world-population percentages; the review explicitly notes the absence of a standardized global baseline. Do not attach a differently-defined population source (for example UN residents-in-Europe, ~10%) to the GWAS ancestry share, because the two bars would then measure different things. To unblock: curate a same-framework world-population-by-ancestry table from a single citable source with an as-of date, add it here, then build the two-bar figure."
+    },
+    {
+      "file": "loudoun_tract_foodaccess_diabetes.README.md",
+      "purpose": "Figure C4 (food-access-t2d): tract-level food access vs diagnosed-diabetes prevalence across Loudoun County census tracts.",
+      "status": "SPEC ONLY. Figure C4 is NOT shipped.",
+      "format": "specification",
+      "blocker": "The community dataset holds only a single county-level food-access summary (low_access_pct = 4.5). The scatter needs one row per census tract pairing a food-access measure with a diabetes-prevalence measure. That paired table does not exist and must be curated per the README before the figure can be built. No values were synthesized."
+    }
+  ]
+}

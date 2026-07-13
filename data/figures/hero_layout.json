@@ -1,0 +1,726 @@
+{
+  "nodes": [
+    {
+      "id": "air-pollution",
+      "type": "exposure",
+      "label": "Ambient Air Pollution (PM2.5)",
+      "degree": 9,
+      "x": 0.5155,
+      "y": 0.493,
+      "labeled": false
+    },
+    {
+      "id": "alzheimers-disease",
+      "type": "disease",
+      "label": "Alzheimer's Disease",
+      "degree": 9,
+      "x": 0.4269,
+      "y": 0.6659,
+      "labeled": false
+    },
+    {
+      "id": "asthma",
+      "type": "disease",
+      "label": "Asthma",
+      "degree": 12,
+      "x": 0.1163,
+      "y": 0.558,
+      "labeled": true
+    },
+    {
+      "id": "bdnf",
+      "type": "gene",
+      "label": "BDNF",
+      "degree": 4,
+      "x": 0.1546,
+      "y": 0.411,
+      "labeled": false
+    },
+    {
+      "id": "breast-cancer",
+      "type": "disease",
+      "label": "Breast Cancer",
+      "degree": 12,
+      "x": 0.6578,
+      "y": 0.7876,
+      "labeled": true
+    },
+    {
+      "id": "colorectal-cancer",
+      "type": "disease",
+      "label": "Colorectal Cancer",
+      "degree": 10,
+      "x": 0.7667,
+      "y": 0.6595,
+      "labeled": false
+    },
+    {
+      "id": "complement-system",
+      "type": "pathway",
+      "label": "Complement System and Immune Regulation",
+      "degree": 4,
+      "x": 0.94,
+      "y": 0.2479,
+      "labeled": false
+    },
+    {
+      "id": "copd",
+      "type": "disease",
+      "label": "Chronic Obstructive Pulmonary Disease",
+      "degree": 8,
+      "x": 0.683,
+      "y": 0.5569,
+      "labeled": false
+    },
+    {
+      "id": "coronary-artery-disease",
+      "type": "disease",
+      "label": "Coronary Artery Disease",
+      "degree": 11,
+      "x": 0.4541,
+      "y": 0.377,
+      "labeled": true
+    },
+    {
+      "id": "diet-quality",
+      "type": "exposure",
+      "label": "Diet Quality",
+      "degree": 10,
+      "x": 0.5423,
+      "y": 0.5675,
+      "labeled": false
+    },
+    {
+      "id": "dna-damage-repair",
+      "type": "pathway",
+      "label": "DNA Damage Response and Repair",
+      "degree": 7,
+      "x": 0.8283,
+      "y": 0.872,
+      "labeled": false
+    },
+    {
+      "id": "dopamine-signaling",
+      "type": "pathway",
+      "label": "Dopamine Signaling Pathway",
+      "degree": 4,
+      "x": 0.4444,
+      "y": 0.06,
+      "labeled": false
+    },
+    {
+      "id": "egfr",
+      "type": "gene",
+      "label": "EGFR",
+      "degree": 4,
+      "x": 0.7679,
+      "y": 0.94,
+      "labeled": false
+    },
+    {
+      "id": "hpa-axis",
+      "type": "pathway",
+      "label": "Hypothalamic-Pituitary-Adrenal Axis",
+      "degree": 4,
+      "x": 0.1675,
+      "y": 0.1202,
+      "labeled": false
+    },
+    {
+      "id": "hypertension",
+      "type": "disease",
+      "label": "Hypertension",
+      "degree": 11,
+      "x": 0.2856,
+      "y": 0.3692,
+      "labeled": true
+    },
+    {
+      "id": "insulin-signaling",
+      "type": "pathway",
+      "label": "Insulin Signaling and Glucose Metabolism",
+      "degree": 5,
+      "x": 0.06,
+      "y": 0.8107,
+      "labeled": false
+    },
+    {
+      "id": "ldl-cholesterol-metabolism",
+      "type": "pathway",
+      "label": "LDL Cholesterol Metabolism Pathway",
+      "degree": 5,
+      "x": 0.1482,
+      "y": 0.2463,
+      "labeled": false
+    },
+    {
+      "id": "lung-cancer",
+      "type": "disease",
+      "label": "Lung Cancer",
+      "degree": 8,
+      "x": 0.7584,
+      "y": 0.733,
+      "labeled": false
+    },
+    {
+      "id": "major-depressive-disorder",
+      "type": "disease",
+      "label": "Major Depressive Disorder",
+      "degree": 11,
+      "x": 0.3202,
+      "y": 0.2839,
+      "labeled": true
+    },
+    {
+      "id": "multiple-sclerosis",
+      "type": "disease",
+      "label": "Multiple Sclerosis",
+      "degree": 7,
+      "x": 0.8,
+      "y": 0.3921,
+      "labeled": false
+    },
+    {
+      "id": "obesity",
+      "type": "disease",
+      "label": "Obesity",
+      "degree": 13,
+      "x": 0.2334,
+      "y": 0.616,
+      "labeled": true
+    },
+    {
+      "id": "obesity-exposure",
+      "type": "exposure",
+      "label": "Obesogenic Environment",
+      "degree": 11,
+      "x": 0.4706,
+      "y": 0.5307,
+      "labeled": true
+    },
+    {
+      "id": "pi3k-akt-mtor",
+      "type": "pathway",
+      "label": "PI3K-AKT-mTOR Signaling Pathway",
+      "degree": 5,
+      "x": 0.9084,
+      "y": 0.8321,
+      "labeled": false
+    },
+    {
+      "id": "psychosocial-stress",
+      "type": "exposure",
+      "label": "Psychosocial Stress",
+      "degree": 9,
+      "x": 0.3838,
+      "y": 0.508,
+      "labeled": false
+    },
+    {
+      "id": "rheumatoid-arthritis",
+      "type": "disease",
+      "label": "Rheumatoid Arthritis",
+      "degree": 9,
+      "x": 0.6626,
+      "y": 0.3819,
+      "labeled": false
+    },
+    {
+      "id": "schizophrenia",
+      "type": "disease",
+      "label": "Schizophrenia",
+      "degree": 9,
+      "x": 0.4978,
+      "y": 0.2628,
+      "labeled": false
+    },
+    {
+      "id": "slc6a4",
+      "type": "gene",
+      "label": "SLC6A4",
+      "degree": 4,
+      "x": 0.3218,
+      "y": 0.0623,
+      "labeled": false
+    },
+    {
+      "id": "tobacco",
+      "type": "exposure",
+      "label": "Tobacco Smoke",
+      "degree": 7,
+      "x": 0.7168,
+      "y": 0.4674,
+      "labeled": false
+    },
+    {
+      "id": "tp53",
+      "type": "gene",
+      "label": "TP53",
+      "degree": 4,
+      "x": 0.9029,
+      "y": 0.94,
+      "labeled": false
+    },
+    {
+      "id": "type-2-diabetes",
+      "type": "disease",
+      "label": "Type 2 Diabetes",
+      "degree": 11,
+      "x": 0.2921,
+      "y": 0.7088,
+      "labeled": true
+    }
+  ],
+  "edges": [
+    {
+      "source": "diet-quality",
+      "target": "obesity",
+      "direction": "amplify",
+      "strength": 0.9
+    },
+    {
+      "source": "air-pollution",
+      "target": "major-depressive-disorder",
+      "direction": "amplify",
+      "strength": 0.58
+    },
+    {
+      "source": "egfr",
+      "target": "breast-cancer",
+      "direction": "unknown",
+      "strength": 0.58
+    },
+    {
+      "source": "obesity-exposure",
+      "target": "major-depressive-disorder",
+      "direction": "bidirectional",
+      "strength": 0.58
+    },
+    {
+      "source": "slc6a4",
+      "target": "schizophrenia",
+      "direction": "unknown",
+      "strength": 0.42
+    },
+    {
+      "source": "complement-system",
+      "target": "multiple-sclerosis",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "slc6a4",
+      "target": "major-depressive-disorder",
+      "direction": "unknown",
+      "strength": 0.72
+    },
+    {
+      "source": "complement-system",
+      "target": "rheumatoid-arthritis",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "dopamine-signaling",
+      "target": "schizophrenia",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "dopamine-signaling",
+      "target": "major-depressive-disorder",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "slc6a4",
+      "target": "dopamine-signaling",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "ldl-cholesterol-metabolism",
+      "target": "coronary-artery-disease",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "bdnf",
+      "target": "major-depressive-disorder",
+      "direction": "unknown",
+      "strength": 0.75
+    },
+    {
+      "source": "ldl-cholesterol-metabolism",
+      "target": "hypertension",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "insulin-signaling",
+      "target": "type-2-diabetes",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "insulin-signaling",
+      "target": "obesity",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "hpa-axis",
+      "target": "major-depressive-disorder",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "hpa-axis",
+      "target": "hypertension",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "slc6a4",
+      "target": "hpa-axis",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "pi3k-akt-mtor",
+      "target": "lung-cancer",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "pi3k-akt-mtor",
+      "target": "colorectal-cancer",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "pi3k-akt-mtor",
+      "target": "breast-cancer",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "egfr",
+      "target": "pi3k-akt-mtor",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "tp53",
+      "target": "pi3k-akt-mtor",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "dna-damage-repair",
+      "target": "breast-cancer",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "dna-damage-repair",
+      "target": "colorectal-cancer",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "psychosocial-stress",
+      "target": "schizophrenia",
+      "direction": "amplify",
+      "strength": 0.85
+    },
+    {
+      "source": "dna-damage-repair",
+      "target": "lung-cancer",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "tp53",
+      "target": "dna-damage-repair",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "egfr",
+      "target": "dna-damage-repair",
+      "direction": "unknown",
+      "strength": 0.5
+    },
+    {
+      "source": "bdnf",
+      "target": "major-depressive-disorder",
+      "direction": "unknown",
+      "strength": 0.78
+    },
+    {
+      "source": "psychosocial-stress",
+      "target": "bdnf",
+      "direction": "amplify",
+      "strength": 0.82
+    },
+    {
+      "source": "tobacco",
+      "target": "schizophrenia",
+      "direction": "amplify",
+      "strength": 0.65
+    },
+    {
+      "source": "obesity-exposure",
+      "target": "schizophrenia",
+      "direction": "amplify",
+      "strength": 0.5
+    },
+    {
+      "source": "psychosocial-stress",
+      "target": "obesity",
+      "direction": "amplify",
+      "strength": 0.7
+    },
+    {
+      "source": "tobacco",
+      "target": "coronary-artery-disease",
+      "direction": "amplify",
+      "strength": 0.95
+    },
+    {
+      "source": "diet-quality",
+      "target": "coronary-artery-disease",
+      "direction": "amplify",
+      "strength": 0.85
+    },
+    {
+      "source": "air-pollution",
+      "target": "coronary-artery-disease",
+      "direction": "amplify",
+      "strength": 0.7
+    },
+    {
+      "source": "obesity-exposure",
+      "target": "coronary-artery-disease",
+      "direction": "amplify",
+      "strength": 0.8
+    },
+    {
+      "source": "obesity-exposure",
+      "target": "obesity",
+      "direction": "amplify",
+      "strength": 0.75
+    },
+    {
+      "source": "diet-quality",
+      "target": "multiple-sclerosis",
+      "direction": "buffer",
+      "strength": 0.75
+    },
+    {
+      "source": "tobacco",
+      "target": "multiple-sclerosis",
+      "direction": "amplify",
+      "strength": 0.78
+    },
+    {
+      "source": "air-pollution",
+      "target": "multiple-sclerosis",
+      "direction": "amplify",
+      "strength": 0.5
+    },
+    {
+      "source": "obesity-exposure",
+      "target": "type-2-diabetes",
+      "direction": "amplify",
+      "strength": 0.95
+    },
+    {
+      "source": "diet-quality",
+      "target": "type-2-diabetes",
+      "direction": "amplify",
+      "strength": 0.8
+    },
+    {
+      "source": "psychosocial-stress",
+      "target": "type-2-diabetes",
+      "direction": "amplify",
+      "strength": 0.6
+    },
+    {
+      "source": "tobacco",
+      "target": "rheumatoid-arthritis",
+      "direction": "amplify",
+      "strength": 0.95
+    },
+    {
+      "source": "obesity-exposure",
+      "target": "rheumatoid-arthritis",
+      "direction": "amplify",
+      "strength": 0.7
+    },
+    {
+      "source": "psychosocial-stress",
+      "target": "rheumatoid-arthritis",
+      "direction": "amplify",
+      "strength": 0.55
+    },
+    {
+      "source": "diet-quality",
+      "target": "rheumatoid-arthritis",
+      "direction": "buffer",
+      "strength": 0.5
+    },
+    {
+      "source": "air-pollution",
+      "target": "asthma",
+      "direction": "amplify",
+      "strength": 0.88
+    },
+    {
+      "source": "air-pollution",
+      "target": "alzheimers-disease",
+      "direction": "amplify",
+      "strength": 0.65
+    },
+    {
+      "source": "psychosocial-stress",
+      "target": "alzheimers-disease",
+      "direction": "amplify",
+      "strength": 0.55
+    },
+    {
+      "source": "diet-quality",
+      "target": "alzheimers-disease",
+      "direction": "buffer",
+      "strength": 0.6
+    },
+    {
+      "source": "obesity-exposure",
+      "target": "alzheimers-disease",
+      "direction": "amplify",
+      "strength": 0.6
+    },
+    {
+      "source": "diet-quality",
+      "target": "colorectal-cancer",
+      "direction": "amplify",
+      "strength": 0.85
+    },
+    {
+      "source": "obesity-exposure",
+      "target": "colorectal-cancer",
+      "direction": "amplify",
+      "strength": 0.78
+    },
+    {
+      "source": "tobacco",
+      "target": "colorectal-cancer",
+      "direction": "amplify",
+      "strength": 0.65
+    },
+    {
+      "source": "diet-quality",
+      "target": "hypertension",
+      "direction": "amplify",
+      "strength": 0.85
+    },
+    {
+      "source": "psychosocial-stress",
+      "target": "hypertension",
+      "direction": "amplify",
+      "strength": 0.72
+    },
+    {
+      "source": "obesity-exposure",
+      "target": "hypertension",
+      "direction": "amplify",
+      "strength": 0.88
+    },
+    {
+      "source": "bdnf",
+      "target": "obesity",
+      "direction": "unknown",
+      "strength": 0.75
+    },
+    {
+      "source": "obesity-exposure",
+      "target": "breast-cancer",
+      "direction": "amplify",
+      "strength": 0.7
+    },
+    {
+      "source": "psychosocial-stress",
+      "target": "breast-cancer",
+      "direction": "amplify",
+      "strength": 0.45
+    },
+    {
+      "source": "tp53",
+      "target": "breast-cancer",
+      "direction": "unknown",
+      "strength": 0.95
+    },
+    {
+      "source": "tobacco",
+      "target": "lung-cancer",
+      "direction": "amplify",
+      "strength": 0.95
+    },
+    {
+      "source": "psychosocial-stress",
+      "target": "major-depressive-disorder",
+      "direction": "amplify",
+      "strength": 0.88
+    },
+    {
+      "source": "air-pollution",
+      "target": "lung-cancer",
+      "direction": "amplify",
+      "strength": 0.62
+    },
+    {
+      "source": "diet-quality",
+      "target": "lung-cancer",
+      "direction": "buffer",
+      "strength": 0.45
+    },
+    {
+      "source": "egfr",
+      "target": "lung-cancer",
+      "direction": "unknown",
+      "strength": 0.88
+    },
+    {
+      "source": "tp53",
+      "target": "lung-cancer",
+      "direction": "unknown",
+      "strength": 0.78
+    },
+    {
+      "source": "tobacco",
+      "target": "copd",
+      "direction": "amplify",
+      "strength": 0.98
+    },
+    {
+      "source": "air-pollution",
+      "target": "copd",
+      "direction": "amplify",
+      "strength": 0.75
+    },
+    {
+      "source": "diet-quality",
+      "target": "copd",
+      "direction": "buffer",
+      "strength": 0.5
+    },
+    {
+      "source": "obesity-exposure",
+      "target": "copd",
+      "direction": "unknown",
+      "strength": 0.45
+    }
+  ]
+}

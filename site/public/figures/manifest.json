@@ -1,0 +1,43 @@
+{
+  "figures": [
+    {
+      "id": "il33-pm25-chain",
+      "title": "How PM2.5 feeds the IL-33 pathway in asthma",
+      "claim": "In airway epithelium, fine-particle pollution can activate NF-κB and release IL-33, the alarmin that drives type 2 asthma inflammation.",
+      "altText": "A five-step diagram running left to right: PM2.5 particulate, bronchial epithelial injury, IL-33 release, ST2 receptor on ILC2 cells, type 2 inflammation, then asthma exacerbation. Each arrow is tagged with its evidence class; steps without direct evidence are dashed and marked inferred.",
+      "destination": "/mechanism-briefs/pm25-il33-nfkb-asthma",
+      "sourceLine": "GENARCH atlas: IL33 gene and asthma gene–environment records",
+      "generatedAt": "2026-07-13T21:27:53.163Z",
+      "files": {
+        "card": "figures/il33-pm25-chain-card@2x.png",
+        "square": "figures/il33-pm25-chain-square@2x.png"
+      }
+    },
+    {
+      "id": "knowledge-graph-hero",
+      "title": "The GENARCH gene–environment graph",
+      "claim": "GENARCH links genes, exposures, pathways, and diseases into one navigable map of gene–environment interaction.",
+      "altText": "A network diagram of the GENARCH knowledge graph. Nodes are colored by type (disease, gene, exposure, pathway, tissue) and edges by direction (amplify in red, buffer in green, unknown in gray). Only the most connected nodes are labeled.",
+      "destination": "/graph",
+      "sourceLine": "GENARCH knowledge graph (seed release)",
+      "generatedAt": "2026-07-13T21:27:55.823Z",
+      "files": {
+        "card": "figures/knowledge-graph-hero-card@2x.png",
+        "square": "figures/knowledge-graph-hero-square@2x.png"
+      }
+    },
+    {
+      "id": "loudoun-asthma-vs-state",
+      "title": "Adult asthma prevalence: Loudoun, Virginia, and the US",
+      "claim": "Loudoun County's modeled adult asthma prevalence (8.2%) sits below Virginia (9.4%) and close to the national rate (8.0%).",
+      "altText": "A bar chart of adult asthma prevalence with three bars: Loudoun County at 8.2 percent, Virginia at 9.4 percent, and the United States at 8.0 percent. Loudoun is the lowest of the three.",
+      "destination": "/community/loudoun-county-va",
+      "sourceLine": "BRFSS 2023, via GENARCH community dataset (loudoun-county-va)",
+      "generatedAt": "2026-07-13T21:27:58.444Z",
+      "files": {
+        "card": "figures/loudoun-asthma-vs-state-card@2x.png",
+        "square": "figures/loudoun-asthma-vs-state-square@2x.png"
+      }
+    }
+  ]
+}
