@@ -145,7 +145,10 @@ export function getSearchIndex(): SearchItem[] {
 
 export function getMechanismBrief(slug: string): MechanismBrief | null {
   const filePath = path.join(DATA_DIR, "briefs", `${slug}.json`);
-  return readJsonFile<MechanismBrief>(filePath);
+  const brief = readJsonFile<MechanismBrief>(filePath);
+  // Unpublished briefs are treated as nonexistent: not routable, not linkable.
+  if (brief === null || brief.published !== true) return null;
+  return brief;
 }
 
 export function getAllMechanismBriefs(): MechanismBrief[] {
@@ -159,14 +162,16 @@ export function getAllMechanismBriefs(): MechanismBrief[] {
     if (!file.endsWith(".json")) continue;
     const fullPath = path.join(briefsDir, file);
     const item = readJsonFile<MechanismBrief>(fullPath);
-    if (item !== null) {
+    // Only published briefs are listed anywhere (index, search, static params).
+    if (item !== null && item.published === true) {
       const slug = item.slug ?? path.basename(file, ".json");
       briefs.push({ ...item, slug });
     }
   }
   return briefs.sort(
     (a, b) =>
-      new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
+      new Date(b.published_at ?? 0).getTime() -
+      new Date(a.published_at ?? 0).getTime()
   );
 }
 

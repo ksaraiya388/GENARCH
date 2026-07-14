@@ -32,6 +32,7 @@
     {"id": "ref1", "title": "Sleep and metabolic function", "authors": "Spiegel K, et al.", "year": 2009, "journal": "Lancet Neurology", "doi": "10.1016/S1474-4422(09)70136-0"},
     {"id": "ref2", "title": "Adolescent sleep and mental health", "authors": "Short MA, et al.", "year": 2013, "journal": "Sleep Medicine Reviews", "doi": "10.1016/j.smrv.2012.03.007"}
   ],
+  "published": true,
   "published_at": "2026-03-25",
   "schema_version": "1.0"
 }

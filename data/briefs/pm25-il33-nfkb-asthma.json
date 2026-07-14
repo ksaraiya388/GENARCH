@@ -41,6 +41,7 @@
     {"id": "ref4", "title": "GSTP1 and TNF Gene Variants and Associations between Air Pollution and Incident Childhood Asthma", "authors": "Islam T, et al.", "year": 2014, "journal": "Environmental Health Perspectives", "doi": "10.1289/ehp.1307459"},
     {"id": "ref5", "title": "The IL-33/ST2 axis: Role in health and disease", "authors": "Cayrol C, Girard JP", "year": 2018, "journal": "Cytokine & Growth Factor Reviews", "doi": "10.1016/j.cytogfr.2018.01.001"}
   ],
+  "published": true,
   "published_at": "2026-02-26",
   "schema_version": "1.0"
 }
