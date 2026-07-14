@@ -32,6 +32,7 @@
     {"id": "ref1", "title": "JAK-STAT signaling in immune regulation", "authors": "O'Shea JJ, et al.", "year": 2015, "journal": "Immunity", "doi": "10.1016/j.immuni.2015.02.010"},
     {"id": "ref2", "title": "Targeting the JAK/STAT pathway in autoimmune disease", "authors": "Schwartz DM, et al.", "year": 2017, "journal": "Nature Reviews Drug Discovery", "doi": "10.1038/nrd.2017.201"}
   ],
+  "published": true,
   "published_at": "2026-03-20",
   "schema_version": "1.0"
 }

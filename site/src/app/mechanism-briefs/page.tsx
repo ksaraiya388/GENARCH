@@ -63,10 +63,10 @@ export default function MechanismBriefsPage() {
                   </p>
                   <div className="flex flex-wrap items-center gap-4 text-xs">
                     <time
-                      dateTime={brief.published_at}
+                      dateTime={brief.published_at ?? undefined}
                       className="text-cool-mid"
                     >
-                      {formatDate(brief.published_at)}
+                      {formatDate(brief.published_at ?? brief.date ?? "")}
                     </time>
                     {tags.length > 0 && (
                       <div className="flex flex-wrap gap-2">

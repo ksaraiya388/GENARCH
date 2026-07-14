@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import datetime
 import json
 import sys
 from pathlib import Path
@@ -188,6 +189,52 @@ def _collect_citation_refs(data_dir: Path) -> list[tuple[Path, str]]:
     return refs
 
 
+def _iso_date_ok(value: object) -> bool:
+    """True if value is a non-empty ISO date or datetime string."""
+    if not isinstance(value, str) or not value:
+        return False
+    try:
+        datetime.date.fromisoformat(value)
+        return True
+    except ValueError:
+        try:
+            datetime.datetime.fromisoformat(value)
+            return True
+        except ValueError:
+            return False
+
+
+def _validate_briefs(data_dir: Path, errors: list[str]) -> None:
+    """Enforce the brief publication gate.
+
+    Every brief must carry a boolean ``published``. A published brief must have a
+    valid ISO ``published_at`` date; an unpublished brief must have
+    ``published_at`` set to null. This makes publishing a data flag rather than a
+    merge-time decision.
+    """
+    briefs_dir = data_dir / "briefs"
+    if not briefs_dir.exists():
+        return
+    for fp in sorted(briefs_dir.rglob("*.json")):
+        try:
+            raw = json.loads(fp.read_text(encoding="utf-8"))
+        except Exception as e:  # noqa: BLE001 - reported as a validation error
+            errors.append(f"{fp}: Invalid JSON: {e}")
+            continue
+        published = raw.get("published")
+        if not isinstance(published, bool):
+            errors.append(f"{fp}: brief must have a boolean 'published' flag")
+            continue
+        published_at = raw.get("published_at")
+        if published:
+            if not _iso_date_ok(published_at):
+                errors.append(
+                    f"{fp}: published brief must have a valid ISO 'published_at' date"
+                )
+        elif published_at is not None:
+            errors.append(f"{fp}: unpublished brief must have 'published_at': null")
+
+
 def validate() -> int:
     """Run all validations. Returns 0 on success, 1 on any error."""
     data_dir = _resolve_data_dir()
@@ -298,6 +345,9 @@ def validate() -> int:
                 errors.append(f"{fp}: Disease missing population equity notes")
         except Exception:
             pass
+
+    # 7. Brief publication gate
+    _validate_briefs(data_dir, errors)
 
     # Output
     if errors:

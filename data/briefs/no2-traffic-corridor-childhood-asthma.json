@@ -48,6 +48,7 @@
     {"id": "ref6", "title": "The asthma-associated ORMDL3 gene product regulates endoplasmic reticulum-mediated calcium signaling and cellular stress", "authors": "Cantero-Recasens G, Fandos C, Rubio-Moscardo F, et al.", "year": 2010, "journal": "Human Molecular Genetics", "doi": "10.1093/hmg/ddp471"},
     {"id": "ref7", "title": "Integrated Science Assessment (ISA) for Oxides of Nitrogen — Health Criteria (EPA/600/R-15/068)", "authors": "U.S. Environmental Protection Agency", "year": 2016, "journal": "U.S. Environmental Protection Agency"}
   ],
+  "published": true,
   "published_at": "2026-07-01",
   "schema_version": "1.0"
 }

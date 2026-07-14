@@ -3,8 +3,9 @@ import Link from "next/link";
 import {
   getDisease,
   getAllDiseases,
+  getMechanismBrief,
 } from "@/lib/data";
-import type { Reference } from "@/lib/types";
+import type { Reference, MechanismBrief } from "@/lib/types";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { EvidenceLimitations } from "@/components/EvidenceLimitations";
 import { CitationRenderer } from "@/components/CitationRenderer";
@@ -304,25 +305,33 @@ export default async function DiseaseDetailPage({
           </section>
         )}
 
-        {disease.mechanism_briefs && disease.mechanism_briefs.length > 0 && (
-          <section aria-labelledby="mechanism-briefs-heading">
-            <h2 id="mechanism-briefs-heading" className="text-h2 text-surface-white mb-3">
-              Mechanism Brief Links
-            </h2>
-            <ul className="list-disc list-inside space-y-1 text-sm">
-              {disease.mechanism_briefs.map((slug, i) => (
-                <li key={i}>
-                  <Link
-                    href={`/mechanism-briefs/${slug}`}
-                    className="text-teal-primary hover:text-teal-soft hover:underline"
-                  >
-                    {slug}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
+        {(() => {
+          // Resolve banked slugs to briefs and drop anything unpublished or
+          // missing, so the page never links to a brief that 404s.
+          const briefLinks = (disease.mechanism_briefs ?? [])
+            .map((s) => getMechanismBrief(s))
+            .filter((b): b is MechanismBrief => b !== null);
+          if (briefLinks.length === 0) return null;
+          return (
+            <section aria-labelledby="mechanism-briefs-heading">
+              <h2 id="mechanism-briefs-heading" className="text-h2 text-surface-white mb-3">
+                Mechanism Brief Links
+              </h2>
+              <ul className="list-disc list-inside space-y-1 text-sm">
+                {briefLinks.map((brief) => (
+                  <li key={brief.slug}>
+                    <Link
+                      href={`/mechanism-briefs/${brief.slug}`}
+                      className="text-teal-primary hover:text-teal-soft hover:underline"
+                    >
+                      {brief.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          );
+        })()}
 
         <section aria-labelledby="visualizations-heading">
           <h2 id="visualizations-heading" className="text-h2 text-surface-white mb-3">

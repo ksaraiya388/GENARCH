@@ -7,7 +7,8 @@
     "site:dev": "npm run dev --prefix site",
     "site:build": "npm run build --prefix site",
     "site:lint": "npm run lint --prefix site",
-    "figures:export": "node scripts/export-figures.mjs"
+    "figures:export": "node scripts/export-figures.mjs",
+    "test:brief-publish": "node scripts/test-brief-publish.mjs"
   },
   "license": "CC-BY-NC-SA-4.0",
   "dependencies": {

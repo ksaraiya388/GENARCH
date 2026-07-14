@@ -323,7 +323,12 @@ export interface MechanismBrief {
   related_genes: string[];
   related_pathways: string[];
   references: Reference[];
-  published_at: string;
+  /** Authoring date (ISO). Set when the brief is written; never cleared. */
+  date?: string;
+  /** Publication gate. Only published briefs are listed, searchable, and routable. */
+  published: boolean;
+  /** ISO publication date when published; null while unpublished. */
+  published_at: string | null;
 }
 
 export interface SearchItem {

@@ -51,6 +51,8 @@
     {"id": "ref10", "title": "Exposure to PM2.5 induces aberrant activation of NF-κB in human airway epithelial cells by downregulating miR-331 expression", "authors": "Li R, et al.", "year": 2017, "journal": "Environmental Toxicology and Pharmacology", "doi": "10.1016/j.etap.2017.02.011"},
     {"id": "ref11", "title": "The IL-33/ST2 axis: Role in health and disease", "authors": "Cayrol C, Girard JP", "year": 2018, "journal": "Cytokine & Growth Factor Reviews", "doi": "10.1016/j.cytogfr.2018.01.001"}
   ],
-  "published_at": "2026-07-13",
+  "date": "2026-07-13",
+  "published": false,
+  "published_at": null,
   "schema_version": "1.0"
 }

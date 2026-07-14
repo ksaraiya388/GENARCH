@@ -32,6 +32,7 @@
     {"id": "ref1", "title": "The BDNF Val66Met polymorphism and stress", "authors": "Hosang GM, et al.", "year": 2014, "journal": "Molecular Psychiatry", "doi": "10.1038/mp.2013.123"},
     {"id": "ref2", "title": "Gene–environment interactions in depression", "authors": "Dunn EC, et al.", "year": 2015, "journal": "Current Psychiatry Reports", "doi": "10.1007/s11920-015-0564-2"}
   ],
+  "published": true,
   "published_at": "2026-03-15",
   "schema_version": "1.0"
 }
