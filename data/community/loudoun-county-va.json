@@ -8,9 +8,9 @@
     {"disease_slug": "asthma", "metric_type": "prevalence", "value": 8.2, "unit": "percent", "year": 2023, "source": "BRFSS (Behavioral Risk Factor Surveillance System)", "comparison_state": 9.4, "comparison_national": 8.0}
   ],
   "exposure_layers": [
-    {"layer_name": "PM2.5", "data_source": "EPA AQS", "year": 2023, "summary_stats": {"mean": 9.2, "max": 18.5}},
-    {"layer_name": "Industrial/Commercial Proximity", "data_source": "EPA NATA, Census", "year": 2022, "summary_stats": {"high_exposure_pct": 12.0}},
-    {"layer_name": "Food Access", "data_source": "USDA Food Access Research Atlas", "year": 2023, "summary_stats": {"low_access_pct": 4.5}}
+    {"layer_name": "PM2.5", "data_source": "EPA AQS", "year": 2023, "unit": "µg/m³", "summary_stats": {"mean": 9.2, "max": 18.5}},
+    {"layer_name": "Industrial/Commercial Proximity", "data_source": "EPA NATA, Census", "year": 2022, "unit": "percent", "summary_stats": {"high_exposure_pct": 12.0}},
+    {"layer_name": "Food Access", "data_source": "USDA Food Access Research Atlas", "year": 2023, "unit": "percent", "summary_stats": {"low_access_pct": 4.5}}
   ],
   "model": {
     "features_used": ["PM2.5", "traffic_proximity", "socioeconomic_index", "green_space", "healthcare_access"],

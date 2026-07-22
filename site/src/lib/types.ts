@@ -271,6 +271,7 @@ export interface CommunityRegion {
     layer_name: string;
     data_source: string;
     year: number;
+    unit?: string;
     geojson_path?: string;
     summary_stats?: Record<string, number>;
   }>;
