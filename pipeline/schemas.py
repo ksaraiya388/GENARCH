@@ -469,6 +469,7 @@ class ExposureLayer(BaseModel):
     layer_name: str
     data_source: str
     year: int
+    unit: Optional[str] = None
     geojson_path: Optional[str] = None
     summary_stats: Optional[dict[str, float]] = None
 

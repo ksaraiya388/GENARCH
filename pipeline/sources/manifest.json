@@ -21,6 +21,25 @@
       "status": "SPEC ONLY. Figure C4 is NOT shipped.",
       "format": "specification",
       "blocker": "The community dataset holds only a single county-level food-access summary (low_access_pct = 4.5). The scatter needs one row per census tract pairing a food-access measure with a diabetes-prevalence measure. That paired table does not exist and must be curated per the README before the figure can be built. No values were synthesized."
+    },
+    {
+      "file": "site/public/geo/{loudoun-county-va,fairfax-county-va}.geojson",
+      "purpose": "County boundary geometry for the /community/[region] map (Branch B, county-level rendering).",
+      "origin_url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/State_County/MapServer/1/query",
+      "query_params": "where=GEOID='<fips>'&outFields=GEOID,NAME&returnGeometry=true&outSR=4326&f=geojson",
+      "fetch_script": "pipeline/fetch_geo.py",
+      "download_date": "2026-07-22",
+      "license": "U.S. Census Bureau TIGERweb / TIGER-Line — public domain (U.S. Government work, not copyrighted).",
+      "format": "GeoJSON (FeatureCollection, WGS84 / EPSG:4326)",
+      "status": "SHIPPED.",
+      "description": "One real county polygon per region, keyed by fips_code (GEOID). Fetched via pipeline/fetch_geo.py and committed to the repo; the static site build does not fetch. This replaced a prior hand-drawn Fairfax outline and added the previously missing Loudoun boundary."
+    },
+    {
+      "file": "(not yet curated) tract-level exposure table",
+      "purpose": "A true sub-county choropleth on /community/[region]: per-census-tract exposure values so the single county polygon can be replaced by a graded tract choropleth.",
+      "status": "BLOCKED. The community map renders at county resolution only.",
+      "format": "specification",
+      "blocker": "The community dataset holds only one county-level scalar per exposure layer (e.g., Loudoun PM2.5 mean = 9.2 µg/m³). A choropleth needs Census TIGER/Line 2023 census-tract geometry for FIPS 51107 (Loudoun) and 51059 (Fairfax) joined to per-tract exposure values (EPA AQS / EJSCREEN for PM2.5 and traffic proximity, USDA Food Access Atlas for food access, CDC PLACES for health burden). That per-tract table does not exist and must be curated before a tract choropleth can be built. No values were synthesized."
     }
   ]
 }

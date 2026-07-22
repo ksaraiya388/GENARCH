@@ -153,6 +153,19 @@ Pathway and G×E relationships are often inferred from correlative or indirect e
 ### Spatial Resolution
 Community hotspot scores are county- or census-tract-level. Within-area heterogeneity is not modeled. Small-area estimates may be unstable where counts are low.
 
+The `/community/[region]` map currently renders at **county resolution only**: one real
+county boundary (U.S. Census TIGERweb, fetched by `pipeline/fetch_geo.py`) with the
+selected exposure layer's single county-level value. The exposure dataset holds only one
+scalar per layer, so no sub-county (tract) variation can be drawn.
+
+> **TODO — tract-level choropleth.** To replace the single county polygon with a graded
+> tract choropleth, curate a per-census-tract exposure table: Census TIGER/Line 2023
+> **tract** geometry for FIPS **51107** (Loudoun) and **51059** (Fairfax) joined to
+> per-tract values for each layer — EPA AQS / EJSCREEN (PM2.5, traffic proximity), USDA
+> Food Access Atlas (food access), CDC PLACES (health burden). This table does not yet
+> exist; see the blocker entry in `pipeline/sources/manifest.json`. Until it is curated,
+> no sub-county values may be synthesized or interpolated.
+
 ### Model Generalizability
 The community hotspot model (XGBoost) is trained on U.S. data. Performance outside the training distribution (e.g., different countries, time periods) is not validated.
 

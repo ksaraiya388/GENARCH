@@ -42,18 +42,21 @@
       "layer_name": "PM2.5",
       "data_source": "EPA AQS",
       "year": 2023,
+      "unit": "µg/m³",
       "summary_stats": {"mean": 8.7, "max": 16.2}
     },
     {
       "layer_name": "Food Access",
       "data_source": "USDA Food Access Research Atlas",
       "year": 2023,
+      "unit": "percent",
       "summary_stats": {"low_access_pct": 12.3}
     },
     {
       "layer_name": "Traffic Proximity",
       "data_source": "EPA EJScreen",
       "year": 2023,
+      "unit": "percent",
       "summary_stats": {"high_exposure_pct": 18.5}
     }
   ],
