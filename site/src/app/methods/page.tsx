@@ -1,8 +1,27 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { EvidenceLimitations } from "@/components/EvidenceLimitations";
+import { getAllGenes, getAllPathways, getGraphData } from "@/lib/data";
 
 export default function MethodsPage() {
+  // Both counts are derived at build time from the files themselves, so the two figures
+  // cannot drift apart and self-correct if the graph is regenerated.
+  const geneModules = getAllGenes().length;
+  const pathwayModules = getAllPathways().length;
+  const graph = getGraphData();
+  const graphNodes = graph?.nodes ?? [];
+  const geneNodes = graphNodes.filter((n) => n.type === "gene").length;
+  const pathwayNodes = graphNodes.filter((n) => n.type === "pathway").length;
+
+  // Citation-backfill status, counted at build time from the graph itself so the published
+  // figure can never drift from the data it describes.
+  const edges = graph?.edges ?? [];
+  const isPlaceholder = (s: string[] | undefined) =>
+    !!s && s.length > 0 && s.every((x) => /^ref\d+$/.test(x.trim()));
+  const placeholderEdges = edges.filter((e) => isPlaceholder(e.attrs?.sources)).length;
+  const emptyEdges = edges.filter((e) => (e.attrs?.sources?.length ?? 0) === 0).length;
+  const pendingEdges = placeholderEdges + emptyEdges;
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <article className="space-y-10">
@@ -307,6 +326,74 @@ export default function MethodsPage() {
           </ul>
         </section>
 
+        {/* ── Entity counts ── */}
+        <section aria-labelledby="entity-counts-heading">
+          <h2 id="entity-counts-heading" className="text-h2 text-surface-white mb-3">
+            What the Atlas Counts
+          </h2>
+          <div className="space-y-3 text-cool-light">
+            <p>
+              GENARCH distinguishes a <strong className="text-surface-white">curated
+              module</strong> from a <strong className="text-surface-white">graph
+              node</strong>. A curated module has its own page, tissue expression records,
+              pathway membership, and reference list. A graph node may also be a gene symbol
+              that appears only as a locus in a disease&rsquo;s top-loci table, with an
+              association and citations but no standalone module.
+            </p>
+            <p>
+              The atlas currently holds <strong className="text-surface-white">{geneModules} gene
+              modules</strong> and <strong className="text-surface-white">{pathwayModules} pathway
+              modules</strong>. The knowledge graph carries{" "}
+              <strong className="text-surface-white">{geneNodes} gene nodes</strong> and{" "}
+              <strong className="text-surface-white">{pathwayNodes} pathway nodes</strong>.
+              Both figures are derived at build time from the data files themselves. Counts on
+              the home page are module counts; counts on the graph page are graph counts.
+            </p>
+          </div>
+        </section>
+
+        {/* ── Known Data-Quality Limitations ── */}
+        <section aria-labelledby="data-quality-heading">
+          <h2 id="data-quality-heading" className="text-h2 text-surface-white mb-3">
+            Known Data-Quality Limitations
+          </h2>
+          <div className="space-y-3 text-cool-light">
+            <p>
+              <strong className="text-surface-white">
+                Citation records for knowledge-graph edges are under active backfill.
+              </strong>{" "}
+              {pendingEdges === edges.length
+                ? `All ${edges.length} edges in the knowledge graph currently carry no resolvable citation identifier`
+                : `Of ${edges.length} edges in the knowledge graph, ${pendingEdges} currently carry no resolvable citation identifier`}
+              {" "}&mdash; {placeholderEdges} hold placeholder tokens and {emptyEdges} hold
+              none. These are flagged in the interface: the edge
+              detail panel on the{" "}
+              <Link href="/graph/" className="text-teal-primary hover:text-teal-soft hover:underline">
+                knowledge graph
+              </Link>{" "}
+              shows &ldquo;Citation record pending&rdquo; rather than a blank field or a bare
+              token.
+            </p>
+            <p>
+              The underlying cause is that reference identifiers in this atlas are
+              file-local: each entity file numbers its own references from{" "}
+              <code className="text-cool-mid">ref1</code>, so the same token means a different
+              paper in a different file. Edges copy those tokens without a namespace, which
+              makes them ambiguous rather than merely missing. A namespacing scheme is
+              designed and pending review; the per-entity reference lists shown on disease,
+              gene, exposure, and pathway pages are unaffected and resolve correctly.
+            </p>
+            <p>
+              Separately, the committed graph artifact is not currently reproducible from the
+              pipeline that generates it: it predates two curated entities and contains node
+              and edge records no current code path produces. It is scheduled for regeneration
+              behind a review of the full node and edge difference. Until then, entity counts
+              shown on this page distinguish curated modules from graph nodes for exactly this
+              reason.
+            </p>
+          </div>
+        </section>
+
         {/* ── Limitations ── */}
         <section aria-labelledby="limitations-heading">
           <h2 id="limitations-heading" className="text-h2 text-surface-white mb-3">
@@ -324,6 +411,7 @@ export default function MethodsPage() {
               interpolation introduces uncertainty, and temporal averaging masks
               peak exposure events.
             </p>
+            {/* constraint-ok: disclaimer denying causation - "not experimentally validated causal models" */}
             <p>
               Mechanism briefs are hypothesis-driven syntheses of existing evidence,
               not experimentally validated causal models. They represent the current

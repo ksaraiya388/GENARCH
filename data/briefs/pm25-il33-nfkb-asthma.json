@@ -36,7 +36,7 @@
   "related_pathways": ["nf-kb", "oxidative-stress-response"],
   "references": [
     {"id": "ref1", "title": "Exposure to PM2.5 induces aberrant activation of NF-κB in human airway epithelial cells by downregulating miR-331 expression", "authors": "Li R, et al.", "year": 2017, "journal": "Environmental Toxicology and Pharmacology", "doi": "10.1016/j.etap.2017.02.011"},
-    {"id": "ref2", "title": "Ambient particulate matter induces an exacerbation of airway inflammation in experimental asthma: role of interleukin-33", "authors": "Brandenburg AH, et al.", "year": 2014, "journal": "Clinical & Experimental Immunology", "doi": "10.1111/cei.12348"},
+    {"id": "ref2", "title": "Ambient particulate matter induces an exacerbation of airway inflammation in experimental asthma: role of interleukin-33", "authors": "Shadie AM, Herbert C, Kumar RK", "year": 2014, "journal": "Clinical & Experimental Immunology", "doi": "10.1111/cei.12348"},
     {"id": "ref3", "title": "Asthma-associated genetic variants induce IL33 differential expression through an enhancer-blocking regulatory region", "authors": "Alvarez M, et al.", "year": 2021, "journal": "Nature Communications", "doi": "10.1038/s41467-021-26347-z"},
     {"id": "ref4", "title": "GSTP1 and TNF Gene Variants and Associations between Air Pollution and Incident Childhood Asthma", "authors": "Islam T, et al.", "year": 2014, "journal": "Environmental Health Perspectives", "doi": "10.1289/ehp.1307459"},
     {"id": "ref5", "title": "The IL-33/ST2 axis: Role in health and disease", "authors": "Cayrol C, Girard JP", "year": 2018, "journal": "Cytokine & Growth Factor Reviews", "doi": "10.1016/j.cytogfr.2018.01.001"}

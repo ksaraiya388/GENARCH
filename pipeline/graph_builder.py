@@ -27,7 +27,7 @@ def load_entities(data_dir: Path) -> dict[str, list[dict[str, Any]]]:
         if path.exists():
             for f in path.rglob("*.json"):
                 try:
-                    result[subdir].append(json.loads(f.read_text()))
+                    result[subdir].append(json.loads(f.read_text(encoding="utf-8")))
                 except Exception:
                     pass
     return result

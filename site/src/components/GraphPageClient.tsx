@@ -57,6 +57,25 @@ export interface GraphPageClientProps {
   initialData: GraphData | null;
 }
 
+/**
+ * Classify an edge's `sources` array.
+ *
+ * Reference IDs in this atlas are file-local (`ref1`..`ref11`, reused across ~83 files with a
+ * different meaning in each), and graph edges carry them with no namespace. A token matching
+ * ^ref\d+$ on an edge is therefore not resolvable to a specific paper — it is a placeholder,
+ * not a citation. Until the backfill lands, say so rather than rendering the bare token.
+ */
+export function citationState(sources: string[] | undefined): {
+  resolved: boolean;
+  reason: "resolved" | "placeholder" | "empty";
+} {
+  if (!sources || sources.length === 0) return { resolved: false, reason: "empty" };
+  const allPlaceholder = sources.every((s) => /^ref\d+$/.test(s.trim()));
+  return allPlaceholder
+    ? { resolved: false, reason: "placeholder" }
+    : { resolved: true, reason: "resolved" };
+}
+
 export function GraphPageClient({ initialData }: GraphPageClientProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const cyRef = useRef<Core | null>(null);
@@ -591,12 +610,23 @@ export function GraphPageClient({ initialData }: GraphPageClientProps) {
                     <dd className="text-surface-white">{selectedEdge.edge.attrs.ancestry_rep}</dd>
                   </>
                 )}
-                {(selectedEdge.edge.attrs?.sources?.length ?? 0) > 0 && (
-                  <>
-                    <dt className="text-cool-mid mt-2">Sources</dt>
-                    <dd className="text-surface-white">{(selectedEdge.edge.attrs?.sources ?? []).join(", ")}</dd>
-                  </>
-                )}
+                {/* The Sources row always renders. Hiding it when empty implied no source
+                    was required; showing raw `ref1, ref2` implied a resolvable citation.
+                    Placeholder and empty states are both surfaced explicitly instead. */}
+                <dt className="text-cool-mid mt-2">Sources</dt>
+                <dd className="text-surface-white">
+                  {citationState(selectedEdge.edge.attrs?.sources).resolved ? (
+                    (selectedEdge.edge.attrs?.sources ?? []).join(", ")
+                  ) : (
+                    <span className="text-cool-mid italic">
+                      Citation record pending — see{" "}
+                      <Link href="/methods/" className="text-teal-primary hover:text-teal-soft hover:underline not-italic">
+                        Methods
+                      </Link>{" "}
+                      for current data-quality status.
+                    </span>
+                  )}
+                </dd>
                 {selectedEdge.edge.attrs?.raw_statistics && (
                   <>
                     <dt className="text-cool-mid mt-2">Raw Statistics</dt>

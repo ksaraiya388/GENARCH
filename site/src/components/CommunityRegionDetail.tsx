@@ -40,6 +40,65 @@ function statLines(layer: ExposureLayerT | undefined): string[] {
   );
 }
 
+type HealthStatT = CommunityRegion["health_stats"][number];
+type ComparisonTier = { label: string; value: number; className: string };
+
+/** Every comparison tier carried by the data, in fixed order. */
+function buildComparisonTiers(stat: HealthStatT): ComparisonTier[] {
+  const tiers: ComparisonTier[] = [
+    { label: "Region", value: stat.value, className: "bg-teal-primary" },
+  ];
+  if (stat.comparison_state != null)
+    tiers.push({ label: "State", value: stat.comparison_state, className: "bg-teal-soft" });
+  if (stat.comparison_national != null)
+    tiers.push({ label: "National", value: stat.comparison_national, className: "bg-cool-mid" });
+  return tiers;
+}
+
+/**
+ * Build-time guard. A comparison tier or confidence interval that exists in the data and is
+ * not rendered is a build error, not a styling choice: quoting one comparator while a less
+ * favourable one is silently dropped is the presentational failure this check exists to
+ * prevent.
+ */
+function assertComparisonCompleteness(stat: HealthStatT, tiers: ComparisonTier[]): void {
+  const expected = 1 +
+    (stat.comparison_state != null ? 1 : 0) +
+    (stat.comparison_national != null ? 1 : 0);
+  if (tiers.length !== expected) {
+    throw new Error(
+      `Health-burden completeness: ${stat.disease_slug}/${stat.metric_type} carries ${expected} comparison tier(s) but ${tiers.length} would render.`
+    );
+  }
+  const hasCi = stat.ci_lower != null && stat.ci_upper != null;
+  if ((stat.ci_lower != null) !== (stat.ci_upper != null)) {
+    throw new Error(
+      `Health-burden completeness: ${stat.disease_slug}/${stat.metric_type} has a half-specified confidence interval (ci_lower=${stat.ci_lower}, ci_upper=${stat.ci_upper}).`
+    );
+  }
+  void hasCi;
+}
+
+/**
+ * Neutral one-line summary, generated from the data. Emitted only when the region value sits
+ * below one comparator and above another -- the case where quoting a single comparator would
+ * be technically true and presentationally selective.
+ */
+function comparisonSummary(
+  regionName: string,
+  stat: HealthStatT,
+  tiers: ComparisonTier[]
+): string | null {
+  const comparators = tiers.filter((t) => t.label !== "Region");
+  const below = comparators.filter((c) => stat.value < c.value);
+  const above = comparators.filter((c) => stat.value > c.value);
+  if (below.length === 0 || above.length === 0) return null;
+  const name = (t: ComparisonTier) => t.label.toLowerCase();
+  return `${regionName} is below the ${below.map(name).join(" and ")} rate and above the ${above
+    .map(name)
+    .join(" and ")} rate for this measure.`;
+}
+
 export function CommunityRegionDetail({ region }: CommunityRegionDetailProps) {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<LeafletMapType | null>(null);
@@ -352,12 +411,13 @@ export function CommunityRegionDetail({ region }: CommunityRegionDetailProps) {
           </h2>
           <div className="space-y-4">
             {region.health_stats!.map((stat, i) => {
-              const maxVal = Math.max(
-                stat.value,
-                stat.comparison_state ?? 0,
-                stat.comparison_national ?? 0,
-                1
-              );
+              // Every comparison tier present in the data is rendered, or none is. Built as
+              // one array and mapped, so a tier cannot be dropped by editing one branch --
+              // selective presentation is structurally impossible, not merely discouraged.
+              const tiers = buildComparisonTiers(stat);
+              assertComparisonCompleteness(stat, tiers);
+              const maxVal = Math.max(...tiers.map((t) => t.value), 1);
+              const summary = comparisonSummary(region.name, stat, tiers);
               return (
                 <div key={i} className="card">
                   <h3 className="text-h3 text-surface-white mb-1">
@@ -368,48 +428,32 @@ export function CommunityRegionDetail({ region }: CommunityRegionDetailProps) {
                       Unit: {stat.unit} | Source: {stat.source} ({stat.year})
                     </p>
                   )}
-                  <div className="flex items-end gap-2 h-24">
-                    <div className="flex-1 flex flex-col items-center">
-                      <div
-                        className="w-full max-w-[60px] bg-teal-primary rounded-t-sm"
-                        style={{
-                          height: `${Math.min(100, (stat.value / maxVal) * 80)}%`,
-                        }}
-                        title={`Region: ${stat.value}`}
-                      />
-                      <span className="text-xs mt-2 text-cool-light">Region</span>
-                      <span className="text-xs font-medium text-surface-white">{stat.value}</span>
-                    </div>
-                    {stat.comparison_state != null && (
-                      <div className="flex-1 flex flex-col items-center">
+                  {/* items-stretch (not items-end): with items-end each column sizes to
+                      content, so the bars' percentage heights resolve against an auto-height
+                      parent and collapse to 0px. */}
+                  <div className="flex items-stretch gap-2 h-32">
+                    {tiers.map((t) => (
+                      <div key={t.label} className="flex-1 flex flex-col justify-end items-center">
                         <div
-                          className="w-full max-w-[60px] bg-teal-soft rounded-t-sm"
-                          style={{
-                            height: `${Math.min(100, (stat.comparison_state / maxVal) * 80)}%`,
-                          }}
-                          title={`State: ${stat.comparison_state}`}
+                          className={`w-full max-w-[60px] rounded-t-sm ${t.className}`}
+                          style={{ height: `${Math.max(2, (t.value / maxVal) * 80)}%` }}
+                          title={`${t.label}: ${t.value}`}
                         />
-                        <span className="text-xs mt-2 text-cool-light">State</span>
-                        <span className="text-xs font-medium text-surface-white">{stat.comparison_state}</span>
+                        <span className="text-xs mt-2 text-cool-light">{t.label}</span>
+                        <span className="text-xs font-medium text-surface-white">{t.value}</span>
                       </div>
-                    )}
-                    {stat.comparison_national != null && (
-                      <div className="flex-1 flex flex-col items-center">
-                        <div
-                          className="w-full max-w-[60px] bg-cool-mid rounded-t-sm"
-                          style={{
-                            height: `${Math.min(100, (stat.comparison_national / maxVal) * 80)}%`,
-                          }}
-                          title={`National: ${stat.comparison_national}`}
-                        />
-                        <span className="text-xs mt-2 text-cool-light">National</span>
-                        <span className="text-xs font-medium text-surface-white">{stat.comparison_national}</span>
-                      </div>
-                    )}
+                    ))}
                   </div>
+                  {summary && (
+                    <p className="text-xs text-cool-light mt-3">{summary}</p>
+                  )}
                   {stat.ci_lower != null && stat.ci_upper != null && (
                     <p className="text-xs text-cool-mid mt-2">
                       95% CI: [{stat.ci_lower}, {stat.ci_upper}]
+                      {stat.comparison_national != null &&
+                        stat.comparison_national >= stat.ci_lower &&
+                        stat.comparison_national <= stat.ci_upper &&
+                        " — this interval overlaps the national value, so the point estimates are not distinguishable at this precision."}
                     </p>
                   )}
                 </div>
@@ -420,10 +464,17 @@ export function CommunityRegionDetail({ region }: CommunityRegionDetailProps) {
       )}
 
       {region.model?.shap_summaries && region.model.shap_summaries.length > 0 && (
-        <section aria-labelledby="shap-drivers-heading">
-          <h2 id="shap-drivers-heading" className="text-h2 text-surface-white mb-3">
-            Model Drivers (SHAP)
+        <section aria-labelledby="shap-attributions-heading">
+          <h2 id="shap-attributions-heading" className="text-h2 text-surface-white mb-3">
+            Model Feature Attributions (SHAP)
           </h2>
+          {/* constraint-ok: disclaimer denying causation - "not estimates of causal effect" */}
+          <p className="text-cool-light text-sm leading-relaxed mb-3 max-w-3xl">
+            SHAP values describe how this model weighted each feature when producing its
+            prediction on regional training data. They are not estimates of causal effect.
+            A feature can carry high attribution because it correlates with variables the
+            model does not observe.
+          </p>
           <div className="card">
             <ul className="space-y-2">
               {region.model.shap_summaries.map((s, i) => (
@@ -434,7 +485,7 @@ export function CommunityRegionDetail({ region }: CommunityRegionDetailProps) {
                       color: s.direction === "positive" ? "#C53030" : "#2F855A",
                     }}
                   >
-                    {s.direction} (mean SHAP: {s.mean_shap_value.toFixed(3)})
+                    {s.direction} attribution (mean SHAP: {s.mean_shap_value.toFixed(3)})
                   </span>
                 </li>
               ))}

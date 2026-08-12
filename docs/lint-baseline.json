@@ -1,0 +1,382 @@
+{
+  "reason": "GATE 3 rulings R1-R12: pre-existing lexicon hits in read-only territory (data/diseases, data/genes, data/pathways, data/exposures, content/briefs) plus DERIVED_FROM_READ_ONLY generated artifacts (data/graph/graph.json, data/search-index.json) verified as verbatim mirrors. In-scope violations are excluded by design and fixed in Phase 2-REVISED. Reviewed R2 carve-outs live in docs/constraint-exemptions.json, not here.",
+  "scope": "Read-only territory and derived-from-read-only artifacts only (rulings R8, R10). In-scope violations are fixed, never ratcheted. Reviewed carve-outs live in docs/constraint-exemptions.json, not here.",
+  "read_only_prefixes": [
+    "data/diseases/",
+    "data/genes/",
+    "data/pathways/",
+    "data/exposures/",
+    "content/briefs/"
+  ],
+  "derived_from_read_only": [
+    "data/graph/graph.json",
+    "data/search-index.json"
+  ],
+  "generated_by": "scripts/check-constraints.mjs --update-baseline",
+  "entries": [
+    {
+      "file": "content/briefs/asthma-air-pollution-ormdl3.mdx",
+      "line": 27,
+      "matched_string": "- **Air pollution and asthma exacerbation.** Epidemiological studies in inner-city birth cohorts have shown that exposure to polycyclic aromatic hydrocarbons (P",
+      "constraint": "causal",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "content/briefs/asthma-air-pollution-ormdl3.mdx",
+      "line": 39,
+      "matched_string": "4. **IL-33 release from damaged epithelium.** Oxidative stress and NF-κB–driven inflammation damage the bronchial epithelial barrier, causing release of the epi",
+      "constraint": "causing",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "content/briefs/asthma-air-pollution-ormdl3.mdx",
+      "line": 43,
+      "matched_string": "6. **Type 2 cytokine production and effector cell recruitment.** Activated ILC2s produce interleukin-5 (IL-5) and interleukin-13 (IL-13) in large quantities. IL",
+      "constraint": "resulting in",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "content/briefs/asthma-air-pollution-ormdl3.mdx",
+      "line": 67,
+      "matched_string": "Third, chromatin accessibility data from ENCODE and the Roadmap Epigenomics Consortium reveal open chromatin marks (DNase I hypersensitivity sites and H3K27ac p",
+      "constraint": "causal",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "content/briefs/asthma-air-pollution-ormdl3.mdx",
+      "line": 75,
+      "matched_string": "**European-ancestry GWAS bias.** The foundational GWAS evidence for the 17q21 locus derives predominantly from European-ancestry cohorts. The Moffatt et al. (20",
+      "constraint": "causal",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "content/briefs/asthma-air-pollution-ormdl3.mdx",
+      "line": 95,
+      "matched_string": "- **Mendelian randomization for sphingolipid metabolism.** Using *ORMDL3* cis-eQTL variants as genetic instruments, a two-sample Mendelian randomization analysi",
+      "constraint": "causal",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/diseases/asthma.json",
+      "line": 7,
+      "matched_string": "Asthma is the most common chronic disease in childhood and adolescence. Ages 10–24 represent a critical window: many individuals experience symptom remission, p",
+      "constraint": "leads to",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/diseases/copd.json",
+      "line": 6,
+      "matched_string": "Chronic obstructive pulmonary disease (COPD) is a progressive respiratory disorder characterized by airflow limitation, emphysema, and chronic bronchitis. Patho",
+      "constraint": "causes",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/diseases/copd.json",
+      "line": 81,
+      "matched_string": "Cigarette smoke causes inflammation, protease–antiprotease imbalance, oxidative stress; dominant environmental cause; gene–smoking interaction",
+      "constraint": "causes",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/diseases/coronary-artery-disease.json",
+      "line": 114,
+      "matched_string": "Obesity drives dyslipidemia, insulin resistance, inflammation, and hypertension; amplifies genetic CAD susceptibility",
+      "constraint": "drives",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/diseases/ischemic-stroke.json",
+      "line": 6,
+      "matched_string": "Ischemic stroke results from occlusion of cerebral arteries, causing focal brain ischemia and infarction. Etiologic subtypes include large-artery atherosclerosi",
+      "constraint": "causes",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/diseases/lung-cancer.json",
+      "line": 6,
+      "matched_string": "Lung cancer encompasses carcinomas of the lung, predominantly non-small cell lung cancer (NSCLC) and small cell lung cancer (SCLC). Tobacco smoking is the princ",
+      "constraint": "driver",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/diseases/type-2-diabetes.json",
+      "line": 81,
+      "matched_string": "Obesity causes insulin resistance and beta-cell stress; amplifies genetic T2D susceptibility; strongest modifiable risk factor",
+      "constraint": "causes",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/exposures/heavy-metals.json",
+      "line": 34,
+      "matched_string": "Lead elevates blood pressure; arsenic causes endothelial dysfunction; metals promote oxidative stress and inflammation; may amplify ACE/hypertension pathway",
+      "constraint": "causes",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/exposures/heavy-metals.json",
+      "line": 48,
+      "matched_string": "Hand-to-mouth behavior; higher absorption; developing brain and kidneys vulnerable; lead exposure causes irreversible IQ loss",
+      "constraint": "causes",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/genes/brca1.json",
+      "line": 7,
+      "matched_string": "BRCA1 encodes a tumor suppressor protein essential for homologous recombination (HR) DNA double-strand break repair. Germline loss-of-function mutations confer ",
+      "constraint": "leads to",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/genes/brca2.json",
+      "line": 7,
+      "matched_string": "BRCA2 encodes a tumor suppressor that binds RAD51 and promotes its loading onto single-stranded DNA during homologous recombination. Like BRCA1, germline loss-o",
+      "constraint": "causes",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/genes/brca2.json",
+      "line": 68,
+      "matched_string": "BRCA2 deficiency prevents RAD51 nucleofilament formation; unrepaired DNA breaks accumulate, enabling malignant transformation; PARP inhibition causes synthetic ",
+      "constraint": "causes",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/genes/drd2.json",
+      "line": 7,
+      "matched_string": "DRD2 encodes the dopamine D2 receptor, a G protein-coupled receptor that inhibits adenylyl cyclase and modulates dopaminergic signaling in striatum, cortex, and",
+      "constraint": "causes",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/genes/egfr.json",
+      "line": 67,
+      "matched_string": "Activating EGFR mutations confer ligand-independent kinase activity; sustained PI3K and MAPK signaling drives proliferation and survival; tobacco exposure may s",
+      "constraint": "drives",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/genes/fto.json",
+      "line": 67,
+      "matched_string": "Claussnitzer et al. showed allele-specific enhancer driving IRX3; FTO genotype-diet interaction in weight gain.",
+      "constraint": "driving",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/genes/il33.json",
+      "line": 7,
+      "matched_string": "IL33 encodes interleukin-33, a dual-function cytokine and nuclear factor belonging to the IL-1 family. IL-33 functions as an epithelial alarmin: it is constitut",
+      "constraint": "driving",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/genes/ormdl3.json",
+      "line": 7,
+      "matched_string": "ORMDL3 encodes a transmembrane protein anchored in the endoplasmic reticulum (ER) membrane that acts as a negative regulator of serine palmitoyltransferase (SPT",
+      "constraint": "leads to",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/genes/serpina1.json",
+      "line": 7,
+      "matched_string": "SERPINA1 encodes alpha-1 antitrypsin (A1AT), a serine protease inhibitor that protects lung tissue from neutrophil elastase. The severe Z allele (Glu342Lys) cau",
+      "constraint": "causes",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/genes/serpina1.json",
+      "line": 65,
+      "matched_string": "A1AT deficiency allows neutrophil elastase to degrade lung elastin unchecked; tobacco smoke further inactivates A1AT and stimulates neutrophil recruitment, crea",
+      "constraint": "drives",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/genes/tp53.json",
+      "line": 68,
+      "matched_string": "TP53 loss permits survival of cells with DNA damage; in tobacco-exposed lung, p53 mutations enable clonal expansion of damaged epithelial cells; combined geneti",
+      "constraint": "drives",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/graph/graph.json",
+      "line": 141,
+      "matched_string": "Lung cancer encompasses carcinomas of the lung, predominantly non-small cell lung cancer (NSCLC) and small cell lung cancer (SCLC). Tobacco smoking is the princ",
+      "constraint": "driver",
+      "class": "DERIVED_FROM_READ_ONLY"
+    },
+    {
+      "file": "data/graph/graph.json",
+      "line": 152,
+      "matched_string": "Chronic obstructive pulmonary disease (COPD) is a progressive respiratory disorder characterized by airflow limitation, emphysema, and chronic bronchitis. Patho",
+      "constraint": "causes",
+      "class": "DERIVED_FROM_READ_ONLY"
+    },
+    {
+      "file": "data/graph/graph.json",
+      "line": 306,
+      "matched_string": "IL33 encodes interleukin-33, a dual-function cytokine and nuclear factor belonging to the IL-1 family. IL-33 functions as an epithelial alarmin: it is constitut",
+      "constraint": "driving",
+      "class": "DERIVED_FROM_READ_ONLY"
+    },
+    {
+      "file": "data/graph/graph.json",
+      "line": 317,
+      "matched_string": "BRCA2 encodes a tumor suppressor that binds RAD51 and promotes its loading onto single-stranded DNA during homologous recombination. Like BRCA1, germline loss-o",
+      "constraint": "causes",
+      "class": "DERIVED_FROM_READ_ONLY"
+    },
+    {
+      "file": "data/graph/graph.json",
+      "line": 339,
+      "matched_string": "SERPINA1 encodes alpha-1 antitrypsin (A1AT), a serine protease inhibitor that protects lung tissue from neutrophil elastase. The severe Z allele (Glu342Lys) cau",
+      "constraint": "causes",
+      "class": "DERIVED_FROM_READ_ONLY"
+    },
+    {
+      "file": "data/graph/graph.json",
+      "line": 350,
+      "matched_string": "DRD2 encodes the dopamine D2 receptor, a G protein-coupled receptor that inhibits adenylyl cyclase and modulates dopaminergic signaling in striatum, cortex, and",
+      "constraint": "causes",
+      "class": "DERIVED_FROM_READ_ONLY"
+    },
+    {
+      "file": "data/graph/graph.json",
+      "line": 394,
+      "matched_string": "BRCA1 encodes a tumor suppressor protein essential for homologous recombination (HR) DNA double-strand break repair. Germline loss-of-function mutations confer ",
+      "constraint": "leads to",
+      "class": "DERIVED_FROM_READ_ONLY"
+    },
+    {
+      "file": "data/graph/graph.json",
+      "line": 526,
+      "matched_string": "The HPA axis mediates the stress response. Hypothalamic CRH stimulates pituitary ACTH release; ACTH drives adrenal cortisol secretion. Cortisol mobilizes energy",
+      "constraint": "causes",
+      "class": "DERIVED_FROM_READ_ONLY"
+    },
+    {
+      "file": "data/graph/graph.json",
+      "line": 526,
+      "matched_string": "The HPA axis mediates the stress response. Hypothalamic CRH stimulates pituitary ACTH release; ACTH drives adrenal cortisol secretion. Cortisol mobilizes energy",
+      "constraint": "drives",
+      "class": "DERIVED_FROM_READ_ONLY"
+    },
+    {
+      "file": "data/graph/graph.json",
+      "line": 537,
+      "matched_string": "The PI3K-AKT-mTOR pathway regulates cell growth, survival, metabolism, and proliferation. Growth factors (e.g., insulin, EGF) activate receptor tyrosine kinases",
+      "constraint": "driver",
+      "class": "DERIVED_FROM_READ_ONLY"
+    },
+    {
+      "file": "data/graph/graph.json",
+      "line": 548,
+      "matched_string": "The DNA damage response (DDR) pathway detects and repairs DNA lesions to maintain genomic integrity. Double-strand breaks activate ATM/ATR kinases, which phosph",
+      "constraint": "leads to",
+      "class": "DERIVED_FROM_READ_ONLY"
+    },
+    {
+      "file": "data/pathways/dna-damage-repair.json",
+      "line": 5,
+      "matched_string": "The DNA damage response (DDR) pathway detects and repairs DNA lesions to maintain genomic integrity. Double-strand breaks activate ATM/ATR kinases, which phosph",
+      "constraint": "leads to",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/pathways/dna-damage-repair.json",
+      "line": 33,
+      "matched_string": "UV causes lesions requiring nucleotide excision repair; TP53 mutations in skin cancer",
+      "constraint": "causes",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/pathways/hpa-axis.json",
+      "line": 5,
+      "matched_string": "The HPA axis mediates the stress response. Hypothalamic CRH stimulates pituitary ACTH release; ACTH drives adrenal cortisol secretion. Cortisol mobilizes energy",
+      "constraint": "causes",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/pathways/hpa-axis.json",
+      "line": 5,
+      "matched_string": "The HPA axis mediates the stress response. Hypothalamic CRH stimulates pituitary ACTH release; ACTH drives adrenal cortisol secretion. Cortisol mobilizes energy",
+      "constraint": "drives",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/pathways/hpa-axis.json",
+      "line": 30,
+      "matched_string": "Stress is primary HPA activator; chronic activation causes dysregulation",
+      "constraint": "causes",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/pathways/il33-st2-axis.json",
+      "line": 5,
+      "matched_string": "The IL-33/ST2 signaling axis is a critical epithelial-derived alarmin pathway that bridges innate and adaptive immunity. IL-33, constitutively expressed in epit",
+      "constraint": "driving",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/pathways/il33-st2-axis.json",
+      "line": 28,
+      "matched_string": "IL-33/ST2 drives eosinophilic airway inflammation and airway hyperresponsiveness",
+      "constraint": "drives",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/pathways/insulin-signaling.json",
+      "line": 28,
+      "matched_string": "Obesity drives insulin resistance; FTO and MC4R are major obesity genes",
+      "constraint": "drives",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/pathways/insulin-signaling.json",
+      "line": 32,
+      "matched_string": "Adiposity is primary driver of insulin resistance",
+      "constraint": "driver",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/pathways/ldl-cholesterol-metabolism.json",
+      "line": 26,
+      "matched_string": "Core pathogenic pathway; elevated LDL-C drives atherosclerosis",
+      "constraint": "drives",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/pathways/ldl-cholesterol-metabolism.json",
+      "line": 31,
+      "matched_string": "Obesity drives dyslipidemia and amplifies genetic susceptibility",
+      "constraint": "drives",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/pathways/nf-kb.json",
+      "line": 22,
+      "matched_string": "Core inflammatory driver; IL33 induction",
+      "constraint": "driver",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/pathways/pi3k-akt-mtor.json",
+      "line": 5,
+      "matched_string": "The PI3K-AKT-mTOR pathway regulates cell growth, survival, metabolism, and proliferation. Growth factors (e.g., insulin, EGF) activate receptor tyrosine kinases",
+      "constraint": "driver",
+      "class": "READ_ONLY"
+    },
+    {
+      "file": "data/search-index.json",
+      "line": 310,
+      "matched_string": "SERPINA1 encodes alpha-1 antitrypsin (A1AT), a serine protease inhibitor that protects lung tissue from neutrophil elastase. The severe Z allele (Glu342Lys) cau",
+      "constraint": "causes",
+      "class": "DERIVED_FROM_READ_ONLY"
+    },
+    {
+      "file": "data/search-index.json",
+      "line": 366,
+      "matched_string": "The HPA axis mediates the stress response. Hypothalamic CRH stimulates pituitary ACTH release; ACTH drives adrenal cortisol secretion. Cortisol mobilizes energy",
+      "constraint": "drives",
+      "class": "DERIVED_FROM_READ_ONLY"
+    }
+  ]
+}

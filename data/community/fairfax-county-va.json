@@ -86,7 +86,7 @@
       "description": "Virginia Department of Health regional office serving Northern Virginia counties"
     }
   ],
-  "limitations": "Health statistics are derived from CDC PLACES model-based estimates at the county level. County-level averages may mask significant within-county variation across census tracts, particularly in a large and diverse county like Fairfax. Exposure layers are modeled or interpolated from monitoring stations; local spatial resolution is limited. Traffic proximity data from EJScreen reflects proximity to major roads, not individual exposure. Model predictions are trained on state/regional data and may not capture Fairfax-specific drivers such as data center growth, rapid transit development, and changing demographics.",
+  "limitations": "Health statistics are derived from CDC PLACES model-based estimates at the county level. County-level averages may mask significant within-county variation across census tracts, particularly in a large and diverse county like Fairfax. Exposure layers are modeled or interpolated from monitoring stations; local spatial resolution is limited. Traffic proximity data from EJScreen reflects proximity to major roads, not individual exposure. Model predictions are trained on state/regional data and may not capture Fairfax-specific conditions such as data center growth, rapid transit development, and changing demographics.",
   "references": [
     {"id": "ref1", "title": "CDC PLACES: Local Data for Better Health", "year": 2023, "url": "https://www.cdc.gov/places/"},
     {"id": "ref2", "title": "EPA Air Quality System", "year": 2024, "url": "https://www.epa.gov/aqs"},

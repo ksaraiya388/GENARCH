@@ -28,7 +28,7 @@
     {"name": "Northern Virginia Asthma Coalition", "type": "link", "url": "https://www.novasthma.org", "description": "Regional asthma awareness and support", "local_relevance": "high"},
     {"name": "Virginia Asthma Hospitalizations Dashboard", "type": "link", "url": "https://www.vdh.virginia.gov/environmental-public-health-tracking/asthma/asthma-hospitalizations/", "description": "VDH asthma hospitalization rates by county", "local_relevance": "high"}
   ],
-  "limitations": "Health statistics are derived from state-level surveillance; county-level estimates may have wide confidence intervals due to population size. Exposure layers are modeled or interpolated; local monitoring is limited. Hotspot model is trained on state/regional data and may not fully capture Loudoun-specific drivers (e.g., rapid suburbanization, data center development). Genetic and G×E data are not yet integrated into community-level predictions.",
+  "limitations": "Health statistics are derived from state-level surveillance; county-level estimates may have wide confidence intervals reflecting the size of the county population. Exposure layers are modeled or interpolated; local monitoring is limited. Hotspot model is trained on state/regional data and may not fully capture Loudoun-specific conditions (e.g., rapid suburbanization, data center development). Genetic and G×E data are not yet integrated into community-level predictions.",
   "references": [
     {"id": "ref1", "title": "Virginia Department of Health Environmental Public Health Tracking", "year": 2023, "url": "https://www.vdh.virginia.gov/environmental-public-health-tracking/"},
     {"id": "ref2", "title": "EPA Air Quality System", "year": 2024, "url": "https://www.epa.gov/aqs"},

@@ -169,6 +169,7 @@ export default function ModelCardPage() {
               Census-tract boundaries may not align with true exposure gradients or
               community boundaries.
             </li>
+            {/* constraint-ok: disclaimer denying causation - "rather than causal environmental exposures" */}
             <li>
               Socioeconomic features may encode structural inequities rather than
               causal environmental exposures.
