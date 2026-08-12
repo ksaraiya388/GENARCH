@@ -109,10 +109,15 @@ export default function HomePage() {
           <h2 className="text-center text-surface-white mb-12">Atlas at a Glance</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
+              // Counts are the number of curated modules -- one JSON file, one page. The
+              // knowledge graph carries additional gene and pathway nodes that have no
+              // curated module (loci named in disease top_loci). "Gene modules" and
+              // "Pathway modules" name what is actually counted, so the tile cannot be read
+              // as a graph-entity count. Both figures are stated on /methods.
               { count: diseases.length, label: "Diseases", href: "/atlas/diseases" },
               { count: exposures.length, label: "Exposures", href: "/atlas/exposures" },
-              { count: genes.length, label: "Genes", href: "/atlas/genes" },
-              { count: pathways.length, label: "Pathways", href: "/atlas/pathways" },
+              { count: genes.length, label: "Gene modules", href: "/atlas/genes" },
+              { count: pathways.length, label: "Pathway modules", href: "/atlas/pathways" },
             ].map((s) => (
               <Link key={s.label} href={s.href} className="card text-center no-underline hover:no-underline group">
                 <div className="text-3xl font-bold text-teal-primary group-hover:text-teal-soft transition-colors">{s.count}</div>
@@ -128,7 +133,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-center text-surface-white mb-4">Disease Modules</h2>
           <p className="text-center text-cool-mid text-sm mb-12 max-w-xl mx-auto">
-            Each module maps genetic architecture, environmental drivers, and
+            Each module maps genetic architecture, environmental modifiers, and
             gene–environment interactions for a specific condition.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -191,8 +196,12 @@ export default function HomePage() {
             across Northern Virginia. It
             integrates GWAS data, tissue-resolved gene expression, biological
             pathways, and local environmental conditions into a navigable
-            knowledge graph. All data points are scored, cited, and transparent.
-            GENARCH is not a health tool, risk calculator, or clinical decision
+            knowledge graph. All data points are scored and traceable to their
+            source class, with citation records under active backfill — see{" "}
+            <Link href="/methods" className="text-teal-primary hover:text-teal-soft hover:underline">
+              Methods
+            </Link>
+            . GENARCH is not a health tool, risk calculator, or clinical decision
             support system.
           </p>
           <Link href="/about" className="btn-secondary text-sm">

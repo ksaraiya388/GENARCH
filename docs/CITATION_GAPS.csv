@@ -1,0 +1,629 @@
+entity_type,entity_slug,assertion_id,claim_text,evidence_type,current_sources,gap_class,reference_grade,page_url
+graph_edge,e1,diet-quality->obesity,diet-quality modifier obesity,literature,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e10,air-pollution->major-depressive-disorder,air-pollution modifier major-depressive-disorder,literature,ref3|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e100,hhip->copd,hhip association copd,GWAS,ref1|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e101,fam13a->copd,fam13a association copd,GWAS,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e102,mmp12->copd,mmp12 association copd,GWAS,ref3|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e103,heavy-metals->alzheimers-disease,heavy-metals modifier alzheimers-disease,literature,ref1|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e104,heavy-metals->hypertension,heavy-metals modifier hypertension,pathway,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e105,endocrine-disruptors->breast-cancer,endocrine-disruptors modifier breast-cancer,pathway,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e106,endocrine-disruptors->obesity,endocrine-disruptors modifier obesity,literature,ref3|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e107,egfr->breast-cancer,egfr association breast-cancer,literature,,EMPTY,,/graph
+graph_edge,e108,brca2->colorectal-cancer,brca2 association colorectal-cancer,literature,,EMPTY,,/graph
+graph_edge,e109,apoe->coronary-artery-disease,apoe association coronary-artery-disease,pathway,,EMPTY,,/graph
+graph_edge,e11,obesity-exposure->major-depressive-disorder,obesity-exposure modifier major-depressive-disorder,literature,ref4|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e110,serpina1->asthma,serpina1 association asthma,literature,,EMPTY,,/graph
+graph_edge,e111,drd2->major-depressive-disorder,drd2 association major-depressive-disorder,literature,,EMPTY,,/graph
+graph_edge,e112,ace->coronary-artery-disease,ace association coronary-artery-disease,pathway,,EMPTY,,/graph
+graph_edge,e113,slc6a4->schizophrenia,slc6a4 association schizophrenia,literature,,EMPTY,,/graph
+graph_edge,e114,brca1->colorectal-cancer,brca1 association colorectal-cancer,literature,,EMPTY,,/graph
+graph_edge,e115,ldlr->hypertension,ldlr association hypertension,pathway,,EMPTY,,/graph
+graph_edge,e116,pcsk9->hypertension,pcsk9 association hypertension,inferred,,EMPTY,,/graph
+graph_edge,e117,mc4r->type-2-diabetes,mc4r association type-2-diabetes,pathway,,EMPTY,,/graph
+graph_edge,e118,tcf7l2->obesity,tcf7l2 association obesity,eQTL,,EMPTY,,/graph
+graph_edge,e119,complement-system->multiple-sclerosis,complement-system pathway multiple-sclerosis,pathway,ref1|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e12,slc6a4->major-depressive-disorder,slc6a4 association major-depressive-disorder,GWAS,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e120,complement-system->rheumatoid-arthritis,complement-system pathway rheumatoid-arthritis,pathway,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e121,hla-drb1->complement-system,hla-drb1 pathway complement-system,pathway,ref1|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e122,il33->complement-system,il33 pathway complement-system,pathway,ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e123,dopamine-signaling->schizophrenia,dopamine-signaling pathway schizophrenia,pathway,ref1|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e124,dopamine-signaling->major-depressive-disorder,dopamine-signaling pathway major-depressive-disorder,pathway,ref2|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e125,drd2->dopamine-signaling,drd2 pathway dopamine-signaling,pathway,ref1|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e126,slc6a4->dopamine-signaling,slc6a4 pathway dopamine-signaling,pathway,ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e127,nf-kb->asthma,nf-kb pathway asthma,pathway,ref1|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e128,il33->nf-kb,il33 pathway nf-kb,pathway,ref1|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e129,ldl-cholesterol-metabolism->coronary-artery-disease,ldl-cholesterol-metabolism pathway coronary-artery-disease,pathway,ref1|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e13,bdnf->major-depressive-disorder,bdnf association major-depressive-disorder,GWAS,ref2|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e130,ldl-cholesterol-metabolism->hypertension,ldl-cholesterol-metabolism pathway hypertension,pathway,ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e131,ldlr->ldl-cholesterol-metabolism,ldlr pathway ldl-cholesterol-metabolism,pathway,ref1|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e132,pcsk9->ldl-cholesterol-metabolism,pcsk9 pathway ldl-cholesterol-metabolism,pathway,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e133,apoe->ldl-cholesterol-metabolism,apoe pathway ldl-cholesterol-metabolism,pathway,ref3|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e134,insulin-signaling->type-2-diabetes,insulin-signaling pathway type-2-diabetes,pathway,ref1|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e135,insulin-signaling->obesity,insulin-signaling pathway obesity,pathway,ref2|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e136,tcf7l2->insulin-signaling,tcf7l2 pathway insulin-signaling,pathway,ref1|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e137,fto->insulin-signaling,fto pathway insulin-signaling,pathway,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e138,mc4r->insulin-signaling,mc4r pathway insulin-signaling,pathway,ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e139,hpa-axis->major-depressive-disorder,hpa-axis pathway major-depressive-disorder,pathway,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e14,htr2a->major-depressive-disorder,htr2a association major-depressive-disorder,GWAS,ref1|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e140,hpa-axis->hypertension,hpa-axis pathway hypertension,pathway,ref1|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e141,ace->hpa-axis,ace pathway hpa-axis,pathway,ref1|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e142,slc6a4->hpa-axis,slc6a4 pathway hpa-axis,pathway,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e143,pi3k-akt-mtor->lung-cancer,pi3k-akt-mtor pathway lung-cancer,pathway,ref1|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e144,pi3k-akt-mtor->colorectal-cancer,pi3k-akt-mtor pathway colorectal-cancer,pathway,ref2|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e145,pi3k-akt-mtor->breast-cancer,pi3k-akt-mtor pathway breast-cancer,pathway,ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e146,egfr->pi3k-akt-mtor,egfr pathway pi3k-akt-mtor,pathway,ref1|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e147,tp53->pi3k-akt-mtor,tp53 pathway pi3k-akt-mtor,pathway,ref2|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e148,dna-damage-repair->breast-cancer,dna-damage-repair pathway breast-cancer,pathway,ref1|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e149,dna-damage-repair->colorectal-cancer,dna-damage-repair pathway colorectal-cancer,pathway,ref2|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e15,psychosocial-stress->schizophrenia,psychosocial-stress modifier schizophrenia,literature,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e150,dna-damage-repair->lung-cancer,dna-damage-repair pathway lung-cancer,pathway,ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e151,brca1->dna-damage-repair,brca1 pathway dna-damage-repair,pathway,ref1|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e152,brca2->dna-damage-repair,brca2 pathway dna-damage-repair,pathway,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e153,tp53->dna-damage-repair,tp53 pathway dna-damage-repair,pathway,ref1|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e154,egfr->dna-damage-repair,egfr pathway dna-damage-repair,pathway,ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e155,gstp1->asthma,gstp1 GÃ—E asthma,literature,ref1,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e156,air-pollution->gstp1,air-pollution GÃ—E gstp1,literature,ref1,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e157,bdnf->major-depressive-disorder,bdnf GWAS major-depressive-disorder,literature,ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e158,psychosocial-stress->bdnf,psychosocial-stress GÃ—E bdnf,literature,ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e159,gstp1->oxidative-stress-response,gstp1 pathway oxidative-stress-response,pathway,ref1,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e16,tobacco->schizophrenia,tobacco modifier schizophrenia,literature,ref3|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e160,sod2->oxidative-stress-response,sod2 pathway oxidative-stress-response,pathway,ref1,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e161,air-pollution->oxidative-stress-response,air-pollution pathway oxidative-stress-response,literature,ref1,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e162,pparg->type-2-diabetes,pparg GWAS type-2-diabetes,GWAS,ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e163,lep->obesity,lep pathway obesity,literature,ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e164,physical-activity->obesity,physical-activity modifier obesity,literature,ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e165,sleep-deprivation->major-depressive-disorder,sleep-deprivation modifier major-depressive-disorder,literature,ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e17,obesity-exposure->schizophrenia,obesity-exposure modifier schizophrenia,literature,ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e18,drd2->schizophrenia,drd2 association schizophrenia,GWAS,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e19,cacna1c->schizophrenia,cacna1c association schizophrenia,GWAS,ref1|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e2,psychosocial-stress->obesity,psychosocial-stress modifier obesity,literature,ref3|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e20,c4a->schizophrenia,c4a association schizophrenia,GWAS,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e21,grin2a->schizophrenia,grin2a association schizophrenia,GWAS,ref3|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e22,tobacco->coronary-artery-disease,tobacco modifier coronary-artery-disease,literature,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e23,diet-quality->coronary-artery-disease,diet-quality modifier coronary-artery-disease,literature,ref3|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e24,air-pollution->coronary-artery-disease,air-pollution modifier coronary-artery-disease,literature,ref4|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e25,obesity-exposure->coronary-artery-disease,obesity-exposure modifier coronary-artery-disease,literature,ref2|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e26,ldlr->coronary-artery-disease,ldlr association coronary-artery-disease,GWAS,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e27,apob->coronary-artery-disease,apob association coronary-artery-disease,GWAS,ref1|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e28,pcsk9->coronary-artery-disease,pcsk9 association coronary-artery-disease,GWAS,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e29,lpa->coronary-artery-disease,lpa association coronary-artery-disease,GWAS,ref3|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e3,obesity-exposure->obesity,obesity-exposure modifier obesity,literature,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e30,diet-quality->multiple-sclerosis,diet-quality modifier multiple-sclerosis,literature,ref2|ref3|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e31,tobacco->multiple-sclerosis,tobacco modifier multiple-sclerosis,literature,ref1|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e32,air-pollution->multiple-sclerosis,air-pollution modifier multiple-sclerosis,literature,ref3|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e33,hla-drb1->multiple-sclerosis,hla-drb1 association multiple-sclerosis,GWAS,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e34,cyp27b1->multiple-sclerosis,cyp27b1 association multiple-sclerosis,GWAS,ref2|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e35,il2ra->multiple-sclerosis,il2ra association multiple-sclerosis,GWAS,ref1|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e36,obesity-exposure->type-2-diabetes,obesity-exposure modifier type-2-diabetes,literature,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e37,diet-quality->type-2-diabetes,diet-quality modifier type-2-diabetes,literature,ref3|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e38,psychosocial-stress->type-2-diabetes,psychosocial-stress modifier type-2-diabetes,literature,ref4|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e39,alcohol->type-2-diabetes,alcohol modifier type-2-diabetes,literature,ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e4,alcohol->obesity,alcohol modifier obesity,literature,ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e40,tcf7l2->type-2-diabetes,tcf7l2 association type-2-diabetes,GWAS,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e41,slc30a8->type-2-diabetes,slc30a8 association type-2-diabetes,GWAS,ref1|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e42,pparg->type-2-diabetes,pparg association type-2-diabetes,GWAS,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e43,fto->type-2-diabetes,fto association type-2-diabetes,GWAS,ref3|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e44,tobacco->rheumatoid-arthritis,tobacco modifier rheumatoid-arthritis,literature,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e45,obesity-exposure->rheumatoid-arthritis,obesity-exposure modifier rheumatoid-arthritis,literature,ref3|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e46,psychosocial-stress->rheumatoid-arthritis,psychosocial-stress modifier rheumatoid-arthritis,literature,ref4|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e47,diet-quality->rheumatoid-arthritis,diet-quality modifier rheumatoid-arthritis,literature,ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e48,hla-drb1->rheumatoid-arthritis,hla-drb1 association rheumatoid-arthritis,GWAS,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e49,ptpn22->rheumatoid-arthritis,ptpn22 association rheumatoid-arthritis,GWAS,ref1|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e5,fto->obesity,fto association obesity,GWAS,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e50,tnf->rheumatoid-arthritis,tnf association rheumatoid-arthritis,GWAS,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e51,ctla4->rheumatoid-arthritis,ctla4 association rheumatoid-arthritis,GWAS,ref3|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e52,air-pollution->asthma,air-pollution modifier asthma,literature,ref5|ref6|ref7,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e53,ozone->asthma,ozone modifier asthma,literature,ref7,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e54,tobacco-smoke-prenatal->asthma,tobacco-smoke-prenatal modifier asthma,literature,ref7,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e55,endotoxin->asthma,endotoxin modifier asthma,literature,ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e56,il33->asthma,il33 association asthma,GWAS,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e57,tslp->asthma,tslp association asthma,GWAS,ref1,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e58,ormdl3->asthma,ormdl3 association asthma,GWAS,ref1,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e59,il1rl1->asthma,il1rl1 association asthma,GWAS,ref1,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e6,mc4r->obesity,mc4r association obesity,GWAS,ref1|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e60,rad50->asthma,rad50 association asthma,GWAS,ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e61,air-pollution->alzheimers-disease,air-pollution modifier alzheimers-disease,literature,ref3|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e62,psychosocial-stress->alzheimers-disease,psychosocial-stress modifier alzheimers-disease,literature,ref4|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e63,diet-quality->alzheimers-disease,diet-quality modifier alzheimers-disease,literature,ref3|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e64,obesity-exposure->alzheimers-disease,obesity-exposure modifier alzheimers-disease,literature,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e65,apoe->alzheimers-disease,apoe association alzheimers-disease,GWAS,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e66,app->alzheimers-disease,app association alzheimers-disease,GWAS,ref1,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e67,psen1->alzheimers-disease,psen1 association alzheimers-disease,GWAS,ref1,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e68,psen2->alzheimers-disease,psen2 association alzheimers-disease,GWAS,ref1,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e69,diet-quality->colorectal-cancer,diet-quality modifier colorectal-cancer,literature,ref3|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e7,tmem18->obesity,tmem18 association obesity,GWAS,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e70,obesity-exposure->colorectal-cancer,obesity-exposure modifier colorectal-cancer,literature,ref4|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e71,tobacco->colorectal-cancer,tobacco modifier colorectal-cancer,literature,ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e72,apc->colorectal-cancer,apc association colorectal-cancer,GWAS,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e73,mlh1->colorectal-cancer,mlh1 association colorectal-cancer,GWAS,ref2|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e74,smad7->colorectal-cancer,smad7 association colorectal-cancer,GWAS,ref1|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e75,diet-quality->hypertension,diet-quality modifier hypertension,literature,ref2|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e76,psychosocial-stress->hypertension,psychosocial-stress modifier hypertension,literature,ref3|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e77,obesity-exposure->hypertension,obesity-exposure modifier hypertension,literature,ref4|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e78,ace->hypertension,ace association hypertension,GWAS,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e79,agt->hypertension,agt association hypertension,GWAS,ref1|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e8,bdnf->obesity,bdnf association obesity,GWAS,ref3|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e80,umod->hypertension,umod association hypertension,GWAS,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e81,alcohol->breast-cancer,alcohol modifier breast-cancer,literature,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e82,obesity-exposure->breast-cancer,obesity-exposure modifier breast-cancer,literature,ref3|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e83,uv-radiation->breast-cancer,uv-radiation modifier breast-cancer,literature,ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e84,psychosocial-stress->breast-cancer,psychosocial-stress modifier breast-cancer,literature,ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e85,brca1->breast-cancer,brca1 association breast-cancer,GWAS,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e86,brca2->breast-cancer,brca2 association breast-cancer,GWAS,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e87,tp53->breast-cancer,tp53 association breast-cancer,GWAS,ref1,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e88,fgfr2->breast-cancer,fgfr2 association breast-cancer,GWAS,ref2|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e89,tobacco->lung-cancer,tobacco modifier lung-cancer,literature,ref1|ref2|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e9,psychosocial-stress->major-depressive-disorder,psychosocial-stress modifier major-depressive-disorder,literature,ref1|ref2|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e90,air-pollution->lung-cancer,air-pollution modifier lung-cancer,literature,ref3|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e91,diet-quality->lung-cancer,diet-quality modifier lung-cancer,literature,ref4|ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e92,chrna5->lung-cancer,chrna5 association lung-cancer,GWAS,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e93,egfr->lung-cancer,egfr association lung-cancer,GWAS,ref2|ref3,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e94,tp53->lung-cancer,tp53 association lung-cancer,GWAS,ref1|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e95,tobacco->copd,tobacco modifier copd,literature,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e96,air-pollution->copd,air-pollution modifier copd,literature,ref3|ref4,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e97,diet-quality->copd,diet-quality modifier copd,literature,ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e98,obesity-exposure->copd,obesity-exposure modifier copd,literature,ref5,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e99,serpina1->copd,serpina1 association copd,GWAS,ref1|ref2,UNNAMESPACED_ID,unnamespaced,/graph
+community,fairfax-county-va,ref1,CDC PLACES: Local Data for Better Health,,ref1,ORPHAN,url_only,/community/fairfax-county-va
+community,fairfax-county-va,ref2,EPA Air Quality System,,ref2,ORPHAN,url_only,/community/fairfax-county-va
+community,fairfax-county-va,ref3,USDA Food Access Research Atlas,,ref3,ORPHAN,url_only,/community/fairfax-county-va
+community,fairfax-county-va,ref4,Virginia Department of Health Environmental Public Health Tracking,,ref4,ORPHAN,url_only,/community/fairfax-county-va
+community,loudoun-county-va,ref1,Virginia Department of Health Environmental Public Health Tracking,,ref1,ORPHAN,url_only,/community/loudoun-county-va
+community,loudoun-county-va,ref2,EPA Air Quality System,,ref2,ORPHAN,url_only,/community/loudoun-county-va
+community,loudoun-county-va,ref3,USDA Food Access Research Atlas,,ref3,ORPHAN,url_only,/community/loudoun-county-va
+disease,alzheimers-disease,$.exposure_modifiers[0],PM2.5 and ultrafine particles may enter brain via olfactory or circulatory routes; oxidative stress and neuroinflammation; epidemiologic associations emerging,,ref3|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/alzheimers-disease
+disease,alzheimers-disease,$.exposure_modifiers[1],Chronic stress and depression may accelerate cognitive decline; cortisol effects on hippocampus; bidirectional with dementia,,ref4|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/alzheimers-disease
+disease,alzheimers-disease,$.exposure_modifiers[2],"Mediterranean-style diet; antioxidants, omega-3s; may reduce inflammation and support brain health",,ref3|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/alzheimers-disease
+disease,alzheimers-disease,$.exposure_modifiers[3],Mid-life obesity increases AD risk; vascular and metabolic pathways; late-life weight loss may reflect prodromal disease,,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/alzheimers-disease
+disease,alzheimers-disease,$.genetic_architecture.top_loci[0],Lipoprotein receptor; ε4 allele increases amyloid deposition and risk; ε2 protective; strongest common AD locus,Lipoprotein receptor; ε4 allele increases amyloid deposition and risk; ε2 protective; strongest common AD locus,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/alzheimers-disease
+disease,alzheimers-disease,$.genetic_architecture.top_loci[1],Amyloid precursor protein; familial AD mutations increase amyloid production,Amyloid precursor protein; familial AD mutations increase amyloid production,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/alzheimers-disease
+disease,alzheimers-disease,$.genetic_architecture.top_loci[2],Presenilin 1; gamma-secretase component; familial AD; alters amyloid processing,Presenilin 1; gamma-secretase component; familial AD; alters amyloid processing,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/alzheimers-disease
+disease,alzheimers-disease,$.genetic_architecture.top_loci[3],Presenilin 2; gamma-secretase component; familial AD,Presenilin 2; gamma-secretase component; familial AD,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/alzheimers-disease
+disease,alzheimers-disease,$.tissues[0],cerebral cortex,GWAS and pathology,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/alzheimers-disease
+disease,alzheimers-disease,$.tissues[1],hippocampus,pathway,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/alzheimers-disease
+disease,alzheimers-disease,$.tissues[2],microglia,GWAS and literature,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/alzheimers-disease
+disease,alzheimers-disease,$.tissues[3],vascular endothelium (blood-brain barrier),pathway,ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/alzheimers-disease
+disease,asthma,ref8,Estimates of asthma heritability in a large twin sample,,ref8,ORPHAN,has_doi,/atlas/diseases/asthma
+disease,asthma,$.exposure_modifiers[0],"PM2.5 and traffic-related pollutants increase asthma incidence, exacerbations, and symptom severity; ROS-mediated NF-κB activation amplifies IL-33 and inflammatory cytokine release",,ref5|ref6|ref7,UNNAMESPACED_ID,has_doi,/atlas/diseases/asthma
+disease,asthma,$.exposure_modifiers[1],Ozone exposure exacerbates airway inflammation and BHR; seasonal and geographic variation in ozone levels,,ref7,UNNAMESPACED_ID,has_doi,/atlas/diseases/asthma
+disease,asthma,$.exposure_modifiers[2],Prenatal maternal smoking increases childhood asthma risk; epigenetic modifications and impaired lung development,,ref7,UNNAMESPACED_ID,has_doi,/atlas/diseases/asthma
+disease,asthma,$.exposure_modifiers[3],Farm and endotoxin exposure in early life may protect against atopic asthma via Th1/regulatory immune skewing (hygiene hypothesis),,ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/asthma
+disease,asthma,$.genetic_architecture.top_loci[0],Enhancer-blocking regulatory region upstream of IL33; asthma-risk allele alters OCT-1 binding and IL33 expression in airway epithelium,Enhancer-blocking regulatory region upstream of IL33; asthma-risk allele alters OCT-1 binding and IL33 expression in airway epithelium,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/asthma
+disease,asthma,$.genetic_architecture.top_loci[1],Epithelial cytokine; TSLP expression influences Th2 priming and asthma susceptibility,Epithelial cytokine; TSLP expression influences Th2 priming and asthma susceptibility,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/asthma
+disease,asthma,$.genetic_architecture.top_loci[2],"Variants regulate ORMDL3 expression; affects ER stress, sphingolipid metabolism, and airway remodeling; strong eQTL for ORMDL3","Variants regulate ORMDL3 expression; affects ER stress, sphingolipid metabolism, and airway remodeling; strong eQTL for ORMDL3",ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/asthma
+disease,asthma,$.genetic_architecture.top_loci[3],ST2 receptor variants; eQTL in airway epithelium and lung parenchyma; sST2 neutralizes IL-33,ST2 receptor variants; eQTL in airway epithelium and lung parenchyma; sST2 neutralizes IL-33,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/asthma
+disease,asthma,$.genetic_architecture.top_loci[4],RAD50-IL13 locus; IL13 drives type 2 inflammation; associated with childhood atopic asthma,RAD50-IL13 locus; IL13 drives type 2 inflammation; associated with childhood atopic asthma,ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/asthma
+disease,asthma,$.tissues[0],bronchial epithelium,eQTL and expression studies,ref2|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/asthma
+disease,asthma,$.tissues[1],alveolar macrophages,expression and functional studies,ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/asthma
+disease,asthma,$.tissues[2],mast cells,IL-33/ST2 activation studies,ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/asthma
+disease,asthma,$.tissues[3],T-helper 2 lymphocytes,cytokine and inflammation studies,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/asthma
+disease,atopic-dermatitis,$.exposure_modifiers[0],$.exposure_modifiers[0],,ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/atopic-dermatitis
+disease,atopic-dermatitis,$.exposure_modifiers[1],$.exposure_modifiers[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/atopic-dermatitis
+disease,atopic-dermatitis,$.exposure_modifiers[2],Early-life microbial exposure may protect,,ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/atopic-dermatitis
+disease,atopic-dermatitis,$.genetic_architecture.top_loci[0],Filaggrin; barrier protein; null alleles strongly increase risk,Filaggrin; barrier protein; null alleles strongly increase risk,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/atopic-dermatitis
+disease,atopic-dermatitis,$.genetic_architecture.top_loci[1],Th2 cytokine; type 2 inflammation,Th2 cytokine; type 2 inflammation,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/atopic-dermatitis
+disease,atopic-dermatitis,$.tissues[0],skin,,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/atopic-dermatitis
+disease,atopic-dermatitis,$.tissues[1],epidermis,,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/atopic-dermatitis
+disease,bipolar-disorder,$.exposure_modifiers[0],Stress triggers episodes; HPA axis and circadian disruption,,ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/bipolar-disorder
+disease,bipolar-disorder,$.exposure_modifiers[1],$.exposure_modifiers[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/bipolar-disorder
+disease,bipolar-disorder,$.genetic_architecture.top_loci[0],Voltage-gated calcium channel; neuronal excitability and mood regulation,Voltage-gated calcium channel; neuronal excitability and mood regulation,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/bipolar-disorder
+disease,bipolar-disorder,$.genetic_architecture.top_loci[1],Ankyrin-G; axon initial segment; neuronal firing,Ankyrin-G; axon initial segment; neuronal firing,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/bipolar-disorder
+disease,bipolar-disorder,$.tissues[0],prefrontal cortex,imaging and expression,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/bipolar-disorder
+disease,bipolar-disorder,$.tissues[1],hippocampus,,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/bipolar-disorder
+disease,breast-cancer,$.exposure_modifiers[0],Alcohol increases estrogen levels and DNA damage; dose-dependent increase in breast cancer risk,,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/breast-cancer
+disease,breast-cancer,$.exposure_modifiers[1],Postmenopausal obesity increases estrogen from adipose aromatase; may amplify risk in ER-positive disease,,ref3|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/breast-cancer
+disease,breast-cancer,$.exposure_modifiers[2],Vitamin D from sun exposure may modestly reduce breast cancer risk; evidence is observational,,ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/breast-cancer
+disease,breast-cancer,$.exposure_modifiers[3],Chronic stress may affect immune surveillance and health behaviors; evidence is limited,,ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/breast-cancer
+disease,breast-cancer,$.genetic_architecture.top_loci[0],DNA double-strand break repair; hereditary breast-ovarian cancer syndrome; high penetrance,DNA double-strand break repair; hereditary breast-ovarian cancer syndrome; high penetrance,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/breast-cancer
+disease,breast-cancer,$.genetic_architecture.top_loci[1],Homologous recombination repair; hereditary breast-ovarian cancer; high penetrance,Homologous recombination repair; hereditary breast-ovarian cancer; high penetrance,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/breast-cancer
+disease,breast-cancer,$.genetic_architecture.top_loci[2],Li-Fraumeni syndrome; tumor suppressor; cell cycle and DNA damage response,Li-Fraumeni syndrome; tumor suppressor; cell cycle and DNA damage response,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/breast-cancer
+disease,breast-cancer,$.genetic_architecture.top_loci[3],Receptor tyrosine kinase; ER-positive breast cancer; fibroblast growth factor signaling,Receptor tyrosine kinase; ER-positive breast cancer; fibroblast growth factor signaling,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/breast-cancer
+disease,breast-cancer,$.tissues[0],mammary epithelium,GWAS and expression,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/breast-cancer
+disease,breast-cancer,$.tissues[1],adipose tissue (breast),pathway,ref3|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/breast-cancer
+disease,breast-cancer,$.tissues[2],lymphocytes,literature,ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/breast-cancer
+disease,breast-cancer,$.tissues[3],ovary,pathway,ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/breast-cancer
+disease,colorectal-cancer,$.exposure_modifiers[0],"Low fiber, high red/processed meat amplifies risk; diet shapes gut microbiome and metabolite profile (e.g., secondary bile acids, TMAO); fiber supports butyrate production",,ref3|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/colorectal-cancer
+disease,colorectal-cancer,$.exposure_modifiers[1],"Obesity-driven insulin resistance, adipokines, and chronic low-grade inflammation promote colorectal carcinogenesis; obesity-microbiome interactions",,ref4|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/colorectal-cancer
+disease,colorectal-cancer,$.exposure_modifiers[2],Smoking increases CRC risk; carcinogens reach colonic mucosa; inflammatory and metabolic pathways,,ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/colorectal-cancer
+disease,colorectal-cancer,$.genetic_architecture.top_loci[0],Wnt signaling regulator; germline mutations cause FAP; common variants at 8q24 modify CRC risk via enhancer effects on MYC,Wnt signaling regulator; germline mutations cause FAP; common variants at 8q24 modify CRC risk via enhancer effects on MYC,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/colorectal-cancer
+disease,colorectal-cancer,$.genetic_architecture.top_loci[1],DNA mismatch repair; germline mutations cause Lynch syndrome; somatic MLH1 silencing in sporadic CRC,DNA mismatch repair; germline mutations cause Lynch syndrome; somatic MLH1 silencing in sporadic CRC,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/colorectal-cancer
+disease,colorectal-cancer,$.genetic_architecture.top_loci[2],TGF-β signaling inhibitor; variants alter TGF-β pathway and colorectal epithelial homeostasis,TGF-β signaling inhibitor; variants alter TGF-β pathway and colorectal epithelial homeostasis,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/colorectal-cancer
+disease,colorectal-cancer,$.tissues[0],colonic epithelium,GWAS and pathway,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/colorectal-cancer
+disease,colorectal-cancer,$.tissues[1],gut-associated lymphoid tissue,literature,ref3|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/colorectal-cancer
+disease,colorectal-cancer,$.tissues[2],liver (bile acid metabolism),inferred,ref4|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/colorectal-cancer
+disease,copd,$.exposure_modifiers[0],"Cigarette smoke causes inflammation, protease–antiprotease imbalance, oxidative stress; dominant environmental cause; gene–smoking interaction",,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/copd
+disease,copd,$.exposure_modifiers[1],PM2.5 and occupational dusts exacerbate COPD; accelerate decline; amplify genetic susceptibility,,ref3|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/copd
+disease,copd,$.exposure_modifiers[2],Antioxidant-rich diet may reduce oxidative stress; vitamin D and omega-3s; observational evidence,,ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/copd
+disease,copd,$.exposure_modifiers[3],Obesity affects lung mechanics and inflammation; paradoxically some studies show protective effect (obesity paradox) in severe COPD,,ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/copd
+disease,copd,$.genetic_architecture.top_loci[0],Alpha-1 antitrypsin; protease inhibitor; deficiency causes early-onset emphysema; illuminates protease–antiprotease hypothesis,Alpha-1 antitrypsin; protease inhibitor; deficiency causes early-onset emphysema; illuminates protease–antiprotease hypothesis,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/copd
+disease,copd,$.genetic_architecture.top_loci[1],Hedgehog-interacting protein; lung development; affects FEV1 and COPD susceptibility,Hedgehog-interacting protein; lung development; affects FEV1 and COPD susceptibility,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/copd
+disease,copd,$.genetic_architecture.top_loci[2],Lung eQTL; Wnt signaling; COPD and lung function,Lung eQTL; Wnt signaling; COPD and lung function,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/copd
+disease,copd,$.genetic_architecture.top_loci[3],Matrix metalloproteinase; elastin degradation; emphysema pathogenesis,Matrix metalloproteinase; elastin degradation; emphysema pathogenesis,ref3|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/copd
+disease,copd,$.tissues[0],bronchial epithelium,eQTL and expression,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/copd
+disease,copd,$.tissues[1],alveolar macrophages,pathway,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/copd
+disease,copd,$.tissues[2],lung parenchyma,GWAS and pathology,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/copd
+disease,copd,$.tissues[3],neutrophils,pathway,ref3|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/copd
+disease,coronary-artery-disease,$.exposure_modifiers[0],"Smoking promotes endothelial dysfunction, oxidative stress, inflammation, and thrombosis; amplifies genetic CAD risk",,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/coronary-artery-disease
+disease,coronary-artery-disease,$.exposure_modifiers[1],"Western diet (saturated fat, refined carbs, low fiber) elevates LDL-C and inflammation; Mediterranean-style diet buffers risk",,ref3|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/coronary-artery-disease
+disease,coronary-artery-disease,$.exposure_modifiers[2],"PM2.5 induces systemic inflammation, oxidative stress, and endothelial dysfunction; increases acute coronary events",,ref4|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/coronary-artery-disease
+disease,coronary-artery-disease,$.exposure_modifiers[3],"Obesity drives dyslipidemia, insulin resistance, inflammation, and hypertension; amplifies genetic CAD susceptibility",,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/coronary-artery-disease
+disease,coronary-artery-disease,$.genetic_architecture.top_loci[0],LDL receptor; familial hypercholesterolemia; central to LDL clearance; common variants contribute to CAD risk,LDL receptor; familial hypercholesterolemia; central to LDL clearance; common variants contribute to CAD risk,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/coronary-artery-disease
+disease,coronary-artery-disease,$.genetic_architecture.top_loci[1],Apolipoprotein B; ligand for LDL receptor; variants affect LDL levels and CAD,Apolipoprotein B; ligand for LDL receptor; variants affect LDL levels and CAD,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/coronary-artery-disease
+disease,coronary-artery-disease,$.genetic_architecture.top_loci[2],Proprotein convertase; degrades LDLR; loss-of-function variants lower LDL and CAD risk,Proprotein convertase; degrades LDLR; loss-of-function variants lower LDL and CAD risk,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/coronary-artery-disease
+disease,coronary-artery-disease,$.genetic_architecture.top_loci[3],Lipoprotein(a); proatherogenic; independent of LDL-C; varies by ancestry,Lipoprotein(a); proatherogenic; independent of LDL-C; varies by ancestry,ref3|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/coronary-artery-disease
+disease,coronary-artery-disease,$.tissues[0],coronary artery endothelium,GWAS and pathway,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/coronary-artery-disease
+disease,coronary-artery-disease,$.tissues[1],hepatocytes,eQTL and expression,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/coronary-artery-disease
+disease,coronary-artery-disease,$.tissues[2],vascular smooth muscle,pathway,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/coronary-artery-disease
+disease,coronary-artery-disease,$.tissues[3],monocytes and macrophages,GWAS and literature,ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/coronary-artery-disease
+disease,hypertension,$.exposure_modifiers[0],High sodium intake amplifies genetic susceptibility in salt-sensitive individuals; DASH-style diet buffers risk; sodium-sensitivity varies by ACE/AGT genotype,,ref2|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/hypertension
+disease,hypertension,$.exposure_modifiers[1],Chronic stress activates sympathetic nervous system and RAAS; stress-induced cortisol may amplify genetic susceptibility; adolescent stress exposure influences BP trajectory,,ref3|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/hypertension
+disease,hypertension,$.exposure_modifiers[2],"Adiposity amplifies hypertension risk via insulin resistance, renal compression, and inflammatory pathways; obesity-epigenetic interactions during adolescence",,ref4|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/hypertension
+disease,hypertension,$.genetic_architecture.top_loci[0],ACE insertion/deletion polymorphism and regulatory variants; angiotensin-converting enzyme regulates RAAS; variants alter blood pressure and treatment response,ACE insertion/deletion polymorphism and regulatory variants; angiotensin-converting enzyme regulates RAAS; variants alter blood pressure and treatment response,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/hypertension
+disease,hypertension,$.genetic_architecture.top_loci[1],Angiotensinogen variants; M235T polymorphism associated with plasma AGT levels and hypertension; key substrate for RAAS,Angiotensinogen variants; M235T polymorphism associated with plasma AGT levels and hypertension; key substrate for RAAS,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/hypertension
+disease,hypertension,$.genetic_architecture.top_loci[2],Uromodulin (Tamm-Horsfall protein) variants; affects renal tubular sodium handling and susceptibility to salt-sensitive hypertension,Uromodulin (Tamm-Horsfall protein) variants; affects renal tubular sodium handling and susceptibility to salt-sensitive hypertension,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/hypertension
+disease,hypertension,$.tissues[0],kidney (renal tubules),GWAS and eQTL,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/hypertension
+disease,hypertension,$.tissues[1],vascular endothelium,pathway and literature,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/hypertension
+disease,hypertension,$.tissues[2],adrenal cortex,literature,ref1|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/hypertension
+disease,inflammatory-bowel-disease,$.exposure_modifiers[0],$.exposure_modifiers[0],,ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/inflammatory-bowel-disease
+disease,inflammatory-bowel-disease,$.exposure_modifiers[1],Smoking increases Crohn risk; may decrease UC risk,,ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/inflammatory-bowel-disease
+disease,inflammatory-bowel-disease,$.genetic_architecture.top_loci[0],Intracellular bacterial sensing; Crohn-specific,Intracellular bacterial sensing; Crohn-specific,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/inflammatory-bowel-disease
+disease,inflammatory-bowel-disease,$.genetic_architecture.top_loci[1],Th17 pathway; shared CD and UC,Th17 pathway; shared CD and UC,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/inflammatory-bowel-disease
+disease,inflammatory-bowel-disease,$.tissues[0],intestinal epithelium,,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/inflammatory-bowel-disease
+disease,inflammatory-bowel-disease,$.tissues[1],lamina propria,,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/inflammatory-bowel-disease
+disease,ischemic-stroke,$.exposure_modifiers[0],$.exposure_modifiers[0],,ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/ischemic-stroke
+disease,ischemic-stroke,$.exposure_modifiers[1],$.exposure_modifiers[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/ischemic-stroke
+disease,ischemic-stroke,$.exposure_modifiers[2],$.exposure_modifiers[2],,ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/ischemic-stroke
+disease,ischemic-stroke,$.genetic_architecture.top_loci[0],Atrial fibrillation; cardioembolic stroke,Atrial fibrillation; cardioembolic stroke,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/ischemic-stroke
+disease,ischemic-stroke,$.genetic_architecture.top_loci[1],Large-vessel atherosclerotic stroke,Large-vessel atherosclerotic stroke,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/ischemic-stroke
+disease,ischemic-stroke,$.tissues[0],brain,,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/ischemic-stroke
+disease,ischemic-stroke,$.tissues[1],vascular endothelium,,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/ischemic-stroke
+disease,lung-cancer,$.exposure_modifiers[0],"Tobacco carcinogens (PAHs, nitrosamines) cause DNA damage; CHRNA5 genotype amplifies both smoking heaviness and cancer risk; smoking × genetics multiplicative",,ref1|ref2|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/lung-cancer
+disease,lung-cancer,$.exposure_modifiers[1],PM2.5 and diesel exhaust increase lung cancer; oxidative stress and inflammation; may amplify risk in never-smokers,,ref3|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/lung-cancer
+disease,lung-cancer,$.exposure_modifiers[2],Fruit/vegetable intake may modestly buffer risk; antioxidants; evidence less strong than tobacco,,ref4|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/lung-cancer
+disease,lung-cancer,$.genetic_architecture.top_loci[0],"Nicotinic acetylcholine receptor α5; influences nicotine dependence, smoking heaviness, and lung cancer risk; smoking × genetics interaction","Nicotinic acetylcholine receptor α5; influences nicotine dependence, smoking heaviness, and lung cancer risk; smoking × genetics interaction",ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/lung-cancer
+disease,lung-cancer,$.genetic_architecture.top_loci[1],Epidermal growth factor receptor; driver mutations in adenocarcinoma; stronger in never-smokers; treatment target,Epidermal growth factor receptor; driver mutations in adenocarcinoma; stronger in never-smokers; treatment target,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/lung-cancer
+disease,lung-cancer,$.genetic_architecture.top_loci[2],Tumor suppressor; somatic mutations common; germline variants may modify susceptibility to tobacco carcinogens,Tumor suppressor; somatic mutations common; germline variants may modify susceptibility to tobacco carcinogens,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/lung-cancer
+disease,lung-cancer,$.tissues[0],bronchial epithelium,GWAS and pathway,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/lung-cancer
+disease,lung-cancer,$.tissues[1],alveolar type II cells,literature,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/lung-cancer
+disease,lung-cancer,$.tissues[2],lung adenocarcinoma (tumor),GWAS and literature,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/lung-cancer
+disease,major-depressive-disorder,$.exposure_modifiers[0],Childhood adversity and chronic stress amplify genetic risk; 5-HTTLPR short allele × stress interaction; HPA axis dysregulation; BDNF Val66Met × stress,,ref1|ref2|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/major-depressive-disorder
+disease,major-depressive-disorder,$.exposure_modifiers[1],Particulate matter exposure linked to depression; neuroinflammation; oxidative stress; emerging epidemiological evidence,,ref3|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/major-depressive-disorder
+disease,major-depressive-disorder,$.exposure_modifiers[2],Obesity-depression bidirectional relationship; inflammatory pathways; shared genetic liability; stigma and psychosocial pathways,,ref4|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/major-depressive-disorder
+disease,major-depressive-disorder,$.genetic_architecture.top_loci[0],Serotonin transporter; short allele associated with stress sensitivity and depression in G×E context; moderates effect of adversity,Serotonin transporter; short allele associated with stress sensitivity and depression in G×E context; moderates effect of adversity,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/major-depressive-disorder
+disease,major-depressive-disorder,$.genetic_architecture.top_loci[1],Val66Met polymorphism affects BDNF secretion and activity-dependent release; neuroplasticity; stress × genotype interactions,Val66Met polymorphism affects BDNF secretion and activity-dependent release; neuroplasticity; stress × genotype interactions,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/major-depressive-disorder
+disease,major-depressive-disorder,$.genetic_architecture.top_loci[2],Serotonin 2A receptor; implicated in mood regulation and treatment response; pathway complement to SLC6A4,Serotonin 2A receptor; implicated in mood regulation and treatment response; pathway complement to SLC6A4,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/major-depressive-disorder
+disease,major-depressive-disorder,$.tissues[0],prefrontal cortex,eQTL and literature,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/major-depressive-disorder
+disease,major-depressive-disorder,$.tissues[1],hippocampus,literature,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/major-depressive-disorder
+disease,major-depressive-disorder,$.tissues[2],amygdala,literature,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/major-depressive-disorder
+disease,multiple-sclerosis,$.exposure_modifiers[0],Vitamin D and omega-3 intake buffer MS risk; diet influences vitamin D status; CYP27B1 genotype may modify vitamin D responsiveness; low vitamin D amplifies risk,,ref2|ref3|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/multiple-sclerosis
+disease,multiple-sclerosis,$.exposure_modifiers[1],Smoking increases MS risk and accelerates disability; oxidative stress and immune modulation; G×E with HLA documented,,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/multiple-sclerosis
+disease,multiple-sclerosis,$.exposure_modifiers[2],Particulate matter and traffic pollution may amplify neuroinflammation; oxidative stress; emerging epidemiological links,,ref3|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/multiple-sclerosis
+disease,multiple-sclerosis,$.genetic_architecture.top_loci[0],HLA-DRB1*15:01 is the dominant MS risk allele; antigen presentation and T-cell repertoire; strongest GWAS signal,HLA-DRB1*15:01 is the dominant MS risk allele; antigen presentation and T-cell repertoire; strongest GWAS signal,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/multiple-sclerosis
+disease,multiple-sclerosis,$.genetic_architecture.top_loci[1],"Vitamin D 1α-hydroxylase; converts 25-OH-D to active 1,25-(OH)2D; links UV/vitamin D to MS genetics","Vitamin D 1α-hydroxylase; converts 25-OH-D to active 1,25-(OH)2D; links UV/vitamin D to MS genetics",ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/multiple-sclerosis
+disease,multiple-sclerosis,$.genetic_architecture.top_loci[2],IL-2 receptor α; regulatory T-cell function; immune tolerance pathway,IL-2 receptor α; regulatory T-cell function; immune tolerance pathway,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/multiple-sclerosis
+disease,multiple-sclerosis,$.tissues[0],white matter (CNS),GWAS and pathway,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/multiple-sclerosis
+disease,multiple-sclerosis,$.tissues[1],oligodendrocytes,literature,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/multiple-sclerosis
+disease,multiple-sclerosis,$.tissues[2],T lymphocytes (peripheral),GWAS and eQTL,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/multiple-sclerosis
+disease,obesity,$.exposure_modifiers[0],"Energy-dense, low-satiety diets (ultra-processed foods, sugar-sweetened beverages) amplify genetic susceptibility; diet is primary modifiable factor",,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/obesity
+disease,obesity,$.exposure_modifiers[1],"Chronic stress affects cortisol, reward circuitry, and eating behavior; stress-induced eating; bidirectional with depression",,ref3|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/obesity
+disease,obesity,$.exposure_modifiers[2],"Obesogenic environment (food access, marketing, physical inactivity) amplifies genetic risk; built environment and policy",,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/obesity
+disease,obesity,$.exposure_modifiers[3],Alcohol provides empty calories; affects appetite and fat metabolism; contributes to weight gain,,ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/obesity
+disease,obesity,$.genetic_architecture.top_loci[0],Fat mass and obesity-associated; hypothalamic energy balance; affects food intake and preference; strongest common BMI locus,Fat mass and obesity-associated; hypothalamic energy balance; affects food intake and preference; strongest common BMI locus,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/obesity
+disease,obesity,$.genetic_architecture.top_loci[1],Melanocortin-4 receptor; leptin–melanocortin pathway; appetite regulation; monogenic obesity when mutated,Melanocortin-4 receptor; leptin–melanocortin pathway; appetite regulation; monogenic obesity when mutated,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/obesity
+disease,obesity,$.genetic_architecture.top_loci[2],Hypothalamic expression; energy balance; gut–brain axis,Hypothalamic expression; energy balance; gut–brain axis,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/obesity
+disease,obesity,$.genetic_architecture.top_loci[3],Brain-derived neurotrophic factor; hypothalamic energy homeostasis; synaptic plasticity,Brain-derived neurotrophic factor; hypothalamic energy homeostasis; synaptic plasticity,ref3|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/obesity
+disease,obesity,$.tissues[0],hypothalamus,GWAS and pathway,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/obesity
+disease,obesity,$.tissues[1],adipose tissue,eQTL and expression,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/obesity
+disease,obesity,$.tissues[2],gut (enteroendocrine cells),pathway,ref3|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/obesity
+disease,obesity,$.tissues[3],liver,pathway,ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/obesity
+disease,psoriasis,$.exposure_modifiers[0],$.exposure_modifiers[0],,ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/psoriasis
+disease,psoriasis,$.exposure_modifiers[1],Phototherapy improves lesions,,ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/psoriasis
+disease,psoriasis,$.genetic_architecture.top_loci[0],HLA-C*06:02 strongest risk allele; antigen presentation,HLA-C*06:02 strongest risk allele; antigen presentation,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/psoriasis
+disease,psoriasis,$.genetic_architecture.top_loci[1],IL-23 receptor; Th17 differentiation,IL-23 receptor; Th17 differentiation,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/psoriasis
+disease,psoriasis,$.tissues[0],skin,primary site,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/psoriasis
+disease,psoriasis,$.tissues[1],synovium,psoriatic arthritis,ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/psoriasis
+disease,rheumatoid-arthritis,$.exposure_modifiers[0],"Smoking induces citrullination in lungs; in HLA-DRB1 carriers, dramatically increases anti-CCP–positive RA risk; gene–environment interaction",,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/rheumatoid-arthritis
+disease,rheumatoid-arthritis,$.exposure_modifiers[1],"Adipose-derived cytokines (leptin, adiponectin) promote inflammation; obesity increases RA risk and reduces treatment response",,ref3|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/rheumatoid-arthritis
+disease,rheumatoid-arthritis,$.exposure_modifiers[2],Stress may trigger or exacerbate RA flares; affects disease activity and treatment adherence,,ref4|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/rheumatoid-arthritis
+disease,rheumatoid-arthritis,$.exposure_modifiers[3],"Mediterranean diet, omega-3 fatty acids may reduce inflammation; observational evidence for symptom improvement",,ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/rheumatoid-arthritis
+disease,rheumatoid-arthritis,$.genetic_architecture.top_loci[0],MHC class II; antigen presentation; shared epitope hypothesis; citrullinated peptide presentation; strongest RA locus,MHC class II; antigen presentation; shared epitope hypothesis; citrullinated peptide presentation; strongest RA locus,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/rheumatoid-arthritis
+disease,rheumatoid-arthritis,$.genetic_architecture.top_loci[1],Lymphoid tyrosine phosphatase; T-cell receptor signaling; multiple autoimmune diseases,Lymphoid tyrosine phosphatase; T-cell receptor signaling; multiple autoimmune diseases,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/rheumatoid-arthritis
+disease,rheumatoid-arthritis,$.genetic_architecture.top_loci[2],TNF-alpha; central cytokine in RA pathogenesis; anti-TNF therapeutics,TNF-alpha; central cytokine in RA pathogenesis; anti-TNF therapeutics,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/rheumatoid-arthritis
+disease,rheumatoid-arthritis,$.genetic_architecture.top_loci[3],T-cell costimulation; immune checkpoint; autoimmune susceptibility,T-cell costimulation; immune checkpoint; autoimmune susceptibility,ref3|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/rheumatoid-arthritis
+disease,rheumatoid-arthritis,$.tissues[0],synovium,GWAS and pathology,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/rheumatoid-arthritis
+disease,rheumatoid-arthritis,$.tissues[1],immune cells (T and B lymphocytes),pathway,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/rheumatoid-arthritis
+disease,rheumatoid-arthritis,$.tissues[2],lung (for citrullination),literature,ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/rheumatoid-arthritis
+disease,rheumatoid-arthritis,$.tissues[3],adipose tissue,pathway,ref3|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/rheumatoid-arthritis
+disease,schizophrenia,$.exposure_modifiers[0],"Childhood trauma, urban upbringing, migration, and social defeat stress increase risk; may trigger onset in genetically susceptible individuals",,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/schizophrenia
+disease,schizophrenia,$.exposure_modifiers[1],Smoking is highly prevalent in schizophrenia; nicotine may affect dopaminergic signaling and cognition; bidirectional relationship,,ref3|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/schizophrenia
+disease,schizophrenia,$.exposure_modifiers[2],Antipsychotic-induced weight gain; metabolic syndrome; bidirectional with sedentary behavior and diet,,ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/schizophrenia
+disease,schizophrenia,$.genetic_architecture.top_loci[0],Dopamine D2 receptor; target of antipsychotics; dopamine hypothesis of schizophrenia,Dopamine D2 receptor; target of antipsychotics; dopamine hypothesis of schizophrenia,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/schizophrenia
+disease,schizophrenia,$.genetic_architecture.top_loci[1],L-type calcium channel; neuronal excitability; psychiatric pleiotropy,L-type calcium channel; neuronal excitability; psychiatric pleiotropy,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/schizophrenia
+disease,schizophrenia,$.genetic_architecture.top_loci[2],Complement C4A; synaptic pruning; excess pruning hypothesis; mechanism linking immune and neurodevelopment,Complement C4A; synaptic pruning; excess pruning hypothesis; mechanism linking immune and neurodevelopment,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/schizophrenia
+disease,schizophrenia,$.genetic_architecture.top_loci[3],NMDA receptor subunit; glutamate hypothesis; affects synaptic plasticity,NMDA receptor subunit; glutamate hypothesis; affects synaptic plasticity,ref3|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/schizophrenia
+disease,schizophrenia,$.tissues[0],prefrontal cortex,GWAS and imaging,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/schizophrenia
+disease,schizophrenia,$.tissues[1],striatum,pathway,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/schizophrenia
+disease,schizophrenia,$.tissues[2],hippocampus,GWAS and literature,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/schizophrenia
+disease,schizophrenia,$.tissues[3],dopaminergic neurons (midbrain),pathway,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/schizophrenia
+disease,type-2-diabetes,$.exposure_modifiers[0],Obesity causes insulin resistance and beta-cell stress; amplifies genetic T2D susceptibility; strongest modifiable risk factor,,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/type-2-diabetes
+disease,type-2-diabetes,$.exposure_modifiers[1],"High refined carbohydrate and sugar intake, low fiber; promotes weight gain and insulin resistance; Western diet amplifies risk",,ref3|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/type-2-diabetes
+disease,type-2-diabetes,$.exposure_modifiers[2],"Chronic stress affects cortisol, eating behavior, and activity; may exacerbate insulin resistance",,ref4|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/type-2-diabetes
+disease,type-2-diabetes,$.exposure_modifiers[3],Moderate alcohol may have mixed effects; heavy use increases risk; relationship is dose-dependent and complex,,ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/type-2-diabetes
+disease,type-2-diabetes,$.genetic_architecture.top_loci[0],Transcription factor; Wnt signaling; affects beta-cell function and insulin secretion; strongest common T2D locus,Transcription factor; Wnt signaling; affects beta-cell function and insulin secretion; strongest common T2D locus,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/type-2-diabetes
+disease,type-2-diabetes,$.genetic_architecture.top_loci[1],Zinc transporter in beta-cells; affects insulin granule packaging and secretion,Zinc transporter in beta-cells; affects insulin granule packaging and secretion,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/type-2-diabetes
+disease,type-2-diabetes,$.genetic_architecture.top_loci[2],Nuclear receptor; regulates adipocyte differentiation and insulin sensitivity; thiazolidinedione target,Nuclear receptor; regulates adipocyte differentiation and insulin sensitivity; thiazolidinedione target,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/type-2-diabetes
+disease,type-2-diabetes,$.genetic_architecture.top_loci[3],Obesity-associated; T2D risk largely mediated through BMI; energy balance and appetite regulation,Obesity-associated; T2D risk largely mediated through BMI; energy balance and appetite regulation,ref3|ref5,UNNAMESPACED_ID,has_doi,/atlas/diseases/type-2-diabetes
+disease,type-2-diabetes,$.tissues[0],pancreatic beta cells,GWAS and eQTL,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/diseases/type-2-diabetes
+disease,type-2-diabetes,$.tissues[1],adipose tissue,GWAS and expression,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/diseases/type-2-diabetes
+disease,type-2-diabetes,$.tissues[2],skeletal muscle,pathway,ref1,UNNAMESPACED_ID,has_doi,/atlas/diseases/type-2-diabetes
+disease,type-2-diabetes,$.tissues[3],liver,eQTL and literature,ref3|ref4,UNNAMESPACED_ID,has_doi,/atlas/diseases/type-2-diabetes
+brief,asthma-air-pollution-17q21,ref1,Genetic variants regulating ORMDL3 expression contribute to the risk of childhood asthma,,ref1,ORPHAN,has_doi,/mechanism-briefs/asthma-air-pollution-17q21
+brief,asthma-air-pollution-17q21,ref10,Exposure to PM2.5 induces aberrant activation of NF-κB in human airway epithelial cells by downregulating miR-331 expression,,ref10,ORPHAN,has_doi,/mechanism-briefs/asthma-air-pollution-17q21
+brief,asthma-air-pollution-17q21,ref11,The IL-33/ST2 axis: Role in health and disease,,ref11,ORPHAN,has_doi,/mechanism-briefs/asthma-air-pollution-17q21
+brief,asthma-air-pollution-17q21,ref2,"A large-scale, consortium-based genomewide association study of asthma",,ref2,ORPHAN,has_doi,/mechanism-briefs/asthma-air-pollution-17q21
+brief,asthma-air-pollution-17q21,ref3,Allele-specific chromatin remodeling in the ZPBP2/GSDMB/ORMDL3 locus associated with the risk of asthma and autoimmune disease,,ref3,ORPHAN,has_doi,/mechanism-briefs/asthma-air-pollution-17q21
+brief,asthma-air-pollution-17q21,ref4,The asthma-associated ORMDL3 gene product regulates endoplasmic reticulum-mediated calcium signaling and cellular stress,,ref4,ORPHAN,has_doi,/mechanism-briefs/asthma-air-pollution-17q21
+brief,asthma-air-pollution-17q21,ref5,"ORMDL3 is an inducible lung epithelial gene regulating metalloproteases, chemokines, OAS, and ATF6",,ref5,ORPHAN,has_doi,/mechanism-briefs/asthma-air-pollution-17q21
+brief,asthma-air-pollution-17q21,ref6,GSDMB induces an asthma phenotype characterized by increased airway responsiveness and remodeling without lung inflammation,,ref6,ORPHAN,has_doi,/mechanism-briefs/asthma-air-pollution-17q21
+brief,asthma-air-pollution-17q21,ref7,Effect of 17q21 variants and smoking exposure in early-onset asthma,,ref7,ORPHAN,has_doi,/mechanism-briefs/asthma-air-pollution-17q21
+brief,asthma-air-pollution-17q21,ref8,Genome-Wide Interaction Analysis of Air Pollution Exposure and Childhood Asthma with Functional Follow-up,,ref8,ORPHAN,has_doi,/mechanism-briefs/asthma-air-pollution-17q21
+brief,asthma-air-pollution-17q21,ref9,Meta-analysis of genome-wide association studies of asthma in ethnically diverse North American populations,,ref9,ORPHAN,has_doi,/mechanism-briefs/asthma-air-pollution-17q21
+brief,bdnf-stress-major-depressive-disorder,ref1,The BDNF Val66Met polymorphism and stress,,ref1,ORPHAN,has_doi,/mechanism-briefs/bdnf-stress-major-depressive-disorder
+brief,bdnf-stress-major-depressive-disorder,ref2,Gene–environment interactions in depression,,ref2,ORPHAN,has_doi,/mechanism-briefs/bdnf-stress-major-depressive-disorder
+brief,jak-stat-psoriasis-ibd-environment,ref1,JAK-STAT signaling in immune regulation,,ref1,ORPHAN,has_doi,/mechanism-briefs/jak-stat-psoriasis-ibd-environment
+brief,jak-stat-psoriasis-ibd-environment,ref2,Targeting the JAK/STAT pathway in autoimmune disease,,ref2,ORPHAN,has_doi,/mechanism-briefs/jak-stat-psoriasis-ibd-environment
+brief,leptin-melanocortin-obesity-environment,ref1,Leptin and the regulation of body weight,,ref1,ORPHAN,has_doi,/mechanism-briefs/leptin-melanocortin-obesity-environment
+brief,leptin-melanocortin-obesity-environment,ref2,FTO and energy homeostasis,,ref2,ORPHAN,has_doi,/mechanism-briefs/leptin-melanocortin-obesity-environment
+brief,no2-traffic-corridor-childhood-asthma,ref1,Exposure to traffic-related air pollution and risk of development of childhood asthma: A systematic review and meta-analysis,,ref1,ORPHAN,has_doi,/mechanism-briefs/no2-traffic-corridor-childhood-asthma
+brief,no2-traffic-corridor-childhood-asthma,ref2,"The influence of childhood traffic-related air pollution exposure on asthma, allergy and sensitization: a systematic review and a meta-analysis of birth cohort studies",,ref2,ORPHAN,has_doi,/mechanism-briefs/no2-traffic-corridor-childhood-asthma
+brief,no2-traffic-corridor-childhood-asthma,ref3,Association of improved air quality with lung development in children,,ref3,ORPHAN,has_doi,/mechanism-briefs/no2-traffic-corridor-childhood-asthma
+brief,no2-traffic-corridor-childhood-asthma,ref4,"A large-scale, consortium-based genomewide association study of asthma",,ref4,ORPHAN,has_doi,/mechanism-briefs/no2-traffic-corridor-childhood-asthma
+brief,no2-traffic-corridor-childhood-asthma,ref5,Meta-analysis of genome-wide association studies of asthma in ethnically diverse North American populations,,ref5,ORPHAN,has_doi,/mechanism-briefs/no2-traffic-corridor-childhood-asthma
+brief,no2-traffic-corridor-childhood-asthma,ref6,The asthma-associated ORMDL3 gene product regulates endoplasmic reticulum-mediated calcium signaling and cellular stress,,ref6,ORPHAN,has_doi,/mechanism-briefs/no2-traffic-corridor-childhood-asthma
+brief,no2-traffic-corridor-childhood-asthma,ref7,Integrated Science Assessment (ISA) for Oxides of Nitrogen — Health Criteria (EPA/600/R-15/068),,ref7,ORPHAN,journal_only,/mechanism-briefs/no2-traffic-corridor-childhood-asthma
+brief,oxidative-stress-air-pollution-asthma-cvd,ref1,GSTP1 and TNF Gene Variants and Associations between Air Pollution and Incident Childhood Asthma,,ref1,ORPHAN,has_doi,/mechanism-briefs/oxidative-stress-air-pollution-asthma-cvd
+brief,oxidative-stress-air-pollution-asthma-cvd,ref2,Oxidative stress in disease and aging,,ref2,ORPHAN,has_doi,/mechanism-briefs/oxidative-stress-air-pollution-asthma-cvd
+brief,pm25-il33-nfkb-asthma,ref1,Exposure to PM2.5 induces aberrant activation of NF-κB in human airway epithelial cells by downregulating miR-331 expression,,ref1,ORPHAN,has_doi,/mechanism-briefs/pm25-il33-nfkb-asthma
+brief,pm25-il33-nfkb-asthma,ref2,Ambient particulate matter induces an exacerbation of airway inflammation in experimental asthma: role of interleukin-33,,ref2,ORPHAN,has_doi,/mechanism-briefs/pm25-il33-nfkb-asthma
+brief,pm25-il33-nfkb-asthma,ref3,Asthma-associated genetic variants induce IL33 differential expression through an enhancer-blocking regulatory region,,ref3,ORPHAN,has_doi,/mechanism-briefs/pm25-il33-nfkb-asthma
+brief,pm25-il33-nfkb-asthma,ref4,GSTP1 and TNF Gene Variants and Associations between Air Pollution and Incident Childhood Asthma,,ref4,ORPHAN,has_doi,/mechanism-briefs/pm25-il33-nfkb-asthma
+brief,pm25-il33-nfkb-asthma,ref5,The IL-33/ST2 axis: Role in health and disease,,ref5,ORPHAN,has_doi,/mechanism-briefs/pm25-il33-nfkb-asthma
+brief,pparg-diet-type2diabetes,ref1,PPARG and type 2 diabetes,,ref1,ORPHAN,has_doi,/mechanism-briefs/pparg-diet-type2diabetes
+brief,pparg-diet-type2diabetes,ref2,Gene–environment interaction in type 2 diabetes,,ref2,ORPHAN,has_doi,/mechanism-briefs/pparg-diet-type2diabetes
+brief,sleep-deprivation-metabolic-mental-health,ref1,Sleep and metabolic function,,ref1,ORPHAN,has_doi,/mechanism-briefs/sleep-deprivation-metabolic-mental-health
+brief,sleep-deprivation-metabolic-mental-health,ref2,Adolescent sleep and mental health,,ref2,ORPHAN,has_doi,/mechanism-briefs/sleep-deprivation-metabolic-mental-health
+gene,ace,ref3,Angiotensin-converting enzyme gene polymorphism and cardiovascular disease,,ref3,ORPHAN,has_doi,/atlas/genes/ace
+gene,ace,$.expression_context[0],$.expression_context[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/ace
+gene,ace,$.expression_context[1],$.expression_context[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/ace
+gene,apoe,ref3,APOE4 leads to blood-brain barrier dysfunction predicting cognitive decline,,ref3,ORPHAN,has_doi,/atlas/genes/apoe
+gene,apoe,$.expression_context[0],$.expression_context[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/apoe
+gene,apoe,$.expression_context[1],$.expression_context[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/apoe
+gene,bdnf,$.expression_context[0],$.expression_context[0],,ref1,UNNAMESPACED_ID,has_doi,/atlas/genes/bdnf
+gene,bdnf,$.expression_context[1],$.expression_context[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/bdnf
+gene,brca1,ref3,Oral poly(ADP-ribose) polymerase inhibitor olaparib in patients with BRCA1 or BRCA2 mutations and advanced breast cancer,,ref3,ORPHAN,has_doi,/atlas/genes/brca1
+gene,brca1,$.expression_context[0],$.expression_context[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/brca1
+gene,brca1,$.expression_context[1],$.expression_context[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/brca1
+gene,brca2,ref3,BRCA2 and homologous recombination in ovarian cancer development,,ref3,ORPHAN,has_doi,/atlas/genes/brca2
+gene,brca2,$.expression_context[0],$.expression_context[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/brca2
+gene,brca2,$.expression_context[1],$.expression_context[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/brca2
+gene,drd2,ref3,Biological insights from 108 schizophrenia-associated genetic loci,,ref3,ORPHAN,has_doi,/atlas/genes/drd2
+gene,drd2,$.expression_context[0],$.expression_context[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/drd2
+gene,drd2,$.expression_context[1],$.expression_context[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/drd2
+gene,egfr,ref3,Osimertinib in untreated EGFR-mutated advanced non-small-cell lung cancer,,ref3,ORPHAN,has_doi,/atlas/genes/egfr
+gene,egfr,$.expression_context[0],$.expression_context[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/egfr
+gene,egfr,$.expression_context[1],$.expression_context[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/egfr
+gene,fto,ref3,A common variant in the FTO gene is associated with body mass index and predisposes to childhood and adult obesity,,ref3,ORPHAN,has_doi,/atlas/genes/fto
+gene,fto,$.expression_context[0],$.expression_context[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/fto
+gene,fto,$.expression_context[1],$.expression_context[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/fto
+gene,gsdmb,$.expression_context[0],$.expression_context[0],,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/genes/gsdmb
+gene,gsdmb,$.expression_context[1],$.expression_context[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/gsdmb
+gene,gsdmb,$.expression_context[2],$.expression_context[2],,ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/gsdmb
+gene,gstp1,ref2,Glutathione S-transferase genotypes and asthma,,ref2,ORPHAN,has_doi,/atlas/genes/gstp1
+gene,gstp1,$.expression_context[0],$.expression_context[0],,ref1,UNNAMESPACED_ID,has_doi,/atlas/genes/gstp1
+gene,gstp1,$.expression_context[1],$.expression_context[1],,ref1,UNNAMESPACED_ID,has_doi,/atlas/genes/gstp1
+gene,hla-drb1,ref3,Genetic risk and a primary role for cell-mediated immune mechanisms in multiple sclerosis,,ref3,ORPHAN,has_doi,/atlas/genes/hla-drb1
+gene,hla-drb1,$.expression_context[0],$.expression_context[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/hla-drb1
+gene,hla-drb1,$.expression_context[1],$.expression_context[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/hla-drb1
+gene,il33,$.expression_context[0],$.expression_context[0],,ref5,UNNAMESPACED_ID,has_doi,/atlas/genes/il33
+gene,il33,$.expression_context[1],$.expression_context[1],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/il33
+gene,il33,$.expression_context[2],$.expression_context[2],,ref4,UNNAMESPACED_ID,has_doi,/atlas/genes/il33
+gene,il33,$.expression_context[3],$.expression_context[3],,ref3,UNNAMESPACED_ID,has_doi,/atlas/genes/il33
+gene,ldlr,ref3,"Genetic risk, adherence to a healthy lifestyle, and coronary disease",,ref3,ORPHAN,has_doi,/atlas/genes/ldlr
+gene,ldlr,$.expression_context[0],$.expression_context[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/ldlr
+gene,ldlr,$.expression_context[1],$.expression_context[1],,ref1,UNNAMESPACED_ID,has_doi,/atlas/genes/ldlr
+gene,lep,$.expression_context[0],$.expression_context[0],,ref1,UNNAMESPACED_ID,has_doi,/atlas/genes/lep
+gene,mc4r,ref3,Genome-wide association study for variants that modulate relationships between childhood obesity and plasma metabolite profiles,,ref3,ORPHAN,has_doi,/atlas/genes/mc4r
+gene,mc4r,$.expression_context[0],$.expression_context[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/mc4r
+gene,mc4r,$.expression_context[1],$.expression_context[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/mc4r
+gene,mthfr,$.expression_context[0],$.expression_context[0],,ref1,UNNAMESPACED_ID,has_doi,/atlas/genes/mthfr
+gene,ormdl3,ref3,ORMDL3 modulates ceramide levels and the unfolded protein response in the endoplasmic reticulum,,ref3,ORPHAN,has_doi,/atlas/genes/ormdl3
+gene,ormdl3,$.expression_context[0],$.expression_context[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/ormdl3
+gene,ormdl3,$.expression_context[1],$.expression_context[1],,ref1,UNNAMESPACED_ID,has_doi,/atlas/genes/ormdl3
+gene,ormdl3,$.expression_context[2],$.expression_context[2],,ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/ormdl3
+gene,pcsk9,ref3,Evolocumab and clinical outcomes in patients with cardiovascular disease,,ref3,ORPHAN,has_doi,/atlas/genes/pcsk9
+gene,pcsk9,$.expression_context[0],$.expression_context[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/pcsk9
+gene,pcsk9,$.expression_context[1],$.expression_context[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/pcsk9
+gene,pparg,$.expression_context[0],$.expression_context[0],,ref1,UNNAMESPACED_ID,has_doi,/atlas/genes/pparg
+gene,serpina1,ref3,Effect of recombinant alpha1-antitrypsin on pulmonary exacerbations in COPD,,ref3,ORPHAN,has_doi,/atlas/genes/serpina1
+gene,serpina1,$.expression_context[0],$.expression_context[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/serpina1
+gene,serpina1,$.expression_context[1],$.expression_context[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/serpina1
+gene,slc6a4,ref3,Serotonin transporter genetic variation and the response of the human amygdala,,ref3,ORPHAN,has_doi,/atlas/genes/slc6a4
+gene,slc6a4,$.expression_context[0],$.expression_context[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/slc6a4
+gene,slc6a4,$.expression_context[1],$.expression_context[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/slc6a4
+gene,sod2,$.expression_context[0],$.expression_context[0],,ref1,UNNAMESPACED_ID,has_doi,/atlas/genes/sod2
+gene,sod2,$.expression_context[1],$.expression_context[1],,ref1,UNNAMESPACED_ID,has_doi,/atlas/genes/sod2
+gene,tcf7l2,ref3,TCF7L2 polymorphisms and progression to diabetes in the Diabetes Prevention Program,,ref3,ORPHAN,has_doi,/atlas/genes/tcf7l2
+gene,tcf7l2,$.expression_context[0],$.expression_context[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/tcf7l2
+gene,tcf7l2,$.expression_context[1],$.expression_context[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/tcf7l2
+gene,tnf,ref2,The role of TNF-alpha in asthma,,ref2,ORPHAN,has_doi,/atlas/genes/tnf
+gene,tnf,$.expression_context[0],$.expression_context[0],,ref1,UNNAMESPACED_ID,has_doi,/atlas/genes/tnf
+gene,tnf,$.expression_context[1],$.expression_context[1],,ref1,UNNAMESPACED_ID,has_doi,/atlas/genes/tnf
+gene,tnf,$.expression_context[2],$.expression_context[2],,ref1,UNNAMESPACED_ID,has_doi,/atlas/genes/tnf
+gene,tp53,ref3,Mutational signatures of tobacco smoking in human cancer,,ref3,ORPHAN,has_doi,/atlas/genes/tp53
+gene,tp53,$.expression_context[0],$.expression_context[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/tp53
+gene,tp53,$.expression_context[1],$.expression_context[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/genes/tp53
+gene,tslp,$.expression_context[0],$.expression_context[0],,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/genes/tslp
+gene,tslp,$.expression_context[1],$.expression_context[1],,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/genes/tslp
+gene,tslp,$.expression_context[2],$.expression_context[2],,ref1,UNNAMESPACED_ID,has_doi,/atlas/genes/tslp
+exposure,air-pollution,ref5,EPA Criteria Air Pollutants,,ref5,ORPHAN,url_only,/atlas/exposures/air-pollution
+exposure,air-pollution,$.gxe_highlights[0],IL33 promoter variants increase epithelial alarmin release under PM2.5-induced NF-kB activation; carriers show amplified Th2 airway inflammation in exposed populations.,literature,ref1|ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/exposures/air-pollution
+exposure,air-pollution,$.gxe_highlights[1],GSTP1 Ile105Val variant reduces glutathione conjugation of PM2.5-derived ROS; carriers show stronger air pollution-asthma associations in childhood cohorts.,literature,ref3,UNNAMESPACED_ID,has_doi,/atlas/exposures/air-pollution
+exposure,air-pollution,$.gxe_highlights[2],TNF-308 promoter variant increases TNF-alpha production under PM2.5 exposure; amplifies NF-kB-driven airway inflammation in genetically susceptible individuals.,literature,ref3,UNNAMESPACED_ID,has_doi,/atlas/exposures/air-pollution
+exposure,air-pollution,$.gxe_highlights[3],"ORMDL3 17q21 variants regulate sphingolipid metabolism and ER stress; PM2.5 exposure may amplify ER stress in carriers, though direct GxE evidence is emerging.",GWAS,ref6,UNNAMESPACED_ID,has_doi,/atlas/exposures/air-pollution
+exposure,air-pollution,$.gxe_highlights[4],GSDMB 17q21 variants associated with pyroptosis and epithelial barrier disruption; PM2.5-induced epithelial damage may be amplified in risk-allele carriers.,GWAS,ref6,UNNAMESPACED_ID,has_doi,/atlas/exposures/air-pollution
+exposure,air-pollution,$.sensitive_windows[0],$.sensitive_windows[0],,ref4,UNNAMESPACED_ID,has_doi,/atlas/exposures/air-pollution
+exposure,air-pollution,$.sensitive_windows[1],$.sensitive_windows[1],,ref4,UNNAMESPACED_ID,has_doi,/atlas/exposures/air-pollution
+exposure,air-pollution,$.sensitive_windows[2],$.sensitive_windows[2],,ref4,UNNAMESPACED_ID,has_doi,/atlas/exposures/air-pollution
+exposure,air-pollution,$.tissues[0],bronchial epithelium,,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/exposures/air-pollution
+exposure,air-pollution,$.tissues[1],pulmonary endothelium,,ref1,UNNAMESPACED_ID,has_doi,/atlas/exposures/air-pollution
+exposure,air-pollution,$.tissues[2],alveolar macrophages,,ref2,UNNAMESPACED_ID,has_doi,/atlas/exposures/air-pollution
+exposure,alcohol,$.sensitive_windows[0],$.sensitive_windows[0],,ref1,UNNAMESPACED_ID,has_doi,/atlas/exposures/alcohol
+exposure,alcohol,$.tissues[0],liver,,ref1,UNNAMESPACED_ID,has_doi,/atlas/exposures/alcohol
+exposure,diet-quality,$.sensitive_windows[0],$.sensitive_windows[0],,ref1,UNNAMESPACED_ID,has_doi,/atlas/exposures/diet-quality
+exposure,diet-quality,$.tissues[0],adipose tissue,,ref1,UNNAMESPACED_ID,has_doi,/atlas/exposures/diet-quality
+exposure,endocrine-disruptors,$.gxe_highlights[0],$.gxe_highlights[0],pathway,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/exposures/endocrine-disruptors
+exposure,endocrine-disruptors,$.gxe_highlights[1],$.gxe_highlights[1],literature,ref3|ref4,UNNAMESPACED_ID,has_doi,/atlas/exposures/endocrine-disruptors
+exposure,endocrine-disruptors,$.sensitive_windows[0],$.sensitive_windows[0],,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/exposures/endocrine-disruptors
+exposure,endocrine-disruptors,$.sensitive_windows[1],$.sensitive_windows[1],,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/exposures/endocrine-disruptors
+exposure,endocrine-disruptors,$.tissues[0],adipose tissue,,ref3|ref4,UNNAMESPACED_ID,has_doi,/atlas/exposures/endocrine-disruptors
+exposure,endocrine-disruptors,$.tissues[1],mammary gland,,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/exposures/endocrine-disruptors
+exposure,endocrine-disruptors,$.tissues[2],thyroid,,ref2,UNNAMESPACED_ID,has_doi,/atlas/exposures/endocrine-disruptors
+exposure,endotoxin,$.sensitive_windows[0],$.sensitive_windows[0],,ref1,UNNAMESPACED_ID,journal_only,/atlas/exposures/endotoxin
+exposure,endotoxin,$.tissues[0],airway mucosa,,ref1,UNNAMESPACED_ID,journal_only,/atlas/exposures/endotoxin
+exposure,greenspace,$.sensitive_windows[0],$.sensitive_windows[0],,ref1,UNNAMESPACED_ID,has_doi,/atlas/exposures/greenspace
+exposure,heavy-metals,$.gxe_highlights[0],$.gxe_highlights[0],literature,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/exposures/heavy-metals
+exposure,heavy-metals,$.gxe_highlights[1],$.gxe_highlights[1],pathway,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/exposures/heavy-metals
+exposure,heavy-metals,$.sensitive_windows[0],$.sensitive_windows[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/exposures/heavy-metals
+exposure,heavy-metals,$.sensitive_windows[1],$.sensitive_windows[1],,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/exposures/heavy-metals
+exposure,heavy-metals,$.tissues[0],brain,,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/exposures/heavy-metals
+exposure,heavy-metals,$.tissues[1],kidney,,ref2,UNNAMESPACED_ID,has_doi,/atlas/exposures/heavy-metals
+exposure,heavy-metals,$.tissues[2],vascular endothelium,,ref4,UNNAMESPACED_ID,has_doi,/atlas/exposures/heavy-metals
+exposure,obesity-exposure,$.sensitive_windows[0],$.sensitive_windows[0],,ref1,UNNAMESPACED_ID,has_doi,/atlas/exposures/obesity-exposure
+exposure,obesity-exposure,$.tissues[0],adipose tissue,,ref1,UNNAMESPACED_ID,has_doi,/atlas/exposures/obesity-exposure
+exposure,ozone,$.sensitive_windows[0],$.sensitive_windows[0],,ref1,UNNAMESPACED_ID,url_only,/atlas/exposures/ozone
+exposure,ozone,$.tissues[0],bronchial epithelium,,ref1,UNNAMESPACED_ID,url_only,/atlas/exposures/ozone
+exposure,physical-activity,$.gxe_highlights[0],$.gxe_highlights[0],intervention,ref2,UNNAMESPACED_ID,has_doi,/atlas/exposures/physical-activity
+exposure,physical-activity,$.gxe_highlights[1],$.gxe_highlights[1],literature,ref2,UNNAMESPACED_ID,has_doi,/atlas/exposures/physical-activity
+exposure,physical-activity,$.sensitive_windows[0],$.sensitive_windows[0],,ref1,UNNAMESPACED_ID,has_doi,/atlas/exposures/physical-activity
+exposure,physical-activity,$.tissues[0],skeletal muscle,,ref1,UNNAMESPACED_ID,has_doi,/atlas/exposures/physical-activity
+exposure,physical-activity,$.tissues[1],adipose tissue,,ref1,UNNAMESPACED_ID,has_doi,/atlas/exposures/physical-activity
+exposure,psychosocial-stress,$.sensitive_windows[0],$.sensitive_windows[0],,ref1,UNNAMESPACED_ID,has_doi,/atlas/exposures/psychosocial-stress
+exposure,psychosocial-stress,$.tissues[0],brain,,ref1,UNNAMESPACED_ID,has_doi,/atlas/exposures/psychosocial-stress
+exposure,sleep-deprivation,$.gxe_highlights[0],$.gxe_highlights[0],literature,ref2,UNNAMESPACED_ID,has_doi,/atlas/exposures/sleep-deprivation
+exposure,sleep-deprivation,$.sensitive_windows[0],$.sensitive_windows[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/exposures/sleep-deprivation
+exposure,sleep-deprivation,$.tissues[0],brain,,ref1,UNNAMESPACED_ID,has_doi,/atlas/exposures/sleep-deprivation
+exposure,sleep-deprivation,$.tissues[1],adipose tissue,,ref1,UNNAMESPACED_ID,has_doi,/atlas/exposures/sleep-deprivation
+exposure,tobacco,$.sensitive_windows[0],$.sensitive_windows[0],,ref1,UNNAMESPACED_ID,url_only,/atlas/exposures/tobacco
+exposure,tobacco,$.tissues[0],lung,,ref1,UNNAMESPACED_ID,url_only,/atlas/exposures/tobacco
+exposure,tobacco-smoke-prenatal,$.sensitive_windows[0],$.sensitive_windows[0],,ref1,UNNAMESPACED_ID,journal_only,/atlas/exposures/tobacco-smoke-prenatal
+exposure,tobacco-smoke-prenatal,$.tissues[0],developing lung,,ref1,UNNAMESPACED_ID,journal_only,/atlas/exposures/tobacco-smoke-prenatal
+exposure,uv-radiation,$.sensitive_windows[0],$.sensitive_windows[0],,ref1,UNNAMESPACED_ID,url_only,/atlas/exposures/uv-radiation
+exposure,uv-radiation,$.tissues[0],skin,,ref1,UNNAMESPACED_ID,url_only,/atlas/exposures/uv-radiation
+pathway,complement-system,$.environmental_triggers[0],$.environmental_triggers[0],,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/complement-system
+pathway,complement-system,$.environmental_triggers[1],$.environmental_triggers[1],,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/complement-system
+pathway,complement-system,$.environmental_triggers[2],$.environmental_triggers[2],,ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/complement-system
+pathway,complement-system,$.key_genes[0],$.key_genes[0],,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/complement-system
+pathway,complement-system,$.key_genes[1],$.key_genes[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/pathways/complement-system
+pathway,complement-system,$.linked_diseases[0],$.linked_diseases[0],,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/complement-system
+pathway,complement-system,$.linked_diseases[1],$.linked_diseases[1],,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/complement-system
+pathway,complement-system,$.linked_exposures[0],$.linked_exposures[0],,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/complement-system
+pathway,complement-system,$.linked_exposures[1],$.linked_exposures[1],,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/complement-system
+pathway,dna-damage-repair,$.environmental_triggers[0],$.environmental_triggers[0],,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/dna-damage-repair
+pathway,dna-damage-repair,$.environmental_triggers[1],$.environmental_triggers[1],,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/dna-damage-repair
+pathway,dna-damage-repair,$.environmental_triggers[2],$.environmental_triggers[2],,ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/dna-damage-repair
+pathway,dna-damage-repair,$.key_genes[0],$.key_genes[0],,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/dna-damage-repair
+pathway,dna-damage-repair,$.key_genes[1],$.key_genes[1],,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/dna-damage-repair
+pathway,dna-damage-repair,$.key_genes[2],$.key_genes[2],,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/dna-damage-repair
+pathway,dna-damage-repair,$.key_genes[3],$.key_genes[3],,ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/dna-damage-repair
+pathway,dna-damage-repair,$.linked_diseases[0],$.linked_diseases[0],,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/dna-damage-repair
+pathway,dna-damage-repair,$.linked_diseases[1],$.linked_diseases[1],,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/dna-damage-repair
+pathway,dna-damage-repair,$.linked_diseases[2],$.linked_diseases[2],,ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/dna-damage-repair
+pathway,dna-damage-repair,$.linked_exposures[0],$.linked_exposures[0],,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/dna-damage-repair
+pathway,dna-damage-repair,$.linked_exposures[1],$.linked_exposures[1],,ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/dna-damage-repair
+pathway,dopamine-signaling,$.environmental_triggers[0],$.environmental_triggers[0],,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/dopamine-signaling
+pathway,dopamine-signaling,$.environmental_triggers[1],$.environmental_triggers[1],,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/dopamine-signaling
+pathway,dopamine-signaling,$.environmental_triggers[2],$.environmental_triggers[2],,ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/dopamine-signaling
+pathway,dopamine-signaling,$.key_genes[0],$.key_genes[0],,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/dopamine-signaling
+pathway,dopamine-signaling,$.key_genes[1],$.key_genes[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/pathways/dopamine-signaling
+pathway,dopamine-signaling,$.linked_diseases[0],$.linked_diseases[0],,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/dopamine-signaling
+pathway,dopamine-signaling,$.linked_diseases[1],$.linked_diseases[1],,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/dopamine-signaling
+pathway,dopamine-signaling,$.linked_exposures[0],$.linked_exposures[0],,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/dopamine-signaling
+pathway,dopamine-signaling,$.linked_exposures[1],$.linked_exposures[1],,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/dopamine-signaling
+pathway,hpa-axis,$.environmental_triggers[0],$.environmental_triggers[0],,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/hpa-axis
+pathway,hpa-axis,$.environmental_triggers[1],$.environmental_triggers[1],,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/hpa-axis
+pathway,hpa-axis,$.environmental_triggers[2],$.environmental_triggers[2],,ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/hpa-axis
+pathway,hpa-axis,$.key_genes[0],$.key_genes[0],,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/hpa-axis
+pathway,hpa-axis,$.key_genes[1],$.key_genes[1],,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/hpa-axis
+pathway,hpa-axis,$.linked_diseases[0],$.linked_diseases[0],,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/hpa-axis
+pathway,hpa-axis,$.linked_diseases[1],$.linked_diseases[1],,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/hpa-axis
+pathway,hpa-axis,$.linked_exposures[0],$.linked_exposures[0],,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/hpa-axis
+pathway,hpa-axis,$.linked_exposures[1],$.linked_exposures[1],,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/hpa-axis
+pathway,il33-st2-axis,$.environmental_triggers[0],$.environmental_triggers[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/pathways/il33-st2-axis
+pathway,il33-st2-axis,$.environmental_triggers[1],$.environmental_triggers[1],,ref1,UNNAMESPACED_ID,has_doi,/atlas/pathways/il33-st2-axis
+pathway,il33-st2-axis,$.environmental_triggers[2],$.environmental_triggers[2],,ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/il33-st2-axis
+pathway,il33-st2-axis,$.key_genes[0],$.key_genes[0],,ref1|ref5,UNNAMESPACED_ID,has_doi,/atlas/pathways/il33-st2-axis
+pathway,il33-st2-axis,$.key_genes[1],$.key_genes[1],,ref1|ref5,UNNAMESPACED_ID,has_doi,/atlas/pathways/il33-st2-axis
+pathway,il33-st2-axis,$.key_genes[2],$.key_genes[2],,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/il33-st2-axis
+pathway,il33-st2-axis,$.key_genes[3],$.key_genes[3],,ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/il33-st2-axis
+pathway,il33-st2-axis,$.linked_diseases[0],$.linked_diseases[0],,ref1|ref2|ref5,UNNAMESPACED_ID,has_doi,/atlas/pathways/il33-st2-axis
+pathway,il33-st2-axis,$.linked_diseases[1],$.linked_diseases[1],,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/il33-st2-axis
+pathway,il33-st2-axis,$.linked_exposures[0],$.linked_exposures[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/pathways/il33-st2-axis
+pathway,il33-st2-axis,$.linked_exposures[1],$.linked_exposures[1],,ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/il33-st2-axis
+pathway,insulin-signaling,$.environmental_triggers[0],$.environmental_triggers[0],,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/insulin-signaling
+pathway,insulin-signaling,$.environmental_triggers[1],$.environmental_triggers[1],,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/insulin-signaling
+pathway,insulin-signaling,$.environmental_triggers[2],$.environmental_triggers[2],,ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/insulin-signaling
+pathway,insulin-signaling,$.key_genes[0],$.key_genes[0],,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/insulin-signaling
+pathway,insulin-signaling,$.key_genes[1],$.key_genes[1],,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/insulin-signaling
+pathway,insulin-signaling,$.key_genes[2],$.key_genes[2],,ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/insulin-signaling
+pathway,insulin-signaling,$.linked_diseases[0],$.linked_diseases[0],,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/insulin-signaling
+pathway,insulin-signaling,$.linked_diseases[1],$.linked_diseases[1],,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/insulin-signaling
+pathway,insulin-signaling,$.linked_exposures[0],$.linked_exposures[0],,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/insulin-signaling
+pathway,insulin-signaling,$.linked_exposures[1],$.linked_exposures[1],,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/insulin-signaling
+pathway,jak-stat-signaling,$.environmental_triggers[0],$.environmental_triggers[0],,ref1,UNNAMESPACED_ID,has_doi,/atlas/pathways/jak-stat-signaling
+pathway,jak-stat-signaling,$.environmental_triggers[1],$.environmental_triggers[1],,ref1,UNNAMESPACED_ID,has_doi,/atlas/pathways/jak-stat-signaling
+pathway,jak-stat-signaling,$.linked_diseases[0],$.linked_diseases[0],,ref2,UNNAMESPACED_ID,has_doi,/atlas/pathways/jak-stat-signaling
+pathway,jak-stat-signaling,$.linked_diseases[1],$.linked_diseases[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/pathways/jak-stat-signaling
+pathway,jak-stat-signaling,$.linked_diseases[2],$.linked_diseases[2],,ref2,UNNAMESPACED_ID,has_doi,/atlas/pathways/jak-stat-signaling
+pathway,jak-stat-signaling,$.linked_exposures[0],$.linked_exposures[0],,ref1,UNNAMESPACED_ID,has_doi,/atlas/pathways/jak-stat-signaling
+pathway,ldl-cholesterol-metabolism,$.environmental_triggers[0],$.environmental_triggers[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/pathways/ldl-cholesterol-metabolism
+pathway,ldl-cholesterol-metabolism,$.environmental_triggers[1],$.environmental_triggers[1],,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/ldl-cholesterol-metabolism
+pathway,ldl-cholesterol-metabolism,$.environmental_triggers[2],$.environmental_triggers[2],,ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/ldl-cholesterol-metabolism
+pathway,ldl-cholesterol-metabolism,$.key_genes[0],$.key_genes[0],,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/ldl-cholesterol-metabolism
+pathway,ldl-cholesterol-metabolism,$.key_genes[1],$.key_genes[1],,ref2|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/ldl-cholesterol-metabolism
+pathway,ldl-cholesterol-metabolism,$.key_genes[2],$.key_genes[2],,ref3|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/ldl-cholesterol-metabolism
+pathway,ldl-cholesterol-metabolism,$.linked_diseases[0],$.linked_diseases[0],,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/ldl-cholesterol-metabolism
+pathway,ldl-cholesterol-metabolism,$.linked_diseases[1],$.linked_diseases[1],,ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/ldl-cholesterol-metabolism
+pathway,ldl-cholesterol-metabolism,$.linked_exposures[0],$.linked_exposures[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/pathways/ldl-cholesterol-metabolism
+pathway,ldl-cholesterol-metabolism,$.linked_exposures[1],$.linked_exposures[1],,ref3|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/ldl-cholesterol-metabolism
+pathway,nf-kb,ref3,KEGG: Kyoto Encyclopedia of Genes and Genomes,,ref3,ORPHAN,has_doi,/atlas/pathways/nf-kb
+pathway,nf-kb,$.environmental_triggers[0],$.environmental_triggers[0],,ref1,UNNAMESPACED_ID,has_doi,/atlas/pathways/nf-kb
+pathway,nf-kb,$.environmental_triggers[1],$.environmental_triggers[1],,ref5,UNNAMESPACED_ID,has_doi,/atlas/pathways/nf-kb
+pathway,nf-kb,$.environmental_triggers[2],$.environmental_triggers[2],,ref2,UNNAMESPACED_ID,has_doi,/atlas/pathways/nf-kb
+pathway,nf-kb,$.key_genes[0],$.key_genes[0],,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/nf-kb
+pathway,nf-kb,$.linked_diseases[0],$.linked_diseases[0],,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/nf-kb
+pathway,nf-kb,$.linked_exposures[0],$.linked_exposures[0],,ref1|ref4|ref5,UNNAMESPACED_ID,has_doi,/atlas/pathways/nf-kb
+pathway,oxidative-stress-response,$.environmental_triggers[0],$.environmental_triggers[0],,ref1|ref2,UNNAMESPACED_ID,has_doi,/atlas/pathways/oxidative-stress-response
+pathway,oxidative-stress-response,$.environmental_triggers[1],$.environmental_triggers[1],,ref1,UNNAMESPACED_ID,has_doi,/atlas/pathways/oxidative-stress-response
+pathway,oxidative-stress-response,$.environmental_triggers[2],$.environmental_triggers[2],,ref1,UNNAMESPACED_ID,has_doi,/atlas/pathways/oxidative-stress-response
+pathway,oxidative-stress-response,$.key_genes[0],$.key_genes[0],,ref1,UNNAMESPACED_ID,has_doi,/atlas/pathways/oxidative-stress-response
+pathway,oxidative-stress-response,$.key_genes[1],$.key_genes[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/pathways/oxidative-stress-response
+pathway,oxidative-stress-response,$.linked_diseases[0],$.linked_diseases[0],,ref2,UNNAMESPACED_ID,has_doi,/atlas/pathways/oxidative-stress-response
+pathway,oxidative-stress-response,$.linked_diseases[1],$.linked_diseases[1],,ref1,UNNAMESPACED_ID,has_doi,/atlas/pathways/oxidative-stress-response
+pathway,oxidative-stress-response,$.linked_exposures[0],$.linked_exposures[0],,ref2,UNNAMESPACED_ID,has_doi,/atlas/pathways/oxidative-stress-response
+pathway,oxidative-stress-response,$.linked_exposures[1],$.linked_exposures[1],,ref1,UNNAMESPACED_ID,has_doi,/atlas/pathways/oxidative-stress-response
+pathway,pi3k-akt-mtor,$.environmental_triggers[0],$.environmental_triggers[0],,ref1|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/pi3k-akt-mtor
+pathway,pi3k-akt-mtor,$.environmental_triggers[1],$.environmental_triggers[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/pathways/pi3k-akt-mtor
+pathway,pi3k-akt-mtor,$.environmental_triggers[2],$.environmental_triggers[2],,ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/pi3k-akt-mtor
+pathway,pi3k-akt-mtor,$.key_genes[0],$.key_genes[0],,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/pi3k-akt-mtor
+pathway,pi3k-akt-mtor,$.key_genes[1],$.key_genes[1],,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/pi3k-akt-mtor
+pathway,pi3k-akt-mtor,$.linked_diseases[0],$.linked_diseases[0],,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/pi3k-akt-mtor
+pathway,pi3k-akt-mtor,$.linked_diseases[1],$.linked_diseases[1],,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/pi3k-akt-mtor
+pathway,pi3k-akt-mtor,$.linked_diseases[2],$.linked_diseases[2],,ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/pi3k-akt-mtor
+pathway,pi3k-akt-mtor,$.linked_exposures[0],$.linked_exposures[0],,ref1|ref4,UNNAMESPACED_ID,has_doi,/atlas/pathways/pi3k-akt-mtor
+pathway,pi3k-akt-mtor,$.linked_exposures[1],$.linked_exposures[1],,ref2|ref3,UNNAMESPACED_ID,has_doi,/atlas/pathways/pi3k-akt-mtor
+pathway,tnf-signaling,$.environmental_triggers[0],$.environmental_triggers[0],,ref1,UNNAMESPACED_ID,has_doi,/atlas/pathways/tnf-signaling
+pathway,tnf-signaling,$.environmental_triggers[1],$.environmental_triggers[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/pathways/tnf-signaling
+pathway,tnf-signaling,$.linked_diseases[0],$.linked_diseases[0],,ref2,UNNAMESPACED_ID,has_doi,/atlas/pathways/tnf-signaling
+pathway,tnf-signaling,$.linked_diseases[1],$.linked_diseases[1],,ref2,UNNAMESPACED_ID,has_doi,/atlas/pathways/tnf-signaling
+pathway,tnf-signaling,$.linked_diseases[2],$.linked_diseases[2],,ref1,UNNAMESPACED_ID,has_doi,/atlas/pathways/tnf-signaling
+pathway,tnf-signaling,$.linked_exposures[0],$.linked_exposures[0],,ref1,UNNAMESPACED_ID,has_doi,/atlas/pathways/tnf-signaling

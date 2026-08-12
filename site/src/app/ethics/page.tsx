@@ -123,6 +123,7 @@ export default function EthicsPage() {
               burden&rdquo; and &ldquo;elevated exposure levels&rdquo; relative
               to regional or national baselines.
             </p>
+            {/* constraint-ok: disclaimer denying causation - "framed as correlative context, not causal attribution" */}
             <p>
               All community-level estimates include uncertainty bounds and
               explicit limitations (ecological fallacy, data currency, spatial
@@ -138,6 +139,7 @@ export default function EthicsPage() {
             Limitations &amp; Uncertainty
           </h2>
           <div className="space-y-3 text-cool-light">
+            {/* constraint-ok: disclaimer denying causation - "not validated causal models" */}
             <p>
               Mechanism briefs are hypothesis-driven syntheses, not validated
               causal models. They represent the current state of evidence and are

@@ -17,11 +17,15 @@ export interface CommunityRegionsListProps {
   regions: RegionSummary[];
 }
 
+// Locale, options and timeZone must stay identical to formatRegionDate in
+// app/community/[region]/page.tsx. timeZone: "UTC" is load-bearing: `new Date("2026-07-22")`
+// parses as UTC midnight, so formatting in the viewer's local zone renders the previous day
+// anywhere west of UTC.
 function formatRegionDate(dateStr: string): string | null {
   if (!dateStr || typeof dateStr !== "string") return null;
   try {
     const d = new Date(dateStr);
-    return isNaN(d.getTime()) ? null : d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+    return isNaN(d.getTime()) ? null : d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
   } catch {
     return null;
   }

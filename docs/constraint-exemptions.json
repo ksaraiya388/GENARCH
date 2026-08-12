@@ -1,0 +1,33 @@
+{
+  "description": "Reviewed exemptions from the content-constraint lexicon, for strings in JSON files that cannot carry an inline `// constraint-ok:` comment. Distinct from docs/lint-baseline.json: a baseline entry is unreviewed legacy debt awaiting remediation; an exemption is a decision that was made, justified, and recorded. Matched on file + json_path + constraint, which is stable across reformatting.",
+  "policy": "Rule 1 governs causal claims linking ENVIRONMENTAL EXPOSURE to POPULATION HEALTH OUTCOME. It does not govern established intra-organism pathophysiology. A carve-out requires all three of: (a) both subject and object are anatomical, cellular, or molecular; (b) neither is a population, a person, or an environmental exposure; (c) a citation is attached or the claim is textbook physiology. Every exemption is per-string and must state its reason.",
+  "exemptions": [
+    {
+      "file": "data/diseases/alzheimers-disease.json",
+      "json_path": "$.summary",
+      "matched_string": "Alzheimer's disease (AD) is the leading cause of dementia, characterized by progressive neurodegeneration",
+      "constraint": "caused",
+      "reason": "intra-organism mechanism per R2 carve-out; subject and object both molecular/anatomical. Full clause: 'early-onset familial AD (5-10%) is caused by rare mutations in APP, PSEN1, and PSEN2' - subject is a set of germline mutations, object is a disease phenotype. No environmental exposure and no population appears in the claim. Textbook Mendelian genetics.",
+      "date": "2026-08-10",
+      "approver": "Kiaan Saraiya (GATE 3 ruling R2/R12)"
+    },
+    {
+      "file": "data/diseases/ischemic-stroke.json",
+      "json_path": "$.summary",
+      "matched_string": "Ischemic stroke results from occlusion of cerebral arteries, causing focal brain ischemia and infarction",
+      "constraint": "causing",
+      "reason": "intra-organism mechanism per R2 carve-out; subject and object both molecular/anatomical. Subject is arterial occlusion, object is focal brain ischemia and infarction - both anatomical structures within one organism. No environmental exposure and no population appears in the claim. Textbook pathophysiology.",
+      "date": "2026-08-10",
+      "approver": "Kiaan Saraiya (GATE 3 ruling R2/R12)"
+    },
+    {
+      "file": "data/graph/graph.json",
+      "json_path": "$.nodes[8].attrs.summary",
+      "matched_string": "Alzheimer's disease (AD) is the leading cause of dementia, characterized by progressive neurodegeneration",
+      "constraint": "caused",
+      "reason": "intra-organism mechanism per R2 carve-out; subject and object both molecular/anatomical. Verbatim generated copy of data/diseases/alzheimers-disease.json $.summary, which carries its own exemption. Exempted here so the derived artifact does not report a violation its source does not have.",
+      "date": "2026-08-10",
+      "approver": "Kiaan Saraiya (GATE 3 ruling R2/R12)"
+    }
+  ]
+}

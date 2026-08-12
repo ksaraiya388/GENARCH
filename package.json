@@ -7,6 +7,7 @@
     "site:dev": "npm run dev --prefix site",
     "site:build": "npm run build --prefix site",
     "site:lint": "npm run lint --prefix site",
+    "check:constraints": "node scripts/check-constraints.mjs",
     "figures:export": "node scripts/export-figures.mjs",
     "test:brief-publish": "node scripts/test-brief-publish.mjs"
   },

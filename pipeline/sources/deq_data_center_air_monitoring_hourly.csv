@@ -1,0 +1,1 @@
+site_id,site_label,sensor_unit_id,locality,latitude,longitude,timestamp_local,pm25_ugm3,no2_ppb,co_ppm,qc_flag,is_collocated_ref

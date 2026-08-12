@@ -61,7 +61,7 @@
   },
   "references": [
     {"id": "ref1", "title": "Exposure to PM2.5 induces aberrant activation of NF-κB in human airway epithelial cells by downregulating miR-331 expression", "authors": "Li R, et al.", "year": 2017, "journal": "Environmental Toxicology and Pharmacology", "doi": "10.1016/j.etap.2017.02.011"},
-    {"id": "ref2", "title": "Ambient particulate matter induces an exacerbation of airway inflammation in experimental asthma: role of interleukin-33", "authors": "Brandenburg AH, et al.", "year": 2014, "journal": "Clinical & Experimental Immunology", "doi": "10.1111/cei.12348"},
+    {"id": "ref2", "title": "Ambient particulate matter induces an exacerbation of airway inflammation in experimental asthma: role of interleukin-33", "authors": "Shadie AM, Herbert C, Kumar RK", "year": 2014, "journal": "Clinical & Experimental Immunology", "doi": "10.1111/cei.12348"},
     {"id": "ref3", "title": "GSTP1 and TNF Gene Variants and Associations between Air Pollution and Incident Childhood Asthma", "authors": "Islam T, et al.", "year": 2014, "journal": "Environmental Health Perspectives", "doi": "10.1289/ehp.1307459"},
     {"id": "ref4", "title": "Traffic-related air pollution exposure and incident asthma in a high-risk birth cohort", "authors": "McConnell R, et al.", "year": 2015, "journal": "Occupational and Environmental Medicine", "doi": "10.1136/oemed-2014-102726"},
     {"id": "ref5", "title": "EPA Criteria Air Pollutants", "authors": "U.S. EPA", "year": 2024, "url": "https://www.epa.gov/criteria-air-pollutants"},

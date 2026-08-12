@@ -1,0 +1,10 @@
+﻿site_id,site_label,locality,sensor_unit_id,start_date,end_date,is_collocated_ref,notes
+ashburn-collocated,Broad Run HS,Ashburn,TO_CONFIRM,2026-03-03,,TRUE,Collocated with DEQ Ashburn air monitoring site for sensor-versus-monitor comparison
+dulles-area,Dulles Airport,TO_CONFIRM,TO_CONFIRM,2026-03-03,,FALSE,Placed near Dulles International Airport to allow correlation with airport meteorological data
+newberry-condo,Newberry Condo Association,Sterling,TO_CONFIRM,2026-03-03,2026-05-14,FALSE,Sensor relocated to Belfort Park Drive on 2026-05-14
+belfort-park,Belfort Park Drive,TO_CONFIRM,TO_CONFIRM,2026-05-14,,FALSE,Receives sensor relocated from Newberry Condo Association
+steuart-weller,Steuart Weller ES,Ashburn,apex-06,2026-03-03,2026-06-18,FALSE,Apex sensor 6 relocated to Sterling Middle School on 2026-06-18
+sterling-ms,Sterling MS,Sterling,apex-06,2026-06-18,,FALSE,Receives Apex sensor 6 relocated from Steuart Weller ES
+heritage-farm,Heritage Farm Museum,Sterling,TO_CONFIRM,2026-03-03,2026-06-18,FALSE,Collection ended 2026-06-18 when sensor removed for maintenance
+farmwell-middle,Farmwell Middle,Ashburn,TO_CONFIRM,2026-04-08,,FALSE,Second-wave deployment
+golf-course,Golf Course,Ashburn,TO_CONFIRM,2026-04-08,,FALSE,Second-wave deployment
