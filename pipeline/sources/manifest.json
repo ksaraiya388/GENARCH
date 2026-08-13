@@ -2,6 +2,43 @@
   "description": "Provenance manifest for curated source files under pipeline/sources/. These files are not ingested by the pipeline (ingest.py reads only the named entity files); they document the origin of data used by the figure system and record what still needs curation.",
   "sources": [
     {
+      "file": "deq_data_center_air_monitoring_hourly.csv",
+      "purpose": "Hourly low-cost sensor readings (PM2.5, NO2, VOCs) from the Virginia DEQ Data Center Air Monitoring Project, reshaped to one row per site-hour-pollutant.",
+      "origin_urls": [
+        "https://www.deq.virginia.gov/air/air-monitoring/data-center-air-monitoring"
+      ],
+      "retrieval_method": "public Kunak Cloud CSV export, method confirmed by DEQ staff 2026-08-10",
+      "download_date": "2026-08-10",
+      "license": "Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ staff, 2026-08-10). Preferred attribution line pending from DEQ Communications.",
+      "format": "CSV",
+      "raw_inputs": "pipeline/sources/deq-raw/<site-slug>_multi_2026-03-03_2026-08-10.csv (6 files, semicolon-delimited with a sep=; preamble, reverse-chronological)",
+      "generated_by": "pipeline/reshape_deq.py",
+      "coverage": "2026-03-03 to 2026-08-10, six sites, 17147 site-hours, 51441 rows",
+      "columns": ["site_id", "unit_id", "unit_id_confidence", "ts_raw", "ts_est", "shift_hours", "pollutant", "value", "unit", "instrument_class", "zero_run_length", "excluded", "exclusion_reason", "v1_scope", "scope_reason"],
+      "status": "SHIPPED.",
+      "description": "Kunak values are hour-ending and DST-adjusted. ts_est normalises them to hour-beginning EST by shifting back 1 hour before 2026-03-08 03:00 and 2 hours on and after, per DEQ's instruction of 2026-08-11; ts_raw is retained unmodified and shift_hours records the shift applied. Values are flagged, never deleted and never nulled: exact 0.0 readings are kept in value with excluded=true, exclusion_reason=exact_zero_floor, and zero_run_length giving the length of the consecutive zero run (longest observed: NO2 45h, VOCs 53h, PM2.5 16h). DEQ voided Kunak PM2.5 for 2026-03-03 to 2026-03-08 inclusive for high humidity and data quality. excluded means failed validity only; v1_scope carries scope. This file must never be merged into one series with the regulatory monitor data: DEQ's CFR limitation language applies to these sensors alone.",
+      "limitations": "DEQ publishes these values as detected; they have not passed quality assurance validation and carry no null code, flag, or qualifier column. Three retired sites (heritage-farm, newberry-condo, steuart-weller) appear in deq_sensor_site_history.csv but have no export, so rules scoped to them match zero rows. Meteorological data is not exportable. VOCs are recorded but not used: Broad Run HS readings span three orders of magnitude with cause unknown."
+    },
+    {
+      "file": "deq_regulatory_monitor_hourly.csv",
+      "purpose": "Hourly regulatory reference monitor readings (PM2.5, NO2, CO) released under FOIA, reshaped to one row per site-hour-pollutant.",
+      "origin_urls": [
+        "https://vadeq.nextrequest.com/requests/26-4646"
+      ],
+      "retrieval_method": "Virginia FOIA request 26-4646, released in full 2026-08-11",
+      "download_date": "2026-08-11",
+      "license": "Public records released in full under the Virginia Freedom of Information Act, no redactions, no cost. Credit Virginia DEQ.",
+      "format": "CSV",
+      "raw_inputs": "pipeline/sources/deq-regulatory/*.xls (4 OLE2 files read with xlrd, sheet Sheet1)",
+      "generated_by": "pipeline/reshape_deq.py",
+      "coverage": "2026-03-03 to 2026-08-10, 11592 rows: ASHBURN PM2.5 (method 638) and NO2 (method 212), AURHILL CO (method 54)",
+      "columns": ["site_id", "ts_raw", "ts_est", "pollutant", "value", "unit", "instrument_class", "parameter", "aqs_method_code", "average_interval", "flags", "aqs_null_code", "qualifier_codes", "excluded", "exclusion_reason", "v1_scope", "scope_reason"],
+      "status": "SHIPPED.",
+      "description": "Regulatory values are hour-beginning and always EST, so ts_raw equals ts_est. A reading is excluded if and only if Value is NaN, an AQS Null Code is present, or Flags contains '<' (Logger Invalid); never on a letter code alone. Flags are case-sensitive and are never lowercased: C is Calibration and c is Ceiling Limit, H is High-High Alarm and h is High Alarm, I is Invalidated By Edit and l is Low Alarm. Parameter, AQS Method Code and Average Interval are carried through as the documentary basis for the instrument-class distinction. The fourth released file, AshburnPM2.5_dailyAvg_030326_081026.xls, is a daily series and is not part of this table; it is used only to reconcile deq_pm25_daily.csv.",
+      "scope_note": "Aurora Hills (AURHILL) CO is released and reshaped but is outside v1 scope: the site is in Arlington, not Loudoun. Those rows carry v1_scope=out_of_scope and scope_reason=out_of_county_reference_arlington, with excluded set purely on validity as for any other row. DEQ's 2026-08-07 report names Aurora Hills as the closest comparable CO regulatory site to the Loudoun sensors and plots it alongside them, so the data may be used later. Kunak reports CO as an 8-hour average while this file is 1-hour, so the two are not directly comparable.",
+      "limitations": "The published daily-average file applies no completeness threshold and is itself unfiltered, reporting values computed from as little as one valid hour. deq_pm25_daily.csv recomputes from hourly with the DEQ-confirmed 18-of-24 rule and truncates to one decimal without rounding; it reproduces the published file on 118 of 119 comparable days."
+    },
+    {
       "file": "gwas_ancestry_breakdown.csv",
       "purpose": "Figure C3 (gwas-ancestry-imbalance): share of GWAS participants by ancestry group.",
       "origin_urls": [

@@ -3,9 +3,7 @@
 from __future__ import annotations
 
 import sys
-from pathlib import Path
 
-from pipeline import __version__
 from pipeline.annotate import annotate_all
 from pipeline.emit import emit_all
 from pipeline.graph_builder import build_graph, write_graph
@@ -15,9 +13,6 @@ from pipeline.score import score_all
 from pipeline.validate import validate
 
 
-def _resolve_data_dir() -> Path:
-    root = Path(__file__).resolve().parent.parent
-    return root / "data"
 
 
 def run_update(scope: str = "all", entity_id: str | None = None) -> int:
@@ -58,7 +53,6 @@ def run_update(scope: str = "all", entity_id: str | None = None) -> int:
         print(f"Emitted: {p}")
 
     # Build graph (from emitted data)
-    data_dir = _resolve_data_dir()
     graph = build_graph()
     graph_path = write_graph(graph)
     print(f"Graph built: {graph_path}")
