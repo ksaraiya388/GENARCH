@@ -1,10 +1,11 @@
-﻿site_id,site_label,locality,sensor_unit_id,start_date,end_date,is_collocated_ref,notes
-ashburn-collocated,Broad Run HS,Ashburn,TO_CONFIRM,2026-03-03,,TRUE,Collocated with DEQ Ashburn air monitoring site for sensor-versus-monitor comparison
-dulles-area,Dulles Airport,TO_CONFIRM,TO_CONFIRM,2026-03-03,,FALSE,Placed near Dulles International Airport to allow correlation with airport meteorological data
-newberry-condo,Newberry Condo Association,Sterling,TO_CONFIRM,2026-03-03,2026-05-14,FALSE,Sensor relocated to Belfort Park Drive on 2026-05-14
-belfort-park,Belfort Park Drive,TO_CONFIRM,TO_CONFIRM,2026-05-14,,FALSE,Receives sensor relocated from Newberry Condo Association
-steuart-weller,Steuart Weller ES,Ashburn,apex-06,2026-03-03,2026-06-18,FALSE,Apex sensor 6 relocated to Sterling Middle School on 2026-06-18
-sterling-ms,Sterling MS,Sterling,apex-06,2026-06-18,,FALSE,Receives Apex sensor 6 relocated from Steuart Weller ES
-heritage-farm,Heritage Farm Museum,Sterling,TO_CONFIRM,2026-03-03,2026-06-18,FALSE,Collection ended 2026-06-18 when sensor removed for maintenance
-farmwell-middle,Farmwell Middle,Ashburn,TO_CONFIRM,2026-04-08,,FALSE,Second-wave deployment
-golf-course,Golf Course,Ashburn,TO_CONFIRM,2026-04-08,,FALSE,Second-wave deployment
+﻿site_id,site_name,kunak_label,area,unit_id,unit_id_confidence,start_date,end_date,pm25_end_date,collocated_regulatory,notes
+ashburn-collocated,Broad Run HS,Broad Run HS,Ashburn,apex-14,ambiguous,2026-03-03,2026-04-08,,TRUE,Collocated with DEQ Broad Run HS regulatory monitor; APEX 14 in place through 2026-04-08; unit_id ambiguous because newberry-condo claims apex-14 over an overlapping window; DEQ 2026-08-07 report states APEX 14 was collocated at Broad Run HS 2026-03-03 to 2026-04-08
+ashburn-collocated,Broad Run HS,Broad Run HS,Ashburn,apex-05,confirmed,2026-04-08,,,TRUE,Collocated with DEQ Broad Run HS regulatory monitor; APEX 5 installed 2026-04-08
+dulles-area,Dulles Airport,Dulles Airport,Sterling,TO_CONFIRM,confirmed,2026-03-03,,,FALSE,Placed near Dulles International Airport to allow correlation with airport meteorological data
+newberry-condo,Newberry Condo Assoc,Newberry Condo Assoc,Sterling,apex-14,ambiguous,2026-03-03,2026-05-14,,FALSE,Sensor relocated to Belfort Park Drive on 2026-05-14; unit_id ambiguous because ashburn-collocated claims apex-14 over an overlapping window; DEQ 2026-08-07 report states the APEX 14 sensor at Newberry moved to Belfort Park on 2026-05-14
+belfort-park,Belfort Park Dr,Belfort Park Dr,Sterling,apex-14,confirmed,2026-05-14,,,FALSE,Receives sensor relocated from Newberry Condo Assoc
+steuart-weller,Steuart Weller ES,Steuart Weller ES,Ashburn,apex-06,confirmed,2026-03-03,2026-06-18,,FALSE,APEX sensor 6 relocated to Sterling Middle School on 2026-06-18
+sterling-ms,Sterling MS,Sterling MS,Sterling,apex-06,confirmed,2026-06-18,,,FALSE,Receives APEX sensor 6 relocated from Steuart Weller ES
+heritage-farm,Heritage Farm Museum,Heritage Farm Museum,Sterling,TO_CONFIRM,confirmed,2026-03-03,2026-06-18,2026-05-30,FALSE,PM2.5 collection ended 2026-05-30 due to air flow failure in particle sensor; site collection ended 2026-06-18 when sensor removed for maintenance
+farmwell-middle,Farmwell Station MS,Farmwell Station MS,Ashburn,TO_CONFIRM,confirmed,2026-04-08,,,FALSE,Second-wave deployment; previously operated in Prince William County
+golf-course,1757 Golf Club,1757 Golf Club,Ashburn,TO_CONFIRM,confirmed,2026-04-08,,,FALSE,Second-wave deployment; previously operated in Prince William County

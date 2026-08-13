@@ -151,7 +151,7 @@ def score_all(annotated: dict[str, Any]) -> dict[str, Any]:
             arch = dict(arch)
             loci = arch.get("top_loci") or []
             arch["top_loci"] = [
-                apply_scores_to_locus(l) for l in loci if isinstance(l, dict)
+                apply_scores_to_locus(locus) for locus in loci if isinstance(locus, dict)
             ]
             nd["genetic_architecture"] = arch
         mods = nd.get("exposure_modifiers") or []

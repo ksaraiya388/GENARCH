@@ -25,7 +25,6 @@ def generate_report(year: str | int) -> Path:
     year_dir.mkdir(parents=True, exist_ok=True)
 
     index_path = year_dir / "index.json"
-    now = datetime.utcnow().strftime("%Y-%m-%d")
 
     content = {
         "year": year_str,

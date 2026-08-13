@@ -51,7 +51,7 @@ def annotate_disease(
         arch = dict(arch)
         loci = arch.get("top_loci") or []
         arch["top_loci"] = [
-            annotate_locus(l, variant_gene_map) for l in loci if isinstance(l, dict)
+            annotate_locus(locus, variant_gene_map) for locus in loci if isinstance(locus, dict)
         ]
         out["genetic_architecture"] = arch
     tissues = out.get("tissues") or []
