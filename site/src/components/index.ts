@@ -7,6 +7,14 @@ export type { CommunityRegionsListProps, RegionSummary } from "./CommunityRegion
 export { CommunityRegionDetail } from "./CommunityRegionDetail";
 export type { CommunityRegionDetailProps } from "./CommunityRegionDetail";
 export { ConfidenceBadge } from "./ConfidenceBadge";
+export { DeqCorrelationMatrix } from "./deq/DeqCorrelationMatrix";
+export type { DeqCorrelationMatrixProps } from "./deq/DeqCorrelationMatrix";
+export { DeqFigure } from "./deq/DeqFigure";
+export type { DeqFigureProps, DeqFigureTable } from "./deq/DeqFigure";
+export { DeqHourlySeries } from "./deq/DeqHourlySeries";
+export type { DeqHourlySeriesProps } from "./deq/DeqHourlySeries";
+export { DeqPercentileBars } from "./deq/DeqPercentileBars";
+export type { DeqPercentileBarsProps } from "./deq/DeqPercentileBars";
 export type { ConfidenceBadgeProps, ConfidenceTier } from "./ConfidenceBadge";
 export { DirectionTag } from "./DirectionTag";
 export type { DirectionTagProps, Direction } from "./DirectionTag";

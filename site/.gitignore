@@ -2,3 +2,7 @@ node_modules/
 .next/
 out/
 _data/
+
+# Staged by scripts/copy-data.js from pipeline/sources/ at build time. Build output, not source:
+# pipeline/sources/ is canonical and a committed copy here would be a second, drifting original.
+public/data/deq/
