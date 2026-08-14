@@ -278,6 +278,32 @@ independent of the evidence-grade work and could land on its own.
 
 ---
 
+## A6 — Sensor map deferred on /community/data-center-alley · PENDING
+
+**Specification says** (Phase 3, section 3): render a nine-marker Leaflet map of the DEQ sensor
+network, matching the existing community map implementation.
+
+**No coordinate source exists.** None of the four DEQ tables under `pipeline/sources/` carries a
+latitude or longitude column, FOIA 26-4646 released none, and A0 above already records sensor
+coordinates as "a separate, unresolved item; DEQ GeoHub is the outstanding lead". Plotting nine
+markers would require deriving positions this project cannot cite.
+
+**Shipped instead:** a labelled site roster carrying `site_id`, area, hardware unit, occupancy
+window, status, valid PM2.5 hours, and collocation, with the three sites that have no downloadable
+export listed explicitly so that three absent records are not read as no data. Section 9 of the
+page states that coordinates are not published in machine-readable form and that a map will follow.
+
+**Not done, deliberately:** the sites were not geocoded from school or facility addresses. A
+coordinate derived here is not a coordinate DEQ published, and mislabelling the provenance of a
+location is a worse failure than shipping without a map.
+
+**To unblock:** obtain coordinates from DEQ GeoHub, or from the ArcGIS StoryMap feature service
+behind `storymaps.arcgis.com/stories/4b236ba9837a455890bbcd8a16fde8a1`, with a retrieval date and
+licence; add them to `deq_sensor_site_history.csv`; then render the map with the existing Leaflet
+pattern in `CommunityRegionDetail.tsx`.
+
+---
+
 ## Also noted, not blocking
 
 - **`build_graph()` writes a wall-clock timestamp.** `pipeline/graph_builder.py` sets

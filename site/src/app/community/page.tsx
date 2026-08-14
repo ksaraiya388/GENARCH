@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { getCommunityRegionSlugs, getCommunityRegion } from "@/lib/data";
 import { CommunityRegionsList } from "@/components/CommunityRegionsList";
@@ -31,6 +32,31 @@ export default function CommunityPage() {
             models. Population-level estimates for educational purposes only.
           </p>
         </header>
+
+        {/* Not a CommunityRegion: this page is built from the DEQ monitoring tables under
+            pipeline/sources/ rather than from data/community/*.json, so it carries no
+            health_stats or exposure_layers and cannot go through CommunityRegionsList. */}
+        <section aria-labelledby="monitoring-heading">
+          <h2 id="monitoring-heading" className="text-h2 text-surface-white mb-4">
+            Monitoring Records
+          </h2>
+          <Link
+            href="/community/data-center-alley/"
+            className="block max-w-2xl no-underline rounded-lg border border-white/[0.08] bg-navy-mid/80 p-5 transition-all hover:border-teal-primary/30 hover:bg-navy-mid focus:outline-none focus:ring-2 focus:ring-teal-primary/50"
+          >
+            <h3 className="text-lg font-semibold text-surface-white mb-1">
+              Data Center Corridor Air Monitoring
+            </h3>
+            <p className="text-sm text-cool-mid mb-4">
+              Eastern Loudoun County, March to August 2026
+            </p>
+            <p className="text-sm text-cool-light">
+              Virginia DEQ low-cost sensor and regulatory monitor measurements, with the
+              agency&apos;s own limitation language, a reproduction of its collocation analysis,
+              and a record-length comparison across sites. No health data.
+            </p>
+          </Link>
+        </section>
 
         <CommunityRegionsList regions={regionSummaries} />
       </div>
