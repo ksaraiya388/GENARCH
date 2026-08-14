@@ -46,7 +46,7 @@ export interface DeqSource {
 }
 
 export const DEQ_SOURCES: Record<
-  "dashboard" | "report" | "project" | "foia",
+  "dashboard" | "report" | "reportAug14" | "project" | "foia",
   DeqSource
 > = {
   dashboard: {
@@ -61,6 +61,16 @@ export const DEQ_SOURCES: Record<
     sourceUrl:
       "https://www.deq.virginia.gov/air/air-monitoring/data-center-air-monitoring",
     retrieved: "2026-08-11",
+  },
+  // DEQ reissues this analysis weekly, so the edition date is part of the citation, not a
+  // detail. Both editions are archived under docs/deq-reports/ because the published page
+  // carries only the current one.
+  reportAug14: {
+    citation:
+      'Virginia DEQ, Office of Air Quality Monitoring, "Data Center Air Quality Analysis", August 14, 2026',
+    sourceUrl:
+      "https://www.deq.virginia.gov/air/air-monitoring/data-center-air-monitoring",
+    retrieved: "2026-08-14",
   },
   project: {
     citation: "Virginia DEQ, Data Center Air Monitoring Project",
