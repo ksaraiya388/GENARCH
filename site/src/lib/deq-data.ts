@@ -577,13 +577,68 @@ export function getDailyReconciliation(): DailyReconciliation {
 
 /* --------------------------------------------- record length and p98 comparison */
 
+/**
+ * Figures for one sensor as published in two consecutive editions of DEQ's weekly analysis.
+ *
+ * VERIFY BEFORE PUSH: these six values are transcribed from the two PDFs archived under
+ * docs/deq-reports/. They are not computed from the source tables and cannot be, because they
+ * are DEQ's own published outputs over DEQ's own windows. Diff each against the archived PDFs
+ * before this ships.
+ *
+ * They are here rather than in the page so that the edition dates and the values stay attached
+ * to each other. Adding a third edition means adding a column, not editing prose.
+ */
+export interface WeeklyEditionRow {
+  metric: string;
+  unit: string;
+  aug07: number;
+  aug14: number;
+}
+
+export const DEQ_WEEKLY_EDITIONS = {
+  siteId: "sterling-ms",
+  editions: ["August 7, 2026", "August 14, 2026"] as const,
+  rows: [
+    { metric: "98th percentile of daily PM2.5 averages", unit: "µg/m³", aug07: 40.4, aug14: 38.2 },
+    { metric: "98th percentile of hourly PM2.5", unit: "µg/m³", aug07: 69.1, aug14: 62.3 },
+    { metric: "Mean hourly PM2.5", unit: "µg/m³", aug07: 11.3, aug14: 11.1 },
+  ] as WeeklyEditionRow[],
+};
+
+export interface RankPosition {
+  /** One-indexed rank of the observation the percentile is read from, ascending. */
+  lower: number;
+  upper: number;
+  n: number;
+  /** True when the percentile lands exactly on an observation rather than between two. */
+  exact: boolean;
+}
+
+/**
+ * Which ranked observation a percentile is actually read from, at a given record length.
+ *
+ * The label "98th percentile" is fixed but the position it points at is not: under the
+ * linear-interpolation definition the index is (n - 1) x 0.98, so a 51-day record reads its p98
+ * from the 50th of 51 days while a 152-day record reads it from between the 148th and 149th of
+ * 152. Same statistic name, different position in the distribution, which is the whole of why
+ * the unmatched comparison in DEQ's Table 4 does not hold.
+ */
+export function percentilePosition(n: number, p = 0.98): RankPosition {
+  const k = (n - 1) * p;
+  const lo = Math.floor(k);
+  const exact = Math.abs(k - lo) < 1e-9;
+  return { lower: lo + 1, upper: exact ? lo + 1 : Math.min(lo + 2, n), n, exact };
+}
+
 export interface PercentileRow {
   key: string;
   label: string;
   fullDays: number;
   fullP98: number;
+  fullPosition: RankPosition;
   commonDays: number;
   commonP98: number;
+  commonPosition: RankPosition;
   /** Share of the site's full record falling in the smoke window, as a percentage. */
   smokeShare: number;
   firstDay: string;
@@ -628,8 +683,10 @@ export function getPercentiles(): PercentileRow[] {
       label: site.label,
       fullDays: days.length,
       fullP98: percentile(days.map((d) => means.get(d)!), 0.98),
+      fullPosition: percentilePosition(days.length),
       commonDays: common.length,
       commonP98: percentile(common.map((d) => means.get(d)!), 0.98),
+      commonPosition: percentilePosition(common.length),
       smokeShare: (smokeDays.length / days.length) * 100,
       firstDay: days[0],
       lastDay: days[days.length - 1],

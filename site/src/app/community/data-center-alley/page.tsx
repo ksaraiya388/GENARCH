@@ -14,9 +14,11 @@ import {
   DEQ_SENSOR_LICENSE,
   DEQ_SOURCES,
 } from "@/content/deq-attribution";
+import type { RankPosition } from "@/lib/deq-data";
 import {
   COMMON_WINDOW_START,
   COMPLETENESS_MIN_HOURS,
+  DEQ_WEEKLY_EDITIONS,
   PM25_24H_LEVEL,
   PM25_ANNUAL_LEVEL,
   RECORD_END,
@@ -60,6 +62,22 @@ const Word = (v: number) => {
   const w = word(v);
   return w.charAt(0).toUpperCase() + w.slice(1);
 };
+
+/** General ordinal, for rank positions well past the spelled-out range. */
+const ordinalNum = (v: number): string => {
+  const r100 = v % 100;
+  if (r100 >= 11 && r100 <= 13) return `${v}th`;
+  return `${v}${["th", "st", "nd", "rd"][v % 10] ?? "th"}`;
+};
+
+/**
+ * Where a percentile is read from, as a rank. Interpolated positions render as a range because
+ * the value lies between two observations rather than on one.
+ */
+const rankLabel = (r: RankPosition): string =>
+  r.exact
+    ? `${ordinalNum(r.lower)} of ${r.n}`
+    : `${ordinalNum(r.lower)}–${ordinalNum(r.upper)} of ${r.n}`;
 
 const n1 = (v: number) => v.toFixed(1);
 const n2 = (v: number) => v.toFixed(2);
@@ -423,6 +441,17 @@ export default function DataCenterCorridorPage() {
 
           <div className="mt-4 max-w-3xl space-y-3 text-cool-light leading-relaxed">
             <p>
+              The DEQ column is the August 7 edition, and the GENARCH column is computed from the
+              released record through its last valid regulatory hour, 2026-08-10 09:00 EST; DEQ
+              reissues this analysis every week, so a comparison that names no edition is
+              measured against a target that moves.
+            </p>
+            <p>
+              The {collocation[0].unitLabel} collocation period closed on 2026-04-08, which fixes
+              the two {collocation[0].unitLabel} regressions: no later week of data can enter
+              them, and they read the same in the August 7 and August 14 editions.
+            </p>
+            <p>
               {Word(reproducing.length)} of the {word(collocation.length)}{" "}
               comparisons reproduce DEQ&apos;s published coefficients to within the tolerance the
               build enforces, which is 0.05 on slope and intercept and 0.03 on R². The remaining
@@ -474,6 +503,55 @@ export default function DataCenterCorridorPage() {
               includes the smoke-transport weekend, which is {n1(shortest.smokeShare)} percent of
               its record against {n1(longest.smokeShare)} percent of the longest one.
             </p>
+          </div>
+
+          <div className="mt-5 overflow-x-auto rounded-lg border border-white/[0.08] bg-navy-mid/50">
+            <table className="w-full min-w-[560px] border-collapse text-sm">
+              <caption className="sr-only">
+                Figures published for {DEQ_WEEKLY_EDITIONS.siteId} in two consecutive editions of
+                DEQ&apos;s weekly analysis, with the change between them.
+              </caption>
+              <thead>
+                <tr className="border-b border-white/[0.08] text-left text-cool-mid">
+                  <th scope="col" className="py-2 px-3 font-medium">
+                    DEQ figure for {DEQ_WEEKLY_EDITIONS.siteId}
+                  </th>
+                  {DEQ_WEEKLY_EDITIONS.editions.map((e) => (
+                    <th key={e} scope="col" className="py-2 px-3 text-right font-medium">
+                      {e}
+                    </th>
+                  ))}
+                  <th scope="col" className="py-2 px-3 text-right font-medium">Change</th>
+                </tr>
+              </thead>
+              <tbody>
+                {DEQ_WEEKLY_EDITIONS.rows.map((r) => (
+                  <tr key={r.metric} className="border-b border-white/[0.04]">
+                    <th scope="row" className="py-2 px-3 text-left font-normal text-surface-white">
+                      {r.metric}{" "}
+                      <span className="text-cool-mid">({r.unit})</span>
+                    </th>
+                    <td className="py-2 px-3 text-right font-mono text-cool-light">{n1(r.aug07)}</td>
+                    <td className="py-2 px-3 text-right font-mono text-cool-light">{n1(r.aug14)}</td>
+                    <td className="py-2 px-3 text-right font-mono text-cool-light">
+                      {r.aug14 > r.aug07 ? "+" : ""}
+                      {n1(r.aug14 - r.aug07)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-3 max-w-3xl space-y-3 text-cool-light leading-relaxed">
+            <p>
+              The sentence naming this sensor as the only one whose 98th percentile of daily
+              averages sits above {PM25_24H_LEVEL} µg/m³ is identical in both editions. Over the
+              same week the number that sentence describes moved{" "}
+              {n1(Math.abs(DEQ_WEEKLY_EDITIONS.rows[0].aug14 - DEQ_WEEKLY_EDITIONS.rows[0].aug07))}{" "}
+              µg/m³ closer to {PM25_24H_LEVEL}. Both editions are archived under
+              docs/deq-reports/, because DEQ&apos;s published page carries only the current one.
+            </p>
             <p>
               Restricting every sensor to the window in which all {word(deployed.length)} were
               collecting, {COMMON_WINDOW_START} to {RECORD_END}, changes the ordering.{" "}
@@ -485,18 +563,21 @@ export default function DataCenterCorridorPage() {
           </div>
 
           <div className="mt-5 overflow-x-auto rounded-lg border border-white/[0.08] bg-navy-mid/50">
-            <table className="w-full min-w-[620px] border-collapse text-sm">
+            <table className="w-full min-w-[780px] border-collapse text-sm">
               <caption className="sr-only">
-                For each site: days and 98th percentile of daily PM2.5 averages over its own
-                record, and over the common window in which all deployed sensors were collecting.
+                For each site: days, 98th percentile of daily PM2.5 averages, and the ranked
+                observation that percentile is read from, over the site&apos;s own record and over
+                the common window in which all deployed sensors were collecting.
               </caption>
               <thead>
                 <tr className="border-b border-white/[0.08] text-left text-cool-mid">
                   <th scope="col" className="py-2 px-3 font-medium">Site</th>
                   <th scope="col" className="py-2 px-3 text-right font-medium">Days, own record</th>
                   <th scope="col" className="py-2 px-3 text-right font-medium">p98, own record</th>
+                  <th scope="col" className="py-2 px-3 text-right font-medium">Rank, own record</th>
                   <th scope="col" className="py-2 px-3 text-right font-medium">Days, common</th>
                   <th scope="col" className="py-2 px-3 text-right font-medium">p98, common</th>
+                  <th scope="col" className="py-2 px-3 text-right font-medium">Rank, common</th>
                 </tr>
               </thead>
               <tbody>
@@ -507,13 +588,27 @@ export default function DataCenterCorridorPage() {
                     </th>
                     <td className="py-2 px-3 text-right font-mono text-cool-light">{p.fullDays}</td>
                     <td className="py-2 px-3 text-right font-mono text-cool-light">{n2(p.fullP98)}</td>
+                    <td className="py-2 px-3 text-right font-mono text-xs text-cool-light">
+                      {rankLabel(p.fullPosition)}
+                    </td>
                     <td className="py-2 px-3 text-right font-mono text-cool-light">{p.commonDays}</td>
                     <td className="py-2 px-3 text-right font-mono text-cool-light">{n2(p.commonP98)}</td>
+                    <td className="py-2 px-3 text-right font-mono text-xs text-cool-light">
+                      {rankLabel(p.commonPosition)}
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
+
+          <p className="mt-3 max-w-3xl text-cool-light leading-relaxed">
+            The rank columns give the observation each percentile is read from. At{" "}
+            {shortest.commonDays} days the 98th percentile is the{" "}
+            {rankLabel(shortest.commonPosition)}; at {longest.fullDays} days it is the{" "}
+            {rankLabel(longest.fullPosition)}. The statistic carries the same name at every record
+            length and sits at a different position in the distribution at each one.
+          </p>
 
           <div className="mt-5">
             <DeqFigure
@@ -530,13 +625,15 @@ export default function DataCenterCorridorPage() {
                 </>
               }
               table={{
-                caption: "Show the percentile table, including smoke-window share of each record",
+                caption: "Show the percentile table, including rank position and smoke-window share",
                 columns: [
-                  "Site", "Days, own record", "p98, own record",
-                  "Days, common", "p98, common", "Smoke share of record",
+                  "Site", "Days, own record", "p98, own record", "Rank, own record",
+                  "Days, common", "p98, common", "Rank, common", "Smoke share of record",
                 ],
                 rows: percentiles.map((p) => [
-                  p.label, p.fullDays, n2(p.fullP98), p.commonDays, n2(p.commonP98),
+                  p.label,
+                  p.fullDays, n2(p.fullP98), rankLabel(p.fullPosition),
+                  p.commonDays, n2(p.commonP98), rankLabel(p.commonPosition),
                   `${n1(p.smokeShare)}%`,
                 ]),
               }}
