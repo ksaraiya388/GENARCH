@@ -1,6 +1,6 @@
 # GENARCH — STANDING RULES
 
-Last updated 2026-08-12. Supersedes all earlier rule statements in chat.
+Last updated 2026-08-16. Supersedes all earlier rule statements in chat.
 
 Sections 1 and 3 are enforcement rules: they belong in code as validator checks, not in your head. Sections 2, 4, and 5 are judgment rules that apply when writing. Section 7 is what is still unknown.
 
@@ -292,3 +292,9 @@ Marked by status. Nothing here is publishable until the corrected exclusion rule
 | 2026-08-11 | DEQ FOIA | Request 26-4646 released in full, no redactions, no cost, four files, coverage 2026-03-03 to 2026-08-10 |
 | 2026-08-11 | DEQ staff | Timestamp convention difference and shift instruction; AQS Null Code and `<` flag both mean invalid |
 | 2026-08-12 | DEQ staff | Flag reference table; comparator logic; `C<` only; 18/24 threshold; daily file unfiltered; units; `IF` = Fire — Canadian; exceptional events determined by EPA; pointer to weekly reports |
+
+---
+
+## 11. Outreach links
+
+**One `/r/<code>` per recipient, never reused.** A forwarded link then stays attributable to the original send rather than merging two recipients into one path in Analytics. Codes live in `OUTREACH_CODES` in `site/src/app/r/[code]/page.tsx`; retire a code by leaving it in place, not by reassigning it.
