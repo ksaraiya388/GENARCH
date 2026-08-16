@@ -1,15 +1,24 @@
 node_modules/
+
+# Next.js build output (matches site/.next/ and site/out/ at any depth)
 .next/
-site/out/
-.env
-.env.local
+out/
+
+# TypeScript incremental build info
+*.tsbuildinfo
+
+# Python
 *.pyc
 __pycache__/
 .pytest_cache/
+.ruff_cache/
 *.egg-info/
+
+# Environment files. .env.example is tracked on purpose if one is ever added.
+.env*
+!.env.example
+
 dist/
 build/
 .DS_Store
 *.log
-
-site/tsconfig.tsbuildinfo

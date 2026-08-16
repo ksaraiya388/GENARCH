@@ -1,6 +1,58 @@
+GENARCH is dual licensed. The two licenses apply to different parts of this
+repository, and the split is stated here so there is no ambiguity about which
+one governs a given file.
+
+================================================================================
+DATA AND CONTENT — Creative Commons Attribution 4.0 International (CC BY 4.0)
+================================================================================
+
+Applies to:
+
+  data/                   emitted JSON entities
+  docs/                   documentation, methods, model card, archived PDFs
+  content/                narrative content
+  pipeline/sources/       curated and reshaped source tables
+  site/src/content/       page content and quotation modules
+  Prose in README.md and other Markdown at the repository root
+  Figures, charts, and text rendered by the published site
+
+You may share and adapt this material, including commercially, provided you
+give appropriate credit, link to the license, and indicate whether changes were
+made.
+
+  Deed:        https://creativecommons.org/licenses/by/4.0/
+  Legal code:  https://creativecommons.org/licenses/by/4.0/legalcode
+
+The legal code at the URL above is the operative text of this license.
+
+Suggested attribution:
+
+  Saraiya, Kiaan. GENARCH: A Gene-Environment Interaction Atlas for Loudoun
+  County, Virginia. https://genarch.org. CC BY 4.0.
+
+Third-party material carries its own terms and is not relicensed by this file.
+In particular, Virginia DEQ air monitoring data belongs to the Virginia
+Department of Environmental Quality and is redistributed here with credit, per
+DEQ staff on 2026-08-10; regulatory monitor data was released as public records
+under the Virginia Freedom of Information Act (request 26-4646). US Census
+TIGERweb boundary geometry is a US Government work in the public domain. See
+pipeline/sources/manifest.json and docs/DATA_PROVENANCE.md.
+
+================================================================================
+CODE — MIT License
+================================================================================
+
+Applies to:
+
+  pipeline/               Python source (excluding pipeline/sources/)
+  site/                   TypeScript, React, and configuration source
+                          (excluding site/src/content/)
+  scripts/                build and lint tooling
+  Configuration at the repository root
+
 MIT License
 
-Copyright (c) 2026 ksaraiya388
+Copyright (c) 2026 Kiaan Saraiya
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +71,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+================================================================================
+NOTE ON PRIOR LICENSING
+================================================================================
+
+Before version 1.0.0 this repository declared CC BY-NC-SA 4.0 across the whole
+tree. That declaration is superseded by this file.

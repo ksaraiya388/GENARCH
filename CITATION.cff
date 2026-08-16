@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use GENARCH or its reproduction of the Virginia DEQ air monitoring analysis, please cite it as below."
+title: "GENARCH: A Gene-Environment Interaction Atlas for Loudoun County, Virginia"
+abstract: >-
+  GENARCH is a static web atlas of gene-environment interaction evidence for
+  Loudoun County, Virginia. It pairs a Python data pipeline with a Next.js
+  static export to publish population-level evidence at county resolution, with
+  every scientific claim tied to a citation. It produces no individual-level
+  output, accepts no personal data, and is not a diagnostic tool. Version 1.0.0
+  includes an independent reproduction of the Virginia Department of
+  Environmental Quality's Data Center Air Monitoring analysis for the Loudoun
+  data center corridor, computed from DEQ's raw sensor exports and from
+  regulatory monitor records released under Virginia FOIA request 26-4646.
+  Three of DEQ's four published collocation regressions reproduce within 0.05
+  on coefficients and 0.03 on R-squared, and recomputed 24-hour PM2.5 averages
+  match DEQ's published daily file on 118 of 119 comparable days with a mean
+  absolute difference of 0.0017 micrograms per cubic metre. Both checks are
+  asserted at build time.
+type: software
+authors:
+  - family-names: Saraiya
+    given-names: Kiaan
+version: 1.0.0
+date-released: "2026-08-15"
+repository-code: "https://github.com/ksaraiya388/GENARCH"
+url: "https://genarch.org"
+license:
+  - CC-BY-4.0
+  - MIT
+keywords:
+  - gene-environment interaction
+  - environmental epidemiology
+  - air quality
+  - PM2.5
+  - open data
+  - reproducibility
+  - Loudoun County
+  - Virginia
+
+# doi: 10.5281/zenodo.XXXXXXX
+# The DOI above is a placeholder and is intentionally left commented out. It
+# will be uncommented and filled in with the concept DOI after the v1.0.0
+# Zenodo deposit. Do not cite a DOI for this work until this line is active.
