@@ -39,7 +39,7 @@ import pandas as pd
 # Constants
 # --------------------------------------------------------------------------
 
-DEFAULT_INPUT_ROOT = Path(r"C:\Users\sarai\genarch-scratch")
+DEFAULT_INPUT_ROOT = Path(__file__).resolve().parent / "sources"
 SENSOR_SUBDIR = "deq-raw"
 REGULATORY_SUBDIR = "deq-regulatory"
 
