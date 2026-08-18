@@ -505,8 +505,8 @@ export default function DataCenterCorridorPage() {
             <p>
               The single day that differs is {reviewed.date}, where the recomputation gives{" "}
               {n1(reviewed.truncated)} against a published {n1(reviewed.published)}. DEQ staff
-              reviewed that date and confirmed that recomputing from hourly values also gives{" "}
-              {n1(reviewed.truncated)}, and that the invalid hour at 10:00 was not excluded from
+              reviewed that date and reviewed that date, said that recomputing from hourly values also gives{" "}
+              {n1(reviewed.truncated)}, and noted that they were unsure why the invalid hour at 10:00 was not excluded from
               the published daily export (DEQ staff, correspondence, 2026-08-16).
             </p>
             <p className="text-sm">
