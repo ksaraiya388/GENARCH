@@ -18,6 +18,7 @@ import type { RankPosition } from "@/lib/deq-data";
 import {
   COMMON_WINDOW_START,
   COMPLETENESS_MIN_HOURS,
+  DEQ_EDITION_CUTOFF_LABEL,
   DEQ_WEEKLY_EDITIONS,
   PM25_24H_LEVEL,
   PM25_ANNUAL_LEVEL,
@@ -28,6 +29,7 @@ import {
   getCrosswalk,
   getDailyReconciliation,
   getHourlySeries,
+  getNo2Diagnostics,
   getPercentiles,
   getProvenance,
   getSiteRoster,
@@ -120,6 +122,7 @@ export default function DataCenterCorridorPage() {
   const hourly = getHourlySeries();
   const splits = getSmokeSplitStats();
   const collocation = getCollocation();
+  const no2 = getNo2Diagnostics();
   const reconciliation = getDailyReconciliation();
   const percentiles = getPercentiles();
   const correlations = getCorrelations();
@@ -134,6 +137,8 @@ export default function DataCenterCorridorPage() {
   const shortestRank = percentiles.findIndex((p) => p.key === shortest.key) + 1;
   const exempt = collocation.filter((c) => !c.asserted);
   const reproducing = collocation.filter((c) => c.asserted);
+  // getDailyReconciliation() fails the build unless this is the one day DEQ staff have reviewed.
+  const reviewed = reconciliation.mismatches[0];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -148,7 +153,14 @@ export default function DataCenterCorridorPage() {
         {/* ---------------------------------------------------------------- 1. Framing */}
         <header>
           <h1 className="text-h1 text-surface-white">Data Center Corridor Air Monitoring</h1>
-          <div className="mt-3 max-w-3xl text-cool-light leading-relaxed">
+          <div className="mt-3 max-w-3xl space-y-3 text-cool-light leading-relaxed">
+            <p>
+              DEQ describes the goal of the project as an exploratory trend analysis of the sensor
+              measurements, meant to establish whether areas with high numbers of data centers need
+              additional regulatory air monitoring (DEQ staff, correspondence, 2026-08-16). The
+              network exists to answer that question. It was not built to measure compliance, and
+              most misreadings of these numbers start by treating it as though it were.
+            </p>
             <p>
               This page presents Virginia DEQ&apos;s Data Center Air Monitoring Project
               measurements for Loudoun County, March to August 2026, alongside the regulatory
@@ -441,10 +453,12 @@ export default function DataCenterCorridorPage() {
 
           <div className="mt-4 max-w-3xl space-y-3 text-cool-light leading-relaxed">
             <p>
-              The DEQ column is the August 7 edition, and the GENARCH column is computed from the
-              released record through its last valid regulatory hour, 2026-08-10 09:00 EST; DEQ
-              reissues this analysis every week, so a comparison that names no edition is
-              measured against a target that moves.
+              The DEQ column is the August 7 edition, and the GENARCH column stops at{" "}
+              {DEQ_EDITION_CUTOFF_LABEL}. DEQ produces each edition on Friday morning from data
+              through 07:00 that day. The cutoff is the agency&apos;s specification, not an
+              assumption made here (DEQ staff, correspondence, 2026-08-16). DEQ reissues this
+              analysis every week, so a comparison that names no edition is measured against a
+              target that moves.
             </p>
             <p>
               The {collocation[0].unitLabel} collocation period closed on 2026-04-08, which fixes
@@ -454,15 +468,31 @@ export default function DataCenterCorridorPage() {
             <p>
               {Word(reproducing.length)} of the {word(collocation.length)}{" "}
               comparisons reproduce DEQ&apos;s published coefficients to within the tolerance the
-              build enforces, which is 0.05 on slope and intercept and 0.03 on R². The remaining
-              comparison,{" "}
-              {exempt.map((c) => `${c.unitLabel} ${c.pollutant}`).join(" and ")}, is close but not
-              exact: slope {n3(exempt[0].genarch.slope)} against DEQ&apos;s {exempt[0].deq.slope}{" "}
-              and R² {n3(exempt[0].genarch.r2)} against {exempt[0].deq.r2}. The residual
-              difference is not explained here, and it is disclosed rather than resolved. Note
-              also that DEQ publishes these coefficients to two significant figures, so part of
-              every difference in the table is that rounding rather than a difference in the
-              underlying fit.
+              build enforces, which is 0.05 on slope and intercept and 0.03 on R². DEQ publishes
+              these coefficients to two significant figures, so part of every difference in the
+              table is that rounding rather than a difference in the underlying fit.
+            </p>
+            <p>
+              The {ordinal(collocation.length)},{" "}
+              {exempt.map((c) => `${c.unitLabel} ${c.pollutant}`).join(" and ")}, does not
+              reproduce. Slope {n3(exempt[0].genarch.slope)} against DEQ&apos;s{" "}
+              {exempt[0].deq.slope}, R² {n3(exempt[0].genarch.r2)} against {exempt[0].deq.r2}. Two
+              explanations were tested here and neither holds. Moving the cutoff changes how many
+              pairs enter the fit and leaves the coefficients where they are: the same fit through
+              the end of the released record gives slope {n3(no2.fullRecord.slope)} and R²{" "}
+              {n3(no2.fullRecord.r2)} on {n0(no2.fullRecord.n)} pairs. Retaining the
+              sensor&apos;s exact-zero values, {n1(no2.zeroSharePct)} percent of the{" "}
+              {exempt[0].unitLabel} window&apos;s {exempt[0].pollutant} hours in runs as long as{" "}
+              {no2.maxZeroRun} hours, moves the fit to slope {n3(no2.zerosRetained.slope)} and R²{" "}
+              {n3(no2.zerosRetained.r2)}, toward DEQ&apos;s figures without reaching them. The
+              difference is unexplained.
+            </p>
+            <p>
+              This is the weakest of the {word(collocation.length)} relationships, and at an R²
+              near 0.2 the coefficients are loosely determined. At{" "}
+              {no2.separationAt} {exempt[0].unit} on the sensor the two lines sit{" "}
+              {n2(no2.separationPpb)} {exempt[0].unit} apart, on a series whose regulatory mean is{" "}
+              {n1(no2.regulatoryMean)} {exempt[0].unit}.
             </p>
             <p>
               Applying the same null-code and flag exclusions and an{" "}
@@ -471,6 +501,13 @@ export default function DataCenterCorridorPage() {
               {reconciliation.compared} comparable days after truncation to one decimal, with a
               mean absolute difference of {reconciliation.meanAbsoluteDifference.toFixed(4)}{" "}
               µg/m³. DEQ truncates published values rather than rounding them.
+            </p>
+            <p>
+              The single day that differs is {reviewed.date}, where the recomputation gives{" "}
+              {n1(reviewed.truncated)} against a published {n1(reviewed.published)}. DEQ staff
+              reviewed that date and confirmed that recomputing from hourly values also gives{" "}
+              {n1(reviewed.truncated)}, and that the invalid hour at 10:00 was not excluded from
+              the published daily export (DEQ staff, correspondence, 2026-08-16).
             </p>
             <p className="text-sm">
               DEQ&apos;s analysis:{" "}
@@ -551,6 +588,12 @@ export default function DataCenterCorridorPage() {
               {n1(Math.abs(DEQ_WEEKLY_EDITIONS.rows[0].aug14 - DEQ_WEEKLY_EDITIONS.rows[0].aug07))}{" "}
               µg/m³ closer to {PM25_24H_LEVEL}. Both editions are archived under
               docs/deq-reports/, because DEQ&apos;s published page carries only the current one.
+            </p>
+            <p>
+              DEQ staff note that the wildfire smoke data heavily skews the 98th percentiles at
+              every site, and that before the smoke arrived they sat at or below about 20 µg/m³
+              everywhere (DEQ staff, correspondence, 2026-08-16). The percentiles in the table
+              below include that window.
             </p>
             <p>
               Restricting every sensor to the window in which all {word(deployed.length)} were

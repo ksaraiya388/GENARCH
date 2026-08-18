@@ -292,6 +292,7 @@ Marked by status. Nothing here is publishable until the corrected exclusion rule
 | 2026-08-11 | DEQ FOIA | Request 26-4646 released in full, no redactions, no cost, four files, coverage 2026-03-03 to 2026-08-10 |
 | 2026-08-11 | DEQ staff | Timestamp convention difference and shift instruction; AQS Null Code and `<` flag both mean invalid |
 | 2026-08-12 | DEQ staff | Flag reference table; comparator logic; `C<` only; 18/24 threshold; daily file unfiltered; units; `IF` = Fire — Canadian; exceptional events determined by EPA; pointer to weekly reports |
+| 2026-08-16 | DEQ staff | Weekly report produced Friday morning from data through 07:00 that day, so the August 7 edition covers the record to 2026-08-07 07:00 EST; reviewed 2026-03-10 and confirmed that recomputing from hourly values gives 5.0 and that the invalid 10:00 hour was not excluded from the published daily export; project goal is exploratory trend analysis to determine whether areas with high numbers of data centers need additional regulatory air monitoring; wildfire data heavily skews the 98th percentiles at all sites, and pre-wildfire 98th percentiles were around or below 20 µg/m³ everywhere |
 
 ---
 
