@@ -1,4 +1,4 @@
-
+﻿
 //
 // The three exported strings below are VERBATIM QUOTATIONS attributed to a state agency.
 // Before this page ships, diff each one character-by-character against the live source named
@@ -59,7 +59,7 @@ export const DEQ_SOURCES: Record<
     citation:
       'Virginia DEQ, Office of Air Quality Monitoring, "Data Center Air Quality Analysis", August 7, 2026',
     sourceUrl:
-      "https://www.deq.virginia.gov/air/air-monitoring/data-center-air-monitoring",
+      "https://www.deq.virginia.gov/news-info/shortcuts/topics-of-interest/data-center-air-monitoring-project",
     retrieved: "2026-08-11",
   },
   // DEQ reissues this analysis weekly, so the edition date is part of the citation, not a
@@ -69,13 +69,13 @@ export const DEQ_SOURCES: Record<
     citation:
       'Virginia DEQ, Office of Air Quality Monitoring, "Data Center Air Quality Analysis", August 14, 2026',
     sourceUrl:
-      "https://www.deq.virginia.gov/air/air-monitoring/data-center-air-monitoring",
+      "https://www.deq.virginia.gov/news-info/shortcuts/topics-of-interest/data-center-air-monitoring-project",
     retrieved: "2026-08-14",
   },
   project: {
     citation: "Virginia DEQ, Data Center Air Monitoring Project",
     sourceUrl:
-      "https://www.deq.virginia.gov/air/air-monitoring/data-center-air-monitoring",
+      "https://www.deq.virginia.gov/news-info/shortcuts/topics-of-interest/data-center-air-monitoring-project",
     retrieved: "2026-08-11",
   },
   foia: {

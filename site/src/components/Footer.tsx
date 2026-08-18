@@ -50,11 +50,11 @@ export function Footer() {
             <div className="space-y-2">
               <p className="text-xs font-semibold uppercase tracking-wider text-cool-mid">About</p>
               <Link
-                href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                href="https://creativecommons.org/licenses/by/4.0/"
                 target="_blank" rel="noopener noreferrer"
                 className="text-cool-light hover:text-teal-primary text-sm no-underline"
               >
-                CC BY-NC-SA 4.0
+                CC BY 4.0
               </Link>
             </div>
           </div>
