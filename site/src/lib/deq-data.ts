@@ -25,6 +25,18 @@ export const SMOKE_WINDOW = { start: "2026-07-16", end: "2026-07-19" } as const;
  */
 export const RECORD_END = "2026-08-07";
 
+/**
+ * Cutoff for the collocation reproduction, hour-level. DEQ produces each weekly edition on
+ * Friday morning from data through 07:00 that day, so the August 7 edition covers the record
+ * to this instant rather than to the end of the released files (DEQ staff, correspondence,
+ * 2026-08-16). This is DEQ's specification, not an inference from where the data stops.
+ *
+ * `RECORD_END` above is date-level and drives the percentile common window. The two are not
+ * interchangeable and neither should be rewritten in terms of the other.
+ */
+export const DEQ_EDITION_CUTOFF = "2026-08-07 07:00:00";
+export const DEQ_EDITION_CUTOFF_LABEL = "2026-08-07 07:00 EST";
+
 /** First day on which all six deployed sensors were collecting. */
 export const COMMON_WINDOW_START = "2026-06-18";
 
@@ -451,9 +463,9 @@ export function getSmokeSplitStats(): SplitStat[] {
  * build-time fits are asserted against these, not against any figure produced by a GENARCH
  * analysis script.
  *
- * `assertAgainstDeq` is false for the APEX 5 NO2 comparison. That one is close but not exact,
- * the residual difference is unexplained, and the page says so rather than tuning a tolerance
- * until it passes.
+ * `assertAgainstDeq` is false for the APEX 5 NO2 comparison. That one does not reproduce, two
+ * candidate explanations have been tested and rejected (see `getNo2Diagnostics`), and the page
+ * discloses the failure rather than tuning a tolerance until it passes.
  */
 const DEQ_PUBLISHED = [
   { key: "apex-14-pm25", unitId: "apex-14", pollutant: "PM2.5", unit: "µg/m³",
@@ -487,6 +499,9 @@ export interface CollocationRow {
  * means the pipeline and the agency no longer agree, and the page's central claim -- that
  * GENARCH's processing reproduces an authoritative source -- would be false. That is a build
  * failure, not a rendering detail.
+ *
+ * Every fit stops at `DEQ_EDITION_CUTOFF`, because the DEQ coefficients being reproduced were
+ * computed over exactly that span.
  */
 export function getCollocation(): CollocationRow[] {
   const rows: CollocationRow[] = [];
@@ -496,6 +511,7 @@ export function getCollocation(): CollocationRow[] {
     const ys: number[] = [];
     for (const r of validSensor(spec.pollutant)) {
       if (r.site_id !== "ashburn-collocated" || r.unit_id !== spec.unitId) continue;
+      if (r.ts_est > DEQ_EDITION_CUTOFF) continue;
       const y = regulatory.get(r.ts_est);
       if (y === undefined) continue;
       xs.push(Number(r.value));
@@ -537,6 +553,105 @@ export function getCollocation(): CollocationRow[] {
   return rows;
 }
 
+/* ------------------------------------------------------- APEX 5 NO2 diagnostics */
+
+/** Sensor concentration at which the two regression lines are compared, in ppb. */
+const NO2_SEPARATION_AT = 10;
+
+export interface No2Diagnostics {
+  /** Same fit with no cutoff applied, to show that moving the cutoff moves only `n`. */
+  fullRecord: Fit;
+  /** Same fit at the cutoff with the sensor's exact-zero readings retained. */
+  zerosRetained: Fit;
+  zeroCount: number;
+  zeroTotal: number;
+  zeroSharePct: number;
+  /** Longest consecutive run of exact zeros in the APEX 5 window, in hours. */
+  maxZeroRun: number;
+  /** Mean of the valid regulatory NO2 series through the cutoff, in ppb. */
+  regulatoryMean: number;
+  separationAt: number;
+  /** Gap between GENARCH's fitted line and DEQ's at `separationAt`, in ppb. */
+  separationPpb: number;
+}
+
+/**
+ * Figures behind the APEX 5 NO2 paragraph. Two candidate explanations for the difference against
+ * DEQ's published coefficients were tested and both were rejected; this computes the numbers that
+ * show why, so the page states a measured result rather than a recollection of an analysis run.
+ *
+ * Scope is the APEX 5 window throughout, since that is the window the failing fit uses. The
+ * site-level exact-zero share over the whole NO2 record is a different population and is recorded
+ * in docs/GENARCH_RULES.md section 4, not here.
+ */
+export function getNo2Diagnostics(): No2Diagnostics {
+  const spec = DEQ_PUBLISHED.find((s) => s.key === "apex-05-no2");
+  if (!spec) throw new Error("apex-05-no2 is missing from DEQ_PUBLISHED.");
+
+  const regulatory = validRegulatory(spec.pollutant);
+  const isUnit = (r: Row) =>
+    r.site_id === "ashburn-collocated" && r.pollutant === spec.pollutant && r.unit_id === spec.unitId;
+
+  // Hypothesis 1: the cutoff. Same fit over the whole released record.
+  const fx: number[] = [];
+  const fy: number[] = [];
+  for (const r of validSensor(spec.pollutant)) {
+    if (!isUnit(r)) continue;
+    const y = regulatory.get(r.ts_est);
+    if (y === undefined) continue;
+    fx.push(Number(r.value));
+    fy.push(y);
+  }
+
+  // Hypothesis 2: the exact-zero readings, which the pipeline excludes as a per-pollutant floor
+  // clamp. Only that exclusion is readmitted; every other exclusion reason stays out.
+  const zx: number[] = [];
+  const zy: number[] = [];
+  let zeroCount = 0;
+  let zeroTotal = 0;
+  let maxZeroRun = 0;
+  for (const r of sensorRows()) {
+    if (!isUnit(r) || r.ts_est > DEQ_EDITION_CUTOFF) continue;
+    zeroTotal++;
+    const isZeroFloor = r.exclusion_reason === "exact_zero_floor";
+    if (isZeroFloor) {
+      zeroCount++;
+      const run = Number(r.zero_run_length);
+      if (Number.isFinite(run) && run > maxZeroRun) maxZeroRun = run;
+    }
+    if (r.value === "" || (r.excluded === "true" && !isZeroFloor)) continue;
+    const y = regulatory.get(r.ts_est);
+    if (y === undefined) continue;
+    zx.push(Number(r.value));
+    zy.push(y);
+  }
+
+  let regSum = 0;
+  let regN = 0;
+  regulatory.forEach((v, ts) => {
+    if (ts > DEQ_EDITION_CUTOFF) return;
+    regSum += v;
+    regN++;
+  });
+
+  const cutoffFit = getCollocation().find((c) => c.key === spec.key);
+  if (!cutoffFit) throw new Error("apex-05-no2 is missing from the collocation table.");
+  const genarchAt = cutoffFit.genarch.intercept + cutoffFit.genarch.slope * NO2_SEPARATION_AT;
+  const deqAt = spec.intercept + spec.slope * NO2_SEPARATION_AT;
+
+  return {
+    fullRecord: leastSquares(fx, fy),
+    zerosRetained: leastSquares(zx, zy),
+    zeroCount,
+    zeroTotal,
+    zeroSharePct: (100 * zeroCount) / zeroTotal,
+    maxZeroRun,
+    regulatoryMean: regSum / regN,
+    separationAt: NO2_SEPARATION_AT,
+    separationPpb: Math.abs(genarchAt - deqAt),
+  };
+}
+
 /* -------------------------------------------------- daily average reconciliation */
 
 export interface DailyReconciliation {
@@ -545,6 +660,14 @@ export interface DailyReconciliation {
   meanAbsoluteDifference: number;
   mismatches: { siteId: string; date: string; recomputed: number; truncated: number; published: number }[];
 }
+
+/**
+ * The days DEQ staff have reviewed. The page names this date and reports what DEQ said about it,
+ * so a mismatch set that no longer matches makes an attributed sentence false. Reviewing a new
+ * date means adding it here and writing what DEQ said; it is not a constant to widen until the
+ * check passes.
+ */
+const DEQ_REVIEWED_MISMATCHES = ["2026-03-10"];
 
 /**
  * DEQ truncates published daily averages to one decimal rather than rounding, so the comparison
@@ -567,6 +690,16 @@ export function getDailyReconciliation(): DailyReconciliation {
       mismatches.push({ siteId: r.site_id, date: r.date_est, recomputed, truncated, published });
     }
   }
+  const dates = mismatches.map((m) => m.date).sort();
+  if (dates.join(",") !== DEQ_REVIEWED_MISMATCHES.join(",")) {
+    throw new Error(
+      `DEQ daily reconciliation: the days that differ are now ${dates.join(", ") || "(none)"}, ` +
+      `but the collocation section attributes a review to DEQ staff for ${DEQ_REVIEWED_MISMATCHES.join(", ")}. ` +
+      `Update that paragraph and DEQ_REVIEWED_MISMATCHES together, so the page does not attribute ` +
+      `a statement to DEQ about a day the agency has not been asked about.`
+    );
+  }
+
   return {
     compared: rows.length,
     matching: rows.length - mismatches.length,

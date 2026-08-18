@@ -304,6 +304,30 @@ pattern in `CommunityRegionDetail.tsx`.
 
 ---
 
+## A-PDF — DEQ report narrative is not machine-readable · **RECORDED 2026-08-17**
+
+The archived weekly analyses under `docs/deq-reports/` embed their narrative text with
+subset-encoded fonts. Decompressing the PDF streams recovers chart and axis labels only: the
+regression annotations (`y = 1.9 + 0.29 x`, `R 2 = 0.17`), site names, and date ticks all extract
+cleanly, while the body prose does not. The already-transcribed `DEQ_REPORT_LIMITATION` string in
+`site/src/content/deq-attribution.ts` cannot be found by any text search of the file it came from,
+which is the proof: that sentence is verbatim from this PDF and was transcribed by a human.
+
+**Consequence.** No agent working inside this repository can verify a claim about what a DEQ
+report says. Chart-label values can be checked; prose cannot. A statement of the form "DEQ's
+report notes X" must be confirmed by a person reading the PDF before it reaches the site, and an
+unverified one must not be written on the strength of a chat summary.
+
+This constraint applied on 2026-08-17: a proposed sentence stating that DEQ's report notes sensor
+NO2 accuracy is likely poor at these concentrations was dropped from the collocation section for
+exactly this reason. Every other DEQ attribution on that page is either a byte-verified quotation
+or a paraphrase of correspondence, and an unverifiable third category would weaken both.
+
+**To unblock:** install a PDF text extractor that resolves subset font encodings (poppler's
+`pdftotext`, or `pdfplumber`), then re-check the dropped claim and any other report attribution.
+
+---
+
 ## Also noted, not blocking
 
 - **`build_graph()` writes a wall-clock timestamp.** `pipeline/graph_builder.py` sets
