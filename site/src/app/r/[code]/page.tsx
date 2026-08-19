@@ -20,6 +20,7 @@ const OUTREACH_CODES = [
   "lchd",
   "gmu",
   "dip",
+  "muckrock",
 ] as const;
 
 /** trailingSlash: true in next.config.js — the target keeps its slash to avoid a second hop. */
@@ -34,6 +35,7 @@ export const dynamicParams = false;
 export async function generateStaticParams() {
   return OUTREACH_CODES.map((code) => ({ code }));
 }
+
 
 export const metadata: Metadata = {
   title: "Redirecting — GENARCH",
