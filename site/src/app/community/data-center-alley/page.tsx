@@ -81,6 +81,19 @@ const rankLabel = (r: RankPosition): string =>
     ? `${ordinalNum(r.lower)} of ${r.n}`
     : `${ordinalNum(r.lower)}–${ordinalNum(r.upper)} of ${r.n}`;
 
+/**
+ * ISO date to the "August 7, 2026" form the surrounding prose uses. Split rather than passed to
+ * `Date`, which parses a bare ISO date as UTC and can render the day before in a local timezone.
+ */
+const MONTH_NAMES = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+];
+const longDate = (iso: string): string => {
+  const [y, m, d] = iso.split("-");
+  return `${MONTH_NAMES[Number(m) - 1]} ${Number(d)}, ${y}`;
+};
+
 const n1 = (v: number) => v.toFixed(1);
 const n2 = (v: number) => v.toFixed(2);
 const n3 = (v: number) => v.toFixed(3);
@@ -135,8 +148,15 @@ export default function DataCenterCorridorPage() {
   const shortest = percentiles.reduce((a, b) => (a.fullDays <= b.fullDays ? a : b));
   const longest = percentiles.reduce((a, b) => (a.fullDays >= b.fullDays ? a : b));
   const shortestRank = percentiles.findIndex((p) => p.key === shortest.key) + 1;
-  const exempt = collocation.filter((c) => !c.asserted);
-  const reproducing = collocation.filter((c) => c.asserted);
+  // The one comparison whose DEQ coefficients arrived by correspondence rather than in the
+  // August 7 report. getCollocation() carries that provenance on the row itself.
+  const corrected = collocation.find((c) => c.correction);
+  if (!corrected?.correction) {
+    throw new Error(
+      "No collocation row carries a DEQ correction. The APEX 5 NO2 paragraph and the table " +
+      "footnote below both describe one, so remove them together with the DEQ_PUBLISHED entry."
+    );
+  }
   // getDailyReconciliation() fails the build unless this is the one day DEQ staff have reviewed.
   const reviewed = reconciliation.mismatches[0];
 
@@ -407,7 +427,7 @@ export default function DataCenterCorridorPage() {
               regression describes neither.
             </p>
             <p>
-              The table sets DEQ&apos;s published coefficients beside coefficients computed by
+              The table sets DEQ&apos;s coefficients beside coefficients computed by
               GENARCH&apos;s pipeline from the source tables. This is a verification of that
               pipeline against an authoritative source, not a new result: DEQ published the
               analysis first and publishes it on a weekly cycle.
@@ -417,14 +437,15 @@ export default function DataCenterCorridorPage() {
           <div className="mt-5 overflow-x-auto rounded-lg border border-white/[0.08] bg-navy-mid/50">
             <table className="w-full min-w-[640px] border-collapse text-sm">
               <caption className="sr-only">
-                DEQ published regression coefficients beside coefficients computed by GENARCH,
-                for each hardware unit and pollutant. Sensor on the x axis, regulatory monitor on
-                the y axis.
+                DEQ&apos;s regression coefficients beside coefficients computed by GENARCH, for
+                each hardware unit and pollutant. Sensor on the x axis, regulatory monitor on the
+                y axis. A dagger marks the one DEQ row that came from correspondence rather than
+                from a report.
               </caption>
               <thead>
                 <tr className="border-b border-white/[0.08] text-left text-cool-mid">
                   <th scope="col" className="py-2 px-3 font-medium">Comparison</th>
-                  <th scope="col" className="py-2 px-3 font-medium">DEQ published</th>
+                  <th scope="col" className="py-2 px-3 font-medium">DEQ</th>
                   <th scope="col" className="py-2 px-3 font-medium">GENARCH</th>
                   <th scope="col" className="py-2 px-3 text-right font-medium">n</th>
                 </tr>
@@ -435,8 +456,28 @@ export default function DataCenterCorridorPage() {
                     <th scope="row" className="py-2 px-3 text-left font-normal text-surface-white">
                       {c.unitLabel} {c.pollutant}
                     </th>
-                    <td className="py-2 px-3 font-mono text-xs text-cool-light">
+                    <td
+                      className={
+                        "py-2 px-3 font-mono text-xs " +
+                        (c.correction
+                          ? "bg-teal-primary/[0.07] text-teal-primary"
+                          : "text-cool-light")
+                      }
+                    >
                       y = {c.deq.intercept} + {c.deq.slope}x, R² = {c.deq.r2}
+                      {c.correction && (
+                        <a
+                          href="#deq-correction-note"
+                          className="ml-1 font-sans hover:underline"
+                        >
+                          <span aria-hidden="true">†</span>
+                          <span className="sr-only">
+                            {" "}
+                            corrected by DEQ on {c.correction.correspondenceDate}; see the note
+                            below the table
+                          </span>
+                        </a>
+                      )}
                     </td>
                     <td className="py-2 px-3 font-mono text-xs text-cool-light">
                       y = {n3(c.genarch.intercept)} + {n3(c.genarch.slope)}x, R² ={" "}
@@ -451,14 +492,26 @@ export default function DataCenterCorridorPage() {
             </table>
           </div>
 
+          <p
+            id="deq-correction-note"
+            className="mt-2 max-w-3xl text-xs text-cool-mid leading-relaxed"
+          >
+            <span aria-hidden="true">† </span>
+            {corrected.unitLabel} {corrected.pollutant}: corrected by DEQ on{" "}
+            {corrected.correction.correspondenceDate}; the{" "}
+            {longDate(corrected.correction.supersedesEdition)} edition published y ={" "}
+            {corrected.correction.published.intercept} +{" "}
+            {corrected.correction.published.slope}x, R² = {corrected.correction.published.r2}.
+          </p>
+
           <div className="mt-4 max-w-3xl space-y-3 text-cool-light leading-relaxed">
             <p>
-              The DEQ column is the August 7 edition, and the GENARCH column stops at{" "}
-              {DEQ_EDITION_CUTOFF_LABEL}. DEQ produces each edition on Friday morning from data
-              through 07:00 that day. The cutoff is the agency&apos;s specification, not an
-              assumption made here (DEQ staff, correspondence, 2026-08-16). DEQ reissues this
-              analysis every week, so a comparison that names no edition is measured against a
-              target that moves.
+              The DEQ column is the August 7 edition apart from the daggered row, and the GENARCH
+              column stops at {DEQ_EDITION_CUTOFF_LABEL}. DEQ produces each edition on Friday
+              morning from data through 07:00 that day. The cutoff is the agency&apos;s
+              specification, not an assumption made here (DEQ staff, correspondence, 2026-08-16).
+              DEQ reissues this analysis every week, so a comparison that names no edition is
+              measured against a target that moves.
             </p>
             <p>
               The {collocation[0].unitLabel} collocation period closed on 2026-04-08, which fixes
@@ -466,33 +519,42 @@ export default function DataCenterCorridorPage() {
               them, and they read the same in the August 7 and August 14 editions.
             </p>
             <p>
-              {Word(reproducing.length)} of the {word(collocation.length)}{" "}
-              comparisons reproduce DEQ&apos;s published coefficients to within the tolerance the
-              build enforces, which is 0.05 on slope and intercept and 0.03 on R². DEQ publishes
-              these coefficients to two significant figures, so part of every difference in the
-              table is that rounding rather than a difference in the underlying fit.
+              All {word(collocation.length)} comparisons reproduce DEQ&apos;s coefficients to
+              within the tolerance the build enforces, which is 0.05 on slope and intercept and
+              0.03 on R². DEQ publishes these coefficients to two significant figures, so part of
+              every difference in the table is that rounding rather than a difference in the
+              underlying fit.
             </p>
             <p>
-              The {ordinal(collocation.length)},{" "}
-              {exempt.map((c) => `${c.unitLabel} ${c.pollutant}`).join(" and ")}, does not
-              reproduce. Slope {n3(exempt[0].genarch.slope)} against DEQ&apos;s{" "}
-              {exempt[0].deq.slope}, R² {n3(exempt[0].genarch.r2)} against {exempt[0].deq.r2}. Two
-              explanations were tested here and neither holds. Moving the cutoff changes how many
-              pairs enter the fit and leaves the coefficients where they are: the same fit through
-              the end of the released record gives slope {n3(no2.fullRecord.slope)} and R²{" "}
-              {n3(no2.fullRecord.r2)} on {n0(no2.fullRecord.n)} pairs. Retaining the
-              sensor&apos;s exact-zero values, {n1(no2.zeroSharePct)} percent of the{" "}
-              {exempt[0].unitLabel} window&apos;s {exempt[0].pollutant} hours in runs as long as{" "}
-              {no2.maxZeroRun} hours, moves the fit to slope {n3(no2.zerosRetained.slope)} and R²{" "}
-              {n3(no2.zerosRetained.r2)}, toward DEQ&apos;s figures without reaching them. The
-              difference is unexplained.
+              The {ordinal(collocation.length)} took a round of correspondence to get there. The{" "}
+              {corrected.unitLabel} {corrected.pollutant} figure printed in the August 7 edition
+              did not reproduce here, so the question went to DEQ. DEQ traced it to the plotting
+              call behind the chart: the axis limits there bounded the model fit as well as the
+              plotted view, so points outside them never entered the regression. Refitting without
+              the limits gives y = {corrected.deq.intercept} + {corrected.deq.slope}x, R² ={" "}
+              {corrected.deq.r2}, and DEQ sent the paired hourly measurements the regression runs
+              on (DEQ staff, correspondence, {corrected.correction.correspondenceDate}).
             </p>
             <p>
-              This is the weakest of the {word(collocation.length)} relationships, and at an R²
-              near 0.2 the coefficients are loosely determined. At{" "}
-              {no2.separationAt} {exempt[0].unit} on the sensor the two lines sit{" "}
-              {n2(no2.separationPpb)} {exempt[0].unit} apart, on a series whose regulatory mean is{" "}
-              {n1(no2.regulatoryMean)} {exempt[0].unit}.
+              The same fit computed from the source tables gives y ={" "}
+              {n3(corrected.genarch.intercept)} + {n3(corrected.genarch.slope)}x, R² ={" "}
+              {n3(corrected.genarch.r2)} on {n0(corrected.genarch.n)} paired hours, inside
+              tolerance of the corrected coefficients. That fit keeps the sensor&apos;s exact-zero
+              readings, {n1(no2.zeroSharePct)} percent of the {corrected.unitLabel} window&apos;s{" "}
+              {corrected.pollutant} hours in runs as long as {no2.maxZeroRun} hours, because DEQ
+              keeps them (DEQ staff, correspondence,{" "}
+              {corrected.correction.correspondenceDate}). Everywhere else on this page they stay
+              excluded as a per-pollutant floor clamp. Dropping them here returns slope{" "}
+              {n3(no2.zerosDropped.slope)} and R² {n3(no2.zerosDropped.r2)} on{" "}
+              {n0(no2.zerosDropped.n)} pairs, the figure this page carried before, which left zero
+              handling as the only remaining difference between the two calculations.
+            </p>
+            <p>
+              Agreement on the coefficients does not make the relationship a strong one. At an R²
+              near {n2(corrected.deq.r2)} this is the weakest of the {word(collocation.length)},
+              and its coefficients are loosely determined. At {no2.separationAt} {corrected.unit}{" "}
+              on the sensor the two lines sit {n2(no2.separationPpb)} {corrected.unit} apart, on a
+              series whose regulatory mean is {n1(no2.regulatoryMean)} {corrected.unit}.
             </p>
             <p>
               Applying the same null-code and flag exclusions and an{" "}

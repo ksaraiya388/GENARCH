@@ -282,6 +282,19 @@ Marked by status. Nothing here is publishable until the corrected exclusion rule
 
 **Superseded, must rerun.** NO2 collocation: r = 0.420, slope 0.439, 780 of 3,862 sensor readings exactly zero against a regulatory mean of 3.87 ppb. This was computed with the incorrect blanket `C` exclusion and 51 valid `C>` rows were wrongly dropped.
 
+**Validated.** All four collocation regressions at the Ashburn site now reproduce DEQ's coefficients within 0.05 on slope and intercept and 0.03 on R², computed from the source tables at build time through the 2026-08-07 07:00 EST edition cutoff and asserted in `DEQ_PUBLISHED` (`site/src/lib/deq-data.ts`). Drift outside tolerance fails the build.
+
+| Comparison | DEQ | Recomputed | n |
+|---|---|---|---|
+| APEX 14 PM2.5 | y = 1.3 + 0.83x, R² = 0.73 | y = 1.299 + 0.831x, R² = 0.725 | 697 |
+| APEX 5 PM2.5 | y = −4.7 + 1.7x, R² = 0.84 | y = −4.678 + 1.665x, R² = 0.837 | 2,111 |
+| APEX 14 NO2 | y = 2.2 + 1.1x, R² = 0.49 | y = 2.186 + 1.075x, R² = 0.497 | 589 |
+| APEX 5 NO2 | y = 1.8 + 0.32x, R² = 0.21 (corrected 2026-08-19) | y = 1.835 + 0.319x, R² = 0.207 | 2,745 |
+
+The August 7 edition printed APEX 5 NO2 as y = 1.9 + 0.29x, R² = 0.17, which did not reproduce here. DEQ traced it to axis limits in its ggplot call, `x = 15` and `y = 26`, which bounded the model fit as well as the plotted view; refitting on the full dataframe gives the corrected coefficients above. Agency-confirmed, 2026-08-19.
+
+**The APEX 5 NO2 regression retains exact zeros. Nothing else does.** DEQ confirmed on 2026-08-19 that it keeps exact-zero measurements in that regression, so `getCollocation()` readmits rows the pipeline flags `exact_zero_floor` for that one fit. Dropping them gives y = 1.668 + 0.340x, R² = 0.199 on 2,261 pairs, which is what this page carried before the correspondence and is what narrowed the remaining difference to zero handling. The flag is per comparison, not per function: readmitting zeros into the other three moves coefficients that currently reproduce back outside tolerance, APEX 14 PM2.5 intercept to 1.368 against a published 1.3 and APEX 14 NO2 R² to 0.549 against a published 0.49. Percentiles, daily averages, smoke-window splits and every other statistic keep the pipeline's exclusion; the effect of retaining zeros there is untested and is a separate question.
+
 ---
 
 ## 10. Correspondence log
@@ -293,6 +306,7 @@ Marked by status. Nothing here is publishable until the corrected exclusion rule
 | 2026-08-11 | DEQ staff | Timestamp convention difference and shift instruction; AQS Null Code and `<` flag both mean invalid |
 | 2026-08-12 | DEQ staff | Flag reference table; comparator logic; `C<` only; 18/24 threshold; daily file unfiltered; units; `IF` = Fire — Canadian; exceptional events determined by EPA; pointer to weekly reports |
 | 2026-08-16 | DEQ staff | Weekly report produced Friday morning from data through 07:00 that day, so the August 7 edition covers the record to 2026-08-07 07:00 EST; reviewed 2026-03-10 and confirmed that recomputing from hourly values gives 5.0 and that the invalid 10:00 hour was not excluded from the published daily export; project goal is exploratory trend analysis to determine whether areas with high numbers of data centers need additional regulatory air monitoring; wildfire data heavily skews the 98th percentiles at all sites, and pre-wildfire 98th percentiles were around or below 20 µg/m³ everywhere |
+| 2026-08-19 | DEQ staff | APEX 5 NO2 collocation regression corrected to y = 1.8 + 0.32x, R² = 0.21: the ggplot call carried axis limits of x = 15 and y = 26 and the linear model was fit on the points inside those bounds rather than on the full dataframe, and the August 7 edition's y = 1.9 + 0.29x, R² = 0.17 came from the bounded fit; ggplot drops rows containing NA before fitting; the regression runs on paired hourly values; exact-zero measurements are retained; underlying data attached as an xlsx spanning 2026-04-07 22:00 to 2026-08-07 05:00, which independently confirms both the 2026-04-08 unit boundary and the DST timestamp shift |
 
 ---
 

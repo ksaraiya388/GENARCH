@@ -328,6 +328,47 @@ or a paraphrase of correspondence, and an unverifiable third category would weak
 
 ---
 
+## A-ZERO — collocation regression retains exact zeros, the rest of the pipeline does not · **RECORDED 2026-08-19**
+
+The pipeline excludes the sensors' exact-`0.0` readings everywhere, with `exclusion_reason =
+exact_zero_floor`. Section 4 of `docs/GENARCH_RULES.md` records why: Broad Run HS reports exact
+zero on PM2.5, NO2 and VOCs, no row has all three at zero, so the pattern is per-pollutant floor
+clamping rather than device outage.
+
+**DEQ does not exclude them from its collocation regression.** DEQ staff confirmed on 2026-08-19
+that exact-zero measurements are retained in the APEX 5 NO2 regression, and sent the paired hourly
+data the fit runs on. Reproducing DEQ's coefficients therefore requires readmitting rows this
+pipeline drops.
+
+**Shipped:** a `retainExactZeros` flag on the `DEQ_PUBLISHED` spec in
+`site/src/lib/deq-data.ts`, read only inside `getCollocation()`, which swaps `validSensor()` for
+`sensorRowsRetainingExactZeros()` for that one comparison. Every other exclusion reason stays out
+of the fit. The two treatments are named functions rather than an inline predicate so that a fit
+running on the retained population cannot be misread as running on the default one.
+
+**Scope, and why it is this narrow.** The flag sits on the comparison, not on the function and not
+on the pipeline.
+
+- *Not the pipeline.* Percentiles, daily averages, smoke-window splits, correlations and the site
+  roster all keep the exclusion. Whether DEQ retains zeros in those statistics has not been asked
+  and the effect of changing them has not been measured. Two untested changes shipping under one
+  confirmed answer is how a scoped correction turns into an unscoped one.
+- *Not the whole function.* Retaining zeros in the other three collocation fits moves coefficients
+  that currently reproduce back outside tolerance: APEX 14 PM2.5 intercept 1.368 against DEQ's
+  published 1.3, and APEX 14 NO2 R² 0.549 against DEQ's published 0.49. DEQ's confirmation covers
+  the regression it was asked about. Extending it to regressions the agency did not speak to would
+  be an inference, and the arithmetic says it would be the wrong one.
+
+**Consequence for anyone reading the page.** The `n` on the APEX 5 NO2 row, 2,745, is larger than
+the `n` a reader would get by applying the exclusion rule the rest of the page describes. The
+collocation section states the difference and gives the zeros-dropped fit beside it. Any new
+statistic added to that section has to say which population it used.
+
+**To revisit:** ask DEQ whether the same retention applies to the PM2.5 collocation regressions
+and to the published daily averages. Until there is an answer, do not widen the flag.
+
+---
+
 ## Also noted, not blocking
 
 - **`build_graph()` writes a wall-clock timestamp.** `pipeline/graph_builder.py` sets
