@@ -245,6 +245,23 @@ function validSensor(pollutant: string): Row[] {
   );
 }
 
+/**
+ * `validSensor()` plus the readings the pipeline drops as `exact_zero_floor`, and nothing else:
+ * every other exclusion reason stays out. Named rather than inlined so that a fit running on
+ * this population cannot be mistaken for one running on the default.
+ *
+ * Only specs carrying `retainExactZeros` reach this, and only inside `getCollocation()`. The
+ * reason and the scope are in `RETAIN_ZEROS_NOTE`.
+ */
+function sensorRowsRetainingExactZeros(pollutant: string): Row[] {
+  return sensorRows().filter(
+    (r) =>
+      r.pollutant === pollutant &&
+      r.value !== "" &&
+      (r.excluded === "false" || r.exclusion_reason === "exact_zero_floor")
+  );
+}
+
 /** Valid readings from the Loudoun regulatory monitor, keyed by timestamp. */
 function validRegulatory(pollutant: string): Map<string, number> {
   const map = new Map<string, number>();
@@ -459,15 +476,67 @@ export function getSmokeSplitStats(): SplitStat[] {
 /* ------------------------------------------------------------ collocation panel */
 
 /**
- * DEQ's published regressions, from the August 7 2026 report. External ground truth: the
- * build-time fits are asserted against these, not against any figure produced by a GENARCH
- * analysis script.
- *
- * `assertAgainstDeq` is false for the APEX 5 NO2 comparison. That one does not reproduce, two
- * candidate explanations have been tested and rejected (see `getNo2Diagnostics`), and the page
- * discloses the failure rather than tuning a tolerance until it passes.
+ * A coefficient set DEQ issued by correspondence in place of one it had already published.
+ * Carried in the data rather than only in the page's prose, so the provenance difference
+ * between a figure read off a published report and a figure supplied by email survives any
+ * later rewrite of the surrounding paragraphs.
  */
-const DEQ_PUBLISHED = [
+export interface DeqCorrection {
+  /** Date of the DEQ correspondence carrying the corrected coefficients. */
+  correspondenceDate: string;
+  /** Report edition whose coefficients the correction replaces. */
+  supersedesEdition: string;
+  /** What that edition printed. */
+  published: { intercept: number; slope: number; r2: number };
+}
+
+interface DeqPublishedSpec {
+  key: string;
+  unitId: string;
+  pollutant: string;
+  unit: string;
+  /** DEQ's coefficients: from the August 7 report, or from `correction` where one exists. */
+  intercept: number;
+  slope: number;
+  r2: number;
+  assertAgainstDeq: boolean;
+  /**
+   * Readmit the sensor's exact-zero readings into this one fit. See `RETAIN_ZEROS_NOTE`.
+   * Absent means the pipeline's normal exclusion applies, which is the default everywhere.
+   */
+  retainExactZeros?: boolean;
+  correction?: DeqCorrection;
+}
+
+/**
+ * DEQ retains exact-zero sensor measurements in the APEX 5 NO2 collocation regression, and
+ * confirmed that in correspondence on 2026-08-19 along with the corrected coefficients and the
+ * underlying paired-hourly data. The pipeline excludes those readings globally as a
+ * per-pollutant floor clamp (docs/GENARCH_RULES.md section 4), so this one fit has to readmit
+ * them to be the same calculation DEQ ran.
+ *
+ * The flag is per comparison rather than per function, and deliberately so. Readmitting zeros
+ * into the other three moves coefficients that currently reproduce back outside tolerance --
+ * APEX 14 PM2.5 intercept to 1.368 against a published 1.3, APEX 14 NO2 R² to 0.549 against a
+ * published 0.49. DEQ's confirmation covers the regression it was asked about; extending it to
+ * regressions the agency did not speak to would be an inference, and the arithmetic says it
+ * would be the wrong one.
+ *
+ * Nothing outside `getCollocation()` reads this flag. Percentiles, daily averages, smoke-window
+ * splits and every other statistic on the page keep the pipeline's exclusion, because the effect
+ * of retaining zeros there is untested and is a separate question.
+ */
+const RETAIN_ZEROS_NOTE =
+  "DEQ staff confirmed on 2026-08-19 that exact-zero measurements are retained in this regression.";
+
+/**
+ * DEQ's regressions at the collocated site. External ground truth: the build-time fits are
+ * asserted against these, not against any figure produced by a GENARCH analysis script.
+ *
+ * Three come from the August 7 2026 report. The APEX 5 NO2 entry carries DEQ's 2026-08-19
+ * correction instead, with the August 7 figures preserved in `correction.published`.
+ */
+const DEQ_PUBLISHED: readonly DeqPublishedSpec[] = [
   { key: "apex-14-pm25", unitId: "apex-14", pollutant: "PM2.5", unit: "µg/m³",
     intercept: 1.3, slope: 0.83, r2: 0.73, assertAgainstDeq: true },
   { key: "apex-05-pm25", unitId: "apex-05", pollutant: "PM2.5", unit: "µg/m³",
@@ -475,8 +544,15 @@ const DEQ_PUBLISHED = [
   { key: "apex-14-no2", unitId: "apex-14", pollutant: "NO2", unit: "ppb",
     intercept: 2.2, slope: 1.1, r2: 0.49, assertAgainstDeq: true },
   { key: "apex-05-no2", unitId: "apex-05", pollutant: "NO2", unit: "ppb",
-    intercept: 1.9, slope: 0.29, r2: 0.17, assertAgainstDeq: false },
-] as const;
+    intercept: 1.8, slope: 0.32, r2: 0.21, assertAgainstDeq: true,
+    // RETAIN_ZEROS_NOTE above carries the reason and the scope of this one flag.
+    retainExactZeros: true,
+    correction: {
+      correspondenceDate: "2026-08-19",
+      supersedesEdition: "2026-08-07",
+      published: { intercept: 1.9, slope: 0.29, r2: 0.17 },
+    } },
+];
 
 /** Agreement tolerance against DEQ's published coefficients. */
 export const DEQ_TOLERANCE = { coefficient: 0.05, r2: 0.03 } as const;
@@ -492,6 +568,10 @@ export interface CollocationRow {
   delta: { intercept: number; slope: number; r2: number };
   reproduces: boolean;
   asserted: boolean;
+  /** True where this fit readmits the sensor's exact zeros. See `RETAIN_ZEROS_NOTE`. */
+  retainsExactZeros: boolean;
+  /** Present where `deq` above is a correction rather than a figure read off a report. */
+  correction?: DeqCorrection;
 }
 
 /**
@@ -507,9 +587,14 @@ export function getCollocation(): CollocationRow[] {
   const rows: CollocationRow[] = [];
   for (const spec of DEQ_PUBLISHED) {
     const regulatory = validRegulatory(spec.pollutant);
+    // Local to this function and to the specs that set the flag. `validSensor()` and every
+    // other caller keep the pipeline's exclusion untouched -- see `RETAIN_ZEROS_NOTE`.
+    const candidates = spec.retainExactZeros
+      ? sensorRowsRetainingExactZeros(spec.pollutant)
+      : validSensor(spec.pollutant);
     const xs: number[] = [];
     const ys: number[] = [];
-    for (const r of validSensor(spec.pollutant)) {
+    for (const r of candidates) {
       if (r.site_id !== "ashburn-collocated" || r.unit_id !== spec.unitId) continue;
       if (r.ts_est > DEQ_EDITION_CUTOFF) continue;
       const y = regulatory.get(r.ts_est);
@@ -548,6 +633,8 @@ export function getCollocation(): CollocationRow[] {
       delta,
       reproduces,
       asserted: spec.assertAgainstDeq,
+      retainsExactZeros: spec.retainExactZeros === true,
+      correction: spec.correction,
     });
   }
   return rows;
@@ -559,10 +646,8 @@ export function getCollocation(): CollocationRow[] {
 const NO2_SEPARATION_AT = 10;
 
 export interface No2Diagnostics {
-  /** Same fit with no cutoff applied, to show that moving the cutoff moves only `n`. */
-  fullRecord: Fit;
-  /** Same fit at the cutoff with the sensor's exact-zero readings retained. */
-  zerosRetained: Fit;
+  /** The same fit with the exact zeros dropped, which is the treatment used everywhere else. */
+  zerosDropped: Fit;
   zeroCount: number;
   zeroTotal: number;
   zeroSharePct: number;
@@ -576,13 +661,15 @@ export interface No2Diagnostics {
 }
 
 /**
- * Figures behind the APEX 5 NO2 paragraph. Two candidate explanations for the difference against
- * DEQ's published coefficients were tested and both were rejected; this computes the numbers that
- * show why, so the page states a measured result rather than a recollection of an analysis run.
+ * Figures behind the APEX 5 NO2 paragraph. The comparison in `getCollocation()` retains the
+ * sensor's exact zeros, because DEQ does; this computes the counterfactual with them dropped,
+ * which is the treatment every other statistic on the page uses and the value this page carried
+ * before 2026-08-19. Both fits are computed from the source tables at build time so the
+ * paragraph states measured numbers rather than a recollection of an analysis run.
  *
- * Scope is the APEX 5 window throughout, since that is the window the failing fit uses. The
- * site-level exact-zero share over the whole NO2 record is a different population and is recorded
- * in docs/GENARCH_RULES.md section 4, not here.
+ * Scope is the APEX 5 window throughout, since that is the window the fit uses. The site-level
+ * exact-zero share over the whole NO2 record is a different population and is recorded in
+ * docs/GENARCH_RULES.md section 4, not here.
  */
 export function getNo2Diagnostics(): No2Diagnostics {
   const spec = DEQ_PUBLISHED.find((s) => s.key === "apex-05-no2");
@@ -592,38 +679,25 @@ export function getNo2Diagnostics(): No2Diagnostics {
   const isUnit = (r: Row) =>
     r.site_id === "ashburn-collocated" && r.pollutant === spec.pollutant && r.unit_id === spec.unitId;
 
-  // Hypothesis 1: the cutoff. Same fit over the whole released record.
-  const fx: number[] = [];
-  const fy: number[] = [];
-  for (const r of validSensor(spec.pollutant)) {
-    if (!isUnit(r)) continue;
-    const y = regulatory.get(r.ts_est);
-    if (y === undefined) continue;
-    fx.push(Number(r.value));
-    fy.push(y);
-  }
-
-  // Hypothesis 2: the exact-zero readings, which the pipeline excludes as a per-pollutant floor
-  // clamp. Only that exclusion is readmitted; every other exclusion reason stays out.
-  const zx: number[] = [];
-  const zy: number[] = [];
+  const dx: number[] = [];
+  const dy: number[] = [];
   let zeroCount = 0;
   let zeroTotal = 0;
   let maxZeroRun = 0;
   for (const r of sensorRows()) {
     if (!isUnit(r) || r.ts_est > DEQ_EDITION_CUTOFF) continue;
     zeroTotal++;
-    const isZeroFloor = r.exclusion_reason === "exact_zero_floor";
-    if (isZeroFloor) {
+    if (r.exclusion_reason === "exact_zero_floor") {
       zeroCount++;
       const run = Number(r.zero_run_length);
       if (Number.isFinite(run) && run > maxZeroRun) maxZeroRun = run;
+      continue;
     }
-    if (r.value === "" || (r.excluded === "true" && !isZeroFloor)) continue;
+    if (r.value === "" || r.excluded === "true") continue;
     const y = regulatory.get(r.ts_est);
     if (y === undefined) continue;
-    zx.push(Number(r.value));
-    zy.push(y);
+    dx.push(Number(r.value));
+    dy.push(y);
   }
 
   let regSum = 0;
@@ -640,8 +714,7 @@ export function getNo2Diagnostics(): No2Diagnostics {
   const deqAt = spec.intercept + spec.slope * NO2_SEPARATION_AT;
 
   return {
-    fullRecord: leastSquares(fx, fy),
-    zerosRetained: leastSquares(zx, zy),
+    zerosDropped: leastSquares(dx, dy),
     zeroCount,
     zeroTotal,
     zeroSharePct: (100 * zeroCount) / zeroTotal,
