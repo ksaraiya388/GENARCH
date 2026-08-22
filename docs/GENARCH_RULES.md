@@ -1,6 +1,6 @@
 # GENARCH — STANDING RULES
 
-Last updated 2026-08-16. Supersedes all earlier rule statements in chat.
+Last updated 2026-08-21. Supersedes all earlier rule statements in chat.
 
 Sections 1 and 3 are enforcement rules: they belong in code as validator checks, not in your head. Sections 2, 4, and 5 are judgment rules that apply when writing. Section 7 is what is still unknown.
 
@@ -293,11 +293,27 @@ Marked by status. Nothing here is publishable until the corrected exclusion rule
 
 The August 7 edition printed APEX 5 NO2 as y = 1.9 + 0.29x, R² = 0.17, which did not reproduce here. DEQ traced it to axis limits in its ggplot call, `x = 15` and `y = 26`, which bounded the model fit as well as the plotted view; refitting on the full dataframe gives the corrected coefficients above. Agency-confirmed, 2026-08-19.
 
+**The correction is in print.** The August 21 edition publishes APEX 5 NO2 as y = 1.8 + 0.31x, R² = 0.2. Cite that edition, not the correspondence, for the fact that DEQ corrected the regression; the correspondence stays the source for the August-7-window coefficients in the table above. The two are not the same number and are not meant to be: the August 21 fit runs over two more weeks of data, while the table's DEQ column is pinned to the August 7 window because that is the window the GENARCH column is computed on and where the FOIA record ends. Do not reconcile them and do not move the DEQ column onto a later edition.
+
+The August 14 edition printed y = 1.9 + 0.28x, R² = 0.17, still the bounded fit. Only APEX 5 is affected by edition: its collocation window is still open, so every edition refits it. The two APEX 14 regressions closed on 2026-04-08 and read y = 1.3 + 0.83x, R² = 0.73 and y = 2.2 + 1.1x, R² = 0.49 in all three archived editions.
+
+**Three editions of the `sterling-ms` percentile figures.** All three are archived under `docs/deq-reports/`; DEQ's published page carries only the current edition.
+
+| Figure | Aug 7 | Aug 14 | Aug 21 |
+|---|---|---|---|
+| 98th percentile of daily PM2.5 averages | 40.4 | 38.2 | 36.0 |
+| 98th percentile of hourly PM2.5 | 69.1 | 62.3 | 56.8 |
+| Mean hourly PM2.5 | 11.3 | 11.1 | 10.8 |
+
+The figure has fallen in each successive edition, and the sentence naming that sensor as the only one whose daily-average 98th percentile sits above 35 µg/m³ is word for word the same in all three. DEQ staff said on 2026-08-16 that they expected the figure to keep falling as the record lengthens. The trend is the observation. Do not project it forward, do not write that the sentence will stop being true, and do not compute how many editions it would take to cross 35.
+
 **The APEX 5 NO2 regression retains exact zeros. Nothing else does.** DEQ confirmed on 2026-08-19 that it keeps exact-zero measurements in that regression, so `getCollocation()` readmits rows the pipeline flags `exact_zero_floor` for that one fit. Dropping them gives y = 1.668 + 0.340x, R² = 0.199 on 2,261 pairs, which is what this page carried before the correspondence and is what narrowed the remaining difference to zero handling. The flag is per comparison, not per function: readmitting zeros into the other three moves coefficients that currently reproduce back outside tolerance, APEX 14 PM2.5 intercept to 1.368 against a published 1.3 and APEX 14 NO2 R² to 0.549 against a published 0.49. Percentiles, daily averages, smoke-window splits and every other statistic keep the pipeline's exclusion; the effect of retaining zeros there is untested and is a separate question.
 
 ---
 
-## 10. Correspondence log
+## 10. Correspondence and edition log
+
+Rows marked `DEQ staff` or `DEQ FOIA` are correspondence. Rows marked `DEQ report` are published editions and can be cited as publications; where a fact appears in both, cite the edition.
 
 | Date | Source | Content |
 |---|---|---|
@@ -305,8 +321,9 @@ The August 7 edition printed APEX 5 NO2 as y = 1.9 + 0.29x, R² = 0.17, which di
 | 2026-08-11 | DEQ FOIA | Request 26-4646 released in full, no redactions, no cost, four files, coverage 2026-03-03 to 2026-08-10 |
 | 2026-08-11 | DEQ staff | Timestamp convention difference and shift instruction; AQS Null Code and `<` flag both mean invalid |
 | 2026-08-12 | DEQ staff | Flag reference table; comparator logic; `C<` only; 18/24 threshold; daily file unfiltered; units; `IF` = Fire — Canadian; exceptional events determined by EPA; pointer to weekly reports |
-| 2026-08-16 | DEQ staff | Weekly report produced Friday morning from data through 07:00 that day, so the August 7 edition covers the record to 2026-08-07 07:00 EST; reviewed 2026-03-10 and confirmed that recomputing from hourly values gives 5.0 and that the invalid 10:00 hour was not excluded from the published daily export; project goal is exploratory trend analysis to determine whether areas with high numbers of data centers need additional regulatory air monitoring; wildfire data heavily skews the 98th percentiles at all sites, and pre-wildfire 98th percentiles were around or below 20 µg/m³ everywhere |
+| 2026-08-16 | DEQ staff | Weekly report produced Friday morning from data through 07:00 that day, so the August 7 edition covers the record to 2026-08-07 07:00 EST; reviewed 2026-03-10 and confirmed that recomputing from hourly values gives 5.0 and that the invalid 10:00 hour was not excluded from the published daily export; project goal is exploratory trend analysis to determine whether areas with high numbers of data centers need additional regulatory air monitoring; wildfire data heavily skews the 98th percentiles at all sites, and pre-wildfire 98th percentiles were around or below 20 µg/m³ everywhere; expects the `sterling-ms` 98th percentile to keep falling as its record lengthens |
 | 2026-08-19 | DEQ staff | APEX 5 NO2 collocation regression corrected to y = 1.8 + 0.32x, R² = 0.21: the ggplot call carried axis limits of x = 15 and y = 26 and the linear model was fit on the points inside those bounds rather than on the full dataframe, and the August 7 edition's y = 1.9 + 0.29x, R² = 0.17 came from the bounded fit; ggplot drops rows containing NA before fitting; the regression runs on paired hourly values; exact-zero measurements are retained; underlying data attached as an xlsx spanning 2026-04-07 22:00 to 2026-08-07 05:00, which independently confirms both the 2026-04-08 unit boundary and the DST timestamp shift |
+| 2026-08-21 | DEQ report | August 21 edition published, archived at `docs/deq-reports/`. Carries the corrected APEX 5 NO2 regression in print at y = 1.8 + 0.31x, R² = 0.2 over its own longer window, so the correction no longer rests on correspondence alone. `sterling-ms` daily-average 98th percentile 36.0, hourly 98th percentile 56.8, mean hourly 10.8, the third point on a figure that has fallen in each edition. The only-site-above-35 sentence is unchanged from the two earlier editions |
 
 ---
 

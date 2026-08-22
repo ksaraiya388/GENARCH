@@ -159,6 +159,12 @@ export default function DataCenterCorridorPage() {
   }
   // getDailyReconciliation() fails the build unless this is the one day DEQ staff have reviewed.
   const reviewed = reconciliation.mismatches[0];
+  // Weekly editions, oldest first. The row order and the edition order are the same tuple
+  // length, so an edition added without its figures is a typecheck failure, not a short column.
+  const editions = DEQ_WEEKLY_EDITIONS.editions;
+  const firstEdition = editions[0];
+  const lastEdition = editions[editions.length - 1];
+  const dailyP98 = DEQ_WEEKLY_EDITIONS.rows[0];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -473,8 +479,7 @@ export default function DataCenterCorridorPage() {
                           <span aria-hidden="true">†</span>
                           <span className="sr-only">
                             {" "}
-                            corrected by DEQ on {c.correction.correspondenceDate}; see the note
-                            below the table
+                            corrected by DEQ; see the note below the table
                           </span>
                         </a>
                       )}
@@ -497,11 +502,19 @@ export default function DataCenterCorridorPage() {
             className="mt-2 max-w-3xl text-xs text-cool-mid leading-relaxed"
           >
             <span aria-hidden="true">† </span>
-            {corrected.unitLabel} {corrected.pollutant}: corrected by DEQ on{" "}
-            {corrected.correction.correspondenceDate}; the{" "}
+            {corrected.unitLabel} {corrected.pollutant}: the{" "}
             {longDate(corrected.correction.supersedesEdition)} edition published y ={" "}
             {corrected.correction.published.intercept} +{" "}
             {corrected.correction.published.slope}x, R² = {corrected.correction.published.r2}.
+            DEQ later corrected that fit, and the{" "}
+            {longDate(corrected.correction.inPrint.edition)} edition prints the corrected form at
+            y = {corrected.correction.inPrint.coefficients.intercept} +{" "}
+            {corrected.correction.inPrint.coefficients.slope}x, R² ={" "}
+            {corrected.correction.inPrint.coefficients.r2} over that edition&apos;s longer record
+            ({DEQ_SOURCES.reportAug21.citation}). The column above holds the corrected fit over
+            the {longDate(corrected.correction.supersedesEdition)} window instead, because that is
+            the window the GENARCH column is computed on. DEQ supplied those coefficients by
+            correspondence on {corrected.correction.correspondenceDate}.
           </p>
 
           <div className="mt-4 max-w-3xl space-y-3 text-cool-light leading-relaxed">
@@ -514,9 +527,17 @@ export default function DataCenterCorridorPage() {
               measured against a target that moves.
             </p>
             <p>
+              Two later editions have since shipped, and the column stays on August 7 anyway. That
+              is the window the GENARCH column is computed over, and it is where the record
+              released under FOIA ends. Setting a coefficient refitted on a longer record beside a
+              fit that stops at August 7 would compare two spans rather than two calculations.
+            </p>
+            <p>
               The {collocation[0].unitLabel} collocation period closed on 2026-04-08, which fixes
               the two {collocation[0].unitLabel} regressions: no later week of data can enter
-              them, and they read the same in the August 7 and August 14 editions.
+              them, and they read the same in all three archived editions. The{" "}
+              {collocation[1].unitLabel} window is still open, so each edition refits those two on
+              more data than the last.
             </p>
             <p>
               All {word(collocation.length)} comparisons reproduce DEQ&apos;s coefficients to
@@ -531,9 +552,19 @@ export default function DataCenterCorridorPage() {
               did not reproduce here, so the question went to DEQ. DEQ traced it to the plotting
               call behind the chart: the axis limits there bounded the model fit as well as the
               plotted view, so points outside them never entered the regression. Refitting without
-              the limits gives y = {corrected.deq.intercept} + {corrected.deq.slope}x, R² ={" "}
-              {corrected.deq.r2}, and DEQ sent the paired hourly measurements the regression runs
-              on (DEQ staff, correspondence, {corrected.correction.correspondenceDate}).
+              the limits over the August 7 window gives y = {corrected.deq.intercept} +{" "}
+              {corrected.deq.slope}x, R² = {corrected.deq.r2}, and DEQ sent the paired hourly
+              measurements the regression runs on (DEQ staff, correspondence,{" "}
+              {corrected.correction.correspondenceDate}).
+            </p>
+            <p>
+              The correction is now in print. The{" "}
+              {longDate(corrected.correction.inPrint.edition)} edition carries the unbounded fit,
+              at y = {corrected.correction.inPrint.coefficients.intercept} +{" "}
+              {corrected.correction.inPrint.coefficients.slope}x, R² ={" "}
+              {corrected.correction.inPrint.coefficients.r2} over a record two weeks longer than
+              the one this table compares on. Those coefficients describe that longer window, so
+              this page cites them here rather than setting them in the column above.
             </p>
             <p>
               The same fit computed from the source tables gives y ={" "}
@@ -605,39 +636,52 @@ export default function DataCenterCorridorPage() {
           </div>
 
           <div className="mt-5 overflow-x-auto rounded-lg border border-white/[0.08] bg-navy-mid/50">
-            <table className="w-full min-w-[560px] border-collapse text-sm">
+            <table className="w-full min-w-[680px] border-collapse text-sm">
               <caption className="sr-only">
-                Figures published for {DEQ_WEEKLY_EDITIONS.siteId} in two consecutive editions of
-                DEQ&apos;s weekly analysis, with the change between them.
+                Figures published for {DEQ_WEEKLY_EDITIONS.siteId} in{" "}
+                {word(editions.length)} consecutive editions of DEQ&apos;s weekly analysis, oldest
+                first, with the change across the full span in the last column. Each edition
+                covers a week more of the record than the one before.
               </caption>
               <thead>
                 <tr className="border-b border-white/[0.08] text-left text-cool-mid">
                   <th scope="col" className="py-2 px-3 font-medium">
                     DEQ figure for {DEQ_WEEKLY_EDITIONS.siteId}
                   </th>
-                  {DEQ_WEEKLY_EDITIONS.editions.map((e) => (
-                    <th key={e} scope="col" className="py-2 px-3 text-right font-medium">
-                      {e}
+                  {editions.map((e) => (
+                    <th key={e.label} scope="col" className="py-2 px-3 text-right font-medium">
+                      {e.short}
                     </th>
                   ))}
-                  <th scope="col" className="py-2 px-3 text-right font-medium">Change</th>
+                  <th scope="col" className="py-2 px-3 text-right font-medium">
+                    {firstEdition.short} to {lastEdition.short}
+                  </th>
                 </tr>
               </thead>
               <tbody>
-                {DEQ_WEEKLY_EDITIONS.rows.map((r) => (
-                  <tr key={r.metric} className="border-b border-white/[0.04]">
-                    <th scope="row" className="py-2 px-3 text-left font-normal text-surface-white">
-                      {r.metric}{" "}
-                      <span className="text-cool-mid">({r.unit})</span>
-                    </th>
-                    <td className="py-2 px-3 text-right font-mono text-cool-light">{n1(r.aug07)}</td>
-                    <td className="py-2 px-3 text-right font-mono text-cool-light">{n1(r.aug14)}</td>
-                    <td className="py-2 px-3 text-right font-mono text-cool-light">
-                      {r.aug14 > r.aug07 ? "+" : ""}
-                      {n1(r.aug14 - r.aug07)}
-                    </td>
-                  </tr>
-                ))}
+                {DEQ_WEEKLY_EDITIONS.rows.map((r) => {
+                  const span = r.values[r.values.length - 1] - r.values[0];
+                  return (
+                    <tr key={r.metric} className="border-b border-white/[0.04]">
+                      <th scope="row" className="py-2 px-3 text-left font-normal text-surface-white">
+                        {r.metric}{" "}
+                        <span className="text-cool-mid">({r.unit})</span>
+                      </th>
+                      {r.values.map((v, i) => (
+                        <td
+                          key={editions[i].label}
+                          className="py-2 px-3 text-right font-mono text-cool-light"
+                        >
+                          {n1(v)}
+                        </td>
+                      ))}
+                      <td className="py-2 px-3 text-right font-mono text-cool-light">
+                        {span > 0 ? "+" : ""}
+                        {n1(span)}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
@@ -645,11 +689,14 @@ export default function DataCenterCorridorPage() {
           <div className="mt-3 max-w-3xl space-y-3 text-cool-light leading-relaxed">
             <p>
               The sentence naming this sensor as the only one whose 98th percentile of daily
-              averages sits above {PM25_24H_LEVEL} µg/m³ is identical in both editions. Over the
-              same week the number that sentence describes moved{" "}
-              {n1(Math.abs(DEQ_WEEKLY_EDITIONS.rows[0].aug14 - DEQ_WEEKLY_EDITIONS.rows[0].aug07))}{" "}
-              µg/m³ closer to {PM25_24H_LEVEL}. Both editions are archived under
-              docs/deq-reports/, because DEQ&apos;s published page carries only the current one.
+              averages sits above {PM25_24H_LEVEL} µg/m³ is word for word the same in all{" "}
+              {word(editions.length)} editions. The figure that sentence describes has fallen in
+              each one: {n1(dailyP98.values[0])} µg/m³ on {firstEdition.label},{" "}
+              {n1(dailyP98.values[1])} on {editions[1].label}, {n1(dailyP98.values[2])} on{" "}
+              {lastEdition.label}. DEQ staff said they expected it to keep falling as the record
+              lengthens (DEQ staff, correspondence, 2026-08-16). All {word(editions.length)}{" "}
+              editions are archived under docs/deq-reports/, because DEQ&apos;s published page
+              carries only the current one.
             </p>
             <p>
               DEQ staff note that the wildfire smoke data heavily skews the 98th percentiles at

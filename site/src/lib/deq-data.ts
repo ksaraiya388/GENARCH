@@ -488,6 +488,17 @@ export interface DeqCorrection {
   supersedesEdition: string;
   /** What that edition printed. */
   published: { intercept: number; slope: number; r2: number };
+  /**
+   * The first edition to carry the corrected regression in print, and the coefficients it
+   * printed. Those coefficients are not the ones in `deq` above and are not meant to be: the
+   * edition refits on a longer record, so it answers a different question than the row does.
+   * Held here so the page can cite a published edition for the fact that DEQ corrected the
+   * regression, rather than resting that fact on correspondence alone.
+   */
+  inPrint: {
+    edition: string;
+    coefficients: { intercept: number; slope: number; r2: number };
+  };
 }
 
 interface DeqPublishedSpec {
@@ -535,6 +546,13 @@ const RETAIN_ZEROS_NOTE =
  *
  * Three come from the August 7 2026 report. The APEX 5 NO2 entry carries DEQ's 2026-08-19
  * correction instead, with the August 7 figures preserved in `correction.published`.
+ *
+ * Every entry stays pinned to the August 7 window even though later editions have shipped,
+ * because the GENARCH column is computed over exactly that span and the record itself stops
+ * there. A later edition refits the two open-ended APEX 5 regressions on more weeks of data, so
+ * setting one of its coefficients beside a GENARCH fit cut off at August 7 would compare two
+ * different windows and read as a reproduction failure. `correction.inPrint` carries the later
+ * figure where it belongs, as provenance rather than as a comparator.
  */
 const DEQ_PUBLISHED: readonly DeqPublishedSpec[] = [
   { key: "apex-14-pm25", unitId: "apex-14", pollutant: "PM2.5", unit: "µg/m³",
@@ -551,6 +569,10 @@ const DEQ_PUBLISHED: readonly DeqPublishedSpec[] = [
       correspondenceDate: "2026-08-19",
       supersedesEdition: "2026-08-07",
       published: { intercept: 1.9, slope: 0.29, r2: 0.17 },
+      inPrint: {
+        edition: "2026-08-21",
+        coefficients: { intercept: 1.8, slope: 0.31, r2: 0.2 },
+      },
     } },
 ];
 
@@ -783,32 +805,47 @@ export function getDailyReconciliation(): DailyReconciliation {
 
 /* --------------------------------------------- record length and p98 comparison */
 
-/**
- * Figures for one sensor as published in two consecutive editions of DEQ's weekly analysis.
- *
- * VERIFY BEFORE PUSH: these six values are transcribed from the two PDFs archived under
- * docs/deq-reports/. They are not computed from the source tables and cannot be, because they
- * are DEQ's own published outputs over DEQ's own windows. Diff each against the archived PDFs
- * before this ships.
- *
- * They are here rather than in the page so that the edition dates and the values stay attached
- * to each other. Adding a third edition means adding a column, not editing prose.
- */
+export interface WeeklyEdition {
+  /** Edition date in the form the surrounding prose writes it. */
+  label: string;
+  /** Column-header form, short enough for a table head. */
+  short: string;
+}
+
 export interface WeeklyEditionRow {
   metric: string;
   unit: string;
-  aug07: number;
-  aug14: number;
+  /**
+   * One figure per entry in `DEQ_WEEKLY_EDITIONS.editions`, same order, oldest first. The
+   * tuple length is what keeps the two aligned: add an edition without adding its figure and
+   * the typecheck fails rather than the table rendering a column short.
+   */
+  values: readonly [number, number, number];
 }
 
+/**
+ * Figures for one sensor as published in three consecutive editions of DEQ's weekly analysis.
+ *
+ * VERIFY BEFORE PUSH: these nine values are transcribed from the three PDFs archived under
+ * docs/deq-reports/. They are not computed from the source tables and cannot be, because they
+ * are DEQ's own published outputs over DEQ's own windows, each one longer than the last. Diff
+ * each against the archived PDFs before this ships.
+ *
+ * They are here rather than in the page so that the edition dates and the values stay attached
+ * to each other. Adding an edition means adding a column, not editing prose.
+ */
 export const DEQ_WEEKLY_EDITIONS = {
   siteId: "sterling-ms",
-  editions: ["August 7, 2026", "August 14, 2026"] as const,
+  editions: [
+    { label: "August 7, 2026", short: "Aug 7" },
+    { label: "August 14, 2026", short: "Aug 14" },
+    { label: "August 21, 2026", short: "Aug 21" },
+  ] as readonly [WeeklyEdition, WeeklyEdition, WeeklyEdition],
   rows: [
-    { metric: "98th percentile of daily PM2.5 averages", unit: "µg/m³", aug07: 40.4, aug14: 38.2 },
-    { metric: "98th percentile of hourly PM2.5", unit: "µg/m³", aug07: 69.1, aug14: 62.3 },
-    { metric: "Mean hourly PM2.5", unit: "µg/m³", aug07: 11.3, aug14: 11.1 },
-  ] as WeeklyEditionRow[],
+    { metric: "98th percentile of daily PM2.5 averages", unit: "µg/m³", values: [40.4, 38.2, 36.0] },
+    { metric: "98th percentile of hourly PM2.5", unit: "µg/m³", values: [69.1, 62.3, 56.8] },
+    { metric: "Mean hourly PM2.5", unit: "µg/m³", values: [11.3, 11.1, 10.8] },
+  ] as readonly WeeklyEditionRow[],
 };
 
 export interface RankPosition {
