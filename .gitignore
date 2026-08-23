@@ -22,3 +22,5 @@ dist/
 build/
 .DS_Store
 *.log
+
+report_diff_output.txt
