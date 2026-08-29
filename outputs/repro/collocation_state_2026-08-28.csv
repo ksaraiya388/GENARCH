@@ -1,0 +1,5 @@
+﻿report_date,pollutant,sensor,window_status,deq_intercept,deq_slope,deq_r2,genarch_intercept,genarch_slope,genarch_r2,rounds_to_published,notes
+2026-08-28,NO2,APEX 14,closed,2.2,1.1,0.49,2.20,1.065,0.491,yes,"Collocation window Mar 3 - Apr 8 2026. Closed; values fixed."
+2026-08-28,NO2,APEX 5,open,1.7,0.31,0.21,1.84,0.316,0.205,no,"Collocation Apr 8 2026 - present. GENARCH figures computed on Aug 7 cutoff; not comparable to this report. Recompute required."
+2026-08-28,PM2.5,APEX 14,closed,1.3,0.83,0.73,1.29,0.832,0.725,yes,"Collocation window Mar 3 - Apr 8 2026. Closed; values fixed."
+2026-08-28,PM2.5,APEX 5,open,-5,1.6,0.82,-4.66,1.665,0.837,no,"Collocation Apr 8 2026 - present. GENARCH figures computed on Aug 7 cutoff; not comparable to this report. Recompute required."
