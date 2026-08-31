@@ -1,0 +1,114 @@
+# p98 diagnostic outputs, run 2026-08-30
+
+Sensor data cutoff 2026-08-27 (truncated to DEQ report period). Kunak export date 2026-08-28.
+Regulatory data cutoff 2026-08-10 (FOIA 26-4646).
+
+## scripts/p98_offset_diagnostic.py
+```
+site                   stat     GENARCH     DEQ   delta
+-------------------------------------------------------
+1757 Golf Club         mean        7.55     7.6   -0.05
+1757 Golf Club         sd          9.22     9.3   -0.08
+1757 Golf Club         median      5.50     5.4   +0.10
+1757 Golf Club         p98        24.56    23.4   +1.16
+                       n=141  max=95.8  top5=[23.5, 24.4, 25.2, 40.1, 95.8]
+
+Belfort Park Dr        mean        9.29     9.3   -0.01
+Belfort Park Dr        sd         10.24    10.3   -0.06
+Belfort Park Dr        median      7.40     7.3   +0.10
+Belfort Park Dr        p98        26.38    25.9   +0.48
+                       n=104  max=93.5  top5=[23.5, 26.0, 26.4, 39.0, 93.5]
+
+Broad Run HS           mean        8.27     8.3   -0.03
+Broad Run HS           sd          8.19     8.3   -0.11
+Broad Run HS           median      6.75     6.8   -0.05
+Broad Run HS           p98        25.17    24.8   +0.37
+                       n=172  max=90.5  top5=[24.3, 25.8, 26.0, 37.0, 90.5]
+
+Dulles Airport         mean        5.80     5.8   -0.00
+Dulles Airport         sd          6.90     7.0   -0.10
+Dulles Airport         median      4.10     4.1   +0.00
+Dulles Airport         p98        19.87    17.8   +2.07
+                       n=169  max=77.0  top5=[18.4, 20.7, 21.1, 28.5, 77.0]
+
+Farmwell Station MS    mean        8.19     8.2   -0.01
+Farmwell Station MS    sd         10.20    10.3   -0.10
+Farmwell Station MS    median      6.05     6.1   -0.05
+Farmwell Station MS    p98        26.66    24.6   +2.06
+                       n=140  max=106.7  top5=[24.6, 26.4, 27.6, 44.1, 106.7]
+
+Sterling MS            mean       10.52    10.5   +0.02
+Sterling MS            sd         11.91    12.0   -0.09
+Sterling MS            median      8.60     8.4   +0.20
+Sterling MS            p98        32.88    33.8   -0.92
+                       n=71  max=95.5  top5=[21.8, 24.7, 24.9, 38.2, 95.5]
+
+```
+
+## scripts/p98_method_solver.py
+```
+
+===== cutoff 2026-08-26 =====
+golf-course          n= 140 DEQ=  23.4  line= 24.58    lowe= 24.40    high= 25.20    near= 24.40    midp= 24.80    EPA= 25.20    R6= 27.88    R4= 24.56  
+belfort-park         n= 103 DEQ=  25.9  line= 26.38    lowe= 26.00    high= 26.40    near= 26.40    midp= 26.20    EPA= 26.40    R6= 37.99    R4= 26.38  
+ashburn-collocated   n= 171 DEQ=  24.8  line= 25.20    lowe= 24.30    high= 25.80    near= 25.80    midp= 25.05    EPA= 25.80    R6= 25.91    R4= 25.17  
+dulles-area          n= 168 DEQ=  17.8  line= 19.92    lowe= 18.40    high= 20.70    near= 20.70    midp= 19.55    EPA= 20.70    R6= 20.95    R4= 19.87  
+farmwell-middle      n= 139 DEQ=  24.6  line= 26.69    lowe= 26.40    high= 27.60    near= 26.40    midp= 27.00    EPA= 27.60    R6= 30.90    R4= 26.66  
+sterling-ms          n=  70 DEQ=  33.8  line= 33.15    lowe= 24.90    high= 38.20    near= 38.20    midp= 31.55    EPA= 38.20    R6= 71.43    R4= 32.88  
+
+===== cutoff 2026-08-27 =====
+golf-course          n= 141 DEQ=  23.4  line= 24.56    lowe= 24.40    high= 25.20    near= 24.40    midp= 24.80    EPA= 25.20    R6= 27.58    R4= 24.54  
+belfort-park         n= 104 DEQ=  25.9  line= 26.38    lowe= 26.00    high= 26.40    near= 26.40    midp= 26.20    EPA= 26.40    R6= 37.74    R4= 26.37  
+ashburn-collocated   n= 172 DEQ=  24.8  line= 25.17    lowe= 24.30    high= 25.80    near= 25.80    midp= 25.05    EPA= 25.80    R6= 25.91    R4= 25.14  
+dulles-area          n= 169 DEQ=  17.8  line= 19.87    lowe= 18.40    high= 20.70    near= 20.70    midp= 19.55    EPA= 20.70    R6= 20.94    R4= 19.83  
+farmwell-middle      n= 140 DEQ=  24.6  line= 26.66    lowe= 26.40    high= 27.60    near= 26.40    midp= 27.00    EPA= 27.60    R6= 30.57    R4= 26.64  
+sterling-ms          n=  71 DEQ=  33.8  line= 32.88    lowe= 24.90    high= 38.20    near= 38.20    midp= 31.55    EPA= 38.20    R6= 70.29    R4= 32.61  
+
+===== cutoff 2026-08-28 =====
+golf-course          n= 142 DEQ=  23.4  line= 24.54    lowe= 24.40    high= 25.20    near= 24.40    midp= 24.80    EPA= 25.20    R6= 27.29    R4= 24.53  
+belfort-park         n= 105 DEQ=  25.9  line= 26.37    lowe= 26.00    high= 26.40    near= 26.40    midp= 26.20    EPA= 26.40    R6= 37.49    R4= 26.36  
+ashburn-collocated   n= 173 DEQ=  24.8  line= 25.14    lowe= 24.30    high= 25.80    near= 25.80    midp= 25.05    EPA= 25.80    R6= 25.90    R4= 25.11  
+dulles-area          n= 170 DEQ=  17.8  line= 19.83    lowe= 18.40    high= 20.70    near= 20.70    midp= 19.55    EPA= 20.70    R6= 20.93    R4= 19.78  
+farmwell-middle      n= 141 DEQ=  24.6  line= 26.64    lowe= 26.40    high= 27.60    near= 26.40    midp= 27.00    EPA= 27.60    R6= 30.24    R4= 26.62  
+sterling-ms          n=  72 DEQ=  33.8  line= 32.61    lowe= 24.90    high= 38.20    near= 38.20    midp= 31.55    EPA= 38.20    R6= 69.14    R4= 32.35  
+```
+
+## scripts/p98_daygrouping_solver.py
+```
+
+===== grouping by d_est =====
+site                    n    mean   dMean     p98     DEQ   delta
+golf-course           141    7.60   +0.00   24.59    23.4   +1.19
+belfort-park          104    9.35   +0.05   26.39    25.9   +0.49
+ashburn-collocated    172    8.32   +0.02   25.22    24.8   +0.42
+dulles-area           169    5.85   +0.05   19.92    17.8   +2.12
+farmwell-middle       140    8.23   +0.03   26.72    24.6   +2.12
+sterling-ms            71   10.57   +0.07   32.91    33.8   -0.89
+
+===== grouping by d_raw =====
+site                    n    mean   dMean     p98     DEQ   delta
+golf-course           141    7.60   +0.00   23.18    23.4   -0.22
+belfort-park          104    9.35   +0.05   25.64    25.9   -0.26
+ashburn-collocated    172    8.31   +0.01   24.56    24.8   -0.24
+dulles-area           168    5.81   +0.01   17.59    17.8   -0.21
+farmwell-middle       140    8.20   +0.00   24.72    24.6   +0.12
+sterling-ms            71   10.57   +0.07   35.29    33.8   +1.49
+
+===== grouping by d_raw_begin =====
+site                    n    mean   dMean     p98     DEQ   delta
+golf-course           141    7.60   +0.00   23.44    23.4   +0.04 *
+belfort-park          104    9.34   +0.04   25.96    25.9   +0.06
+ashburn-collocated    172    8.32   +0.02   24.85    24.8   +0.05 *
+dulles-area           168    5.81   +0.01   17.82    17.8   +0.02 *
+farmwell-middle       140    8.22   +0.02   25.01    24.6   +0.41
+sterling-ms            71   10.57   +0.07   34.15    33.8   +0.35
+
+===== grouping by d_local_begin =====
+site                    n    mean   dMean     p98     DEQ   delta
+golf-course           141    7.60   +0.00   24.59    23.4   +1.19
+belfort-park          104    9.35   +0.05   26.39    25.9   +0.49
+ashburn-collocated    172    8.32   +0.02   25.22    24.8   +0.42
+dulles-area           169    5.85   +0.05   19.92    17.8   +2.12
+farmwell-middle       140    8.23   +0.03   26.72    24.6   +2.12
+sterling-ms            71   10.57   +0.07   32.91    33.8   -0.89
+```

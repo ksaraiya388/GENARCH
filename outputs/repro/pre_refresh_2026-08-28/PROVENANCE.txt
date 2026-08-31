@@ -1,0 +1,13 @@
+Pre-refresh baseline snapshot for the 2026-08-28 Kunak refresh.
+
+Source: git HEAD (93e98ef), NOT the working tree.
+
+Reason: reshape_deq.py had already been run against the 2026-08-28 export
+during the Phase 0 inspection that produced the prompt amendments, so the
+working-tree copies of deq_data_center_air_monitoring_hourly.csv,
+deq_pm25_daily.csv and deq_missing_hours.csv were already post-refresh
+(max ts_est 2026-08-28 21:00). Snapshotting them would have produced an
+empty Phase 2 diff. HEAD carries the genuine pre-refresh state
+(max ts_est 2026-08-10 21:00), which is what Phase 1.1 intends.
+
+Baseline data cutoff: 2026-08-10 (sensors 21:00 EST, regulatory 23:00 EST).

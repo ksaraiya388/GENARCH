@@ -53,7 +53,7 @@ export default function CommunityPage() {
             <p className="text-sm text-cool-light">
               Virginia DEQ low-cost sensor and regulatory monitor measurements, with the
               agency&apos;s own limitation language, a reproduction of its collocation analysis,
-              and a record-length comparison across sites. No health data.
+              and a percentile comparison across sites of differing record length. No health data.
             </p>
           </Link>
         </section>

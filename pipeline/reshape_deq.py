@@ -87,6 +87,7 @@ KUNAK_POLLUTANT_PREFIXES = {
     "PM2.5": "PM2.5",
     "NO2": "NO2",
     "VOC": "VOCs",
+    "CO": "CO",
 }
 
 REGULATORY_PARAMETERS = {
