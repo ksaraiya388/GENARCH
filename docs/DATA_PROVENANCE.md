@@ -9,9 +9,9 @@ disagree.
 
 | Source | Retrieval method | Retrieved | License | Coverage | File path |
 |---|---|---|---|---|---|
-| Virginia DEQ, Data Center Air Monitoring Project — Kunak Cloud dashboard export | Public CSV export from the Kunak Cloud dashboard; export method confirmed by DEQ staff | 2026-08-10 | Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ staff, 2026-08-10). Preferred attribution line pending from DEQ Communications. | 2026-03-03 to 2026-08-10; six sites; 17,147 site-hours; 51,441 rows; PM2.5, NO2, VOCs | Raw: `pipeline/sources/deq-raw/<site-slug>_multi_2026-03-03_2026-08-10.csv` (6 files)<br>Reshaped: `pipeline/sources/deq_data_center_air_monitoring_hourly.csv` |
+| Virginia DEQ, Data Center Air Monitoring Project — Kunak Cloud dashboard export | Public CSV export from the Kunak Cloud dashboard; export method confirmed by DEQ staff | 2026-08-28 | Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ staff, 2026-08-10). Preferred attribution line pending from DEQ Communications. | 2026-03-03 to 2026-08-28; six sites; 19,748 site-hours; 59,244 rows; PM2.5, NO2, VOCs | Raw: `pipeline/sources/deq-raw/<site-slug>_multi_2026-03-03_2026-08-28.csv` (6 files; the superseded 2026-08-10 pull is retained under `deq-raw/_superseded/` and is not ingested)<br>Reshaped: `pipeline/sources/deq_data_center_air_monitoring_hourly.csv` |
 | Virginia DEQ regulatory reference monitors — FOIA request 26-4646 | Virginia Freedom of Information Act request, released in full | 2026-08-11 | Public records released in full under the Virginia FOIA. No redactions, no cost. Credit Virginia DEQ. | 2026-03-03 to 2026-08-10; 11,592 rows; ASHBURN PM2.5 (AQS method 638) and NO2 (method 212); AURHILL CO (method 54) | Raw: `pipeline/sources/deq-regulatory/*.xls` (4 files)<br>Reshaped: `pipeline/sources/deq_regulatory_monitor_hourly.csv` |
-| Virginia DEQ, Office of Air Quality Monitoring — "Data Center Air Quality Analysis" weekly PDFs | Downloaded from the DEQ project page on each publication date | 2026-08-07 and 2026-08-14 | Virginia DEQ publication. Archived here because the project page carries only the current edition. | Two editions: August 7, 2026 and August 14, 2026 | `docs/deq-reports/2026-08-07_data_center_air_quality_analysis.pdf`<br>`docs/deq-reports/2026-08-14_data_center_air_quality_analysis.pdf` |
+| Virginia DEQ, Office of Air Quality Monitoring — "Data Center Air Quality Analysis" weekly PDFs | Downloaded from the DEQ project page on each publication date | 2026-08-07, 2026-08-14, 2026-08-21, 2026-08-28 | Virginia DEQ publication. Archived here because the project page carries only the current edition. | Four editions: August 7, 14, 21 and 28, 2026 | `docs/deq-reports/2026-08-07_data_center_air_quality_analysis.pdf`<br>`docs/deq-reports/2026-08-14_data_center_air_quality_analysis.pdf`<br>`docs/deq-reports/2026-08-21_data_center_air_quality_analysis.pdf`<br>`pipeline/sources/deq/deq_dcamp_weekly_2026-08-28.pdf` |
 | DEQ sensor site history | Transcribed from the DEQ dashboard site list and the August 7 report | 2026-08-14 | Same terms as the sensor export above | 9 sites including 3 retired locations with no export | `pipeline/sources/deq_sensor_site_history.csv` |
 | US Census Bureau TIGERweb — county boundaries | ArcGIS REST query via `pipeline/fetch_geo.py` | 2026-07-22 | Public domain (US Government work, not copyrighted) | Loudoun County (GEOID 51107) and Fairfax County (51059) polygons, WGS84 | `site/public/geo/loudoun-county-va.geojson`<br>`site/public/geo/fairfax-county-va.geojson` |
 | GWAS Catalog ancestry breakdown | Quoted from the GWAS Diversity Monitor and the Cell Genomics 2024 diversity-gap review | 2026-07-13 | GWAS Catalog distributed by EMBL-EBI under open terms; the 2023 snapshot is quoted as citation, not redistribution | Share of GWAS participants by ancestry group, 2023 snapshot | `pipeline/sources/gwas_ancestry_breakdown.csv` |
@@ -55,6 +55,44 @@ hourly under the DEQ-confirmed 18-of-24 rule and truncates to one decimal withou
 reproduces the published file on 118 of 119 comparable days, mean absolute difference
 0.0017 µg/m³. The single disagreement is Ashburn on 2026-03-10: 5.0 recomputed against 5.2
 published.
+
+## The Kunak dashboard backfills, so export date is provenance
+
+The Kunak Cloud dashboard revises previously-published hours without notice. Two exports
+covering an identical requested range can disagree, so a re-pull is not purely additive and a
+figure is a function of its **export date** as well as its data cutoff. Every file in
+`outputs/repro/` therefore carries both.
+
+The 2026-08-28 re-pull is the worked example. It introduced no new missing hours and filled
+nine site-hours that the 2026-08-10 export had left absent, all of them inside that earlier
+export's own range. The count of missing site-hour-pollutant rows fell from 45 to 18.
+
+| Site | Hour, `ts_est` | Before, 2026-08-10 export | After, 2026-08-28 export |
+|---|---|---|---|
+| `ashburn-collocated` | 2026-04-21 06:00 | absent | 0.0 on NO2, PM2.5 and VOCs |
+| `belfort-park` | 2026-06-20 05:00 | absent | 0.0 on NO2, PM2.5 and VOCs |
+| `farmwell-middle` | 2026-07-10 04:00 | absent | 0.0 on NO2, PM2.5 and VOCs |
+| `farmwell-middle` | 2026-07-30 03:00 | absent | 0.0 on NO2, PM2.5 and VOCs |
+| `golf-course` | 2026-04-27 04:00 | absent | 0.0 on NO2, PM2.5 and VOCs |
+| `golf-course` | 2026-05-14 00:00 | absent | 0.0 on NO2, PM2.5 and VOCs |
+| `golf-course` | 2026-06-28 03:00 | absent | 0.0 on NO2, PM2.5 and VOCs |
+| `golf-course` | 2026-06-28 04:00 | absent | 0.0 on NO2, PM2.5 and VOCs |
+| `sterling-ms` | 2026-07-09 12:00 | absent | 0.0 on NO2, PM2.5 and VOCs |
+
+All nine came back as exact zeros on all three pollutants, so all nine are excluded by the
+`exact_zero_floor` rule and none adds a usable measurement. The row count and the missing-hour
+count both change; no statistic does. A backfill that resolves an absence into an
+instrument-floor zero is a change in the record, not a recovery of data, and the two should
+not be reported as the same thing.
+
+**`_superseded/` is load-bearing, not housekeeping.** Because the dashboard revises, the only
+way to show what a published figure was computed from is to keep the export it was computed
+from. `pipeline/sources/deq-raw/_superseded/` holds the six 2026-08-10 exports unmodified.
+`reshape_deq.py` globs `deq-raw/` non-recursively, so those files are not ingested and cannot
+double-count overlapping hours. Each carries `superseded_on`, `superseded_by` and
+`superseded_reason` in `pipeline/sources/manifest.json`, alongside `export_date`, the
+requested range, and the first and last data timestamp actually returned. Those last two
+differ for four of the six sites, which is the distinction the fields exist to record.
 
 ## Known gaps
 

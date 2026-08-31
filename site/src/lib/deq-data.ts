@@ -20,8 +20,17 @@ export const SMOKE_WINDOW = { start: "2026-07-16", end: "2026-07-19" } as const;
 
 /**
  * Record endpoint for the percentile comparison. DEQ's "Data Center Air Quality Analysis" is
- * dated 2026-08-07, so every percentile compared against its Table 4 stops there. The hourly
- * files themselves run three days further, to 2026-08-10.
+ * dated 2026-08-07, so every percentile compared against its Table 4 stops there.
+ *
+ * The sensor export now runs to 2026-08-28, and three later editions have shipped, but the
+ * comparison stays on the August 7 edition because that is the edition whose Table 4 these
+ * percentiles are set beside. The later editions are tracked in `DEQ_WEEKLY_EDITIONS` as
+ * DEQ's own published figures rather than as recomputed comparisons.
+ *
+ * A recomputation over the full record to the 2026-08-28 cutoff, including the common-window
+ * ranking and the percentile-method sensitivity, is in
+ * outputs/repro/p98_common_window_2026-08-28.csv. Every value there carries its cutoff as a
+ * column.
  */
 export const RECORD_END = "2026-08-07";
 
@@ -33,6 +42,12 @@ export const RECORD_END = "2026-08-07";
  *
  * `RECORD_END` above is date-level and drives the percentile common window. The two are not
  * interchangeable and neither should be rewritten in terms of the other.
+ *
+ * Moving this cutoff to a later edition is blocked on data, not on a decision. The regulatory
+ * monitor released under FOIA 26-4646 ends 2026-08-10, and a collocation fit needs both sides
+ * of the pair, so no cutoff past 2026-08-10 is computable at all. A follow-up FOIA request
+ * extending that range is pending; until it is released, the two open APEX 5 regressions
+ * cannot be compared against any edition later than the one they are pinned to here.
  */
 export const DEQ_EDITION_CUTOFF = "2026-08-07 07:00:00";
 export const DEQ_EDITION_CUTOFF_LABEL = "2026-08-07 07:00 EST";
@@ -517,6 +532,28 @@ interface DeqPublishedSpec {
    */
   retainExactZeros?: boolean;
   correction?: DeqCorrection;
+  /**
+   * Why this pair is held as a record rather than asserted. Present only where the two
+   * sides are known to be computed over windows that cannot be aligned, so a passing
+   * comparison would not mean what a passing comparison is supposed to mean.
+   */
+  nonComparable?: NonComparable;
+}
+
+/**
+ * A DEQ figure and a GENARCH figure that are both correct and cannot be compared.
+ *
+ * `restoreWhen` is a live marker, not a comment. The gate comes back when the condition it
+ * names is met, and the divergence stays visible on the page until then.
+ */
+export interface NonComparable {
+  /** Window the DEQ coefficients were computed over. */
+  deqCutoff: string;
+  /** Window the GENARCH fit beside them stops at. */
+  genarchCutoff: string;
+  reason: string;
+  restoreWhen: string;
+  blockedOn: string;
 }
 
 /**
@@ -561,8 +598,10 @@ const DEQ_PUBLISHED: readonly DeqPublishedSpec[] = [
     intercept: -4.7, slope: 1.7, r2: 0.84, assertAgainstDeq: true },
   { key: "apex-14-no2", unitId: "apex-14", pollutant: "NO2", unit: "ppb",
     intercept: 2.2, slope: 1.1, r2: 0.49, assertAgainstDeq: true },
+  // Not asserted. See `nonComparable` below: the two sides are pinned to windows that
+  // cannot be aligned in either direction, so the gate was demoted on 2026-08-29.
   { key: "apex-05-no2", unitId: "apex-05", pollutant: "NO2", unit: "ppb",
-    intercept: 1.8, slope: 0.32, r2: 0.21, assertAgainstDeq: true,
+    intercept: 1.8, slope: 0.32, r2: 0.21, assertAgainstDeq: false,
     // RETAIN_ZEROS_NOTE above carries the reason and the scope of this one flag.
     retainExactZeros: true,
     correction: {
@@ -573,6 +612,22 @@ const DEQ_PUBLISHED: readonly DeqPublishedSpec[] = [
         edition: "2026-08-21",
         coefficients: { intercept: 1.8, slope: 0.31, r2: 0.2 },
       },
+    },
+    nonComparable: {
+      deqCutoff: "2026-08-19 correspondence, refit over DEQ's record to that date",
+      genarchCutoff: DEQ_EDITION_CUTOFF_LABEL,
+      reason:
+        "DEQ's corrected coefficients were computed over a window that runs past the " +
+        "2026-08-07 edition cutoff the GENARCH fit stops at. The fit cannot be extended " +
+        "to meet them: a collocation fit needs both sides of each hourly pair, and the " +
+        "regulatory monitor released under FOIA 26-4646 ends 2026-08-10. Neither side " +
+        "can be moved, so no change on this side makes the comparison valid. A gate that " +
+        "passes on a comparison known to be non-comparable is worse than no gate.",
+      restoreWhen:
+        "The follow-up FOIA request extends the regulatory record past 2026-08-10 and " +
+        "the GENARCH fit can be recomputed over DEQ's own correction window. Set " +
+        "assertAgainstDeq back to true and drop this block.",
+      blockedOn: "FOIA 26-4646 follow-up request, pending",
     } },
 ];
 
@@ -594,6 +649,12 @@ export interface CollocationRow {
   retainsExactZeros: boolean;
   /** Present where `deq` above is a correction rather than a figure read off a report. */
   correction?: DeqCorrection;
+  /**
+   * Present where the pair is recorded rather than asserted. `reproduces` is still computed
+   * and still rendered; what this says is that agreeing or disagreeing would not mean
+   * anything, because the two sides are computed over windows that cannot be aligned.
+   */
+  nonComparable?: NonComparable;
 }
 
 /**
@@ -604,6 +665,12 @@ export interface CollocationRow {
  *
  * Every fit stops at `DEQ_EDITION_CUTOFF`, because the DEQ coefficients being reproduced were
  * computed over exactly that span.
+ *
+ * Three of the four specs are asserted. `apex-05-no2` is not: its DEQ side is the 2026-08-19
+ * correction, computed over a window that runs past this cutoff, and the FOIA-capped
+ * regulatory record makes the gap unclosable from here. It is carried as a recorded pair with
+ * a `nonComparable` label rather than dropped, so the divergence stays visible and the gate
+ * can be restored when the extended regulatory record arrives.
  */
 export function getCollocation(): CollocationRow[] {
   const rows: CollocationRow[] = [];
@@ -657,6 +724,7 @@ export function getCollocation(): CollocationRow[] {
       asserted: spec.assertAgainstDeq,
       retainsExactZeros: spec.retainExactZeros === true,
       correction: spec.correction,
+      nonComparable: spec.nonComparable,
     });
   }
   return rows;
@@ -820,16 +888,17 @@ export interface WeeklyEditionRow {
    * tuple length is what keeps the two aligned: add an edition without adding its figure and
    * the typecheck fails rather than the table rendering a column short.
    */
-  values: readonly [number, number, number];
+  values: readonly [number, number, number, number];
 }
 
 /**
- * Figures for one sensor as published in three consecutive editions of DEQ's weekly analysis.
+ * Figures for one sensor as published in four consecutive editions of DEQ's weekly analysis.
  *
- * VERIFY BEFORE PUSH: these nine values are transcribed from the three PDFs archived under
- * docs/deq-reports/. They are not computed from the source tables and cannot be, because they
- * are DEQ's own published outputs over DEQ's own windows, each one longer than the last. Diff
- * each against the archived PDFs before this ships.
+ * These twelve values are transcribed from DEQ's own PDFs, not computed from the source
+ * tables, and they cannot be computed from them: they are DEQ's published outputs over DEQ's
+ * own windows, each one a week longer than the last. The August 7, 14 and 21 editions are
+ * archived under docs/deq-reports/ and the August 28 edition under pipeline/sources/deq/.
+ * All twelve were diffed against those four PDFs on 2026-08-29 and reproduce exactly.
  *
  * They are here rather than in the page so that the edition dates and the values stay attached
  * to each other. Adding an edition means adding a column, not editing prose.
@@ -840,11 +909,12 @@ export const DEQ_WEEKLY_EDITIONS = {
     { label: "August 7, 2026", short: "Aug 7" },
     { label: "August 14, 2026", short: "Aug 14" },
     { label: "August 21, 2026", short: "Aug 21" },
-  ] as readonly [WeeklyEdition, WeeklyEdition, WeeklyEdition],
+    { label: "August 28, 2026", short: "Aug 28" },
+  ] as readonly [WeeklyEdition, WeeklyEdition, WeeklyEdition, WeeklyEdition],
   rows: [
-    { metric: "98th percentile of daily PM2.5 averages", unit: "µg/m³", values: [40.4, 38.2, 36.0] },
-    { metric: "98th percentile of hourly PM2.5", unit: "µg/m³", values: [69.1, 62.3, 56.8] },
-    { metric: "Mean hourly PM2.5", unit: "µg/m³", values: [11.3, 11.1, 10.8] },
+    { metric: "98th percentile of daily PM2.5 averages", unit: "µg/m³", values: [40.4, 38.2, 36.0, 33.8] },
+    { metric: "98th percentile of hourly PM2.5", unit: "µg/m³", values: [69.1, 62.3, 56.8, 53.6] },
+    { metric: "Mean hourly PM2.5", unit: "µg/m³", values: [11.3, 11.1, 10.8, 10.5] },
   ] as readonly WeeklyEditionRow[],
 };
 
@@ -863,8 +933,15 @@ export interface RankPosition {
  * The label "98th percentile" is fixed but the position it points at is not: under the
  * linear-interpolation definition the index is (n - 1) x 0.98, so a 51-day record reads its p98
  * from the 50th of 51 days while a 152-day record reads it from between the 148th and 149th of
- * 152. Same statistic name, different position in the distribution, which is the whole of why
- * the unmatched comparison in DEQ's Table 4 does not hold.
+ * 152. Same statistic name, different order statistic. A short record reads it from very near
+ * the maximum; a long one reads it from inside the upper tail, where the observations are
+ * denser.
+ *
+ * This is the order-statistic form of the argument, and it is the primary one. The magnitude is
+ * measurable two ways: changing only the interpolation convention moves the shortest record's
+ * p98 by 13.27 ug/m3 against 0.35 to 2.33 for the longer ones, and moving the day boundary by
+ * one hour moves it by up to 2.12 ug/m3 at every site while the mean holds to within 0.05. See
+ * docs/PERCENTILE_METHOD.md.
  */
 export function percentilePosition(n: number, p = 0.98): RankPosition {
   const k = (n - 1) * p;
@@ -907,10 +984,12 @@ function dailyMeans(siteId: string): Map<string, number> {
 }
 
 /**
- * The page's original contribution. Sensor records differ in length by a factor of three, and
- * the shortest one falls entirely in high summer, so a percentile computed over each site's own
- * record compares six different sampling periods. Restricting every site to the window in which
- * all six were collecting removes that difference.
+ * Sensor records differ in length by a factor of three and the shortest falls entirely in high
+ * summer, so a percentile computed over each site's own record is read from a different order
+ * statistic at each site. Restricting every site to the window in which all six were collecting
+ * removes the unequal-length difference. It does not remove the unequal-seasonality one: the
+ * common window is entirely high summer and contains the smoke period, so it is a comparison
+ * with one confound held rather than a clean control, and the page says so.
  */
 export function getPercentiles(): PercentileRow[] {
   const out: PercentileRow[] = [];

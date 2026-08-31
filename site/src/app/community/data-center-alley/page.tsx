@@ -148,6 +148,17 @@ export default function DataCenterCorridorPage() {
   const shortest = percentiles.reduce((a, b) => (a.fullDays <= b.fullDays ? a : b));
   const longest = percentiles.reduce((a, b) => (a.fullDays >= b.fullDays ? a : b));
   const shortestRank = percentiles.findIndex((p) => p.key === shortest.key) + 1;
+  // Three of the four comparisons are enforced by the build. The fourth is held as a
+  // recorded pair: its two sides are computed over windows that cannot be aligned, so a
+  // passing check would not mean what a passing check is supposed to mean.
+  const assertedFits = collocation.filter((c) => c.asserted);
+  const recordedFit = collocation.find((c) => c.nonComparable);
+  if (!recordedFit?.nonComparable) {
+    throw new Error(
+      "No collocation row is marked non-comparable. The paragraph and table footnote below " +
+      "describe one, so remove them together with the DEQ_PUBLISHED nonComparable block."
+    );
+  }
   // The one comparison whose DEQ coefficients arrived by correspondence rather than in the
   // August 7 report. getCollocation() carries that provenance on the row itself.
   const corrected = collocation.find((c) => c.correction);
@@ -266,9 +277,17 @@ export default function DataCenterCorridorPage() {
               sensors so far, two of which have been relocated once each. The network measures
               where it sits, and a finding drawn from these {word(deployed.length)} records
               describes those {word(deployed.length)} locations rather than the corridor as a
-              whole. DEQ&apos;s wind
-              rose analysis in its August 7 report concludes that the collocated Ashburn site and
-              the Dulles-area site are good upwind reference locations relative to the corridor.
+              whole.
+            </p>
+            <p>
+              DEQ reports a wind rose built from Dulles Airport measurements and states that
+              winds during the study period came predominantly from either the south or the
+              northwest. On that basis DEQ describes the collocated Ashburn site and the
+              Dulles-area site as good upwind sites with regard to Data Center Alley
+              ({DEQ_SOURCES.reportAug28.citation}). That is DEQ&apos;s characterisation of the
+              geometry of its own network, and it is carried here as DEQ&apos;s statement. It
+              does not establish that any particular site is downwind of any particular facility,
+              and nothing on this page draws that inference.
             </p>
             <p>
               Sensors are identified here by DEQ site identifier and locality rather than by
@@ -454,6 +473,7 @@ export default function DataCenterCorridorPage() {
                   <th scope="col" className="py-2 px-3 font-medium">DEQ</th>
                   <th scope="col" className="py-2 px-3 font-medium">GENARCH</th>
                   <th scope="col" className="py-2 px-3 text-right font-medium">n</th>
+                  <th scope="col" className="py-2 px-3 font-medium">Status</th>
                 </tr>
               </thead>
               <tbody>
@@ -491,6 +511,19 @@ export default function DataCenterCorridorPage() {
                     <td className="py-2 px-3 text-right font-mono text-cool-light">
                       {n0(c.genarch.n)}
                     </td>
+                    <td className="py-2 px-3 text-cool-mid">
+                      {c.nonComparable ? (
+                        <a href="#deq-noncomparable-note" className="hover:underline">
+                          Recorded
+                          <span className="sr-only">
+                            {" "}
+                            , not compared; see the note below the table
+                          </span>
+                        </a>
+                      ) : (
+                        "Checked by the build"
+                      )}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -527,24 +560,48 @@ export default function DataCenterCorridorPage() {
               measured against a target that moves.
             </p>
             <p>
-              Two later editions have since shipped, and the column stays on August 7 anyway. That
-              is the window the GENARCH column is computed over, and it is where the record
-              released under FOIA ends. Setting a coefficient refitted on a longer record beside a
-              fit that stops at August 7 would compare two spans rather than two calculations.
+              {Word(editions.length - 1)} later editions have since shipped, and the column stays
+              on August 7 anyway. That is the window the GENARCH column is computed over, and it
+              is where the regulatory record released under FOIA 26-4646 ends, on 2026-08-10.
+              Setting a coefficient refitted on a longer record beside a fit that stops at
+              August 7 would compare two spans rather than two calculations. Extending the
+              comparison to the {lastEdition.label} edition needs regulatory data that has been
+              requested and not yet released.
             </p>
             <p>
               The {collocation[0].unitLabel} collocation period closed on 2026-04-08, which fixes
               the two {collocation[0].unitLabel} regressions: no later week of data can enter
-              them, and they read the same in all three archived editions. The{" "}
-              {collocation[1].unitLabel} window is still open, so each edition refits those two on
-              more data than the last.
+              them, and they print identically in all {word(editions.length)} editions. The{" "}
+              {collocation[1].unitLabel} window is still open, so each edition refits those two
+              on a week more data than the last, and their coefficients move accordingly.
+            </p>
+            <p id="deq-noncomparable-note">
+              {Word(assertedFits.length)} of the {word(collocation.length)} comparisons are
+              checked by the build, against a tolerance of 0.05 on slope and intercept and 0.03
+              on R², and all {word(assertedFits.length)} agree. DEQ publishes these coefficients
+              to two significant figures, so the claim is that these fits round to DEQ&apos;s
+              values at DEQ&apos;s own precision. Agreement to three decimals is not something
+              this data can establish, and part of every difference in the table is that
+              rounding rather than a difference in the underlying fit.
             </p>
             <p>
-              All {word(collocation.length)} comparisons reproduce DEQ&apos;s coefficients to
-              within the tolerance the build enforces, which is 0.05 on slope and intercept and
-              0.03 on R². DEQ publishes these coefficients to two significant figures, so part of
-              every difference in the table is that rounding rather than a difference in the
-              underlying fit.
+              The {recordedFit.unitLabel} {recordedFit.pollutant} row is recorded rather than
+              checked. Its DEQ side is the {recordedFit.nonComparable.deqCutoff}, while the
+              GENARCH fit beside it stops at {recordedFit.nonComparable.genarchCutoff}. The fit
+              cannot be extended to meet it, because a collocation fit needs both sides of each
+              hourly pair and the regulatory record released under FOIA 26-4646 ends 2026-08-10.
+              Neither side can be moved, so no change here makes the comparison valid, and a
+              check that passed on it would not mean what the other{" "}
+              {word(assertedFits.length)} mean. Both figures stay in the table and the check
+              returns when the extended regulatory record arrives.
+            </p>
+            <p>
+              The rows do not carry equal weight. The two {collocation[0].unitLabel} rows
+              compare against a closed window whose published values cannot move, so they are
+              the same calculation on both sides. The {collocation[1].unitLabel} rows compare
+              against a window DEQ is still refitting, and the checked one lines up only because
+              the column above is pinned to the same August 7 span. Read as a count of matches
+              the {word(collocation.length)} would say more than they can support.
             </p>
             <p>
               The {ordinal(collocation.length)} took a round of correspondence to get there. The{" "}
@@ -620,18 +677,57 @@ export default function DataCenterCorridorPage() {
         {/* --------------------------------------------------- 6. Record length and p98 */}
         <section aria-labelledby="record-length-heading">
           <h2 id="record-length-heading" className="text-h2 text-surface-white mb-3">
-            Record length and the percentile comparison
+            What the 98th percentile points at
           </h2>
 
           <div className="max-w-3xl space-y-3 text-cool-light leading-relaxed">
             <p>
-              Table 4 of DEQ&apos;s August 7 report states that one sensor is the only one whose
-              98th percentile of daily PM2.5 averages sits above {PM25_24H_LEVEL} µg/m³. That
-              sensor, {shortest.key}, also has the shortest record in the network. It began
-              collecting on {COMMON_WINDOW_START} and has {shortest.fullDays} days, against{" "}
-              {longest.fullDays} at {longest.key}. Its entire record falls in high summer and
-              includes the smoke-transport weekend, which is {n1(shortest.smokeShare)} percent of
-              its record against {n1(longest.smokeShare)} percent of the longest one.
+              The name &ldquo;98th percentile&rdquo; is fixed, but the observation it is read
+              from is not. Under the linear-interpolation definition the index is (n − 1) × 0.98,
+              so the statistic moves through the distribution as the record grows. On{" "}
+              {shortest.fullDays} days it falls at the {rankLabel(shortest.fullPosition)},
+              effectively the second-highest daily value in the record. On {longest.fullDays}{" "}
+              days it falls at the {rankLabel(longest.fullPosition)}, roughly the fourth-highest,
+              drawn from a denser part of the distribution. Setting one beside the other compares
+              a near-maximum against a genuine upper-tail quantile.
+            </p>
+            <p>
+              How much that matters can be measured. Holding the data fixed and changing only the
+              interpolation convention moves the shortest record&apos;s 98th percentile by 13.27
+              µg/m³, against 0.35 to 2.33 µg/m³ for the longer records (sensor cutoff 2026-08-28,
+              Kunak export 2026-08-28,{" "}
+              <span className="font-mono text-xs">
+                outputs/repro/p98_common_window_2026-08-28.csv
+              </span>
+              ). A statistic that moves that far on a choice of convention is not measuring a
+              difference between sites.
+            </p>
+            <p>
+              The instability is not confined to the short record. At every site the 98th
+              percentile of daily PM2.5 falls inside a wide gap between the bulk of the
+              distribution and the July smoke days, and the two daily values it is interpolated
+              between are themselves smoke days. Moving the day boundary by one hour, which is
+              the difference between binning days on local standard time and on local clock time,
+              shifts the statistic by up to 2.12 µg/m³ while leaving the mean unchanged to within
+              0.05 (sensor cutoff 2026-08-27, Kunak export 2026-08-28,{" "}
+              <span className="font-mono text-xs">docs/PERCENTILE_METHOD.md</span>). At these
+              sample sizes the 98th percentile of daily PM2.5 is sensitive to defensible
+              methodological choices at every site, not only at the shortest-record one.
+            </p>
+            <p>
+              The series below illustrates the point rather than carrying it. Table 4 of
+              DEQ&apos;s {firstEdition.label} report named one sensor as the only one whose 98th
+              percentile of daily PM2.5 averages sat above {PM25_24H_LEVEL} µg/m³. That sensor,{" "}
+              {shortest.key}, had the shortest record in the network: it began collecting on{" "}
+              {COMMON_WINDOW_START} and had {shortest.fullDays} days at that cutoff against{" "}
+              {longest.fullDays} at {longest.key}, entirely in high summer, with{" "}
+              {n1(shortest.smokeShare)} percent of its record inside the smoke-transport window
+              of {SMOKE_WINDOW.start} to {SMOKE_WINDOW.end} against {n1(longest.smokeShare)}{" "}
+              percent of the longest one. The figure fell in each edition that followed, and on
+              the {lastEdition.label} report no site sits above {PM25_24H_LEVEL} µg/m³. This is a
+              methodological point about the statistic. It is not a correction of a standing DEQ
+              error: the falling figure is DEQ&apos;s own, published in DEQ&apos;s own
+              consecutive editions.
             </p>
           </div>
 
@@ -688,15 +784,17 @@ export default function DataCenterCorridorPage() {
 
           <div className="mt-3 max-w-3xl space-y-3 text-cool-light leading-relaxed">
             <p>
-              The sentence naming this sensor as the only one whose 98th percentile of daily
-              averages sits above {PM25_24H_LEVEL} µg/m³ is word for word the same in all{" "}
-              {word(editions.length)} editions. The figure that sentence describes has fallen in
-              each one: {n1(dailyP98.values[0])} µg/m³ on {firstEdition.label},{" "}
-              {n1(dailyP98.values[1])} on {editions[1].label}, {n1(dailyP98.values[2])} on{" "}
-              {lastEdition.label}. DEQ staff said they expected it to keep falling as the record
-              lengthens (DEQ staff, correspondence, 2026-08-16). All {word(editions.length)}{" "}
-              editions are archived under docs/deq-reports/, because DEQ&apos;s published page
-              carries only the current one.
+              The sentence naming this sensor as the only one above {PM25_24H_LEVEL} µg/m³ stood
+              word for word through the first {word(editions.length - 1)} editions while the
+              figure it described fell in every one:{" "}
+              {dailyP98.values.map((v, i) => `${n1(v)} on ${editions[i].short}`).join(", ")}.
+              The {lastEdition.label} edition drops that sentence and states instead that no
+              site&apos;s 98th percentile of daily averages sits above the {PM25_24H_LEVEL} µg/m³
+              level. DEQ staff said they expected the figure to keep falling as the record
+              lengthened (DEQ staff, correspondence, 2026-08-16). The first{" "}
+              {word(editions.length - 1)} editions are archived under docs/deq-reports/ and the{" "}
+              {lastEdition.short} edition under pipeline/sources/deq/, because DEQ&apos;s
+              published page carries only the current one.
             </p>
             <p>
               DEQ staff note that the wildfire smoke data heavily skews the 98th percentiles at
@@ -709,8 +807,10 @@ export default function DataCenterCorridorPage() {
               collecting, {COMMON_WINDOW_START} to {RECORD_END}, changes the ordering.{" "}
               {Word(aboveLevel.length)} of {word(percentiles.length)} sites sit above{" "}
               {PM25_24H_LEVEL} µg/m³ on matched windows, and {shortest.key} ranks{" "}
-              {ordinal(shortestRank)} rather than first. The apparent difference between sites is
-              a difference in record length.
+              {ordinal(shortestRank)} rather than first. The common window is not a clean control
+              on its own: it falls entirely in high summer and contains the smoke window, so it
+              removes the unequal-length difference and leaves the unequal-seasonality one in
+              place.
             </p>
           </div>
 

@@ -23,7 +23,7 @@ Both numbers regenerate from source on a clean checkout, and both fail loudly if
 
 ### The Data Center Alley page
 
-`site/src/app/community/data-center-alley/page.tsx` covers the six sensor locations that have exported records and one regulatory reference monitor, March to August 2026. It carries DEQ's limitation language verbatim at the top, the collocation comparison, hourly series with the July wildfire smoke window marked, a record-length percentile comparison, and an identifier crosswalk to DEQ's published site labels.
+`site/src/app/community/data-center-alley/page.tsx` covers the six sensor locations that have exported records and one regulatory reference monitor, March to August 2026. It carries DEQ's limitation language verbatim at the top, the collocation comparison, hourly series with the July wildfire smoke window marked, a percentile comparison showing how the statistic moves with record length, and an identifier crosswalk to DEQ's published site labels.
 
 ### The DEQ pipeline
 
@@ -81,9 +81,9 @@ Full per-source detail, including column lists and known gaps, is in `pipeline/s
 
 | Source | Retrieved | License | Coverage |
 |---|---|---|---|
-| DEQ Data Center Air Monitoring Project, Kunak Cloud dashboard export | 2026-08-10, public CSV export | Redistributable with credit to Virginia DEQ | 2026-03-03 to 2026-08-10, six sites, 17,147 site-hours |
+| DEQ Data Center Air Monitoring Project, Kunak Cloud dashboard export | 2026-08-28, public CSV export | Redistributable with credit to Virginia DEQ | 2026-03-03 to 2026-08-28, six sites, 19,748 site-hours |
 | Virginia FOIA 26-4646, regulatory monitor hourly | 2026-08-11, released in full | Public records, no redactions, no cost | 2026-03-03 to 2026-08-10, 11,592 rows, Ashburn PM2.5 and NO2, Aurora Hills CO |
-| DEQ weekly analysis PDFs | 2026-08-07 and 2026-08-14 | Virginia DEQ publication | Two editions, archived under `docs/deq-reports/` |
+| DEQ weekly analysis PDFs | 2026-08-07, 08-14, 08-21, 08-28 | Virginia DEQ publication | Four editions; the first three under `docs/deq-reports/`, the fourth under `pipeline/sources/deq/` |
 | US Census TIGERweb county boundaries | 2026-07-22 via `pipeline/fetch_geo.py` | Public domain | Loudoun (51107) and Fairfax (51059) polygons |
 
 ## Limitations
