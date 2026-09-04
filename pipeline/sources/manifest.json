@@ -516,6 +516,26 @@
       "data_last_timestamp_local": "2026-08-10 23:00",
       "rows_as_exported": 1307,
       "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+    },
+    {
+      "filename": "pipeline/sources/deq/deq_dcamp_weekly_2026-09-04.pdf",
+      "origin_url": "https://www.deq.virginia.gov/home/showpublisheddocument/38872",
+      "download_date": "2026-09-04",
+      "report_date": "2026-09-04",
+      "license": "Public record. Virginia DEQ confirmed redistributable with credit to Virginia DEQ.",
+      "attribution": "Virginia Department of Environmental Quality",
+      "format": "pdf",
+      "sha256": "2b4c53b3bd5692c7583600119cd1049b6659e70002d98340efbdf2b9a2c9e163",
+      "size_bytes": 3531724,
+      "pages": 25,
+      "tables_extracted": 30,
+      "text_normalization": "NFKC",
+      "description": "Virginia DEQ Data Center Air Monitoring Project weekly analysis report. Reference artifact for reproduction of published collocation regressions, daily-average QA, and daily PM2.5 98th-percentile values. Not a data source; hourly Kunak CSV exports are the data source.",
+      "expected_columns": null,
+      "derived_files": [
+        "pipeline/sources/deq/deq_dcamp_weekly_2026-09-04.txt",
+        "pipeline/sources/deq/deq_dcamp_weekly_2026-09-04_tables.json"
+      ]
     }
   ]
 }

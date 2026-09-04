@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 
 SRC = Path(sys.argv[1])
-START, END = "2026-03-03", "2026-08-28"
+START, END = "2026-09-04", "2026-08-28"
 DEST = Path("pipeline/sources/deq-raw")
 
 LOCS = {
@@ -13,6 +13,12 @@ LOCS = {
     "Farmwell Station MS": "farmwell-middle",
     "1757 Golf Club": "golf-course",
     "Sterling MS": "sterling-ms",
+
+    "Heritage Farm Museum": "heritage-farm",
+
+    "Newberry Condo Assoc": "newberry-condo",
+
+    "Steuart Weller ES": "steuart-weller",
 }
 
 
@@ -72,3 +78,5 @@ elif "--go" in sys.argv:
     print("refusing to copy with sites missing")
 else:
     print("\nDry run. Add --go to copy.")
+
+
