@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 
 SRC = Path(sys.argv[1])
-START, END = "2026-09-04", "2026-08-28"
+START, END = "2026-03-03", "2026-09-11"
 DEST = Path("pipeline/sources/deq-raw")
 
 LOCS = {
@@ -59,7 +59,7 @@ for p in sorted(SRC.glob("*.csv")):
     seen.add(slug)
     target = DEST / f"{slug}_multi_{START}_{END}.csv"
     plan.append((p, target))
-    flag = "" if "Aug 28, 2026" in newest else "   <-- newest is not Aug 28"
+    flag = "" if "Sep 11, 2026" in newest else "   <-- newest is not Sep 11"
     print(f"{loc:22} rows={n:6d}  {oldest}  ..  {newest}{flag}")
     print(f"    {p.name}  ->  {target.as_posix()}")
 
@@ -78,5 +78,6 @@ elif "--go" in sys.argv:
     print("refusing to copy with sites missing")
 else:
     print("\nDry run. Add --go to copy.")
+
 
 

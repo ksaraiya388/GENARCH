@@ -1,0 +1,1056 @@
+===== PAGE 1 =====
+Data Center Air Quality Analysis
+Virginia DEQ, Office of Air Quality Monitoring
+Loudoun County Study Area
+September 11, 2026
+Table of contents
+1 Introduction 2
+2 CO Hourly Concentrations: Loudoun County Sensor Data 5
+3 NO2 Hourly Concentrations: Loudoun County Sensor and Regulatory Monitor
+Data 9
+3.1 Collocation Statistics: Broad Run HS NO2 . . . . . . . . . . . . . . . . 12
+4 PM2.5 Hourly Concentrations: Loudoun County Sensor and Regulatory Mon-
+itor Data 15
+4.1 Collocation Statistics: Broad Run HS PM2.5 . . . . . . . . . . . . . . . 19
+5 PM2.5 24-hour (daily) Concentrations: Loudoun County Sensor and Regula-
+tory Monitor Data 22
+6 Wind Speed and Direction 25
+1
+
+===== PAGE 2 =====
+1 Introduction
+VirginiaDEQ’sOfficeofAirQualityMonitoring(AQM)iscurrentlyoperating6APEX/Kunak
+AIR Pro sensors in Loudoun County, north of Dulles International Airport in the vicinity of
+Sterling and Ashburn.
+Figure 1: Study area with the APEX/Kunak sensors highlighted in green. Dulles Airport is
+visible in the bottom (South) of the map.
+These sensors were placed to monitor ambient air quality in “Data Center Alley”, an area
+with a high density of data centers in Loudoun County. Five of these sensors were in-
+stalled on Wednesday, Feb 25, 2026 and transmitted data later that day.1 These were
+the sensors at Newberry Condo Association (Newberry Condo Assoc.), Broad Run High
+1Kunakstatesthatthereisastabilizationperiodafterinstallation,whichmaylastupto5days. Onlypost-
+stabilizationperioddataisanalyzedinthisreport.
+2
+
+===== PAGE 3 =====
+School(BroadRunHS),DullesAirport,theHeritageFarmMuseum,andSteuartWellerEl-
+ementarySchool(SteuartWellerES).Duetothestabilizationperiod,thisreportonlyuses
+data post-stabilization period, or from March 3, 2026 to the morning of June 18, 2026.
+An additional two APEX/Kunak sensors, which operated previously in Prince William
+County were moved to Loudoun County on April 8, 2026. The two new APEX/Kunak
+sensors were installed at the 1757 Golf Course and Farmwell Station Middle School
+(Farmwell Station MS). These two sites’ data began on April 8, 2026.
+On the morning of Thursday May 14, 2026, the APEX/Kunak 14 Sensor at Newberry
+Condo Assoc. was moved to Belfort Park Drive (Belfort Park Dr.). Therefore, the data
+collection for the Newberry Condo Assoc. site ended on May 14, 2026, and the data
+collection for Belfort Park Dr. began on May 14, 2026.
+OnWednesdayJune18,2026,Apexsensor6atSteuartWellerESwasmovedtoSterling
+MiddleSchool(SterlingMS).DatacollectionforSteuartWellerESendedonJune18,2026
+and data collection for Sterling MS began on June 18, 2026. Additionally, data collection
+for Heritage Farm Museum ended on June 18, 2026, after the sensor was removed for
+maintenance.
+Figure 2: Study area highlighted, with permitted (blue circles) data centers mapped along
+with the local VADEQ air monitoring site (yellow triangle, Broad Run HS) and
+APEX/Kunak sensor positions (black pentagons).
+The pollutants that are being measured are carbon monoxide (CO), nitrogen dioxide
+(NO ), and particulate matter less than 2.5 microns in size (PM2.5).
+2
+3
+
+===== PAGE 4 =====
+These sensors are capable of collecting pollutant concentration data and establishing pol-
+lutant concentration trends, but they are not regulatory instruments as specified in the
+Code of Federal Regulations (CFR). They cannot be used in determining attainment or
+non-attainment of the National Ambient Air Quality Standards (NAAQS). Only Federal
+Reference/Equivalent Method designated monitors can.
+TheAPEXBroadRunHSsensoriscollocated(locatedatthesamesite)asVirginiaDEQ’s
+Broad Run HS regulatory monitoring site. The Broad Run HS regulatory monitoring site
+and the APEX/Kunak sensors both measure NO and PM2.5, so a direct statistical
+2
+comparison between these two instruments can be performed for these two pollutants.
+For the APEX/Kunak CO sensors, the closest general ambient air regulatory monitoring
+site to the APEX/Kunak CO sensors is in Arlington County. Virginia DEQ’s Arlington
+regulatory monitoring site is located outside of the “Data Center Alley” study area. There
+is a closer CO regulatory monitoring site in Fairfax County, but it is focused on near-
+highway and near-road emissions and would not be representative for general ambient
+air quality.
+All dates & times presented below are in U.S. Eastern Standard Time (U.S. EST, UTC -
+5:00).
+4
+
+===== PAGE 5 =====
+2 CO Hourly Concentrations: Loudoun County Sensor
+Data
+ThecurrentNationalAmbientAirQualityStandards(NAAQS)forCOaresetattwolevels,
+corresponding to two different averaging times:
+1. No 8-hour rolling concentration average may exceed 9 parts per million (ppm) more
+than once per year.
+2. No 1-hour concentration average may exceed 35 parts per million (ppm) more than
+once per year.
+The APEX/Kunak Air sensors measure CO in parts per billion (ppb), where 1000 ppb = 1
+ppm. Foreaseofcomparison,wehaveconvertedsensorppbvaluesintoppmtocompare
+withourregulatorymonitorvalues(whichrecordinppm, theunitthattheCO NAAQSare
+assessed in). The closest comparable CO monitoring site to the APEX/Kunak sensors is
+Virginia DEQ’s Aurora Hills monitoring site, in Arlington County, Virginia. According to the
+EPA,thelargestsourcesofCOpollutionarevehiclesandothermachinerythatburnfossil
+fuels. As CO concentrations in Virginia have historically been well below the NAAQS lev-
+els (and very low in general), and because CO sources correlate with more traffic/higher
+populationdensities,theVirginiaDEQambientairregulatorymonitorforNorthernVirginia
+is in Arlington County. This is why the Loudoun County regulatory air monitoring site
+(Broad Run HS) does not have a regulatory CO monitor.
+TheAPEX/Kunaksensorsatthe1757GolfCourseandFarmwellStationMSwereinstalled
+onApril8,2026;therefore,thesesites’datacollectionbeganonApril8,2026. Thesensor
+atBelfortParkDr.wasinstalledonMay14,2026,anddatacollectionforthatsensorbegan
+on that day. Data collection for Newberry Condo Assoc. ended on May 14, 2026. Data
+collection for Steuart Weller ES and Heritage Farm Museum ended on June 18, 2026.
+Data collection for Sterling MS began on June 18, 2026.
+5
+
+===== PAGE 6 =====
+1757 Golf Club Arlington Regulatory Monitor
+2.6
+2.4
+2.2
+2.0
+1.8
+1.6
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+2026− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09− 2 1 0 5 26− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09−15
+Belfort Park Dr Broad Run HS
+2.6
+2.4
+2.2
+2.0
+1.8
+1.6
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+2026− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09− 2 1 0 5 26− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09−15
+Dulles Airport Farmwell Station MS
+2.6
+2.4
+2.2
+2.0
+1.8
+1.6
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+2026− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09− 2 1 0 5 26− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09−15
+Heritage Farm Museum Newberry Condo Assoc
+2.6
+2.4
+2.2
+2.0
+1.8
+1.6
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+2026− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09− 2 1 0 5 26− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09−15
+Sterling MS Steuart Weller ES
+2.6
+2.4
+2.2
+2.0
+1.8
+1.6
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+2026− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09− 2 1 0 5 26− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09−15
+Date
+)mpp
+ni(
+noitartnecnoC
+ylruoH
+CO Hourly Average Concentrations, Loudoun County
+Hourly average CO NAAQS limit is 35.0 ppm
+As the graph above illustrates, CO concentrations from the sensors in Loudoun County
+are in the same general range as CO concentrations at the Arlington County regulatory
+6
+
+===== PAGE 7 =====
+monitoring site, at around 0 - 1.1 ppm, with a few spikes up to 3.0 ppm.2 The concen-
+trations are well below the hourly NAAQS limit for CO (35.0 ppm). Because the hourly
+concentrations are consistently below 1 ppm, all 8-hour average concentrations are also
+wellbelowtheassociatedNAAQSlimitof9.0ppm.ThelargespikenearJuly17,2026,can
+be attributed to wildfire smoke from the wildfires occurring in Minnesota and Canada.
+2.6
+2.4
+2.2
+2.0
+1.8
+1.6
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+1757
+G olf C lub
+A
+rlington R egula
+B
+to
+e
+r
+l
+y
+fo
+M
+rt
+o
+P
+n
+a
+it
+r
+o
+k
+r
+D r
+B
+road R un H S
+D
+ulles A irport
+Farm
+w ell S tation
+H
+M
+e
+S
+ritage Farm M
+N
+us
+e
+e
+w
+u
+b
+m
+erry C ondo
+S
+A
+te
+s
+r
+s
+li
+o
+n
+c
+g M S
+S
+teuart W eller E
+S
+)mpp
+ni(
+noitartnecnoC
+ylruoH
+CO Sensors and Regulatory Monitor Hourly Concentration Distributions, Loudoun County
+Hourly average CO NAAQS limit is 35.0 ppm
+As the above violin plot (which plots a box plot over the statistical distribution of values
+across each site) illustrates, CO concentrations from the sensors in Loudoun County
+haverelativelysimilardistributionsandmedians, inthe0.1-0.2ppmrange. Afulltableof
+statistical values from each sensor and the regulatory monitor can be found below. The
+98thpercentilevaluesareextremelylowacrosstheregion,alllyingatorbelow0.6ppm.
+2Due to data quality and instrumentation issues, data between March 31, 2026, and April 7, 2026, were
+voidedattheArlingtonregulatoryCOmonitor.
+7
+
+===== PAGE 8 =====
+Table 1: CO Hourly Concentrations Statistical Summary, Loudoun County (in ppm)
+Site mean standard_deviation median percentile_98
+1757 Golf Club 0.1 0.1 0.1 0.4
+Arlington Regulatory Monitor 0.2 0.1 0.3 0.6
+Belfort Park Dr 0.1 0.1 0.1 0.4
+Broad Run HS 0.1 0.1 0.1 0.4
+Dulles Airport 0.1 0.1 0.1 0.4
+Farmwell Station MS 0.1 0.1 0.1 0.4
+Heritage Farm Museum 0.2 0.1 0.2 0.4
+Newberry Condo Assoc 0.2 0.1 0.2 0.5
+Sterling MS 0.1 0.1 0.1 0.4
+Steuart Weller ES 0.1 0.1 0.2 0.4
+8
+
+===== PAGE 9 =====
+3 NO2 Hourly Concentrations: Loudoun County Sensor
+and Regulatory Monitor Data
+The current National Ambient Air Quality Standards (NAAQS) for NO are set at two
+2
+levels, corresponding to two different averaging times:
+1. The 98th percentile of 1-hour daily maximum concentrations of NO may not ex-
+2
+ceed 100 parts per billion (ppb), when averaged over 3 years.
+2. The yearly average of 1-hour NO concentrations may not exceed 53 parts per
+2
+billion (ppb).
+The APEX/Kunak Air sensors measure NO in parts per billion (ppb); Virginia DEQ’s
+2
+regulatoryNO analyzersalsomeasureNO inppb. TheclosestNO regulatorymon-
+2 2 2
+itoring site is at Broad Run HS in Loudoun County, where a regulatory NO monitor and
+2
+an APEX/Kunak sensor (APEX Broad Run HS) are collocated.
+TheAPEX/Kunaksensorsatthe1757GolfCourseandFarmwellStationMSwereinstalled
+onApril8,2026;therefore,thesesites’datacollectionbeganonApril8,2026. Thesensor
+atBelfortParkDr.wasinstalledonMay14,2026,anddatacollectionforthatsensorbegan
+on that day. Data collection for Newberry Condo Assoc. ended on May 14, 2026. Data
+collection for Steuart Weller ES and Heritage Farm Museum ended on June 18, 2026.
+Data collection for Sterling MS began on June 18, 2026.
+9
+
+===== PAGE 10 =====
+1757 Golf Club Belfort Park Dr
+40
+35
+30
+25
+20
+15
+10
+5
+0
+2026− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09− 2 1 0 5 26− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09−15
+Broad Run HS Broad Run HS Regulatory Monitor
+40
+35
+30
+25
+20
+15
+10
+5
+0
+2026− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09− 2 1 0 5 26− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09−15
+Dulles Airport Farmwell Station MS
+40
+35
+30
+25
+20
+15
+10
+5
+0
+2026− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09− 2 1 0 5 26− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09−15
+Heritage Farm Museum Newberry Condo Assoc
+40
+35
+30
+25
+20
+15
+10
+5
+0
+2026− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09− 2 1 0 5 26− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09−15
+Sterling MS Steuart Weller ES
+40
+35
+30
+25
+20
+15
+10
+5
+0
+2026− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09− 2 1 0 5 26− 2 0 0 3 2 − 6 0 − 2 9 0 0 3 2 − 6 1 − 2 9 0 0 3 2 − 6 2 − 2 9 0 0 4 2 − 6 0 − 2 8 0 0 4 2 − 6 1 − 2 8 0 0 4 2 − 6 2 − 2 8 0 0 5 2 − 6 0 − 2 8 0 0 5 2 − 6 1 − 2 8 0 0 5 2 − 6 2 − 2 8 0 0 6 2 − 6 0 − 2 7 0 0 6 2 − 6 1 − 2 7 0 0 6 2 − 6 2 − 2 7 0 0 7 2 − 6 0 − 2 7 0 0 7 2 − 6 1 − 2 7 0 0 7 2 − 6 2 − 2 7 0 0 8 2 − 6 0 − 2 6 0 0 8 2 − 6 1 − 2 6 0 0 8 2 − 6 2 − 2 6 0 0 9 2 − 6 0 − 5 09−15
+Date
+)bpp
+ni(
+noitartnecnoC
+ylruoH
+NO2 Hourly Average Concentrations Loudoun County
+Hourly 98th−percentile NO2 NAAQS limit is 100 ppb
+Theabovetime-seriesgraphofshowsamoderateamountofagreementbetweensensors,
+with the highest NO values on average measured at the Dulles Airport NO site. Due
+2 2
+10
+
+===== PAGE 11 =====
+to data quality and instrumentation issues, data between May 8, 2026, and May 10, 2026,
+were voided at the Ashburn regulatory NO monitor. The full statistical analysis can be
+2
+seen in the violin plot and the statistical summary table below:
+40
+35
+30
+25
+20
+15
+10
+5
+0
+1757
+G olf C lub
+B
+elfort P ark D r
+B
+road R un H S
+B
+road R un H S R
+D
+e u g l u le la s t A or ir
+y
+p
+M
+ort
+Farm
+w ell S tation
+H
+M er S itage Farm M
+N
+u e s w e b u e m rry C ondo
+S
+t A e s rl s in o g c M S
+S
+teuart W eller E S
+onitor
+)bpp
+ni(
+noitartnecnoC
+ylruoH
+NO2 Distributions of Hourly Concentrations in Loudoun County
+Hourly 98th−percentile NO2 NAAQS limit is 100 ppb
+Table 2: NO2 Hourly Concentrations Statistical Summary, Loudoun County (in ppb)
+Site mean standard_deviation median percentile_98
+1757 Golf Club 3.9 4.1 3.0 15.0
+Belfort Park Dr 2.8 3.6 1.6 13.8
+Broad Run HS 3.9 3.8 3.3 13.0
+Broad Run HS Regulatory Monitor 3.4 3.2 2.4 13.4
+Dulles Airport 5.6 5.3 4.8 19.3
+Farmwell Station MS 4.0 3.7 3.5 12.8
+Heritage Farm Museum 2.5 3.1 1.3 10.8
+Newberry Condo Assoc 4.1 4.1 3.2 15.8
+Sterling MS 5.1 4.2 4.5 14.3
+Steuart Weller ES 3.0 3.2 2.0 11.4
+Mean values across all sites are below 10 ppb, with the highest at Dulles Airport and
+SterlingMS.Thehourly98thpercentilevaluesarelow(inthe10-20ppbrange),compared
+with the NAAQS Hourly 98th percentile limit of 100 ppb.
+11
+
+===== PAGE 12 =====
+3.1 Collocation Statistics: Broad Run HS NO2
+Because the Broad Run HS NO regulatory monitor and the APEX/Kunak sensor at
+2
+Broad Run HS are collocated, a deeper statistical analysis can be performed to compare
+the accuracy and correlation between the two analyzers. In order to get a sense of the
+general quality of the APEX/Kunak sensors, two sensors were rotated through to be col-
+located at Broad Run HS.
+1. From March 3, 2026 - April 8, 2026, the APEX 14 sensor was collocated at Broad
+Run HS.
+2. From April 8, 2026 - present, the APEX 5 sensor was collocated at Broad Run HS.
+The data from each sensor was separated out and is presented below. First, the time-
+series graphs are compared to get a general view of agreement. In an ideal, perfect
+scenario the sensor data and the regulatory monitor data would lie completely on top
+of each other since they are measuring the same pollutant at the same place and time.
+Becausenomeasurementsystemistrulyperfect,andastheAPEX/Kunaksensorrelieson
+anentirelydifferentNO measurementmethod, therearesomedifferencesbetweenthe
+2
+concentrations measured between the two analyzers, with the Broad Run HS regulatory
+monitor generally measuring higher concentrations compared to both sensors.
+25
+20
+15
+10
+5
+0
+2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026−
+03− 03− 03− 03− 03− 03− 03− 03− 03− 04− 04− 04−
+05 08 11 14 17 20 23 26 29 01 04 07
+Date
+)bpp
+ni(
+noitartnecnoC
+ylruoH
+NO2 Hourly Avg Concentrations at Collocated Broad Run HS Site, APEX 14
+Hourly 98th−percentile NO2 NAAQS limit is 100 ppb
+Broad Run HS Regulatory Monitor K−A3 APEX 14
+12
+
+===== PAGE 13 =====
+35
+30
+25
+20
+15
+10
+5
+0
+2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026−
+04− 04− 04− 05− 05− 05− 05− 05− 06− 06− 06− 06− 07− 07− 07− 07− 08− 08− 08− 08− 08− 09− 09−
+11 18 25 02 09 16 23 30 06 13 20 27 04 11 18 25 01 08 15 22 29 05 12
+Date
+)bpp
+ni(
+noitartnecnoC
+ylruoH
+NO2 Hourly Avg Concentrations at Collocated Broad Run HS Site, APEX 5
+Hourly 98th−percentile NO2 NAAQS limit is 100 ppb
+Broad Run HS Regulatory Monitor K−A3 APEX 5
+A scatter plot can also be used to compare concentrations measured by the APEX sen-
+sors with those from the Broad Run HS regulatory NO monitor. In this plot, the APEX
+2
+sensor readings are placed on the x axis and the regulatory monitor readings on the y
+axis. This allows for a visual assessment of how closely the two instruments agree. If the
+measurements matched perfectly, all points would fall along a single straight line.
+ThescatterplotsbelowshowthattheAPEX5sensordoesnotaligncloselywiththeBroad
+Run HS regulatory (T500u) monitor. This is reflected in the relatively low
+R2
+value, which
+indicates a weaker correlation and a poorer fit of the linear trend line. The best￿fit line is
+shown in blue. In comparison, the APEX 14 sensor displays a stronger relationship with
+theregulatorymonitor,
+asindicatedbyitshigherR2
+value. APEX5hasnowhadalonger
+time period correlated with the Broad Run HS regulatory monitor compared to APEX 14.
+Despite this time difference, APEX 5’s
+R2
+value remains low. This could be attributed to
+difficulty in sensor accuracy when reading lower NO concentrations.
+2
+13
+
+===== PAGE 14 =====
+y = 2.2+1.1 x R 2 = 0.49
+20
+10
+0
+0 5 10 15
+APEX 14 NO2 Concentration (ppb)
+)bpp(
+noitartnecnoC
+2ON
+yrotalugeR
+Broad Run HS: NO2 APEX 14 Sensor vs Regulatory Monitor
+30
+y = 1.7+0.32 x R 2 = 0.22
+20
+10
+0
+0 10 20 30
+APEX 5 NO2 Concentration (ppb)
+)bpp(
+noitartnecnoC
+2ON
+yrotalugeR
+Broad Run HS: NO2 APEX 5 Sensor vs Regulatory Monitor
+14
+
+===== PAGE 15 =====
+4 PM2.5 Hourly Concentrations: Loudoun County Sensor
+and Regulatory Monitor Data
+The current National Ambient Air Quality Standards (NAAQS) for PM2.5 are set at two
+levels, corresponding to two different averaging times:
+1. The yearly mean of 24-hr (daily) average PM2.5 concentrations may not exceed
+9.0 micrograms per cubic meter
+(μg/m3
+), when averaged over 3 years.
+2. The98thpercentileof24-hr(daily)averagePM2.5concentrationsmaynotexceed
+35.0 micrograms per cubic meter
+(μg/m3
+), when averaged over 3 years.
+The APEX/Kunak Air sensors and Virginia DEQ’s regulatory PM2.5 monitors both mea-
+sure PM2.5 in micrograms per cubic meter (μg/m3 ). The closest PM2.5 regulatory
+monitoring site is at Broad Run HS in Loudoun County, which has a collocated regulatory
+PM2.5 monitor and an APEX/Kunak sensor.3
+TheAPEX/Kunaksensorsatthe1757GolfCourseandFarmwellStationMSwereinstalled
+onApril8,2026;therefore,thesesites’datacollectionbeganonApril8,2026. Thesensor
+atBelfortParkDr.wasinstalledonMay14,2026,anddatacollectionforthatsensorbegan
+on that day. Data collection for Newberry Condo Assoc. ended on May 14, 2026. Data
+collection for Steuart Weller ES and Heritage Farm Museum ended on June 18, 2026.
+Data collection for Sterling MS began on June 18, 2026.
+3Due to high humidity and data quality issues with the Kunak/APEX sensors, the first week of PM2.5
+sensorcollecteddata(March3,2026-March8,2026)wasvoidedandisnotincludedinthisanalysis.
+15
+
+===== PAGE 16 =====
+1757 Golf Club Belfort Park Dr
+300
+280
+260
+240
+220
+200
+180
+160
+140
+120
+100
+80
+60
+40(35.0 μg/m^3) (35.0 μg/m^3)
+20
+0
+2026− 2 0 0 3 2 − 6 1 − 2 5 0 0 3 2 − 6 2 − 2 5 0 0 4 2 − 6 0 − 2 4 0 0 4 2 − 6 1 − 2 4 0 0 4 2 − 6 2 − 2 4 0 0 5 2 − 6 0 − 2 4 0 0 5 2 − 6 1 − 2 4 0 0 5 2 − 6 2 − 2 4 0 0 6 2 − 6 0 − 2 3 0 0 6 2 − 6 1 − 2 3 0 0 6 2 − 6 2 − 2 3 0 0 7 2 − 6 0 − 2 3 0 0 7 2 − 6 1 − 2 3 0 0 7 2 − 6 2 − 2 3 0 0 8 2 − 6 0 − 2 2 0 0 8 2 − 6 1 − 2 2 0 0 8 2 − 6 2 − 2 2 0 0 9 2 − 6 0 − 1 09−1 2 1 026− 2 0 0 3 2 − 6 1 − 2 5 0 0 3 2 − 6 2 − 2 5 0 0 4 2 − 6 0 − 2 4 0 0 4 2 − 6 1 − 2 4 0 0 4 2 − 6 2 − 2 4 0 0 5 2 − 6 0 − 2 4 0 0 5 2 − 6 1 − 2 4 0 0 5 2 − 6 2 − 2 4 0 0 6 2 − 6 0 − 2 3 0 0 6 2 − 6 1 − 2 3 0 0 6 2 − 6 2 − 2 3 0 0 7 2 − 6 0 − 2 3 0 0 7 2 − 6 1 − 2 3 0 0 7 2 − 6 2 − 2 3 0 0 8 2 − 6 0 − 2 2 0 0 8 2 − 6 1 − 2 2 0 0 8 2 − 6 2 − 2 2 0 0 9 2 − 6 0 − 1 09−11
+Broad Run HS Broad Run HS Regulatory Monitor
+300
+280
+260
+240
+220
+200
+180
+160
+140
+120
+100
+80
+60
+40(35.0 μg/m^3) (35.0 μg/m^3)
+20
+0
+2026− 2 0 0 3 2 − 6 1 − 2 5 0 0 3 2 − 6 2 − 2 5 0 0 4 2 − 6 0 − 2 4 0 0 4 2 − 6 1 − 2 4 0 0 4 2 − 6 2 − 2 4 0 0 5 2 − 6 0 − 2 4 0 0 5 2 − 6 1 − 2 4 0 0 5 2 − 6 2 − 2 4 0 0 6 2 − 6 0 − 2 3 0 0 6 2 − 6 1 − 2 3 0 0 6 2 − 6 2 − 2 3 0 0 7 2 − 6 0 − 2 3 0 0 7 2 − 6 1 − 2 3 0 0 7 2 − 6 2 − 2 3 0 0 8 2 − 6 0 − 2 2 0 0 8 2 − 6 1 − 2 2 0 0 8 2 − 6 2 − 2 2 0 0 9 2 − 6 0 − 1 09−1 2 1 026− 2 0 0 3 2 − 6 1 − 2 5 0 0 3 2 − 6 2 − 2 5 0 0 4 2 − 6 0 − 2 4 0 0 4 2 − 6 1 − 2 4 0 0 4 2 − 6 2 − 2 4 0 0 5 2 − 6 0 − 2 4 0 0 5 2 − 6 1 − 2 4 0 0 5 2 − 6 2 − 2 4 0 0 6 2 − 6 0 − 2 3 0 0 6 2 − 6 1 − 2 3 0 0 6 2 − 6 2 − 2 3 0 0 7 2 − 6 0 − 2 3 0 0 7 2 − 6 1 − 2 3 0 0 7 2 − 6 2 − 2 3 0 0 8 2 − 6 0 − 2 2 0 0 8 2 − 6 1 − 2 2 0 0 8 2 − 6 2 − 2 2 0 0 9 2 − 6 0 − 1 09−11
+Dulles Airport Farmwell Station MS
+300 280
+260 240
+220
+200
+180
+160
+140
+120
+100
+80
+60
+40(35.0 μg/m^3) (35.0 μg/m^3)
+20
+0
+2026− 2 0 0 3 2 − 6 1 − 2 5 0 0 3 2 − 6 2 − 2 5 0 0 4 2 − 6 0 − 2 4 0 0 4 2 − 6 1 − 2 4 0 0 4 2 − 6 2 − 2 4 0 0 5 2 − 6 0 − 2 4 0 0 5 2 − 6 1 − 2 4 0 0 5 2 − 6 2 − 2 4 0 0 6 2 − 6 0 − 2 3 0 0 6 2 − 6 1 − 2 3 0 0 6 2 − 6 2 − 2 3 0 0 7 2 − 6 0 − 2 3 0 0 7 2 − 6 1 − 2 3 0 0 7 2 − 6 2 − 2 3 0 0 8 2 − 6 0 − 2 2 0 0 8 2 − 6 1 − 2 2 0 0 8 2 − 6 2 − 2 2 0 0 9 2 − 6 0 − 1 09−1 2 1 026− 2 0 0 3 2 − 6 1 − 2 5 0 0 3 2 − 6 2 − 2 5 0 0 4 2 − 6 0 − 2 4 0 0 4 2 − 6 1 − 2 4 0 0 4 2 − 6 2 − 2 4 0 0 5 2 − 6 0 − 2 4 0 0 5 2 − 6 1 − 2 4 0 0 5 2 − 6 2 − 2 4 0 0 6 2 − 6 0 − 2 3 0 0 6 2 − 6 1 − 2 3 0 0 6 2 − 6 2 − 2 3 0 0 7 2 − 6 0 − 2 3 0 0 7 2 − 6 1 − 2 3 0 0 7 2 − 6 2 − 2 3 0 0 8 2 − 6 0 − 2 2 0 0 8 2 − 6 1 − 2 2 0 0 8 2 − 6 2 − 2 2 0 0 9 2 − 6 0 − 1 09−11
+Heritage Farm Museum Newberry Condo Assoc
+300
+280
+260
+240
+220
+200
+180
+160
+140
+120
+100
+80
+60
+40(35.0 μg/m^3) (35.0 μg/m^3)
+20
+0
+2026− 2 0 0 3 2 − 6 1 − 2 5 0 0 3 2 − 6 2 − 2 5 0 0 4 2 − 6 0 − 2 4 0 0 4 2 − 6 1 − 2 4 0 0 4 2 − 6 2 − 2 4 0 0 5 2 − 6 0 − 2 4 0 0 5 2 − 6 1 − 2 4 0 0 5 2 − 6 2 − 2 4 0 0 6 2 − 6 0 − 2 3 0 0 6 2 − 6 1 − 2 3 0 0 6 2 − 6 2 − 2 3 0 0 7 2 − 6 0 − 2 3 0 0 7 2 − 6 1 − 2 3 0 0 7 2 − 6 2 − 2 3 0 0 8 2 − 6 0 − 2 2 0 0 8 2 − 6 1 − 2 2 0 0 8 2 − 6 2 − 2 2 0 0 9 2 − 6 0 − 1 09−1 2 1 026− 2 0 0 3 2 − 6 1 − 2 5 0 0 3 2 − 6 2 − 2 5 0 0 4 2 − 6 0 − 2 4 0 0 4 2 − 6 1 − 2 4 0 0 4 2 − 6 2 − 2 4 0 0 5 2 − 6 0 − 2 4 0 0 5 2 − 6 1 − 2 4 0 0 5 2 − 6 2 − 2 4 0 0 6 2 − 6 0 − 2 3 0 0 6 2 − 6 1 − 2 3 0 0 6 2 − 6 2 − 2 3 0 0 7 2 − 6 0 − 2 3 0 0 7 2 − 6 1 − 2 3 0 0 7 2 − 6 2 − 2 3 0 0 8 2 − 6 0 − 2 2 0 0 8 2 − 6 1 − 2 2 0 0 8 2 − 6 2 − 2 2 0 0 9 2 − 6 0 − 1 09−11
+Sterling MS Steuart Weller ES
+300
+280
+260
+240
+220
+200
+180
+160
+140
+120
+100
+80
+60
+40(35.0 μg/m^3) (35.0 μg/m^3)
+20
+0
+2026− 2 0 0 3 2 − 6 1 − 2 5 0 0 3 2 − 6 2 − 2 5 0 0 4 2 − 6 0 − 2 4 0 0 4 2 − 6 1 − 2 4 0 0 4 2 − 6 2 − 2 4 0 0 5 2 − 6 0 − 2 4 0 0 5 2 − 6 1 − 2 4 0 0 5 2 − 6 2 − 2 4 0 0 6 2 − 6 0 − 2 3 0 0 6 2 − 6 1 − 2 3 0 0 6 2 − 6 2 − 2 3 0 0 7 2 − 6 0 − 2 3 0 0 7 2 − 6 1 − 2 3 0 0 7 2 − 6 2 − 2 3 0 0 8 2 − 6 0 − 2 2 0 0 8 2 − 6 1 − 2 2 0 0 8 2 − 6 2 − 2 2 0 0 9 2 − 6 0 − 1 09−1 2 1 026− 2 0 0 3 2 − 6 1 − 2 5 0 0 3 2 − 6 2 − 2 5 0 0 4 2 − 6 0 − 2 4 0 0 4 2 − 6 1 − 2 4 0 0 4 2 − 6 2 − 2 4 0 0 5 2 − 6 0 − 2 4 0 0 5 2 − 6 1 − 2 4 0 0 5 2 − 6 2 − 2 4 0 0 6 2 − 6 0 − 2 3 0 0 6 2 − 6 1 − 2 3 0 0 6 2 − 6 2 − 2 3 0 0 7 2 − 6 0 − 2 3 0 0 7 2 − 6 1 − 2 3 0 0 7 2 − 6 2 − 2 3 0 0 8 2 − 6 0 − 2 2 0 0 8 2 − 6 1 − 2 2 0 0 8 2 − 6 2 − 2 2 0 0 9 2 − 6 0 − 1 09−11
+Date
+3m
+gμ
+ni
+noitartnecnoC
+ylruoH
+PM2.5 Hourly Average Concentrations in Loudoun County
+24−hr Avg 98th−percentile PM2.5 NAAQS limit is 35.0 μg m3
+16
+
+===== PAGE 17 =====
+Hourly concentrations greater than 35.0
+μg/m3
+do not represent exceedances of
+thePM2.5NAAQS,asNAAQScomplianceisdeterminedwiththe98thpercentiles
+of daily (24-hr) PM2.5 averages.
+Besides some localized and short-term spikes, the PM2.5 data agrees very well be-
+tween all the sensors and the Broad Run HS regulatory monitor. Due to data quality and
+instrumentationissues, databetweenMay7, 2026, andMay10, 2026, werevoidedatthe
+AshburnregulatoryPM2.5monitor. AdditionallydataattheAshburnregulatoryPM2.5
+monitor between June 16, 2026, and July 14, 2026, were voided due to a failed data qual-
+ityanalysistestandinstrumentationissues. PM2.5datafromtheHeritageFarmsensor
+ended May 30, 2026, due to air flow failure in the particle sensor. PM2.5 levels were
+elevated surrounding the weekend of July 4, 2026. This is typical as fireworks greatly
+influence PM2.5 levels. There was a large spike through the weekend of July 17, 2026
+due to the Minnesotan and Canadian wildfires. Further statistical analysis can be seen
+below in the violin chart and the summary statistics table:
+280
+260
+240
+220
+200
+180
+160
+140
+120
+100
+80
+60
+40 (35.0 μg/m^3)
+20
+0
+1757
+G olf C lub
+B
+elfort P ark D r
+B
+road R un H S
+B
+road R un H S R
+D
+e u g ll u e l s a t A o i r r y p o
+M
+rt
+Farm
+w ell S tation
+H
+e M r S itage Farm M
+N
+u e s w e b u e m rry C ond
+S
+o t A er s l s in o g c M S
+S
+teuart W eller E S
+onitor
+3m
+gμ
+ni
+noitartnecnoC
+ylruoH
+PM2.5 Distributions of Hourly Concentrations in Loudoun County
+24−hr Avg 98th−percentile PM2.5 NAAQS limit is 35.0 μg m3
+17
+
+===== PAGE 18 =====
+Table 3: PM2.5 Hourly Concentrations Statistical Summary
+Site mean standard_deviation median percentile_98
+1757 Golf Club 7.5 9.8 5.2 26.8
+Belfort Park Dr 9.1 10.8 6.5 32.4
+Broad Run HS 8.3 8.8 6.3 27.5
+Broad Run HS Regulatory Monitor 8.2 15.9 5.9 22.6
+Dulles Airport 5.8 7.6 4.0 20.1
+Farmwell Station MS 8.1 10.9 5.6 26.7
+Heritage Farm Museum 4.2 3.4 3.4 15.6
+Newberry Condo Assoc 5.7 4.3 4.6 18.1
+Sterling MS 9.8 12.2 7.3 47.9
+Steuart Weller ES 4.5 3.2 3.7 13.5
+The mean and median PM2.5 concentrations for each site are all below 11.0 μg/m3 .
+The Sterling MS sensor measured the highest mean concentration out of the group, fol-
+lowed by the Belfort sensor. 98th percentile values are elevated due to the extreme
+PM2.5 values recorded during the Minnesotan and Canadian wildfires on the weekend
+of July 17, 2026. Although some Sterling’s 98th percentile values appears to exceed the
+NAAQS 24-hr (daily) average PM2.5 concentration of 35.0 micrograms per cubic meter
+(μg/m3
+), itdoesnotastheNAAQSstandardisbasedonadailyaverageacross3years,
+not hourly averages.
+18
+
+===== PAGE 19 =====
+4.1 Collocation Statistics: Broad Run HS PM2.5
+As with the NO data, the APEX 14 sensor was collocated with the Broad Run HS
+2
+PM2.5 regulatory monitor for a period of time before being swapped with the APEX
+5 sensor - which is currently collocated with the Broad Run HS PM2.5 regulatory moni-
+tor.
+The time-periods of collocation were the same for PM2.5 as they were for NO :
+2
+1. From March 3, 2026 - April 8, 2026, the APEX 14 sensor was collocated at Broad
+Run HS.
+2. From April 8, 2026 - present, the APEX 5 sensor was collocated at Broad Run HS.
+Again, we can compare the time-series to get a general view of agreement. In the graphs
+below, the readings from the APEX sensors and the regulatory PM2.5 monitor were
+overlaid on each other. As we can see in the graphs, the sensor data and the regulatory
+monitor are close, with the regulatory monitor reading slightly higher except for a few
+spikes in the sensor data.
+25
+20
+15
+10
+5
+0
+2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026−
+03− 03− 03− 03− 03− 03− 03− 03− 03− 03− 03− 04− 04− 04− 04−
+10 12 14 16 18 20 22 24 26 28 30 01 03 05 07
+Date
+3m
+gμ
+ni
+noitartnecnoC
+ylruoH
+PM2.5 Hourly Avg Concentrations at Collocated Broad Run HS Site, APEX 14
+Broad Run HS Regulatory Monitor K−A3 APEX 14
+19
+
+===== PAGE 20 =====
+280
+260
+240
+220
+200
+180
+160
+140
+120
+100
+80
+60
+40
+20
+0
+2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026−
+04− 04− 04− 04− 04− 05− 05− 05− 05− 05− 05− 06− 06− 06− 06− 06− 06− 07− 07− 07− 07− 07− 07− 08− 08− 08− 08− 08− 08− 09− 09− 09−
+0914192429040914192429030813182328030813182328020712172227010611
+Date
+3m
+gμ
+ni
+noitartnecnoC
+ylruoH
+PM2.5 Hourly Avg Concentrations at Collocated Broad Run HS Site, APEX 5
+Broad Run HS Regulatory Monitor K−A3 APEX 5
+As with the NO data, scatter plots were created for the APEX 5 and APEX 14 sensors.
+2
+Both scatter plots show that data from the APEX PM2.5 sensors do not perfectly match
+the data from the Broad Run HS regulatory (T640x) monitor, although the PM2.5 data
+from the sensors are more accurate compared to the NO sensor data.
+2
+Notably, the
+R2
+values for the PM2.5 data are much higher for both collocated
+APEX/Kunak sensors, indicating stronger correlations with the PM2.5 data between
+the APEX/Kunak sensors and the DEQ Broad Run HS regulatory monitor. At higher
+concentration values for PM2.5, differences between the sensor and regulatory monitor
+widen, as reflected in the scatter plots below. The recent wildfire impacted data from July
+17, 2026, skew the linear relationship of APEX 5 to the regulatory monitor.
+20
+
+===== PAGE 21 =====
+y = 1.3+0.83 x R 2 = 0.73
+20
+10
+0
+0 10 20
+3
+APEX 14 Sensor PM2.5 Concentration in μg m
+3
+m
+gμ
+ni
+noitartnecnoC
+5.2MP
+)x046T(
+yrotalugeR
+APEX 14 Sensor vs Regulatory Monitor PM2.5 Concentration
+200 y = - 5.1+1.6 x R 2 = 0.81
+100
+0
+0 25 50 75 100 125
+3
+APEX 5 Sensor PM2.5 Concentration in μg m
+3
+m
+gμ
+ni
+noitartnecnoC
+5.2MP
+)x046T(
+yrotalugeR
+APEX 5 Sensor vs Regulatory Monitor PM2.5 Concentration
+21
+
+===== PAGE 22 =====
+5 PM2.5 24-hour (daily) Concentrations: Loudoun County
+Sensor and Regulatory Monitor Data
+As the PM2.5 NAAQS are given in terms of the 24-hour (daily) concentrations, the daily
+24-hr average data is presented below, in a time-series and a distribution (violin plot) for-
+mat.
+The current National Ambient Air Quality Standards (NAAQS) for PM2.5 are set at two
+levels, corresponding to two different averaging times:
+1. The yearly mean of 24-hr (daily) average PM2.5 concentrations may not exceed
+9.0 micrograms per cubic meter
+(μg/m3
+), when averaged over 3 years.
+2. The98thpercentileof24-hr(daily)averagePM2.5concentrationsmaynotexceed
+35.0 micrograms per cubic meter
+(μg/m3
+), when averaged over 3 years.
+At least 18 out of 24 hours are required to make a valid 24-hour (daily) PM2.5 average.
+SincethisreportwasproducedthemorningofSeptember11,2026,dailyPM2.5average
+data only goes until September 10, 2026.
+TheAPEX/Kunaksensorsatthe1757GolfCourseandFarmwellStationMSwereinstalled
+onApril8,2026;therefore,thesesites’datacollectionbeganonApril8,2026. Thesensor
+atBelfortParkDr.wasinstalledonMay14,2026,anddatacollectionforthatsensorbegan
+on that day. Data collection for Newberry Condo Assoc. ended on May 14, 2026. Data
+collection for Steuart Weller ES and Heritage Farm Museum ended on June 18, 2026.
+Data collection for Sterling MS began on June 18, 2026.
+22
+
+===== PAGE 23 =====
+1757 Golf Club Belfort Park Dr
+111111111 012345678 123456789000000000
+0000000000
+(35.0 μg/m^3) (35.0 μg/m^3)
+2026− 2 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 2 4 0 0 9 2 − 6 1 − 2 4 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 4 09−14
+Broad Run HS Broad Run HS Regulatory Monitor
+111111111 012345678 123456789000000000
+0000000000
+(35.0 μg/m^3) (35.0 μg/m^3)
+2026− 2 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 2 4 0 0 9 2 − 6 1 − 2 4 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 4 09−14
+Dulles Airport Farmwell Station MS
+111111111 012345678 123456789000000000
+0000000000
+(35.0 μg/m^3) (35.0 μg/m^3)
+2026− 2 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 2 4 0 0 9 2 − 6 1 − 2 4 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 4 09−14
+Heritage Farm Museum Newberry Condo Assoc
+111111111 012345678 123456789000000000
+0000000000
+(35.0 μg/m^3) (35.0 μg/m^3)
+2026− 2 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 2 4 0 0 9 2 − 6 1 − 2 4 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 4 09−14
+Sterling MS Steuart Weller ES
+111111111 012345678 123456789000000000
+0000000000
+(35.0 μg/m^3) (35.0 μg/m^3)
+2026− 2 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 2 4 0 0 9 2 − 6 1 − 2 4 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 4 09−14
+Date
+3m
+gμ
+ni
+noitartnecnoC
+)yliaD(
+rh−42
+PM2.5 24−hr (Daily) Average Concentrations in Loudoun County
+24−hr Avg 98th−percentile PM2.5 NAAQS limit is 35.0 μg m3
+Daily concentrations across all sensor sites and the Broad Run HS Regulatory monitor lie
+below the 35.0 μg/m3 limit for PM2.5, with the exception of the wildfire impacted data
+near the weekend of July 17, 2026.
+The violin plot below shows the distributions and median of all sensor data, as well as the
+23
+
+===== PAGE 24 =====
+Broad Run HS regulatory monitor data. The full statistical analysis for the 24-hour (Daily)
+PM2.5 concentrations are presented in a table below the violin plot.
+170
+160
+150
+140
+130
+120
+110
+100
+90
+80
+70
+60
+50
+40
+(35.0 μg/m^3) 30
+20
+10
+0
+1757 G olf Club Belfort Park Dr Broad Run HS Broad Run HS
+Regul
+D
+at
+u
+o
+ll
+r
+e
+y
+s
+M
+Airport Farm well Station
+M
+S
+Heritage Farm
+M
+useu
+N
+m
+ewberry Condo
+Ass
+S
+o
+t
+c
+erling M S Steuart W eller
+ES
+onitor
+3m
+gμ
+ni
+nsoitartnecnoC
+)yliaD(
+rh−42
+PM2.5 Distributions of 24−hr (Daily) Concentrations in Loudoun County
+24−hr Avg 98th−percentile PM2.5 NAAQS limit is 35.0 μg m3
+Table 4: PM2.5 24-Hour (Daily) Concentrations Statistical Summary
+Site mean standard_deviation median percentile_98
+1757 Golf Club 7.4 8.9 5.4 23.1
+Belfort Park Dr 9.1 9.8 7.0 25.1
+Broad Run HS 8.3 8.0 6.8 24.4
+Broad Run HS Regulatory Monitor 8.1 14.6 6.2 22.1
+Dulles Airport 5.8 6.8 4.3 17.5
+Farmwell Station MS 8.1 9.9 6.0 23.8
+Heritage Farm Museum 4.2 2.3 3.5 9.7
+Newberry Condo Assoc 5.7 3.1 4.9 14.5
+Sterling MS 9.8 11.1 7.9 29.4
+Steuart Weller ES 4.6 2.4 3.9 10.2
+As the above table illustrates, no site’s 98th percentile concentration of the daily PM2.5
+averages is above the 24-hr 98th percentile PM2.5 NAAQS limit of 35.0 μg/m3 . The
+Sterling MS sensor and Belfort sensor are above the 24-hr (daily) average PM2.5
+NAAQS limit of 9.0
+μg/m3
+. Keep in mind that the NAAQS standards are based on 3
+year averages, and so it cannot be said that these sensors are violating the NAAQS
+standards.
+24
+
+===== PAGE 25 =====
+6 Wind Speed and Direction
+Below is a wind rose from Dulles International Airport, directly South/Southwest of AQM’s
+study area.
+Figure 3: Wind Rose from Dulles Airport.
+Wind speeds and directions during the study period show most winds came from either
+the South or Northwest direction. This suggests that AQM’s Broad Run HS and Dulles
+sites are good upwind sites with regard to Loudoun County’s “Data Center Alley”.
+25
