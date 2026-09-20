@@ -1000,6 +1000,16 @@ export default function DataCenterCorridorPage() {
                 convention before any comparison, per DEQ&apos;s instruction.
               </li>
               <li>
+                One site&apos;s particle sensor failed on 2026-05-30 while its other instruments
+                continued until the unit was removed. Its PM2.5 readings after that date are
+                treated as missing; its NO2 and VOC readings over the same period are retained.
+              </li>
+              <li>
+                Sensors are moved between locations. Readings that arrive at a location in the
+                hours before its recorded occupancy begins are excluded rather than assigned to
+                either location, so no reading is attributed to the wrong site.
+              </li>
+              <li>
                 Meteorological data appears on DEQ&apos;s dashboard but is not available through
                 the historical export. No wind-direction analysis is performed here.
               </li>

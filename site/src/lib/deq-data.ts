@@ -220,6 +220,7 @@ function assertRegulatoryValidity(rows: Row[]): void {
  */
 const KNOWN_SENSOR_EXCLUSIONS = new Set([
   "", "exact_zero_floor", "kunak_pm25_void_window", "pre_occupancy_transit",
+  "pm25_collection_ended",
 ]);
 
 function assertSensorExclusions(rows: Row[]): void {

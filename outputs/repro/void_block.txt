@@ -1,0 +1,30 @@
+﻿                    At the regulatory monitor the mean over the full record is{" "}
+                    {n2(s.withSmoke.mean)} Âµg/mÂ³ across {n0(s.withSmoke.n)} valid hours, and{" "}
+                    {n2(s.withoutSmoke.mean)} Âµg/mÂ³ across {n0(s.withoutSmoke.n)} hours with the
+                    smoke window removed. The highest single hour in the whole record,{" "}
+                    {n1(s.withSmoke.max)} Âµg/mÂ³, falls inside that window; outside it the highest
+                    hour is {n1(s.withoutSmoke.max)} Âµg/mÂ³.
+                  </span>
+                ))}
+            </p>
+            <p>
+              Four separate periods are voided in the source data, and the chart shows each as a
+              gap. DEQ&apos;s August 7 report records regulatory PM2.5 voided 2026-05-07 to 05-10
+              and 2026-06-16 to 07-14 for failed data quality analysis and instrumentation
+              issues, regulatory NO2 voided 2026-05-07 to 05-10, sensor PM2.5 voided 2026-03-03
+              to 03-08 at every site for high humidity and sensor data quality, and PM2.5
+              collection at one retired site ending 2026-05-30 after an air flow failure in the
+              particle sensor. In the released record the fully void days are narrower than the
+              stated windows, 05-08 to 05-09 and 06-17 to 07-13, because the days at each
+              boundary are partly valid.
+            </p>
+          </div>
+        </section>
+
+        {/* ------------------------------------------------------------- 5. Collocation */}
+        <section aria-labelledby="collocation-heading">
+          <h2 id="collocation-heading" className="text-h2 text-surface-white mb-3">
+            Sensor against regulatory monitor at the collocated site
+          </h2>
+
+          <div className="max-w-3xl space-y-3 text-cool-light leading-relaxed">
