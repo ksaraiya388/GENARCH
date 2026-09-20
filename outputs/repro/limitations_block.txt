@@ -1,0 +1,65 @@
+﻿              The ratio between the highest and lowest site reading in a given hour is not a
+              usable discriminator here. It fails below roughly 30 Âµg/mÂ³, where small absolute
+              differences produce large ratios. Across{" "}
+              {n0(correlations.ratioN)} hours the median ratio is{" "}
+              {n2(correlations.ratioMedian)}, and low-concentration hours reach ratios above{" "}
+              {Math.floor(correlations.ratioMax)} from differences under a microgram per cubic
+              metre.
+            </p>
+          </div>
+        </section>
+
+        {/* ------------------------------------------------------------- 8. Limitations */}
+        <section aria-labelledby="limits-heading">
+          <h2 id="limits-heading" className="text-h2 text-surface-white mb-3 scroll-mt-20">
+            Limitations
+          </h2>
+          <EvidenceLimitations>
+            <ul className="list-disc space-y-2 pl-5">
+              <li>
+                DEQ&apos;s own limitation language is quoted in full{" "}
+                <Link href="#deq-limitations" className="text-teal-primary hover:text-teal-soft hover:underline">
+                  at the top of this page
+                </Link>{" "}
+                and governs every sensor figure below it.
+              </li>
+              <li>
+                Sensor data has not passed quality assurance validation. Regulatory data carries
+                validity flags and null codes; sensor data carries none. The two records are not
+                symmetric, and a disagreement between them has several candidate explanations,
+                including sensor accuracy, the absence of quality assurance on one side, and the
+                difference in timestamp convention.
+              </li>
+              <li>
+                Exact-zero sensor readings occur in multi-hour runs at every site and are treated
+                here as missing rather than as measurements.
+              </li>
+              <li>
+                Kunak timestamps are hour-ending and adjusted for daylight saving; regulatory
+                timestamps are hour-beginning and always EST. Values are normalised to a common
+                convention before any comparison, per DEQ&apos;s instruction.
+              </li>
+              <li>
+                Meteorological data appears on DEQ&apos;s dashboard but is not available through
+                the historical export. No wind-direction analysis is performed here.
+              </li>
+              <li>
+                Seven of 22 identified locations have been deployed. Findings describe the
+                deployed locations, not the corridor.
+              </li>
+              <li>
+                No health data appears on this page and no health inference is drawn from it.
+              </li>
+            </ul>
+          </EvidenceLimitations>
+        </section>
+
+        {/* --------------------------------------------------------- 9. Data and methods */}
+        <section aria-labelledby="methods-heading">
+          <h2 id="methods-heading" className="text-h2 text-surface-white mb-3 scroll-mt-20">
+            Data and methods
+          </h2>
+
+          <h3 className="text-h3 text-surface-white mb-2">Site identifier crosswalk</h3>
+          <p className="mb-3 max-w-3xl text-sm text-cool-light leading-relaxed">
+            This table carries identifiers only. It holds no measurement of any kind, and none

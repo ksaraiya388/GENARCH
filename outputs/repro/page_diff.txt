@@ -1,0 +1,305 @@
+﻿diff --git a/site/src/app/community/data-center-alley/page.tsx b/site/src/app/community/data-center-alley/page.tsx
+index 7a0f977..62ee5d7 100644
+--- a/site/src/app/community/data-center-alley/page.tsx
++++ b/site/src/app/community/data-center-alley/page.tsx
+@@ -1,4 +1,4 @@
+-import Link from "next/link";
++∩╗┐import Link from "next/link";
+ import type { Metadata } from "next";
+ import { Breadcrumbs } from "@/components/Breadcrumbs";
+ import { EvidenceLimitations } from "@/components/EvidenceLimitations";
+@@ -37,7 +37,7 @@ import {
+ } from "@/lib/deq-data";
+ 
+ export const metadata: Metadata = {
+-  title: "Data Center Corridor Air Monitoring ΓÇö GENARCH",
++  title: "Data Center Corridor Air Monitoring ├óΓé¼ΓÇ¥ GENARCH",
+   description:
+     "Virginia DEQ low-cost sensor and regulatory monitor measurements for Loudoun County, with the agency's own limitation language, a reproduction of its collocation analysis, and a record-length comparison across sites.",
+ };
+@@ -79,7 +79,7 @@ const ordinalNum = (v: number): string => {
+ const rankLabel = (r: RankPosition): string =>
+   r.exact
+     ? `${ordinalNum(r.lower)} of ${r.n}`
+-    : `${ordinalNum(r.lower)}ΓÇô${ordinalNum(r.upper)} of ${r.n}`;
++    : `${ordinalNum(r.lower)}├óΓé¼ΓÇ£${ordinalNum(r.upper)} of ${r.n}`;
+ 
+ /**
+  * ISO date to the "August 7, 2026" form the surrounding prose uses. Split rather than passed to
+@@ -214,11 +214,11 @@ export default function DataCenterCorridorPage() {
+             <a href="#deq-limitations" className="text-teal-primary hover:text-teal-soft hover:underline">
+               DEQ&apos;s limitation statement
+             </a>
+-            {" ┬╖ "}
++            {" ├é┬╖ "}
+             <a href="#limits-heading" className="text-teal-primary hover:text-teal-soft hover:underline">
+               Full limitations
+             </a>
+-            {" ┬╖ "}
++            {" ├é┬╖ "}
+             <a href="#methods-heading" className="text-teal-primary hover:text-teal-soft hover:underline">
+               Data and methods
+             </a>
+@@ -245,11 +245,11 @@ export default function DataCenterCorridorPage() {
+               GENARCH&apos;s own wording, from here on
+             </p>
+             <p>
+-              A single hourly reading above {PM25_24H_LEVEL} ┬╡g/m┬│ is not measured against the
++              A single hourly reading above {PM25_24H_LEVEL} ├é┬╡g/m├é┬│ is not measured against the
+               24-hour PM2.5 standard and does not by itself show that the standard has been
+               surpassed. The regulatory form of that standard is the 98th percentile of daily
+               24-hour averages, averaged over three consecutive years. The separate annual
+-              standard is {n1(PM25_ANNUAL_LEVEL)} ┬╡g/m┬│, as revised in 2024. DEQ&apos;s published
++              standard is {n1(PM25_ANNUAL_LEVEL)} ├é┬╡g/m├é┬│, as revised in 2024. DEQ&apos;s published
+               analysis makes the same point about hourly values.
+             </p>
+             <p>
+@@ -345,7 +345,7 @@ export default function DataCenterCorridorPage() {
+                         : "No export available"}
+                     </td>
+                     <td className="py-2 px-3 text-right font-mono text-cool-light">
+-                      {s.hasExport ? n0(s.validPm25Hours) : "ΓÇö"}
++                      {s.hasExport ? n0(s.validPm25Hours) : "├óΓé¼ΓÇ¥"}
+                     </td>
+                     <td className="py-2 px-3 text-cool-light">
+                       {s.collocatedRegulatory ? "Yes" : "No"}
+@@ -389,7 +389,7 @@ export default function DataCenterCorridorPage() {
+             table={{
+               caption: "Show per-site summary, with and without the smoke-transport window",
+               columns: [
+-                "Site", "Class", "Hours", "Mean ┬╡g/m┬│", "Max ┬╡g/m┬│",
++                "Site", "Class", "Hours", "Mean ├é┬╡g/m├é┬│", "Max ├é┬╡g/m├é┬│",
+                 "Hours excl. smoke", "Mean excl. smoke", "Max excl. smoke",
+               ],
+               rows: splits.map((s) => [
+@@ -414,11 +414,11 @@ export default function DataCenterCorridorPage() {
+                   <span key={s.key}>
+                     {" "}
+                     At the regulatory monitor the mean over the full record is{" "}
+-                    {n2(s.withSmoke.mean)} ┬╡g/m┬│ across {n0(s.withSmoke.n)} valid hours, and{" "}
+-                    {n2(s.withoutSmoke.mean)} ┬╡g/m┬│ across {n0(s.withoutSmoke.n)} hours with the
++                    {n2(s.withSmoke.mean)} ├é┬╡g/m├é┬│ across {n0(s.withSmoke.n)} valid hours, and{" "}
++                    {n2(s.withoutSmoke.mean)} ├é┬╡g/m├é┬│ across {n0(s.withoutSmoke.n)} hours with the
+                     smoke window removed. The highest single hour in the whole record,{" "}
+-                    {n1(s.withSmoke.max)} ┬╡g/m┬│, falls inside that window; outside it the highest
+-                    hour is {n1(s.withoutSmoke.max)} ┬╡g/m┬│.
++                    {n1(s.withSmoke.max)} ├é┬╡g/m├é┬│, falls inside that window; outside it the highest
++                    hour is {n1(s.withoutSmoke.max)} ├é┬╡g/m├é┬│.
+                   </span>
+                 ))}
+             </p>
+@@ -490,13 +490,13 @@ export default function DataCenterCorridorPage() {
+                           : "text-cool-light")
+                       }
+                     >
+-                      y = {c.deq.intercept} + {c.deq.slope}x, R┬▓ = {c.deq.r2}
++                      y = {c.deq.intercept} + {c.deq.slope}x, R├é┬▓ = {c.deq.r2}
+                       {c.correction && (
+                         <a
+                           href="#deq-correction-note"
+                           className="ml-1 font-sans hover:underline"
+                         >
+-                          <span aria-hidden="true">ΓÇá</span>
++                          <span aria-hidden="true">├óΓé¼┬á</span>
+                           <span className="sr-only">
+                             {" "}
+                             corrected by DEQ; see the note below the table
+@@ -505,7 +505,7 @@ export default function DataCenterCorridorPage() {
+                       )}
+                     </td>
+                     <td className="py-2 px-3 font-mono text-xs text-cool-light">
+-                      y = {n3(c.genarch.intercept)} + {n3(c.genarch.slope)}x, R┬▓ ={" "}
++                      y = {n3(c.genarch.intercept)} + {n3(c.genarch.slope)}x, R├é┬▓ ={" "}
+                       {n3(c.genarch.r2)}
+                     </td>
+                     <td className="py-2 px-3 text-right font-mono text-cool-light">
+@@ -534,15 +534,15 @@ export default function DataCenterCorridorPage() {
+             id="deq-correction-note"
+             className="mt-2 max-w-3xl text-xs text-cool-mid leading-relaxed"
+           >
+-            <span aria-hidden="true">ΓÇá </span>
++            <span aria-hidden="true">├óΓé¼┬á </span>
+             {corrected.unitLabel} {corrected.pollutant}: the{" "}
+             {longDate(corrected.correction.supersedesEdition)} edition published y ={" "}
+             {corrected.correction.published.intercept} +{" "}
+-            {corrected.correction.published.slope}x, R┬▓ = {corrected.correction.published.r2}.
++            {corrected.correction.published.slope}x, R├é┬▓ = {corrected.correction.published.r2}.
+             DEQ later corrected that fit, and the{" "}
+             {longDate(corrected.correction.inPrint.edition)} edition prints the corrected form at
+             y = {corrected.correction.inPrint.coefficients.intercept} +{" "}
+-            {corrected.correction.inPrint.coefficients.slope}x, R┬▓ ={" "}
++            {corrected.correction.inPrint.coefficients.slope}x, R├é┬▓ ={" "}
+             {corrected.correction.inPrint.coefficients.r2} over that edition&apos;s longer record
+             ({DEQ_SOURCES.reportAug21.citation}). The column above holds the corrected fit over
+             the {longDate(corrected.correction.supersedesEdition)} window instead, because that is
+@@ -578,7 +578,7 @@ export default function DataCenterCorridorPage() {
+             <p id="deq-noncomparable-note">
+               {Word(assertedFits.length)} of the {word(collocation.length)} comparisons are
+               checked by the build, against a tolerance of 0.05 on slope and intercept and 0.03
+-              on R┬▓, and all {word(assertedFits.length)} agree. DEQ publishes these coefficients
++              on R├é┬▓, and all {word(assertedFits.length)} agree. DEQ publishes these coefficients
+               to two significant figures, so the claim is that these fits round to DEQ&apos;s
+               values at DEQ&apos;s own precision. Agreement to three decimals is not something
+               this data can establish, and part of every difference in the table is that
+@@ -610,7 +610,7 @@ export default function DataCenterCorridorPage() {
+               call behind the chart: the axis limits there bounded the model fit as well as the
+               plotted view, so points outside them never entered the regression. Refitting without
+               the limits over the August 7 window gives y = {corrected.deq.intercept} +{" "}
+-              {corrected.deq.slope}x, R┬▓ = {corrected.deq.r2}, and DEQ sent the paired hourly
++              {corrected.deq.slope}x, R├é┬▓ = {corrected.deq.r2}, and DEQ sent the paired hourly
+               measurements the regression runs on (DEQ staff, correspondence,{" "}
+               {corrected.correction.correspondenceDate}).
+             </p>
+@@ -618,14 +618,14 @@ export default function DataCenterCorridorPage() {
+               The correction is now in print. The{" "}
+               {longDate(corrected.correction.inPrint.edition)} edition carries the unbounded fit,
+               at y = {corrected.correction.inPrint.coefficients.intercept} +{" "}
+-              {corrected.correction.inPrint.coefficients.slope}x, R┬▓ ={" "}
++              {corrected.correction.inPrint.coefficients.slope}x, R├é┬▓ ={" "}
+               {corrected.correction.inPrint.coefficients.r2} over a record two weeks longer than
+               the one this table compares on. Those coefficients describe that longer window, so
+               this page cites them here rather than setting them in the column above.
+             </p>
+             <p>
+               The same fit computed from the source tables gives y ={" "}
+-              {n3(corrected.genarch.intercept)} + {n3(corrected.genarch.slope)}x, R┬▓ ={" "}
++              {n3(corrected.genarch.intercept)} + {n3(corrected.genarch.slope)}x, R├é┬▓ ={" "}
+               {n3(corrected.genarch.r2)} on {n0(corrected.genarch.n)} paired hours, inside
+               tolerance of the corrected coefficients. That fit keeps the sensor&apos;s exact-zero
+               readings, {n1(no2.zeroSharePct)} percent of the {corrected.unitLabel} window&apos;s{" "}
+@@ -633,12 +633,12 @@ export default function DataCenterCorridorPage() {
+               keeps them (DEQ staff, correspondence,{" "}
+               {corrected.correction.correspondenceDate}). Everywhere else on this page they stay
+               excluded as a per-pollutant floor clamp. Dropping them here returns slope{" "}
+-              {n3(no2.zerosDropped.slope)} and R┬▓ {n3(no2.zerosDropped.r2)} on{" "}
++              {n3(no2.zerosDropped.slope)} and R├é┬▓ {n3(no2.zerosDropped.r2)} on{" "}
+               {n0(no2.zerosDropped.n)} pairs, the figure this page carried before, which left zero
+               handling as the only remaining difference between the two calculations.
+             </p>
+             <p>
+-              Agreement on the coefficients does not make the relationship a strong one. At an R┬▓
++              Agreement on the coefficients does not make the relationship a strong one. At an R├é┬▓
+               near {n2(corrected.deq.r2)} this is the weakest of the {word(collocation.length)},
+               and its coefficients are loosely determined. At {no2.separationAt} {corrected.unit}{" "}
+               on the sensor the two lines sit {n2(no2.separationPpb)} {corrected.unit} apart, on a
+@@ -650,7 +650,7 @@ export default function DataCenterCorridorPage() {
+               DEQ&apos;s published daily file on {reconciliation.matching} of{" "}
+               {reconciliation.compared} comparable days after truncation to one decimal, with a
+               mean absolute difference of {reconciliation.meanAbsoluteDifference.toFixed(4)}{" "}
+-              ┬╡g/m┬│. DEQ truncates published values rather than rounding them.
++              ├é┬╡g/m├é┬│. DEQ truncates published values rather than rounding them.
+             </p>
+             <p>
+               The single day that differs is {reviewed.date}, where the recomputation gives{" "}
+@@ -683,7 +683,7 @@ export default function DataCenterCorridorPage() {
+           <div className="max-w-3xl space-y-3 text-cool-light leading-relaxed">
+             <p>
+               The name &ldquo;98th percentile&rdquo; is fixed, but the observation it is read
+-              from is not. Under the linear-interpolation definition the index is (n ΓêÆ 1) ├ù 0.98,
++              from is not. Under the linear-interpolation definition the index is (n ├ó╦åΓÇÖ 1) ├âΓÇö 0.98,
+               so the statistic moves through the distribution as the record grows. On{" "}
+               {shortest.fullDays} days it falls at the {rankLabel(shortest.fullPosition)},
+               effectively the second-highest daily value in the record. On {longest.fullDays}{" "}
+@@ -694,7 +694,7 @@ export default function DataCenterCorridorPage() {
+             <p>
+               How much that matters can be measured. Holding the data fixed and changing only the
+               interpolation convention moves the shortest record&apos;s 98th percentile by 13.27
+-              ┬╡g/m┬│, against 0.35 to 2.33 ┬╡g/m┬│ for the longer records (sensor cutoff 2026-08-28,
++              ├é┬╡g/m├é┬│, against 0.35 to 2.33 ├é┬╡g/m├é┬│ for the longer records (sensor cutoff 2026-08-28,
+               Kunak export 2026-08-28,{" "}
+               <span className="font-mono text-xs">
+                 outputs/repro/p98_common_window_2026-08-28.csv
+@@ -708,7 +708,7 @@ export default function DataCenterCorridorPage() {
+               distribution and the July smoke days, and the two daily values it is interpolated
+               between are themselves smoke days. Moving the day boundary by one hour, which is
+               the difference between binning days on local standard time and on local clock time,
+-              shifts the statistic by up to 2.12 ┬╡g/m┬│ while leaving the mean unchanged to within
++              shifts the statistic by up to 2.12 ├é┬╡g/m├é┬│ while leaving the mean unchanged to within
+               0.05 (sensor cutoff 2026-08-27, Kunak export 2026-08-28,{" "}
+               <span className="font-mono text-xs">docs/PERCENTILE_METHOD.md</span>). At these
+               sample sizes the 98th percentile of daily PM2.5 is sensitive to defensible
+@@ -717,14 +717,14 @@ export default function DataCenterCorridorPage() {
+             <p>
+               The series below illustrates the point rather than carrying it. Table 4 of
+               DEQ&apos;s {firstEdition.label} report named one sensor as the only one whose 98th
+-              percentile of daily PM2.5 averages sat above {PM25_24H_LEVEL} ┬╡g/m┬│. That sensor,{" "}
++              percentile of daily PM2.5 averages sat above {PM25_24H_LEVEL} ├é┬╡g/m├é┬│. That sensor,{" "}
+               {shortest.key}, had the shortest record in the network: it began collecting on{" "}
+               {COMMON_WINDOW_START} and had {shortest.fullDays} days at that cutoff against{" "}
+               {longest.fullDays} at {longest.key}, entirely in high summer, with{" "}
+               {n1(shortest.smokeShare)} percent of its record inside the smoke-transport window
+               of {SMOKE_WINDOW.start} to {SMOKE_WINDOW.end} against {n1(longest.smokeShare)}{" "}
+               percent of the longest one. The figure fell in each edition that followed, and on
+-              the {lastEdition.label} report no site sits above {PM25_24H_LEVEL} ┬╡g/m┬│. This is a
++              the {lastEdition.label} report no site sits above {PM25_24H_LEVEL} ├é┬╡g/m├é┬│. This is a
+               methodological point about the statistic. It is not a correction of a standing DEQ
+               error: the falling figure is DEQ&apos;s own, published in DEQ&apos;s own
+               consecutive editions.
+@@ -784,12 +784,12 @@ export default function DataCenterCorridorPage() {
+ 
+           <div className="mt-3 max-w-3xl space-y-3 text-cool-light leading-relaxed">
+             <p>
+-              The sentence naming this sensor as the only one above {PM25_24H_LEVEL} ┬╡g/m┬│ stood
++              The sentence naming this sensor as the only one above {PM25_24H_LEVEL} ├é┬╡g/m├é┬│ stood
+               word for word through the first {word(editions.length - 1)} editions while the
+               figure it described fell in every one:{" "}
+               {dailyP98.values.map((v, i) => `${n1(v)} on ${editions[i].short}`).join(", ")}.
+               The {lastEdition.label} edition drops that sentence and states instead that no
+-              site&apos;s 98th percentile of daily averages sits above the {PM25_24H_LEVEL} ┬╡g/m┬│
++              site&apos;s 98th percentile of daily averages sits above the {PM25_24H_LEVEL} ├é┬╡g/m├é┬│
+               level. DEQ staff said they expected the figure to keep falling as the record
+               lengthened (DEQ staff, correspondence, 2026-08-16). The first{" "}
+               {word(editions.length - 1)} editions are archived under docs/deq-reports/ and the{" "}
+@@ -798,7 +798,7 @@ export default function DataCenterCorridorPage() {
+             </p>
+             <p>
+               DEQ staff note that the wildfire smoke data heavily skews the 98th percentiles at
+-              every site, and that before the smoke arrived they sat at or below about 20 ┬╡g/m┬│
++              every site, and that before the smoke arrived they sat at or below about 20 ├é┬╡g/m├é┬│
+               everywhere (DEQ staff, correspondence, 2026-08-16). The percentiles in the table
+               below include that window.
+             </p>
+@@ -806,7 +806,7 @@ export default function DataCenterCorridorPage() {
+               Restricting every sensor to the window in which all {word(deployed.length)} were
+               collecting, {COMMON_WINDOW_START} to {RECORD_END}, changes the ordering.{" "}
+               {Word(aboveLevel.length)} of {word(percentiles.length)} sites sit above{" "}
+-              {PM25_24H_LEVEL} ┬╡g/m┬│ on matched windows, and {shortest.key} ranks{" "}
++              {PM25_24H_LEVEL} ├é┬╡g/m├é┬│ on matched windows, and {shortest.key} ranks{" "}
+               {ordinal(shortestRank)} rather than first. The common window is not a clean control
+               on its own: it falls entirely in high summer and contains the smoke window, so it
+               removes the unequal-length difference and leaves the unequal-seasonality one in
+@@ -910,7 +910,7 @@ export default function DataCenterCorridorPage() {
+             </p>
+             <p>
+               GENARCH&apos;s own-record percentiles differ from DEQ&apos;s Table 4 by up to
+-              roughly 2.4 ┬╡g/m┬│ in both directions, higher at some sites and lower at others. The
++              roughly 2.4 ├é┬╡g/m├é┬│ in both directions, higher at some sites and lower at others. The
+               most likely explanation is the treatment of exact-zero sensor readings, which this
+               pipeline excludes as a fault mode rather than counting as measurements. That
+               explanation is not established, and the difference is disclosed here rather than
+@@ -959,7 +959,7 @@ export default function DataCenterCorridorPage() {
+             </p>
+             <p>
+               The ratio between the highest and lowest site reading in a given hour is not a
+-              usable discriminator here. It fails below roughly 30 ┬╡g/m┬│, where small absolute
++              usable discriminator here. It fails below roughly 30 ├é┬╡g/m├é┬│, where small absolute
+               differences produce large ratios. Across{" "}
+               {n0(correlations.ratioN)} hours the median ratio is{" "}
+               {n2(correlations.ratioMedian)}, and low-concentration hours reach ratios above{" "}
+@@ -999,6 +999,16 @@ export default function DataCenterCorridorPage() {
+                 timestamps are hour-beginning and always EST. Values are normalised to a common
+                 convention before any comparison, per DEQ&apos;s instruction.
+               </li>
++              <li>
++                One site&apos;s particle sensor failed on 2026-05-30 while its other instruments
++                continued until the unit was removed. Its PM2.5 readings after that date are
++                treated as missing; its NO2 and VOC readings over the same period are retained.
++              </li>
++              <li>
++                Sensors are moved between locations. Readings that arrive at a location in the
++                hours before its recorded occupancy begins are excluded rather than assigned to
++                either location, so no reading is attributed to the wrong site.
++              </li>
+               <li>
+                 Meteorological data appears on DEQ&apos;s dashboard but is not available through
+                 the historical export. No wind-direction analysis is performed here.

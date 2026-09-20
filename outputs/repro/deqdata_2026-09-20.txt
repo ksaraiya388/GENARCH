@@ -1,0 +1,100 @@
+﻿function assertRegulatoryValidity(rows: Row[]): void {
+  let mismatches = 0;
+  for (const r of rows) {
+    const derived = r.value === "" || r.aqs_null_code !== "" || r.flags.includes("<");
+    if (derived !== (r.excluded === "true")) mismatches++;
+  }
+  if (mismatches > 0) {
+    throw new Error(
+      `DEQ regulatory validity: ${mismatches} row(s) where the pipeline's 'excluded' column ` +
+      `disagrees with the DEQ exclusion rule (missing value, AQS Null Code, or Flags containing '<'). ` +
+      `Reconcile pipeline/reshape_deq.py against docs/GENARCH_RULES.md section 3 before shipping this page.`
+    );
+  }
+}
+
+/**
+ * The sensor export carries no flag column, so its exclusions cannot be re-derived. What can be
+ * checked is that the pipeline has not introduced an exclusion class this page does not know how
+ * to describe -- every reason is disclosed in the limitations box, and an undisclosed one would
+ * silently drop readings.
+ */
+const KNOWN_SENSOR_EXCLUSIONS = new Set([
+  "", "exact_zero_floor", "kunak_pm25_void_window", "pre_occupancy_transit",
+]);
+
+function assertSensorExclusions(rows: Row[]): void {
+  const unknown = new Set<string>();
+  for (const r of rows) {
+    if (!KNOWN_SENSOR_EXCLUSIONS.has(r.exclusion_reason)) unknown.add(r.exclusion_reason);
+  }
+  if (unknown.size > 0) {
+    throw new Error(
+      `DEQ sensor data carries exclusion reason(s) this page does not disclose: ` +
+      `${Array.from(unknown).join(", ")}. Add them to the limitations section before shipping.`
+    );
+  }
+}
+
+let sensorRowsCache: Row[] | null = null;
+function sensorRows(): Row[] {
+  if (sensorRowsCache) return sensorRowsCache;
+  const rows = readCsv("deq_data_center_air_monitoring_hourly.csv");
+  assertSensorExclusions(rows);
+  sensorRowsCache = rows;
+  return rows;
+}
+
+let regulatoryRowsCache: Row[] | null = null;
+function regulatoryRows(): Row[] {
+  if (regulatoryRowsCache) return regulatoryRowsCache;
+  const rows = readCsv("deq_regulatory_monitor_hourly.csv");
+  assertRegulatoryValidity(rows);
+  regulatoryRowsCache = rows;
+  return rows;
+}
+
+/** Valid sensor readings for one pollutant: `excluded=false` and a value present. */
+function validSensor(pollutant: string): Row[] {
+  return sensorRows().filter(
+    (r) => r.pollutant === pollutant && r.excluded === "false" && r.value !== ""
+  );
+}
+
+/**
+ * `validSensor()` plus the readings the pipeline drops as `exact_zero_floor`, and nothing else:
+ * every other exclusion reason stays out. Named rather than inlined so that a fit running on
+ * this population cannot be mistaken for one running on the default.
+ *
+ * Only specs carrying `retainExactZeros` reach this, and only inside `getCollocation()`. The
+ * reason and the scope are in `RETAIN_ZEROS_NOTE`.
+ */
+function sensorRowsRetainingExactZeros(pollutant: string): Row[] {
+  return sensorRows().filter(
+    (r) =>
+      r.pollutant === pollutant &&
+      r.value !== "" &&
+      (r.excluded === "false" || r.exclusion_reason === "exact_zero_floor")
+  );
+}
+
+/** Valid readings from the Loudoun regulatory monitor, keyed by timestamp. */
+function validRegulatory(pollutant: string): Map<string, number> {
+  const map = new Map<string, number>();
+  for (const r of regulatoryRows()) {
+    if (r.site_id !== REGULATORY_SITE) continue;
+    if (r.pollutant !== pollutant || r.excluded !== "false" || r.value === "") continue;
+    map.set(r.ts_est, Number(r.value));
+  }
+  return map;
+}
+
+/* ------------------------------------------------------------------ site roster */
+
+/**
+ * Sensors are identified by DEQ site_id and locality throughout this page, never by DEQ's
+ * published site label. Four of the nine sites are hosted at schools, and rendering a school
+ * name beside a concentration figure invites an inference about children at that school that
+ * none of this data supports (docs/CONTENT_CONSTRAINTS.md section 4, PROMPT_AMENDMENTS A2).
+ * The identifier crosswalk in `getCrosswalk()` carries DEQ's labels, with no measurements, so
+ * the reproduction against DEQ's report stays checkable.

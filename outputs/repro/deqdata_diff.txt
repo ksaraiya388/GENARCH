@@ -1,0 +1,79 @@
+﻿diff --git a/site/src/lib/deq-data.ts b/site/src/lib/deq-data.ts
+index 210dc72..fd01602 100644
+--- a/site/src/lib/deq-data.ts
++++ b/site/src/lib/deq-data.ts
+@@ -1,4 +1,4 @@
+-import fs from "fs";
++∩╗┐import fs from "fs";
+ import path from "path";
+ 
+ /**
+@@ -55,10 +55,10 @@ export const DEQ_EDITION_CUTOFF_LABEL = "2026-08-07 07:00 EST";
+ /** First day on which all six deployed sensors were collecting. */
+ export const COMMON_WINDOW_START = "2026-06-18";
+ 
+-/** Level of the 24-hour PM2.5 standard, in ┬╡g/m┬│. Not a threshold being crossed. */
++/** Level of the 24-hour PM2.5 standard, in ├é┬╡g/m├é┬│. Not a threshold being crossed. */
+ export const PM25_24H_LEVEL = 35;
+ 
+-/** Annual PM2.5 standard in ┬╡g/m┬│, as revised in 2024. */
++/** Annual PM2.5 standard in ├é┬╡g/m├é┬│, as revised in 2024. */
+ export const PM25_ANNUAL_LEVEL = 9.0;
+ 
+ /** Valid hours required before a 24-hour average is computed. Agency-confirmed. */
+@@ -124,7 +124,7 @@ function readCsv(filename: string): Row[] {
+   }
+   // The site-history export carries a UTF-8 BOM; left in place it becomes part of the first
+   // header name and every lookup of `site_id` returns undefined.
+-  const text = fs.readFileSync(full, "utf-8").replace(/^∩╗┐/, "");
++  const text = fs.readFileSync(full, "utf-8").replace(/^├»┬╗┬┐/, "");
+   const lines = text.split(/\r?\n/).filter((l) => l.length > 0);
+   const header = splitCsvLine(lines[0]);
+   return lines.slice(1).map((line) => {
+@@ -220,6 +220,7 @@ function assertRegulatoryValidity(rows: Row[]): void {
+  */
+ const KNOWN_SENSOR_EXCLUSIONS = new Set([
+   "", "exact_zero_floor", "kunak_pm25_void_window", "pre_occupancy_transit",
++  "pm25_collection_ended",
+ ]);
+ 
+ function assertSensorExclusions(rows: Row[]): void {
+@@ -565,7 +566,7 @@ export interface NonComparable {
+  *
+  * The flag is per comparison rather than per function, and deliberately so. Readmitting zeros
+  * into the other three moves coefficients that currently reproduce back outside tolerance --
+- * APEX 14 PM2.5 intercept to 1.368 against a published 1.3, APEX 14 NO2 R┬▓ to 0.549 against a
++ * APEX 14 PM2.5 intercept to 1.368 against a published 1.3, APEX 14 NO2 R├é┬▓ to 0.549 against a
+  * published 0.49. DEQ's confirmation covers the regression it was asked about; extending it to
+  * regressions the agency did not speak to would be an inference, and the arithmetic says it
+  * would be the wrong one.
+@@ -592,9 +593,9 @@ const RETAIN_ZEROS_NOTE =
+  * figure where it belongs, as provenance rather than as a comparator.
+  */
+ const DEQ_PUBLISHED: readonly DeqPublishedSpec[] = [
+-  { key: "apex-14-pm25", unitId: "apex-14", pollutant: "PM2.5", unit: "┬╡g/m┬│",
++  { key: "apex-14-pm25", unitId: "apex-14", pollutant: "PM2.5", unit: "├é┬╡g/m├é┬│",
+     intercept: 1.3, slope: 0.83, r2: 0.73, assertAgainstDeq: true },
+-  { key: "apex-05-pm25", unitId: "apex-05", pollutant: "PM2.5", unit: "┬╡g/m┬│",
++  { key: "apex-05-pm25", unitId: "apex-05", pollutant: "PM2.5", unit: "├é┬╡g/m├é┬│",
+     intercept: -4.7, slope: 1.7, r2: 0.84, assertAgainstDeq: true },
+   { key: "apex-14-no2", unitId: "apex-14", pollutant: "NO2", unit: "ppb",
+     intercept: 2.2, slope: 1.1, r2: 0.49, assertAgainstDeq: true },
+@@ -912,9 +913,9 @@ export const DEQ_WEEKLY_EDITIONS = {
+     { label: "August 28, 2026", short: "Aug 28" },
+   ] as readonly [WeeklyEdition, WeeklyEdition, WeeklyEdition, WeeklyEdition],
+   rows: [
+-    { metric: "98th percentile of daily PM2.5 averages", unit: "┬╡g/m┬│", values: [40.4, 38.2, 36.0, 33.8] },
+-    { metric: "98th percentile of hourly PM2.5", unit: "┬╡g/m┬│", values: [69.1, 62.3, 56.8, 53.6] },
+-    { metric: "Mean hourly PM2.5", unit: "┬╡g/m┬│", values: [11.3, 11.1, 10.8, 10.5] },
++    { metric: "98th percentile of daily PM2.5 averages", unit: "├é┬╡g/m├é┬│", values: [40.4, 38.2, 36.0, 33.8] },
++    { metric: "98th percentile of hourly PM2.5", unit: "├é┬╡g/m├é┬│", values: [69.1, 62.3, 56.8, 53.6] },
++    { metric: "Mean hourly PM2.5", unit: "├é┬╡g/m├é┬│", values: [11.3, 11.1, 10.8, 10.5] },
+   ] as readonly WeeklyEditionRow[],
+ };
+ 
+@@ -1209,3 +1210,4 @@ export function getProvenance(): ProvenanceEntry[] {
+     };
+   });
+ }
++
