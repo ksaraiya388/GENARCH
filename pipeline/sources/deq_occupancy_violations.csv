@@ -1,4 +1,15 @@
 site_id,ts_raw,ts_est,disposition
+evergreen-cc,2026-09-17 13:00:00,2026-09-17 11:00:00,pre_occupancy_transit
+evergreen-cc,2026-09-17 14:00:00,2026-09-17 12:00:00,pre_occupancy_transit
+evergreen-cc,2026-09-17 15:00:00,2026-09-17 13:00:00,pre_occupancy_transit
+evergreen-cc,2026-09-17 16:00:00,2026-09-17 14:00:00,pre_occupancy_transit
+evergreen-cc,2026-09-17 17:00:00,2026-09-17 15:00:00,pre_occupancy_transit
+evergreen-cc,2026-09-17 18:00:00,2026-09-17 16:00:00,pre_occupancy_transit
+evergreen-cc,2026-09-17 19:00:00,2026-09-17 17:00:00,pre_occupancy_transit
+evergreen-cc,2026-09-17 20:00:00,2026-09-17 18:00:00,pre_occupancy_transit
+evergreen-cc,2026-09-17 21:00:00,2026-09-17 19:00:00,pre_occupancy_transit
+evergreen-cc,2026-09-17 22:00:00,2026-09-17 20:00:00,pre_occupancy_transit
+evergreen-cc,2026-09-17 23:00:00,2026-09-17 21:00:00,pre_occupancy_transit
 sterling-ms,2026-06-17 11:00:00,2026-06-17 09:00:00,pre_occupancy_transit
 sterling-ms,2026-06-17 12:00:00,2026-06-17 10:00:00,pre_occupancy_transit
 sterling-ms,2026-06-17 13:00:00,2026-06-17 11:00:00,pre_occupancy_transit

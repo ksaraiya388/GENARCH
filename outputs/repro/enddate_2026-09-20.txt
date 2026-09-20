@@ -1,0 +1,60 @@
+﻿
+  pipeline\reshape_deq.py:14:----------------
+  pipeline\reshape_deq.py:15:All DEQ calendar-date rules -- occupancy windows, the PM2.5 void window and
+> pipeline\reshape_deq.py:16:``pm25_end_date`` -- are evaluated on ``ts_raw``, the dashboard's local wall
+  pipeline\reshape_deq.py:17:clock, which is the clock those published dates are written in. All analysis
+  pipeline\reshape_deq.py:18:operations -- daily averaging and every join -- use ``ts_est``.
+  pipeline\reshape_deq.py:19:
+  pipeline\reshape_deq.py:20:Usage::
+  pipeline\reshape_deq.py:21:
+  pipeline\reshape_deq.py:56:# Kunak values are hour-ending and DST-adjusted; shift back to hour-beginning
+  pipeline\reshape_deq.py:57:# EST. DEQ supplied the boundary; see GENARCH_RULES section 4.
+> pipeline\reshape_deq.py:58:DST_CUTOVER = datetime.fromisoformat("2026-03-08T03:00:00")
+  pipeline\reshape_deq.py:59:SHIFT_BEFORE_CUTOVER = 1
+  pipeline\reshape_deq.py:60:SHIFT_FROM_CUTOVER = 2
+  pipeline\reshape_deq.py:61:
+  pipeline\reshape_deq.py:62:# 2026-03-08 02:00 does not exist in local time (spring forward).
+> pipeline\reshape_deq.py:63:DST_MISSING_HOUR = datetime.fromisoformat("2026-03-08T02:00:00")
+  pipeline\reshape_deq.py:64:
+  pipeline\reshape_deq.py:65:SENSOR_CLASS = "low_cost_sensor_kunak_apex"
+  pipeline\reshape_deq.py:66:REGULATORY_CLASS = "regulatory_fem"
+  pipeline\reshape_deq.py:67:
+  pipeline\reshape_deq.py:68:DAILY_MIN_VALID_HOURS = 18
+  pipeline\reshape_deq.py:72:RELOCATION_WINDOW_DAYS = 7
+  pipeline\reshape_deq.py:73:
+> pipeline\reshape_deq.py:74:FAR_FUTURE = datetime.fromisoformat("2099-01-01T00:00:00")
+  pipeline\reshape_deq.py:75:
+  pipeline\reshape_deq.py:76:POLLUTANT_UNITS = {
+  pipeline\reshape_deq.py:77:    "PM2.5": "\u00b5g/m\u00b3",
+  pipeline\reshape_deq.py:78:    "NO2": "ppb",
+  pipeline\reshape_deq.py:79:    "VOCs": "ppb",
+  pipeline\reshape_deq.py:253:            # DEQ publishes these as bare calendar dates on the site's local
+  pipeline\reshape_deq.py:254:            # clock; they are compared against ts_raw, which is also naive.
+> pipeline\reshape_deq.py:255:            start = datetime.fromisoformat(row["start_date"])
+> pipeline\reshape_deq.py:256:            end_raw = (row.get("end_date") or "").strip()
+> pipeline\reshape_deq.py:257:            end = datetime.fromisoformat(end_raw) if end_raw else FAR_FUTURE
+> pipeline\reshape_deq.py:258:            pm25_raw = (row.get("pm25_end_date") or "").strip()
+> pipeline\reshape_deq.py:259:            pm25_end = date.fromisoformat(pm25_raw) if pm25_raw else None
+  pipeline\reshape_deq.py:260:            rows.append(
+  pipeline\reshape_deq.py:261:                Occupancy(
+  pipeline\reshape_deq.py:262:                    site_id=row["site_id"].strip(),
+  pipeline\reshape_deq.py:263:                    kunak_label=row["kunak_label"].strip(),
+  pipeline\reshape_deq.py:264:                    unit_id=row["unit_id"].strip(),
+  pipeline\reshape_deq.py:518:            if occ.site_id == site_id or occ.unit_id != unit:
+  pipeline\reshape_deq.py:519:                continue
+> pipeline\reshape_deq.py:520:            if occ.end == FAR_FUTURE:
+  pipeline\reshape_deq.py:521:                continue  # still open: the unit was never released
+  pipeline\reshape_deq.py:522:            if abs((occ.end - start).days) <= RELOCATION_WINDOW_DAYS:
+  pipeline\reshape_deq.py:523:                origin = occ
+  pipeline\reshape_deq.py:524:                break
+  pipeline\reshape_deq.py:525:        if origin is None:
+  pipeline\reshape_deq.py:838:        if row["site_id"] != site_id or not row["meets_18_of_24"]:
+  pipeline\reshape_deq.py:839:            continue
+> pipeline\reshape_deq.py:840:        day = date.fromisoformat(row["date_est"])
+  pipeline\reshape_deq.py:841:        if day in published:
+  pipeline\reshape_deq.py:842:            row["published_value"] = str(published[day])
+  pipeline\reshape_deq.py:843:            row["matches_published"] = (
+  pipeline\reshape_deq.py:844:                Decimal(row["mean_pm25_ugm3"]) == published[day]
+  pipeline\reshape_deq.py:845:            )
+
+
