@@ -1,0 +1,1013 @@
+===== PAGE 1 =====
+Data Center Air Quality Analysis
+Virginia DEQ, Office of Air Quality Monitoring
+Loudoun County and Prince William County Study Area
+September 25, 2026
+Table of contents
+1 Introduction 2
+2 Sensor Timeline 3
+3 CO Hourly Concentrations: Loudoun County and Prince William Sensor Data 5
+4 NO2 Hourly Concentrations: Loudoun County Sensor and Regulatory Monitor
+Data 10
+4.1 Collocation Statistics: Broad Run HS NO2 . . . . . . . . . . . . . . . . 14
+5 PM2.5 Hourly Concentrations: Loudoun County Sensor and Regulatory Mon-
+itor Data 16
+5.1 Collocation Statistics: Broad Run HS PM2.5 . . . . . . . . . . . . . . . 21
+6 PM2.5 24-hour (daily) Concentrations: Loudoun County Sensor and Regula-
+tory Monitor Data 23
+7 Wind Speed and Direction 27
+1
+
+===== PAGE 2 =====
+1 Introduction
+VirginiaDEQ’sOfficeofAirQualityMonitoring(AQM)iscurrentlyoperating3APEX/Kunak
+AIRProsensorsinPrinceWilliamCounty,and3APEX/KunakAIRProsensorsinLoudoun
+County north of Dulles International Airport in the vicinity of Sterling and Ashburn.
+Figure 1: Study area with the APEX/Kunak sensors highlighted in green.
+The pollutants that are being measured are carbon monoxide (CO), nitrogen dioxide
+(NO ), and particulate matter less than 2.5 microns in size (PM2.5).
+2
+Thesesensorsarecapableofcollectingpollutantconcentrationdataandestablishingpol-
+lutant concentration trends, but they are not regulatory instruments as specified in the
+Code of Federal Regulations (CFR). They cannot be used in determining attainment or
+non-attainment of the National Ambient Air Quality Standards (NAAQS). Only Federal
+Reference/Equivalent Method designated monitors can.
+2
+
+===== PAGE 3 =====
+2 Sensor Timeline
+• OnFeb 25, 2026, Five sensors were installedin Loudoun County: Newberry Condo
+Association (Newberry Condo Assoc.), Broad Run High School (Broad Run HS),
+Dulles Airport, the Heritage Farm Museum, and Steuart Weller Elementary School
+(Steuart Weller ES). Due to the stabilization period, this report only uses data post-
+stabilization period, or from March 3, 2026 onward. 1
+• On April 8, 2026, two additional sensors were installed at 1757 Golf Course and
+Farmwell Station Middle School (Farmwell Station MS).
+• On May 14, 2026, data collection at Newberry Condo Assoc. ended as the
+APEX/Kunak sensor 14 was moved to Belfort Park Drive (Belfort Park Dr.).
+• On June 18, 2026, data collection at Heritage Farm Musuem ended after the
+APEX/Kunak sensor 8 was removed for maintenance. Additionally, data collection
+at Steuart Weller ES ended as the APEX/Kunak sensor 6 was moved to Sterling
+Middle School (Sterling MS).
+• On September 17, 2026, data collection at 1757 Golf Course (sensor 13), Farmwell
+MS (sensor 10), and Sterling MS (sensor 6) ended as these sensors were moved
+fromLoudounCountytoPrinceWilliamCounty. APEX/Kunaksensor13wasmoved
+to the Virginia Department of Transportation (VDOT) Facility at Mason King Court
+(VDOTMKC).APEX/Kunaksensor10wasmovedtoCampWilliamBSynder(Camp
+Snyder) and APEX/Kunak sensor 6 was moved to Evergreen Country Club (ECC).
+1Kunakstatesthatthereisastabilizationperiodafterinstallation,whichmaylastupto5days. Onlypost-
+stabilizationperioddataisanalyzedinthisreport.
+3
+
+===== PAGE 4 =====
+TheAPEXBroadRunHSsensoriscollocated(locatedatthesamesite)asVirginiaDEQ’s
+Broad Run HS regulatory monitoring site. The Broad Run HS regulatory monitoring site
+and the APEX/Kunak sensors both measure NO and PM2.5, so a direct statistical
+2
+comparison between these two instruments can be performed for these two pollutants.
+For the APEX/Kunak CO sensors, the closest general ambient air regulatory monitoring
+site to the APEX/Kunak CO sensors is in Arlington County. Virginia DEQ’s Arlington
+regulatory monitoring site is located outside of the “Data Center Alley” study area. There
+is a closer CO regulatory monitoring site in Fairfax County, but it is focused on near-
+highway and near-road emissions and would not be representative for general ambient
+air quality.
+Virginia DEQ’s Long Park regulatory monitoring site has a NO analyzer but no CO nor
+2
+PM2.5analyzers. Alldates&timespresentedbelowareinU.S.EasternStandardTime
+(U.S. EST, UTC - 5:00).
+4
+
+===== PAGE 5 =====
+3 CO Hourly Concentrations: Loudoun County and Prince
+William Sensor Data
+ThecurrentNationalAmbientAirQualityStandards(NAAQS)forCOaresetattwolevels,
+corresponding to two different averaging times:
+1. No 8-hour rolling concentration average may exceed 9 parts per million (ppm) more
+than once per year.
+2. No 1-hour concentration average may exceed 35 parts per million (ppm) more than
+once per year.
+The APEX/Kunak Air sensors measure CO in parts per billion (ppb), where 1000 ppb = 1
+ppm. Foreaseofcomparison,wehaveconvertedsensorppbvaluesintoppmtocompare
+withourregulatorymonitorvalues(whichrecordinppm,theunitthattheCONAAQSare
+assessed in). The closest comparable CO monitoring site to the APEX/Kunak sensors is
+Virginia DEQ’s Aurora Hills monitoring site, in Arlington County, Virginia. According to the
+EPA,thelargestsourcesofCOpollutionarevehiclesandothermachinerythatburnfossil
+fuels. AsCOconcentrationsinVirginiahavehistoricallybeenwellbelowtheNAAQSlev-
+els (and very low in general), and because CO sources correlate with more traffic/higher
+population densities, the Virginia DEQ ambient air regulatory monitor for Northern Vir-
+giniaisinArlingtonCounty. ThisiswhytheLoudounCountyregulatoryairmonitoringsite
+(Broad Run HS) does not have a regulatory CO monitor.
+5
+
+===== PAGE 6 =====
+Arlington Regulatory Monitor Belfort Park Dr
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+2026− 2 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 2 4 0 0 9 2 − 6 1 − 4 09−2 2 4 026− 2 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 2 4 0 0 9 2 − 6 1 − 4 09−24
+Broad Run HS Dulles Airport
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+2026− 2 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 2 4 0 0 9 2 − 6 1 − 4 09−2 2 4 026− 2 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 2 4 0 0 9 2 − 6 1 − 4 09−24
+Date
+)mpp
+ni(
+noitartnecnoC
+ylruoH
+CO Hourly Average Concentrations, Loudoun County
+Hourly average CO NAAQS limit is 35.0 ppm
+6
+
+===== PAGE 7 =====
+Camp William B Snyder Evergreen Country Club
+1.6
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+2026−09−18 2026−09−19 2026−09−20 2026−09−21 2026−09−22 2026−09−23 2026−09−24 2026−09−25 2026−09−18 2026−09−19 2026−09−20 2026−09−21 2026−09−22 2026−09−23 2026−09−24 2026−09−25
+VDOT MKC
+1.6
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+2026−09−18 2026−09−19 2026−09−20 2026−09−21 2026−09−22 2026−09−23 2026−09−24 2026−09−25
+Date
+)mpp
+ni(
+noitartnecnoC
+ylruoH
+CO Hourly Average Concentrations, Prince William County
+Hourly average CO NAAQS limit is 35.0 ppm
+As the graphs above illustrate, CO concentrations from the sensors in Loudoun County
+and Prince william are in the same general range as CO concentrations at the Arlington
+7
+
+===== PAGE 8 =====
+Countyregulatorymonitoringsite,ataround0-1.1ppm,withafewspikesupto3.0ppm.2
+The concentrations are well below the hourly NAAQS limit for CO (35.0 ppm). Because
+thehourlyconcentrationsareconsistentlybelow1ppm,all8-houraverageconcentrations
+are also well below the associated NAAQS limit of 9.0 ppm. The large spike near July 17,
+2026 in Loudoun County sensors, can be attributed to wildfire smoke from the wildfires
+occurring in Minnesota and Canada.
+1.6
+1.4
+1.2
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+A B B C D E V
+rlington
+R egulatory
+M
+on
+e
+it
+l
+o
+fo
+r
+rt
+P ark D r
+road
+R un H S
+am
+p
+W illiam B
+S
+nyder
+ulles
+A irport
+vergreen
+C ountry
+C
+lub
+D O
+T
+M K C
+)mpp
+ni(
+noitartnecnoC
+ylruoH
+CO Sensors and Regulatory Monitor Hourly Concentration Distributions
+Hourly average CO NAAQS limit is 35.0 ppm
+As the above violin plot (which plots a box plot over the statistical distribution of values
+across each site) illustrates, CO concentrations from the sensors in Loudoun County
+haverelativelysimilardistributionsandmedians, inthe0.1-0.2ppmrange. Afulltableof
+statistical values from each sensor and the regulatory monitor can be found below. The
+98thpercentilevaluesareextremelylowacrosstheregion,alllyingatorbelow0.6ppm.
+2Due to data quality and instrumentation issues, data between March 31, 2026, and April 7, 2026, were
+voidedattheArlingtonregulatoryCOmonitor.
+8
+
+===== PAGE 9 =====
+Table 1: CO Hourly Concentrations Statistical Summary, Loudoun County and Prince
+William County (in ppm)
+Site mean standard_deviation median percentile_98
+Arlington Regulatory Monitor 0.2 0.1 0.3 0.6
+Belfort Park Dr 0.1 0.1 0.1 0.4
+Broad Run HS 0.1 0.1 0.1 0.4
+Camp William B Snyder 0.0 0.0 0.0 0.1
+Dulles Airport 0.1 0.1 0.1 0.4
+Evergreen Country Club 0.0 0.0 0.1 0.1
+VDOT MKC 0.0 0.1 0.1 0.3
+9
+
+===== PAGE 10 =====
+4 NO2 Hourly Concentrations: Loudoun County Sensor
+and Regulatory Monitor Data
+The current National Ambient Air Quality Standards (NAAQS) for NO are set at two
+2
+levels, corresponding to two different averaging times:
+1. The 98th percentile of 1-hour daily maximum concentrations of NO may not ex-
+2
+ceed 100 parts per billion (ppb), when averaged over 3 years.
+2. The yearly average of 1-hour NO concentrations may not exceed 53 parts per
+2
+billion (ppb).
+TheAPEX/KunakAirsensorsmeasureNO inpartsperbillion(ppb);VirginiaDEQ’sreg-
+2
+ulatory NO analyzers also measure NO in ppb. The closest NO regulatory moni-
+2 2 2
+toring site is at Broad Run HS in Loudoun County, where a regulatory NO monitor and
+2
+an APEX/Kunak sensor (APEX Broad Run HS) are collocated.
+10
+
+===== PAGE 11 =====
+Belfort Park Dr Broad Run HS
+40
+35
+30
+25
+20
+15
+10
+5
+0
+2026− 2 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 2 4 0 0 9 2 − 6 1 − 4 09−2 2 4 026− 2 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 2 4 0 0 9 2 − 6 1 − 4 09−24
+Broad Run HS Regulatory Monitor Dulles Airport
+40
+35
+30
+25
+20
+15
+10
+5
+0
+2026− 2 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 2 4 0 0 9 2 − 6 1 − 4 09−2 2 4 026− 2 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 2 4 0 0 9 2 − 6 1 − 4 09−24
+Date
+)bpp
+ni(
+noitartnecnoC
+ylruoH
+NO2 Hourly Average Concentrations, Loudoun County
+Hourly 98th−percentile NO2 NAAQS limit is 100 ppb
+11
+
+===== PAGE 12 =====
+Camp William B Snyder Evergreen Country Club
+10
+5
+0
+2026−09−18 2026−09−19 2026−09−20 2026−09−21 2026−09−22 2026−09−23 2026−09−24 2026−09−25 2026−09−18 2026−09−19 2026−09−20 2026−09−21 2026−09−22 2026−09−23 2026−09−24 2026−09−25
+Long Park Regulatory Monitor VDOT MKC
+10
+5
+0
+2026−09−18 2026−09−19 2026−09−20 2026−09−21 2026−09−22 2026−09−23 2026−09−24 2026−09−25 2026−09−18 2026−09−19 2026−09−20 2026−09−21 2026−09−22 2026−09−23 2026−09−24 2026−09−25
+Date
+)bpp
+ni(
+noitartnecnoC
+ylruoH
+NO2 Hourly Average Concentrations, Prince William County
+Hourly 98th−percentile NO2 NAAQS limit is 100 ppb
+Theabovetime-seriesgraphofshowsamoderateamountofagreementbetweensensors,
+with the highest NO values on average measured at the Dulles Airport NO site. Due
+2 2
+12
+
+===== PAGE 13 =====
+todataqualityandinstrumentationissues, databetweenMay8, 2026, andMay10, 2026,
+were voided at the Ashburn regulatory NO monitor.Due to a network communications
+2
+issue, some data between September 17, 2026, and September 18, 2026, were voided
+at the Long Park regulatory NO monitor The full statistical analysis can be seen in the
+2
+violin plot and the statistical summary table below:
+40
+35
+30
+25
+20
+15
+10
+5
+0
+B
+elfort P ark D r
+B
+road R un H S
+B
+road R un H S R
+egu
+C
+la
+a
+t
+m
+or
+p
+y
+W
+M
+i
+o
+ll
+n
+ia
+it
+m
+or
+B
+S
+ny
+D
+d
+u
+e
+l
+r
+les A irport
+E
+vergreen C ountry
+C
+Lo
+lu
+n
+b
+g P ark R egulato
+V
+ry
+D
+M
+O
+o
+T
+n
+M
+ito
+K
+r
+C
+)bpp
+ni(
+noitartnecnoC
+ylruoH
+NO2 Distributions of Hourly Concentrations, Loudoun and Prince William
+Hourly 98th−percentile NO2 NAAQS limit is 100 ppb
+Table 2: NO2 Hourly Concentrations Statistical Summary, Loudoun County and Prince
+William County (in ppb)
+Site mean standard_deviation median percentile_98
+Belfort Park Dr 3.0 3.7 1.9 13.8
+Broad Run HS 4.1 3.9 3.5 13.3
+Broad Run HS Regulatory Monitor 3.4 3.1 2.4 13.2
+Camp William B Snyder 3.4 2.1 3.5 7.8
+Dulles Airport 5.7 5.2 4.9 19.1
+Evergreen Country Club 3.3 1.8 3.4 7.4
+Long Park Regulatory Monitor 2.3 1.1 2.2 4.9
+VDOT MKC 5.4 3.3 5.0 12.5
+Mean values across all sites are below 10 ppb, with the highest at Dulles Airport followed
+by VDOT MKC. The hourly 98th percentile values are low (in the 10 - 20 ppb range),
+compared with the NAAQS Hourly 98th percentile limit of 100 ppb.
+13
+
+===== PAGE 14 =====
+4.1 Collocation Statistics: Broad Run HS NO2
+Because the Broad Run HS NO regulatory monitor and the APEX/Kunak sensor at
+2
+Broad Run HS are collocated, a deeper statistical analysis can be performed to compare
+the accuracy and correlation between the two analyzers. In order to get a sense of the
+general quality of the APEX/Kunak sensors, two sensors were rotated through to be col-
+located at Broad Run HS.
+1. From March 3, 2026 - April 8, 2026, the APEX 14 sensor was collocated at Broad
+Run HS. Data can be viewed in the archived weekly report.
+2. From April 8, 2026 - present, the APEX 5 sensor was collocated at Broad Run HS.
+Collected data for APEX 5 is displayed below. First, the time-series graphs are compared
+to get a general view of agreement. In an ideal, perfect scenario the sensor data and the
+regulatory monitor data would lie completely on top of each other since they are measur-
+ing the same pollutant at the same place and time. Because no measurement system is
+trulyperfect,andastheAPEX/KunaksensorreliesonanentirelydifferentNO measure-
+2
+mentmethod,therearesomedifferencesbetweentheconcentrationsmeasuredbetween
+the two analyzers, with the Broad Run HS regulatory monitor generally measuring higher
+concentrations compared the sensor.
+35
+30
+25
+20
+15
+10
+5
+0
+2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026− 2026−
+04− 04− 04− 05− 05− 05− 05− 05− 06− 06− 06− 06− 07− 07− 07− 07− 08− 08− 08− 08− 08− 09− 09− 09− 09−
+11 18 25 02 09 16 23 30 06 13 20 27 04 11 18 25 01 08 15 22 29 05 12 19 26
+Date
+)bpp
+ni(
+noitartnecnoC
+ylruoH
+NO2 Hourly Avg Concentrations at Collocated Broad Run HS Site, APEX 5
+Hourly 98th−percentile NO2 NAAQS limit is 100 ppb
+Broad Run HS Regulatory Monitor K−A3 APEX 5
+A scatter plot can also be used to compare concentrations measured by the APEX sen-
+sors with those from the Broad Run HS regulatory NO monitor. In this plot, the APEX
+2
+sensor readings are placed on the x axis and the regulatory monitor readings on the y
+axis. This allows for a visual assessment of how closely the two instruments agree. If the
+measurements matched perfectly, all points would fall along a single straight line.
+14
+
+===== PAGE 15 =====
+ThescatterplotsbelowshowthattheAPEX5sensordoesnotaligncloselywiththeBroad
+Run HS regulatory (T500u) monitor. This is reflected in the relatively low
+R2
+value, which
+indicates a weaker correlation and a poorer fit of the linear trend line. The best(cid:0)fit line is
+shown in blue. In comparison, the APEX 14 sensor displays a stronger relationship with
+the regulatory monitor, as indicated by its higher
+R2
+value. APEX 5’s
+R2
+value remains
+low, which could be attributed to difficulty in sensor accuracy when reading lower NO
+2
+concentrations.
+30
+y = 2.5+0.14 x R 2 = 0.041
+20
+10
+0
+0 10 20 30
+APEX 5 NO2 Concentration (ppb)
+)bpp(
+noitartnecnoC
+2ON
+yrotalugeR
+Broad Run HS: NO2 APEX 5 Sensor vs Regulatory Monitor
+15
+
+===== PAGE 16 =====
+5 PM2.5 Hourly Concentrations: Loudoun County Sensor
+and Regulatory Monitor Data
+The current National Ambient Air Quality Standards (NAAQS) for PM2.5 are set at two
+levels, corresponding to two different averaging times:
+1. The yearly mean of 24-hr (daily) average PM2.5 concentrations may not exceed
+9.0 micrograms per cubic meter
+(μg/m3
+), when averaged over 3 years.
+2. The98thpercentileof24-hr(daily)averagePM2.5concentrationsmaynotexceed
+35.0 micrograms per cubic meter
+(μg/m3
+), when averaged over 3 years.
+The APEX/Kunak Air sensors and Virginia DEQ’s regulatory PM2.5 monitors both mea-
+sure PM2.5 in micrograms per cubic meter (μg/m3 ). The closest PM2.5 regulatory
+monitoring site is at Broad Run HS in Loudoun County, which has a collocated regulatory
+PM2.5 monitor and an APEX/Kunak sensor.3
+3Due to high humidity and data quality issues with the Kunak/APEX sensors, the first week of PM2.5
+sensorcollecteddata(March3,2026-March8,2026)wasvoidedandisnotincludedinthisanalysis.
+16
+
+===== PAGE 17 =====
+Belfort Park Dr Broad Run HS
+300
+280
+260
+240
+220
+200
+180
+160
+140
+120
+100
+80
+60
+40(35.0 μg/m^3) (35.0 μg/m^3)
+20
+0
+2026− 2 0 0 3 2 − 6 1 − 2 4 0 0 3 2 − 6 2 − 2 4 0 0 4 2 − 6 0 − 2 3 0 0 4 2 − 6 1 − 2 3 0 0 4 2 − 6 2 − 2 3 0 0 5 2 − 6 0 − 2 3 0 0 5 2 − 6 1 − 2 3 0 0 5 2 − 6 2 − 2 3 0 0 6 2 − 6 0 − 2 2 0 0 6 2 − 6 1 − 2 2 0 0 6 2 − 6 2 − 2 2 0 0 7 2 − 6 0 − 2 2 0 0 7 2 − 6 1 − 2 2 0 0 7 2 − 6 2 − 2 2 0 0 8 2 − 6 0 − 2 1 0 0 8 2 − 6 1 − 2 1 0 0 8 2 − 6 2 − 2 1 0 0 8 2 − 6 3 − 2 1 0 0 9 2 − 6 1 − 2 0 0 0 9 2 − 6 2 − 0 09 2 − 0 3 2 0 6− 2 0 0 3 2 − 6 1 − 2 4 0 0 3 2 − 6 2 − 2 4 0 0 4 2 − 6 0 − 2 3 0 0 4 2 − 6 1 − 2 3 0 0 4 2 − 6 2 − 2 3 0 0 5 2 − 6 0 − 2 3 0 0 5 2 − 6 1 − 2 3 0 0 5 2 − 6 2 − 2 3 0 0 6 2 − 6 0 − 2 2 0 0 6 2 − 6 1 − 2 2 0 0 6 2 − 6 2 − 2 2 0 0 7 2 − 6 0 − 2 2 0 0 7 2 − 6 1 − 2 2 0 0 7 2 − 6 2 − 2 2 0 0 8 2 − 6 0 − 2 1 0 0 8 2 − 6 1 − 2 1 0 0 8 2 − 6 2 − 2 1 0 0 8 2 − 6 3 − 2 1 0 0 9 2 − 6 1 − 2 0 0 0 9 2 − 6 2 − 0 09−30
+Broad Run HS Regulatory Monitor Dulles Airport
+300
+280
+260
+240
+220
+200
+180
+160
+140
+120
+100
+80
+60
+40(35.0 μg/m^3) (35.0 μg/m^3)
+20
+0
+2026− 2 0 0 3 2 − 6 1 − 2 4 0 0 3 2 − 6 2 − 2 4 0 0 4 2 − 6 0 − 2 3 0 0 4 2 − 6 1 − 2 3 0 0 4 2 − 6 2 − 2 3 0 0 5 2 − 6 0 − 2 3 0 0 5 2 − 6 1 − 2 3 0 0 5 2 − 6 2 − 2 3 0 0 6 2 − 6 0 − 2 2 0 0 6 2 − 6 1 − 2 2 0 0 6 2 − 6 2 − 2 2 0 0 7 2 − 6 0 − 2 2 0 0 7 2 − 6 1 − 2 2 0 0 7 2 − 6 2 − 2 2 0 0 8 2 − 6 0 − 2 1 0 0 8 2 − 6 1 − 2 1 0 0 8 2 − 6 2 − 2 1 0 0 8 2 − 6 3 − 2 1 0 0 9 2 − 6 1 − 2 0 0 0 9 2 − 6 2 − 0 09 2 − 0 3 2 0 6− 2 0 0 3 2 − 6 1 − 2 4 0 0 3 2 − 6 2 − 2 4 0 0 4 2 − 6 0 − 2 3 0 0 4 2 − 6 1 − 2 3 0 0 4 2 − 6 2 − 2 3 0 0 5 2 − 6 0 − 2 3 0 0 5 2 − 6 1 − 2 3 0 0 5 2 − 6 2 − 2 3 0 0 6 2 − 6 0 − 2 2 0 0 6 2 − 6 1 − 2 2 0 0 6 2 − 6 2 − 2 2 0 0 7 2 − 6 0 − 2 2 0 0 7 2 − 6 1 − 2 2 0 0 7 2 − 6 2 − 2 2 0 0 8 2 − 6 0 − 2 1 0 0 8 2 − 6 1 − 2 1 0 0 8 2 − 6 2 − 2 1 0 0 8 2 − 6 3 − 2 1 0 0 9 2 − 6 1 − 2 0 0 0 9 2 − 6 2 − 0 09−30
+Date
+3m
+gμ
+ni
+noitartnecnoC
+ylruoH
+PM2.5 Hourly Average Concentrations, Loudoun County
+24−hr Avg 98th−percentile PM2.5 NAAQS limit is 35.0 μg m3
+17
+
+===== PAGE 18 =====
+Camp William B Snyder
+40
+(35.0 μg/m^3)
+20
+0
+2026−09−18 2026−09−19 2026−09−20 2026−09−21 2026−09−22 2026−09−23 2026−09−24 2026−09−25
+Evergreen Country Club
+40
+(35.0 μg/m^3)
+20
+0
+2026−09−18 2026−09−19 2026−09−20 2026−09−21 2026−09−22 2026−09−23 2026−09−24 2026−09−25
+VDOT MKC
+40
+(35.0 μg/m^3)
+20
+0
+2026−09−18 2026−09−19 2026−09−20 2026−09−21 2026−09−22 2026−09−23 2026−09−24 2026−09−25
+Date
+3m
+gμ
+ni
+noitartnecnoC
+ylruoH
+PM2.5 Hourly Average Concentrations, Prince William County
+24−hr Avg 98th−percentile PM2.5 NAAQS limit is 35.0 μg m3
+18
+
+===== PAGE 19 =====
+Hourly concentrations greater than 35.0
+μg/m3
+do not represent exceedances of
+thePM2.5NAAQS,asNAAQScomplianceisdeterminedwiththe98thpercentiles
+of daily (24-hr) PM2.5 averages.
+Besides some localized and short-term spikes, the PM2.5 data agrees very well be-
+tween all the sensors and the Broad Run HS regulatory monitor. Due to data quality and
+instrumentationissues, databetweenMay7, 2026, andMay10, 2026, werevoidedatthe
+AshburnregulatoryPM2.5monitor. AdditionallydataattheAshburnregulatoryPM2.5
+monitorbetweenJune16,2026,andJuly14,2026,werevoidedduetoafaileddataqual-
+ity analysis test and instrumentation issues. PM2.5 levels were elevated surrounding
+the weekend of July 4, 2026. This is typical as fireworks greatly influence PM2.5 levels.
+TherewasalargespikethroughtheweekendofJuly17,2026duetotheMinnesotanand
+Canadian wildfires. Further statistical analysis can be seen below in the violin chart and
+the summary statistics table:
+280
+260
+240
+220
+200
+180
+160
+140
+120
+100
+80
+60
+40 (35.0 μg/m^3)
+20
+0
+B B B C D E V
+elfort
+P ark
+D r
+road
+R un
+H S
+road
+R un
+H S R
+egulato
+a
+r
+m
+y
+M
+p
+W illiam
+B
+S
+nyder
+ulles
+A irport
+vergreen
+C ountry
+C
+lub
+D O
+T
+M K
+C
+onitor
+3m
+gμ
+ni
+noitartnecnoC
+ylruoH
+PM2.5 Distributions of Hourly Concentrations
+24−hr Avg 98th−percentile PM2.5 NAAQS limit is 35.0 μg m3
+19
+
+===== PAGE 20 =====
+Table 3: PM2.5 Hourly Concentrations Statistical Summary
+Site mean standard_deviation median percentile_98
+Belfort Park Dr 8.6 10.3 6.1 29.8
+Broad Run HS 8.1 8.6 6.2 26.2
+Broad Run HS Regulatory Monitor 7.9 15.2 5.8 20.7
+Camp William B Snyder 4.6 3.4 3.8 17.0
+Dulles Airport 5.6 7.4 3.8 19.2
+Evergreen Country Club 3.5 2.5 2.9 11.7
+VDOT MKC 4.0 2.6 3.2 12.4
+The mean and median PM2.5 concentrations for each site are all below 10.0 μg/m3 .
+TheBelfortsensormeasuredthehighestmeanconcentrationoutofthegroup,followedby
+the Broad Run HS sensor. Loudoun County sensors have higher 98th percentile values
+than the Prince William County sensors as the Prince William County sensors were not
+deployed during the Minnesotan and Canadian wildfires during the weekend of July 17,
+2026.
+20
+
+===== PAGE 21 =====
+5.1 Collocation Statistics: Broad Run HS PM2.5
+APEX 5 sensor is currently collocated with the Broad Run HS PM2.5 regulatory moni-
+tor.
+The time-periods of collocation were the same for PM2.5 as they were for NO :
+2
+1. From March 3, 2026 - April 8, 2026, the APEX 14 sensor was collocated at Broad
+Run HS. Data can be viewed in the archived weekly report
+2. From April 8, 2026 - present, the APEX 5 sensor was collocated at Broad Run HS.
+Again, we can compare the time-series to get a general view of agreement. In the graphs
+below, the readings from the APEX sensors and the regulatory PM2.5 monitor were
+overlaid on each other. As we can see in the graphs, the sensor data and the regulatory
+monitor are close, with the regulatory monitor reading slightly higher except for a few
+spikes in the sensor data.
+280
+260
+240
+220
+200
+180
+160
+140
+120
+100
+80
+60
+40
+20
+0
+2026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026 2
+−
+026−
+04− 04− 04− 04− 04− 05− 05− 05− 05− 05− 05− 06− 06− 06− 06− 06− 06− 07− 07− 07− 07− 07− 07− 08− 08− 08− 08− 08− 08− 09− 09− 09− 09− 09− 09−
+0914192429040914192429030813182328030813182328020712172227010611162126
+Date
+3m
+gμ
+ni
+noitartnecnoC
+ylruoH
+PM2.5 Hourly Avg Concentrations at Collocated Broad Run HS Site, APEX 5
+Broad Run HS Regulatory Monitor K−A3 APEX 5
+AswiththeNO data, scatterplotswerecreatedfortheAPEX5sensor. Thescatterplot
+2
+showsthatdatafromtheAPEXPM2.5sensorsdonotperfectlymatchthedatafromthe
+Broad Run HS regulatory (T640x) monitor, although the PM2.5 data from the sensors
+are more accurate compared to the NO sensor data.
+2
+Notably,theR2
+valuesforthePM2.5dataaremuchhigherforthecollocatedAPEX/Kunak
+sensors, indicatingstrongercorrelationswiththePM2.5databetweentheAPEX/Kunak
+sensors and the DEQ Broad Run HS regulatory monitor. At higher concentration values
+for PM2.5, differences between the sensor and regulatory monitor widen, as reflected
+in the scatter plots below. The recent wildfire impacted data from July 17, 2026, skew the
+linear relationship of APEX 5 to the regulatory monitor.
+21
+
+===== PAGE 22 =====
+200 y = - 3.6+1.4 x R 2 = 0.66
+100
+0
+0 25 50 75 100 125
+3
+APEX 5 Sensor PM2.5 Concentration in μg m
+3
+m
+gμ
+ni
+noitartnecnoC
+5.2MP
+)x046T(
+yrotalugeR
+APEX 5 Sensor vs Regulatory Monitor PM2.5 Concentration
+22
+
+===== PAGE 23 =====
+6 PM2.5 24-hour (daily) Concentrations: Loudoun County
+Sensor and Regulatory Monitor Data
+As the PM2.5 NAAQS are given in terms of the 24-hour (daily) concentrations, the daily
+24-hr average data is presented below, in a time-series and a distribution (violin plot)
+format.
+The current National Ambient Air Quality Standards (NAAQS) for PM2.5 are set at two
+levels, corresponding to two different averaging times:
+1. The yearly mean of 24-hr (daily) average PM2.5 concentrations may not exceed
+9.0 micrograms per cubic meter
+(μg/m3
+), when averaged over 3 years.
+2. The98thpercentileof24-hr(daily)averagePM2.5concentrationsmaynotexceed
+35.0 micrograms per cubic meter
+(μg/m3
+), when averaged over 3 years.
+At least 18 out of 24 hours are required to make a valid 24-hour (daily) PM2.5 average.
+SincethisreportwasproducedthemorningofSeptember25,2026,dailyPM2.5average
+data only goes until September 24, 2026.
+23
+
+===== PAGE 24 =====
+Belfort Park Dr Broad Run HS
+180
+170
+160
+150
+140
+130
+120
+110
+100
+90
+80
+70
+60
+50
+40(35.0 μg/m^3) (35.0 μg/m^3)
+30
+20
+10
+0
+2026− 2 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 2 4 0 0 9 2 − 6 1 − 4 09 2 − 02 2 6 4 − 2 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 2 4 0 0 9 2 − 6 1 − 4 09−24
+Broad Run HS Regulatory Monitor Dulles Airport
+180
+170
+160
+150
+140
+130
+120
+110
+100
+90
+80
+70
+60
+50
+40(35.0 μg/m^3) (35.0 μg/m^3)
+30
+20
+10
+0
+2026− 2 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 2 4 0 0 9 2 − 6 1 − 4 09 2 − 02 2 6 4 − 2 0 0 3 2 − 6 0 − 2 8 0 0 3 2 − 6 1 − 2 8 0 0 3 2 − 6 2 − 2 8 0 0 4 2 − 6 0 − 2 7 0 0 4 2 − 6 1 − 2 7 0 0 4 2 − 6 2 − 2 7 0 0 5 2 − 6 0 − 2 7 0 0 5 2 − 6 1 − 2 7 0 0 5 2 − 6 2 − 2 7 0 0 6 2 − 6 0 − 2 6 0 0 6 2 − 6 1 − 2 6 0 0 6 2 − 6 2 − 2 6 0 0 7 2 − 6 0 − 2 6 0 0 7 2 − 6 1 − 2 6 0 0 7 2 − 6 2 − 2 6 0 0 8 2 − 6 0 − 2 5 0 0 8 2 − 6 1 − 2 5 0 0 8 2 − 6 2 − 2 5 0 0 9 2 − 6 0 − 2 4 0 0 9 2 − 6 1 − 4 09−24
+Date
+3m
+gμ
+ni
+noitartnecnoC
+)yliaD(
+rh−42
+PM2.5 24−hr (Daily) Average Concentrations, Loudoun County
+24−hr Avg 98th−percentile PM2.5 NAAQS limit is 35.0 μg m3
+24
+
+===== PAGE 25 =====
+Camp William B Snyder
+40
+(35.0 μg/m^3)
+30
+20
+10
+0
+2026−09−17 2026−09−18 2026−09−19 2026−09−20 2026−09−21 2026−09−22 2026−09−23 2026−09−24
+Evergreen Country Club
+40
+(35.0 μg/m^3)
+30
+20
+10
+0
+2026−09−17 2026−09−18 2026−09−19 2026−09−20 2026−09−21 2026−09−22 2026−09−23 2026−09−24
+VDOT MKC
+40
+(35.0 μg/m^3)
+30
+20
+10
+0
+2026−09−17 2026−09−18 2026−09−19 2026−09−20 2026−09−21 2026−09−22 2026−09−23 2026−09−24
+Date
+3m
+gμ
+ni
+noitartnecnoC
+)yliaD(
+rh−42
+PM2.5 24−hr (Daily) Average Concentrations, Prince William County
+24−hr Avg 98th−percentile PM2.5 NAAQS limit is 35.0 μg m3
+Daily concentrations across all sensor sites and the Broad Run HS Regulatory monitor lie
+below the 35.0 μg/m3 limit for PM2.5, with the exception of the wildfire impacted data
+near the weekend of July 17, 2026.
+The violin plot below shows the distributions and median of all sensor data, as well as the
+25
+
+===== PAGE 26 =====
+Broad Run HS regulatory monitor data. The full statistical analysis for the 24-hour (Daily)
+PM2.5 concentrations are presented in a table below the violin plot.
+170
+160
+150
+140
+130
+120
+110
+100
+90
+80
+70
+60
+50
+40
+(35.0 μg/m^3) 30
+20
+10
+0
+Belfort
+Park
+Dr
+Broad
+Run
+HS
+Broad
+Run
+HS
+Regulatory
+M
+Cam
+p
+W illiam
+B Snyder
+Dulles
+Airport
+Evergreen
+Country
+Club
+VDO
+T
+M KC
+onitor
+3m
+gμ
+ni
+nsoitartnecnoC
+)yliaD(
+rh−42
+PM2.5 Distributions of 24−hr (Daily) Concentrations, Loudoun County and Prince William County
+24−hr Avg 98th−percentile PM2.5 NAAQS limit is 35.0 μg m3
+Table 4: PM2.5 24-Hour (Daily) Concentrations Statistical Summary
+Site mean standard_deviation median percentile_98
+Belfort Park Dr 8.7 9.3 6.5 24.3
+Broad Run HS 8.1 7.7 6.7 23.9
+Broad Run HS Regulatory Monitor 7.8 14.0 5.8 20.9
+Camp William B Snyder 4.7 1.9 4.3 7.8
+Dulles Airport 5.6 6.6 4.1 17.1
+Evergreen Country Club 3.6 1.4 3.2 6.1
+VDOT MKC 4.1 1.6 3.8 6.4
+As the above table illustrates, no site’s 98th percentile concentration of the daily PM2.5
+averages is above the 24-hr 98th percentile PM2.5 NAAQS limit of 35.0 μg/m3 .
+No sensors are above the 24-hr (daily) average PM2.5 NAAQS limit of 9.0 μg/m3 .
+Loudoun County sensors have higher 98th percentile values than the Prince William
+County sensors as the Prince William County sensors were not deployed during the
+Minnesotan and Canadian wildfires during the weekend of July 17, 2026.
+26
+
+===== PAGE 27 =====
+7 Wind Speed and Direction
+Below is a wind rose from Dulles International Airport, directly South/Southwest of AQM’s
+study area.
+27
+
+===== PAGE 28 =====
+Wind speeds and directions in Loudoun during the study period show most winds came
+fromeithertheSouthorNorthwestdirection. ThissuggeststhatAQM’sBroadRunHSand
+Dulles sites are good upwind sites with regard to Loudoun County’s “Data Center Alley”.
+Wind speeds and directions in Prince William during the study period mostly came from
+the North. Long Park, Evergreen Country Club, and Camp Snyder are to the Northwest
+of Manassas Airport but the wind rose suggests that VDOT MKC could be a good upwind
+site. There are plans to install a sensor at Manassas Airport pending approval.
+28

@@ -1,9 +1,9 @@
-﻿import shutil
+import shutil
 import sys
 from pathlib import Path
 
 SRC = Path(sys.argv[1])
-START, END = "2026-03-03", "2026-09-19"
+START, END = "2026-03-03", "2026-09-26"
 DEST = Path("pipeline/sources/deq-raw")
 
 LOCS = {
@@ -12,7 +12,7 @@ LOCS = {
     "Dulles Airport": "dulles-area",
     "Farmwell Station MS": "farmwell-middle",
     "1757 Golf Club": "golf-course",
-    "Camp William B Synder": "camp-snyder",
+    "Camp William B Snyder": "camp-snyder",
     "Evergreen Country Club": "evergreen-cc",
     "VDOT MKC": "vdot-mkc",
     "Sterling MS": "sterling-ms",
@@ -62,7 +62,7 @@ for p in sorted(SRC.glob("*.csv")):
     seen.add(slug)
     target = DEST / f"{slug}_multi_{START}_{END}.csv"
     plan.append((p, target))
-    flag = "" if "Sep 19, 2026" in newest else "   <-- newest is not Sep 19"
+    flag = "" if "Sep 26, 2026" in newest else "   <-- newest is not Sep 26"
     print(f"{loc:22} rows={n:6d}  {oldest}  ..  {newest}{flag}")
     print(f"    {p.name}  ->  {target.as_posix()}")
 
