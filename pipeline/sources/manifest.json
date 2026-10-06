@@ -576,6 +576,26 @@
         "pipeline/sources/deq/deq_dcamp_weekly_2026-09-25.txt",
         "pipeline/sources/deq/deq_dcamp_weekly_2026-09-25_tables.json"
       ]
+    },
+    {
+      "filename": "pipeline/sources/deq/deq_dcamp_weekly_2026-10-02.pdf",
+      "origin_url": "https://www.deq.virginia.gov/home/showpublisheddocument/39212/639265344236100000",
+      "download_date": "2026-10-05",
+      "report_date": "2026-10-02",
+      "license": "Public record. Virginia DEQ confirmed redistributable with credit to Virginia DEQ.",
+      "attribution": "Virginia Department of Environmental Quality",
+      "format": "pdf",
+      "sha256": "67310608da566245ed4a4e613c03c289a7e1a0edf8a92f6ec4ffe8be390ad5a0",
+      "size_bytes": 3581439,
+      "pages": 28,
+      "tables_extracted": 40,
+      "text_normalization": "NFKC",
+      "description": "Virginia DEQ Data Center Air Monitoring Project weekly analysis report. Reference artifact for reproduction of published collocation regressions, daily-average QA, and daily PM2.5 98th-percentile values. Not a data source; hourly Kunak CSV exports are the data source.",
+      "expected_columns": null,
+      "derived_files": [
+        "pipeline/sources/deq/deq_dcamp_weekly_2026-10-02.txt",
+        "pipeline/sources/deq/deq_dcamp_weekly_2026-10-02_tables.json"
+      ]
     }
   ]
 }
