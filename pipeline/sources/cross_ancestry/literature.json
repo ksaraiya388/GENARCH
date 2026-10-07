@@ -1,0 +1,1846 @@
+[
+  {
+    "id": "martin2019",
+    "title": "Clinical use of current polygenic risk scores may exacerbate health disparities",
+    "doi": "10.1038/s41588-019-0379-x",
+    "populations_reported": [
+      "European",
+      "non-European (unspecified)"
+    ],
+    "population_labels_as_used": "individuals of European ancestry; other ancestries; European-descent populations",
+    "traits": [
+      "polygenic risk scores, trait-general"
+    ],
+    "extractions": [
+      {
+        "claim_id": "martin2019-accuracy-gap-qualitative",
+        "trait": "polygenic risk scores, trait-general",
+        "population": "non-European (unspecified)",
+        "metric": "PRS accuracy ratio versus European ancestry; stated qualitatively, no numeric value given in the retrieved abstract",
+        "value": null,
+        "comparator": "European",
+        "locator": "Abstract",
+        "excerpt_internal": "those available today are several times more accurate in individuals of European ancestry than other ancestries",
+        "source_text": "europepmc_abstract"
+      },
+      {
+        "claim_id": "martin2019-eurocentric-origin",
+        "trait": "polygenic risk scores, trait-general",
+        "population": "European",
+        "metric": "stated source of the accuracy disparity; not a measured quantity",
+        "value": null,
+        "comparator": null,
+        "locator": "Abstract",
+        "excerpt_internal": "This disparity is an inescapable consequence of Eurocentric biases in genome-wide association studies",
+        "source_text": "europepmc_abstract"
+      }
+    ],
+    "used_by": {
+      "genarch": [
+        "data/ancestry/type-2-diabetes.json",
+        "data/ancestry/coronary-artery-disease.json",
+        "data/ancestry/asthma.json"
+      ],
+      "aurora": "not covered"
+    },
+    "aurora_note_path": null,
+    "text_availability": "Abstract only. Not open access; the Europe PMC fullTextXML endpoint returns HTTP 500 for PMC6563838.",
+    "verified": {
+      "crossref_title": "Clinical use of current polygenic risk scores may exacerbate health disparities",
+      "year": 2019,
+      "journal": "Nature Genetics",
+      "first_author": "Martin, Alicia R.",
+      "checked_at": "2026-10-06"
+    }
+  },
+  {
+    "id": "duncan2019",
+    "title": "Analysis of polygenic risk score usage and performance in diverse human populations",
+    "doi": "10.1038/s41467-019-11112-0",
+    "populations_reported": [
+      "European",
+      "East Asian",
+      "South Asian",
+      "African",
+      "Hispanic/Latino",
+      "Indigenous"
+    ],
+    "population_labels_as_used": "European ancestry; East Asian ancestry; African ancestry; cohorts of African, Hispanic, or Indigenous peoples; Latino samples",
+    "traits": [
+      "polygenic risk scores, trait-general"
+    ],
+    "extractions": [
+      {
+        "claim_id": "duncan2019-studies-european-only",
+        "trait": "polygenic scoring studies 2008-2017",
+        "population": "European",
+        "metric": "share of polygenic scoring studies including exclusively European-ancestry participants",
+        "value": 67.0,
+        "comparator": null,
+        "locator": "Abstract",
+        "excerpt_internal": "67% of studies included exclusively European ancestry participants and another 19% included only East Asian ancestry participants",
+        "source_text": "europepmc_abstract"
+      },
+      {
+        "claim_id": "duncan2019-studies-afr-hisp-indig",
+        "trait": "polygenic scoring studies 2008-2017",
+        "population": "African, Hispanic/Latino, Indigenous (combined)",
+        "metric": "share of polygenic scoring studies conducted among these cohorts",
+        "value": 3.8,
+        "comparator": null,
+        "locator": "Abstract",
+        "excerpt_internal": "Only 3.8% of studies were among cohorts of African, Hispanic, or Indigenous peoples",
+        "source_text": "europepmc_abstract"
+      },
+      {
+        "claim_id": "duncan2019-afr-performance-test",
+        "trait": "polygenic risk scores, trait-general",
+        "population": "African",
+        "metric": "paired t-statistic for lower predictive performance of European-derived PRS in African-ancestry samples (t = -5.97, df = 24)",
+        "value": -5.97,
+        "comparator": "European",
+        "locator": "Abstract",
+        "excerpt_internal": "predictive performance of European ancestry-derived polygenic scores is lower in non-European ancestry samples",
+        "source_text": "europepmc_abstract"
+      },
+      {
+        "claim_id": "duncan2019-south-asian-scarcity",
+        "trait": "polygenic scoring studies 2008-2017",
+        "population": "South Asian",
+        "metric": "qualitative statement of South Asian representation; no separate percentage reported",
+        "value": null,
+        "comparator": "East Asian",
+        "locator": "Results, figure discussion of ancestry representation",
+        "excerpt_internal": "South Asian samples, which have been included in very few polygenic scoring studies to date",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "duncan2019-mechanism-ld-maf",
+        "trait": "polygenic risk scores, trait-general",
+        "population": "non-European (unspecified)",
+        "metric": "named methodological sources of degradation; not a measured quantity",
+        "value": null,
+        "comparator": null,
+        "locator": "Abstract",
+        "excerpt_internal": "the need for improved treatment of linkage disequilibrium and variant frequencies when applying polygenic scoring",
+        "source_text": "europepmc_abstract"
+      }
+    ],
+    "used_by": {
+      "genarch": [
+        "data/ancestry/type-2-diabetes.json",
+        "data/ancestry/coronary-artery-disease.json",
+        "data/ancestry/asthma.json"
+      ],
+      "aurora": "not covered"
+    },
+    "aurora_note_path": null,
+    "text_availability": "Open access. Abstract and fullTextXML retrieved from PMC6658471.",
+    "verified": {
+      "crossref_title": "Analysis of polygenic risk score usage and performance in diverse human populations",
+      "year": 2019,
+      "journal": "Nature Communications",
+      "first_author": "Duncan, L.",
+      "checked_at": "2026-10-06"
+    }
+  },
+  {
+    "id": "prive2022",
+    "title": "Portability of 245 polygenic scores when derived from the UK Biobank and applied to 9 ancestry groups from the same cohort",
+    "doi": "10.1016/j.ajhg.2021.11.008",
+    "populations_reported": [
+      "nine sub-continental ancestry groups within the UK Biobank"
+    ],
+    "population_labels_as_used": "nine ancestry groups defined at a sub-continental level; Northwestern European (training group)",
+    "traits": [
+      "245 curated traits"
+    ],
+    "extractions": [
+      {
+        "claim_id": "prive2022-portability-decay-qualitative",
+        "trait": "245 curated traits",
+        "population": "nine sub-continental ancestry groups",
+        "metric": "reduction in polygenic score portability relative to the Northwestern European training group; stated qualitatively, no numeric value in the retrieved abstract",
+        "value": null,
+        "comparator": "Northwestern European",
+        "locator": "Abstract",
+        "excerpt_internal": "a systematic and dramatic reduction in portability of PGSs trained using Northwestern European individuals and applied to nine ancestry groups",
+        "source_text": "crossref_abstract"
+      },
+      {
+        "claim_id": "prive2022-genetic-distance",
+        "trait": "245 curated traits",
+        "population": "nine sub-continental ancestry groups",
+        "metric": "relationship between prediction accuracy and genetic distance; stated qualitatively",
+        "value": null,
+        "comparator": "Northwestern European",
+        "locator": "Abstract",
+        "excerpt_internal": "prediction already drops off within European ancestries and reduces globally in proportion to genetic distance",
+        "source_text": "crossref_abstract"
+      },
+      {
+        "claim_id": "prive2022-same-cohort-design",
+        "trait": "245 curated traits",
+        "population": "nine sub-continental ancestry groups",
+        "metric": "study design feature: training and testing confined to one cohort; not a measured quantity",
+        "value": null,
+        "comparator": null,
+        "locator": "Abstract",
+        "excerpt_internal": "By restricting both training and testing to the UK Biobank data, we reduce the risk of environmental and genotyping confounding",
+        "source_text": "crossref_abstract"
+      }
+    ],
+    "used_by": {
+      "genarch": [
+        "data/ancestry/type-2-diabetes.json",
+        "data/ancestry/coronary-artery-disease.json",
+        "data/ancestry/asthma.json"
+      ],
+      "aurora": "not covered"
+    },
+    "aurora_note_path": null,
+    "text_availability": "Abstract only. Not open access; the Europe PMC fullTextXML endpoint returns HTTP 500 for PMC8764121. Per-group accuracy figures live in the paper's figures and are NOT recorded here. Note the recorded title says 'from the same cohort'; sources that write 'in the same cohort' are quoting it incorrectly.",
+    "verified": {
+      "crossref_title": "Portability of 245 polygenic scores when derived from the UK Biobank and applied to 9 ancestry groups from the same cohort",
+      "year": 2022,
+      "journal": "The American Journal of Human Genetics",
+      "first_author": "Privé, Florian",
+      "checked_at": "2026-10-06"
+    }
+  },
+  {
+    "id": "wang2020ra",
+    "title": "Theoretical and empirical quantification of the accuracy of polygenic scores in ancestry divergent populations",
+    "doi": "10.1038/s41467-020-17719-y",
+    "populations_reported": [
+      "European",
+      "South Asian",
+      "East Asian",
+      "African"
+    ],
+    "population_labels_as_used": "European ancestry (EUR); South-Asian ancestry (SAS); East-Asian ancestry (EAS); African ancestry (AFR), as ancestry-homogeneous UK Biobank groups",
+    "traits": [
+      "height",
+      "body mass index",
+      "HDL cholesterol",
+      "LDL cholesterol",
+      "triglycerides",
+      "asthma",
+      "type 2 diabetes",
+      "hypertension"
+    ],
+    "extractions": [
+      {
+        "claim_id": "wang2020ra-definition",
+        "trait": "polygenic scores, trait-general",
+        "population": "ancestry-divergent target populations",
+        "metric": "definition of relative accuracy (RA) as the ratio of prediction accuracy in the target population to that in a population of the discovery ancestry, R2_2/R2_1",
+        "value": null,
+        "comparator": "population of the same ancestry as the discovery population",
+        "locator": "Results, 'Expected relative accuracy of PGS in ancestry divergent populations', text following Equation (1)",
+        "excerpt_internal": "the relative accuracy (RA, relative to the accuracy in populations of same ancestry as Population 1) of PGS, defined as R2_2/R2_1",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "wang2020ra-decomposition",
+        "trait": "polygenic scores, trait-general",
+        "population": "ancestry-divergent target populations",
+        "metric": "terms RA decomposes into: squared cross-population genetic correlation of causal effect sizes, heritability ratio, squared covariance ratio, and PGS variance ratio",
+        "value": null,
+        "comparator": null,
+        "locator": "Results, text following Equation (1)",
+        "excerpt_internal": "the squared genetic correlation between populations, the ratio of heritability between populations, and the ratio of variance of PGS",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "wang2020ra-mean-sas",
+        "trait": "mean across 5 quantitative traits and 3 common diseases",
+        "population": "South Asian",
+        "metric": "mean observed relative accuracy (RA) of European-discovery PGS, as a percentage of accuracy in European ancestry",
+        "value": 72.0,
+        "comparator": "European",
+        "locator": "Results, 'Trans-ancestry relative prediction accuracy' (Fig. 3)",
+        "excerpt_internal": "the mean observed RA across traits and diseases is 72%, 64% and 24% in participants of SAS, EAS and AFR ancestry",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "wang2020ra-mean-afr",
+        "trait": "mean across 5 quantitative traits and 3 common diseases",
+        "population": "African",
+        "metric": "mean observed relative accuracy (RA) of European-discovery PGS, as a percentage of accuracy in European ancestry",
+        "value": 24.0,
+        "comparator": "European",
+        "locator": "Results, 'Trans-ancestry relative prediction accuracy' (Fig. 3)",
+        "excerpt_internal": "the mean observed RA across traits and diseases is 72%, 64% and 24% in participants of SAS, EAS and AFR ancestry",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "wang2020ra-mean-eas",
+        "trait": "mean across 5 quantitative traits and 3 common diseases",
+        "population": "East Asian",
+        "metric": "mean observed relative accuracy (RA) of European-discovery PGS, as a percentage of accuracy in European ancestry",
+        "value": 64.0,
+        "comparator": "European",
+        "locator": "Results, 'Trans-ancestry relative prediction accuracy' (Fig. 3)",
+        "excerpt_internal": "the mean observed RA across traits and diseases is 72%, 64% and 24% in participants of SAS, EAS and AFR ancestry",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "wang2020ra-loa-definition",
+        "trait": "polygenic scores, trait-general",
+        "population": "ancestry-divergent target populations",
+        "metric": "definition of loss of accuracy, LOA = (1 - RA) x 100%",
+        "value": null,
+        "comparator": null,
+        "locator": "Results, 'fraction of RA attributable to MAF and LD differences'",
+        "excerpt_internal": "we define the loss of accuracy (LOA) of their corresponding PGS as LOA = (1 - RA) x 100%",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "wang2020ra-loa-maf-ld-sas",
+        "trait": "mean across traits with significantly reduced RA",
+        "population": "South Asian",
+        "metric": "proportion of loss of accuracy (LOA) attributable to minor-allele-frequency and linkage-disequilibrium differences from European ancestry (S.E. 5%)",
+        "value": 37.0,
+        "comparator": "European",
+        "locator": "Results, 'fraction of RA attributable to MAF and LD differences'",
+        "excerpt_internal": "MAF and LD differences alone can explain up to ~37% (S.E. 5%), ~57% (S.E. 11%) and ~86% (S.E. 7%) of the LOA in SAS, EAS and AFR",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "wang2020ra-loa-maf-ld-afr",
+        "trait": "mean across traits with significantly reduced RA",
+        "population": "African",
+        "metric": "proportion of loss of accuracy (LOA) attributable to minor-allele-frequency and linkage-disequilibrium differences from European ancestry (S.E. 7%)",
+        "value": 86.0,
+        "comparator": "European",
+        "locator": "Results, 'fraction of RA attributable to MAF and LD differences'",
+        "excerpt_internal": "MAF and LD differences alone can explain up to ~37% (S.E. 5%), ~57% (S.E. 11%) and ~86% (S.E. 7%) of the LOA in SAS, EAS and AFR",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "wang2020ra-loa-t2d-afr",
+        "trait": "type 2 diabetes",
+        "population": "African",
+        "metric": "proportion of loss of accuracy (LOA) of the T2D PGS attributable to MAF and LD differences between European and African ancestries (S.E. 14%)",
+        "value": 82.0,
+        "comparator": "European",
+        "locator": "Results, 'fraction of RA attributable to MAF and LD differences'",
+        "excerpt_internal": "For T2D and HTN, respectively, we found that ~82% (S.E. 14%) and ~86% (S.E. 20%) of the LOA can be expected because of MAF and LD differences",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "wang2020ra-sas-significance",
+        "trait": "height, body mass index, LDL cholesterol, HDL cholesterol",
+        "population": "South Asian",
+        "metric": "set of traits for which the RA reduction reached statistical significance (Wald test p < 0.05); type 2 diabetes, asthma and hypertension are not in that set",
+        "value": null,
+        "comparator": "European",
+        "locator": "Results, 'Trans-ancestry relative prediction accuracy' (Supplementary Table 2)",
+        "excerpt_internal": "In SAS ancestry for example, the reduction of RA was significant only for height, BMI, LDL and HDL",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "wang2020ra-afr-significance",
+        "trait": "all 8 traits and diseases studied",
+        "population": "African",
+        "metric": "set of traits for which the RA reduction reached statistical significance; all studied traits qualify in African ancestry",
+        "value": null,
+        "comparator": "European",
+        "locator": "Results, 'Trans-ancestry relative prediction accuracy' (Supplementary Table 2)",
+        "excerpt_internal": "while PGSs of all traits had significantly reduced RA in AFR ancestry",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "wang2020ra-shared-causal-variants",
+        "trait": "polygenic scores, trait-general",
+        "population": "non-European (unspecified)",
+        "metric": "interpretation of cross-population causal-variant sharing; not a measured quantity",
+        "value": null,
+        "comparator": "European",
+        "locator": "Abstract",
+        "excerpt_internal": "causal variants underlying common genetic variation identified in European ancestry GWAS are mostly shared across continents",
+        "source_text": "crossref_abstract"
+      },
+      {
+        "claim_id": "wang2020ra-ukb-group-sizes",
+        "trait": "study design",
+        "population": "European, South Asian, African, East Asian",
+        "metric": "UK Biobank ancestry-group sample sizes: EUR 333,263; SAS 9,448; AFR 7,015; EAS 2,257",
+        "value": null,
+        "comparator": null,
+        "locator": "Results, UK Biobank ancestry grouping",
+        "excerpt_internal": "European ancestry (EUR; N = 333,263), East-Asian ancestry (EAS, N = 2257), South-Asian ancestry (SAS, N = 9448) and African ancestry (AFR, N = 7015)",
+        "source_text": "europepmc_fulltext"
+      }
+    ],
+    "used_by": {
+      "genarch": [
+        "data/ancestry/type-2-diabetes.json",
+        "data/ancestry/coronary-artery-disease.json",
+        "data/ancestry/asthma.json"
+      ],
+      "aurora": "not covered"
+    },
+    "aurora_note_path": null,
+    "text_availability": "Open access. Abstract and fullTextXML retrieved from PMC7395791. The abstract rounds the African-ancestry T2D/BMI attribution to 'between 70 and 80%'; the Results text gives ~82% (S.E. 14%) for T2D specifically. GENARCH cites the Results figure, not the rounded abstract range.",
+    "verified": {
+      "crossref_title": "Theoretical and empirical quantification of the accuracy of polygenic scores in ancestry divergent populations",
+      "year": 2020,
+      "journal": "Nature Communications",
+      "first_author": "Wang, Ying",
+      "checked_at": "2026-10-06"
+    }
+  },
+  {
+    "id": "ding2023",
+    "title": "Polygenic scoring accuracy varies across the genetic ancestry continuum",
+    "doi": "10.1038/s41586-023-06079-4",
+    "populations_reported": [
+      "European American",
+      "Hispanic Latino American",
+      "South Asian American",
+      "East Asian American",
+      "African American"
+    ],
+    "population_labels_as_used": "genetically inferred ancestry (GIA) clusters labelled European American (EA), Hispanic Latino American (HL), South Asian American (SAA), East Asian American (EAA), African American (AA)",
+    "traits": [
+      "84 traits"
+    ],
+    "extractions": [
+      {
+        "claim_id": "ding2023-gd-accuracy-correlation",
+        "trait": "mean across 84 traits",
+        "population": "all ATLAS participants",
+        "metric": "Pearson correlation between genetic distance from the PGS training data and PGS accuracy, averaged across 84 traits",
+        "value": -0.95,
+        "comparator": "PGS training data (white British, UK Biobank)",
+        "locator": "Abstract",
+        "excerpt_internal": "Pearson correlation of -0.95 between GD and PGS accuracy averaged across 84 traits",
+        "source_text": "crossref_abstract"
+      },
+      {
+        "claim_id": "ding2023-within-european-decile-drop",
+        "trait": "mean across 84 traits",
+        "population": "European American",
+        "metric": "reduction in PGS accuracy in the furthest genetic-distance decile relative to the closest decile, within one GIA cluster",
+        "value": 14.0,
+        "comparator": "closest genetic-distance decile of the same GIA cluster",
+        "locator": "Abstract; Results",
+        "excerpt_internal": "individuals in the furthest GD decile have 14% lower accuracy relative to the closest decile",
+        "source_text": "crossref_abstract"
+      },
+      {
+        "claim_id": "ding2023-hl-overlap-european",
+        "trait": "mean across 84 traits",
+        "population": "Hispanic Latino American",
+        "metric": "qualitative overlap of PGS accuracy distributions between the closest decile of one group and the furthest decile of another",
+        "value": null,
+        "comparator": "European American",
+        "locator": "Abstract; Results",
+        "excerpt_internal": "the closest GD decile of individuals with Hispanic Latino American ancestries show similar PGS performance to the furthest GD decile of individuals with European ancestries",
+        "source_text": "crossref_abstract"
+      },
+      {
+        "claim_id": "ding2023-gd-corr-hl",
+        "trait": "mean across 84 traits",
+        "population": "Hispanic Latino American",
+        "metric": "correlation (R) between genetic distance and PGS accuracy within the GIA cluster",
+        "value": -0.84,
+        "comparator": "PGS training data (white British, UK Biobank)",
+        "locator": "Results (Fig. 3)",
+        "excerpt_internal": "GD strongly correlates with PGS accuracy of individuals in the GIA cluster labelled Hispanic Latino American (HL, R = -0.84)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "ding2023-gd-corr-aa",
+        "trait": "mean across 84 traits",
+        "population": "African American",
+        "metric": "correlation (R) between genetic distance and PGS accuracy within the GIA cluster",
+        "value": -0.88,
+        "comparator": "PGS training data (white British, UK Biobank)",
+        "locator": "Results (Fig. 3)",
+        "excerpt_internal": "and African American (AA, R = -0.88) in ATLAS",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "ding2023-gd-corr-saa",
+        "trait": "mean across 84 traits",
+        "population": "South Asian American",
+        "metric": "correlation (R) between genetic distance and PGS accuracy within the GIA cluster",
+        "value": -0.66,
+        "comparator": "PGS training data (white British, UK Biobank)",
+        "locator": "Results (Fig. 3)",
+        "excerpt_internal": "GD correlates with PGS accuracy even in non-admixed GIA clusters with correlations as -0.66, -0.66 and -0.35, for European American (EA), South Asian American (SAA) or East Asian American (EAA)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "ding2023-continuum-recommendation",
+        "trait": "84 traits",
+        "population": "all",
+        "metric": "stated interpretation: discrete ancestry clusters are inadequate for PGS interpretation; not a measured quantity",
+        "value": null,
+        "comparator": null,
+        "locator": "Abstract",
+        "excerpt_internal": "the need to move away from discrete genetic ancestry clusters towards the continuum of genetic ancestries when considering PGSs",
+        "source_text": "crossref_abstract"
+      },
+      {
+        "claim_id": "ding2023-atlas-cluster-sizes",
+        "trait": "study design",
+        "population": "all five ATLAS GIA clusters",
+        "metric": "ATLAS cluster sizes: 22,380 European American; 6,973 Hispanic Latino American; 3,331 East Asian American; 1,995 African American; 625 South Asian American",
+        "value": null,
+        "comparator": null,
+        "locator": "Methods, 'Ancestry ascertainment in ATLAS'",
+        "excerpt_internal": "We can cluster 95% of the ATLAS participants into 22,380 EA, 6,973 HL, 625 SAA, 3,331 EAA and 1,995 AA",
+        "source_text": "europepmc_fulltext"
+      }
+    ],
+    "used_by": {
+      "genarch": [
+        "data/ancestry/type-2-diabetes.json",
+        "data/ancestry/coronary-artery-disease.json",
+        "data/ancestry/asthma.json"
+      ],
+      "aurora": "not covered"
+    },
+    "aurora_note_path": null,
+    "text_availability": "Open access. Abstract and fullTextXML retrieved from PMC10284707.",
+    "verified": {
+      "crossref_title": "Polygenic scoring accuracy varies across the genetic ancestry continuum",
+      "year": 2023,
+      "journal": "Nature",
+      "first_author": "Ding, Yi",
+      "checked_at": "2026-10-06"
+    }
+  },
+  {
+    "id": "kachuri2024",
+    "title": "Principles and methods for transferring polygenic risk scores across global populations",
+    "doi": "10.1038/s41576-023-00637-2",
+    "populations_reported": [
+      "global populations, diverse and complex genetic ancestries"
+    ],
+    "population_labels_as_used": "populations of predominantly European genetic ancestries; individuals of diverse and complex genetic ancestries",
+    "traits": [
+      "polygenic risk scores, trait-general"
+    ],
+    "extractions": [
+      {
+        "claim_id": "kachuri2024-transferability-limits",
+        "trait": "polygenic risk scores, trait-general",
+        "population": "diverse and complex genetic ancestries",
+        "metric": "named categories of factor limiting PRS transferability: genetic and modifiable risk factors; not a measured quantity",
+        "value": null,
+        "comparator": "populations of predominantly European genetic ancestries",
+        "locator": "Abstract",
+        "excerpt_internal": "We describe genetic and modifiable risk factors that limit the transferability of PRSs across populations",
+        "source_text": "europepmc_abstract"
+      },
+      {
+        "claim_id": "kachuri2024-disparity-mechanism",
+        "trait": "polygenic risk scores, trait-general",
+        "population": "diverse and complex genetic ancestries",
+        "metric": "stated consequence of poor predictive performance; not a measured quantity",
+        "value": null,
+        "comparator": "populations of predominantly European genetic ancestries",
+        "locator": "Abstract",
+        "excerpt_internal": "PRSs that are developed in populations of predominantly European genetic ancestries can increase health disparities due to poor predictive performance",
+        "source_text": "europepmc_abstract"
+      }
+    ],
+    "used_by": {
+      "genarch": [
+        "data/ancestry/type-2-diabetes.json",
+        "data/ancestry/coronary-artery-disease.json",
+        "data/ancestry/asthma.json"
+      ],
+      "aurora": "not covered"
+    },
+    "aurora_note_path": null,
+    "text_availability": "Abstract only. Not open access; the Europe PMC fullTextXML endpoint returns HTTP 500 for PMC10961971. Crossref records the publication year as 2023 (online); the print issue is 2024.",
+    "verified": {
+      "crossref_title": "Principles and methods for transferring polygenic risk scores across global populations",
+      "year": 2023,
+      "journal": "Nature Reviews Genetics",
+      "first_author": "Kachuri, Linda",
+      "checked_at": "2026-10-06"
+    }
+  },
+  {
+    "id": "fatumo2022",
+    "title": "A roadmap to increase diversity in genomic studies",
+    "doi": "10.1038/s41591-021-01672-4",
+    "populations_reported": [
+      "European",
+      "East Asian",
+      "African",
+      "South Asian",
+      "Hispanic/Latino"
+    ],
+    "population_labels_as_used": "individuals of European descent; East Asian; African; South Asian; Hispanic/Latino populations",
+    "traits": [
+      "GWAS participation, trait-general"
+    ],
+    "extractions": [
+      {
+        "claim_id": "fatumo2022-gwas-share-european",
+        "trait": "GWAS participation",
+        "population": "European",
+        "metric": "share of GWAS participants by population descent",
+        "value": 86.3,
+        "comparator": null,
+        "locator": "Introduction (Figure 1)",
+        "excerpt_internal": "genome-wide association studies (GWAS) have been conducted in individuals of European descent (86.3%)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "fatumo2022-gwas-share-south-asian",
+        "trait": "GWAS participation",
+        "population": "South Asian",
+        "metric": "share of GWAS participants by population descent",
+        "value": 0.8,
+        "comparator": "European",
+        "locator": "Introduction (Figure 1)",
+        "excerpt_internal": "followed by East Asian (5.9%), African (1.1%), South Asian (0.8%), and Hispanic/Latino (0.08%) populations",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "fatumo2022-gwas-share-african",
+        "trait": "GWAS participation",
+        "population": "African",
+        "metric": "share of GWAS participants by population descent",
+        "value": 1.1,
+        "comparator": "European",
+        "locator": "Introduction (Figure 1)",
+        "excerpt_internal": "followed by East Asian (5.9%), African (1.1%), South Asian (0.8%), and Hispanic/Latino (0.08%) populations",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "fatumo2022-gwas-share-hispanic-latino",
+        "trait": "GWAS participation",
+        "population": "Hispanic/Latino",
+        "metric": "share of GWAS participants by population descent",
+        "value": 0.08,
+        "comparator": "European",
+        "locator": "Introduction (Figure 1)",
+        "excerpt_internal": "followed by East Asian (5.9%), African (1.1%), South Asian (0.8%), and Hispanic/Latino (0.08%) populations",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "fatumo2022-gwas-share-east-asian",
+        "trait": "GWAS participation",
+        "population": "East Asian",
+        "metric": "share of GWAS participants by population descent",
+        "value": 5.9,
+        "comparator": "European",
+        "locator": "Introduction (Figure 1)",
+        "excerpt_internal": "followed by East Asian (5.9%), African (1.1%), South Asian (0.8%), and Hispanic/Latino (0.08%) populations",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "fatumo2022-south-asian-underrepresented",
+        "trait": "GWAS participation",
+        "population": "South Asian",
+        "metric": "qualitative statement of South Asian under-representation in complex-disease genomics",
+        "value": null,
+        "comparator": null,
+        "locator": "Section 4.2 Asia",
+        "excerpt_internal": "South Asians are particularly underrepresented in genomic research of complex diseases",
+        "source_text": "europepmc_fulltext"
+      }
+    ],
+    "used_by": {
+      "genarch": [
+        "data/ancestry/type-2-diabetes.json",
+        "data/ancestry/coronary-artery-disease.json",
+        "data/ancestry/asthma.json"
+      ],
+      "aurora": "not covered"
+    },
+    "aurora_note_path": null,
+    "text_availability": "Open access. Abstract and fullTextXML retrieved from PMC7614889.",
+    "verified": {
+      "crossref_title": "A roadmap to increase diversity in genomic studies",
+      "year": 2022,
+      "journal": "Nature Medicine",
+      "first_author": "Fatumo, Segun",
+      "checked_at": "2026-10-06"
+    }
+  },
+  {
+    "id": "mills2020",
+    "title": "The GWAS Diversity Monitor tracks diversity by disease in real time",
+    "doi": "10.1038/s41588-020-0580-y",
+    "populations_reported": [
+      "ancestry groups tracked by the GWAS Diversity Monitor dashboard"
+    ],
+    "population_labels_as_used": "not extracted; no abstract or full text was retrievable",
+    "traits": [
+      "GWAS participation, trait-general"
+    ],
+    "extractions": [],
+    "used_by": {
+      "genarch": [
+        "site/src/lib/figures.ts (gwas-ancestry-imbalance source line)"
+      ],
+      "aurora": "not covered"
+    },
+    "aurora_note_path": null,
+    "text_availability": "No text retrieved. Crossref returns no abstract and the record is not in Europe PMC (inEPMC = N, no PMCID). PROVENANCE POINTER ONLY: this entry identifies the paper that the GWAS Diversity Monitor dashboard cites as its own reference. The figure's numbers come from pipeline/sources/gwas_ancestry_breakdown.csv and its manifest entry, not from this paper's text. No claim on the site is sourced to it.",
+    "verified": {
+      "crossref_title": "The GWAS Diversity Monitor tracks diversity by disease in real time",
+      "year": 2020,
+      "journal": "Nature Genetics",
+      "first_author": "Mills, Melinda C.",
+      "checked_at": "2026-10-06"
+    }
+  },
+  {
+    "id": "nasem2023",
+    "title": "Using Population Descriptors in Genetics and Genomics Research",
+    "doi": "10.17226/26902",
+    "populations_reported": [
+      "not extracted; no abstract or full text was retrievable"
+    ],
+    "population_labels_as_used": "not extracted; no abstract or full text was retrievable",
+    "traits": [
+      "population descriptors in genetics and genomics research"
+    ],
+    "extractions": [],
+    "used_by": {
+      "genarch": [
+        "site/src/app/ancestry-equity/page.tsx (methods and definitions)"
+      ],
+      "aurora": "not covered"
+    },
+    "aurora_note_path": null,
+    "text_availability": "No text retrieved. Crossref resolves the DOI and title; the record is not in Europe PMC and no abstract is published in Crossref. PROVENANCE POINTER ONLY: cited on the site to identify the National Academies' 2023 consensus study report on this question. No recommendation or finding is attributed to it, because none was read from fetched text. The admixture and ancestry-continuum statement GENARCH makes is sourced to ding2023 and ge2022 instead.",
+    "verified": {
+      "crossref_title": "Using Population Descriptors in Genetics and Genomics Research",
+      "year": 2023,
+      "journal": null,
+      "first_author": "Committee on the Use of Race, Ethnicity, and Ancestry as Population Descriptors in Genomics Research",
+      "checked_at": "2026-10-06"
+    }
+  },
+  {
+    "id": "mahajan2022",
+    "title": "Multi-ancestry genetic study of type 2 diabetes highlights the power of diverse populations for discovery and translation",
+    "doi": "10.1038/s41588-022-01058-3",
+    "populations_reported": [
+      "European",
+      "East Asian",
+      "South Asian",
+      "African",
+      "Hispanic"
+    ],
+    "population_labels_as_used": "European ancestry; East Asian ancestry; South Asian ancestry; African ancestry, including recently admixed African American populations; Hispanic individuals with recent admixture",
+    "traits": [
+      "type 2 diabetes"
+    ],
+    "extractions": [
+      {
+        "claim_id": "mahajan2022-effective-n-european",
+        "trait": "type 2 diabetes",
+        "population": "European",
+        "metric": "share of total effective sample size in the DIAMANTE multi-ancestry T2D GWAS meta-analysis",
+        "value": 51.1,
+        "comparator": null,
+        "locator": "Results, ancestry composition of the meta-analysis",
+        "excerpt_internal": "European ancestry (51.1% of the total effective sample size); East Asian ancestry (28.4%); South Asian ancestry (8.3%); African ancestry ... (6.6%)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "mahajan2022-effective-n-south-asian",
+        "trait": "type 2 diabetes",
+        "population": "South Asian",
+        "metric": "share of total effective sample size in the DIAMANTE multi-ancestry T2D GWAS meta-analysis",
+        "value": 8.3,
+        "comparator": "European",
+        "locator": "Results, ancestry composition of the meta-analysis",
+        "excerpt_internal": "European ancestry (51.1% of the total effective sample size); East Asian ancestry (28.4%); South Asian ancestry (8.3%); African ancestry ... (6.6%)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "mahajan2022-effective-n-african",
+        "trait": "type 2 diabetes",
+        "population": "African",
+        "metric": "share of total effective sample size in the DIAMANTE multi-ancestry T2D GWAS meta-analysis",
+        "value": 6.6,
+        "comparator": "European",
+        "locator": "Results, ancestry composition of the meta-analysis",
+        "excerpt_internal": "European ancestry (51.1% of the total effective sample size); East Asian ancestry (28.4%); South Asian ancestry (8.3%); African ancestry ... (6.6%)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "mahajan2022-ancestry-specific-grs-weak",
+        "trait": "type 2 diabetes",
+        "population": "African, Hispanic, South Asian",
+        "metric": "trait variance explained (pseudo R2) by the ancestry-specific T2D genetic risk score in the three smallest-effective-sample-size groups; reported as a bound, below 1%",
+        "value": null,
+        "comparator": "European ancestry-specific GRS",
+        "locator": "Results, 'Transferability of T2D GRS across diverse populations' (Fig. 4, Supplementary Table 19)",
+        "excerpt_internal": "for the ancestry groups with the smallest effective sample size (African, Hispanic, and South Asian), the predictive power of the ancestry-specific GRS was weak (pseudo R2 < 1%)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "mahajan2022-european-grs-outperforms-matched",
+        "trait": "type 2 diabetes",
+        "population": "African, Hispanic, South Asian",
+        "metric": "qualitative ordering: the European ancestry-specific GRS outperformed the ancestry-matched GRS in under-represented groups, because more lead SNVs reached significance and signals are mostly shared",
+        "value": null,
+        "comparator": "ancestry-matched GRS",
+        "locator": "Results, 'Transferability of T2D GRS across diverse populations'",
+        "excerpt_internal": "the European ancestry-specific GRS outperformed the ancestry-matched GRS because more lead SNVs attained genome-wide significance in the European ancestry meta-analysis",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "mahajan2022-multi-ancestry-best",
+        "trait": "type 2 diabetes",
+        "population": "all five ancestry groups",
+        "metric": "qualitative ordering: greatest predictive power came from the multi-ancestry GRS with population-specific allelic effect estimates",
+        "value": null,
+        "comparator": "ancestry-specific GRS",
+        "locator": "Results, 'Transferability of T2D GRS across diverse populations'",
+        "excerpt_internal": "the greatest predictive power for test GWAS from all ancestry groups was achieved by the multi-ancestry GRS weighted with population-specific allelic effect estimates",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "mahajan2022-degradation-mechanisms",
+        "trait": "type 2 diabetes",
+        "population": "non-European (unspecified)",
+        "metric": "named sources of unreliable prediction: differences in effect sizes, allele frequencies, and patterns of linkage disequilibrium",
+        "value": null,
+        "comparator": "European",
+        "locator": "Introduction",
+        "excerpt_internal": "in part reflecting differences in effect sizes, allele frequencies and patterns of linkage disequilibrium (LD)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "mahajan2022-ancestry-specific-variants-rarer",
+        "trait": "type 2 diabetes",
+        "population": "African, Hispanic, South Asian",
+        "metric": "stated consequence of lower variant frequency for discovery; not a measured quantity",
+        "value": null,
+        "comparator": "European",
+        "locator": "Discussion",
+        "excerpt_internal": "Ancestry-specific variants tend to have lower frequency, with the result that discovery of T2D associations that are unique to African, Hispanic, or South Asian ancestry groups will have been limited",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "mahajan2022-south-asian-heterogeneity",
+        "trait": "type 2 diabetes",
+        "population": "South Asian",
+        "metric": "internal structure of the South Asian ancestry grouping, as separated by the study's genetic-distance axes",
+        "value": null,
+        "comparator": null,
+        "locator": "Methods, ancestry axes of genetic variation",
+        "excerpt_internal": "South Asian studies of Sri Lankan, Bangladeshi and South Indian ancestry ... from those of North Indian and Pakistani ancestry",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "mahajan2022-fine-mapping-gain",
+        "trait": "type 2 diabetes",
+        "population": "African, Hispanic, South Asian",
+        "metric": "qualitative contribution of under-represented groups to fine-mapping resolution",
+        "value": null,
+        "comparator": null,
+        "locator": "Results, fine-mapping",
+        "excerpt_internal": "The inclusion of the most under-represented ancestry groups (African, Hispanic and South Asian) in the multi-ancestry meta-regression reduced the median size of 99% credible sets",
+        "source_text": "europepmc_fulltext"
+      }
+    ],
+    "used_by": {
+      "genarch": [
+        "data/ancestry/type-2-diabetes.json",
+        "data/briefs/t2d-south-asian-prs-transferability.json"
+      ],
+      "aurora": "not covered"
+    },
+    "aurora_note_path": null,
+    "text_availability": "Open access. Abstract and fullTextXML retrieved from PMC9179018.",
+    "verified": {
+      "crossref_title": "Multi-ancestry genetic study of type 2 diabetes highlights the power of diverse populations for discovery and translation",
+      "year": 2022,
+      "journal": "Nature Genetics",
+      "first_author": "Mahajan, Anubha",
+      "checked_at": "2026-10-06"
+    }
+  },
+  {
+    "id": "ge2022",
+    "title": "Development and validation of a trans-ancestry polygenic risk score for type 2 diabetes in diverse populations",
+    "doi": "10.1186/s13073-022-01074-2",
+    "populations_reported": [
+      "European",
+      "African",
+      "Hispanic/Latino",
+      "East Asian"
+    ],
+    "population_labels_as_used": "European; African; Hispanic (Hispanic/Latino group) in the eMERGE analysis; four Black cohorts; Taiwan Biobank",
+    "traits": [
+      "type 2 diabetes"
+    ],
+    "extractions": [
+      {
+        "claim_id": "ge2022-liability-r2-european",
+        "trait": "type 2 diabetes",
+        "population": "European",
+        "metric": "variance explained on the liability scale by the trans-ancestry T2D PRS in eMERGE, percent",
+        "value": 9.2,
+        "comparator": null,
+        "locator": "Table 2",
+        "excerpt_internal": "Prediction accuracy of the trans-ancestry T2D PRS in eMERGE across three populations ... European 9.2%",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "ge2022-liability-r2-african",
+        "trait": "type 2 diabetes",
+        "population": "African",
+        "metric": "variance explained on the liability scale by the trans-ancestry T2D PRS in eMERGE, percent",
+        "value": 2.8,
+        "comparator": "European",
+        "locator": "Table 2",
+        "excerpt_internal": "the variance explained on the liability scale was 2.8%, the covariates-adjusted AUC was 0.58, and the OR/SD was 1.54",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "ge2022-liability-r2-hispanic",
+        "trait": "type 2 diabetes",
+        "population": "Hispanic/Latino",
+        "metric": "variance explained on the liability scale by the trans-ancestry T2D PRS in eMERGE, percent",
+        "value": 8.0,
+        "comparator": "European",
+        "locator": "Table 2",
+        "excerpt_internal": "variance explained = 8.0%; covariates-adjusted AUC = 0.63; OR/SD = 2.08",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "ge2022-auc-european",
+        "trait": "type 2 diabetes",
+        "population": "European",
+        "metric": "covariates-adjusted AUC of the trans-ancestry T2D PRS in eMERGE",
+        "value": 0.66,
+        "comparator": null,
+        "locator": "Table 2",
+        "excerpt_internal": "European 9.2% 0.66 1.96 (1.91, 2.02)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "ge2022-auc-african",
+        "trait": "type 2 diabetes",
+        "population": "African",
+        "metric": "covariates-adjusted AUC of the trans-ancestry T2D PRS in eMERGE",
+        "value": 0.58,
+        "comparator": "European",
+        "locator": "Table 2",
+        "excerpt_internal": "African 2.8% 0.58 1.54 (1.46, 1.64)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "ge2022-auc-hispanic",
+        "trait": "type 2 diabetes",
+        "population": "Hispanic/Latino",
+        "metric": "covariates-adjusted AUC of the trans-ancestry T2D PRS in eMERGE",
+        "value": 0.63,
+        "comparator": "European",
+        "locator": "Table 2",
+        "excerpt_internal": "Hispanic 8.0% 0.63 2.08 (1.84, 2.35)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "ge2022-discovery-composition",
+        "trait": "type 2 diabetes",
+        "population": "European, East Asian",
+        "metric": "stated discovery composition of the trans-ancestry PRS, offered by the authors as the reason African-ancestry accuracy was lower",
+        "value": null,
+        "comparator": null,
+        "locator": "Results, African-ancestry prediction",
+        "excerpt_internal": "our trans-ancestry PRS was constructed from GWAS of predominantly European and East Asian individuals",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "ge2022-hispanic-admixture",
+        "trait": "type 2 diabetes",
+        "population": "Hispanic/Latino",
+        "metric": "stated admixture composition offered as the reason accuracy sits between the European and African values; not a measured quantity",
+        "value": null,
+        "comparator": "European, African",
+        "locator": "Results, Hispanic/Latino prediction",
+        "excerpt_internal": "the Hispanic/Latino population is a recent admixture among Europeans, Africans, and Native Americans",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "ge2022-hispanic-tail-uncertainty",
+        "trait": "type 2 diabetes",
+        "population": "Hispanic/Latino",
+        "metric": "stated limitation: wide uncertainty on tail odds ratios from the small Hispanic/Latino eMERGE sample",
+        "value": null,
+        "comparator": null,
+        "locator": "Results, Hispanic/Latino prediction",
+        "excerpt_internal": "due to the relatively small sample size of the Hispanic/Latino sample in the eMERGE study, the OR estimates for the tails of the PRS distribution were associated with large uncertainties",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "ge2022-no-south-asian",
+        "trait": "type 2 diabetes",
+        "population": "South Asian",
+        "metric": "absence of a South Asian evaluation cohort in this study; the validation populations are European, African, Hispanic/Latino, and East Asian only",
+        "value": null,
+        "comparator": null,
+        "locator": "Abstract, Methods",
+        "excerpt_internal": "the multi-ethnic eMERGE study, four Black cohorts, and the Taiwan Biobank",
+        "source_text": "crossref_abstract"
+      }
+    ],
+    "used_by": {
+      "genarch": [
+        "data/ancestry/type-2-diabetes.json",
+        "data/briefs/t2d-south-asian-prs-transferability.json"
+      ],
+      "aurora": "not covered"
+    },
+    "aurora_note_path": null,
+    "text_availability": "Open access. Abstract and fullTextXML retrieved from PMC9241245.",
+    "verified": {
+      "crossref_title": "Development and validation of a trans-ancestry polygenic risk score for type 2 diabetes in diverse populations",
+      "year": 2022,
+      "journal": "Genome Medicine",
+      "first_author": "Ge, Tian",
+      "checked_at": "2026-10-06"
+    }
+  },
+  {
+    "id": "huertachagoya2026",
+    "title": "Multi-ancestry polygenic risk scores for the prediction of type 2 diabetes and complications in diverse ancestries",
+    "doi": "10.1016/s2213-8587(25)00405-x",
+    "populations_reported": [
+      "European",
+      "African or African American",
+      "Admixed American",
+      "South Asian",
+      "East Asian"
+    ],
+    "population_labels_as_used": "European; African or African American; Admixed American; South Asian; East Asian",
+    "traits": [
+      "type 2 diabetes"
+    ],
+    "extractions": [
+      {
+        "claim_id": "huertachagoya2026-multi-incauc-european",
+        "trait": "type 2 diabetes",
+        "population": "European",
+        "metric": "incremental AUC of the multi-ancestry (PRS-CSx) T2D PRS, point estimate",
+        "value": 0.143,
+        "comparator": null,
+        "locator": "Results, comparison against the PGS Catalog (figure 2, appendix 2 tab 9)",
+        "excerpt_internal": "incremental AUC for our multi-ancestry PRSs vs best incremental AUC from the PGS Catalog ... 0.143 vs 0.123 in European ancestries",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "huertachagoya2026-multi-incauc-south-asian",
+        "trait": "type 2 diabetes",
+        "population": "South Asian",
+        "metric": "incremental AUC of the multi-ancestry (PRS-CSx) T2D PRS, point estimate",
+        "value": 0.061,
+        "comparator": "European",
+        "locator": "Results, comparison against the PGS Catalog (figure 2, appendix 2 tab 9)",
+        "excerpt_internal": "but not for the East Asian (0.074 vs 0.062) and South Asian (0.061 vs 0.068) ancestry groups",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "huertachagoya2026-multi-incauc-african",
+        "trait": "type 2 diabetes",
+        "population": "African or African American",
+        "metric": "incremental AUC of the multi-ancestry (PRS-CSx) T2D PRS, point estimate",
+        "value": 0.041,
+        "comparator": "European",
+        "locator": "Results, comparison against the PGS Catalog (figure 2, appendix 2 tab 9)",
+        "excerpt_internal": "0.041 vs 0.029 in African or African American, 0.086 vs 0.073 in Admixed American, and 0.143 vs 0.123 in European ancestries",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "huertachagoya2026-multi-incauc-admixed-american",
+        "trait": "type 2 diabetes",
+        "population": "Admixed American",
+        "metric": "incremental AUC of the multi-ancestry (PRS-CSx) T2D PRS, point estimate",
+        "value": 0.086,
+        "comparator": "European",
+        "locator": "Results, comparison against the PGS Catalog (figure 2, appendix 2 tab 9)",
+        "excerpt_internal": "0.041 vs 0.029 in African or African American, 0.086 vs 0.073 in Admixed American, and 0.143 vs 0.123 in European ancestries",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "huertachagoya2026-multi-incauc-east-asian",
+        "trait": "type 2 diabetes",
+        "population": "East Asian",
+        "metric": "incremental AUC of the multi-ancestry (PRS-CSx) T2D PRS, point estimate",
+        "value": 0.074,
+        "comparator": "European",
+        "locator": "Results, comparison against the PGS Catalog (figure 2, appendix 2 tab 9)",
+        "excerpt_internal": "but not for the East Asian (0.074 vs 0.062) and South Asian (0.061 vs 0.068) ancestry groups",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "huertachagoya2026-single-incauc-ranges",
+        "trait": "type 2 diabetes",
+        "population": "all five ancestry groups",
+        "metric": "incremental AUC range of the best matched single-ancestry T2D PRS: European 0.07-0.14, East Asian 0.02-0.16, African or African American 0.02-0.03, Admixed American 0.02-0.04, South Asian 0.02-0.04",
+        "value": null,
+        "comparator": "European",
+        "locator": "Abstract (Findings); Results (figure 2, appendix 2 tab 9)",
+        "excerpt_internal": "prediction was poorer for African or African American (0.02-0.03), Admixed American (0.02-0.04), and South Asian (0.02-0.04) ancestries, correlating with sample sizes",
+        "source_text": "europepmc_abstract"
+      },
+      {
+        "claim_id": "huertachagoya2026-or-sd-south-asian",
+        "trait": "type 2 diabetes",
+        "population": "South Asian",
+        "metric": "odds ratio per SD of the multi-ancestry T2D PRS (95% CI 2.05-2.42)",
+        "value": 2.23,
+        "comparator": "European",
+        "locator": "Abstract (Findings)",
+        "excerpt_internal": "2.36 (2.32-2.41) in European, and 2.23 (2.05-2.42) in South Asian ancestries",
+        "source_text": "europepmc_abstract"
+      },
+      {
+        "claim_id": "huertachagoya2026-or-sd-european",
+        "trait": "type 2 diabetes",
+        "population": "European",
+        "metric": "odds ratio per SD of the multi-ancestry T2D PRS (95% CI 2.32-2.41)",
+        "value": 2.36,
+        "comparator": null,
+        "locator": "Abstract (Findings)",
+        "excerpt_internal": "2.36 (2.32-2.41) in European, and 2.23 (2.05-2.42) in South Asian ancestries",
+        "source_text": "europepmc_abstract"
+      },
+      {
+        "claim_id": "huertachagoya2026-or-sd-african",
+        "trait": "type 2 diabetes",
+        "population": "African or African American",
+        "metric": "odds ratio per SD of the multi-ancestry T2D PRS (95% CI 1.67-1.80)",
+        "value": 1.73,
+        "comparator": "European",
+        "locator": "Abstract (Findings)",
+        "excerpt_internal": "OR per SD 1.73 (95% CI 1.67-1.80) in African or African American, 2.82 (2.67-2.97) in Admixed American",
+        "source_text": "europepmc_abstract"
+      },
+      {
+        "claim_id": "huertachagoya2026-or-sd-admixed-american",
+        "trait": "type 2 diabetes",
+        "population": "Admixed American",
+        "metric": "odds ratio per SD of the multi-ancestry T2D PRS (95% CI 2.67-2.97)",
+        "value": 2.82,
+        "comparator": "European",
+        "locator": "Abstract (Findings)",
+        "excerpt_internal": "OR per SD 1.73 (95% CI 1.67-1.80) in African or African American, 2.82 (2.67-2.97) in Admixed American",
+        "source_text": "europepmc_abstract"
+      },
+      {
+        "claim_id": "huertachagoya2026-sample-size-correlation",
+        "trait": "type 2 diabetes",
+        "population": "all five ancestry groups",
+        "metric": "stated relationship between single-ancestry PRS performance and discovery GWAS sample size",
+        "value": null,
+        "comparator": null,
+        "locator": "Results, single-ancestry PRS performance",
+        "excerpt_internal": "The performance of the matched single-ancestry PRS was positively correlated with the sample sizes of the GWAS",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "huertachagoya2026-south-asian-no-gain",
+        "trait": "type 2 diabetes",
+        "population": "South Asian",
+        "metric": "statistical-significance outcome: the multi-ancestry PRS did not significantly outperform the best PGS Catalog score in South Asian or East Asian ancestry groups (DeLong test)",
+        "value": null,
+        "comparator": "best incremental AUC from the PGS Catalog",
+        "locator": "Results, comparison against the PGS Catalog",
+        "excerpt_internal": "significantly better ... for the African or African American, Admixed American, and European ancestry groups ... but not for the East Asian and South Asian ancestry groups",
+        "source_text": "europepmc_fulltext"
+      }
+    ],
+    "used_by": {
+      "genarch": [
+        "data/ancestry/type-2-diabetes.json",
+        "data/briefs/t2d-south-asian-prs-transferability.json",
+        "site/src/lib/figures.ts (prs-portability)"
+      ],
+      "aurora": "not covered"
+    },
+    "aurora_note_path": null,
+    "text_availability": "Open access. Abstract and fullTextXML retrieved via Europe PMC. Crossref records the publication year as 2026.",
+    "verified": {
+      "crossref_title": "Multi-ancestry polygenic risk scores for the prediction of type 2 diabetes and complications in diverse ancestries",
+      "year": 2026,
+      "journal": "The Lancet Diabetes & Endocrinology",
+      "first_author": "Huerta-Chagoya, Alicia",
+      "checked_at": "2026-10-06"
+    }
+  },
+  {
+    "id": "hodgson2024",
+    "title": "Genetic basis of early onset and progression of type 2 diabetes in South Asians",
+    "doi": "10.1038/s41591-024-03317-8",
+    "populations_reported": [
+      "South Asian (British Pakistani and British Bangladeshi)",
+      "white European"
+    ],
+    "population_labels_as_used": "British Pakistani and British Bangladeshi individuals (Genes & Health); South Asians; white Europeans in the UK Biobank",
+    "traits": [
+      "type 2 diabetes",
+      "gestational diabetes mellitus"
+    ],
+    "extractions": [
+      {
+        "claim_id": "hodgson2024-earlier-onset",
+        "trait": "type 2 diabetes",
+        "population": "South Asian (British Pakistani and British Bangladeshi)",
+        "metric": "difference in age at T2D diagnosis between individuals at high versus low partitioned polygenic score for both insulin deficiency and lipodystrophy, in years",
+        "value": 8.2,
+        "comparator": "individuals at low genetic risk on the same two partitioned scores",
+        "locator": "Abstract",
+        "excerpt_internal": "Individuals at high genetic risk of both insulin deficiency and lipodystrophy were diagnosed with T2D 8.2 years earlier",
+        "source_text": "crossref_abstract"
+      },
+      {
+        "claim_id": "hodgson2024-lower-bmi",
+        "trait": "type 2 diabetes",
+        "population": "South Asian (British Pakistani and British Bangladeshi)",
+        "metric": "difference in BMI at T2D diagnosis between high and low partitioned polygenic score groups, kg/m2",
+        "value": 3.0,
+        "comparator": "individuals at low genetic risk on the same two partitioned scores",
+        "locator": "Abstract",
+        "excerpt_internal": "diagnosed with T2D 8.2 years earlier with BMI 3 kg m-2 lower compared to those at low genetic risk",
+        "source_text": "crossref_abstract"
+      },
+      {
+        "claim_id": "hodgson2024-greater-burden",
+        "trait": "type 2 diabetes",
+        "population": "South Asian (British Pakistani and British Bangladeshi)",
+        "metric": "comparative partitioned polygenic score burden for insulin deficiency and lipodystrophy; direction stated, magnitude not given in the retrieved abstract",
+        "value": null,
+        "comparator": "white Europeans in the UK Biobank",
+        "locator": "Abstract",
+        "excerpt_internal": "South Asians had a greater genetic burden from both of these pPSs than white Europeans in the UK Biobank",
+        "source_text": "crossref_abstract"
+      },
+      {
+        "claim_id": "hodgson2024-cohort-size",
+        "trait": "type 2 diabetes",
+        "population": "South Asian (British Pakistani and British Bangladeshi)",
+        "metric": "Genes & Health study size (n = 50,556), with 11,678 T2D and 1,965 gestational diabetes cases",
+        "value": null,
+        "comparator": null,
+        "locator": "Abstract",
+        "excerpt_internal": "British Pakistani and British Bangladeshi individuals with T2D (n = 11,678) and gestational diabetes mellitus (n = 1,965) in the Genes & Health study (n = 50,556)",
+        "source_text": "crossref_abstract"
+      },
+      {
+        "claim_id": "hodgson2024-pathway-specificity",
+        "trait": "type 2 diabetes",
+        "population": "South Asian (British Pakistani and British Bangladeshi)",
+        "metric": "which partitioned polygenic scores associated most strongly with T2D, GDM and younger diagnosis age",
+        "value": null,
+        "comparator": null,
+        "locator": "Abstract",
+        "excerpt_internal": "Beta cell 2 (insulin deficiency) and Lipodystrophy 1 (unfavorable fat distribution) pPSs were most strongly associated with T2D, GDM and younger age at T2D diagnosis",
+        "source_text": "crossref_abstract"
+      }
+    ],
+    "used_by": {
+      "genarch": [
+        "data/ancestry/type-2-diabetes.json",
+        "data/briefs/t2d-south-asian-prs-transferability.json"
+      ],
+      "aurora": "not covered"
+    },
+    "aurora_note_path": null,
+    "text_availability": "Open access. Abstract and fullTextXML retrieved via Europe PMC. Crossref records the publication year as 2024; the issue is 2025.",
+    "verified": {
+      "crossref_title": "Genetic basis of early onset and progression of type 2 diabetes in South Asians",
+      "year": 2024,
+      "journal": "Nature Medicine",
+      "first_author": "Hodgson, Sam",
+      "checked_at": "2026-10-06"
+    }
+  },
+  {
+    "id": "marquezluna2017",
+    "title": "Multiethnic polygenic risk scores improve risk prediction in diverse populations",
+    "doi": "10.1002/gepi.22083",
+    "populations_reported": [
+      "European",
+      "Latino",
+      "South Asian",
+      "African"
+    ],
+    "population_labels_as_used": "European samples; Latino cohort; South Asian UK Biobank cohort; African UK Biobank cohort",
+    "traits": [
+      "type 2 diabetes",
+      "height"
+    ],
+    "extractions": [
+      {
+        "claim_id": "marquezluna2017-latino-t2d-r2-before",
+        "trait": "type 2 diabetes",
+        "population": "Latino",
+        "metric": "prediction accuracy (R2) using a single source of training data, before combining European and target-population training data",
+        "value": 0.027,
+        "comparator": "multiethnic score using both training sources",
+        "locator": "Abstract",
+        "excerpt_internal": "we attained a >70% relative improvement in prediction accuracy (from R2 = 0.027 to 0.047)",
+        "source_text": "crossref_abstract"
+      },
+      {
+        "claim_id": "marquezluna2017-latino-t2d-r2-after",
+        "trait": "type 2 diabetes",
+        "population": "Latino",
+        "metric": "prediction accuracy (R2) of the multiethnic score combining European (Neff = 40k) and Latino (Neff = 8k) training data",
+        "value": 0.047,
+        "comparator": "single-source training score (R2 = 0.027)",
+        "locator": "Abstract",
+        "excerpt_internal": "we attained a >70% relative improvement in prediction accuracy (from R2 = 0.027 to 0.047)",
+        "source_text": "crossref_abstract"
+      },
+      {
+        "claim_id": "marquezluna2017-south-asian-t2d-improvement",
+        "trait": "type 2 diabetes",
+        "population": "South Asian",
+        "metric": "relative improvement in prediction accuracy from combining European (Neff = 40k) and South Asian (Neff = 16k) training data; reported as a bound, greater than 70%, with no absolute R2 in the retrieved abstract",
+        "value": null,
+        "comparator": "single-source training score",
+        "locator": "Abstract",
+        "excerpt_internal": "We predict T2D in a South Asian UK Biobank cohort using European (Neff = 40k) and South Asian (Neff = 16k) training data and attained a >70% relative improvement",
+        "source_text": "crossref_abstract"
+      },
+      {
+        "claim_id": "marquezluna2017-method-premise",
+        "trait": "type 2 diabetes, height",
+        "population": "non-European target populations",
+        "metric": "stated gap in prior practice: studies used either large European training data or small target-population training data, not both",
+        "value": null,
+        "comparator": null,
+        "locator": "Abstract",
+        "excerpt_internal": "Previous studies have used either training data from European samples in large sample size or training data from the target population in small sample size, but not both",
+        "source_text": "crossref_abstract"
+      }
+    ],
+    "used_by": {
+      "genarch": [
+        "data/ancestry/type-2-diabetes.json",
+        "data/briefs/t2d-south-asian-prs-transferability.json"
+      ],
+      "aurora": "not covered"
+    },
+    "aurora_note_path": null,
+    "text_availability": "Abstract only. Europe PMC reports the record but the fullTextXML endpoint is not available for it. Absolute R2 values for the South Asian cohort are not in the abstract and are NOT recorded here.",
+    "verified": {
+      "crossref_title": "Multiethnic polygenic risk scores improve risk prediction in diverse populations",
+      "year": 2017,
+      "journal": "Genetic Epidemiology",
+      "first_author": "Márquez‐Luna, Carla",
+      "checked_at": "2026-10-06"
+    }
+  },
+  {
+    "id": "patel2023",
+    "title": "A multi-ancestry polygenic risk score improves risk prediction for coronary artery disease",
+    "doi": "10.1038/s41591-023-02429-x",
+    "populations_reported": [
+      "African",
+      "European",
+      "Hispanic",
+      "South Asian",
+      "East Asian"
+    ],
+    "population_labels_as_used": "self-identified groups of African, East Asian, European, Hispanic and South Asian ancestries",
+    "traits": [
+      "coronary artery disease"
+    ],
+    "extractions": [
+      {
+        "claim_id": "patel2023-rel-effect-gps2018-south-asian",
+        "trait": "coronary artery disease (incident)",
+        "population": "South Asian",
+        "metric": "relative effect size of the 2018 predominantly European-derived polygenic score (GPS 2018), indexed to the effect size that score achieves in European ancestry",
+        "value": 0.97,
+        "comparator": "European ancestry with GPS 2018, indexed to 1.00",
+        "locator": "Results, incident CAD prediction (Fig. 5b)",
+        "excerpt_internal": "performance surpassing the reference score in East Asian ancestry (relative effect size 1.37, increased from 0.80) and South Asian ancestry (1.19, increased from 0.97)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "patel2023-rel-effect-gps2018-african",
+        "trait": "coronary artery disease (incident)",
+        "population": "African",
+        "metric": "relative effect size of the 2018 predominantly European-derived polygenic score (GPS 2018), indexed to the effect size that score achieves in European ancestry",
+        "value": 0.23,
+        "comparator": "European ancestry with GPS 2018, indexed to 1.00",
+        "locator": "Results, incident CAD prediction (Fig. 5b)",
+        "excerpt_internal": "with improved prediction in African ancestry (relative effect size 0.55, increased from 0.23)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "patel2023-rel-effect-gps2018-east-asian",
+        "trait": "coronary artery disease (incident)",
+        "population": "East Asian",
+        "metric": "relative effect size of the 2018 predominantly European-derived polygenic score (GPS 2018), indexed to the effect size that score achieves in European ancestry",
+        "value": 0.8,
+        "comparator": "European ancestry with GPS 2018, indexed to 1.00",
+        "locator": "Results, incident CAD prediction (Fig. 5b)",
+        "excerpt_internal": "performance surpassing the reference score in East Asian ancestry (relative effect size 1.37, increased from 0.80)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "patel2023-rel-effect-mult-south-asian",
+        "trait": "coronary artery disease (incident)",
+        "population": "South Asian",
+        "metric": "relative effect size of the multi-ancestry score (GPS Mult), indexed to the effect size GPS 2018 achieves in European ancestry",
+        "value": 1.19,
+        "comparator": "European ancestry with GPS 2018, indexed to 1.00",
+        "locator": "Results, incident CAD prediction (Fig. 5b)",
+        "excerpt_internal": "and South Asian ancestry (relative effect size 1.19, increased from 0.97)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "patel2023-rel-effect-mult-african",
+        "trait": "coronary artery disease (incident)",
+        "population": "African",
+        "metric": "relative effect size of the multi-ancestry score (GPS Mult), indexed to the effect size GPS 2018 achieves in European ancestry",
+        "value": 0.55,
+        "comparator": "European ancestry with GPS 2018, indexed to 1.00",
+        "locator": "Results, incident CAD prediction (Fig. 5b)",
+        "excerpt_internal": "with improved prediction in African ancestry (relative effect size 0.55, increased from 0.23)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "patel2023-rel-effect-mult-east-asian",
+        "trait": "coronary artery disease (incident)",
+        "population": "East Asian",
+        "metric": "relative effect size of the multi-ancestry score (GPS Mult), indexed to the effect size GPS 2018 achieves in European ancestry",
+        "value": 1.37,
+        "comparator": "European ancestry with GPS 2018, indexed to 1.00",
+        "locator": "Results, incident CAD prediction (Fig. 5b)",
+        "excerpt_internal": "performance surpassing the reference score in East Asian ancestry (relative effect size 1.37, increased from 0.80)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "patel2023-or-sd-south-asian",
+        "trait": "coronary artery disease (prevalent)",
+        "population": "South Asian",
+        "metric": "odds ratio per SD of GPS Mult in 16,874 South Asian-ancestry individuals in Genes & Health (95% CI 1.69-1.99)",
+        "value": 1.83,
+        "comparator": "other validation cohorts in the same figure, which are different studies",
+        "locator": "Results, external validation (Fig. 4)",
+        "excerpt_internal": "among 16,874 individuals of South Asian ancestry in Genes & Health, GPS Mult was associated with an OR/SD of 1.83 (95% CI 1.69-1.99)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "patel2023-or-sd-hispanic",
+        "trait": "coronary artery disease (prevalent)",
+        "population": "Hispanic",
+        "metric": "odds ratio per SD of GPS Mult in 16,433 Hispanic-ancestry individuals in the Million Veteran Program (95% CI 1.53-1.70)",
+        "value": 1.61,
+        "comparator": "European-ancestry Million Veteran Program participants in the same cohort",
+        "locator": "Results, external validation (Fig. 4)",
+        "excerpt_internal": "Among 16,433 individuals of Hispanic ancestry in the Million Veteran Program, GPS Mult was associated with an OR/SD of 1.61 (95% CI 1.53-1.70)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "patel2023-or-sd-african",
+        "trait": "coronary artery disease (prevalent)",
+        "population": "African",
+        "metric": "odds ratio per SD of GPS Mult in 33,096 African-ancestry individuals in the Million Veteran Program (95% CI 1.21-1.29)",
+        "value": 1.25,
+        "comparator": "European-ancestry Million Veteran Program participants in the same cohort",
+        "locator": "Results, external validation (Fig. 4)",
+        "excerpt_internal": "Among 33,096 individuals of African ancestry in the Million Veteran Program, GPS Mult was associated with an OR/SD of 1.25 (95% CI 1.21-1.29)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "patel2023-or-sd-european",
+        "trait": "coronary artery disease (prevalent)",
+        "population": "European",
+        "metric": "odds ratio per SD of GPS Mult in 124,467 European-ancestry individuals in the Million Veteran Program (95% CI 1.69-1.75)",
+        "value": 1.72,
+        "comparator": null,
+        "locator": "Results, external validation (Fig. 4)",
+        "excerpt_internal": "among 124,467 individuals of European ancestry in the Million Veteran Program, GPS Mult was associated with an OR/SD of 1.72 (95% CI 1.69-1.75)",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "patel2023-validation-sizes",
+        "trait": "coronary artery disease",
+        "population": "African, European, Hispanic, South Asian",
+        "metric": "external validation cohort sizes: 33,096 African, 124,467 European, 16,433 Hispanic, 16,874 South Asian",
+        "value": null,
+        "comparator": null,
+        "locator": "Abstract",
+        "excerpt_internal": "external validation datasets inclusive of 33,096, 124,467, 16,433 and 16,874 participants of African, European, Hispanic and South Asian ancestry",
+        "source_text": "crossref_abstract"
+      },
+      {
+        "claim_id": "patel2023-discovery-breadth",
+        "trait": "coronary artery disease",
+        "population": "five ancestries",
+        "metric": "discovery composition of GPS Mult: genome-wide association data across five ancestries and ten CAD risk factors",
+        "value": null,
+        "comparator": null,
+        "locator": "Abstract",
+        "excerpt_internal": "incorporates genome-wide association data across five ancestries for CAD (>269,000 cases and >1,178,000 controls) and ten CAD risk factors",
+        "source_text": "crossref_abstract"
+      },
+      {
+        "claim_id": "patel2023-improvement-source",
+        "trait": "coronary artery disease",
+        "population": "East Asian, South Asian",
+        "metric": "stated reason for the gain in these groups: greater representation of Biobank Japan and Genes & Health summary statistics",
+        "value": null,
+        "comparator": null,
+        "locator": "Discussion",
+        "excerpt_internal": "substantial improvements in prediction for individuals of East and South Asian ancestry, reflecting greater representation of summary statistics from Biobank Japan and Genes & Health",
+        "source_text": "europepmc_fulltext"
+      }
+    ],
+    "used_by": {
+      "genarch": [
+        "data/ancestry/coronary-artery-disease.json"
+      ],
+      "aurora": "not covered"
+    },
+    "aurora_note_path": null,
+    "text_availability": "Open access. Abstract and fullTextXML retrieved from PMC10353935. The Fig. 4 odds ratios come from different cohorts (Million Veteran Program for African, European and Hispanic; Genes & Health for South Asian), so they are not a within-cohort comparison. The Fig. 5b relative effect sizes are all within the UK Biobank and carry no Hispanic group.",
+    "verified": {
+      "crossref_title": "A multi-ancestry polygenic risk score improves risk prediction for coronary artery disease",
+      "year": 2023,
+      "journal": "Nature Medicine",
+      "first_author": "Patel, Aniruddh P.",
+      "checked_at": "2026-10-06"
+    }
+  },
+  {
+    "id": "wangm2020cad",
+    "title": "Validation of a Genome-Wide Polygenic Score for Coronary Artery Disease in South Asians",
+    "doi": "10.1016/j.jacc.2020.06.024",
+    "populations_reported": [
+      "South Asian"
+    ],
+    "population_labels_as_used": "South Asians; South Asian UK Biobank participants; a case-control study in Bangladesh; Indian individuals",
+    "traits": [
+      "coronary artery disease"
+    ],
+    "extractions": [
+      {
+        "claim_id": "wangm2020cad-or-sd-ukb-south-asian",
+        "trait": "coronary artery disease",
+        "population": "South Asian",
+        "metric": "odds ratio per SD of a South Asian-derived genome-wide polygenic score, in 7,244 South Asian UK Biobank participants",
+        "value": 1.58,
+        "comparator": null,
+        "locator": "Abstract (Results)",
+        "excerpt_internal": "had an odds ratio (OR) per SD of 1.58 in South Asian UK Biobank participants and 1.60 in the Bangladeshi study",
+        "source_text": "europepmc_abstract"
+      },
+      {
+        "claim_id": "wangm2020cad-or-sd-bangladesh",
+        "trait": "coronary artery disease",
+        "population": "South Asian (Bangladeshi)",
+        "metric": "odds ratio per SD of the same score in a 491-individual case-control study in Bangladesh",
+        "value": 1.6,
+        "comparator": null,
+        "locator": "Abstract (Results)",
+        "excerpt_internal": "had an odds ratio (OR) per SD of 1.58 in South Asian UK Biobank participants and 1.60 in the Bangladeshi study",
+        "source_text": "europepmc_abstract"
+      },
+      {
+        "claim_id": "wangm2020cad-score-size",
+        "trait": "coronary artery disease",
+        "population": "South Asian",
+        "metric": "number of common variants in the score",
+        "value": 6630150.0,
+        "comparator": null,
+        "locator": "Abstract (Results)",
+        "excerpt_internal": "The GPS CAD, containing 6,630,150 common DNA variants",
+        "source_text": "europepmc_abstract"
+      },
+      {
+        "claim_id": "wangm2020cad-derivation",
+        "trait": "coronary artery disease",
+        "population": "South Asian",
+        "metric": "study design: a new score derived for South Asians from prior GWAS summary statistics, validated in three South Asian studies",
+        "value": null,
+        "comparator": null,
+        "locator": "Abstract (Objectives, Conclusions)",
+        "excerpt_internal": "used summary statistics from a prior genome-wide association study to derive a new GPS CAD for South Asians",
+        "source_text": "europepmc_abstract"
+      }
+    ],
+    "used_by": {
+      "genarch": [
+        "data/ancestry/coronary-artery-disease.json"
+      ],
+      "aurora": "not covered"
+    },
+    "aurora_note_path": null,
+    "text_availability": "Abstract only. Not open access; the Europe PMC fullTextXML endpoint returns HTTP 500 for PMC7592606. The retrieved abstract is damaged where inequality signs were stripped ('p CAD distribution-ORs of 4.16, 2.46, and 3.22'); those percentile odds ratios are therefore NOT recorded, because the sentence that scopes them cannot be read.",
+    "verified": {
+      "crossref_title": "Validation of a Genome-Wide Polygenic Score for Coronary Artery Disease in South Asians",
+      "year": 2020,
+      "journal": "Journal of the American College of Cardiology",
+      "first_author": "Wang, Minxian",
+      "checked_at": "2026-10-06"
+    }
+  },
+  {
+    "id": "tsuo2022",
+    "title": "Multi-ancestry meta-analysis of asthma identifies novel associations and highlights the value of increased power and diversity",
+    "doi": "10.1016/j.xgen.2022.100212",
+    "populations_reported": [
+      "European",
+      "African",
+      "admixed American",
+      "East Asian",
+      "Middle Eastern",
+      "Central and South Asian"
+    ],
+    "population_labels_as_used": "European (EUR), African (AFR), admixed American (AMR), East Asian (EAS), Middle Eastern (MID), and Central and South Asian (CSA) ancestry",
+    "traits": [
+      "asthma"
+    ],
+    "extractions": [
+      {
+        "claim_id": "tsuo2022-liability-r2-european",
+        "trait": "asthma",
+        "population": "European",
+        "metric": "average variance explained on the liability scale by the PRS-CSx asthma score in the EUR target cohort, across 100 random splits",
+        "value": 0.054,
+        "comparator": null,
+        "locator": "Results, PRS performance across ancestries (Figure 5, Table S9)",
+        "excerpt_internal": "The average R liability 2 in the EAS (0.053) and EUR (0.054) target cohorts approached the SNP-based heritability",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "tsuo2022-liability-r2-csa",
+        "trait": "asthma",
+        "population": "Central and South Asian",
+        "metric": "average variance explained on the liability scale by the PRS-CSx asthma score in the CSA target cohort, across 100 random splits",
+        "value": 0.038,
+        "comparator": "European",
+        "locator": "Results, PRS performance across ancestries (Figure 5, Table S9)",
+        "excerpt_internal": "while the prediction accuracies in the CSA (0.038) and AFR (0.014) target cohorts were lower",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "tsuo2022-liability-r2-afr",
+        "trait": "asthma",
+        "population": "African",
+        "metric": "average variance explained on the liability scale by the PRS-CSx asthma score in the AFR target cohort, across 100 random splits",
+        "value": 0.014,
+        "comparator": "European",
+        "locator": "Results, PRS performance across ancestries (Figure 5, Table S9)",
+        "excerpt_internal": "while the prediction accuracies in the CSA (0.038) and AFR (0.014) target cohorts were lower",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "tsuo2022-liability-r2-eas",
+        "trait": "asthma",
+        "population": "East Asian",
+        "metric": "average variance explained on the liability scale by the PRS-CSx asthma score in the EAS target cohort, across 100 random splits",
+        "value": 0.053,
+        "comparator": "European",
+        "locator": "Results, PRS performance across ancestries (Figure 5, Table S9)",
+        "excerpt_internal": "The average R liability 2 in the EAS (0.053) and EUR (0.054) target cohorts approached the SNP-based heritability",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "tsuo2022-h2-snp",
+        "trait": "asthma",
+        "population": "all-biobank meta-analysis",
+        "metric": "SNP-based heritability of asthma, the ceiling the liability-scale R2 values are compared against",
+        "value": 0.085,
+        "comparator": null,
+        "locator": "Results, PRS performance across ancestries",
+        "excerpt_internal": "approached the SNP-based heritability (h SNP 2), estimated to be 0.085 for asthma using the all-biobank meta-analysis",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "tsuo2022-target-cohort-sizes",
+        "trait": "asthma",
+        "population": "African, East Asian, European, Central and South Asian",
+        "metric": "PRS target cohort sizes: AFR 849 cases / 5,190 controls; EAS 500/500; EUR 1,164/7,577; CSA 1,232/6,744",
+        "value": null,
+        "comparator": null,
+        "locator": "Results, Figure 5 legend",
+        "excerpt_internal": "cases = 849 and controls = 5,190 for AFR; cases = 500 and controls = 500 for EAS; cases = 1,164 and controls = 7,577 for EUR; cases = 1,232 and controls = 6,744 for CSA",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "tsuo2022-no-amr-target",
+        "trait": "asthma",
+        "population": "admixed American",
+        "metric": "absence of an admixed American target cohort: AMR contributed discovery data but was not one of the four cohorts in which PRS accuracy was evaluated",
+        "value": null,
+        "comparator": null,
+        "locator": "STAR Methods, Polygenic risk scores",
+        "excerpt_internal": "We evaluated the predictive performance of the PRS in 4 target cohorts: AFR ... CSA ... EAS ... and EUR ancestry individuals in UKBB",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "tsuo2022-consistent-effects",
+        "trait": "asthma",
+        "population": "all six ancestry groups",
+        "metric": "qualitative finding on cross-biobank and cross-ancestry consistency of per-variant genetic effects",
+        "value": null,
+        "comparator": null,
+        "locator": "Abstract",
+        "excerpt_internal": "Despite the wide range in asthma prevalence among biobanks, we found largely consistent genetic effects across biobanks and ancestries",
+        "source_text": "europepmc_abstract"
+      },
+      {
+        "claim_id": "tsuo2022-meta-scale",
+        "trait": "asthma",
+        "population": "all six ancestry groups",
+        "metric": "meta-analysis scale: 153,763 cases and 1,647,022 controls across 22 biobanks; 179 loci, 49 not previously reported",
+        "value": null,
+        "comparator": null,
+        "locator": "Abstract",
+        "excerpt_internal": "a large-scale genome-wide association study of asthma (153,763 cases and 1,647,022 controls) via meta-analysis across 22 biobanks",
+        "source_text": "europepmc_abstract"
+      },
+      {
+        "claim_id": "tsuo2022-prevalence-caveat",
+        "trait": "asthma",
+        "population": "all target cohorts",
+        "metric": "stated reasons estimates may differ across biobanks and ancestries: disease prevalence, environmental exposures, phenotype definitions",
+        "value": null,
+        "comparator": null,
+        "locator": "Results, PRS performance across ancestries",
+        "excerpt_internal": "Estimates may differ across biobanks and ancestries given differences in disease prevalence, environmental exposures, phenotype definitions, and other factors",
+        "source_text": "europepmc_fulltext"
+      }
+    ],
+    "used_by": {
+      "genarch": [
+        "data/ancestry/asthma.json"
+      ],
+      "aurora": "not covered"
+    },
+    "aurora_note_path": null,
+    "text_availability": "Open access. Abstract and fullTextXML retrieved from PMC9903683. CSA is 'Central and South Asian' and is not South Asian-specific; GENARCH states that wherever the value appears.",
+    "verified": {
+      "crossref_title": "Multi-ancestry meta-analysis of asthma identifies novel associations and highlights the value of increased power and diversity",
+      "year": 2022,
+      "journal": "Cell Genomics",
+      "first_author": "Tsuo, Kristin",
+      "checked_at": "2026-10-06"
+    }
+  },
+  {
+    "id": "finer2020",
+    "title": "Cohort Profile: East London Genes & Health (ELGH), a community-based population genomics and health study in British Bangladeshi and British Pakistani people",
+    "doi": "10.1093/ije/dyz174",
+    "populations_reported": [
+      "South Asian (British Bangladeshi and British Pakistani)"
+    ],
+    "population_labels_as_used": "British Bangladeshi and British Pakistani people",
+    "traits": [
+      "cohort profile, trait-general"
+    ],
+    "extractions": [],
+    "used_by": {
+      "genarch": [
+        "data/ancestry/coronary-artery-disease.json",
+        "data/ancestry/type-2-diabetes.json"
+      ],
+      "aurora": "not covered"
+    },
+    "aurora_note_path": null,
+    "text_availability": "No abstract or full text retrieved. Not open access; the Europe PMC fullTextXML endpoint returns HTTP 500 for PMC7124496 and Crossref publishes no abstract. PROVENANCE POINTER ONLY: cited to identify the Genes & Health cohort, which is the South Asian-ancestry validation sample in patel2023 and the study population in hodgson2024. No finding is attributed to it. Crossref records the publication year as 2019 (online); the issue is 2020.",
+    "verified": {
+      "crossref_title": "Cohort Profile: East London Genes & Health (ELGH), a community-based population genomics and health study in British Bangladeshi and British Pakistani people",
+      "year": 2019,
+      "journal": "International Journal of Epidemiology",
+      "first_author": "Finer, Sarah",
+      "checked_at": "2026-10-06"
+    }
+  },
+  {
+    "id": "kurniansyah2023",
+    "title": "Evaluating the use of blood pressure polygenic risk scores across race/ethnic background groups",
+    "doi": "10.1038/s41467-023-38990-9",
+    "populations_reported": [
+      "Asian",
+      "Black",
+      "Hispanic/Latino",
+      "White"
+    ],
+    "population_labels_as_used": "groups defined by self-reported race/ethnic background: Asian or Asian American (Asian), Black or African American/British (Black), Latino or Hispanic American (Hispanic/Latino), White or European American (White)",
+    "traits": [
+      "systolic blood pressure",
+      "diastolic blood pressure"
+    ],
+    "extractions": [
+      {
+        "claim_id": "kurniansyah2023-self-reported-design",
+        "trait": "systolic and diastolic blood pressure",
+        "population": "Asian, Black, Hispanic/Latino, White",
+        "metric": "grouping variable used: self-reported race/ethnic background, not a genetic-ancestry grouping",
+        "value": null,
+        "comparator": null,
+        "locator": "Abstract; Results, study population",
+        "excerpt_internal": "to train, assess, and validate PRSs in groups defined by self-reported race/ethnic background (Asian, Black, Hispanic/Latino, and White)",
+        "source_text": "crossref_abstract"
+      },
+      {
+        "claim_id": "kurniansyah2023-residual-variance-differs",
+        "trait": "systolic and diastolic blood pressure",
+        "population": "Asian, Black, Hispanic/Latino, White",
+        "metric": "residual variance, the denominator of the proportion-variance-explained statistic, was lowest in White and highest in Black participants, by up to 25% over White participants",
+        "value": 25.0,
+        "comparator": "White participants",
+        "locator": "Results, characteristics of participants (Supplementary Figs. 1 and 2)",
+        "excerpt_internal": "Residual variance, the denominator in the proportion variance explained statistic ... generally lowest in White ... highest in Black participants, by up to 25% over White",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "kurniansyah2023-admixture",
+        "trait": "systolic and diastolic blood pressure",
+        "population": "Black, Hispanic/Latino",
+        "metric": "estimated global continental genetic-ancestry proportions of the self-reported groups; stated qualitatively",
+        "value": null,
+        "comparator": null,
+        "locator": "Results, characteristics of participants (Supplementary Fig. 3)",
+        "excerpt_internal": "Black participants are admixed with primarily African ancestries and some European ancestries, and Hispanic/Latino participants are admixed with substantial European, Amerindian, and African ancestries",
+        "source_text": "europepmc_fulltext"
+      },
+      {
+        "claim_id": "kurniansyah2023-gxe-interpretation",
+        "trait": "systolic and diastolic blood pressure",
+        "population": "Asian, Black",
+        "metric": "stated interpretation: stratified performance patterns were clearer in White and Hispanic backgrounds, suggesting a role for environmental and gene-environment effects",
+        "value": null,
+        "comparator": null,
+        "locator": "Discussion",
+        "excerpt_internal": "patterns were seen more clearly in White and Hispanic backgrounds than in Asian and Black backgrounds, again suggesting a role for more complex environmental and GxE effects",
+        "source_text": "europepmc_fulltext"
+      }
+    ],
+    "used_by": {
+      "genarch": [
+        "docs/cross-ancestry/AURORA_REUSE.md (module scope decision, hypertension excluded)"
+      ],
+      "aurora": "not covered"
+    },
+    "aurora_note_path": null,
+    "text_availability": "Open access. Abstract and fullTextXML retrieved from PMC via Europe PMC. NOT used for a disease module: this study's groups are self-reported race/ethnicity categories and its 'Asian' group is not a South Asian-ancestry grouping, so it cannot support a South Asian-ancestry transferability metric without equating a census-style category with a genetic-ancestry group.",
+    "verified": {
+      "crossref_title": "Evaluating the use of blood pressure polygenic risk scores across race/ethnic background groups",
+      "year": 2023,
+      "journal": "Nature Communications",
+      "first_author": "Kurniansyah, Nuzulul",
+      "checked_at": "2026-10-06"
+    }
+  }
+]
