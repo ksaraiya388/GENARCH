@@ -113,6 +113,14 @@ const SCAN = [
   { dir: path.join(ROOT, "site", "src"), exts: [".tsx", ".ts", ".mdx"] },
   { dir: path.join(ROOT, "data"), exts: [".json"] },
   { dir: path.join(ROOT, "content"), exts: [".mdx", ".md"] },
+  // Post kits are written for the owner to draft social copy from, so every
+  // sentence in them is a candidate published string and has to pass the same
+  // lexicon as the site. Scanned, and IN_SCOPE (never baselinable).
+  //
+  // Scoped to this one directory rather than all of outputs/: outputs/repro/ holds
+  // DEQ reproduction logs that are machine output, not copy, and pulling them in
+  // would mix an unrelated baseline into this gate.
+  { dir: path.join(ROOT, "outputs", "ancestry-equity"), exts: [".md"] },
 ];
 const SKIP_DIRS = new Set(["node_modules", ".next", "out", "_data", ".git"]);
 
@@ -214,7 +222,26 @@ const JSON_DISPLAY_KEYS = [
   "transferability_notes", "data_gaps", "gwas_ancestry_breakdown",
   "hypothesis", "supporting_evidence", "role_in_pathway", "pathway_role",
   "pathway_effect", "mechanism_rationale", "local_relevance",
+  // Cross-ancestry modules (data/ancestry/*.json). `text` is the prose field on
+  // every cited-text block; `metric`, `comparator` and `labels_as_used` all reach
+  // the DOM as table cells. A prose key absent from this list is NEVER linted, so
+  // adding a nested block without listing its keys silently exempts it.
+  "text", "labels_as_used", "metric", "comparator",
 ];
+
+// Keys whose value is an ARRAY OF STRINGS that reaches the DOM.
+//
+// extractJson's walk only inspects string values found directly on an object, so a
+// string living inside an array was never linted at any key. That is a silent hole:
+// `not_quantified: ["..."]` renders as list items on a disease page and would have
+// shipped unchecked. Listed separately from JSON_DISPLAY_KEYS because enabling the
+// traversal wholesale would newly flag array prose across pre-existing entity and
+// brief files, which this work package is not permitted to rewrite. Each key is added
+// here only once its files are confirmed clean, so coverage ratchets up and never
+// forces a new baseline entry.
+//
+// Confirmed clean when added: not_quantified (data/ancestry only, authored here).
+const JSON_DISPLAY_LIST_KEYS = ["not_quantified"];
 
 // R7: citation metadata, wherever it appears. Never linted.
 const CITATION_KEYS = new Set(["title", "authors", "journal", "source", "doi", "url"]);
@@ -228,6 +255,15 @@ function extractJson(src, file) {
     const needle = JSON.stringify(value).slice(1, -1).slice(0, 60);
     for (let i = 0; i < lines.length; i++) {
       if (lines[i].includes(`"${key}"`) && lines[i].includes(needle)) return i + 1;
+    }
+    return 1;
+  };
+  // An array element sits on its own line, away from its key, so the key-plus-value
+  // match above cannot find it. Match on the value alone.
+  const findLineOfValue = (value) => {
+    const needle = JSON.stringify(value).slice(1, -1).slice(0, 60);
+    for (let i = 0; i < lines.length; i++) {
+      if (lines[i].includes(needle)) return i + 1;
     }
     return 1;
   };
@@ -246,6 +282,22 @@ function extractJson(src, file) {
         if (isRefRecord || (CITATION_KEYS.has(k) && jsonPath.includes("references"))) continue;
         const ln = findLine(k, v);
         out.push({ line: ln, endLine: ln, text: v, context: `json:${k}`, file, jsonPath: `${jsonPath}.${k}` });
+      } else if (
+        Array.isArray(v) &&
+        JSON_DISPLAY_LIST_KEYS.includes(k) &&
+        !isRefRecord
+      ) {
+        v.forEach((item, i) => {
+          if (typeof item !== "string") {
+            walkValue(item, `${jsonPath}.${k}[${i}]`);
+            return;
+          }
+          const ln = findLineOfValue(item);
+          out.push({
+            line: ln, endLine: ln, text: item, context: `json:${k}[]`,
+            file, jsonPath: `${jsonPath}.${k}[${i}]`,
+          });
+        });
       } else {
         walkValue(v, `${jsonPath}.${k}`);
       }

@@ -11,6 +11,7 @@ from pathlib import Path
 
 from pipeline.schemas import (
     CommunitySchema,
+    CrossAncestrySection,
     DiseaseSchema,
     ExposureSchema,
     GeneSchema,
@@ -28,7 +29,17 @@ def _resolve_data_dir() -> Path:
 def _collect_json_files(data_dir: Path) -> dict[str, list[Path]]:
     """Collect JSON files by entity type (directory name)."""
     by_type: dict[str, list[Path]] = {}
-    dirs = ["diseases", "exposures", "genes", "pathways", "community", "graph", "briefs", "reports"]
+    dirs = [
+        "diseases",
+        "exposures",
+        "genes",
+        "pathways",
+        "community",
+        "graph",
+        "briefs",
+        "reports",
+        "ancestry",
+    ]
     for subdir in dirs:
         path = data_dir / subdir
         if path.exists():
@@ -45,6 +56,7 @@ def _schema_for_type(entity_type: str):
         "pathways": PathwaySchema,
         "community": CommunitySchema,
         "graph": GraphSchema,
+        "ancestry": CrossAncestrySection,
     }
     return schemas.get(entity_type)
 
@@ -97,7 +109,9 @@ def _collect_slugs(data_dir: Path) -> dict[str, set[str]]:
 def _collect_citation_ids(data_dir: Path) -> set[str]:
     """Collect all reference IDs from entity JSON files."""
     ref_ids: set[str] = set()
-    for subdir in ["diseases", "exposures", "genes", "pathways", "community", "briefs"]:
+    for subdir in [
+        "diseases", "exposures", "genes", "pathways", "community", "briefs", "ancestry",
+    ]:
         path = data_dir / subdir
         if not path.exists():
             continue
@@ -125,7 +139,9 @@ def _collect_referenced_slugs(data_dir: Path) -> dict[str, list[tuple[Path, str]
         if slug:
             refs[typ].append((fp, slug))
 
-    for subdir in ["diseases", "exposures", "genes", "pathways", "community", "briefs"]:
+    for subdir in [
+        "diseases", "exposures", "genes", "pathways", "community", "briefs", "ancestry",
+    ]:
         path = data_dir / subdir
         if not path.exists():
             continue
@@ -165,7 +181,9 @@ def _collect_referenced_slugs(data_dir: Path) -> dict[str, list[tuple[Path, str]
 def _collect_citation_refs(data_dir: Path) -> list[tuple[Path, str]]:
     """Collect all citation ID references (filepath, citation_id)."""
     refs: list[tuple[Path, str]] = []
-    for subdir in ["diseases", "exposures", "genes", "pathways", "community", "briefs"]:
+    for subdir in [
+        "diseases", "exposures", "genes", "pathways", "community", "briefs", "ancestry",
+    ]:
         path = data_dir / subdir
         if not path.exists():
             continue
@@ -239,11 +257,252 @@ def _validate_briefs(data_dir: Path, errors: list[str]) -> None:
 
 _PLACEHOLDER_RE = re.compile(r"^ref\d+$")
 
+# The three target groups every cross-ancestry module must carry, exactly. A module
+# that drops a group because no study measured it would silently turn a data gap into
+# an absence, so the gap is recorded on the group entry instead (value null,
+# not_quantified populated, evidence_confidence low).
+_REQUIRED_ANCESTRY_GROUPS = frozenset(
+    {
+        "South Asian ancestry",
+        "African ancestry",
+        "Hispanic/Latino and Admixed American ancestry",
+    }
+)
+
+
+def _norm_metric(value: str) -> str:
+    """Lowercase and strip punctuation, so metric names compare on wording alone."""
+    return re.sub(r"[^a-z0-9]+", " ", value.lower()).strip()
+
+
+def _load_literature(repo_root: Path, errors: list[str]) -> dict[str, dict]:
+    """Load the verified cross-ancestry bibliography, keyed by entry id.
+
+    Every entry must carry a ``verified`` block written by scripts/verify_dois.py.
+    An unverified entry is treated as absent, so a module citing it fails.
+    """
+    lit_path = (
+        repo_root / "pipeline" / "sources" / "cross_ancestry" / "literature.json"
+    )
+    if not lit_path.exists():
+        errors.append(
+            f"{lit_path}: cross-ancestry bibliography is missing. Run "
+            f"scripts/verify_dois.py."
+        )
+        return {}
+    try:
+        raw = json.loads(lit_path.read_text(encoding="utf-8"))
+    except Exception as e:  # noqa: BLE001
+        errors.append(f"{lit_path}: Invalid JSON: {e}")
+        return {}
+
+    by_id: dict[str, dict] = {}
+    for entry in raw:
+        eid = entry.get("id")
+        if not eid:
+            errors.append(f"{lit_path}: an entry has no id")
+            continue
+        if not entry.get("verified"):
+            errors.append(
+                f"{lit_path}: entry '{eid}' has no 'verified' block. Run "
+                f"scripts/verify_dois.py; an unverified record may not be cited."
+            )
+            continue
+        by_id[eid] = entry
+    return by_id
+
+
+def _validate_cross_ancestry(data_dir: Path, errors: list[str]) -> None:
+    """Cross-ancestry module rules.
+
+    Schema conformance is already handled by CrossAncestrySection via
+    _validate_schema. This adds the rules that need other files loaded:
+
+      * disease_slug resolves to data/diseases/
+      * every citations[] ID resolves inside the file's OWN references[]
+        (the global citation pool in rule 3 is too permissive for a new surface)
+      * every reference DOI exists in literature.json with a verified block
+      * every non-null transferability value matches an extraction in
+        literature.json by study, claim_id, value and metric wording
+      * exactly the three required groups, once each
+      * limitations is non-empty
+      * every cited-text block actually carries a citation
+    """
+    ancestry_dir = data_dir / "ancestry"
+    if not ancestry_dir.exists():
+        return
+
+    repo_root = data_dir.parent
+    literature = _load_literature(repo_root, errors)
+
+    # DOI -> literature entry id, for the reference cross-check.
+    doi_to_lit = {
+        (e.get("doi") or "").strip().lower(): eid
+        for eid, e in literature.items()
+        if e.get("doi")
+    }
+
+    disease_slugs = {
+        json.loads(fp.read_text(encoding="utf-8")).get("slug")
+        for fp in (data_dir / "diseases").rglob("*.json")
+    } if (data_dir / "diseases").exists() else set()
+
+    for fp in sorted(ancestry_dir.rglob("*.json")):
+        try:
+            raw = json.loads(fp.read_text(encoding="utf-8"))
+        except Exception as e:  # noqa: BLE001
+            errors.append(f"{fp}: Invalid JSON: {e}")
+            continue
+
+        where = fp.as_posix()
+
+        # disease_slug must resolve.
+        dslug = raw.get("disease_slug")
+        if dslug not in disease_slugs:
+            errors.append(
+                f"{where}: disease_slug '{dslug}' does not resolve to data/diseases/"
+            )
+
+        # Citation IDs must resolve inside this file's own references[].
+        local_refs = {
+            r.get("id"): r for r in raw.get("references", []) if isinstance(r, dict)
+        }
+
+        def check_citations(block: object, label: str) -> None:
+            if not isinstance(block, dict):
+                return
+            cites = block.get("citations")
+            if not isinstance(cites, list) or not cites:
+                errors.append(f"{where}: {label} carries no citation")
+                return
+            for cid in cites:
+                if cid not in local_refs:
+                    errors.append(
+                        f"{where}: {label} cites '{cid}', which is not in this file's "
+                        f"references[]"
+                    )
+
+        # Every reference DOI must be a verified literature.json record.
+        for rid, ref in local_refs.items():
+            doi = (ref.get("doi") or "").strip().lower()
+            if not doi:
+                errors.append(f"{where}: reference '{rid}' has no DOI")
+            elif doi not in doi_to_lit:
+                errors.append(
+                    f"{where}: reference '{rid}' DOI '{doi}' is not a verified entry in "
+                    f"pipeline/sources/cross_ancestry/literature.json"
+                )
+
+        groups = raw.get("groups") or []
+        seen = [g.get("population") for g in groups if isinstance(g, dict)]
+        if len(groups) != len(_REQUIRED_ANCESTRY_GROUPS) or set(seen) != set(
+            _REQUIRED_ANCESTRY_GROUPS
+        ):
+            errors.append(
+                f"{where}: groups must be exactly {sorted(_REQUIRED_ANCESTRY_GROUPS)}, "
+                f"one entry each; found {seen}"
+            )
+
+        for i, group in enumerate(groups):
+            if not isinstance(group, dict):
+                continue
+            pop = group.get("population", f"[{i}]")
+            check_citations(group.get("gwas_representation"), f"group '{pop}' gwas_representation")
+            check_citations(group.get("effect_estimate_notes"), f"group '{pop}' effect_estimate_notes")
+            check_citations(group.get("prs_transferability"), f"group '{pop}' prs_transferability")
+
+            pt = group.get("prs_transferability") or {}
+            study = pt.get("study")
+            value = pt.get("value")
+            claim_id = pt.get("claim_id")
+            metric = pt.get("metric") or ""
+
+            if study not in literature:
+                errors.append(
+                    f"{where}: group '{pop}' names study '{study}', which is not a "
+                    f"verified entry in literature.json"
+                )
+                continue
+
+            extractions = literature[study].get("extractions") or []
+
+            if value is None:
+                # No number means no claim_id is needed, and the gap must be stated.
+                if not group.get("not_quantified"):
+                    errors.append(
+                        f"{where}: group '{pop}' has no transferability value and an empty "
+                        f"not_quantified[]; an unmeasured group must say what is missing"
+                    )
+                continue
+
+            if not claim_id:
+                errors.append(
+                    f"{where}: group '{pop}' reports value {value} with no claim_id; a "
+                    f"number must name the extraction it came from"
+                )
+                continue
+
+            match = next((x for x in extractions if x.get("claim_id") == claim_id), None)
+            if match is None:
+                errors.append(
+                    f"{where}: group '{pop}' claim_id '{claim_id}' is not an extraction "
+                    f"of study '{study}'"
+                )
+                continue
+            if match.get("value") != value:
+                errors.append(
+                    f"{where}: group '{pop}' reports value {value} but extraction "
+                    f"'{claim_id}' records {match.get('value')}"
+                )
+            if _norm_metric(metric) not in _norm_metric(match.get("metric") or ""):
+                errors.append(
+                    f"{where}: group '{pop}' metric {metric!r} does not match the metric "
+                    f"recorded on extraction '{claim_id}': {match.get('metric')!r}"
+                )
+
+        check_citations(raw.get("mechanisms_of_degradation"), "mechanisms_of_degradation")
+
+        if not (raw.get("limitations") or "").strip():
+            errors.append(f"{where}: limitations must be non-empty")
+        if not (raw.get("data_gaps") or "").strip():
+            errors.append(f"{where}: data_gaps must be non-empty")
+
+        # Loudoun context must point at real ACS labels.
+        acs_path = (
+            repo_root / "pipeline" / "sources" / "cross_ancestry" / "acs_loudoun_2023.json"
+        )
+        ctx = raw.get("loudoun_context") or {}
+        acs_refs = ctx.get("acs_refs") or []
+        if not acs_refs:
+            errors.append(f"{where}: loudoun_context carries no acs_refs")
+        elif acs_path.exists():
+            try:
+                acs = json.loads(acs_path.read_text(encoding="utf-8"))
+                labels = {
+                    v["label"]
+                    for section in ("profile_dp05", "detail_b02015")
+                    for v in (acs.get(section) or {}).values()
+                }
+                for ref in acs_refs:
+                    label = ref.split("acs_loudoun_2023:", 1)[-1]
+                    if label not in labels:
+                        errors.append(
+                            f"{where}: acs_ref '{ref}' names a label that is not in "
+                            f"acs_loudoun_2023.json"
+                        )
+            except Exception as e:  # noqa: BLE001
+                errors.append(f"{acs_path}: could not read ACS labels: {e}")
+        else:
+            errors.append(
+                f"{acs_path}: missing. Run scripts/fetch_acs_loudoun.py with "
+                f"CENSUS_API_KEY set."
+            )
+
 # Surfaces created by this work package. Citation defects here are hard errors: the new
 # pages may not ship with a placeholder citation under any circumstance. Pre-existing entity
 # files warn instead, because a hard failure there would block every other fix in the package
 # from shipping (and those files are read-only in this work package).
-_NEW_SURFACES = ("community/data-center-alley.json", "sensors/")
+_NEW_SURFACES = ("community/data-center-alley.json", "sensors/", "ancestry/")
 
 
 def _is_new_surface(fp: Path) -> bool:
@@ -448,7 +707,7 @@ def _validate_citations(data_dir: Path, errors: list[str], warnings: list[str]) 
         counts[r["gap_class"]] = counts.get(r["gap_class"], 0) + 1
 
     # Rule 1: no placeholder token may ship on a surface created by this work package.
-    for subdir in ["community", "sensors"]:
+    for subdir in ["community", "sensors", "ancestry"]:
         path = data_dir / subdir
         if not path.exists():
             continue
@@ -463,7 +722,9 @@ def _validate_citations(data_dir: Path, errors: list[str], warnings: list[str]) 
                 )
 
     # Rule 3: a reference record with no doi, no url and no journal cannot be looked up.
-    for subdir in ["diseases", "exposures", "genes", "pathways", "community", "briefs"]:
+    for subdir in [
+        "diseases", "exposures", "genes", "pathways", "community", "briefs", "ancestry",
+    ]:
         path = data_dir / subdir
         if not path.exists():
             continue
@@ -598,7 +859,7 @@ def validate() -> int:
             errors.append(f"graph.json: Failed to validate graph integrity: {e}")
 
     # 5. Slug-filename consistency
-    for subdir in ["diseases", "exposures", "genes", "pathways", "community"]:
+    for subdir in ["diseases", "exposures", "genes", "pathways", "community", "ancestry"]:
         path = data_dir / subdir
         if not path.exists():
             continue
@@ -630,6 +891,9 @@ def validate() -> int:
 
     # 7. Brief publication gate
     _validate_briefs(data_dir, errors)
+
+    # 7b. Cross-ancestry modules
+    _validate_cross_ancestry(data_dir, errors)
 
     # 8. Citation integrity + gap manifest
     citation_warnings: list[str] = []

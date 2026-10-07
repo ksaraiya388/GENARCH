@@ -526,6 +526,90 @@ class CommunitySchema(BaseModel):
         return v
 
 
+# --- Cross-ancestry transferability ---
+#
+# A separate entity under data/ancestry/, deliberately NOT a field on DiseaseSchema.
+# Three reasons:
+#   1. data/diseases/ is lint read-only territory in this work package, and
+#      population_equity / ancestry_context on those files are not edited.
+#   2. extra="forbid" means a new optional field on DiseaseSchema would still force
+#      a touch on all 19 disease files to keep them uniform.
+#   3. A module exists for 3 of 19 diseases. An optional field that is absent 16
+#      times models the data worse than a directory with 3 files in it.
+#
+# This records published, group-level transferability metrics. It never holds a
+# score, a weight, or anything that could be evaluated for one person.
+
+
+class CrossAncestryLoudounContext(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    text: str
+    # Each entry names a label in pipeline/sources/cross_ancestry/acs_loudoun_2023.json,
+    # formatted "acs_loudoun_2023:<label>".
+    acs_refs: list[str]
+
+
+class CrossAncestryCitedText(BaseModel):
+    """Prose that must carry at least one citation. Enforced in validate.py."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    text: str
+    citations: list[str]
+
+
+class CrossAncestryTransferability(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    # Reader-facing metric name. Must be a substring of the metric recorded on the
+    # matching extraction in literature.json, so a number can never be relabelled
+    # as a different quantity on its way to the page.
+    metric: str
+    value: Optional[float] = None
+    comparator: str
+    # literature.json entry id.
+    study: str
+    # literature.json extraction claim_id. Required whenever value is not None; the
+    # cross-check lives in validate.py because it needs the bibliography loaded.
+    claim_id: Optional[str] = None
+    text: str
+    citations: list[str]
+
+
+class CrossAncestryGroup(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    # Genetic-ancestry grouping label used by GENARCH. The exact labels the source
+    # studies used go in labels_as_used, which is rendered beside it.
+    population: str
+    labels_as_used: str
+    gwas_representation: CrossAncestryCitedText
+    prs_transferability: CrossAncestryTransferability
+    effect_estimate_notes: CrossAncestryCitedText
+    evidence_confidence: Confidence
+    # Everything the verified literature does not measure for this group. A group
+    # with no metric still gets an entry; the gap is stated, not omitted.
+    not_quantified: list[str]
+
+
+class CrossAncestrySection(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    slug: str
+    disease_slug: str
+    title: str
+    summary: str
+    loudoun_context: CrossAncestryLoudounContext
+    groups: list[CrossAncestryGroup]
+    mechanisms_of_degradation: CrossAncestryCitedText
+    data_gaps: str
+    limitations: str
+    references: list[Reference]
+    schema_version: str
+    last_updated: str
+
+
 # Schema registry for dispatch
 ENTITY_SCHEMAS: dict[str, type[BaseModel]] = {
     "disease": DiseaseSchema,
@@ -534,4 +618,5 @@ ENTITY_SCHEMAS: dict[str, type[BaseModel]] = {
     "pathway": PathwaySchema,
     "graph": GraphSchema,
     "community": CommunitySchema,
+    "ancestry": CrossAncestrySection,
 }
