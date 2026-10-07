@@ -1,0 +1,151 @@
+{
+  "source": "US Census Bureau, American Community Survey",
+  "dataset": "ACS 2023 5-year estimates (acs/acs5)",
+  "vintage": "2023 ACS 5-year estimates (2019-2023)",
+  "geography": "Loudoun County, Virginia",
+  "geography_fips": {
+    "state": "51",
+    "county": "107"
+  },
+  "retrieved_at": "2026-10-06",
+  "api_base": "https://api.census.gov/data/2023/acs/acs5",
+  "selection_method": "Variables resolved by exact match against the vintage's variables.json label text, not by memorised variable code. A label matching other than exactly one variable is a hard error.",
+  "notes": "Percentages and their margins of error are the values the Census Bureau publishes in the DP05 profile (PE/PM), not values computed here. B02015 is a detailed table and publishes no percentage; none is derived. Race and Hispanic origin are self-identification categories and are not genetic-ancestry groupings.",
+  "sentinel_handling": "The API returns a large negative sentinel in place of a statistic it does not publish for a cell. Raw values are preserved verbatim; the '*_published' booleans say whether each cell carries a real statistic. A false value means no statistic was published and the cell must not be rendered as a number. 'estimate_exceeds_margin' marks an estimate whose margin of error is at least as large as the estimate itself.",
+  "sentinel_codes_recognised": [
+    "-222222222",
+    "-555555555",
+    "-666666666",
+    "-888888888",
+    "-999999999"
+  ],
+  "profile_dp05": {
+    "total_population": {
+      "variable": "DP05_0001E",
+      "label": "Estimate!!SEX AND AGE!!Total population",
+      "estimate": "427082",
+      "margin_of_error": "-555555555",
+      "margin_of_error_published": false,
+      "percent": null,
+      "percent_published": false,
+      "percent_margin_of_error": "-888888888",
+      "percent_margin_of_error_published": false,
+      "percent_note": "This is the base row of the table; the profile's percent column repeats the count, so no percentage is published.",
+      "estimate_exceeds_margin": false
+    },
+    "black_or_african_american_alone": {
+      "variable": "DP05_0038E",
+      "label": "Estimate!!RACE!!Total population!!One race!!Black or African American",
+      "estimate": "32889",
+      "margin_of_error": "815",
+      "margin_of_error_published": true,
+      "percent": "7.7",
+      "percent_published": true,
+      "percent_margin_of_error": "0.2",
+      "percent_margin_of_error_published": true,
+      "estimate_exceeds_margin": false
+    },
+    "asian_alone": {
+      "variable": "DP05_0047E",
+      "label": "Estimate!!RACE!!Total population!!One race!!Asian",
+      "estimate": "89864",
+      "margin_of_error": "1389",
+      "margin_of_error_published": true,
+      "percent": "21.0",
+      "percent_published": true,
+      "percent_margin_of_error": "0.3",
+      "percent_margin_of_error_published": true,
+      "estimate_exceeds_margin": false
+    },
+    "hispanic_or_latino_any_race": {
+      "variable": "DP05_0076E",
+      "label": "Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)",
+      "estimate": "60466",
+      "margin_of_error": "-555555555",
+      "margin_of_error_published": false,
+      "percent": "14.2",
+      "percent_published": true,
+      "percent_margin_of_error": "-555555555.0",
+      "percent_margin_of_error_published": false,
+      "estimate_exceeds_margin": false
+    }
+  },
+  "detail_b02015": {
+    "asian_indian": {
+      "variable": "B02015_021E",
+      "label": "Estimate!!Total:!!South Asian:!!Asian Indian",
+      "estimate": "45468",
+      "margin_of_error": "2243",
+      "margin_of_error_published": true,
+      "estimate_exceeds_margin": false
+    },
+    "pakistani": {
+      "variable": "B02015_025E",
+      "label": "Estimate!!Total:!!South Asian:!!Pakistani",
+      "estimate": "9848",
+      "margin_of_error": "1694",
+      "margin_of_error_published": true,
+      "estimate_exceeds_margin": false
+    },
+    "bangladeshi": {
+      "variable": "B02015_022E",
+      "label": "Estimate!!Total:!!South Asian:!!Bangladeshi",
+      "estimate": "921",
+      "margin_of_error": "418",
+      "margin_of_error_published": true,
+      "estimate_exceeds_margin": false
+    },
+    "sri_lankan": {
+      "variable": "B02015_027E",
+      "label": "Estimate!!Total:!!South Asian:!!Sri Lankan",
+      "estimate": "334",
+      "margin_of_error": "445",
+      "margin_of_error_published": true,
+      "estimate_exceeds_margin": true
+    },
+    "nepalese": {
+      "variable": "B02015_024E",
+      "label": "Estimate!!Total:!!South Asian:!!Nepalese",
+      "estimate": "1800",
+      "margin_of_error": "637",
+      "margin_of_error_published": true,
+      "estimate_exceeds_margin": false
+    }
+  },
+  "raw_responses": {
+    "profile_dp05": {
+      "DP05_0001E": "427082",
+      "DP05_0001M": "-555555555",
+      "DP05_0001PE": "427082",
+      "DP05_0001PM": "-888888888",
+      "DP05_0038E": "32889",
+      "DP05_0038M": "815",
+      "DP05_0038PE": "7.7",
+      "DP05_0038PM": "0.2",
+      "DP05_0047E": "89864",
+      "DP05_0047M": "1389",
+      "DP05_0047PE": "21.0",
+      "DP05_0047PM": "0.3",
+      "DP05_0076E": "60466",
+      "DP05_0076M": "-555555555",
+      "DP05_0076PE": "14.2",
+      "DP05_0076PM": "-555555555.0",
+      "state": "51",
+      "county": "107"
+    },
+    "detail_b02015": {
+      "B02015_021E": "45468",
+      "B02015_021M": "2243",
+      "B02015_025E": "9848",
+      "B02015_025M": "1694",
+      "B02015_022E": "921",
+      "B02015_022M": "418",
+      "B02015_027E": "334",
+      "B02015_027M": "445",
+      "B02015_024E": "1800",
+      "B02015_024M": "637",
+      "state": "51",
+      "county": "107"
+    }
+  }
+}

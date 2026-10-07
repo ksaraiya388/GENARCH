@@ -90,8 +90,8 @@
         "source",
         "source_url"
       ],
-      "status": "PARTIAL. Figure C3 is NOT shipped.",
-      "blocker": "The figure needs a matched world/global population share by the SAME ancestry categories (the Morales et al. 2018 framework the GWAS Diversity Monitor uses). Neither the GWAS Diversity Monitor nor the Cell Genomics 2024 review publishes matched world-population percentages; the review explicitly notes the absence of a standardized global baseline. Do not attach a differently-defined population source (for example UN residents-in-Europe, ~10%) to the GWAS ancestry share, because the two bars would then measure different things. To unblock: curate a same-framework world-population-by-ancestry table from a single citable source with an as-of date, add it here, then build the two-bar figure."
+      "status": "SHIPPED, narrowed. Figure C3 (gwas-ancestry-imbalance) ships as a GWAS-participant-share chart from ONE snapshot.",
+      "blocker": "RESOLVED BY NARROWING, not by finding the missing source. The original blocker stands on its own terms: a two-bar GWAS-share-versus-world-population figure needs a matched world-population share by the SAME ancestry framework (Morales et al. 2018, as used by the GWAS Diversity Monitor), and neither the Monitor nor the Cell Genomics 2024 review publishes one. That figure is still not built, and a differently-defined population source must still never be attached to the GWAS ancestry share. What ships instead is the narrower figure: GWAS participant share alone, no world-population bar, therefore no second denominator and no mismatch. SNAPSHOT_AS_OF in site/src/lib/figures.ts pins the figure to the 2024-09 rows; the 2023 and 2024-09 rows have different denominators and the 2023 African row additionally excludes African American and Afro-Caribbean participants, so rows must never be mixed across as_of values on one axis. The 2024-09 snapshot itemises only European and Asian, so the remainder is unplotted rather than shown as zero, and its 'Asian' category is not South Asian-specific. Because that last point matters on a page about South Asian ancestry, /ancestry-equity also presents a five-group breakdown that does itemise South Asian and Hispanic/Latino participation, as a separate cited TABLE from a different source (Fatumo et al. 2022, 10.1038/s41591-021-01672-4), deliberately not merged into this chart."
     },
     {
       "file": "loudoun_tract_foodaccess_diabetes.README.md",
@@ -596,6 +596,61 @@
         "pipeline/sources/deq/deq_dcamp_weekly_2026-10-02.txt",
         "pipeline/sources/deq/deq_dcamp_weekly_2026-10-02_tables.json"
       ]
+    },
+    {
+      "file": "cross_ancestry/literature.json",
+      "purpose": "Single canonical record of the cross-ancestry bibliography: every reference behind data/ancestry/*.json, data/briefs/t2d-south-asian-prs-transferability.json and /ancestry-equity, with a per-claim extraction carrying the metric, value, comparator and a page/table/figure locator.",
+      "origin_urls": [
+        "https://api.crossref.org/works/{doi}",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:{doi}&resultType=core&format=json",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/{pmcid}/fullTextXML"
+      ],
+      "retrieval_method": "Crossref REST for DOI and title verification; Europe PMC search for abstracts and, where a record is open access, the fullTextXML endpoint for body text. Values were read only from text actually fetched. Non-open-access records return HTTP 500 from fullTextXML and contribute abstract-only extractions.",
+      "download_date": "2026-10-06",
+      "license": "Crossref metadata is distributed under CC0. Europe PMC open-access full text is redistributable under each article's own licence. GENARCH stores bibliographic metadata plus short internal locator excerpts for provenance; the excerpt_internal fields are never rendered and no article text is republished.",
+      "format": "JSON (list of entries)",
+      "generated_by": "scripts/verify_dois.py (writes the verified block and docs/cross-ancestry/cross_ancestry.bib)",
+      "coverage": "19 entries, 111 extractions, 60 carrying a numeric value. All 19 passed DOI and normalised-title verification against Crossref on 2026-10-06.",
+      "columns": [
+        "id",
+        "title",
+        "doi",
+        "verified",
+        "populations_reported",
+        "population_labels_as_used",
+        "traits",
+        "extractions",
+        "used_by",
+        "aurora_note_path",
+        "text_availability"
+      ],
+      "status": "SHIPPED.",
+      "description": "Rebuild or re-verify with `python scripts/verify_dois.py`, which exits 1 on any title mismatch or 404 and refuses to write. An entry that fails verification is deleted, not patched. pipeline/validate.py cross-checks that every reference DOI in data/ancestry/ resolves to a verified entry here and that every non-null value matches its named extraction by claim_id, value and metric wording."
+    },
+    {
+      "file": "cross_ancestry/acs_loudoun_2023.json",
+      "purpose": "Loudoun County population counts used for the Loudoun context on /ancestry-equity, on each data/ancestry/ module, and in mechanism brief #5: total population, Black or African American alone, Asian alone, Hispanic or Latino of any race, and five detailed South Asian groups.",
+      "origin_urls": [
+        "https://api.census.gov/data/2023/acs/acs5/profile",
+        "https://api.census.gov/data/2023/acs/acs5"
+      ],
+      "retrieval_method": "US Census Bureau ACS API, tables DP05 (data profile) and B02015 (Asian Alone by Selected Groups), for state 51 county 107. Variables are selected by exact match against the vintage's variables.json label text, never by memorised variable code, because Census renumbers profile variables between vintages. A label matching other than exactly one variable is a hard error. The data endpoints require an API key, read from CENSUS_API_KEY or ~/.census_api_key; the key is redacted from every error path and a write-time guard refuses to save a payload containing a key or a 'key=' URL parameter.",
+      "download_date": "2026-10-06",
+      "license": "US Census Bureau data is a US Government work and is in the public domain.",
+      "format": "JSON",
+      "generated_by": "scripts/fetch_acs_loudoun.py",
+      "coverage": "Loudoun County, Virginia. 2023 ACS 5-year estimates (2019-2023). 4 DP05 cells and 5 B02015 cells.",
+      "columns": [
+        "profile_dp05",
+        "detail_b02015",
+        "raw_responses",
+        "vintage",
+        "selection_method",
+        "sentinel_handling",
+        "sentinel_codes_recognised"
+      ],
+      "status": "SHIPPED.",
+      "description": "Percentages and their margins of error are the values the Bureau publishes (PE/PM); none is computed here. B02015 is a detailed table and publishes no percentage, so none is derived. The API returns large negative sentinels (for example -555555555) in place of a statistic it does not publish; raw values are preserved and '*_published' booleans say whether each cell carries a real statistic, so a sentinel can never render as a number. 'estimate_exceeds_margin' flags the Sri Lankan count, whose margin of error (445) is larger than the estimate (334). The DP05 total-population row's percent column repeats the count rather than carrying a percentage and is suppressed. Race and Hispanic origin are self-identification categories and are not genetic-ancestry groupings."
     }
   ]
 }
