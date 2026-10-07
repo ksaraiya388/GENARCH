@@ -160,7 +160,8 @@
     "data_gaps": "Under-representation of diverse ancestries; G×E studies across populations; adolescent-onset T2D genetics; gene–diet interactions."
   },
   "mechanism_briefs": [
-    "pparg-diet-type2diabetes"
+    "pparg-diet-type2diabetes",
+    "t2d-south-asian-prs-transferability"
   ],
   "references": [
     {
