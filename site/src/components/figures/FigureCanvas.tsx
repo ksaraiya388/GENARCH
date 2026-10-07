@@ -6,6 +6,8 @@ import { FigureFrame } from "./FigureFrame";
 import { Il33Pm25Chain } from "./Il33Pm25Chain";
 import { LoudounAsthmaVsState } from "./LoudounAsthmaVsState";
 import { KnowledgeGraphHero } from "./KnowledgeGraphHero";
+import { GwasAncestryImbalance } from "./GwasAncestryImbalance";
+import { PrsPortability } from "./PrsPortability";
 
 /**
  * Client wrapper: reads the requested size from the query string and renders
@@ -26,6 +28,12 @@ export function FigureCanvas({ payload }: { payload: FigurePayload }) {
         )}
         {payload.id === "loudoun-asthma-vs-state" && (
           <LoudounAsthmaVsState size={size} data={payload.data} meta={meta} />
+        )}
+        {payload.id === "gwas-ancestry-imbalance" && (
+          <GwasAncestryImbalance size={size} data={payload.data} meta={meta} />
+        )}
+        {payload.id === "prs-portability" && (
+          <PrsPortability size={size} data={payload.data} meta={meta} />
         )}
         {payload.id === "knowledge-graph-hero" && (
           <KnowledgeGraphHero size={size} data={payload.data} meta={meta} />

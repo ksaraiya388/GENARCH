@@ -394,6 +394,47 @@ export default function MethodsPage() {
           </div>
         </section>
 
+        {/* ── Cross-ancestry layer ── */}
+        <section aria-labelledby="cross-ancestry-layer-heading">
+          <h2
+            id="cross-ancestry-layer-heading"
+            className="text-h2 text-surface-white mb-3"
+          >
+            Cross-Ancestry Layer
+          </h2>
+          <div className="space-y-3 text-cool-light">
+            <p>
+              Most of the GWAS evidence this atlas rests on was collected in
+              European-ancestry study populations, and polygenic scores built from it are
+              less accurate when applied to other ancestry groups. A separate layer
+              records what published studies measured about that gap, per disease and per
+              population group: the transferability metric, the comparison group, the
+              study it came from, and what the verified sources do not measure. Every
+              number is traceable to a DOI and title checked against Crossref, with a
+              page, table, or figure locator recorded alongside it in{" "}
+              <code className="text-cool-mid">
+                pipeline/sources/cross_ancestry/literature.json
+              </code>
+              .
+            </p>
+            <p>
+              The layer reports group-level findings from the literature. It performs no
+              polygenic scoring of its own, and there is nothing on those pages to enter
+              a genotype into. Metric names are printed next to every value, because
+              values drawn from different studies and different metrics do not share a
+              scale and cannot be compared as if they did. See{" "}
+              <Link
+                href="/ancestry-equity/"
+                className="text-teal-primary hover:text-teal-soft hover:underline"
+              >
+                Ancestry &amp; Equity
+              </Link>{" "}
+              for the modules, the Loudoun County population context, the
+              population-descriptor policy, and the definitions.
+            </p>
+          </div>
+        </section>
+
         {/* ── Limitations ── */}
         <section aria-labelledby="limitations-heading">
           <h2 id="limitations-heading" className="text-h2 text-surface-white mb-3">

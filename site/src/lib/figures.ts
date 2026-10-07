@@ -19,6 +19,7 @@ export type FigureId =
   | "il33-pm25-chain"
   | "loudoun-asthma-vs-state"
   | "gwas-ancestry-imbalance"
+  | "prs-portability"
   | "food-access-t2d"
   | "knowledge-graph-hero";
 
@@ -47,13 +48,23 @@ export const FIGURE_COLORS = {
 } as const;
 
 /**
- * Only figures backed by verified data ship. Two of the five originally scoped
- * figures are not present here:
+ * Only figures backed by verified data ship. One of the originally scoped figures
+ * is still not present here:
  *  - "food-access-t2d": STOPPED. The community dataset has only a county-level
  *    food-access summary, no tract-level food-access/diabetes pairs. See the
  *    curation spec at pipeline/sources/loudoun_tract_foodaccess_diabetes.README.md.
- *  - "gwas-ancestry-imbalance": added only when the external ancestry breakdown
- *    is retrieved and written to pipeline/sources/gwas_ancestry_breakdown.csv.
+ *
+ * "gwas-ancestry-imbalance" SHIPS as of the cross-ancestry work package. Its former
+ * blocker was that a two-bar GWAS-share-versus-world-population chart needs a matched
+ * world-population share by the same ancestry framework, which neither the GWAS
+ * Diversity Monitor nor the Cell Genomics 2024 review publishes. That blocker is not
+ * resolved and the two-bar chart is still not built. What ships instead is a narrower
+ * figure: GWAS participant share alone, from ONE snapshot of
+ * pipeline/sources/gwas_ancestry_breakdown.csv, with no world-population comparison
+ * bar and therefore no second denominator. The CSV holds two mutually incompatible
+ * snapshots (2023 and 2024-09) whose denominators differ; SNAPSHOT_AS_OF below pins
+ * the figure to one of them, and mixing rows across `as_of` values would make the
+ * bars measure different things.
  */
 export const FIGURES: Partial<Record<FigureId, FigureMeta>> = {
   "il33-pm25-chain": {
@@ -75,6 +86,28 @@ export const FIGURES: Partial<Record<FigureId, FigureMeta>> = {
     destination: "/community/loudoun-county-va",
     altText:
       "A bar chart of adult asthma prevalence with three bars: Loudoun County at 8.2 percent, Virginia at 9.4 percent, and the United States at 8.0 percent. Loudoun is the lowest of the three.",
+  },
+  "gwas-ancestry-imbalance": {
+    id: "gwas-ancestry-imbalance",
+    title: "Who GWAS has enrolled, by ancestry group",
+    claim:
+      "In the GWAS Diversity Monitor's September 2024 snapshot, European-ancestry participants are 94.48% of GWAS participants and Asian-ancestry participants 3.96%.",
+    sourceLine:
+      "GWAS Diversity Monitor, September 2024 snapshot (Mills & Rahal, Nat Genet 2020)",
+    destination: "/ancestry-equity",
+    altText:
+      "A bar chart of GWAS participant share by ancestry group from a single September 2024 snapshot. European ancestry is 94.48 percent and Asian ancestry is 3.96 percent. The snapshot itemises only these two groups and does not break out South Asian ancestry separately, so 'Asian' here is not South Asian-specific. The remaining share is not itemised in this snapshot and is not plotted.",
+  },
+  "prs-portability": {
+    id: "prs-portability",
+    title: "Type 2 diabetes polygenic score accuracy, by ancestry group",
+    claim:
+      "In one multi-ancestry type 2 diabetes polygenic score, incremental AUC is 0.143 in European-ancestry validation cohorts and 0.061 in South Asian-ancestry cohorts.",
+    sourceLine:
+      "Huerta-Chagoya et al., Lancet Diabetes Endocrinol 2026, doi:10.1016/s2213-8587(25)00405-x",
+    destination: "/ancestry-equity",
+    altText:
+      "A bar chart of incremental AUC for one multi-ancestry type 2 diabetes polygenic risk score across five ancestry groups, from a single study: European 0.143, Admixed American 0.086, East Asian 0.074, South Asian 0.061, and African or African American 0.041. All five bars are the same metric, the same trait, and the same score, so they are directly comparable. Incremental AUC is the gain in area under the curve from adding the score to a model of age, sex and principal components.",
   },
   "knowledge-graph-hero": {
     id: "knowledge-graph-hero",
@@ -138,7 +171,49 @@ export interface GraphHeroData {
   edges: GraphHeroEdge[];
 }
 
+/**
+ * The one snapshot of gwas_ancestry_breakdown.csv the figure is pinned to. The CSV
+ * holds two snapshots whose denominators differ; rows from different `as_of` values
+ * must never share an axis. Changing this constant changes the whole figure, which
+ * is the point of having it in one place.
+ */
+export const SNAPSHOT_AS_OF = "2024-09";
+
+export interface GwasAncestryRow {
+  group: string;
+  pct: number;
+}
+
+export interface GwasAncestryData {
+  asOf: string;
+  denominatorNote: string;
+  source: string;
+  sourceUrl: string;
+  rows: GwasAncestryRow[];
+}
+
+export interface PrsPortabilityRow {
+  /** GENARCH's label for the group. */
+  population: string;
+  /** The label the study itself used. */
+  labelAsUsed: string;
+  value: number;
+}
+
+export interface PrsPortabilityData {
+  /** literature.json entry id. */
+  study: string;
+  studyLabel: string;
+  doi: string;
+  trait: string;
+  /** Named on the chart. Every bar is this one metric. */
+  metric: string;
+  rows: PrsPortabilityRow[];
+}
+
 export type FigurePayload =
   | { id: "il33-pm25-chain"; data: Il33ChainData }
   | { id: "loudoun-asthma-vs-state"; data: LoudounPrevalenceData }
+  | { id: "gwas-ancestry-imbalance"; data: GwasAncestryData }
+  | { id: "prs-portability"; data: PrsPortabilityData }
   | { id: "knowledge-graph-hero"; data: GraphHeroData };

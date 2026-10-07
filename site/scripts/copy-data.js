@@ -68,3 +68,35 @@ if (!fs.existsSync(deqSrc)) {
   }
   console.log(`[copy-data] Copied ${copied} DEQ source file(s) → ${deqDest}`);
 }
+
+/**
+ * The cross-ancestry layer reads two source records at build time: the GWAS ancestry
+ * snapshot table and the ACS Loudoun population counts. Same reason as the DEQ tables
+ * above — they are source records rather than atlas entities, so they live under
+ * pipeline/sources/ and are staged into public/ where the build can reach them
+ * regardless of working directory. Generated output, never committed.
+ */
+const CROSS_ANCESTRY_FILES = [
+  ["gwas_ancestry_breakdown.csv", "gwas_ancestry_breakdown.csv"],
+  ["cross_ancestry/acs_loudoun_2023.json", "acs_loudoun_2023.json"],
+  ["cross_ancestry/literature.json", "literature.json"],
+];
+
+const caDest = path.resolve(__dirname, "..", "public", "data", "cross-ancestry");
+
+if (!fs.existsSync(deqSrc)) {
+  console.log(`[copy-data] ${deqSrc} not found — skipping cross-ancestry sources.`);
+} else {
+  fs.mkdirSync(caDest, { recursive: true });
+  let copied = 0;
+  for (const [rel, name] of CROSS_ANCESTRY_FILES) {
+    const from = path.join(deqSrc, rel);
+    if (!fs.existsSync(from)) {
+      console.error(`[copy-data] Required cross-ancestry source missing: ${from}`);
+      process.exit(1);
+    }
+    fs.copyFileSync(from, path.join(caDest, name));
+    copied++;
+  }
+  console.log(`[copy-data] Copied ${copied} cross-ancestry source file(s) → ${caDest}`);
+}
