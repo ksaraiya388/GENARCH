@@ -1,0 +1,127 @@
+{
+  "slug": "type-2-diabetes",
+  "disease_slug": "type-2-diabetes",
+  "title": "Cross-ancestry transferability: type 2 diabetes",
+  "summary": "This is a population-level summary of published studies. It reports what those studies measured in whole study populations. Nothing here asserts causation, and nothing here is a risk tool: GENARCH computes no polygenic score, and there is no way to enter a genotype on this page. Polygenic scores for type 2 diabetes were built mainly from European-ancestry genome-wide association data. Applied to other ancestry groups, their measured accuracy falls. In one multi-ancestry study, the incremental AUC of a single type 2 diabetes score was 0.143 in European-ancestry validation cohorts, 0.086 in Admixed American, 0.074 in East Asian, 0.061 in South Asian, and 0.041 in African or African American cohorts. Accuracy loss is one quantity. Differences in per-variant effect estimates, allele frequencies, and linkage disequilibrium are a separate set of quantities, measured separately, and the two should not be read as one number.",
+  "loudoun_context": {
+    "text": "The 2023 ACS 5-year estimates put Loudoun County's population at 427,082; the Census Bureau publishes no margin of error for that count. Residents recorded as Asian alone numbered 89,864, or 21.0 percent of the county, with margins of 1,389 people and 0.2 percentage points. Within the detailed Asian groups, the Census counted 45,468 Asian Indian residents (margin 2,243), 9,848 Pakistani (1,694), 1,800 Nepalese (637), 921 Bangladeshi (418), and 334 Sri Lankan (445). The Sri Lankan margin is larger than its own estimate, so that count is not distinguishable from a much smaller one. Residents recorded as Black or African American alone numbered 32,889, or 7.7 percent, with margins of 815 and 0.2 points. Residents recorded as Hispanic or Latino of any race numbered 60,466, or 14.2 percent; no margin of error is published for either figure. Asian Indian, Black, and Hispanic or Latino are Census self-identification categories. The studies summarised here grouped participants by genetic ancestry, which is a different construct, measured a different way. A county share recorded in a Census category does not establish the genetic-ancestry composition of the people counted in it, and none of the figures above describes any individual resident.",
+    "acs_refs": [
+      "acs_loudoun_2023:Estimate!!SEX AND AGE!!Total population",
+      "acs_loudoun_2023:Estimate!!RACE!!Total population!!One race!!Asian",
+      "acs_loudoun_2023:Estimate!!RACE!!Total population!!One race!!Black or African American",
+      "acs_loudoun_2023:Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)",
+      "acs_loudoun_2023:Estimate!!Total:!!South Asian:!!Asian Indian",
+      "acs_loudoun_2023:Estimate!!Total:!!South Asian:!!Pakistani",
+      "acs_loudoun_2023:Estimate!!Total:!!South Asian:!!Bangladeshi",
+      "acs_loudoun_2023:Estimate!!Total:!!South Asian:!!Sri Lankan",
+      "acs_loudoun_2023:Estimate!!Total:!!South Asian:!!Nepalese"
+    ]
+  },
+  "groups": [
+    {
+      "population": "South Asian ancestry",
+      "labels_as_used": "\"South Asian\" (Huerta-Chagoya 2026; Mahajan 2022; Fatumo 2022); \"South Asian UK Biobank cohort\" (Marquez-Luna 2017); \"British Pakistani and British Bangladeshi\" (Hodgson 2024); \"SAS\" (Wang 2020)",
+      "gwas_representation": {
+        "text": "South Asian-ancestry participants were 0.8 percent of GWAS participants in one 2022 survey of the field. Type 2 diabetes is better represented than that field-wide figure: in the DIAMANTE multi-ancestry meta-analysis, South Asian ancestry supplied 8.3 percent of the total effective sample size, against 51.1 percent European.",
+        "citations": ["fatumo2022", "mahajan2022"]
+      },
+      "prs_transferability": {
+        "metric": "incremental AUC of the multi-ancestry PRS",
+        "value": 0.061,
+        "comparator": "European-ancestry validation cohorts in the same study, same metric and same score (0.143)",
+        "study": "huertachagoya2026",
+        "claim_id": "huertachagoya2026-multi-incauc-south-asian",
+        "text": "Incremental AUC is the gain in area under the curve from adding the score to a model of age, sex and principal components. For one multi-ancestry type 2 diabetes score it was 0.061 in South Asian-ancestry validation cohorts and 0.143 in European-ancestry cohorts: the same score, the same metric, the same study. The best matched single-ancestry score reached an incremental AUC of only 0.02 to 0.04 in South Asian cohorts, against 0.07 to 0.14 in European. One earlier study reported a relative improvement of more than 70 percent in a South Asian UK Biobank cohort when European and South Asian training data were combined, but published no absolute accuracy figure for that cohort, so none is given here.",
+        "citations": ["huertachagoya2026", "marquezluna2017"]
+      },
+      "effect_estimate_notes": {
+        "text": "Per-variant effect estimates are a separate matter from score accuracy. Type 2 diabetes association signals are mostly shared across ancestry groups, and in the DIAMANTE analysis a European-derived score outperformed the ancestry-matched South Asian score, because far more variants reached genome-wide significance in the larger European meta-analysis. The ancestry-specific South Asian score explained under 1 percent of trait variance on the pseudo R-squared scale for that reason. Variants specific to an ancestry group tend to be rarer, which limits which ones a study of this size can find at all. Averaged across traits, allele-frequency and linkage-disequilibrium differences from European ancestry account for about 37 percent of the accuracy loss in South Asian ancestry, so most of the loss is attributable to something else. South Asian ancestry is also internally structured: the same analysis separated Sri Lankan, Bangladeshi and South Indian study populations from North Indian and Pakistani ones. In British Pakistani and British Bangladeshi participants, partitioned scores for insulin deficiency and for unfavourable fat distribution carried a greater genetic burden than in white European UK Biobank participants, which indicates the relevant pathways are weighted differently, not merely measured less accurately.",
+        "citations": ["mahajan2022", "wang2020ra", "hodgson2024", "finer2020"]
+      },
+      "evidence_confidence": "medium",
+      "not_quantified": [
+        "No verified source reports a relative-accuracy ratio for a type 2 diabetes polygenic score in South Asian ancestry specifically; the published relative-accuracy figures average over several traits",
+        "Marquez-Luna 2017 gives the South Asian improvement only as a bound of more than 70 percent, with no absolute R-squared for that cohort in the retrieved text",
+        "No verified source evaluates a type 2 diabetes polygenic score in a South Asian-ancestry cohort recruited in the United States",
+        "The internal structure of South Asian ancestry is described but no per-subgroup transferability metric is reported"
+      ]
+    },
+    {
+      "population": "African ancestry",
+      "labels_as_used": "\"African or African American\" (Huerta-Chagoya 2026); \"African\" (Ge 2022; Mahajan 2022; Fatumo 2022); \"AFR\" (Wang 2020); \"four Black cohorts\" (Ge 2022)",
+      "gwas_representation": {
+        "text": "African-ancestry participants were 1.1 percent of GWAS participants in one 2022 survey of the field. In the DIAMANTE type 2 diabetes meta-analysis, African ancestry, including recently admixed African American study populations, supplied 6.6 percent of the total effective sample size, against 51.1 percent European.",
+        "citations": ["fatumo2022", "mahajan2022"]
+      },
+      "prs_transferability": {
+        "metric": "incremental AUC of the multi-ancestry PRS",
+        "value": 0.041,
+        "comparator": "European-ancestry validation cohorts in the same study, same metric and same score (0.143)",
+        "study": "huertachagoya2026",
+        "claim_id": "huertachagoya2026-multi-incauc-african",
+        "text": "For the same multi-ancestry type 2 diabetes score, incremental AUC was 0.041 in African or African American validation cohorts and 0.143 in European-ancestry cohorts. The best matched single-ancestry score reached 0.02 to 0.03. A separate study of a trans-ancestry score in the eMERGE cohort reports a different metric, variance explained on the liability scale, at 2.8 percent in African-ancestry participants against 9.2 percent in European, with covariate-adjusted AUC 0.58 against 0.66. Those figures come from a different study and a different metric, and the two sets should not be placed on one scale.",
+        "citations": ["huertachagoya2026", "ge2022"]
+      },
+      "effect_estimate_notes": {
+        "text": "African ancestry carries the largest measured differences in the quantities a score depends on. Averaged across traits, allele-frequency and linkage-disequilibrium differences from European ancestry account for about 86 percent of the accuracy loss in African ancestry, and for type 2 diabetes specifically about 82 percent, though that per-trait estimate carries a wide standard error of 14 percentage points. Relative accuracy decreases as genetic distance from the discovery population increases, and African ancestry is the most distant of the groups measured. As in South Asian ancestry, the ancestry-specific African score in DIAMANTE explained under 1 percent of trait variance on the pseudo R-squared scale, because too few variants reached genome-wide significance in a sample of that size. Association signals themselves are mostly shared across continents.",
+        "citations": ["wang2020ra", "mahajan2022"]
+      },
+      "evidence_confidence": "medium",
+      "not_quantified": [
+        "The 82 percent attribution for type 2 diabetes specifically has a standard error of 14 percentage points and is not a precise estimate",
+        "No verified source separates continental African from African American study populations when reporting type 2 diabetes score accuracy",
+        "No verified source reports type 2 diabetes score accuracy in an African-ancestry population resident in Virginia or the mid-Atlantic"
+      ]
+    },
+    {
+      "population": "Hispanic/Latino and Admixed American ancestry",
+      "labels_as_used": "\"Admixed American\" (Huerta-Chagoya 2026); \"Hispanic\" (Ge 2022; Mahajan 2022); \"Latino cohort\" (Marquez-Luna 2017); \"Hispanic Latino American\" (Ding 2023); \"Hispanic/Latino\" (Fatumo 2022)",
+      "gwas_representation": {
+        "text": "Hispanic or Latino participants were 0.08 percent of GWAS participants in one 2022 survey of the field, the smallest share of the five groups that survey reported. In the DIAMANTE type 2 diabetes meta-analysis, Hispanic study populations with recent admixture were one of the three smallest contributors to effective sample size, alongside African and South Asian ancestry.",
+        "citations": ["fatumo2022", "mahajan2022"]
+      },
+      "prs_transferability": {
+        "metric": "incremental AUC of the multi-ancestry PRS",
+        "value": 0.086,
+        "comparator": "European-ancestry validation cohorts in the same study, same metric and same score (0.143)",
+        "study": "huertachagoya2026",
+        "claim_id": "huertachagoya2026-multi-incauc-admixed-american",
+        "text": "For the same multi-ancestry type 2 diabetes score, incremental AUC was 0.086 in Admixed American validation cohorts and 0.143 in European-ancestry cohorts. The best matched single-ancestry score reached 0.02 to 0.04. In a separate study of a trans-ancestry score in eMERGE, variance explained on the liability scale was 8.0 percent in the Hispanic or Latino group, between the European figure of 9.2 percent and the African figure of 2.8 percent, with covariate-adjusted AUC 0.63. That is a different study and a different metric from the incremental AUC above.",
+        "citations": ["huertachagoya2026", "ge2022", "marquezluna2017"]
+      },
+      "effect_estimate_notes": {
+        "text": "Hispanic and Latino study populations are admixed, with substantial European, African and Indigenous American genetic ancestry, and the authors of the eMERGE analysis give that admixture as the reason their accuracy figure falls between the European and African ones. Admixture also means a single group label covers a wide range of individual genetic ancestry. Within one Los Angeles biobank, genetic distance from the score's training data correlated with score accuracy at R equal to -0.84 in the Hispanic Latino American cluster, and the closest tenth of that cluster performed about as well as the furthest tenth of the European-ancestry cluster. Combining European training data with Latino training data raised prediction accuracy for type 2 diabetes from an R-squared of 0.027 to 0.047 in one earlier study, a relative gain of more than 70 percent. Tail estimates in the smaller Hispanic or Latino samples carry wide uncertainty.",
+        "citations": ["ge2022", "ding2023", "marquezluna2017"]
+      },
+      "evidence_confidence": "medium",
+      "not_quantified": [
+        "No verified source reports an allele-frequency and linkage-disequilibrium attribution for the accuracy loss in Admixed American ancestry, as it does for South Asian and African ancestry",
+        "Census Hispanic or Latino origin spans many national-origin groups, and no verified source reports a transferability metric for any one of them",
+        "No verified source evaluates a type 2 diabetes polygenic score in a Hispanic or Latino population resident in Northern Virginia"
+      ]
+    }
+  ],
+  "mechanisms_of_degradation": {
+    "text": "Five named quantities account for the measured loss, and the literature separates them. First, discovery sample size: score performance tracked GWAS sample size directly across all five ancestry groups in the multi-ancestry study, and the groups with the smallest effective sample sizes had the weakest ancestry-specific scores. Second, linkage-disequilibrium differences: a score carries tag variants rather than the underlying functional ones, and how well a tag stands in for its neighbour differs between populations. Third, allele-frequency differences: a variant common enough to find in one population may be too rare to detect in another, and ancestry-specific variants tend to be rarer. Together these two account for about 86 percent of the accuracy loss in African ancestry and about 37 percent in South Asian ancestry, averaged across traits, which leaves a substantial remainder in both. Fourth, effect heterogeneity: the correlation of effect sizes at the underlying functional variants between populations enters the accuracy ratio directly, alongside the heritability ratio. Fifth, environment and gene-environment interaction: when training and testing are confined to one cohort, environmental and genotyping confounding is reduced and accuracy still falls with genetic distance, so environment is a contributor and not the whole explanation. Underlying all five, accuracy varies continuously with genetic distance from the training data rather than in steps between labelled groups, including within a single labelled group.",
+    "citations": ["huertachagoya2026", "wang2020ra", "mahajan2022", "duncan2019", "kachuri2024", "prive2022", "ding2023"]
+  },
+  "data_gaps": "No verified source evaluates a type 2 diabetes polygenic score in any Loudoun County or Northern Virginia population, and none is expected to: the published cohorts are UK Biobank, Genes & Health, eMERGE, the Million Veteran Program, Taiwan Biobank, FinnGen and the DIAMANTE member studies. Accuracy figures reported for South Asian ancestry come overwhelmingly from British Pakistani and British Bangladeshi participants, whose environment and health-care setting differ from Loudoun's. The relative-accuracy ratios available for South Asian ancestry average over several traits rather than isolating type 2 diabetes. No verified source reports an allele-frequency and linkage-disequilibrium attribution for Admixed American ancestry. Where a group has no number, the gap is listed on that group's row rather than left blank.",
+  "limitations": "Every figure here is a group-level statistic from a published study population, and none of it describes an individual. Accuracy metrics are not interchangeable: incremental AUC, variance explained on the liability scale, odds ratio per standard deviation and relative accuracy answer different questions and cannot be compared across studies as though they shared a scale, which is why the metric is named next to every value. Group labels are the ones each source study used, and they are not consistent between studies; \"Admixed American\", \"Hispanic\" and \"Latino cohort\" are not guaranteed to describe the same sampled population. Cohort setting is a confounder in its own right, because ascertainment, phenotype definition and environment differ between biobanks. A multi-ancestry score narrows the gap but does not close it, and in this study the multi-ancestry score did not significantly outperform the best previously published score in South Asian or East Asian ancestry groups. GENARCH performed no polygenic scoring and no reanalysis; this module summarises what the cited studies reported.",
+  "references": [
+    {"id": "martin2019", "title": "Clinical use of current polygenic risk scores may exacerbate health disparities", "authors": "Martin AR, et al.", "year": 2019, "journal": "Nature Genetics", "doi": "10.1038/s41588-019-0379-x"},
+    {"id": "duncan2019", "title": "Analysis of polygenic risk score usage and performance in diverse human populations", "authors": "Duncan L, et al.", "year": 2019, "journal": "Nature Communications", "doi": "10.1038/s41467-019-11112-0"},
+    {"id": "prive2022", "title": "Portability of 245 polygenic scores when derived from the UK Biobank and applied to 9 ancestry groups from the same cohort", "authors": "Privé F, et al.", "year": 2022, "journal": "The American Journal of Human Genetics", "doi": "10.1016/j.ajhg.2021.11.008"},
+    {"id": "wang2020ra", "title": "Theoretical and empirical quantification of the accuracy of polygenic scores in ancestry divergent populations", "authors": "Wang Y, et al.", "year": 2020, "journal": "Nature Communications", "doi": "10.1038/s41467-020-17719-y"},
+    {"id": "ding2023", "title": "Polygenic scoring accuracy varies across the genetic ancestry continuum", "authors": "Ding Y, et al.", "year": 2023, "journal": "Nature", "doi": "10.1038/s41586-023-06079-4"},
+    {"id": "kachuri2024", "title": "Principles and methods for transferring polygenic risk scores across global populations", "authors": "Kachuri L, et al.", "year": 2023, "journal": "Nature Reviews Genetics", "doi": "10.1038/s41576-023-00637-2"},
+    {"id": "fatumo2022", "title": "A roadmap to increase diversity in genomic studies", "authors": "Fatumo S, et al.", "year": 2022, "journal": "Nature Medicine", "doi": "10.1038/s41591-021-01672-4"},
+    {"id": "mahajan2022", "title": "Multi-ancestry genetic study of type 2 diabetes highlights the power of diverse populations for discovery and translation", "authors": "Mahajan A, et al.", "year": 2022, "journal": "Nature Genetics", "doi": "10.1038/s41588-022-01058-3"},
+    {"id": "ge2022", "title": "Development and validation of a trans-ancestry polygenic risk score for type 2 diabetes in diverse populations", "authors": "Ge T, et al.", "year": 2022, "journal": "Genome Medicine", "doi": "10.1186/s13073-022-01074-2"},
+    {"id": "huertachagoya2026", "title": "Multi-ancestry polygenic risk scores for the prediction of type 2 diabetes and complications in diverse ancestries", "authors": "Huerta-Chagoya A, et al.", "year": 2026, "journal": "The Lancet Diabetes & Endocrinology", "doi": "10.1016/s2213-8587(25)00405-x"},
+    {"id": "hodgson2024", "title": "Genetic basis of early onset and progression of type 2 diabetes in South Asians", "authors": "Hodgson S, et al.", "year": 2024, "journal": "Nature Medicine", "doi": "10.1038/s41591-024-03317-8"},
+    {"id": "marquezluna2017", "title": "Multiethnic polygenic risk scores improve risk prediction in diverse populations", "authors": "Márquez-Luna C, et al.", "year": 2017, "journal": "Genetic Epidemiology", "doi": "10.1002/gepi.22083"},
+    {"id": "finer2020", "title": "Cohort Profile: East London Genes & Health (ELGH), a community-based population genomics and health study in British Bangladeshi and British Pakistani people", "authors": "Finer S, et al.", "year": 2019, "journal": "International Journal of Epidemiology", "doi": "10.1093/ije/dyz174"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-10-06"
+}

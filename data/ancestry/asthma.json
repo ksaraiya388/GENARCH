@@ -1,0 +1,125 @@
+{
+  "slug": "asthma",
+  "disease_slug": "asthma",
+  "title": "Cross-ancestry transferability: asthma",
+  "summary": "This is a population-level summary of published studies. It reports what those studies measured in whole study populations. Nothing here asserts causation, and nothing here is a risk tool: GENARCH computes no polygenic score, and there is no way to enter a genotype on this page. In the largest multi-ancestry asthma meta-analysis to date, one polygenic score was tested in four target cohorts. Variance explained on the liability scale was 0.054 in the European-ancestry cohort and 0.053 in East Asian, close to the 0.085 SNP-based heritability ceiling for asthma, but 0.038 in the Central and South Asian cohort and 0.014 in the African-ancestry cohort. The same study found per-variant genetic effects largely consistent across biobanks and ancestries, so the accuracy gap is not explained by different variants mattering in different groups. No admixed American target cohort was evaluated, so for Hispanic and Latino populations this trait has no transferability figure at all.",
+  "loudoun_context": {
+    "text": "The 2023 ACS 5-year estimates put Loudoun County's population at 427,082; the Census Bureau publishes no margin of error for that count. Residents recorded as Asian alone numbered 89,864, or 21.0 percent of the county, with margins of 1,389 people and 0.2 percentage points. Within the detailed Asian groups, the Census counted 45,468 Asian Indian residents (margin 2,243), 9,848 Pakistani (1,694), 1,800 Nepalese (637), 921 Bangladeshi (418), and 334 Sri Lankan (445), the last with a margin larger than its own estimate. Residents recorded as Black or African American alone numbered 32,889, or 7.7 percent, with margins of 815 and 0.2 points. Residents recorded as Hispanic or Latino of any race numbered 60,466, or 14.2 percent, with no published margin of error. Asian Indian, Black, and Hispanic or Latino are Census self-identification categories. The studies below grouped participants by genetic ancestry, which is a different construct measured a different way, and a county share recorded in a Census category does not establish the genetic-ancestry composition of the people counted in it. GENARCH separately reports monitored air quality in eastern Loudoun. The two lines of work are kept apart on purpose: nothing in this module describes the exposure of any group in the county, and nothing here describes any individual resident.",
+    "acs_refs": [
+      "acs_loudoun_2023:Estimate!!SEX AND AGE!!Total population",
+      "acs_loudoun_2023:Estimate!!RACE!!Total population!!One race!!Asian",
+      "acs_loudoun_2023:Estimate!!RACE!!Total population!!One race!!Black or African American",
+      "acs_loudoun_2023:Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)",
+      "acs_loudoun_2023:Estimate!!Total:!!South Asian:!!Asian Indian",
+      "acs_loudoun_2023:Estimate!!Total:!!South Asian:!!Pakistani",
+      "acs_loudoun_2023:Estimate!!Total:!!South Asian:!!Bangladeshi",
+      "acs_loudoun_2023:Estimate!!Total:!!South Asian:!!Sri Lankan",
+      "acs_loudoun_2023:Estimate!!Total:!!South Asian:!!Nepalese"
+    ]
+  },
+  "groups": [
+    {
+      "population": "South Asian ancestry",
+      "labels_as_used": "\"Central and South Asian (CSA)\" (Tsuo 2022); \"South Asian\" (Fatumo 2022); \"SAS\" (Wang 2020)",
+      "gwas_representation": {
+        "text": "South Asian-ancestry participants were 0.8 percent of GWAS participants in one 2022 survey of the field. The multi-ancestry asthma meta-analysis spanned 22 biobanks and 153,763 cases, and its Central and South Asian stratum contributed 4,015 cases and 27,091 controls. The score was then tested in a Central and South Asian target cohort of 1,232 cases and 6,744 controls in the UK Biobank.",
+        "citations": ["fatumo2022", "tsuo2022"]
+      },
+      "prs_transferability": {
+        "metric": "average variance explained on the liability scale",
+        "value": 0.038,
+        "comparator": "the European-ancestry target cohort in the same study, same metric and same score (0.054)",
+        "study": "tsuo2022",
+        "claim_id": "tsuo2022-liability-r2-csa",
+        "text": "Variance explained on the liability scale measures how much of the underlying continuous susceptibility to asthma a score captures. Averaged over 100 random splits, it was 0.038 in the Central and South Asian target cohort and 0.054 in the European-ancestry cohort: same score, same metric, same study. For reference, the SNP-based heritability of asthma in the full meta-analysis was 0.085, so the European figure reaches about two thirds of that ceiling and the Central and South Asian figure under half. One important caveat on the label: this cohort is Central AND South Asian combined, not South Asian-specific, so the figure cannot be read as a South Asian-only estimate. In a separate trait-general analysis, the reduction in relative accuracy in South Asian ancestry was statistically significant for height, body mass index, LDL and HDL cholesterol but not for asthma, so that study provides no significant South Asian asthma accuracy loss to report.",
+        "citations": ["tsuo2022", "wang2020ra"]
+      },
+      "effect_estimate_notes": {
+        "text": "The asthma meta-analysis found largely consistent per-variant genetic effects across its 22 biobanks and six ancestry groups, despite wide variation in asthma prevalence between them. That is an important separation: the accuracy gap for this trait is not well explained by different variants carrying different effects in different groups. What remains are the tagging and frequency terms, and sample size. Across traits generally, allele-frequency and linkage-disequilibrium differences from European ancestry account for about 37 percent of the accuracy loss in South Asian ancestry, leaving most of it attributable to other terms. The study also notes that estimates differ across biobanks and ancestries in part through disease prevalence, environmental exposures and phenotype definition, which are properties of the cohort rather than of the variants.",
+        "citations": ["tsuo2022", "wang2020ra"]
+      },
+      "evidence_confidence": "medium",
+      "not_quantified": [
+        "The target cohort is Central and South Asian combined; no verified source reports an asthma transferability metric for South Asian ancestry on its own",
+        "No verified source reports an allele-frequency or linkage-disequilibrium attribution for asthma score accuracy loss in South Asian ancestry specifically",
+        "The trait-general relative-accuracy analysis found no statistically significant asthma accuracy reduction in South Asian ancestry, so no relative-accuracy figure is reported for this trait and group",
+        "No verified source reports an asthma trans-ancestry genetic correlation between European and South Asian ancestry",
+        "No verified source evaluates an asthma polygenic score in a South Asian-ancestry population resident in the United States"
+      ]
+    },
+    {
+      "population": "African ancestry",
+      "labels_as_used": "\"African (AFR)\" (Tsuo 2022); \"African\" (Fatumo 2022); \"AFR\" (Wang 2020)",
+      "gwas_representation": {
+        "text": "African-ancestry participants were 1.1 percent of GWAS participants in one 2022 survey of the field. In the multi-ancestry asthma meta-analysis, the African-ancestry target cohort for score testing comprised 849 cases and 5,190 controls in the UK Biobank, the smallest case count of the four target cohorts apart from the 500-case East Asian holdout.",
+        "citations": ["fatumo2022", "tsuo2022"]
+      },
+      "prs_transferability": {
+        "metric": "average variance explained on the liability scale",
+        "value": 0.014,
+        "comparator": "the European-ancestry target cohort in the same study, same metric and same score (0.054)",
+        "study": "tsuo2022",
+        "claim_id": "tsuo2022-liability-r2-afr",
+        "text": "Averaged over 100 random splits, variance explained on the liability scale was 0.014 in the African-ancestry target cohort and 0.054 in the European-ancestry cohort: same score, same metric, same study. Against the 0.085 SNP-based heritability of asthma, the African-ancestry figure captures under a fifth of the available signal. This is the lowest of the four cohorts tested and the gap is the widest in this module. In a separate trait-general analysis, every trait studied showed a statistically significant reduction in relative accuracy in African ancestry, asthma among them, which the Central and South Asian comparison did not.",
+        "citations": ["tsuo2022", "wang2020ra"]
+      },
+      "effect_estimate_notes": {
+        "text": "As for the other groups, the asthma meta-analysis reports largely consistent per-variant effects across ancestries, so the accuracy gap is not primarily a matter of different variants mattering. African ancestry carries the largest allele-frequency and linkage-disequilibrium differences from European ancestry of any group measured, and across traits those two factors account for about 86 percent of the accuracy loss in African ancestry. Greater haplotype diversity shortens the linkage-disequilibrium blocks that a European-derived tag variant depends on, which is a tagging problem rather than a biological one. Score accuracy also falls continuously with genetic distance from the training data: within one biobank's African American cluster, that distance correlated with accuracy at R equal to -0.88.",
+        "citations": ["tsuo2022", "wang2020ra", "ding2023"]
+      },
+      "evidence_confidence": "medium",
+      "not_quantified": [
+        "The 86 percent allele-frequency and linkage-disequilibrium attribution is averaged across other traits; no verified source reports it for asthma specifically",
+        "The African-ancestry target cohort has 849 cases, so the liability-scale estimate rests on a small case count",
+        "No verified source separates continental African from African American study populations when reporting asthma score accuracy",
+        "No verified source reports an asthma trans-ancestry genetic correlation between European and African ancestry"
+      ]
+    },
+    {
+      "population": "Hispanic/Latino and Admixed American ancestry",
+      "labels_as_used": "\"admixed American (AMR)\" (Tsuo 2022, discovery stratum only); \"Hispanic/Latino\" (Fatumo 2022); \"Hispanic Latino American\" (Ding 2023)",
+      "gwas_representation": {
+        "text": "Hispanic or Latino participants were 0.08 percent of GWAS participants in one 2022 survey of the field, the smallest share of the five groups reported. The multi-ancestry asthma meta-analysis did include an admixed American stratum in its discovery data, and that stratum contributed to score construction, but it was not one of the four cohorts in which score accuracy was then evaluated.",
+        "citations": ["fatumo2022", "tsuo2022"]
+      },
+      "prs_transferability": {
+        "metric": "average variance explained on the liability scale",
+        "value": null,
+        "comparator": "the European-ancestry target cohort in the same study (0.054), had an admixed American target cohort been evaluated",
+        "study": "tsuo2022",
+        "claim_id": null,
+        "text": "Not quantified. The study evaluated score accuracy in four target cohorts, African, Central and South Asian, East Asian and European, and no admixed American cohort was among them. Admixed American data contributed to building the score but not to testing it, so no asthma transferability figure exists for this group in the verified sources. This is a gap in the published evidence rather than a finding, and it is not filled here by substituting a figure from another trait or another study. What is known generally is that score accuracy declines continuously with genetic distance from the training data, and that within one Los Angeles biobank this correlation was R equal to -0.84 in the Hispanic Latino American cluster, across 84 traits rather than asthma alone.",
+        "citations": ["tsuo2022", "ding2023"]
+      },
+      "effect_estimate_notes": {
+        "text": "Hispanic and Latino study populations are admixed, with substantial European, Indigenous American and African genetic ancestry, so a single group label spans a wide range of individual genetic ancestry. The asthma meta-analysis reports largely consistent per-variant effects across the six ancestry strata it analysed, including the admixed American stratum, so the per-variant evidence for this group is better than the accuracy evidence. Asthma prevalence varied widely between the contributing biobanks, and the authors name disease prevalence, environmental exposures and phenotype definition as reasons estimates differ across cohorts. No verified source reports per-variant effect-estimate heterogeneity for asthma in this group on its own.",
+        "citations": ["tsuo2022", "ding2023"]
+      },
+      "evidence_confidence": "low",
+      "not_quantified": [
+        "No verified source reports any asthma polygenic score accuracy metric for admixed American, Hispanic or Latino populations: the group contributed discovery data but was not a target cohort",
+        "No verified source reports an allele-frequency or linkage-disequilibrium attribution for asthma score accuracy in this group",
+        "Census Hispanic or Latino origin spans many national-origin groups, and no verified source reports an asthma transferability metric for any one of them",
+        "No verified source reports an asthma trans-ancestry genetic correlation involving this group"
+      ]
+    }
+  ],
+  "mechanisms_of_degradation": {
+    "text": "Asthma separates the two halves of the problem unusually clearly. Per-variant genetic effects were largely consistent across 22 biobanks and six ancestry groups in the meta-analysis, so the accuracy gap for this trait rests mainly on the remaining terms rather than on effect heterogeneity. First, discovery sample size: the European and East Asian target cohorts, whose discovery strata were the largest, came closest to the 0.085 heritability ceiling, and downsampling the European cohort to match the East Asian sample size widened its confidence interval sharply. Second, linkage-disequilibrium differences: a score carries tag variants, and how well a tag stands in for the functional variant beside it differs between populations. Third, allele-frequency differences: a variant frequent enough to detect in one population may be too rare to detect in another. Across traits, those two together account for about 86 percent of the accuracy loss in African ancestry and about 37 percent in South Asian ancestry. Fourth, effect heterogeneity: it enters the accuracy ratio through the cross-population correlation of effect sizes at the underlying functional variants, and the heritability ratio,, and for asthma the meta-analysis found it comparatively small. Fifth, environment and gene-environment interaction: the authors name differences in disease prevalence, environmental exposures and phenotype definition between biobanks as reasons estimates differ, and asthma prevalence did vary widely between them. Underlying all five, accuracy varies continuously with genetic distance from the training data rather than stepping between labelled groups.",
+    "citations": ["tsuo2022", "wang2020ra", "duncan2019", "kachuri2024", "ding2023", "prive2022"]
+  },
+  "data_gaps": "The largest gap is the absence of any admixed American, Hispanic or Latino target cohort in the asthma score evaluation, which leaves one of the three groups in this module with no figure for this trait. The Central and South Asian cohort is a combined stratum, so no South Asian-specific asthma transferability metric exists in the verified sources. All four target cohorts for score testing are small relative to the discovery meta-analysis, from 500 to 1,232 cases. No verified source evaluates an asthma polygenic score in any Loudoun County or Northern Virginia population, or in a United States cohort of any of these three ancestry groups. No trans-ancestry genetic correlation for asthma is reported for any of the three groups.",
+  "limitations": "Every figure here is a group-level statistic from a published study population, and none of it describes an individual. The liability-scale figures are comparable with each other because they come from one study, one score and one metric; they are not comparable to the incremental AUC figures on the type 2 diabetes module or the relative effect sizes on the coronary artery disease module, which are different quantities. The Central and South Asian label combines two regions and cannot be narrowed to South Asian ancestry. Target cohorts are small, and asthma prevalence, phenotype definition and environment all differ between the contributing biobanks, so cohort differences are confounded with ancestry. GENARCH separately reports monitored air quality in eastern Loudoun; this module makes no connection between that monitoring and any group's asthma, and no statement here about ancestry groups should be read as a statement about exposure in the county. GENARCH performed no polygenic scoring and no reanalysis; this module summarises what the cited studies reported.",
+  "references": [
+    {"id": "martin2019", "title": "Clinical use of current polygenic risk scores may exacerbate health disparities", "authors": "Martin AR, et al.", "year": 2019, "journal": "Nature Genetics", "doi": "10.1038/s41588-019-0379-x"},
+    {"id": "duncan2019", "title": "Analysis of polygenic risk score usage and performance in diverse human populations", "authors": "Duncan L, et al.", "year": 2019, "journal": "Nature Communications", "doi": "10.1038/s41467-019-11112-0"},
+    {"id": "prive2022", "title": "Portability of 245 polygenic scores when derived from the UK Biobank and applied to 9 ancestry groups from the same cohort", "authors": "Privé F, et al.", "year": 2022, "journal": "The American Journal of Human Genetics", "doi": "10.1016/j.ajhg.2021.11.008"},
+    {"id": "wang2020ra", "title": "Theoretical and empirical quantification of the accuracy of polygenic scores in ancestry divergent populations", "authors": "Wang Y, et al.", "year": 2020, "journal": "Nature Communications", "doi": "10.1038/s41467-020-17719-y"},
+    {"id": "ding2023", "title": "Polygenic scoring accuracy varies across the genetic ancestry continuum", "authors": "Ding Y, et al.", "year": 2023, "journal": "Nature", "doi": "10.1038/s41586-023-06079-4"},
+    {"id": "kachuri2024", "title": "Principles and methods for transferring polygenic risk scores across global populations", "authors": "Kachuri L, et al.", "year": 2023, "journal": "Nature Reviews Genetics", "doi": "10.1038/s41576-023-00637-2"},
+    {"id": "fatumo2022", "title": "A roadmap to increase diversity in genomic studies", "authors": "Fatumo S, et al.", "year": 2022, "journal": "Nature Medicine", "doi": "10.1038/s41591-021-01672-4"},
+    {"id": "tsuo2022", "title": "Multi-ancestry meta-analysis of asthma identifies novel associations and highlights the value of increased power and diversity", "authors": "Tsuo K, et al.", "year": 2022, "journal": "Cell Genomics", "doi": "10.1016/j.xgen.2022.100212"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-10-06"
+}
