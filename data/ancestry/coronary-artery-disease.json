@@ -1,0 +1,126 @@
+{
+  "slug": "coronary-artery-disease",
+  "disease_slug": "coronary-artery-disease",
+  "title": "Cross-ancestry transferability: coronary artery disease",
+  "summary": "This is a population-level summary of published studies. It reports what those studies measured in whole study populations. Nothing here asserts causation, and nothing here is a risk tool: GENARCH computes no polygenic score, and there is no way to enter a genotype on this page. A widely used 2018 coronary artery disease score was built mainly from European-ancestry data. Measured against the strength it achieves in European ancestry, that score retained 97 percent of its effect size in South Asian ancestry and 23 percent in African ancestry. A 2023 multi-ancestry replacement raised both figures, to 119 percent and 55 percent of the same reference. Coronary artery disease is the one trait here where a South Asian-specific score was built and validated directly rather than borrowed, which is why the South Asian gap for this disease is narrower than for type 2 diabetes or asthma. Accuracy is one quantity; per-variant effect estimates and allele frequencies are separate quantities, measured separately.",
+  "loudoun_context": {
+    "text": "The 2023 ACS 5-year estimates put Loudoun County's population at 427,082; the Census Bureau publishes no margin of error for that count. Residents recorded as Asian alone numbered 89,864, or 21.0 percent of the county, with margins of 1,389 people and 0.2 percentage points. Within the detailed Asian groups, the Census counted 45,468 Asian Indian residents (margin 2,243), 9,848 Pakistani (1,694), 1,800 Nepalese (637), 921 Bangladeshi (418), and 334 Sri Lankan (445), the last of which has a margin larger than its own estimate. Residents recorded as Black or African American alone numbered 32,889, or 7.7 percent, with margins of 815 and 0.2 points. Residents recorded as Hispanic or Latino of any race numbered 60,466, or 14.2 percent, with no published margin of error. Asian Indian, Black, and Hispanic or Latino are Census self-identification categories, collected by asking people how they identify. The studies below grouped participants by genetic ancestry, a different construct measured a different way. A county share recorded in a Census category does not establish the genetic-ancestry composition of the people counted in it, and none of these figures describes any individual resident.",
+    "acs_refs": [
+      "acs_loudoun_2023:Estimate!!SEX AND AGE!!Total population",
+      "acs_loudoun_2023:Estimate!!RACE!!Total population!!One race!!Asian",
+      "acs_loudoun_2023:Estimate!!RACE!!Total population!!One race!!Black or African American",
+      "acs_loudoun_2023:Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)",
+      "acs_loudoun_2023:Estimate!!Total:!!South Asian:!!Asian Indian",
+      "acs_loudoun_2023:Estimate!!Total:!!South Asian:!!Pakistani",
+      "acs_loudoun_2023:Estimate!!Total:!!South Asian:!!Bangladeshi",
+      "acs_loudoun_2023:Estimate!!Total:!!South Asian:!!Sri Lankan",
+      "acs_loudoun_2023:Estimate!!Total:!!South Asian:!!Nepalese"
+    ]
+  },
+  "groups": [
+    {
+      "population": "South Asian ancestry",
+      "labels_as_used": "\"South Asian\" (Patel 2023; Wang M 2020; Fatumo 2022); \"South Asian UK Biobank participants\" and \"the Bangladeshi study\" (Wang M 2020); \"British Bangladeshi and British Pakistani people\" (Finer, Genes & Health cohort profile)",
+      "gwas_representation": {
+        "text": "South Asian-ancestry participants were 0.8 percent of GWAS participants in one 2022 survey of the field. For coronary artery disease the picture is better than that: the 2023 multi-ancestry score drew on association data across five ancestries covering more than 269,000 cases, and was validated in 16,874 South Asian-ancestry participants in Genes & Health. The authors attribute the South Asian improvement specifically to greater representation of Genes & Health summary statistics.",
+        "citations": ["fatumo2022", "patel2023", "finer2020"]
+      },
+      "prs_transferability": {
+        "metric": "relative effect size of the 2018 predominantly European-derived polygenic score",
+        "value": 0.97,
+        "comparator": "the same 2018 score in European ancestry, indexed to 1.00, in the same cohort and metric",
+        "study": "patel2023",
+        "claim_id": "patel2023-rel-effect-gps2018-south-asian",
+        "text": "Relative effect size here means the score's effect size for incident coronary artery disease in one group, divided by the effect size the 2018 score achieves in European ancestry. All these values come from one study and one UK Biobank analysis. The 2018 predominantly European-derived score retained 0.97 of its European strength in South Asian ancestry, the narrowest gap of any group measured. The 2023 multi-ancestry score raised that to 1.19, above the European reference. Separately, a South Asian-specific score of 6,630,150 variants reported an odds ratio per standard deviation of 1.58 in 7,244 South Asian UK Biobank participants and 1.60 in a 491-person Bangladeshi case-control study. Odds ratio per standard deviation is a different metric from relative effect size and the two are not on one scale.",
+        "citations": ["patel2023", "wangm2020cad"]
+      },
+      "effect_estimate_notes": {
+        "text": "That a European-derived coronary artery disease score nearly retains its strength in South Asian ancestry indicates the per-variant effect estimates for this trait transfer comparatively well between these two groups, which is not true of every trait or every group. It does not indicate that coronary artery disease has the same architecture in both. A score can keep its rank-ordering strength while the underlying effect estimates and allele frequencies differ, and relative accuracy depends on the correlation of effect sizes at the underlying functional variants between populations, the heritability ratio, and allele-frequency and linkage-disequilibrium differences, which are measured separately from accuracy itself. The 2020 South Asian-specific score was deliberately derived for this population rather than transferred to it, so its performance speaks to what an ancestry-matched score achieves, not to transferability.",
+        "citations": ["patel2023", "wangm2020cad", "wang2020ra"]
+      },
+      "evidence_confidence": "medium",
+      "not_quantified": [
+        "No verified source reports an allele-frequency or linkage-disequilibrium attribution for coronary artery disease score accuracy loss in South Asian ancestry",
+        "The South Asian validation sample is drawn from British Pakistani and British Bangladeshi participants in Genes & Health; no verified source evaluates a coronary artery disease score in a South Asian-ancestry population resident in the United States",
+        "The 491-person Bangladeshi case-control odds ratio rests on a small sample, and the retrieved abstract text is damaged where its percentile odds ratios appear, so those are not reported here",
+        "No verified source reports a trans-ancestry genetic correlation for coronary artery disease between European and South Asian ancestry"
+      ]
+    },
+    {
+      "population": "African ancestry",
+      "labels_as_used": "\"African\" (Patel 2023; Fatumo 2022); \"African ancestry individuals in the Million Veteran Program\" (Patel 2023); \"AFR\" (Wang 2020, trait-general)",
+      "gwas_representation": {
+        "text": "African-ancestry participants were 1.1 percent of GWAS participants in one 2022 survey of the field. The 2023 multi-ancestry coronary artery disease score was validated in 33,096 African-ancestry participants in the Million Veteran Program, the largest of its four external validation groups.",
+        "citations": ["fatumo2022", "patel2023"]
+      },
+      "prs_transferability": {
+        "metric": "relative effect size of the 2018 predominantly European-derived polygenic score",
+        "value": 0.23,
+        "comparator": "the same 2018 score in European ancestry, indexed to 1.00, in the same cohort and metric",
+        "study": "patel2023",
+        "claim_id": "patel2023-rel-effect-gps2018-african",
+        "text": "The 2018 predominantly European-derived score retained 0.23 of its European effect size for incident coronary artery disease in African ancestry: roughly a quarter of the strength it has in the population it was built from, and the widest gap of any group in this analysis. The 2023 multi-ancestry score raised that to 0.55, which is a substantial gain and still well below the European reference of 1.00. In external validation on a different metric, the multi-ancestry score reached an odds ratio per standard deviation of 1.25 in African-ancestry Million Veteran Program participants against 1.72 in European-ancestry participants of the same cohort.",
+        "citations": ["patel2023"]
+      },
+      "effect_estimate_notes": {
+        "text": "African ancestry carries the largest allele-frequency and linkage-disequilibrium differences from European ancestry of any group measured, and across traits generally those two factors account for about 86 percent of the loss in relative accuracy. African ancestry also has the greatest haplotype diversity, which shortens the linkage-disequilibrium blocks a European-derived tag variant relies on. Score accuracy falls continuously with genetic distance from the training data, and within one biobank's African American cluster that distance correlated with accuracy at R equal to -0.88. The underlying functional variants behind common variation found in European-ancestry studies appear to be mostly shared across continents, so the gap is better explained by how variants are tagged and how common they are than by different biology.",
+        "citations": ["wang2020ra", "ding2023", "patel2023"]
+      },
+      "evidence_confidence": "medium",
+      "not_quantified": [
+        "The 86 percent allele-frequency and linkage-disequilibrium attribution is averaged across other traits; no verified source reports it for coronary artery disease specifically",
+        "No verified source separates continental African from African American study populations when reporting coronary artery disease score accuracy",
+        "No verified source reports a trans-ancestry genetic correlation for coronary artery disease between European and African ancestry"
+      ]
+    },
+    {
+      "population": "Hispanic/Latino and Admixed American ancestry",
+      "labels_as_used": "\"Hispanic\" (Patel 2023); \"Hispanic ancestry individuals in the Million Veteran Program\" (Patel 2023); \"Hispanic Latino American\" (Ding 2023); \"Hispanic/Latino\" (Fatumo 2022)",
+      "gwas_representation": {
+        "text": "Hispanic or Latino participants were 0.08 percent of GWAS participants in one 2022 survey of the field, the smallest share of the five groups reported. The 2023 multi-ancestry coronary artery disease score was validated in 16,433 Hispanic-ancestry participants in the Million Veteran Program.",
+        "citations": ["fatumo2022", "patel2023"]
+      },
+      "prs_transferability": {
+        "metric": "odds ratio per SD of GPS Mult",
+        "value": 1.61,
+        "comparator": "European-ancestry participants of the same cohort, the Million Veteran Program, on the same metric (odds ratio per standard deviation 1.72)",
+        "study": "patel2023",
+        "claim_id": "patel2023-or-sd-hispanic",
+        "text": "This row reports a different metric from the two above, because the study's relative-effect-size analysis was run in the UK Biobank, which has no Hispanic group. What is available is the external validation: the 2023 multi-ancestry score reached an odds ratio per standard deviation of 1.61 (95 percent confidence interval 1.53 to 1.70) in 16,433 Hispanic-ancestry Million Veteran Program participants, against 1.72 (1.69 to 1.75) in 124,467 European-ancestry participants of the same cohort. Same cohort, same metric, so those two are comparable with each other. Neither is comparable to the relative effect sizes of 0.97 and 0.23 in the rows above, which are a different quantity.",
+        "citations": ["patel2023"]
+      },
+      "effect_estimate_notes": {
+        "text": "Hispanic and Latino study populations are admixed, with substantial European, Indigenous American and African genetic ancestry, so a single group label spans a wide range of individual genetic ancestry and a group-level average conceals that spread. Within one Los Angeles biobank, genetic distance from the training data correlated with score accuracy at R equal to -0.84 in the Hispanic Latino American cluster, and the closest tenth of that cluster performed about as well as the furthest tenth of the European-ancestry cluster. No verified source reports per-variant effect-estimate heterogeneity for coronary artery disease in this group.",
+        "citations": ["ding2023", "kurniansyah2023"]
+      },
+      "evidence_confidence": "low",
+      "not_quantified": [
+        "The relative-effect-size analysis was run in the UK Biobank and includes no Hispanic group, so no relative effect size indexed to European performance exists for this group",
+        "No verified source reports an allele-frequency or linkage-disequilibrium attribution for coronary artery disease score accuracy in Admixed American ancestry",
+        "Census Hispanic or Latino origin spans many national-origin groups, and no verified source reports a coronary artery disease transferability metric for any one of them",
+        "The Million Veteran Program sample is predominantly older and male, and no verified source reports a coronary artery disease score evaluation in a general Hispanic or Latino population"
+      ]
+    }
+  ],
+  "mechanisms_of_degradation": {
+    "text": "The same five quantities apply as for other traits, and coronary artery disease shows what happens when one of them improves. First, discovery sample size: the 2023 score added association data from five ancestries and ten related traits, and the authors attribute the East and South Asian gains specifically to greater representation of Biobank Japan and Genes & Health summary statistics. Second, linkage-disequilibrium differences: a score carries tag variants, and how well a tag stands in for the functional variant beside it differs by population, which matters most where haplotype blocks are shortest. Third, allele-frequency differences: a variant frequent enough to detect in one population can be too rare to detect in another. Across traits, those two together account for about 86 percent of the accuracy loss in African ancestry. Fourth, effect heterogeneity: the cross-population correlation of effect sizes at the underlying functional variants, and the heritability ratio, both enter the accuracy ratio directly. Fifth, environment and gene-environment interaction: in blood-pressure score evaluations, stratified performance patterns were clearer in some self-reported background groups than others, which the authors read as a sign of environmental and gene-environment contributions; and residual variance, the denominator of variance-explained statistics, itself differed across groups by up to 25 percent. Underlying all five, accuracy varies continuously with genetic distance from the training data rather than stepping between labelled groups.",
+    "citations": ["patel2023", "wang2020ra", "duncan2019", "kachuri2024", "kurniansyah2023", "ding2023", "prive2022"]
+  },
+  "data_gaps": "No verified source evaluates a coronary artery disease polygenic score in any Loudoun County or Northern Virginia population. The South Asian evidence comes from British Pakistani and British Bangladeshi participants in Genes & Health, from South Asian UK Biobank participants, and from case-control studies in Bangladesh and India; the African and Hispanic evidence comes from the Million Veteran Program, whose participants are predominantly older and male. The study's cleanest cross-group comparison, relative effect size indexed to European performance, was run in the UK Biobank and therefore has no Hispanic group at all, which is why that row reports a different metric. No verified source gives a trans-ancestry genetic correlation for coronary artery disease for any of the three groups.",
+  "limitations": "Every figure here is a group-level statistic from a published study population, and none of it describes an individual. Two different metrics appear in the transferability column: relative effect size indexed to European performance for the South Asian and African rows, and odds ratio per standard deviation for the Hispanic row. They answer different questions, and the metric is named in every cell so the two cannot be read as one series. The external-validation odds ratios also come from different cohorts, Million Veteran Program for African, European and Hispanic ancestry and Genes & Health for South Asian, so cohort differences are confounded with ancestry in that comparison; the relative effect sizes avoid that problem by staying inside the UK Biobank, at the cost of omitting Hispanic ancestry. A score that improves on its predecessor is still being measured against that predecessor, not against an absolute standard. GENARCH performed no polygenic scoring and no reanalysis; this module summarises what the cited studies reported.",
+  "references": [
+    {"id": "martin2019", "title": "Clinical use of current polygenic risk scores may exacerbate health disparities", "authors": "Martin AR, et al.", "year": 2019, "journal": "Nature Genetics", "doi": "10.1038/s41588-019-0379-x"},
+    {"id": "duncan2019", "title": "Analysis of polygenic risk score usage and performance in diverse human populations", "authors": "Duncan L, et al.", "year": 2019, "journal": "Nature Communications", "doi": "10.1038/s41467-019-11112-0"},
+    {"id": "prive2022", "title": "Portability of 245 polygenic scores when derived from the UK Biobank and applied to 9 ancestry groups from the same cohort", "authors": "Privé F, et al.", "year": 2022, "journal": "The American Journal of Human Genetics", "doi": "10.1016/j.ajhg.2021.11.008"},
+    {"id": "wang2020ra", "title": "Theoretical and empirical quantification of the accuracy of polygenic scores in ancestry divergent populations", "authors": "Wang Y, et al.", "year": 2020, "journal": "Nature Communications", "doi": "10.1038/s41467-020-17719-y"},
+    {"id": "ding2023", "title": "Polygenic scoring accuracy varies across the genetic ancestry continuum", "authors": "Ding Y, et al.", "year": 2023, "journal": "Nature", "doi": "10.1038/s41586-023-06079-4"},
+    {"id": "kachuri2024", "title": "Principles and methods for transferring polygenic risk scores across global populations", "authors": "Kachuri L, et al.", "year": 2023, "journal": "Nature Reviews Genetics", "doi": "10.1038/s41576-023-00637-2"},
+    {"id": "fatumo2022", "title": "A roadmap to increase diversity in genomic studies", "authors": "Fatumo S, et al.", "year": 2022, "journal": "Nature Medicine", "doi": "10.1038/s41591-021-01672-4"},
+    {"id": "patel2023", "title": "A multi-ancestry polygenic risk score improves risk prediction for coronary artery disease", "authors": "Patel AP, et al.", "year": 2023, "journal": "Nature Medicine", "doi": "10.1038/s41591-023-02429-x"},
+    {"id": "wangm2020cad", "title": "Validation of a Genome-Wide Polygenic Score for Coronary Artery Disease in South Asians", "authors": "Wang M, et al.", "year": 2020, "journal": "Journal of the American College of Cardiology", "doi": "10.1016/j.jacc.2020.06.024"},
+    {"id": "kurniansyah2023", "title": "Evaluating the use of blood pressure polygenic risk scores across race/ethnic background groups", "authors": "Kurniansyah N, et al.", "year": 2023, "journal": "Nature Communications", "doi": "10.1038/s41467-023-38990-9"},
+    {"id": "finer2020", "title": "Cohort Profile: East London Genes & Health (ELGH), a community-based population genomics and health study in British Bangladeshi and British Pakistani people", "authors": "Finer S, et al.", "year": 2019, "journal": "International Journal of Epidemiology", "doi": "10.1093/ije/dyz174"}
+  ],
+  "schema_version": "1.0",
+  "last_updated": "2026-10-06"
+}
