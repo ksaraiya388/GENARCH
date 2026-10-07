@@ -4,11 +4,13 @@ import {
   getDisease,
   getAllDiseases,
   getMechanismBrief,
+  getCrossAncestry,
 } from "@/lib/data";
 import type { Reference, MechanismBrief } from "@/lib/types";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { EvidenceLimitations } from "@/components/EvidenceLimitations";
 import { CitationRenderer } from "@/components/CitationRenderer";
+import { CrossAncestryPanel } from "@/components/CrossAncestryPanel";
 import { ConfidenceBadge } from "@/components/ConfidenceBadge";
 import { RiskShiftChart } from "@/components/RiskShiftChart";
 import { TissueRelevanceChart } from "@/components/TissueRelevanceChart";
@@ -73,7 +75,18 @@ export default async function DiseaseDetailPage({
   const disease = getDisease(slug);
   if (!disease) notFound();
 
-  const refs = ensureRefAuthors(disease.references ?? []);
+  // Present only for the diseases that have a module under data/ancestry/.
+  const crossAncestry = getCrossAncestry(slug);
+
+  // One reference list per page. The cross-ancestry module's references are merged
+  // in here rather than rendered by the panel, because CitationRenderer emits fixed
+  // element IDs and two instances would collide. Dedupe on id: an entry already cited
+  // by the disease wins, so the inline anchors keep resolving to one list item.
+  const seenRefIds = new Set((disease.references ?? []).map((r) => r.id));
+  const refs = ensureRefAuthors([
+    ...(disease.references ?? []),
+    ...(crossAncestry?.references ?? []).filter((r) => !seenRefIds.has(r.id)),
+  ]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -272,6 +285,10 @@ export default async function DiseaseDetailPage({
               </div>
             )}
           </section>
+        )}
+
+        {crossAncestry && (
+          <CrossAncestryPanel section={crossAncestry} renderReferences={false} />
         )}
 
         {disease.tissues && disease.tissues.length > 0 && (

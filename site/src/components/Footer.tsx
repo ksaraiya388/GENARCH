@@ -43,6 +43,7 @@ export function Footer() {
             <div className="space-y-2">
               <p className="text-xs font-semibold uppercase tracking-wider text-cool-mid">Resources</p>
               <Link href="/methods" className="block text-cool-light hover:text-teal-primary text-sm no-underline">Methods</Link>
+              <Link href="/ancestry-equity" className="block text-cool-light hover:text-teal-primary text-sm no-underline">Ancestry &amp; Equity</Link>
               <Link href="/ethics" className="block text-cool-light hover:text-teal-primary text-sm no-underline">Ethics</Link>
               <Link href="/graph" className="block text-cool-light hover:text-teal-primary text-sm no-underline">Knowledge Graph</Link>
               <Link href="/glossary" className="block text-cool-light hover:text-teal-primary text-sm no-underline">Glossary</Link>

@@ -43,7 +43,7 @@
     "type": "disease",
     "slug": "coronary-artery-disease",
     "name": "Coronary Artery Disease",
-    "summary": "Coronary artery disease (CAD) is the leading cause of death globally, characterized by atherosclerosis\u2014the progressive buildup of fatty plaques in coronary arteries that supply the heart. Pathophysiol",
+    "summary": "Coronary artery disease (CAD) is the leading cause of death globally, characterized by atherosclerosis—the progressive buildup of fatty plaques in coronary arteries that supply the heart. Pathophysiol",
     "confidence": "high",
     "synonyms": []
   },
@@ -51,7 +51,7 @@
     "type": "disease",
     "slug": "hypertension",
     "name": "Hypertension",
-    "summary": "Hypertension (essential arterial hypertension) is a chronic condition characterized by sustained elevation of blood pressure (\u2265130/80 mmHg). It is the leading modifiable risk factor for cardiovascular",
+    "summary": "Hypertension (essential arterial hypertension) is a chronic condition characterized by sustained elevation of blood pressure (≥130/80 mmHg). It is the leading modifiable risk factor for cardiovascular",
     "confidence": "high",
     "synonyms": []
   },
@@ -83,7 +83,7 @@
     "type": "disease",
     "slug": "obesity",
     "name": "Obesity",
-    "summary": "Obesity is a multifactorial condition characterized by excess adipose tissue accumulation, with body mass index (BMI) \u226530 kg/m\u00b2 as a common threshold. Pathophysiology involves energy balance dysregula",
+    "summary": "Obesity is a multifactorial condition characterized by excess adipose tissue accumulation, with body mass index (BMI) ≥30 kg/m² as a common threshold. Pathophysiology involves energy balance dysregula",
     "confidence": "high",
     "synonyms": []
   },
@@ -115,7 +115,7 @@
     "type": "exposure",
     "slug": "air-pollution",
     "name": "Ambient Air Pollution (PM2.5)",
-    "summary": "PM2.5 (particulate matter with aerodynamic diameter \u22642.5 micrometers) refers to fine inhalable particles that can penetrate deep into the lungs and enter the bloodstream. Sources include combustion (v",
+    "summary": "PM2.5 (particulate matter with aerodynamic diameter ≤2.5 micrometers) refers to fine inhalable particles that can penetrate deep into the lungs and enter the bloodstream. Sources include combustion (v",
     "confidence": "medium",
     "synonyms": []
   },
@@ -210,7 +210,7 @@
   {
     "type": "gene",
     "slug": "ace",
-    "name": "ACE \u2014 Angiotensin-converting enzyme",
+    "name": "ACE — Angiotensin-converting enzyme",
     "summary": "ACE encodes angiotensin-converting enzyme, a zinc metallopeptidase that converts angiotensin I to angiotensin II and inactivates bradykinin. ACE is central to the renin-angiotensin-aldosterone system ",
     "confidence": "high",
     "synonyms": []
@@ -218,7 +218,7 @@
   {
     "type": "gene",
     "slug": "apoe",
-    "name": "APOE \u2014 Apolipoprotein E",
+    "name": "APOE — Apolipoprotein E",
     "summary": "APOE encodes apolipoprotein E, a lipid-binding protein that mediates cholesterol and triglyceride transport in the brain and periphery. The epsilon4 allele (APOE4) is the strongest genetic risk factor",
     "confidence": "high",
     "synonyms": []
@@ -226,7 +226,7 @@
   {
     "type": "gene",
     "slug": "brca1",
-    "name": "BRCA1 \u2014 BRCA1 DNA repair associated",
+    "name": "BRCA1 — BRCA1 DNA repair associated",
     "summary": "BRCA1 encodes a tumor suppressor protein essential for homologous recombination (HR) DNA double-strand break repair. Germline loss-of-function mutations confer high lifetime risk of breast cancer (up ",
     "confidence": "high",
     "synonyms": []
@@ -234,7 +234,7 @@
   {
     "type": "gene",
     "slug": "brca2",
-    "name": "BRCA2 \u2014 BRCA2 DNA repair associated",
+    "name": "BRCA2 — BRCA2 DNA repair associated",
     "summary": "BRCA2 encodes a tumor suppressor that binds RAD51 and promotes its loading onto single-stranded DNA during homologous recombination. Like BRCA1, germline loss-of-function mutations confer high risk of",
     "confidence": "high",
     "synonyms": []
@@ -242,7 +242,7 @@
   {
     "type": "gene",
     "slug": "drd2",
-    "name": "DRD2 \u2014 Dopamine receptor D2",
+    "name": "DRD2 — Dopamine receptor D2",
     "summary": "DRD2 encodes the dopamine D2 receptor, a G protein-coupled receptor that inhibits adenylyl cyclase and modulates dopaminergic signaling in striatum, cortex, and limbic regions. DRD2 is the primary tar",
     "confidence": "high",
     "synonyms": []
@@ -250,7 +250,7 @@
   {
     "type": "gene",
     "slug": "egfr",
-    "name": "EGFR \u2014 Epidermal growth factor receptor",
+    "name": "EGFR — Epidermal growth factor receptor",
     "summary": "EGFR encodes the epidermal growth factor receptor, a receptor tyrosine kinase that binds EGF and related ligands to activate RAS-RAF-MAPK and PI3K-AKT signaling. Somatic EGFR mutations (especially exo",
     "confidence": "high",
     "synonyms": []
@@ -258,7 +258,7 @@
   {
     "type": "gene",
     "slug": "fto",
-    "name": "FTO \u2014 Fat mass and obesity-associated protein",
+    "name": "FTO — Fat mass and obesity-associated protein",
     "summary": "FTO encodes fat mass and obesity-associated protein, an alpha-ketoglutarate-dependent dioxygenase that demethylates nucleic acids. The FTO locus harbors the strongest common genetic association with o",
     "confidence": "high",
     "synonyms": []
@@ -266,7 +266,7 @@
   {
     "type": "gene",
     "slug": "hla-drb1",
-    "name": "HLA-DRB1 \u2014 Major histocompatibility complex, class II, DR beta 1",
+    "name": "HLA-DRB1 — Major histocompatibility complex, class II, DR beta 1",
     "summary": "HLA-DRB1 encodes the beta chain of HLA-DR, an MHC class II molecule that presents exogenous antigens to CD4+ T cells. Specific HLA-DRB1 alleles (e.g., shared epitope: *01, *04, *10) confer strong gene",
     "confidence": "high",
     "synonyms": []
@@ -274,7 +274,7 @@
   {
     "type": "gene",
     "slug": "il33",
-    "name": "IL33 \u2014 Interleukin 33",
+    "name": "IL33 — Interleukin 33",
     "summary": "IL33 encodes interleukin-33, a dual-function cytokine and nuclear factor belonging to the IL-1 family. IL-33 functions as an epithelial alarmin: it is constitutively expressed in barrier tissues (lung",
     "confidence": "high",
     "synonyms": []
@@ -282,7 +282,7 @@
   {
     "type": "gene",
     "slug": "ldlr",
-    "name": "LDLR \u2014 LDL receptor",
+    "name": "LDLR — LDL receptor",
     "summary": "LDLR encodes the low-density lipoprotein receptor, a cell-surface glycoprotein that binds and internalizes LDL cholesterol particles. The receptor mediates endocytosis of cholesterol-carrying lipoprot",
     "confidence": "high",
     "synonyms": []
@@ -290,7 +290,7 @@
   {
     "type": "gene",
     "slug": "mc4r",
-    "name": "MC4R \u2014 Melanocortin 4 receptor",
+    "name": "MC4R — Melanocortin 4 receptor",
     "summary": "MC4R encodes the melanocortin 4 receptor, a G protein-coupled receptor in the hypothalamic leptin-melanocortin pathway that regulates energy balance and appetite. MC4R is activated by alpha-MSH (from ",
     "confidence": "high",
     "synonyms": []
@@ -298,7 +298,7 @@
   {
     "type": "gene",
     "slug": "pcsk9",
-    "name": "PCSK9 \u2014 Proprotein convertase subtilisin/kexin type 9",
+    "name": "PCSK9 — Proprotein convertase subtilisin/kexin type 9",
     "summary": "PCSK9 encodes proprotein convertase subtilisin/kexin type 9, a serine protease that binds the LDL receptor and targets it for lysosomal degradation. By reducing hepatic LDLR abundance, PCSK9 raises pl",
     "confidence": "high",
     "synonyms": []
@@ -306,7 +306,7 @@
   {
     "type": "gene",
     "slug": "serpina1",
-    "name": "SERPINA1 \u2014 Alpha-1 antitrypsin",
+    "name": "SERPINA1 — Alpha-1 antitrypsin",
     "summary": "SERPINA1 encodes alpha-1 antitrypsin (A1AT), a serine protease inhibitor that protects lung tissue from neutrophil elastase. The severe Z allele (Glu342Lys) causes protein misfolding and accumulation ",
     "confidence": "high",
     "synonyms": []
@@ -314,7 +314,7 @@
   {
     "type": "gene",
     "slug": "slc6a4",
-    "name": "SLC6A4 \u2014 Solute carrier family 6 member 4",
+    "name": "SLC6A4 — Solute carrier family 6 member 4",
     "summary": "SLC6A4 encodes the serotonin transporter (5-HTT), which reuptakes serotonin from the synaptic cleft and terminates serotonergic signaling. The promoter polymorphism 5-HTTLPR (short vs long) modulates ",
     "confidence": "medium",
     "synonyms": []
@@ -322,7 +322,7 @@
   {
     "type": "gene",
     "slug": "tcf7l2",
-    "name": "TCF7L2 \u2014 Transcription factor 7-like 2",
+    "name": "TCF7L2 — Transcription factor 7-like 2",
     "summary": "TCF7L2 encodes transcription factor 7-like 2, a nuclear effector of the Wnt signaling pathway that regulates gene expression in pancreatic beta cells, intestinal enteroendocrine cells, and hepatic tis",
     "confidence": "high",
     "synonyms": []
@@ -330,7 +330,7 @@
   {
     "type": "gene",
     "slug": "tp53",
-    "name": "TP53 \u2014 Tumor protein p53",
+    "name": "TP53 — Tumor protein p53",
     "summary": "TP53 encodes p53, a critical tumor suppressor that coordinates cellular responses to DNA damage, oncogenic stress, and other insults. p53 arrests the cell cycle, promotes DNA repair, or induces apopto",
     "confidence": "high",
     "synonyms": []
@@ -386,8 +386,8 @@
   {
     "type": "pathway",
     "slug": "nf-kb",
-    "name": "NF-\u03baB Signaling Pathway",
-    "summary": "NF-\u03baB (nuclear factor kappa-light-chain-enhancer of activated B cells) is a master regulator of inflammatory gene expression, governing immune responses, cell survival, and proliferation. The pathway ",
+    "name": "NF-κB Signaling Pathway",
+    "summary": "NF-κB (nuclear factor kappa-light-chain-enhancer of activated B cells) is a master regulator of inflammatory gene expression, governing immune responses, cell survival, and proliferation. The pathway ",
     "confidence": "medium",
     "synonyms": []
   },
@@ -403,32 +403,241 @@
     "type": "brief",
     "slug": "pm25-il33-nfkb-asthma",
     "name": "PM2.5 Exposure Amplifies IL-33-Mediated Airway Inflammation via NF-kB Signaling in Genetically Susceptible Individuals",
-    "summary": "How does ambient PM2.5 exposure interact with genetic variation in IL33 and NF-\u03baB pathway genes to amplify airway inflammation and asthma risk?",
+    "summary": "How does ambient PM2.5 exposure interact with genetic variation in IL33 and NF-κB pathway genes to amplify airway inflammation and asthma risk?",
     "confidence": "high",
     "synonyms": []
   },
-  {"type": "disease", "slug": "bipolar-disorder", "name": "Bipolar Disorder", "summary": "Mood disorder with mania and depression; high heritability; stress and sleep are triggers.", "confidence": "high", "synonyms": []},
-  {"type": "disease", "slug": "psoriasis", "name": "Psoriasis", "summary": "Chronic immune-mediated skin disease; IL-23/Th17 axis; HLA-C and IL23R.", "confidence": "high", "synonyms": []},
-  {"type": "disease", "slug": "inflammatory-bowel-disease", "name": "Inflammatory Bowel Disease", "summary": "Crohn disease and ulcerative colitis; NOD2, IL23R; microbiome and diet.", "confidence": "high", "synonyms": []},
-  {"type": "disease", "slug": "ischemic-stroke", "name": "Ischemic Stroke", "summary": "Cerebral artery occlusion; PITX2, HDAC9; hypertension and smoking are major risk factors.", "confidence": "high", "synonyms": []},
-  {"type": "disease", "slug": "atopic-dermatitis", "name": "Atopic Dermatitis", "summary": "Chronic inflammatory skin disease; FLG, IL13; atopic march.", "confidence": "high", "synonyms": []},
-  {"type": "gene", "slug": "bdnf", "name": "BDNF — Brain-derived neurotrophic factor", "summary": "Neurotrophin; Val66Met and stress–depression G×E.", "confidence": "high", "synonyms": []},
-  {"type": "gene", "slug": "gstp1", "name": "GSTP1 — Glutathione S-transferase pi 1", "summary": "Antioxidant enzyme; G×E with air pollution and asthma.", "confidence": "high", "synonyms": []},
-  {"type": "gene", "slug": "lep", "name": "LEP — Leptin", "summary": "Adipokine; energy homeostasis; obesity and T2D.", "confidence": "high", "synonyms": []},
-  {"type": "gene", "slug": "pparg", "name": "PPARG — Peroxisome proliferator-activated receptor gamma", "summary": "Nuclear receptor; adipogenesis and insulin sensitivity; T2D drug target.", "confidence": "high", "synonyms": []},
-  {"type": "gene", "slug": "mthfr", "name": "MTHFR — Methylenetetrahydrofolate reductase", "summary": "Folate metabolism; homocysteine; gene–nutrient interactions.", "confidence": "medium", "synonyms": []},
-  {"type": "gene", "slug": "sod2", "name": "SOD2 — Superoxide dismutase 2", "summary": "Mitochondrial antioxidant; oxidative stress; G×E with pollution.", "confidence": "medium", "synonyms": []},
-  {"type": "pathway", "slug": "jak-stat-signaling", "name": "JAK-STAT Signaling Pathway", "summary": "Cytokine signaling; autoimmune disease and cancer.", "confidence": "medium", "synonyms": []},
-  {"type": "pathway", "slug": "oxidative-stress-response", "name": "Oxidative Stress Response", "summary": "Antioxidant defenses; GSTP1, SOD2; air pollution G×E.", "confidence": "medium", "synonyms": []},
-  {"type": "pathway", "slug": "tnf-signaling", "name": "TNF Signaling Pathway", "summary": "TNF inflammation; RA, IBD, psoriasis; air pollution–asthma G×E.", "confidence": "medium", "synonyms": []},
-  {"type": "exposure", "slug": "physical-activity", "name": "Physical Activity", "summary": "Movement and exercise; buffers obesity and T2D risk.", "confidence": "high", "synonyms": []},
-  {"type": "exposure", "slug": "greenspace", "name": "Greenspace", "summary": "Natural environments; mental health and stress reduction.", "confidence": "medium", "synonyms": []},
-  {"type": "exposure", "slug": "sleep-deprivation", "name": "Sleep Deprivation", "summary": "Insufficient sleep and circadian disruption; metabolic and mental health.", "confidence": "high", "synonyms": []},
-  {"type": "brief", "slug": "bdnf-stress-major-depressive-disorder", "name": "BDNF Val66Met and Psychosocial Stress in MDD Susceptibility", "summary": "How does BDNF Val66Met interact with psychosocial stress to influence depression risk?", "confidence": "high", "synonyms": []},
-  {"type": "brief", "slug": "leptin-melanocortin-obesity-environment", "name": "Leptin–Melanocortin Axis and Obesogenic Environment", "summary": "How do LEP, MC4R, FTO interact with diet and activity in obesity?", "confidence": "high", "synonyms": []},
-  {"type": "brief", "slug": "pparg-diet-type2diabetes", "name": "PPARG Pro12Ala and Diet in Type 2 Diabetes", "summary": "How does PPARG Pro12Ala interact with diet quality in T2D and insulin sensitivity?", "confidence": "high", "synonyms": []},
-  {"type": "brief", "slug": "sleep-deprivation-metabolic-mental-health", "name": "Sleep Deprivation in Metabolic and Mental Health", "summary": "Sleep and circadian disruption; gene–environment interactions in metabolic and mental health.", "confidence": "medium", "synonyms": []},
-  {"type": "brief", "slug": "oxidative-stress-air-pollution-asthma-cvd", "name": "Oxidative Stress Genes and Air Pollution in Asthma and CVD", "summary": "GSTP1, SOD2 and air pollution G×E in asthma and cardiovascular susceptibility.", "confidence": "high", "synonyms": []},
-  {"type": "brief", "slug": "jak-stat-psoriasis-ibd-environment", "name": "JAK-STAT and IL-23/Th17 in Psoriasis and IBD", "summary": "Environmental triggers and JAK-STAT/IL-23 pathway in psoriasis and inflammatory bowel disease.", "confidence": "medium", "synonyms": []},
-  {"type": "brief", "slug": "no2-traffic-corridor-childhood-asthma", "name": "Traffic-Related NO2 (Route 28–Dulles Corridor) and Childhood Asthma", "summary": "How near-roadway traffic-related nitrogen dioxide interacts with 17q21 (ORMDL3/GSDMB) and IL33/TSLP susceptibility in childhood asthma.", "confidence": "medium", "synonyms": ["nitrogen dioxide", "traffic pollution", "Route 28", "Dulles"]}
+  {
+    "type": "disease",
+    "slug": "bipolar-disorder",
+    "name": "Bipolar Disorder",
+    "summary": "Mood disorder with mania and depression; high heritability; stress and sleep are triggers.",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "disease",
+    "slug": "psoriasis",
+    "name": "Psoriasis",
+    "summary": "Chronic immune-mediated skin disease; IL-23/Th17 axis; HLA-C and IL23R.",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "disease",
+    "slug": "inflammatory-bowel-disease",
+    "name": "Inflammatory Bowel Disease",
+    "summary": "Crohn disease and ulcerative colitis; NOD2, IL23R; microbiome and diet.",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "disease",
+    "slug": "ischemic-stroke",
+    "name": "Ischemic Stroke",
+    "summary": "Cerebral artery occlusion; PITX2, HDAC9; hypertension and smoking are major risk factors.",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "disease",
+    "slug": "atopic-dermatitis",
+    "name": "Atopic Dermatitis",
+    "summary": "Chronic inflammatory skin disease; FLG, IL13; atopic march.",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "bdnf",
+    "name": "BDNF — Brain-derived neurotrophic factor",
+    "summary": "Neurotrophin; Val66Met and stress–depression G×E.",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "gstp1",
+    "name": "GSTP1 — Glutathione S-transferase pi 1",
+    "summary": "Antioxidant enzyme; G×E with air pollution and asthma.",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "lep",
+    "name": "LEP — Leptin",
+    "summary": "Adipokine; energy homeostasis; obesity and T2D.",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "pparg",
+    "name": "PPARG — Peroxisome proliferator-activated receptor gamma",
+    "summary": "Nuclear receptor; adipogenesis and insulin sensitivity; T2D drug target.",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "mthfr",
+    "name": "MTHFR — Methylenetetrahydrofolate reductase",
+    "summary": "Folate metabolism; homocysteine; gene–nutrient interactions.",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "gene",
+    "slug": "sod2",
+    "name": "SOD2 — Superoxide dismutase 2",
+    "summary": "Mitochondrial antioxidant; oxidative stress; G×E with pollution.",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "pathway",
+    "slug": "jak-stat-signaling",
+    "name": "JAK-STAT Signaling Pathway",
+    "summary": "Cytokine signaling; autoimmune disease and cancer.",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "pathway",
+    "slug": "oxidative-stress-response",
+    "name": "Oxidative Stress Response",
+    "summary": "Antioxidant defenses; GSTP1, SOD2; air pollution G×E.",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "pathway",
+    "slug": "tnf-signaling",
+    "name": "TNF Signaling Pathway",
+    "summary": "TNF inflammation; RA, IBD, psoriasis; air pollution–asthma G×E.",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "exposure",
+    "slug": "physical-activity",
+    "name": "Physical Activity",
+    "summary": "Movement and exercise; buffers obesity and T2D risk.",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "exposure",
+    "slug": "greenspace",
+    "name": "Greenspace",
+    "summary": "Natural environments; mental health and stress reduction.",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "exposure",
+    "slug": "sleep-deprivation",
+    "name": "Sleep Deprivation",
+    "summary": "Insufficient sleep and circadian disruption; metabolic and mental health.",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "brief",
+    "slug": "bdnf-stress-major-depressive-disorder",
+    "name": "BDNF Val66Met and Psychosocial Stress in MDD Susceptibility",
+    "summary": "How does BDNF Val66Met interact with psychosocial stress to influence depression risk?",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "brief",
+    "slug": "leptin-melanocortin-obesity-environment",
+    "name": "Leptin–Melanocortin Axis and Obesogenic Environment",
+    "summary": "How do LEP, MC4R, FTO interact with diet and activity in obesity?",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "brief",
+    "slug": "pparg-diet-type2diabetes",
+    "name": "PPARG Pro12Ala and Diet in Type 2 Diabetes",
+    "summary": "How does PPARG Pro12Ala interact with diet quality in T2D and insulin sensitivity?",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "brief",
+    "slug": "sleep-deprivation-metabolic-mental-health",
+    "name": "Sleep Deprivation in Metabolic and Mental Health",
+    "summary": "Sleep and circadian disruption; gene–environment interactions in metabolic and mental health.",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "brief",
+    "slug": "oxidative-stress-air-pollution-asthma-cvd",
+    "name": "Oxidative Stress Genes and Air Pollution in Asthma and CVD",
+    "summary": "GSTP1, SOD2 and air pollution G×E in asthma and cardiovascular susceptibility.",
+    "confidence": "high",
+    "synonyms": []
+  },
+  {
+    "type": "brief",
+    "slug": "jak-stat-psoriasis-ibd-environment",
+    "name": "JAK-STAT and IL-23/Th17 in Psoriasis and IBD",
+    "summary": "Environmental triggers and JAK-STAT/IL-23 pathway in psoriasis and inflammatory bowel disease.",
+    "confidence": "medium",
+    "synonyms": []
+  },
+  {
+    "type": "brief",
+    "slug": "no2-traffic-corridor-childhood-asthma",
+    "name": "Traffic-Related NO2 (Route 28–Dulles Corridor) and Childhood Asthma",
+    "summary": "How near-roadway traffic-related nitrogen dioxide interacts with 17q21 (ORMDL3/GSDMB) and IL33/TSLP susceptibility in childhood asthma.",
+    "confidence": "medium",
+    "synonyms": [
+      "nitrogen dioxide",
+      "traffic pollution",
+      "Route 28",
+      "Dulles"
+    ]
+  },
+  {
+    "type": "page",
+    "slug": "ancestry-equity",
+    "name": "Ancestry & Equity",
+    "summary": "What published studies measured about polygenic score transferability across ancestry groups for type 2 diabetes, coronary artery disease and asthma, set beside Loudoun County's population. Population-level only.",
+    "synonyms": [
+      "cross-ancestry",
+      "transferability",
+      "portability",
+      "PRS transferability",
+      "polygenic score accuracy",
+      "GWAS diversity",
+      "population descriptors",
+      "South Asian ancestry",
+      "African ancestry",
+      "Hispanic Latino",
+      "relative accuracy",
+      "equity"
+    ]
+  },
+  {
+    "type": "brief",
+    "slug": "t2d-south-asian-prs-transferability",
+    "name": "Why European-ancestry GWAS underserve Loudoun's South Asian community: PRS transferability in type 2 diabetes",
+    "summary": "How well do type 2 diabetes polygenic risk scores derived mainly from European-ancestry GWAS carry over to South Asian-ancestry populations, and which measurable quantities account for the shortfall?",
+    "confidence": "medium",
+    "synonyms": [
+      "PRS transferability",
+      "South Asian",
+      "type 2 diabetes",
+      "incremental AUC",
+      "polygenic score portability",
+      "Genes and Health",
+      "DIAMANTE"
+    ]
+  }
 ]

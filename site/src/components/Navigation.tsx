@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: "Mechanism Briefs", href: "/mechanism-briefs" },
   { label: "Graph", href: "/graph" },
   { label: "Community", href: "/community" },
+  { label: "Ancestry & Equity", href: "/ancestry-equity" },
   { label: "Methods", href: "/methods" },
   { label: "Field Notes", href: "/field-notes" },
   { label: "Updates", href: "/updates" },

@@ -1,13 +1,26 @@
 {
   "figures": [
     {
+      "id": "gwas-ancestry-imbalance",
+      "title": "Who GWAS has enrolled, by ancestry group",
+      "claim": "In the GWAS Diversity Monitor's September 2024 snapshot, European-ancestry participants are 94.48% of GWAS participants and Asian-ancestry participants 3.96%.",
+      "altText": "A bar chart of GWAS participant share by ancestry group from a single September 2024 snapshot. European ancestry is 94.48 percent and Asian ancestry is 3.96 percent. The snapshot itemises only these two groups and does not break out South Asian ancestry separately, so 'Asian' here is not South Asian-specific. The remaining share is not itemised in this snapshot and is not plotted.",
+      "destination": "/ancestry-equity",
+      "sourceLine": "GWAS Diversity Monitor, September 2024 snapshot (Mills & Rahal, Nat Genet 2020)",
+      "generatedAt": "2026-10-07T02:55:52.287Z",
+      "files": {
+        "card": "figures/gwas-ancestry-imbalance-card@2x.png",
+        "square": "figures/gwas-ancestry-imbalance-square@2x.png"
+      }
+    },
+    {
       "id": "il33-pm25-chain",
       "title": "How PM2.5 feeds the IL-33 pathway in asthma",
       "claim": "In airway epithelium, fine-particle pollution can activate NF-κB and release IL-33, the alarmin that drives type 2 asthma inflammation.",
       "altText": "A five-step diagram running left to right: PM2.5 particulate, bronchial epithelial injury, IL-33 release, ST2 receptor on ILC2 cells, type 2 inflammation, then asthma exacerbation. Each arrow is tagged with its evidence class; steps without direct evidence are dashed and marked inferred.",
       "destination": "/mechanism-briefs/pm25-il33-nfkb-asthma",
       "sourceLine": "GENARCH atlas: IL33 gene and asthma gene–environment records",
-      "generatedAt": "2026-07-13T21:27:53.163Z",
+      "generatedAt": "2026-10-07T02:55:54.885Z",
       "files": {
         "card": "figures/il33-pm25-chain-card@2x.png",
         "square": "figures/il33-pm25-chain-square@2x.png"
@@ -20,7 +33,7 @@
       "altText": "A network diagram of the GENARCH knowledge graph. Nodes are colored by type (disease, gene, exposure, pathway, tissue) and edges by direction (amplify in red, buffer in green, unknown in gray). Only the most connected nodes are labeled.",
       "destination": "/graph",
       "sourceLine": "GENARCH knowledge graph (seed release)",
-      "generatedAt": "2026-07-13T21:27:55.823Z",
+      "generatedAt": "2026-10-07T02:55:57.524Z",
       "files": {
         "card": "figures/knowledge-graph-hero-card@2x.png",
         "square": "figures/knowledge-graph-hero-square@2x.png"
@@ -33,10 +46,23 @@
       "altText": "A bar chart of adult asthma prevalence with three bars: Loudoun County at 8.2 percent, Virginia at 9.4 percent, and the United States at 8.0 percent. Loudoun is the lowest of the three.",
       "destination": "/community/loudoun-county-va",
       "sourceLine": "BRFSS 2023, via GENARCH community dataset (loudoun-county-va)",
-      "generatedAt": "2026-07-13T21:27:58.444Z",
+      "generatedAt": "2026-10-07T02:56:00.136Z",
       "files": {
         "card": "figures/loudoun-asthma-vs-state-card@2x.png",
         "square": "figures/loudoun-asthma-vs-state-square@2x.png"
+      }
+    },
+    {
+      "id": "prs-portability",
+      "title": "Type 2 diabetes polygenic score accuracy, by ancestry group",
+      "claim": "In one multi-ancestry type 2 diabetes polygenic score, incremental AUC is 0.143 in European-ancestry validation cohorts and 0.061 in South Asian-ancestry cohorts.",
+      "altText": "A bar chart of incremental AUC for one multi-ancestry type 2 diabetes polygenic risk score across five ancestry groups, from a single study: European 0.143, Admixed American 0.086, East Asian 0.074, South Asian 0.061, and African or African American 0.041. All five bars are the same metric, the same trait, and the same score, so they are directly comparable. Incremental AUC is the gain in area under the curve from adding the score to a model of age, sex and principal components.",
+      "destination": "/ancestry-equity",
+      "sourceLine": "Huerta-Chagoya et al., Lancet Diabetes Endocrinol 2026, doi:10.1016/s2213-8587(25)00405-x",
+      "generatedAt": "2026-10-07T02:56:02.741Z",
+      "files": {
+        "card": "figures/prs-portability-card@2x.png",
+        "square": "figures/prs-portability-square@2x.png"
       }
     }
   ]

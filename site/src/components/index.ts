@@ -1,3 +1,5 @@
+export { BarRows } from "./figures/BarRows";
+export type { BarRow, BarRowsColors } from "./figures/BarRows";
 export { Breadcrumbs } from "./Breadcrumbs";
 export type { BreadcrumbItem, BreadcrumbsProps } from "./Breadcrumbs";
 export { CitationRenderer, InlineCitation } from "./CitationRenderer";

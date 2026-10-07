@@ -11,6 +11,7 @@ const TYPE_LABELS: Record<string, string> = {
   gene: "Gene",
   pathway: "Pathway",
   brief: "Mechanism Brief",
+  page: "Page",
 };
 
 const TYPE_COLORS: Record<string, string> = {
@@ -19,6 +20,7 @@ const TYPE_COLORS: Record<string, string> = {
   gene: "bg-teal-primary/20 text-teal-primary",
   pathway: "bg-[#2F855A]/20 text-[#2F855A]",
   brief: "bg-cool-dark/30 text-cool-light",
+  page: "bg-teal-soft/20 text-teal-soft",
 };
 
 function getHref(item: SearchItem): string {
@@ -33,6 +35,9 @@ function getHref(item: SearchItem): string {
       return `/atlas/pathways/${item.slug}`;
     case "brief":
       return `/mechanism-briefs/${item.slug}`;
+    // A top-level page, routed by slug from the site root.
+    case "page":
+      return `/${item.slug}`;
     default:
       return "/";
   }
