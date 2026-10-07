@@ -320,7 +320,12 @@ export interface MechanismBrief {
   counterarguments: string[];
   validation_criteria: string[];
   related_disease: string;
-  related_exposure: string;
+  /**
+   * Null for a methods brief that has no exposure counterpart. Both render sites
+   * (the brief index tag list, the /methods field table) already guard on
+   * truthiness, so null is safe.
+   */
+  related_exposure: string | null;
   related_genes: string[];
   related_pathways: string[];
   references: Reference[];
@@ -332,8 +337,67 @@ export interface MechanismBrief {
   published_at: string | null;
 }
 
+/**
+ * Cross-ancestry transferability module. Mirrors CrossAncestrySection in
+ * pipeline/schemas.py, which is strict (`extra="forbid"`) -- keep the two in step.
+ *
+ * Population-level only. These records hold published, group-level transferability
+ * metrics for whole study populations. They carry no score, no weight, and nothing
+ * that could be evaluated for one person.
+ */
+export interface CrossAncestryCitedText {
+  text: string;
+  citations: string[];
+}
+
+export interface CrossAncestryTransferability {
+  /** Reader-facing metric name; a substring of the metric on the cited extraction. */
+  metric: string;
+  /** Null when the verified literature reports no number for this group and trait. */
+  value: number | null;
+  comparator: string;
+  /** literature.json entry id. */
+  study: string;
+  /** literature.json extraction claim_id; present whenever value is non-null. */
+  claim_id?: string | null;
+  text: string;
+  citations: string[];
+}
+
+export interface CrossAncestryGroup {
+  /** GENARCH's genetic-ancestry grouping label. */
+  population: string;
+  /** The exact group labels the source studies used. Rendered beside `population`. */
+  labels_as_used: string;
+  gwas_representation: CrossAncestryCitedText;
+  prs_transferability: CrossAncestryTransferability;
+  effect_estimate_notes: CrossAncestryCitedText;
+  evidence_confidence: "low" | "medium" | "high";
+  not_quantified: string[];
+}
+
+export interface CrossAncestrySection {
+  slug: string;
+  disease_slug: string;
+  title: string;
+  summary: string;
+  loudoun_context: {
+    text: string;
+    /** "acs_loudoun_2023:<exact Census label>" */
+    acs_refs: string[];
+  };
+  groups: CrossAncestryGroup[];
+  mechanisms_of_degradation: CrossAncestryCitedText;
+  data_gaps: string;
+  limitations: string;
+  references: Reference[];
+  schema_version: string;
+  last_updated: string;
+}
+
 export interface SearchItem {
-  type: "disease" | "exposure" | "gene" | "pathway" | "brief";
+  /** "page" is a standalone top-level page, routed by slug from the site root. */
+  type: "disease" | "exposure" | "gene" | "pathway" | "brief" | "page";
   slug: string;
   name: string;
   summary: string;

@@ -7,6 +7,7 @@ import type {
   Pathway,
   GraphData,
   CommunityRegion,
+  CrossAncestrySection,
   SearchItem,
   MechanismBrief,
   ReleaseItem,
@@ -131,6 +132,23 @@ export function getCommunityRegionSlugs(): string[] {
     .readdirSync(dir)
     .filter((f) => f.endsWith(".json"))
     .map((f) => path.basename(f, ".json"));
+}
+
+/**
+ * Cross-ancestry module for one disease, or null when none exists.
+ *
+ * Returning null rather than throwing is deliberate: only some diseases have a
+ * module, and the disease page renders the section only when this resolves.
+ */
+export function getCrossAncestry(slug: string): CrossAncestrySection | null {
+  const filePath = path.join(DATA_DIR, "ancestry", `${slug}.json`);
+  return readJsonFile<CrossAncestrySection>(filePath);
+}
+
+export function getAllCrossAncestry(): CrossAncestrySection[] {
+  return readAllJsonFromDir<CrossAncestrySection>(
+    path.join(DATA_DIR, "ancestry")
+  ).sort((a, b) => a.slug.localeCompare(b.slug));
 }
 
 export function getSearchIndex(): SearchItem[] {
