@@ -651,6 +651,26 @@
       ],
       "status": "SHIPPED.",
       "description": "Percentages and their margins of error are the values the Bureau publishes (PE/PM); none is computed here. B02015 is a detailed table and publishes no percentage, so none is derived. The API returns large negative sentinels (for example -555555555) in place of a statistic it does not publish; raw values are preserved and '*_published' booleans say whether each cell carries a real statistic, so a sentinel can never render as a number. 'estimate_exceeds_margin' flags the Sri Lankan count, whose margin of error (445) is larger than the estimate (334). The DP05 total-population row's percent column repeats the count rather than carrying a percentage and is suppressed. Race and Hispanic origin are self-identification categories and are not genetic-ancestry groupings."
+    },
+    {
+      "filename": "pipeline/sources/deq/deq_dcamp_weekly_2026-10-09.pdf",
+      "origin_url": "https://www.deq.virginia.gov/home/showpublisheddocument/39287",
+      "download_date": "2026-10-11",
+      "report_date": "2026-10-09",
+      "license": "Public record. Virginia DEQ confirmed redistributable with credit to Virginia DEQ.",
+      "attribution": "Virginia Department of Environmental Quality",
+      "format": "pdf",
+      "sha256": "41effca9b48ff2b93fb3ce9a990c768cc831a0e24ef838f1eea85f752eac706d",
+      "size_bytes": 3616316,
+      "pages": 28,
+      "tables_extracted": 41,
+      "text_normalization": "NFKC",
+      "description": "Virginia DEQ Data Center Air Monitoring Project weekly analysis report. Reference artifact for reproduction of published collocation regressions, daily-average QA, and daily PM2.5 98th-percentile values. Not a data source; hourly Kunak CSV exports are the data source.",
+      "expected_columns": null,
+      "derived_files": [
+        "pipeline/sources/deq/deq_dcamp_weekly_2026-10-09.txt",
+        "pipeline/sources/deq/deq_dcamp_weekly_2026-10-09_tables.json"
+      ]
     }
   ]
 }
