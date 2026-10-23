@@ -1,0 +1,2239 @@
+{
+  "inputs": {
+    "aug-2026 exports (2026-08-10)": [
+      "ashburn-collocated_multi_2026-03-03_2026-08-10.csv",
+      "belfort-park_multi_2026-03-03_2026-08-10.csv",
+      "dulles-area_multi_2026-03-03_2026-08-10.csv",
+      "farmwell-middle_multi_2026-03-03_2026-08-10.csv",
+      "golf-course_multi_2026-03-03_2026-08-10.csv",
+      "sterling-ms_multi_2026-03-03_2026-08-10.csv"
+    ],
+    "freeze exports (2026-10-10)": [
+      "ashburn-collocated_multi_2026-03-03_2026-10-10.csv",
+      "belfort-park_multi_2026-03-03_2026-10-10.csv",
+      "camp-snyder_multi_2026-03-03_2026-10-10.csv",
+      "dulles-area_multi_2026-03-03_2026-10-10.csv",
+      "evergreen-cc_multi_2026-03-03_2026-10-10.csv",
+      "farmwell-middle_multi_2026-03-03_2026-10-10.csv",
+      "golf-course_multi_2026-03-03_2026-10-10.csv",
+      "heritage-farm_multi_2026-03-03_2026-10-10.csv",
+      "newberry-condo_multi_2026-03-03_2026-10-10.csv",
+      "sterling-ms_multi_2026-03-03_2026-10-10.csv",
+      "steuart-weller_multi_2026-03-03_2026-10-10.csv",
+      "vdot-mkc_multi_2026-03-03_2026-10-10.csv"
+    ]
+  },
+  "task_a_common_window": {
+    "aug-2026 exports (2026-08-10)": {
+      "farmwell-middle": {
+        "valid_days": 50,
+        "p98": 45.402,
+        "p98_truncated_daily": 45.352,
+        "context_r3": 45.4,
+        "diff_vs_context": 0.002,
+        "rank": 1
+      },
+      "belfort-park": {
+        "valid_days": 50,
+        "p98": 40.189,
+        "p98_truncated_daily": 40.09,
+        "context_r3": 40.19,
+        "diff_vs_context": -0.001,
+        "rank": 2
+      },
+      "golf-course": {
+        "valid_days": 51,
+        "p98": 40.123,
+        "p98_truncated_daily": 40.1,
+        "context_r3": 40.12,
+        "diff_vs_context": 0.003,
+        "rank": 3
+      },
+      "sterling-ms": {
+        "valid_days": 51,
+        "p98": 38.215,
+        "p98_truncated_daily": 38.2,
+        "context_r3": 38.21,
+        "diff_vs_context": 0.005,
+        "rank": 4
+      },
+      "ashburn-collocated": {
+        "valid_days": 51,
+        "p98": 37.097,
+        "p98_truncated_daily": 37.0,
+        "context_r3": 37.1,
+        "diff_vs_context": -0.003,
+        "rank": 5
+      },
+      "dulles-area": {
+        "valid_days": 50,
+        "p98": 29.5,
+        "p98_truncated_daily": 29.47,
+        "context_r3": 29.5,
+        "diff_vs_context": 0.0,
+        "rank": 6
+      },
+      "_above_35": 5
+    },
+    "freeze exports (2026-10-10)": {
+      "farmwell-middle": {
+        "valid_days": 50,
+        "p98": 45.402,
+        "p98_truncated_daily": 45.352,
+        "context_r3": 45.4,
+        "diff_vs_context": 0.002,
+        "rank": 1
+      },
+      "belfort-park": {
+        "valid_days": 50,
+        "p98": 40.189,
+        "p98_truncated_daily": 40.09,
+        "context_r3": 40.19,
+        "diff_vs_context": -0.001,
+        "rank": 2
+      },
+      "golf-course": {
+        "valid_days": 51,
+        "p98": 40.123,
+        "p98_truncated_daily": 40.1,
+        "context_r3": 40.12,
+        "diff_vs_context": 0.003,
+        "rank": 3
+      },
+      "sterling-ms": {
+        "valid_days": 51,
+        "p98": 38.215,
+        "p98_truncated_daily": 38.2,
+        "context_r3": 38.21,
+        "diff_vs_context": 0.005,
+        "rank": 4
+      },
+      "ashburn-collocated": {
+        "valid_days": 51,
+        "p98": 37.097,
+        "p98_truncated_daily": 37.0,
+        "context_r3": 37.1,
+        "diff_vs_context": -0.003,
+        "rank": 5
+      },
+      "dulles-area": {
+        "valid_days": 50,
+        "p98": 29.5,
+        "p98_truncated_daily": 29.47,
+        "context_r3": 29.5,
+        "diff_vs_context": 0.0,
+        "rank": 6
+      },
+      "_above_35": 5
+    }
+  },
+  "task_b_full_record_aug7": {
+    "aug-2026 exports (2026-08-10)": {
+      "cutoff_0700_est|i_standard_zeros_missing": {
+        "golf-course": {
+          "n": 121,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 24.898,
+          "deq_p98": 23.8,
+          "diff": 1.098,
+          "mean": 7.423,
+          "deq_mean": 7.4,
+          "p98_truncated_daily": 24.88
+        },
+        "belfort-park": {
+          "n": 83,
+          "first_day": "2026-05-15",
+          "last_day": "2026-08-06",
+          "p98": 30.979,
+          "deq_p98": 31.4,
+          "diff": -0.421,
+          "mean": 9.306,
+          "deq_mean": 9.3,
+          "p98_truncated_daily": 30.936
+        },
+        "ashburn-collocated": {
+          "n": 151,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 25.878,
+          "deq_p98": 25.5,
+          "diff": 0.378,
+          "mean": 8.075,
+          "deq_mean": 8.1,
+          "p98_truncated_daily": 25.8
+        },
+        "dulles-area": {
+          "n": 149,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 20.772,
+          "deq_p98": 18.4,
+          "diff": 2.372,
+          "mean": 5.612,
+          "deq_mean": 5.6,
+          "p98_truncated_daily": 20.716
+        },
+        "farmwell-middle": {
+          "n": 119,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 27.222,
+          "deq_p98": 26.0,
+          "diff": 1.222,
+          "mean": 7.964,
+          "deq_mean": 7.9,
+          "p98_truncated_daily": 27.168
+        },
+        "sterling-ms": {
+          "n": 50,
+          "first_day": "2026-06-18",
+          "last_day": "2026-08-06",
+          "p98": 39.363,
+          "deq_p98": 40.4,
+          "diff": -1.037,
+          "mean": 11.423,
+          "deq_mean": 11.3,
+          "p98_truncated_daily": 39.346
+        },
+        "_matches_within_0.05": 0
+      },
+      "cutoff_0700_est|ii_standard_zeros_retained": {
+        "golf-course": {
+          "n": 121,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 24.898,
+          "deq_p98": 23.8,
+          "diff": 1.098,
+          "mean": 7.372,
+          "deq_mean": 7.4,
+          "p98_truncated_daily": 24.88
+        },
+        "belfort-park": {
+          "n": 84,
+          "first_day": "2026-05-15",
+          "last_day": "2026-08-06",
+          "p98": 30.725,
+          "deq_p98": 31.4,
+          "diff": -0.675,
+          "mean": 9.136,
+          "deq_mean": 9.3,
+          "p98_truncated_daily": 30.684
+        },
+        "ashburn-collocated": {
+          "n": 151,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 25.878,
+          "deq_p98": 25.5,
+          "diff": 0.378,
+          "mean": 8.007,
+          "deq_mean": 8.1,
+          "p98_truncated_daily": 25.8
+        },
+        "dulles-area": {
+          "n": 151,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 20.757,
+          "deq_p98": 18.4,
+          "diff": 2.357,
+          "mean": 5.426,
+          "deq_mean": 5.6,
+          "p98_truncated_daily": 20.7
+        },
+        "farmwell-middle": {
+          "n": 121,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 27.174,
+          "deq_p98": 26.0,
+          "diff": 1.174,
+          "mean": 7.879,
+          "deq_mean": 7.9,
+          "p98_truncated_daily": 27.12
+        },
+        "sterling-ms": {
+          "n": 50,
+          "first_day": "2026-06-18",
+          "last_day": "2026-08-06",
+          "p98": 39.363,
+          "deq_p98": 40.4,
+          "diff": -1.037,
+          "mean": 11.297,
+          "deq_mean": 11.3,
+          "p98_truncated_daily": 39.346
+        },
+        "_matches_within_0.05": 0
+      },
+      "cutoff_0700_est|iii_clock_zeros_missing": {
+        "golf-course": {
+          "n": 121,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 23.839,
+          "deq_p98": 23.8,
+          "diff": 0.039,
+          "mean": 7.425,
+          "deq_mean": 7.4,
+          "p98_truncated_daily": 23.8
+        },
+        "belfort-park": {
+          "n": 83,
+          "first_day": "2026-05-15",
+          "last_day": "2026-08-06",
+          "p98": 31.708,
+          "deq_p98": 31.4,
+          "diff": 0.308,
+          "mean": 9.303,
+          "deq_mean": 9.3,
+          "p98_truncated_daily": 31.68
+        },
+        "ashburn-collocated": {
+          "n": 151,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 25.497,
+          "deq_p98": 25.5,
+          "diff": -0.003,
+          "mean": 8.074,
+          "deq_mean": 8.1,
+          "p98_truncated_daily": 25.4
+        },
+        "dulles-area": {
+          "n": 148,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 18.419,
+          "deq_p98": 18.4,
+          "diff": 0.019,
+          "mean": 5.57,
+          "deq_mean": 5.6,
+          "p98_truncated_daily": 18.374
+        },
+        "farmwell-middle": {
+          "n": 119,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 26.26,
+          "deq_p98": 26.0,
+          "diff": 0.26,
+          "mean": 7.948,
+          "deq_mean": 7.9,
+          "p98_truncated_daily": 26.22
+        },
+        "sterling-ms": {
+          "n": 50,
+          "first_day": "2026-06-18",
+          "last_day": "2026-08-06",
+          "p98": 41.572,
+          "deq_p98": 40.4,
+          "diff": 1.172,
+          "mean": 11.426,
+          "deq_mean": 11.3,
+          "p98_truncated_daily": 41.53
+        },
+        "_matches_within_0.05": 3
+      },
+      "cutoff_0700_est|iv_clock_zeros_retained": {
+        "golf-course": {
+          "n": 121,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 23.839,
+          "deq_p98": 23.8,
+          "diff": 0.039,
+          "mean": 7.371,
+          "deq_mean": 7.4,
+          "p98_truncated_daily": 23.8
+        },
+        "belfort-park": {
+          "n": 84,
+          "first_day": "2026-05-15",
+          "last_day": "2026-08-06",
+          "p98": 31.398,
+          "deq_p98": 31.4,
+          "diff": -0.002,
+          "mean": 9.134,
+          "deq_mean": 9.3,
+          "p98_truncated_daily": 31.37
+        },
+        "ashburn-collocated": {
+          "n": 151,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 25.497,
+          "deq_p98": 25.5,
+          "diff": -0.003,
+          "mean": 8.007,
+          "deq_mean": 8.1,
+          "p98_truncated_daily": 25.4
+        },
+        "dulles-area": {
+          "n": 151,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 18.245,
+          "deq_p98": 18.4,
+          "diff": -0.155,
+          "mean": 5.425,
+          "deq_mean": 5.6,
+          "p98_truncated_daily": 18.2
+        },
+        "farmwell-middle": {
+          "n": 121,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 26.14,
+          "deq_p98": 26.0,
+          "diff": 0.14,
+          "mean": 7.879,
+          "deq_mean": 7.9,
+          "p98_truncated_daily": 26.1
+        },
+        "sterling-ms": {
+          "n": 50,
+          "first_day": "2026-06-18",
+          "last_day": "2026-08-06",
+          "p98": 41.572,
+          "deq_p98": 40.4,
+          "diff": 1.172,
+          "mean": 11.298,
+          "deq_mean": 11.3,
+          "p98_truncated_daily": 41.53
+        },
+        "_matches_within_0.05": 3
+      },
+      "days_through_2026-08-07|i_standard_zeros_missing": {
+        "golf-course": {
+          "n": 122,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-07",
+          "p98": 24.882,
+          "deq_p98": 23.8,
+          "diff": 1.082,
+          "mean": 7.397,
+          "deq_mean": 7.4,
+          "p98_truncated_daily": 24.864
+        },
+        "belfort-park": {
+          "n": 84,
+          "first_day": "2026-05-15",
+          "last_day": "2026-08-07",
+          "p98": 30.725,
+          "deq_p98": 31.4,
+          "diff": -0.675,
+          "mean": 9.249,
+          "deq_mean": 9.3,
+          "p98_truncated_daily": 30.684
+        },
+        "ashburn-collocated": {
+          "n": 152,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-07",
+          "p98": 25.846,
+          "deq_p98": 25.5,
+          "diff": 0.346,
+          "mean": 8.047,
+          "deq_mean": 8.1,
+          "p98_truncated_daily": 25.77
+        },
+        "dulles-area": {
+          "n": 149,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 20.772,
+          "deq_p98": 18.4,
+          "diff": 2.372,
+          "mean": 5.612,
+          "deq_mean": 5.6,
+          "p98_truncated_daily": 20.716
+        },
+        "farmwell-middle": {
+          "n": 120,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-07",
+          "p98": 27.198,
+          "deq_p98": 26.0,
+          "diff": 1.198,
+          "mean": 7.93,
+          "deq_mean": 7.9,
+          "p98_truncated_daily": 27.144
+        },
+        "sterling-ms": {
+          "n": 51,
+          "first_day": "2026-06-18",
+          "last_day": "2026-08-07",
+          "p98": 38.215,
+          "deq_p98": 40.4,
+          "diff": -2.185,
+          "mean": 11.285,
+          "deq_mean": 11.3,
+          "p98_truncated_daily": 38.2
+        },
+        "_matches_within_0.05": 0
+      },
+      "days_through_2026-08-07|ii_standard_zeros_retained": {
+        "golf-course": {
+          "n": 122,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-07",
+          "p98": 24.882,
+          "deq_p98": 23.8,
+          "diff": 1.082,
+          "mean": 7.346,
+          "deq_mean": 7.4,
+          "p98_truncated_daily": 24.864
+        },
+        "belfort-park": {
+          "n": 85,
+          "first_day": "2026-05-15",
+          "last_day": "2026-08-07",
+          "p98": 30.471,
+          "deq_p98": 31.4,
+          "diff": -0.929,
+          "mean": 9.081,
+          "deq_mean": 9.3,
+          "p98_truncated_daily": 30.432
+        },
+        "ashburn-collocated": {
+          "n": 152,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-07",
+          "p98": 25.846,
+          "deq_p98": 25.5,
+          "diff": 0.346,
+          "mean": 7.98,
+          "deq_mean": 8.1,
+          "p98_truncated_daily": 25.77
+        },
+        "dulles-area": {
+          "n": 152,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-07",
+          "p98": 20.71,
+          "deq_p98": 18.4,
+          "diff": 2.31,
+          "mean": 5.406,
+          "deq_mean": 5.6,
+          "p98_truncated_daily": 20.654
+        },
+        "farmwell-middle": {
+          "n": 122,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-07",
+          "p98": 27.15,
+          "deq_p98": 26.0,
+          "diff": 1.15,
+          "mean": 7.843,
+          "deq_mean": 7.9,
+          "p98_truncated_daily": 27.096
+        },
+        "sterling-ms": {
+          "n": 51,
+          "first_day": "2026-06-18",
+          "last_day": "2026-08-07",
+          "p98": 38.215,
+          "deq_p98": 40.4,
+          "diff": -2.185,
+          "mean": 11.162,
+          "deq_mean": 11.3,
+          "p98_truncated_daily": 38.2
+        },
+        "_matches_within_0.05": 0
+      },
+      "days_through_2026-08-07|iii_clock_zeros_missing": {
+        "golf-course": {
+          "n": 122,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-07",
+          "p98": 23.819,
+          "deq_p98": 23.8,
+          "diff": 0.019,
+          "mean": 7.399,
+          "deq_mean": 7.4,
+          "p98_truncated_daily": 23.78
+        },
+        "belfort-park": {
+          "n": 84,
+          "first_day": "2026-05-15",
+          "last_day": "2026-08-07",
+          "p98": 31.398,
+          "deq_p98": 31.4,
+          "diff": -0.002,
+          "mean": 9.247,
+          "deq_mean": 9.3,
+          "p98_truncated_daily": 31.37
+        },
+        "ashburn-collocated": {
+          "n": 152,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-07",
+          "p98": 25.466,
+          "deq_p98": 25.5,
+          "diff": -0.034,
+          "mean": 8.048,
+          "deq_mean": 8.1,
+          "p98_truncated_daily": 25.37
+        },
+        "dulles-area": {
+          "n": 148,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 18.419,
+          "deq_p98": 18.4,
+          "diff": 0.019,
+          "mean": 5.57,
+          "deq_mean": 5.6,
+          "p98_truncated_daily": 18.374
+        },
+        "farmwell-middle": {
+          "n": 120,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-07",
+          "p98": 26.2,
+          "deq_p98": 26.0,
+          "diff": 0.2,
+          "mean": 7.914,
+          "deq_mean": 7.9,
+          "p98_truncated_daily": 26.16
+        },
+        "sterling-ms": {
+          "n": 51,
+          "first_day": "2026-06-18",
+          "last_day": "2026-08-07",
+          "p98": 40.442,
+          "deq_p98": 40.4,
+          "diff": 0.042,
+          "mean": 11.29,
+          "deq_mean": 11.3,
+          "p98_truncated_daily": 40.4
+        },
+        "_matches_within_0.05": 5
+      },
+      "days_through_2026-08-07|iv_clock_zeros_retained": {
+        "golf-course": {
+          "n": 122,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-07",
+          "p98": 23.819,
+          "deq_p98": 23.8,
+          "diff": 0.019,
+          "mean": 7.347,
+          "deq_mean": 7.4,
+          "p98_truncated_daily": 23.78
+        },
+        "belfort-park": {
+          "n": 85,
+          "first_day": "2026-05-15",
+          "last_day": "2026-08-07",
+          "p98": 31.088,
+          "deq_p98": 31.4,
+          "diff": -0.312,
+          "mean": 9.08,
+          "deq_mean": 9.3,
+          "p98_truncated_daily": 31.06
+        },
+        "ashburn-collocated": {
+          "n": 152,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-07",
+          "p98": 25.466,
+          "deq_p98": 25.5,
+          "diff": -0.034,
+          "mean": 7.98,
+          "deq_mean": 8.1,
+          "p98_truncated_daily": 25.37
+        },
+        "dulles-area": {
+          "n": 152,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-07",
+          "p98": 18.22,
+          "deq_p98": 18.4,
+          "diff": -0.18,
+          "mean": 5.405,
+          "deq_mean": 5.6,
+          "p98_truncated_daily": 18.174
+        },
+        "farmwell-middle": {
+          "n": 122,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-07",
+          "p98": 26.081,
+          "deq_p98": 26.0,
+          "diff": 0.081,
+          "mean": 7.843,
+          "deq_mean": 7.9,
+          "p98_truncated_daily": 26.04
+        },
+        "sterling-ms": {
+          "n": 51,
+          "first_day": "2026-06-18",
+          "last_day": "2026-08-07",
+          "p98": 40.442,
+          "deq_p98": 40.4,
+          "diff": 0.042,
+          "mean": 11.164,
+          "deq_mean": 11.3,
+          "p98_truncated_daily": 40.4
+        },
+        "_matches_within_0.05": 3
+      }
+    },
+    "freeze exports (2026-10-10)": {
+      "cutoff_0700_est|i_standard_zeros_missing": {
+        "golf-course": {
+          "n": 121,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 24.898,
+          "deq_p98": 23.8,
+          "diff": 1.098,
+          "mean": 7.423,
+          "deq_mean": 7.4,
+          "p98_truncated_daily": 24.88
+        },
+        "belfort-park": {
+          "n": 83,
+          "first_day": "2026-05-15",
+          "last_day": "2026-08-06",
+          "p98": 30.979,
+          "deq_p98": 31.4,
+          "diff": -0.421,
+          "mean": 9.306,
+          "deq_mean": 9.3,
+          "p98_truncated_daily": 30.936
+        },
+        "ashburn-collocated": {
+          "n": 151,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 25.878,
+          "deq_p98": 25.5,
+          "diff": 0.378,
+          "mean": 8.075,
+          "deq_mean": 8.1,
+          "p98_truncated_daily": 25.8
+        },
+        "dulles-area": {
+          "n": 149,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 20.772,
+          "deq_p98": 18.4,
+          "diff": 2.372,
+          "mean": 5.612,
+          "deq_mean": 5.6,
+          "p98_truncated_daily": 20.716
+        },
+        "farmwell-middle": {
+          "n": 119,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 27.222,
+          "deq_p98": 26.0,
+          "diff": 1.222,
+          "mean": 7.964,
+          "deq_mean": 7.9,
+          "p98_truncated_daily": 27.168
+        },
+        "heritage-farm": {
+          "n": 82,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-30",
+          "p98": 9.73,
+          "deq_p98": 9.7,
+          "diff": 0.03,
+          "mean": 4.13,
+          "deq_mean": 4.2,
+          "p98_truncated_daily": 9.638
+        },
+        "newberry-condo": {
+          "n": 66,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-13",
+          "p98": 14.519,
+          "deq_p98": 14.5,
+          "diff": 0.019,
+          "mean": 5.685,
+          "deq_mean": 5.7,
+          "p98_truncated_daily": 14.45
+        },
+        "sterling-ms": {
+          "n": 50,
+          "first_day": "2026-06-18",
+          "last_day": "2026-08-06",
+          "p98": 39.363,
+          "deq_p98": 40.4,
+          "diff": -1.037,
+          "mean": 11.423,
+          "deq_mean": 11.3,
+          "p98_truncated_daily": 39.346
+        },
+        "steuart-weller": {
+          "n": 100,
+          "first_day": "2026-03-09",
+          "last_day": "2026-06-16",
+          "p98": 10.196,
+          "deq_p98": 10.2,
+          "diff": -0.004,
+          "mean": 4.566,
+          "deq_mean": 4.6,
+          "p98_truncated_daily": 10.122
+        },
+        "_matches_within_0.05": 3
+      },
+      "cutoff_0700_est|ii_standard_zeros_retained": {
+        "golf-course": {
+          "n": 121,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 24.898,
+          "deq_p98": 23.8,
+          "diff": 1.098,
+          "mean": 7.36,
+          "deq_mean": 7.4,
+          "p98_truncated_daily": 24.88
+        },
+        "belfort-park": {
+          "n": 84,
+          "first_day": "2026-05-15",
+          "last_day": "2026-08-06",
+          "p98": 30.725,
+          "deq_p98": 31.4,
+          "diff": -0.675,
+          "mean": 9.135,
+          "deq_mean": 9.3,
+          "p98_truncated_daily": 30.684
+        },
+        "ashburn-collocated": {
+          "n": 151,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 25.878,
+          "deq_p98": 25.5,
+          "diff": 0.378,
+          "mean": 8.006,
+          "deq_mean": 8.1,
+          "p98_truncated_daily": 25.8
+        },
+        "dulles-area": {
+          "n": 151,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 20.757,
+          "deq_p98": 18.4,
+          "diff": 2.357,
+          "mean": 5.426,
+          "deq_mean": 5.6,
+          "p98_truncated_daily": 20.7
+        },
+        "farmwell-middle": {
+          "n": 121,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 27.174,
+          "deq_p98": 26.0,
+          "diff": 1.174,
+          "mean": 7.874,
+          "deq_mean": 7.9,
+          "p98_truncated_daily": 27.12
+        },
+        "heritage-farm": {
+          "n": 83,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-30",
+          "p98": 9.728,
+          "deq_p98": 9.7,
+          "diff": 0.028,
+          "mean": 4.085,
+          "deq_mean": 4.2,
+          "p98_truncated_daily": 9.636
+        },
+        "newberry-condo": {
+          "n": 66,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-13",
+          "p98": 14.519,
+          "deq_p98": 14.5,
+          "diff": 0.019,
+          "mean": 5.681,
+          "deq_mean": 5.7,
+          "p98_truncated_daily": 14.45
+        },
+        "sterling-ms": {
+          "n": 50,
+          "first_day": "2026-06-18",
+          "last_day": "2026-08-06",
+          "p98": 39.363,
+          "deq_p98": 40.4,
+          "diff": -1.037,
+          "mean": 11.29,
+          "deq_mean": 11.3,
+          "p98_truncated_daily": 39.346
+        },
+        "steuart-weller": {
+          "n": 100,
+          "first_day": "2026-03-09",
+          "last_day": "2026-06-16",
+          "p98": 10.161,
+          "deq_p98": 10.2,
+          "diff": -0.039,
+          "mean": 4.516,
+          "deq_mean": 4.6,
+          "p98_truncated_daily": 10.122
+        },
+        "_matches_within_0.05": 3
+      },
+      "cutoff_0700_est|iii_clock_zeros_missing": {
+        "golf-course": {
+          "n": 121,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 23.839,
+          "deq_p98": 23.8,
+          "diff": 0.039,
+          "mean": 7.425,
+          "deq_mean": 7.4,
+          "p98_truncated_daily": 23.8
+        },
+        "belfort-park": {
+          "n": 83,
+          "first_day": "2026-05-15",
+          "last_day": "2026-08-06",
+          "p98": 31.708,
+          "deq_p98": 31.4,
+          "diff": 0.308,
+          "mean": 9.303,
+          "deq_mean": 9.3,
+          "p98_truncated_daily": 31.68
+        },
+        "ashburn-collocated": {
+          "n": 151,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 25.497,
+          "deq_p98": 25.5,
+          "diff": -0.003,
+          "mean": 8.074,
+          "deq_mean": 8.1,
+          "p98_truncated_daily": 25.4
+        },
+        "dulles-area": {
+          "n": 148,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 18.419,
+          "deq_p98": 18.4,
+          "diff": 0.019,
+          "mean": 5.57,
+          "deq_mean": 5.6,
+          "p98_truncated_daily": 18.374
+        },
+        "farmwell-middle": {
+          "n": 119,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 26.26,
+          "deq_p98": 26.0,
+          "diff": 0.26,
+          "mean": 7.948,
+          "deq_mean": 7.9,
+          "p98_truncated_daily": 26.22
+        },
+        "heritage-farm": {
+          "n": 82,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-30",
+          "p98": 9.341,
+          "deq_p98": 9.7,
+          "diff": -0.359,
+          "mean": 4.133,
+          "deq_mean": 4.2,
+          "p98_truncated_daily": 9.276
+        },
+        "newberry-condo": {
+          "n": 66,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-13",
+          "p98": 14.252,
+          "deq_p98": 14.5,
+          "diff": -0.248,
+          "mean": 5.679,
+          "deq_mean": 5.7,
+          "p98_truncated_daily": 14.2
+        },
+        "sterling-ms": {
+          "n": 50,
+          "first_day": "2026-06-18",
+          "last_day": "2026-08-06",
+          "p98": 41.572,
+          "deq_p98": 40.4,
+          "diff": 1.172,
+          "mean": 11.426,
+          "deq_mean": 11.3,
+          "p98_truncated_daily": 41.53
+        },
+        "steuart-weller": {
+          "n": 100,
+          "first_day": "2026-03-09",
+          "last_day": "2026-06-16",
+          "p98": 10.355,
+          "deq_p98": 10.2,
+          "diff": 0.155,
+          "mean": 4.567,
+          "deq_mean": 4.6,
+          "p98_truncated_daily": 10.31
+        },
+        "_matches_within_0.05": 3
+      },
+      "cutoff_0700_est|iv_clock_zeros_retained": {
+        "golf-course": {
+          "n": 121,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 23.839,
+          "deq_p98": 23.8,
+          "diff": 0.039,
+          "mean": 7.359,
+          "deq_mean": 7.4,
+          "p98_truncated_daily": 23.8
+        },
+        "belfort-park": {
+          "n": 84,
+          "first_day": "2026-05-15",
+          "last_day": "2026-08-06",
+          "p98": 31.398,
+          "deq_p98": 31.4,
+          "diff": -0.002,
+          "mean": 9.133,
+          "deq_mean": 9.3,
+          "p98_truncated_daily": 31.37
+        },
+        "ashburn-collocated": {
+          "n": 151,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 25.497,
+          "deq_p98": 25.5,
+          "diff": -0.003,
+          "mean": 8.005,
+          "deq_mean": 8.1,
+          "p98_truncated_daily": 25.4
+        },
+        "dulles-area": {
+          "n": 151,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 18.245,
+          "deq_p98": 18.4,
+          "diff": -0.155,
+          "mean": 5.425,
+          "deq_mean": 5.6,
+          "p98_truncated_daily": 18.2
+        },
+        "farmwell-middle": {
+          "n": 121,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 26.14,
+          "deq_p98": 26.0,
+          "diff": 0.14,
+          "mean": 7.873,
+          "deq_mean": 7.9,
+          "p98_truncated_daily": 26.1
+        },
+        "heritage-farm": {
+          "n": 83,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-30",
+          "p98": 9.337,
+          "deq_p98": 9.7,
+          "diff": -0.363,
+          "mean": 4.086,
+          "deq_mean": 4.2,
+          "p98_truncated_daily": 9.272
+        },
+        "newberry-condo": {
+          "n": 66,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-13",
+          "p98": 14.252,
+          "deq_p98": 14.5,
+          "diff": -0.248,
+          "mean": 5.675,
+          "deq_mean": 5.7,
+          "p98_truncated_daily": 14.2
+        },
+        "sterling-ms": {
+          "n": 50,
+          "first_day": "2026-06-18",
+          "last_day": "2026-08-06",
+          "p98": 41.572,
+          "deq_p98": 40.4,
+          "diff": 1.172,
+          "mean": 11.29,
+          "deq_mean": 11.3,
+          "p98_truncated_daily": 41.53
+        },
+        "steuart-weller": {
+          "n": 100,
+          "first_day": "2026-03-09",
+          "last_day": "2026-06-16",
+          "p98": 10.195,
+          "deq_p98": 10.2,
+          "diff": -0.005,
+          "mean": 4.517,
+          "deq_mean": 4.6,
+          "p98_truncated_daily": 10.114
+        },
+        "_matches_within_0.05": 4
+      },
+      "days_through_2026-08-07|i_standard_zeros_missing": {
+        "golf-course": {
+          "n": 122,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-07",
+          "p98": 24.882,
+          "deq_p98": 23.8,
+          "diff": 1.082,
+          "mean": 7.397,
+          "deq_mean": 7.4,
+          "p98_truncated_daily": 24.864
+        },
+        "belfort-park": {
+          "n": 84,
+          "first_day": "2026-05-15",
+          "last_day": "2026-08-07",
+          "p98": 30.725,
+          "deq_p98": 31.4,
+          "diff": -0.675,
+          "mean": 9.249,
+          "deq_mean": 9.3,
+          "p98_truncated_daily": 30.684
+        },
+        "ashburn-collocated": {
+          "n": 152,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-07",
+          "p98": 25.846,
+          "deq_p98": 25.5,
+          "diff": 0.346,
+          "mean": 8.047,
+          "deq_mean": 8.1,
+          "p98_truncated_daily": 25.77
+        },
+        "dulles-area": {
+          "n": 149,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 20.772,
+          "deq_p98": 18.4,
+          "diff": 2.372,
+          "mean": 5.612,
+          "deq_mean": 5.6,
+          "p98_truncated_daily": 20.716
+        },
+        "farmwell-middle": {
+          "n": 120,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-07",
+          "p98": 27.198,
+          "deq_p98": 26.0,
+          "diff": 1.198,
+          "mean": 7.93,
+          "deq_mean": 7.9,
+          "p98_truncated_daily": 27.144
+        },
+        "heritage-farm": {
+          "n": 82,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-30",
+          "p98": 9.73,
+          "deq_p98": 9.7,
+          "diff": 0.03,
+          "mean": 4.13,
+          "deq_mean": 4.2,
+          "p98_truncated_daily": 9.638
+        },
+        "newberry-condo": {
+          "n": 66,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-13",
+          "p98": 14.519,
+          "deq_p98": 14.5,
+          "diff": 0.019,
+          "mean": 5.685,
+          "deq_mean": 5.7,
+          "p98_truncated_daily": 14.45
+        },
+        "sterling-ms": {
+          "n": 51,
+          "first_day": "2026-06-18",
+          "last_day": "2026-08-07",
+          "p98": 38.215,
+          "deq_p98": 40.4,
+          "diff": -2.185,
+          "mean": 11.285,
+          "deq_mean": 11.3,
+          "p98_truncated_daily": 38.2
+        },
+        "steuart-weller": {
+          "n": 100,
+          "first_day": "2026-03-09",
+          "last_day": "2026-06-16",
+          "p98": 10.196,
+          "deq_p98": 10.2,
+          "diff": -0.004,
+          "mean": 4.566,
+          "deq_mean": 4.6,
+          "p98_truncated_daily": 10.122
+        },
+        "_matches_within_0.05": 3
+      },
+      "days_through_2026-08-07|ii_standard_zeros_retained": {
+        "golf-course": {
+          "n": 122,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-07",
+          "p98": 24.882,
+          "deq_p98": 23.8,
+          "diff": 1.082,
+          "mean": 7.334,
+          "deq_mean": 7.4,
+          "p98_truncated_daily": 24.864
+        },
+        "belfort-park": {
+          "n": 85,
+          "first_day": "2026-05-15",
+          "last_day": "2026-08-07",
+          "p98": 30.471,
+          "deq_p98": 31.4,
+          "diff": -0.929,
+          "mean": 9.08,
+          "deq_mean": 9.3,
+          "p98_truncated_daily": 30.432
+        },
+        "ashburn-collocated": {
+          "n": 152,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-07",
+          "p98": 25.846,
+          "deq_p98": 25.5,
+          "diff": 0.346,
+          "mean": 7.979,
+          "deq_mean": 8.1,
+          "p98_truncated_daily": 25.77
+        },
+        "dulles-area": {
+          "n": 152,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-07",
+          "p98": 20.71,
+          "deq_p98": 18.4,
+          "diff": 2.31,
+          "mean": 5.406,
+          "deq_mean": 5.6,
+          "p98_truncated_daily": 20.654
+        },
+        "farmwell-middle": {
+          "n": 122,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-07",
+          "p98": 27.15,
+          "deq_p98": 26.0,
+          "diff": 1.15,
+          "mean": 7.838,
+          "deq_mean": 7.9,
+          "p98_truncated_daily": 27.096
+        },
+        "heritage-farm": {
+          "n": 83,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-30",
+          "p98": 9.728,
+          "deq_p98": 9.7,
+          "diff": 0.028,
+          "mean": 4.085,
+          "deq_mean": 4.2,
+          "p98_truncated_daily": 9.636
+        },
+        "newberry-condo": {
+          "n": 66,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-13",
+          "p98": 14.519,
+          "deq_p98": 14.5,
+          "diff": 0.019,
+          "mean": 5.681,
+          "deq_mean": 5.7,
+          "p98_truncated_daily": 14.45
+        },
+        "sterling-ms": {
+          "n": 51,
+          "first_day": "2026-06-18",
+          "last_day": "2026-08-07",
+          "p98": 38.215,
+          "deq_p98": 40.4,
+          "diff": -2.185,
+          "mean": 11.155,
+          "deq_mean": 11.3,
+          "p98_truncated_daily": 38.2
+        },
+        "steuart-weller": {
+          "n": 100,
+          "first_day": "2026-03-09",
+          "last_day": "2026-06-16",
+          "p98": 10.161,
+          "deq_p98": 10.2,
+          "diff": -0.039,
+          "mean": 4.516,
+          "deq_mean": 4.6,
+          "p98_truncated_daily": 10.122
+        },
+        "_matches_within_0.05": 3
+      },
+      "days_through_2026-08-07|iii_clock_zeros_missing": {
+        "golf-course": {
+          "n": 122,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-07",
+          "p98": 23.819,
+          "deq_p98": 23.8,
+          "diff": 0.019,
+          "mean": 7.399,
+          "deq_mean": 7.4,
+          "p98_truncated_daily": 23.78
+        },
+        "belfort-park": {
+          "n": 84,
+          "first_day": "2026-05-15",
+          "last_day": "2026-08-07",
+          "p98": 31.398,
+          "deq_p98": 31.4,
+          "diff": -0.002,
+          "mean": 9.247,
+          "deq_mean": 9.3,
+          "p98_truncated_daily": 31.37
+        },
+        "ashburn-collocated": {
+          "n": 152,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-07",
+          "p98": 25.466,
+          "deq_p98": 25.5,
+          "diff": -0.034,
+          "mean": 8.048,
+          "deq_mean": 8.1,
+          "p98_truncated_daily": 25.37
+        },
+        "dulles-area": {
+          "n": 148,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-06",
+          "p98": 18.419,
+          "deq_p98": 18.4,
+          "diff": 0.019,
+          "mean": 5.57,
+          "deq_mean": 5.6,
+          "p98_truncated_daily": 18.374
+        },
+        "farmwell-middle": {
+          "n": 120,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-07",
+          "p98": 26.2,
+          "deq_p98": 26.0,
+          "diff": 0.2,
+          "mean": 7.914,
+          "deq_mean": 7.9,
+          "p98_truncated_daily": 26.16
+        },
+        "heritage-farm": {
+          "n": 82,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-30",
+          "p98": 9.341,
+          "deq_p98": 9.7,
+          "diff": -0.359,
+          "mean": 4.133,
+          "deq_mean": 4.2,
+          "p98_truncated_daily": 9.276
+        },
+        "newberry-condo": {
+          "n": 66,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-13",
+          "p98": 14.252,
+          "deq_p98": 14.5,
+          "diff": -0.248,
+          "mean": 5.679,
+          "deq_mean": 5.7,
+          "p98_truncated_daily": 14.2
+        },
+        "sterling-ms": {
+          "n": 51,
+          "first_day": "2026-06-18",
+          "last_day": "2026-08-07",
+          "p98": 40.442,
+          "deq_p98": 40.4,
+          "diff": 0.042,
+          "mean": 11.29,
+          "deq_mean": 11.3,
+          "p98_truncated_daily": 40.4
+        },
+        "steuart-weller": {
+          "n": 100,
+          "first_day": "2026-03-09",
+          "last_day": "2026-06-16",
+          "p98": 10.355,
+          "deq_p98": 10.2,
+          "diff": 0.155,
+          "mean": 4.567,
+          "deq_mean": 4.6,
+          "p98_truncated_daily": 10.31
+        },
+        "_matches_within_0.05": 5
+      },
+      "days_through_2026-08-07|iv_clock_zeros_retained": {
+        "golf-course": {
+          "n": 122,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-07",
+          "p98": 23.819,
+          "deq_p98": 23.8,
+          "diff": 0.019,
+          "mean": 7.334,
+          "deq_mean": 7.4,
+          "p98_truncated_daily": 23.78
+        },
+        "belfort-park": {
+          "n": 85,
+          "first_day": "2026-05-15",
+          "last_day": "2026-08-07",
+          "p98": 31.088,
+          "deq_p98": 31.4,
+          "diff": -0.312,
+          "mean": 9.08,
+          "deq_mean": 9.3,
+          "p98_truncated_daily": 31.06
+        },
+        "ashburn-collocated": {
+          "n": 152,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-07",
+          "p98": 25.466,
+          "deq_p98": 25.5,
+          "diff": -0.034,
+          "mean": 7.979,
+          "deq_mean": 8.1,
+          "p98_truncated_daily": 25.37
+        },
+        "dulles-area": {
+          "n": 152,
+          "first_day": "2026-03-09",
+          "last_day": "2026-08-07",
+          "p98": 18.22,
+          "deq_p98": 18.4,
+          "diff": -0.18,
+          "mean": 5.405,
+          "deq_mean": 5.6,
+          "p98_truncated_daily": 18.174
+        },
+        "farmwell-middle": {
+          "n": 122,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-07",
+          "p98": 26.081,
+          "deq_p98": 26.0,
+          "diff": 0.081,
+          "mean": 7.838,
+          "deq_mean": 7.9,
+          "p98_truncated_daily": 26.04
+        },
+        "heritage-farm": {
+          "n": 83,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-30",
+          "p98": 9.337,
+          "deq_p98": 9.7,
+          "diff": -0.363,
+          "mean": 4.086,
+          "deq_mean": 4.2,
+          "p98_truncated_daily": 9.272
+        },
+        "newberry-condo": {
+          "n": 66,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-13",
+          "p98": 14.252,
+          "deq_p98": 14.5,
+          "diff": -0.248,
+          "mean": 5.675,
+          "deq_mean": 5.7,
+          "p98_truncated_daily": 14.2
+        },
+        "sterling-ms": {
+          "n": 51,
+          "first_day": "2026-06-18",
+          "last_day": "2026-08-07",
+          "p98": 40.442,
+          "deq_p98": 40.4,
+          "diff": 0.042,
+          "mean": 11.157,
+          "deq_mean": 11.3,
+          "p98_truncated_daily": 40.4
+        },
+        "steuart-weller": {
+          "n": 100,
+          "first_day": "2026-03-09",
+          "last_day": "2026-06-16",
+          "p98": 10.195,
+          "deq_p98": 10.2,
+          "diff": -0.005,
+          "mean": 4.517,
+          "deq_mean": 4.6,
+          "p98_truncated_daily": 10.114
+        },
+        "_matches_within_0.05": 4
+      }
+    }
+  },
+  "task_b_sterling_sensitivity_aug_inputs": {
+    "i_standard_zeros_missing|cutoff_2026-08-07_0700_est": {
+      "n": 50,
+      "p98": 39.363,
+      "p98_truncated_daily": 39.346,
+      "top3_daily_means": [
+        95.593,
+        38.215,
+        24.947
+      ],
+      "deq_p98": 40.4
+    },
+    "i_standard_zeros_missing|no_cutoff_days_to_2026-08-07": {
+      "n": 51,
+      "p98": 38.215,
+      "p98_truncated_daily": 38.2,
+      "top3_daily_means": [
+        95.593,
+        38.215,
+        24.947
+      ],
+      "deq_p98": 40.4
+    },
+    "i_standard_zeros_missing|no_cutoff_days_to_2026-08-06": {
+      "n": 50,
+      "p98": 39.363,
+      "p98_truncated_daily": 39.346,
+      "top3_daily_means": [
+        95.593,
+        38.215,
+        24.947
+      ],
+      "deq_p98": 40.4
+    },
+    "ii_standard_zeros_retained|cutoff_2026-08-07_0700_est": {
+      "n": 50,
+      "p98": 39.363,
+      "p98_truncated_daily": 39.346,
+      "top3_daily_means": [
+        95.593,
+        38.215,
+        24.947
+      ],
+      "deq_p98": 40.4
+    },
+    "ii_standard_zeros_retained|no_cutoff_days_to_2026-08-07": {
+      "n": 51,
+      "p98": 38.215,
+      "p98_truncated_daily": 38.2,
+      "top3_daily_means": [
+        95.593,
+        38.215,
+        24.947
+      ],
+      "deq_p98": 40.4
+    },
+    "ii_standard_zeros_retained|no_cutoff_days_to_2026-08-06": {
+      "n": 50,
+      "p98": 39.363,
+      "p98_truncated_daily": 39.346,
+      "top3_daily_means": [
+        95.593,
+        38.215,
+        24.947
+      ],
+      "deq_p98": 40.4
+    },
+    "iii_clock_zeros_missing|cutoff_2026-08-07_0700_est": {
+      "n": 50,
+      "p98": 41.572,
+      "p98_truncated_daily": 41.53,
+      "top3_daily_means": [
+        96.954,
+        40.442,
+        24.703
+      ],
+      "deq_p98": 40.4
+    },
+    "iii_clock_zeros_missing|no_cutoff_days_to_2026-08-07": {
+      "n": 51,
+      "p98": 40.442,
+      "p98_truncated_daily": 40.4,
+      "top3_daily_means": [
+        96.954,
+        40.442,
+        24.703
+      ],
+      "deq_p98": 40.4
+    },
+    "iii_clock_zeros_missing|no_cutoff_days_to_2026-08-06": {
+      "n": 50,
+      "p98": 41.572,
+      "p98_truncated_daily": 41.53,
+      "top3_daily_means": [
+        96.954,
+        40.442,
+        24.703
+      ],
+      "deq_p98": 40.4
+    },
+    "iv_clock_zeros_retained|cutoff_2026-08-07_0700_est": {
+      "n": 50,
+      "p98": 41.572,
+      "p98_truncated_daily": 41.53,
+      "top3_daily_means": [
+        96.954,
+        40.442,
+        24.703
+      ],
+      "deq_p98": 40.4
+    },
+    "iv_clock_zeros_retained|no_cutoff_days_to_2026-08-07": {
+      "n": 51,
+      "p98": 40.442,
+      "p98_truncated_daily": 40.4,
+      "top3_daily_means": [
+        96.954,
+        40.442,
+        24.703
+      ],
+      "deq_p98": 40.4
+    },
+    "iv_clock_zeros_retained|no_cutoff_days_to_2026-08-06": {
+      "n": 50,
+      "p98": 41.572,
+      "p98_truncated_daily": 41.53,
+      "top3_daily_means": [
+        96.954,
+        40.442,
+        24.703
+      ],
+      "deq_p98": 40.4
+    }
+  },
+  "task_b_extra_no_completeness_threshold": {
+    "aug-2026 exports (2026-08-10)": {
+      "i_standard_zeros_missing": {
+        "golf-course": {
+          "n": 123,
+          "p98": 24.867,
+          "deq_p98": 23.8,
+          "diff": 1.067,
+          "mean": 7.364,
+          "deq_mean": 7.4
+        },
+        "belfort-park": {
+          "n": 86,
+          "p98": 30.217,
+          "deq_p98": 31.4,
+          "diff": -1.183,
+          "mean": 9.152,
+          "deq_mean": 9.3
+        },
+        "ashburn-collocated": {
+          "n": 153,
+          "p98": 25.815,
+          "deq_p98": 25.5,
+          "diff": 0.315,
+          "mean": 8.011,
+          "deq_mean": 8.1
+        },
+        "dulles-area": {
+          "n": 153,
+          "p98": 20.664,
+          "deq_p98": 18.4,
+          "diff": 2.264,
+          "mean": 5.548,
+          "deq_mean": 5.6
+        },
+        "farmwell-middle": {
+          "n": 123,
+          "p98": 27.126,
+          "deq_p98": 26.0,
+          "diff": 1.126,
+          "mean": 7.929,
+          "deq_mean": 7.9
+        },
+        "sterling-ms": {
+          "n": 52,
+          "p98": 37.95,
+          "deq_p98": 40.4,
+          "diff": -2.45,
+          "mean": 11.161,
+          "deq_mean": 11.3
+        }
+      },
+      "ii_standard_zeros_retained": {
+        "golf-course": {
+          "n": 123,
+          "p98": 24.867,
+          "deq_p98": 23.8,
+          "diff": 1.067,
+          "mean": 7.314,
+          "deq_mean": 7.4
+        },
+        "belfort-park": {
+          "n": 86,
+          "p98": 30.217,
+          "deq_p98": 31.4,
+          "diff": -1.183,
+          "mean": 9.002,
+          "deq_mean": 9.3
+        },
+        "ashburn-collocated": {
+          "n": 153,
+          "p98": 25.815,
+          "deq_p98": 25.5,
+          "diff": 0.315,
+          "mean": 7.945,
+          "deq_mean": 8.1
+        },
+        "dulles-area": {
+          "n": 153,
+          "p98": 20.664,
+          "deq_p98": 18.4,
+          "diff": 2.264,
+          "mean": 5.372,
+          "deq_mean": 5.6
+        },
+        "farmwell-middle": {
+          "n": 123,
+          "p98": 27.126,
+          "deq_p98": 26.0,
+          "diff": 1.126,
+          "mean": 7.802,
+          "deq_mean": 7.9
+        },
+        "sterling-ms": {
+          "n": 52,
+          "p98": 37.95,
+          "deq_p98": 40.4,
+          "diff": -2.45,
+          "mean": 11.041,
+          "deq_mean": 11.3
+        }
+      },
+      "iii_clock_zeros_missing": {
+        "golf-course": {
+          "n": 123,
+          "p98": 23.799,
+          "deq_p98": 23.8,
+          "diff": -0.001,
+          "mean": 7.366,
+          "deq_mean": 7.4
+        },
+        "belfort-park": {
+          "n": 86,
+          "p98": 30.778,
+          "deq_p98": 31.4,
+          "diff": -0.622,
+          "mean": 9.147,
+          "deq_mean": 9.3
+        },
+        "ashburn-collocated": {
+          "n": 153,
+          "p98": 25.436,
+          "deq_p98": 25.5,
+          "diff": -0.064,
+          "mean": 8.01,
+          "deq_mean": 8.1
+        },
+        "dulles-area": {
+          "n": 153,
+          "p98": 18.195,
+          "deq_p98": 18.4,
+          "diff": -0.205,
+          "mean": 5.56,
+          "deq_mean": 5.6
+        },
+        "farmwell-middle": {
+          "n": 123,
+          "p98": 26.021,
+          "deq_p98": 26.0,
+          "diff": 0.021,
+          "mean": 7.933,
+          "deq_mean": 7.9
+        },
+        "sterling-ms": {
+          "n": 52,
+          "p98": 40.127,
+          "deq_p98": 40.4,
+          "diff": -0.273,
+          "mean": 11.16,
+          "deq_mean": 11.3
+        }
+      },
+      "iv_clock_zeros_retained": {
+        "golf-course": {
+          "n": 123,
+          "p98": 23.799,
+          "deq_p98": 23.8,
+          "diff": -0.001,
+          "mean": 7.314,
+          "deq_mean": 7.4
+        },
+        "belfort-park": {
+          "n": 86,
+          "p98": 30.778,
+          "deq_p98": 31.4,
+          "diff": -0.622,
+          "mean": 9.001,
+          "deq_mean": 9.3
+        },
+        "ashburn-collocated": {
+          "n": 153,
+          "p98": 25.436,
+          "deq_p98": 25.5,
+          "diff": -0.064,
+          "mean": 7.944,
+          "deq_mean": 8.1
+        },
+        "dulles-area": {
+          "n": 153,
+          "p98": 18.195,
+          "deq_p98": 18.4,
+          "diff": -0.205,
+          "mean": 5.375,
+          "deq_mean": 5.6
+        },
+        "farmwell-middle": {
+          "n": 123,
+          "p98": 26.021,
+          "deq_p98": 26.0,
+          "diff": 0.021,
+          "mean": 7.803,
+          "deq_mean": 7.9
+        },
+        "sterling-ms": {
+          "n": 52,
+          "p98": 40.127,
+          "deq_p98": 40.4,
+          "diff": -0.273,
+          "mean": 11.037,
+          "deq_mean": 11.3
+        }
+      }
+    },
+    "freeze exports (2026-10-10)": {
+      "i_standard_zeros_missing": {
+        "golf-course": {
+          "n": 123,
+          "p98": 24.867,
+          "deq_p98": 23.8,
+          "diff": 1.067,
+          "mean": 7.364,
+          "deq_mean": 7.4
+        },
+        "belfort-park": {
+          "n": 86,
+          "p98": 30.217,
+          "deq_p98": 31.4,
+          "diff": -1.183,
+          "mean": 9.152,
+          "deq_mean": 9.3
+        },
+        "ashburn-collocated": {
+          "n": 153,
+          "p98": 25.815,
+          "deq_p98": 25.5,
+          "diff": 0.315,
+          "mean": 8.011,
+          "deq_mean": 8.1
+        },
+        "dulles-area": {
+          "n": 153,
+          "p98": 20.664,
+          "deq_p98": 18.4,
+          "diff": 2.264,
+          "mean": 5.548,
+          "deq_mean": 5.6
+        },
+        "farmwell-middle": {
+          "n": 123,
+          "p98": 27.126,
+          "deq_p98": 26.0,
+          "diff": 1.126,
+          "mean": 7.929,
+          "deq_mean": 7.9
+        },
+        "heritage-farm": {
+          "n": 84,
+          "p98": 9.726,
+          "deq_p98": 9.7,
+          "diff": 0.026,
+          "mean": 4.13,
+          "deq_mean": 4.2
+        },
+        "newberry-condo": {
+          "n": 68,
+          "p98": 14.677,
+          "deq_p98": 14.5,
+          "diff": 0.177,
+          "mean": 5.771,
+          "deq_mean": 5.7
+        },
+        "sterling-ms": {
+          "n": 52,
+          "p98": 37.95,
+          "deq_p98": 40.4,
+          "diff": -2.45,
+          "mean": 11.161,
+          "deq_mean": 11.3
+        },
+        "steuart-weller": {
+          "n": 102,
+          "p98": 10.174,
+          "deq_p98": 10.2,
+          "diff": -0.026,
+          "mean": 4.535,
+          "deq_mean": 4.6
+        }
+      },
+      "ii_standard_zeros_retained": {
+        "golf-course": {
+          "n": 123,
+          "p98": 24.867,
+          "deq_p98": 23.8,
+          "diff": 1.067,
+          "mean": 7.302,
+          "deq_mean": 7.4
+        },
+        "belfort-park": {
+          "n": 86,
+          "p98": 30.217,
+          "deq_p98": 31.4,
+          "diff": -1.183,
+          "mean": 9.001,
+          "deq_mean": 9.3
+        },
+        "ashburn-collocated": {
+          "n": 153,
+          "p98": 25.815,
+          "deq_p98": 25.5,
+          "diff": 0.315,
+          "mean": 7.943,
+          "deq_mean": 8.1
+        },
+        "dulles-area": {
+          "n": 153,
+          "p98": 20.664,
+          "deq_p98": 18.4,
+          "diff": 2.264,
+          "mean": 5.372,
+          "deq_mean": 5.6
+        },
+        "farmwell-middle": {
+          "n": 123,
+          "p98": 27.126,
+          "deq_p98": 26.0,
+          "diff": 1.126,
+          "mean": 7.797,
+          "deq_mean": 7.9
+        },
+        "heritage-farm": {
+          "n": 84,
+          "p98": 9.726,
+          "deq_p98": 9.7,
+          "diff": 0.026,
+          "mean": 4.067,
+          "deq_mean": 4.2
+        },
+        "newberry-condo": {
+          "n": 68,
+          "p98": 14.677,
+          "deq_p98": 14.5,
+          "diff": 0.177,
+          "mean": 5.768,
+          "deq_mean": 5.7
+        },
+        "sterling-ms": {
+          "n": 52,
+          "p98": 37.95,
+          "deq_p98": 40.4,
+          "diff": -2.45,
+          "mean": 11.034,
+          "deq_mean": 11.3
+        },
+        "steuart-weller": {
+          "n": 102,
+          "p98": 10.113,
+          "deq_p98": 10.2,
+          "diff": -0.087,
+          "mean": 4.486,
+          "deq_mean": 4.6
+        }
+      },
+      "iii_clock_zeros_missing": {
+        "golf-course": {
+          "n": 123,
+          "p98": 23.799,
+          "deq_p98": 23.8,
+          "diff": -0.001,
+          "mean": 7.366,
+          "deq_mean": 7.4
+        },
+        "belfort-park": {
+          "n": 86,
+          "p98": 30.778,
+          "deq_p98": 31.4,
+          "diff": -0.622,
+          "mean": 9.147,
+          "deq_mean": 9.3
+        },
+        "ashburn-collocated": {
+          "n": 153,
+          "p98": 25.436,
+          "deq_p98": 25.5,
+          "diff": -0.064,
+          "mean": 8.01,
+          "deq_mean": 8.1
+        },
+        "dulles-area": {
+          "n": 153,
+          "p98": 18.195,
+          "deq_p98": 18.4,
+          "diff": -0.205,
+          "mean": 5.56,
+          "deq_mean": 5.6
+        },
+        "farmwell-middle": {
+          "n": 123,
+          "p98": 26.021,
+          "deq_p98": 26.0,
+          "diff": 0.021,
+          "mean": 7.933,
+          "deq_mean": 7.9
+        },
+        "heritage-farm": {
+          "n": 84,
+          "p98": 9.333,
+          "deq_p98": 9.7,
+          "diff": -0.367,
+          "mean": 4.132,
+          "deq_mean": 4.2
+        },
+        "newberry-condo": {
+          "n": 68,
+          "p98": 14.369,
+          "deq_p98": 14.5,
+          "diff": -0.131,
+          "mean": 5.762,
+          "deq_mean": 5.7
+        },
+        "sterling-ms": {
+          "n": 52,
+          "p98": 40.127,
+          "deq_p98": 40.4,
+          "diff": -0.273,
+          "mean": 11.16,
+          "deq_mean": 11.3
+        },
+        "steuart-weller": {
+          "n": 102,
+          "p98": 10.341,
+          "deq_p98": 10.2,
+          "diff": 0.141,
+          "mean": 4.535,
+          "deq_mean": 4.6
+        }
+      },
+      "iv_clock_zeros_retained": {
+        "golf-course": {
+          "n": 123,
+          "p98": 23.799,
+          "deq_p98": 23.8,
+          "diff": -0.001,
+          "mean": 7.302,
+          "deq_mean": 7.4
+        },
+        "belfort-park": {
+          "n": 86,
+          "p98": 30.778,
+          "deq_p98": 31.4,
+          "diff": -0.622,
+          "mean": 9.0,
+          "deq_mean": 9.3
+        },
+        "ashburn-collocated": {
+          "n": 153,
+          "p98": 25.436,
+          "deq_p98": 25.5,
+          "diff": -0.064,
+          "mean": 7.942,
+          "deq_mean": 8.1
+        },
+        "dulles-area": {
+          "n": 153,
+          "p98": 18.195,
+          "deq_p98": 18.4,
+          "diff": -0.205,
+          "mean": 5.375,
+          "deq_mean": 5.6
+        },
+        "farmwell-middle": {
+          "n": 123,
+          "p98": 26.021,
+          "deq_p98": 26.0,
+          "diff": 0.021,
+          "mean": 7.798,
+          "deq_mean": 7.9
+        },
+        "heritage-farm": {
+          "n": 84,
+          "p98": 9.333,
+          "deq_p98": 9.7,
+          "diff": -0.367,
+          "mean": 4.068,
+          "deq_mean": 4.2
+        },
+        "newberry-condo": {
+          "n": 68,
+          "p98": 14.369,
+          "deq_p98": 14.5,
+          "diff": -0.131,
+          "mean": 5.759,
+          "deq_mean": 5.7
+        },
+        "sterling-ms": {
+          "n": 52,
+          "p98": 40.127,
+          "deq_p98": 40.4,
+          "diff": -0.273,
+          "mean": 11.03,
+          "deq_mean": 11.3
+        },
+        "steuart-weller": {
+          "n": 102,
+          "p98": 10.153,
+          "deq_p98": 10.2,
+          "diff": -0.047,
+          "mean": 4.486,
+          "deq_mean": 4.6
+        }
+      }
+    }
+  },
+  "task_e_share_below_35": {
+    "method": "EST binning, exact zeros excluded (pipeline default), 18-of-24, untruncated mean, strict < 35",
+    "all_sites": {
+      "site_days": 1299,
+      "below_35": 1288,
+      "share": 0.9915
+    },
+    "loudoun_sites_only": {
+      "site_days": 1231,
+      "below_35": 1220,
+      "share": 0.9911
+    },
+    "per_site": {
+      "ashburn-collocated": {
+        "complete_days": 215,
+        "below_35": 213,
+        "at_or_above_35": 2,
+        "first_day": "2026-03-09",
+        "last_day": "2026-10-10"
+      },
+      "belfort-park": {
+        "complete_days": 147,
+        "below_35": 145,
+        "at_or_above_35": 2,
+        "first_day": "2026-05-15",
+        "last_day": "2026-10-10"
+      },
+      "camp-snyder": {
+        "complete_days": 23,
+        "below_35": 23,
+        "at_or_above_35": 0,
+        "first_day": "2026-09-18",
+        "last_day": "2026-10-10"
+      },
+      "dulles-area": {
+        "complete_days": 209,
+        "below_35": 208,
+        "at_or_above_35": 1,
+        "first_day": "2026-03-09",
+        "last_day": "2026-10-10"
+      },
+      "evergreen-cc": {
+        "complete_days": 22,
+        "below_35": 22,
+        "at_or_above_35": 0,
+        "first_day": "2026-09-18",
+        "last_day": "2026-10-10"
+      },
+      "farmwell-middle": {
+        "complete_days": 160,
+        "below_35": 158,
+        "at_or_above_35": 2,
+        "first_day": "2026-04-08",
+        "last_day": "2026-09-16"
+      },
+      "golf-course": {
+        "complete_days": 161,
+        "below_35": 159,
+        "at_or_above_35": 2,
+        "first_day": "2026-04-08",
+        "last_day": "2026-09-16"
+      },
+      "heritage-farm": {
+        "complete_days": 82,
+        "below_35": 82,
+        "at_or_above_35": 0,
+        "first_day": "2026-03-09",
+        "last_day": "2026-05-30"
+      },
+      "newberry-condo": {
+        "complete_days": 66,
+        "below_35": 66,
+        "at_or_above_35": 0,
+        "first_day": "2026-03-09",
+        "last_day": "2026-05-13"
+      },
+      "sterling-ms": {
+        "complete_days": 91,
+        "below_35": 89,
+        "at_or_above_35": 2,
+        "first_day": "2026-06-18",
+        "last_day": "2026-09-16"
+      },
+      "steuart-weller": {
+        "complete_days": 100,
+        "below_35": 100,
+        "at_or_above_35": 0,
+        "first_day": "2026-03-09",
+        "last_day": "2026-06-16"
+      },
+      "vdot-mkc": {
+        "complete_days": 23,
+        "below_35": 23,
+        "at_or_above_35": 0,
+        "first_day": "2026-09-18",
+        "last_day": "2026-10-10"
+      }
+    }
+  }
+}

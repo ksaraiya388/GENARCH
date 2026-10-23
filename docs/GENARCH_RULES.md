@@ -87,7 +87,7 @@ The published `dailyAvg` file applies no threshold and is itself unfiltered — 
 
 ### Truncation
 
-DEQ truncates published values to one decimal. Do not round. Recomputed daily averages matched DEQ's published file on 126 of 131 days after accounting for truncation, mean absolute delta 0.0099 µg/m³.
+DEQ truncates published values to one decimal. Do not round. Recomputed daily averages matched DEQ's published file on 118 of 119 days (2026-03-03 to 2026-08-09; filtered dailyAvg file intersected with days meeting the 18-of-24 rule; mean absolute difference 0.0017 µg/m³) after accounting for truncation. An earlier figure of 126 of 131 (commit 03d8016, 2026-08-12) was computed without a completeness threshold, which this section excludes, and is superseded.
 
 ### Units
 
@@ -129,7 +129,11 @@ Kunak files carry no null code, flag, or qualifier column. DEQ's dashboard state
 
 ### Zeros
 
-Broad Run HS reports exact `0.0` on PM2.5 (53 rows), NO2 (780 rows, 20.2%), and VOCs (194 rows). No row has all three at zero, so these are per-pollutant floor clamping rather than device outage. Excluding them shifts the sensor mean by roughly 0.1 µg/m³. Whichever treatment you choose, state it.
+As of the 2026-08-10 export, Broad Run HS reports exact `0.0` on PM2.5 (53 rows), NO2 (780 rows, 20.2%), and VOCs (194 rows). A zero on one channel while the other channels carry values is read as per-pollutant floor clamping rather than device outage. Excluding those shifts the sensor mean by roughly 0.1 µg/m³. Whichever treatment you choose, state it.
+
+The Kunak dashboard has backfilled previously missing hours with rows in which every channel (NO2, CO, VOCs, PM2.5) is exactly zero: 9 hours as of the 2026-10-10 exports, listed in `docs/report-2026/AUDIT.md` round 2.
+
+Rows in which every pollutant channel is exactly zero are treated as missing in all computations. Exception: reproductions of DEQ fits that DEQ confirmed use zero retention (APEX 5 NO2) are computed from the inputs DEQ used (`FREEZE.json` `original_analysis_inputs`).
 
 ### Duplicates
 
@@ -137,7 +141,7 @@ The Broad Run HS export returned 4,721 rows against 3,862 unique timestamps. All
 
 ### Known gaps
 
-2026-03-08 02:00 does not exist in local time (spring forward). 2026-04-21 08:00 is a genuine one-hour gap. Render gaps as gaps, never as zero, never interpolated. Report the excluded count alongside every statistic.
+2026-03-08 02:00 does not exist in local time (spring forward). 2026-04-21 08:00 was a gap in every export through 2026-08-10; the 2026-10-10 export backfills that hour at the collocated site with NO2, CO, VOCs and PM2.5 all exactly zero, which the rule above treats as missing. Render gaps as gaps, never as zero, never interpolated. Report the excluded count alongside every statistic.
 
 ### Retired sites
 
@@ -206,7 +210,7 @@ FOIA 26-4646 and the released records are public at `vadeq.nextrequest.com/reque
 
 **The NO2 result is a result, not a limitation.** It has an n and a correlation coefficient and you produced it. It belongs in the results section alongside the PM2.5 comparison. The limitations box holds DEQ's two verbatim paragraphs, the ecological-fallacy disclosure, and the sub-threshold framing.
 
-**State the validation.** One sentence with the number: recomputed daily averages reproduce DEQ's published file on 126 of 131 days after truncation, mean absolute delta 0.0099 µg/m³. Almost nothing else on the page will carry that much weight per word.
+**State the validation.** One sentence with the number: recomputed daily averages reproduce DEQ's published file on 118 of 119 days (2026-03-03 to 2026-08-09; filtered dailyAvg file intersected with days meeting the 18-of-24 rule; mean absolute difference 0.0017 µg/m³) after truncation. Almost nothing else on the page will carry that much weight per word.
 
 ---
 
@@ -276,7 +280,7 @@ Not blocking:
 
 Marked by status. Nothing here is publishable until the corrected exclusion rule has been rerun.
 
-**Validated.** Recomputed daily PM2.5 averages match DEQ's published file on 126 of 131 days after truncation to one decimal. Mean absolute delta 0.0099 µg/m³. The five mismatches are all partial days; only one has ≥18 valid hours, differing by 0.2.
+**Validated.** Recomputed daily PM2.5 averages match DEQ's published file on 118 of 119 comparable days over the window 2026-03-03 to 2026-08-09, after truncation to one decimal. Mean absolute delta 0.0017 µg/m³. Comparable means the published day survives the null-code and `<` exclusions of Section 3 and the recomputed day clears 18 of 24 valid hours. The one mismatch is 2026-03-10, recomputed 5.0 against a published 5.2 at 23 valid hours. The earlier figure of 126 of 131 days at mean absolute delta 0.0099 reproduces over the same window but applies no completeness threshold and reads the published file unfiltered, which Section 3 rules out; it is superseded.
 
 **Resolved empirically.** DEQ's published daily average for 2026-07-17 is 170.8. Recomputing with the eight `h`-flagged hours included gives 170.8167, truncating to 170.8. Excluding them gives 129.89. DEQ includes `h`-flagged hours, so the 282.5 µg/m³ peak is agency-endorsed data.
 

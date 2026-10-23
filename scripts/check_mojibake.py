@@ -1,0 +1,228 @@
+"""Fail if any git-tracked text file contains mojibake or a leading BOM.
+
+Scans every file from ``git ls-files`` and skips binaries by extension and by
+a null-byte check. Prints ``file:line:snippet`` for each hit and exits 1 if
+any are found. Patterns are written as escapes so this file never matches
+itself, and any file that states them is expected to do the same.
+
+Box-drawing characters are legitimate in directory trees and ASCII tables, so
+they are read by signature rather than by character (``DECISIONS.md`` D22):
+
+  R-a  U+251C followed by a character that is neither whitespace nor
+       box-drawing (U+2500-U+257F).
+  R-b  any block element (U+2580-U+259F).
+  R-c  a box-drawing character other than U+2500 and U+2502 immediately
+       adjacent, on either side, to an ASCII letter or digit.
+  R-d  U+252C followed by anything other than U+2500 or whitespace.
+
+A tree or table keeps box-drawing characters next to each other and to
+whitespace. A cp437 round trip of double-encoded UTF-8 puts them against
+letters and digits, and pulls in block elements that no tree draws.
+
+U+2500 and U+2502 are out of R-c because a drawing does place them against
+text: a cell whose label exactly fills its width ends in a letter against the
+closing bar (the pipeline diagram in ``docs/METHODS.md``). R-d covers what
+that exclusion would otherwise let through, since a drawing only ever follows
+U+252C with U+2500.
+
+Raw source data under ``pipeline/sources/`` is skipped: those files are DEQ's
+bytes, hash-pinned in ``manifest.json``, and the readers that consume them
+already strip BOMs. Their hits are reported as ``INFO`` and never fail the
+run. There is no allowlist and no per-file exemption.
+
+A single line may carry the marker ``mojibake-doc`` when it intentionally
+documents the corruption itself, and the checker skips that line. The marker
+is per line, never per file; corrupted content is repaired rather than marked
+(``docs/report-2026/DECISIONS.md`` D14).
+
+Usage::
+
+    python scripts/check_mojibake.py
+    python scripts/check_mojibake.py --selftest
+"""
+
+from __future__ import annotations
+
+import re
+import subprocess
+import sys
+from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+
+# Double-encoded UTF-8 (read as cp1252/latin-1), plus the three box-drawing
+# signatures a drawing does not produce. Written as escapes, so this file
+# never matches itself.
+PATTERNS = [
+    re.compile(r"\u00c3"),        # A-tilde
+    re.compile(r"\u00c2"),        # A-circumflex
+    re.compile(r"\u00e2\u20ac"),  # a-circumflex + euro sign
+    # R-a. Light vertical and right, followed by a character that is neither
+    # whitespace nor box-drawing. End of line never matches: the following
+    # character has to exist.
+    re.compile(r"\u251c[^\s\u2500-\u257f]"),
+    # R-b. Any block element. Trees and tables draw with box-drawing
+    # characters; shades and half blocks arrive from a cp437 round trip.
+    re.compile(r"[\u2580-\u259f]"),
+    # R-c. A box-drawing character other than U+2500 and U+2502 touching an
+    # ASCII letter or digit on either side.
+    re.compile(r"[\u2501\u2503-\u257f][A-Za-z0-9]|[A-Za-z0-9][\u2501\u2503-\u257f]"),
+    # R-d. Light down and horizontal followed by anything but a horizontal
+    # or whitespace. Catches a space-separated cp437 run that R-c now lets
+    # past; in a drawing U+252C is always followed by U+2500.
+    re.compile(r"\u252c[^\u2500\s]"),
+]
+BOM = "\ufeff"
+
+# Line marker for a line that intentionally documents the corruption itself.
+# Scanned lines carrying it are skipped. Never used to silence real mojibake.
+DOC_MARKER = "mojibake-doc"
+
+# Raw source data: scanned and reported, never counted against the gate.
+INFO_ONLY_PREFIXES = ("pipeline/sources/",)
+
+BINARY_EXTENSIONS = {
+    ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".bmp", ".tif", ".tiff",
+    ".avif", ".pdf", ".xls", ".xlsx", ".docx", ".pptx", ".zip", ".gz", ".tgz",
+    ".bz2", ".xz", ".7z", ".woff", ".woff2", ".ttf", ".otf", ".eot", ".mp3",
+    ".mp4", ".mov", ".webm", ".wav", ".pyc", ".so", ".dll", ".exe", ".bin",
+    ".parquet", ".feather", ".sqlite", ".db", ".pkl", ".npy", ".npz",
+}
+
+SNIPPET_CHARS = 80
+
+
+def tracked_files() -> list[Path]:
+    out = subprocess.run(
+        ["git", "ls-files", "-z"],
+        cwd=REPO_ROOT,
+        check=True,
+        capture_output=True,
+    ).stdout
+    return [REPO_ROOT / p for p in out.decode("utf-8").split("\0") if p]
+
+
+def snippet(line: str, col: int) -> str:
+    start = max(0, col - SNIPPET_CHARS // 2)
+    text = line[start:start + SNIPPET_CHARS].strip()
+    return text.encode("unicode_escape").decode("ascii") if not text.isprintable() else text
+
+
+def scan_text(text: str) -> list[tuple[int, str]]:
+    hits: list[tuple[int, str]] = []
+    if text.startswith(BOM):
+        hits.append((1, "leading U+FEFF (BOM)"))
+        text = text[1:]
+    for lineno, line in enumerate(text.splitlines(), start=1):
+        if DOC_MARKER in line:
+            continue
+        cols = [m.start() for m in (p.search(line) for p in PATTERNS) if m]
+        if cols:
+            hits.append((lineno, snippet(line, min(cols))))
+    return hits
+
+
+def scan(path: Path) -> list[tuple[int, str]]:
+    if path.suffix.lower() in BINARY_EXTENSIONS or not path.is_file():
+        return []
+    data = path.read_bytes()
+    if b"\0" in data:
+        return []
+    return scan_text(data.decode("utf-8", errors="replace"))
+
+
+# Self-tests. Every string is written as escapes for the same reason the
+# patterns are. MUST_FLAG is real double-encoded UTF-8; MUST_PASS is drawing.
+MUST_FLAG = [
+    ("mojibake micro sign and superscript three",
+     "\u251c\u00e9\u252c\u2561g/m\u251c\u00e9\u252c\u2502"),
+    ("mojibake superscript two", "R\u251c\u00e9\u252c\u2593"),
+    ("a-circumflex plus euro sign", "0.08\u00e2\u20ac\"0.15"),
+    ("A-tilde plus copyright sign", "\u00c3\u00a9"),
+    ("leading BOM", "\ufeffplain ascii line\n"),
+    ("cp437 micro sign, bare", "\u252c\u2561g/m\u252c\u2502"),
+    ("cp437 superscript two in prose", "R\u252c\u2593 to 0.549"),
+    ("cp437 micro sign after a number", "2.12 \u252c\u2561g/m\u252c\u2502"),
+    ("cp437 degree sign", "25 \u252c\u2591C"),
+    ("cp437 micro sign in a unit field",
+     "unit: \"\u252c\u2561g/m\u252c\u2502\""),
+    ("cp437 superscript three, space separated", "10 \u252c\u2502"),
+    ("cp437 middle dot, space separated", "a \u252c\u2556 b"),
+    ("cp437 BOM at the head of a diff line",
+     "+\u2229\u2557\u2510import Link"),
+]
+MUST_PASS = [
+    ("tree branch", "\u251c\u2500\u2500 src/"),
+    ("tree continuation", "\u2502   \u2514\u2500\u2500 page.tsx"),
+    ("table top border", "\u250c\u2500\u2500\u252c\u2500\u2500\u2510"),
+    ("table row separator", "\u251c\u2500\u253c\u2500\u2524"),
+    ("table data row", "\u2502 376  \u2502 text \u2502"),
+    ("tree leaf with a path",
+     "\u251c\u2500 site/src/app/community/page.tsx"),
+    ("tree last leaf", "\u2514\u2500\u2500 page.tsx"),
+    ("pipeline diagram row, tight cell",
+     "\u2502 Ingest  \u2502 \u2192 \u2502 Normalize \u2502 \u2192 \u2502 "
+     "Annotate \u2502 \u2192 \u2502 Score \u2502 \u2192 \u2502 Emit \u2502 "
+     "\u2192 \u2502 Validate\u2502 \u2192 \u2502 Package \u2502"),
+    ("tee in a horizontal rule", "\u2500\u252c\u2500"),
+]
+
+
+def selftest() -> int:
+    failures = 0
+    for want_hit, cases in ((True, MUST_FLAG), (False, MUST_PASS)):
+        for name, text in cases:
+            hits = scan_text(text)
+            ok = bool(hits) is want_hit
+            failures += not ok
+            expect = "FLAG" if want_hit else "PASS"
+            got = "FLAG" if hits else "PASS"
+            mark = "ok  " if ok else "FAIL"
+            detail = f"  {hits}" if hits else ""
+            print(f"{mark} expect {expect} got {got}  {name}{detail}")
+    print()
+    if failures:
+        print(f"SELFTEST FAIL: {failures} of "
+              f"{len(MUST_FLAG) + len(MUST_PASS)} case(s)", file=sys.stderr)
+        return 1
+    print(f"SELFTEST OK: {len(MUST_FLAG) + len(MUST_PASS)} case(s)")
+    return 0
+
+
+def main() -> int:
+    if "--selftest" in sys.argv[1:]:
+        return selftest()
+    total = 0
+    files_hit = 0
+    info_total = 0
+    info_files = 0
+    for path in tracked_files():
+        hits = scan(path)
+        if not hits:
+            continue
+        rel = path.relative_to(REPO_ROOT).as_posix()
+        if rel.startswith(INFO_ONLY_PREFIXES):
+            info_files += 1
+            for lineno, text in hits:
+                info_total += 1
+                print(f"INFO {rel}:{lineno}:{text}")
+            continue
+        files_hit += 1
+        for lineno, text in hits:
+            total += 1
+            print(f"{rel}:{lineno}:{text}")
+    if info_total:
+        print(
+            f"\nINFO: {info_total} hit(s) in {info_files} raw source file(s) under "
+            f"{', '.join(INFO_ONLY_PREFIXES)}; not counted"
+        )
+    if total:
+        print(f"\nFAIL: {total} hit(s) in {files_hit} file(s)", file=sys.stderr)
+        return 1
+    print("OK: no mojibake or leading BOM in tracked text files")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.stdout.reconfigure(encoding="utf-8", errors="backslashreplace")
+    sys.exit(main())

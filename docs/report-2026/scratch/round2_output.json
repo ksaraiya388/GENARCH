@@ -1,0 +1,1545 @@
+{
+  "inputs": {
+    "original inputs (2026-08-10 exports)": [
+      "ashburn-collocated_multi_2026-03-03_2026-08-10.csv",
+      "belfort-park_multi_2026-03-03_2026-08-10.csv",
+      "dulles-area_multi_2026-03-03_2026-08-10.csv",
+      "farmwell-middle_multi_2026-03-03_2026-08-10.csv",
+      "golf-course_multi_2026-03-03_2026-08-10.csv",
+      "sterling-ms_multi_2026-03-03_2026-08-10.csv"
+    ],
+    "current freeze (2026-10-10 exports)": [
+      "ashburn-collocated_multi_2026-03-03_2026-10-10.csv",
+      "belfort-park_multi_2026-03-03_2026-10-10.csv",
+      "camp-snyder_multi_2026-03-03_2026-10-10.csv",
+      "dulles-area_multi_2026-03-03_2026-10-10.csv",
+      "evergreen-cc_multi_2026-03-03_2026-10-10.csv",
+      "farmwell-middle_multi_2026-03-03_2026-10-10.csv",
+      "golf-course_multi_2026-03-03_2026-10-10.csv",
+      "heritage-farm_multi_2026-03-03_2026-10-10.csv",
+      "newberry-condo_multi_2026-03-03_2026-10-10.csv",
+      "sterling-ms_multi_2026-03-03_2026-10-10.csv",
+      "steuart-weller_multi_2026-03-03_2026-10-10.csv",
+      "vdot-mkc_multi_2026-03-03_2026-10-10.csv"
+    ],
+    "regulatory (frozen, FOIA 26-4646)": [
+      "AshburnPM2.5_030326_081026.xls",
+      "AshburnNO2_hourly_030326_081026.xls",
+      "AuroraHillsCO_hourly_030326_081026.xls"
+    ],
+    "published_daily_file": "AshburnPM2.5_dailyAvg_030326_081026.xls"
+  },
+  "task_1a_common_window_clock_zeros_missing": {
+    "original inputs (2026-08-10 exports)": {
+      "whole_days_through_2026-08-07": {
+        "per_site": {
+          "farmwell-middle": {
+            "valid_days": 50,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-07",
+            "p98": 47.916,
+            "rank": 1
+          },
+          "belfort-park": {
+            "valid_days": 50,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-07",
+            "p98": 42.689,
+            "rank": 2
+          },
+          "golf-course": {
+            "valid_days": 51,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-07",
+            "p98": 42.62,
+            "rank": 3
+          },
+          "sterling-ms": {
+            "valid_days": 51,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-07",
+            "p98": 40.442,
+            "rank": 4
+          },
+          "ashburn-collocated": {
+            "valid_days": 51,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-07",
+            "p98": 39.167,
+            "rank": 5
+          },
+          "dulles-area": {
+            "valid_days": 49,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-06",
+            "p98": 31.783,
+            "rank": 6
+          }
+        },
+        "count_above_35": 5,
+        "deq_table4_sensor": "sterling-ms",
+        "deq_table4_sensor_rank": 4,
+        "deq_table4_sensor_p98": 40.442,
+        "ranking_high_to_low": [
+          "farmwell-middle",
+          "belfort-park",
+          "golf-course",
+          "sterling-ms",
+          "ashburn-collocated",
+          "dulles-area"
+        ]
+      },
+      "deq_cutoff_2026-08-07_0700_est": {
+        "per_site": {
+          "farmwell-middle": {
+            "valid_days": 49,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-06",
+            "p98": 49.157,
+            "rank": 1
+          },
+          "belfort-park": {
+            "valid_days": 49,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-06",
+            "p98": 43.756,
+            "rank": 2
+          },
+          "golf-course": {
+            "valid_days": 50,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-06",
+            "p98": 43.71,
+            "rank": 3
+          },
+          "sterling-ms": {
+            "valid_days": 50,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-06",
+            "p98": 41.572,
+            "rank": 4
+          },
+          "ashburn-collocated": {
+            "valid_days": 50,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-06",
+            "p98": 40.218,
+            "rank": 5
+          },
+          "dulles-area": {
+            "valid_days": 49,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-06",
+            "p98": 31.783,
+            "rank": 6
+          }
+        },
+        "count_above_35": 5,
+        "deq_table4_sensor": "sterling-ms",
+        "deq_table4_sensor_rank": 4,
+        "deq_table4_sensor_p98": 41.572,
+        "ranking_high_to_low": [
+          "farmwell-middle",
+          "belfort-park",
+          "golf-course",
+          "sterling-ms",
+          "ashburn-collocated",
+          "dulles-area"
+        ]
+      }
+    },
+    "current freeze (2026-10-10 exports)": {
+      "whole_days_through_2026-08-07": {
+        "per_site": {
+          "farmwell-middle": {
+            "valid_days": 50,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-07",
+            "p98": 47.916,
+            "rank": 1
+          },
+          "belfort-park": {
+            "valid_days": 50,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-07",
+            "p98": 42.689,
+            "rank": 2
+          },
+          "golf-course": {
+            "valid_days": 51,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-07",
+            "p98": 42.62,
+            "rank": 3
+          },
+          "sterling-ms": {
+            "valid_days": 51,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-07",
+            "p98": 40.442,
+            "rank": 4
+          },
+          "ashburn-collocated": {
+            "valid_days": 51,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-07",
+            "p98": 39.167,
+            "rank": 5
+          },
+          "dulles-area": {
+            "valid_days": 49,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-06",
+            "p98": 31.783,
+            "rank": 6
+          }
+        },
+        "count_above_35": 5,
+        "deq_table4_sensor": "sterling-ms",
+        "deq_table4_sensor_rank": 4,
+        "deq_table4_sensor_p98": 40.442,
+        "ranking_high_to_low": [
+          "farmwell-middle",
+          "belfort-park",
+          "golf-course",
+          "sterling-ms",
+          "ashburn-collocated",
+          "dulles-area"
+        ]
+      },
+      "deq_cutoff_2026-08-07_0700_est": {
+        "per_site": {
+          "farmwell-middle": {
+            "valid_days": 49,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-06",
+            "p98": 49.157,
+            "rank": 1
+          },
+          "belfort-park": {
+            "valid_days": 49,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-06",
+            "p98": 43.756,
+            "rank": 2
+          },
+          "golf-course": {
+            "valid_days": 50,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-06",
+            "p98": 43.71,
+            "rank": 3
+          },
+          "sterling-ms": {
+            "valid_days": 50,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-06",
+            "p98": 41.572,
+            "rank": 4
+          },
+          "ashburn-collocated": {
+            "valid_days": 50,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-06",
+            "p98": 40.218,
+            "rank": 5
+          },
+          "dulles-area": {
+            "valid_days": 49,
+            "first_day": "2026-06-18",
+            "last_day": "2026-08-06",
+            "p98": 31.783,
+            "rank": 6
+          }
+        },
+        "count_above_35": 5,
+        "deq_table4_sensor": "sterling-ms",
+        "deq_table4_sensor_rank": 4,
+        "deq_table4_sensor_p98": 41.572,
+        "ranking_high_to_low": [
+          "farmwell-middle",
+          "belfort-park",
+          "golf-course",
+          "sterling-ms",
+          "ashburn-collocated",
+          "dulles-area"
+        ]
+      }
+    }
+  },
+  "task_1b_collocation": {
+    "original inputs (2026-08-10 exports)": {
+      "unit_id": {
+        "PM2.5|apex-14": {
+          "n": 697,
+          "intercept": 1.299,
+          "slope": 0.831,
+          "r2": 0.725,
+          "retains_exact_zeros": false,
+          "first_pair_ts_est": "2026-03-08 22:00:00",
+          "last_pair_ts_est": "2026-04-07 21:00:00"
+        },
+        "PM2.5|apex-05": {
+          "n": 2111,
+          "intercept": -4.678,
+          "slope": 1.665,
+          "r2": 0.837,
+          "retains_exact_zeros": false,
+          "first_pair_ts_est": "2026-04-07 22:00:00",
+          "last_pair_ts_est": "2026-08-07 07:00:00"
+        },
+        "NO2|apex-14": {
+          "n": 589,
+          "intercept": 2.186,
+          "slope": 1.075,
+          "r2": 0.497,
+          "retains_exact_zeros": false,
+          "first_pair_ts_est": "2026-03-03 00:00:00",
+          "last_pair_ts_est": "2026-04-07 21:00:00"
+        },
+        "NO2|apex-05": {
+          "n": 2745,
+          "intercept": 1.835,
+          "slope": 0.319,
+          "r2": 0.207,
+          "retains_exact_zeros": true,
+          "first_pair_ts_est": "2026-04-07 22:00:00",
+          "last_pair_ts_est": "2026-08-07 07:00:00"
+        }
+      },
+      "date": {
+        "PM2.5|apex-14": {
+          "n": 699,
+          "intercept": 1.293,
+          "slope": 0.832,
+          "r2": 0.725,
+          "retains_exact_zeros": false,
+          "first_pair_ts_est": "2026-03-08 22:00:00",
+          "last_pair_ts_est": "2026-04-07 23:00:00"
+        },
+        "PM2.5|apex-05": {
+          "n": 2109,
+          "intercept": -4.681,
+          "slope": 1.665,
+          "r2": 0.837,
+          "retains_exact_zeros": false,
+          "first_pair_ts_est": "2026-04-08 00:00:00",
+          "last_pair_ts_est": "2026-08-07 07:00:00"
+        },
+        "NO2|apex-14": {
+          "n": 591,
+          "intercept": 2.196,
+          "slope": 1.065,
+          "r2": 0.491,
+          "retains_exact_zeros": false,
+          "first_pair_ts_est": "2026-03-03 00:00:00",
+          "last_pair_ts_est": "2026-04-07 23:00:00"
+        },
+        "NO2|apex-05": {
+          "n": 2743,
+          "intercept": 1.835,
+          "slope": 0.319,
+          "r2": 0.207,
+          "retains_exact_zeros": true,
+          "first_pair_ts_est": "2026-04-08 00:00:00",
+          "last_pair_ts_est": "2026-08-07 07:00:00"
+        }
+      }
+    },
+    "current freeze (2026-10-10 exports)": {
+      "unit_id": {
+        "PM2.5|apex-14": {
+          "n": 697,
+          "intercept": 1.299,
+          "slope": 0.831,
+          "r2": 0.725,
+          "retains_exact_zeros": false,
+          "first_pair_ts_est": "2026-03-08 22:00:00",
+          "last_pair_ts_est": "2026-04-07 21:00:00"
+        },
+        "PM2.5|apex-05": {
+          "n": 2111,
+          "intercept": -4.678,
+          "slope": 1.665,
+          "r2": 0.837,
+          "retains_exact_zeros": false,
+          "first_pair_ts_est": "2026-04-07 22:00:00",
+          "last_pair_ts_est": "2026-08-07 07:00:00"
+        },
+        "NO2|apex-14": {
+          "n": 589,
+          "intercept": 2.186,
+          "slope": 1.075,
+          "r2": 0.497,
+          "retains_exact_zeros": false,
+          "first_pair_ts_est": "2026-03-03 00:00:00",
+          "last_pair_ts_est": "2026-04-07 21:00:00"
+        },
+        "NO2|apex-05": {
+          "n": 2746,
+          "intercept": 1.847,
+          "slope": 0.317,
+          "r2": 0.204,
+          "retains_exact_zeros": true,
+          "first_pair_ts_est": "2026-04-07 22:00:00",
+          "last_pair_ts_est": "2026-08-07 07:00:00"
+        }
+      },
+      "date": {
+        "PM2.5|apex-14": {
+          "n": 699,
+          "intercept": 1.293,
+          "slope": 0.832,
+          "r2": 0.725,
+          "retains_exact_zeros": false,
+          "first_pair_ts_est": "2026-03-08 22:00:00",
+          "last_pair_ts_est": "2026-04-07 23:00:00"
+        },
+        "PM2.5|apex-05": {
+          "n": 2109,
+          "intercept": -4.681,
+          "slope": 1.665,
+          "r2": 0.837,
+          "retains_exact_zeros": false,
+          "first_pair_ts_est": "2026-04-08 00:00:00",
+          "last_pair_ts_est": "2026-08-07 07:00:00"
+        },
+        "NO2|apex-14": {
+          "n": 591,
+          "intercept": 2.196,
+          "slope": 1.065,
+          "r2": 0.491,
+          "retains_exact_zeros": false,
+          "first_pair_ts_est": "2026-03-03 00:00:00",
+          "last_pair_ts_est": "2026-04-07 23:00:00"
+        },
+        "NO2|apex-05": {
+          "n": 2744,
+          "intercept": 1.847,
+          "slope": 0.317,
+          "r2": 0.204,
+          "retains_exact_zeros": true,
+          "first_pair_ts_est": "2026-04-08 00:00:00",
+          "last_pair_ts_est": "2026-08-07 07:00:00"
+        }
+      }
+    }
+  },
+  "task_1b_collocation_rules_s9": {
+    "PM2.5|apex-14": {
+      "deq": "y = 1.3 + 0.83x, R2 = 0.73",
+      "recomputed": {
+        "intercept": 1.299,
+        "slope": 0.831,
+        "r2": 0.725,
+        "n": 697
+      }
+    },
+    "PM2.5|apex-05": {
+      "deq": "y = -4.7 + 1.7x, R2 = 0.84",
+      "recomputed": {
+        "intercept": -4.678,
+        "slope": 1.665,
+        "r2": 0.837,
+        "n": 2111
+      }
+    },
+    "NO2|apex-14": {
+      "deq": "y = 2.2 + 1.1x, R2 = 0.49",
+      "recomputed": {
+        "intercept": 2.186,
+        "slope": 1.075,
+        "r2": 0.497,
+        "n": 589
+      }
+    },
+    "NO2|apex-05": {
+      "deq": "y = 1.8 + 0.32x, R2 = 0.21 (corrected 2026-08-19)",
+      "recomputed": {
+        "intercept": 1.835,
+        "slope": 0.319,
+        "r2": 0.207,
+        "n": 2745
+      }
+    }
+  },
+  "task_1b_reconciliation": {
+    "original inputs (2026-08-10 exports)": {
+      "strict_18_of_24": {
+        "comparable_days": 119,
+        "matches": 118,
+        "statement": "118 of 119",
+        "mean_absolute_difference": 0.0017,
+        "first_day": "2026-03-03",
+        "last_day": "2026-08-09",
+        "mismatches": [
+          {
+            "date": "2026-03-10",
+            "recomputed": "5.0",
+            "published": "5.2",
+            "delta": -0.2,
+            "valid_hours": 23,
+            "meets_18_of_24": true
+          }
+        ]
+      },
+      "all_published_days": {
+        "comparable_days": 120,
+        "matches": 118,
+        "statement": "118 of 120",
+        "mean_absolute_difference": 0.0042,
+        "first_day": "2026-03-03",
+        "last_day": "2026-08-09",
+        "mismatches": [
+          {
+            "date": "2026-03-10",
+            "recomputed": "5.0",
+            "published": "5.2",
+            "delta": -0.2,
+            "valid_hours": 23,
+            "meets_18_of_24": true
+          },
+          {
+            "date": "2026-06-16",
+            "recomputed": "3.3",
+            "published": "3.0",
+            "delta": 0.3,
+            "valid_hours": 10,
+            "meets_18_of_24": false
+          }
+        ]
+      },
+      "published_file": {
+        "valid_days": 120,
+        "first_day": "2026-03-03",
+        "last_day": "2026-08-09"
+      },
+      "recomputed_any_hours": {
+        "days": 132,
+        "first_day": "2026-03-03",
+        "last_day": "2026-08-10",
+        "days_meeting_18_of_24": 121
+      },
+      "published_days_without_recomputed_hours": [],
+      "published_days_below_18_hours": [
+        "2026-06-16"
+      ],
+      "recomputed_18_of_24_days_not_in_published": [
+        "2026-07-15",
+        "2026-07-16"
+      ]
+    },
+    "current freeze (2026-10-10 exports)": {
+      "strict_18_of_24": {
+        "comparable_days": 119,
+        "matches": 118,
+        "statement": "118 of 119",
+        "mean_absolute_difference": 0.0017,
+        "first_day": "2026-03-03",
+        "last_day": "2026-08-09",
+        "mismatches": [
+          {
+            "date": "2026-03-10",
+            "recomputed": "5.0",
+            "published": "5.2",
+            "delta": -0.2,
+            "valid_hours": 23,
+            "meets_18_of_24": true
+          }
+        ]
+      },
+      "all_published_days": {
+        "comparable_days": 120,
+        "matches": 118,
+        "statement": "118 of 120",
+        "mean_absolute_difference": 0.0042,
+        "first_day": "2026-03-03",
+        "last_day": "2026-08-09",
+        "mismatches": [
+          {
+            "date": "2026-03-10",
+            "recomputed": "5.0",
+            "published": "5.2",
+            "delta": -0.2,
+            "valid_hours": 23,
+            "meets_18_of_24": true
+          },
+          {
+            "date": "2026-06-16",
+            "recomputed": "3.3",
+            "published": "3.0",
+            "delta": 0.3,
+            "valid_hours": 10,
+            "meets_18_of_24": false
+          }
+        ]
+      },
+      "published_file": {
+        "valid_days": 120,
+        "first_day": "2026-03-03",
+        "last_day": "2026-08-09"
+      },
+      "recomputed_any_hours": {
+        "days": 132,
+        "first_day": "2026-03-03",
+        "last_day": "2026-08-10",
+        "days_meeting_18_of_24": 121
+      },
+      "published_days_without_recomputed_hours": [],
+      "published_days_below_18_hours": [
+        "2026-06-16"
+      ],
+      "recomputed_18_of_24_days_not_in_published": [
+        "2026-07-15",
+        "2026-07-16"
+      ]
+    }
+  },
+  "task_1b_reconciliation_note": "The daily reconciliation compares the regulatory monitor's recomputed daily means against DEQ's published dailyAvg file. Neither side reads a Kunak export, so it is identical under both input sets by construction.",
+  "task_1b_changed_timestamps": {
+    "compared_sites": [
+      "ashburn-collocated",
+      "belfort-park",
+      "dulles-area",
+      "farmwell-middle",
+      "golf-course",
+      "sterling-ms"
+    ],
+    "august_readings": 51441,
+    "freeze_readings_same_sites": 96988,
+    "changed_count": 0,
+    "changed": [],
+    "present_in_august_absent_from_freeze": [],
+    "readings_added_after_august_cutoff": {
+      "ashburn-collocated": 9722,
+      "belfort-park": 7983,
+      "dulles-area": 9719,
+      "farmwell-middle": 6604,
+      "golf-course": 6608,
+      "sterling-ms": 4911
+    }
+  },
+  "task_1c_r2_window": {
+    "strict_18_of_24": {
+      "comparable_days": 119,
+      "matches": 118,
+      "statement": "118 of 119",
+      "mean_absolute_difference": 0.0017,
+      "first_day": "2026-03-03",
+      "last_day": "2026-08-09",
+      "mismatches": [
+        {
+          "date": "2026-03-10",
+          "recomputed": "5.0",
+          "published": "5.2",
+          "delta": -0.2,
+          "valid_hours": 23,
+          "meets_18_of_24": true
+        }
+      ]
+    },
+    "all_published_days": {
+      "comparable_days": 120,
+      "matches": 118,
+      "statement": "118 of 120",
+      "mean_absolute_difference": 0.0042,
+      "first_day": "2026-03-03",
+      "last_day": "2026-08-09",
+      "mismatches": [
+        {
+          "date": "2026-03-10",
+          "recomputed": "5.0",
+          "published": "5.2",
+          "delta": -0.2,
+          "valid_hours": 23,
+          "meets_18_of_24": true
+        },
+        {
+          "date": "2026-06-16",
+          "recomputed": "3.3",
+          "published": "3.0",
+          "delta": 0.3,
+          "valid_hours": 10,
+          "meets_18_of_24": false
+        }
+      ]
+    },
+    "published_file": {
+      "valid_days": 120,
+      "first_day": "2026-03-03",
+      "last_day": "2026-08-09"
+    },
+    "recomputed_any_hours": {
+      "days": 132,
+      "first_day": "2026-03-03",
+      "last_day": "2026-08-10",
+      "days_meeting_18_of_24": 121
+    },
+    "published_days_without_recomputed_hours": [],
+    "published_days_below_18_hours": [
+      "2026-06-16"
+    ],
+    "recomputed_18_of_24_days_not_in_published": [
+      "2026-07-15",
+      "2026-07-16"
+    ]
+  },
+  "task_1d_retired_sites": {
+    "retired_pm25_ended_before_the_2026-08-07_edition": {
+      "heritage-farm": {
+        "standard": {
+          "record_days": 82,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-30",
+          "p98": 9.73,
+          "deq_p98": 9.7,
+          "diff_vs_deq": 0.03,
+          "mean": 4.13,
+          "deq_mean": 4.2,
+          "median": 3.498,
+          "deq_median": 3.5,
+          "end_date_sweep_within_0.05": [
+            {
+              "last_day": "2026-04-30",
+              "n": 53,
+              "p98": 9.715,
+              "diff_vs_deq": 0.015
+            },
+            {
+              "last_day": "2026-05-01",
+              "n": 54,
+              "p98": 9.674,
+              "diff_vs_deq": -0.026
+            },
+            {
+              "last_day": "2026-05-20",
+              "n": 73,
+              "p98": 9.749,
+              "diff_vs_deq": 0.049
+            },
+            {
+              "last_day": "2026-05-21",
+              "n": 74,
+              "p98": 9.747,
+              "diff_vs_deq": 0.047
+            },
+            {
+              "last_day": "2026-05-22",
+              "n": 75,
+              "p98": 9.745,
+              "diff_vs_deq": 0.045
+            },
+            {
+              "last_day": "2026-05-23",
+              "n": 76,
+              "p98": 9.743,
+              "diff_vs_deq": 0.043
+            },
+            {
+              "last_day": "2026-05-24",
+              "n": 77,
+              "p98": 9.741,
+              "diff_vs_deq": 0.041
+            },
+            {
+              "last_day": "2026-05-26",
+              "n": 78,
+              "p98": 9.739,
+              "diff_vs_deq": 0.039
+            },
+            {
+              "last_day": "2026-05-27",
+              "n": 79,
+              "p98": 9.736,
+              "diff_vs_deq": 0.036
+            },
+            {
+              "last_day": "2026-05-28",
+              "n": 80,
+              "p98": 9.734,
+              "diff_vs_deq": 0.034
+            },
+            {
+              "last_day": "2026-05-29",
+              "n": 81,
+              "p98": 9.732,
+              "diff_vs_deq": 0.032
+            },
+            {
+              "last_day": "2026-05-30",
+              "n": 82,
+              "p98": 9.73,
+              "diff_vs_deq": 0.03
+            }
+          ],
+          "end_date_sweep_best": {
+            "last_day": "2026-04-30",
+            "n": 53,
+            "p98": 9.715,
+            "diff_vs_deq": 0.015
+          },
+          "end_date_sweep_tail": [
+            {
+              "last_day": "2026-05-24",
+              "n": 77,
+              "p98": 9.741,
+              "diff_vs_deq": 0.041
+            },
+            {
+              "last_day": "2026-05-26",
+              "n": 78,
+              "p98": 9.739,
+              "diff_vs_deq": 0.039
+            },
+            {
+              "last_day": "2026-05-27",
+              "n": 79,
+              "p98": 9.736,
+              "diff_vs_deq": 0.036
+            },
+            {
+              "last_day": "2026-05-28",
+              "n": 80,
+              "p98": 9.734,
+              "diff_vs_deq": 0.034
+            },
+            {
+              "last_day": "2026-05-29",
+              "n": 81,
+              "p98": 9.732,
+              "diff_vs_deq": 0.032
+            },
+            {
+              "last_day": "2026-05-30",
+              "n": 82,
+              "p98": 9.73,
+              "diff_vs_deq": 0.03
+            }
+          ]
+        },
+        "clock": {
+          "record_days": 82,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-30",
+          "p98": 9.341,
+          "deq_p98": 9.7,
+          "diff_vs_deq": -0.359,
+          "mean": 4.133,
+          "deq_mean": 4.2,
+          "median": 3.595,
+          "deq_median": 3.5,
+          "end_date_sweep_within_0.05": [
+            {
+              "last_day": "2026-04-24",
+              "n": 47,
+              "p98": 9.724,
+              "diff_vs_deq": 0.024
+            },
+            {
+              "last_day": "2026-04-25",
+              "n": 48,
+              "p98": 9.658,
+              "diff_vs_deq": -0.042
+            }
+          ],
+          "end_date_sweep_best": {
+            "last_day": "2026-04-24",
+            "n": 47,
+            "p98": 9.724,
+            "diff_vs_deq": 0.024
+          },
+          "end_date_sweep_tail": [
+            {
+              "last_day": "2026-05-24",
+              "n": 77,
+              "p98": 9.36,
+              "diff_vs_deq": -0.34
+            },
+            {
+              "last_day": "2026-05-26",
+              "n": 78,
+              "p98": 9.356,
+              "diff_vs_deq": -0.344
+            },
+            {
+              "last_day": "2026-05-27",
+              "n": 79,
+              "p98": 9.353,
+              "diff_vs_deq": -0.347
+            },
+            {
+              "last_day": "2026-05-28",
+              "n": 80,
+              "p98": 9.349,
+              "diff_vs_deq": -0.351
+            },
+            {
+              "last_day": "2026-05-29",
+              "n": 81,
+              "p98": 9.345,
+              "diff_vs_deq": -0.355
+            },
+            {
+              "last_day": "2026-05-30",
+              "n": 82,
+              "p98": 9.341,
+              "diff_vs_deq": -0.359
+            }
+          ]
+        }
+      },
+      "newberry-condo": {
+        "standard": {
+          "record_days": 66,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-13",
+          "p98": 14.519,
+          "deq_p98": 14.5,
+          "diff_vs_deq": 0.019,
+          "mean": 5.685,
+          "deq_mean": 5.7,
+          "median": 4.945,
+          "deq_median": 4.9,
+          "end_date_sweep_within_0.05": [
+            {
+              "last_day": "2026-05-13",
+              "n": 66,
+              "p98": 14.519,
+              "diff_vs_deq": 0.019
+            }
+          ],
+          "end_date_sweep_best": {
+            "last_day": "2026-05-13",
+            "n": 66,
+            "p98": 14.519,
+            "diff_vs_deq": 0.019
+          },
+          "end_date_sweep_tail": [
+            {
+              "last_day": "2026-05-08",
+              "n": 61,
+              "p98": 14.776,
+              "diff_vs_deq": 0.276
+            },
+            {
+              "last_day": "2026-05-09",
+              "n": 62,
+              "p98": 14.725,
+              "diff_vs_deq": 0.225
+            },
+            {
+              "last_day": "2026-05-10",
+              "n": 63,
+              "p98": 14.673,
+              "diff_vs_deq": 0.173
+            },
+            {
+              "last_day": "2026-05-11",
+              "n": 64,
+              "p98": 14.622,
+              "diff_vs_deq": 0.122
+            },
+            {
+              "last_day": "2026-05-12",
+              "n": 65,
+              "p98": 14.57,
+              "diff_vs_deq": 0.07
+            },
+            {
+              "last_day": "2026-05-13",
+              "n": 66,
+              "p98": 14.519,
+              "diff_vs_deq": 0.019
+            }
+          ]
+        },
+        "clock": {
+          "record_days": 66,
+          "first_day": "2026-03-09",
+          "last_day": "2026-05-13",
+          "p98": 14.252,
+          "deq_p98": 14.5,
+          "diff_vs_deq": -0.248,
+          "mean": 5.679,
+          "deq_mean": 5.7,
+          "median": 4.843,
+          "deq_median": 4.9,
+          "end_date_sweep_within_0.05": [
+            {
+              "last_day": "2026-05-06",
+              "n": 59,
+              "p98": 14.532,
+              "diff_vs_deq": 0.032
+            },
+            {
+              "last_day": "2026-05-07",
+              "n": 60,
+              "p98": 14.492,
+              "diff_vs_deq": -0.008
+            },
+            {
+              "last_day": "2026-05-08",
+              "n": 61,
+              "p98": 14.452,
+              "diff_vs_deq": -0.048
+            }
+          ],
+          "end_date_sweep_best": {
+            "last_day": "2026-05-07",
+            "n": 60,
+            "p98": 14.492,
+            "diff_vs_deq": -0.008
+          },
+          "end_date_sweep_tail": [
+            {
+              "last_day": "2026-05-08",
+              "n": 61,
+              "p98": 14.452,
+              "diff_vs_deq": -0.048
+            },
+            {
+              "last_day": "2026-05-09",
+              "n": 62,
+              "p98": 14.412,
+              "diff_vs_deq": -0.088
+            },
+            {
+              "last_day": "2026-05-10",
+              "n": 63,
+              "p98": 14.372,
+              "diff_vs_deq": -0.128
+            },
+            {
+              "last_day": "2026-05-11",
+              "n": 64,
+              "p98": 14.332,
+              "diff_vs_deq": -0.168
+            },
+            {
+              "last_day": "2026-05-12",
+              "n": 65,
+              "p98": 14.292,
+              "diff_vs_deq": -0.208
+            },
+            {
+              "last_day": "2026-05-13",
+              "n": 66,
+              "p98": 14.252,
+              "diff_vs_deq": -0.248
+            }
+          ]
+        }
+      },
+      "steuart-weller": {
+        "standard": {
+          "record_days": 100,
+          "first_day": "2026-03-09",
+          "last_day": "2026-06-16",
+          "p98": 10.196,
+          "deq_p98": 10.2,
+          "diff_vs_deq": -0.004,
+          "mean": 4.566,
+          "deq_mean": 4.6,
+          "median": 3.831,
+          "deq_median": 3.9,
+          "end_date_sweep_within_0.05": [
+            {
+              "last_day": "2026-03-26",
+              "n": 18,
+              "p98": 10.245,
+              "diff_vs_deq": 0.045
+            },
+            {
+              "last_day": "2026-03-27",
+              "n": 19,
+              "p98": 10.187,
+              "diff_vs_deq": -0.013
+            },
+            {
+              "last_day": "2026-03-31",
+              "n": 23,
+              "p98": 10.166,
+              "diff_vs_deq": -0.034
+            },
+            {
+              "last_day": "2026-06-14",
+              "n": 98,
+              "p98": 10.238,
+              "diff_vs_deq": 0.038
+            },
+            {
+              "last_day": "2026-06-15",
+              "n": 99,
+              "p98": 10.217,
+              "diff_vs_deq": 0.017
+            },
+            {
+              "last_day": "2026-06-16",
+              "n": 100,
+              "p98": 10.196,
+              "diff_vs_deq": -0.004
+            }
+          ],
+          "end_date_sweep_best": {
+            "last_day": "2026-06-16",
+            "n": 100,
+            "p98": 10.196,
+            "diff_vs_deq": -0.004
+          },
+          "end_date_sweep_tail": [
+            {
+              "last_day": "2026-06-11",
+              "n": 95,
+              "p98": 10.301,
+              "diff_vs_deq": 0.101
+            },
+            {
+              "last_day": "2026-06-12",
+              "n": 96,
+              "p98": 10.28,
+              "diff_vs_deq": 0.08
+            },
+            {
+              "last_day": "2026-06-13",
+              "n": 97,
+              "p98": 10.259,
+              "diff_vs_deq": 0.059
+            },
+            {
+              "last_day": "2026-06-14",
+              "n": 98,
+              "p98": 10.238,
+              "diff_vs_deq": 0.038
+            },
+            {
+              "last_day": "2026-06-15",
+              "n": 99,
+              "p98": 10.217,
+              "diff_vs_deq": 0.017
+            },
+            {
+              "last_day": "2026-06-16",
+              "n": 100,
+              "p98": 10.196,
+              "diff_vs_deq": -0.004
+            }
+          ]
+        },
+        "clock": {
+          "record_days": 100,
+          "first_day": "2026-03-09",
+          "last_day": "2026-06-16",
+          "p98": 10.355,
+          "deq_p98": 10.2,
+          "diff_vs_deq": 0.155,
+          "mean": 4.567,
+          "deq_mean": 4.6,
+          "median": 4.045,
+          "deq_median": 3.9,
+          "end_date_sweep_within_0.05": [],
+          "end_date_sweep_best": {
+            "last_day": "2026-06-16",
+            "n": 100,
+            "p98": 10.355,
+            "diff_vs_deq": 0.155
+          },
+          "end_date_sweep_tail": [
+            {
+              "last_day": "2026-06-11",
+              "n": 95,
+              "p98": 10.409,
+              "diff_vs_deq": 0.209
+            },
+            {
+              "last_day": "2026-06-12",
+              "n": 96,
+              "p98": 10.398,
+              "diff_vs_deq": 0.198
+            },
+            {
+              "last_day": "2026-06-13",
+              "n": 97,
+              "p98": 10.388,
+              "diff_vs_deq": 0.188
+            },
+            {
+              "last_day": "2026-06-14",
+              "n": 98,
+              "p98": 10.377,
+              "diff_vs_deq": 0.177
+            },
+            {
+              "last_day": "2026-06-15",
+              "n": 99,
+              "p98": 10.366,
+              "diff_vs_deq": 0.166
+            },
+            {
+              "last_day": "2026-06-16",
+              "n": 100,
+              "p98": 10.355,
+              "diff_vs_deq": 0.155
+            }
+          ]
+        }
+      }
+    },
+    "offline_2026-09-17": {
+      "farmwell-middle": {
+        "standard": {
+          "record_days": 119,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 27.222,
+          "deq_p98": 26.0,
+          "diff_vs_deq": 1.222,
+          "mean": 7.964,
+          "deq_mean": 7.9,
+          "median": 5.218,
+          "deq_median": 5.2,
+          "end_date_sweep_within_0.05": [],
+          "end_date_sweep_best": {
+            "last_day": "2026-07-18",
+            "n": 100,
+            "p98": 26.811,
+            "diff_vs_deq": 0.811
+          },
+          "end_date_sweep_tail": [
+            {
+              "last_day": "2026-08-01",
+              "n": 114,
+              "p98": 27.341,
+              "diff_vs_deq": 1.341
+            },
+            {
+              "last_day": "2026-08-02",
+              "n": 115,
+              "p98": 27.317,
+              "diff_vs_deq": 1.317
+            },
+            {
+              "last_day": "2026-08-03",
+              "n": 116,
+              "p98": 27.293,
+              "diff_vs_deq": 1.293
+            },
+            {
+              "last_day": "2026-08-04",
+              "n": 117,
+              "p98": 27.269,
+              "diff_vs_deq": 1.269
+            },
+            {
+              "last_day": "2026-08-05",
+              "n": 118,
+              "p98": 27.245,
+              "diff_vs_deq": 1.245
+            },
+            {
+              "last_day": "2026-08-06",
+              "n": 119,
+              "p98": 27.222,
+              "diff_vs_deq": 1.222
+            }
+          ]
+        },
+        "clock": {
+          "record_days": 119,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 26.26,
+          "deq_p98": 26.0,
+          "diff_vs_deq": 0.26,
+          "mean": 7.948,
+          "deq_mean": 7.9,
+          "median": 5.243,
+          "deq_median": 5.2,
+          "end_date_sweep_within_0.05": [],
+          "end_date_sweep_best": {
+            "last_day": "2026-08-06",
+            "n": 119,
+            "p98": 26.26,
+            "diff_vs_deq": 0.26
+          },
+          "end_date_sweep_tail": [
+            {
+              "last_day": "2026-08-01",
+              "n": 114,
+              "p98": 26.558,
+              "diff_vs_deq": 0.558
+            },
+            {
+              "last_day": "2026-08-02",
+              "n": 115,
+              "p98": 26.498,
+              "diff_vs_deq": 0.498
+            },
+            {
+              "last_day": "2026-08-03",
+              "n": 116,
+              "p98": 26.439,
+              "diff_vs_deq": 0.439
+            },
+            {
+              "last_day": "2026-08-04",
+              "n": 117,
+              "p98": 26.379,
+              "diff_vs_deq": 0.379
+            },
+            {
+              "last_day": "2026-08-05",
+              "n": 118,
+              "p98": 26.319,
+              "diff_vs_deq": 0.319
+            },
+            {
+              "last_day": "2026-08-06",
+              "n": 119,
+              "p98": 26.26,
+              "diff_vs_deq": 0.26
+            }
+          ]
+        }
+      },
+      "golf-course": {
+        "standard": {
+          "record_days": 121,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 24.898,
+          "deq_p98": 23.8,
+          "diff_vs_deq": 1.098,
+          "mean": 7.423,
+          "deq_mean": 7.4,
+          "median": 5.08,
+          "deq_median": 5.0,
+          "end_date_sweep_within_0.05": [],
+          "end_date_sweep_best": {
+            "last_day": "2026-08-06",
+            "n": 121,
+            "p98": 24.898,
+            "diff_vs_deq": 1.098
+          },
+          "end_date_sweep_tail": [
+            {
+              "last_day": "2026-08-01",
+              "n": 116,
+              "p98": 24.974,
+              "diff_vs_deq": 1.174
+            },
+            {
+              "last_day": "2026-08-02",
+              "n": 117,
+              "p98": 24.958,
+              "diff_vs_deq": 1.158
+            },
+            {
+              "last_day": "2026-08-03",
+              "n": 118,
+              "p98": 24.943,
+              "diff_vs_deq": 1.143
+            },
+            {
+              "last_day": "2026-08-04",
+              "n": 119,
+              "p98": 24.928,
+              "diff_vs_deq": 1.128
+            },
+            {
+              "last_day": "2026-08-05",
+              "n": 120,
+              "p98": 24.913,
+              "diff_vs_deq": 1.113
+            },
+            {
+              "last_day": "2026-08-06",
+              "n": 121,
+              "p98": 24.898,
+              "diff_vs_deq": 1.098
+            }
+          ]
+        },
+        "clock": {
+          "record_days": 121,
+          "first_day": "2026-04-08",
+          "last_day": "2026-08-06",
+          "p98": 23.839,
+          "deq_p98": 23.8,
+          "diff_vs_deq": 0.039,
+          "mean": 7.425,
+          "deq_mean": 7.4,
+          "median": 5.058,
+          "deq_median": 5.0,
+          "end_date_sweep_within_0.05": [
+            {
+              "last_day": "2026-08-06",
+              "n": 121,
+              "p98": 23.839,
+              "diff_vs_deq": 0.039
+            }
+          ],
+          "end_date_sweep_best": {
+            "last_day": "2026-08-06",
+            "n": 121,
+            "p98": 23.839,
+            "diff_vs_deq": 0.039
+          },
+          "end_date_sweep_tail": [
+            {
+              "last_day": "2026-08-01",
+              "n": 116,
+              "p98": 23.94,
+              "diff_vs_deq": 0.14
+            },
+            {
+              "last_day": "2026-08-02",
+              "n": 117,
+              "p98": 23.919,
+              "diff_vs_deq": 0.119
+            },
+            {
+              "last_day": "2026-08-03",
+              "n": 118,
+              "p98": 23.899,
+              "diff_vs_deq": 0.099
+            },
+            {
+              "last_day": "2026-08-04",
+              "n": 119,
+              "p98": 23.879,
+              "diff_vs_deq": 0.079
+            },
+            {
+              "last_day": "2026-08-05",
+              "n": 120,
+              "p98": 23.859,
+              "diff_vs_deq": 0.059
+            },
+            {
+              "last_day": "2026-08-06",
+              "n": 121,
+              "p98": 23.839,
+              "diff_vs_deq": 0.039
+            }
+          ]
+        }
+      },
+      "sterling-ms": {
+        "standard": {
+          "record_days": 50,
+          "first_day": "2026-06-18",
+          "last_day": "2026-08-06",
+          "p98": 39.363,
+          "deq_p98": 40.4,
+          "diff_vs_deq": -1.037,
+          "mean": 11.423,
+          "deq_mean": 11.3,
+          "median": 8.747,
+          "deq_median": 8.6,
+          "end_date_sweep_within_0.05": [],
+          "end_date_sweep_best": {
+            "last_day": "2026-08-05",
+            "n": 49,
+            "p98": 40.51,
+            "diff_vs_deq": 0.11
+          },
+          "end_date_sweep_tail": [
+            {
+              "last_day": "2026-08-01",
+              "n": 45,
+              "p98": 45.1,
+              "diff_vs_deq": 4.7
+            },
+            {
+              "last_day": "2026-08-02",
+              "n": 46,
+              "p98": 43.953,
+              "diff_vs_deq": 3.553
+            },
+            {
+              "last_day": "2026-08-03",
+              "n": 47,
+              "p98": 42.805,
+              "diff_vs_deq": 2.405
+            },
+            {
+              "last_day": "2026-08-04",
+              "n": 48,
+              "p98": 41.658,
+              "diff_vs_deq": 1.258
+            },
+            {
+              "last_day": "2026-08-05",
+              "n": 49,
+              "p98": 40.51,
+              "diff_vs_deq": 0.11
+            },
+            {
+              "last_day": "2026-08-06",
+              "n": 50,
+              "p98": 39.363,
+              "diff_vs_deq": -1.037
+            }
+          ]
+        },
+        "clock": {
+          "record_days": 50,
+          "first_day": "2026-06-18",
+          "last_day": "2026-08-06",
+          "p98": 41.572,
+          "deq_p98": 40.4,
+          "diff_vs_deq": 1.172,
+          "mean": 11.426,
+          "deq_mean": 11.3,
+          "median": 8.745,
+          "deq_median": 8.6,
+          "end_date_sweep_within_0.05": [],
+          "end_date_sweep_best": {
+            "last_day": "2026-08-06",
+            "n": 50,
+            "p98": 41.572,
+            "diff_vs_deq": 1.172
+          },
+          "end_date_sweep_tail": [
+            {
+              "last_day": "2026-08-01",
+              "n": 45,
+              "p98": 47.223,
+              "diff_vs_deq": 6.823
+            },
+            {
+              "last_day": "2026-08-02",
+              "n": 46,
+              "p98": 46.093,
+              "diff_vs_deq": 5.693
+            },
+            {
+              "last_day": "2026-08-03",
+              "n": 47,
+              "p98": 44.963,
+              "diff_vs_deq": 4.563
+            },
+            {
+              "last_day": "2026-08-04",
+              "n": 48,
+              "p98": 43.832,
+              "diff_vs_deq": 3.432
+            },
+            {
+              "last_day": "2026-08-05",
+              "n": 49,
+              "p98": 42.702,
+              "diff_vs_deq": 2.302
+            },
+            {
+              "last_day": "2026-08-06",
+              "n": 50,
+              "p98": 41.572,
+              "diff_vs_deq": 1.172
+            }
+          ]
+        }
+      }
+    }
+  }
+}

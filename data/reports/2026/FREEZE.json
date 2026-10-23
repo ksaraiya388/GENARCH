@@ -1,0 +1,388 @@
+{
+  "description": "Data freeze for GENARCH Annual Report 2026 v1.0. Every input the report's DEQ analysis reads, copied byte-for-byte to pipeline/sources/freeze-2026/ with its original filename. Kunak data cutoff is the last hour carrying any non-empty pollutant value (local clock, hour-ending as exported; EST hour-beginning also given). Regulatory cutoff is the last hour with a non-null Value.",
+  "frozen_at_utc": "2026-10-18T23:04:13+00:00",
+  "git_head": "c2101b3d766dcaa29821448c8929ded5a1f2787f",
+  "branch": "report-2026",
+  "kunak_exports": [
+    {
+      "site_id": "ashburn-collocated",
+      "source_path": "pipeline/sources/deq-raw/ashburn-collocated_multi_2026-03-03_2026-10-10.csv",
+      "frozen_path": "pipeline/sources/freeze-2026/ashburn-collocated_multi_2026-03-03_2026-10-10.csv",
+      "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+      "size_bytes": 451266,
+      "export_date": "2026-10-11T13:47:03-04:00",
+      "export_date_source": "git add commit timestamp (upper bound)",
+      "data_cutoff_local_hour_ending": "2026-10-10 23:00:00",
+      "data_cutoff_est_hour_beginning": "2026-10-10 21:00:00",
+      "pm25_cutoff_local_hour_ending": "2026-10-10 23:00:00",
+      "first_hour_local": "2026-03-03 00:00:00",
+      "rows_deduplicated": 5327
+    },
+    {
+      "site_id": "belfort-park",
+      "source_path": "pipeline/sources/deq-raw/belfort-park_multi_2026-03-03_2026-10-10.csv",
+      "frozen_path": "pipeline/sources/freeze-2026/belfort-park_multi_2026-03-03_2026-10-10.csv",
+      "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+      "size_bytes": 275843,
+      "export_date": "2026-10-11T13:47:03-04:00",
+      "export_date_source": "git add commit timestamp (upper bound)",
+      "data_cutoff_local_hour_ending": "2026-10-10 23:00:00",
+      "data_cutoff_est_hour_beginning": "2026-10-10 21:00:00",
+      "pm25_cutoff_local_hour_ending": "2026-10-10 23:00:00",
+      "first_hour_local": "2026-05-14 11:00:00",
+      "rows_deduplicated": 3588
+    },
+    {
+      "site_id": "camp-snyder",
+      "source_path": "pipeline/sources/deq-raw/camp-snyder_multi_2026-03-03_2026-10-10.csv",
+      "frozen_path": "pipeline/sources/freeze-2026/camp-snyder_multi_2026-03-03_2026-10-10.csv",
+      "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+      "size_bytes": 45909,
+      "export_date": "2026-10-11T13:47:03-04:00",
+      "export_date_source": "git add commit timestamp (upper bound)",
+      "data_cutoff_local_hour_ending": "2026-10-10 23:00:00",
+      "data_cutoff_est_hour_beginning": "2026-10-10 21:00:00",
+      "pm25_cutoff_local_hour_ending": "2026-10-10 23:00:00",
+      "first_hour_local": "2026-09-17 13:00:00",
+      "rows_deduplicated": 563
+    },
+    {
+      "site_id": "dulles-area",
+      "source_path": "pipeline/sources/deq-raw/dulles-area_multi_2026-03-03_2026-10-10.csv",
+      "frozen_path": "pipeline/sources/freeze-2026/dulles-area_multi_2026-03-03_2026-10-10.csv",
+      "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+      "size_bytes": 405643,
+      "export_date": "2026-10-11T13:47:03-04:00",
+      "export_date_source": "git add commit timestamp (upper bound)",
+      "data_cutoff_local_hour_ending": "2026-10-10 23:00:00",
+      "data_cutoff_est_hour_beginning": "2026-10-10 21:00:00",
+      "pm25_cutoff_local_hour_ending": "2026-10-10 23:00:00",
+      "first_hour_local": "2026-03-03 00:00:00",
+      "rows_deduplicated": 5327
+    },
+    {
+      "site_id": "evergreen-cc",
+      "source_path": "pipeline/sources/deq-raw/evergreen-cc_multi_2026-03-03_2026-10-10.csv",
+      "frozen_path": "pipeline/sources/freeze-2026/evergreen-cc_multi_2026-03-03_2026-10-10.csv",
+      "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+      "size_bytes": 47409,
+      "export_date": "2026-10-11T13:47:03-04:00",
+      "export_date_source": "git add commit timestamp (upper bound)",
+      "data_cutoff_local_hour_ending": "2026-10-10 23:00:00",
+      "data_cutoff_est_hour_beginning": "2026-10-10 21:00:00",
+      "pm25_cutoff_local_hour_ending": "2026-10-10 23:00:00",
+      "first_hour_local": "2026-09-17 13:00:00",
+      "rows_deduplicated": 563
+    },
+    {
+      "site_id": "farmwell-middle",
+      "source_path": "pipeline/sources/deq-raw/farmwell-middle_multi_2026-03-03_2026-10-10.csv",
+      "frozen_path": "pipeline/sources/freeze-2026/farmwell-middle_multi_2026-03-03_2026-10-10.csv",
+      "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+      "size_bytes": 309516,
+      "export_date": "2026-10-11T13:47:03-04:00",
+      "export_date_source": "git add commit timestamp (upper bound)",
+      "data_cutoff_local_hour_ending": "2026-09-17 11:00:00",
+      "data_cutoff_est_hour_beginning": "2026-09-17 09:00:00",
+      "pm25_cutoff_local_hour_ending": "2026-09-17 11:00:00",
+      "first_hour_local": "2026-04-08 00:00:00",
+      "rows_deduplicated": 3898,
+      "byte_identical_to": [
+        "pipeline/sources/deq-raw/farmwell-middle_multi_2026-03-03_2026-10-04.csv"
+      ]
+    },
+    {
+      "site_id": "golf-course",
+      "source_path": "pipeline/sources/deq-raw/golf-course_multi_2026-03-03_2026-10-10.csv",
+      "frozen_path": "pipeline/sources/freeze-2026/golf-course_multi_2026-03-03_2026-10-10.csv",
+      "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+      "size_bytes": 297563,
+      "export_date": "2026-10-11T13:47:03-04:00",
+      "export_date_source": "git add commit timestamp (upper bound)",
+      "data_cutoff_local_hour_ending": "2026-09-17 10:00:00",
+      "data_cutoff_est_hour_beginning": "2026-09-17 08:00:00",
+      "pm25_cutoff_local_hour_ending": "2026-09-17 10:00:00",
+      "first_hour_local": "2026-04-08 00:00:00",
+      "rows_deduplicated": 3899,
+      "byte_identical_to": [
+        "pipeline/sources/deq-raw/golf-course_multi_2026-03-03_2026-10-04.csv"
+      ]
+    },
+    {
+      "site_id": "heritage-farm",
+      "source_path": "pipeline/sources/deq-raw/heritage-farm_multi_2026-03-03_2026-10-10.csv",
+      "frozen_path": "pipeline/sources/freeze-2026/heritage-farm_multi_2026-03-03_2026-10-10.csv",
+      "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+      "size_bytes": 206629,
+      "export_date": "2026-10-11T13:47:03-04:00",
+      "export_date_source": "git add commit timestamp (upper bound)",
+      "data_cutoff_local_hour_ending": "2026-06-17 12:00:00",
+      "data_cutoff_est_hour_beginning": "2026-06-17 10:00:00",
+      "pm25_cutoff_local_hour_ending": "2026-06-17 12:00:00",
+      "first_hour_local": "2026-03-03 00:00:00",
+      "rows_deduplicated": 2555,
+      "byte_identical_to": [
+        "pipeline/sources/deq-raw/heritage-farm_multi_2026-03-03_2026-10-04.csv"
+      ]
+    },
+    {
+      "site_id": "newberry-condo",
+      "source_path": "pipeline/sources/deq-raw/newberry-condo_multi_2026-03-03_2026-10-10.csv",
+      "frozen_path": "pipeline/sources/freeze-2026/newberry-condo_multi_2026-03-03_2026-10-10.csv",
+      "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+      "size_bytes": 139971,
+      "export_date": "2026-10-11T13:47:03-04:00",
+      "export_date_source": "git add commit timestamp (upper bound)",
+      "data_cutoff_local_hour_ending": "2026-05-14 10:00:00",
+      "data_cutoff_est_hour_beginning": "2026-05-14 08:00:00",
+      "pm25_cutoff_local_hour_ending": "2026-05-14 10:00:00",
+      "first_hour_local": "2026-03-03 00:00:00",
+      "rows_deduplicated": 1738,
+      "byte_identical_to": [
+        "pipeline/sources/deq-raw/newberry-condo_multi_2026-03-03_2026-10-04.csv"
+      ]
+    },
+    {
+      "site_id": "sterling-ms",
+      "source_path": "pipeline/sources/deq-raw/sterling-ms_multi_2026-03-03_2026-10-10.csv",
+      "frozen_path": "pipeline/sources/freeze-2026/sterling-ms_multi_2026-03-03_2026-10-10.csv",
+      "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+      "size_bytes": 163784,
+      "export_date": "2026-10-11T13:47:03-04:00",
+      "export_date_source": "git add commit timestamp (upper bound)",
+      "data_cutoff_local_hour_ending": "2026-09-17 11:00:00",
+      "data_cutoff_est_hour_beginning": "2026-09-17 09:00:00",
+      "pm25_cutoff_local_hour_ending": "2026-09-17 11:00:00",
+      "first_hour_local": "2026-06-17 11:00:00",
+      "rows_deduplicated": 2208,
+      "byte_identical_to": [
+        "pipeline/sources/deq-raw/sterling-ms_multi_2026-03-03_2026-10-04.csv"
+      ]
+    },
+    {
+      "site_id": "steuart-weller",
+      "source_path": "pipeline/sources/deq-raw/steuart-weller_multi_2026-03-03_2026-10-10.csv",
+      "frozen_path": "pipeline/sources/freeze-2026/steuart-weller_multi_2026-03-03_2026-10-10.csv",
+      "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+      "size_bytes": 200800,
+      "export_date": "2026-10-11T13:47:03-04:00",
+      "export_date_source": "git add commit timestamp (upper bound)",
+      "data_cutoff_local_hour_ending": "2026-06-17 10:00:00",
+      "data_cutoff_est_hour_beginning": "2026-06-17 08:00:00",
+      "pm25_cutoff_local_hour_ending": "2026-06-17 10:00:00",
+      "first_hour_local": "2026-03-03 00:00:00",
+      "rows_deduplicated": 2554,
+      "byte_identical_to": [
+        "pipeline/sources/deq-raw/steuart-weller_multi_2026-03-03_2026-10-04.csv"
+      ]
+    },
+    {
+      "site_id": "vdot-mkc",
+      "source_path": "pipeline/sources/deq-raw/vdot-mkc_multi_2026-03-03_2026-10-10.csv",
+      "frozen_path": "pipeline/sources/freeze-2026/vdot-mkc_multi_2026-03-03_2026-10-10.csv",
+      "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+      "size_bytes": 40468,
+      "export_date": "2026-10-11T13:47:03-04:00",
+      "export_date_source": "git add commit timestamp (upper bound)",
+      "data_cutoff_local_hour_ending": "2026-10-10 23:00:00",
+      "data_cutoff_est_hour_beginning": "2026-10-10 21:00:00",
+      "pm25_cutoff_local_hour_ending": "2026-10-10 23:00:00",
+      "first_hour_local": "2026-09-17 10:00:00",
+      "rows_deduplicated": 566
+    }
+  ],
+  "regulatory_foia_26_4646": [
+    {
+      "source_path": "pipeline/sources/deq-regulatory/AshburnPM2.5_030326_081026.xls",
+      "frozen_path": "pipeline/sources/freeze-2026/AshburnPM2.5_030326_081026.xls",
+      "sha256": "4982b12cadc6168464d12d94837b31d063bc3e9fa587650b56a35bb2e851885e",
+      "size_bytes": 605696,
+      "foia_request": "26-4646",
+      "export_date": "2026-08-11",
+      "export_date_source": "manifest.json deq_regulatory_monitor_hourly.csv download_date (FOIA release date); no per-file manifest entry",
+      "role": "hourly regulatory series read by reshape_deq.py",
+      "data_cutoff_est_hour_beginning": "2026-08-10 09:00:00",
+      "rows": 3864,
+      "date_column": "Date"
+    },
+    {
+      "source_path": "pipeline/sources/deq-regulatory/AshburnNO2_hourly_030326_081026.xls",
+      "frozen_path": "pipeline/sources/freeze-2026/AshburnNO2_hourly_030326_081026.xls",
+      "sha256": "bae77afc58feec0bbf6e1eac0e6f161ef485fe28894553ad51730a480d5c65c6",
+      "size_bytes": 602624,
+      "foia_request": "26-4646",
+      "export_date": "2026-08-11",
+      "export_date_source": "manifest.json deq_regulatory_monitor_hourly.csv download_date (FOIA release date); no per-file manifest entry",
+      "role": "hourly regulatory series read by reshape_deq.py",
+      "data_cutoff_est_hour_beginning": "2026-08-10 09:00:00",
+      "rows": 3864,
+      "date_column": "Date"
+    },
+    {
+      "source_path": "pipeline/sources/deq-regulatory/AuroraHillsCO_hourly_030326_081026.xls",
+      "frozen_path": "pipeline/sources/freeze-2026/AuroraHillsCO_hourly_030326_081026.xls",
+      "sha256": "41de935ddfd3dbabd2856d06a624f4d502a1dc887fa469c128d61a11a5d1b55f",
+      "size_bytes": 602112,
+      "foia_request": "26-4646",
+      "export_date": "2026-08-11",
+      "export_date_source": "manifest.json deq_regulatory_monitor_hourly.csv download_date (FOIA release date); no per-file manifest entry",
+      "role": "hourly regulatory series read by reshape_deq.py",
+      "data_cutoff_est_hour_beginning": "2026-08-10 09:00:00",
+      "rows": 3864,
+      "date_column": "Date"
+    },
+    {
+      "source_path": "pipeline/sources/deq-regulatory/AshburnPM2.5_dailyAvg_030326_081026.xls",
+      "frozen_path": "pipeline/sources/freeze-2026/AshburnPM2.5_dailyAvg_030326_081026.xls",
+      "sha256": "58051f022fbe2f72021c69791b4b234a3d56b36a9aa6f259fd6f75b304330276",
+      "size_bytes": 56832,
+      "foia_request": "26-4646",
+      "export_date": "2026-08-11",
+      "export_date_source": "manifest.json deq_regulatory_monitor_hourly.csv download_date (FOIA release date); no per-file manifest entry",
+      "role": "published daily average file (dailyAvg)",
+      "data_cutoff_est_hour_beginning": "2026-08-09 00:00:00",
+      "rows": 161,
+      "date_column": "Date"
+    }
+  ],
+  "deq_weekly_reports": [
+    {
+      "source_path": "docs/deq-reports/2026-08-07_data_center_air_quality_analysis.pdf",
+      "frozen_path": "pipeline/sources/freeze-2026/2026-08-07_data_center_air_quality_analysis.pdf",
+      "sha256": "490a1966d7f5bde02eb73ca582512ddaa7c3bb34b0ae81460c283aeddd18558a",
+      "size_bytes": 3420002,
+      "report_date": "2026-08-07",
+      "manifest_sha256": null,
+      "role": "DEQ weekly report cited by R1-R3 (Table 4 statement)"
+    },
+    {
+      "source_path": "pipeline/sources/deq/deq_dcamp_weekly_2026-10-09.pdf",
+      "frozen_path": "pipeline/sources/freeze-2026/deq_dcamp_weekly_2026-10-09.pdf",
+      "sha256": "41effca9b48ff2b93fb3ce9a990c768cc831a0e24ef838f1eea85f752eac706d",
+      "size_bytes": 3616316,
+      "report_date": "2026-10-09",
+      "manifest_sha256": "41effca9b48ff2b93fb3ce9a990c768cc831a0e24ef838f1eea85f752eac706d",
+      "role": "newest DEQ weekly report present at freeze"
+    },
+    {
+      "source_path": "pipeline/sources/deq/deq_dcamp_weekly_2026-10-09.txt",
+      "frozen_path": "pipeline/sources/freeze-2026/deq_dcamp_weekly_2026-10-09.txt",
+      "sha256": "672adabda815cf6528faaa9212bef57e76f8af333e867bda9a165de48f543267",
+      "size_bytes": 39700,
+      "report_date": "2026-10-09",
+      "manifest_sha256": null,
+      "role": "newest DEQ weekly report present at freeze"
+    },
+    {
+      "source_path": "pipeline/sources/deq/deq_dcamp_weekly_2026-10-09_tables.json",
+      "frozen_path": "pipeline/sources/freeze-2026/deq_dcamp_weekly_2026-10-09_tables.json",
+      "sha256": "0b5a1222f2a42e0cfbdf1eb959cfdddc9503e427d0412be7ccaf2f932dcddc7d",
+      "size_bytes": 419447,
+      "report_date": "2026-10-09",
+      "manifest_sha256": null,
+      "role": "newest DEQ weekly report present at freeze"
+    }
+  ],
+  "original_analysis_inputs": {
+    "analysis_date": "2026-08-12",
+    "selection_rule": "manifest.json export_date <= 2026-08-12 and superseded_on null or after 2026-08-12, searched across deq-raw/ and deq-raw/_superseded/",
+    "files": [
+      {
+        "site_id": "ashburn-collocated",
+        "source_path": "pipeline/sources/deq-raw/_superseded/ashburn-collocated_multi_2026-03-03_2026-08-10.csv",
+        "frozen_path": "pipeline/sources/freeze-2026/aug-2026/ashburn-collocated_multi_2026-03-03_2026-08-10.csv",
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "manifest_sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "sha256_matches_manifest": true,
+        "export_date": "2026-08-10",
+        "superseded_on": "2026-08-29",
+        "report_date": "2026-08-07",
+        "data_cutoff_local_hour_ending": "2026-08-10 23:00:00",
+        "data_cutoff_est_hour_beginning": "2026-08-10 21:00:00",
+        "pm25_cutoff_local_hour_ending": "2026-08-10 23:00:00",
+        "first_hour_local": "2026-03-03 00:00:00",
+        "rows_deduplicated": 3862
+      },
+      {
+        "site_id": "belfort-park",
+        "source_path": "pipeline/sources/deq-raw/_superseded/belfort-park_multi_2026-03-03_2026-08-10.csv",
+        "frozen_path": "pipeline/sources/freeze-2026/aug-2026/belfort-park_multi_2026-03-03_2026-08-10.csv",
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "manifest_sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "sha256_matches_manifest": true,
+        "export_date": "2026-08-10",
+        "superseded_on": "2026-08-29",
+        "report_date": "2026-08-07",
+        "data_cutoff_local_hour_ending": "2026-08-10 23:00:00",
+        "data_cutoff_est_hour_beginning": "2026-08-10 21:00:00",
+        "pm25_cutoff_local_hour_ending": "2026-08-10 23:00:00",
+        "first_hour_local": "2026-05-14 11:00:00",
+        "rows_deduplicated": 2123
+      },
+      {
+        "site_id": "dulles-area",
+        "source_path": "pipeline/sources/deq-raw/_superseded/dulles-area_multi_2026-03-03_2026-08-10.csv",
+        "frozen_path": "pipeline/sources/freeze-2026/aug-2026/dulles-area_multi_2026-03-03_2026-08-10.csv",
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "manifest_sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "sha256_matches_manifest": true,
+        "export_date": "2026-08-10",
+        "superseded_on": "2026-08-29",
+        "report_date": "2026-08-07",
+        "data_cutoff_local_hour_ending": "2026-08-10 23:00:00",
+        "data_cutoff_est_hour_beginning": "2026-08-10 21:00:00",
+        "pm25_cutoff_local_hour_ending": "2026-08-10 23:00:00",
+        "first_hour_local": "2026-03-03 00:00:00",
+        "rows_deduplicated": 3863
+      },
+      {
+        "site_id": "farmwell-middle",
+        "source_path": "pipeline/sources/deq-raw/_superseded/farmwell-middle_multi_2026-03-03_2026-08-10.csv",
+        "frozen_path": "pipeline/sources/freeze-2026/aug-2026/farmwell-middle_multi_2026-03-03_2026-08-10.csv",
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "manifest_sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "sha256_matches_manifest": true,
+        "export_date": "2026-08-10",
+        "superseded_on": "2026-08-29",
+        "report_date": "2026-08-07",
+        "data_cutoff_local_hour_ending": "2026-08-10 23:00:00",
+        "data_cutoff_est_hour_beginning": "2026-08-10 21:00:00",
+        "pm25_cutoff_local_hour_ending": "2026-08-10 23:00:00",
+        "first_hour_local": "2026-04-08 00:00:00",
+        "rows_deduplicated": 2996
+      },
+      {
+        "site_id": "golf-course",
+        "source_path": "pipeline/sources/deq-raw/_superseded/golf-course_multi_2026-03-03_2026-08-10.csv",
+        "frozen_path": "pipeline/sources/freeze-2026/aug-2026/golf-course_multi_2026-03-03_2026-08-10.csv",
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "manifest_sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "sha256_matches_manifest": true,
+        "export_date": "2026-08-10",
+        "superseded_on": "2026-08-29",
+        "report_date": "2026-08-07",
+        "data_cutoff_local_hour_ending": "2026-08-10 23:00:00",
+        "data_cutoff_est_hour_beginning": "2026-08-10 21:00:00",
+        "pm25_cutoff_local_hour_ending": "2026-08-10 23:00:00",
+        "first_hour_local": "2026-04-08 00:00:00",
+        "rows_deduplicated": 2996
+      },
+      {
+        "site_id": "sterling-ms",
+        "source_path": "pipeline/sources/deq-raw/_superseded/sterling-ms_multi_2026-03-03_2026-08-10.csv",
+        "frozen_path": "pipeline/sources/freeze-2026/aug-2026/sterling-ms_multi_2026-03-03_2026-08-10.csv",
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "manifest_sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "sha256_matches_manifest": true,
+        "export_date": "2026-08-10",
+        "superseded_on": "2026-08-29",
+        "report_date": "2026-08-07",
+        "data_cutoff_local_hour_ending": "2026-08-10 23:00:00",
+        "data_cutoff_est_hour_beginning": "2026-08-10 21:00:00",
+        "pm25_cutoff_local_hour_ending": "2026-08-10 23:00:00",
+        "first_hour_local": "2026-06-17 11:00:00",
+        "rows_deduplicated": 1307
+      }
+    ]
+  }
+}

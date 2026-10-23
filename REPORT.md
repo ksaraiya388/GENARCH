@@ -472,9 +472,9 @@ Both surfaces already read one field. `2/26/2026` is unreproducible. Fix the for
 no data.
 
 ### F3 — The mojibake is real, confined to one file, and traced to one bare read.
-**83 double-encoding markers, all in `data/graph/graph.json`** — `Ã` ×10, `Â` ×10, `Î` ×9,
-`â€` ×54. Rendering as `NF-ÎºB Signaling Pathway`, `SNP-based hÂ² is ~0.24`, `GÃ—E`,
-`0.08â€"0.15`. Every file under `pipeline/sources/` and every entity JSON decodes as clean
+**83 double-encoding markers, all in `data/graph/graph.json`** — `Ã` ×10, `Â` ×10, `Î` ×9, <!-- mojibake-doc -->
+`â€` ×54. Rendering as `NF-ÎºB Signaling Pathway`, `SNP-based hÂ² is ~0.24`, `GÃ—E`, <!-- mojibake-doc -->
+`0.08â€"0.15`. Every file under `pipeline/sources/` and every entity JSON decodes as clean <!-- mojibake-doc -->
 strict UTF-8 with **zero** markers — verified byte-level. The corruption exists only in the
 generated artifact.
 
@@ -517,10 +517,10 @@ mojibake markers           83      0
 gsdmb                  absent      present
 il33-st2-axis          absent      present
 edge types        modifier, association,   modifier, association,
-                  pathway, GÃ—E, GWAS      pathway
+                  pathway, GÃ—E, GWAS      pathway <!-- mojibake-doc -->
 ```
 
-The 27 extra gene nodes and the edge types `GÃ—E` and `GWAS` are produced by **no code path
+The 27 extra gene nodes and the edge types `GÃ—E` and `GWAS` are produced by **no code path <!-- mojibake-doc -->
 that exists today**. `build_nodes` (`graph_builder.py:36-95`) mints gene nodes **only** from
 gene files. So the committed artifact is output from an older builder, and `52` is a fossil.
 `gsdmb` and `il33-st2-axis` are missing purely because the artifact predates the current data.
@@ -668,7 +668,7 @@ checking each token against that file's own `references` array:
   `data/exposures/physical-activity.json`, which has only `ref1` and `ref2`. A genuinely
   dangling local ID — and a live example of what the flat pool hides, since `ref3` exists in
   50 other files.
-- **`e155`–`e158`, `e161`–`e163`** — seven edges carrying the fossil types `GÃ—E` (×3) and
+- **`e155`–`e158`, `e161`–`e163`** — seven edges carrying the fossil types `GÃ—E` (×3) and <!-- mojibake-doc -->
   `GWAS` (×2) plus two `pathway` edges in a shape the current builder does not produce
   (`gstp1→asthma`, `air-pollution→gstp1`, `bdnf→major-depressive-disorder`,
   `psychosocial-stress→bdnf`, `air-pollution→oxidative-stress-response`,
@@ -846,7 +846,7 @@ Validation passed: all schemas, cross-links, citations, graph integrity, and com
 EXIT=0
 
 $ python -c "... build_graph() ..."
-mojibake markers in rebuild: {'Ã': 0, 'Â': 0, 'Î': 0, 'â€': 0}
+mojibake markers in rebuild: {'Ã': 0, 'Â': 0, 'Î': 0, 'â€': 0} <!-- mojibake-doc -->
 NF-κB label present correctly: True
 ```
 

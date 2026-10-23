@@ -1,0 +1,192 @@
+.claude/prompts/consolidation_2026-08-29.md:1:leading U+FEFF (BOM)
+REPORT.md:376:├─ site/src/app/community/page.tsx            (index)
+REPORT.md:475:rs, all in `data/graph/graph.json`** — `Ã` ×10, `Â` ×10, `Î` ×9,
+REPORT.md:476:`â€` ×54. Rendering as `NF-ÎºB Signaling Pathway`, `SNP-based hÂ² is ~0.24`, `GÃ
+REPORT.md:477:`0.08â€"0.15`. Every file under `pipeline/sources/` and every entity JSON decode
+REPORT.md:520:pathway, GÃ—E, GWAS      pathway
+REPORT.md:523:7 extra gene nodes and the edge types `GÃ—E` and `GWAS` are produced by **no cod
+REPORT.md:671:seven edges carrying the fossil types `GÃ—E` (×3) and
+REPORT.md:849:mojibake markers in rebuild: {'Ã': 0, 'Â': 0, 'Î': 0, 'â€': 0}
+VERIFICATION.md:155:├── site/                          ✅ Next.js TypeScript web app
+VERIFICATION.md:156:│   ├── src/
+VERIFICATION.md:157:│   │   ├── app/                   ✅ App Router pages (25 routes)
+VERIFICATION.md:158:│   │   ├── components/            ✅ Reusable UI components
+VERIFICATION.md:160:│   ├── package.json               ✅
+VERIFICATION.md:161:│   ├── tsconfig.json              ✅
+VERIFICATION.md:162:│   ├── tailwind.config.ts         ✅
+VERIFICATION.md:164:├── pipeline/                      ✅ Python ETL package
+VERIFICATION.md:165:│   ├── __init__.py                ✅
+VERIFICATION.md:166:│   ├── schemas.py                 ✅ Pydantic v2 models
+VERIFICATION.md:167:│   ├── validate.py                ✅ Schema + cross-link validation
+VERIFICATION.md:168:│   ├── ingest.py                  ✅
+VERIFICATION.md:169:│   ├── normalize.py               ✅
+VERIFICATION.md:170:│   ├── annotate.py                ✅
+VERIFICATION.md:171:│   ├── score.py                   ✅ Documented scoring rules
+VERIFICATION.md:172:│   ├── emit.py                    ✅
+VERIFICATION.md:173:│   ├── report.py                  ✅ Annual report generator
+VERIFICATION.md:174:│   ├── graph_builder.py           ✅ Graph JSON builder
+VERIFICATION.md:175:│   ├── update.py                  ✅ Pipeline orchestrator
+VERIFICATION.md:177:├── data/                          ✅ Generated outputs
+VERIFICATION.md:178:│   ├── diseases/                  ✅ asthma.json
+VERIFICATION.md:179:│   ├── exposures/                 ✅ air-pollution, ozone, tobacco, endotoxin
+VERIFICATION.md:180:│   ├── genes/                     ✅ il33.json
+VERIFICATION.md:181:│   ├── pathways/                  ✅ nf-kb.json
+VERIFICATION.md:182:│   ├── graph/                     ✅ graph.json
+VERIFICATION.md:183:│   ├── community/                 ✅ loudoun-county-va.json
+VERIFICATION.md:184:│   ├── briefs/                    ✅ pm25-il33-nfkb-asthma.json
+VERIFICATION.md:186:├── docs/                          ✅
+VERIFICATION.md:187:│   ├── PRD.md                     ✅
+VERIFICATION.md:188:│   ├── METHODS.md                 ✅ Scoring rules + data sources
+VERIFICATION.md:189:│   ├── MODEL_CARD.md              ✅ Hotspot model specification
+VERIFICATION.md:191:├── scripts/                       ✅
+VERIFICATION.md:192:├── .github/workflows/ci.yml       ✅ CI pipeline
+VERIFICATION.md:193:├── package.json                   ✅ Workspace commands
+VERIFICATION.md:194:├── requirements.txt               ✅
+coverage_synchrony.py:1:leading U+FEFF (BOM)
+data/graph/graph.json:9:n, with body mass index (BMI) â‰¥30 kg/mÂ² as a common threshold. Pathophysiolog
+data/graph/graph.json:20:~37% of variance; SNP heritability ~0.08â€“0.15, reflecting high polygenicity an
+data/graph/graph.json:31:adolescence or early adulthood (ages 15â€“25). Genetic susceptibility is very h
+data/graph/graph.json:42:obally, characterized by atherosclerosisâ€”the progressive buildup of fatty plaq
+data/graph/graph.json:53:y. Genetic susceptibility is substantialâ€”twin concordance ~25%, SNP heritabili
+data/graph/graph.json:64:al: heritability estimates range from 30â€“70% depending on study design and pop
+data/graph/graph.json:75:inated peptide recognition, and TNF/IL-6â€“driven inflammation. Seropositive RA
+data/graph/graph.json:86:ically, asthma involves T-helper 2 (Th2)â€“mediated inflammation, eosinophilic i
+data/graph/graph.json:97:ly late life; early-onset familial AD (5â€“10%) is caused by rare mutations in A
+data/graph/graph.json:108:obiome are major environmental modifiersâ€”red meat, processed foods, and low fi
+data/graph/graph.json:119:in studies estimating heritability at 30â€“50% and SNP-based heritability ~0.15â
+data/graph/graph.json:130:y from twin studies is ~30%; SNP-based hÂ² is ~0.08â€“0.15. Rare high-penetrance
+data/graph/graph.json:141:ccounting for ~85% of cases; the smokingâ€“genetics interaction is among the bes
+data/graph/graph.json:152:involves chronic inflammation, proteaseâ€“antiprotease imbalance, oxidative str
+data/graph/graph.json:383:gene-denvironment interaction (5-HTTLPR Ã— stress â†’ depression) has been debat
+data/graph/graph.json:493:h releases NF-ÎºB dimers (e.g., RelA/p65â€“p50) for nuclear translocation and ta
+data/graph/graph.json:614:neurotrophic factor; Val66Met and stressâ€“depression GÃ—E.",
+data/graph/graph.json:625:"summary": "Glutathione S-transferase; GÃ—E with air pollution and asthma.",
+data/graph/graph.json:658:: "Folate metabolism; homocysteine; geneâ€“nutrient interactions.",
+data/graph/graph.json:669:uperoxide dismutase; oxidative stress; GÃ—E with pollution.",
+data/graph/graph.json:691:t defenses; GSTP1, SOD2; air pollution GÃ—E.",
+data/graph/graph.json:702:ation; RA, IBD, psoriasis; air pollutionâ€“asthma GÃ—E.",
+data/graph/graph.json:4346:"type": "GÃ—E",
+data/graph/graph.json:4372:"type": "GÃ—E",
+data/graph/graph.json:4404:"type": "GÃ—E",
+docs/CITATION_GAPS.csv:64:graph_edge,e155,gstp1->asthma,gstp1 GÃ—E asthma,literature,ref1,UNNAMESPACED_ID,
+docs/CITATION_GAPS.csv:65:156,air-pollution->gstp1,air-pollution GÃ—E gstp1,literature,ref1,UNNAMESPACED_I
+docs/CITATION_GAPS.csv:67:ocial-stress->bdnf,psychosocial-stress GÃ—E bdnf,literature,ref2,UNNAMESPACED_ID
+docs/COLLOCATION_METHOD.md:1:leading U+FEFF (BOM)
+docs/FRIDAY_PROCEDURE.md:1:leading U+FEFF (BOM)
+outputs/repro/deq_report_diff_2026-10-02.txt:1:leading U+FEFF (BOM)
+outputs/repro/deq_report_diff_2026-10-09.txt:1:leading U+FEFF (BOM)
+outputs/repro/deqdata_2026-09-20.txt:1:leading U+FEFF (BOM)
+outputs/repro/deqdata_diff.txt:1:leading U+FEFF (BOM)
+outputs/repro/deqdata_diff.txt:15:Level of the 24-hour PM2.5 standard, in ┬╡g/m┬│. Not a threshold being crossed.
+outputs/repro/deqdata_diff.txt:16:Level of the 24-hour PM2.5 standard, in ├é┬╡g/m├é┬│. Not a threshold being cross
+outputs/repro/deqdata_diff.txt:19:-/** Annual PM2.5 standard in ┬╡g/m┬│, as revised in 2024. */
+outputs/repro/deqdata_diff.txt:20:+/** Annual PM2.5 standard in ├é┬╡g/m├é┬│, as revised in 2024. */
+outputs/repro/deqdata_diff.txt:29:s.readFileSync(full, "utf-8").replace(/^├»┬╗┬┐/, "");
+outputs/repro/deqdata_diff.txt:45:8 against a published 1.3, APEX 14 NO2 R┬▓ to 0.549 against a
+outputs/repro/deqdata_diff.txt:46:8 against a published 1.3, APEX 14 NO2 R├é┬▓ to 0.549 against a
+outputs/repro/deqdata_diff.txt:54:: "apex-14", pollutant: "PM2.5", unit: "┬╡g/m┬│",
+outputs/repro/deqdata_diff.txt:55:: "apex-14", pollutant: "PM2.5", unit: "├é┬╡g/m├é┬│",
+outputs/repro/deqdata_diff.txt:57:: "apex-05", pollutant: "PM2.5", unit: "┬╡g/m┬│",
+outputs/repro/deqdata_diff.txt:58:: "apex-05", pollutant: "PM2.5", unit: "├é┬╡g/m├é┬│",
+outputs/repro/deqdata_diff.txt:66:entile of daily PM2.5 averages", unit: "┬╡g/m┬│", values: [40.4, 38.2, 36.0, 33.
+outputs/repro/deqdata_diff.txt:67:8th percentile of hourly PM2.5", unit: "┬╡g/m┬│", values: [69.1, 62.3, 56.8, 53.
+outputs/repro/deqdata_diff.txt:68:{ metric: "Mean hourly PM2.5", unit: "┬╡g/m┬│", values: [11.3, 11.1, 10.8, 10.
+outputs/repro/deqdata_diff.txt:69:entile of daily PM2.5 averages", unit: "├é┬╡g/m├é┬│", values: [40.4, 38.2, 36.0,
+outputs/repro/deqdata_diff.txt:70:8th percentile of hourly PM2.5", unit: "├é┬╡g/m├é┬│", values: [69.1, 62.3, 56.8,
+outputs/repro/deqdata_diff.txt:71:{ metric: "Mean hourly PM2.5", unit: "├é┬╡g/m├é┬│", values: [11.3, 11.1, 10.8,
+outputs/repro/enddate_2026-09-20.txt:1:leading U+FEFF (BOM)
+outputs/repro/limitations_block.txt:1:leading U+FEFF (BOM)
+outputs/repro/limitations_block.txt:2:minator here. It fails below roughly 30 Âµg/mÂ³, where small absolute
+outputs/repro/page_diff.txt:1:leading U+FEFF (BOM)
+outputs/repro/page_diff.txt:16:e: "Data Center Corridor Air Monitoring ├óΓé¼ΓÇ¥ GENARCH",
+outputs/repro/page_diff.txt:25:+    : `${ordinalNum(r.lower)}├óΓé¼ΓÇ£${ordinalNum(r.upper)} of ${r.n}`;
+outputs/repro/page_diff.txt:33:-            {" ┬╖ "}
+outputs/repro/page_diff.txt:34:+            {" ├é┬╖ "}
+outputs/repro/page_diff.txt:38:-            {" ┬╖ "}
+outputs/repro/page_diff.txt:39:+            {" ├é┬╖ "}
+outputs/repro/page_diff.txt:47:e hourly reading above {PM25_24H_LEVEL} ┬╡g/m┬│ is not measured against the
+outputs/repro/page_diff.txt:48:e hourly reading above {PM25_24H_LEVEL} ├é┬╡g/m├é┬│ is not measured against the
+outputs/repro/page_diff.txt:52:standard is {n1(PM25_ANNUAL_LEVEL)} ┬╡g/m┬│, as revised in 2024. DEQ&apos;s
+outputs/repro/page_diff.txt:53:standard is {n1(PM25_ANNUAL_LEVEL)} ├é┬╡g/m├é┬│, as revised in 2024. DEQ&apo
+outputs/repro/page_diff.txt:62:{s.hasExport ? n0(s.validPm25Hours) : "├óΓé¼ΓÇ¥"}
+outputs/repro/page_diff.txt:70:"Site", "Class", "Hours", "Mean ┬╡g/m┬│", "Max ┬╡g/m┬│",
+outputs/repro/page_diff.txt:71:"Site", "Class", "Hours", "Mean ├é┬╡g/m├é┬│", "Max ├é┬╡g/m├é┬│",
+outputs/repro/page_diff.txt:79:{n2(s.withSmoke.mean)} ┬╡g/m┬│ across {n0(s.withSmoke.n)} valid
+outputs/repro/page_diff.txt:80:{n2(s.withoutSmoke.mean)} ┬╡g/m┬│ across {n0(s.withoutSmoke.n)} ho
+outputs/repro/page_diff.txt:81:{n2(s.withSmoke.mean)} ├é┬╡g/m├é┬│ across {n0(s.withSmoke.n)} v
+outputs/repro/page_diff.txt:82:{n2(s.withoutSmoke.mean)} ├é┬╡g/m├é┬│ across {n0(s.withoutSmoke.n)
+outputs/repro/page_diff.txt:84:{n1(s.withSmoke.max)} ┬╡g/m┬│, falls inside that window; outsi
+outputs/repro/page_diff.txt:85:hour is {n1(s.withoutSmoke.max)} ┬╡g/m┬│.
+outputs/repro/page_diff.txt:86:{n1(s.withSmoke.max)} ├é┬╡g/m├é┬│, falls inside that window; o
+outputs/repro/page_diff.txt:87:hour is {n1(s.withoutSmoke.max)} ├é┬╡g/m├é┬│.
+outputs/repro/page_diff.txt:95:= {c.deq.intercept} + {c.deq.slope}x, R┬▓ = {c.deq.r2}
+outputs/repro/page_diff.txt:96:= {c.deq.intercept} + {c.deq.slope}x, R├é┬▓ = {c.deq.r2}
+outputs/repro/page_diff.txt:103:<span aria-hidden="true">├óΓé¼┬á</span>
+outputs/repro/page_diff.txt:111:.intercept)} + {n3(c.genarch.slope)}x, R┬▓ ={" "}
+outputs/repro/page_diff.txt:112:.intercept)} + {n3(c.genarch.slope)}x, R├é┬▓ ={" "}
+outputs/repro/page_diff.txt:121:+            <span aria-hidden="true">├óΓé¼┬á </span>
+outputs/repro/page_diff.txt:125:orrected.correction.published.slope}x, R┬▓ = {corrected.correction.published.r2}
+outputs/repro/page_diff.txt:126:orrected.correction.published.slope}x, R├é┬▓ = {corrected.correction.published.r
+outputs/repro/page_diff.txt:130:rrection.inPrint.coefficients.slope}x, R┬▓ ={" "}
+outputs/repro/page_diff.txt:131:rrection.inPrint.coefficients.slope}x, R├é┬▓ ={" "}
+outputs/repro/page_diff.txt:139:-              on R┬▓, and all {word(assertedFits.length)} agree. DEQ publishes
+outputs/repro/page_diff.txt:140:+              on R├é┬▓, and all {word(assertedFits.length)} agree. DEQ publishe
+outputs/repro/page_diff.txt:148:-              {corrected.deq.slope}x, R┬▓ = {corrected.deq.r2}, and DEQ sent th
+outputs/repro/page_diff.txt:149:+              {corrected.deq.slope}x, R├é┬▓ = {corrected.deq.r2}, and DEQ sent
+outputs/repro/page_diff.txt:157:rrection.inPrint.coefficients.slope}x, R┬▓ ={" "}
+outputs/repro/page_diff.txt:158:rrection.inPrint.coefficients.slope}x, R├é┬▓ ={" "}
+outputs/repro/page_diff.txt:165:pt)} + {n3(corrected.genarch.slope)}x, R┬▓ ={" "}
+outputs/repro/page_diff.txt:166:pt)} + {n3(corrected.genarch.slope)}x, R├é┬▓ ={" "}
+outputs/repro/page_diff.txt:174:{n3(no2.zerosDropped.slope)} and R┬▓ {n3(no2.zerosDropped.r2)} on{" "}
+outputs/repro/page_diff.txt:175:{n3(no2.zerosDropped.slope)} and R├é┬▓ {n3(no2.zerosDropped.r2)} on{" "}
+outputs/repro/page_diff.txt:180:e the relationship a strong one. At an R┬▓
+outputs/repro/page_diff.txt:181:e the relationship a strong one. At an R├é┬▓
+outputs/repro/page_diff.txt:189:-              ┬╡g/m┬│. DEQ truncates published values rather than rounding them
+outputs/repro/page_diff.txt:190:+              ├é┬╡g/m├é┬│. DEQ truncates published values rather than rounding
+outputs/repro/page_diff.txt:198:ation definition the index is (n ΓêÆ 1) ├ù 0.98,
+outputs/repro/page_diff.txt:199:nterpolation definition the index is (n ├ó╦åΓÇÖ 1) ├âΓÇö 0.98,
+outputs/repro/page_diff.txt:207:-              ┬╡g/m┬│, against 0.35 to 2.33 ┬╡g/m┬│ for the longer records (sen
+outputs/repro/page_diff.txt:208:+              ├é┬╡g/m├é┬│, against 0.35 to 2.33 ├é┬╡g/m├é┬│ for the longer reco
+outputs/repro/page_diff.txt:216:shifts the statistic by up to 2.12 ┬╡g/m┬│ while leaving the mean unchanged
+outputs/repro/page_diff.txt:217:shifts the statistic by up to 2.12 ├é┬╡g/m├é┬│ while leaving the mean uncha
+outputs/repro/page_diff.txt:225:2.5 averages sat above {PM25_24H_LEVEL} ┬╡g/m┬│. That sensor,{" "}
+outputs/repro/page_diff.txt:226:2.5 averages sat above {PM25_24H_LEVEL} ├é┬╡g/m├é┬│. That sensor,{" "}
+outputs/repro/page_diff.txt:233:ort no site sits above {PM25_24H_LEVEL} ┬╡g/m┬│. This is a
+outputs/repro/page_diff.txt:234:ort no site sits above {PM25_24H_LEVEL} ├é┬╡g/m├é┬│. This is a
+outputs/repro/page_diff.txt:242:as the only one above {PM25_24H_LEVEL} ┬╡g/m┬│ stood
+outputs/repro/page_diff.txt:243:as the only one above {PM25_24H_LEVEL} ├é┬╡g/m├é┬│ stood
+outputs/repro/page_diff.txt:248:verages sits above the {PM25_24H_LEVEL} ┬╡g/m┬│
+outputs/repro/page_diff.txt:249:verages sits above the {PM25_24H_LEVEL} ├é┬╡g/m├é┬│
+outputs/repro/page_diff.txt:257:e arrived they sat at or below about 20 ┬╡g/m┬│
+outputs/repro/page_diff.txt:258:e arrived they sat at or below about 20 ├é┬╡g/m├é┬│
+outputs/repro/page_diff.txt:266:-              {PM25_24H_LEVEL} ┬╡g/m┬│ on matched windows, and {shortest.key} r
+outputs/repro/page_diff.txt:267:+              {PM25_24H_LEVEL} ├é┬╡g/m├é┬│ on matched windows, and {shortest.ke
+outputs/repro/page_diff.txt:275:-              roughly 2.4 ┬╡g/m┬│ in both directions, higher at some sites and
+outputs/repro/page_diff.txt:276:+              roughly 2.4 ├é┬╡g/m├é┬│ in both directions, higher at some sites
+outputs/repro/page_diff.txt:284:minator here. It fails below roughly 30 ┬╡g/m┬│, where small absolute
+outputs/repro/page_diff.txt:285:minator here. It fails below roughly 30 ├é┬╡g/m├é┬│, where small absolute
+outputs/repro/viol_2026-09-20.txt:1:leading U+FEFF (BOM)
+outputs/repro/void_block.txt:1:leading U+FEFF (BOM)
+outputs/repro/void_block.txt:2:{n2(s.withSmoke.mean)} Âµg/mÂ³ across {n0(s.withSmoke.n)} valid
+outputs/repro/void_block.txt:3:{n2(s.withoutSmoke.mean)} Âµg/mÂ³ across {n0(s.withoutSmoke.n)} ho
+outputs/repro/void_block.txt:5:{n1(s.withSmoke.max)} Âµg/mÂ³, falls inside that window; outsi
+outputs/repro/void_block.txt:6:hour is {n1(s.withoutSmoke.max)} Âµg/mÂ³.
+INFO pipeline/sources/deq_sensor_site_history.csv:1:leading U+FEFF (BOM)
+scripts/co_table1_truncation_test.py:1:leading U+FEFF (BOM)
+scripts/collocation_leverage_check.py:1:leading U+FEFF (BOM)
+scripts/collocation_policy_sweep.py:1:leading U+FEFF (BOM)
+scripts/collocation_selection_sweep.py:1:leading U+FEFF (BOM)
+scripts/collocation_window_sweep.py:1:leading U+FEFF (BOM)
+scripts/deq/extract_report_figures.py:1:leading U+FEFF (BOM)
+scripts/find_kunak_exports.py:1:leading U+FEFF (BOM)
+scripts/ingest_deq_report.py:1:leading U+FEFF (BOM)
+scripts/locate_kunak.py:1:leading U+FEFF (BOM)
+scripts/mark_superseded.py:1:leading U+FEFF (BOM)
+scripts/p98_daygrouping_solver.py:1:leading U+FEFF (BOM)
+scripts/p98_method_solver.py:1:leading U+FEFF (BOM)
+scripts/p98_offset_diagnostic.py:1:leading U+FEFF (BOM)
+scripts/remove_manifest_entry.py:1:leading U+FEFF (BOM)
+scripts/show_deq_tables.py:1:leading U+FEFF (BOM)
+site/src/content/deq-attribution.ts:1:leading U+FEFF (BOM)
+
+INFO: 1 hit(s) in 1 raw source file(s) under pipeline/sources/; not counted
