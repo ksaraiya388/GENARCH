@@ -1,0 +1,170 @@
+{
+  "tables": [
+    {
+      "caption": "Every file the report's analysis reads, as pinned in the data freeze. Sensor exports are named by site code; each row is identified by its SHA-256 so the reproduction stays checkable without printing a filename that carries a site identifier.",
+      "columns": [
+        "Source",
+        "Origin",
+        "Licence",
+        "Export date",
+        "Data cutoff",
+        "SHA-256"
+      ],
+      "file": "T01_sources.csv",
+      "id": "T01_sources",
+      "row_count": 26,
+      "source_note": "data/reports/2026/FREEZE.json and pipeline/sources/manifest.json.",
+      "title": "Frozen inputs",
+      "units": {
+        "Data cutoff": "local clock for sensors, EST for the regulatory monitor"
+      }
+    },
+    {
+      "caption": "Maps each neutral site code to the name DEQ publishes for that location. One row per unit period, so a unit that moved is listed under each site it occupied. This table carries no reading value of any kind and none may be added to it.",
+      "columns": [
+        "Site code",
+        "DEQ published name",
+        "APEX unit",
+        "County",
+        "Active start",
+        "Active end",
+        "Record days"
+      ],
+      "file": "T02_site_key.csv",
+      "id": "T02_site_key",
+      "row_count": 13,
+      "source_note": "pipeline/sources/deq_sensor_site_history.csv and pipeline/lookups/site_codes.json.",
+      "title": "Site key",
+      "units": {
+        "Record days": "complete days over the full frozen record, 18 of 24 valid hours"
+      }
+    },
+    {
+      "caption": "The four regressions at the collocated site, sensor on x and regulatory monitor on y, each fit stopping at DEQ's 2026-08-07 07:00 EST edition cutoff. DEQ publishes its coefficients to two significant figures, so status reports whether each recomputed value, rounded to the decimals DEQ printed, equals DEQ's. Exact zeros are retained in the APEX 5 NO2 fit and in nothing else.",
+      "columns": [
+        "Comparison",
+        "DEQ intercept",
+        "DEQ slope",
+        "DEQ R-squared",
+        "GENARCH intercept",
+        "GENARCH slope",
+        "GENARCH R-squared",
+        "Difference, intercept",
+        "Difference, slope",
+        "Difference, R-squared",
+        "Paired hours",
+        "Period start",
+        "Period end",
+        "Status"
+      ],
+      "file": "T03_collocation.csv",
+      "id": "T03_collocation",
+      "row_count": 4,
+      "source_note": "Frozen original analysis inputs and FOIA 26-4646, against DEQ's published coefficients.",
+      "title": "Collocation regressions",
+      "units": {
+        "Intercept and slope": "pollutant units",
+        "n": "paired hours"
+      }
+    },
+    {
+      "caption": "Recomputed 24-hour means of the regulatory monitor against DEQ's published daily file, truncated to one decimal as DEQ truncates. One row per comparable day.",
+      "columns": [
+        "Date",
+        "Recomputed daily mean (µg/m³)",
+        "DEQ published daily mean (µg/m³)",
+        "Difference (µg/m³)",
+        "Valid hours",
+        "Agrees after truncation"
+      ],
+      "file": "T04_daily_reconciliation.csv",
+      "id": "T04_daily_reconciliation",
+      "row_count": 119,
+      "source_note": "FOIA 26-4646 hourly and published daily average files.",
+      "title": "Daily-average reconciliation, by day",
+      "units": {
+        "Published": "µg/m³",
+        "Recomputed": "µg/m³"
+      }
+    },
+    {
+      "caption": "The reconciliation in one row. Comparable means the published day survives DEQ's null-code and logger-invalid exclusions and the recomputed day clears 18 of 24 valid hours.",
+      "columns": [
+        "Comparable days",
+        "Agreeing days",
+        "Mean absolute difference (µg/m³)",
+        "Maximum absolute difference (µg/m³)",
+        "Window start",
+        "Window end",
+        "Days that differ"
+      ],
+      "file": "T04s_daily_summary.csv",
+      "id": "T04s_daily_summary",
+      "row_count": 1,
+      "source_note": "FOIA 26-4646 hourly and published daily average files.",
+      "title": "Daily-average reconciliation, summary",
+      "units": {
+        "Mean absolute difference": "µg/m³"
+      }
+    },
+    {
+      "caption": "The six sensors restricted to the window in which all six were collecting, under both day definitions and both cutoffs. Restricting to a common window removes the unequal-record-length difference; it does not remove the unequal-seasonality one, because the window is entirely high summer and contains the smoke period. Neither these values nor DEQ's are comparable to the NAAQS.",
+      "columns": [
+        "Site code",
+        "Day definition",
+        "Whole-day record days",
+        "Whole-day 98th percentile (µg/m³)",
+        "DEQ-cutoff record days",
+        "DEQ-cutoff 98th percentile (µg/m³)",
+        "Rank"
+      ],
+      "file": "T05_p98_common_window.csv",
+      "id": "T05_p98_common_window",
+      "row_count": 12,
+      "source_note": "Frozen sensor exports; DEQ's edition cutoff is 2026-08-07 07:00 EST.",
+      "title": "98th percentiles on the common window",
+      "units": {
+        "98th percentile": "µg/m³"
+      }
+    },
+    {
+      "caption": "The same statistic under three defensible method combinations, against the value DEQ published in Table 4 of its 2026-08-07 report. No single combination reproduces all nine rows, which is why this is reported as a partial reproduction. The day boundary accounts for most of the offset; zero handling is minor and inconsistent in direction.",
+      "columns": [
+        "Site code",
+        "Record days",
+        "98th percentile, local standard time, zeros missing (µg/m³)",
+        "98th percentile, local clock time, zeros missing (µg/m³)",
+        "98th percentile, local clock time, zeros kept (µg/m³)",
+        "DEQ Table 4, 2026-08-07 (µg/m³)",
+        "Difference, local standard time, zeros missing (µg/m³)",
+        "Difference, local clock time, zeros missing (µg/m³)",
+        "Difference, local clock time, zeros kept (µg/m³)"
+      ],
+      "file": "T06_p98_full_record_variants.csv",
+      "id": "T06_p98_full_record_variants",
+      "row_count": 9,
+      "source_note": "Frozen sensor exports and DEQ's 2026-08-07 report, Table 4.",
+      "title": "98th percentiles over each site's own record",
+      "units": {
+        "98th percentile": "µg/m³"
+      }
+    },
+    {
+      "caption": "Pearson correlation of hourly PM2.5 between each pair of the six sensors, pairwise-complete, with the smoke window excluded and exact zeros treated as missing. Long form rather than a grid so each pair carries its own overlapping-hour count. Descriptive only: high spatial correlation does not establish that local sources contribute nothing.",
+      "columns": [
+        "Site code A",
+        "Site code B",
+        "Pearson r",
+        "Overlapping hours"
+      ],
+      "file": "T07_correlation_matrix.csv",
+      "id": "T07_correlation_matrix",
+      "row_count": 15,
+      "source_note": "Frozen original analysis inputs.",
+      "title": "Cross-site hourly correlation",
+      "units": {
+        "Pearson r": "dimensionless"
+      }
+    }
+  ]
+}

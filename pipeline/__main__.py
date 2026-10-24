@@ -9,14 +9,15 @@ def main() -> int:
     """Dispatch to subcommands."""
     # Allow: python -m pipeline.update --scope all
     #        python -m pipeline.validate
-    #        python -m pipeline.report --year 2026
+    #        python -m pipeline.report --year 2026 --freeze data/reports/2026/FREEZE.json
     args = sys.argv[1:]
 
     if not args:
         print("Usage: python -m pipeline <command> [options]")
         print("  update --scope all | disease | exposure | gene | pathway [--id <slug>]")
         print("  validate")
-        print("  report --year <year>")
+        print("  report --year <year> [--freeze <path>] [--out-dir <path>]")
+        print("         [--add-atlas-inputs] [--verify]")
         return 0
 
     cmd = args[0].lower()
@@ -45,14 +46,9 @@ def main() -> int:
         return validate()
 
     if cmd == "report":
-        year_arg = None
-        for i, a in enumerate(args):
-            if a == "--year" and i + 1 < len(args):
-                year_arg = args[i + 1]
-                break
-        from pipeline.report import run_report
+        from pipeline.report import main as report_main
 
-        return run_report(year_arg)
+        return report_main(args[1:])
 
     print(f"Unknown command: {cmd}", file=sys.stderr)
     return 1

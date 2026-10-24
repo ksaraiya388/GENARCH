@@ -823,3 +823,40 @@ records this per entry.
 Still open after Task 2: the manifest's six live `deq-raw/<site>_..._2026-08-28.csv` entries
 still name paths that now sit under `_superseded/`, and the twelve `_2026-10-04` exports have no
 entries either. Neither was in scope here.
+
+## pipeline.report, DEQ half (2026-10-23)
+
+Appended, not edited (D23). `python -m pipeline.report --year 2026 --freeze
+data/reports/2026/FREEZE.json` now recomputes every DEQ finding the report states and emits
+`numbers.json` (192 keys), T01-T07 with `tables.json`, and F01-F05 as SVG and 300-dpi PNG with
+`figures.json`, all under `data/reports/2026/`. All 51 R1-R4 comparisons reproduce their CONTEXT
+section 4 values; `--verify` prints the table. Outputs are byte-identical between runs.
+
+**The atlas half is gated on Prompt A and is not in this run.** `inventory.*`, `chain.*`, T08 and
+T09 are not emitted and carry no placeholder keys. `--add-atlas-inputs` refuses unless HEAD's
+`data/graph/graph.json` has `metadata.generated_at` later than 2026-10-22 and passes
+`scripts/check_mojibake.py`; it prints the reason and exits nonzero without writing. At this
+commit both conditions fail: `generated_at` is 2026-03-07 and the file carries 25 mojibake hits.
+`docs/GENARCH_RULES.md` section 7 records a clean rebuild at 72 nodes and 211 edges against the
+committed 97 and 165, so the inventory counts cannot be frozen until that rebuild lands.
+
+Site codes DC-01 to DC-12 were assigned in `pipeline/sources/deq_sensor_site_history.csv` row
+order and recorded in `pipeline/lookups/site_codes.json` (D7), which the site is to consume
+rather than re-deriving. No DC-xx convention existed before this commit.
+
+`site/src/content/deq-limitation.json` is now the single source of truth for the CONTEXT section
+3 limitation, its pairing sentence and the credit line; it is sliced out of CONTEXT.md and
+asserted byte-for-byte by a test. It differs from `DEQ_REPORT_LIMITATION` in
+`site/src/content/deq-attribution.ts`, which quotes the PDF wording; both are correct as
+transcribed and neither was altered.
+
+Gate results at this commit: constraint lint 52 violations, 52 baselined, 3 exempted, 0 new,
+in-scope 0, exit 0. `check_mojibake.py` 272 hits in 32 files, exit 1, unchanged from the
+2026-10-18 measurement, with 0 hits in any file added here. `ruff check pipeline/` passes.
+`python -m pipeline validate` passes. 69 tests pass.
+
+The exemption added for `site/src/content/deq-limitation.json` `$.pairing` is currently **inert**:
+`scripts/check-constraints.mjs` scans `site/src` for `.tsx`, `.ts` and `.mdx` only, and `.json`
+only under `data/`. It records the reviewed decision and becomes live if the constant moves under
+`data/` or the scan list grows. The 3 exemptions the lint reports are the pre-existing causal
+carve-outs on `alzheimers-disease.json`, `ischemic-stroke.json` and `graph.json`.

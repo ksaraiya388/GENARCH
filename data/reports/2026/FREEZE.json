@@ -384,5 +384,25 @@
         "rows_deduplicated": 1307
       }
     ]
-  }
+  },
+  "config_inputs": [
+    {
+      "path": "pipeline/sources/deq_sensor_site_history.csv",
+      "sha256": "aad1aa0f7e1c5cfba91b8343bc76cd5d62d9c95086b35fb02fb2ae596a835aa2",
+      "size_bytes": 4068,
+      "role": "configuration read by pipeline.report; not measurement data"
+    },
+    {
+      "path": "pipeline/lookups/site_codes.json",
+      "sha256": "06604ad091e0384faa3ca9601a9b6cd3efbdc513d7907a72c4b57451475db834",
+      "size_bytes": 8487,
+      "role": "configuration read by pipeline.report; not measurement data"
+    },
+    {
+      "path": "pipeline/sources/manifest.json",
+      "sha256": "c1ed91dc4c778085158022cc0ca4401ace2862ce6fb00d2288047d208c60c310",
+      "size_bytes": 73814,
+      "role": "configuration read by pipeline.report; not measurement data"
+    }
+  ]
 }

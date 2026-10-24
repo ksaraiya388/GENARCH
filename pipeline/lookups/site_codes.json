@@ -1,0 +1,266 @@
+{
+  "assigned_on": "2026-10-23",
+  "description": "Neutral site codes for the DEQ Data Center Air Monitoring Project sensor network. Each code denotes a physical site, not a hardware unit; where a unit moved, the unit and its period are listed separately under that site. Value tables and figures use these codes, never the internal site_id or the DEQ published name (docs/report-2026/CONTEXT.md C7 and C8, docs/CONTENT_CONSTRAINTS.md section 4). This file is the single mapping shared by pipeline.report and the site (docs/report-2026/DECISIONS.md D7).",
+  "order_source": "pipeline/sources/deq_sensor_site_history.csv, first appearance of each site_id in row order",
+  "sites": [
+    {
+      "area": "Ashburn",
+      "code": "DC-01",
+      "collocated_regulatory": true,
+      "county": "Loudoun County",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv area field",
+      "deq_published_name": "Broad Run HS",
+      "in_v1_scope": true,
+      "kunak_label": "Broad Run HS",
+      "pm25_end_date": null,
+      "site_id": "ashburn-collocated",
+      "units": [
+        {
+          "end_date": "2026-04-08",
+          "start_date": "2026-03-03",
+          "unit_id": "apex-14",
+          "unit_id_confidence": "ambiguous",
+          "unit_label": "APEX 14"
+        },
+        {
+          "end_date": null,
+          "start_date": "2026-04-08",
+          "unit_id": "apex-05",
+          "unit_id_confidence": "confirmed",
+          "unit_label": "APEX 5"
+        }
+      ]
+    },
+    {
+      "area": "Sterling",
+      "code": "DC-02",
+      "collocated_regulatory": false,
+      "county": "Loudoun County",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv area field",
+      "deq_published_name": "Dulles Airport",
+      "in_v1_scope": true,
+      "kunak_label": "Dulles Airport",
+      "pm25_end_date": null,
+      "site_id": "dulles-area",
+      "units": [
+        {
+          "end_date": null,
+          "start_date": "2026-03-03",
+          "unit_id": "TO_CONFIRM",
+          "unit_id_confidence": "confirmed",
+          "unit_label": "not confirmed"
+        }
+      ]
+    },
+    {
+      "area": "Sterling",
+      "code": "DC-03",
+      "collocated_regulatory": false,
+      "county": "Loudoun County",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv area field",
+      "deq_published_name": "Newberry Condo Assoc",
+      "in_v1_scope": true,
+      "kunak_label": "Newberry Condo Assoc",
+      "pm25_end_date": null,
+      "site_id": "newberry-condo",
+      "units": [
+        {
+          "end_date": "2026-05-15",
+          "start_date": "2026-03-03",
+          "unit_id": "TO_CONFIRM",
+          "unit_id_confidence": "ambiguous",
+          "unit_label": "not confirmed"
+        }
+      ]
+    },
+    {
+      "area": "Sterling",
+      "code": "DC-04",
+      "collocated_regulatory": false,
+      "county": "Loudoun County",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv area field",
+      "deq_published_name": "Belfort Park Dr",
+      "in_v1_scope": true,
+      "kunak_label": "Belfort Park Dr",
+      "pm25_end_date": null,
+      "site_id": "belfort-park",
+      "units": [
+        {
+          "end_date": null,
+          "start_date": "2026-05-14",
+          "unit_id": "apex-14",
+          "unit_id_confidence": "confirmed",
+          "unit_label": "APEX 14"
+        }
+      ]
+    },
+    {
+      "area": "Ashburn",
+      "code": "DC-05",
+      "collocated_regulatory": false,
+      "county": "Loudoun County",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv area field",
+      "deq_published_name": "Steuart Weller ES",
+      "in_v1_scope": true,
+      "kunak_label": "Steuart Weller ES",
+      "pm25_end_date": null,
+      "site_id": "steuart-weller",
+      "units": [
+        {
+          "end_date": "2026-06-18",
+          "start_date": "2026-03-03",
+          "unit_id": "apex-06",
+          "unit_id_confidence": "confirmed",
+          "unit_label": "APEX 6"
+        }
+      ]
+    },
+    {
+      "area": "Sterling",
+      "code": "DC-06",
+      "collocated_regulatory": false,
+      "county": "Loudoun County",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv area field",
+      "deq_published_name": "Sterling MS",
+      "in_v1_scope": true,
+      "kunak_label": "Sterling MS",
+      "pm25_end_date": null,
+      "site_id": "sterling-ms",
+      "units": [
+        {
+          "end_date": "2026-09-18",
+          "start_date": "2026-06-18",
+          "unit_id": "apex-06",
+          "unit_id_confidence": "confirmed",
+          "unit_label": "APEX 6"
+        }
+      ]
+    },
+    {
+      "area": "Sterling",
+      "code": "DC-07",
+      "collocated_regulatory": false,
+      "county": "Loudoun County",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv area field",
+      "deq_published_name": "Heritage Farm Museum",
+      "in_v1_scope": true,
+      "kunak_label": "Heritage Farm Museum",
+      "pm25_end_date": "2026-05-30",
+      "site_id": "heritage-farm",
+      "units": [
+        {
+          "end_date": "2026-06-18",
+          "start_date": "2026-03-03",
+          "unit_id": "TO_CONFIRM",
+          "unit_id_confidence": "confirmed",
+          "unit_label": "not confirmed"
+        }
+      ]
+    },
+    {
+      "area": "Ashburn",
+      "code": "DC-08",
+      "collocated_regulatory": false,
+      "county": "Loudoun County",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv area field",
+      "deq_published_name": "Farmwell Station MS",
+      "in_v1_scope": true,
+      "kunak_label": "Farmwell Station MS",
+      "pm25_end_date": null,
+      "site_id": "farmwell-middle",
+      "units": [
+        {
+          "end_date": "2026-09-18",
+          "start_date": "2026-04-08",
+          "unit_id": "TO_CONFIRM",
+          "unit_id_confidence": "confirmed",
+          "unit_label": "not confirmed"
+        }
+      ]
+    },
+    {
+      "area": "Ashburn",
+      "code": "DC-09",
+      "collocated_regulatory": false,
+      "county": "Loudoun County",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv area field",
+      "deq_published_name": "1757 Golf Club",
+      "in_v1_scope": true,
+      "kunak_label": "1757 Golf Club",
+      "pm25_end_date": null,
+      "site_id": "golf-course",
+      "units": [
+        {
+          "end_date": "2026-09-18",
+          "start_date": "2026-04-08",
+          "unit_id": "TO_CONFIRM",
+          "unit_id_confidence": "confirmed",
+          "unit_label": "not confirmed"
+        }
+      ]
+    },
+    {
+      "area": "Haymarket",
+      "code": "DC-10",
+      "collocated_regulatory": false,
+      "county": "Prince William County",
+      "county_source": "DEQ weekly report 2026-10-09 p.3 and site-history note; not verified by geocoder",
+      "deq_published_name": "Camp William B Snyder",
+      "in_v1_scope": false,
+      "kunak_label": "Camp William B Snyder",
+      "pm25_end_date": null,
+      "site_id": "camp-snyder",
+      "units": [
+        {
+          "end_date": null,
+          "start_date": "2026-09-17",
+          "unit_id": "apex-10",
+          "unit_id_confidence": "dashboard",
+          "unit_label": "APEX 10"
+        }
+      ]
+    },
+    {
+      "area": "Haymarket",
+      "code": "DC-11",
+      "collocated_regulatory": false,
+      "county": "Prince William County",
+      "county_source": "DEQ weekly report 2026-10-09 p.3 and site-history note; not verified by geocoder",
+      "deq_published_name": "Evergreen Country Club",
+      "in_v1_scope": false,
+      "kunak_label": "Evergreen Country Club",
+      "pm25_end_date": null,
+      "site_id": "evergreen-cc",
+      "units": [
+        {
+          "end_date": null,
+          "start_date": "2026-09-18",
+          "unit_id": "apex-06",
+          "unit_id_confidence": "confirmed",
+          "unit_label": "APEX 6"
+        }
+      ]
+    },
+    {
+      "area": "Manassas",
+      "code": "DC-12",
+      "collocated_regulatory": false,
+      "county": "Prince William County",
+      "county_source": "Census onelineaddress geocoder, GEOID 51153, and DEQ weekly report 2026-10-09 p.3",
+      "deq_published_name": "VDOT MKC",
+      "in_v1_scope": false,
+      "kunak_label": "VDOT MKC",
+      "pm25_end_date": null,
+      "site_id": "vdot-mkc",
+      "units": [
+        {
+          "end_date": null,
+          "start_date": "2026-09-16",
+          "unit_id": "apex-13",
+          "unit_id_confidence": "dashboard",
+          "unit_label": "APEX 13"
+        }
+      ]
+    }
+  ]
+}

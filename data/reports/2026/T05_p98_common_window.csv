@@ -1,0 +1,13 @@
+Site code,Day definition,Whole-day record days,Whole-day 98th percentile (µg/m³),DEQ-cutoff record days,DEQ-cutoff 98th percentile (µg/m³),Rank
+DC-01,local standard time,51,37.097,50,38.167,5
+DC-02,local standard time,50,29.500,50,29.500,6
+DC-04,local standard time,50,40.189,49,41.278,2
+DC-06,local standard time,51,38.215,50,39.363,4
+DC-08,local standard time,50,45.402,49,46.653,1
+DC-09,local standard time,51,40.123,50,41.237,3
+DC-01,local clock time,51,39.167,50,40.218,5
+DC-02,local clock time,49,31.783,49,31.783,6
+DC-04,local clock time,50,42.689,49,43.756,2
+DC-06,local clock time,51,40.442,50,41.572,4
+DC-08,local clock time,50,47.916,49,49.157,1
+DC-09,local clock time,51,42.620,50,43.710,3

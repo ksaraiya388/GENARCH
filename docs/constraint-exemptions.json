@@ -28,6 +28,15 @@
       "reason": "intra-organism mechanism per R2 carve-out; subject and object both molecular/anatomical. Verbatim generated copy of data/diseases/alzheimers-disease.json $.summary, which carries its own exemption. Exempted here so the derived artifact does not report a violation its source does not have.",
       "date": "2026-08-10",
       "approver": "Kiaan Saraiya (GATE 3 ruling R2/R12)"
+    },
+    {
+      "file": "site/src/content/deq-limitation.json",
+      "json_path": "$.pairing",
+      "matched_string": "A single hourly reading above 35 µg/m³ is not an exceedance of the 24-hour PM2.5 standard",
+      "constraint": "exceedance",
+      "reason": "DEQ verbatim limitation and mandatory NAAQS pairing sentence (CONTEXT §3); the sentence denies an exceedance. This file is the single source of truth for that text: the pipeline and the site both read it and nobody retypes it, so this is the only exemption the term needs. Automated negation detection was removed by ruling R1, so a disclaimer trips its own term.",
+      "date": "2026-10-23",
+      "approver": "Kiaan Saraiya (CONTEXT §3 pairing sentence, 2026-10-23 ruling)"
     }
   ]
 }

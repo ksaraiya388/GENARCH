@@ -1,0 +1,15 @@
+{
+  "appears_in": [
+    "the report summary",
+    "every limitations box",
+    "every sensor-data figure caption"
+  ],
+  "attribution": "(Virginia DEQ)",
+  "credit": "Sensor data: Virginia Department of Environmental Quality, Data Center Air Monitoring Project.",
+  "description": "The DEQ limitation language, its mandatory NAAQS pairing sentence and the credit line, as fixed by docs/report-2026/CONTEXT.md section 3. Single source of truth: the pipeline (pipeline/report_lib/figures.py) and the site both read this file. Nobody retypes the text. The limitation is a verbatim quotation attributed to Virginia DEQ and must not be paraphrased, shortened or softened. The pairing sentence must accompany it wherever it appears.",
+  "limitation": "The sensors used in this project are not regulatory instruments as specified in the Code of Federal Regulations. They cannot be used in determining attainment or non-attainment of the National Ambient Air Quality Standards. Only Federal Reference/Equivalent Method designated monitors can.",
+  "lint_note": "The pairing sentence contains the word \"exceedance\" because its function is to deny one. Automated negation detection was removed from the constraint lint by ruling R1, so this disclaimer trips its own term and carries a reviewed exemption in docs/constraint-exemptions.json.",
+  "pairing": "A single hourly reading above 35 µg/m³ is not an exceedance of the 24-hour PM2.5 standard; the regulatory form is the annual 98th percentile of daily averages, averaged over three years. The separate annual standard is 9.0 µg/m³ (2024 revision).",
+  "rendered": "The sensors used in this project are not regulatory instruments as specified in the Code of Federal Regulations. They cannot be used in determining attainment or non-attainment of the National Ambient Air Quality Standards. Only Federal Reference/Equivalent Method designated monitors can. (Virginia DEQ) A single hourly reading above 35 µg/m³ is not an exceedance of the 24-hour PM2.5 standard; the regulatory form is the annual 98th percentile of daily averages, averaged over three years. The separate annual standard is 9.0 µg/m³ (2024 revision). Sensor data: Virginia Department of Environmental Quality, Data Center Air Monitoring Project.",
+  "source": "docs/report-2026/CONTEXT.md section 3"
+}

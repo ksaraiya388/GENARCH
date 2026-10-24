@@ -1,0 +1,44 @@
+{
+  "figures": [
+    {
+      "alt_text": "A timeline of 12.0 sensor sites across 2026. Coverage is uneven: the longest records run from early March, while the shortest begins in mid-June. All six sensors in the common window were collecting together only from 2026-06-18 to 2026-08-07.",
+      "caption": "Coverage by site code. The shaded band is the window in which all six sensors were collecting; the darker band is the wildfire smoke transport weekend. Dotted lines mark the end of the regulatory monitor record and the network reconfiguration.",
+      "data_table": "T02_site_key",
+      "id": "F01_network_timeline",
+      "limitation": "The sensors used in this project are not regulatory instruments as specified in the Code of Federal Regulations. They cannot be used in determining attainment or non-attainment of the National Ambient Air Quality Standards. Only Federal Reference/Equivalent Method designated monitors can. (Virginia DEQ) A single hourly reading above 35 µg/m³ is not an exceedance of the 24-hour PM2.5 standard; the regulatory form is the annual 98th percentile of daily averages, averaged over three years. The separate annual standard is 9.0 µg/m³ (2024 revision). Sensor data: Virginia Department of Environmental Quality, Data Center Air Monitoring Project.",
+      "title": "Sensor network coverage by site code"
+    },
+    {
+      "alt_text": "Four scatter panels of paired hourly readings, sensor on the horizontal axis and regulatory monitor on the vertical. DEQ's published line and the recomputed line sit close together in every panel; the two PM2.5 panels show the tighter relationship, at R-squared 0.725 and 0.837, against 0.497 and 0.207 for NO2.",
+      "caption": "Each panel gives DEQ's published equation, the recomputed equation, the number of paired hours and whether the recomputed values match DEQ at DEQ's own published precision. Every fit stops at the 2026-08-07 07:00 EST edition cutoff.",
+      "data_table": "T03_collocation",
+      "id": "F02_collocation",
+      "limitation": "The sensors used in this project are not regulatory instruments as specified in the Code of Federal Regulations. They cannot be used in determining attainment or non-attainment of the National Ambient Air Quality Standards. Only Federal Reference/Equivalent Method designated monitors can. (Virginia DEQ) A single hourly reading above 35 µg/m³ is not an exceedance of the 24-hour PM2.5 standard; the regulatory form is the annual 98th percentile of daily averages, averaged over three years. The separate annual standard is 9.0 µg/m³ (2024 revision). Sensor data: Virginia Department of Environmental Quality, Data Center Air Monitoring Project.",
+      "title": "Collocation: sensor against the regulatory monitor"
+    },
+    {
+      "alt_text": "Recomputed daily averages plotted against DEQ's published values for 119.0 comparable days. 118.0 sit on the one-to-one line; the mean absolute difference is 0.0017 micrograms per cubic metre. One day differs.",
+      "caption": "Recomputed 24-hour means against DEQ's published daily file, truncated to one decimal as DEQ truncates. The single marked day is the one that differs, at 23 valid hours. Comparable days are those surviving DEQ's null-code and logger-invalid exclusions and clearing 18 of 24 valid hours.",
+      "data_table": "T04_daily_reconciliation",
+      "id": "F03_daily_reconciliation",
+      "limitation": "The sensors used in this project are not regulatory instruments as specified in the Code of Federal Regulations. They cannot be used in determining attainment or non-attainment of the National Ambient Air Quality Standards. Only Federal Reference/Equivalent Method designated monitors can. (Virginia DEQ) A single hourly reading above 35 µg/m³ is not an exceedance of the 24-hour PM2.5 standard; the regulatory form is the annual 98th percentile of daily averages, averaged over three years. The separate annual standard is 9.0 µg/m³ (2024 revision). Sensor data: Virginia Department of Environmental Quality, Data Center Air Monitoring Project.",
+      "title": "Daily-average reconciliation, regulatory monitor"
+    },
+    {
+      "alt_text": "For each site code, the 98th percentile over the site's own record and over the common window, joined by a line. The site with the shortest record, DC-06 at 51 days, carries the highest own-record value; DC-01 has 152 days. On the common window 5.0 of six sites sit above the 35 microgram line.",
+      "caption": "Own-record against common-window 98th percentiles, with record days annotated. A 98th percentile read from a 51-day record is a different order statistic from one read from 152 days. The horizontal line marks the level of the 24-hour standard and is not a threshold being crossed: neither these values nor DEQ's are comparable to the NAAQS.",
+      "data_table": "T05_p98_common_window",
+      "id": "F04_p98_by_site",
+      "limitation": "The sensors used in this project are not regulatory instruments as specified in the Code of Federal Regulations. They cannot be used in determining attainment or non-attainment of the National Ambient Air Quality Standards. Only Federal Reference/Equivalent Method designated monitors can. (Virginia DEQ) A single hourly reading above 35 µg/m³ is not an exceedance of the 24-hour PM2.5 standard; the regulatory form is the annual 98th percentile of daily averages, averaged over three years. The separate annual standard is 9.0 µg/m³ (2024 revision). Sensor data: Virginia Department of Environmental Quality, Data Center Air Monitoring Project.",
+      "title": "Record length moves the 98th percentile"
+    },
+    {
+      "alt_text": "A six-by-six matrix of pairwise correlations, every cell labelled. All fifteen pairs fall between 0.886 and 0.966, so the sensors largely rise and fall together across the network.",
+      "caption": "Pearson correlation of hourly PM2.5 between each pair of sensors, pairwise-complete, smoke window excluded, exact zeros treated as missing. Descriptive only: high spatial correlation does not establish that local sources contribute nothing, since the network may sit largely upwind and a local increment can be masked by a dominant regional signal.",
+      "data_table": "T07_correlation_matrix",
+      "id": "F05_correlation_heatmap",
+      "limitation": "The sensors used in this project are not regulatory instruments as specified in the Code of Federal Regulations. They cannot be used in determining attainment or non-attainment of the National Ambient Air Quality Standards. Only Federal Reference/Equivalent Method designated monitors can. (Virginia DEQ) A single hourly reading above 35 µg/m³ is not an exceedance of the 24-hour PM2.5 standard; the regulatory form is the annual 98th percentile of daily averages, averaged over three years. The separate annual standard is 9.0 µg/m³ (2024 revision). Sensor data: Virginia Department of Environmental Quality, Data Center Air Monitoring Project.",
+      "title": "Cross-site hourly PM2.5 correlation"
+    }
+  ]
+}
