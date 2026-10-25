@@ -9,7 +9,7 @@ on:
 
 jobs:
   checks:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       PYTHONUTF8: '1'
     steps:
@@ -32,6 +32,14 @@ jobs:
 
       - name: Tests
         run: python3 -m pytest tests/
+
+      # The suite writes nothing into the working tree: every generator run in
+      # tests/ goes to a tmp_path. A file that landed in data/reports/2026/
+      # instead would let the reproducibility step below compare a fresh run
+      # against output pytest had just overwritten, and pass on both being
+      # wrong. --porcelain covers untracked files as well as modified ones.
+      - name: Working tree clean after tests
+        run: git diff --exit-code && test -z "$(git status --porcelain)"
 
       # node builtins only, so this needs no npm install.
       - name: Constraint lint
@@ -86,7 +94,7 @@ jobs:
           exit $status
 
   validate-and-build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       PYTHONUTF8: '1'
     steps:

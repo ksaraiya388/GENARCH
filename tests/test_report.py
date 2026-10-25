@@ -594,7 +594,10 @@ def test_freeze_verifies_every_listed_input(freeze):
 
 
 def test_report_run_without_a_freeze_still_writes_only_the_index(tmp_path):
-    assert run_report(year=2026) == 0
+    # Into tmp_path, not data/reports/2026/: the suite leaves the working tree
+    # clean, and CI asserts that with `git status --porcelain` after pytest.
+    assert run_report(year=2026, out_dir=tmp_path) == 0
+    assert [path.name for path in sorted(tmp_path.iterdir())] == ["index.json"]
 
 
 # ----------------------------------------------------------- the atlas gate

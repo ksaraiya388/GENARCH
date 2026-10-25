@@ -1,8 +1,28 @@
-pydantic>=2.0
-jsonschema
+# Exact pins, so a CI run installs the interpreter-and-package set the
+# committed report numbers and tables were generated against (DECISIONS.md
+# D26). Every version here is the one installed in the local Python 3.14
+# environment that produced data/reports/2026/.
+#
+# Only packages the pipeline and the tests use are listed. Transitive
+# dependencies are left to the resolver: pinning them would not change a
+# reported number and would make the file a lockfile without being one.
+pydantic==2.12.5
+pandas==3.0.5
+numpy==2.5.1
+matplotlib==3.11.1
+
+# pandas reads the regulatory .xls exports through this engine
+# (pipeline/reshape_deq.py), so it is a runtime dependency of the pipeline
+# even though no module imports it.
+xlrd==2.0.2
+
+# Tooling: pytest runs tests/, ruff is the pipeline lint gate.
+pytest==9.1.1
 ruff==0.11.13
-pytest
-pandas>=2.0
-xlrd>=2.0
-numpy>=2.0
-matplotlib>=3.8
+
+# Unpinned deliberately. No module under pipeline/ or tests/ imports
+# jsonschema, so its version cannot move a reported value. The local
+# environment holds 3.2.0 (2019), which predates Python 3.14 and would not be
+# a safe pin for the Linux runner; the entry is kept rather than removed
+# because removing an unused declared dependency is not this change.
+jsonschema

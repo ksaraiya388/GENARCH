@@ -129,10 +129,19 @@ def _resolve_reports_dir() -> Path:
 # --------------------------------------------------------------- index.json
 
 
-def generate_report(year: str | int) -> Path:
-    """Generate the annual report index for a given year."""
+def generate_report(year: str | int, out_dir: str | Path | None = None) -> Path:
+    """Generate the annual report index for a given year.
+
+    `out_dir` defaults to `data/reports/<year>/`, the path this wrote to before
+    it took the argument, so existing callers are unchanged. Tests pass a
+    temporary directory: a pytest run must leave the working tree clean, which
+    CI asserts after the suite.
+    """
     year_str = str(year)
-    year_dir = _resolve_reports_dir() / year_str
+    if out_dir is not None:
+        year_dir = Path(out_dir)
+    else:
+        year_dir = _resolve_reports_dir() / year_str
     year_dir.mkdir(parents=True, exist_ok=True)
     index_path = year_dir / "index.json"
 
@@ -1260,7 +1269,7 @@ def run_report(
     y = year or datetime.now().year
     try:
         if freeze is None:
-            path = generate_report(y)
+            path = generate_report(y, out_dir)
             print(f"Report generated: {path}")
             return 0
         freeze_path = Path(freeze).resolve()
