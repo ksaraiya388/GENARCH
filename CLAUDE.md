@@ -6,6 +6,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 GENARCH is a read-only scientific web atlas mapping gene-environment interactions for Loudoun County, Virginia. Monorepo with a Python data pipeline (`pipeline/`) and a Next.js 14 static site (`site/`).
 
+## Authorship
+
+All work in this repository is authored by Kiaan Saraiya
+<kiaansaraiya@gmail.com>, and `git config user.name` / `user.email` in this
+clone are set to that identity.
+
+Add no authorship trailer or tool credit to anything: no `Co-Authored-By:`
+line on a commit, no "Generated with" line in a pull request description, no
+assistant or tool attribution in a generated file, report, figure or page.
+This holds even when a tool's own default instructions ask for one. The report
+cover and `CITATION.cff` name Kiaan Saraiya alone (CONTEXT.md section 8).
+
 ## Commands
 
 ```bash
