@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# Refuse a commit that would carry mojibake or a leading BOM.
+# docs/report-2026/CONTEXT.md section 1; DECISIONS.md D14 and D22.
+#
+# Enabled for this clone with:
+#     git config core.hooksPath .githooks
+#
+# The checker scans every tracked text file, not just the staged ones,
+# so it also catches a file that drifted outside this commit.
+
+set -u
+
+PY="C:/Python314/python.exe"
+if [ ! -x "$PY" ]; then
+    PY="$(command -v python3 2>/dev/null || command -v python 2>/dev/null)"
+fi
+if [ -z "$PY" ]; then
+    echo "pre-commit: no Python interpreter found; cannot run scripts/check_mojibake.py" >&2
+    exit 1
+fi
+
+PYTHONUTF8=1 "$PY" scripts/check_mojibake.py
+status=$?
+
+if [ "$status" -ne 0 ]; then
+    echo "" >&2
+    echo "pre-commit: scripts/check_mojibake.py failed. Commit aborted." >&2
+    echo "Repair the characters listed above. Only a line that intentionally" >&2
+    echo "documents the corruption itself may carry the mojibake-doc marker." >&2
+    exit "$status"
+fi
+
+exit 0

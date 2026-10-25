@@ -1,12 +1,44 @@
 name: GENARCH CI
 
+# Every branch and every pull request: the checks job below is the
+# encoding and constraint gate, and a branch that skips it can carry a
+# BOM or a mojibake sequence into main unseen.
 on:
   push:
-    branches: [main, 'cursor/*']
   pull_request:
-    branches: [main]
 
 jobs:
+  checks:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install pipeline dependencies
+        run: pip install -r pipeline/requirements.txt
+
+      - name: Tests
+        run: python3 -m pytest tests/
+
+      # node builtins only, so this needs no npm install.
+      - name: Constraint lint
+        run: node scripts/check-constraints.mjs
+
+      - name: Encoding check
+        run: python3 scripts/check_mojibake.py
+
+      - name: Validate pipeline schemas
+        run: python3 -m pipeline.validate
+
   validate-and-build:
     runs-on: ubuntu-latest
     steps:

@@ -1,4 +1,4 @@
-﻿import csv, glob, os
+import csv, glob, os
 import pandas as pd, numpy as np
 pd.set_option("display.width", 220)
 

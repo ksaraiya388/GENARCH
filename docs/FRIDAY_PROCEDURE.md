@@ -1,4 +1,4 @@
-﻿# GENARCH Friday procedure
+# GENARCH Friday procedure
 
 Mechanical ingestion only. No analysis, no artifact edits, no outreach.
 Anything surprising gets written down and left for the next working session.
@@ -26,9 +26,16 @@ read the reason before reaching for --force.
 
     $prev = "pipeline\sources\deq\deq_dcamp_weekly_<prior>.txt"
     $curr = "pipeline\sources\deq\deq_dcamp_weekly_<new>.txt"
-    Compare-Object (Get-Content $prev -Encoding UTF8) (Get-Content $curr -Encoding UTF8) |
+    $out  = "outputs\repro\deq_report_diff_<new>.txt"
+    $text = Compare-Object (Get-Content $prev -Encoding UTF8) (Get-Content $curr -Encoding UTF8) |
       Where-Object { $_.InputObject -match '\d' } |
-      Tee-Object -FilePath "outputs\repro\deq_report_diff_<new>.txt"
+      Out-String -Width 200
+    Write-Host $text
+    [System.IO.File]::WriteAllText($out, $text, (New-Object System.Text.UTF8Encoding($false)))
+
+Tee-Object, Out-File, Set-Content and `>` each write a UTF-8 BOM here, and
+`scripts/check_mojibake.py` fails on a leading BOM. Every file this
+procedure writes goes through the `WriteAllText` call above (CONTEXT 1).
 
 Read for silent revisions to prior weeks. DEQ has corrected a regression and a
 daily value without announcement before.

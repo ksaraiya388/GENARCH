@@ -1,4 +1,4 @@
-﻿
+
   pipeline\reshape_deq.py:14:----------------
   pipeline\reshape_deq.py:15:All DEQ calendar-date rules -- occupancy windows, the PM2.5 void window and
 > pipeline\reshape_deq.py:16:``pm25_end_date`` -- are evaluated on ``ts_raw``, the dashboard's local wall

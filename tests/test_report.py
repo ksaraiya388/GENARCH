@@ -31,7 +31,7 @@ from pipeline.report_lib.verify import (
     render,
 )
 
-MOJIBAKE_PATTERNS = ("Ã", "Â", "â€")
+MOJIBAKE_PATTERNS = ("\u00c3", "\u00c2", "\u00e2\u20ac")
 TEXT_SUFFIXES = {".json", ".csv", ".svg", ".txt", ".md"}
 PNG_METADATA_CHUNKS = (b"tEXt", b"zTXt", b"iTXt", b"tIME")
 

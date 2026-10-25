@@ -1,4 +1,4 @@
-﻿
+
 //
 // The three exported strings below are VERBATIM QUOTATIONS attributed to a state agency.
 // Before this page ships, diff each one character-by-character against the live source named

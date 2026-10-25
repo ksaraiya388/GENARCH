@@ -1,4 +1,4 @@
-﻿# Collocation reproduction method
+# Collocation reproduction method
 
 Established 2026-08-29 by policy, selection, and leverage sweeps
 (`scripts/collocation_policy_sweep.py`, `scripts/collocation_selection_sweep.py`,

@@ -24,3 +24,13 @@ build/
 *.log
 
 report_diff_output.txt
+
+# Untracked 2026-10-24 by the encoding repair. Each quotes corrupted
+# text verbatim, so scripts/check_mojibake.py can never pass while they
+# are tracked, and none can be regenerated. Kept on local disk; see
+# docs/report-2026/AUDIT.md.
+docs/report-2026/scratch/moj.txt
+outputs/repro/page_diff.txt
+outputs/repro/deqdata_diff.txt
+outputs/repro/void_block.txt
+outputs/repro/limitations_block.txt

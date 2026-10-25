@@ -1,4 +1,4 @@
-﻿import pdfplumber, glob, os, io
+import pdfplumber, glob, os, io
 out = io.open("report_diff_output.txt", "w", encoding="utf-8")
 def w(s): out.write(s + "\n")
 KEYS = ["R2 =", "R\u00b2 =", "98th percentile", "y =", "Sterling", "voided"]

@@ -61,10 +61,10 @@ graph_edge,e151,brca1->dna-damage-repair,brca1 pathway dna-damage-repair,pathway
 graph_edge,e152,brca2->dna-damage-repair,brca2 pathway dna-damage-repair,pathway,ref2|ref4,UNNAMESPACED_ID,unnamespaced,/graph
 graph_edge,e153,tp53->dna-damage-repair,tp53 pathway dna-damage-repair,pathway,ref1|ref3,UNNAMESPACED_ID,unnamespaced,/graph
 graph_edge,e154,egfr->dna-damage-repair,egfr pathway dna-damage-repair,pathway,ref3,UNNAMESPACED_ID,unnamespaced,/graph
-graph_edge,e155,gstp1->asthma,gstp1 GÃ—E asthma,literature,ref1,UNNAMESPACED_ID,unnamespaced,/graph
-graph_edge,e156,air-pollution->gstp1,air-pollution GÃ—E gstp1,literature,ref1,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e155,gstp1->asthma,gstp1 G×E asthma,literature,ref1,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e156,air-pollution->gstp1,air-pollution G×E gstp1,literature,ref1,UNNAMESPACED_ID,unnamespaced,/graph
 graph_edge,e157,bdnf->major-depressive-disorder,bdnf GWAS major-depressive-disorder,literature,ref2,UNNAMESPACED_ID,unnamespaced,/graph
-graph_edge,e158,psychosocial-stress->bdnf,psychosocial-stress GÃ—E bdnf,literature,ref2,UNNAMESPACED_ID,unnamespaced,/graph
+graph_edge,e158,psychosocial-stress->bdnf,psychosocial-stress G×E bdnf,literature,ref2,UNNAMESPACED_ID,unnamespaced,/graph
 graph_edge,e159,gstp1->oxidative-stress-response,gstp1 pathway oxidative-stress-response,pathway,ref1,UNNAMESPACED_ID,unnamespaced,/graph
 graph_edge,e16,tobacco->schizophrenia,tobacco modifier schizophrenia,literature,ref3|ref5,UNNAMESPACED_ID,unnamespaced,/graph
 graph_edge,e160,sod2->oxidative-stress-response,sod2 pathway oxidative-stress-response,pathway,ref1,UNNAMESPACED_ID,unnamespaced,/graph

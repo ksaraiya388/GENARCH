@@ -1,4 +1,4 @@
-﻿import numpy as np
+import numpy as np
 import pandas as pd
 
 r = pd.read_csv("pipeline/sources/deq_regulatory_monitor_hourly.csv")

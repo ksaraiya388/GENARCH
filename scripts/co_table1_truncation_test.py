@@ -1,4 +1,4 @@
-﻿import math
+import math
 import pandas as pd
 
 DEQ_T1 = {

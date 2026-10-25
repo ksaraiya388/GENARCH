@@ -1,4 +1,4 @@
-﻿# TASK: Consolidate the 2026-08-28 refresh findings and reframe the record-length claim
+# TASK: Consolidate the 2026-08-28 refresh findings and reframe the record-length claim
 
 ## Context
 

@@ -860,3 +860,15 @@ The exemption added for `site/src/content/deq-limitation.json` `$.pairing` is cu
 only under `data/`. It records the reviewed decision and becomes live if the constant moves under
 `data/` or the scan list grows. The 3 exemptions the lint reports are the pre-existing causal
 carve-outs on `alzheimers-disease.json`, `ischemic-stroke.json` and `graph.json`.
+
+## Encoding repair (2026-10-24)
+
+Appended, not edited, per D23.
+
+2026-10-24: data/graph/graph.json (generated 2026-03-07) is not reproducible from the current pipeline. A clean rebuild yields 72 nodes / 211 edges with 38 orphan-endpoint edges across 35 gene ids lacking gene records (including il1rl1), and validate rule 4 fails; the committed graph carries 27 gene nodes no code produces. Encoding repaired in place; structure unchanged at 97 nodes / 165 edges.
+
+2026-10-24: moj.txt and four outputs/repro captures untracked. They quote corrupted text, and moj.txt was itself mangled by a cp437 console redirect when written. They remain on local disk; AUDIT's Task 2 table is the record. tabulate_moj.py can no longer run from the repo.
+
+2026-10-24: after the in-place encoding repair, data/graph/graph.json holds 97 nodes and 165 edges; metadata.generated_at is 2026-03-07, metadata.node_count 97, metadata.edge_count 165, unchanged from before the repair. 27 of 4,536 lines changed; 4,509 are byte-identical.
+
+Census correction: data/graph/graph.json carried 232 corrupted characters in 11 sequences across 27 lines (87 substitutions), not 83 in 8 across 26 as REPORT.md F3 recorded; F3 missed \u00e2\u2030\u00a5, \u00e2\u2030\u00a4 and \u00e2\u2020\u2019. Corruption entered at 0cd2031 (2026-04-03); the last clean version is d1ea029 (2026-03-07). Each repaired string matches both the d1ea029 text and its cp1252 round-trip. The stray CRLF from the BOM writer is on the last line of 17 files, not the first line of 26; all line endings were left untouched. graph.json gains no encoding_repair field (GraphSchema forbids extra keys). The checker pattern \u00e2\u20ac was generalized so that \u00e2\u2030\u00a4, \u00e2\u2030\u00a5 and \u00e2\u2020\u2019 are flagged.

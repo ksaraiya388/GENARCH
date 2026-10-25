@@ -14,10 +14,30 @@ they are read by signature rather than by character (``DECISIONS.md`` D22):
   R-c  a box-drawing character other than U+2500 and U+2502 immediately
        adjacent, on either side, to an ASCII letter or digit.
   R-d  U+252C followed by anything other than U+2500 or whitespace.
+  R-e  U+00CE or U+00CF followed by a character in U+0080-U+00BF or
+       U+0152-U+2122, the cp1252 high range.
+  R-f  U+00E2 followed by a character in that same cp1252 high range.
 
 A tree or table keeps box-drawing characters next to each other and to
 whitespace. A cp437 round trip of double-encoded UTF-8 puts them against
 letters and digits, and pulls in block elements that no tree draws.
+
+R-f replaces an earlier literal pair, U+00E2 U+20AC, which caught only
+the sequences whose second byte was 0x80. U+00E2 is the lead byte of a
+three-byte UTF-8 sequence read as cp1252, and the second byte ranges
+over 0x80-0xBF, so the euro sign is one case of twenty-seven. The pair
+missed U+2264, U+2265 and U+2192, which arrive as U+00E2 U+2030 U+00A4,
+U+00E2 U+2030 U+00A5 and U+00E2 U+2020 U+2019; one of those survived in
+`data/graph/graph.json` with the checker reporting a clean run. A real
+a-circumflex is followed by ordinary text, as in chateau, so the second
+character carries the signal here too.
+
+R-e reads the lead byte of a two-byte UTF-8 sequence decoded as cp1252.
+Greek and Coptic double-encode that way: U+03BA arrives as U+00CE U+00BA,
+U+03B1 as U+00CE U+00B1, U+03C0 as U+00CF U+20AC. A real I-circumflex or
+I-diaeresis is followed by ordinary text, so the second character is what
+separates the two. The three literal patterns above miss this class: a
+`graph.json` pathway label read `NF-` U+00CE U+00BA `B` and passed.
 
 U+2500 and U+2502 are out of R-c because a drawing does place them against
 text: a cell whose label exactly fills its width ends in a letter against the
@@ -56,7 +76,11 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 PATTERNS = [
     re.compile(r"\u00c3"),        # A-tilde
     re.compile(r"\u00c2"),        # A-circumflex
-    re.compile(r"\u00e2\u20ac"),  # a-circumflex + euro sign
+    # R-f. a-circumflex followed by the cp1252 high range: the lead
+    # byte of a three-byte UTF-8 sequence (general punctuation, arrows,
+    # mathematical operators) read as cp1252. The range covers every
+    # cp1252 reading of a 0x80-0xBF continuation byte.
+    re.compile(r"\u00e2[\u0080-\u00bf\u0152-\u2122]"),
     # R-a. Light vertical and right, followed by a character that is neither
     # whitespace nor box-drawing. End of line never matches: the following
     # character has to exist.
@@ -71,6 +95,11 @@ PATTERNS = [
     # or whitespace. Catches a space-separated cp437 run that R-c now lets
     # past; in a drawing U+252C is always followed by U+2500.
     re.compile(r"\u252c[^\u2500\s]"),
+    # R-e. I-circumflex or I-diaeresis followed by the cp1252 high
+    # range, which is the lead byte of a Greek or Coptic character
+    # double-encoded through cp1252. Written as escapes, so this file
+    # never matches itself.
+    re.compile(r"[\u00ce\u00cf][\u0080-\u00bf\u0152-\u2122]"),
 ]
 BOM = "\ufeff"
 
@@ -150,6 +179,13 @@ MUST_FLAG = [
     ("cp437 middle dot, space separated", "a \u252c\u2556 b"),
     ("cp437 BOM at the head of a diff line",
      "+\u2229\u2557\u2510import Link"),
+    ("R-e kappa in a pathway label", "NF-\u00ce\u00baB"),
+    ("R-e alpha, bare", "\u00ce\u00b1"),
+    ("R-e pi, second character in the cp1252 high range", "\u00cf\u20ac"),
+    ("R-f less-than or equal to", "\u00e2\u2030\u00a42.5"),
+    ("R-f greater-than or equal to", "\u00e2\u2030\u00a5"),
+    ("R-f rightwards arrow", "\u00e2\u2020\u2019"),
+    ("R-f en dash in a range", "0.08\u00e2\u20ac\u201c0.15"),
 ]
 MUST_PASS = [
     ("tree branch", "\u251c\u2500\u2500 src/"),
@@ -165,6 +201,10 @@ MUST_PASS = [
      "Annotate \u2502 \u2192 \u2502 Score \u2502 \u2192 \u2502 Emit \u2502 "
      "\u2192 \u2502 Validate\u2502 \u2192 \u2502 Package \u2502"),
     ("tee in a horizontal rule", "\u2500\u252c\u2500"),
+    ("I-circumflex before lowercase text", "\u00cele"),
+    ("I-diaeresis before lowercase text", "\u00cfndex"),
+    ("a-circumflex in a French word", "ch\u00e2teau"),
+    ("a-circumflex opening a French word", "\u00e2ge"),
 ]
 
 

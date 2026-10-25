@@ -1,4 +1,4 @@
-﻿from pathlib import Path
+from pathlib import Path
 
 LOCS = {
     "Broad Run HS": "ashburn-collocated",

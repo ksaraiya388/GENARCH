@@ -1,4 +1,4 @@
-﻿import pandas as pd
+import pandas as pd
 
 DEQ_T4 = {
     "1757 Golf Club":       (7.6, 9.3, 5.4, 23.4),

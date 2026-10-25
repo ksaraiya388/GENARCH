@@ -1,4 +1,4 @@
-﻿function assertRegulatoryValidity(rows: Row[]): void {
+function assertRegulatoryValidity(rows: Row[]): void {
   let mismatches = 0;
   for (const r of rows) {
     const derived = r.value === "" || r.aqs_null_code !== "" || r.flags.includes("<");

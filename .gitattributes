@@ -1,0 +1,4 @@
+# Only the shell hook is pinned here. A repo-wide `* text=auto` would
+# renormalize every tracked file, which the 2026-10-24 encoding repair
+# deliberately avoided (core.autocrlf is true in this clone).
+.githooks/pre-commit text eol=lf
