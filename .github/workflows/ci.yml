@@ -13,13 +13,17 @@ jobs:
     env:
       PYTHONUTF8: '1'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      # .python-version is the single pin: 3.14, the interpreter every
+      # pipeline command is run against locally (DECISIONS.md D12).
+      - uses: actions/setup-python@v6
         with:
-          python-version: '3.11'
+          python-version-file: .python-version
+          cache: 'pip'
+          cache-dependency-path: pipeline/requirements.txt
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: '20'
 
@@ -39,16 +43,62 @@ jobs:
       - name: Validate pipeline schemas
         run: python3 -m pipeline.validate
 
+      # A fresh run on this runner must reproduce the committed numbers and
+      # tables byte for byte, on a different OS from the Windows machine that
+      # generated them.
+      #
+      # Figures are excluded deliberately. The SVG and PNG bytes depend on the
+      # matplotlib version, on which font files the host has installed and on
+      # the platform's text shaping, so figure bytes are only comparable
+      # between two runs on the same machine -- which is what
+      # tests/test_report.py::test_outputs_are_byte_identical_between_runs
+      # already does. numbers.json and the CSV tables carry every value the
+      # report states, so byte-identity there is the claim worth gating on.
+      - name: Report reproducibility
+        run: |
+          out="$(mktemp -d)"
+          python3 -m pipeline.report --year 2026 \
+            --freeze data/reports/2026/FREEZE.json --out-dir "$out"
+
+          committed=data/reports/2026
+          status=0
+          for f in numbers.json tables.json $(cd "$committed" && ls *.csv); do
+            if [ ! -f "$out/$f" ]; then
+              echo "MISSING from the fresh run: $f"
+              status=1
+            elif cmp -s "$committed/$f" "$out/$f"; then
+              echo "identical  $f"
+            else
+              echo "DIFFERS    $f"
+              diff -u "$committed/$f" "$out/$f" | head -40
+              status=1
+            fi
+          done
+
+          # A table the run produces but nobody committed is a failure too.
+          for f in $(cd "$out" && ls *.csv); do
+            if [ ! -f "$committed/$f" ]; then
+              echo "NOT COMMITTED: $f"
+              status=1
+            fi
+          done
+
+          exit $status
+
   validate-and-build:
     runs-on: ubuntu-latest
+    env:
+      PYTHONUTF8: '1'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
-          python-version: '3.11'
+          python-version-file: .python-version
+          cache: 'pip'
+          cache-dependency-path: pipeline/requirements.txt
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: '20'
           cache: 'npm'
@@ -71,4 +121,3 @@ jobs:
 
       - name: Build site
         run: cd site && npm run build
-

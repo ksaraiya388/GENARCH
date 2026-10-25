@@ -2,3 +2,28 @@
 # renormalize every tracked file, which the 2026-10-24 encoding repair
 # deliberately avoided (core.autocrlf is true in this clone).
 .githooks/pre-commit text eol=lf
+
+# Hash-pinned DEQ inputs: stored and restored byte-for-byte, never filtered.
+#
+# FREEZE.json and pipeline/sources/manifest.json each record a SHA-256 of a raw
+# DEQ download as it was received, and all 59 of those hashes describe the bytes
+# in the working tree. 42 of the files mix CRLF and LF line endings (a Kunak
+# export quirk), so no `eol=` setting can reconstruct them -- only verbatim
+# storage keeps the recorded hashes true on every platform. With `core.autocrlf`
+# normalising them to LF on the way into git, a non-Windows checkout hashed
+# differently from the freeze and every DEQ figure in the test suite failed on
+# the runner while passing locally.
+pipeline/sources/** -text
+
+# The exceptions: pinned files that really are LF and get read as text in
+# review. Their recorded hashes describe the LF bytes, so `eol=lf` keeps the
+# hashes valid on every platform and keeps the diffs readable.
+pipeline/sources/manifest.json text eol=lf
+pipeline/sources/loudoun_tract_foodaccess_diabetes.README.md text eol=lf
+pipeline/lookups/site_codes.json text eol=lf
+
+# Generated data, written by Python with newline="\n" throughout (CONTEXT §1).
+# Pinning LF keeps a Windows checkout byte-identical to a fresh pipeline run,
+# which is what the report reproducibility step in CI compares.
+data/** text eol=lf
+data/**/*.png binary

@@ -22,7 +22,9 @@ def emit_disease(disease: dict[str, Any], data_dir: Path) -> Path:
     out_dir = data_dir / "diseases"
     _ensure_dir(out_dir)
     out_path = out_dir / f"{slug}.json"
-    out_path.write_text(json.dumps(disease, indent=2, ensure_ascii=False), encoding="utf-8")
+    out_path.write_text(
+        json.dumps(disease, indent=2, ensure_ascii=False), encoding="utf-8", newline="\n"
+    )
     return out_path
 
 
@@ -32,7 +34,9 @@ def emit_exposure(exposure: dict[str, Any], data_dir: Path) -> Path:
     out_dir = data_dir / "exposures"
     _ensure_dir(out_dir)
     out_path = out_dir / f"{slug}.json"
-    out_path.write_text(json.dumps(exposure, indent=2, ensure_ascii=False), encoding="utf-8")
+    out_path.write_text(
+        json.dumps(exposure, indent=2, ensure_ascii=False), encoding="utf-8", newline="\n"
+    )
     return out_path
 
 
@@ -42,7 +46,9 @@ def emit_gene(gene: dict[str, Any], data_dir: Path) -> Path:
     out_dir = data_dir / "genes"
     _ensure_dir(out_dir)
     out_path = out_dir / f"{slug}.json"
-    out_path.write_text(json.dumps(gene, indent=2, ensure_ascii=False), encoding="utf-8")
+    out_path.write_text(
+        json.dumps(gene, indent=2, ensure_ascii=False), encoding="utf-8", newline="\n"
+    )
     return out_path
 
 
@@ -52,7 +58,9 @@ def emit_pathway(pathway: dict[str, Any], data_dir: Path) -> Path:
     out_dir = data_dir / "pathways"
     _ensure_dir(out_dir)
     out_path = out_dir / f"{slug}.json"
-    out_path.write_text(json.dumps(pathway, indent=2, ensure_ascii=False), encoding="utf-8")
+    out_path.write_text(
+        json.dumps(pathway, indent=2, ensure_ascii=False), encoding="utf-8", newline="\n"
+    )
     return out_path
 
 

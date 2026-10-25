@@ -126,7 +126,9 @@ def fetch_all() -> int:
 
         out_path = out_dir / f"{region_id}.geojson"
         out_path.write_text(
-            json.dumps(feature_collection, ensure_ascii=False), encoding="utf-8"
+            json.dumps(feature_collection, ensure_ascii=False),
+            encoding="utf-8",
+            newline="\n",
         )
         n_pairs = _count_coord_pairs(geometry.get("coordinates", [])) if geometry else 0
         gtype = geometry.get("type") if geometry else "?"

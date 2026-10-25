@@ -159,6 +159,7 @@ def generate_report(year: str | int) -> Path:
     index_path.write_text(
         json.dumps(content, indent=2, ensure_ascii=False),
         encoding="utf-8",
+        newline="\n",
     )
     return index_path
 
