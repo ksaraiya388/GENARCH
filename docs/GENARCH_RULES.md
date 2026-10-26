@@ -87,7 +87,7 @@ The published `dailyAvg` file applies no threshold and is itself unfiltered — 
 
 ### Truncation
 
-DEQ truncates published values to one decimal. Do not round. Recomputed daily averages matched DEQ's published file on 118 of 119 days (2026-03-03 to 2026-08-09; filtered dailyAvg file intersected with days meeting the 18-of-24 rule; mean absolute difference 0.0017 µg/m³) after accounting for truncation. An earlier figure of 126 of 131 (commit 03d8016, 2026-08-12) was computed without a completeness threshold, which this section excludes, and is superseded.
+DEQ truncates published values to one decimal. Do not round. Recomputed daily averages matched DEQ's published file on 118 of 119 days (2026-03-03 to 2026-08-09; filtered dailyAvg file intersected with days meeting the 18-of-24 rule; mean absolute difference 0.0017 µg/m³) after accounting for truncation. An earlier figure of 126 of 131 (commit 8885a56, 2026-08-12; `03d8016` before the 2026-10-25 authorship rewrite) was computed without a completeness threshold, which this section excludes, and is superseded.
 
 ### Units
 

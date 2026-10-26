@@ -874,3 +874,46 @@ Appended, not edited, per D23.
 Census correction: data/graph/graph.json carried 232 corrupted characters in 11 sequences across 27 lines (87 substitutions), not 83 in 8 across 26 as REPORT.md F3 recorded; F3 missed \u00e2\u2030\u00a5, \u00e2\u2030\u00a4 and \u00e2\u2020\u2019. Corruption entered at 0cd2031 (2026-04-03); the last clean version is d1ea029 (2026-03-07). Each repaired string matches both the d1ea029 text and its cp1252 round-trip. The stray CRLF from the BOM writer is on the last line of 17 files, not the first line of 26; all line endings were left untouched. graph.json gains no encoding_repair field (GraphSchema forbids extra keys). The checker pattern \u00e2\u20ac was generalized so that \u00e2\u2030\u00a4, \u00e2\u2030\u00a5 and \u00e2\u2020\u2019 are flagged.
 
 2026-10-25: CI checks job failed on SHA-256 mismatches. core.autocrlf=true had stored LF-normalized copies of 59 hash-pinned raw files, whose recorded hashes matched the authentic working-tree bytes (42 of 59 mix CRLF and LF). Fixed by -text on pipeline/sources/** and a renormalize of 111 files; no hash, number, table or figure changed. Four writers (report.py, graph_builder.write_graph, fetch_geo, emit.py) now force LF. CI run 40156069808 passed both jobs; the reproducibility step was identical for all ten files. Runner pinned to ubuntu-24.04 and packages pinned on 2026-10-25.
+
+## Authorship rewrite (2026-10-25)
+
+Appended, not edited, per D23.
+
+2026-10-25: all 95 commits on all seven branches were rewritten so that author and committer
+are Kiaan Saraiya <kiaansaraiya@gmail.com>, and every `Co-Authored-By` trailer was removed (74
+trailer lines in all: one naming Claude Opus 4.6 on the 2026-04-03 Passport-removal commit, the
+rest naming Kiaan Saraiya, ksaraiya388 or the Vercel app). Author and commit dates are
+unchanged. Every branch's tree is byte-identical to its pre-rewrite tree and every commit count
+is unchanged: main 66, report-2026 72, feat/brief2-and-figures 38, and the four stale
+pull-request branches 16, 16, 10 and 21. No file content, hash, number, table or figure changed.
+
+Every SHA therefore changed. The SHAs this repository cites, old to new:
+
+| Cited in | Old | New | Commit |
+|---|---|---|---|
+| `docs/GENARCH_RULES.md` section 3 (updated in place) | `03d8016` | `8885a56` | Phase 2B/3/C, 2026-08-12 |
+| `AUDIT.md` lines 655, 656 | `03d8016` | `8885a56` | Phase 2B/3/C, 2026-08-12 |
+| `AUDIT.md` lines 655, 656 | `a175853` | `0eb6003` | DEQ reshape pipeline, 2026-08-13 |
+| `AUDIT.md` line 656 | `23ce0a8` | `21f27ca` | Public repo: README, licenses, 2026-08-15 |
+| `AUDIT.md` lines 117, 514 | `25d35b7` | `81fb1df` | brief #5 T2D, 2026-10-06 |
+| `AUDIT.md` lines 3, 342 | `c2101b3` | `782c1dc` | deq weekly ingest 2026-10-10 |
+| `AUDIT.md` line 874 | `0cd2031` | `51fb4ce` | Remove Passport, 2026-04-03 |
+| `AUDIT.md` line 874 | `d1ea029` | `ea40033` | GENARCH launch, 2026-03-07 |
+| `REPORT.md` lines 318, 1443 (annotated in place) | `1178e1a` | `14622fe` | community last_updated, 2026-07-22 |
+
+`AUDIT.md`'s own citations are left as written, per D23; this table is the resolution. The two
+live documents that must resolve on their own, `docs/GENARCH_RULES.md` and `REPORT.md`, carry
+the new SHA beside the old one.
+
+`data/reports/2026/FREEZE.json` `git_head` and the `freeze.commit` key in `numbers.json` still
+read `c2101b3d766dcaa29821448c8929ded5a1f2787f`. Both are left as they are. The field records
+what HEAD was when the freeze was taken on 2026-10-18, which is what it says it records and
+what was true that day; the rewrite came a week later. Editing it would change the bytes of a
+frozen artifact and of a generated report output that CI gates on byte-identity, to chase a
+renaming that moved no data. The tree the freeze attests to, and all 29 input hashes, are
+unchanged.
+
+The pre-rewrite objects remain reachable on GitHub by full SHA until they are garbage
+collected, so the Claude trailer on `0cd2031` may still be served at its own commit URL. A
+GitHub Support request is the only way to purge it; Kiaan is opening one. A local bundle of all
+pre-rewrite refs was taken before the rewrite and is not in the repository.

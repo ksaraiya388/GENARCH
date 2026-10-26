@@ -315,7 +315,7 @@ already read it.**
 - `data/community/loudoun-county-va.json:38` → `"last_updated": "2026-07-22"`
 - `data/community/fairfax-county-va.json` → `"last_updated": "2026-07-22"`
 - `git show main:data/community/loudoun-county-va.json` → `2026-07-22` (main carries the same value)
-- `main` and `HEAD` are the same commit (`1178e1a`), so the deployed tree is this tree.
+- `main` and `HEAD` are the same commit (`1178e1a` as recorded this session, `14622fe` after the 2026-10-25 authorship rewrite), so the deployed tree is this tree.
 
 **The audit's `2/26/2026` cannot be produced from any field in this repository.**
 `new Date("2026-07-22").toLocaleDateString()` cannot yield `2/26/2026` in any locale. No field
@@ -1441,7 +1441,7 @@ helpers into one shared utility would prevent recurrence and is logged in
 **Status: open. Not reproducible from this repository at any commit examined.**
 
 Both region files carry `last_updated: "2026-07-22"`, on `main` and on `HEAD` (the same commit,
-`1178e1a`). No field in either file holds `2026-02-26`. `new Date("2026-07-22")` cannot yield
+`1178e1a` as recorded this session, `14622fe` after the 2026-10-25 authorship rewrite). No field in either file holds `2026-02-26`. `new Date("2026-07-22")` cannot yield
 `2/26/2026` in any locale or timezone. Candidates checked and excluded:
 `model.training_data_cutoff` (`2024-06-01`), `model.model_card_version` (`1.0`),
 `health_stats[].year` (2023), `exposure_layers[].year` (2022/2023),

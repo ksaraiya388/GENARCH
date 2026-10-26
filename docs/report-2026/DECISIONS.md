@@ -24,6 +24,7 @@ D22 check_mojibake.py flags \u00c3, \u00c2, a leading BOM, four box-drawing sign
 D23 AUDIT.md is append-only. Corrections are dated lines beneath the original entry; original entries are never edited.
 D25 The published knowledge graph is repaired for encoding in place and kept at 97/165. Its non-reproducibility is disclosed in report §7, excluded from the §3.8 reproducibility claim, and scheduled in §8 (fix graph_builder.build_nodes and curate gene records for the 35 missing ids, then rebaseline the lint).
 D26 Raw source files under pipeline/sources/** are stored by git byte-for-byte (-text in .gitattributes). Their SHA-256 values in manifest.json and FREEZE.json attest to the bytes as DEQ shipped them, mixed line endings included. Every other text file under data/ is LF. Report numbers and tables are verified byte-identical on a clean Linux checkout by the CI reproducibility step, on a pinned runner and pinned Python packages. Figures are excluded from byte comparison.
+D27 Authorship of every output is Kiaan Saraiya <kiaansaraiya@gmail.com> alone. No commit carries a Co-Authored-By trailer, no pull request description carries a "Generated with" line, and no generated file, report, figure or page carries a tool or assistant credit. Superseding D13, which required only that git config name Kiaan: history was rewritten on 2026-10-25 so that all 95 commits match this rule, trees and dates unchanged, with the old to new SHA map in AUDIT.md. The rule is also in CLAUDE.md under Authorship.
 
 ---
 
