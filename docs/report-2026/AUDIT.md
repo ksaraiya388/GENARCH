@@ -917,3 +917,18 @@ The pre-rewrite objects remain reachable on GitHub by full SHA until they are ga
 collected, so the Claude trailer on `0cd2031` may still be served at its own commit URL. A
 GitHub Support request is the only way to purge it; Kiaan is opening one. A local bundle of all
 pre-rewrite refs was taken before the rewrite and is not in the repository.
+
+2026-10-26: the four stale pull-request branches named in the 2026-10-25 entry above are
+deleted from the remote, so the repository now carries three branches: `main`,
+`report-2026` and `feat/brief2-and-figures`. The force push of 2026-10-25 re-triggered each
+stale branch's own obsolete workflow, dormant since February and March, and
+`cursor/genarch-initial-build-6a1a` failed on three `I001` import-order findings in
+`pipeline/models.py`, `pipeline/paths.py` and `pipeline/validate.py`, files that left the tree
+months ago. That branch's workflow installs ruff unpinned, so it drew ruff 0.17.2, which enables
+`I001` by default where the ruff of February did not. The branch tree hashed `a729936` both
+before and after the authorship rewrite, so no content of it changed and the failure was
+pre-existing drift, not a consequence of the rewrite. All four branches were merged or closed
+pull requests (PR 1, 2 and 4 merged, PR 3 closed), their heads are archived in a local bundle
+outside the repository, and `main` and `report-2026` passed on the current workflow at
+`782c1dc` and `2e2de4f`. `feat/brief2-and-figures` is fully contained in `main` and its own
+workflow triggers only on `main` and `cursor/*`, so it runs no CI and carries no failure.
