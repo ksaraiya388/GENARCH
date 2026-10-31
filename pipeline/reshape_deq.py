@@ -912,8 +912,17 @@ def main(argv: list[str] | None = None) -> int:
 
     parsed: dict[str, list[dict]] = {}
     raw_counts: dict[str, int] = {}
+    source_of: dict[str, Path] = {}
     for path in sensor_files:
         site_id, records = read_kunak_file(path)
+        if site_id in parsed:
+            # Last-writer-wins silently discarded the earlier file and left the
+            # output describing whichever filename sorted later.
+            raise DeqReshapeError(
+                f"two sensor files map to site_id {site_id!r}: "
+                f"{source_of[site_id].name} and {path.name} -- retire the "
+                f"superseded export before reshaping"
+            )
         if site_id not in by_site:
             raise DeqReshapeError(
                 f"{path.name}: site_id {site_id!r} is not in the site history"
@@ -932,6 +941,7 @@ def main(argv: list[str] | None = None) -> int:
                 f"deduplication -- values disagree for the same hour"
             )
         parsed[site_id] = records
+        source_of[site_id] = path
         raw_counts[site_id] = len(records)
 
     observed = {s: [r["_ts_raw"] for r in recs] for s, recs in parsed.items()}
