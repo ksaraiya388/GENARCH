@@ -22,10 +22,47 @@ MIN_HITS = 5
 MIN_PAGES = 5
 MIN_TABLES = 5
 
-src = Path(sys.argv[1])
-report_date = sys.argv[2]
-origin_url = sys.argv[3]
-force = "--force" in sys.argv
+USAGE = (
+    "usage: ingest_deq_report.py <source.pdf> <report-date> <origin-url> "
+    "[--download-date YYYY-MM-DD] [--force]"
+)
+
+
+def parse_args(argv):
+    """Positionals in order, with the two flags accepted anywhere among them."""
+    force = False
+    download_date = None
+    positional = []
+    i = 0
+    while i < len(argv):
+        arg = argv[i]
+        if arg == "--force":
+            force = True
+        elif arg == "--download-date":
+            if i + 1 >= len(argv):
+                raise SystemExit(f"--download-date needs a YYYY-MM-DD value\n{USAGE}")
+            download_date = argv[i + 1]
+            i += 1
+        elif arg.startswith("--download-date="):
+            download_date = arg.split("=", 1)[1]
+        elif arg.startswith("--"):
+            raise SystemExit(f"unknown option {arg}\n{USAGE}")
+        else:
+            positional.append(arg)
+        i += 1
+    if len(positional) != 3:
+        raise SystemExit(USAGE)
+    if download_date is not None:
+        try:
+            download_date = date.fromisoformat(download_date).isoformat()
+        except ValueError:
+            raise SystemExit(
+                f"--download-date must be YYYY-MM-DD, got {download_date!r}"
+            ) from None
+    return Path(positional[0]), positional[1], positional[2], download_date, force
+
+
+src, report_date, origin_url, download_date, force = parse_args(sys.argv[1:])
 
 
 def norm(s):
@@ -34,6 +71,17 @@ def norm(s):
 
 if not src.exists():
     raise SystemExit(f"missing source: {src}")
+
+# The downloaded file's own modification time, on the local clock, rather than
+# today's date: a run started after midnight, or an ingest of a file downloaded
+# days earlier, would otherwise record a download date the file cannot support.
+# `--download-date` overrides it where the mtime has been lost, for instance in a
+# file that arrived by copy rather than by download.
+if download_date is None:
+    download_date = date.fromtimestamp(src.stat().st_mtime).isoformat()
+    print(f"download_date={download_date} (from the source file's modification time)")
+else:
+    print(f"download_date={download_date} (given on the command line)")
 
 pages, tables = [], []
 with pdfplumber.open(src) as pdf:
@@ -80,6 +128,10 @@ if pdf_path.exists():
 shutil.copy2(src, pdf_path)
 txt_path = pdf_path.with_suffix(".txt")
 tbl_path = pdf_path.with_name(pdf_path.stem + "_tables.json")
+# The two sidecars keep the platform default deliberately. Everything under
+# pipeline/sources/ is stored byte-for-byte (`-text`, DECISIONS.md D26) and every
+# sidecar already in pipeline/sources/deq/ carries CRLF, so pinning LF here would
+# make each new pair differ from the seven before it for no gain.
 txt_path.write_text(text, encoding="utf-8")
 tbl_path.write_text(json.dumps(tables, indent=2, ensure_ascii=False), encoding="utf-8")
 
@@ -87,7 +139,7 @@ digest = hashlib.sha256(pdf_path.read_bytes()).hexdigest()
 entry = {
     "filename": pdf_path.as_posix(),
     "origin_url": origin_url,
-    "download_date": date.today().isoformat(),
+    "download_date": download_date,
     "report_date": report_date,
     "license": "Public record. Virginia DEQ confirmed redistributable with credit to Virginia DEQ.",
     "attribution": "Virginia Department of Environmental Quality",
@@ -120,7 +172,14 @@ if any(e.get("filename") == entry["filename"] for e in bucket):
     raise SystemExit("manifest entry already present")
 
 bucket.append(entry)
-mp.write_text(json.dumps(m, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+# `newline="\n"` because .gitattributes pins the manifest to LF and the default
+# on Windows is to translate every "\n" in the payload to CRLF, which rewrites
+# all 2,900 lines of the file and loses the diff of the entry just added.
+mp.write_text(
+    json.dumps(m, indent=2, ensure_ascii=False) + "\n",
+    encoding="utf-8",
+    newline="\n",
+)
 
 print(f"pdf    -> {pdf_path}")
 print(f"text   -> {txt_path}")
