@@ -44,6 +44,8 @@ DEQ_EDITION_CUTOFF = datetime(2026, 8, 7, 7, 0)
 DEQ_EDITION_CUTOFF_LABEL = "2026-08-07T07:00 EST"
 PM25_24H_LEVEL = 35
 
+# The live manifest, which every weekly ingest rewrites. The report reads the
+# frozen copy FREEZE.json config_inputs pins; `Freeze.config_path` redirects it.
 MANIFEST_PATH = "pipeline/sources/manifest.json"
 
 # The six sensors collecting across the common window.
@@ -656,7 +658,7 @@ def _codes_for_common_window() -> list[str]:
 def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.Table]:
     code_of = site_codes.code_for
     manifest = json.loads(
-        fz.verified_path(MANIFEST_PATH).read_text(encoding="utf-8")
+        fz.config_path(MANIFEST_PATH).read_text(encoding="utf-8")
     )
     # Manifest keys are a mix of repo-relative paths and paths relative to
     # pipeline/sources/, so match on the basename.

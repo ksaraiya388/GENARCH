@@ -3,6 +3,9 @@
 `pipeline/lookups/site_codes.json` is the single mapping shared by this report and
 the site (DECISIONS.md D7). Internal slugs never leave this module: everything
 downstream keys on the DC-xx code (CONTEXT.md C7 and C8).
+
+The report reads the frozen copy of that mapping rather than the live file, so the
+2026 roster stays the roster the freeze was taken on (DECISIONS.md D28).
 """
 
 from __future__ import annotations
@@ -14,7 +17,14 @@ from functools import lru_cache
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-SITE_CODES_PATH = REPO_ROOT / "pipeline" / "lookups" / "site_codes.json"
+
+# Not `pipeline/lookups/site_codes.json`: the report reads the copy taken at the
+# freeze, hash-verified through FREEZE.json `config_inputs` on every run
+# (DECISIONS.md D28). A site a weekly ingest adds to the live lookup after the
+# freeze therefore cannot move a 2026 number.
+SITE_CODES_PATH = (
+    REPO_ROOT / "pipeline" / "sources" / "freeze-2026" / "config" / "site_codes.json"
+)
 
 LOUDOUN = "Loudoun County"
 

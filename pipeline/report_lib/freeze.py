@@ -3,12 +3,20 @@
 `data/reports/2026/FREEZE.json` pins every input by SHA-256. Nothing is read
 unless it is listed there and its hash still matches; a mismatch aborts the run
 rather than producing a number from a file that moved under us.
+
+Measurement inputs and configuration inputs are both copied under
+`pipeline/sources/freeze-2026/`. A `config_inputs` entry carries `path`, the live
+file the copy was taken from, and `frozen_path`, the copy the report actually
+reads and hashes, so a weekly DEQ ingest can keep editing the live manifest, site
+history and site-code lookup without moving a number in the 2026 report
+(DECISIONS.md D28).
 """
 
 from __future__ import annotations
 
 import hashlib
 import json
+import shutil
 import subprocess
 import sys
 from dataclasses import dataclass
@@ -23,11 +31,13 @@ GRAPH_PATH = "data/graph/graph.json"
 MOJIBAKE_CHECKER = "scripts/check_mojibake.py"
 
 # Inputs the DEQ analysis needs that are configuration rather than measurement.
+# Keyed by the live path each was taken from; read at its frozen copy.
 CONFIG_INPUTS = (
     "pipeline/sources/deq_sensor_site_history.csv",
     "pipeline/lookups/site_codes.json",
     "pipeline/sources/manifest.json",
 )
+CONFIG_FROZEN_DIR = "pipeline/sources/freeze-2026/config"
 
 _CHUNK = 1048576
 
@@ -74,12 +84,21 @@ class Freeze:
         for entry in self.doc.get("original_analysis_inputs", {}).get("files", []):
             self._add(entry, "frozen_path", entry.get("data_cutoff_local_hour_ending"))
         for entry in self.doc.get("config_inputs", []):
-            self._add(entry, "path", None)
+            # Indexed under the live path the entry names, resolved at the frozen
+            # copy. The live file stays the report's historical source and stays in
+            # every provenance stamp; the bytes read and hashed are the frozen ones.
+            self._add(entry, "path", None, resolve_key="frozen_path")
 
-    def _add(self, entry: dict, path_key: str, cutoff: str | None) -> None:
+    def _add(
+        self,
+        entry: dict,
+        path_key: str,
+        cutoff: str | None,
+        resolve_key: str | None = None,
+    ) -> None:
         rel = entry[path_key]
         self._index[rel] = FrozenFile(
-            path=REPO_ROOT / rel,
+            path=REPO_ROOT / entry[resolve_key or path_key],
             rel_path=rel,
             sha256=entry["sha256"],
             export_date=entry.get("export_date"),
@@ -148,6 +167,17 @@ class Freeze:
     def config_input(self, rel_path: str) -> FrozenFile:
         return self._index[rel_path]
 
+    def config_path(self, rel_path: str) -> Path:
+        """The frozen copy of one configuration input, hash-verified before the read.
+
+        `rel_path` is the live path, which is what `CONFIG_INPUTS` and every
+        provenance stamp name. What comes back is the copy under
+        `CONFIG_FROZEN_DIR`.
+        """
+        if rel_path not in CONFIG_INPUTS:
+            raise FreezeError(f"{rel_path} is not a configuration input")
+        return self.verified_path(rel_path)
+
     def inputs_for(self, entries) -> list[dict]:
         """The provenance stamp recorded on every number."""
         return [{"path": e.rel_path, "sha256": e.sha256} for e in entries]
@@ -160,6 +190,9 @@ class Freeze:
     def ensure_config_inputs(self) -> bool:
         """Pin the configuration inputs on first run; verify them on every later run.
 
+        Pinning copies each live file into `CONFIG_FROZEN_DIR` and records both
+        paths, because the live files keep changing after the freeze is taken.
+
         Returns True when the block was written by this call.
         """
         if self.doc.get("config_inputs"):
@@ -171,18 +204,24 @@ class Freeze:
             target = REPO_ROOT / rel
             if not target.is_file():
                 raise FreezeError(f"configuration input is missing: {rel}")
+            frozen_rel = f"{CONFIG_FROZEN_DIR}/{target.name}"
+            frozen = REPO_ROOT / frozen_rel
+            frozen.parent.mkdir(parents=True, exist_ok=True)
+            if not frozen.is_file():
+                shutil.copy2(target, frozen)
             block.append(
                 {
                     "path": rel,
-                    "sha256": sha256_of(target),
-                    "size_bytes": target.stat().st_size,
+                    "frozen_path": frozen_rel,
+                    "sha256": sha256_of(frozen),
+                    "size_bytes": frozen.stat().st_size,
                     "role": "configuration read by pipeline.report; not measurement data",
                 }
             )
         self.doc["config_inputs"] = block
         self.write_doc()
         for entry in block:
-            self._add(entry, "path", None)
+            self._add(entry, "path", None, resolve_key="frozen_path")
         return True
 
     def write_doc(self) -> None:
