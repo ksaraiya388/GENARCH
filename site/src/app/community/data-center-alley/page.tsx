@@ -172,6 +172,19 @@ export default function DataCenterCorridorPage() {
   const unitWindows = collocated.units
     .map((u) => `${u.unitLabel} from ${u.start} to ${u.end === "" ? "the present" : u.end}`)
     .join("; ");
+  // The second unit in the collocation table held the regulatory-monitor position while DEQ
+  // refitted its two regressions week by week. The site history closes that window at the
+  // in-place swap and names the unit that took the position over, which is the one DEQ refits
+  // now; both dates come from the rows the roster above is built on.
+  const refitUnit = collocated.units.find((u) => u.unitLabel === collocation[1].unitLabel);
+  const successorUnit = collocated.units.find((u) => u.start === refitUnit?.end);
+  if (!refitUnit || refitUnit.end === "" || !successorUnit) {
+    throw new Error(
+      `The collocated site's history carries no closed ${collocation[1].unitLabel} window ` +
+      "followed by another unit. The paragraph below gives that window's dates and names its " +
+      "successor; rewrite it before shipping."
+    );
+  }
   const insufficientNote =
     correlations.insufficient.length > 0
       ? ` ${Word(correlations.insufficient.length)} further pair` +
@@ -612,8 +625,13 @@ export default function DataCenterCorridorPage() {
               The {collocation[0].unitLabel} collocation period closed on 2026-04-08, which fixes
               the two {collocation[0].unitLabel} regressions: no later week of data can enter
               them, and they print identically in all {word(editions.length)} editions. The{" "}
-              {collocation[1].unitLabel} window is still open, so each edition refits those two
-              on a week more data than the last, and their coefficients move accordingly.
+              {refitUnit.unitLabel} window ran {refitUnit.start} to {refitUnit.end}, refitted on
+              a week more data in each edition across that span, which is why those two
+              coefficients move; {successorUnit.unitLabel} has held the collocated position
+              since {successorUnit.start}, so that is the unit later editions refit. The
+              reproduction here stays pinned to the {RECORD_END} edition and the regulatory
+              record released under FOIA 26-4646 ends 2026-08-10, so neither date reaches the
+              figures in this table.
             </p>
             <p id="deq-noncomparable-note">
               {Word(assertedFits.length)} of the {word(collocation.length)} comparisons are
@@ -639,9 +657,10 @@ export default function DataCenterCorridorPage() {
               The rows do not carry equal weight. The two {collocation[0].unitLabel} rows
               compare against a closed window whose published values cannot move, so they are
               the same calculation on both sides. The {collocation[1].unitLabel} rows compare
-              against a window DEQ is still refitting, and the checked one lines up only because
-              the column above is pinned to the same August 7 span. Read as a count of matches
-              the {word(collocation.length)} would say more than they can support.
+              against a window DEQ refitted in every edition through {refitUnit.end}, and the
+              checked one lines up only because the column above is pinned to the same August 7
+              span. Read as a count of matches the {word(collocation.length)} would say more
+              than they can support.
             </p>
             <p>
               The {ordinal(collocation.length)} took a round of correspondence to get there. The{" "}
