@@ -20,6 +20,7 @@ import {
   COMPLETENESS_MIN_HOURS,
   DEQ_EDITION_CUTOFF_LABEL,
   DEQ_WEEKLY_EDITIONS,
+  MIN_OVERLAP_HOURS,
   PM25_24H_LEVEL,
   PM25_ANNUAL_LEVEL,
   RECORD_END,
@@ -144,10 +145,40 @@ export default function DataCenterCorridorPage() {
 
   const deployed = roster.filter((s) => s.hasExport);
   const withoutExport = roster.filter((s) => !s.hasExport);
-  const aboveLevel = percentiles.filter((p) => p.commonP98 > PM25_24H_LEVEL);
+  const schools = roster.filter((s) => s.atSchool);
+  // The common-window comparison can only describe the sites that were still collecting when
+  // the window opened. The others keep their own-record row and carry no matched-window figure.
+  const commonWindow = percentiles.filter((p) => p.commonP98 !== null);
+  const aboveLevel = commonWindow.filter((p) => p.commonP98! > PM25_24H_LEVEL);
   const shortest = percentiles.reduce((a, b) => (a.fullDays <= b.fullDays ? a : b));
   const longest = percentiles.reduce((a, b) => (a.fullDays >= b.fullDays ? a : b));
-  const shortestRank = percentiles.findIndex((p) => p.key === shortest.key) + 1;
+  const shortestRank = commonWindow.findIndex((p) => p.key === shortest.key) + 1;
+  if (shortestRank === 0) {
+    throw new Error(
+      "The shortest record has no common-window percentile, so it cannot be ranked against " +
+      "the others. The paragraph below states that ranking; rewrite it before shipping."
+    );
+  }
+  // The collocated site is the one place two instruments have followed each other, and the
+  // paragraphs below count its units and name the dates they changed over.
+  const collocated = roster.find((s) => s.collocatedRegulatory);
+  if (!collocated) {
+    throw new Error(
+      "No site in the roster is collocated with the regulatory monitor. The collocation " +
+      "section below is built on one, so remove it together with the site history row."
+    );
+  }
+  const inPlaceSwaps = collocated.units.slice(1).map((u) => u.start);
+  const unitWindows = collocated.units
+    .map((u) => `${u.unitLabel} from ${u.start} to ${u.end === "" ? "the present" : u.end}`)
+    .join("; ");
+  const insufficientNote =
+    correlations.insufficient.length > 0
+      ? ` ${Word(correlations.insufficient.length)} further pair` +
+        `${correlations.insufficient.length === 1 ? "" : "s"} shared fewer than ` +
+        `${MIN_OVERLAP_HOURS} overlapping valid hours and read insufficient overlap in place ` +
+        `of a coefficient.`
+      : "";
   // Three of the four comparisons are enforced by the build. The fourth is held as a
   // recorded pair: its two sides are computed over windows that cannot be aligned, so a
   // passing check would not mean what a passing check is supposed to mean.
@@ -273,11 +304,12 @@ export default function DataCenterCorridorPage() {
 
           <div className="max-w-3xl space-y-3 text-cool-light leading-relaxed">
             <p>
-              DEQ identified 22 potential locations in Loudoun County and has deployed seven
-              sensors so far, two of which have been relocated once each. The network measures
-              where it sits, and a finding drawn from these {word(deployed.length)} records
-              describes those {word(deployed.length)} locations rather than the corridor as a
-              whole.
+              DEQ identified 22 potential locations in Loudoun County and has deployed sensors at{" "}
+              {word(roster.length)} of them so far. The network measures where it sits, and a
+              finding drawn from these {word(deployed.length)} records describes those{" "}
+              {word(deployed.length)} locations rather than the corridor as a whole. Since
+              September 17, 2026, DEQ has also operated sensors in Prince William County; they
+              are outside this page&apos;s Loudoun scope and are not shown here.
             </p>
             <p>
               DEQ reports a wind rose built from Dulles Airport measurements and states that
@@ -291,19 +323,22 @@ export default function DataCenterCorridorPage() {
             </p>
             <p>
               Sensors are identified here by DEQ site identifier and locality rather than by
-              DEQ&apos;s published site label. Four of the {word(roster.length)} locations are
+              DEQ&apos;s published site label. {Word(schools.length)} of the{" "}
+              {word(roster.length)} locations are
               hosted at schools, and placing a school name beside a concentration figure invites
               an inference about children at that school that nothing in this data supports. The
               identifier crosswalk in section 9 maps every identifier to DEQ&apos;s exact
               published label, so this page can still be checked against DEQ&apos;s report.
             </p>
-            <p>
-              {Word(withoutExport.length)} of the {word(roster.length)} site records are not
-              reachable through the public dashboard, which shows those locations without a
-              device. Their historical measurements are not downloadable, so they carry no series
-              anywhere on this page. {Word(withoutExport.length)} absent site records are not the
-              same thing as no data at those locations.
-            </p>
+            {withoutExport.length > 0 && (
+              <p>
+                {Word(withoutExport.length)} of the {word(roster.length)} site records are not
+                reachable through the public dashboard, which shows those locations without a
+                device. Their historical measurements are not downloadable, so they carry no
+                series anywhere on this page. {Word(withoutExport.length)} absent site records
+                are not the same thing as no data at those locations.
+              </p>
+            )}
           </div>
 
           <div className="mt-5 overflow-x-auto rounded-lg border border-white/[0.08] bg-navy-mid/50">
@@ -358,12 +393,18 @@ export default function DataCenterCorridorPage() {
 
           <p className="mt-3 max-w-3xl text-xs text-cool-mid leading-relaxed">
             Occupancy windows and hardware unit assignments come from DEQ&apos;s site history.
-            One site shows two units because the hardware was swapped in place on 2026-04-08;
-            those two deployments are treated separately throughout.{" "}
-            {withoutExport.length} site
-            {withoutExport.length === 1 ? "" : "s"} carry no valid-hour count because no export
-            exists for them: {withoutExport.map((s) => s.siteId).join(", ")}. Sensor coordinates
-            are not published in machine-readable form, so no map is drawn here.
+            One site shows {word(collocated.units.length)} units because the hardware was
+            swapped in place on {inPlaceSwaps.join(" and ")}; each of those deployments is
+            treated separately throughout.{" "}
+            {withoutExport.length > 0 && (
+              <>
+                {withoutExport.length} site
+                {withoutExport.length === 1 ? "" : "s"} carry no valid-hour count because no
+                export exists for them: {withoutExport.map((s) => s.siteId).join(", ")}.{" "}
+              </>
+            )}
+            Sensor coordinates are not published in machine-readable form, so no map is drawn
+            here.
           </p>
         </section>
 
@@ -446,10 +487,9 @@ export default function DataCenterCorridorPage() {
             <p>
               DEQ operates one sensor at the same location as its regulatory reference monitor,
               and has published a regression between the two every week since the project began.
-              Two different hardware units have occupied that position: {collocation[0].unitLabel}{" "}
-              from 2026-03-03 to 2026-04-08 and {collocation[1].unitLabel} from 2026-04-08 onward.
-              They are treated separately throughout, since pooling two instruments into one
-              regression describes neither.
+              {Word(collocated.units.length)} different hardware units have occupied that
+              position: {unitWindows}. They are treated separately throughout, since a
+              regression pooling two instruments describes neither of them.
             </p>
             <p>
               The table sets DEQ&apos;s coefficients beside coefficients computed by
@@ -803,9 +843,9 @@ export default function DataCenterCorridorPage() {
               below include that window.
             </p>
             <p>
-              Restricting every sensor to the window in which all {word(deployed.length)} were
-              collecting, {COMMON_WINDOW_START} to {RECORD_END}, changes the ordering.{" "}
-              {Word(aboveLevel.length)} of {word(percentiles.length)} sites sit above{" "}
+              Restricting every sensor to the window in which all {word(commonWindow.length)}{" "}
+              of them were collecting, {COMMON_WINDOW_START} to {RECORD_END}, changes the
+              ordering. {Word(aboveLevel.length)} of {word(commonWindow.length)} sites sit above{" "}
               {PM25_24H_LEVEL} µg/m³ on matched windows, and {shortest.key} ranks{" "}
               {ordinal(shortestRank)} rather than first. The common window is not a clean control
               on its own: it falls entirely in high summer and contains the smoke window, so it
@@ -844,9 +884,11 @@ export default function DataCenterCorridorPage() {
                       {rankLabel(p.fullPosition)}
                     </td>
                     <td className="py-2 px-3 text-right font-mono text-cool-light">{p.commonDays}</td>
-                    <td className="py-2 px-3 text-right font-mono text-cool-light">{n2(p.commonP98)}</td>
+                    <td className="py-2 px-3 text-right font-mono text-cool-light">
+                      {p.commonP98 === null ? "—" : n2(p.commonP98)}
+                    </td>
                     <td className="py-2 px-3 text-right font-mono text-xs text-cool-light">
-                      {rankLabel(p.commonPosition)}
+                      {p.commonPosition === null ? "—" : rankLabel(p.commonPosition)}
                     </td>
                   </tr>
                 ))}
@@ -857,7 +899,8 @@ export default function DataCenterCorridorPage() {
           <p className="mt-3 max-w-3xl text-cool-light leading-relaxed">
             The rank columns give the observation each percentile is read from. At{" "}
             {shortest.commonDays} days the 98th percentile is the{" "}
-            {rankLabel(shortest.commonPosition)}; at {longest.fullDays} days it is the{" "}
+            {shortest.commonPosition === null ? "—" : rankLabel(shortest.commonPosition)}; at{" "}
+            {longest.fullDays} days it is the{" "}
             {rankLabel(longest.fullPosition)}. The statistic carries the same name at every record
             length and sits at a different position in the distribution at each one.
           </p>
@@ -866,7 +909,7 @@ export default function DataCenterCorridorPage() {
             <DeqFigure
               id="fig-percentiles"
               heading="98th percentile, own record against common window"
-              ariaLabel={`Horizontal grouped bar chart. For each of ${percentiles.length} DEQ sensor sites, one bar gives the 98th percentile of daily PM2.5 averages over that site's own record and a second gives it over the common window of ${COMMON_WINDOW_START} to ${RECORD_END}. A dashed vertical line marks ${PM25_24H_LEVEL} micrograms per cubic metre. On the common window ${aboveLevel.length} of ${percentiles.length} sites sit above that line, compared with fewer over the unmatched records.`}
+              ariaLabel={`Horizontal grouped bar chart. For each of ${percentiles.length} DEQ sensor sites, one bar gives the 98th percentile of daily PM2.5 averages over that site's own record, and for the ${commonWindow.length} still collecting when the common window of ${COMMON_WINDOW_START} to ${RECORD_END} opened, a second bar gives it over that window. A dashed vertical line marks ${PM25_24H_LEVEL} micrograms per cubic metre. On the common window ${aboveLevel.length} of ${commonWindow.length} sites sit above that line, compared with fewer over the unmatched records.`}
               caption={
                 <>
                   Daily averages are computed under the {COMPLETENESS_MIN_HOURS}-of-24
@@ -885,7 +928,9 @@ export default function DataCenterCorridorPage() {
                 rows: percentiles.map((p) => [
                   p.label,
                   p.fullDays, n2(p.fullP98), rankLabel(p.fullPosition),
-                  p.commonDays, n2(p.commonP98), rankLabel(p.commonPosition),
+                  p.commonDays,
+                  p.commonP98 === null ? "—" : n2(p.commonP98),
+                  p.commonPosition === null ? "—" : rankLabel(p.commonPosition),
                   `${n1(p.smokeShare)}%`,
                 ]),
               }}
@@ -928,22 +973,30 @@ export default function DataCenterCorridorPage() {
           <DeqFigure
             id="fig-correlation"
             heading="Pairwise correlation of hourly PM2.5"
-            ariaLabel={`Matrix of pairwise correlation coefficients for hourly PM2.5 between ${correlations.keys.length} DEQ sensor sites, with the smoke-transport window excluded. All ${correlations.pairs.length} pairwise coefficients fall between ${n3(correlations.rMin)} and ${n3(correlations.rMax)}. The number of overlapping hours behind each coefficient ranges from ${n0(correlations.nMin)} to ${n0(correlations.nMax)}.`}
+            ariaLabel={`Matrix of pairwise correlation coefficients for hourly PM2.5 between ${correlations.keys.length} DEQ sensor sites, with the smoke-transport window excluded. All ${correlations.pairs.length} reported pairwise coefficients fall between ${n3(correlations.rMin)} and ${n3(correlations.rMax)}. The number of overlapping hours behind each coefficient ranges from ${n0(correlations.nMin)} to ${n0(correlations.nMax)}.${insufficientNote}`}
             caption={
               <>
                 Smoke-transport window excluded, and exact-zero sensor readings treated as
                 missing rather than as measurements. Hour counts differ by pair because the sites
-                were not all collecting over the same period. Source:
+                were not all collecting over the same period. A pair sharing fewer than{" "}
+                {MIN_OVERLAP_HOURS} overlapping valid hours, one week of data, is reported as
+                insufficient overlap and left out of the pair count and the range below. Source:
                 deq_data_center_air_monitoring_hourly.csv.
               </>
             }
             table={{
               caption: "Show every pair as a list, with its hour count",
               columns: ["Site A", "Site B", "r", "Overlapping hours"],
-              rows: correlations.pairs
-                .slice()
-                .sort((a, b) => b.r - a.r)
-                .map((p) => [p.a, p.b, n3(p.r), n0(p.n)]),
+              rows: [
+                ...correlations.pairs
+                  .slice()
+                  .sort((a, b) => b.r - a.r)
+                  .map((p) => [p.a, p.b, n3(p.r), n0(p.n)]),
+                ...correlations.insufficient
+                  .slice()
+                  .sort((a, b) => b.n - a.n)
+                  .map((p) => [p.a, p.b, "insufficient overlap", n0(p.n)]),
+              ],
             }}
           >
             <DeqCorrelationMatrix payload={correlations} />
@@ -951,7 +1004,7 @@ export default function DataCenterCorridorPage() {
 
           <div className="mt-5 max-w-3xl space-y-3 text-cool-light leading-relaxed">
             <p>
-              All {correlations.pairs.length} pairwise correlations fall between{" "}
+              All {correlations.pairs.length} reported pairwise correlations fall between{" "}
               {n3(correlations.rMin)} and {n3(correlations.rMax)}. This is a description of how
               the series move together and nothing more. High spatial correlation does not
               establish that local sources contribute nothing: the deployed sensors may sit
@@ -1014,8 +1067,8 @@ export default function DataCenterCorridorPage() {
                 the historical export. No wind-direction analysis is performed here.
               </li>
               <li>
-                Seven of 22 identified locations have been deployed. Findings describe the
-                deployed locations, not the corridor.
+                {Word(roster.length)} of 22 identified locations have been deployed. Findings
+                describe the deployed locations, not the corridor.
               </li>
               <li>
                 No health data appears on this page and no health inference is drawn from it.

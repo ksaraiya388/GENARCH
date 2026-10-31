@@ -67,6 +67,26 @@ export const COMPLETENESS_MIN_HOURS = 18;
 /** Regulatory site inside Loudoun County. `aurhill` is Arlington and is out of v1 scope. */
 const REGULATORY_SITE = "ashburn";
 
+/**
+ * The county this page is scoped to. GENARCH is hyperlocal to Loudoun County, and DEQ retitled
+ * the project's study area "Loudoun County and Prince William County" in its 2026-10-09 report:
+ * the Prince William sites are measurements from another county and are out of v1 scope
+ * (docs/report-2026/CONTEXT.md section 7, DECISIONS.md D5).
+ *
+ * The county is read from the site history's own `county` column rather than from a list kept
+ * here, so a site reaches this page only once DEQ's published report has placed it in a county.
+ */
+export const PAGE_COUNTY = "Loudoun";
+
+/**
+ * Overlapping valid hours a pair of sites needs before its correlation coefficient is reported.
+ * One week of hourly data. A coefficient computed on a handful of shared hours is dominated by
+ * whichever hours happen to coincide, and the network reconfigures often enough that short
+ * overlaps are routine: two sites whose deployments barely met would otherwise contribute a
+ * coefficient indistinguishable in presentation from one computed over months.
+ */
+export const MIN_OVERLAP_HOURS = 168;
+
 /* -------------------------------------------------------------- file resolution */
 
 /**
@@ -236,13 +256,58 @@ function assertSensorExclusions(rows: Row[]): void {
   }
 }
 
+let historyRowsCache: Row[] | null = null;
+
+/** The curated site history, one row per site-unit period. */
+function historyRows(): Row[] {
+  if (historyRowsCache) return historyRowsCache;
+  const rows = readCsv("deq_sensor_site_history.csv");
+  const blank = rows.filter((r) => (r.county ?? "").trim() === "");
+  if (rows.length === 0 || blank.length > 0) {
+    throw new Error(
+      `deq_sensor_site_history.csv: ${blank.length} of ${rows.length} row(s) carry no county. ` +
+      `This page is scoped by that column, so a blank or missing one would silently drop a ` +
+      `site rather than fail. Fill the column in before shipping this page.`
+    );
+  }
+  historyRowsCache = rows;
+  return rows;
+}
+
+let scopeCache: Set<string> | null = null;
+
+/**
+ * The site_ids this page may show. Every site-level reading, statistic, chart and table is
+ * filtered through this set, so a measurement from another county cannot reach the page by any
+ * route. The regulatory monitor is not filtered here: it sits in Loudoun by definition
+ * (`REGULATORY_SITE`), and the Arlington CO monitor is excluded by `validRegulatory`.
+ */
+function sitesInScope(): Set<string> {
+  if (scopeCache) return scopeCache;
+  const ids = new Set(
+    historyRows().filter((r) => r.county === PAGE_COUNTY).map((r) => r.site_id)
+  );
+  if (ids.size === 0) {
+    throw new Error(
+      `deq_sensor_site_history.csv carries no site with county '${PAGE_COUNTY}'. The ` +
+      `data-center-alley page would render an empty network, so this fails the build instead.`
+    );
+  }
+  scopeCache = ids;
+  return ids;
+}
+
 let sensorRowsCache: Row[] | null = null;
 function sensorRows(): Row[] {
   if (sensorRowsCache) return sensorRowsCache;
   const rows = readCsv("deq_data_center_air_monitoring_hourly.csv");
+  // The exclusion guard runs over the whole table, including the sites this page does not
+  // show: an exclusion class the page cannot describe is a pipeline change worth failing on
+  // wherever it appears. The county filter is applied after it.
   assertSensorExclusions(rows);
-  sensorRowsCache = rows;
-  return rows;
+  const scope = sitesInScope();
+  sensorRowsCache = rows.filter((r) => scope.has(r.site_id));
+  return sensorRowsCache;
 }
 
 let regulatoryRowsCache: Row[] | null = null;
@@ -317,14 +382,24 @@ export interface RosterEntry {
   endDate: string;
   pm25EndDate: string;
   collocatedRegulatory: boolean;
-  /** False for the three sites DEQ shows as "Location without device". */
+  /** False for a site DEQ shows as "Location without device", with no downloadable record. */
   hasExport: boolean;
+  /**
+   * DEQ's published label for this location is a school. Carried so the page can count them
+   * rather than state a number that a network change would quietly falsify; no reading value
+   * is ever rendered against the label itself (docs/CONTENT_CONSTRAINTS.md section 4).
+   */
+  atSchool: boolean;
   status: "active" | "retired";
   validPm25Hours: number;
 }
 
+/** DEQ's published labels end in the abbreviation, as in `Farmwell Station MS`. */
+const SCHOOL_LABEL = /\s(?:HS|MS|ES)$/;
+
 export function getSiteRoster(): RosterEntry[] {
-  const history = readCsv("deq_sensor_site_history.csv");
+  const scope = sitesInScope();
+  const history = historyRows().filter((r) => scope.has(r.site_id));
   const hours = new Map<string, number>();
   for (const r of validSensor("PM2.5")) {
     hours.set(r.site_id, (hours.get(r.site_id) ?? 0) + 1);
@@ -361,6 +436,7 @@ export function getSiteRoster(): RosterEntry[] {
       pm25EndDate: r.pm25_end_date,
       collocatedRegulatory: r.collocated_regulatory.toUpperCase() === "TRUE",
       hasExport: exported.has(r.site_id),
+      atSchool: SCHOOL_LABEL.test(r.site_name),
       status: "active",
       validPm25Hours: hours.get(r.site_id) ?? 0,
     });
@@ -372,7 +448,7 @@ export function getSiteRoster(): RosterEntry[] {
   return Array.from(bySite.values()).sort((a, b) => a.siteId.localeCompare(b.siteId));
 }
 
-/** The six sites with a downloadable record, in stable order. */
+/** The in-scope sites with a downloadable record, in stable order. */
 export function getActiveSiteIds(): string[] {
   return getSiteRoster().filter((s) => s.hasExport).map((s) => s.siteId);
 }
@@ -958,8 +1034,12 @@ export interface PercentileRow {
   fullP98: number;
   fullPosition: RankPosition;
   commonDays: number;
-  commonP98: number;
-  commonPosition: RankPosition;
+  /**
+   * Null where the site had stopped collecting before the common window opened, which is not
+   * the same thing as a percentile of zero and must not render as a number.
+   */
+  commonP98: number | null;
+  commonPosition: RankPosition | null;
   /** Share of the site's full record falling in the smoke window, as a percentage. */
   smokeShare: number;
   firstDay: string;
@@ -1008,14 +1088,18 @@ export function getPercentiles(): PercentileRow[] {
       fullP98: percentile(days.map((d) => means.get(d)!), 0.98),
       fullPosition: percentilePosition(days.length),
       commonDays: common.length,
-      commonP98: percentile(common.map((d) => means.get(d)!), 0.98),
-      commonPosition: percentilePosition(common.length),
+      commonP98: common.length
+        ? percentile(common.map((d) => means.get(d)!), 0.98)
+        : null,
+      commonPosition: common.length ? percentilePosition(common.length) : null,
       smokeShare: (smokeDays.length / days.length) * 100,
       firstDay: days[0],
       lastDay: days[days.length - 1],
     });
   }
-  return out.sort((a, b) => b.commonP98 - a.commonP98);
+  // Ranked on the common window, the comparison the section is about. A site with no common
+  // window has no place in that ranking and sorts to the end rather than to the top.
+  return out.sort((a, b) => (b.commonP98 ?? -Infinity) - (a.commonP98 ?? -Infinity));
 }
 
 /* ------------------------------------------------------- cross-site correlation */
@@ -1023,8 +1107,16 @@ export function getPercentiles(): PercentileRow[] {
 export interface CorrelationPayload {
   keys: string[];
   labels: Record<string, string>;
-  /** Upper-triangle pairs; `r` and the hour count `n` for each. */
+  /**
+   * Upper-triangle pairs clearing `MIN_OVERLAP_HOURS`; `r` and the hour count `n` for each.
+   * These are the pairs the page counts and takes its range from.
+   */
   pairs: { a: string; b: string; r: number; n: number }[];
+  /**
+   * Upper-triangle pairs below that threshold, reported as insufficient overlap rather than as
+   * a coefficient. `n` is the overlap they do have, which may be zero.
+   */
+  insufficient: { a: string; b: string; n: number }[];
   rMin: number;
   rMax: number;
   nMin: number;
@@ -1037,7 +1129,9 @@ export interface CorrelationPayload {
 
 /**
  * Hourly PM2.5 correlation across the deployed sensors, smoke window excluded, exact-zero
- * readings already treated as missing by the pipeline's `exact_zero_floor` exclusion.
+ * readings already treated as missing by the pipeline's `exact_zero_floor` exclusion. A pair
+ * with fewer than `MIN_OVERLAP_HOURS` overlapping valid hours is carried in `insufficient`
+ * instead, out of the range and out of the pair count.
  * Descriptive only: high spatial correlation does not establish that local sources contribute
  * nothing, since the network may sit largely upwind and a local increment can be masked by a
  * dominant regional signal.
@@ -1056,6 +1150,7 @@ export function getCorrelations(): CorrelationPayload {
   for (const s of roster) labels[s.siteId] = s.label;
 
   const pairs: CorrelationPayload["pairs"] = [];
+  const insufficient: CorrelationPayload["insufficient"] = [];
   for (let i = 0; i < keys.length; i++) {
     for (let j = i + 1; j < keys.length; j++) {
       const ma = byKey.get(keys[i])!;
@@ -1066,9 +1161,20 @@ export function getCorrelations(): CorrelationPayload {
         const w = mb.get(ts);
         if (w !== undefined) { xs.push(v); ys.push(w); }
       });
-      if (xs.length < 2) continue;
+      // Short overlaps are reported as such rather than dropped from the matrix: a blank cell
+      // reads as a missing computation, and the pair count is what the page's range describes.
+      if (xs.length < MIN_OVERLAP_HOURS) {
+        insufficient.push({ a: keys[i], b: keys[j], n: xs.length });
+        continue;
+      }
       pairs.push({ a: keys[i], b: keys[j], r: pearson(xs, ys), n: xs.length });
     }
+  }
+  if (pairs.length === 0) {
+    throw new Error(
+      `No site pair clears ${MIN_OVERLAP_HOURS} overlapping valid hours, so the correlation ` +
+      `section has no range to state. Remove the section or lower the threshold deliberately.`
+    );
   }
 
   // Hourly max-to-min ratio across whichever sites were reporting that hour.
@@ -1092,6 +1198,7 @@ export function getCorrelations(): CorrelationPayload {
     keys,
     labels,
     pairs,
+    insufficient,
     rMin: Math.min(...pairs.map((p) => p.r)),
     rMax: Math.max(...pairs.map((p) => p.r)),
     nMin: Math.min(...pairs.map((p) => p.n)),
@@ -1118,9 +1225,11 @@ export interface CrosswalkRow {
  * report, which is what makes the reproduction checkable.
  */
 export function getCrosswalk(): CrosswalkRow[] {
+  const scope = sitesInScope();
   const seen = new Set<string>();
   const out: CrosswalkRow[] = [];
-  for (const r of readCsv("deq_sensor_site_history.csv")) {
+  for (const r of historyRows()) {
+    if (!scope.has(r.site_id)) continue;
     if (seen.has(r.site_id)) continue;
     seen.add(r.site_id);
     out.push({
@@ -1174,8 +1283,30 @@ const DERIVED_DAILY: ManifestSource = {
   download_date: "2026-08-11",
   license:
     "Public records released in full under the Virginia Freedom of Information Act, no redactions, no cost. Credit Virginia DEQ.",
-  coverage: "2026-03-03 to 2026-08-10, six sensor sites and the Ashburn regulatory monitor",
+  coverage: "",
 };
+
+/**
+ * Coverage for the derived daily table, measured off the file rather than restated, because the
+ * file is served from this page and gains sites and days with every ingest. It describes the
+ * whole file, which is what the download link hands a reader, not the subset this page renders.
+ */
+function derivedDailyCoverage(): string {
+  const rows = readCsv("deq_pm25_daily.csv");
+  if (rows.length === 0) return "";
+  const days = rows.map((r) => r.date_est).filter((d) => d !== "").sort();
+  const sensors = new Set(
+    rows.filter((r) => r.instrument_class !== "regulatory_fem").map((r) => r.site_id)
+  );
+  const regulatory = new Set(
+    rows.filter((r) => r.instrument_class === "regulatory_fem").map((r) => r.site_id)
+  );
+  return (
+    `${days[0]} to ${days[days.length - 1]}, ${sensors.size} sensor site` +
+    `${sensors.size === 1 ? "" : "s"} and ${regulatory.size} regulatory monitor` +
+    `${regulatory.size === 1 ? "" : "s"}`
+  );
+}
 
 export function getProvenance(): ProvenanceEntry[] {
   const candidates = [
@@ -1205,7 +1336,8 @@ export function getProvenance(): ProvenanceEntry[] {
       retrievalMethod: entry?.retrieval_method ?? "",
       downloadDate: entry?.download_date ?? "",
       license: entry?.license ?? "",
-      coverage: entry?.coverage ?? "",
+      coverage:
+        entry === DERIVED_DAILY ? derivedDailyCoverage() : entry?.coverage ?? "",
       bytes: fs.existsSync(onDisk) ? fs.statSync(onDisk).size : 0,
     };
   });

@@ -14,12 +14,18 @@ export interface DeqCorrelationMatrixProps {
  * which sites were collecting at the same time.
  */
 export function DeqCorrelationMatrix({ payload }: DeqCorrelationMatrixProps) {
-  const { keys, pairs } = payload;
+  const { keys, pairs, insufficient } = payload;
 
-  const lookup = new Map<string, { r: number; n: number }>();
+  const lookup = new Map<string, { r: number | null; n: number }>();
   for (const p of pairs) {
     lookup.set(`${p.a}|${p.b}`, { r: p.r, n: p.n });
     lookup.set(`${p.b}|${p.a}`, { r: p.r, n: p.n });
+  }
+  // A pair that did not clear the overlap threshold holds its place in the matrix with the
+  // reason, so a reader can tell a suppressed coefficient from one that was never computed.
+  for (const p of insufficient) {
+    lookup.set(`${p.a}|${p.b}`, { r: null, n: p.n });
+    lookup.set(`${p.b}|${p.a}`, { r: null, n: p.n });
   }
 
   return (
@@ -27,7 +33,8 @@ export function DeqCorrelationMatrix({ payload }: DeqCorrelationMatrixProps) {
       <caption className="sr-only">
         Pairwise correlation of hourly PM2.5 between DEQ sensor sites, smoke-transport window
         excluded. Each cell gives the correlation coefficient and, beneath it, the number of hours
-        both sites were collecting.
+        both sites were collecting. A pair with too few overlapping hours for a coefficient reads
+        insufficient overlap in place of one.
       </caption>
       <thead>
         <tr className="border-b border-white/[0.08] text-cool-mid">
@@ -56,10 +63,20 @@ export function DeqCorrelationMatrix({ payload }: DeqCorrelationMatrixProps) {
                 );
               }
               const cell = lookup.get(`${rowKey}|${colKey}`);
+              if (cell && cell.r === null) {
+                return (
+                  <td key={colKey} className="px-2 py-2 text-right align-top text-cool-mid">
+                    <span className="block text-[10px] leading-tight">insufficient overlap</span>
+                    <span className="block font-mono text-[10px]">
+                      {`n=${cell.n.toLocaleString("en-US")}`}
+                    </span>
+                  </td>
+                );
+              }
               return (
                 <td key={colKey} className="px-2 py-2 text-right align-top">
                   <span className="block font-mono text-surface-white">
-                    {cell ? cell.r.toFixed(3) : "—"}
+                    {cell ? cell.r!.toFixed(3) : "—"}
                   </span>
                   <span className="block font-mono text-[10px] text-cool-mid">
                     {cell ? `n=${cell.n.toLocaleString("en-US")}` : ""}

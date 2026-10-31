@@ -21,10 +21,12 @@ export interface DeqPercentileBarsProps {
  * length in hue.
  */
 export function DeqPercentileBars({ rows, standardLevel }: DeqPercentileBarsProps) {
+  // A site that stopped collecting before the common window opened has no second bar. `null`
+  // leaves the slot empty; a zero would draw a bar claiming a percentile of zero.
   const data = rows.map((r) => ({
     label: r.label,
     full: Number(r.fullP98.toFixed(2)),
-    common: Number(r.commonP98.toFixed(2)),
+    common: r.commonP98 === null ? null : Number(r.commonP98.toFixed(2)),
     fullDays: r.fullDays,
     commonDays: r.commonDays,
   }));
