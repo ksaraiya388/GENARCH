@@ -1,0 +1,30 @@
+1757 Golf Club         rows=  3899  Apr 8, 2026, 00:00:00  ..  Sep 17, 2026, 10:00:00   <-- newest is not Oct 29, 2026
+    1757 Golf Club.csv  ->  pipeline/sources/deq-raw/golf-course_multi_2026-03-03_2026-10-29.csv
+Belfort Park Dr        rows=  4044  May 14, 2026, 11:00:00  ..  Oct 29, 2026, 23:00:00
+    Belfort Park Dr.csv  ->  pipeline/sources/deq-raw/belfort-park_multi_2026-03-03_2026-10-29.csv
+Broad Run HS           rows=  6639  Mar 3, 2026, 00:00:00  ..  Oct 29, 2026, 23:00:00
+    Broad Run HS.csv  ->  pipeline/sources/deq-raw/ashburn-collocated_multi_2026-03-03_2026-10-29.csv
+Camp William B Snyder  rows=  1018  Sep 17, 2026, 14:00:00  ..  Oct 29, 2026, 23:00:00
+    Camp William B Snyder.csv  ->  pipeline/sources/deq-raw/camp-snyder_multi_2026-03-03_2026-10-29.csv
+Dulles Airport         rows=  5602  Mar 3, 2026, 00:00:00  ..  Oct 22, 2026, 10:00:00   <-- newest is not Oct 29, 2026
+    Dulles Airport.csv  ->  pipeline/sources/deq-raw/dulles-area_multi_2026-03-03_2026-10-29.csv
+Evergreen Country Club rows=  1018  Sep 17, 2026, 14:00:00  ..  Oct 29, 2026, 23:00:00
+    Evergreen Country Club.csv  ->  pipeline/sources/deq-raw/evergreen-cc_multi_2026-03-03_2026-10-29.csv
+Farmwell Station MS    rows=  3898  Apr 8, 2026, 00:00:00  ..  Sep 17, 2026, 11:00:00   <-- newest is not Oct 29, 2026
+    Farmwell Station MS.csv  ->  pipeline/sources/deq-raw/farmwell-middle_multi_2026-03-03_2026-10-29.csv
+Heritage Farm Museum   rows=  2555  Mar 3, 2026, 00:00:00  ..  Jun 17, 2026, 12:00:00   <-- newest is not Oct 29, 2026
+    Heritage Farm Museum.csv  ->  pipeline/sources/deq-raw/heritage-farm_multi_2026-03-03_2026-10-29.csv
+Meadows Farms          rows=   178  Oct 22, 2026, 14:00:00  ..  Oct 29, 2026, 23:00:00
+    Meadows Farms.csv  ->  pipeline/sources/deq-raw/meadows-farms_multi_2026-03-03_2026-10-29.csv
+Newberry Condo Assoc   rows=  1738  Mar 3, 2026, 00:00:00  ..  May 14, 2026, 10:00:00   <-- newest is not Oct 29, 2026
+    Newberry Condo Assoc.csv  ->  pipeline/sources/deq-raw/newberry-condo_multi_2026-03-03_2026-10-29.csv
+PW Police Dept. West   rows=   178  Oct 22, 2026, 14:00:00  ..  Oct 29, 2026, 23:00:00
+    PW Police Dept. West.csv  ->  pipeline/sources/deq-raw/pw-police-west_multi_2026-03-03_2026-10-29.csv
+Sterling MS            rows=  2208  Jun 17, 2026, 11:00:00  ..  Sep 17, 2026, 11:00:00   <-- newest is not Oct 29, 2026
+    Sterling MS.csv  ->  pipeline/sources/deq-raw/sterling-ms_multi_2026-03-03_2026-10-29.csv
+Steuart Weller ES      rows=  2554  Mar 3, 2026, 00:00:00  ..  Jun 17, 2026, 10:00:00   <-- newest is not Oct 29, 2026
+    Steuart Weller ES.csv  ->  pipeline/sources/deq-raw/steuart-weller_multi_2026-03-03_2026-10-29.csv
+VDOT MKC               rows=  1020  Sep 17, 2026, 12:00:00  ..  Oct 29, 2026, 23:00:00
+    VDOT MKC.csv  ->  pipeline/sources/deq-raw/vdot-mkc_multi_2026-03-03_2026-10-29.csv
+
+Dry run. Add --go to copy.

@@ -1,5 +1,4 @@
 site_id,ts_raw,ts_est,disposition
-evergreen-cc,2026-09-17 13:00:00,2026-09-17 11:00:00,pre_occupancy_transit
 evergreen-cc,2026-09-17 14:00:00,2026-09-17 12:00:00,pre_occupancy_transit
 evergreen-cc,2026-09-17 15:00:00,2026-09-17 13:00:00,pre_occupancy_transit
 evergreen-cc,2026-09-17 16:00:00,2026-09-17 14:00:00,pre_occupancy_transit

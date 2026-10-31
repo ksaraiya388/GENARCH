@@ -4,11 +4,11 @@ from datetime import date
 from pathlib import Path
 
 SRC = Path(sys.argv[1])
-START, END = "2026-03-03", "2026-10-10"
+START, END = "2026-03-03", "2026-10-29"
 DEST = Path("pipeline/sources/deq-raw")
 SUPERSEDED = DEST / "_superseded"
 
-# Kunak writes its Date column as "Oct 10, 2026, 23:00:00", with no zero padding
+# Kunak writes its Date column as "Oct 29, 2026, 23:00:00", with no zero padding
 # on the day. Both literals are derived from END: a hardcoded date survives a
 # change of export window and then reports the wrong newest hour as correct.
 _END_DATE = date.fromisoformat(END)
@@ -25,6 +25,8 @@ LOCS = {
     "Evergreen Country Club": "evergreen-cc",
     "VDOT MKC": "vdot-mkc",
     "Sterling MS": "sterling-ms",
+    "Meadows Farms": "meadows-farms",
+    "PW Police Dept. West": "pw-police-west",
 
     "Heritage Farm Museum": "heritage-farm",
 
