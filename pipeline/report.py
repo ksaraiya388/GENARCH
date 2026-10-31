@@ -44,9 +44,11 @@ DEQ_EDITION_CUTOFF = datetime(2026, 8, 7, 7, 0)
 DEQ_EDITION_CUTOFF_LABEL = "2026-08-07T07:00 EST"
 PM25_24H_LEVEL = 35
 
-# The live manifest, which every weekly ingest rewrites. The report reads the
-# frozen copy FREEZE.json config_inputs pins; `Freeze.config_path` redirects it.
+# The live manifest and site history, which every weekly ingest rewrites. The
+# report reads the frozen copies FREEZE.json config_inputs pins;
+# `Freeze.config_path` redirects both.
 MANIFEST_PATH = "pipeline/sources/manifest.json"
+SITE_HISTORY_PATH = "pipeline/sources/deq_sensor_site_history.csv"
 
 # The six sensors collecting across the common window.
 COMMON_WINDOW_SITES = (
@@ -183,8 +185,15 @@ def compute(fz: Freeze) -> dict:
     august = [fz.verified_path(f.rel_path) for f in fz.original_analysis_inputs()]
     frozen = [fz.verified_path(f.rel_path) for f in fz.kunak_exports()]
 
-    august_rows = build_rows(august)
-    frozen_rows = build_rows(frozen)
+    # Occupancy comes from the frozen copy of the site history, the one
+    # `config_inputs` pins and hash-verifies, not from the live file a weekly
+    # ingest rewrites. `build_rows` defaults to the live path, which left unit
+    # periods as the one freeze input the report still read off the working tree
+    # (DECISIONS.md D28). A unit backfilled or re-dated after the freeze now
+    # cannot move a 2026 number.
+    site_history = fz.config_path(SITE_HISTORY_PATH)
+    august_rows = build_rows(august, site_history)
+    frozen_rows = build_rows(frozen, site_history)
     regulatory_rows = build_regulatory_rows(
         lambda name: fz.verified_path(fz.regulatory_named(name).rel_path)
     )
@@ -331,7 +340,7 @@ def build_numbers(fz: Freeze, results: dict) -> NumberRegistry:
         unit="sites",
         precision=0,
         method="distinct physical sites in the sensor site history",
-        inputs=inputs_for(fz, [fz.config_input("pipeline/sources/deq_sensor_site_history.csv")]),
+        inputs=inputs_for(fz, [fz.config_input(SITE_HISTORY_PATH)]),
     )
     cutoff = fz.kunak_cutoff()
     active = sum(1 for e in fz.kunak_exports() if e.data_cutoff == cutoff)

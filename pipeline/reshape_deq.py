@@ -243,7 +243,13 @@ def void_window_reason(
 
 
 def load_site_history(path: Path) -> list[Occupancy]:
-    """Read the curated site history into occupancy intervals."""
+    """Read the curated site history into occupancy intervals.
+
+    Keyed by column name throughout, so a column the occupancy model does not
+    use -- `county`, added 2026-10-31 for the site's Loudoun scope filter --
+    reaches its own readers without moving anything here. The file is never
+    parsed positionally, and `notes` is quoted free text that may hold commas.
+    """
     if not path.exists():
         raise DeqReshapeError(f"site history not found: {path}")
 
