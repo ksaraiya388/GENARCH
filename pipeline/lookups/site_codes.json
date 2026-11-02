@@ -1,6 +1,6 @@
 {
   "assigned_on": "2026-10-23",
-  "description": "Neutral site codes for the DEQ Data Center Air Monitoring Project sensor network. Each code denotes a physical site, not a hardware unit; where a unit moved, the unit and its period are listed separately under that site. Value tables and figures use these codes, never the internal site_id or the DEQ published name (docs/report-2026/CONTEXT.md C7 and C8, docs/CONTENT_CONSTRAINTS.md section 4). This file is the single mapping shared by pipeline.report and the site (docs/report-2026/DECISIONS.md D7).",
+  "description": "Neutral site codes for the DEQ Data Center Air Monitoring Project sensor network. Each code denotes a physical site, not a hardware unit; where a unit moved, the unit and its period are listed separately under that site. Value tables and figures use these codes, never the internal site_id or the DEQ published name (docs/report-2026/CONTEXT.md C7 and C8, docs/CONTENT_CONSTRAINTS.md section 4). This file is the single mapping shared by pipeline.report and the site (docs/report-2026/DECISIONS.md D7). Codes are assigned once in order_source order and are never renumbered: a site the network adds later takes the next unused code, so DC-13 and DC-14 were appended on 2026-11-01.",
   "order_source": "pipeline/sources/deq_sensor_site_history.csv, first appearance of each site_id in row order",
   "sites": [
     {
@@ -8,7 +8,7 @@
       "code": "DC-01",
       "collocated_regulatory": true,
       "county": "Loudoun County",
-      "county_source": "pipeline/sources/deq_sensor_site_history.csv area field",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv county column",
       "deq_published_name": "Broad Run HS",
       "in_v1_scope": true,
       "kunak_label": "Broad Run HS",
@@ -23,11 +23,18 @@
           "unit_label": "APEX 14"
         },
         {
-          "end_date": null,
+          "end_date": "2026-10-22",
           "start_date": "2026-04-08",
           "unit_id": "apex-05",
           "unit_id_confidence": "confirmed",
           "unit_label": "APEX 5"
+        },
+        {
+          "end_date": null,
+          "start_date": "2026-10-22",
+          "unit_id": "apex-08",
+          "unit_id_confidence": "confirmed",
+          "unit_label": "APEX 8"
         }
       ]
     },
@@ -36,7 +43,7 @@
       "code": "DC-02",
       "collocated_regulatory": false,
       "county": "Loudoun County",
-      "county_source": "pipeline/sources/deq_sensor_site_history.csv area field",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv county column",
       "deq_published_name": "Dulles Airport",
       "in_v1_scope": true,
       "kunak_label": "Dulles Airport",
@@ -44,11 +51,11 @@
       "site_id": "dulles-area",
       "units": [
         {
-          "end_date": null,
+          "end_date": "2026-10-23",
           "start_date": "2026-03-03",
-          "unit_id": "TO_CONFIRM",
+          "unit_id": "apex-09",
           "unit_id_confidence": "confirmed",
-          "unit_label": "not confirmed"
+          "unit_label": "APEX 9"
         }
       ]
     },
@@ -57,7 +64,7 @@
       "code": "DC-03",
       "collocated_regulatory": false,
       "county": "Loudoun County",
-      "county_source": "pipeline/sources/deq_sensor_site_history.csv area field",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv county column",
       "deq_published_name": "Newberry Condo Assoc",
       "in_v1_scope": true,
       "kunak_label": "Newberry Condo Assoc",
@@ -78,7 +85,7 @@
       "code": "DC-04",
       "collocated_regulatory": false,
       "county": "Loudoun County",
-      "county_source": "pipeline/sources/deq_sensor_site_history.csv area field",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv county column",
       "deq_published_name": "Belfort Park Dr",
       "in_v1_scope": true,
       "kunak_label": "Belfort Park Dr",
@@ -99,7 +106,7 @@
       "code": "DC-05",
       "collocated_regulatory": false,
       "county": "Loudoun County",
-      "county_source": "pipeline/sources/deq_sensor_site_history.csv area field",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv county column",
       "deq_published_name": "Steuart Weller ES",
       "in_v1_scope": true,
       "kunak_label": "Steuart Weller ES",
@@ -120,7 +127,7 @@
       "code": "DC-06",
       "collocated_regulatory": false,
       "county": "Loudoun County",
-      "county_source": "pipeline/sources/deq_sensor_site_history.csv area field",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv county column",
       "deq_published_name": "Sterling MS",
       "in_v1_scope": true,
       "kunak_label": "Sterling MS",
@@ -141,7 +148,7 @@
       "code": "DC-07",
       "collocated_regulatory": false,
       "county": "Loudoun County",
-      "county_source": "pipeline/sources/deq_sensor_site_history.csv area field",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv county column",
       "deq_published_name": "Heritage Farm Museum",
       "in_v1_scope": true,
       "kunak_label": "Heritage Farm Museum",
@@ -151,9 +158,9 @@
         {
           "end_date": "2026-06-18",
           "start_date": "2026-03-03",
-          "unit_id": "TO_CONFIRM",
+          "unit_id": "apex-08",
           "unit_id_confidence": "confirmed",
-          "unit_label": "not confirmed"
+          "unit_label": "APEX 8"
         }
       ]
     },
@@ -162,7 +169,7 @@
       "code": "DC-08",
       "collocated_regulatory": false,
       "county": "Loudoun County",
-      "county_source": "pipeline/sources/deq_sensor_site_history.csv area field",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv county column",
       "deq_published_name": "Farmwell Station MS",
       "in_v1_scope": true,
       "kunak_label": "Farmwell Station MS",
@@ -172,9 +179,9 @@
         {
           "end_date": "2026-09-18",
           "start_date": "2026-04-08",
-          "unit_id": "TO_CONFIRM",
+          "unit_id": "apex-10",
           "unit_id_confidence": "confirmed",
-          "unit_label": "not confirmed"
+          "unit_label": "APEX 10"
         }
       ]
     },
@@ -183,7 +190,7 @@
       "code": "DC-09",
       "collocated_regulatory": false,
       "county": "Loudoun County",
-      "county_source": "pipeline/sources/deq_sensor_site_history.csv area field",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv county column",
       "deq_published_name": "1757 Golf Club",
       "in_v1_scope": true,
       "kunak_label": "1757 Golf Club",
@@ -193,9 +200,9 @@
         {
           "end_date": "2026-09-18",
           "start_date": "2026-04-08",
-          "unit_id": "TO_CONFIRM",
+          "unit_id": "apex-13",
           "unit_id_confidence": "confirmed",
-          "unit_label": "not confirmed"
+          "unit_label": "APEX 13"
         }
       ]
     },
@@ -204,7 +211,8 @@
       "code": "DC-10",
       "collocated_regulatory": false,
       "county": "Prince William County",
-      "county_source": "DEQ weekly report 2026-10-09 p.3 and site-history note; not verified by geocoder",
+      "county_corroboration": "not verified by geocoder",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv county column",
       "deq_published_name": "Camp William B Snyder",
       "in_v1_scope": false,
       "kunak_label": "Camp William B Snyder",
@@ -213,9 +221,9 @@
       "units": [
         {
           "end_date": null,
-          "start_date": "2026-09-17",
+          "start_date": "2026-09-18",
           "unit_id": "apex-10",
-          "unit_id_confidence": "dashboard",
+          "unit_id_confidence": "confirmed",
           "unit_label": "APEX 10"
         }
       ]
@@ -225,7 +233,8 @@
       "code": "DC-11",
       "collocated_regulatory": false,
       "county": "Prince William County",
-      "county_source": "DEQ weekly report 2026-10-09 p.3 and site-history note; not verified by geocoder",
+      "county_corroboration": "not verified by geocoder",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv county column",
       "deq_published_name": "Evergreen Country Club",
       "in_v1_scope": false,
       "kunak_label": "Evergreen Country Club",
@@ -246,7 +255,8 @@
       "code": "DC-12",
       "collocated_regulatory": false,
       "county": "Prince William County",
-      "county_source": "Census onelineaddress geocoder, GEOID 51153, and DEQ weekly report 2026-10-09 p.3",
+      "county_corroboration": "Census onelineaddress geocoder, GEOID 51153",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv county column",
       "deq_published_name": "VDOT MKC",
       "in_v1_scope": false,
       "kunak_label": "VDOT MKC",
@@ -255,10 +265,52 @@
       "units": [
         {
           "end_date": null,
-          "start_date": "2026-09-16",
+          "start_date": "2026-09-18",
           "unit_id": "apex-13",
-          "unit_id_confidence": "dashboard",
+          "unit_id_confidence": "confirmed",
           "unit_label": "APEX 13"
+        }
+      ]
+    },
+    {
+      "area": "Manassas",
+      "code": "DC-13",
+      "collocated_regulatory": false,
+      "county": "Prince William County",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv county column",
+      "deq_published_name": "Meadows Farms",
+      "in_v1_scope": false,
+      "kunak_label": "Meadows Farms",
+      "pm25_end_date": null,
+      "site_id": "meadows-farms",
+      "units": [
+        {
+          "end_date": null,
+          "start_date": "2026-10-22",
+          "unit_id": "apex-05",
+          "unit_id_confidence": "confirmed",
+          "unit_label": "APEX 5"
+        }
+      ]
+    },
+    {
+      "area": null,
+      "code": "DC-14",
+      "collocated_regulatory": false,
+      "county": "Prince William County",
+      "county_source": "pipeline/sources/deq_sensor_site_history.csv county column",
+      "deq_published_name": "PW Police Dept. West",
+      "in_v1_scope": false,
+      "kunak_label": "PW Police Dept. West",
+      "pm25_end_date": null,
+      "site_id": "pw-police-west",
+      "units": [
+        {
+          "end_date": null,
+          "start_date": "2026-10-23",
+          "unit_id": "apex-09",
+          "unit_id_confidence": "confirmed",
+          "unit_label": "APEX 9"
         }
       ]
     }

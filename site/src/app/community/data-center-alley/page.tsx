@@ -19,6 +19,7 @@ import {
   COMMON_WINDOW_START,
   COMPLETENESS_MIN_HOURS,
   DEQ_EDITION_CUTOFF_LABEL,
+  DEQ_UPWIND_SITE_CODES,
   DEQ_WEEKLY_EDITIONS,
   MIN_OVERLAP_HOURS,
   PM25_24H_LEVEL,
@@ -27,12 +28,12 @@ import {
   SMOKE_WINDOW,
   getCollocation,
   getCorrelations,
-  getCrosswalk,
   getDailyReconciliation,
   getHourlySeries,
   getNo2Diagnostics,
   getPercentiles,
   getProvenance,
+  getSiteKey,
   getSiteRoster,
   getSmokeSplitStats,
 } from "@/lib/deq-data";
@@ -140,12 +141,13 @@ export default function DataCenterCorridorPage() {
   const reconciliation = getDailyReconciliation();
   const percentiles = getPercentiles();
   const correlations = getCorrelations();
-  const crosswalk = getCrosswalk();
+  const siteKey = getSiteKey();
   const provenance = getProvenance();
 
   const deployed = roster.filter((s) => s.hasExport);
   const withoutExport = roster.filter((s) => !s.hasExport);
   const schools = roster.filter((s) => s.atSchool);
+  const outOfScope = siteKey.filter((s) => !s.inV1Scope);
   // The common-window comparison can only describe the sites that were still collecting when
   // the window opened. The others keep their own-record row and carry no matched-window figure.
   const commonWindow = percentiles.filter((p) => p.commonP98 !== null);
@@ -322,26 +324,31 @@ export default function DataCenterCorridorPage() {
               finding drawn from these {word(deployed.length)} records describes those{" "}
               {word(deployed.length)} locations rather than the corridor as a whole. Since
               September 17, 2026, DEQ has also operated sensors in Prince William County; they
-              are outside this page&apos;s Loudoun scope and are not shown here.
+              are outside this page&apos;s Loudoun scope; the site key lists them without values.
             </p>
             <p>
               DEQ reports a wind rose built from Dulles Airport measurements and states that
               winds during the study period came predominantly from either the south or the
-              northwest. On that basis DEQ describes the collocated Ashburn site and the
-              Dulles-area site as good upwind sites with regard to Data Center Alley
-              ({DEQ_SOURCES.reportAug28.citation}). That is DEQ&apos;s characterisation of the
+              northwest. On that basis DEQ describes two of the sites, {DEQ_UPWIND_SITE_CODES[0]}{" "}
+              and {DEQ_UPWIND_SITE_CODES[1]} in the site key, as good upwind sites with regard to
+              Data Center Alley ({DEQ_SOURCES.reportAug28.citation}). That is DEQ&apos;s characterisation of the
               geometry of its own network, and it is carried here as DEQ&apos;s statement. It
               does not establish that any particular site is downwind of any particular facility,
               and nothing on this page draws that inference.
             </p>
             <p>
-              Sensors are identified here by DEQ site identifier and locality rather than by
-              DEQ&apos;s published site label. {Word(schools.length)} of the{" "}
-              {word(roster.length)} locations are
-              hosted at schools, and placing a school name beside a concentration figure invites
-              an inference about children at that school that nothing in this data supports. The
-              identifier crosswalk in section 9 maps every identifier to DEQ&apos;s exact
-              published label, so this page can still be checked against DEQ&apos;s report.
+              Sensors are identified here by a neutral site code rather than by DEQ&apos;s
+              published site label or by any internal identifier naming a locality.{" "}
+              {Word(schools.length)} of the {word(roster.length)} locations are hosted at
+              schools, and placing a school name, or a label that resolves to one, beside a
+              concentration figure invites an inference about children at that school that
+              nothing in this data supports. The{" "}
+              <Link href="#site-key" className="text-teal-primary hover:text-teal-soft hover:underline">
+                site key
+              </Link>{" "}
+              maps every code to DEQ&apos;s exact published label, in a section of its own that
+              carries no measurement, so this page can still be checked against DEQ&apos;s
+              report.
             </p>
             {withoutExport.length > 0 && (
               <p>
@@ -357,14 +364,13 @@ export default function DataCenterCorridorPage() {
           <div className="mt-5 overflow-x-auto rounded-lg border border-white/[0.08] bg-navy-mid/50">
             <table className="w-full min-w-[720px] border-collapse text-sm">
               <caption className="sr-only">
-                DEQ sensor sites: identifier, locality, hardware unit, occupancy window, status,
-                valid hours of PM2.5 data, and whether the site is collocated with the regulatory
+                DEQ sensor sites by site code: hardware unit, occupancy window, status, valid
+                hours of PM2.5 data, and whether the site is collocated with the regulatory
                 monitor.
               </caption>
               <thead>
                 <tr className="border-b border-white/[0.08] text-left text-cool-mid">
                   <th scope="col" className="py-2 px-3 font-medium">Site</th>
-                  <th scope="col" className="py-2 px-3 font-medium">Area</th>
                   <th scope="col" className="py-2 px-3 font-medium">Unit</th>
                   <th scope="col" className="py-2 px-3 font-medium">Occupancy</th>
                   <th scope="col" className="py-2 px-3 font-medium">Status</th>
@@ -374,11 +380,10 @@ export default function DataCenterCorridorPage() {
               </thead>
               <tbody>
                 {roster.map((s) => (
-                  <tr key={s.siteId} className="border-b border-white/[0.04]">
+                  <tr key={s.code} className="border-b border-white/[0.04]">
                     <th scope="row" className="py-2 px-3 text-left font-mono font-normal text-surface-white">
-                      {s.siteId}
+                      {s.code}
                     </th>
-                    <td className="py-2 px-3 text-cool-light">{s.area}</td>
                     <td className="py-2 px-3 text-cool-light">
                       {s.units.map((u) => u.unitLabel).join(", ")}
                     </td>
@@ -413,7 +418,7 @@ export default function DataCenterCorridorPage() {
               <>
                 {withoutExport.length} site
                 {withoutExport.length === 1 ? "" : "s"} carry no valid-hour count because no
-                export exists for them: {withoutExport.map((s) => s.siteId).join(", ")}.{" "}
+                export exists for them: {withoutExport.map((s) => s.code).join(", ")}.{" "}
               </>
             )}
             Sensor coordinates are not published in machine-readable form, so no map is drawn
@@ -430,7 +435,7 @@ export default function DataCenterCorridorPage() {
           <DeqFigure
             id="fig-hourly"
             heading="Hourly PM2.5 by site"
-            ariaLabel={`Line chart of hourly PM2.5 concentration for ${deployed.length} DEQ sensor sites and the Ashburn regulatory monitor, from ${hourly.hours[0]?.slice(0, 10)} to ${hourly.hours[hourly.hours.length - 1]?.slice(0, 10)}. A dashed horizontal line marks ${PM25_24H_LEVEL} micrograms per cubic metre, the level of the 24-hour standard. A shaded band covers ${SMOKE_WINDOW.start} to ${SMOKE_WINDOW.end}, the wildfire smoke transport window carrying DEQ qualifier IF, in which the highest values in the record occur. Gaps in a line are hours with no valid measurement.`}
+            ariaLabel={`Line chart of hourly PM2.5 concentration for ${deployed.length} DEQ sensor sites and the regulatory monitor, from ${hourly.hours[0]?.slice(0, 10)} to ${hourly.hours[hourly.hours.length - 1]?.slice(0, 10)}. A dashed horizontal line marks ${PM25_24H_LEVEL} micrograms per cubic metre, the level of the 24-hour standard. A shaded band covers ${SMOKE_WINDOW.start} to ${SMOKE_WINDOW.end}, the wildfire smoke transport window carrying DEQ qualifier IF, in which the highest values in the record occur. Gaps in a line are hours with no valid measurement.`}
             caption={
               <>
                 Sensor and regulatory series are drawn as separate lines and are never combined
@@ -776,10 +781,11 @@ export default function DataCenterCorridorPage() {
             <p>
               The series below illustrates the point rather than carrying it. Table 4 of
               DEQ&apos;s {firstEdition.label} report named one sensor as the only one whose 98th
-              percentile of daily PM2.5 averages sat above {PM25_24H_LEVEL} µg/m³. That sensor,{" "}
-              {shortest.key}, had the shortest record in the network: it began collecting on{" "}
+              percentile of daily PM2.5 averages sat above {PM25_24H_LEVEL} µg/m³. That sensor,
+              site {shortest.key} in the site key, had the shortest record in the network: it
+              began collecting on{" "}
               {COMMON_WINDOW_START} and had {shortest.fullDays} days at that cutoff against{" "}
-              {longest.fullDays} at {longest.key}, entirely in high summer, with{" "}
+              {longest.fullDays} at site {longest.key}, entirely in high summer, with{" "}
               {n1(shortest.smokeShare)} percent of its record inside the smoke-transport window
               of {SMOKE_WINDOW.start} to {SMOKE_WINDOW.end} against {n1(longest.smokeShare)}{" "}
               percent of the longest one. The figure fell in each edition that followed, and on
@@ -793,7 +799,7 @@ export default function DataCenterCorridorPage() {
           <div className="mt-5 overflow-x-auto rounded-lg border border-white/[0.08] bg-navy-mid/50">
             <table className="w-full min-w-[680px] border-collapse text-sm">
               <caption className="sr-only">
-                Figures published for {DEQ_WEEKLY_EDITIONS.siteId} in{" "}
+                Figures published for site {DEQ_WEEKLY_EDITIONS.code} in{" "}
                 {word(editions.length)} consecutive editions of DEQ&apos;s weekly analysis, oldest
                 first, with the change across the full span in the last column. Each edition
                 covers a week more of the record than the one before.
@@ -801,7 +807,7 @@ export default function DataCenterCorridorPage() {
               <thead>
                 <tr className="border-b border-white/[0.08] text-left text-cool-mid">
                   <th scope="col" className="py-2 px-3 font-medium">
-                    DEQ figure for {DEQ_WEEKLY_EDITIONS.siteId}
+                    DEQ figure for {DEQ_WEEKLY_EDITIONS.code}
                   </th>
                   {editions.map((e) => (
                     <th key={e.label} scope="col" className="py-2 px-3 text-right font-medium">
@@ -865,7 +871,7 @@ export default function DataCenterCorridorPage() {
               Restricting every sensor to the window in which all {word(commonWindow.length)}{" "}
               of them were collecting, {COMMON_WINDOW_START} to {RECORD_END}, changes the
               ordering. {Word(aboveLevel.length)} of {word(commonWindow.length)} sites sit above{" "}
-              {PM25_24H_LEVEL} µg/m³ on matched windows, and {shortest.key} ranks{" "}
+              {PM25_24H_LEVEL} µg/m³ on matched windows, and site {shortest.key} ranks{" "}
               {ordinal(shortestRank)} rather than first. The common window is not a clean control
               on its own: it falls entirely in high summer and contains the smoke window, so it
               removes the unequal-length difference and leaves the unequal-seasonality one in
@@ -1096,54 +1102,88 @@ export default function DataCenterCorridorPage() {
           </EvidenceLimitations>
         </section>
 
-        {/* --------------------------------------------------------- 9. Data and methods */}
-        <section aria-labelledby="methods-heading">
-          <h2 id="methods-heading" className="text-h2 text-surface-white mb-3 scroll-mt-20">
-            Data and methods
+        {/* ----------------------------------------------------------------- 9. Site key */}
+        <section aria-labelledby="site-key-heading" id="site-key" className="scroll-mt-20">
+          <h2 id="site-key-heading" className="text-h2 text-surface-white mb-3">
+            Site key
           </h2>
 
-          <h3 className="text-h3 text-surface-white mb-2">Site identifier crosswalk</h3>
-          <p className="mb-3 max-w-3xl text-sm text-cool-light leading-relaxed">
-            This table carries identifiers only. It holds no measurement of any kind, and none
-            may be added to it. It exists so that a reader can map every identifier used on this
-            page onto DEQ&apos;s published site labels and check the work against DEQ&apos;s
-            report.
-          </p>
-          <div className="overflow-x-auto rounded-lg border border-white/[0.08] bg-navy-mid/50">
-            <table className="w-full min-w-[560px] border-collapse text-sm">
+          <div className="max-w-3xl space-y-3 text-cool-light leading-relaxed">
+            <p>
+              This table carries identifiers and occupancy dates only. It holds no reading, no
+              percentile, no hour count and no measurement of any kind, and none may be added to
+              it. It sits in a section of its own, away from every figure and table on this page
+              that carries a value, which is the condition on which DEQ&apos;s published site
+              labels appear here at all.
+            </p>
+            <p>
+              It exists so that a reader can map every site code used above onto DEQ&apos;s
+              published label and check the work against DEQ&apos;s report. All{" "}
+              {siteKey.length} sites DEQ has deployed are listed, including the{" "}
+              {word(outOfScope.length)} in Prince William County that carry no values anywhere on
+              this page.
+            </p>
+          </div>
+
+          <div className="mt-5 overflow-x-auto rounded-lg border border-white/[0.08] bg-navy-mid/50">
+            <table className="w-full min-w-[720px] border-collapse text-sm">
               <caption className="sr-only">
-                Crosswalk from GENARCH site identifier to locality, DEQ published site label, and
-                the label string shown on the Kunak dashboard.
+                Site key: for each site code, DEQ&apos;s published site label, the county, the
+                periods the site was collecting, and whether the site is inside the current
+                scope of this page. No reading value appears in this table.
               </caption>
               <thead>
                 <tr className="border-b border-white/[0.08] text-left text-cool-mid">
-                  <th scope="col" className="py-2 px-3 font-medium">GENARCH identifier</th>
-                  <th scope="col" className="py-2 px-3 font-medium">Area</th>
-                  <th scope="col" className="py-2 px-3 font-medium">DEQ published label</th>
-                  <th scope="col" className="py-2 px-3 font-medium">Kunak dashboard label</th>
+                  <th scope="col" className="py-2 px-3 font-medium">Site code</th>
+                  <th scope="col" className="py-2 px-3 font-medium">DEQ published name</th>
+                  <th scope="col" className="py-2 px-3 font-medium">County</th>
+                  <th scope="col" className="py-2 px-3 font-medium">Active periods</th>
+                  <th scope="col" className="py-2 px-3 font-medium">Scope</th>
                 </tr>
               </thead>
               <tbody>
-                {crosswalk.map((c) => (
-                  <tr key={c.siteId} className="border-b border-white/[0.04]">
+                {siteKey.map((s) => (
+                  <tr key={s.code} className="border-b border-white/[0.04]">
                     <th scope="row" className="py-2 px-3 text-left font-mono font-normal text-surface-white">
-                      {c.siteId}
+                      {s.code}
                     </th>
-                    <td className="py-2 px-3 text-cool-light">{c.area}</td>
-                    <td className="py-2 px-3 text-cool-light">{c.deqLabel}</td>
-                    <td className="py-2 px-3 text-cool-light">{c.kunakLabel}</td>
+                    <td className="py-2 px-3 text-cool-light">{s.deqPublishedName}</td>
+                    <td className="py-2 px-3 text-cool-light">{s.county}</td>
+                    <td className="py-2 px-3 font-mono text-xs text-cool-light">
+                      {s.activePeriods.map((period) => (
+                        <span key={period} className="block">{period}</span>
+                      ))}
+                    </td>
+                    <td className="py-2 px-3 text-xs text-cool-light">
+                      {s.inV1Scope ? "In scope" : "Outside current scope"}
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
 
-          <h3 className="text-h3 text-surface-white mt-8 mb-2">Source tables</h3>
+          <p className="mt-3 max-w-3xl text-xs text-cool-mid leading-relaxed">
+            Occupancy dates come from DEQ&apos;s site history. A site with more than one period
+            held more than one hardware unit; each deployment is treated separately throughout.
+            The {word(outOfScope.length)} sites marked outside current scope are in Prince
+            William County, which this page does not cover, so they appear here and nowhere else.
+          </p>
+        </section>
+
+        {/* -------------------------------------------------------- 10. Data and methods */}
+        <section aria-labelledby="methods-heading">
+          <h2 id="methods-heading" className="text-h2 text-surface-white mb-3 scroll-mt-20">
+            Data and methods
+          </h2>
+
+          <h3 className="text-h3 text-surface-white mb-2">Source tables</h3>
           <div className="overflow-x-auto rounded-lg border border-white/[0.08] bg-navy-mid/50">
             <table className="w-full min-w-[720px] border-collapse text-sm">
               <caption className="sr-only">
                 Provenance for each source table: retrieval method, retrieval date, coverage,
-                licence, and a download link.
+                licence, and a download link. Each download is the table keyed by site code and
+                filtered to this page&apos;s county.
               </caption>
               <thead>
                 <tr className="border-b border-white/[0.08] text-left text-cool-mid">
@@ -1158,11 +1198,11 @@ export default function DataCenterCorridorPage() {
                   <tr key={p.file} className="border-b border-white/[0.04]">
                     <th scope="row" className="py-2 px-3 text-left font-normal">
                       <a
-                        href={`/data/deq/${p.file}`}
+                        href={`/data/deq/${p.download}`}
                         download
                         className="font-mono text-xs text-teal-primary hover:text-teal-soft hover:underline"
                       >
-                        {p.file}
+                        {p.download}
                       </a>
                       {p.bytes > 0 && (
                         <span className="ml-2 text-xs text-cool-mid">
@@ -1181,6 +1221,22 @@ export default function DataCenterCorridorPage() {
               </tbody>
             </table>
           </div>
+
+          <p className="mt-3 max-w-3xl text-xs text-cool-mid leading-relaxed">
+            Each download carries a <span className="font-mono">site_code</span> column in place
+            of DEQ&apos;s internal site identifier, and is filtered to the same county as every
+            figure above it, so the file and the page describe the same network. The regulatory
+            monitor appears as <span className="font-mono">REG</span>. The site key above is
+            downloadable on the same terms, with no values, as{" "}
+            <a
+              href="/data/deq/deq_site_key.csv"
+              download
+              className="font-mono text-teal-primary hover:text-teal-soft hover:underline"
+            >
+              deq_site_key.csv
+            </a>
+            . Every other column, and every value, is as DEQ shipped it.
+          </p>
 
           <div className="mt-6 max-w-3xl space-y-3 text-sm text-cool-light leading-relaxed">
             <h3 className="text-h3 text-surface-white">Exclusion rule</h3>

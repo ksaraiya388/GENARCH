@@ -129,3 +129,12 @@ jobs:
 
       - name: Build site
         run: cd site && npm run build
+
+      # C7 and C8 on what the export actually serves, rather than on what the
+      # page source says. This reuses the build above: the fixture rebuilds
+      # only when site/out/ is older than an input that feeds the page, so the
+      # step costs a grep rather than a second build. It is here and not in the
+      # checks job because that job installs no site dependencies, and the test
+      # skips without them.
+      - name: No internal identifier in served output
+        run: python -m pytest tests/test_site_output.py

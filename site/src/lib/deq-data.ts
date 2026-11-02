@@ -1,6 +1,8 @@
 import fs from "fs";
 import path from "path";
 
+import { codeFor, loadSiteCodes, unitPeriodLabel } from "./site-codes";
+
 /**
  * Build-time reader for the Virginia DEQ source tables under `pipeline/sources/`.
  *
@@ -64,8 +66,16 @@ export const PM25_ANNUAL_LEVEL = 9.0;
 /** Valid hours required before a 24-hour average is computed. Agency-confirmed. */
 export const COMPLETENESS_MIN_HOURS = 18;
 
-/** Regulatory site inside Loudoun County. `aurhill` is Arlington and is out of v1 scope. */
+/**
+ * Regulatory site inside Loudoun County. `aurhill` is Arlington and is out of v1 scope.
+ *
+ * This is an internal locality slug, so it never leaves this module. `REGULATORY_KEY` is what
+ * every payload, label and download carries in its place (docs/report-2026/CONTEXT.md C7). The
+ * monitor sits at the collocated sensor site, which the site key gives as DC-01.
+ */
 const REGULATORY_SITE = "ashburn";
+export const REGULATORY_KEY = "REG";
+export const REGULATORY_LABEL = "Regulatory monitor";
 
 /**
  * The county this page is scoped to. GENARCH is hyperlocal to Loudoun County, and DEQ retitled
@@ -77,6 +87,16 @@ const REGULATORY_SITE = "ashburn";
  * here, so a site reaches this page only once DEQ's published report has placed it in a county.
  */
 export const PAGE_COUNTY = "Loudoun";
+
+/**
+ * The two sites DEQ's wind-rose paragraph characterises as upwind, as site codes. DEQ names
+ * them by its own published labels; the page carries DEQ's statement with the sites identified
+ * the way every other site on the page is identified (CONTEXT.md C8).
+ */
+export const DEQ_UPWIND_SITE_CODES = [
+  codeFor("ashburn-collocated"),
+  codeFor("dulles-area"),
+] as const;
 
 /**
  * Overlapping valid hours a pair of sites needs before its correlation coefficient is reported.
@@ -91,14 +111,19 @@ export const MIN_OVERLAP_HOURS = 168;
 
 /**
  * Mirrors the cwd-fallback ladder in `resolveDataDir()` (lib/data.ts). `copy-data.js` stages
- * the three CSVs into `site/public/data/deq/` before `next build`, which covers Vercel and CI;
- * the `pipeline/sources` entries cover `next dev`, where no prebuild step has run.
+ * the source CSVs into `site/_data/deq/` before `next build`, which covers Vercel and CI; the
+ * `pipeline/sources` entries cover `next dev`, where no prebuild step has run.
+ *
+ * Not `public/data/deq/`. These tables carry a `site_id` column and DEQ's published school
+ * labels, so the staged copies are deliberately outside the served tree; what the page offers
+ * for download is the neutralised set `copy-data.js` writes into `public/data/deq/`
+ * (docs/report-2026/CONTEXT.md C7 and C8).
  */
 function resolveSourcesDir(): string {
   const cwd = process.cwd();
   const candidates = [
-    path.join(cwd, "public", "data", "deq"),
-    path.join(cwd, "site", "public", "data", "deq"),
+    path.join(cwd, "_data", "deq"),
+    path.join(cwd, "site", "_data", "deq"),
     path.join(cwd, "..", "pipeline", "sources"),
     path.join(cwd, "pipeline", "sources"),
   ];
@@ -109,6 +134,21 @@ function resolveSourcesDir(): string {
 }
 
 const SOURCES_DIR = resolveSourcesDir();
+
+/**
+ * Where `copy-data.js` writes the neutralised downloads. Only their byte sizes are read from
+ * here; every value the page computes comes from the staged source tables above.
+ */
+function resolvePublicDeqDir(): string {
+  const cwd = process.cwd();
+  const candidates = [
+    path.join(cwd, "public", "data", "deq"),
+    path.join(cwd, "site", "public", "data", "deq"),
+  ];
+  return candidates.find((d) => fs.existsSync(d)) ?? candidates[0];
+}
+
+const PUBLIC_DEQ_DIR = resolvePublicDeqDir();
 
 /**
  * RFC 4180 field splitting. None of the four DEQ files currently contains a quoted field, but
@@ -142,9 +182,17 @@ function readCsv(filename: string): Row[] {
       `DEQ source ${filename} not found under ${SOURCES_DIR}. The data-center-alley page cannot be built without it.`
     );
   }
+  return parseCsv(fs.readFileSync(full, "utf-8"));
+}
+
+/**
+ * CSV text to rows. Split out from `readCsv()` so the served download tables, which sit outside
+ * `SOURCES_DIR`, can be measured with the same parser that reads the source tables.
+ */
+function parseCsv(input: string): Row[] {
   // The site-history export carries a UTF-8 BOM; left in place it becomes part of the first
   // header name and every lookup of `site_id` returns undefined.
-  const text = fs.readFileSync(full, "utf-8").replace(/^﻿/, "");
+  const text = input.replace(/^﻿/, "");
   const lines = text.split(/\r?\n/).filter((l) => l.length > 0);
   const header = splitCsvLine(lines[0]);
   return lines.slice(1).map((line) => {
@@ -274,6 +322,16 @@ function historyRows(): Row[] {
   return rows;
 }
 
+/**
+ * Code to internal slug, for the readers below that still have to filter raw rows. Built from
+ * the roster's own scope set so it cannot resolve a code the page does not show.
+ */
+function slugForCode(code: string): string {
+  const site = loadSiteCodes().find((s) => s.code === code);
+  if (!site) throw new Error(`Unknown site code ${code}.`);
+  return site.siteId;
+}
+
 let scopeCache: Set<string> | null = null;
 
 /**
@@ -357,14 +415,17 @@ function validRegulatory(pollutant: string): Map<string, number> {
 /* ------------------------------------------------------------------ site roster */
 
 /**
- * Sensors are identified by DEQ site_id and locality throughout this page, never by DEQ's
- * published site label. Four of the nine sites are hosted at schools, and rendering a school
- * name beside a concentration figure invites an inference about children at that school that
- * none of this data supports (docs/CONTENT_CONSTRAINTS.md section 4, PROMPT_AMENDMENTS A2).
- * The identifier crosswalk in `getCrosswalk()` carries DEQ's labels, with no measurements, so
- * the reproduction against DEQ's report stays checkable.
+ * Sensors are identified by neutral site code throughout this page, never by DEQ's published
+ * site label and never by the internal slug. Four of the nine sites are hosted at schools, and
+ * rendering a school name beside a concentration figure invites an inference about children at
+ * that school that none of this data supports (docs/CONTENT_CONSTRAINTS.md section 4,
+ * PROMPT_AMENDMENTS A2); the slug names the locality, which section 4 rules out just as
+ * plainly, and a reader who has the slug has the school (CONTEXT.md C7 and C8).
+ *
+ * The site key in `getSiteKey()` carries DEQ's labels, with no measurements and in its own
+ * section, so the reproduction against DEQ's report stays checkable.
  */
-export const siteLabel = (siteId: string, area: string): string => `${siteId} (${area})`;
+export const siteLabel = (siteId: string): string => codeFor(siteId);
 
 /** `apex-05` renders as `APEX 5`, matching DEQ's report. Hardware units are not sites. */
 export function unitLabel(unitId: string): string {
@@ -374,8 +435,8 @@ export function unitLabel(unitId: string): string {
 }
 
 export interface RosterEntry {
-  siteId: string;
-  area: string;
+  /** Neutral site code. The internal slug is not carried on this interface at all. */
+  code: string;
   label: string;
   units: { unitId: string; unitLabel: string; confidence: string; start: string; end: string }[];
   startDate: string;
@@ -409,6 +470,7 @@ export function getSiteRoster(): RosterEntry[] {
   const bySite = new Map<string, RosterEntry>();
   for (const r of history) {
     const existing = bySite.get(r.site_id);
+    const code = codeFor(r.site_id);
     const unit = {
       unitId: r.unit_id,
       unitLabel: unitLabel(r.unit_id),
@@ -427,9 +489,8 @@ export function getSiteRoster(): RosterEntry[] {
       continue;
     }
     bySite.set(r.site_id, {
-      siteId: r.site_id,
-      area: r.area,
-      label: siteLabel(r.site_id, r.area),
+      code,
+      label: code,
       units: [unit],
       startDate: r.start_date,
       endDate: r.end_date,
@@ -445,12 +506,12 @@ export function getSiteRoster(): RosterEntry[] {
   bySite.forEach((site) => {
     site.status = site.endDate === "" ? "active" : "retired";
   });
-  return Array.from(bySite.values()).sort((a, b) => a.siteId.localeCompare(b.siteId));
+  return Array.from(bySite.values()).sort((a, b) => a.code.localeCompare(b.code));
 }
 
-/** The in-scope sites with a downloadable record, in stable order. */
-export function getActiveSiteIds(): string[] {
-  return getSiteRoster().filter((s) => s.hasExport).map((s) => s.siteId);
+/** The in-scope sites with a downloadable record, in stable code order. */
+export function getActiveSiteCodes(): string[] {
+  return getSiteRoster().filter((s) => s.hasExport).map((s) => s.code);
 }
 
 /* ------------------------------------------------------- hourly PM2.5 time series */
@@ -492,18 +553,18 @@ export function getHourlySeries(): HourlySeriesPayload {
 
   const series: HourlySeriesPayload["series"] = [];
   for (const site of roster) {
-    const m = sensorByKey.get(site.siteId);
+    const m = sensorByKey.get(slugForCode(site.code));
     if (!m) continue;
     series.push({
-      key: site.siteId,
+      key: site.code,
       label: site.label,
       instrumentClass: "sensor",
       values: hours.map((h) => m.get(h) ?? null),
     });
   }
   series.push({
-    key: REGULATORY_SITE,
-    label: `${REGULATORY_SITE} regulatory monitor (Ashburn)`,
+    key: REGULATORY_KEY,
+    label: REGULATORY_LABEL,
     instrumentClass: "regulatory",
     values: hours.map((h) => regulatory.get(h) ?? null),
   });
@@ -542,12 +603,13 @@ export function getSmokeSplitStats(): SplitStat[] {
   const roster = getSiteRoster();
   const out: SplitStat[] = [];
   for (const site of roster) {
-    const rows = validSensor("PM2.5").filter((r) => r.site_id === site.siteId);
+    const slug = slugForCode(site.code);
+    const rows = validSensor("PM2.5").filter((r) => r.site_id === slug);
     if (rows.length === 0) continue;
     const all = rows.map((r) => Number(r.value));
     const clean = rows.filter((r) => !inSmokeWindow(r.ts_est)).map((r) => Number(r.value));
     out.push({
-      key: site.siteId,
+      key: site.code,
       label: site.label,
       instrumentClass: "sensor",
       withSmoke: summarize(all),
@@ -556,8 +618,8 @@ export function getSmokeSplitStats(): SplitStat[] {
   }
   const reg = Array.from(validRegulatory("PM2.5").entries());
   out.push({
-    key: REGULATORY_SITE,
-    label: `${REGULATORY_SITE} regulatory monitor (Ashburn)`,
+    key: REGULATORY_KEY,
+    label: REGULATORY_LABEL,
     instrumentClass: "regulatory",
     withSmoke: summarize(reg.map(([, v]) => v)),
     withoutSmoke: summarize(reg.filter(([ts]) => !inSmokeWindow(ts)).map(([, v]) => v)),
@@ -898,7 +960,7 @@ export interface DailyReconciliation {
   compared: number;
   matching: number;
   meanAbsoluteDifference: number;
-  mismatches: { siteId: string; date: string; recomputed: number; truncated: number; published: number }[];
+  mismatches: { code: string; date: string; recomputed: number; truncated: number; published: number }[];
 }
 
 /**
@@ -927,7 +989,13 @@ export function getDailyReconciliation(): DailyReconciliation {
     const diff = Math.abs(truncated - published);
     sum += diff;
     if (diff > 1e-9) {
-      mismatches.push({ siteId: r.site_id, date: r.date_est, recomputed, truncated, published });
+      mismatches.push({
+        code: r.site_id === REGULATORY_SITE ? REGULATORY_KEY : codeFor(r.site_id),
+        date: r.date_est,
+        recomputed,
+        truncated,
+        published,
+      });
     }
   }
   const dates = mismatches.map((m) => m.date).sort();
@@ -981,7 +1049,8 @@ export interface WeeklyEditionRow {
  * to each other. Adding an edition means adding a column, not editing prose.
  */
 export const DEQ_WEEKLY_EDITIONS = {
-  siteId: "sterling-ms",
+  /** The Table 4 sensor, as a site code. Resolved through the lookup, never written out. */
+  code: codeFor("sterling-ms"),
   editions: [
     { label: "August 7, 2026", short: "Aug 7" },
     { label: "August 14, 2026", short: "Aug 14" },
@@ -1076,13 +1145,13 @@ export function getPercentiles(): PercentileRow[] {
   const out: PercentileRow[] = [];
   for (const site of getSiteRoster()) {
     if (!site.hasExport) continue;
-    const means = dailyMeans(site.siteId);
+    const means = dailyMeans(slugForCode(site.code));
     const days = Array.from(means.keys()).filter((d) => d <= RECORD_END).sort();
     if (days.length === 0) continue;
     const common = days.filter((d) => d >= COMMON_WINDOW_START);
     const smokeDays = days.filter((d) => d >= SMOKE_WINDOW.start && d <= SMOKE_WINDOW.end);
     out.push({
-      key: site.siteId,
+      key: site.code,
       label: site.label,
       fullDays: days.length,
       fullP98: percentile(days.map((d) => means.get(d)!), 0.98),
@@ -1139,15 +1208,15 @@ export interface CorrelationPayload {
 export function getCorrelations(): CorrelationPayload {
   const roster = getSiteRoster().filter((s) => s.hasExport);
   const byKey = new Map<string, Map<string, number>>();
-  for (const site of roster) byKey.set(site.siteId, new Map());
+  for (const site of roster) byKey.set(site.code, new Map());
   for (const r of validSensor("PM2.5")) {
     if (inSmokeWindow(r.ts_est)) continue;
-    byKey.get(r.site_id)?.set(r.ts_est, Number(r.value));
+    byKey.get(codeFor(r.site_id))?.set(r.ts_est, Number(r.value));
   }
 
-  const keys = roster.map((s) => s.siteId);
+  const keys = roster.map((s) => s.code);
   const labels: Record<string, string> = {};
-  for (const s of roster) labels[s.siteId] = s.label;
+  for (const s of roster) labels[s.code] = s.label;
 
   const pairs: CorrelationPayload["pairs"] = [];
   const insufficient: CorrelationPayload["insufficient"] = [];
@@ -1211,41 +1280,47 @@ export function getCorrelations(): CorrelationPayload {
 
 /* ------------------------------------------------------------------- crosswalk */
 
-export interface CrosswalkRow {
-  siteId: string;
-  area: string;
-  deqLabel: string;
-  kunakLabel: string;
+export interface SiteKeyRow {
+  code: string;
+  deqPublishedName: string;
+  county: string;
+  /** Occupancy windows, one per hardware unit, in start order. */
+  activePeriods: string[];
+  inV1Scope: boolean;
 }
 
 /**
- * Identifiers only: site_id, locality, DEQ's published site label, and the exact string Kunak's
- * dashboard displays. No reading value, percentile, or measurement of any kind appears in this
- * table, and none may be added to it. It exists so a reader can map this page onto DEQ's August 7
- * report, which is what makes the reproduction checkable.
+ * Identifiers and occupancy only: site code, DEQ's published site label, county, and the
+ * periods the site was collecting. No reading value, percentile, count of hours, or measurement
+ * of any kind appears in this table, and none may be added to it. It is rendered in a section
+ * of its own, away from every value display, which is the condition on which DEQ's published
+ * names may appear at all (docs/CONTENT_CONSTRAINTS.md section 4, CONTEXT.md C8).
+ *
+ * Unlike every other reader here it is not filtered to the page's county: the key is what tells
+ * a reader which sites exist and which are outside v1 scope, so all of them are listed and the
+ * out-of-scope ones are flagged (DECISIONS.md D5). It carries no values, so no measurement from
+ * another county reaches the page through it.
  */
-export function getCrosswalk(): CrosswalkRow[] {
-  const scope = sitesInScope();
-  const seen = new Set<string>();
-  const out: CrosswalkRow[] = [];
-  for (const r of historyRows()) {
-    if (!scope.has(r.site_id)) continue;
-    if (seen.has(r.site_id)) continue;
-    seen.add(r.site_id);
-    out.push({
-      siteId: r.site_id,
-      area: r.area,
-      deqLabel: r.site_name,
-      kunakLabel: r.kunak_label,
-    });
-  }
-  return out.sort((a, b) => a.siteId.localeCompare(b.siteId));
+export function getSiteKey(): SiteKeyRow[] {
+  return loadSiteCodes().map((s) => ({
+    code: s.code,
+    deqPublishedName: s.deqPublishedName,
+    county: s.county,
+    activePeriods: s.units.map(unitPeriodLabel),
+    inV1Scope: s.inV1Scope,
+  }));
 }
 
 /* ------------------------------------------------------------------ provenance */
 
 export interface ProvenanceEntry {
   file: string;
+  /**
+   * The file a reader actually receives: the neutralised, county-filtered derivative
+   * `copy-data.js` writes into `public/data/deq/`, keyed by site code. The source table named
+   * by `file` is not served (CONTEXT.md C7).
+   */
+  download: string;
   purpose: string;
   originUrl: string;
   retrievalMethod: string;
@@ -1277,8 +1352,10 @@ const DERIVED_DAILY: ManifestSource = {
   file: "deq_pm25_daily.csv",
   purpose:
     "Daily 24-hour PM2.5 averages recomputed from the hourly tables under the 18-of-24 completeness rule, with DEQ's published daily file carried alongside for reconciliation.",
+  // DEQ's own export filename names the monitor's locality, so the file is described rather
+  // than named, the way `REGULATORY_LABELS` in pipeline/report.py describes it (CONTEXT C7).
   retrieval_method:
-    "derived by the pipeline from deq_data_center_air_monitoring_hourly.csv and deq_regulatory_monitor_hourly.csv; published values from AshburnPM2.5_dailyAvg_030326_081026.xls, released under FOIA 26-4646",
+    "derived by the pipeline from deq_data_center_air_monitoring_hourly.csv and deq_regulatory_monitor_hourly.csv; published values from the regulatory monitor's daily-average export, released under FOIA 26-4646",
   origin_urls: ["https://vadeq.nextrequest.com/requests/26-4646"],
   download_date: "2026-08-11",
   license:
@@ -1287,25 +1364,34 @@ const DERIVED_DAILY: ManifestSource = {
 };
 
 /**
- * Coverage for the derived daily table, measured off the file rather than restated, because the
- * file is served from this page and gains sites and days with every ingest. It describes the
- * whole file, which is what the download link hands a reader, not the subset this page renders.
+ * Coverage for each download, measured off the served file rather than restated from the
+ * manifest.
+ *
+ * Two reasons. The served file is a county-filtered derivative keyed by site code, so the
+ * source table's own coverage note describes a different set of rows than the one the download
+ * link hands over. And the manifest's note for the regulatory table names the monitor by its
+ * AQS site designation, which is the locality the code scheme exists to keep off the page
+ * (CONTEXT C7): counting the served rows cannot reproduce a name that is not in them.
  */
-function derivedDailyCoverage(): string {
-  const rows = readCsv("deq_pm25_daily.csv");
+function downloadCoverage(file: string): string {
+  const onDisk = path.join(PUBLIC_DEQ_DIR, file);
+  if (!fs.existsSync(onDisk)) return "";
+  const rows = parseCsv(fs.readFileSync(onDisk, "utf-8"));
   if (rows.length === 0) return "";
-  const days = rows.map((r) => r.date_est).filter((d) => d !== "").sort();
+  const days = rows
+    .map((r) => (r.date_est !== "" && r.date_est !== undefined ? r.date_est : dayOf(r.ts_est ?? "")))
+    .filter((d) => d !== "")
+    .sort();
+  const codes = new Set(rows.map((r) => r.site_code));
   const sensors = new Set(
-    rows.filter((r) => r.instrument_class !== "regulatory_fem").map((r) => r.site_id)
+    rows.map((r) => r.site_code).filter((c) => c !== REGULATORY_KEY)
   );
-  const regulatory = new Set(
-    rows.filter((r) => r.instrument_class === "regulatory_fem").map((r) => r.site_id)
-  );
-  return (
-    `${days[0]} to ${days[days.length - 1]}, ${sensors.size} sensor site` +
-    `${sensors.size === 1 ? "" : "s"} and ${regulatory.size} regulatory monitor` +
-    `${regulatory.size === 1 ? "" : "s"}`
-  );
+  const parts = [`${days[0]} to ${days[days.length - 1]}`, `${rows.length} rows`];
+  if (sensors.size > 0) {
+    parts.push(`${sensors.size} sensor site${sensors.size === 1 ? "" : "s"}`);
+  }
+  if (codes.has(REGULATORY_KEY)) parts.push("1 regulatory monitor");
+  return parts.join(", ");
 }
 
 export function getProvenance(): ProvenanceEntry[] {
@@ -1319,25 +1405,29 @@ export function getProvenance(): ProvenanceEntry[] {
     ? (JSON.parse(fs.readFileSync(found, "utf-8")) as { sources: ManifestSource[] }).sources
     : [];
 
-  const wanted = [
-    "deq_data_center_air_monitoring_hourly.csv",
-    "deq_regulatory_monitor_hourly.csv",
-    "deq_pm25_daily.csv",
+  // Source table to the published download written by `copy-data.js`. Both names appear on
+  // the page: the download is what the link hands over, the source is what the manifest and
+  // the SHA-256 in the report's T01 attest to.
+  const wanted: [string, string][] = [
+    ["deq_data_center_air_monitoring_hourly.csv", "deq_sensor_hourly_loudoun.csv"],
+    ["deq_regulatory_monitor_hourly.csv", "deq_regulatory_monitor_hourly_loudoun.csv"],
+    ["deq_pm25_daily.csv", "deq_pm25_daily_loudoun.csv"],
   ];
-  return wanted.map((name) => {
+  return wanted.map(([name, download]) => {
     const entry =
       sources.find((s) => s.file === name) ??
       (name === DERIVED_DAILY.file ? DERIVED_DAILY : undefined);
-    const onDisk = path.join(SOURCES_DIR, name);
+    // Sized off the file the reader receives, not off the source table it derives from.
+    const onDisk = path.join(PUBLIC_DEQ_DIR, download);
     return {
       file: name,
+      download,
       purpose: entry?.purpose ?? "",
       originUrl: entry?.origin_urls?.[0] ?? "",
       retrievalMethod: entry?.retrieval_method ?? "",
       downloadDate: entry?.download_date ?? "",
       license: entry?.license ?? "",
-      coverage:
-        entry === DERIVED_DAILY ? derivedDailyCoverage() : entry?.coverage ?? "",
+      coverage: downloadCoverage(download),
       bytes: fs.existsSync(onDisk) ? fs.statSync(onDisk).size : 0,
     };
   });

@@ -44,7 +44,9 @@ class Site:
     site_id: str
     deq_published_name: str
     kunak_label: str
-    area: str
+    # None where the history carries no locality for the site yet. Nothing downstream
+    # renders it; a site is identified by its code, and the site key gives the county.
+    area: str | None
     county: str
     county_source: str
     in_v1_scope: bool
