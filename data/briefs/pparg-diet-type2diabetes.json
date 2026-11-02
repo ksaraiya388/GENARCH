@@ -1,7 +1,7 @@
 {
   "slug": "pparg-diet-type2diabetes",
   "title": "PPARG Pro12Ala and Diet Quality in Type 2 Diabetes and Insulin Sensitivity",
-  "question": "How does the PPARG Pro12Ala polymorphism interact with diet quality to influence insulin sensitivity and type 2 diabetes risk?",
+  "question": "How does the PPARG Pro12Ala polymorphism interact with diet quality to modify insulin sensitivity and the population-level association with type 2 diabetes?",
   "background": "PPARG encodes peroxisome proliferator-activated receptor gamma, a nuclear receptor that regulates adipocyte differentiation and insulin sensitivity. The Pro12Ala variant (rs1801282) is associated with lower T2D risk and improved insulin sensitivity in meta-analyses. PPARG is the target of thiazolidinediones (TZDs). Diet quality—including intake of refined carbohydrates, saturated fat, and fiber—strongly affects insulin sensitivity and T2D risk. Gene–diet interactions have been reported: Ala carriers may benefit more from improved diet or weight loss. This brief summarizes the PPARG–diet–T2D axis and implications for prevention.",
   "evidence_summary": [
     "GWAS and meta-analyses: Pro12Ala Ala allele associated with lower T2D risk and higher insulin sensitivity; effect may be modified by diet and BMI.",

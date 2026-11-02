@@ -1,7 +1,7 @@
 {
   "slug": "leptin-melanocortin-obesity-environment",
   "title": "Leptin–Melanocortin Axis and Obesogenic Environment in Polygenic Obesity",
-  "question": "How do genes in the leptin–melanocortin pathway (LEP, LEPR, MC4R, FTO) interact with diet and physical activity to influence obesity risk?",
+  "question": "How do genes in the leptin–melanocortin pathway (LEP, LEPR, MC4R, FTO) interact with diet and physical activity to modify the population-level association with obesity?",
   "background": "Energy balance is regulated by the leptin–melanocortin pathway: leptin from adipose tissue signals energy sufficiency to the hypothalamus; MC4R and POMC neurons integrate signals to suppress appetite. Rare mutations in LEP, LEPR, POMC, and MC4R cause severe early-onset obesity. Common variants at FTO and near MC4R are the strongest GWAS hits for BMI. The obesogenic environment—high-calorie diet, sedentary behavior, built environment—strongly modulates genetic risk. Physical activity can buffer the effect of FTO and other risk alleles. This brief summarizes the mechanistic link between leptin–melanocortin genetics and environmental modifiers of obesity.",
   "evidence_summary": [
     "Mendelian: LEP, LEPR, POMC, MC4R loss-of-function cause severe obesity; leptin replacement effective in LEP deficiency.",

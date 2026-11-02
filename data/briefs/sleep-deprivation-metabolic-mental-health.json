@@ -1,7 +1,7 @@
 {
   "slug": "sleep-deprivation-metabolic-mental-health",
   "title": "Sleep Deprivation and Circadian Disruption in Metabolic and Mental Health: Gene–Environment Interactions",
-  "question": "How do sleep deprivation and circadian disruption interact with genetic susceptibility to affect metabolic disease and depression risk?",
+  "question": "How do sleep deprivation and circadian disruption interact with genetic susceptibility to modify the population-level association with metabolic disease and depression?",
   "background": "Short sleep duration and poor sleep quality are associated with obesity, type 2 diabetes, cardiovascular disease, and depression. Circadian genes (CLOCK, PER, CRY) and stress-related genes (BDNF) may modify susceptibility. Adolescence is a period of natural circadian shift and often insufficient sleep; shift work in adulthood increases metabolic and cardiovascular risk. Mechanisms include effects on leptin/ghrelin, glucose metabolism, HPA axis, and neuroplasticity. This brief synthesizes evidence for sleep as an environmental modifier of genetic risk for metabolic and mental health outcomes.",
   "evidence_summary": [
     "Epidemiological: Short sleep (<7 h) and shift work associated with higher BMI, T2D, and depression risk; meta-analyses support causal inference.",

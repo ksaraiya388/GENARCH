@@ -1,7 +1,7 @@
 {
   "slug": "bdnf-stress-major-depressive-disorder",
   "title": "BDNF Val66Met and Psychosocial Stress in Major Depressive Disorder Susceptibility",
-  "question": "How does the BDNF Val66Met polymorphism interact with psychosocial stress to influence risk of major depressive disorder and neural plasticity?",
+  "question": "How does the BDNF Val66Met polymorphism interact with psychosocial stress to shift the reported population-level association with major depressive disorder and neural plasticity?",
   "background": "Brain-derived neurotrophic factor (BDNF) supports neuronal survival, synaptic plasticity, and neurogenesis. The Val66Met variant (rs6265) affects activity-dependent secretion of BDNF and has been associated with depression, anxiety, and stress-related phenotypes in meta-analyses. Psychosocial stress—including childhood adversity, chronic stress, and life events—is a well-established risk factor for MDD. Gene–environment interaction (G×E) hypotheses propose that Met carriers show heightened stress sensitivity and greater depression risk following adversity, with implications for hippocampal structure and function. This brief synthesizes evidence for the BDNF × stress interaction in MDD and adolescent vulnerability.",
   "evidence_summary": [
     "Meta-analyses support a small main effect of BDNF Val66Met on depression risk and a stronger G×E effect: Met carriers show elevated depression risk following childhood adversity or recent stress (Mol Psychiatry, multiple cohorts).",

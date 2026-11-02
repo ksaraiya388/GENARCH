@@ -1,7 +1,7 @@
 {
   "slug": "pm25-il33-nfkb-asthma",
-  "title": "PM2.5 Exposure Amplifies IL-33-Mediated Airway Inflammation via NF-kB Signaling in Genetically Susceptible Individuals",
-  "question": "How does ambient PM2.5 exposure interact with genetic variation in IL33 and NF-κB pathway genes to amplify airway inflammation and asthma risk?",
+  "title": "PM2.5 Exposure Amplifies IL-33-Mediated Airway Inflammation via NF-κB Signaling in Genetically Susceptible Populations",
+  "question": "How does ambient PM2.5 exposure interact with genetic variation in IL33 and NF-κB pathway genes to amplify airway inflammation and the population-level asthma association?",
   "background": "Asthma is a multifactorial disease shaped by genetic susceptibility and environmental exposures. Genome-wide association studies have identified IL33 and related type 2 pathway genes as major asthma risk loci. IL-33 functions as an epithelial alarmin released upon cell damage or stress, activating group 2 innate lymphoid cells (ILC2s), mast cells, and Th2 lymphocytes via the ST2 receptor. Ambient fine particulate matter (PM2.5) induces oxidative stress and NF-κB activation in airway epithelium, leading to pro-inflammatory cytokine production. Epidemiological and experimental evidence suggests that PM2.5 exacerbates asthma and that genetic variants increasing IL33 expression may amplify this interaction. This brief synthesizes the mechanistic chain linking PM2.5 exposure to IL-33–driven airway inflammation through NF-κB signaling, with implications for gene–environment interaction (G×E) in asthma susceptibility.",
   "evidence_summary": [
     "GWAS: IL33 variants (rs1888909, rs928413) associated with asthma risk; enhancer-blocking regulatory mechanism alters IL33 expression (Nature Comms 2021, doi:10.1038/s41467-021-26347-z)",

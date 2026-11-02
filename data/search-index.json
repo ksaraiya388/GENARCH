@@ -402,8 +402,8 @@
   {
     "type": "brief",
     "slug": "pm25-il33-nfkb-asthma",
-    "name": "PM2.5 Exposure Amplifies IL-33-Mediated Airway Inflammation via NF-kB Signaling in Genetically Susceptible Individuals",
-    "summary": "How does ambient PM2.5 exposure interact with genetic variation in IL33 and NF-κB pathway genes to amplify airway inflammation and asthma risk?",
+    "name": "PM2.5 Exposure Amplifies IL-33-Mediated Airway Inflammation via NF-κB Signaling in Genetically Susceptible Populations",
+    "summary": "How does ambient PM2.5 exposure interact with genetic variation in IL33 and NF-κB pathway genes to amplify airway inflammation and the population-level asthma association?",
     "confidence": "high",
     "synonyms": []
   },
