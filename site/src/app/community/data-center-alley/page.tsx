@@ -974,9 +974,15 @@ export default function DataCenterCorridorPage() {
               three years. A {shortest.commonDays}-day percentile is not that statistic, and
               nothing about attainment or non-attainment follows from either set of numbers.
             </p>
+            {/* CONTEXT.md section 4 R3 mandatory caveat 2, verbatim (DECISIONS.md D19 and
+                AUDIT item 8). The wording it replaced read as GENARCH correcting DEQ, which
+                GENARCH_RULES.md section 9 rules out: every figure in the series is DEQ's own
+                and the resolution came from DEQ's own lengthening record. */}
             <p>
-              This corrects a comparison between monitoring sites. It is not a statement that any
-              location is polluted, and it is not a statement about anyone&apos;s health.
+              DEQ&apos;s table reported each sensor&apos;s value over its own record. The
+              comparison between sensors did not hold because the records differed in length and
+              season. This is not a claim that DEQ&apos;s figures were wrong or that any site is
+              polluted. It is not a statement about anyone&apos;s health.
             </p>
             <p>
               GENARCH&apos;s own-record percentiles differ from DEQ&apos;s Table 4 by up to
