@@ -19,10 +19,3 @@ xlrd==2.0.2
 # Tooling: pytest runs tests/, ruff is the pipeline lint gate.
 pytest==9.1.1
 ruff==0.11.13
-
-# Unpinned deliberately. No module under pipeline/ or tests/ imports
-# jsonschema, so its version cannot move a reported value. The local
-# environment holds 3.2.0 (2019), which predates Python 3.14 and would not be
-# a safe pin for the Linux runner; the entry is kept rather than removed
-# because removing an unused declared dependency is not this change.
-jsonschema
