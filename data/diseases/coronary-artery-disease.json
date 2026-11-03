@@ -41,7 +41,7 @@
         "gwas_p": 1e-35,
         "effect_size": 1.15,
         "ancestry_composition": "European-dominated",
-        "replication_status": "Replicated; therapeutic target",
+        "replication_status": "Replicated",
         "evidence": "Proprotein convertase; degrades LDLR; loss-of-function variants lower LDL and CAD risk",
         "strength": 0.9,
         "citations": [

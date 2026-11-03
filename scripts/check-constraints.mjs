@@ -276,6 +276,11 @@ const JSON_DISPLAY_KEYS = [
   "transferability_notes", "data_gaps", "gwas_ancestry_breakdown",
   "hypothesis", "supporting_evidence", "role_in_pathway", "pathway_role",
   "pathway_effect", "mechanism_rationale", "local_relevance",
+  // `replication_status` is a locus field. It is declared in site/src/lib/types.ts and
+  // no component reads it yet, so unlike every other key here it does not currently reach
+  // the DOM; it is listed so that the lint already covers it when one does, and because
+  // the C5 key set can only narrow what this list extracts.
+  "replication_status",
   // Cross-ancestry modules (data/ancestry/*.json). `text` is the prose field on
   // every cited-text block; `metric`, `comparator` and `labels_as_used` all reach
   // the DOM as table cells. A prose key absent from this list is NEVER linted, so
@@ -389,7 +394,15 @@ function extractMdx(src, file) {
 // JSON_DISPLAY_KEYS -- `summary`, `description`, `supporting_evidence`,
 // `mechanism_hypothesis`, `adolescent_relevance`, `transferability_notes` and the others --
 // is prose about a disease, gene or pathway, where a clinical term is the subject matter.
-const C5_JSON_KEYS = new Set(["title", "question", "name", "label", "caption", "heading"]);
+//
+// `pathway_role` and `role_in_pathway` were added 2026-11-02. Both render through
+// site/src/app/atlas/pathways/[slug]/page.tsx as a short label beside a disease or gene
+// link ("psoriasis -- IL-23/Th17 axis"), not as a sentence, so they sit on the label side
+// of the line D29 draws rather than with the entity prose.
+const C5_JSON_KEYS = new Set([
+  "title", "question", "name", "label", "caption", "heading",
+  "pathway_role", "role_in_pathway", "replication_status",
+]);
 
 // Heading and label positions in .tsx and .mdx. `jsx-text` and `mdx-prose` are body copy.
 const C5_CONTEXTS = new Set(["heading", "label"]);

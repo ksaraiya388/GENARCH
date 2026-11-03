@@ -10,7 +10,7 @@
   ],
   "key_genes": [],
   "linked_diseases": [
-    {"disease_slug": "psoriasis", "pathway_role": "IL-23/Th17 axis; therapeutic target", "citations": ["ref2"]},
+    {"disease_slug": "psoriasis", "pathway_role": "IL-23/Th17 axis", "citations": ["ref2"]},
     {"disease_slug": "rheumatoid-arthritis", "pathway_role": "Cytokine-driven inflammation", "citations": ["ref2"]},
     {"disease_slug": "inflammatory-bowel-disease", "pathway_role": "IL-23/Th17; JAK inhibitors in development", "citations": ["ref2"]}
   ],

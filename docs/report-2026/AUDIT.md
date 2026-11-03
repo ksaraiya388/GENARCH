@@ -939,3 +939,7 @@ CONTEXT.md C5, which bans clinical language on a label. The field stays in `pipe
 in `site/src/lib/types.ts` and in all four `data/pathways/*.json` records with its values
 unchanged; a field rename or removal is deferred to the schema pass. Verified by grep over the
 built export: `Therapeutic target` appears on no served page.
+
+2026-11-02: drug-class terms (anti-*, inhibitor) are not in the C5 lexicon; every
+`pathway_role`/`role_in_pathway` label using one was rewritten in this commit. Lexicon
+extension deferred to the schema pass.

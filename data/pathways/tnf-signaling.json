@@ -10,8 +10,8 @@
   ],
   "key_genes": [],
   "linked_diseases": [
-    {"disease_slug": "rheumatoid-arthritis", "pathway_role": "Core therapeutic target; anti-TNF", "citations": ["ref2"]},
-    {"disease_slug": "inflammatory-bowel-disease", "pathway_role": "Anti-TNF in Crohn and UC", "citations": ["ref2"]},
+    {"disease_slug": "rheumatoid-arthritis", "pathway_role": "Core signaling node", "citations": ["ref2"]},
+    {"disease_slug": "inflammatory-bowel-disease", "pathway_role": "Implicated in Crohn disease and UC", "citations": ["ref2"]},
     {"disease_slug": "asthma", "pathway_role": "TNF variants modify air pollution–asthma association", "citations": ["ref1"]}
   ],
   "linked_exposures": [
