@@ -377,10 +377,18 @@ class Freeze:
         blockers: list[str] = []
 
         if not head_contains(ATLAS_PROMPT_A_COMMIT):
-            blockers.append(
-                f"HEAD does not contain the Prompt A commit {ATLAS_PROMPT_A_COMMIT}; "
-                "the in-place encoding repair is not in this checkout"
-            )
+            if commit_is_present(ATLAS_PROMPT_A_COMMIT):
+                blockers.append(
+                    f"HEAD does not contain the Prompt A commit "
+                    f"{ATLAS_PROMPT_A_COMMIT}; the in-place encoding repair is not in "
+                    "this checkout"
+                )
+            else:
+                blockers.append(
+                    f"the Prompt A commit {ATLAS_PROMPT_A_COMMIT} is not in this "
+                    "repository at all, which a shallow clone causes; fetch the full "
+                    "history before evaluating the atlas gate"
+                )
 
         graph = REPO_ROOT / GRAPH_PATH
         if not graph.is_file():
@@ -414,10 +422,9 @@ def head_sha() -> str:
     return result.stdout.strip()
 
 
-def head_contains(commit: str) -> bool:
-    """Whether `commit` is an ancestor of HEAD, by `git merge-base --is-ancestor`."""
-    result = subprocess.run(
-        ["git", "merge-base", "--is-ancestor", commit, "HEAD"],
+def _git(*args: str) -> subprocess.CompletedProcess:
+    return subprocess.run(
+        ["git", *args],
         capture_output=True,
         text=True,
         encoding="utf-8",
@@ -425,7 +432,22 @@ def head_contains(commit: str) -> bool:
         cwd=str(REPO_ROOT),
         check=False,
     )
-    return result.returncode == 0
+
+
+def commit_is_present(commit: str) -> bool:
+    """Whether the repository holds the commit object at all.
+
+    A shallow clone does not, and `merge-base --is-ancestor` then fails for a
+    reason that has nothing to do with what HEAD contains. The gate reports the
+    two cases differently so a refusal on a CI runner is not read as a tree that
+    is missing the repair.
+    """
+    return _git("cat-file", "-e", f"{commit}^{{commit}}").returncode == 0
+
+
+def head_contains(commit: str) -> bool:
+    """Whether `commit` is an ancestor of HEAD, by `git merge-base --is-ancestor`."""
+    return _git("merge-base", "--is-ancestor", commit, "HEAD").returncode == 0
 
 
 def audit_records_graph_reproducibility() -> bool:

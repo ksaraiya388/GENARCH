@@ -732,6 +732,20 @@ def test_each_gate_condition_blocks_on_its_own(freeze, monkeypatch, condition, n
     assert needle in blockers[0]
 
 
+def test_a_shallow_clone_is_reported_as_shallow_not_as_a_missing_repair(freeze, monkeypatch):
+    """A depth-1 checkout has no Prompt A commit object; that is not a closed gate.
+
+    `actions/checkout` clones shallow by default, so `merge-base --is-ancestor`
+    fails there for a reason that has nothing to do with what HEAD contains. CI
+    fetches the full history; the blocker says which case it is either way.
+    """
+    monkeypatch.setattr(freeze_lib, "head_contains", lambda _commit: False)
+    monkeypatch.setattr(freeze_lib, "commit_is_present", lambda _commit: False)
+    (blocker,) = freeze.atlas_gate_blockers()
+    assert "shallow clone" in blocker
+    assert "not in this repository at all" in blocker
+
+
 def test_add_atlas_inputs_refuses_to_repin_an_already_frozen_atlas(freeze_path):
     """Re-pinning would move the counts under a freeze date that no longer matches them."""
     before = freeze_path.read_bytes()

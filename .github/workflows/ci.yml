@@ -13,7 +13,14 @@ jobs:
     env:
       PYTHONUTF8: '1'
     steps:
+      # Full history, not the default shallow clone. The atlas gate asks whether
+      # HEAD contains the Prompt A encoding-repair commit, which is a
+      # `git merge-base --is-ancestor` call, and that cannot be answered from a
+      # depth-1 checkout: the commit object is simply absent and the gate reads
+      # as closed on a tree where it is open.
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       # .python-version is the single pin: 3.14, the interpreter every
       # pipeline command is run against locally (DECISIONS.md D12).
