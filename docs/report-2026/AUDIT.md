@@ -943,3 +943,91 @@ built export: `Therapeutic target` appears on no served page.
 2026-11-02: drug-class terms (anti-*, inhibitor) are not in the C5 lexicon; every
 `pathway_role`/`role_in_pathway` label using one was rewritten in this commit. Lexicon
 extension deferred to the schema pass.
+
+## DEQ wording source, atlas freeze, figure contrast (2026-11-02)
+
+Appended, not edited, per D23.
+
+2026-11-02: CONTEXT §3 previously held an edited version of DEQ staff email text (added
+prefix; removed "(CFR)" and "(NAAQS)"). Replaced with DEQ's published report wording,
+DEQ_REPORT_LIMITATION, cited to the 2026-10-09 report, p. 2.
+
+2026-11-02: the quotation was located in both frozen DEQ reports before the citation was
+written. `DEQ_REPORT_LIMITATION` occurs on p. 4 of
+`pipeline/sources/freeze-2026/2026-08-07_data_center_air_quality_analysis.pdf` (25 pages) and on
+p. 2 of `pipeline/sources/freeze-2026/deq_dcamp_weekly_2026-10-09.pdf` (28 pages); in both the
+printed folio equals the PDF page index. The match holds under the D24 rule and only under it:
+pdfplumber's extraction splits "pollutant" as `pol-` + line break + `lutant` in both files, so a
+whitespace-only comparison misses it. The citation names the more recent of the two.
+`scripts/gen_deq_limitation.py` re-runs that check on every generation and writes nothing if it
+fails. `site/src/content/deq-limitation.json` is now generated from
+`site/src/content/deq-attribution.ts` rather than from CONTEXT, and the byte-equality test
+compares the two; the pairing sentence and the credit line are GENARCH's own wording and stay
+sliced out of CONTEXT §3, unchanged. The file created in 118fd51 from the email-supplied text is
+replaced. Its `attribution` key, which held `(Virginia DEQ)`, is now `citation` and holds the
+report date and page.
+
+2026-11-02: the `site/src/content/deq-limitation.json` `$.pairing` exemption in
+`docs/constraint-exemptions.json` was re-checked after D29 and is still documentary. Two
+independent reasons: `scripts/check-constraints.mjs` `SCAN` reads `site/src` for `.tsx`, `.ts`
+and `.mdx` only and reads `.json` only under `data/`, so the file is outside the scan scope; and
+`pairing` is not in `JSON_DISPLAY_KEYS`, which D29 extended with `pathway_role`,
+`role_in_pathway` and `replication_status` but not with this key. The entry is kept with a
+`status` of "documentary; not exercised" and a note saying so.
+
+2026-11-02: the `--add-atlas-inputs` gate was rewritten to require all three of: HEAD contains
+the Prompt A commit `03763e8` (`git merge-base --is-ancestor`); `data/graph/graph.json` passes
+`scripts/check_mojibake.py`; and AUDIT.md carries the 2026-10-24 graph reproducibility entry
+(D25). The `metadata.generated_at` later than 2026-10-22 condition is removed. It could not be
+satisfied while D25 stands: D25 keeps the published graph at its 2026-03-07 build and repairs it
+in place rather than regenerating it, so the old gate waited on a rebuild that was ruled out.
+All three conditions hold at this commit and the atlas freeze was taken.
+
+**Atlas freeze date: 2026-11-02.** 88 records pinned across 8 modules: diseases 19, exposures 15, genes 26, pathways 12, mechanism briefs 10, community regions 2, ancestry modules 3, knowledge graph 1. Knowledge
+graph 97 nodes / 165 edges, matching
+`metadata.node_count` and `metadata.edge_count`, `metadata.generated_at` 2026-03-07. T08 carries
+the graph's status as "live; not reproducible from current pipeline (D25)"; every other module
+reads "live; emitted by the current pipeline". The counts are read from the pinned records and
+from the committed `data/graph/graph.json`, never asserted, and a test re-reads both. Every
+inventory count carries the atlas freeze date, in the `window` field of each key and in a column
+of T08.
+
+Atlas records are pinned where they live rather than copied under `freeze-2026/` the way D28
+copies the three configuration inputs. The atlas half of the report is a snapshot of the
+committed atlas, so an edit after the freeze has to fail the run rather than be absorbed;
+retaking the freeze is the remedy. `verify_all` now checks 117 inputs, 29 DEQ plus 88 atlas.
+If atlas editing resumes before the report ships, the D28 remedy -- frozen copies with
+`frozen_path` beside the live path -- applies here unchanged.
+
+`inventory.*` and `chain.*` keys are emitted into `data/reports/2026/inventory.json` and
+`data/reports/2026/chain.json`, not into `numbers.json`, and T08 and T09 are manifested in those
+two files, not in `tables.json`. `numbers.json`, `tables.json` and T01-T07 are byte-identical
+across this prompt, which is what CI gates on. The CI reproducibility step now compares
+`inventory.json` and `chain.json` as well.
+
+T09 reports the five links of the published `il33-pm25-chain` figure with the evidence class on
+each. Two classes are read from atlas records (`data/genes/il33.json`
+`linked_exposures[air-pollution].evidence_type` = literature, `linked_diseases[asthma]` = GWAS);
+three are assigned by the figure definition in `site/src/lib/figure-data.ts` (functional,
+functional, inferred) and the table marks them as not read from a record, so a reader does not
+take every class for a record value. One link is inferred. Confidence high and direction amplify
+come from the `air-pollution` exposure modifier on `data/diseases/asthma.json`. No brief title
+and no entity prose is quoted in either atlas artifact: AUDIT item 16 holds that quoting brief
+titles in the module inventory needs a ruling, and the D8 rewrites are not approved, so the
+inventory counts the briefs and names none. A test asserts it.
+
+2026-11-02: the `chrome` colour role is removed from `pipeline/report_lib/palette.py` and from
+the contrast test, and no role is exempt from the contrast floors any more. The role held the
+F04 35 microgram reference line and the F01 washes at `cool.mid`, 2.56:1 on white, on the
+grounds that a reference line marks the level of a standard rather than a category. That was
+wrong for F04, where six plotted percentiles are read against the line, which makes it a mark a
+value is read off. The reference line and the F04 per-site connectors now use `cool.dark`
+(`#64748B`, Tailwind slate-500, 4.76:1 on white), as does the F03 1:1 line; the F04 text label
+stays in `navy.deep` at 16.78:1. The F01 washes keep their light fill, because neither carries a
+value, and each gained a `cool.dark` outline at 4.76:1 and the smoke window gained a text label
+inside the axes (GENARCH_RULES.md §6). `palette.data_marks()` is now the list the contrast test
+reads, so a new mark is covered by being added to it.
+
+Figures F01, F03 and F04 were regenerated. F02 and F05 never used the role and their bytes are
+unchanged. `figures.json` changed in exactly five keys, the `limitation` field of each of the
+five entries, and in nothing else: no key was added or removed and no other value moved.

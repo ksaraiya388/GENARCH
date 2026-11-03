@@ -1,0 +1,6 @@
+Step,From,To,Evidence class,Class read from an atlas record,Source of the evidence class,As of (atlas freeze)
+1,PM2.5 particulate,Bronchial epithelial injury,literature,yes,data/genes/il33.json linked_exposures[air-pollution].evidence_type,2026-11-02
+2,Bronchial epithelial injury,IL-33 release,functional,no,GENARCH figure definition (site/src/lib/figure-data.ts),2026-11-02
+3,IL-33 release,ST2 on ILC2,functional,no,GENARCH figure definition (site/src/lib/figure-data.ts),2026-11-02
+4,ST2 on ILC2,Type 2 inflammation,inferred,no,GENARCH figure definition (site/src/lib/figure-data.ts),2026-11-02
+5,Type 2 inflammation,Asthma exacerbation,GWAS,yes,data/genes/il33.json linked_diseases[asthma].evidence_type,2026-11-02

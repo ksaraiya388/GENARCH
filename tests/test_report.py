@@ -13,13 +13,23 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 from pathlib import Path
 
 import pytest
 
 from pipeline.report import PM25_24H_LEVEL, compute, run_report
-from pipeline.report_lib import collocation, correlation, daily, figures, palette, site_codes
-from pipeline.report_lib.freeze import Freeze, FreezeError
+from pipeline.report_lib import (
+    atlas,
+    collocation,
+    correlation,
+    daily,
+    figures,
+    palette,
+    site_codes,
+)
+from pipeline.report_lib import freeze as freeze_lib
+from pipeline.report_lib.freeze import Freeze, FreezeError, sha256_of
 from pipeline.report_lib.numbers import NumberRegistry
 from pipeline.report_lib.rounding import decimals_of, half_up, matches_at_published_precision
 from pipeline.report_lib.verify import (
@@ -317,24 +327,66 @@ def test_only_the_site_key_carries_deq_published_names(report_dir):
 
 
 CONTEXT_PATH = Path(__file__).resolve().parents[1] / "docs" / "report-2026" / "CONTEXT.md"
+ATTRIBUTION_TS_PATH = (
+    Path(__file__).resolve().parents[1] / "site" / "src" / "content" / "deq-attribution.ts"
+)
 
 
-def test_deq_limitation_constant_equals_context_section_3():
-    """The constant is sliced out of CONTEXT.md, so it cannot drift from it."""
+def test_deq_limitation_constant_equals_the_transcribed_attribution_constant():
+    """The quotation is sliced out of deq-attribution.ts, so it cannot drift from it.
+
+    `DEQ_REPORT_LIMITATION` is DEQ's published weekly-report wording, transcribed
+    once from the PDF. `site/src/content/deq-limitation.json` is generated from it by
+    `scripts/gen_deq_limitation.py` and compared byte-for-byte here, so the pipeline
+    and the site cannot quote anything but that one transcription (DECISIONS.md D24).
+    The pairing sentence and the credit line are GENARCH's own wording and stay
+    sliced out of CONTEXT.md section 3.
+    """
+    source = ATTRIBUTION_TS_PATH.read_text(encoding="utf-8")
+    match = re.search(r"export const DEQ_REPORT_LIMITATION = `(.*?)`;", source, re.S)
+    assert match, "DEQ_REPORT_LIMITATION not found in deq-attribution.ts"
+    expected_limitation = match.group(1)
+
     lines = CONTEXT_PATH.read_text(encoding="utf-8").splitlines()
-    quote, attribution = lines[21].rsplit('" ', 1)
-    expected_limitation = quote.lstrip('"')
-    expected_pairing = lines[22].removeprefix("Always pair with: ")
-    expected_credit = lines[23].split(": ", 1)[1].strip().strip('"')
+    (pairing_line,) = [ln for ln in lines if ln.startswith("Always pair with: ")]
+    (credit_line,) = [
+        ln
+        for ln in lines
+        if ln.startswith("Credit line until DEQ Communications supplies its preferred wording: ")
+    ]
+    expected_pairing = pairing_line.removeprefix("Always pair with: ")
+    expected_credit = credit_line.split(": ", 1)[1].strip().strip('"')
 
     constant = figures.deq_limitation()
     assert constant["limitation"] == expected_limitation
-    assert constant["attribution"] == attribution.strip() == "(Virginia DEQ)"
     assert constant["pairing"] == expected_pairing
     assert constant["credit"] == expected_credit
-    assert constant["rendered"] == (
-        f"{expected_limitation} {attribution.strip()} {expected_pairing} {expected_credit}"
+    assert constant["citation"] == (
+        "Virginia DEQ, Data Center Air Monitoring Project weekly report, 2026-10-09, p. 2"
     )
+    assert constant["rendered"] == (
+        f"{expected_limitation} ({constant['citation']}) "
+        f"{expected_pairing} {expected_credit}"
+    )
+
+
+def test_context_section_3_quotes_the_same_wording_with_its_citation():
+    """CONTEXT section 3 carries DEQ's published wording, not an edited email text."""
+    lines = CONTEXT_PATH.read_text(encoding="utf-8").splitlines()
+    heading = next(i for i, ln in enumerate(lines) if ln.startswith("## 3. DEQ limitation"))
+    constant = figures.deq_limitation()
+    assert lines[heading + 1] == f'"{constant["limitation"]}" ({constant["citation"]})'
+
+
+def test_the_cited_deq_report_is_frozen_and_hash_pinned(freeze):
+    """The report the citation names is one of the hash-verified frozen inputs."""
+    cited = [
+        entry
+        for entry in freeze.weekly_reports()
+        if entry.path.name == "deq_dcamp_weekly_2026-10-09.pdf"
+    ]
+    assert cited, "the cited 2026-10-09 report is not pinned in FREEZE.json"
+    freeze.verified_path(cited[0].rel_path)
 
 
 def test_every_figure_limitation_equals_the_constant(report_dir):
@@ -348,7 +400,7 @@ def test_every_figure_limitation_equals_the_constant(report_dir):
 def test_no_caption_repeats_any_part_of_the_constant(report_dir):
     manifest = json.loads((report_dir / "figures.json").read_text(encoding="utf-8"))
     constant = figures.deq_limitation()
-    parts = [constant[k] for k in ("limitation", "attribution", "pairing", "credit")]
+    parts = [constant[k] for k in ("limitation", "citation", "pairing", "credit")]
     offenders = {}
     for entry in manifest["figures"]:
         repeated = [p[:40] for p in parts if p in entry["caption"]]
@@ -375,7 +427,13 @@ def test_prince_william_sites_carry_no_values(numbers):
         assert f"p98.full.{code}.lst_zero_missing" not in numbers
 
 
-def test_atlas_numbers_are_absent_rather_than_placeholders(numbers):
+def test_atlas_keys_stay_out_of_numbers_json(numbers):
+    """The atlas keys live in inventory.json and chain.json, never in numbers.json.
+
+    numbers.json is the DEQ half and CI gates on its bytes, so the atlas half carries
+    its own key files. This was also the shape while the atlas was unfrozen, when the
+    keys were simply unemitted and never placeholders.
+    """
     assert not [k for k in numbers if k.startswith(("inventory.", "chain.", "Chain."))]
 
 
@@ -420,12 +478,33 @@ def test_registry_rejects_a_duplicate_key():
 
 
 def test_data_mark_colours_clear_three_to_one_on_white():
+    """Every mark a reader reads a value from or against clears 3:1. No exemptions.
+
+    `palette.data_marks()` is the whole list: the two series colours, the reference
+    line and the wash outline. The reference line used to sit in an exempt `chrome`
+    role at 2.56:1; the exemption is gone and the line is held to the floor like any
+    other mark, because on F04 six plotted percentiles are read against it.
+    """
     failures = [
         f"{colour} against white at {palette.contrast_ratio(colour, palette.WHITE):.2f}:1"
-        for colour in palette.series()
+        for colour in palette.data_marks()
         if palette.contrast_ratio(colour, palette.WHITE) < palette.DATA_MARK_MIN_CONTRAST
     ]
     assert not failures, "data marks below 3:1: " + "; ".join(failures)
+
+
+def test_the_palette_offers_no_exempt_role():
+    """There is no colour role that opts out of the contrast floors."""
+    assert not hasattr(palette, "chrome"), "the exempt chrome role is back"
+    assert palette.reference() in palette.data_marks()
+    assert palette.wash_edge() in palette.data_marks()
+
+
+def test_the_reference_line_label_clears_the_text_floor():
+    """F04 prints the level beside the line, so the label is held to 4.5:1."""
+    for colour in (palette.ink(), palette.reference()):
+        ratio = palette.contrast_ratio(colour, palette.WHITE)
+        assert ratio >= palette.TEXT_MIN_CONTRAST, f"{colour} at {ratio:.2f}:1"
 
 
 def test_text_colours_clear_four_and_a_half_to_one():
@@ -454,7 +533,10 @@ def test_palette_is_read_from_the_site_tokens():
     assert tokens["navy.deep"] == "#0B1F2F"
     assert tokens["teal.dim"] == "#177A6F"
     assert tokens["cool.mid"] == "#94A3B8"
-    assert palette.chrome() == tokens["cool.mid"]
+    assert tokens["cool.dark"] == "#64748B"
+    assert palette.reference() == tokens["cool.dark"]
+    assert palette.wash() == tokens["cool.mid"]
+    assert palette.wash_edge() == tokens["cool.dark"]
 
 
 # --------------------------------------------------------- report_lib units
@@ -588,8 +670,12 @@ def test_freeze_refuses_a_path_it_does_not_list(freeze):
 
 
 def test_freeze_verifies_every_listed_input(freeze):
+    """29 DEQ inputs plus every pinned atlas record, all hash-checked on every run."""
     checked = freeze.verify_all()
-    assert len(checked) == 29
+    atlas_records = [e["path"] for e in freeze.atlas_inputs()["files"]]
+    deq_inputs = [rel for rel in checked if rel not in set(atlas_records)]
+    assert len(deq_inputs) == 29
+    assert len(checked) == 29 + len(atlas_records)
     assert "pipeline/lookups/site_codes.json" in checked
 
 
@@ -603,31 +689,229 @@ def test_report_run_without_a_freeze_still_writes_only_the_index(tmp_path):
 # ----------------------------------------------------------- the atlas gate
 
 
-def test_atlas_freeze_refuses_while_the_graph_rebuild_is_absent(freeze, capsys):
+def test_the_atlas_gate_is_open_on_all_three_conditions(freeze):
+    """The gate holds: the Prompt A commit is in HEAD, the graph is clean, D25 is logged."""
+    assert freeze.atlas_gate_blockers() == []
+    assert freeze_lib.head_contains(freeze_lib.ATLAS_PROMPT_A_COMMIT)
+    assert freeze_lib.mojibake_hits_for(freeze_lib.GRAPH_PATH) == 0
+    assert freeze_lib.audit_records_graph_reproducibility()
+
+
+def test_the_gate_no_longer_reads_the_graph_generated_at_date(freeze):
+    """`metadata.generated_at` is not a condition: D25 keeps the graph at its 2026-03-07 build.
+
+    The old gate required a date later than 2026-10-22, which no checkout can satisfy
+    while D25 stands, so the condition is gone rather than waived.
+    """
+    assert not hasattr(freeze_lib, "ATLAS_GRAPH_MIN_GENERATED_AT")
+    graph = json.loads(
+        (Path(freeze_lib.REPO_ROOT) / freeze_lib.GRAPH_PATH).read_text(encoding="utf-8")
+    )
+    assert graph["metadata"]["generated_at"] == "2026-03-07"
+    assert freeze.atlas_gate_blockers() == []
+
+
+@pytest.mark.parametrize(
+    ("condition", "needle"),
+    [
+        ("commit", "Prompt A commit"),
+        ("mojibake", "check_mojibake.py"),
+        ("audit", "graph reproducibility entry"),
+    ],
+)
+def test_each_gate_condition_blocks_on_its_own(freeze, monkeypatch, condition, needle):
+    """Each condition is reported separately, so a refusal names what is missing."""
+    if condition == "commit":
+        monkeypatch.setattr(freeze_lib, "head_contains", lambda _commit: False)
+    elif condition == "mojibake":
+        monkeypatch.setattr(freeze_lib, "mojibake_hits_for", lambda _path: 3)
+    else:
+        monkeypatch.setattr(freeze_lib, "audit_records_graph_reproducibility", lambda: False)
     blockers = freeze.atlas_gate_blockers()
-    assert blockers, "the atlas gate should still be closed"
-    joined = " ".join(blockers)
-    assert "graph.json" in joined
-    with capsys.disabled():
-        print("\natlas gate blockers:")
-        for blocker in blockers:
-            print(f"  {blocker}")
+    assert len(blockers) == 1, blockers
+    assert needle in blockers[0]
 
 
-def test_add_atlas_inputs_exits_nonzero_and_writes_nothing(freeze_path):
+def test_add_atlas_inputs_refuses_to_repin_an_already_frozen_atlas(freeze_path):
+    """Re-pinning would move the counts under a freeze date that no longer matches them."""
     before = freeze_path.read_bytes()
     assert run_report(year=2026, freeze=freeze_path, add_atlas=True) == 1
     assert freeze_path.read_bytes() == before
 
 
+# ------------------------------------------------------------ the atlas half
+
+
+def _atlas_doc(report_dir, name):
+    return json.loads((report_dir / name).read_text(encoding="utf-8"))
+
+
+def test_every_pinned_atlas_input_hash_verifies(freeze):
+    """The 88 atlas records hash-verify against the files on disk."""
+    block = freeze.atlas_inputs()
+    assert block is not None, "the atlas freeze has not been taken"
+    assert len(block["files"]) == sum(m["record_count"] for m in block["modules"])
+    for entry in block["files"]:
+        resolved = freeze.verified_path(entry["path"])
+        assert sha256_of(resolved) == entry["sha256"], entry["path"]
+
+
+def test_verify_all_covers_the_atlas_records(freeze):
+    checked = set(freeze.verify_all())
+    for entry in freeze.atlas_inputs()["files"]:
+        assert entry["path"] in checked
+
+
+def test_inventory_counts_equal_the_committed_graph_counts(report_dir):
+    """The graph counts are read from the committed data/graph/graph.json, not asserted."""
+    graph = json.loads(
+        (Path(freeze_lib.REPO_ROOT) / freeze_lib.GRAPH_PATH).read_text(encoding="utf-8")
+    )
+    expected_nodes = len(graph["nodes"])
+    expected_edges = len(graph["edges"])
+    assert (expected_nodes, expected_edges) == (
+        graph["metadata"]["node_count"],
+        graph["metadata"]["edge_count"],
+    )
+
+    doc = _atlas_doc(report_dir, "inventory.json")
+    assert doc["keys"]["inventory.graph.nodes"]["value"] == expected_nodes
+    assert doc["keys"]["inventory.graph.edges"]["value"] == expected_edges
+    assert doc["graph"]["node_count"] == expected_nodes
+    assert doc["graph"]["edge_count"] == expected_edges
+
+    header, rows = _read_csv(report_dir / "T08_module_inventory.csv")
+    (graph_row,) = [row for row in rows if row[header.index("Graph nodes")]]
+    assert int(graph_row[header.index("Graph nodes")]) == expected_nodes
+    assert int(graph_row[header.index("Graph edges")]) == expected_edges
+
+
+def test_inventory_module_counts_equal_the_records_on_disk(report_dir):
+    doc = _atlas_doc(report_dir, "inventory.json")
+    total = 0
+    for module, rel_dir in freeze_lib.ATLAS_MODULES:
+        on_disk = len(list((Path(freeze_lib.REPO_ROOT) / rel_dir).glob("*.json")))
+        assert doc["keys"][f"inventory.{module}.records"]["value"] == on_disk, module
+        total += on_disk
+    assert doc["keys"]["inventory.record_total"]["value"] == total
+
+
+def test_every_inventory_count_carries_the_atlas_freeze_date(freeze, report_dir):
+    doc = _atlas_doc(report_dir, "inventory.json")
+    frozen_at = freeze.atlas_frozen_at()
+    assert doc["atlas_freeze_date"] == frozen_at
+    assert doc["keys"]["inventory.frozen_at"]["value"] == frozen_at
+    counted = [k for k in doc["keys"] if k != "inventory.frozen_at"]
+    assert counted
+    for key in counted:
+        assert doc["keys"][key]["window"] == f"atlas as frozen {frozen_at}", key
+
+    header, rows = _read_csv(report_dir / "T08_module_inventory.csv")
+    column = header.index("As of (atlas freeze)")
+    assert {row[column] for row in rows} == {frozen_at}
+
+
+def test_t08_marks_the_knowledge_graph_with_the_d25_status(report_dir):
+    """The graph row carries the D25 status verbatim; no other row does."""
+    header, rows = _read_csv(report_dir / "T08_module_inventory.csv")
+    status = header.index("Status")
+    carrying = [row for row in rows if row[status] == atlas.GRAPH_STATUS]
+    assert atlas.GRAPH_STATUS == "live; not reproducible from current pipeline (D25)"
+    assert len(carrying) == 1, "exactly one row is the knowledge graph"
+    assert carrying[0][header.index("Module")] == atlas.MODULE_LABELS[atlas.GRAPH_MODULE]
+
+    doc = _atlas_doc(report_dir, "inventory.json")
+    assert doc["keys"]["inventory.graph.status"]["value"] == atlas.GRAPH_STATUS
+    assert doc["keys"]["inventory.knowledge_graph.status"]["value"] == atlas.GRAPH_STATUS
+
+
+def test_t09_carries_the_five_links_and_says_which_classes_came_from_a_record(report_dir):
+    header, rows = _read_csv(report_dir / "T09_chain_evidence.csv")
+    assert len(rows) == 5, "five links across six nodes"
+    assert [int(row[header.index("Step")]) for row in rows] == [1, 2, 3, 4, 5]
+
+    # The chain is end to end: every link starts where the one before it finished.
+    from_col, to_col = header.index("From"), header.index("To")
+    for earlier, later in zip(rows, rows[1:]):
+        assert earlier[to_col] == later[from_col]
+
+    read_from_record = header.index("Class read from an atlas record")
+    assert [row[read_from_record] for row in rows] == ["yes", "no", "no", "no", "yes"]
+    for row in rows:
+        assert row[header.index("Source of the evidence class")]
+
+    doc = _atlas_doc(report_dir, "chain.json")
+    assert doc["keys"]["chain.steps"]["value"] == 5
+    assert doc["keys"]["chain.inferred_steps"]["value"] == 1
+    classes = [doc["keys"][f"chain.step{i}.evidence_class"]["value"] for i in range(1, 6)]
+    assert classes == [row[header.index("Evidence class")] for row in rows]
+
+
+def test_the_chain_classes_match_the_atlas_records_they_name(freeze, report_dir):
+    """The two record-derived classes are read from the atlas, not restated here."""
+    gene = json.loads(
+        freeze.atlas_path(f"data/genes/{atlas.CHAIN_GENE}.json").read_text(encoding="utf-8")
+    )
+    disease = json.loads(
+        freeze.atlas_path(f"data/diseases/{atlas.CHAIN_DISEASE}.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    exposure_link = next(
+        link
+        for link in gene["linked_exposures"]
+        if link["exposure_slug"] == atlas.CHAIN_EXPOSURE
+    )
+    disease_link = next(
+        link for link in gene["linked_diseases"] if link["disease_slug"] == atlas.CHAIN_DISEASE
+    )
+    modifier = next(
+        m
+        for m in disease["exposure_modifiers"]
+        if m["exposure_slug"] == atlas.CHAIN_EXPOSURE
+    )
+
+    doc = _atlas_doc(report_dir, "chain.json")
+    keys = doc["keys"]
+    assert keys["chain.step1.evidence_class"]["value"] == exposure_link["evidence_type"]
+    assert keys["chain.step5.evidence_class"]["value"] == disease_link["evidence_type"]
+    assert keys["chain.confidence"]["value"] == modifier["confidence"]
+    assert keys["chain.direction"]["value"] == modifier["direction"]
+
+
+def test_the_atlas_inventory_quotes_no_brief_title_or_entity_prose(report_dir):
+    """AUDIT item 16: quoting brief titles in the inventory needs a ruling it has not had."""
+    titles = [
+        json.loads(path.read_text(encoding="utf-8"))["title"]
+        for path in (Path(freeze_lib.REPO_ROOT) / "data" / "briefs").glob("*.json")
+    ]
+    assert titles
+    for name in ("inventory.json", "chain.json", "T08_module_inventory.csv",
+                 "T09_chain_evidence.csv"):
+        text = (report_dir / name).read_text(encoding="utf-8")
+        quoted = [t for t in titles if t in text]
+        assert not quoted, f"{name} quotes a brief title: {quoted}"
+
+
 # -------------------------------------------------------------- the tables
 
 
-def test_every_table_is_listed_in_the_manifest(report_dir):
+def test_every_table_is_listed_in_a_manifest(report_dir):
+    """Every CSV is manifested, the DEQ tables in tables.json and the atlas pair in theirs.
+
+    `tables.json` holds T01-T07 and nothing else, because CI gates on its bytes. T08 and
+    T09 are manifested in `inventory.json` and `chain.json` instead.
+    """
     manifest = json.loads((report_dir / "tables.json").read_text(encoding="utf-8"))
     listed = {entry["id"] for entry in manifest["tables"]}
     on_disk = {path.stem for path in report_dir.glob("T*.csv")}
-    assert listed == on_disk
+    atlas_listed = {
+        json.loads((report_dir / name).read_text(encoding="utf-8"))["table"]["id"]
+        for name in ("inventory.json", "chain.json")
+    }
+    assert atlas_listed == {"T08_module_inventory", "T09_chain_evidence"}
+    assert listed.isdisjoint(atlas_listed), "an atlas table leaked into tables.json"
+    assert listed | atlas_listed == on_disk
     for entry in manifest["tables"]:
         assert entry["title"] and entry["caption"] and entry["source_note"]
         header, rows = _read_csv(report_dir / entry["file"])

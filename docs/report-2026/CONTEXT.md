@@ -19,7 +19,7 @@ C9 Constraint lint must not exceed baseline 52.
 C10 Neutral language about communities. No community is "unhealthy" or "diseased".
 
 ## 3. DEQ limitation language: verbatim and attributed, in the report summary, every limitations box, and every sensor-data figure caption
-"The sensors used in this project are not regulatory instruments as specified in the Code of Federal Regulations. They cannot be used in determining attainment or non-attainment of the National Ambient Air Quality Standards. Only Federal Reference/Equivalent Method designated monitors can." (Virginia DEQ)
+"These sensors are capable of collecting pollutant concentration data and establishing pollutant concentration trends, but they are not regulatory instruments as specified in the Code of Federal Regulations (CFR). They cannot be used in determining attainment or non-attainment of the National Ambient Air Quality Standards (NAAQS). Only Federal Reference/Equivalent Method designated monitors can." (Virginia DEQ, Data Center Air Monitoring Project weekly report, 2026-10-09, p. 2)
 Always pair with: A single hourly reading above 35 µg/m³ is not an exceedance of the 24-hour PM2.5 standard; the regulatory form is the annual 98th percentile of daily averages, averaged over three years. The separate annual standard is 9.0 µg/m³ (2024 revision).
 Credit line until DEQ Communications supplies its preferred wording: "Sensor data: Virginia Department of Environmental Quality, Data Center Air Monitoring Project."
 

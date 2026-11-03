@@ -1106,7 +1106,7 @@ z
    <g id="line2d_43">
     <path d="M 0.330746 441.099453 
 L 442.840508 38.863661 
-" clip-path="url(#p3bc7dfd701)" style="fill: none; stroke: #94a3b8; stroke-linecap: square"/>
+" clip-path="url(#p3bc7dfd701)" style="fill: none; stroke: #64748b; stroke-linecap: square"/>
    </g>
    <g id="patch_3">
     <path d="M 43.040703 402.276641 
@@ -1768,7 +1768,7 @@ z
      <path d="M 49.790703 31.382109 
 L 57.290703 31.382109 
 L 64.790703 31.382109 
-" style="fill: none; stroke: #94a3b8; stroke-linecap: square"/>
+" style="fill: none; stroke: #64748b; stroke-linecap: square"/>
     </g>
     <g id="text_9">
      <!-- 1:1 -->

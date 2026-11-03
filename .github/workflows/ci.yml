@@ -60,8 +60,9 @@ jobs:
       # the platform's text shaping, so figure bytes are only comparable
       # between two runs on the same machine -- which is what
       # tests/test_report.py::test_outputs_are_byte_identical_between_runs
-      # already does. numbers.json and the CSV tables carry every value the
-      # report states, so byte-identity there is the claim worth gating on.
+      # already does. numbers.json, inventory.json, chain.json and the CSV
+      # tables carry every value the report states, so byte-identity there is
+      # the claim worth gating on.
       - name: Report reproducibility
         run: |
           out="$(mktemp -d)"
@@ -70,7 +71,8 @@ jobs:
 
           committed=data/reports/2026
           status=0
-          for f in numbers.json tables.json $(cd "$committed" && ls *.csv); do
+          keyfiles="numbers.json tables.json inventory.json chain.json"
+          for f in $keyfiles $(cd "$committed" && ls *.csv); do
             if [ ! -f "$out/$f" ]; then
               echo "MISSING from the fresh run: $f"
               status=1

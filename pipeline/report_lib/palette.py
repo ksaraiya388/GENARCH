@@ -4,17 +4,26 @@ Every hex comes out of `site/tailwind.config.ts`; nothing here hard-codes one, s
 the figures cannot drift from the site. The report prints on white, so the dark
 surface palette in `site/src/components/deq/palette.ts` is deliberately not used.
 
-Three roles, with different contrast obligations:
+Four roles, with different contrast obligations:
 
-    data marks  series lines, scatter points, bars. Must clear 3:1 against white,
+    data marks  series lines, scatter points, bars, and every reference line a
+                reader has to read a value against. Must clear 3:1 against white,
                 and must also differ in line style or marker shape so identity
                 never rests on colour alone.
     text        labels, tick marks, annotations. Must clear 4.5:1 against the
                 surface they sit on.
-    chrome      the 35 microgram reference line, the smoke-window wash, gridlines.
-                Deliberately low contrast: the reference line marks the level of a
-                standard and the smoke window is context, neither is a category
-                nor a warning. Exempt from the data-mark floor by design.
+    wash        the shaded date spans on F01. These carry no value and may stay
+                light, but a wash is only legible if its boundary is, so every
+                wash is drawn with a `wash_edge()` outline that clears the
+                data-mark floor and is named by a text label inside the axes.
+    grid        gridlines, legend frames. Decoration behind the data; no floor.
+
+There is no exempt role. The reference line used to sit in a `chrome` role that was
+exempt from the data-mark floor on the grounds that it marks the level of a standard
+rather than a category. That was wrong: on F04 the whole point of the line is that a
+reader compares six plotted percentiles against it, which makes it a mark they read a
+value off, and at `cool.mid` it carried 2.56:1 on white. It is a data mark and clears
+3:1 like the rest.
 """
 
 from __future__ import annotations
@@ -72,9 +81,24 @@ def series_styles() -> tuple[dict, dict]:
     )
 
 
-def chrome() -> str:
-    """The 35 microgram reference line and the smoke-window wash."""
+def reference() -> str:
+    """Reference lines: the 35 microgram level on F04, the 1:1 line on F03.
+
+    A data mark, held to the 3:1 floor. `cool.dark` is the Tailwind slate-500 token
+    and the darkest grey in the config, at 4.76:1 on white, so it clears the data-mark
+    floor and the text floor both; a label drawn in it reads as well as the line.
+    """
+    return token("cool.dark")
+
+
+def wash() -> str:
+    """The fill of a shaded date span. Light by design; see `wash_edge()`."""
     return token("cool.mid")
+
+
+def wash_edge() -> str:
+    """The outline of a shaded date span, so the span's boundary clears 3:1."""
+    return token("cool.dark")
 
 
 def grid() -> str:
@@ -83,6 +107,12 @@ def grid() -> str:
 
 DATA_MARK_MIN_CONTRAST = 3.0
 TEXT_MIN_CONTRAST = 4.5
+
+# Every mark a reader reads a value from or against. The contrast test takes this
+# list, so a new mark is covered by adding it here and nothing is exempt.
+def data_marks() -> tuple[str, ...]:
+    """Every colour held to `DATA_MARK_MIN_CONTRAST`."""
+    return (*series(), reference(), wash_edge())
 
 
 # -------------------------------------------------------------- contrast

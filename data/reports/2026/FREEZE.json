@@ -407,5 +407,588 @@
       "size_bytes": 73814,
       "role": "configuration read by pipeline.report; not measurement data"
     }
-  ]
+  ],
+  "atlas_inputs": {
+    "frozen_at": "2026-11-02",
+    "git_head": "2325bcaa9333c4c33b0ae8b370d05d18623d515f",
+    "gate": {
+      "prompt_a_commit": "03763e8",
+      "prompt_a_commit_in_head": true,
+      "graph_mojibake_hits": 0,
+      "audit_entry": "docs/report-2026/AUDIT.md, 2026-10-24 graph reproducibility entry (D25)"
+    },
+    "graph_status": "live; not reproducible from current pipeline (D25)",
+    "modules": [
+      {
+        "module": "diseases",
+        "dir": "data/diseases",
+        "record_count": 19
+      },
+      {
+        "module": "exposures",
+        "dir": "data/exposures",
+        "record_count": 15
+      },
+      {
+        "module": "genes",
+        "dir": "data/genes",
+        "record_count": 26
+      },
+      {
+        "module": "pathways",
+        "dir": "data/pathways",
+        "record_count": 12
+      },
+      {
+        "module": "mechanism_briefs",
+        "dir": "data/briefs",
+        "record_count": 10
+      },
+      {
+        "module": "community_regions",
+        "dir": "data/community",
+        "record_count": 2
+      },
+      {
+        "module": "ancestry_modules",
+        "dir": "data/ancestry",
+        "record_count": 3
+      },
+      {
+        "module": "knowledge_graph",
+        "dir": "data/graph",
+        "record_count": 1
+      }
+    ],
+    "files": [
+      {
+        "module": "diseases",
+        "path": "data/diseases/alzheimers-disease.json",
+        "sha256": "9a0b9ef3d3ed094536b6c96b22344760700f702a2d24979c2570a2b66f638e73",
+        "size_bytes": 8203
+      },
+      {
+        "module": "diseases",
+        "path": "data/diseases/asthma.json",
+        "sha256": "4fa4e0ab76c437e2b6f9cf894ff999fe7ac64f29ebf26d0572417f3d88e8fb82",
+        "size_bytes": 10681
+      },
+      {
+        "module": "diseases",
+        "path": "data/diseases/atopic-dermatitis.json",
+        "sha256": "466cef79b6aa89a4483a74ae163b5b9e5f37660375df63ed4d3def2316502560",
+        "size_bytes": 3994
+      },
+      {
+        "module": "diseases",
+        "path": "data/diseases/bipolar-disorder.json",
+        "sha256": "12cb034063c771e4b09947a688ac1c16550d873525a227ffb6c566c4d9c1937b",
+        "size_bytes": 3786
+      },
+      {
+        "module": "diseases",
+        "path": "data/diseases/breast-cancer.json",
+        "sha256": "62f483ff7ec8148e4377bb29317efaa9ba51b30718b8452a7842d4b33841f0cf",
+        "size_bytes": 8260
+      },
+      {
+        "module": "diseases",
+        "path": "data/diseases/colorectal-cancer.json",
+        "sha256": "425399b49de655fa17f04b517a01211a39cea4315302c44e039ff8fa9f082fda",
+        "size_bytes": 6694
+      },
+      {
+        "module": "diseases",
+        "path": "data/diseases/copd.json",
+        "sha256": "abbb03809b90463c2f182cf9f747a1ac636eb13293b8f82c09562a847560163b",
+        "size_bytes": 8243
+      },
+      {
+        "module": "diseases",
+        "path": "data/diseases/coronary-artery-disease.json",
+        "sha256": "a244714e5f344cfc5d228f8851996181266b1043b1f2f6d479adb5f0d5fdfcea",
+        "size_bytes": 9019
+      },
+      {
+        "module": "diseases",
+        "path": "data/diseases/hypertension.json",
+        "sha256": "65ffc1efda8a0ad76151b4259f1c7008bdfb0c0d835c04665b67d7fdf586aea5",
+        "size_bytes": 7124
+      },
+      {
+        "module": "diseases",
+        "path": "data/diseases/inflammatory-bowel-disease.json",
+        "sha256": "50171812b9b120a7ccfae4cc36b8c4b7c2f93fa15151823a860e74b74e9441b8",
+        "size_bytes": 3694
+      },
+      {
+        "module": "diseases",
+        "path": "data/diseases/ischemic-stroke.json",
+        "sha256": "88a452fa0c91a19ea0f3f8ac3634956c3b270dc31f1d4e4807d6dc601a5c9a3d",
+        "size_bytes": 3828
+      },
+      {
+        "module": "diseases",
+        "path": "data/diseases/lung-cancer.json",
+        "sha256": "10378ad104ec25812989950dd93100bcd61fd48ed8fa5e34bfb219495bfea06c",
+        "size_bytes": 6591
+      },
+      {
+        "module": "diseases",
+        "path": "data/diseases/major-depressive-disorder.json",
+        "sha256": "9b2060212714121286a42e9f2d7ea58900a02e7be7ceb4d2780538ffcc39277b",
+        "size_bytes": 7078
+      },
+      {
+        "module": "diseases",
+        "path": "data/diseases/multiple-sclerosis.json",
+        "sha256": "6d2a21925057e22deb7927e98baa5534b39de09aa4e49c4cf15c6b01c9779888",
+        "size_bytes": 6821
+      },
+      {
+        "module": "diseases",
+        "path": "data/diseases/obesity.json",
+        "sha256": "5a4756a483da78b40670cf1dc05646f734c5a6d0bce6a634f72b0a5fa0471b3c",
+        "size_bytes": 8511
+      },
+      {
+        "module": "diseases",
+        "path": "data/diseases/psoriasis.json",
+        "sha256": "76c3219f15fa9d113b0e30cd816605eb72182b965d937e6b05e10e617b0d9ad1",
+        "size_bytes": 3722
+      },
+      {
+        "module": "diseases",
+        "path": "data/diseases/rheumatoid-arthritis.json",
+        "sha256": "9d68d30a7f1bc680ea2f957eaf68d130102826e9b9d17a0a578fc6caaaa8fb8d",
+        "size_bytes": 8232
+      },
+      {
+        "module": "diseases",
+        "path": "data/diseases/schizophrenia.json",
+        "sha256": "6a84c390041096d347e970a19311204a714b58817e32230977774a3bae569f0c",
+        "size_bytes": 7938
+      },
+      {
+        "module": "diseases",
+        "path": "data/diseases/type-2-diabetes.json",
+        "sha256": "39a0df72a4f71b249fe5b2e3dfa2005c8026194c1ba73381ac98b3bf50ba5324",
+        "size_bytes": 8767
+      },
+      {
+        "module": "exposures",
+        "path": "data/exposures/air-pollution.json",
+        "sha256": "e0d4f34721f41c5f81e3796f2a6f839e5b3896848288b2acf054f7cf586e4a1c",
+        "size_bytes": 7975
+      },
+      {
+        "module": "exposures",
+        "path": "data/exposures/alcohol.json",
+        "sha256": "700e51723cb718b7299529b0041761443f8065a2fa9185694337ea6f16adb4eb",
+        "size_bytes": 1382
+      },
+      {
+        "module": "exposures",
+        "path": "data/exposures/diet-quality.json",
+        "sha256": "b0786d8ba1795430c827290ddc3578e91e112722f8cdeced8fc6707bc54be05d",
+        "size_bytes": 1477
+      },
+      {
+        "module": "exposures",
+        "path": "data/exposures/endocrine-disruptors.json",
+        "sha256": "9063d96a42bccfde6c616e61d83c9dbddbcd220881b4034fe154596ca5796ad7",
+        "size_bytes": 3880
+      },
+      {
+        "module": "exposures",
+        "path": "data/exposures/endotoxin.json",
+        "sha256": "016fc82328b978a70450a15d9fc5bc5d3f11eb0030ac4273f87d79387eedba7b",
+        "size_bytes": 1055
+      },
+      {
+        "module": "exposures",
+        "path": "data/exposures/greenspace.json",
+        "sha256": "e122a087fb2dba3e6d2476d098691d9cc96eb56b7536fe4d0ae7fd95de05e58f",
+        "size_bytes": 1759
+      },
+      {
+        "module": "exposures",
+        "path": "data/exposures/heavy-metals.json",
+        "sha256": "e04c196e714d76525680c8f6151e1c21900fb3b77c68c681d96067e5005a9727",
+        "size_bytes": 4030
+      },
+      {
+        "module": "exposures",
+        "path": "data/exposures/obesity-exposure.json",
+        "sha256": "11a9b91e778d9a1ac186dd64017bec1c06fd275ab25226febb34f40db93de277",
+        "size_bytes": 1456
+      },
+      {
+        "module": "exposures",
+        "path": "data/exposures/ozone.json",
+        "sha256": "37303a291cdabcb01a89fd25305e78d4f64508672969f0e5c3fd390b98f0bf20",
+        "size_bytes": 1054
+      },
+      {
+        "module": "exposures",
+        "path": "data/exposures/physical-activity.json",
+        "sha256": "10eda03405f51031fe51fb74809a387f7491b3248af66a8194d73b319f358e89",
+        "size_bytes": 2615
+      },
+      {
+        "module": "exposures",
+        "path": "data/exposures/psychosocial-stress.json",
+        "sha256": "e2b297c55d4f113df436f73b51adbd352fce122c40f952926740a1c32c16352f",
+        "size_bytes": 1440
+      },
+      {
+        "module": "exposures",
+        "path": "data/exposures/sleep-deprivation.json",
+        "sha256": "6efb926f08605f3bcf05b86d5707e305e2c91557460b5e78bb4e938a5f580ee2",
+        "size_bytes": 2441
+      },
+      {
+        "module": "exposures",
+        "path": "data/exposures/tobacco-smoke-prenatal.json",
+        "sha256": "495a4c579b84cc4382256b1be8622b0ebefed3012907ac235bbb3ad0ae28c9aa",
+        "size_bytes": 1068
+      },
+      {
+        "module": "exposures",
+        "path": "data/exposures/tobacco.json",
+        "sha256": "55e8b244d8f46a0107540758a75158fc2d74128a7ed9e8487233a0ef8739d6b4",
+        "size_bytes": 1457
+      },
+      {
+        "module": "exposures",
+        "path": "data/exposures/uv-radiation.json",
+        "sha256": "71421035f5f78be0bdce56be67313c66003a58bb494deaff91f0c61500e416bb",
+        "size_bytes": 1224
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/ace.json",
+        "sha256": "e94408ff409ce81c0f91e83efdb18ce9cd7c674be7bcdf05644ff49019bde37c",
+        "size_bytes": 3647
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/apoe.json",
+        "sha256": "f774d522e6505fe6a240315690cd967f2aaa0e5d3d4e921946289f31efd83576",
+        "size_bytes": 3624
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/bdnf.json",
+        "sha256": "41c94d83926e456992478051820cdf1bae6fb5c12fab0464fd3b303422e9899e",
+        "size_bytes": 2930
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/brca1.json",
+        "sha256": "93984037495c9f8a5df85afd2e554fc05d265c0ca4c3efee2b6ff654364f288b",
+        "size_bytes": 3699
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/brca2.json",
+        "sha256": "b868ea9e0ec2c34bf7c825b6a1615aa1bd48bd663fcb9e007f9ce7850ab2e23f",
+        "size_bytes": 3596
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/drd2.json",
+        "sha256": "924725bfd32890d4aac0736d8185dfd32d830bccc607f633e0a74f9a8f33fe01",
+        "size_bytes": 3795
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/egfr.json",
+        "sha256": "c7d0c6175b285f6d5e5316931bc3cb72b8c2b4e8552ce4c4d1a58b53c4dbec9a",
+        "size_bytes": 3652
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/fto.json",
+        "sha256": "9f5dd007cdc1ecca28ae6a43fcdf34735a91aafc5684cac7541ddc562afb0b6e",
+        "size_bytes": 3749
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/gsdmb.json",
+        "sha256": "dee5cf553856f62c27abde073fe2c7224b949ee5140ec3a2348d8fa6ad41154d",
+        "size_bytes": 4630
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/gstp1.json",
+        "sha256": "75e1f46c020272e0cc1276c9ace52a87c2dcdd1c667898f0e43ffb93dcabf150",
+        "size_bytes": 3013
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/hla-drb1.json",
+        "sha256": "3868e65b3ade6cd5a4b32b4b8e601803a54a7469e2a486528dcbc764a9120c6d",
+        "size_bytes": 3796
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/il33.json",
+        "sha256": "3c9371b52335eaacd70a2d28f4e3496acbcf39d01c4c07bbf7f92ab57edca54c",
+        "size_bytes": 5516
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/ldlr.json",
+        "sha256": "f9925855a7df6000e56a01fc9c7c224310eb4dbd6ee9645b21c3c947ede2c1c4",
+        "size_bytes": 3690
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/lep.json",
+        "sha256": "940cbe5aec24e8b17116fcb665200d5f28296f7d1446b01032f4942dd98f9e0f",
+        "size_bytes": 2576
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/mc4r.json",
+        "sha256": "1805ee48ad448ddcb5b750373aa69115c1ca321266094125f291875bf006e077",
+        "size_bytes": 3707
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/mthfr.json",
+        "sha256": "7ce1d55e7cbcb54f8557f6bc31e21d4cfab01bf69aba79296807cc2337ec4e5c",
+        "size_bytes": 2414
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/ormdl3.json",
+        "sha256": "569a4fe5eebe261141fe045df7d390891ce3c77d6c9a6c96acc3a3a3103af739",
+        "size_bytes": 4694
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/pcsk9.json",
+        "sha256": "05af26883d54a9d8a86f368f4683fbc1716ccc426e18e9a3080c29ac13cb2d6f",
+        "size_bytes": 3580
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/pparg.json",
+        "sha256": "41d9ca8a6758164abcb763a400f69a7665e116f335d293a7d3e0589a24c404e6",
+        "size_bytes": 2505
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/serpina1.json",
+        "sha256": "0837b12e94e2d110dfd9dcd7ce31e44685511bdd93a65281071c5637e01cc003",
+        "size_bytes": 3509
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/slc6a4.json",
+        "sha256": "2c5eca716ea7756b8d1ceeb5c8260bb64b0a8888aa05708d74d34c1fc99a8251",
+        "size_bytes": 3748
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/sod2.json",
+        "sha256": "0a4a58d4e4efef2656b3bbc0012342dc1b0d16b9c77320fa7b241d3acf6271ce",
+        "size_bytes": 2696
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/tcf7l2.json",
+        "sha256": "dd017f00d47e6f5bf83a23294d3af9d2be0c9986396d5df3191e3498d9caa30e",
+        "size_bytes": 3788
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/tnf.json",
+        "sha256": "dc909cf7e6b2c675d118bba13d55e07b6c20f5a0a84b6a46c2cc32f1bf152e32",
+        "size_bytes": 3617
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/tp53.json",
+        "sha256": "e8b6b8b5f106be9a446f76ab76ed3259b0a1b589159f872687adafa207c44f67",
+        "size_bytes": 3582
+      },
+      {
+        "module": "genes",
+        "path": "data/genes/tslp.json",
+        "sha256": "330fb11092b0fced9cdccd8b02046f4e53eb8fa063c26afbed9445e7e46379e8",
+        "size_bytes": 5035
+      },
+      {
+        "module": "pathways",
+        "path": "data/pathways/complement-system.json",
+        "sha256": "afb00944917098baefd312ac8b8a24779dafa9fa196ba88760c6c944bcb42edc",
+        "size_bytes": 3804
+      },
+      {
+        "module": "pathways",
+        "path": "data/pathways/dna-damage-repair.json",
+        "sha256": "9a4e3f5c6a3df532bb0bf49b0d5f9af1f88db7a3b2ff22fbec6f0284ad4384bc",
+        "size_bytes": 4281
+      },
+      {
+        "module": "pathways",
+        "path": "data/pathways/dopamine-signaling.json",
+        "sha256": "557308312c11d4e7e392a213ec1c1036458d4284840d24d05d0e266e990b3c61",
+        "size_bytes": 3727
+      },
+      {
+        "module": "pathways",
+        "path": "data/pathways/hpa-axis.json",
+        "sha256": "3a344db79ad5041cf2f16489c3c5d005ae9c9e3fbcd4192f6f0d5962c9c3fab1",
+        "size_bytes": 3863
+      },
+      {
+        "module": "pathways",
+        "path": "data/pathways/il33-st2-axis.json",
+        "sha256": "f3f5245713254b5ca4e66f86196b4bc0833597a5772177379eae27fb090b2ac3",
+        "size_bytes": 4388
+      },
+      {
+        "module": "pathways",
+        "path": "data/pathways/insulin-signaling.json",
+        "sha256": "3b13e42ca4302bfaff4822f7bbe748d653809306dca3c5c8e92827265d09ac74",
+        "size_bytes": 4011
+      },
+      {
+        "module": "pathways",
+        "path": "data/pathways/jak-stat-signaling.json",
+        "sha256": "b76fe4b06ba5b2357b16cd92da897494480391600429629e2010a6b66f96e609",
+        "size_bytes": 1999
+      },
+      {
+        "module": "pathways",
+        "path": "data/pathways/ldl-cholesterol-metabolism.json",
+        "sha256": "7cef0754e435d413414a399797a8ea83a7862fc813cfb73a0d973ec9378a0b45",
+        "size_bytes": 4007
+      },
+      {
+        "module": "pathways",
+        "path": "data/pathways/nf-kb.json",
+        "sha256": "9a82216f24494f5b14aae9a129f1b1bae4716a533f1819c344edec71908c0674",
+        "size_bytes": 3718
+      },
+      {
+        "module": "pathways",
+        "path": "data/pathways/oxidative-stress-response.json",
+        "sha256": "bf7f2be0b1cca9a9ec00b6bb38c66d8f56581dd806327330b11ea0a182c38d24",
+        "size_bytes": 2346
+      },
+      {
+        "module": "pathways",
+        "path": "data/pathways/pi3k-akt-mtor.json",
+        "sha256": "ea982552ac1473b3176ca57fe28630bcbdec881333ddfa99e10eced4eae69e19",
+        "size_bytes": 3801
+      },
+      {
+        "module": "pathways",
+        "path": "data/pathways/tnf-signaling.json",
+        "sha256": "f850b2be83d09234fb71071205987859ae93c721e93f199ada35885d17648318",
+        "size_bytes": 1953
+      },
+      {
+        "module": "mechanism_briefs",
+        "path": "data/briefs/asthma-air-pollution-17q21.json",
+        "sha256": "43a33da8d99b58d849803bd66d2184158b0e28cbcf774441778b31a5e0d48c0f",
+        "size_bytes": 12736
+      },
+      {
+        "module": "mechanism_briefs",
+        "path": "data/briefs/bdnf-stress-major-depressive-disorder.json",
+        "sha256": "4c01eaca6d2aa05212cbf91c3633077cb489bf47fed5b09439da1045d38f2278",
+        "size_bytes": 3872
+      },
+      {
+        "module": "mechanism_briefs",
+        "path": "data/briefs/jak-stat-psoriasis-ibd-environment.json",
+        "sha256": "c02b5081b9f276bb02678cd980ed08f3af529aa12d45e7701ecf9010e5b12259",
+        "size_bytes": 3355
+      },
+      {
+        "module": "mechanism_briefs",
+        "path": "data/briefs/leptin-melanocortin-obesity-environment.json",
+        "sha256": "0d3e646ae39df4fcf07140d1f8cfe7491c95f863b794e106ded6af40ab7772c1",
+        "size_bytes": 3512
+      },
+      {
+        "module": "mechanism_briefs",
+        "path": "data/briefs/no2-traffic-corridor-childhood-asthma.json",
+        "sha256": "68513af8dfc90db1ce813f46b409d327fb9e7b11f6a1c7d24aaaf8bdfd08d5b5",
+        "size_bytes": 12437
+      },
+      {
+        "module": "mechanism_briefs",
+        "path": "data/briefs/oxidative-stress-air-pollution-asthma-cvd.json",
+        "sha256": "8facdefe8dd20e71bc26f5334506e18fb8e3575a1ad24d06b6339494f7bc9e4b",
+        "size_bytes": 3632
+      },
+      {
+        "module": "mechanism_briefs",
+        "path": "data/briefs/pm25-il33-nfkb-asthma.json",
+        "sha256": "34c83639f4957018ed5b85cb5d735d08d531ca1eb20a1e1aeb22759ecacb7e9c",
+        "size_bytes": 5820
+      },
+      {
+        "module": "mechanism_briefs",
+        "path": "data/briefs/pparg-diet-type2diabetes.json",
+        "sha256": "011612f85110173072eb2ac25f8f8eb0c25e7c61ba930455eadcbb2526e3e628",
+        "size_bytes": 3402
+      },
+      {
+        "module": "mechanism_briefs",
+        "path": "data/briefs/sleep-deprivation-metabolic-mental-health.json",
+        "sha256": "5d69db6b55170177cc0fd41f2106c3798f05a9c9383daf700f0ffd7552f9515f",
+        "size_bytes": 3407
+      },
+      {
+        "module": "mechanism_briefs",
+        "path": "data/briefs/t2d-south-asian-prs-transferability.json",
+        "sha256": "7a3742ab9597cc138fac286c72fa625bd1966ccd222129d2fc8f2c63a88cdd35",
+        "size_bytes": 16431
+      },
+      {
+        "module": "community_regions",
+        "path": "data/community/fairfax-county-va.json",
+        "sha256": "eadf28fd80b462b28b0aa155999517418b680b22d82114b0968f5783e938c7ec",
+        "size_bytes": 4070
+      },
+      {
+        "module": "community_regions",
+        "path": "data/community/loudoun-county-va.json",
+        "sha256": "3742877c9ee3c5b17d1e12e116ed555f016b3e1238ba50def3db1f1fb816f334",
+        "size_bytes": 3456
+      },
+      {
+        "module": "ancestry_modules",
+        "path": "data/ancestry/asthma.json",
+        "sha256": "61218d49a1c931e08b74d64ceab1255dbd98a70fbf95aba38698522b1b31f6e5",
+        "size_bytes": 19437
+      },
+      {
+        "module": "ancestry_modules",
+        "path": "data/ancestry/coronary-artery-disease.json",
+        "sha256": "22e6dc62913c7ff8671b2b098dc38a53d861f60aa1a68d200a68f96dff54c6f3",
+        "size_bytes": 20304
+      },
+      {
+        "module": "ancestry_modules",
+        "path": "data/ancestry/type-2-diabetes.json",
+        "sha256": "daea61b500351a72fe379815c7a873e36dd571de27418fffb117a82411ef922d",
+        "size_bytes": 20844
+      },
+      {
+        "module": "knowledge_graph",
+        "path": "data/graph/graph.json",
+        "sha256": "be18f8905e5c78c81355732865ebc341acce1908de78adfd8abdf925ce114248",
+        "size_bytes": 136874
+      }
+    ]
+  }
 }

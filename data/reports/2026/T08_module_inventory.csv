@@ -1,0 +1,9 @@
+Module,Records,Graph nodes,Graph edges,Status,As of (atlas freeze)
+Disease records,19,,,live; emitted by the current pipeline,2026-11-02
+Exposure records,15,,,live; emitted by the current pipeline,2026-11-02
+Gene records,26,,,live; emitted by the current pipeline,2026-11-02
+Pathway records,12,,,live; emitted by the current pipeline,2026-11-02
+Mechanism briefs,10,,,live; emitted by the current pipeline,2026-11-02
+Community regions,2,,,live; emitted by the current pipeline,2026-11-02
+Cross-ancestry modules,3,,,live; emitted by the current pipeline,2026-11-02
+Knowledge graph,1,97,165,live; not reproducible from current pipeline (D25),2026-11-02

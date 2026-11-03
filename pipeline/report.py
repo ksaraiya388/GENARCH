@@ -15,12 +15,14 @@ site name and no frozen filename reaches a value table, a figure label or alt te
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 from datetime import date, datetime
 from pathlib import Path
 
 from pipeline.report_lib import (
+    atlas,
     collocation,
     correlation,
     daily,
@@ -30,6 +32,7 @@ from pipeline.report_lib import (
     tables,
     verify,
 )
+from pipeline.report_lib import freeze as freeze_lib
 from pipeline.report_lib.freeze import Freeze, FreezeError
 from pipeline.report_lib.numbers import NumberRegistry
 from pipeline.report_lib.rows import build_regulatory_rows, build_rows
@@ -1212,6 +1215,291 @@ def build_figures(results: dict, reg: NumberRegistry, out_dir: Path) -> list[dic
     return entries
 
 
+# --------------------------------------------------------------------- atlas
+
+# Neither inventory nor chain output goes into `numbers.json` or `tables.json`. Those
+# two are the DEQ half's artifacts and CI gates on their bytes, so the atlas half
+# carries its own key file and its own table manifest and the DEQ outputs stay
+# byte-identical across this change (D26).
+ATLAS_DOC_NOTE = (
+    "The atlas half of the report. Keys are namespaced inventory.* and chain.* and live "
+    "here rather than in numbers.json, which holds the DEQ half and is gated on "
+    "byte-identity. Every count is reported against the atlas freeze date and computed "
+    "from the records FREEZE.json pins under atlas_inputs."
+)
+
+
+def _atlas_inputs(fz: Freeze, module: str) -> list[dict]:
+    """Provenance stamp for one atlas module: every pinned record, by path and hash."""
+    return [{"source": e.rel_path, "sha256": e.sha256} for e in fz.atlas_files(module)]
+
+
+def _atlas_digest(fz: Freeze) -> list[dict]:
+    """One stamp over the whole pinned atlas, for the total that spans every module."""
+    digest = hashlib.sha256()
+    for module, _ in freeze_lib.ATLAS_MODULES:
+        for entry in fz.atlas_files(module):
+            digest.update(entry.sha256.encode("ascii"))
+    return [
+        {
+            "source": (
+                "SHA-256 over the SHA-256 of every atlas record pinned in FREEZE.json "
+                "atlas_inputs, in module then path order"
+            ),
+            "sha256": digest.hexdigest(),
+        }
+    ]
+
+
+def _atlas_record_inputs(fz: Freeze, rel_paths: list[str]) -> list[dict]:
+    entries = [fz.atlas_entry(rel) for rel in rel_paths]
+    return [{"source": e.rel_path, "sha256": e.sha256} for e in entries]
+
+
+def build_inventory(fz: Freeze, out_dir: Path) -> dict:
+    """inventory.* keys plus T08. Counts carry the atlas freeze date."""
+    inv = atlas.inventory(fz)
+    frozen_at = inv["frozen_at"]
+    as_of = f"atlas as frozen {frozen_at}"
+
+    reg = NumberRegistry()
+    reg.add(
+        "inventory.frozen_at",
+        frozen_at,
+        method="atlas freeze date recorded in FREEZE.json atlas_inputs; every count below "
+        "is the count on that date",
+    )
+    for module in inv["modules"]:
+        reg.add(
+            f"inventory.{module['module']}.records",
+            module["record_count"],
+            unit="records",
+            precision=0,
+            window=as_of,
+            method=f"JSON records pinned under {module['dir']}",
+            inputs=_atlas_inputs(fz, module["module"]),
+        )
+        reg.add(
+            f"inventory.{module['module']}.status",
+            module["status"],
+            window=as_of,
+            method="module status as of the atlas freeze",
+        )
+    reg.add(
+        "inventory.record_total",
+        inv["record_total"],
+        unit="records",
+        precision=0,
+        window=as_of,
+        method="sum of the record counts of every module above",
+        inputs=_atlas_digest(fz),
+    )
+    graph_inputs = _atlas_inputs(fz, atlas.GRAPH_MODULE)
+    for key, value, unit in (
+        ("inventory.graph.nodes", inv["graph"]["node_count"], "nodes"),
+        ("inventory.graph.edges", inv["graph"]["edge_count"], "edges"),
+    ):
+        reg.add(
+            key,
+            value,
+            unit=unit,
+            precision=0,
+            window=as_of,
+            method=f"length of the {unit} array in the committed {atlas.GRAPH_PATH}, "
+            "checked against its own metadata count",
+            inputs=graph_inputs,
+        )
+    reg.add(
+        "inventory.graph.generated_at",
+        inv["graph"]["generated_at"],
+        window=as_of,
+        method=f"metadata.generated_at in the committed {atlas.GRAPH_PATH}",
+        inputs=graph_inputs,
+    )
+    reg.add(
+        "inventory.graph.status",
+        atlas.GRAPH_STATUS,
+        window=as_of,
+        method="DECISIONS.md D25: the published graph is repaired in place and kept at its "
+        "committed counts; a clean rebuild of the current pipeline yields different ones",
+        inputs=graph_inputs,
+    )
+
+    table = tables.Table(
+        "T08_module_inventory",
+        "Atlas module inventory",
+        "Record counts for every atlas module at the atlas freeze date, with each module's "
+        "status. The knowledge graph's counts are the committed published figures: the graph "
+        "is not reproducible from the current pipeline, which is why its status differs from "
+        "every other row's and why report section 7 carries the disclosure. No brief title "
+        "and no entity prose is quoted here; the inventory counts records and names none.",
+        f"Atlas records pinned in FREEZE.json atlas_inputs, frozen {frozen_at}.",
+        {"Records": "count", "Graph nodes": "count", "Graph edges": "count"},
+        [
+            "Module",
+            "Records",
+            "Graph nodes",
+            "Graph edges",
+            "Status",
+            "As of (atlas freeze)",
+        ],
+        [
+            [
+                module["label"],
+                module["record_count"],
+                inv["graph"]["node_count"] if module["module"] == atlas.GRAPH_MODULE else "",
+                inv["graph"]["edge_count"] if module["module"] == atlas.GRAPH_MODULE else "",
+                module["status"],
+                frozen_at,
+            ]
+            for module in inv["modules"]
+        ],
+    )
+    table.write(out_dir)
+    _write_atlas_doc(
+        out_dir / "inventory.json",
+        reg,
+        table,
+        {"atlas_freeze_date": frozen_at, "graph": inv["graph"]},
+    )
+    return inv
+
+
+def build_chain(fz: Freeze, out_dir: Path) -> dict:
+    """chain.* keys plus T09, the five published links and their evidence classes."""
+    chn = atlas.chain(fz)
+    frozen_at = fz.atlas_frozen_at()
+    as_of = f"atlas as frozen {frozen_at}"
+    record_inputs = _atlas_record_inputs(
+        fz,
+        [
+            f"data/genes/{atlas.CHAIN_GENE}.json",
+            f"data/diseases/{atlas.CHAIN_DISEASE}.json",
+            f"data/briefs/{atlas.CHAIN_BRIEF}.json",
+        ],
+    )
+
+    reg = NumberRegistry()
+    reg.add(
+        "chain.steps",
+        len(chn["steps"]),
+        unit="links",
+        precision=0,
+        window=as_of,
+        method=f"links in the published {chn['figure_id']} chain, six nodes end to end",
+        inputs=record_inputs,
+    )
+    for step in chn["steps"]:
+        prefix = f"chain.step{step['step']}"
+        reg.add(
+            f"{prefix}.link",
+            f"{step['from']} to {step['to']}",
+            window=as_of,
+            method="chain link as the published figure composes it",
+            inputs=record_inputs,
+        )
+        reg.add(
+            f"{prefix}.evidence_class",
+            step["evidence_class"],
+            window=as_of,
+            method=f"evidence class read from {step['evidence_class_source']}",
+            inputs=record_inputs,
+        )
+    reg.add(
+        "chain.inferred_steps",
+        chn["inferred_steps"],
+        unit="links",
+        precision=0,
+        window=as_of,
+        method="links carrying the inferred evidence class, which have no direct evidence in "
+        "the atlas and are drawn dashed in the figure",
+        inputs=record_inputs,
+    )
+    reg.add(
+        "chain.confidence",
+        chn["confidence"],
+        window=as_of,
+        method=f"confidence on the {atlas.CHAIN_EXPOSURE} exposure modifier of "
+        f"data/diseases/{atlas.CHAIN_DISEASE}.json",
+        inputs=record_inputs,
+    )
+    reg.add(
+        "chain.direction",
+        chn["direction"],
+        window=as_of,
+        method=f"direction on the {atlas.CHAIN_EXPOSURE} exposure modifier of "
+        f"data/diseases/{atlas.CHAIN_DISEASE}.json",
+        inputs=record_inputs,
+    )
+    reg.add(
+        "chain.reference_count",
+        chn["reference_count"],
+        unit="references",
+        precision=0,
+        window=as_of,
+        method=f"references carried by data/briefs/{atlas.CHAIN_BRIEF}.json",
+        inputs=record_inputs,
+    )
+
+    table = tables.Table(
+        "T09_chain_evidence",
+        "Mechanism chain evidence by link",
+        "Each link of the published five-step chain with its evidence class and where that "
+        "class comes from. Two classes are read from atlas records; three are assigned by the "
+        "figure definition and are marked as such, so a reader does not take every class for "
+        "a record value. A link marked inferred has no direct evidence in the atlas. Every "
+        "association here is population-level, and the chain states a mechanism: no link "
+        "asserts that one step brings about the next.",
+        f"Atlas records pinned in FREEZE.json atlas_inputs, frozen {frozen_at}.",
+        {},
+        [
+            "Step",
+            "From",
+            "To",
+            "Evidence class",
+            "Class read from an atlas record",
+            "Source of the evidence class",
+            "As of (atlas freeze)",
+        ],
+        [
+            [
+                step["step"],
+                step["from"],
+                step["to"],
+                step["evidence_class"],
+                "yes" if step["from_an_atlas_record"] else "no",
+                step["evidence_class_source"],
+                frozen_at,
+            ]
+            for step in chn["steps"]
+        ],
+    )
+    table.write(out_dir)
+    _write_atlas_doc(
+        out_dir / "chain.json",
+        reg,
+        table,
+        {
+            "atlas_freeze_date": frozen_at,
+            "brief": chn["brief"],
+            "figure_id": chn["figure_id"],
+        },
+    )
+    return chn
+
+
+def _write_atlas_doc(path: Path, reg: NumberRegistry, table: tables.Table, extra: dict) -> None:
+    document = {
+        "note": ATLAS_DOC_NOTE,
+        "keys": reg.as_dict(),
+        "table": table.manifest_entry(),
+        **extra,
+    }
+    with open(path, "w", encoding="utf-8", newline="\n") as handle:
+        json.dump(document, handle, ensure_ascii=False, indent=2, sort_keys=True)
+        handle.write("\n")
+
+
 # --------------------------------------------------------------- atlas gate
 
 
@@ -1223,14 +1511,20 @@ def add_atlas_inputs(fz: Freeze) -> int:
             print(f"  {blocker}", file=sys.stderr)
         print(
             "No atlas_inputs block written. DEQ outputs unaffected.\n"
-            "The inventory and mechanism-chain numbers stay out of numbers.json until the "
-            "Prompt A graph regeneration is in HEAD.",
+            "The inventory and mechanism-chain keys stay unemitted, with no placeholders, "
+            "until all three gate conditions hold.",
             file=sys.stderr,
         )
         return 1
-    raise NotImplementedError(
-        "the atlas freeze is unblocked; implement atlas_inputs before taking it"
+    block = fz.take_atlas_inputs()
+    print(
+        f"atlas_inputs pinned in {fz.path.name}: {len(block['files'])} records across "
+        f"{len(block['modules'])} modules, frozen {block['frozen_at']}"
     )
+    for module in block["modules"]:
+        print(f"  {module['module']:<18} {module['record_count']:>3} records  {module['dir']}")
+    print(f"  graph status: {block['graph_status']}")
+    return 0
 
 
 # -------------------------------------------------------------------- entry
@@ -1253,6 +1547,24 @@ def build_from_freeze(freeze_path: Path, out_dir: Path, show_verify: bool) -> in
 
     entries = build_figures(results, reg, out_dir)
     print(f"figures: {len(entries)} as SVG and 300-dpi PNG plus figures.json")
+
+    # The atlas half runs only once its inputs are pinned. While they are not, nothing
+    # is written and no key is emitted as a placeholder: a reader of inventory.json has
+    # to be able to take every count in it as frozen and verified.
+    if fz.atlas_inputs() is None:
+        print(
+            "atlas: not frozen; inventory.*, chain.*, T08 and T09 not emitted "
+            "(run --add-atlas-inputs)"
+        )
+    else:
+        inv = build_inventory(fz, out_dir)
+        chn = build_chain(fz, out_dir)
+        print(
+            f"atlas: inventory.json and T08 ({inv['record_total']} records across "
+            f"{len(inv['modules'])} modules, graph {inv['graph']['node_count']}/"
+            f"{inv['graph']['edge_count']}), chain.json and T09 "
+            f"({len(chn['steps'])} links), frozen {inv['frozen_at']}"
+        )
 
     rows = verify.build_rows(results, site_codes.code_for)
     failed = [r for r in rows if not r.match]

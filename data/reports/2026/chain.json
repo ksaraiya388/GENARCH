@@ -1,0 +1,356 @@
+{
+  "atlas_freeze_date": "2026-11-02",
+  "brief": "pm25-il33-nfkb-asthma",
+  "figure_id": "il33-pm25-chain",
+  "keys": {
+    "chain.confidence": {
+      "inputs": [
+        {
+          "sha256": "3c9371b52335eaacd70a2d28f4e3496acbcf39d01c4c07bbf7f92ab57edca54c",
+          "source": "data/genes/il33.json"
+        },
+        {
+          "sha256": "4fa4e0ab76c437e2b6f9cf894ff999fe7ac64f29ebf26d0572417f3d88e8fb82",
+          "source": "data/diseases/asthma.json"
+        },
+        {
+          "sha256": "34c83639f4957018ed5b85cb5d735d08d531ca1eb20a1e1aeb22759ecacb7e9c",
+          "source": "data/briefs/pm25-il33-nfkb-asthma.json"
+        }
+      ],
+      "method": "confidence on the air-pollution exposure modifier of data/diseases/asthma.json",
+      "n": null,
+      "precision": null,
+      "unit": null,
+      "value": "high",
+      "window": "atlas as frozen 2026-11-02"
+    },
+    "chain.direction": {
+      "inputs": [
+        {
+          "sha256": "3c9371b52335eaacd70a2d28f4e3496acbcf39d01c4c07bbf7f92ab57edca54c",
+          "source": "data/genes/il33.json"
+        },
+        {
+          "sha256": "4fa4e0ab76c437e2b6f9cf894ff999fe7ac64f29ebf26d0572417f3d88e8fb82",
+          "source": "data/diseases/asthma.json"
+        },
+        {
+          "sha256": "34c83639f4957018ed5b85cb5d735d08d531ca1eb20a1e1aeb22759ecacb7e9c",
+          "source": "data/briefs/pm25-il33-nfkb-asthma.json"
+        }
+      ],
+      "method": "direction on the air-pollution exposure modifier of data/diseases/asthma.json",
+      "n": null,
+      "precision": null,
+      "unit": null,
+      "value": "amplify",
+      "window": "atlas as frozen 2026-11-02"
+    },
+    "chain.inferred_steps": {
+      "inputs": [
+        {
+          "sha256": "3c9371b52335eaacd70a2d28f4e3496acbcf39d01c4c07bbf7f92ab57edca54c",
+          "source": "data/genes/il33.json"
+        },
+        {
+          "sha256": "4fa4e0ab76c437e2b6f9cf894ff999fe7ac64f29ebf26d0572417f3d88e8fb82",
+          "source": "data/diseases/asthma.json"
+        },
+        {
+          "sha256": "34c83639f4957018ed5b85cb5d735d08d531ca1eb20a1e1aeb22759ecacb7e9c",
+          "source": "data/briefs/pm25-il33-nfkb-asthma.json"
+        }
+      ],
+      "method": "links carrying the inferred evidence class, which have no direct evidence in the atlas and are drawn dashed in the figure",
+      "n": null,
+      "precision": 0,
+      "unit": "links",
+      "value": 1.0,
+      "window": "atlas as frozen 2026-11-02"
+    },
+    "chain.reference_count": {
+      "inputs": [
+        {
+          "sha256": "3c9371b52335eaacd70a2d28f4e3496acbcf39d01c4c07bbf7f92ab57edca54c",
+          "source": "data/genes/il33.json"
+        },
+        {
+          "sha256": "4fa4e0ab76c437e2b6f9cf894ff999fe7ac64f29ebf26d0572417f3d88e8fb82",
+          "source": "data/diseases/asthma.json"
+        },
+        {
+          "sha256": "34c83639f4957018ed5b85cb5d735d08d531ca1eb20a1e1aeb22759ecacb7e9c",
+          "source": "data/briefs/pm25-il33-nfkb-asthma.json"
+        }
+      ],
+      "method": "references carried by data/briefs/pm25-il33-nfkb-asthma.json",
+      "n": null,
+      "precision": 0,
+      "unit": "references",
+      "value": 5.0,
+      "window": "atlas as frozen 2026-11-02"
+    },
+    "chain.step1.evidence_class": {
+      "inputs": [
+        {
+          "sha256": "3c9371b52335eaacd70a2d28f4e3496acbcf39d01c4c07bbf7f92ab57edca54c",
+          "source": "data/genes/il33.json"
+        },
+        {
+          "sha256": "4fa4e0ab76c437e2b6f9cf894ff999fe7ac64f29ebf26d0572417f3d88e8fb82",
+          "source": "data/diseases/asthma.json"
+        },
+        {
+          "sha256": "34c83639f4957018ed5b85cb5d735d08d531ca1eb20a1e1aeb22759ecacb7e9c",
+          "source": "data/briefs/pm25-il33-nfkb-asthma.json"
+        }
+      ],
+      "method": "evidence class read from data/genes/il33.json linked_exposures[air-pollution].evidence_type",
+      "n": null,
+      "precision": null,
+      "unit": null,
+      "value": "literature",
+      "window": "atlas as frozen 2026-11-02"
+    },
+    "chain.step1.link": {
+      "inputs": [
+        {
+          "sha256": "3c9371b52335eaacd70a2d28f4e3496acbcf39d01c4c07bbf7f92ab57edca54c",
+          "source": "data/genes/il33.json"
+        },
+        {
+          "sha256": "4fa4e0ab76c437e2b6f9cf894ff999fe7ac64f29ebf26d0572417f3d88e8fb82",
+          "source": "data/diseases/asthma.json"
+        },
+        {
+          "sha256": "34c83639f4957018ed5b85cb5d735d08d531ca1eb20a1e1aeb22759ecacb7e9c",
+          "source": "data/briefs/pm25-il33-nfkb-asthma.json"
+        }
+      ],
+      "method": "chain link as the published figure composes it",
+      "n": null,
+      "precision": null,
+      "unit": null,
+      "value": "PM2.5 particulate to Bronchial epithelial injury",
+      "window": "atlas as frozen 2026-11-02"
+    },
+    "chain.step2.evidence_class": {
+      "inputs": [
+        {
+          "sha256": "3c9371b52335eaacd70a2d28f4e3496acbcf39d01c4c07bbf7f92ab57edca54c",
+          "source": "data/genes/il33.json"
+        },
+        {
+          "sha256": "4fa4e0ab76c437e2b6f9cf894ff999fe7ac64f29ebf26d0572417f3d88e8fb82",
+          "source": "data/diseases/asthma.json"
+        },
+        {
+          "sha256": "34c83639f4957018ed5b85cb5d735d08d531ca1eb20a1e1aeb22759ecacb7e9c",
+          "source": "data/briefs/pm25-il33-nfkb-asthma.json"
+        }
+      ],
+      "method": "evidence class read from GENARCH figure definition (site/src/lib/figure-data.ts)",
+      "n": null,
+      "precision": null,
+      "unit": null,
+      "value": "functional",
+      "window": "atlas as frozen 2026-11-02"
+    },
+    "chain.step2.link": {
+      "inputs": [
+        {
+          "sha256": "3c9371b52335eaacd70a2d28f4e3496acbcf39d01c4c07bbf7f92ab57edca54c",
+          "source": "data/genes/il33.json"
+        },
+        {
+          "sha256": "4fa4e0ab76c437e2b6f9cf894ff999fe7ac64f29ebf26d0572417f3d88e8fb82",
+          "source": "data/diseases/asthma.json"
+        },
+        {
+          "sha256": "34c83639f4957018ed5b85cb5d735d08d531ca1eb20a1e1aeb22759ecacb7e9c",
+          "source": "data/briefs/pm25-il33-nfkb-asthma.json"
+        }
+      ],
+      "method": "chain link as the published figure composes it",
+      "n": null,
+      "precision": null,
+      "unit": null,
+      "value": "Bronchial epithelial injury to IL-33 release",
+      "window": "atlas as frozen 2026-11-02"
+    },
+    "chain.step3.evidence_class": {
+      "inputs": [
+        {
+          "sha256": "3c9371b52335eaacd70a2d28f4e3496acbcf39d01c4c07bbf7f92ab57edca54c",
+          "source": "data/genes/il33.json"
+        },
+        {
+          "sha256": "4fa4e0ab76c437e2b6f9cf894ff999fe7ac64f29ebf26d0572417f3d88e8fb82",
+          "source": "data/diseases/asthma.json"
+        },
+        {
+          "sha256": "34c83639f4957018ed5b85cb5d735d08d531ca1eb20a1e1aeb22759ecacb7e9c",
+          "source": "data/briefs/pm25-il33-nfkb-asthma.json"
+        }
+      ],
+      "method": "evidence class read from GENARCH figure definition (site/src/lib/figure-data.ts)",
+      "n": null,
+      "precision": null,
+      "unit": null,
+      "value": "functional",
+      "window": "atlas as frozen 2026-11-02"
+    },
+    "chain.step3.link": {
+      "inputs": [
+        {
+          "sha256": "3c9371b52335eaacd70a2d28f4e3496acbcf39d01c4c07bbf7f92ab57edca54c",
+          "source": "data/genes/il33.json"
+        },
+        {
+          "sha256": "4fa4e0ab76c437e2b6f9cf894ff999fe7ac64f29ebf26d0572417f3d88e8fb82",
+          "source": "data/diseases/asthma.json"
+        },
+        {
+          "sha256": "34c83639f4957018ed5b85cb5d735d08d531ca1eb20a1e1aeb22759ecacb7e9c",
+          "source": "data/briefs/pm25-il33-nfkb-asthma.json"
+        }
+      ],
+      "method": "chain link as the published figure composes it",
+      "n": null,
+      "precision": null,
+      "unit": null,
+      "value": "IL-33 release to ST2 on ILC2",
+      "window": "atlas as frozen 2026-11-02"
+    },
+    "chain.step4.evidence_class": {
+      "inputs": [
+        {
+          "sha256": "3c9371b52335eaacd70a2d28f4e3496acbcf39d01c4c07bbf7f92ab57edca54c",
+          "source": "data/genes/il33.json"
+        },
+        {
+          "sha256": "4fa4e0ab76c437e2b6f9cf894ff999fe7ac64f29ebf26d0572417f3d88e8fb82",
+          "source": "data/diseases/asthma.json"
+        },
+        {
+          "sha256": "34c83639f4957018ed5b85cb5d735d08d531ca1eb20a1e1aeb22759ecacb7e9c",
+          "source": "data/briefs/pm25-il33-nfkb-asthma.json"
+        }
+      ],
+      "method": "evidence class read from GENARCH figure definition (site/src/lib/figure-data.ts)",
+      "n": null,
+      "precision": null,
+      "unit": null,
+      "value": "inferred",
+      "window": "atlas as frozen 2026-11-02"
+    },
+    "chain.step4.link": {
+      "inputs": [
+        {
+          "sha256": "3c9371b52335eaacd70a2d28f4e3496acbcf39d01c4c07bbf7f92ab57edca54c",
+          "source": "data/genes/il33.json"
+        },
+        {
+          "sha256": "4fa4e0ab76c437e2b6f9cf894ff999fe7ac64f29ebf26d0572417f3d88e8fb82",
+          "source": "data/diseases/asthma.json"
+        },
+        {
+          "sha256": "34c83639f4957018ed5b85cb5d735d08d531ca1eb20a1e1aeb22759ecacb7e9c",
+          "source": "data/briefs/pm25-il33-nfkb-asthma.json"
+        }
+      ],
+      "method": "chain link as the published figure composes it",
+      "n": null,
+      "precision": null,
+      "unit": null,
+      "value": "ST2 on ILC2 to Type 2 inflammation",
+      "window": "atlas as frozen 2026-11-02"
+    },
+    "chain.step5.evidence_class": {
+      "inputs": [
+        {
+          "sha256": "3c9371b52335eaacd70a2d28f4e3496acbcf39d01c4c07bbf7f92ab57edca54c",
+          "source": "data/genes/il33.json"
+        },
+        {
+          "sha256": "4fa4e0ab76c437e2b6f9cf894ff999fe7ac64f29ebf26d0572417f3d88e8fb82",
+          "source": "data/diseases/asthma.json"
+        },
+        {
+          "sha256": "34c83639f4957018ed5b85cb5d735d08d531ca1eb20a1e1aeb22759ecacb7e9c",
+          "source": "data/briefs/pm25-il33-nfkb-asthma.json"
+        }
+      ],
+      "method": "evidence class read from data/genes/il33.json linked_diseases[asthma].evidence_type",
+      "n": null,
+      "precision": null,
+      "unit": null,
+      "value": "GWAS",
+      "window": "atlas as frozen 2026-11-02"
+    },
+    "chain.step5.link": {
+      "inputs": [
+        {
+          "sha256": "3c9371b52335eaacd70a2d28f4e3496acbcf39d01c4c07bbf7f92ab57edca54c",
+          "source": "data/genes/il33.json"
+        },
+        {
+          "sha256": "4fa4e0ab76c437e2b6f9cf894ff999fe7ac64f29ebf26d0572417f3d88e8fb82",
+          "source": "data/diseases/asthma.json"
+        },
+        {
+          "sha256": "34c83639f4957018ed5b85cb5d735d08d531ca1eb20a1e1aeb22759ecacb7e9c",
+          "source": "data/briefs/pm25-il33-nfkb-asthma.json"
+        }
+      ],
+      "method": "chain link as the published figure composes it",
+      "n": null,
+      "precision": null,
+      "unit": null,
+      "value": "Type 2 inflammation to Asthma exacerbation",
+      "window": "atlas as frozen 2026-11-02"
+    },
+    "chain.steps": {
+      "inputs": [
+        {
+          "sha256": "3c9371b52335eaacd70a2d28f4e3496acbcf39d01c4c07bbf7f92ab57edca54c",
+          "source": "data/genes/il33.json"
+        },
+        {
+          "sha256": "4fa4e0ab76c437e2b6f9cf894ff999fe7ac64f29ebf26d0572417f3d88e8fb82",
+          "source": "data/diseases/asthma.json"
+        },
+        {
+          "sha256": "34c83639f4957018ed5b85cb5d735d08d531ca1eb20a1e1aeb22759ecacb7e9c",
+          "source": "data/briefs/pm25-il33-nfkb-asthma.json"
+        }
+      ],
+      "method": "links in the published il33-pm25-chain chain, six nodes end to end",
+      "n": null,
+      "precision": 0,
+      "unit": "links",
+      "value": 5.0,
+      "window": "atlas as frozen 2026-11-02"
+    }
+  },
+  "note": "The atlas half of the report. Keys are namespaced inventory.* and chain.* and live here rather than in numbers.json, which holds the DEQ half and is gated on byte-identity. Every count is reported against the atlas freeze date and computed from the records FREEZE.json pins under atlas_inputs.",
+  "table": {
+    "caption": "Each link of the published five-step chain with its evidence class and where that class comes from. Two classes are read from atlas records; three are assigned by the figure definition and are marked as such, so a reader does not take every class for a record value. A link marked inferred has no direct evidence in the atlas. Every association here is population-level, and the chain states a mechanism: no link asserts that one step brings about the next.",
+    "columns": [
+      "Step",
+      "From",
+      "To",
+      "Evidence class",
+      "Class read from an atlas record",
+      "Source of the evidence class",
+      "As of (atlas freeze)"
+    ],
+    "file": "T09_chain_evidence.csv",
+    "id": "T09_chain_evidence",
+    "row_count": 5,
+    "source_note": "Atlas records pinned in FREEZE.json atlas_inputs, frozen 2026-11-02.",
+    "title": "Mechanism chain evidence by link",
+    "units": {}
+  }
+}
