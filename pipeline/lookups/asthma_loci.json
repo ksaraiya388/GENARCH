@@ -1,0 +1,48 @@
+{
+  "description": "The five asthma loci in v1 scope, as report section 7 lists them. pipeline/report_lib/ancestry.py counts genome-wide-significant associations at these loci by the broad ancestral category of the discovery sample (T11).",
+  "scope_source": "data/diseases/asthma.json genetic_architecture.top_loci, plus the two partner genes the locus labels name (GSDMB at 17q12-21, IL13 at 5q31).",
+  "selection_rule": "An association is assigned to a locus when any symbol in the GWAS Catalog's own MAPPED_GENE cell for that association equals one of the locus's gene_symbols, compared case-sensitively after splitting the cell on its separators and trimming. MAPPED_GENE is the catalog's gene annotation, so the match is against a curated identifier and never against free text in a trait or study title. REPORTED GENE(S) is deliberately not used: it carries the authors' own wording, which is not a controlled field. No genomic window is applied, because a window needs a genome build the extract does not state per row.",
+  "significance_threshold": 5e-8,
+  "significance_note": "P-VALUE strictly less than 5e-8, the conventional genome-wide significance threshold. The threshold is a convention for declaring an association, not a measure of effect size, and nothing here reports an effect estimate (CONTEXT.md X7).",
+  "loci": [
+    {
+      "id": "17q12-21",
+      "label": "17q12-21 (ORMDL3/GSDMB)",
+      "cytoband": "17q12-21",
+      "gene_symbols": ["ORMDL3", "GSDMB"],
+      "atlas_variant_example": "rs7216389",
+      "note": "The strongest and most replicated asthma locus in the atlas record. ORMDL3 is the gene data/diseases/asthma.json names; GSDMB sits in the same linkage-disequilibrium block and the locus is conventionally labelled by both."
+    },
+    {
+      "id": "il33",
+      "label": "IL33",
+      "cytoband": "9p24.1",
+      "gene_symbols": ["IL33"],
+      "atlas_variant_example": "rs1888909",
+      "note": "The gene at the head of the five-step mechanism chain the report states."
+    },
+    {
+      "id": "tslp",
+      "label": "TSLP",
+      "cytoband": "5q22.1",
+      "gene_symbols": ["TSLP"],
+      "atlas_variant_example": "rs1837253"
+    },
+    {
+      "id": "il1rl1",
+      "label": "IL1RL1",
+      "cytoband": "2q12.1",
+      "gene_symbols": ["IL1RL1"],
+      "atlas_variant_example": "rs1420101",
+      "note": "Encodes ST2, the IL-33 receptor."
+    },
+    {
+      "id": "5q31",
+      "label": "5q31 (RAD50/IL13)",
+      "cytoband": "5q31",
+      "gene_symbols": ["RAD50", "IL13"],
+      "atlas_variant_example": "rs2244012",
+      "note": "RAD50 is the gene data/diseases/asthma.json names; IL13 is adjacent and the locus is conventionally labelled by both."
+    }
+  ]
+}

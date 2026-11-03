@@ -1,0 +1,337 @@
+{
+  "cells": {
+    "B02001_001E": {
+      "label": "Estimate!!Total:",
+      "published": true,
+      "value": "432998"
+    },
+    "B02001_001EA": {
+      "label": "Annotation of Estimate!!Total:",
+      "published": false,
+      "value": null
+    },
+    "B02001_001M": {
+      "label": "Margin of Error!!Total:",
+      "published": false,
+      "value": "-555555555"
+    },
+    "B02001_001MA": {
+      "label": "Annotation of Margin of Error!!Total:",
+      "published": true,
+      "value": "*****"
+    },
+    "B02001_002E": {
+      "label": "Estimate!!Total:!!White alone",
+      "published": true,
+      "value": "228302"
+    },
+    "B02001_002EA": {
+      "label": "Annotation of Estimate!!Total:!!White alone",
+      "published": false,
+      "value": null
+    },
+    "B02001_002M": {
+      "label": "Margin of Error!!Total:!!White alone",
+      "published": true,
+      "value": "1523"
+    },
+    "B02001_002MA": {
+      "label": "Annotation of Margin of Error!!Total:!!White alone",
+      "published": false,
+      "value": null
+    },
+    "B02001_003E": {
+      "label": "Estimate!!Total:!!Black or African American alone",
+      "published": true,
+      "value": "33411"
+    },
+    "B02001_003EA": {
+      "label": "Annotation of Estimate!!Total:!!Black or African American alone",
+      "published": false,
+      "value": null
+    },
+    "B02001_003M": {
+      "label": "Margin of Error!!Total:!!Black or African American alone",
+      "published": true,
+      "value": "926"
+    },
+    "B02001_003MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Black or African American alone",
+      "published": false,
+      "value": null
+    },
+    "B02001_004E": {
+      "label": "Estimate!!Total:!!American Indian and Alaska Native alone",
+      "published": true,
+      "value": "1253"
+    },
+    "B02001_004EA": {
+      "label": "Annotation of Estimate!!Total:!!American Indian and Alaska Native alone",
+      "published": false,
+      "value": null
+    },
+    "B02001_004M": {
+      "label": "Margin of Error!!Total:!!American Indian and Alaska Native alone",
+      "published": true,
+      "value": "421"
+    },
+    "B02001_004MA": {
+      "label": "Annotation of Margin of Error!!Total:!!American Indian and Alaska Native alone",
+      "published": false,
+      "value": null
+    },
+    "B02001_005E": {
+      "label": "Estimate!!Total:!!Asian alone",
+      "published": true,
+      "value": "94508"
+    },
+    "B02001_005EA": {
+      "label": "Annotation of Estimate!!Total:!!Asian alone",
+      "published": false,
+      "value": null
+    },
+    "B02001_005M": {
+      "label": "Margin of Error!!Total:!!Asian alone",
+      "published": true,
+      "value": "1466"
+    },
+    "B02001_005MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Asian alone",
+      "published": false,
+      "value": null
+    },
+    "B02001_006E": {
+      "label": "Estimate!!Total:!!Native Hawaiian and Other Pacific Islander alone",
+      "published": true,
+      "value": "221"
+    },
+    "B02001_006EA": {
+      "label": "Annotation of Estimate!!Total:!!Native Hawaiian and Other Pacific Islander alone",
+      "published": false,
+      "value": null
+    },
+    "B02001_006M": {
+      "label": "Margin of Error!!Total:!!Native Hawaiian and Other Pacific Islander alone",
+      "published": true,
+      "value": "78"
+    },
+    "B02001_006MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Native Hawaiian and Other Pacific Islander alone",
+      "published": false,
+      "value": null
+    },
+    "B02001_007E": {
+      "label": "Estimate!!Total:!!Some Other Race alone",
+      "published": true,
+      "value": "20804"
+    },
+    "B02001_007EA": {
+      "label": "Annotation of Estimate!!Total:!!Some Other Race alone",
+      "published": false,
+      "value": null
+    },
+    "B02001_007M": {
+      "label": "Margin of Error!!Total:!!Some Other Race alone",
+      "published": true,
+      "value": "2100"
+    },
+    "B02001_007MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Some Other Race alone",
+      "published": false,
+      "value": null
+    },
+    "B02001_008E": {
+      "label": "Estimate!!Total:!!Two or More Races:",
+      "published": true,
+      "value": "54499"
+    },
+    "B02001_008EA": {
+      "label": "Annotation of Estimate!!Total:!!Two or More Races:",
+      "published": false,
+      "value": null
+    },
+    "B02001_008M": {
+      "label": "Margin of Error!!Total:!!Two or More Races:",
+      "published": true,
+      "value": "2698"
+    },
+    "B02001_008MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Two or More Races:",
+      "published": false,
+      "value": null
+    },
+    "B02001_009E": {
+      "label": "Estimate!!Total:!!Two or More Races:!!Two races including Some Other Race",
+      "published": true,
+      "value": "34114"
+    },
+    "B02001_009EA": {
+      "label": "Annotation of Estimate!!Total:!!Two or More Races:!!Two races including Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "B02001_009M": {
+      "label": "Margin of Error!!Total:!!Two or More Races:!!Two races including Some Other Race",
+      "published": true,
+      "value": "2296"
+    },
+    "B02001_009MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Two or More Races:!!Two races including Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "B02001_010E": {
+      "label": "Estimate!!Total:!!Two or More Races:!!Two races excluding Some Other Race, and three or more races",
+      "published": true,
+      "value": "20385"
+    },
+    "B02001_010EA": {
+      "label": "Annotation of Estimate!!Total:!!Two or More Races:!!Two races excluding Some Other Race, and three or more races",
+      "published": false,
+      "value": null
+    },
+    "B02001_010M": {
+      "label": "Margin of Error!!Total:!!Two or More Races:!!Two races excluding Some Other Race, and three or more races",
+      "published": true,
+      "value": "1662"
+    },
+    "B02001_010MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Two or More Races:!!Two races excluding Some Other Race, and three or more races",
+      "published": false,
+      "value": null
+    },
+    "GEO_ID": {
+      "label": "Geography",
+      "published": true,
+      "value": "0500000US51107"
+    },
+    "NAME": {
+      "label": "Geographic Area Name",
+      "published": true,
+      "value": "Loudoun County, Virginia"
+    }
+  },
+  "concept": "Race",
+  "dataset": "ACS 2024 5-year estimates (acs/acs5)",
+  "geography": "Loudoun County, Virginia",
+  "geography_columns": {
+    "county": "107",
+    "state": "51"
+  },
+  "geography_fips": {
+    "county": "107",
+    "state": "51"
+  },
+  "label_source_url": "https://api.census.gov/data/2024/acs/acs5/groups/B02001.json",
+  "notes": "Race and Hispanic origin in these tables are self-identified social categories. They are not genetic ancestry and must never be presented as a genetic-ancestry composition.",
+  "raw_response": [
+    [
+      "B02001_001E",
+      "B02001_001EA",
+      "B02001_001M",
+      "B02001_001MA",
+      "B02001_002E",
+      "B02001_002EA",
+      "B02001_002M",
+      "B02001_002MA",
+      "B02001_003E",
+      "B02001_003EA",
+      "B02001_003M",
+      "B02001_003MA",
+      "B02001_004E",
+      "B02001_004EA",
+      "B02001_004M",
+      "B02001_004MA",
+      "B02001_005E",
+      "B02001_005EA",
+      "B02001_005M",
+      "B02001_005MA",
+      "B02001_006E",
+      "B02001_006EA",
+      "B02001_006M",
+      "B02001_006MA",
+      "B02001_007E",
+      "B02001_007EA",
+      "B02001_007M",
+      "B02001_007MA",
+      "B02001_008E",
+      "B02001_008EA",
+      "B02001_008M",
+      "B02001_008MA",
+      "B02001_009E",
+      "B02001_009EA",
+      "B02001_009M",
+      "B02001_009MA",
+      "B02001_010E",
+      "B02001_010EA",
+      "B02001_010M",
+      "B02001_010MA",
+      "GEO_ID",
+      "NAME",
+      "state",
+      "county"
+    ],
+    [
+      "432998",
+      null,
+      "-555555555",
+      "*****",
+      "228302",
+      null,
+      "1523",
+      null,
+      "33411",
+      null,
+      "926",
+      null,
+      "1253",
+      null,
+      "421",
+      null,
+      "94508",
+      null,
+      "1466",
+      null,
+      "221",
+      null,
+      "78",
+      null,
+      "20804",
+      null,
+      "2100",
+      null,
+      "54499",
+      null,
+      "2698",
+      null,
+      "34114",
+      null,
+      "2296",
+      null,
+      "20385",
+      null,
+      "1662",
+      null,
+      "0500000US51107",
+      "Loudoun County, Virginia",
+      "51",
+      "107"
+    ]
+  ],
+  "release": "2024",
+  "request_url": "https://api.census.gov/data/2024/acs/acs5?get=group(B02001)&for=county:107&in=state:51",
+  "retrieved_at": "2026-11-03",
+  "selection_method": "Whole table requested as get=group(B02001); no variable is named, matched or numbered in advance and nothing depends on a line position. Label text is read from the release's own per-group metadata endpoint recorded in label_source_url. Consumers select cells by label.",
+  "sentinel_codes_recognised": [
+    "-222222222",
+    "-555555555",
+    "-666666666",
+    "-888888888",
+    "-999999999"
+  ],
+  "sentinel_handling": "The API returns a large negative sentinel in place of a statistic it does not publish for a cell. Values are preserved verbatim and 'published' says whether the cell carries a real statistic. A false value must not be rendered as a number.",
+  "source": "US Census Bureau, American Community Survey",
+  "table": "B02001",
+  "universe": "Total population",
+  "variable_count": 42
+}

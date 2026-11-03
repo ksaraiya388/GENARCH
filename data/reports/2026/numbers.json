@@ -1,4 +1,3249 @@
 {
+  "ancestry.acs.american_indian_and_alaska_native_alone.count": {
+    "inputs": [
+      {
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json"
+      },
+      {
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json"
+      },
+      {
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json"
+      }
+    ],
+    "method": "B02001 B02001_004E, label Estimate!!Total:!!American Indian and Alaska Native alone. ACS categories are self-identified race and ethnicity, which are social categories and not genetic ancestry. They are shown only to describe the population the atlas is meant to serve.",
+    "n": null,
+    "precision": 0,
+    "unit": "residents",
+    "value": 1253.0,
+    "window": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia"
+  },
+  "ancestry.acs.american_indian_and_alaska_native_alone.share": {
+    "inputs": [
+      {
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json"
+      },
+      {
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json"
+      },
+      {
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json"
+      }
+    ],
+    "method": "this category's count over the B02001 table total. ACS categories are self-identified race and ethnicity, which are social categories and not genetic ancestry. They are shown only to describe the population the atlas is meant to serve.",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of county residents",
+    "value": 0.29,
+    "window": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia"
+  },
+  "ancestry.acs.asian_alone.count": {
+    "inputs": [
+      {
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json"
+      },
+      {
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json"
+      },
+      {
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json"
+      }
+    ],
+    "method": "B02001 B02001_005E, label Estimate!!Total:!!Asian alone. ACS categories are self-identified race and ethnicity, which are social categories and not genetic ancestry. They are shown only to describe the population the atlas is meant to serve.",
+    "n": null,
+    "precision": 0,
+    "unit": "residents",
+    "value": 94508.0,
+    "window": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia"
+  },
+  "ancestry.acs.asian_alone.share": {
+    "inputs": [
+      {
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json"
+      },
+      {
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json"
+      },
+      {
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json"
+      }
+    ],
+    "method": "this category's count over the B02001 table total. ACS categories are self-identified race and ethnicity, which are social categories and not genetic ancestry. They are shown only to describe the population the atlas is meant to serve.",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of county residents",
+    "value": 21.83,
+    "window": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia"
+  },
+  "ancestry.acs.black_or_african_american_alone.count": {
+    "inputs": [
+      {
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json"
+      },
+      {
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json"
+      },
+      {
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json"
+      }
+    ],
+    "method": "B02001 B02001_003E, label Estimate!!Total:!!Black or African American alone. ACS categories are self-identified race and ethnicity, which are social categories and not genetic ancestry. They are shown only to describe the population the atlas is meant to serve.",
+    "n": null,
+    "precision": 0,
+    "unit": "residents",
+    "value": 33411.0,
+    "window": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia"
+  },
+  "ancestry.acs.black_or_african_american_alone.share": {
+    "inputs": [
+      {
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json"
+      },
+      {
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json"
+      },
+      {
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json"
+      }
+    ],
+    "method": "this category's count over the B02001 table total. ACS categories are self-identified race and ethnicity, which are social categories and not genetic ancestry. They are shown only to describe the population the atlas is meant to serve.",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of county residents",
+    "value": 7.72,
+    "window": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia"
+  },
+  "ancestry.acs.hispanic_or_latino.count": {
+    "inputs": [
+      {
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json"
+      },
+      {
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json"
+      },
+      {
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json"
+      }
+    ],
+    "method": "DP05 DP05_0090E. Hispanic or Latino origin cross-cuts every race category in ACS, so this figure is reported beside the race stack and is never a segment of it. Adding it would count the same residents twice.",
+    "n": null,
+    "precision": 0,
+    "unit": "residents",
+    "value": 61750.0,
+    "window": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia"
+  },
+  "ancestry.acs.hispanic_or_latino.share": {
+    "inputs": [
+      {
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json"
+      },
+      {
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json"
+      },
+      {
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json"
+      }
+    ],
+    "method": "DP05 Hispanic or Latino count over the B02001 table total. Hispanic or Latino origin cross-cuts every race category in ACS, so this figure is reported beside the race stack and is never a segment of it. Adding it would count the same residents twice.",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of county residents",
+    "value": 14.26,
+    "window": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia"
+  },
+  "ancestry.acs.native_hawaiian_and_other_pacific_islander_alone.count": {
+    "inputs": [
+      {
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json"
+      },
+      {
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json"
+      },
+      {
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json"
+      }
+    ],
+    "method": "B02001 B02001_006E, label Estimate!!Total:!!Native Hawaiian and Other Pacific Islander alone. ACS categories are self-identified race and ethnicity, which are social categories and not genetic ancestry. They are shown only to describe the population the atlas is meant to serve.",
+    "n": null,
+    "precision": 0,
+    "unit": "residents",
+    "value": 221.0,
+    "window": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia"
+  },
+  "ancestry.acs.native_hawaiian_and_other_pacific_islander_alone.share": {
+    "inputs": [
+      {
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json"
+      },
+      {
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json"
+      },
+      {
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json"
+      }
+    ],
+    "method": "this category's count over the B02001 table total. ACS categories are self-identified race and ethnicity, which are social categories and not genetic ancestry. They are shown only to describe the population the atlas is meant to serve.",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of county residents",
+    "value": 0.05,
+    "window": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia"
+  },
+  "ancestry.acs.release": {
+    "inputs": [
+      {
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json"
+      },
+      {
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json"
+      },
+      {
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json"
+      }
+    ],
+    "method": "the ACS 5-year release the county composition is read from. ACS categories are self-identified race and ethnicity, which are social categories and not genetic ancestry. They are shown only to describe the population the atlas is meant to serve.",
+    "n": null,
+    "precision": null,
+    "unit": null,
+    "value": "2024",
+    "window": null
+  },
+  "ancestry.acs.some_other_race_alone.count": {
+    "inputs": [
+      {
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json"
+      },
+      {
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json"
+      },
+      {
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json"
+      }
+    ],
+    "method": "B02001 B02001_007E, label Estimate!!Total:!!Some Other Race alone. ACS categories are self-identified race and ethnicity, which are social categories and not genetic ancestry. They are shown only to describe the population the atlas is meant to serve.",
+    "n": null,
+    "precision": 0,
+    "unit": "residents",
+    "value": 20804.0,
+    "window": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia"
+  },
+  "ancestry.acs.some_other_race_alone.share": {
+    "inputs": [
+      {
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json"
+      },
+      {
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json"
+      },
+      {
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json"
+      }
+    ],
+    "method": "this category's count over the B02001 table total. ACS categories are self-identified race and ethnicity, which are social categories and not genetic ancestry. They are shown only to describe the population the atlas is meant to serve.",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of county residents",
+    "value": 4.8,
+    "window": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia"
+  },
+  "ancestry.acs.total_population": {
+    "inputs": [
+      {
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json"
+      },
+      {
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json"
+      },
+      {
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json"
+      }
+    ],
+    "method": "B02001 table total (B02001_001E), selected by the release's own label text and never by variable code",
+    "n": null,
+    "precision": 0,
+    "unit": "residents",
+    "value": 432998.0,
+    "window": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia"
+  },
+  "ancestry.acs.two_or_more_races.count": {
+    "inputs": [
+      {
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json"
+      },
+      {
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json"
+      },
+      {
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json"
+      }
+    ],
+    "method": "B02001 B02001_008E, label Estimate!!Total:!!Two or More Races:. ACS categories are self-identified race and ethnicity, which are social categories and not genetic ancestry. They are shown only to describe the population the atlas is meant to serve.",
+    "n": null,
+    "precision": 0,
+    "unit": "residents",
+    "value": 54499.0,
+    "window": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia"
+  },
+  "ancestry.acs.two_or_more_races.share": {
+    "inputs": [
+      {
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json"
+      },
+      {
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json"
+      },
+      {
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json"
+      }
+    ],
+    "method": "this category's count over the B02001 table total. ACS categories are self-identified race and ethnicity, which are social categories and not genetic ancestry. They are shown only to describe the population the atlas is meant to serve.",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of county residents",
+    "value": 12.59,
+    "window": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia"
+  },
+  "ancestry.acs.white_alone.count": {
+    "inputs": [
+      {
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json"
+      },
+      {
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json"
+      },
+      {
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json"
+      }
+    ],
+    "method": "B02001 B02001_002E, label Estimate!!Total:!!White alone. ACS categories are self-identified race and ethnicity, which are social categories and not genetic ancestry. They are shown only to describe the population the atlas is meant to serve.",
+    "n": null,
+    "precision": 0,
+    "unit": "residents",
+    "value": 228302.0,
+    "window": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia"
+  },
+  "ancestry.acs.white_alone.share": {
+    "inputs": [
+      {
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json"
+      },
+      {
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json"
+      },
+      {
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json"
+      }
+    ],
+    "method": "this category's count over the B02001 table total. ACS categories are self-identified race and ethnicity, which are social categories and not genetic ancestry. They are shown only to describe the population the atlas is meant to serve.",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of county residents",
+    "value": 52.73,
+    "window": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia"
+  },
+  "ancestry.discovery.african_american_or_afro_caribbean.individuals": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "initial-stage discovery individuals in this broad ancestral category. A row naming one broad ancestral category contributes all its individuals to that category; a row naming k categories contributes an equal 1/k share to each. The catalog publishes no per-category count within a row, so the equal split is an assumption. It preserves the total, so the shares describe one denominator.",
+    "n": null,
+    "precision": 1,
+    "unit": "individuals",
+    "value": 952929.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.african_american_or_afro_caribbean.share": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "this category's discovery individuals over the discovery total",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of discovery individuals",
+    "value": 1.93,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.african_unspecified.individuals": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "initial-stage discovery individuals in this broad ancestral category. A row naming one broad ancestral category contributes all its individuals to that category; a row naming k categories contributes an equal 1/k share to each. The catalog publishes no per-category count within a row, so the equal split is an assumption. It preserves the total, so the shares describe one denominator.",
+    "n": null,
+    "precision": 1,
+    "unit": "individuals",
+    "value": 113161.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.african_unspecified.share": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "this category's discovery individuals over the discovery total",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of discovery individuals",
+    "value": 0.23,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.central_asian.individuals": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "initial-stage discovery individuals in this broad ancestral category. A row naming one broad ancestral category contributes all its individuals to that category; a row naming k categories contributes an equal 1/k share to each. The catalog publishes no per-category count within a row, so the equal split is an assumption. It preserves the total, so the shares describe one denominator.",
+    "n": null,
+    "precision": 1,
+    "unit": "individuals",
+    "value": 15553.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.central_asian.share": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "this category's discovery individuals over the discovery total",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of discovery individuals",
+    "value": 0.03,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.east_asian.individuals": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "initial-stage discovery individuals in this broad ancestral category. A row naming one broad ancestral category contributes all its individuals to that category; a row naming k categories contributes an equal 1/k share to each. The catalog publishes no per-category count within a row, so the equal split is an assumption. It preserves the total, so the shares describe one denominator.",
+    "n": null,
+    "precision": 1,
+    "unit": "individuals",
+    "value": 3604425.5,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.east_asian.share": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "this category's discovery individuals over the discovery total",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of discovery individuals",
+    "value": 7.3,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.european.individuals": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "initial-stage discovery individuals in this broad ancestral category. A row naming one broad ancestral category contributes all its individuals to that category; a row naming k categories contributes an equal 1/k share to each. The catalog publishes no per-category count within a row, so the equal split is an assumption. It preserves the total, so the shares describe one denominator.",
+    "n": null,
+    "precision": 1,
+    "unit": "individuals",
+    "value": 43766190.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.european.share": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "this category's discovery individuals over the discovery total",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of discovery individuals",
+    "value": 88.61,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.greater_middle_eastern.individuals": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "initial-stage discovery individuals in this broad ancestral category. A row naming one broad ancestral category contributes all its individuals to that category; a row naming k categories contributes an equal 1/k share to each. The catalog publishes no per-category count within a row, so the equal split is an assumption. It preserves the total, so the shares describe one denominator.",
+    "n": null,
+    "precision": 1,
+    "unit": "individuals",
+    "value": 4734.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.greater_middle_eastern.share": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "this category's discovery individuals over the discovery total",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of discovery individuals",
+    "value": 0.01,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.hispanic_or_latin_american.individuals": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "initial-stage discovery individuals in this broad ancestral category. A row naming one broad ancestral category contributes all its individuals to that category; a row naming k categories contributes an equal 1/k share to each. The catalog publishes no per-category count within a row, so the equal split is an assumption. It preserves the total, so the shares describe one denominator.",
+    "n": null,
+    "precision": 1,
+    "unit": "individuals",
+    "value": 402499.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.hispanic_or_latin_american.share": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "this category's discovery individuals over the discovery total",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of discovery individuals",
+    "value": 0.81,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.largest_category": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "the broad ancestral category holding the largest share of discovery individuals",
+    "n": null,
+    "precision": null,
+    "unit": null,
+    "value": "European",
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.multi_category_rows": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "initial-stage rows naming more than one broad ancestral category, which are the rows the equal split applies to. The category cell is consumed by longest match against the controlled vocabulary in pipeline/lookups/gwas_ancestry_categories.json, not split on a comma: one vocabulary label, 'Greater Middle Eastern (Middle Eastern, North African or Persian)', contains commas of its own. Any residue the vocabulary cannot account for fails the run.",
+    "n": null,
+    "precision": 0,
+    "unit": "ancestry rows",
+    "value": 7.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.multi_category_share": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "share of discovery individuals sitting in a multi-category row, so the weight the equal split carries is visible rather than asserted",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of discovery individuals",
+    "value": 2.46,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.native_american.individuals": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "initial-stage discovery individuals in this broad ancestral category. A row naming one broad ancestral category contributes all its individuals to that category; a row naming k categories contributes an equal 1/k share to each. The catalog publishes no per-category count within a row, so the equal split is an assumption. It preserves the total, so the shares describe one denominator.",
+    "n": null,
+    "precision": 1,
+    "unit": "individuals",
+    "value": 3032.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.native_american.share": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "this category's discovery individuals over the discovery total",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of discovery individuals",
+    "value": 0.01,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.nr.individuals": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "initial-stage discovery individuals in this broad ancestral category. A row naming one broad ancestral category contributes all its individuals to that category; a row naming k categories contributes an equal 1/k share to each. The catalog publishes no per-category count within a row, so the equal split is an assumption. It preserves the total, so the shares describe one denominator.",
+    "n": null,
+    "precision": 1,
+    "unit": "individuals",
+    "value": 425954.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.nr.share": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "this category's discovery individuals over the discovery total",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of discovery individuals",
+    "value": 0.86,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.other.individuals": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "initial-stage discovery individuals in this broad ancestral category. A row naming one broad ancestral category contributes all its individuals to that category; a row naming k categories contributes an equal 1/k share to each. The catalog publishes no per-category count within a row, so the equal split is an assumption. It preserves the total, so the shares describe one denominator.",
+    "n": null,
+    "precision": 1,
+    "unit": "individuals",
+    "value": 16100.5,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.other.share": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "this category's discovery individuals over the discovery total",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of discovery individuals",
+    "value": 0.03,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.rows": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "initial-stage rows in the asthma ancestry extract. Rows are not deduplicated by study, because a study contributing two rows is describing two parts of its sample",
+    "n": null,
+    "precision": 0,
+    "unit": "ancestry rows",
+    "value": 243.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.rows_without_individuals": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "initial-stage rows whose NUMBER OF INDIVIDUALS is absent or unparseable; these contribute to no count and no share",
+    "n": null,
+    "precision": 0,
+    "unit": "ancestry rows",
+    "value": 0.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.south_asian.individuals": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "initial-stage discovery individuals in this broad ancestral category. A row naming one broad ancestral category contributes all its individuals to that category; a row naming k categories contributes an equal 1/k share to each. The catalog publishes no per-category count within a row, so the equal split is an assumption. It preserves the total, so the shares describe one denominator.",
+    "n": null,
+    "precision": 1,
+    "unit": "individuals",
+    "value": 87128.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.south_asian.share": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "this category's discovery individuals over the discovery total",
+    "n": null,
+    "precision": 2,
+    "unit": "percent of discovery individuals",
+    "value": 0.18,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.studies": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "distinct STUDY ACCESSION values carrying an initial-stage ancestry row in the asthma ancestry extract",
+    "n": null,
+    "precision": 0,
+    "unit": "studies",
+    "value": 172.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.total_individuals": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "sum of NUMBER OF INDIVIDUALS over initial-stage ancestry rows. The total is a sum of study sample sizes, not a count of distinct people. Asthma GWAS draw repeatedly on the same large cohorts, so a participant enrolled in several studies is counted once per study, and studies mapped to asthma alongside another trait contribute their whole sample. The total is therefore much larger than the number of people who have ever been in an asthma GWAS, and must never be reported as a headcount. What the shares describe is how the field's accumulated asthma evidence is distributed across ancestry groups, which is the question this module asks. A row naming one broad ancestral category contributes all its individuals to that category; a row naming k categories contributes an equal 1/k share to each. The catalog publishes no per-category count within a row, so the equal split is an assumption. It preserves the total, so the shares describe one denominator.",
+    "n": null,
+    "precision": 0,
+    "unit": "individuals",
+    "value": 49391706.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.gwas_release_date": {
+    "inputs": [
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "dated GWAS Catalog release the committed extracts were cut from. The `latest` alias is re-pointed every month, so it is never recorded as an origin (DECISIONS.md D30)",
+    "n": null,
+    "precision": null,
+    "unit": null,
+    "value": "2026-11-02",
+    "window": null
+  },
+  "ancestry.loci.17q12-21.african_american_or_afro_caribbean.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 4.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.17q12-21.african_unspecified.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 0.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.17q12-21.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant asthma associations mapped to 17q12-21 (ORMDL3/GSDMB). An association is assigned to a locus when any symbol in the GWAS Catalog's own MAPPED_GENE cell for that association equals one of the locus's gene_symbols, compared case-sensitively after splitting the cell on its separators and trimming. MAPPED_GENE is the catalog's gene annotation, so the match is against a curated identifier and never against free text in a trait or study title. REPORTED GENE(S) is deliberately not used: it carries the authors' own wording, which is not a controlled field. No genomic window is applied, because a window needs a genome build the extract does not state per row.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 74.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.17q12-21.central_asian.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 0.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.17q12-21.east_asian.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 10.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.17q12-21.european.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 69.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.17q12-21.greater_middle_eastern.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 0.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.17q12-21.hispanic_or_latin_american.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 7.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.17q12-21.nr.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 2.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.17q12-21.south_asian.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 0.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.17q12-21.variants": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "distinct SNPS values among those associations at 17q12-21 (ORMDL3/GSDMB)",
+    "n": null,
+    "precision": 0,
+    "unit": "variants",
+    "value": 37.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.5q31.african_american_or_afro_caribbean.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 5.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.5q31.african_unspecified.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 1.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.5q31.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant asthma associations mapped to 5q31 (RAD50/IL13). An association is assigned to a locus when any symbol in the GWAS Catalog's own MAPPED_GENE cell for that association equals one of the locus's gene_symbols, compared case-sensitively after splitting the cell on its separators and trimming. MAPPED_GENE is the catalog's gene annotation, so the match is against a curated identifier and never against free text in a trait or study title. REPORTED GENE(S) is deliberately not used: it carries the authors' own wording, which is not a controlled field. No genomic window is applied, because a window needs a genome build the extract does not state per row.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 34.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.5q31.central_asian.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 0.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.5q31.east_asian.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 9.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.5q31.european.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 33.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.5q31.greater_middle_eastern.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 0.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.5q31.hispanic_or_latin_american.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 6.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.5q31.nr.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 2.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.5q31.south_asian.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 0.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.5q31.variants": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "distinct SNPS values among those associations at 5q31 (RAD50/IL13)",
+    "n": null,
+    "precision": 0,
+    "unit": "variants",
+    "value": 20.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.associations_significant": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "asthma associations in the extract with P-VALUE below 5e-08, at any locus",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 3395.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il1rl1.african_american_or_afro_caribbean.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 7.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il1rl1.african_unspecified.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 2.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il1rl1.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant asthma associations mapped to IL1RL1. An association is assigned to a locus when any symbol in the GWAS Catalog's own MAPPED_GENE cell for that association equals one of the locus's gene_symbols, compared case-sensitively after splitting the cell on its separators and trimming. MAPPED_GENE is the catalog's gene annotation, so the match is against a curated identifier and never against free text in a trait or study title. REPORTED GENE(S) is deliberately not used: it carries the authors' own wording, which is not a controlled field. No genomic window is applied, because a window needs a genome build the extract does not state per row.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 72.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il1rl1.central_asian.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 0.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il1rl1.east_asian.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 9.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il1rl1.european.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 72.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il1rl1.greater_middle_eastern.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 1.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il1rl1.hispanic_or_latin_american.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 9.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il1rl1.nr.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 2.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il1rl1.south_asian.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 1.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il1rl1.variants": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "distinct SNPS values among those associations at IL1RL1",
+    "n": null,
+    "precision": 0,
+    "unit": "variants",
+    "value": 24.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il33.african_american_or_afro_caribbean.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 6.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il33.african_unspecified.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 1.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il33.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant asthma associations mapped to IL33. An association is assigned to a locus when any symbol in the GWAS Catalog's own MAPPED_GENE cell for that association equals one of the locus's gene_symbols, compared case-sensitively after splitting the cell on its separators and trimming. MAPPED_GENE is the catalog's gene annotation, so the match is against a curated identifier and never against free text in a trait or study title. REPORTED GENE(S) is deliberately not used: it carries the authors' own wording, which is not a controlled field. No genomic window is applied, because a window needs a genome build the extract does not state per row.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 54.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il33.central_asian.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 0.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il33.east_asian.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 9.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il33.european.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 54.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il33.greater_middle_eastern.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 0.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il33.hispanic_or_latin_american.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 7.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il33.nr.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 2.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il33.south_asian.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 0.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.il33.variants": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "distinct SNPS values among those associations at IL33",
+    "n": null,
+    "precision": 0,
+    "unit": "variants",
+    "value": 15.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.threshold": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide significance threshold. A convention for declaring an association, not a measure of effect size (CONTEXT.md X7)",
+    "n": null,
+    "precision": null,
+    "unit": "p-value",
+    "value": 5e-08,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.tslp.african_american_or_afro_caribbean.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 9.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.tslp.african_unspecified.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 3.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.tslp.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant asthma associations mapped to TSLP. An association is assigned to a locus when any symbol in the GWAS Catalog's own MAPPED_GENE cell for that association equals one of the locus's gene_symbols, compared case-sensitively after splitting the cell on its separators and trimming. MAPPED_GENE is the catalog's gene annotation, so the match is against a curated identifier and never against free text in a trait or study title. REPORTED GENE(S) is deliberately not used: it carries the authors' own wording, which is not a controlled field. No genomic window is applied, because a window needs a genome build the extract does not state per row.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 62.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.tslp.central_asian.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 1.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.tslp.east_asian.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 14.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.tslp.european.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 57.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.tslp.greater_middle_eastern.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 2.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.tslp.hispanic_or_latin_american.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 10.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.tslp.nr.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 2.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.tslp.south_asian.associations": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "n": null,
+    "precision": 0,
+    "unit": "associations",
+    "value": 2.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.tslp.variants": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "distinct SNPS values among those associations at TSLP",
+    "n": null,
+    "precision": 0,
+    "unit": "variants",
+    "value": 10.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.method_divergence": {
+    "inputs": [],
+    "method": "recorded so that no reader takes the report's asthma-specific share and the live page's all-trait share for two values of one quantity",
+    "n": null,
+    "precision": null,
+    "unit": null,
+    "value": "The atlas page /ancestry-equity states an all-trait GWAS participant share transcribed from the GWAS Diversity Monitor dashboard. The share here is computed from the GWAS Catalog release named below, over asthma studies only, counting initial-stage discovery individuals. The two are different quantities with different denominators and are not comparable; the comparison is tabulated in docs/report-2026/AUDIT.md.",
+    "window": null
+  },
+  "ancestry.trait_terms": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      }
+    ],
+    "method": "asthma ontology IDs the extraction selects on, resolved from OLS by scripts/build_asthma_trait_terms.py. Selection is by ID only: no trait name is matched as free text anywhere in this module",
+    "n": null,
+    "precision": 0,
+    "unit": "ontology IDs",
+    "value": 23.0,
+    "window": null
+  },
   "colloc.apex-05_NO2.deq_intercept": {
     "inputs": [
       {

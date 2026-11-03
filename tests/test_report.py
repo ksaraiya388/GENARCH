@@ -14,12 +14,15 @@ from __future__ import annotations
 import csv
 import json
 import re
+import sys
 from pathlib import Path
 
 import pytest
 
 from pipeline.report import PM25_24H_LEVEL, compute, run_report
 from pipeline.report_lib import (
+    ancestry,
+    ancestry_report,
     atlas,
     collocation,
     correlation,
@@ -389,12 +392,44 @@ def test_the_cited_deq_report_is_frozen_and_hash_pinned(freeze):
     freeze.verified_path(cited[0].rel_path)
 
 
-def test_every_figure_limitation_equals_the_constant(report_dir):
+# F01-F05 plot DEQ sensor data; F06 plots a study population and a census table.
+DEQ_FIGURE_IDS = (
+    "F01_network_timeline",
+    "F02_collocation",
+    "F03_daily_reconciliation",
+    "F04_p98_by_site",
+    "F05_correlation_heatmap",
+)
+
+
+def test_every_sensor_figure_limitation_equals_the_constant(report_dir):
+    """Every sensor-data figure carries DEQ's wording verbatim (CONTEXT.md section 3)."""
     manifest = json.loads((report_dir / "figures.json").read_text(encoding="utf-8"))
-    assert len(manifest["figures"]) == 5
     constant = figures.deq_limitation_block()
-    for entry in manifest["figures"]:
+    deq = [e for e in manifest["figures"] if e["id"] in DEQ_FIGURE_IDS]
+    assert len(deq) == len(DEQ_FIGURE_IDS)
+    for entry in deq:
         assert entry["limitation"] == constant, entry["id"]
+
+
+def test_the_ancestry_figure_does_not_carry_the_sensor_limitation(report_dir):
+    """F06 plots no sensor reading, so DEQ's CFR limitation must not be attached.
+
+    Attaching it would put a limitation Virginia DEQ published about low-cost air
+    sensors onto a GWAS Catalog count and a census table, which DEQ never made a
+    statement about.
+    """
+    manifest = json.loads((report_dir / "figures.json").read_text(encoding="utf-8"))
+    f06 = [e for e in manifest["figures"] if e["id"] == "F06_ancestry_composition"]
+    if not f06:
+        pytest.skip("ancestry inputs are not pinned in this freeze")
+    entry = f06[0]
+    constant = figures.deq_limitation()
+    assert entry["limitation"] != figures.deq_limitation_block()
+    for part in (constant["limitation"], constant["citation"], constant["credit"]):
+        assert part not in entry["limitation"]
+    assert "not an effect estimate" in entry["limitation"]
+    assert ancestry_report.ACS_CATEGORY_SENTENCE in entry["limitation"]
 
 
 def test_no_caption_repeats_any_part_of_the_constant(report_dir):
@@ -670,12 +705,19 @@ def test_freeze_refuses_a_path_it_does_not_list(freeze):
 
 
 def test_freeze_verifies_every_listed_input(freeze):
-    """29 DEQ inputs plus every pinned atlas record, all hash-checked on every run."""
+    """29 DEQ inputs, every pinned atlas record and every ancestry input, all hashed.
+
+    The three blocks are counted separately so that adding one cannot quietly
+    absorb a missing input from another.
+    """
     checked = freeze.verify_all()
-    atlas_records = [e["path"] for e in freeze.atlas_inputs()["files"]]
-    deq_inputs = [rel for rel in checked if rel not in set(atlas_records)]
+    atlas_records = {e["path"] for e in freeze.atlas_inputs()["files"]}
+    ancestry_records = {e["path"] for e in (freeze.ancestry_inputs() or {"files": []})["files"]}
+    assert not atlas_records & ancestry_records
+    deq_inputs = [rel for rel in checked if rel not in atlas_records | ancestry_records]
     assert len(deq_inputs) == 29
-    assert len(checked) == 29 + len(atlas_records)
+    assert len(ancestry_records) == 9
+    assert len(checked) == 29 + len(atlas_records) + len(ancestry_records)
     assert "pipeline/lookups/site_codes.json" in checked
 
 
@@ -964,3 +1006,235 @@ def test_compute_is_pure_with_respect_to_the_repository(freeze, report_dir):
     compute(freeze)
     after = {p.name: p.stat().st_mtime_ns for p in published.iterdir() if p.is_file()}
     assert before == after
+
+def _read_table(report_dir, table_id):
+    """One emitted CSV as a list of dicts, or a skip when it is not emitted."""
+    path = report_dir / f"{table_id}.csv"
+    if not path.is_file():
+        pytest.skip(f"{table_id} is not emitted in this freeze")
+    with open(path, encoding="utf-8", newline="") as handle:
+        return list(csv.DictReader(handle))
+
+
+# ------------------------------------------------------- ancestry composition
+
+
+@pytest.fixture(scope="session")
+def anc(freeze):
+    """The recomputed ancestry block, or a skip while its inputs are unpinned."""
+    if freeze.ancestry_inputs() is None:
+        pytest.skip("ancestry_inputs is not pinned in this freeze")
+    return ancestry_report.compute(freeze)
+
+
+def test_discovery_shares_sum_to_one_within_rounding(anc):
+    shares = [row["share"] for row in anc["discovery"]["categories"]]
+    assert shares, "no discovery categories"
+    assert abs(sum(shares) - 1.0) < 1e-9
+
+
+def test_acs_shares_sum_to_one_within_rounding(anc):
+    """The race stack must cover the whole county, or the panel misleads."""
+    shares = [segment["share"] for segment in anc["acs"]["segments"]]
+    assert shares
+    assert abs(sum(shares) - 1.0) < 1e-9
+
+
+def test_published_shares_sum_to_one_hundred_within_rounding(numbers, anc):
+    """The rounded percentages a reader adds up must also reach 100."""
+    for prefix, rows in (
+        ("ancestry.discovery", anc["discovery"]["categories"]),
+        ("ancestry.acs", anc["acs"]["segments"]),
+    ):
+        keys = [
+            f"{prefix}.{ancestry.slug(row.get('category'))}.share" for row in rows
+        ]
+        total = sum(numbers[key]["value"] for key in keys)
+        # Each value is rounded half away from zero to two decimals, so the sum can
+        # drift by at most half a unit in the last place per row.
+        tolerance = 0.005 * len(keys)
+        assert abs(total - 100.0) <= tolerance, f"{prefix} shares sum to {total}"
+
+
+def test_the_equal_split_preserves_the_discovery_total(anc):
+    """Splitting a multi-category row 1/k must not change the denominator."""
+    discovery = anc["discovery"]
+    assert abs(
+        sum(row["individuals"] for row in discovery["categories"])
+        - discovery["total_individuals"]
+    ) < 1e-6
+
+
+def test_the_weight_of_the_equal_split_is_reported(numbers, anc):
+    """A reader has to be able to see how much rests on the split assumption."""
+    assert "ancestry.discovery.multi_category_rows" in numbers
+    assert "ancestry.discovery.multi_category_share" in numbers
+    single = anc["discovery"]["shares_single_category_only"]
+    assert single, "the single-category sensitivity was not computed"
+
+
+# The one ancestry key with no measured input: it states how the report's method
+# differs from the live page's, which is a statement about two methods and not a
+# value read off a file. Named here so the exemption is visible rather than a
+# silent gap in the check below.
+NARRATIVE_ANCESTRY_KEYS = {"ancestry.method_divergence"}
+
+
+def test_every_ancestry_number_names_its_release_and_inputs(numbers):
+    keys = [k for k in numbers if k.startswith("ancestry.")]
+    assert keys, "no ancestry keys were emitted"
+    for key in keys:
+        record = numbers[key]
+        assert record["method"], key
+        if key in NARRATIVE_ANCESTRY_KEYS:
+            assert not record["inputs"], f"{key} is narrative and should cite no file"
+            continue
+        assert record["inputs"], f"{key} carries no provenance"
+        for source in record["inputs"]:
+            assert len(source["sha256"]) == 64, key
+
+
+def test_the_release_recorded_is_a_dated_path_not_the_latest_alias(numbers, freeze):
+    """`latest` is re-pointed monthly, so it can never be an origin (D30)."""
+    for entry in freeze.ancestry_full_downloads():
+        assert "/releases/latest/" not in entry["origin_url"], entry["name"]
+        assert freeze.ancestry_release() in {"2026-11-02"} or entry["origin_url"]
+    for record in numbers.values():
+        for source in record["inputs"]:
+            assert "releases/latest" not in source["source"]
+
+
+def test_selection_uses_ontology_ids_and_no_trait_name(freeze):
+    """Selection is by ID; a trait name must never be a selector."""
+    block = freeze.ancestry_inputs()
+    if block is None:
+        pytest.skip("ancestry_inputs is not pinned in this freeze")
+    assert block["asthma_term_ids"], "no term IDs recorded in the freeze"
+    for term_id in block["asthma_term_ids"]:
+        assert term_id.split("_")[0] in {"EFO", "MONDO"}, term_id
+    assert "free text" in block["selection_rule"]
+
+
+def test_the_obsolete_and_live_asthma_seeds_are_both_present(freeze):
+    """EFO_0000270 is obsolete; MONDO_0004979 is live. Both must be selectors."""
+    block = freeze.ancestry_inputs()
+    if block is None:
+        pytest.skip("ancestry_inputs is not pinned in this freeze")
+    assert "EFO_0000270" in block["asthma_term_ids"]
+    assert "MONDO_0004979" in block["asthma_term_ids"]
+
+
+def test_the_category_splitter_keeps_the_comma_bearing_label_whole():
+    """One vocabulary label carries commas, so a comma split would corrupt it."""
+    label = "Greater Middle Eastern (Middle Eastern, North African or Persian)"
+    assert ancestry.split_broad(label) == [label]
+    assert ancestry.split_broad(f"European, {label}") == ["European", label]
+    assert ancestry.split_broad("European, East Asian") == ["European", "East Asian"]
+
+
+def test_an_unknown_category_fails_rather_than_vanishing():
+    """An unrecognised category would otherwise drop out of the denominator."""
+    with pytest.raises(ancestry.AncestryError):
+        ancestry.split_broad("European, Martian")
+
+
+def test_loci_counts_never_exceed_the_locus_total(anc):
+    """A per-category count is a subset of the locus's associations."""
+    for locus in anc["loci"]["loci"]:
+        for category, count in locus["by_category"].items():
+            assert count <= locus["associations"], (locus["id"], category)
+
+
+def test_every_in_scope_locus_appears_in_t11(report_dir, anc):
+    rows = _read_table(report_dir, "T11_loci_by_ancestry")
+    labels = {row["Locus"] for row in rows}
+    assert labels == {locus["label"] for locus in anc["loci"]["loci"]}
+    assert len(rows) == 5
+
+
+def test_t12_keeps_hispanic_origin_out_of_the_race_stack(report_dir):
+    """Hispanic origin cross-cuts race; stacking it would double-count residents."""
+    rows = _read_table(report_dir, "T12_loudoun_acs_context")
+    stacked = [r for r in rows if r["In race stack"] == "yes"]
+    crossing = [r for r in rows if r["In race stack"] == "no"]
+    assert len(crossing) == 1
+    assert "Hispanic or Latino" in crossing[0]["Category"]
+    assert abs(sum(float(r["Share"]) for r in stacked) - 100.0) <= 0.005 * len(stacked)
+
+
+def test_the_required_acs_sentence_is_on_f06_verbatim(report_dir):
+    manifest = json.loads((report_dir / "figures.json").read_text(encoding="utf-8"))
+    f06 = [e for e in manifest["figures"] if e["id"] == "F06_ancestry_composition"]
+    if not f06:
+        pytest.skip("ancestry inputs are not pinned in this freeze")
+    required = (
+        "ACS categories are self-identified race and ethnicity, which are social "
+        "categories and not genetic ancestry. They are shown only to describe the "
+        "population the atlas is meant to serve."
+    )
+    assert required in f06[0]["caption"]
+
+
+def test_the_method_divergence_from_the_live_page_is_recorded(numbers, report_dir):
+    """The report and /ancestry-equity read different sources; the report says so."""
+    assert "ancestry.method_divergence" in numbers
+    value = numbers["ancestry.method_divergence"]["value"]
+    assert "Diversity Monitor" in value and "AUDIT.md" in value
+    rows = _read_table(report_dir, "T10_gwas_ancestry_composition")
+    assert rows
+
+
+def test_no_ancestry_output_states_an_effect_estimate(report_dir):
+    """CONTEXT.md X7: no cross-ancestry effect estimate appears in v1."""
+    banned = ("odds ratio", "hazard ratio", "effect size", "beta =", "AUC")
+    for name in (
+        "T10_gwas_ancestry_composition.csv",
+        "T11_loci_by_ancestry.csv",
+        "T12_loudoun_acs_context.csv",
+    ):
+        path = report_dir / name
+        if not path.is_file():
+            pytest.skip("ancestry tables are not emitted in this freeze")
+        text = path.read_text(encoding="utf-8").lower()
+        for phrase in banned:
+            assert phrase.lower() not in text, f"{name} states {phrase!r}"
+
+
+def test_the_extract_is_reproducible_from_the_full_download(freeze):
+    """Re-cutting the extract twice must give the pinned bytes both times.
+
+    Skipped when the full downloads are absent, which is the normal state of a
+    clean clone: D30 keeps them out of git. The pinned SHA-256 of each full file
+    is what a reader re-downloads against.
+    """
+    block = freeze.ancestry_inputs()
+    if block is None:
+        pytest.skip("ancestry_inputs is not pinned in this freeze")
+    gwas_dir = freeze_lib.REPO_ROOT / "pipeline" / "sources" / "gwas-catalog"
+    missing = [
+        entry["name"]
+        for entry in freeze.ancestry_full_downloads()
+        if not (gwas_dir / entry["name"]).is_file()
+    ]
+    if missing:
+        pytest.skip(f"full downloads absent (D30): {missing}")
+
+    import subprocess
+
+    pinned = {
+        entry["path"]: entry["sha256"]
+        for entry in block["files"]
+        if entry["role"].startswith("gwas_") and entry["role"].endswith("extract")
+    }
+    assert pinned, "no extracts pinned"
+    for run in (1, 2):
+        result = subprocess.run(
+            [sys.executable, "scripts/fetch_gwas_catalog.py", "--extract-only"],
+            cwd=freeze_lib.REPO_ROOT,
+            capture_output=True,
+            text=True,
+        )
+        assert result.returncode == 0, f"run {run} failed: {result.stderr}"
+        for rel, expected in pinned.items():
+            actual = sha256_of(freeze_lib.REPO_ROOT / rel)
+            assert actual == expected, f"run {run} changed {rel}"

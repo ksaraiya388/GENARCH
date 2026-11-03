@@ -487,6 +487,154 @@ def f05_correlation_heatmap(out_dir: Path, codes: list[str], matrix: dict) -> li
     return save(fig, out_dir, "F05_correlation_heatmap")
 
 
+# --------------------------------------------------------------------- F06
+
+# Hatches as well as fills, so a segment's identity never rests on colour. The
+# sequence repeats only after eight segments.
+_STACK_HATCHES = ("", "///", "...", "\\\\\\", "xxx", "|||", "---", "+++")
+
+# A segment narrower than this takes no inline label. Set from the widest label
+# a segment has to hold ("88.6%") against the panel width: below about a seventh
+# of the axis the text runs past its own segment and sits on its neighbour's
+# hatching. The legend carries every value, so dropping the inline label loses
+# nothing.
+_INLINE_LABEL_MIN_SHARE = 0.15
+
+
+def _share_label(share: float) -> str:
+    """A share as text, without rounding a real category away to nothing.
+
+    `0.0%` on a category that genuinely enrolled people reads as "none", which is
+    a different claim from "few". Anything under 0.05 percent is shown as an
+    upper bound instead.
+    """
+    percent = share * 100
+    if 0 < percent < 0.05:
+        return "<0.1%"
+    return f"{percent:.1f}%"
+
+
+def _stacked_share_panel(ax, segments: list[dict], title: str, subtitle: str) -> None:
+    """One horizontal 100 percent bar. `segments` is [{label, share}] in order.
+
+    Fills come from the sequential ramp and each segment takes an ink outline and
+    a hatch, the same treatment the F05 heatmap cells get: a fill a reader does
+    not read a value off is not a data mark, so it is not held to the 3:1 floor,
+    but its boundary has to be legible and its identity has to survive
+    greyscale.
+    """
+    left = 0.0
+    n = max(len(segments) - 1, 1)
+    for index, segment in enumerate(segments):
+        share = segment["share"]
+        # Darkest first, so the largest segment reads as the heaviest.
+        fill = palette.sequential(1.0 - index / n)
+        ax.barh(
+            0,
+            share,
+            left=left,
+            height=0.52,
+            facecolor=fill,
+            edgecolor=palette.ink(),
+            linewidth=0.6,
+            hatch=_STACK_HATCHES[index % len(_STACK_HATCHES)],
+            zorder=2,
+        )
+        if share >= _INLINE_LABEL_MIN_SHARE:
+            ax.text(
+                left + share / 2,
+                0,
+                _share_label(share),
+                ha="center",
+                va="center",
+                fontsize=8.2,
+                color=palette.readable_on(fill),
+                zorder=3,
+            )
+        left += share
+
+    ax.set_xlim(0, 1)
+    ax.set_ylim(-0.5, 0.5)
+    ax.set_yticks([])
+    ax.set_xticks([0, 0.2, 0.4, 0.6, 0.8, 1.0])
+    ax.set_xticklabels(["0%", "20%", "40%", "60%", "80%", "100%"])
+    for side in ("left", "right", "top"):
+        ax.spines[side].set_visible(False)
+    ax.set_title(title, fontsize=10, loc="left", pad=10)
+    ax.annotate(
+        subtitle,
+        xy=(0, 1),
+        xycoords="axes fraction",
+        xytext=(0, 2),
+        textcoords="offset points",
+        fontsize=7.6,
+        color=palette.ink(),
+        va="bottom",
+    )
+    handles = [
+        plt.Rectangle(
+            (0, 0),
+            1,
+            1,
+            facecolor=palette.sequential(1.0 - i / n),
+            edgecolor=palette.ink(),
+            linewidth=0.6,
+            hatch=_STACK_HATCHES[i % len(_STACK_HATCHES)],
+        )
+        for i in range(len(segments))
+    ]
+    labels = [f"{s['label']}  {_share_label(s['share'])}" for s in segments]
+    ax.legend(
+        handles,
+        labels,
+        loc="upper left",
+        bbox_to_anchor=(0, -0.45),
+        ncol=2,
+        fontsize=7.2,
+        frameon=True,
+        framealpha=1,
+        edgecolor=palette.grid(),
+        handlelength=1.6,
+        handleheight=1.1,
+        borderpad=0.6,
+        labelspacing=0.5,
+        columnspacing=1.4,
+    )
+
+
+def f06_ancestry_composition(
+    out_dir: Path,
+    discovery: list[dict],
+    discovery_subtitle: str,
+    acs: list[dict],
+    acs_subtitle: str,
+) -> list[Path]:
+    """Two separate panels: GWAS discovery ancestry share, and the ACS composition.
+
+    The panels have their own axes and are never merged. One counts people
+    enrolled in studies and groups them by the catalog's genetic-ancestry
+    assignment; the other counts county residents and groups them by
+    self-identified race. They are different measurements of different
+    populations, and a shared axis would invite reading one against the other.
+    """
+    fig, (top, bottom) = plt.subplots(
+        2, 1, figsize=(8.6, 7.4), gridspec_kw={"hspace": 2.1}
+    )
+    _stacked_share_panel(
+        top,
+        discovery,
+        "Asthma GWAS discovery samples, by broad ancestral category",
+        discovery_subtitle,
+    )
+    _stacked_share_panel(
+        bottom,
+        acs,
+        "Loudoun County residents, by self-identified race",
+        acs_subtitle,
+    )
+    return save(fig, out_dir, "F06_ancestry_composition")
+
+
 # --------------------------------------------------------------- manifest
 
 

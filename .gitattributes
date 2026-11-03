@@ -18,9 +18,14 @@ pipeline/sources/** -text
 # The exceptions: pinned files that really are LF and get read as text in
 # review. Their recorded hashes describe the LF bytes, so `eol=lf` keeps the
 # hashes valid on every platform and keeps the diffs readable.
+#
+# The lookup rule covers the whole directory, not just site_codes.json: the three
+# ancestry lookups added 2026-11-03 are hash-pinned under FREEZE.json
+# ancestry_inputs the same way, and an unlisted lookup would be checked out CRLF
+# on Windows (core.autocrlf is true here) and fail its own hash on a fresh clone.
 pipeline/sources/manifest.json text eol=lf
 pipeline/sources/loudoun_tract_foodaccess_diabetes.README.md text eol=lf
-pipeline/lookups/site_codes.json text eol=lf
+pipeline/lookups/*.json text eol=lf
 
 # Generated data, written by Python with newline="\n" throughout (CONTEXT §1).
 # Pinning LF keeps a Windows checkout byte-identical to a fresh pipeline run,

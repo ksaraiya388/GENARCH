@@ -1543,6 +1543,151 @@
       "data_last_timestamp_local": "2026-10-29 23:00",
       "rows_as_exported": 1020,
       "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+    },
+    {
+      "file": "gwas-catalog/gwas-catalog-associations_ontology-annotated-full.zip",
+      "purpose": "Source of the asthma association extract: all GWAS Catalog associations with their ontology annotations, which is the only download carrying MAPPED_TRAIT_URI.",
+      "origin_urls": [
+        "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip"
+      ],
+      "retrieval_method": "HTTPS download from the dated release directory by scripts/fetch_gwas_catalog.py. The releases/latest alias is re-pointed every month and is never recorded as an origin.",
+      "download_date": "2026-11-03",
+      "release_date": "2026-11-02",
+      "license": "No licence is stated for the data files on https://www.ebi.ac.uk/gwas/docs/file-downloads (checked 2026-11-03). That page links to GWAS Catalog citation guidance and to EMBL-EBI's terms of use; its footer licence statement, 'Documentation available under CC BY 4.0', covers the documentation and not the downloads. EMBL-EBI's terms of use state that EMBL-EBI 'places no additional restrictions on the use or redistribution of the data' beyond those set by the original data owners, so reuse is governed by the owners' own terms. No specific licence name is asserted here because neither page names one. Cite the GWAS Catalog per its citation page.",
+      "format": "ZIP of TSV",
+      "columns": "Zipped TSV, one member. Columns used: STUDY ACCESSION, MAPPED_TRAIT, MAPPED_TRAIT_URI, MAPPED_GENE, SNPS, P-VALUE. The full column list is recorded per extract in pipeline/sources/gwas-catalog/extract_manifest.json.",
+      "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+      "size_bytes": 72739430,
+      "stored_in_git": false,
+      "status": "NOT COMMITTED, per DECISIONS.md D30. Pinned by SHA-256 and dated origin URL here and in data/reports/2026/FREEZE.json; gitignored by name under pipeline/sources/gwas-catalog/.",
+      "description": "Too large to commit: this file and its sibling are about 120 MB together and the zip cannot be packed by git. The committed asthma extract beside it was cut from these exact bytes, which the SHA-256 attests. Re-download from origin_urls and re-run scripts/fetch_gwas_catalog.py to reproduce the extract byte-for-byte.",
+      "limitations": "A GWAS Catalog release is a snapshot of curation at one date; study and ancestry records are revised between releases, so a share computed here is a share as of this release and not a standing fact."
+    },
+    {
+      "file": "gwas-catalog/gwas-catalog-download-ancestries-v1.0.3.1.tsv",
+      "purpose": "Source of the asthma ancestry extract: one row per study, stage and ancestry group, carrying the discovery-sample size and ancestry category.",
+      "origin_urls": [
+        "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv"
+      ],
+      "retrieval_method": "HTTPS download from the dated release directory by scripts/fetch_gwas_catalog.py. The releases/latest alias is re-pointed every month and is never recorded as an origin.",
+      "download_date": "2026-11-03",
+      "release_date": "2026-11-02",
+      "license": "No licence is stated for the data files on https://www.ebi.ac.uk/gwas/docs/file-downloads (checked 2026-11-03). That page links to GWAS Catalog citation guidance and to EMBL-EBI's terms of use; its footer licence statement, 'Documentation available under CC BY 4.0', covers the documentation and not the downloads. EMBL-EBI's terms of use state that EMBL-EBI 'places no additional restrictions on the use or redistribution of the data' beyond those set by the original data owners, so reuse is governed by the owners' own terms. No specific licence name is asserted here because neither page names one. Cite the GWAS Catalog per its citation page.",
+      "format": "TSV",
+      "columns": "TSV. Columns used: STUDY ACCESSION, STAGE, NUMBER OF INDIVIDUALS, BROAD ANCESTRAL CATEGORY. The v1.0.3.1 variant adds fields matching the unpublished downloads.",
+      "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+      "size_bytes": 53769063,
+      "stored_in_git": false,
+      "status": "NOT COMMITTED, per DECISIONS.md D30. Pinned by SHA-256 and dated origin URL here and in data/reports/2026/FREEZE.json; gitignored by name under pipeline/sources/gwas-catalog/.",
+      "description": "Too large to commit: this file and its sibling are about 120 MB together and the zip cannot be packed by git. The committed asthma extract beside it was cut from these exact bytes, which the SHA-256 attests. Re-download from origin_urls and re-run scripts/fetch_gwas_catalog.py to reproduce the extract byte-for-byte.",
+      "limitations": "A GWAS Catalog release is a snapshot of curation at one date; study and ancestry records are revised between releases, so a share computed here is a share as of this release and not a standing fact."
+    },
+    {
+      "file": "gwas-catalog/asthma_associations_2026-11-02.tsv",
+      "purpose": "Asthma associations: every row of the associations file whose MAPPED_TRAIT_URI names an asthma ontology ID. Read by pipeline/report_lib/ancestry.py for T11 (associations at the in-scope loci by discovery-sample ancestry).",
+      "origin_urls": [
+        "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip"
+      ],
+      "retrieval_method": "Deterministic extract cut from gwas-catalog-associations_ontology-annotated-full.zip by scripts/fetch_gwas_catalog.py. Selection is by ontology ID against pipeline/lookups/asthma_trait_terms.json; no trait name is matched as free text and no row is listed by hand.",
+      "download_date": "2026-11-03",
+      "release_date": "2026-11-02",
+      "license": "No licence is stated for the data files on https://www.ebi.ac.uk/gwas/docs/file-downloads (checked 2026-11-03). That page links to GWAS Catalog citation guidance and to EMBL-EBI's terms of use; its footer licence statement, 'Documentation available under CC BY 4.0', covers the documentation and not the downloads. EMBL-EBI's terms of use state that EMBL-EBI 'places no additional restrictions on the use or redistribution of the data' beyond those set by the original data owners, so reuse is governed by the owners' own terms. No specific licence name is asserted here because neither page names one. Cite the GWAS Catalog per its citation page.",
+      "format": "TSV",
+      "columns": "DATE ADDED TO CATALOG, PUBMEDID, FIRST AUTHOR, DATE, JOURNAL, LINK, STUDY, DISEASE/TRAIT, INITIAL SAMPLE SIZE, REPLICATION SAMPLE SIZE, REGION, CHR_ID, CHR_POS, REPORTED GENE(S), MAPPED_GENE, UPSTREAM_GENE_ID, DOWNSTREAM_GENE_ID, SNP_GENE_IDS, UPSTREAM_GENE_DISTANCE, DOWNSTREAM_GENE_DISTANCE, STRONGEST SNP-RISK ALLELE, SNPS, MERGED, SNP_ID_CURRENT, CONTEXT, INTERGENIC, RISK ALLELE FREQUENCY, P-VALUE, PVALUE_MLOG, P-VALUE (TEXT), OR or BETA, 95% CI (TEXT), PLATFORM [SNPS PASSING QC], CNV, MAPPED_TRAIT, MAPPED_TRAIT_URI, STUDY ACCESSION, GENOTYPING TECHNOLOGY",
+      "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+      "size_bytes": 2747084,
+      "cut_from": "gwas-catalog/gwas-catalog-associations_ontology-annotated-full.zip",
+      "cut_from_sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+      "generated_by": "scripts/fetch_gwas_catalog.py",
+      "stored_in_git": true,
+      "status": "SHIPPED. Committed; the full download it was cut from is not.",
+      "description": "An association row is selected when the last path segment of any IRI in its MAPPED_TRAIT_URI cell equals one of the asthma ontology IDs in the term lookup. The ancestry extract is every row of the ancestries file whose STUDY ACCESSION appears in the association extract. No trait name is matched as free text and no row is listed by hand. Source row order and column content are preserved; output is UTF-8 without a BOM, LF endings, no quoting. Re-running on the same full download reproduces each extract byte-for-byte.",
+      "limitations": "Scope is asthma as the ontology defines it: the 23 IDs in the term lookup are the asthma subtree of MONDO and EFO plus the retired EFO_0000270. A study the catalog maps to a trait outside that subtree is not in this extract, however asthma-related its title."
+    },
+    {
+      "file": "gwas-catalog/asthma_ancestries_2026-11-02.tsv",
+      "purpose": "Asthma ancestry rows: every row of the ancestries file whose STUDY ACCESSION appears in the association extract. Read by pipeline/report_lib/ancestry.py for T10 and F06 (discovery-sample composition by broad ancestral category).",
+      "origin_urls": [
+        "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv"
+      ],
+      "retrieval_method": "Deterministic extract cut from gwas-catalog-download-ancestries-v1.0.3.1.tsv by scripts/fetch_gwas_catalog.py. Selection is by ontology ID against pipeline/lookups/asthma_trait_terms.json; no trait name is matched as free text and no row is listed by hand.",
+      "download_date": "2026-11-03",
+      "release_date": "2026-11-02",
+      "license": "No licence is stated for the data files on https://www.ebi.ac.uk/gwas/docs/file-downloads (checked 2026-11-03). That page links to GWAS Catalog citation guidance and to EMBL-EBI's terms of use; its footer licence statement, 'Documentation available under CC BY 4.0', covers the documentation and not the downloads. EMBL-EBI's terms of use state that EMBL-EBI 'places no additional restrictions on the use or redistribution of the data' beyond those set by the original data owners, so reuse is governed by the owners' own terms. No specific licence name is asserted here because neither page names one. Cite the GWAS Catalog per its citation page.",
+      "format": "TSV",
+      "columns": "STUDY ACCESSION, PUBMED ID, FIRST AUTHOR, DATE, INITIAL SAMPLE DESCRIPTION, REPLICATION SAMPLE DESCRIPTION, STAGE, NUMBER OF INDIVIDUALS, BROAD ANCESTRAL CATEGORY, COUNTRY OF ORIGIN, COUNTRY OF RECRUITMENT, ADDITIONAL ANCESTRY DESCRIPTION, ANCESTRY DESCRIPTOR, FOUNDER/GENETICALLY ISOLATED POPULATION, NUMBER OF CASES, NUMBER OF CONTROLS, SAMPLE DESCRIPTION",
+      "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+      "size_bytes": 113706,
+      "cut_from": "gwas-catalog/gwas-catalog-download-ancestries-v1.0.3.1.tsv",
+      "cut_from_sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+      "generated_by": "scripts/fetch_gwas_catalog.py",
+      "stored_in_git": true,
+      "status": "SHIPPED. Committed; the full download it was cut from is not.",
+      "description": "An association row is selected when the last path segment of any IRI in its MAPPED_TRAIT_URI cell equals one of the asthma ontology IDs in the term lookup. The ancestry extract is every row of the ancestries file whose STUDY ACCESSION appears in the association extract. No trait name is matched as free text and no row is listed by hand. Source row order and column content are preserved; output is UTF-8 without a BOM, LF endings, no quoting. Re-running on the same full download reproduces each extract byte-for-byte.",
+      "limitations": "Scope is asthma as the ontology defines it: the 23 IDs in the term lookup are the asthma subtree of MONDO and EFO plus the retired EFO_0000270. A study the catalog maps to a trait outside that subtree is not in this extract, however asthma-related its title."
+    },
+    {
+      "file": "cross_ancestry/acs_loudoun_2024_b02001.json",
+      "purpose": "Loudoun County population composition from ACS table B02001, read by pipeline/report_lib/ancestry.py for T12 and the F06 ACS panel.",
+      "origin_urls": [
+        "https://api.census.gov/data/2024/acs/acs5?get=group(B02001)&for=county:107&in=state:51",
+        "https://api.census.gov/data/2024/acs/acs5/groups/B02001.json"
+      ],
+      "retrieval_method": "api.census.gov group() request by scripts/fetch_acs_loudoun_release.py. The whole table is requested, so no variable is named or numbered in advance; label text comes from the release's own per-group metadata endpoint. The API key is read from outside the repository and is stripped from every recorded URL.",
+      "download_date": "2026-11-03",
+      "release_date": "2024",
+      "license": "US Census Bureau data are US Government works and are not subject to domestic copyright protection under 17 U.S.C. 105. The Bureau's terms of service ask that the Census Bureau be cited as the source and that the Bureau not be shown as endorsing any product. The API key used to retrieve these files is read from outside the repository and appears in no committed file.",
+      "format": "JSON",
+      "columns": "42 labelled cells; each carries label, value and a published flag. The API response is preserved verbatim under raw_response.",
+      "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+      "size_bytes": 9514,
+      "generated_by": "scripts/fetch_acs_loudoun_release.py",
+      "stored_in_git": true,
+      "status": "SHIPPED. Read by the report only. The live page /ancestry-equity reads the earlier acs_loudoun_2023.json and is unchanged; the release divergence is an open item in docs/report-2026/AUDIT.md.",
+      "description": "The API returns a large negative sentinel in place of a statistic it does not publish for a cell. Values are preserved verbatim and 'published' says whether the cell carries a real statistic. A false value must not be rendered as a number. Race and Hispanic origin in these tables are self-identified social categories. They are not genetic ancestry and must never be presented as a genetic-ancestry composition.",
+      "limitations": "Race and Hispanic origin here are self-identified social categories, not genetic ancestry, and must never be presented as a genetic-ancestry composition. Hispanic or Latino origin cross-cuts every race category, so it is never a segment of a race stack. Margins of error are published per cell and a cell whose margin is absent carries a sentinel, not a number."
+    },
+    {
+      "file": "cross_ancestry/acs_loudoun_2024_b02015.json",
+      "purpose": "Loudoun County population composition from ACS table B02015, read by pipeline/report_lib/ancestry.py for T12 and the F06 ACS panel.",
+      "origin_urls": [
+        "https://api.census.gov/data/2024/acs/acs5?get=group(B02015)&for=county:107&in=state:51",
+        "https://api.census.gov/data/2024/acs/acs5/groups/B02015.json"
+      ],
+      "retrieval_method": "api.census.gov group() request by scripts/fetch_acs_loudoun_release.py. The whole table is requested, so no variable is named or numbered in advance; label text comes from the release's own per-group metadata endpoint. The API key is read from outside the repository and is stripped from every recorded URL.",
+      "download_date": "2026-11-03",
+      "release_date": "2024",
+      "license": "US Census Bureau data are US Government works and are not subject to domestic copyright protection under 17 U.S.C. 105. The Bureau's terms of service ask that the Census Bureau be cited as the source and that the Bureau not be shown as endorsing any product. The API key used to retrieve these files is read from outside the repository and appears in no committed file.",
+      "format": "JSON",
+      "columns": "142 labelled cells; each carries label, value and a published flag. The API response is preserved verbatim under raw_response.",
+      "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+      "size_bytes": 27181,
+      "generated_by": "scripts/fetch_acs_loudoun_release.py",
+      "stored_in_git": true,
+      "status": "SHIPPED. Read by the report only. The live page /ancestry-equity reads the earlier acs_loudoun_2023.json and is unchanged; the release divergence is an open item in docs/report-2026/AUDIT.md.",
+      "description": "The API returns a large negative sentinel in place of a statistic it does not publish for a cell. Values are preserved verbatim and 'published' says whether the cell carries a real statistic. A false value must not be rendered as a number. Race and Hispanic origin in these tables are self-identified social categories. They are not genetic ancestry and must never be presented as a genetic-ancestry composition.",
+      "limitations": "Race and Hispanic origin here are self-identified social categories, not genetic ancestry, and must never be presented as a genetic-ancestry composition. Hispanic or Latino origin cross-cuts every race category, so it is never a segment of a race stack. Margins of error are published per cell and a cell whose margin is absent carries a sentinel, not a number."
+    },
+    {
+      "file": "cross_ancestry/acs_loudoun_2024_dp05.json",
+      "purpose": "Loudoun County population composition from ACS table DP05, read by pipeline/report_lib/ancestry.py for T12 and the F06 ACS panel.",
+      "origin_urls": [
+        "https://api.census.gov/data/2024/acs/acs5/profile?get=group(DP05)&for=county:107&in=state:51",
+        "https://api.census.gov/data/2024/acs/acs5/profile/groups/DP05.json"
+      ],
+      "retrieval_method": "api.census.gov group() request by scripts/fetch_acs_loudoun_release.py. The whole table is requested, so no variable is named or numbered in advance; label text comes from the release's own per-group metadata endpoint. The API key is read from outside the repository and is stripped from every recorded URL.",
+      "download_date": "2026-11-03",
+      "release_date": "2024",
+      "license": "US Census Bureau data are US Government works and are not subject to domestic copyright protection under 17 U.S.C. 105. The Bureau's terms of service ask that the Census Bureau be cited as the source and that the Bureau not be shown as endorsing any product. The API key used to retrieve these files is read from outside the repository and appears in no committed file.",
+      "format": "JSON",
+      "columns": "866 labelled cells; each carries label, value and a published flag. The API response is preserved verbatim under raw_response.",
+      "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+      "size_bytes": 189224,
+      "generated_by": "scripts/fetch_acs_loudoun_release.py",
+      "stored_in_git": true,
+      "status": "SHIPPED. Read by the report only. The live page /ancestry-equity reads the earlier acs_loudoun_2023.json and is unchanged; the release divergence is an open item in docs/report-2026/AUDIT.md.",
+      "description": "The API returns a large negative sentinel in place of a statistic it does not publish for a cell. Values are preserved verbatim and 'published' says whether the cell carries a real statistic. A false value must not be rendered as a number. Race and Hispanic origin in these tables are self-identified social categories. They are not genetic ancestry and must never be presented as a genetic-ancestry composition.",
+      "limitations": "Race and Hispanic origin here are self-identified social categories, not genetic ancestry, and must never be presented as a genetic-ancestry composition. Hispanic or Latino origin cross-cuts every race category, so it is never a segment of a race stack. Margins of error are published per cell and a cell whose margin is absent carries a sentinel, not a number."
     }
   ]
 }

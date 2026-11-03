@@ -1,0 +1,310 @@
+{
+  "description": "Ontology IDs that count as asthma for the report's GWAS Catalog ancestry-composition module. Selection against the catalog is by these IDs only: a MAPPED_TRAIT_URI matches when it ends in one of the `id` values below. No trait name is ever matched as free text.",
+  "obsolete_seed_note": "EFO_0000270 is obsolete in current EFO, returned by OLS as 'obsolete_asthma' with no children. It is retained as a seed so a catalog row still carrying the retired identifier is matched rather than dropped. Live asthma is MONDO_0004979.",
+  "ontology_versions": [
+    {
+      "loaded": "2026-11-03T00:08:55.473236007",
+      "ontology": "efo",
+      "version": "3.95.0",
+      "version_iri": "http://www.ebi.ac.uk/efo/releases/v3.95.0/efo.owl"
+    },
+    {
+      "loaded": "2026-11-03T00:08:17.352102251",
+      "ontology": "mondo",
+      "version": "2026-10-06",
+      "version_iri": "http://purl.obolibrary.org/obo/mondo/releases/2026-10-06/mondo-international.owl"
+    }
+  ],
+  "queries": [
+    {
+      "descendants_returned": 0,
+      "endpoint": "https://www.ebi.ac.uk/ols4/api/ontologies/efo/terms/<double-encoded IRI>/hierarchicalDescendants",
+      "ontology": "efo",
+      "seed": "EFO:0000270",
+      "seed_is_obsolete": true,
+      "seed_label_in_this_ontology": "obsolete_asthma"
+    },
+    {
+      "descendants_returned": 9,
+      "endpoint": "https://www.ebi.ac.uk/ols4/api/ontologies/efo/terms/<double-encoded IRI>/hierarchicalDescendants",
+      "ontology": "efo",
+      "seed": "MONDO:0004979",
+      "seed_is_obsolete": false,
+      "seed_label_in_this_ontology": "asthma"
+    },
+    {
+      "descendants_returned": 18,
+      "endpoint": "https://www.ebi.ac.uk/ols4/api/ontologies/mondo/terms/<double-encoded IRI>/hierarchicalDescendants",
+      "ontology": "mondo",
+      "seed": "MONDO:0004979",
+      "seed_is_obsolete": false,
+      "seed_label_in_this_ontology": "asthma"
+    }
+  ],
+  "resolved_at": "2026-11-03",
+  "resolver": "scripts/build_asthma_trait_terms.py",
+  "selection_rule": "Union of the hierarchical descendants of MONDO_0004979 in mondo and in efo, plus both seed terms themselves, plus EFO_0000270. The union is used because the two ontologies disagree: MONDO's subtree is larger and EFO carries asthma subtypes MONDO does not. Subtype breadth is the ontology's; nothing is hand-filtered out of the subtree.",
+  "term_count": 23,
+  "terms": [
+    {
+      "id": "EFO_0000270",
+      "iri": "http://www.ebi.ac.uk/efo/EFO_0000270",
+      "is_obsolete": true,
+      "label": "obsolete_asthma",
+      "obo_id": "EFO:0000270",
+      "relation": "seed",
+      "seen_in": [
+        "efo"
+      ]
+    },
+    {
+      "id": "EFO_0009759",
+      "iri": "http://www.ebi.ac.uk/efo/EFO_0009759",
+      "is_obsolete": false,
+      "label": "Chronic Obstructive Asthma",
+      "obo_id": "EFO:0009759",
+      "relation": "descendant",
+      "seen_in": [
+        "efo"
+      ]
+    },
+    {
+      "id": "EFO_0010638",
+      "iri": "http://www.ebi.ac.uk/efo/EFO_0010638",
+      "is_obsolete": false,
+      "label": "atopic asthma",
+      "obo_id": "EFO:0010638",
+      "relation": "descendant",
+      "seen_in": [
+        "efo"
+      ]
+    },
+    {
+      "id": "EFO_1002011",
+      "iri": "http://www.ebi.ac.uk/efo/EFO_1002011",
+      "is_obsolete": false,
+      "label": "adult onset asthma",
+      "obo_id": "EFO:1002011",
+      "relation": "descendant",
+      "seen_in": [
+        "efo"
+      ]
+    },
+    {
+      "id": "MONDO_0001491",
+      "iri": "http://purl.obolibrary.org/obo/MONDO_0001491",
+      "is_obsolete": false,
+      "label": "cough variant asthma",
+      "obo_id": "MONDO:0001491",
+      "relation": "descendant",
+      "seen_in": [
+        "mondo"
+      ]
+    },
+    {
+      "id": "MONDO_0004765",
+      "iri": "http://purl.obolibrary.org/obo/MONDO_0004765",
+      "is_obsolete": false,
+      "label": "intrinsic asthma",
+      "obo_id": "MONDO:0004765",
+      "relation": "descendant",
+      "seen_in": [
+        "mondo"
+      ]
+    },
+    {
+      "id": "MONDO_0004766",
+      "iri": "http://purl.obolibrary.org/obo/MONDO_0004766",
+      "is_obsolete": false,
+      "label": "status asthmaticus",
+      "obo_id": "MONDO:0004766",
+      "relation": "descendant",
+      "seen_in": [
+        "efo",
+        "mondo"
+      ]
+    },
+    {
+      "id": "MONDO_0004784",
+      "iri": "http://purl.obolibrary.org/obo/MONDO_0004784",
+      "is_obsolete": false,
+      "label": "allergic asthma",
+      "obo_id": "MONDO:0004784",
+      "relation": "descendant",
+      "seen_in": [
+        "efo",
+        "mondo"
+      ]
+    },
+    {
+      "id": "MONDO_0004979",
+      "iri": "http://purl.obolibrary.org/obo/MONDO_0004979",
+      "is_obsolete": false,
+      "label": "asthma",
+      "obo_id": "MONDO:0004979",
+      "relation": "seed",
+      "seen_in": [
+        "efo",
+        "mondo"
+      ]
+    },
+    {
+      "id": "MONDO_0005405",
+      "iri": "http://purl.obolibrary.org/obo/MONDO_0005405",
+      "is_obsolete": false,
+      "label": "childhood onset asthma",
+      "obo_id": "MONDO:0005405",
+      "relation": "descendant",
+      "seen_in": [
+        "efo",
+        "mondo"
+      ]
+    },
+    {
+      "id": "MONDO_0022742",
+      "iri": "http://purl.obolibrary.org/obo/MONDO_0022742",
+      "is_obsolete": false,
+      "label": "occupational asthma",
+      "obo_id": "MONDO:0022742",
+      "relation": "descendant",
+      "seen_in": [
+        "efo",
+        "mondo"
+      ]
+    },
+    {
+      "id": "MONDO_0025556",
+      "iri": "http://purl.obolibrary.org/obo/MONDO_0025556",
+      "is_obsolete": false,
+      "label": "isocyanate induced asthma",
+      "obo_id": "MONDO:0025556",
+      "relation": "descendant",
+      "seen_in": [
+        "mondo"
+      ]
+    },
+    {
+      "id": "MONDO_0850282",
+      "iri": "http://purl.obolibrary.org/obo/MONDO_0850282",
+      "is_obsolete": false,
+      "label": "chronic asthma",
+      "obo_id": "MONDO:0850282",
+      "relation": "descendant",
+      "seen_in": [
+        "efo",
+        "mondo"
+      ]
+    },
+    {
+      "id": "MONDO_0850283",
+      "iri": "http://purl.obolibrary.org/obo/MONDO_0850283",
+      "is_obsolete": false,
+      "label": "acute asthma",
+      "obo_id": "MONDO:0850283",
+      "relation": "descendant",
+      "seen_in": [
+        "mondo"
+      ]
+    },
+    {
+      "id": "MONDO_0850284",
+      "iri": "http://purl.obolibrary.org/obo/MONDO_0850284",
+      "is_obsolete": false,
+      "label": "extrinsic asthma",
+      "obo_id": "MONDO:0850284",
+      "relation": "descendant",
+      "seen_in": [
+        "mondo"
+      ]
+    },
+    {
+      "id": "MONDO_0850285",
+      "iri": "http://purl.obolibrary.org/obo/MONDO_0850285",
+      "is_obsolete": false,
+      "label": "environmental induced asthma",
+      "obo_id": "MONDO:0850285",
+      "relation": "descendant",
+      "seen_in": [
+        "mondo"
+      ]
+    },
+    {
+      "id": "MONDO_0850286",
+      "iri": "http://purl.obolibrary.org/obo/MONDO_0850286",
+      "is_obsolete": false,
+      "label": "exercise-induced bronchoconstriction",
+      "obo_id": "MONDO:0850286",
+      "relation": "descendant",
+      "seen_in": [
+        "mondo"
+      ]
+    },
+    {
+      "id": "MONDO_0850287",
+      "iri": "http://purl.obolibrary.org/obo/MONDO_0850287",
+      "is_obsolete": false,
+      "label": "aspirin-induced respiratory disease",
+      "obo_id": "MONDO:0850287",
+      "relation": "descendant",
+      "seen_in": [
+        "mondo"
+      ]
+    },
+    {
+      "id": "MONDO_0956971",
+      "iri": "http://purl.obolibrary.org/obo/MONDO_0956971",
+      "is_obsolete": false,
+      "label": "intermittent asthma",
+      "obo_id": "MONDO:0956971",
+      "relation": "descendant",
+      "seen_in": [
+        "mondo"
+      ]
+    },
+    {
+      "id": "MONDO_0956975",
+      "iri": "http://purl.obolibrary.org/obo/MONDO_0956975",
+      "is_obsolete": false,
+      "label": "T2-high asthma",
+      "obo_id": "MONDO:0956975",
+      "relation": "descendant",
+      "seen_in": [
+        "efo",
+        "mondo"
+      ]
+    },
+    {
+      "id": "MONDO_0956976",
+      "iri": "http://purl.obolibrary.org/obo/MONDO_0956976",
+      "is_obsolete": false,
+      "label": "T2-low asthma",
+      "obo_id": "MONDO:0956976",
+      "relation": "descendant",
+      "seen_in": [
+        "mondo"
+      ]
+    },
+    {
+      "id": "MONDO_0956977",
+      "iri": "http://purl.obolibrary.org/obo/MONDO_0956977",
+      "is_obsolete": false,
+      "label": "near-fatal asthma",
+      "obo_id": "MONDO:0956977",
+      "relation": "descendant",
+      "seen_in": [
+        "mondo"
+      ]
+    },
+    {
+      "id": "MONDO_0956979",
+      "iri": "http://purl.obolibrary.org/obo/MONDO_0956979",
+      "is_obsolete": false,
+      "label": "nocturnal asthma",
+      "obo_id": "MONDO:0956979",
+      "relation": "descendant",
+      "seen_in": [
+        "mondo"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1037 @@
+{
+  "cells": {
+    "B02015_001E": {
+      "label": "Estimate!!Total:",
+      "published": true,
+      "value": "94508"
+    },
+    "B02015_001EA": {
+      "label": "Annotation of Estimate!!Total:",
+      "published": false,
+      "value": null
+    },
+    "B02015_001M": {
+      "label": "Margin of Error!!Total:",
+      "published": true,
+      "value": "1466"
+    },
+    "B02015_001MA": {
+      "label": "Annotation of Margin of Error!!Total:",
+      "published": false,
+      "value": null
+    },
+    "B02015_002E": {
+      "label": "Estimate!!Total:!!East Asian:!!Chinese, except Taiwanese",
+      "published": true,
+      "value": "6229"
+    },
+    "B02015_002EA": {
+      "label": "Annotation of Estimate!!Total:!!East Asian:!!Chinese, except Taiwanese",
+      "published": false,
+      "value": null
+    },
+    "B02015_002M": {
+      "label": "Margin of Error!!Total:!!East Asian:!!Chinese, except Taiwanese",
+      "published": true,
+      "value": "682"
+    },
+    "B02015_002MA": {
+      "label": "Annotation of Margin of Error!!Total:!!East Asian:!!Chinese, except Taiwanese",
+      "published": false,
+      "value": null
+    },
+    "B02015_003E": {
+      "label": "Estimate!!Total:!!East Asian:!!Hmong",
+      "published": true,
+      "value": "0"
+    },
+    "B02015_003EA": {
+      "label": "Annotation of Estimate!!Total:!!East Asian:!!Hmong",
+      "published": false,
+      "value": null
+    },
+    "B02015_003M": {
+      "label": "Margin of Error!!Total:!!East Asian:!!Hmong",
+      "published": true,
+      "value": "31"
+    },
+    "B02015_003MA": {
+      "label": "Annotation of Margin of Error!!Total:!!East Asian:!!Hmong",
+      "published": false,
+      "value": null
+    },
+    "B02015_004E": {
+      "label": "Estimate!!Total:!!East Asian:!!Japanese",
+      "published": true,
+      "value": "889"
+    },
+    "B02015_004EA": {
+      "label": "Annotation of Estimate!!Total:!!East Asian:!!Japanese",
+      "published": false,
+      "value": null
+    },
+    "B02015_004M": {
+      "label": "Margin of Error!!Total:!!East Asian:!!Japanese",
+      "published": true,
+      "value": "220"
+    },
+    "B02015_004MA": {
+      "label": "Annotation of Margin of Error!!Total:!!East Asian:!!Japanese",
+      "published": false,
+      "value": null
+    },
+    "B02015_005E": {
+      "label": "Estimate!!Total:!!East Asian:!!Korean",
+      "published": true,
+      "value": "6147"
+    },
+    "B02015_005EA": {
+      "label": "Annotation of Estimate!!Total:!!East Asian:!!Korean",
+      "published": false,
+      "value": null
+    },
+    "B02015_005M": {
+      "label": "Margin of Error!!Total:!!East Asian:!!Korean",
+      "published": true,
+      "value": "924"
+    },
+    "B02015_005MA": {
+      "label": "Annotation of Margin of Error!!Total:!!East Asian:!!Korean",
+      "published": false,
+      "value": null
+    },
+    "B02015_006E": {
+      "label": "Estimate!!Total:!!East Asian:!!Mongolian",
+      "published": true,
+      "value": "304"
+    },
+    "B02015_006EA": {
+      "label": "Annotation of Estimate!!Total:!!East Asian:!!Mongolian",
+      "published": false,
+      "value": null
+    },
+    "B02015_006M": {
+      "label": "Margin of Error!!Total:!!East Asian:!!Mongolian",
+      "published": true,
+      "value": "235"
+    },
+    "B02015_006MA": {
+      "label": "Annotation of Margin of Error!!Total:!!East Asian:!!Mongolian",
+      "published": false,
+      "value": null
+    },
+    "B02015_007E": {
+      "label": "Estimate!!Total:!!East Asian:!!Okinawan",
+      "published": true,
+      "value": "25"
+    },
+    "B02015_007EA": {
+      "label": "Annotation of Estimate!!Total:!!East Asian:!!Okinawan",
+      "published": false,
+      "value": null
+    },
+    "B02015_007M": {
+      "label": "Margin of Error!!Total:!!East Asian:!!Okinawan",
+      "published": true,
+      "value": "38"
+    },
+    "B02015_007MA": {
+      "label": "Annotation of Margin of Error!!Total:!!East Asian:!!Okinawan",
+      "published": false,
+      "value": null
+    },
+    "B02015_008E": {
+      "label": "Estimate!!Total:!!East Asian:!!Taiwanese",
+      "published": true,
+      "value": "377"
+    },
+    "B02015_008EA": {
+      "label": "Annotation of Estimate!!Total:!!East Asian:!!Taiwanese",
+      "published": false,
+      "value": null
+    },
+    "B02015_008M": {
+      "label": "Margin of Error!!Total:!!East Asian:!!Taiwanese",
+      "published": true,
+      "value": "187"
+    },
+    "B02015_008MA": {
+      "label": "Annotation of Margin of Error!!Total:!!East Asian:!!Taiwanese",
+      "published": false,
+      "value": null
+    },
+    "B02015_009E": {
+      "label": "Estimate!!Total:!!East Asian:!!Other East Asian",
+      "published": true,
+      "value": "0"
+    },
+    "B02015_009EA": {
+      "label": "Annotation of Estimate!!Total:!!East Asian:!!Other East Asian",
+      "published": false,
+      "value": null
+    },
+    "B02015_009M": {
+      "label": "Margin of Error!!Total:!!East Asian:!!Other East Asian",
+      "published": true,
+      "value": "31"
+    },
+    "B02015_009MA": {
+      "label": "Annotation of Margin of Error!!Total:!!East Asian:!!Other East Asian",
+      "published": false,
+      "value": null
+    },
+    "B02015_010E": {
+      "label": "Estimate!!Total:!!Southeast Asian:!!Burmese",
+      "published": true,
+      "value": "217"
+    },
+    "B02015_010EA": {
+      "label": "Annotation of Estimate!!Total:!!Southeast Asian:!!Burmese",
+      "published": false,
+      "value": null
+    },
+    "B02015_010M": {
+      "label": "Margin of Error!!Total:!!Southeast Asian:!!Burmese",
+      "published": true,
+      "value": "132"
+    },
+    "B02015_010MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Southeast Asian:!!Burmese",
+      "published": false,
+      "value": null
+    },
+    "B02015_011E": {
+      "label": "Estimate!!Total:!!Southeast Asian:!!Cambodian",
+      "published": true,
+      "value": "372"
+    },
+    "B02015_011EA": {
+      "label": "Annotation of Estimate!!Total:!!Southeast Asian:!!Cambodian",
+      "published": false,
+      "value": null
+    },
+    "B02015_011M": {
+      "label": "Margin of Error!!Total:!!Southeast Asian:!!Cambodian",
+      "published": true,
+      "value": "192"
+    },
+    "B02015_011MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Southeast Asian:!!Cambodian",
+      "published": false,
+      "value": null
+    },
+    "B02015_012E": {
+      "label": "Estimate!!Total:!!Southeast Asian:!!Filipino",
+      "published": true,
+      "value": "4185"
+    },
+    "B02015_012EA": {
+      "label": "Annotation of Estimate!!Total:!!Southeast Asian:!!Filipino",
+      "published": false,
+      "value": null
+    },
+    "B02015_012M": {
+      "label": "Margin of Error!!Total:!!Southeast Asian:!!Filipino",
+      "published": true,
+      "value": "691"
+    },
+    "B02015_012MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Southeast Asian:!!Filipino",
+      "published": false,
+      "value": null
+    },
+    "B02015_013E": {
+      "label": "Estimate!!Total:!!Southeast Asian:!!Indonesian",
+      "published": true,
+      "value": "228"
+    },
+    "B02015_013EA": {
+      "label": "Annotation of Estimate!!Total:!!Southeast Asian:!!Indonesian",
+      "published": false,
+      "value": null
+    },
+    "B02015_013M": {
+      "label": "Margin of Error!!Total:!!Southeast Asian:!!Indonesian",
+      "published": true,
+      "value": "178"
+    },
+    "B02015_013MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Southeast Asian:!!Indonesian",
+      "published": false,
+      "value": null
+    },
+    "B02015_014E": {
+      "label": "Estimate!!Total:!!Southeast Asian:!!Laotian",
+      "published": true,
+      "value": "574"
+    },
+    "B02015_014EA": {
+      "label": "Annotation of Estimate!!Total:!!Southeast Asian:!!Laotian",
+      "published": false,
+      "value": null
+    },
+    "B02015_014M": {
+      "label": "Margin of Error!!Total:!!Southeast Asian:!!Laotian",
+      "published": true,
+      "value": "228"
+    },
+    "B02015_014MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Southeast Asian:!!Laotian",
+      "published": false,
+      "value": null
+    },
+    "B02015_015E": {
+      "label": "Estimate!!Total:!!Southeast Asian:!!Malaysian",
+      "published": true,
+      "value": "119"
+    },
+    "B02015_015EA": {
+      "label": "Annotation of Estimate!!Total:!!Southeast Asian:!!Malaysian",
+      "published": false,
+      "value": null
+    },
+    "B02015_015M": {
+      "label": "Margin of Error!!Total:!!Southeast Asian:!!Malaysian",
+      "published": true,
+      "value": "113"
+    },
+    "B02015_015MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Southeast Asian:!!Malaysian",
+      "published": false,
+      "value": null
+    },
+    "B02015_016E": {
+      "label": "Estimate!!Total:!!Southeast Asian:!!Mien",
+      "published": true,
+      "value": "0"
+    },
+    "B02015_016EA": {
+      "label": "Annotation of Estimate!!Total:!!Southeast Asian:!!Mien",
+      "published": false,
+      "value": null
+    },
+    "B02015_016M": {
+      "label": "Margin of Error!!Total:!!Southeast Asian:!!Mien",
+      "published": true,
+      "value": "31"
+    },
+    "B02015_016MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Southeast Asian:!!Mien",
+      "published": false,
+      "value": null
+    },
+    "B02015_017E": {
+      "label": "Estimate!!Total:!!Southeast Asian:!!Singaporean",
+      "published": true,
+      "value": "7"
+    },
+    "B02015_017EA": {
+      "label": "Annotation of Estimate!!Total:!!Southeast Asian:!!Singaporean",
+      "published": false,
+      "value": null
+    },
+    "B02015_017M": {
+      "label": "Margin of Error!!Total:!!Southeast Asian:!!Singaporean",
+      "published": true,
+      "value": "11"
+    },
+    "B02015_017MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Southeast Asian:!!Singaporean",
+      "published": false,
+      "value": null
+    },
+    "B02015_018E": {
+      "label": "Estimate!!Total:!!Southeast Asian:!!Thai",
+      "published": true,
+      "value": "972"
+    },
+    "B02015_018EA": {
+      "label": "Annotation of Estimate!!Total:!!Southeast Asian:!!Thai",
+      "published": false,
+      "value": null
+    },
+    "B02015_018M": {
+      "label": "Margin of Error!!Total:!!Southeast Asian:!!Thai",
+      "published": true,
+      "value": "344"
+    },
+    "B02015_018MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Southeast Asian:!!Thai",
+      "published": false,
+      "value": null
+    },
+    "B02015_019E": {
+      "label": "Estimate!!Total:!!Southeast Asian:!!Vietnamese",
+      "published": true,
+      "value": "6685"
+    },
+    "B02015_019EA": {
+      "label": "Annotation of Estimate!!Total:!!Southeast Asian:!!Vietnamese",
+      "published": false,
+      "value": null
+    },
+    "B02015_019M": {
+      "label": "Margin of Error!!Total:!!Southeast Asian:!!Vietnamese",
+      "published": true,
+      "value": "1130"
+    },
+    "B02015_019MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Southeast Asian:!!Vietnamese",
+      "published": false,
+      "value": null
+    },
+    "B02015_020E": {
+      "label": "Estimate!!Total:!!Southeast Asian:!!Other Southeast Asian",
+      "published": true,
+      "value": "0"
+    },
+    "B02015_020EA": {
+      "label": "Annotation of Estimate!!Total:!!Southeast Asian:!!Other Southeast Asian",
+      "published": false,
+      "value": null
+    },
+    "B02015_020M": {
+      "label": "Margin of Error!!Total:!!Southeast Asian:!!Other Southeast Asian",
+      "published": true,
+      "value": "31"
+    },
+    "B02015_020MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Southeast Asian:!!Other Southeast Asian",
+      "published": false,
+      "value": null
+    },
+    "B02015_021E": {
+      "label": "Estimate!!Total:!!South Asian:!!Asian Indian",
+      "published": true,
+      "value": "47553"
+    },
+    "B02015_021EA": {
+      "label": "Annotation of Estimate!!Total:!!South Asian:!!Asian Indian",
+      "published": false,
+      "value": null
+    },
+    "B02015_021M": {
+      "label": "Margin of Error!!Total:!!South Asian:!!Asian Indian",
+      "published": true,
+      "value": "2323"
+    },
+    "B02015_021MA": {
+      "label": "Annotation of Margin of Error!!Total:!!South Asian:!!Asian Indian",
+      "published": false,
+      "value": null
+    },
+    "B02015_022E": {
+      "label": "Estimate!!Total:!!South Asian:!!Bangladeshi",
+      "published": true,
+      "value": "1726"
+    },
+    "B02015_022EA": {
+      "label": "Annotation of Estimate!!Total:!!South Asian:!!Bangladeshi",
+      "published": false,
+      "value": null
+    },
+    "B02015_022M": {
+      "label": "Margin of Error!!Total:!!South Asian:!!Bangladeshi",
+      "published": true,
+      "value": "452"
+    },
+    "B02015_022MA": {
+      "label": "Annotation of Margin of Error!!Total:!!South Asian:!!Bangladeshi",
+      "published": false,
+      "value": null
+    },
+    "B02015_023E": {
+      "label": "Estimate!!Total:!!South Asian:!!Bhutanese",
+      "published": true,
+      "value": "0"
+    },
+    "B02015_023EA": {
+      "label": "Annotation of Estimate!!Total:!!South Asian:!!Bhutanese",
+      "published": false,
+      "value": null
+    },
+    "B02015_023M": {
+      "label": "Margin of Error!!Total:!!South Asian:!!Bhutanese",
+      "published": true,
+      "value": "31"
+    },
+    "B02015_023MA": {
+      "label": "Annotation of Margin of Error!!Total:!!South Asian:!!Bhutanese",
+      "published": false,
+      "value": null
+    },
+    "B02015_024E": {
+      "label": "Estimate!!Total:!!South Asian:!!Nepalese",
+      "published": true,
+      "value": "1780"
+    },
+    "B02015_024EA": {
+      "label": "Annotation of Estimate!!Total:!!South Asian:!!Nepalese",
+      "published": false,
+      "value": null
+    },
+    "B02015_024M": {
+      "label": "Margin of Error!!Total:!!South Asian:!!Nepalese",
+      "published": true,
+      "value": "631"
+    },
+    "B02015_024MA": {
+      "label": "Annotation of Margin of Error!!Total:!!South Asian:!!Nepalese",
+      "published": false,
+      "value": null
+    },
+    "B02015_025E": {
+      "label": "Estimate!!Total:!!South Asian:!!Pakistani",
+      "published": true,
+      "value": "10553"
+    },
+    "B02015_025EA": {
+      "label": "Annotation of Estimate!!Total:!!South Asian:!!Pakistani",
+      "published": false,
+      "value": null
+    },
+    "B02015_025M": {
+      "label": "Margin of Error!!Total:!!South Asian:!!Pakistani",
+      "published": true,
+      "value": "1719"
+    },
+    "B02015_025MA": {
+      "label": "Annotation of Margin of Error!!Total:!!South Asian:!!Pakistani",
+      "published": false,
+      "value": null
+    },
+    "B02015_026E": {
+      "label": "Estimate!!Total:!!South Asian:!!Sikh",
+      "published": true,
+      "value": "151"
+    },
+    "B02015_026EA": {
+      "label": "Annotation of Estimate!!Total:!!South Asian:!!Sikh",
+      "published": false,
+      "value": null
+    },
+    "B02015_026M": {
+      "label": "Margin of Error!!Total:!!South Asian:!!Sikh",
+      "published": true,
+      "value": "208"
+    },
+    "B02015_026MA": {
+      "label": "Annotation of Margin of Error!!Total:!!South Asian:!!Sikh",
+      "published": false,
+      "value": null
+    },
+    "B02015_027E": {
+      "label": "Estimate!!Total:!!South Asian:!!Sri Lankan",
+      "published": true,
+      "value": "314"
+    },
+    "B02015_027EA": {
+      "label": "Annotation of Estimate!!Total:!!South Asian:!!Sri Lankan",
+      "published": false,
+      "value": null
+    },
+    "B02015_027M": {
+      "label": "Margin of Error!!Total:!!South Asian:!!Sri Lankan",
+      "published": true,
+      "value": "430"
+    },
+    "B02015_027MA": {
+      "label": "Annotation of Margin of Error!!Total:!!South Asian:!!Sri Lankan",
+      "published": false,
+      "value": null
+    },
+    "B02015_028E": {
+      "label": "Estimate!!Total:!!South Asian:!!Other South Asian",
+      "published": true,
+      "value": "10"
+    },
+    "B02015_028EA": {
+      "label": "Annotation of Estimate!!Total:!!South Asian:!!Other South Asian",
+      "published": false,
+      "value": null
+    },
+    "B02015_028M": {
+      "label": "Margin of Error!!Total:!!South Asian:!!Other South Asian",
+      "published": true,
+      "value": "17"
+    },
+    "B02015_028MA": {
+      "label": "Annotation of Margin of Error!!Total:!!South Asian:!!Other South Asian",
+      "published": false,
+      "value": null
+    },
+    "B02015_029E": {
+      "label": "Estimate!!Total:!!Central Asian:!!Afghan",
+      "published": true,
+      "value": "2424"
+    },
+    "B02015_029EA": {
+      "label": "Annotation of Estimate!!Total:!!Central Asian:!!Afghan",
+      "published": false,
+      "value": null
+    },
+    "B02015_029M": {
+      "label": "Margin of Error!!Total:!!Central Asian:!!Afghan",
+      "published": true,
+      "value": "714"
+    },
+    "B02015_029MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Central Asian:!!Afghan",
+      "published": false,
+      "value": null
+    },
+    "B02015_030E": {
+      "label": "Estimate!!Total:!!Central Asian:!!Kazakh",
+      "published": true,
+      "value": "5"
+    },
+    "B02015_030EA": {
+      "label": "Annotation of Estimate!!Total:!!Central Asian:!!Kazakh",
+      "published": false,
+      "value": null
+    },
+    "B02015_030M": {
+      "label": "Margin of Error!!Total:!!Central Asian:!!Kazakh",
+      "published": true,
+      "value": "10"
+    },
+    "B02015_030MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Central Asian:!!Kazakh",
+      "published": false,
+      "value": null
+    },
+    "B02015_031E": {
+      "label": "Estimate!!Total:!!Central Asian:!!Uzbek",
+      "published": true,
+      "value": "29"
+    },
+    "B02015_031EA": {
+      "label": "Annotation of Estimate!!Total:!!Central Asian:!!Uzbek",
+      "published": false,
+      "value": null
+    },
+    "B02015_031M": {
+      "label": "Margin of Error!!Total:!!Central Asian:!!Uzbek",
+      "published": true,
+      "value": "33"
+    },
+    "B02015_031MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Central Asian:!!Uzbek",
+      "published": false,
+      "value": null
+    },
+    "B02015_032E": {
+      "label": "Estimate!!Total:!!Central Asian:!!Other Central Asian",
+      "published": true,
+      "value": "0"
+    },
+    "B02015_032EA": {
+      "label": "Annotation of Estimate!!Total:!!Central Asian:!!Other Central Asian",
+      "published": false,
+      "value": null
+    },
+    "B02015_032M": {
+      "label": "Margin of Error!!Total:!!Central Asian:!!Other Central Asian",
+      "published": true,
+      "value": "31"
+    },
+    "B02015_032MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Central Asian:!!Other Central Asian",
+      "published": false,
+      "value": null
+    },
+    "B02015_033E": {
+      "label": "Estimate!!Total:!!Other Asian, specified",
+      "published": true,
+      "value": "13"
+    },
+    "B02015_033EA": {
+      "label": "Annotation of Estimate!!Total:!!Other Asian, specified",
+      "published": false,
+      "value": null
+    },
+    "B02015_033M": {
+      "label": "Margin of Error!!Total:!!Other Asian, specified",
+      "published": true,
+      "value": "19"
+    },
+    "B02015_033MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Other Asian, specified",
+      "published": false,
+      "value": null
+    },
+    "B02015_034E": {
+      "label": "Estimate!!Total:!!Other Asian, not specified",
+      "published": true,
+      "value": "657"
+    },
+    "B02015_034EA": {
+      "label": "Annotation of Estimate!!Total:!!Other Asian, not specified",
+      "published": false,
+      "value": null
+    },
+    "B02015_034M": {
+      "label": "Margin of Error!!Total:!!Other Asian, not specified",
+      "published": true,
+      "value": "274"
+    },
+    "B02015_034MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Other Asian, not specified",
+      "published": false,
+      "value": null
+    },
+    "B02015_035E": {
+      "label": "Estimate!!Total:!!Two or more Asian",
+      "published": true,
+      "value": "1963"
+    },
+    "B02015_035EA": {
+      "label": "Annotation of Estimate!!Total:!!Two or more Asian",
+      "published": false,
+      "value": null
+    },
+    "B02015_035M": {
+      "label": "Margin of Error!!Total:!!Two or more Asian",
+      "published": true,
+      "value": "440"
+    },
+    "B02015_035MA": {
+      "label": "Annotation of Margin of Error!!Total:!!Two or more Asian",
+      "published": false,
+      "value": null
+    },
+    "GEO_ID": {
+      "label": "Geography",
+      "published": true,
+      "value": "0500000US51107"
+    },
+    "NAME": {
+      "label": "Geographic Area Name",
+      "published": true,
+      "value": "Loudoun County, Virginia"
+    }
+  },
+  "concept": "Asian Alone by Selected Groups",
+  "dataset": "ACS 2024 5-year estimates (acs/acs5)",
+  "geography": "Loudoun County, Virginia",
+  "geography_columns": {
+    "county": "107",
+    "state": "51"
+  },
+  "geography_fips": {
+    "county": "107",
+    "state": "51"
+  },
+  "label_source_url": "https://api.census.gov/data/2024/acs/acs5/groups/B02015.json",
+  "notes": "Race and Hispanic origin in these tables are self-identified social categories. They are not genetic ancestry and must never be presented as a genetic-ancestry composition.",
+  "raw_response": [
+    [
+      "B02015_001E",
+      "B02015_001EA",
+      "B02015_001M",
+      "B02015_001MA",
+      "B02015_002E",
+      "B02015_002EA",
+      "B02015_002M",
+      "B02015_002MA",
+      "B02015_003E",
+      "B02015_003EA",
+      "B02015_003M",
+      "B02015_003MA",
+      "B02015_004E",
+      "B02015_004EA",
+      "B02015_004M",
+      "B02015_004MA",
+      "B02015_005E",
+      "B02015_005EA",
+      "B02015_005M",
+      "B02015_005MA",
+      "B02015_006E",
+      "B02015_006EA",
+      "B02015_006M",
+      "B02015_006MA",
+      "B02015_007E",
+      "B02015_007EA",
+      "B02015_007M",
+      "B02015_007MA",
+      "B02015_008E",
+      "B02015_008EA",
+      "B02015_008M",
+      "B02015_008MA",
+      "B02015_009E",
+      "B02015_009EA",
+      "B02015_009M",
+      "B02015_009MA",
+      "B02015_010E",
+      "B02015_010EA",
+      "B02015_010M",
+      "B02015_010MA",
+      "B02015_011E",
+      "B02015_011EA",
+      "B02015_011M",
+      "B02015_011MA",
+      "B02015_012E",
+      "B02015_012EA",
+      "B02015_012M",
+      "B02015_012MA",
+      "B02015_013E",
+      "B02015_013EA",
+      "B02015_013M",
+      "B02015_013MA",
+      "B02015_014E",
+      "B02015_014EA",
+      "B02015_014M",
+      "B02015_014MA",
+      "B02015_015E",
+      "B02015_015EA",
+      "B02015_015M",
+      "B02015_015MA",
+      "B02015_016E",
+      "B02015_016EA",
+      "B02015_016M",
+      "B02015_016MA",
+      "B02015_017E",
+      "B02015_017EA",
+      "B02015_017M",
+      "B02015_017MA",
+      "B02015_018E",
+      "B02015_018EA",
+      "B02015_018M",
+      "B02015_018MA",
+      "B02015_019E",
+      "B02015_019EA",
+      "B02015_019M",
+      "B02015_019MA",
+      "B02015_020E",
+      "B02015_020EA",
+      "B02015_020M",
+      "B02015_020MA",
+      "B02015_021E",
+      "B02015_021EA",
+      "B02015_021M",
+      "B02015_021MA",
+      "B02015_022E",
+      "B02015_022EA",
+      "B02015_022M",
+      "B02015_022MA",
+      "B02015_023E",
+      "B02015_023EA",
+      "B02015_023M",
+      "B02015_023MA",
+      "B02015_024E",
+      "B02015_024EA",
+      "B02015_024M",
+      "B02015_024MA",
+      "B02015_025E",
+      "B02015_025EA",
+      "B02015_025M",
+      "B02015_025MA",
+      "B02015_026E",
+      "B02015_026EA",
+      "B02015_026M",
+      "B02015_026MA",
+      "B02015_027E",
+      "B02015_027EA",
+      "B02015_027M",
+      "B02015_027MA",
+      "B02015_028E",
+      "B02015_028EA",
+      "B02015_028M",
+      "B02015_028MA",
+      "B02015_029E",
+      "B02015_029EA",
+      "B02015_029M",
+      "B02015_029MA",
+      "B02015_030E",
+      "B02015_030EA",
+      "B02015_030M",
+      "B02015_030MA",
+      "B02015_031E",
+      "B02015_031EA",
+      "B02015_031M",
+      "B02015_031MA",
+      "B02015_032E",
+      "B02015_032EA",
+      "B02015_032M",
+      "B02015_032MA",
+      "B02015_033E",
+      "B02015_033EA",
+      "B02015_033M",
+      "B02015_033MA",
+      "B02015_034E",
+      "B02015_034EA",
+      "B02015_034M",
+      "B02015_034MA",
+      "B02015_035E",
+      "B02015_035EA",
+      "B02015_035M",
+      "B02015_035MA",
+      "GEO_ID",
+      "NAME",
+      "state",
+      "county"
+    ],
+    [
+      "94508",
+      null,
+      "1466",
+      null,
+      "6229",
+      null,
+      "682",
+      null,
+      "0",
+      null,
+      "31",
+      null,
+      "889",
+      null,
+      "220",
+      null,
+      "6147",
+      null,
+      "924",
+      null,
+      "304",
+      null,
+      "235",
+      null,
+      "25",
+      null,
+      "38",
+      null,
+      "377",
+      null,
+      "187",
+      null,
+      "0",
+      null,
+      "31",
+      null,
+      "217",
+      null,
+      "132",
+      null,
+      "372",
+      null,
+      "192",
+      null,
+      "4185",
+      null,
+      "691",
+      null,
+      "228",
+      null,
+      "178",
+      null,
+      "574",
+      null,
+      "228",
+      null,
+      "119",
+      null,
+      "113",
+      null,
+      "0",
+      null,
+      "31",
+      null,
+      "7",
+      null,
+      "11",
+      null,
+      "972",
+      null,
+      "344",
+      null,
+      "6685",
+      null,
+      "1130",
+      null,
+      "0",
+      null,
+      "31",
+      null,
+      "47553",
+      null,
+      "2323",
+      null,
+      "1726",
+      null,
+      "452",
+      null,
+      "0",
+      null,
+      "31",
+      null,
+      "1780",
+      null,
+      "631",
+      null,
+      "10553",
+      null,
+      "1719",
+      null,
+      "151",
+      null,
+      "208",
+      null,
+      "314",
+      null,
+      "430",
+      null,
+      "10",
+      null,
+      "17",
+      null,
+      "2424",
+      null,
+      "714",
+      null,
+      "5",
+      null,
+      "10",
+      null,
+      "29",
+      null,
+      "33",
+      null,
+      "0",
+      null,
+      "31",
+      null,
+      "13",
+      null,
+      "19",
+      null,
+      "657",
+      null,
+      "274",
+      null,
+      "1963",
+      null,
+      "440",
+      null,
+      "0500000US51107",
+      "Loudoun County, Virginia",
+      "51",
+      "107"
+    ]
+  ],
+  "release": "2024",
+  "request_url": "https://api.census.gov/data/2024/acs/acs5?get=group(B02015)&for=county:107&in=state:51",
+  "retrieved_at": "2026-11-03",
+  "selection_method": "Whole table requested as get=group(B02015); no variable is named, matched or numbered in advance and nothing depends on a line position. Label text is read from the release's own per-group metadata endpoint recorded in label_source_url. Consumers select cells by label.",
+  "sentinel_codes_recognised": [
+    "-222222222",
+    "-555555555",
+    "-666666666",
+    "-888888888",
+    "-999999999"
+  ],
+  "sentinel_handling": "The API returns a large negative sentinel in place of a statistic it does not publish for a cell. Values are preserved verbatim and 'published' says whether the cell carries a real statistic. A false value must not be rendered as a number.",
+  "source": "US Census Bureau, American Community Survey",
+  "table": "B02015",
+  "universe": "Total Asian alone population",
+  "variable_count": 142
+}

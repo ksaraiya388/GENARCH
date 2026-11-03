@@ -1031,3 +1031,145 @@ reads, so a new mark is covered by being added to it.
 Figures F01, F03 and F04 were regenerated. F02 and F05 never used the role and their bytes are
 unchanged. `figures.json` changed in exactly five keys, the `limitation` field of each of the
 five entries, and in nothing else: no key was added or removed and no other value moved.
+
+2026-11-03: step 0 of the ancestry-composition module, the method comparison between the
+report's planned T10 and the GWAS ancestry shares already on `/ancestry-equity`. Recorded before
+any computation, because the answer changes what the module may emit.
+
+The page's source and computation. `site/src/app/ancestry-equity/page.tsx` renders two
+independent GWAS-share displays, neither of which reads the GWAS Catalog.
+
+1. The `gwas-ancestry-imbalance` BarRows, built by `buildGwasAncestry()` in
+   `site/src/lib/figure-data.ts`, read `pipeline/sources/gwas_ancestry_breakdown.csv`: a
+   four-row hand-transcribed CSV of published summary percentages. The computation is a filter
+   on `as_of` against `SNAPSHOT_AS_OF` in `site/src/lib/figures.ts`, pinned to `2024-09`, then a
+   sort by percentage descending. No arithmetic is performed on any participant count. The
+   `2024-09` rows are the GWAS Diversity Monitor live dashboard (Mills and Rahal, Nat Genet
+   2020) and itemise only European 94.48 and Asian 3.96, so the remainder is unplotted. The
+   manifest entry for that CSV records the download date as 2026-07-13 and the narrowing that
+   dropped the world-population comparison bar.
+2. A separate cited table of five groups from Fatumo et al. 2022, read out of
+   `pipeline/sources/cross_ancestry/literature.json` by `claim_id`, deliberately not merged into
+   the chart because the dashboard's "Asian" is not South Asian-specific.
+
+The method the module was asked for. Initial-stage discovery individuals by broad ancestral
+category, computed from the GWAS Catalog ancestries file over the studies whose
+`MAPPED_TRAIT_URI` matches asthma, counted and shared, with multi-ancestry rows split on the
+catalog's delimiter.
+
+The two differ in four ways, and none of them is a difference in rounding or snapshot date:
+trait scope (asthma-specific against all traits in the catalog), stage (initial-stage discovery
+samples only against every participant the monitor counts), provenance (recomputed from the
+pinned release against transcribed from a third-party dashboard), and the category framework
+(the catalog's broad ancestral category against the monitor's groups, which itemise two
+categories and leave the remainder unplotted). The quantities are therefore not the same
+quantity measured two ways; they are two different quantities. "86.5 percent European in 2023"
+and "94.48 percent European in 2024-09" already sit in the same CSV against different
+denominators, which is why `SNAPSHOT_AS_OF` exists.
+
+That distinction is the whole substance of the step 0 instruction, and it does not discharge it:
+a reader who sees an asthma discovery-sample European share in the report and an all-trait
+participant European share on the page has no way to tell from either surface that the two
+denominators differ, so the shares read as a contradiction whether or not they are one. The
+resolution owed is a single method for the one quantity both surfaces can state, with the
+all-trait dashboard figure either relabelled so its denominator is unmistakable on the page or
+replaced by the recomputed asthma figure. That ruling is not taken here.
+
+Status: unfinished. No number was computed, no key emitted and no file changed under `data/` or
+`pipeline/` in this entry. The GWAS Catalog release is identified: the FTP `latest` directory
+resolves to `releases/2026/11`, dated 2026-11-02, holding
+`gwas-catalog-associations_ontology-annotated-full.zip` and
+`gwas-catalog-download-ancestries-v1.0.3.1.tsv`. Neither is downloaded into
+`pipeline/sources/gwas-catalog/`, neither is in `manifest.json` or `FREEZE.json`, and the two
+partial copies taken in this session live only in a scratch directory and are not to be pinned:
+the ancestries transfer broke off at 27.8 MB of a stated 51 MB. The pipeline holds no earlier
+GWAS Catalog release for asthma to compare release dates against; `gwas_ancestry_breakdown.csv`
+cites the catalog through two intermediaries and pins no release.
+
+Also unresolved, and logged because it is a repository decision rather than a computation: the
+two files are about 120 MB together, against 84 MB for all of `pipeline/sources/` today, and the
+associations file is a zip that git cannot pack down. Pinning both by SHA-256 in `FREEZE.json`
+is what D26 reproducibility requires, but committing them doubles the clone every CI run pays
+for. Whether to commit both in full, or to commit an asthma-filtered extract beside the
+SHA-256 of the full download it came from, needs Kiaan's ruling.
+
+2026-11-03: the ancestry-composition module's two review artefacts, generated by scripts/audit_append_ancestry.py from numbers.json and the extract manifest. No figure below is typed by hand.
+
+Distinct MAPPED_TRAIT values matched by the 23 asthma ontology IDs, GWAS Catalog release 2026-11-02. Selection is by the last path segment of each IRI in MAPPED_TRAIT_URI; no trait name is matched as free text, so the names below are the output of the selection and never an input to it. 4156 of 1205644 association rows were kept, across 172 study accessions.
+
+| MAPPED_TRAIT | Association rows |
+|---|---|
+| asthma | 2238 |
+| childhood onset asthma | 491 |
+| atopic asthma | 199 |
+| asthma, response to diisocyanate | 180 |
+| adult onset asthma | 160 |
+| asthma, cardiovascular disorder | 145 |
+| asthma, endometriosis | 127 |
+| chronic rhinosinusitis, asthma | 96 |
+| asthma, Eczematoid dermatitis, allergic rhinitis | 85 |
+| asthma, allergic disease | 71 |
+| asthma, age at onset | 65 |
+| chronic obstructive pulmonary disease, asthma | 31 |
+| gastroesophageal reflux disease, asthma | 22 |
+| asthma, seasonal allergic rhinitis | 21 |
+| T2-high asthma | 18 |
+| asthma, diverticular disease | 18 |
+| asthma, irritable bowel syndrome | 17 |
+| drug use measurement, asthma | 15 |
+| asthma, body mass index | 12 |
+| Chronic Obstructive Asthma | 10 |
+| asthma, major depressive disorder | 10 |
+| asthma, family history | 9 |
+| B-cell acute lymphoblastic leukemia, adult onset asthma | 8 |
+| BMI-adjusted waist-hip ratio, asthma | 8 |
+| adult onset asthma, body mass index | 8 |
+| attention deficit-hyperactivity disorder, asthma | 7 |
+| childhood onset asthma, atopic march, atopic eczema | 7 |
+| BMI-adjusted waist-hip ratio, adult onset asthma | 6 |
+| adult onset asthma, type 2 diabetes mellitus | 6 |
+| asthma, polyp of colon | 6 |
+| asthma, sex interaction measurement | 6 |
+| asthma, traffic air pollution measurement | 5 |
+| asthma, type 2 diabetes mellitus | 5 |
+| asthma, Eczematoid dermatitis | 4 |
+| asthma, Latin or Admixed American ancestry | 4 |
+| asthma, Townsend deprivation index | 4 |
+| asthma, neuroticism measurement | 4 |
+| childhood onset asthma, age at onset, environmental tobacco smoke exposure measurement | 4 |
+| asthma, age at diagnosis | 3 |
+| asthma, alcohol exposure measurement | 3 |
+| asthma, insomnia | 3 |
+| asthma, metabolic rate measurement | 3 |
+| asthma, peptic ulcer disease | 3 |
+| asthma, COVID-19 | 2 |
+| asthma, response to corticosteroid | 2 |
+| childhood onset asthma, age at onset | 2 |
+| asthma, anxiety disorder | 1 |
+| asthma, blood glucose amount | 1 |
+| blood glucose amount, adult onset asthma | 1 |
+
+| Ontology ID | Association rows |
+|---|---|
+| MONDO_0004979 | 3236 |
+| MONDO_0005405 | 504 |
+| EFO_0010638 | 199 |
+| EFO_1002011 | 189 |
+| MONDO_0956975 | 18 |
+| EFO_0009759 | 10 |
+
+17 of the term IDs matched no association in this release and are listed so the set stays reviewable rather than looking complete: EFO_0000270, MONDO_0001491, MONDO_0004765, MONDO_0004766, MONDO_0004784, MONDO_0022742, MONDO_0025556, MONDO_0850282, MONDO_0850283, MONDO_0850284, MONDO_0850285, MONDO_0850286, MONDO_0850287, MONDO_0956971, MONDO_0956976, MONDO_0956977, MONDO_0956979. An ID matching nothing is kept in the lookup: it is a term the ontology places under asthma, and its absence here is a fact about this release's curation, not a reason to narrow the selection.
+
+Method comparison between the live page and the report, owed by the step 0 entry of 2026-11-03 above. The page value is the GWAS Diversity Monitor transcription in pipeline/sources/gwas_ancestry_breakdown.csv, as_of 2024-09, which site/src/lib/figures.ts pins through SNAPSHOT_AS_OF. The catalog value is recomputed here from GWAS Catalog release 2026-11-02 over asthma studies only, counting initial-stage discovery individuals.
+
+| Category as the page shows it | Page value (percent) | Catalog-derived (percent) | Difference (percentage points) | What the catalog value sums |
+|---|---|---|---|---|
+| Asian | 3.96 | 7.51 | 3.55 | the sum of the catalog's five Asian categories (East, South, South East, Central, Asian unspecified), because the dashboard publishes one undivided Asian bar and the catalog publishes no such category |
+| European | 94.48 | 88.61 | -5.87 | the catalog's single European category |
+
+The difference on each row is not an error in either figure. The two quantities have different denominators: the page counts participants in every GWAS of every trait as a third-party dashboard tallied them in 2024-09, and the report counts individuals in the initial-stage discovery samples of asthma studies in one dated catalog release. A row's difference measures the distance between those two definitions and nothing else. Neither value can be substituted for the other, and the report states this wherever it gives a share (numbers.json key ancestry.method_divergence, repeated in the T10 caption).
+
+Resolution, and what is still open. The report and the page now have one method each for one clearly labelled quantity, and the report names the page's source and denominator wherever it states its own share, so the two cannot be read as two values of a single quantity. /ancestry-equity is unchanged, per the ruling on this work: it reads the 2023 ACS file and the dashboard transcription, and rewriting a public page's sourcing was not in scope here. What stays open is the page side: the all-trait dashboard bars carry no denominator on the page itself, so a reader who sees only the page still cannot tell what population the share describes. Relabelling those bars, or replacing them with the recomputed asthma figure, is the remaining work and is not done.
+
+ACS release divergence, open item. The report's T12 and the F06 ACS panel read the 2024 ACS 5-year release, retrieved for this module into pipeline/sources/cross_ancestry/acs_loudoun_2024_*.json. The live page /ancestry-equity reads the 2023 release in pipeline/sources/cross_ancestry/acs_loudoun_2023.json and is unchanged, so the report and the page state county counts from two different vintages. Nothing is wrong with either number on its own terms and both name their vintage, but a reader comparing the two surfaces will find different totals for the same county. Moving the page to the newer release, or stating the vintage more prominently on it, is open.
+

@@ -165,6 +165,84 @@
       "units": {
         "Pearson r": "dimensionless"
       }
+    },
+    {
+      "caption": "Initial-stage discovery individuals across the asthma studies in the GWAS Catalog 2026-11-02 release, by the catalog's own broad ancestral category. The total is a sum of study sample sizes, not a count of distinct people. Asthma GWAS draw repeatedly on the same large cohorts, so a participant enrolled in several studies is counted once per study, and studies mapped to asthma alongside another trait contribute their whole sample. The total is therefore much larger than the number of people who have ever been in an asthma GWAS, and must never be reported as a headcount. What the shares describe is how the field's accumulated asthma evidence is distributed across ancestry groups, which is the question this module asks. A row naming one broad ancestral category contributes all its individuals to that category; a row naming k categories contributes an equal 1/k share to each. The catalog publishes no per-category count within a row, so the equal split is an assumption. It preserves the total, so the shares describe one denominator. The category cell is consumed by longest match against the controlled vocabulary in pipeline/lookups/gwas_ancestry_categories.json, not split on a comma: one vocabulary label, 'Greater Middle Eastern (Middle Eastern, North African or Persian)', contains commas of its own. Any residue the vocabulary cannot account for fails the run. The last column repeats each share with multi-category rows dropped, so the weight the equal split carries is visible rather than asserted. Descriptive only. These are counts of people enrolled and associations declared, not effect estimates: no cross-ancestry gene-environment effect is computed in v1 (CONTEXT.md X7). The atlas page /ancestry-equity states an all-trait GWAS participant share transcribed from the GWAS Diversity Monitor dashboard. The share here is computed from the GWAS Catalog release named below, over asthma studies only, counting initial-stage discovery individuals. The two are different quantities with different denominators and are not comparable; the comparison is tabulated in docs/report-2026/AUDIT.md.",
+      "columns": [
+        "Broad ancestral category",
+        "Discovery individuals",
+        "Share",
+        "Share, single-category rows only"
+      ],
+      "file": "T10_gwas_ancestry_composition.csv",
+      "id": "T10_gwas_ancestry_composition",
+      "row_count": 11,
+      "source_note": "GWAS Catalog release 2026-11-02, asthma extract cut by scripts/fetch_gwas_catalog.py on the ontology IDs in pipeline/lookups/asthma_trait_terms.json.",
+      "title": "Asthma GWAS discovery samples by broad ancestral category",
+      "units": {
+        "Discovery individuals": "count",
+        "Share": "percent",
+        "Share, single-category rows only": "percent"
+      }
+    },
+    {
+      "caption": "Associations with P-VALUE below 5e-08 at the five asthma loci in v1 scope, from the GWAS Catalog 2026-11-02 release, counted by the broad ancestral category of each study's initial-stage sample. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only. An association is assigned to a locus when any symbol in the GWAS Catalog's own MAPPED_GENE cell for that association equals one of the locus's gene_symbols, compared case-sensitively after splitting the cell on its separators and trimming. MAPPED_GENE is the catalog's gene annotation, so the match is against a curated identifier and never against free text in a trait or study title. REPORTED GENE(S) is deliberately not used: it carries the authors' own wording, which is not a controlled field. No genomic window is applied, because a window needs a genome build the extract does not state per row. Descriptive only. These are counts of people enrolled and associations declared, not effect estimates: no cross-ancestry gene-environment effect is computed in v1 (CONTEXT.md X7).",
+      "columns": [
+        "Locus",
+        "Cytoband",
+        "Genes",
+        "Associations",
+        "Distinct variants",
+        "European",
+        "African American or Afro-Caribbean",
+        "African unspecified",
+        "East Asian",
+        "South Asian",
+        "Central Asian",
+        "Hispanic or Latin American",
+        "Greater Middle Eastern (Middle Eastern, North African or Persian)",
+        "NR",
+        "Associations with no initial-stage ancestry row"
+      ],
+      "file": "T11_loci_by_ancestry.csv",
+      "id": "T11_loci_by_ancestry",
+      "row_count": 5,
+      "source_note": "GWAS Catalog release 2026-11-02, asthma extract cut by scripts/fetch_gwas_catalog.py on the ontology IDs in pipeline/lookups/asthma_trait_terms.json.",
+      "title": "Genome-wide-significant associations at the in-scope asthma loci, by ancestry of the discovery sample",
+      "units": {
+        "African American or Afro-Caribbean": "count",
+        "African unspecified": "count",
+        "Associations": "count",
+        "Associations with no initial-stage ancestry row": "count",
+        "Central Asian": "count",
+        "Distinct variants": "count",
+        "East Asian": "count",
+        "European": "count",
+        "Greater Middle Eastern (Middle Eastern, North African or Persian)": "count",
+        "Hispanic or Latin American": "count",
+        "NR": "count",
+        "South Asian": "count"
+      }
+    },
+    {
+      "caption": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia. ACS categories are self-identified race and ethnicity, which are social categories and not genetic ancestry. They are shown only to describe the population the atlas is meant to serve. The race categories are mutually exclusive and sum to the table total, which is what lets them stack in F06. Hispanic or Latino origin cross-cuts every race category and is listed with 'In race stack' set to no: adding it to the stack would count the same residents twice. Descriptive only. These are counts of people enrolled and associations declared, not effect estimates: no cross-ancestry gene-environment effect is computed in v1 (CONTEXT.md X7).",
+      "columns": [
+        "Category",
+        "Residents",
+        "Share",
+        "Margin of error",
+        "In race stack"
+      ],
+      "file": "T12_loudoun_acs_context.csv",
+      "id": "T12_loudoun_acs_context",
+      "row_count": 8,
+      "source_note": "US Census Bureau, American Community Survey, ACS 2024 5-year estimates (acs/acs5), tables B02001, B02015, DP05, state 51 (Virginia) county 107 (Loudoun).",
+      "title": "Loudoun County population composition",
+      "units": {
+        "Margin of error": "count",
+        "Residents": "count",
+        "Share": "percent"
+      }
     }
   ]
 }

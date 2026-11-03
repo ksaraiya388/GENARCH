@@ -1,0 +1,26 @@
+{
+  "description": "The GWAS Catalog's controlled BROAD ANCESTRAL CATEGORY vocabulary. pipeline/report_lib/ancestry.py parses the catalog's category cell by longest match against these labels and fails the run on any residue, so an unrecognised category cannot silently vanish from a denominator.",
+  "source": "Ancestry categories as published in the GWAS Catalog ancestry download and defined by the framework the catalog adopted: Morales et al., 'A standardized framework for representation of ancestry data in genomics studies', Genome Biology 2018, 19:21 (https://doi.org/10.1186/s13059-018-1396-2).",
+  "parsing_note": "The catalog separates several categories within one cell by a comma and a space. The cell must NOT be split on a comma, because the Greater Middle Eastern label carries two commas of its own; longest match against this list is the rule instead. Labels are listed in report order and matched case-sensitively, exactly as the catalog writes them.",
+  "order_note": "Report order groups the labels by the continental grouping the framework uses, then places the unspecified, other and not-reported labels last. The order is presentation only and no computation depends on it.",
+  "categories": [
+    { "label": "European", "grouping": "European" },
+    { "label": "African American or Afro-Caribbean", "grouping": "African" },
+    { "label": "Sub-Saharan African", "grouping": "African" },
+    { "label": "African unspecified", "grouping": "African" },
+    { "label": "East Asian", "grouping": "Asian" },
+    { "label": "South Asian", "grouping": "Asian" },
+    { "label": "South East Asian", "grouping": "Asian" },
+    { "label": "Central Asian", "grouping": "Asian" },
+    { "label": "Asian unspecified", "grouping": "Asian" },
+    { "label": "Hispanic or Latin American", "grouping": "Hispanic or Latin American" },
+    { "label": "Native American", "grouping": "Native American" },
+    { "label": "Greater Middle Eastern (Middle Eastern, North African or Persian)", "grouping": "Greater Middle Eastern" },
+    { "label": "Oceanian", "grouping": "Oceanian" },
+    { "label": "Aboriginal Australian", "grouping": "Oceanian" },
+    { "label": "Circumpolar peoples", "grouping": "Circumpolar peoples" },
+    { "label": "Other admixed ancestry", "grouping": "Other" },
+    { "label": "Other", "grouping": "Other" },
+    { "label": "NR", "grouping": "Not reported" }
+  ]
+}

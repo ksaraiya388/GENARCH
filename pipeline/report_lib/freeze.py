@@ -70,6 +70,21 @@ CONFIG_INPUTS = (
 )
 CONFIG_FROZEN_DIR = "pipeline/sources/freeze-2026/config"
 
+# The ancestry module's inputs, by role. The two GWAS extracts and the extract
+# manifest are committed; the full downloads they were cut from are not, and are
+# pinned by SHA-256 and dated origin URL alone (DECISIONS.md D30). The three
+# lookups are pinned too, because selection is by ontology ID and a changed ID
+# list would move every share without changing a source file.
+ANCESTRY_LOOKUPS = (
+    "pipeline/lookups/asthma_trait_terms.json",
+    "pipeline/lookups/asthma_loci.json",
+    "pipeline/lookups/gwas_ancestry_categories.json",
+)
+GWAS_CATALOG_DIR = "pipeline/sources/gwas-catalog"
+GWAS_EXTRACT_MANIFEST = f"{GWAS_CATALOG_DIR}/extract_manifest.json"
+ACS_SOURCE_DIR = "pipeline/sources/cross_ancestry"
+ACS_TABLES = ("b02001", "b02015", "dp05")
+
 _CHUNK = 1048576
 
 
@@ -119,6 +134,13 @@ class Freeze:
             # copy. The live file stays the report's historical source and stays in
             # every provenance stamp; the bytes read and hashed are the frozen ones.
             self._add(entry, "path", None, resolve_key="frozen_path")
+        for entry in self.doc.get("ancestry_inputs", {}).get("files", []):
+            # Ancestry inputs are pinned where they live, like the atlas records:
+            # the committed GWAS extracts, the ACS release files and the three
+            # lookups the module selects on. The two full GWAS downloads are
+            # listed under `full_downloads` instead, with their SHA-256 and dated
+            # origin URL but no path on disk, because D30 keeps them out of git.
+            self._add(entry, "path", None)
         for entry in self.doc.get("atlas_inputs", {}).get("files", []):
             # Atlas records are pinned where they live. Unlike the configuration
             # inputs (D28) there is no frozen copy: the atlas half of the report is a
@@ -367,6 +389,159 @@ class Freeze:
         return block
 
     # ------------------------------------------------------------- atlas gate
+
+    # --------------------------------------------------- ancestry block
+
+    def ancestry_inputs(self) -> dict | None:
+        """The pinned ancestry block, or None while the module is unfrozen."""
+        return self.doc.get("ancestry_inputs")
+
+    def ancestry_release(self) -> str:
+        block = self.ancestry_inputs()
+        if block is None:
+            raise FreezeError("ancestry_inputs is not pinned in this freeze")
+        return block["gwas_release_date"]
+
+    def ancestry_files(self, role: str) -> list[FrozenFile]:
+        """Every pinned ancestry input of one role, in path order."""
+        block = self.ancestry_inputs() or {"files": []}
+        return [
+            self._index[e["path"]]
+            for e in sorted(block["files"], key=lambda e: e["path"])
+            if e.get("role") == role
+        ]
+
+    def ancestry_entry(self, rel_path: str) -> FrozenFile:
+        block = self.ancestry_inputs()
+        if block is None:
+            raise FreezeError("ancestry_inputs is not pinned in this freeze")
+        if rel_path not in {e["path"] for e in block["files"]}:
+            raise FreezeError(f"{rel_path} is not pinned under ancestry_inputs")
+        return self._index[rel_path]
+
+    def ancestry_full_downloads(self) -> list[dict]:
+        """The two uncommitted full downloads: hash and dated origin URL only.
+
+        These carry no path on disk. They attest which release the committed
+        extracts were cut from, which is the whole of what D30 asks a reader to
+        be able to check without storing 120 MB in the repository.
+        """
+        block = self.ancestry_inputs() or {}
+        return sorted(block.get("full_downloads", []), key=lambda e: e["name"])
+
+    def take_ancestry_inputs(self, acs_release: str) -> dict:
+        """Pin the ancestry inputs and write them into FREEZE.json.
+
+        Refuses to re-pin an already pinned block: the 2026 report's shares are
+        frozen once, and a second pin after a later GWAS Catalog release would
+        move them silently. Retaking the freeze is the remedy, as it is for the
+        atlas block.
+        """
+        if self.ancestry_inputs() is not None:
+            raise FreezeError(
+                "ancestry_inputs is already pinned in this freeze; retake the freeze "
+                "rather than re-pinning, so a later release cannot move a 2026 share"
+            )
+        manifest_path = REPO_ROOT / GWAS_EXTRACT_MANIFEST
+        if not manifest_path.is_file():
+            raise FreezeError(
+                f"missing {GWAS_EXTRACT_MANIFEST}; run scripts/fetch_gwas_catalog.py"
+            )
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+
+        roles = {
+            "asthma_associations_": "gwas_association_extract",
+            "asthma_ancestries_": "gwas_ancestry_extract",
+        }
+        files: list[dict] = []
+        for entry in manifest["files"]:
+            if entry["role"] != "committed extract":
+                continue
+            role = next(
+                (r for prefix, r in roles.items() if entry["name"].startswith(prefix)),
+                None,
+            )
+            if role is None:
+                raise FreezeError(f"unexpected committed extract {entry['name']}")
+            files.append(
+                {
+                    "role": role,
+                    "path": f"{GWAS_CATALOG_DIR}/{entry['name']}",
+                    "sha256": entry["sha256"],
+                    "size_bytes": entry["size_bytes"],
+                }
+            )
+        files.append(
+            {
+                "role": "gwas_extract_manifest",
+                "path": GWAS_EXTRACT_MANIFEST,
+                "sha256": sha256_of(manifest_path),
+                "size_bytes": manifest_path.stat().st_size,
+            }
+        )
+        for table in ACS_TABLES:
+            rel = f"{ACS_SOURCE_DIR}/acs_loudoun_{acs_release}_{table}.json"
+            path = REPO_ROOT / rel
+            if not path.is_file():
+                raise FreezeError(
+                    f"missing {rel}; run scripts/fetch_acs_loudoun_release.py"
+                )
+            files.append(
+                {
+                    "role": "acs_release",
+                    "path": rel,
+                    "sha256": sha256_of(path),
+                    "size_bytes": path.stat().st_size,
+                }
+            )
+        for rel in ANCESTRY_LOOKUPS:
+            path = REPO_ROOT / rel
+            if not path.is_file():
+                raise FreezeError(f"missing lookup {rel}")
+            files.append(
+                {
+                    "role": "lookup",
+                    "path": rel,
+                    "sha256": sha256_of(path),
+                    "size_bytes": path.stat().st_size,
+                }
+            )
+
+        full = [
+            {
+                "name": entry["name"],
+                "origin_url": entry["origin_url"],
+                "sha256": entry["sha256"],
+                "size_bytes": entry["size_bytes"],
+                "stored": False,
+                "note": (
+                    "Not committed (DECISIONS.md D30). The committed extract beside it "
+                    "was cut from these bytes; re-download from origin_url and re-run "
+                    "scripts/fetch_gwas_catalog.py to reproduce the extract."
+                ),
+            }
+            for entry in manifest["files"]
+            if entry["role"] == "full download, not committed"
+        ]
+        if len(full) != 2:
+            raise FreezeError(f"expected 2 full downloads in the manifest, found {len(full)}")
+
+        block = {
+            "frozen_at": date.today().isoformat(),
+            "gwas_release_date": manifest["release_date"],
+            "gwas_release_base_url": manifest["release_base_url"],
+            "acs_release": acs_release,
+            "extraction_script": manifest["extraction_script"],
+            "selection_rule": manifest["selection_rule"],
+            "asthma_term_ids": manifest["asthma_term_ids"],
+            "full_downloads": full,
+            "files": sorted(files, key=lambda e: e["path"]),
+        }
+        self.doc["ancestry_inputs"] = block
+        for entry in block["files"]:
+            self._add(entry, "path", None)
+        self.write_doc()
+        return block
 
     def atlas_gate_blockers(self) -> list[str]:
         """Why the atlas freeze may not be taken yet. An empty list means it may.

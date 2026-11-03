@@ -1,0 +1,6105 @@
+{
+  "cells": {
+    "DP05_0001E": {
+      "label": "Estimate!!SEX AND AGE!!Total population",
+      "published": true,
+      "value": "432998"
+    },
+    "DP05_0001EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population",
+      "published": false,
+      "value": null
+    },
+    "DP05_0001M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population",
+      "published": false,
+      "value": "-555555555"
+    },
+    "DP05_0001MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population",
+      "published": true,
+      "value": "*****"
+    },
+    "DP05_0001PE": {
+      "label": "Percent!!SEX AND AGE!!Total population",
+      "published": true,
+      "value": "432998"
+    },
+    "DP05_0001PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population",
+      "published": false,
+      "value": null
+    },
+    "DP05_0001PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population",
+      "published": false,
+      "value": "-888888888"
+    },
+    "DP05_0001PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population",
+      "published": true,
+      "value": "(X)"
+    },
+    "DP05_0002E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!Male",
+      "published": true,
+      "value": "216777"
+    },
+    "DP05_0002EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!Male",
+      "published": false,
+      "value": null
+    },
+    "DP05_0002M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!Male",
+      "published": true,
+      "value": "56"
+    },
+    "DP05_0002MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!Male",
+      "published": false,
+      "value": null
+    },
+    "DP05_0002PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!Male",
+      "published": true,
+      "value": "50.1"
+    },
+    "DP05_0002PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!Male",
+      "published": false,
+      "value": null
+    },
+    "DP05_0002PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!Male",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0002PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!Male",
+      "published": false,
+      "value": null
+    },
+    "DP05_0003E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!Female",
+      "published": true,
+      "value": "216221"
+    },
+    "DP05_0003EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!Female",
+      "published": false,
+      "value": null
+    },
+    "DP05_0003M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!Female",
+      "published": true,
+      "value": "56"
+    },
+    "DP05_0003MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!Female",
+      "published": false,
+      "value": null
+    },
+    "DP05_0003PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!Female",
+      "published": true,
+      "value": "49.9"
+    },
+    "DP05_0003PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!Female",
+      "published": false,
+      "value": null
+    },
+    "DP05_0003PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!Female",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0003PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!Female",
+      "published": false,
+      "value": null
+    },
+    "DP05_0004E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!Sex ratio (males per 100 females)",
+      "published": true,
+      "value": "100.3"
+    },
+    "DP05_0004EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!Sex ratio (males per 100 females)",
+      "published": false,
+      "value": null
+    },
+    "DP05_0004M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!Sex ratio (males per 100 females)",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0004MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!Sex ratio (males per 100 females)",
+      "published": false,
+      "value": null
+    },
+    "DP05_0004PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!Sex ratio (males per 100 females)",
+      "published": false,
+      "value": "-888888888"
+    },
+    "DP05_0004PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!Sex ratio (males per 100 females)",
+      "published": true,
+      "value": "(X)"
+    },
+    "DP05_0004PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!Sex ratio (males per 100 females)",
+      "published": false,
+      "value": "-888888888"
+    },
+    "DP05_0004PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!Sex ratio (males per 100 females)",
+      "published": true,
+      "value": "(X)"
+    },
+    "DP05_0005E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!Under 5 years",
+      "published": true,
+      "value": "26798"
+    },
+    "DP05_0005EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!Under 5 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0005M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!Under 5 years",
+      "published": true,
+      "value": "25"
+    },
+    "DP05_0005MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!Under 5 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0005PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!Under 5 years",
+      "published": true,
+      "value": "6.2"
+    },
+    "DP05_0005PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!Under 5 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0005PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!Under 5 years",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0005PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!Under 5 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0006E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!5 to 9 years",
+      "published": true,
+      "value": "31290"
+    },
+    "DP05_0006EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!5 to 9 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0006M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!5 to 9 years",
+      "published": true,
+      "value": "1132"
+    },
+    "DP05_0006MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!5 to 9 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0006PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!5 to 9 years",
+      "published": true,
+      "value": "7.2"
+    },
+    "DP05_0006PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!5 to 9 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0006PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!5 to 9 years",
+      "published": true,
+      "value": "0.3"
+    },
+    "DP05_0006PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!5 to 9 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0007E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!10 to 14 years",
+      "published": true,
+      "value": "35634"
+    },
+    "DP05_0007EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!10 to 14 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0007M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!10 to 14 years",
+      "published": true,
+      "value": "1132"
+    },
+    "DP05_0007MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!10 to 14 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0007PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!10 to 14 years",
+      "published": true,
+      "value": "8.2"
+    },
+    "DP05_0007PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!10 to 14 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0007PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!10 to 14 years",
+      "published": true,
+      "value": "0.3"
+    },
+    "DP05_0007PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!10 to 14 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0008E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!15 to 19 years",
+      "published": true,
+      "value": "31943"
+    },
+    "DP05_0008EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!15 to 19 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0008M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!15 to 19 years",
+      "published": true,
+      "value": "39"
+    },
+    "DP05_0008MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!15 to 19 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0008PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!15 to 19 years",
+      "published": true,
+      "value": "7.4"
+    },
+    "DP05_0008PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!15 to 19 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0008PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!15 to 19 years",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0008PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!15 to 19 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0009E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!20 to 24 years",
+      "published": true,
+      "value": "23353"
+    },
+    "DP05_0009EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!20 to 24 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0009M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!20 to 24 years",
+      "published": true,
+      "value": "44"
+    },
+    "DP05_0009MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!20 to 24 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0009PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!20 to 24 years",
+      "published": true,
+      "value": "5.4"
+    },
+    "DP05_0009PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!20 to 24 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0009PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!20 to 24 years",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0009PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!20 to 24 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0010E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!25 to 34 years",
+      "published": true,
+      "value": "47099"
+    },
+    "DP05_0010EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!25 to 34 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0010M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!25 to 34 years",
+      "published": true,
+      "value": "64"
+    },
+    "DP05_0010MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!25 to 34 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0010PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!25 to 34 years",
+      "published": true,
+      "value": "10.9"
+    },
+    "DP05_0010PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!25 to 34 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0010PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!25 to 34 years",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0010PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!25 to 34 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0011E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!35 to 44 years",
+      "published": true,
+      "value": "72668"
+    },
+    "DP05_0011EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!35 to 44 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0011M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!35 to 44 years",
+      "published": true,
+      "value": "61"
+    },
+    "DP05_0011MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!35 to 44 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0011PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!35 to 44 years",
+      "published": true,
+      "value": "16.8"
+    },
+    "DP05_0011PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!35 to 44 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0011PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!35 to 44 years",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0011PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!35 to 44 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0012E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!45 to 54 years",
+      "published": true,
+      "value": "68432"
+    },
+    "DP05_0012EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!45 to 54 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0012M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!45 to 54 years",
+      "published": true,
+      "value": "61"
+    },
+    "DP05_0012MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!45 to 54 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0012PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!45 to 54 years",
+      "published": true,
+      "value": "15.8"
+    },
+    "DP05_0012PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!45 to 54 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0012PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!45 to 54 years",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0012PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!45 to 54 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0013E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!55 to 59 years",
+      "published": true,
+      "value": "27072"
+    },
+    "DP05_0013EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!55 to 59 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0013M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!55 to 59 years",
+      "published": true,
+      "value": "842"
+    },
+    "DP05_0013MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!55 to 59 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0013PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!55 to 59 years",
+      "published": true,
+      "value": "6.3"
+    },
+    "DP05_0013PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!55 to 59 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0013PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!55 to 59 years",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0013PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!55 to 59 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0014E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!60 to 64 years",
+      "published": true,
+      "value": "21815"
+    },
+    "DP05_0014EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!60 to 64 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0014M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!60 to 64 years",
+      "published": true,
+      "value": "843"
+    },
+    "DP05_0014MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!60 to 64 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0014PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!60 to 64 years",
+      "published": true,
+      "value": "5.0"
+    },
+    "DP05_0014PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!60 to 64 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0014PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!60 to 64 years",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0014PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!60 to 64 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0015E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!65 to 74 years",
+      "published": true,
+      "value": "27091"
+    },
+    "DP05_0015EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!65 to 74 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0015M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!65 to 74 years",
+      "published": true,
+      "value": "62"
+    },
+    "DP05_0015MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!65 to 74 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0015PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!65 to 74 years",
+      "published": true,
+      "value": "6.3"
+    },
+    "DP05_0015PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!65 to 74 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0015PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!65 to 74 years",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0015PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!65 to 74 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0016E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!75 to 84 years",
+      "published": true,
+      "value": "14848"
+    },
+    "DP05_0016EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!75 to 84 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0016M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!75 to 84 years",
+      "published": true,
+      "value": "526"
+    },
+    "DP05_0016MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!75 to 84 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0016PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!75 to 84 years",
+      "published": true,
+      "value": "3.4"
+    },
+    "DP05_0016PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!75 to 84 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0016PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!75 to 84 years",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0016PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!75 to 84 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0017E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!85 years and over",
+      "published": true,
+      "value": "4955"
+    },
+    "DP05_0017EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!85 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0017M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!85 years and over",
+      "published": true,
+      "value": "519"
+    },
+    "DP05_0017MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!85 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0017PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!85 years and over",
+      "published": true,
+      "value": "1.1"
+    },
+    "DP05_0017PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!85 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0017PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!85 years and over",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0017PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!85 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0018E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!Median age (years)",
+      "published": true,
+      "value": "38.2"
+    },
+    "DP05_0018EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!Median age (years)",
+      "published": false,
+      "value": null
+    },
+    "DP05_0018M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!Median age (years)",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0018MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!Median age (years)",
+      "published": false,
+      "value": null
+    },
+    "DP05_0018PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!Median age (years)",
+      "published": false,
+      "value": "-888888888"
+    },
+    "DP05_0018PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!Median age (years)",
+      "published": true,
+      "value": "(X)"
+    },
+    "DP05_0018PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!Median age (years)",
+      "published": false,
+      "value": "-888888888"
+    },
+    "DP05_0018PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!Median age (years)",
+      "published": true,
+      "value": "(X)"
+    },
+    "DP05_0019E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!Under 18 years",
+      "published": true,
+      "value": "115171"
+    },
+    "DP05_0019EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!Under 18 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0019M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!Under 18 years",
+      "published": false,
+      "value": "-555555555"
+    },
+    "DP05_0019MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!Under 18 years",
+      "published": true,
+      "value": "*****"
+    },
+    "DP05_0019PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!Under 18 years",
+      "published": true,
+      "value": "26.6"
+    },
+    "DP05_0019PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!Under 18 years",
+      "published": false,
+      "value": null
+    },
+    "DP05_0019PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!Under 18 years",
+      "published": false,
+      "value": "-555555555.0"
+    },
+    "DP05_0019PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!Under 18 years",
+      "published": true,
+      "value": "*****"
+    },
+    "DP05_0020E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!16 years and over",
+      "published": true,
+      "value": "332286"
+    },
+    "DP05_0020EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!16 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0020M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!16 years and over",
+      "published": true,
+      "value": "459"
+    },
+    "DP05_0020MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!16 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0020PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!16 years and over",
+      "published": true,
+      "value": "76.7"
+    },
+    "DP05_0020PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!16 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0020PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!16 years and over",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0020PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!16 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0021E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!18 years and over",
+      "published": true,
+      "value": "317827"
+    },
+    "DP05_0021EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!18 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0021M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!18 years and over",
+      "published": false,
+      "value": "-555555555"
+    },
+    "DP05_0021MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!18 years and over",
+      "published": true,
+      "value": "*****"
+    },
+    "DP05_0021PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!18 years and over",
+      "published": true,
+      "value": "73.4"
+    },
+    "DP05_0021PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!18 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0021PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!18 years and over",
+      "published": false,
+      "value": "-555555555.0"
+    },
+    "DP05_0021PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!18 years and over",
+      "published": true,
+      "value": "*****"
+    },
+    "DP05_0022E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!21 years and over",
+      "published": true,
+      "value": "302823"
+    },
+    "DP05_0022EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!21 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0022M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!21 years and over",
+      "published": true,
+      "value": "656"
+    },
+    "DP05_0022MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!21 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0022PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!21 years and over",
+      "published": true,
+      "value": "69.9"
+    },
+    "DP05_0022PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!21 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0022PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!21 years and over",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0022PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!21 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0023E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!62 years and over",
+      "published": true,
+      "value": "58955"
+    },
+    "DP05_0023EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!62 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0023M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!62 years and over",
+      "published": true,
+      "value": "685"
+    },
+    "DP05_0023MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!62 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0023PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!62 years and over",
+      "published": true,
+      "value": "13.6"
+    },
+    "DP05_0023PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!62 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0023PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!62 years and over",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0023PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!62 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0024E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!65 years and over",
+      "published": true,
+      "value": "46894"
+    },
+    "DP05_0024EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!65 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0024M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!65 years and over",
+      "published": true,
+      "value": "43"
+    },
+    "DP05_0024MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!65 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0024PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!65 years and over",
+      "published": true,
+      "value": "10.8"
+    },
+    "DP05_0024PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!65 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0024PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!65 years and over",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0024PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!65 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0025E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!18 years and over",
+      "published": true,
+      "value": "317827"
+    },
+    "DP05_0025EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!18 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0025M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!18 years and over",
+      "published": false,
+      "value": "-555555555"
+    },
+    "DP05_0025MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!18 years and over",
+      "published": true,
+      "value": "*****"
+    },
+    "DP05_0025PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!18 years and over",
+      "published": true,
+      "value": "317827"
+    },
+    "DP05_0025PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!18 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0025PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!18 years and over",
+      "published": false,
+      "value": "-888888888"
+    },
+    "DP05_0025PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!18 years and over",
+      "published": true,
+      "value": "(X)"
+    },
+    "DP05_0026E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!18 years and over!!Male",
+      "published": true,
+      "value": "157733"
+    },
+    "DP05_0026EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!18 years and over!!Male",
+      "published": false,
+      "value": null
+    },
+    "DP05_0026M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!18 years and over!!Male",
+      "published": true,
+      "value": "48"
+    },
+    "DP05_0026MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!18 years and over!!Male",
+      "published": false,
+      "value": null
+    },
+    "DP05_0026PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!18 years and over!!Male",
+      "published": true,
+      "value": "49.6"
+    },
+    "DP05_0026PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!18 years and over!!Male",
+      "published": false,
+      "value": null
+    },
+    "DP05_0026PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!18 years and over!!Male",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0026PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!18 years and over!!Male",
+      "published": false,
+      "value": null
+    },
+    "DP05_0027E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!18 years and over!!Female",
+      "published": true,
+      "value": "160094"
+    },
+    "DP05_0027EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!18 years and over!!Female",
+      "published": false,
+      "value": null
+    },
+    "DP05_0027M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!18 years and over!!Female",
+      "published": true,
+      "value": "48"
+    },
+    "DP05_0027MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!18 years and over!!Female",
+      "published": false,
+      "value": null
+    },
+    "DP05_0027PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!18 years and over!!Female",
+      "published": true,
+      "value": "50.4"
+    },
+    "DP05_0027PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!18 years and over!!Female",
+      "published": false,
+      "value": null
+    },
+    "DP05_0027PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!18 years and over!!Female",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0027PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!18 years and over!!Female",
+      "published": false,
+      "value": null
+    },
+    "DP05_0028E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!18 years and over!!Sex ratio (males per 100 females)",
+      "published": true,
+      "value": "98.5"
+    },
+    "DP05_0028EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!18 years and over!!Sex ratio (males per 100 females)",
+      "published": false,
+      "value": null
+    },
+    "DP05_0028M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!18 years and over!!Sex ratio (males per 100 females)",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0028MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!18 years and over!!Sex ratio (males per 100 females)",
+      "published": false,
+      "value": null
+    },
+    "DP05_0028PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!18 years and over!!Sex ratio (males per 100 females)",
+      "published": false,
+      "value": "-888888888"
+    },
+    "DP05_0028PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!18 years and over!!Sex ratio (males per 100 females)",
+      "published": true,
+      "value": "(X)"
+    },
+    "DP05_0028PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!18 years and over!!Sex ratio (males per 100 females)",
+      "published": false,
+      "value": "-888888888"
+    },
+    "DP05_0028PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!18 years and over!!Sex ratio (males per 100 females)",
+      "published": true,
+      "value": "(X)"
+    },
+    "DP05_0029E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!65 years and over",
+      "published": true,
+      "value": "46894"
+    },
+    "DP05_0029EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!65 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0029M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!65 years and over",
+      "published": true,
+      "value": "43"
+    },
+    "DP05_0029MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!65 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0029PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!65 years and over",
+      "published": true,
+      "value": "46894"
+    },
+    "DP05_0029PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!65 years and over",
+      "published": false,
+      "value": null
+    },
+    "DP05_0029PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!65 years and over",
+      "published": false,
+      "value": "-888888888"
+    },
+    "DP05_0029PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!65 years and over",
+      "published": true,
+      "value": "(X)"
+    },
+    "DP05_0030E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!65 years and over!!Male",
+      "published": true,
+      "value": "21240"
+    },
+    "DP05_0030EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!65 years and over!!Male",
+      "published": false,
+      "value": null
+    },
+    "DP05_0030M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!65 years and over!!Male",
+      "published": true,
+      "value": "42"
+    },
+    "DP05_0030MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!65 years and over!!Male",
+      "published": false,
+      "value": null
+    },
+    "DP05_0030PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!65 years and over!!Male",
+      "published": true,
+      "value": "45.3"
+    },
+    "DP05_0030PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!65 years and over!!Male",
+      "published": false,
+      "value": null
+    },
+    "DP05_0030PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!65 years and over!!Male",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0030PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!65 years and over!!Male",
+      "published": false,
+      "value": null
+    },
+    "DP05_0031E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!65 years and over!!Female",
+      "published": true,
+      "value": "25654"
+    },
+    "DP05_0031EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!65 years and over!!Female",
+      "published": false,
+      "value": null
+    },
+    "DP05_0031M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!65 years and over!!Female",
+      "published": true,
+      "value": "4"
+    },
+    "DP05_0031MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!65 years and over!!Female",
+      "published": false,
+      "value": null
+    },
+    "DP05_0031PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!65 years and over!!Female",
+      "published": true,
+      "value": "54.7"
+    },
+    "DP05_0031PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!65 years and over!!Female",
+      "published": false,
+      "value": null
+    },
+    "DP05_0031PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!65 years and over!!Female",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0031PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!65 years and over!!Female",
+      "published": false,
+      "value": null
+    },
+    "DP05_0032E": {
+      "label": "Estimate!!SEX AND AGE!!Total population!!65 years and over!!Sex ratio (males per 100 females)",
+      "published": true,
+      "value": "82.8"
+    },
+    "DP05_0032EA": {
+      "label": "Annotation of Estimate!!SEX AND AGE!!Total population!!65 years and over!!Sex ratio (males per 100 females)",
+      "published": false,
+      "value": null
+    },
+    "DP05_0032M": {
+      "label": "Margin of Error!!SEX AND AGE!!Total population!!65 years and over!!Sex ratio (males per 100 females)",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0032MA": {
+      "label": "Annotation of Margin of Error!!SEX AND AGE!!Total population!!65 years and over!!Sex ratio (males per 100 females)",
+      "published": false,
+      "value": null
+    },
+    "DP05_0032PE": {
+      "label": "Percent!!SEX AND AGE!!Total population!!65 years and over!!Sex ratio (males per 100 females)",
+      "published": false,
+      "value": "-888888888"
+    },
+    "DP05_0032PEA": {
+      "label": "Annotation of Percent!!SEX AND AGE!!Total population!!65 years and over!!Sex ratio (males per 100 females)",
+      "published": true,
+      "value": "(X)"
+    },
+    "DP05_0032PM": {
+      "label": "Percent Margin of Error!!SEX AND AGE!!Total population!!65 years and over!!Sex ratio (males per 100 females)",
+      "published": false,
+      "value": "-888888888"
+    },
+    "DP05_0032PMA": {
+      "label": "Annotation of Percent Margin of Error!!SEX AND AGE!!Total population!!65 years and over!!Sex ratio (males per 100 females)",
+      "published": true,
+      "value": "(X)"
+    },
+    "DP05_0033E": {
+      "label": "Estimate!!RACE!!Total population",
+      "published": true,
+      "value": "432998"
+    },
+    "DP05_0033EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population",
+      "published": false,
+      "value": null
+    },
+    "DP05_0033M": {
+      "label": "Margin of Error!!RACE!!Total population",
+      "published": false,
+      "value": "-555555555"
+    },
+    "DP05_0033MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population",
+      "published": true,
+      "value": "*****"
+    },
+    "DP05_0033PE": {
+      "label": "Percent!!RACE!!Total population",
+      "published": true,
+      "value": "432998"
+    },
+    "DP05_0033PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population",
+      "published": false,
+      "value": null
+    },
+    "DP05_0033PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population",
+      "published": false,
+      "value": "-888888888"
+    },
+    "DP05_0033PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population",
+      "published": true,
+      "value": "(X)"
+    },
+    "DP05_0034E": {
+      "label": "Estimate!!RACE!!Total population!!One race",
+      "published": true,
+      "value": "378499"
+    },
+    "DP05_0034EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0034M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race",
+      "published": true,
+      "value": "2698"
+    },
+    "DP05_0034MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0034PE": {
+      "label": "Percent!!RACE!!Total population!!One race",
+      "published": true,
+      "value": "87.4"
+    },
+    "DP05_0034PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0034PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race",
+      "published": true,
+      "value": "0.6"
+    },
+    "DP05_0034PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0035E": {
+      "label": "Estimate!!RACE!!Total population!!Two or More Races",
+      "published": true,
+      "value": "54499"
+    },
+    "DP05_0035EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!Two or More Races",
+      "published": false,
+      "value": null
+    },
+    "DP05_0035M": {
+      "label": "Margin of Error!!RACE!!Total population!!Two or More Races",
+      "published": true,
+      "value": "2698"
+    },
+    "DP05_0035MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!Two or More Races",
+      "published": false,
+      "value": null
+    },
+    "DP05_0035PE": {
+      "label": "Percent!!RACE!!Total population!!Two or More Races",
+      "published": true,
+      "value": "12.6"
+    },
+    "DP05_0035PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!Two or More Races",
+      "published": false,
+      "value": null
+    },
+    "DP05_0035PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!Two or More Races",
+      "published": true,
+      "value": "0.6"
+    },
+    "DP05_0035PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!Two or More Races",
+      "published": false,
+      "value": null
+    },
+    "DP05_0036E": {
+      "label": "Estimate!!RACE!!Total population!!One race",
+      "published": true,
+      "value": "378499"
+    },
+    "DP05_0036EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0036M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race",
+      "published": true,
+      "value": "2698"
+    },
+    "DP05_0036MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0036PE": {
+      "label": "Percent!!RACE!!Total population!!One race",
+      "published": true,
+      "value": "87.4"
+    },
+    "DP05_0036PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0036PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race",
+      "published": true,
+      "value": "0.6"
+    },
+    "DP05_0036PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0037E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!White",
+      "published": true,
+      "value": "228302"
+    },
+    "DP05_0037EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!White",
+      "published": false,
+      "value": null
+    },
+    "DP05_0037M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!White",
+      "published": true,
+      "value": "1523"
+    },
+    "DP05_0037MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!White",
+      "published": false,
+      "value": null
+    },
+    "DP05_0037PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!White",
+      "published": true,
+      "value": "52.7"
+    },
+    "DP05_0037PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!White",
+      "published": false,
+      "value": null
+    },
+    "DP05_0037PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!White",
+      "published": true,
+      "value": "0.4"
+    },
+    "DP05_0037PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!White",
+      "published": false,
+      "value": null
+    },
+    "DP05_0038E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!White!!Egyptian",
+      "published": true,
+      "value": "2623"
+    },
+    "DP05_0038EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!White!!Egyptian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0038M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!White!!Egyptian",
+      "published": true,
+      "value": "872"
+    },
+    "DP05_0038MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!White!!Egyptian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0038PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!White!!Egyptian",
+      "published": true,
+      "value": "0.6"
+    },
+    "DP05_0038PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!White!!Egyptian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0038PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!White!!Egyptian",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0038PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!White!!Egyptian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0039E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!White!!English",
+      "published": true,
+      "value": "24702"
+    },
+    "DP05_0039EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!White!!English",
+      "published": false,
+      "value": null
+    },
+    "DP05_0039M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!White!!English",
+      "published": true,
+      "value": "2156"
+    },
+    "DP05_0039MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!White!!English",
+      "published": false,
+      "value": null
+    },
+    "DP05_0039PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!White!!English",
+      "published": true,
+      "value": "5.7"
+    },
+    "DP05_0039PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!White!!English",
+      "published": false,
+      "value": null
+    },
+    "DP05_0039PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!White!!English",
+      "published": true,
+      "value": "0.5"
+    },
+    "DP05_0039PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!White!!English",
+      "published": false,
+      "value": null
+    },
+    "DP05_0040E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!White!!German",
+      "published": true,
+      "value": "13522"
+    },
+    "DP05_0040EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!White!!German",
+      "published": false,
+      "value": null
+    },
+    "DP05_0040M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!White!!German",
+      "published": true,
+      "value": "1228"
+    },
+    "DP05_0040MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!White!!German",
+      "published": false,
+      "value": null
+    },
+    "DP05_0040PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!White!!German",
+      "published": true,
+      "value": "3.1"
+    },
+    "DP05_0040PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!White!!German",
+      "published": false,
+      "value": null
+    },
+    "DP05_0040PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!White!!German",
+      "published": true,
+      "value": "0.3"
+    },
+    "DP05_0040PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!White!!German",
+      "published": false,
+      "value": null
+    },
+    "DP05_0041E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!White!!Irish",
+      "published": true,
+      "value": "15299"
+    },
+    "DP05_0041EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!White!!Irish",
+      "published": false,
+      "value": null
+    },
+    "DP05_0041M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!White!!Irish",
+      "published": true,
+      "value": "1652"
+    },
+    "DP05_0041MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!White!!Irish",
+      "published": false,
+      "value": null
+    },
+    "DP05_0041PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!White!!Irish",
+      "published": true,
+      "value": "3.5"
+    },
+    "DP05_0041PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!White!!Irish",
+      "published": false,
+      "value": null
+    },
+    "DP05_0041PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!White!!Irish",
+      "published": true,
+      "value": "0.4"
+    },
+    "DP05_0041PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!White!!Irish",
+      "published": false,
+      "value": null
+    },
+    "DP05_0042E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!White!!Italian",
+      "published": true,
+      "value": "7988"
+    },
+    "DP05_0042EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!White!!Italian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0042M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!White!!Italian",
+      "published": true,
+      "value": "970"
+    },
+    "DP05_0042MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!White!!Italian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0042PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!White!!Italian",
+      "published": true,
+      "value": "1.8"
+    },
+    "DP05_0042PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!White!!Italian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0042PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!White!!Italian",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0042PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!White!!Italian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0043E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!White!!Lebanese",
+      "published": true,
+      "value": "1224"
+    },
+    "DP05_0043EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!White!!Lebanese",
+      "published": false,
+      "value": null
+    },
+    "DP05_0043M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!White!!Lebanese",
+      "published": true,
+      "value": "779"
+    },
+    "DP05_0043MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!White!!Lebanese",
+      "published": false,
+      "value": null
+    },
+    "DP05_0043PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!White!!Lebanese",
+      "published": true,
+      "value": "0.3"
+    },
+    "DP05_0043PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!White!!Lebanese",
+      "published": false,
+      "value": null
+    },
+    "DP05_0043PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!White!!Lebanese",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0043PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!White!!Lebanese",
+      "published": false,
+      "value": null
+    },
+    "DP05_0044E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!White!!Other White",
+      "published": true,
+      "value": "162944"
+    },
+    "DP05_0044EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!White!!Other White",
+      "published": false,
+      "value": null
+    },
+    "DP05_0044M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!White!!Other White",
+      "published": true,
+      "value": "3288"
+    },
+    "DP05_0044MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!White!!Other White",
+      "published": false,
+      "value": null
+    },
+    "DP05_0044PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!White!!Other White",
+      "published": true,
+      "value": "37.6"
+    },
+    "DP05_0044PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!White!!Other White",
+      "published": false,
+      "value": null
+    },
+    "DP05_0044PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!White!!Other White",
+      "published": true,
+      "value": "0.8"
+    },
+    "DP05_0044PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!White!!Other White",
+      "published": false,
+      "value": null
+    },
+    "DP05_0045E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Black or African American",
+      "published": true,
+      "value": "33411"
+    },
+    "DP05_0045EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Black or African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0045M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Black or African American",
+      "published": true,
+      "value": "926"
+    },
+    "DP05_0045MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Black or African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0045PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Black or African American",
+      "published": true,
+      "value": "7.7"
+    },
+    "DP05_0045PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Black or African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0045PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Black or African American",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0045PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Black or African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0046E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Black or African American!!African American",
+      "published": true,
+      "value": "18446"
+    },
+    "DP05_0046EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Black or African American!!African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0046M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Black or African American!!African American",
+      "published": true,
+      "value": "1573"
+    },
+    "DP05_0046MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Black or African American!!African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0046PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Black or African American!!African American",
+      "published": true,
+      "value": "4.3"
+    },
+    "DP05_0046PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Black or African American!!African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0046PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Black or African American!!African American",
+      "published": true,
+      "value": "0.4"
+    },
+    "DP05_0046PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Black or African American!!African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0047E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Black or African American!!Ethiopian",
+      "published": true,
+      "value": "1095"
+    },
+    "DP05_0047EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Black or African American!!Ethiopian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0047M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Ethiopian",
+      "published": true,
+      "value": "444"
+    },
+    "DP05_0047MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Ethiopian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0047PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Black or African American!!Ethiopian",
+      "published": true,
+      "value": "0.3"
+    },
+    "DP05_0047PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Black or African American!!Ethiopian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0047PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Ethiopian",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0047PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Ethiopian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0048E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Black or African American!!Haitian",
+      "published": true,
+      "value": "257"
+    },
+    "DP05_0048EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Black or African American!!Haitian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0048M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Haitian",
+      "published": true,
+      "value": "179"
+    },
+    "DP05_0048MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Haitian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0048PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Black or African American!!Haitian",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0048PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Black or African American!!Haitian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0048PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Haitian",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0048PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Haitian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0049E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Black or African American!!Jamaican",
+      "published": true,
+      "value": "362"
+    },
+    "DP05_0049EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Black or African American!!Jamaican",
+      "published": false,
+      "value": null
+    },
+    "DP05_0049M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Jamaican",
+      "published": true,
+      "value": "185"
+    },
+    "DP05_0049MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Jamaican",
+      "published": false,
+      "value": null
+    },
+    "DP05_0049PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Black or African American!!Jamaican",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0049PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Black or African American!!Jamaican",
+      "published": false,
+      "value": null
+    },
+    "DP05_0049PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Jamaican",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0049PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Jamaican",
+      "published": false,
+      "value": null
+    },
+    "DP05_0050E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Black or African American!!Nigerian",
+      "published": true,
+      "value": "881"
+    },
+    "DP05_0050EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Black or African American!!Nigerian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0050M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Nigerian",
+      "published": true,
+      "value": "554"
+    },
+    "DP05_0050MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Nigerian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0050PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Black or African American!!Nigerian",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0050PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Black or African American!!Nigerian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0050PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Nigerian",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0050PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Nigerian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0051E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Black or African American!!Somali",
+      "published": true,
+      "value": "349"
+    },
+    "DP05_0051EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Black or African American!!Somali",
+      "published": false,
+      "value": null
+    },
+    "DP05_0051M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Somali",
+      "published": true,
+      "value": "239"
+    },
+    "DP05_0051MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Somali",
+      "published": false,
+      "value": null
+    },
+    "DP05_0051PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Black or African American!!Somali",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0051PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Black or African American!!Somali",
+      "published": false,
+      "value": null
+    },
+    "DP05_0051PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Somali",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0051PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Somali",
+      "published": false,
+      "value": null
+    },
+    "DP05_0052E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Black or African American!!Other Black or African American",
+      "published": true,
+      "value": "12021"
+    },
+    "DP05_0052EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Black or African American!!Other Black or African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0052M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Other Black or African American",
+      "published": true,
+      "value": "1471"
+    },
+    "DP05_0052MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Other Black or African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0052PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Black or African American!!Other Black or African American",
+      "published": true,
+      "value": "2.8"
+    },
+    "DP05_0052PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Black or African American!!Other Black or African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0052PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Other Black or African American",
+      "published": true,
+      "value": "0.3"
+    },
+    "DP05_0052PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Black or African American!!Other Black or African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0053E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!American Indian and Alaska Native",
+      "published": true,
+      "value": "1253"
+    },
+    "DP05_0053EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0053M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native",
+      "published": true,
+      "value": "421"
+    },
+    "DP05_0053MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0053PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!American Indian and Alaska Native",
+      "published": true,
+      "value": "0.3"
+    },
+    "DP05_0053PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0053PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0053PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0054E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Aztec",
+      "published": true,
+      "value": "37"
+    },
+    "DP05_0054EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Aztec",
+      "published": false,
+      "value": null
+    },
+    "DP05_0054M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Aztec",
+      "published": true,
+      "value": "43"
+    },
+    "DP05_0054MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Aztec",
+      "published": false,
+      "value": null
+    },
+    "DP05_0054PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Aztec",
+      "published": true,
+      "value": "0.0"
+    },
+    "DP05_0054PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Aztec",
+      "published": false,
+      "value": null
+    },
+    "DP05_0054PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Aztec",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0054PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Aztec",
+      "published": false,
+      "value": null
+    },
+    "DP05_0055E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Blackfeet Tribe of the Blackfeet Indian Reservation of Montana",
+      "published": true,
+      "value": "7"
+    },
+    "DP05_0055EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Blackfeet Tribe of the Blackfeet Indian Reservation of Montana",
+      "published": false,
+      "value": null
+    },
+    "DP05_0055M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Blackfeet Tribe of the Blackfeet Indian Reservation of Montana",
+      "published": true,
+      "value": "11"
+    },
+    "DP05_0055MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Blackfeet Tribe of the Blackfeet Indian Reservation of Montana",
+      "published": false,
+      "value": null
+    },
+    "DP05_0055PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Blackfeet Tribe of the Blackfeet Indian Reservation of Montana",
+      "published": true,
+      "value": "0.0"
+    },
+    "DP05_0055PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Blackfeet Tribe of the Blackfeet Indian Reservation of Montana",
+      "published": false,
+      "value": null
+    },
+    "DP05_0055PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Blackfeet Tribe of the Blackfeet Indian Reservation of Montana",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0055PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Blackfeet Tribe of the Blackfeet Indian Reservation of Montana",
+      "published": false,
+      "value": null
+    },
+    "DP05_0056E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Maya",
+      "published": true,
+      "value": "246"
+    },
+    "DP05_0056EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Maya",
+      "published": false,
+      "value": null
+    },
+    "DP05_0056M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Maya",
+      "published": true,
+      "value": "214"
+    },
+    "DP05_0056MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Maya",
+      "published": false,
+      "value": null
+    },
+    "DP05_0056PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Maya",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0056PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Maya",
+      "published": false,
+      "value": null
+    },
+    "DP05_0056PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Maya",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0056PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Maya",
+      "published": false,
+      "value": null
+    },
+    "DP05_0057E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Native Village of Barrow Inupiat Traditional Government",
+      "published": true,
+      "value": "0"
+    },
+    "DP05_0057EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Native Village of Barrow Inupiat Traditional Government",
+      "published": false,
+      "value": null
+    },
+    "DP05_0057M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Native Village of Barrow Inupiat Traditional Government",
+      "published": true,
+      "value": "31"
+    },
+    "DP05_0057MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Native Village of Barrow Inupiat Traditional Government",
+      "published": false,
+      "value": null
+    },
+    "DP05_0057PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Native Village of Barrow Inupiat Traditional Government",
+      "published": true,
+      "value": "0.0"
+    },
+    "DP05_0057PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Native Village of Barrow Inupiat Traditional Government",
+      "published": false,
+      "value": null
+    },
+    "DP05_0057PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Native Village of Barrow Inupiat Traditional Government",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0057PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Native Village of Barrow Inupiat Traditional Government",
+      "published": false,
+      "value": null
+    },
+    "DP05_0058E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Navajo Nation",
+      "published": true,
+      "value": "6"
+    },
+    "DP05_0058EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Navajo Nation",
+      "published": false,
+      "value": null
+    },
+    "DP05_0058M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Navajo Nation",
+      "published": true,
+      "value": "13"
+    },
+    "DP05_0058MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Navajo Nation",
+      "published": false,
+      "value": null
+    },
+    "DP05_0058PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Navajo Nation",
+      "published": true,
+      "value": "0.0"
+    },
+    "DP05_0058PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Navajo Nation",
+      "published": false,
+      "value": null
+    },
+    "DP05_0058PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Navajo Nation",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0058PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Navajo Nation",
+      "published": false,
+      "value": null
+    },
+    "DP05_0059E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Nome Eskimo Community",
+      "published": true,
+      "value": "0"
+    },
+    "DP05_0059EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Nome Eskimo Community",
+      "published": false,
+      "value": null
+    },
+    "DP05_0059M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Nome Eskimo Community",
+      "published": true,
+      "value": "31"
+    },
+    "DP05_0059MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Nome Eskimo Community",
+      "published": false,
+      "value": null
+    },
+    "DP05_0059PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Nome Eskimo Community",
+      "published": true,
+      "value": "0.0"
+    },
+    "DP05_0059PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Nome Eskimo Community",
+      "published": false,
+      "value": null
+    },
+    "DP05_0059PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Nome Eskimo Community",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0059PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Nome Eskimo Community",
+      "published": false,
+      "value": null
+    },
+    "DP05_0060E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Other American Indian and Alaska Native",
+      "published": true,
+      "value": "957"
+    },
+    "DP05_0060EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Other American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0060M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Other American Indian and Alaska Native",
+      "published": true,
+      "value": "347"
+    },
+    "DP05_0060MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Other American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0060PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Other American Indian and Alaska Native",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0060PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Other American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0060PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Other American Indian and Alaska Native",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0060PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!American Indian and Alaska Native!!Other American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0061E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Asian",
+      "published": true,
+      "value": "94508"
+    },
+    "DP05_0061EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Asian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0061M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Asian",
+      "published": true,
+      "value": "1466"
+    },
+    "DP05_0061MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Asian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0061PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Asian",
+      "published": true,
+      "value": "21.8"
+    },
+    "DP05_0061PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Asian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0061PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Asian",
+      "published": true,
+      "value": "0.3"
+    },
+    "DP05_0061PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Asian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0062E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Asian!!Asian Indian",
+      "published": true,
+      "value": "47553"
+    },
+    "DP05_0062EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Asian!!Asian Indian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0062M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Asian!!Asian Indian",
+      "published": true,
+      "value": "2323"
+    },
+    "DP05_0062MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Asian!!Asian Indian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0062PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Asian!!Asian Indian",
+      "published": true,
+      "value": "11.0"
+    },
+    "DP05_0062PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Asian!!Asian Indian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0062PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Asian!!Asian Indian",
+      "published": true,
+      "value": "0.5"
+    },
+    "DP05_0062PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Asian!!Asian Indian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0063E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Asian!!Chinese",
+      "published": true,
+      "value": "6606"
+    },
+    "DP05_0063EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Asian!!Chinese",
+      "published": false,
+      "value": null
+    },
+    "DP05_0063M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Asian!!Chinese",
+      "published": true,
+      "value": "728"
+    },
+    "DP05_0063MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Asian!!Chinese",
+      "published": false,
+      "value": null
+    },
+    "DP05_0063PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Asian!!Chinese",
+      "published": true,
+      "value": "1.5"
+    },
+    "DP05_0063PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Asian!!Chinese",
+      "published": false,
+      "value": null
+    },
+    "DP05_0063PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Asian!!Chinese",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0063PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Asian!!Chinese",
+      "published": false,
+      "value": null
+    },
+    "DP05_0064E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Asian!!Filipino",
+      "published": true,
+      "value": "4185"
+    },
+    "DP05_0064EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Asian!!Filipino",
+      "published": false,
+      "value": null
+    },
+    "DP05_0064M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Asian!!Filipino",
+      "published": true,
+      "value": "691"
+    },
+    "DP05_0064MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Asian!!Filipino",
+      "published": false,
+      "value": null
+    },
+    "DP05_0064PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Asian!!Filipino",
+      "published": true,
+      "value": "1.0"
+    },
+    "DP05_0064PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Asian!!Filipino",
+      "published": false,
+      "value": null
+    },
+    "DP05_0064PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Asian!!Filipino",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0064PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Asian!!Filipino",
+      "published": false,
+      "value": null
+    },
+    "DP05_0065E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Asian!!Japanese",
+      "published": true,
+      "value": "889"
+    },
+    "DP05_0065EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Asian!!Japanese",
+      "published": false,
+      "value": null
+    },
+    "DP05_0065M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Asian!!Japanese",
+      "published": true,
+      "value": "220"
+    },
+    "DP05_0065MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Asian!!Japanese",
+      "published": false,
+      "value": null
+    },
+    "DP05_0065PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Asian!!Japanese",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0065PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Asian!!Japanese",
+      "published": false,
+      "value": null
+    },
+    "DP05_0065PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Asian!!Japanese",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0065PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Asian!!Japanese",
+      "published": false,
+      "value": null
+    },
+    "DP05_0066E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Asian!!Korean",
+      "published": true,
+      "value": "6147"
+    },
+    "DP05_0066EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Asian!!Korean",
+      "published": false,
+      "value": null
+    },
+    "DP05_0066M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Asian!!Korean",
+      "published": true,
+      "value": "924"
+    },
+    "DP05_0066MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Asian!!Korean",
+      "published": false,
+      "value": null
+    },
+    "DP05_0066PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Asian!!Korean",
+      "published": true,
+      "value": "1.4"
+    },
+    "DP05_0066PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Asian!!Korean",
+      "published": false,
+      "value": null
+    },
+    "DP05_0066PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Asian!!Korean",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0066PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Asian!!Korean",
+      "published": false,
+      "value": null
+    },
+    "DP05_0067E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Asian!!Vietnamese",
+      "published": true,
+      "value": "6685"
+    },
+    "DP05_0067EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Asian!!Vietnamese",
+      "published": false,
+      "value": null
+    },
+    "DP05_0067M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Asian!!Vietnamese",
+      "published": true,
+      "value": "1130"
+    },
+    "DP05_0067MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Asian!!Vietnamese",
+      "published": false,
+      "value": null
+    },
+    "DP05_0067PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Asian!!Vietnamese",
+      "published": true,
+      "value": "1.5"
+    },
+    "DP05_0067PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Asian!!Vietnamese",
+      "published": false,
+      "value": null
+    },
+    "DP05_0067PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Asian!!Vietnamese",
+      "published": true,
+      "value": "0.3"
+    },
+    "DP05_0067PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Asian!!Vietnamese",
+      "published": false,
+      "value": null
+    },
+    "DP05_0068E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Asian!!Other Asian",
+      "published": true,
+      "value": "22443"
+    },
+    "DP05_0068EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Asian!!Other Asian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0068M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Asian!!Other Asian",
+      "published": true,
+      "value": "2106"
+    },
+    "DP05_0068MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Asian!!Other Asian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0068PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Asian!!Other Asian",
+      "published": true,
+      "value": "5.2"
+    },
+    "DP05_0068PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Asian!!Other Asian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0068PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Asian!!Other Asian",
+      "published": true,
+      "value": "0.5"
+    },
+    "DP05_0068PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Asian!!Other Asian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0069E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander",
+      "published": true,
+      "value": "221"
+    },
+    "DP05_0069EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander",
+      "published": false,
+      "value": null
+    },
+    "DP05_0069M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander",
+      "published": true,
+      "value": "78"
+    },
+    "DP05_0069MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander",
+      "published": false,
+      "value": null
+    },
+    "DP05_0069PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0069PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander",
+      "published": false,
+      "value": null
+    },
+    "DP05_0069PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0069PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander",
+      "published": false,
+      "value": null
+    },
+    "DP05_0070E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Chamorro",
+      "published": true,
+      "value": "42"
+    },
+    "DP05_0070EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Chamorro",
+      "published": false,
+      "value": null
+    },
+    "DP05_0070M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Chamorro",
+      "published": true,
+      "value": "49"
+    },
+    "DP05_0070MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Chamorro",
+      "published": false,
+      "value": null
+    },
+    "DP05_0070PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Chamorro",
+      "published": true,
+      "value": "0.0"
+    },
+    "DP05_0070PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Chamorro",
+      "published": false,
+      "value": null
+    },
+    "DP05_0070PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Chamorro",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0070PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Chamorro",
+      "published": false,
+      "value": null
+    },
+    "DP05_0071E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Native Hawaiian",
+      "published": true,
+      "value": "69"
+    },
+    "DP05_0071EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Native Hawaiian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0071M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Native Hawaiian",
+      "published": true,
+      "value": "60"
+    },
+    "DP05_0071MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Native Hawaiian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0071PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Native Hawaiian",
+      "published": true,
+      "value": "0.0"
+    },
+    "DP05_0071PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Native Hawaiian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0071PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Native Hawaiian",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0071PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Native Hawaiian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0072E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Samoan",
+      "published": true,
+      "value": "17"
+    },
+    "DP05_0072EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Samoan",
+      "published": false,
+      "value": null
+    },
+    "DP05_0072M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Samoan",
+      "published": true,
+      "value": "30"
+    },
+    "DP05_0072MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Samoan",
+      "published": false,
+      "value": null
+    },
+    "DP05_0072PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Samoan",
+      "published": true,
+      "value": "0.0"
+    },
+    "DP05_0072PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Samoan",
+      "published": false,
+      "value": null
+    },
+    "DP05_0072PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Samoan",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0072PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Samoan",
+      "published": false,
+      "value": null
+    },
+    "DP05_0073E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Other Native Hawaiian and Other Pacific Islander",
+      "published": true,
+      "value": "93"
+    },
+    "DP05_0073EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Other Native Hawaiian and Other Pacific Islander",
+      "published": false,
+      "value": null
+    },
+    "DP05_0073M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Other Native Hawaiian and Other Pacific Islander",
+      "published": true,
+      "value": "55"
+    },
+    "DP05_0073MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Other Native Hawaiian and Other Pacific Islander",
+      "published": false,
+      "value": null
+    },
+    "DP05_0073PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Other Native Hawaiian and Other Pacific Islander",
+      "published": true,
+      "value": "0.0"
+    },
+    "DP05_0073PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Other Native Hawaiian and Other Pacific Islander",
+      "published": false,
+      "value": null
+    },
+    "DP05_0073PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Other Native Hawaiian and Other Pacific Islander",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0073PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Native Hawaiian and Other Pacific Islander!!Other Native Hawaiian and Other Pacific Islander",
+      "published": false,
+      "value": null
+    },
+    "DP05_0074E": {
+      "label": "Estimate!!RACE!!Total population!!One race!!Some Other Race",
+      "published": true,
+      "value": "20804"
+    },
+    "DP05_0074EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!One race!!Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0074M": {
+      "label": "Margin of Error!!RACE!!Total population!!One race!!Some Other Race",
+      "published": true,
+      "value": "2100"
+    },
+    "DP05_0074MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!One race!!Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0074PE": {
+      "label": "Percent!!RACE!!Total population!!One race!!Some Other Race",
+      "published": true,
+      "value": "4.8"
+    },
+    "DP05_0074PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!One race!!Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0074PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!One race!!Some Other Race",
+      "published": true,
+      "value": "0.5"
+    },
+    "DP05_0074PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!One race!!Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0075E": {
+      "label": "Estimate!!RACE!!Total population!!Two or More Races",
+      "published": true,
+      "value": "54499"
+    },
+    "DP05_0075EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!Two or More Races",
+      "published": false,
+      "value": null
+    },
+    "DP05_0075M": {
+      "label": "Margin of Error!!RACE!!Total population!!Two or More Races",
+      "published": true,
+      "value": "2698"
+    },
+    "DP05_0075MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!Two or More Races",
+      "published": false,
+      "value": null
+    },
+    "DP05_0075PE": {
+      "label": "Percent!!RACE!!Total population!!Two or More Races",
+      "published": true,
+      "value": "12.6"
+    },
+    "DP05_0075PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!Two or More Races",
+      "published": false,
+      "value": null
+    },
+    "DP05_0075PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!Two or More Races",
+      "published": true,
+      "value": "0.6"
+    },
+    "DP05_0075PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!Two or More Races",
+      "published": false,
+      "value": null
+    },
+    "DP05_0076E": {
+      "label": "Estimate!!RACE!!Total population!!Two or More Races!!White and Black or African American",
+      "published": true,
+      "value": "4448"
+    },
+    "DP05_0076EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!Two or More Races!!White and Black or African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0076M": {
+      "label": "Margin of Error!!RACE!!Total population!!Two or More Races!!White and Black or African American",
+      "published": true,
+      "value": "698"
+    },
+    "DP05_0076MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!Two or More Races!!White and Black or African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0076PE": {
+      "label": "Percent!!RACE!!Total population!!Two or More Races!!White and Black or African American",
+      "published": true,
+      "value": "1.0"
+    },
+    "DP05_0076PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!Two or More Races!!White and Black or African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0076PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!Two or More Races!!White and Black or African American",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0076PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!Two or More Races!!White and Black or African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0077E": {
+      "label": "Estimate!!RACE!!Total population!!Two or More Races!!White and American Indian and Alaska Native",
+      "published": true,
+      "value": "1471"
+    },
+    "DP05_0077EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!Two or More Races!!White and American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0077M": {
+      "label": "Margin of Error!!RACE!!Total population!!Two or More Races!!White and American Indian and Alaska Native",
+      "published": true,
+      "value": "263"
+    },
+    "DP05_0077MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!Two or More Races!!White and American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0077PE": {
+      "label": "Percent!!RACE!!Total population!!Two or More Races!!White and American Indian and Alaska Native",
+      "published": true,
+      "value": "0.3"
+    },
+    "DP05_0077PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!Two or More Races!!White and American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0077PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!Two or More Races!!White and American Indian and Alaska Native",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0077PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!Two or More Races!!White and American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0078E": {
+      "label": "Estimate!!RACE!!Total population!!Two or More Races!!White and Asian",
+      "published": true,
+      "value": "9330"
+    },
+    "DP05_0078EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!Two or More Races!!White and Asian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0078M": {
+      "label": "Margin of Error!!RACE!!Total population!!Two or More Races!!White and Asian",
+      "published": true,
+      "value": "1165"
+    },
+    "DP05_0078MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!Two or More Races!!White and Asian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0078PE": {
+      "label": "Percent!!RACE!!Total population!!Two or More Races!!White and Asian",
+      "published": true,
+      "value": "2.2"
+    },
+    "DP05_0078PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!Two or More Races!!White and Asian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0078PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!Two or More Races!!White and Asian",
+      "published": true,
+      "value": "0.3"
+    },
+    "DP05_0078PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!Two or More Races!!White and Asian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0079E": {
+      "label": "Estimate!!RACE!!Total population!!Two or More Races!!White and Some Other Race",
+      "published": true,
+      "value": "32622"
+    },
+    "DP05_0079EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!Two or More Races!!White and Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0079M": {
+      "label": "Margin of Error!!RACE!!Total population!!Two or More Races!!White and Some Other Race",
+      "published": true,
+      "value": "2223"
+    },
+    "DP05_0079MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!Two or More Races!!White and Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0079PE": {
+      "label": "Percent!!RACE!!Total population!!Two or More Races!!White and Some Other Race",
+      "published": true,
+      "value": "7.5"
+    },
+    "DP05_0079PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!Two or More Races!!White and Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0079PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!Two or More Races!!White and Some Other Race",
+      "published": true,
+      "value": "0.5"
+    },
+    "DP05_0079PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!Two or More Races!!White and Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0080E": {
+      "label": "Estimate!!RACE!!Total population!!Two or More Races!!Black or African American and American Indian and Alaska Native",
+      "published": true,
+      "value": "218"
+    },
+    "DP05_0080EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!Two or More Races!!Black or African American and American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0080M": {
+      "label": "Margin of Error!!RACE!!Total population!!Two or More Races!!Black or African American and American Indian and Alaska Native",
+      "published": true,
+      "value": "126"
+    },
+    "DP05_0080MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!Two or More Races!!Black or African American and American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0080PE": {
+      "label": "Percent!!RACE!!Total population!!Two or More Races!!Black or African American and American Indian and Alaska Native",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0080PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!Two or More Races!!Black or African American and American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0080PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!Two or More Races!!Black or African American and American Indian and Alaska Native",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0080PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!Two or More Races!!Black or African American and American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0081E": {
+      "label": "Estimate!!RACE!!Total population!!Two or More Races!!Black or African American and Some Other Race",
+      "published": true,
+      "value": "1134"
+    },
+    "DP05_0081EA": {
+      "label": "Annotation of Estimate!!RACE!!Total population!!Two or More Races!!Black or African American and Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0081M": {
+      "label": "Margin of Error!!RACE!!Total population!!Two or More Races!!Black or African American and Some Other Race",
+      "published": true,
+      "value": "439"
+    },
+    "DP05_0081MA": {
+      "label": "Annotation of Margin of Error!!RACE!!Total population!!Two or More Races!!Black or African American and Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0081PE": {
+      "label": "Percent!!RACE!!Total population!!Two or More Races!!Black or African American and Some Other Race",
+      "published": true,
+      "value": "0.3"
+    },
+    "DP05_0081PEA": {
+      "label": "Annotation of Percent!!RACE!!Total population!!Two or More Races!!Black or African American and Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0081PM": {
+      "label": "Percent Margin of Error!!RACE!!Total population!!Two or More Races!!Black or African American and Some Other Race",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0081PMA": {
+      "label": "Annotation of Percent Margin of Error!!RACE!!Total population!!Two or More Races!!Black or African American and Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0082E": {
+      "label": "Estimate!!Race alone or in combination with one or more other races!!Total population",
+      "published": true,
+      "value": "432998"
+    },
+    "DP05_0082EA": {
+      "label": "Annotation of Estimate!!Race alone or in combination with one or more other races!!Total population",
+      "published": false,
+      "value": null
+    },
+    "DP05_0082M": {
+      "label": "Margin of Error!!Race alone or in combination with one or more other races!!Total population",
+      "published": false,
+      "value": "-555555555"
+    },
+    "DP05_0082MA": {
+      "label": "Annotation of Margin of Error!!Race alone or in combination with one or more other races!!Total population",
+      "published": true,
+      "value": "*****"
+    },
+    "DP05_0082PE": {
+      "label": "Percent!!Race alone or in combination with one or more other races!!Total population",
+      "published": true,
+      "value": "432998"
+    },
+    "DP05_0082PEA": {
+      "label": "Annotation of Percent!!Race alone or in combination with one or more other races!!Total population",
+      "published": false,
+      "value": null
+    },
+    "DP05_0082PM": {
+      "label": "Percent Margin of Error!!Race alone or in combination with one or more other races!!Total population",
+      "published": false,
+      "value": "-888888888"
+    },
+    "DP05_0082PMA": {
+      "label": "Annotation of Percent Margin of Error!!Race alone or in combination with one or more other races!!Total population",
+      "published": true,
+      "value": "(X)"
+    },
+    "DP05_0083E": {
+      "label": "Estimate!!Race alone or in combination with one or more other races!!Total population!!White",
+      "published": true,
+      "value": "279979"
+    },
+    "DP05_0083EA": {
+      "label": "Annotation of Estimate!!Race alone or in combination with one or more other races!!Total population!!White",
+      "published": false,
+      "value": null
+    },
+    "DP05_0083M": {
+      "label": "Margin of Error!!Race alone or in combination with one or more other races!!Total population!!White",
+      "published": true,
+      "value": "2503"
+    },
+    "DP05_0083MA": {
+      "label": "Annotation of Margin of Error!!Race alone or in combination with one or more other races!!Total population!!White",
+      "published": false,
+      "value": null
+    },
+    "DP05_0083PE": {
+      "label": "Percent!!Race alone or in combination with one or more other races!!Total population!!White",
+      "published": true,
+      "value": "64.7"
+    },
+    "DP05_0083PEA": {
+      "label": "Annotation of Percent!!Race alone or in combination with one or more other races!!Total population!!White",
+      "published": false,
+      "value": null
+    },
+    "DP05_0083PM": {
+      "label": "Percent Margin of Error!!Race alone or in combination with one or more other races!!Total population!!White",
+      "published": true,
+      "value": "0.6"
+    },
+    "DP05_0083PMA": {
+      "label": "Annotation of Percent Margin of Error!!Race alone or in combination with one or more other races!!Total population!!White",
+      "published": false,
+      "value": null
+    },
+    "DP05_0084E": {
+      "label": "Estimate!!Race alone or in combination with one or more other races!!Total population!!Black or African American",
+      "published": true,
+      "value": "41771"
+    },
+    "DP05_0084EA": {
+      "label": "Annotation of Estimate!!Race alone or in combination with one or more other races!!Total population!!Black or African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0084M": {
+      "label": "Margin of Error!!Race alone or in combination with one or more other races!!Total population!!Black or African American",
+      "published": true,
+      "value": "931"
+    },
+    "DP05_0084MA": {
+      "label": "Annotation of Margin of Error!!Race alone or in combination with one or more other races!!Total population!!Black or African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0084PE": {
+      "label": "Percent!!Race alone or in combination with one or more other races!!Total population!!Black or African American",
+      "published": true,
+      "value": "9.6"
+    },
+    "DP05_0084PEA": {
+      "label": "Annotation of Percent!!Race alone or in combination with one or more other races!!Total population!!Black or African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0084PM": {
+      "label": "Percent Margin of Error!!Race alone or in combination with one or more other races!!Total population!!Black or African American",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0084PMA": {
+      "label": "Annotation of Percent Margin of Error!!Race alone or in combination with one or more other races!!Total population!!Black or African American",
+      "published": false,
+      "value": null
+    },
+    "DP05_0085E": {
+      "label": "Estimate!!Race alone or in combination with one or more other races!!Total population!!American Indian and Alaska Native",
+      "published": true,
+      "value": "5113"
+    },
+    "DP05_0085EA": {
+      "label": "Annotation of Estimate!!Race alone or in combination with one or more other races!!Total population!!American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0085M": {
+      "label": "Margin of Error!!Race alone or in combination with one or more other races!!Total population!!American Indian and Alaska Native",
+      "published": true,
+      "value": "859"
+    },
+    "DP05_0085MA": {
+      "label": "Annotation of Margin of Error!!Race alone or in combination with one or more other races!!Total population!!American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0085PE": {
+      "label": "Percent!!Race alone or in combination with one or more other races!!Total population!!American Indian and Alaska Native",
+      "published": true,
+      "value": "1.2"
+    },
+    "DP05_0085PEA": {
+      "label": "Annotation of Percent!!Race alone or in combination with one or more other races!!Total population!!American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0085PM": {
+      "label": "Percent Margin of Error!!Race alone or in combination with one or more other races!!Total population!!American Indian and Alaska Native",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0085PMA": {
+      "label": "Annotation of Percent Margin of Error!!Race alone or in combination with one or more other races!!Total population!!American Indian and Alaska Native",
+      "published": false,
+      "value": null
+    },
+    "DP05_0086E": {
+      "label": "Estimate!!Race alone or in combination with one or more other races!!Total population!!Asian",
+      "published": true,
+      "value": "106549"
+    },
+    "DP05_0086EA": {
+      "label": "Annotation of Estimate!!Race alone or in combination with one or more other races!!Total population!!Asian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0086M": {
+      "label": "Margin of Error!!Race alone or in combination with one or more other races!!Total population!!Asian",
+      "published": true,
+      "value": "687"
+    },
+    "DP05_0086MA": {
+      "label": "Annotation of Margin of Error!!Race alone or in combination with one or more other races!!Total population!!Asian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0086PE": {
+      "label": "Percent!!Race alone or in combination with one or more other races!!Total population!!Asian",
+      "published": true,
+      "value": "24.6"
+    },
+    "DP05_0086PEA": {
+      "label": "Annotation of Percent!!Race alone or in combination with one or more other races!!Total population!!Asian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0086PM": {
+      "label": "Percent Margin of Error!!Race alone or in combination with one or more other races!!Total population!!Asian",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0086PMA": {
+      "label": "Annotation of Percent Margin of Error!!Race alone or in combination with one or more other races!!Total population!!Asian",
+      "published": false,
+      "value": null
+    },
+    "DP05_0087E": {
+      "label": "Estimate!!Race alone or in combination with one or more other races!!Total population!!Native Hawaiian and Other Pacific Islander",
+      "published": true,
+      "value": "834"
+    },
+    "DP05_0087EA": {
+      "label": "Annotation of Estimate!!Race alone or in combination with one or more other races!!Total population!!Native Hawaiian and Other Pacific Islander",
+      "published": false,
+      "value": null
+    },
+    "DP05_0087M": {
+      "label": "Margin of Error!!Race alone or in combination with one or more other races!!Total population!!Native Hawaiian and Other Pacific Islander",
+      "published": true,
+      "value": "232"
+    },
+    "DP05_0087MA": {
+      "label": "Annotation of Margin of Error!!Race alone or in combination with one or more other races!!Total population!!Native Hawaiian and Other Pacific Islander",
+      "published": false,
+      "value": null
+    },
+    "DP05_0087PE": {
+      "label": "Percent!!Race alone or in combination with one or more other races!!Total population!!Native Hawaiian and Other Pacific Islander",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0087PEA": {
+      "label": "Annotation of Percent!!Race alone or in combination with one or more other races!!Total population!!Native Hawaiian and Other Pacific Islander",
+      "published": false,
+      "value": null
+    },
+    "DP05_0087PM": {
+      "label": "Percent Margin of Error!!Race alone or in combination with one or more other races!!Total population!!Native Hawaiian and Other Pacific Islander",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0087PMA": {
+      "label": "Annotation of Percent Margin of Error!!Race alone or in combination with one or more other races!!Total population!!Native Hawaiian and Other Pacific Islander",
+      "published": false,
+      "value": null
+    },
+    "DP05_0088E": {
+      "label": "Estimate!!Race alone or in combination with one or more other races!!Total population!!Some Other Race",
+      "published": true,
+      "value": "57284"
+    },
+    "DP05_0088EA": {
+      "label": "Annotation of Estimate!!Race alone or in combination with one or more other races!!Total population!!Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0088M": {
+      "label": "Margin of Error!!Race alone or in combination with one or more other races!!Total population!!Some Other Race",
+      "published": true,
+      "value": "1650"
+    },
+    "DP05_0088MA": {
+      "label": "Annotation of Margin of Error!!Race alone or in combination with one or more other races!!Total population!!Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0088PE": {
+      "label": "Percent!!Race alone or in combination with one or more other races!!Total population!!Some Other Race",
+      "published": true,
+      "value": "13.2"
+    },
+    "DP05_0088PEA": {
+      "label": "Annotation of Percent!!Race alone or in combination with one or more other races!!Total population!!Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0088PM": {
+      "label": "Percent Margin of Error!!Race alone or in combination with one or more other races!!Total population!!Some Other Race",
+      "published": true,
+      "value": "0.4"
+    },
+    "DP05_0088PMA": {
+      "label": "Annotation of Percent Margin of Error!!Race alone or in combination with one or more other races!!Total population!!Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0089E": {
+      "label": "Estimate!!HISPANIC OR LATINO AND RACE!!Total population",
+      "published": true,
+      "value": "432998"
+    },
+    "DP05_0089EA": {
+      "label": "Annotation of Estimate!!HISPANIC OR LATINO AND RACE!!Total population",
+      "published": false,
+      "value": null
+    },
+    "DP05_0089M": {
+      "label": "Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population",
+      "published": false,
+      "value": "-555555555"
+    },
+    "DP05_0089MA": {
+      "label": "Annotation of Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population",
+      "published": true,
+      "value": "*****"
+    },
+    "DP05_0089PE": {
+      "label": "Percent!!HISPANIC OR LATINO AND RACE!!Total population",
+      "published": true,
+      "value": "432998"
+    },
+    "DP05_0089PEA": {
+      "label": "Annotation of Percent!!HISPANIC OR LATINO AND RACE!!Total population",
+      "published": false,
+      "value": null
+    },
+    "DP05_0089PM": {
+      "label": "Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population",
+      "published": false,
+      "value": "-888888888"
+    },
+    "DP05_0089PMA": {
+      "label": "Annotation of Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population",
+      "published": true,
+      "value": "(X)"
+    },
+    "DP05_0090E": {
+      "label": "Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)",
+      "published": true,
+      "value": "61750"
+    },
+    "DP05_0090EA": {
+      "label": "Annotation of Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)",
+      "published": false,
+      "value": null
+    },
+    "DP05_0090M": {
+      "label": "Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)",
+      "published": false,
+      "value": "-555555555"
+    },
+    "DP05_0090MA": {
+      "label": "Annotation of Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)",
+      "published": true,
+      "value": "*****"
+    },
+    "DP05_0090PE": {
+      "label": "Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)",
+      "published": true,
+      "value": "14.3"
+    },
+    "DP05_0090PEA": {
+      "label": "Annotation of Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)",
+      "published": false,
+      "value": null
+    },
+    "DP05_0090PM": {
+      "label": "Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)",
+      "published": false,
+      "value": "-555555555.0"
+    },
+    "DP05_0090PMA": {
+      "label": "Annotation of Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)",
+      "published": true,
+      "value": "*****"
+    },
+    "DP05_0091E": {
+      "label": "Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Mexican",
+      "published": true,
+      "value": "7073"
+    },
+    "DP05_0091EA": {
+      "label": "Annotation of Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Mexican",
+      "published": false,
+      "value": null
+    },
+    "DP05_0091M": {
+      "label": "Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Mexican",
+      "published": true,
+      "value": "957"
+    },
+    "DP05_0091MA": {
+      "label": "Annotation of Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Mexican",
+      "published": false,
+      "value": null
+    },
+    "DP05_0091PE": {
+      "label": "Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Mexican",
+      "published": true,
+      "value": "1.6"
+    },
+    "DP05_0091PEA": {
+      "label": "Annotation of Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Mexican",
+      "published": false,
+      "value": null
+    },
+    "DP05_0091PM": {
+      "label": "Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Mexican",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0091PMA": {
+      "label": "Annotation of Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Mexican",
+      "published": false,
+      "value": null
+    },
+    "DP05_0092E": {
+      "label": "Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Puerto Rican",
+      "published": true,
+      "value": "5460"
+    },
+    "DP05_0092EA": {
+      "label": "Annotation of Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Puerto Rican",
+      "published": false,
+      "value": null
+    },
+    "DP05_0092M": {
+      "label": "Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Puerto Rican",
+      "published": true,
+      "value": "931"
+    },
+    "DP05_0092MA": {
+      "label": "Annotation of Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Puerto Rican",
+      "published": false,
+      "value": null
+    },
+    "DP05_0092PE": {
+      "label": "Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Puerto Rican",
+      "published": true,
+      "value": "1.3"
+    },
+    "DP05_0092PEA": {
+      "label": "Annotation of Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Puerto Rican",
+      "published": false,
+      "value": null
+    },
+    "DP05_0092PM": {
+      "label": "Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Puerto Rican",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0092PMA": {
+      "label": "Annotation of Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Puerto Rican",
+      "published": false,
+      "value": null
+    },
+    "DP05_0093E": {
+      "label": "Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Cuban",
+      "published": true,
+      "value": "1788"
+    },
+    "DP05_0093EA": {
+      "label": "Annotation of Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Cuban",
+      "published": false,
+      "value": null
+    },
+    "DP05_0093M": {
+      "label": "Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Cuban",
+      "published": true,
+      "value": "521"
+    },
+    "DP05_0093MA": {
+      "label": "Annotation of Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Cuban",
+      "published": false,
+      "value": null
+    },
+    "DP05_0093PE": {
+      "label": "Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Cuban",
+      "published": true,
+      "value": "0.4"
+    },
+    "DP05_0093PEA": {
+      "label": "Annotation of Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Cuban",
+      "published": false,
+      "value": null
+    },
+    "DP05_0093PM": {
+      "label": "Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Cuban",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0093PMA": {
+      "label": "Annotation of Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Cuban",
+      "published": false,
+      "value": null
+    },
+    "DP05_0094E": {
+      "label": "Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Other Hispanic or Latino",
+      "published": true,
+      "value": "47429"
+    },
+    "DP05_0094EA": {
+      "label": "Annotation of Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Other Hispanic or Latino",
+      "published": false,
+      "value": null
+    },
+    "DP05_0094M": {
+      "label": "Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Other Hispanic or Latino",
+      "published": true,
+      "value": "1453"
+    },
+    "DP05_0094MA": {
+      "label": "Annotation of Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Other Hispanic or Latino",
+      "published": false,
+      "value": null
+    },
+    "DP05_0094PE": {
+      "label": "Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Other Hispanic or Latino",
+      "published": true,
+      "value": "11.0"
+    },
+    "DP05_0094PEA": {
+      "label": "Annotation of Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Other Hispanic or Latino",
+      "published": false,
+      "value": null
+    },
+    "DP05_0094PM": {
+      "label": "Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Other Hispanic or Latino",
+      "published": true,
+      "value": "0.3"
+    },
+    "DP05_0094PMA": {
+      "label": "Annotation of Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)!!Other Hispanic or Latino",
+      "published": false,
+      "value": null
+    },
+    "DP05_0095E": {
+      "label": "Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino",
+      "published": true,
+      "value": "371248"
+    },
+    "DP05_0095EA": {
+      "label": "Annotation of Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino",
+      "published": false,
+      "value": null
+    },
+    "DP05_0095M": {
+      "label": "Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino",
+      "published": false,
+      "value": "-555555555"
+    },
+    "DP05_0095MA": {
+      "label": "Annotation of Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino",
+      "published": true,
+      "value": "*****"
+    },
+    "DP05_0095PE": {
+      "label": "Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino",
+      "published": true,
+      "value": "85.7"
+    },
+    "DP05_0095PEA": {
+      "label": "Annotation of Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino",
+      "published": false,
+      "value": null
+    },
+    "DP05_0095PM": {
+      "label": "Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino",
+      "published": false,
+      "value": "-555555555.0"
+    },
+    "DP05_0095PMA": {
+      "label": "Annotation of Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino",
+      "published": true,
+      "value": "*****"
+    },
+    "DP05_0096E": {
+      "label": "Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!White alone",
+      "published": true,
+      "value": "220791"
+    },
+    "DP05_0096EA": {
+      "label": "Annotation of Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!White alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0096M": {
+      "label": "Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!White alone",
+      "published": true,
+      "value": "572"
+    },
+    "DP05_0096MA": {
+      "label": "Annotation of Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!White alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0096PE": {
+      "label": "Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!White alone",
+      "published": true,
+      "value": "51.0"
+    },
+    "DP05_0096PEA": {
+      "label": "Annotation of Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!White alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0096PM": {
+      "label": "Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!White alone",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0096PMA": {
+      "label": "Annotation of Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!White alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0097E": {
+      "label": "Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Black or African American alone",
+      "published": true,
+      "value": "32463"
+    },
+    "DP05_0097EA": {
+      "label": "Annotation of Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Black or African American alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0097M": {
+      "label": "Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Black or African American alone",
+      "published": true,
+      "value": "828"
+    },
+    "DP05_0097MA": {
+      "label": "Annotation of Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Black or African American alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0097PE": {
+      "label": "Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Black or African American alone",
+      "published": true,
+      "value": "7.5"
+    },
+    "DP05_0097PEA": {
+      "label": "Annotation of Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Black or African American alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0097PM": {
+      "label": "Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Black or African American alone",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0097PMA": {
+      "label": "Annotation of Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Black or African American alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0098E": {
+      "label": "Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!American Indian and Alaska Native alone",
+      "published": true,
+      "value": "453"
+    },
+    "DP05_0098EA": {
+      "label": "Annotation of Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!American Indian and Alaska Native alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0098M": {
+      "label": "Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!American Indian and Alaska Native alone",
+      "published": true,
+      "value": "117"
+    },
+    "DP05_0098MA": {
+      "label": "Annotation of Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!American Indian and Alaska Native alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0098PE": {
+      "label": "Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!American Indian and Alaska Native alone",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0098PEA": {
+      "label": "Annotation of Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!American Indian and Alaska Native alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0098PM": {
+      "label": "Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!American Indian and Alaska Native alone",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0098PMA": {
+      "label": "Annotation of Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!American Indian and Alaska Native alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0099E": {
+      "label": "Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Asian alone",
+      "published": true,
+      "value": "94036"
+    },
+    "DP05_0099EA": {
+      "label": "Annotation of Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Asian alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0099M": {
+      "label": "Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Asian alone",
+      "published": true,
+      "value": "1400"
+    },
+    "DP05_0099MA": {
+      "label": "Annotation of Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Asian alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0099PE": {
+      "label": "Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Asian alone",
+      "published": true,
+      "value": "21.7"
+    },
+    "DP05_0099PEA": {
+      "label": "Annotation of Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Asian alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0099PM": {
+      "label": "Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Asian alone",
+      "published": true,
+      "value": "0.3"
+    },
+    "DP05_0099PMA": {
+      "label": "Annotation of Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Asian alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0100E": {
+      "label": "Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Native Hawaiian and Other Pacific Islander alone",
+      "published": true,
+      "value": "196"
+    },
+    "DP05_0100EA": {
+      "label": "Annotation of Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Native Hawaiian and Other Pacific Islander alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0100M": {
+      "label": "Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Native Hawaiian and Other Pacific Islander alone",
+      "published": true,
+      "value": "66"
+    },
+    "DP05_0100MA": {
+      "label": "Annotation of Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Native Hawaiian and Other Pacific Islander alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0100PE": {
+      "label": "Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Native Hawaiian and Other Pacific Islander alone",
+      "published": true,
+      "value": "0.0"
+    },
+    "DP05_0100PEA": {
+      "label": "Annotation of Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Native Hawaiian and Other Pacific Islander alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0100PM": {
+      "label": "Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Native Hawaiian and Other Pacific Islander alone",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0100PMA": {
+      "label": "Annotation of Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Native Hawaiian and Other Pacific Islander alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0101E": {
+      "label": "Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Some Other Race alone",
+      "published": true,
+      "value": "3263"
+    },
+    "DP05_0101EA": {
+      "label": "Annotation of Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Some Other Race alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0101M": {
+      "label": "Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Some Other Race alone",
+      "published": true,
+      "value": "736"
+    },
+    "DP05_0101MA": {
+      "label": "Annotation of Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Some Other Race alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0101PE": {
+      "label": "Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Some Other Race alone",
+      "published": true,
+      "value": "0.8"
+    },
+    "DP05_0101PEA": {
+      "label": "Annotation of Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Some Other Race alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0101PM": {
+      "label": "Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Some Other Race alone",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0101PMA": {
+      "label": "Annotation of Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Some Other Race alone",
+      "published": false,
+      "value": null
+    },
+    "DP05_0102E": {
+      "label": "Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races",
+      "published": true,
+      "value": "20046"
+    },
+    "DP05_0102EA": {
+      "label": "Annotation of Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races",
+      "published": false,
+      "value": null
+    },
+    "DP05_0102M": {
+      "label": "Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races",
+      "published": true,
+      "value": "1539"
+    },
+    "DP05_0102MA": {
+      "label": "Annotation of Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races",
+      "published": false,
+      "value": null
+    },
+    "DP05_0102PE": {
+      "label": "Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races",
+      "published": true,
+      "value": "4.6"
+    },
+    "DP05_0102PEA": {
+      "label": "Annotation of Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races",
+      "published": false,
+      "value": null
+    },
+    "DP05_0102PM": {
+      "label": "Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races",
+      "published": true,
+      "value": "0.4"
+    },
+    "DP05_0102PMA": {
+      "label": "Annotation of Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races",
+      "published": false,
+      "value": null
+    },
+    "DP05_0103E": {
+      "label": "Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races!!Two races including Some Other Race",
+      "published": true,
+      "value": "2933"
+    },
+    "DP05_0103EA": {
+      "label": "Annotation of Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races!!Two races including Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0103M": {
+      "label": "Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races!!Two races including Some Other Race",
+      "published": true,
+      "value": "438"
+    },
+    "DP05_0103MA": {
+      "label": "Annotation of Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races!!Two races including Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0103PE": {
+      "label": "Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races!!Two races including Some Other Race",
+      "published": true,
+      "value": "0.7"
+    },
+    "DP05_0103PEA": {
+      "label": "Annotation of Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races!!Two races including Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0103PM": {
+      "label": "Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races!!Two races including Some Other Race",
+      "published": true,
+      "value": "0.1"
+    },
+    "DP05_0103PMA": {
+      "label": "Annotation of Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races!!Two races including Some Other Race",
+      "published": false,
+      "value": null
+    },
+    "DP05_0104E": {
+      "label": "Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races!!Two races excluding Some Other Race, and three or more races",
+      "published": true,
+      "value": "17113"
+    },
+    "DP05_0104EA": {
+      "label": "Annotation of Estimate!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races!!Two races excluding Some Other Race, and three or more races",
+      "published": false,
+      "value": null
+    },
+    "DP05_0104M": {
+      "label": "Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races!!Two races excluding Some Other Race, and three or more races",
+      "published": true,
+      "value": "1437"
+    },
+    "DP05_0104MA": {
+      "label": "Annotation of Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races!!Two races excluding Some Other Race, and three or more races",
+      "published": false,
+      "value": null
+    },
+    "DP05_0104PE": {
+      "label": "Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races!!Two races excluding Some Other Race, and three or more races",
+      "published": true,
+      "value": "4.0"
+    },
+    "DP05_0104PEA": {
+      "label": "Annotation of Percent!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races!!Two races excluding Some Other Race, and three or more races",
+      "published": false,
+      "value": null
+    },
+    "DP05_0104PM": {
+      "label": "Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races!!Two races excluding Some Other Race, and three or more races",
+      "published": true,
+      "value": "0.3"
+    },
+    "DP05_0104PMA": {
+      "label": "Annotation of Percent Margin of Error!!HISPANIC OR LATINO AND RACE!!Total population!!Not Hispanic or Latino!!Two or More Races!!Two races excluding Some Other Race, and three or more races",
+      "published": false,
+      "value": null
+    },
+    "DP05_0105E": {
+      "label": "Estimate!!Total housing units",
+      "published": true,
+      "value": "147003"
+    },
+    "DP05_0105EA": {
+      "label": "Annotation of Estimate!!Total housing units",
+      "published": false,
+      "value": null
+    },
+    "DP05_0105M": {
+      "label": "Margin of Error!!Total housing units",
+      "published": true,
+      "value": "96"
+    },
+    "DP05_0105MA": {
+      "label": "Annotation of Margin of Error!!Total housing units",
+      "published": false,
+      "value": null
+    },
+    "DP05_0105PE": {
+      "label": "Percent!!Total housing units",
+      "published": false,
+      "value": "-888888888"
+    },
+    "DP05_0105PEA": {
+      "label": "Annotation of Percent!!Total housing units",
+      "published": true,
+      "value": "(X)"
+    },
+    "DP05_0105PM": {
+      "label": "Percent Margin of Error!!Total housing units",
+      "published": false,
+      "value": "-888888888"
+    },
+    "DP05_0105PMA": {
+      "label": "Annotation of Percent Margin of Error!!Total housing units",
+      "published": true,
+      "value": "(X)"
+    },
+    "DP05_0106E": {
+      "label": "Estimate!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population",
+      "published": true,
+      "value": "278045"
+    },
+    "DP05_0106EA": {
+      "label": "Annotation of Estimate!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population",
+      "published": false,
+      "value": null
+    },
+    "DP05_0106M": {
+      "label": "Margin of Error!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population",
+      "published": true,
+      "value": "1873"
+    },
+    "DP05_0106MA": {
+      "label": "Annotation of Margin of Error!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population",
+      "published": false,
+      "value": null
+    },
+    "DP05_0106PE": {
+      "label": "Percent!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population",
+      "published": true,
+      "value": "278045"
+    },
+    "DP05_0106PEA": {
+      "label": "Annotation of Percent!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population",
+      "published": false,
+      "value": null
+    },
+    "DP05_0106PM": {
+      "label": "Percent Margin of Error!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population",
+      "published": false,
+      "value": "-888888888"
+    },
+    "DP05_0106PMA": {
+      "label": "Annotation of Percent Margin of Error!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population",
+      "published": true,
+      "value": "(X)"
+    },
+    "DP05_0107E": {
+      "label": "Estimate!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population!!Male",
+      "published": true,
+      "value": "138524"
+    },
+    "DP05_0107EA": {
+      "label": "Annotation of Estimate!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population!!Male",
+      "published": false,
+      "value": null
+    },
+    "DP05_0107M": {
+      "label": "Margin of Error!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population!!Male",
+      "published": true,
+      "value": "1102"
+    },
+    "DP05_0107MA": {
+      "label": "Annotation of Margin of Error!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population!!Male",
+      "published": false,
+      "value": null
+    },
+    "DP05_0107PE": {
+      "label": "Percent!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population!!Male",
+      "published": true,
+      "value": "49.8"
+    },
+    "DP05_0107PEA": {
+      "label": "Annotation of Percent!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population!!Male",
+      "published": false,
+      "value": null
+    },
+    "DP05_0107PM": {
+      "label": "Percent Margin of Error!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population!!Male",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0107PMA": {
+      "label": "Annotation of Percent Margin of Error!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population!!Male",
+      "published": false,
+      "value": null
+    },
+    "DP05_0108E": {
+      "label": "Estimate!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population!!Female",
+      "published": true,
+      "value": "139521"
+    },
+    "DP05_0108EA": {
+      "label": "Annotation of Estimate!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population!!Female",
+      "published": false,
+      "value": null
+    },
+    "DP05_0108M": {
+      "label": "Margin of Error!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population!!Female",
+      "published": true,
+      "value": "1172"
+    },
+    "DP05_0108MA": {
+      "label": "Annotation of Margin of Error!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population!!Female",
+      "published": false,
+      "value": null
+    },
+    "DP05_0108PE": {
+      "label": "Percent!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population!!Female",
+      "published": true,
+      "value": "50.2"
+    },
+    "DP05_0108PEA": {
+      "label": "Annotation of Percent!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population!!Female",
+      "published": false,
+      "value": null
+    },
+    "DP05_0108PM": {
+      "label": "Percent Margin of Error!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population!!Female",
+      "published": true,
+      "value": "0.2"
+    },
+    "DP05_0108PMA": {
+      "label": "Annotation of Percent Margin of Error!!CITIZEN, VOTING AGE POPULATION!!Citizen, 18 and over population!!Female",
+      "published": false,
+      "value": null
+    },
+    "GEO_ID": {
+      "label": "Geography",
+      "published": true,
+      "value": "0500000US51107"
+    },
+    "NAME": {
+      "label": "Geographic Area Name",
+      "published": true,
+      "value": "Loudoun County, Virginia"
+    }
+  },
+  "concept": "ACS Demographic and Housing Estimates",
+  "dataset": "ACS 2024 5-year estimates (acs/acs5)",
+  "geography": "Loudoun County, Virginia",
+  "geography_columns": {
+    "county": "107",
+    "state": "51"
+  },
+  "geography_fips": {
+    "county": "107",
+    "state": "51"
+  },
+  "label_source_url": "https://api.census.gov/data/2024/acs/acs5/profile/groups/DP05.json",
+  "notes": "Race and Hispanic origin in these tables are self-identified social categories. They are not genetic ancestry and must never be presented as a genetic-ancestry composition.",
+  "raw_response": [
+    [
+      "DP05_0001E",
+      "DP05_0001EA",
+      "DP05_0001M",
+      "DP05_0001MA",
+      "DP05_0001PE",
+      "DP05_0001PEA",
+      "DP05_0001PM",
+      "DP05_0001PMA",
+      "DP05_0002E",
+      "DP05_0002EA",
+      "DP05_0002M",
+      "DP05_0002MA",
+      "DP05_0002PE",
+      "DP05_0002PEA",
+      "DP05_0002PM",
+      "DP05_0002PMA",
+      "DP05_0003E",
+      "DP05_0003EA",
+      "DP05_0003M",
+      "DP05_0003MA",
+      "DP05_0003PE",
+      "DP05_0003PEA",
+      "DP05_0003PM",
+      "DP05_0003PMA",
+      "DP05_0004E",
+      "DP05_0004EA",
+      "DP05_0004M",
+      "DP05_0004MA",
+      "DP05_0004PE",
+      "DP05_0004PEA",
+      "DP05_0004PM",
+      "DP05_0004PMA",
+      "DP05_0005E",
+      "DP05_0005EA",
+      "DP05_0005M",
+      "DP05_0005MA",
+      "DP05_0005PE",
+      "DP05_0005PEA",
+      "DP05_0005PM",
+      "DP05_0005PMA",
+      "DP05_0006E",
+      "DP05_0006EA",
+      "DP05_0006M",
+      "DP05_0006MA",
+      "DP05_0006PE",
+      "DP05_0006PEA",
+      "DP05_0006PM",
+      "DP05_0006PMA",
+      "DP05_0007E",
+      "DP05_0007EA",
+      "DP05_0007M",
+      "DP05_0007MA",
+      "DP05_0007PE",
+      "DP05_0007PEA",
+      "DP05_0007PM",
+      "DP05_0007PMA",
+      "DP05_0008E",
+      "DP05_0008EA",
+      "DP05_0008M",
+      "DP05_0008MA",
+      "DP05_0008PE",
+      "DP05_0008PEA",
+      "DP05_0008PM",
+      "DP05_0008PMA",
+      "DP05_0009E",
+      "DP05_0009EA",
+      "DP05_0009M",
+      "DP05_0009MA",
+      "DP05_0009PE",
+      "DP05_0009PEA",
+      "DP05_0009PM",
+      "DP05_0009PMA",
+      "DP05_0010E",
+      "DP05_0010EA",
+      "DP05_0010M",
+      "DP05_0010MA",
+      "DP05_0010PE",
+      "DP05_0010PEA",
+      "DP05_0010PM",
+      "DP05_0010PMA",
+      "DP05_0011E",
+      "DP05_0011EA",
+      "DP05_0011M",
+      "DP05_0011MA",
+      "DP05_0011PE",
+      "DP05_0011PEA",
+      "DP05_0011PM",
+      "DP05_0011PMA",
+      "DP05_0012E",
+      "DP05_0012EA",
+      "DP05_0012M",
+      "DP05_0012MA",
+      "DP05_0012PE",
+      "DP05_0012PEA",
+      "DP05_0012PM",
+      "DP05_0012PMA",
+      "DP05_0013E",
+      "DP05_0013EA",
+      "DP05_0013M",
+      "DP05_0013MA",
+      "DP05_0013PE",
+      "DP05_0013PEA",
+      "DP05_0013PM",
+      "DP05_0013PMA",
+      "DP05_0014E",
+      "DP05_0014EA",
+      "DP05_0014M",
+      "DP05_0014MA",
+      "DP05_0014PE",
+      "DP05_0014PEA",
+      "DP05_0014PM",
+      "DP05_0014PMA",
+      "DP05_0015E",
+      "DP05_0015EA",
+      "DP05_0015M",
+      "DP05_0015MA",
+      "DP05_0015PE",
+      "DP05_0015PEA",
+      "DP05_0015PM",
+      "DP05_0015PMA",
+      "DP05_0016E",
+      "DP05_0016EA",
+      "DP05_0016M",
+      "DP05_0016MA",
+      "DP05_0016PE",
+      "DP05_0016PEA",
+      "DP05_0016PM",
+      "DP05_0016PMA",
+      "DP05_0017E",
+      "DP05_0017EA",
+      "DP05_0017M",
+      "DP05_0017MA",
+      "DP05_0017PE",
+      "DP05_0017PEA",
+      "DP05_0017PM",
+      "DP05_0017PMA",
+      "DP05_0018E",
+      "DP05_0018EA",
+      "DP05_0018M",
+      "DP05_0018MA",
+      "DP05_0018PE",
+      "DP05_0018PEA",
+      "DP05_0018PM",
+      "DP05_0018PMA",
+      "DP05_0019E",
+      "DP05_0019EA",
+      "DP05_0019M",
+      "DP05_0019MA",
+      "DP05_0019PE",
+      "DP05_0019PEA",
+      "DP05_0019PM",
+      "DP05_0019PMA",
+      "DP05_0020E",
+      "DP05_0020EA",
+      "DP05_0020M",
+      "DP05_0020MA",
+      "DP05_0020PE",
+      "DP05_0020PEA",
+      "DP05_0020PM",
+      "DP05_0020PMA",
+      "DP05_0021E",
+      "DP05_0021EA",
+      "DP05_0021M",
+      "DP05_0021MA",
+      "DP05_0021PE",
+      "DP05_0021PEA",
+      "DP05_0021PM",
+      "DP05_0021PMA",
+      "DP05_0022E",
+      "DP05_0022EA",
+      "DP05_0022M",
+      "DP05_0022MA",
+      "DP05_0022PE",
+      "DP05_0022PEA",
+      "DP05_0022PM",
+      "DP05_0022PMA",
+      "DP05_0023E",
+      "DP05_0023EA",
+      "DP05_0023M",
+      "DP05_0023MA",
+      "DP05_0023PE",
+      "DP05_0023PEA",
+      "DP05_0023PM",
+      "DP05_0023PMA",
+      "DP05_0024E",
+      "DP05_0024EA",
+      "DP05_0024M",
+      "DP05_0024MA",
+      "DP05_0024PE",
+      "DP05_0024PEA",
+      "DP05_0024PM",
+      "DP05_0024PMA",
+      "DP05_0025E",
+      "DP05_0025EA",
+      "DP05_0025M",
+      "DP05_0025MA",
+      "DP05_0025PE",
+      "DP05_0025PEA",
+      "DP05_0025PM",
+      "DP05_0025PMA",
+      "DP05_0026E",
+      "DP05_0026EA",
+      "DP05_0026M",
+      "DP05_0026MA",
+      "DP05_0026PE",
+      "DP05_0026PEA",
+      "DP05_0026PM",
+      "DP05_0026PMA",
+      "DP05_0027E",
+      "DP05_0027EA",
+      "DP05_0027M",
+      "DP05_0027MA",
+      "DP05_0027PE",
+      "DP05_0027PEA",
+      "DP05_0027PM",
+      "DP05_0027PMA",
+      "DP05_0028E",
+      "DP05_0028EA",
+      "DP05_0028M",
+      "DP05_0028MA",
+      "DP05_0028PE",
+      "DP05_0028PEA",
+      "DP05_0028PM",
+      "DP05_0028PMA",
+      "DP05_0029E",
+      "DP05_0029EA",
+      "DP05_0029M",
+      "DP05_0029MA",
+      "DP05_0029PE",
+      "DP05_0029PEA",
+      "DP05_0029PM",
+      "DP05_0029PMA",
+      "DP05_0030E",
+      "DP05_0030EA",
+      "DP05_0030M",
+      "DP05_0030MA",
+      "DP05_0030PE",
+      "DP05_0030PEA",
+      "DP05_0030PM",
+      "DP05_0030PMA",
+      "DP05_0031E",
+      "DP05_0031EA",
+      "DP05_0031M",
+      "DP05_0031MA",
+      "DP05_0031PE",
+      "DP05_0031PEA",
+      "DP05_0031PM",
+      "DP05_0031PMA",
+      "DP05_0032E",
+      "DP05_0032EA",
+      "DP05_0032M",
+      "DP05_0032MA",
+      "DP05_0032PE",
+      "DP05_0032PEA",
+      "DP05_0032PM",
+      "DP05_0032PMA",
+      "DP05_0033E",
+      "DP05_0033EA",
+      "DP05_0033M",
+      "DP05_0033MA",
+      "DP05_0033PE",
+      "DP05_0033PEA",
+      "DP05_0033PM",
+      "DP05_0033PMA",
+      "DP05_0034E",
+      "DP05_0034EA",
+      "DP05_0034M",
+      "DP05_0034MA",
+      "DP05_0034PE",
+      "DP05_0034PEA",
+      "DP05_0034PM",
+      "DP05_0034PMA",
+      "DP05_0035E",
+      "DP05_0035EA",
+      "DP05_0035M",
+      "DP05_0035MA",
+      "DP05_0035PE",
+      "DP05_0035PEA",
+      "DP05_0035PM",
+      "DP05_0035PMA",
+      "DP05_0036E",
+      "DP05_0036EA",
+      "DP05_0036M",
+      "DP05_0036MA",
+      "DP05_0036PE",
+      "DP05_0036PEA",
+      "DP05_0036PM",
+      "DP05_0036PMA",
+      "DP05_0037E",
+      "DP05_0037EA",
+      "DP05_0037M",
+      "DP05_0037MA",
+      "DP05_0037PE",
+      "DP05_0037PEA",
+      "DP05_0037PM",
+      "DP05_0037PMA",
+      "DP05_0038E",
+      "DP05_0038EA",
+      "DP05_0038M",
+      "DP05_0038MA",
+      "DP05_0038PE",
+      "DP05_0038PEA",
+      "DP05_0038PM",
+      "DP05_0038PMA",
+      "DP05_0039E",
+      "DP05_0039EA",
+      "DP05_0039M",
+      "DP05_0039MA",
+      "DP05_0039PE",
+      "DP05_0039PEA",
+      "DP05_0039PM",
+      "DP05_0039PMA",
+      "DP05_0040E",
+      "DP05_0040EA",
+      "DP05_0040M",
+      "DP05_0040MA",
+      "DP05_0040PE",
+      "DP05_0040PEA",
+      "DP05_0040PM",
+      "DP05_0040PMA",
+      "DP05_0041E",
+      "DP05_0041EA",
+      "DP05_0041M",
+      "DP05_0041MA",
+      "DP05_0041PE",
+      "DP05_0041PEA",
+      "DP05_0041PM",
+      "DP05_0041PMA",
+      "DP05_0042E",
+      "DP05_0042EA",
+      "DP05_0042M",
+      "DP05_0042MA",
+      "DP05_0042PE",
+      "DP05_0042PEA",
+      "DP05_0042PM",
+      "DP05_0042PMA",
+      "DP05_0043E",
+      "DP05_0043EA",
+      "DP05_0043M",
+      "DP05_0043MA",
+      "DP05_0043PE",
+      "DP05_0043PEA",
+      "DP05_0043PM",
+      "DP05_0043PMA",
+      "DP05_0044E",
+      "DP05_0044EA",
+      "DP05_0044M",
+      "DP05_0044MA",
+      "DP05_0044PE",
+      "DP05_0044PEA",
+      "DP05_0044PM",
+      "DP05_0044PMA",
+      "DP05_0045E",
+      "DP05_0045EA",
+      "DP05_0045M",
+      "DP05_0045MA",
+      "DP05_0045PE",
+      "DP05_0045PEA",
+      "DP05_0045PM",
+      "DP05_0045PMA",
+      "DP05_0046E",
+      "DP05_0046EA",
+      "DP05_0046M",
+      "DP05_0046MA",
+      "DP05_0046PE",
+      "DP05_0046PEA",
+      "DP05_0046PM",
+      "DP05_0046PMA",
+      "DP05_0047E",
+      "DP05_0047EA",
+      "DP05_0047M",
+      "DP05_0047MA",
+      "DP05_0047PE",
+      "DP05_0047PEA",
+      "DP05_0047PM",
+      "DP05_0047PMA",
+      "DP05_0048E",
+      "DP05_0048EA",
+      "DP05_0048M",
+      "DP05_0048MA",
+      "DP05_0048PE",
+      "DP05_0048PEA",
+      "DP05_0048PM",
+      "DP05_0048PMA",
+      "DP05_0049E",
+      "DP05_0049EA",
+      "DP05_0049M",
+      "DP05_0049MA",
+      "DP05_0049PE",
+      "DP05_0049PEA",
+      "DP05_0049PM",
+      "DP05_0049PMA",
+      "DP05_0050E",
+      "DP05_0050EA",
+      "DP05_0050M",
+      "DP05_0050MA",
+      "DP05_0050PE",
+      "DP05_0050PEA",
+      "DP05_0050PM",
+      "DP05_0050PMA",
+      "DP05_0051E",
+      "DP05_0051EA",
+      "DP05_0051M",
+      "DP05_0051MA",
+      "DP05_0051PE",
+      "DP05_0051PEA",
+      "DP05_0051PM",
+      "DP05_0051PMA",
+      "DP05_0052E",
+      "DP05_0052EA",
+      "DP05_0052M",
+      "DP05_0052MA",
+      "DP05_0052PE",
+      "DP05_0052PEA",
+      "DP05_0052PM",
+      "DP05_0052PMA",
+      "DP05_0053E",
+      "DP05_0053EA",
+      "DP05_0053M",
+      "DP05_0053MA",
+      "DP05_0053PE",
+      "DP05_0053PEA",
+      "DP05_0053PM",
+      "DP05_0053PMA",
+      "DP05_0054E",
+      "DP05_0054EA",
+      "DP05_0054M",
+      "DP05_0054MA",
+      "DP05_0054PE",
+      "DP05_0054PEA",
+      "DP05_0054PM",
+      "DP05_0054PMA",
+      "DP05_0055E",
+      "DP05_0055EA",
+      "DP05_0055M",
+      "DP05_0055MA",
+      "DP05_0055PE",
+      "DP05_0055PEA",
+      "DP05_0055PM",
+      "DP05_0055PMA",
+      "DP05_0056E",
+      "DP05_0056EA",
+      "DP05_0056M",
+      "DP05_0056MA",
+      "DP05_0056PE",
+      "DP05_0056PEA",
+      "DP05_0056PM",
+      "DP05_0056PMA",
+      "DP05_0057E",
+      "DP05_0057EA",
+      "DP05_0057M",
+      "DP05_0057MA",
+      "DP05_0057PE",
+      "DP05_0057PEA",
+      "DP05_0057PM",
+      "DP05_0057PMA",
+      "DP05_0058E",
+      "DP05_0058EA",
+      "DP05_0058M",
+      "DP05_0058MA",
+      "DP05_0058PE",
+      "DP05_0058PEA",
+      "DP05_0058PM",
+      "DP05_0058PMA",
+      "DP05_0059E",
+      "DP05_0059EA",
+      "DP05_0059M",
+      "DP05_0059MA",
+      "DP05_0059PE",
+      "DP05_0059PEA",
+      "DP05_0059PM",
+      "DP05_0059PMA",
+      "DP05_0060E",
+      "DP05_0060EA",
+      "DP05_0060M",
+      "DP05_0060MA",
+      "DP05_0060PE",
+      "DP05_0060PEA",
+      "DP05_0060PM",
+      "DP05_0060PMA",
+      "DP05_0061E",
+      "DP05_0061EA",
+      "DP05_0061M",
+      "DP05_0061MA",
+      "DP05_0061PE",
+      "DP05_0061PEA",
+      "DP05_0061PM",
+      "DP05_0061PMA",
+      "DP05_0062E",
+      "DP05_0062EA",
+      "DP05_0062M",
+      "DP05_0062MA",
+      "DP05_0062PE",
+      "DP05_0062PEA",
+      "DP05_0062PM",
+      "DP05_0062PMA",
+      "DP05_0063E",
+      "DP05_0063EA",
+      "DP05_0063M",
+      "DP05_0063MA",
+      "DP05_0063PE",
+      "DP05_0063PEA",
+      "DP05_0063PM",
+      "DP05_0063PMA",
+      "DP05_0064E",
+      "DP05_0064EA",
+      "DP05_0064M",
+      "DP05_0064MA",
+      "DP05_0064PE",
+      "DP05_0064PEA",
+      "DP05_0064PM",
+      "DP05_0064PMA",
+      "DP05_0065E",
+      "DP05_0065EA",
+      "DP05_0065M",
+      "DP05_0065MA",
+      "DP05_0065PE",
+      "DP05_0065PEA",
+      "DP05_0065PM",
+      "DP05_0065PMA",
+      "DP05_0066E",
+      "DP05_0066EA",
+      "DP05_0066M",
+      "DP05_0066MA",
+      "DP05_0066PE",
+      "DP05_0066PEA",
+      "DP05_0066PM",
+      "DP05_0066PMA",
+      "DP05_0067E",
+      "DP05_0067EA",
+      "DP05_0067M",
+      "DP05_0067MA",
+      "DP05_0067PE",
+      "DP05_0067PEA",
+      "DP05_0067PM",
+      "DP05_0067PMA",
+      "DP05_0068E",
+      "DP05_0068EA",
+      "DP05_0068M",
+      "DP05_0068MA",
+      "DP05_0068PE",
+      "DP05_0068PEA",
+      "DP05_0068PM",
+      "DP05_0068PMA",
+      "DP05_0069E",
+      "DP05_0069EA",
+      "DP05_0069M",
+      "DP05_0069MA",
+      "DP05_0069PE",
+      "DP05_0069PEA",
+      "DP05_0069PM",
+      "DP05_0069PMA",
+      "DP05_0070E",
+      "DP05_0070EA",
+      "DP05_0070M",
+      "DP05_0070MA",
+      "DP05_0070PE",
+      "DP05_0070PEA",
+      "DP05_0070PM",
+      "DP05_0070PMA",
+      "DP05_0071E",
+      "DP05_0071EA",
+      "DP05_0071M",
+      "DP05_0071MA",
+      "DP05_0071PE",
+      "DP05_0071PEA",
+      "DP05_0071PM",
+      "DP05_0071PMA",
+      "DP05_0072E",
+      "DP05_0072EA",
+      "DP05_0072M",
+      "DP05_0072MA",
+      "DP05_0072PE",
+      "DP05_0072PEA",
+      "DP05_0072PM",
+      "DP05_0072PMA",
+      "DP05_0073E",
+      "DP05_0073EA",
+      "DP05_0073M",
+      "DP05_0073MA",
+      "DP05_0073PE",
+      "DP05_0073PEA",
+      "DP05_0073PM",
+      "DP05_0073PMA",
+      "DP05_0074E",
+      "DP05_0074EA",
+      "DP05_0074M",
+      "DP05_0074MA",
+      "DP05_0074PE",
+      "DP05_0074PEA",
+      "DP05_0074PM",
+      "DP05_0074PMA",
+      "DP05_0075E",
+      "DP05_0075EA",
+      "DP05_0075M",
+      "DP05_0075MA",
+      "DP05_0075PE",
+      "DP05_0075PEA",
+      "DP05_0075PM",
+      "DP05_0075PMA",
+      "DP05_0076E",
+      "DP05_0076EA",
+      "DP05_0076M",
+      "DP05_0076MA",
+      "DP05_0076PE",
+      "DP05_0076PEA",
+      "DP05_0076PM",
+      "DP05_0076PMA",
+      "DP05_0077E",
+      "DP05_0077EA",
+      "DP05_0077M",
+      "DP05_0077MA",
+      "DP05_0077PE",
+      "DP05_0077PEA",
+      "DP05_0077PM",
+      "DP05_0077PMA",
+      "DP05_0078E",
+      "DP05_0078EA",
+      "DP05_0078M",
+      "DP05_0078MA",
+      "DP05_0078PE",
+      "DP05_0078PEA",
+      "DP05_0078PM",
+      "DP05_0078PMA",
+      "DP05_0079E",
+      "DP05_0079EA",
+      "DP05_0079M",
+      "DP05_0079MA",
+      "DP05_0079PE",
+      "DP05_0079PEA",
+      "DP05_0079PM",
+      "DP05_0079PMA",
+      "DP05_0080E",
+      "DP05_0080EA",
+      "DP05_0080M",
+      "DP05_0080MA",
+      "DP05_0080PE",
+      "DP05_0080PEA",
+      "DP05_0080PM",
+      "DP05_0080PMA",
+      "DP05_0081E",
+      "DP05_0081EA",
+      "DP05_0081M",
+      "DP05_0081MA",
+      "DP05_0081PE",
+      "DP05_0081PEA",
+      "DP05_0081PM",
+      "DP05_0081PMA",
+      "DP05_0082E",
+      "DP05_0082EA",
+      "DP05_0082M",
+      "DP05_0082MA",
+      "DP05_0082PE",
+      "DP05_0082PEA",
+      "DP05_0082PM",
+      "DP05_0082PMA",
+      "DP05_0083E",
+      "DP05_0083EA",
+      "DP05_0083M",
+      "DP05_0083MA",
+      "DP05_0083PE",
+      "DP05_0083PEA",
+      "DP05_0083PM",
+      "DP05_0083PMA",
+      "DP05_0084E",
+      "DP05_0084EA",
+      "DP05_0084M",
+      "DP05_0084MA",
+      "DP05_0084PE",
+      "DP05_0084PEA",
+      "DP05_0084PM",
+      "DP05_0084PMA",
+      "DP05_0085E",
+      "DP05_0085EA",
+      "DP05_0085M",
+      "DP05_0085MA",
+      "DP05_0085PE",
+      "DP05_0085PEA",
+      "DP05_0085PM",
+      "DP05_0085PMA",
+      "DP05_0086E",
+      "DP05_0086EA",
+      "DP05_0086M",
+      "DP05_0086MA",
+      "DP05_0086PE",
+      "DP05_0086PEA",
+      "DP05_0086PM",
+      "DP05_0086PMA",
+      "DP05_0087E",
+      "DP05_0087EA",
+      "DP05_0087M",
+      "DP05_0087MA",
+      "DP05_0087PE",
+      "DP05_0087PEA",
+      "DP05_0087PM",
+      "DP05_0087PMA",
+      "DP05_0088E",
+      "DP05_0088EA",
+      "DP05_0088M",
+      "DP05_0088MA",
+      "DP05_0088PE",
+      "DP05_0088PEA",
+      "DP05_0088PM",
+      "DP05_0088PMA",
+      "DP05_0089E",
+      "DP05_0089EA",
+      "DP05_0089M",
+      "DP05_0089MA",
+      "DP05_0089PE",
+      "DP05_0089PEA",
+      "DP05_0089PM",
+      "DP05_0089PMA",
+      "DP05_0090E",
+      "DP05_0090EA",
+      "DP05_0090M",
+      "DP05_0090MA",
+      "DP05_0090PE",
+      "DP05_0090PEA",
+      "DP05_0090PM",
+      "DP05_0090PMA",
+      "DP05_0091E",
+      "DP05_0091EA",
+      "DP05_0091M",
+      "DP05_0091MA",
+      "DP05_0091PE",
+      "DP05_0091PEA",
+      "DP05_0091PM",
+      "DP05_0091PMA",
+      "DP05_0092E",
+      "DP05_0092EA",
+      "DP05_0092M",
+      "DP05_0092MA",
+      "DP05_0092PE",
+      "DP05_0092PEA",
+      "DP05_0092PM",
+      "DP05_0092PMA",
+      "DP05_0093E",
+      "DP05_0093EA",
+      "DP05_0093M",
+      "DP05_0093MA",
+      "DP05_0093PE",
+      "DP05_0093PEA",
+      "DP05_0093PM",
+      "DP05_0093PMA",
+      "DP05_0094E",
+      "DP05_0094EA",
+      "DP05_0094M",
+      "DP05_0094MA",
+      "DP05_0094PE",
+      "DP05_0094PEA",
+      "DP05_0094PM",
+      "DP05_0094PMA",
+      "DP05_0095E",
+      "DP05_0095EA",
+      "DP05_0095M",
+      "DP05_0095MA",
+      "DP05_0095PE",
+      "DP05_0095PEA",
+      "DP05_0095PM",
+      "DP05_0095PMA",
+      "DP05_0096E",
+      "DP05_0096EA",
+      "DP05_0096M",
+      "DP05_0096MA",
+      "DP05_0096PE",
+      "DP05_0096PEA",
+      "DP05_0096PM",
+      "DP05_0096PMA",
+      "DP05_0097E",
+      "DP05_0097EA",
+      "DP05_0097M",
+      "DP05_0097MA",
+      "DP05_0097PE",
+      "DP05_0097PEA",
+      "DP05_0097PM",
+      "DP05_0097PMA",
+      "DP05_0098E",
+      "DP05_0098EA",
+      "DP05_0098M",
+      "DP05_0098MA",
+      "DP05_0098PE",
+      "DP05_0098PEA",
+      "DP05_0098PM",
+      "DP05_0098PMA",
+      "DP05_0099E",
+      "DP05_0099EA",
+      "DP05_0099M",
+      "DP05_0099MA",
+      "DP05_0099PE",
+      "DP05_0099PEA",
+      "DP05_0099PM",
+      "DP05_0099PMA",
+      "DP05_0100E",
+      "DP05_0100EA",
+      "DP05_0100M",
+      "DP05_0100MA",
+      "DP05_0100PE",
+      "DP05_0100PEA",
+      "DP05_0100PM",
+      "DP05_0100PMA",
+      "DP05_0101E",
+      "DP05_0101EA",
+      "DP05_0101M",
+      "DP05_0101MA",
+      "DP05_0101PE",
+      "DP05_0101PEA",
+      "DP05_0101PM",
+      "DP05_0101PMA",
+      "DP05_0102E",
+      "DP05_0102EA",
+      "DP05_0102M",
+      "DP05_0102MA",
+      "DP05_0102PE",
+      "DP05_0102PEA",
+      "DP05_0102PM",
+      "DP05_0102PMA",
+      "DP05_0103E",
+      "DP05_0103EA",
+      "DP05_0103M",
+      "DP05_0103MA",
+      "DP05_0103PE",
+      "DP05_0103PEA",
+      "DP05_0103PM",
+      "DP05_0103PMA",
+      "DP05_0104E",
+      "DP05_0104EA",
+      "DP05_0104M",
+      "DP05_0104MA",
+      "DP05_0104PE",
+      "DP05_0104PEA",
+      "DP05_0104PM",
+      "DP05_0104PMA",
+      "DP05_0105E",
+      "DP05_0105EA",
+      "DP05_0105M",
+      "DP05_0105MA",
+      "DP05_0105PE",
+      "DP05_0105PEA",
+      "DP05_0105PM",
+      "DP05_0105PMA",
+      "DP05_0106E",
+      "DP05_0106EA",
+      "DP05_0106M",
+      "DP05_0106MA",
+      "DP05_0106PE",
+      "DP05_0106PEA",
+      "DP05_0106PM",
+      "DP05_0106PMA",
+      "DP05_0107E",
+      "DP05_0107EA",
+      "DP05_0107M",
+      "DP05_0107MA",
+      "DP05_0107PE",
+      "DP05_0107PEA",
+      "DP05_0107PM",
+      "DP05_0107PMA",
+      "DP05_0108E",
+      "DP05_0108EA",
+      "DP05_0108M",
+      "DP05_0108MA",
+      "DP05_0108PE",
+      "DP05_0108PEA",
+      "DP05_0108PM",
+      "DP05_0108PMA",
+      "GEO_ID",
+      "NAME",
+      "state",
+      "county"
+    ],
+    [
+      "432998",
+      null,
+      "-555555555",
+      "*****",
+      "432998",
+      null,
+      "-888888888",
+      "(X)",
+      "216777",
+      null,
+      "56",
+      null,
+      "50.1",
+      null,
+      "0.1",
+      null,
+      "216221",
+      null,
+      "56",
+      null,
+      "49.9",
+      null,
+      "0.1",
+      null,
+      "100.3",
+      null,
+      "0.1",
+      null,
+      "-888888888",
+      "(X)",
+      "-888888888",
+      "(X)",
+      "26798",
+      null,
+      "25",
+      null,
+      "6.2",
+      null,
+      "0.1",
+      null,
+      "31290",
+      null,
+      "1132",
+      null,
+      "7.2",
+      null,
+      "0.3",
+      null,
+      "35634",
+      null,
+      "1132",
+      null,
+      "8.2",
+      null,
+      "0.3",
+      null,
+      "31943",
+      null,
+      "39",
+      null,
+      "7.4",
+      null,
+      "0.1",
+      null,
+      "23353",
+      null,
+      "44",
+      null,
+      "5.4",
+      null,
+      "0.1",
+      null,
+      "47099",
+      null,
+      "64",
+      null,
+      "10.9",
+      null,
+      "0.1",
+      null,
+      "72668",
+      null,
+      "61",
+      null,
+      "16.8",
+      null,
+      "0.1",
+      null,
+      "68432",
+      null,
+      "61",
+      null,
+      "15.8",
+      null,
+      "0.1",
+      null,
+      "27072",
+      null,
+      "842",
+      null,
+      "6.3",
+      null,
+      "0.2",
+      null,
+      "21815",
+      null,
+      "843",
+      null,
+      "5.0",
+      null,
+      "0.2",
+      null,
+      "27091",
+      null,
+      "62",
+      null,
+      "6.3",
+      null,
+      "0.1",
+      null,
+      "14848",
+      null,
+      "526",
+      null,
+      "3.4",
+      null,
+      "0.1",
+      null,
+      "4955",
+      null,
+      "519",
+      null,
+      "1.1",
+      null,
+      "0.1",
+      null,
+      "38.2",
+      null,
+      "0.2",
+      null,
+      "-888888888",
+      "(X)",
+      "-888888888",
+      "(X)",
+      "115171",
+      null,
+      "-555555555",
+      "*****",
+      "26.6",
+      null,
+      "-555555555.0",
+      "*****",
+      "332286",
+      null,
+      "459",
+      null,
+      "76.7",
+      null,
+      "0.1",
+      null,
+      "317827",
+      null,
+      "-555555555",
+      "*****",
+      "73.4",
+      null,
+      "-555555555.0",
+      "*****",
+      "302823",
+      null,
+      "656",
+      null,
+      "69.9",
+      null,
+      "0.2",
+      null,
+      "58955",
+      null,
+      "685",
+      null,
+      "13.6",
+      null,
+      "0.2",
+      null,
+      "46894",
+      null,
+      "43",
+      null,
+      "10.8",
+      null,
+      "0.1",
+      null,
+      "317827",
+      null,
+      "-555555555",
+      "*****",
+      "317827",
+      null,
+      "-888888888",
+      "(X)",
+      "157733",
+      null,
+      "48",
+      null,
+      "49.6",
+      null,
+      "0.1",
+      null,
+      "160094",
+      null,
+      "48",
+      null,
+      "50.4",
+      null,
+      "0.1",
+      null,
+      "98.5",
+      null,
+      "0.1",
+      null,
+      "-888888888",
+      "(X)",
+      "-888888888",
+      "(X)",
+      "46894",
+      null,
+      "43",
+      null,
+      "46894",
+      null,
+      "-888888888",
+      "(X)",
+      "21240",
+      null,
+      "42",
+      null,
+      "45.3",
+      null,
+      "0.1",
+      null,
+      "25654",
+      null,
+      "4",
+      null,
+      "54.7",
+      null,
+      "0.1",
+      null,
+      "82.8",
+      null,
+      "0.2",
+      null,
+      "-888888888",
+      "(X)",
+      "-888888888",
+      "(X)",
+      "432998",
+      null,
+      "-555555555",
+      "*****",
+      "432998",
+      null,
+      "-888888888",
+      "(X)",
+      "378499",
+      null,
+      "2698",
+      null,
+      "87.4",
+      null,
+      "0.6",
+      null,
+      "54499",
+      null,
+      "2698",
+      null,
+      "12.6",
+      null,
+      "0.6",
+      null,
+      "378499",
+      null,
+      "2698",
+      null,
+      "87.4",
+      null,
+      "0.6",
+      null,
+      "228302",
+      null,
+      "1523",
+      null,
+      "52.7",
+      null,
+      "0.4",
+      null,
+      "2623",
+      null,
+      "872",
+      null,
+      "0.6",
+      null,
+      "0.2",
+      null,
+      "24702",
+      null,
+      "2156",
+      null,
+      "5.7",
+      null,
+      "0.5",
+      null,
+      "13522",
+      null,
+      "1228",
+      null,
+      "3.1",
+      null,
+      "0.3",
+      null,
+      "15299",
+      null,
+      "1652",
+      null,
+      "3.5",
+      null,
+      "0.4",
+      null,
+      "7988",
+      null,
+      "970",
+      null,
+      "1.8",
+      null,
+      "0.2",
+      null,
+      "1224",
+      null,
+      "779",
+      null,
+      "0.3",
+      null,
+      "0.2",
+      null,
+      "162944",
+      null,
+      "3288",
+      null,
+      "37.6",
+      null,
+      "0.8",
+      null,
+      "33411",
+      null,
+      "926",
+      null,
+      "7.7",
+      null,
+      "0.2",
+      null,
+      "18446",
+      null,
+      "1573",
+      null,
+      "4.3",
+      null,
+      "0.4",
+      null,
+      "1095",
+      null,
+      "444",
+      null,
+      "0.3",
+      null,
+      "0.1",
+      null,
+      "257",
+      null,
+      "179",
+      null,
+      "0.1",
+      null,
+      "0.1",
+      null,
+      "362",
+      null,
+      "185",
+      null,
+      "0.1",
+      null,
+      "0.1",
+      null,
+      "881",
+      null,
+      "554",
+      null,
+      "0.2",
+      null,
+      "0.1",
+      null,
+      "349",
+      null,
+      "239",
+      null,
+      "0.1",
+      null,
+      "0.1",
+      null,
+      "12021",
+      null,
+      "1471",
+      null,
+      "2.8",
+      null,
+      "0.3",
+      null,
+      "1253",
+      null,
+      "421",
+      null,
+      "0.3",
+      null,
+      "0.1",
+      null,
+      "37",
+      null,
+      "43",
+      null,
+      "0.0",
+      null,
+      "0.1",
+      null,
+      "7",
+      null,
+      "11",
+      null,
+      "0.0",
+      null,
+      "0.1",
+      null,
+      "246",
+      null,
+      "214",
+      null,
+      "0.1",
+      null,
+      "0.1",
+      null,
+      "0",
+      null,
+      "31",
+      null,
+      "0.0",
+      null,
+      "0.1",
+      null,
+      "6",
+      null,
+      "13",
+      null,
+      "0.0",
+      null,
+      "0.1",
+      null,
+      "0",
+      null,
+      "31",
+      null,
+      "0.0",
+      null,
+      "0.1",
+      null,
+      "957",
+      null,
+      "347",
+      null,
+      "0.2",
+      null,
+      "0.1",
+      null,
+      "94508",
+      null,
+      "1466",
+      null,
+      "21.8",
+      null,
+      "0.3",
+      null,
+      "47553",
+      null,
+      "2323",
+      null,
+      "11.0",
+      null,
+      "0.5",
+      null,
+      "6606",
+      null,
+      "728",
+      null,
+      "1.5",
+      null,
+      "0.2",
+      null,
+      "4185",
+      null,
+      "691",
+      null,
+      "1.0",
+      null,
+      "0.2",
+      null,
+      "889",
+      null,
+      "220",
+      null,
+      "0.2",
+      null,
+      "0.1",
+      null,
+      "6147",
+      null,
+      "924",
+      null,
+      "1.4",
+      null,
+      "0.2",
+      null,
+      "6685",
+      null,
+      "1130",
+      null,
+      "1.5",
+      null,
+      "0.3",
+      null,
+      "22443",
+      null,
+      "2106",
+      null,
+      "5.2",
+      null,
+      "0.5",
+      null,
+      "221",
+      null,
+      "78",
+      null,
+      "0.1",
+      null,
+      "0.1",
+      null,
+      "42",
+      null,
+      "49",
+      null,
+      "0.0",
+      null,
+      "0.1",
+      null,
+      "69",
+      null,
+      "60",
+      null,
+      "0.0",
+      null,
+      "0.1",
+      null,
+      "17",
+      null,
+      "30",
+      null,
+      "0.0",
+      null,
+      "0.1",
+      null,
+      "93",
+      null,
+      "55",
+      null,
+      "0.0",
+      null,
+      "0.1",
+      null,
+      "20804",
+      null,
+      "2100",
+      null,
+      "4.8",
+      null,
+      "0.5",
+      null,
+      "54499",
+      null,
+      "2698",
+      null,
+      "12.6",
+      null,
+      "0.6",
+      null,
+      "4448",
+      null,
+      "698",
+      null,
+      "1.0",
+      null,
+      "0.2",
+      null,
+      "1471",
+      null,
+      "263",
+      null,
+      "0.3",
+      null,
+      "0.1",
+      null,
+      "9330",
+      null,
+      "1165",
+      null,
+      "2.2",
+      null,
+      "0.3",
+      null,
+      "32622",
+      null,
+      "2223",
+      null,
+      "7.5",
+      null,
+      "0.5",
+      null,
+      "218",
+      null,
+      "126",
+      null,
+      "0.1",
+      null,
+      "0.1",
+      null,
+      "1134",
+      null,
+      "439",
+      null,
+      "0.3",
+      null,
+      "0.1",
+      null,
+      "432998",
+      null,
+      "-555555555",
+      "*****",
+      "432998",
+      null,
+      "-888888888",
+      "(X)",
+      "279979",
+      null,
+      "2503",
+      null,
+      "64.7",
+      null,
+      "0.6",
+      null,
+      "41771",
+      null,
+      "931",
+      null,
+      "9.6",
+      null,
+      "0.2",
+      null,
+      "5113",
+      null,
+      "859",
+      null,
+      "1.2",
+      null,
+      "0.2",
+      null,
+      "106549",
+      null,
+      "687",
+      null,
+      "24.6",
+      null,
+      "0.2",
+      null,
+      "834",
+      null,
+      "232",
+      null,
+      "0.2",
+      null,
+      "0.1",
+      null,
+      "57284",
+      null,
+      "1650",
+      null,
+      "13.2",
+      null,
+      "0.4",
+      null,
+      "432998",
+      null,
+      "-555555555",
+      "*****",
+      "432998",
+      null,
+      "-888888888",
+      "(X)",
+      "61750",
+      null,
+      "-555555555",
+      "*****",
+      "14.3",
+      null,
+      "-555555555.0",
+      "*****",
+      "7073",
+      null,
+      "957",
+      null,
+      "1.6",
+      null,
+      "0.2",
+      null,
+      "5460",
+      null,
+      "931",
+      null,
+      "1.3",
+      null,
+      "0.2",
+      null,
+      "1788",
+      null,
+      "521",
+      null,
+      "0.4",
+      null,
+      "0.1",
+      null,
+      "47429",
+      null,
+      "1453",
+      null,
+      "11.0",
+      null,
+      "0.3",
+      null,
+      "371248",
+      null,
+      "-555555555",
+      "*****",
+      "85.7",
+      null,
+      "-555555555.0",
+      "*****",
+      "220791",
+      null,
+      "572",
+      null,
+      "51.0",
+      null,
+      "0.1",
+      null,
+      "32463",
+      null,
+      "828",
+      null,
+      "7.5",
+      null,
+      "0.2",
+      null,
+      "453",
+      null,
+      "117",
+      null,
+      "0.1",
+      null,
+      "0.1",
+      null,
+      "94036",
+      null,
+      "1400",
+      null,
+      "21.7",
+      null,
+      "0.3",
+      null,
+      "196",
+      null,
+      "66",
+      null,
+      "0.0",
+      null,
+      "0.1",
+      null,
+      "3263",
+      null,
+      "736",
+      null,
+      "0.8",
+      null,
+      "0.2",
+      null,
+      "20046",
+      null,
+      "1539",
+      null,
+      "4.6",
+      null,
+      "0.4",
+      null,
+      "2933",
+      null,
+      "438",
+      null,
+      "0.7",
+      null,
+      "0.1",
+      null,
+      "17113",
+      null,
+      "1437",
+      null,
+      "4.0",
+      null,
+      "0.3",
+      null,
+      "147003",
+      null,
+      "96",
+      null,
+      "-888888888",
+      "(X)",
+      "-888888888",
+      "(X)",
+      "278045",
+      null,
+      "1873",
+      null,
+      "278045",
+      null,
+      "-888888888",
+      "(X)",
+      "138524",
+      null,
+      "1102",
+      null,
+      "49.8",
+      null,
+      "0.2",
+      null,
+      "139521",
+      null,
+      "1172",
+      null,
+      "50.2",
+      null,
+      "0.2",
+      null,
+      "0500000US51107",
+      "Loudoun County, Virginia",
+      "51",
+      "107"
+    ]
+  ],
+  "release": "2024",
+  "request_url": "https://api.census.gov/data/2024/acs/acs5/profile?get=group(DP05)&for=county:107&in=state:51",
+  "retrieved_at": "2026-11-03",
+  "selection_method": "Whole table requested as get=group(DP05); no variable is named, matched or numbered in advance and nothing depends on a line position. Label text is read from the release's own per-group metadata endpoint recorded in label_source_url. Consumers select cells by label.",
+  "sentinel_codes_recognised": [
+    "-222222222",
+    "-555555555",
+    "-666666666",
+    "-888888888",
+    "-999999999"
+  ],
+  "sentinel_handling": "The API returns a large negative sentinel in place of a statistic it does not publish for a cell. Values are preserved verbatim and 'published' says whether the cell carries a real statistic. A false value must not be rendered as a number.",
+  "source": "US Census Bureau, American Community Survey",
+  "table": "DP05",
+  "universe": null,
+  "variable_count": 866
+}

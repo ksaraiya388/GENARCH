@@ -22,6 +22,8 @@ from datetime import date, datetime
 from pathlib import Path
 
 from pipeline.report_lib import (
+    ancestry,
+    ancestry_report,
     atlas,
     collocation,
     correlation,
@@ -1020,7 +1022,12 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
 # ------------------------------------------------------------------ figures
 
 
-def build_figures(results: dict, reg: NumberRegistry, out_dir: Path) -> list[dict]:
+def build_figures(
+    results: dict,
+    reg: NumberRegistry,
+    out_dir: Path,
+    anc: dict | None = None,
+) -> list[dict]:
     code_of = site_codes.code_for
     figures.configure()
     entries: list[dict] = []
@@ -1210,6 +1217,49 @@ def build_figures(results: dict, reg: NumberRegistry, out_dir: Path) -> list[dic
             "data_table": "T07_correlation_matrix",
         }
     )
+
+    # ---- F06. Not a sensor figure, so it does not carry the DEQ CFR limitation:
+    # that quotation is about low-cost air sensors and says nothing about a study
+    # population or a census table. Its own limitation is composed below.
+    if anc is not None:
+        top, top_subtitle, bottom, bottom_subtitle = ancestry_report.figure_segments(anc)
+        figures.f06_ancestry_composition(
+            out_dir, top, top_subtitle, bottom, bottom_subtitle
+        )
+        discovery = anc["discovery"]
+        largest = discovery["categories"][0]
+        largest_share = reg.value(
+            f"ancestry.discovery.{ancestry.slug(largest['category'])}.share"
+        )
+        entries.append(
+            {
+                "id": "F06_ancestry_composition",
+                "title": (
+                    "Who the asthma GWAS evidence was measured in, and who lives in "
+                    "Loudoun County"
+                ),
+                "alt_text": (
+                    "Two separate horizontal stacked bars. The upper bar shows that "
+                    f"{largest_share} percent of asthma GWAS discovery individuals sit "
+                    f"in the {largest['category']} category. The lower bar shows "
+                    "Loudoun County residents by self-identified race, a different "
+                    "measurement of a different population."
+                ),
+                "caption": (
+                    "Upper panel: initial-stage discovery individuals across the asthma "
+                    f"studies in GWAS Catalog release {anc['release']}, by the catalog's "
+                    "broad ancestral category. Lower panel: Loudoun County residents by "
+                    f"self-identified race, {anc['acs']['dataset']}, table B02001. "
+                    + ancestry_report.ACS_CATEGORY_SENTENCE
+                    + " The two panels have separate axes and are not comparable: one "
+                    "counts people enrolled in studies and groups them by genetic "
+                    "ancestry, the other counts residents and groups them by a social "
+                    "category."
+                ),
+                "limitation": ancestry_report.FIGURE_LIMITATION,
+                "data_table": "T10_gwas_ancestry_composition",
+            }
+        )
 
     figures.write_manifest(entries, out_dir)
     return entries
@@ -1503,6 +1553,21 @@ def _write_atlas_doc(path: Path, reg: NumberRegistry, table: tables.Table, extra
 # --------------------------------------------------------------- atlas gate
 
 
+def add_ancestry_inputs(fz: Freeze, acs_release: str) -> int:
+    """Pin the ancestry inputs in FREEZE.json."""
+    block = fz.take_ancestry_inputs(acs_release)
+    print(
+        f"ancestry_inputs pinned in {fz.path.name}: {len(block['files'])} records, "
+        f"GWAS Catalog release {block['gwas_release_date']}, ACS {block['acs_release']}, "
+        f"frozen {block['frozen_at']}"
+    )
+    for entry in block["files"]:
+        print(f"  {entry['role']:<26} {entry['sha256'][:16]}...  {entry['path']}")
+    for entry in block["full_downloads"]:
+        print(f"  {'full download (not stored)':<26} {entry['sha256'][:16]}...  {entry['name']}")
+    return 0
+
+
 def add_atlas_inputs(fz: Freeze) -> int:
     blockers = fz.atlas_gate_blockers()
     if blockers:
@@ -1539,14 +1604,41 @@ def build_from_freeze(freeze_path: Path, out_dir: Path, show_verify: bool) -> in
 
     results = compute(fz)
     reg = build_numbers(fz, results)
+
+    # The ancestry half runs only once its inputs are pinned, and its keys go into
+    # the shared registry rather than a file of their own: report prose cites them
+    # through <N> like any other number. While the block is unpinned nothing is
+    # emitted and no key appears as a placeholder.
+    anc = None
+    if fz.ancestry_inputs() is None:
+        print(
+            "ancestry: not frozen; ancestry.*, T10, T11, T12 and F06 not emitted "
+            "(pin ancestry_inputs in FREEZE.json)"
+        )
+    else:
+        anc = ancestry_report.compute(fz)
+        ancestry_report.build_numbers(fz, anc, reg)
+
     numbers_path = reg.write(out_dir / "numbers.json")
     print(f"numbers.json: {len(reg)} keys -> {numbers_path}")
 
-    written = tables.write_tables(build_tables(fz, results, reg), out_dir)
+    report_tables = build_tables(fz, results, reg)
+    if anc is not None:
+        report_tables += ancestry_report.build_tables(anc)
+    written = tables.write_tables(report_tables, out_dir)
     print(f"tables: {len(written) - 1} CSV plus tables.json")
 
-    entries = build_figures(results, reg, out_dir)
+    entries = build_figures(results, reg, out_dir, anc)
     print(f"figures: {len(entries)} as SVG and 300-dpi PNG plus figures.json")
+
+    if anc is not None:
+        discovery = anc["discovery"]
+        print(
+            f"ancestry: GWAS Catalog {anc['release']}, "
+            f"{discovery['total_individuals']:,} discovery individuals across "
+            f"{discovery['studies']} studies in "
+            f"{len(discovery['categories'])} categories; ACS {anc['acs']['release']}"
+        )
 
     # The atlas half runs only once its inputs are pinned. While they are not, nothing
     # is written and no key is emitted as a placeholder: a reader of inventory.json has
@@ -1586,6 +1678,7 @@ def run_report(
     freeze: str | Path | None = None,
     out_dir: str | Path | None = None,
     add_atlas: bool = False,
+    add_ancestry: str | None = None,
     show_verify: bool = False,
 ) -> int:
     """Run report generation. Returns 0 on success, 1 on error."""
@@ -1601,6 +1694,8 @@ def run_report(
         fz = Freeze(freeze_path)
         if add_atlas:
             return add_atlas_inputs(fz)
+        if add_ancestry:
+            return add_ancestry_inputs(fz, add_ancestry)
         return build_from_freeze(freeze_path, target, show_verify)
     except (FreezeError, OSError, ValueError, KeyError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
@@ -1622,6 +1717,12 @@ def main(argv: list[str] | None = None) -> int:
         help="pin the atlas inputs in FREEZE.json; refuses while the graph rebuild is absent",
     )
     parser.add_argument(
+        "--add-ancestry-inputs",
+        default=None,
+        metavar="ACS_RELEASE",
+        help="pin the ancestry inputs in FREEZE.json for the named ACS 5-year release",
+    )
+    parser.add_argument(
         "--verify",
         action="store_true",
         help="print the CONTEXT value against recomputed value table",
@@ -1632,6 +1733,7 @@ def main(argv: list[str] | None = None) -> int:
         freeze=args.freeze,
         out_dir=args.out_dir,
         add_atlas=args.add_atlas_inputs,
+        add_ancestry=args.add_ancestry_inputs,
         show_verify=args.verify,
     )
 

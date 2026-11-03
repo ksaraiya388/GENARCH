@@ -990,5 +990,112 @@
         "size_bytes": 136874
       }
     ]
+  },
+  "ancestry_inputs": {
+    "frozen_at": "2026-11-03",
+    "gwas_release_date": "2026-11-02",
+    "gwas_release_base_url": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02",
+    "acs_release": "2024",
+    "extraction_script": "scripts/fetch_gwas_catalog.py",
+    "selection_rule": "An association row is selected when the last path segment of any IRI in its MAPPED_TRAIT_URI cell equals one of the asthma ontology IDs in the term lookup. The ancestry extract is every row of the ancestries file whose STUDY ACCESSION appears in the association extract. No trait name is matched as free text and no row is listed by hand.",
+    "asthma_term_ids": [
+      "EFO_0000270",
+      "EFO_0009759",
+      "EFO_0010638",
+      "EFO_1002011",
+      "MONDO_0001491",
+      "MONDO_0004765",
+      "MONDO_0004766",
+      "MONDO_0004784",
+      "MONDO_0004979",
+      "MONDO_0005405",
+      "MONDO_0022742",
+      "MONDO_0025556",
+      "MONDO_0850282",
+      "MONDO_0850283",
+      "MONDO_0850284",
+      "MONDO_0850285",
+      "MONDO_0850286",
+      "MONDO_0850287",
+      "MONDO_0956971",
+      "MONDO_0956975",
+      "MONDO_0956976",
+      "MONDO_0956977",
+      "MONDO_0956979"
+    ],
+    "full_downloads": [
+      {
+        "name": "gwas-catalog-associations_ontology-annotated-full.zip",
+        "origin_url": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip",
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "size_bytes": 72739430,
+        "stored": false,
+        "note": "Not committed (DECISIONS.md D30). The committed extract beside it was cut from these bytes; re-download from origin_url and re-run scripts/fetch_gwas_catalog.py to reproduce the extract."
+      },
+      {
+        "name": "gwas-catalog-download-ancestries-v1.0.3.1.tsv",
+        "origin_url": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv",
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "size_bytes": 53769063,
+        "stored": false,
+        "note": "Not committed (DECISIONS.md D30). The committed extract beside it was cut from these bytes; re-download from origin_url and re-run scripts/fetch_gwas_catalog.py to reproduce the extract."
+      }
+    ],
+    "files": [
+      {
+        "role": "lookup",
+        "path": "pipeline/lookups/asthma_loci.json",
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "size_bytes": 2715
+      },
+      {
+        "role": "lookup",
+        "path": "pipeline/lookups/asthma_trait_terms.json",
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "size_bytes": 8799
+      },
+      {
+        "role": "lookup",
+        "path": "pipeline/lookups/gwas_ancestry_categories.json",
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "size_bytes": 2394
+      },
+      {
+        "role": "acs_release",
+        "path": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json",
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "size_bytes": 9514
+      },
+      {
+        "role": "acs_release",
+        "path": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json",
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "size_bytes": 27181
+      },
+      {
+        "role": "acs_release",
+        "path": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json",
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "size_bytes": 189224
+      },
+      {
+        "role": "gwas_ancestry_extract",
+        "path": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv",
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "size_bytes": 113706
+      },
+      {
+        "role": "gwas_association_extract",
+        "path": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv",
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "size_bytes": 2747084
+      },
+      {
+        "role": "gwas_extract_manifest",
+        "path": "pipeline/sources/gwas-catalog/extract_manifest.json",
+        "sha256": "c4e9be7231d98a45b444b668a52c988c04f00f2341318d1ed0fdf00ae65c1de1",
+        "size_bytes": 9952
+      }
+    ]
   }
 }

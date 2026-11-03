@@ -34,3 +34,12 @@ outputs/repro/page_diff.txt
 outputs/repro/deqdata_diff.txt
 outputs/repro/void_block.txt
 outputs/repro/limitations_block.txt
+
+# Third-party bulk downloads, per DECISIONS.md D30. The full GWAS Catalog
+# release files are 120 MB together and the associations file is a zip git
+# cannot pack. They are pinned by SHA-256 and dated release URL in
+# pipeline/sources/manifest.json and data/reports/2026/FREEZE.json, and the
+# committed asthma extracts beside them are what the report reads. Re-download
+# with scripts/fetch_gwas_catalog.py.
+pipeline/sources/gwas-catalog/gwas-catalog-associations_ontology-annotated-full.zip
+pipeline/sources/gwas-catalog/gwas-catalog-download-ancestries-v1.0.3.1.tsv
