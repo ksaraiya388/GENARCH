@@ -4,8 +4,10 @@ Audit for DECISIONS.md D8. Every brief title, question field and rendered headin
 against CONTEXT.md C5 ("Population-level only. No individual risk, no diagnosis, no clinical
 language") and `docs/CONTENT_CONSTRAINTS.md` section 5 ("No individual risk language").
 
-**Nothing in this file is applied.** The table is a proposal. Slugs stay unchanged in every
-row, so no URL moves and no cross-link breaks.
+**Applied.** The eleven rows below were applied verbatim in commit `b6ae4fc` under the
+rulings recorded in "Two rows that need your ruling" further down, plus the three derived rows
+in "Applied beyond the eleven rows". The table is kept as written so the before state stays
+readable. Slugs are unchanged in every row, so no URL moved and no cross-link broke.
 
 Scope read: 10 brief records under `data/briefs/`, the orphan MDX under `content/briefs/`, and
 the seven section headings in `site/src/app/mechanism-briefs/[slug]/page.tsx`.
@@ -38,6 +40,25 @@ Eleven rewrites across nine files. The MDX is the orphan D9 covers: no route rea
 `content/briefs/`, so those two rows change nothing a reader sees. They are listed because the
 file is a brief and the rule is not conditional on the file being wired up. If D9 resolves by
 moving it to `docs/archive/briefs/`, strike both rows instead of applying them.
+
+---
+
+## Applied beyond the eleven rows
+
+`data/search-index.json` has no generator stage (`DERIVED_PATHS` in
+`scripts/check-constraints.mjs`), so a string in it is authored text that no pipeline run will
+refresh. Three of its brief entries had to change with the rows above, or site search would keep
+serving the language those rows remove.
+
+| file | field | current | proposed | rule | source |
+|---|---|---|---|---|---|
+| `data/search-index.json` | `name` (pm25-il33-nfkb-asthma) | PM2.5 Exposure Amplifies IL-33-Mediated Airway Inflammation via NF-kB Signaling in Genetically Susceptible **Individuals** | PM2.5 Exposure Amplifies IL-33-Mediated Airway Inflammation via NF-κB Signaling in Genetically Susceptible **Populations** | Verbatim copy of row 6 | search-index (no generator) |
+| `data/search-index.json` | `summary` (pm25-il33-nfkb-asthma) | How does ambient PM2.5 exposure interact with genetic variation in IL33 and NF-κB pathway genes to amplify airway inflammation and **asthma risk**? | How does ambient PM2.5 exposure interact with genetic variation in IL33 and NF-κB pathway genes to amplify airway inflammation and the **population-level asthma association**? | Verbatim copy of row 7 | search-index (no generator) |
+| `data/search-index.json` | `summary` (bdnf-stress-major-depressive-disorder) | How does BDNF Val66Met interact with psychosocial stress to **influence depression risk**? | How does BDNF Val66Met interact with psychosocial stress to **shift the reported population-level association with depression**? | C5 — bare "risk"; "influence" asserts a direction of effect (§1). Not a verbatim copy of row 3 but an abbreviation of it, so it takes row 3's verb and framing | search-index (no generator) |
+
+The first two went in with `b6ae4fc`. The third was reported at the time and held back because it
+is an abbreviation rather than a copy, so the wording was a choice rather than a consequence; it
+is applied here under the ruling that it take row 3's verb and framing.
 
 ---
 

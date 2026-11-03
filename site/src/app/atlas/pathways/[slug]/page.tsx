@@ -138,11 +138,11 @@ export default async function PathwayDetailPage({
                               — {rc.modulator_genes.join(", ")}
                             </span>
                           )}
-                        {rc.potential_therapeutic_target && (
-                          <span className="ml-2 text-xs bg-teal-primary/20 text-teal-primary px-2 py-0.5 rounded-sm">
-                            Therapeutic target
-                          </span>
-                        )}
+                        {/* A `Therapeutic target` badge rendered here from
+                            `rc.potential_therapeutic_target`. CONTEXT.md C5 bans clinical
+                            language on a label, and a badge naming a drug target is the
+                            site recommending one. Removed 2026-11-02; the schema field and
+                            its data are unchanged, and nothing renders it (AUDIT.md). */}
                       </li>
                     ))}
                   </ul>

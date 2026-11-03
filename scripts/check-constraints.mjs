@@ -21,7 +21,9 @@
  *    Code comments and identifiers are excluded -- a flat text search over source files
  *    produces false positives (REPORT.md section H2).
  *  - The lexicon is TIERED. Tier A is banned everywhere. Tier B is banned in headings and
- *    labels but is legitimate scientific prose in body copy.
+ *    labels but is legitimate scientific prose in body copy. Tier C5 -- clinical and
+ *    individual-subject language -- is banned on C5 surfaces only: a title, a brief's
+ *    central question, a heading, a label or a badge (DECISIONS.md D29).
  *  - Rule 1 governs causal claims linking ENVIRONMENTAL EXPOSURE to POPULATION HEALTH
  *    OUTCOME. It does not govern established intra-organism pathophysiology, which is
  *    carved out per-line via `// constraint-ok: intra-organism mechanism` (ruling R2).
@@ -69,6 +71,40 @@ const TIER_A = [
   "makes the other worse", "makes it worse",
 ];
 
+// Banned on C5 surfaces only: a title, a brief's central question, a heading, a label or
+// a badge. Not in explanatory or entity prose (DECISIONS.md D29) -- "inhaled corticosteroid
+// therapy" on a disease page is the accurate clinical fact about a disease, while
+// "Therapeutic Targets" in a brief title is the site recommending one. The scope test is
+// `isC5Surface`; prose stays under editorial review and the Tier A / Tier B patterns, whose
+// scope this does not change.
+//
+// CONTEXT.md C5 bans "diagnosis, treatment, medication" outright and nothing in the Tier A
+// lexicon covered any of them, so "Therapeutic Targets" shipped in a published brief title
+// and in its page <h1>, and a "Therapeutic target" badge shipped on every pathway page,
+// until 2026-11-02.
+//
+// `wordRe` anchors on non-letter boundaries, so a stem does not match its inflections and
+// each form is listed. The bare verb `treat` and its inflections are deliberately absent:
+// "zeros treated as missing" and "treated separately throughout" are the pipeline's own
+// vocabulary for exclusion handling, and carry no clinical claim. `treatment` is the noun
+// C5 names.
+//
+// The individual-subject strings catch a person as the subject at all, where "high risk",
+// "predisposed" and "at risk" above catch only a person as the subject of risk.
+// "Genetically Susceptible Individuals" matched nothing before this: `individuals` was in
+// the lexicon only as a POPULATION_NOUNS entry that escalates `triggers`. "your risk" is
+// in the Tier A second-person block, which applies everywhere.
+const TIER_C5 = [
+  "therapy", "therapies", "therapeutic", "therapeutics",
+  "treatment", "treatments",
+  "diagnosis", "diagnoses", "diagnose", "diagnosed", "diagnosing",
+  "diagnostic", "diagnostics",
+  "medication", "medications",
+  "cure", "cures", "cured",
+  "susceptible individuals", "susceptible people", "susceptible patients",
+  "people with", "patients",
+];
+
 // Banned in headings / chart titles / axis labels / table headers / alt / aria-label.
 // Warning-only in body prose and MDX: "the effect of PM2.5 on epithelial barrier
 // integrity", cited, is legitimate scientific writing.
@@ -82,6 +118,19 @@ const TIER_B = [
 
 // Exact phrases that must never trip the lint.
 const WHITELIST_PHRASES = [
+  // C5's clinical ban and CLAUDE.md critical constraint 1 require the same words: the
+  // disclaimer that must appear on every scientific page is itself written in the vocabulary
+  // the rule prohibits. A lint that fails its own mandated disclaimer is broken, the same
+  // reasoning the `environmental triggers` entry below rests on. These are the disclaimer
+  // strings as they are rendered, and each denies the capability rather than claiming it.
+  // Matched after whitespace normalisation, so a JSX line break inside the sentence does
+  // not defeat them.
+  "Not a diagnostic tool",
+  "not a diagnostic tool",
+  "constitutes medical advice",
+  "constitute medical advice",
+  "medical advice, diagnosis, or treatment",
+  "medical advice, diagnosis or treatment",
   // The project's own name. Both spellings: rendered strings are unhyphenated.
   "Genetic Epidemiology Network for At Risk Community Health",
   "Genetic Epidemiology Network for At-Risk Community Health",
@@ -216,6 +265,11 @@ function extractTsx(src, file) {
 }
 
 const JSON_DISPLAY_KEYS = [
+  // `question` is the central question of a mechanism brief. It renders as body copy under
+  // the "Central Question" heading on every brief page, and it was absent from this list
+  // until 2026-11-02, so seven brief questions carrying individual-risk language were never
+  // linted at any key (DECISIONS.md D8).
+  "question",
   "summary", "description", "notes", "limitations", "title", "label",
   "caption", "definition", "statement", "name", "mechanism_summary",
   "mechanism_hypothesis", "prs_notes", "adolescent_relevance",
@@ -326,19 +380,79 @@ function extractMdx(src, file) {
   return out;
 }
 
+/* ----------------------------------------------------------------- C5 surfaces */
+
+/* D29: the C5 patterns cover titles, questions, headings and labels. Explanatory and
+   entity prose stays under editorial review and the existing patterns. */
+
+// JSON keys whose value NAMES something rather than explaining it. The rest of
+// JSON_DISPLAY_KEYS -- `summary`, `description`, `supporting_evidence`,
+// `mechanism_hypothesis`, `adolescent_relevance`, `transferability_notes` and the others --
+// is prose about a disease, gene or pathway, where a clinical term is the subject matter.
+const C5_JSON_KEYS = new Set(["title", "question", "name", "label", "caption", "heading"]);
+
+// Heading and label positions in .tsx and .mdx. `jsx-text` and `mdx-prose` are body copy.
+const C5_CONTEXTS = new Set(["heading", "label"]);
+
+// A badge or chip is a short, unpunctuated run of JSX text in an element of its own -- the
+// shape of the `Therapeutic target` chip that shipped on every pathway page. The extractor
+// cannot tell a chip from a sentence structurally, so it is recognised by shape: no
+// sentence punctuation, at most six words. Body prose is a sentence and fails both tests.
+const isBadgeLike = (text) =>
+  !/[.!?,;:]/.test(text) && text.trim().split(/\s+/).length <= 6;
+
+function isC5Surface(s) {
+  // graph.json and search-index.json mirror read-only entity prose verbatim and cannot be
+  // fixed independently of it (R10); D29 leaves their labels out of these patterns too.
+  if (DERIVED_PATHS.includes(rel(s.file))) return false;
+  if (s.context.startsWith("json:"))
+    return C5_JSON_KEYS.has(s.context.slice(5).replace(/\[\]$/, ""));
+  if (C5_CONTEXTS.has(s.context)) return true;
+  return s.context === "jsx-text" && isBadgeLike(s.text);
+}
+
 /* ------------------------------------------------------------------ matching */
 
 const wordRe = (term) =>
   new RegExp(`(?<![A-Za-z])${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?![A-Za-z])`, "i");
 
-const isWhitelisted = (text, idx, term) => {
-  const lower = text.toLowerCase();
-  return WHITELIST_PHRASES.some((p) => {
-    const pl = p.toLowerCase();
-    let at = lower.indexOf(pl);
-    while (at !== -1) {
-      if (idx >= at && idx < at + pl.length) return true;
-      at = lower.indexOf(pl, at + 1);
+/* A whitelist phrase is written as one line; the JSX that renders it is wrapped by the
+   formatter, so the extracted string carries newlines and indentation in the middle of the
+   sentence. Matching the phrase literally therefore missed the rendered text -- the
+   mandated "medical advice, diagnosis, or treatment recommendation" disclaimer on
+   /ethics broke across "or" and "treatment" and tripped the lint it is whitelisted
+   against. Collapse whitespace runs in both before matching, and carry an index map so a
+   hit's offset in the raw string can be translated into the normalised one. */
+function collapseWhitespace(text) {
+  let out = "";
+  const origOf = [];       // origOf[i] = index in `text` of out[i]
+  let pendingSpace = false;
+  for (let i = 0; i < text.length; i++) {
+    if (/\s/.test(text[i])) { pendingSpace = out.length > 0; continue; }
+    if (pendingSpace) { out += " "; origOf.push(i); pendingSpace = false; }
+    out += text[i]; origOf.push(i);
+  }
+  // A collapsed run pushes the same original index twice (the inserted space, then the
+  // character itself). The later write wins, so a non-space character maps to itself.
+  const normOf = new Array(text.length).fill(-1);
+  origOf.forEach((orig, i) => { normOf[orig] = i; });
+  return { text: out, normOf };
+}
+
+const WHITELIST_NORMALISED = WHITELIST_PHRASES.map(
+  (p) => collapseWhitespace(p).text.toLowerCase()
+);
+
+const isWhitelisted = (text, idx) => {
+  const { text: norm, normOf } = collapseWhitespace(text);
+  const at = normOf[idx];
+  if (at === undefined || at === -1) return false;
+  const lower = norm.toLowerCase();
+  return WHITELIST_NORMALISED.some((pl) => {
+    let found = lower.indexOf(pl);
+    while (found !== -1) {
+      if (at >= found && at < found + pl.length) return true;
+      found = lower.indexOf(pl, found + 1);
     }
     return false;
   });
@@ -357,6 +471,14 @@ function escalates(term, text, idx) {
 const HARD_CONTEXTS = new Set(["heading", "label"]);
 
 function classify(term, tier, context, text, idx) {
+  // C5 reaches `classify` only on a C5 surface, so there is no context to weigh: the hit
+  // is on a title, question, heading, label or badge. Reported as Tier A, which is the
+  // severity and the grouping it belongs in.
+  if (tier === "C5")
+    return {
+      severity: "error", tier: "A",
+      reason: "C5: clinical or individual-subject language on a title, question, heading or label",
+    };
   if (tier === "B" && escalates(term, text, idx)) {
     return { severity: "error", tier: "A", reason: `Tier B escalated to A: population/policy object` };
   }
@@ -391,11 +513,12 @@ for (const file of files) {
   const supp = suppressionLines(src);
 
   for (const s of strings) {
-    for (const [tier, terms] of [["A", TIER_A], ["B", TIER_B]]) {
+    for (const [tier, terms] of [["A", TIER_A], ["B", TIER_B], ["C5", TIER_C5]]) {
+      if (tier === "C5" && !isC5Surface(s)) continue;
       for (const term of terms) {
         const m = s.text.match(wordRe(term));
         if (!m) continue;
-        if (isWhitelisted(s.text, m.index, term)) continue;
+        if (isWhitelisted(s.text, m.index)) continue;
         const c = classify(term, tier, s.context, s.text, m.index);
         // A suppression comment may sit on the line above, or anywhere the string spans.
         let suppressedWith = null;

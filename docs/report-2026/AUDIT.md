@@ -932,3 +932,10 @@ pull requests (PR 1, 2 and 4 merged, PR 3 closed), their heads are archived in a
 outside the repository, and `main` and `report-2026` passed on the current workflow at
 `782c1dc` and `2e2de4f`. `feat/brief2-and-figures` is fully contained in `main` and its own
 workflow triggers only on `main` and `cursor/*`, so it runs no CI and carries no failure.
+
+2026-11-02: `potential_therapeutic_target` renders nowhere. The `Therapeutic target` badge in
+`site/src/app/atlas/pathways/[slug]/page.tsx` was the field's only reader and was removed under
+CONTEXT.md C5, which bans clinical language on a label. The field stays in `pipeline/schemas.py`,
+in `site/src/lib/types.ts` and in all four `data/pathways/*.json` records with its values
+unchanged; a field rename or removal is deferred to the schema pass. Verified by grep over the
+built export: `Therapeutic target` appears on no served page.
