@@ -420,5 +420,91 @@ export interface AnnualReport {
   slug: string;
   summary?: string;
   pdf_path?: string;
+  /** Size of the file at `pdf_path`. Written by the PDF build, never by hand. */
+  pdf_bytes?: number;
+  /** SHA-256 of the file at `pdf_path`, so a download can be checked. */
+  pdf_sha256?: string;
   content?: string;
+}
+
+/* ------------------------------------------------------------------ report artifacts
+ *
+ * The shapes `pipeline.report` emits under `data/reports/<year>/`. These mirror
+ * `pipeline/report_lib/numbers.py`, `tables.py` and `figures.py` the way the entity
+ * types mirror `pipeline/schemas.py`: if a field moves on the Python side it moves
+ * here, and `npx tsc --noEmit` is what catches the drift.
+ */
+
+/** One frozen input behind a reported number, by neutral label and hash. */
+export interface ReportNumberInput {
+  source: string;
+  sha256: string;
+}
+
+/**
+ * One keyed value the report may state. `precision` is the number of decimals the
+ * value was rounded to and is `null` for dates, labels and statuses, which are
+ * strings. `window` carries the period and day definition; `method` carries how the
+ * value was computed. Report prose cites these keys and types no decimal
+ * (docs/report-2026/CONTEXT.md section 8).
+ */
+export interface ReportNumber {
+  value: number | string;
+  unit: string | null;
+  precision: number | null;
+  n: number | null;
+  window: string | null;
+  method: string;
+  inputs: ReportNumberInput[];
+}
+
+/** A report table's manifest entry. The rows themselves live in `file`, a CSV. */
+export interface ReportTableManifest {
+  id: string;
+  title: string;
+  caption: string;
+  file: string;
+  columns: string[];
+  row_count: number;
+  source_note: string;
+  /** Column name to unit. Columns absent from the map carry no unit. */
+  units: Record<string, string>;
+}
+
+/** A report figure's manifest entry. The image itself is `<id>.svg` beside it. */
+export interface ReportFigureManifest {
+  id: string;
+  title: string;
+  caption: string;
+  alt_text: string;
+  /** Id of the table this figure plots, rendered as its data-table fallback. */
+  data_table: string;
+  /**
+   * The limitation block the caption must carry. For the five sensor figures this
+   * is DEQ's verbatim wording with its attribution, pairing sentence and credit;
+   * F06 carries its own descriptive-only text and no DEQ wording.
+   */
+  limitation: string;
+}
+
+/**
+ * `inventory.json` and `chain.json`: the atlas half of the report. Their keys are
+ * namespaced `inventory.*` and `chain.*` and live outside `numbers.json`, which
+ * holds the DEQ half and is gated on byte-identity in CI. Each carries one table
+ * manifest -- T08 and T09 -- which is why neither appears in `tables.json`.
+ */
+export interface ReportAtlasDoc {
+  atlas_freeze_date: string;
+  note: string;
+  table: ReportTableManifest;
+  keys: Record<string, ReportNumber>;
+  graph?: {
+    node_count: number;
+    edge_count: number;
+    metadata_node_count: number;
+    metadata_edge_count: number;
+    generated_at: string;
+  };
+  brief?: string;
+  figure_id?: string;
 }

@@ -1,0 +1,332 @@
+/*
+ * Print stylesheet for the report.
+ *
+ * Loaded only by the print route, so none of it reaches the rest of the site. It is
+ * also what the PDF build renders through: the script navigates to this route, emulates
+ * print media and calls `page.pdf()`, so these rules are the PDF's layout and not a
+ * courtesy for someone pressing Ctrl-P.
+ */
+
+@page {
+  size: Letter;
+  margin: 1in;
+}
+
+/* The chrome is hidden on screen as well as in print. This route exists to be
+   rendered, and a reader who opens it should see what the PDF will contain rather
+   than a page that looks different from the artifact it produces. */
+.report-print-page .disclaimer-banner,
+.report-print-page nav[aria-label="Main navigation"],
+.report-print-page footer {
+  display: none !important;
+}
+
+.report-print-page {
+  background: #ffffff;
+  color: #111111;
+  font-size: 10.5pt;
+  line-height: 1.45;
+  max-width: 6.5in;
+  margin: 0 auto;
+}
+
+.report-print-page a {
+  color: #111111;
+  text-decoration: none;
+}
+
+@media print {
+  /* Body text in a print document needs a light background whatever the site theme
+     is: the screen theme is a dark navy, which would print as a solid ink field. */
+  html,
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+
+  .disclaimer-banner,
+  nav,
+  footer,
+  .report-toc,
+  .report-citebox,
+  .report-copy {
+    display: none !important;
+  }
+
+  /* Each numbered section and appendix starts a fresh page. The cover and the summary
+     do not: the summary is held to one page and reads as part of the front matter. */
+  .report-page-break {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  .report-cover {
+    break-after: avoid;
+  }
+
+  /* A figure, a table or a callout split across a page boundary is worse than a short
+     page: a limitation whose first half sits under a value and whose second half sits
+     overleaf has failed at the one job it has. */
+  figure,
+  table,
+  .callout,
+  .report-callout,
+  .report-deq-box,
+  .report-figure,
+  .report-table-figure,
+  .report-glossary-entry {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* A long table does break, and when it does every page needs its header row. */
+  thead {
+    display: table-header-group;
+  }
+
+  tbody tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+    color: #111111;
+  }
+
+  /* Print metrics, in points.
+   *
+   * The screen stylesheet sizes every margin and gap in `rem`, which is relative to
+   * the root font size and therefore does not shrink when the body drops to 10.5pt
+   * for paper. Left alone, a Letter page carries about a third of the text it should.
+   * Everything the report lays out vertically is restated here in absolute units. */
+  .report-print-page {
+    font-size: 10pt;
+    line-height: 1.34;
+  }
+
+  .report-p,
+  .report-lead,
+  .report-li,
+  .report-glossary dd {
+    font-size: 10pt;
+    line-height: 1.34;
+    margin-bottom: 5pt;
+  }
+
+  .report-lead {
+    font-size: 10.5pt;
+  }
+
+  .report-section {
+    margin-top: 0;
+  }
+
+  .report-subsection {
+    margin-top: 10pt;
+  }
+
+  .report-h2 {
+    font-size: 13pt;
+    margin: 0 0 6pt 0;
+  }
+
+  .report-h3 {
+    font-size: 10.5pt;
+    margin: 0 0 4pt 0;
+  }
+
+  .report-ol,
+  .report-ul {
+    margin: 0 0 6pt 14pt;
+  }
+
+  .report-cover-title {
+    font-size: 17pt;
+  }
+
+  .report-cover,
+  .report-masthead {
+    padding-bottom: 10pt;
+    margin-bottom: 12pt;
+  }
+
+  .report-cover-meta {
+    margin-top: 10pt;
+    gap: 3pt 12pt;
+  }
+
+  .callout,
+  .report-callout,
+  .report-deq-box {
+    margin: 8pt 0;
+  }
+
+  .report-figure {
+    margin: 10pt 0;
+  }
+
+  .report-table-figure {
+    margin: 8pt 0;
+    /* Overflow is scrolled on screen and there is nowhere to scroll on paper, so a
+     * wide table must be allowed to lay out inside the measure instead of being
+     * clipped at it. Without this the widest columns of the collocation table fall
+     * off the page edge and simply go missing from the PDF. */
+    overflow: visible;
+  }
+
+  .report-glossary-entry {
+    margin-bottom: 6pt;
+  }
+
+  .report-figure-caption {
+    margin-top: 5pt;
+    font-size: 9pt;
+  }
+
+  /* A figure's own data table is set a little smaller than a standalone one: it is a
+   * fallback for the picture above it rather than something read on its own. */
+  .report-figure-details table {
+    font-size: 7.5pt;
+  }
+
+  /* An orphaned heading or a single trailing line of a paragraph reads as an error. */
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* A printed page cannot be clicked, so every external link prints its address. A
+     DOI link prints the DOI it already displays, so it is left alone; anything else
+     gets its href appended. Internal anchors are suppressed: the target is in the
+     same document. */
+  a[href^="http"]:not(.report-doi)::after {
+    content: " (" attr(href) ")";
+    font-size: 8.5pt;
+    word-break: break-all;
+  }
+
+  a[href^="#"]::after {
+    content: "";
+  }
+
+  .report-figure-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Data tables under a figure are forced open in print: a collapsed <details>
+     prints as a summary line, which would drop every figure data fallback from the
+     PDF. Two overrides, because browsers have hidden the closed content two
+     different ways -- older engines by hiding the non-summary children, current
+     Chromium by setting content-visibility on ::details-content -- and the PDF is
+     rendered through whichever one the installed browser uses. */
+  details:not([open]) > *:not(summary) {
+    display: block !important;
+  }
+
+  details::details-content {
+    content-visibility: visible !important;
+    display: block !important;
+  }
+
+  .report-figure-details > summary {
+    display: none;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8pt;
+    /* Automatic layout, deliberately. Fixed layout divides the measure equally, which
+     * gives a fourteen-column table the same width for a status sentence as for a
+     * one-digit count and hyphenates every heading into fragments. Automatic layout
+     * distributes by content and `width: 100%` keeps the whole table inside the
+     * measure. */
+    table-layout: auto;
+  }
+
+  th,
+  td {
+    border: 0.5pt solid #999999;
+    padding: 1.5pt 3pt;
+    text-align: left;
+    vertical-align: top;
+    /* Wrap between words, and inside a word only when the word alone is wider than
+     * its cell -- a hash, a URL, a long parenthesised category label. Automatic
+     * hyphenation and unconditional word breaking were both tried and both made the
+     * headings worse, turning "Comparison" into "Comp ari- son". */
+    overflow-wrap: break-word;
+  }
+
+  /* A number is never broken. Fixed layout plus word breaking printed "-0.001" as
+   * "-0.00 1", which reads as a different number. */
+  .report-table-num,
+  .report-table-rowhead {
+    white-space: nowrap;
+  }
+
+  /* A table with many columns is set smaller, and its heading row is allowed to wrap
+   * between words while the cells below stay on one line. Nothing is dropped and
+   * nothing is scaled: the columns simply take the width their contents need. */
+  .report-table-wide table {
+    font-size: 7pt;
+  }
+
+  .report-table-wide th {
+    white-space: normal;
+  }
+
+  /* The widest tables need their first column to wrap as well, or its longest cell
+   * sets a minimum width the rest of the table cannot fit around. */
+  .report-table-xwide table {
+    font-size: 6.5pt;
+  }
+
+  .report-table-xwide .report-table-rowhead {
+    white-space: normal;
+  }
+
+  /* A caption takes its width from its table, so a table wider than the measure
+   * dragged its caption off the page edge and every line of that caption was cut
+   * mid-word. The caption is prose and belongs to the page, not to the table. */
+  caption {
+    width: 6.5in;
+    max-width: 6.5in;
+    box-sizing: border-box;
+  }
+
+  .report-table-num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  caption {
+    caption-side: top;
+    text-align: left;
+    font-size: 8.5pt;
+    padding-bottom: 3pt;
+  }
+
+  .report-pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 8.5pt;
+  }
+
+  .report-deq-box,
+  .report-callout {
+    border: 0.5pt solid #666666;
+    padding: 6pt 8pt;
+  }
+
+  .report-figure-limitation,
+  .report-table-source,
+  .report-references-verification {
+    font-size: 8.5pt;
+  }
+}

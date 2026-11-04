@@ -515,6 +515,24 @@
     "value": 0.23,
     "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
   },
+  "ancestry.discovery.association_rows_kept": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      }
+    ],
+    "method": "association rows the ontology-ID selection keeps; the denominator for the multi-trait count below",
+    "n": null,
+    "precision": 0,
+    "unit": "association rows",
+    "value": 4156.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
   "ancestry.discovery.central_asian.individuals": {
     "inputs": [
       {
@@ -903,6 +921,24 @@
     "precision": 2,
     "unit": "percent of discovery individuals",
     "value": 2.46,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.discovery.multi_trait_rows": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      }
+    ],
+    "method": "kept association rows whose MAPPED_TRAIT_URI names a trait outside the asthma term set alongside asthma, recomputed from the frozen extract rather than read from the extraction manifest. The selection rule keeps such a row and its study contributes its whole sample, so the asthma denominator includes it. Most come from multi-trait and pleiotropy analyses",
+    "n": null,
+    "precision": 0,
+    "unit": "association rows",
+    "value": 1040.0,
     "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
   },
   "ancestry.discovery.native_american.individuals": {
@@ -2063,6 +2099,20 @@
     "precision": 0,
     "unit": "associations",
     "value": 3395.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "ancestry.loci.count": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      }
+    ],
+    "method": "asthma loci in v1 scope, as listed in pipeline/lookups/asthma_loci.json",
+    "n": null,
+    "precision": 0,
+    "unit": "loci",
+    "value": 5.0,
     "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
   },
   "ancestry.loci.il1rl1.african_american_or_afro_caribbean.associations": {
@@ -3243,6 +3293,320 @@
     "unit": "ontology IDs",
     "value": 23.0,
     "window": null
+  },
+  "ancestry.trait_terms_matching_no_association": {
+    "inputs": [
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      }
+    ],
+    "method": "asthma ontology IDs in the lookup that matched no association in this release. An ID matching nothing is kept: the ontology places the term under asthma, and its absence is a fact about this release's curation rather than a reason to narrow the selection",
+    "n": null,
+    "precision": 0,
+    "unit": "ontology IDs",
+    "value": 17.0,
+    "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
+  },
+  "colloc.apex-05_NO2.backfill_gx_intercept": {
+    "inputs": [
+      {
+        "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+        "source": "Kunak hourly sensor export, DC-01 (data freeze)"
+      },
+      {
+        "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+        "source": "Kunak hourly sensor export, DC-04 (data freeze)"
+      },
+      {
+        "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+        "source": "Kunak hourly sensor export, DC-10 (data freeze)"
+      },
+      {
+        "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+        "source": "Kunak hourly sensor export, DC-02 (data freeze)"
+      },
+      {
+        "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+        "source": "Kunak hourly sensor export, DC-11 (data freeze)"
+      },
+      {
+        "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+        "source": "Kunak hourly sensor export, DC-08 (data freeze)"
+      },
+      {
+        "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+        "source": "Kunak hourly sensor export, DC-09 (data freeze)"
+      },
+      {
+        "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+        "source": "Kunak hourly sensor export, DC-07 (data freeze)"
+      },
+      {
+        "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+        "source": "Kunak hourly sensor export, DC-03 (data freeze)"
+      },
+      {
+        "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+        "source": "Kunak hourly sensor export, DC-06 (data freeze)"
+      },
+      {
+        "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+        "source": "Kunak hourly sensor export, DC-05 (data freeze)"
+      },
+      {
+        "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+        "source": "Kunak hourly sensor export, DC-12 (data freeze)"
+      },
+      {
+        "sha256": "4982b12cadc6168464d12d94837b31d063bc3e9fa587650b56a35bb2e851885e",
+        "source": "Regulatory monitor, hourly PM2.5 (FOIA 26-4646)"
+      },
+      {
+        "sha256": "bae77afc58feec0bbf6e1eac0e6f161ef485fe28894553ad51730a480d5c65c6",
+        "source": "Regulatory monitor, hourly NO2 (FOIA 26-4646)"
+      },
+      {
+        "sha256": "41de935ddfd3dbabd2856d06a624f4d502a1dc887fa469c128d61a11a5d1b55f",
+        "source": "Reference monitor, hourly CO, Arlington County (FOIA 26-4646; outside v1 scope)"
+      },
+      {
+        "sha256": "58051f022fbe2f72021c69791b4b234a3d56b36a9aa6f259fd6f75b304330276",
+        "source": "Regulatory monitor, published daily average PM2.5 (FOIA 26-4646)"
+      }
+    ],
+    "method": "the APEX 5 NO2 regression recomputed over the data freeze inputs instead of the original analysis inputs. It is the only one of the four that moves, because it is the only fit that retains readings of zero and so the only one the Kunak dashboard's all-zero backfill rows can enter (DECISIONS.md D16). DEQ's published coefficients correspond to the original inputs, so this is recorded beside the reported fit and never in place of it",
+    "n": 2746,
+    "precision": 3,
+    "unit": "ppb",
+    "value": 1.847,
+    "window": "2026-04-07 22:00:00 to 2026-08-07 07:00:00 EST"
+  },
+  "colloc.apex-05_NO2.backfill_gx_r2": {
+    "inputs": [
+      {
+        "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+        "source": "Kunak hourly sensor export, DC-01 (data freeze)"
+      },
+      {
+        "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+        "source": "Kunak hourly sensor export, DC-04 (data freeze)"
+      },
+      {
+        "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+        "source": "Kunak hourly sensor export, DC-10 (data freeze)"
+      },
+      {
+        "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+        "source": "Kunak hourly sensor export, DC-02 (data freeze)"
+      },
+      {
+        "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+        "source": "Kunak hourly sensor export, DC-11 (data freeze)"
+      },
+      {
+        "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+        "source": "Kunak hourly sensor export, DC-08 (data freeze)"
+      },
+      {
+        "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+        "source": "Kunak hourly sensor export, DC-09 (data freeze)"
+      },
+      {
+        "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+        "source": "Kunak hourly sensor export, DC-07 (data freeze)"
+      },
+      {
+        "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+        "source": "Kunak hourly sensor export, DC-03 (data freeze)"
+      },
+      {
+        "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+        "source": "Kunak hourly sensor export, DC-06 (data freeze)"
+      },
+      {
+        "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+        "source": "Kunak hourly sensor export, DC-05 (data freeze)"
+      },
+      {
+        "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+        "source": "Kunak hourly sensor export, DC-12 (data freeze)"
+      },
+      {
+        "sha256": "4982b12cadc6168464d12d94837b31d063bc3e9fa587650b56a35bb2e851885e",
+        "source": "Regulatory monitor, hourly PM2.5 (FOIA 26-4646)"
+      },
+      {
+        "sha256": "bae77afc58feec0bbf6e1eac0e6f161ef485fe28894553ad51730a480d5c65c6",
+        "source": "Regulatory monitor, hourly NO2 (FOIA 26-4646)"
+      },
+      {
+        "sha256": "41de935ddfd3dbabd2856d06a624f4d502a1dc887fa469c128d61a11a5d1b55f",
+        "source": "Reference monitor, hourly CO, Arlington County (FOIA 26-4646; outside v1 scope)"
+      },
+      {
+        "sha256": "58051f022fbe2f72021c69791b4b234a3d56b36a9aa6f259fd6f75b304330276",
+        "source": "Regulatory monitor, published daily average PM2.5 (FOIA 26-4646)"
+      }
+    ],
+    "method": "the APEX 5 NO2 regression recomputed over the data freeze inputs instead of the original analysis inputs. It is the only one of the four that moves, because it is the only fit that retains readings of zero and so the only one the Kunak dashboard's all-zero backfill rows can enter (DECISIONS.md D16). DEQ's published coefficients correspond to the original inputs, so this is recorded beside the reported fit and never in place of it",
+    "n": 2746,
+    "precision": 3,
+    "unit": null,
+    "value": 0.204,
+    "window": "2026-04-07 22:00:00 to 2026-08-07 07:00:00 EST"
+  },
+  "colloc.apex-05_NO2.backfill_gx_slope": {
+    "inputs": [
+      {
+        "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+        "source": "Kunak hourly sensor export, DC-01 (data freeze)"
+      },
+      {
+        "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+        "source": "Kunak hourly sensor export, DC-04 (data freeze)"
+      },
+      {
+        "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+        "source": "Kunak hourly sensor export, DC-10 (data freeze)"
+      },
+      {
+        "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+        "source": "Kunak hourly sensor export, DC-02 (data freeze)"
+      },
+      {
+        "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+        "source": "Kunak hourly sensor export, DC-11 (data freeze)"
+      },
+      {
+        "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+        "source": "Kunak hourly sensor export, DC-08 (data freeze)"
+      },
+      {
+        "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+        "source": "Kunak hourly sensor export, DC-09 (data freeze)"
+      },
+      {
+        "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+        "source": "Kunak hourly sensor export, DC-07 (data freeze)"
+      },
+      {
+        "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+        "source": "Kunak hourly sensor export, DC-03 (data freeze)"
+      },
+      {
+        "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+        "source": "Kunak hourly sensor export, DC-06 (data freeze)"
+      },
+      {
+        "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+        "source": "Kunak hourly sensor export, DC-05 (data freeze)"
+      },
+      {
+        "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+        "source": "Kunak hourly sensor export, DC-12 (data freeze)"
+      },
+      {
+        "sha256": "4982b12cadc6168464d12d94837b31d063bc3e9fa587650b56a35bb2e851885e",
+        "source": "Regulatory monitor, hourly PM2.5 (FOIA 26-4646)"
+      },
+      {
+        "sha256": "bae77afc58feec0bbf6e1eac0e6f161ef485fe28894553ad51730a480d5c65c6",
+        "source": "Regulatory monitor, hourly NO2 (FOIA 26-4646)"
+      },
+      {
+        "sha256": "41de935ddfd3dbabd2856d06a624f4d502a1dc887fa469c128d61a11a5d1b55f",
+        "source": "Reference monitor, hourly CO, Arlington County (FOIA 26-4646; outside v1 scope)"
+      },
+      {
+        "sha256": "58051f022fbe2f72021c69791b4b234a3d56b36a9aa6f259fd6f75b304330276",
+        "source": "Regulatory monitor, published daily average PM2.5 (FOIA 26-4646)"
+      }
+    ],
+    "method": "the APEX 5 NO2 regression recomputed over the data freeze inputs instead of the original analysis inputs. It is the only one of the four that moves, because it is the only fit that retains readings of zero and so the only one the Kunak dashboard's all-zero backfill rows can enter (DECISIONS.md D16). DEQ's published coefficients correspond to the original inputs, so this is recorded beside the reported fit and never in place of it",
+    "n": 2746,
+    "precision": 3,
+    "unit": "ppb",
+    "value": 0.317,
+    "window": "2026-04-07 22:00:00 to 2026-08-07 07:00:00 EST"
+  },
+  "colloc.apex-05_NO2.backfill_n_pairs": {
+    "inputs": [
+      {
+        "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+        "source": "Kunak hourly sensor export, DC-01 (data freeze)"
+      },
+      {
+        "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+        "source": "Kunak hourly sensor export, DC-04 (data freeze)"
+      },
+      {
+        "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+        "source": "Kunak hourly sensor export, DC-10 (data freeze)"
+      },
+      {
+        "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+        "source": "Kunak hourly sensor export, DC-02 (data freeze)"
+      },
+      {
+        "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+        "source": "Kunak hourly sensor export, DC-11 (data freeze)"
+      },
+      {
+        "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+        "source": "Kunak hourly sensor export, DC-08 (data freeze)"
+      },
+      {
+        "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+        "source": "Kunak hourly sensor export, DC-09 (data freeze)"
+      },
+      {
+        "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+        "source": "Kunak hourly sensor export, DC-07 (data freeze)"
+      },
+      {
+        "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+        "source": "Kunak hourly sensor export, DC-03 (data freeze)"
+      },
+      {
+        "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+        "source": "Kunak hourly sensor export, DC-06 (data freeze)"
+      },
+      {
+        "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+        "source": "Kunak hourly sensor export, DC-05 (data freeze)"
+      },
+      {
+        "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+        "source": "Kunak hourly sensor export, DC-12 (data freeze)"
+      },
+      {
+        "sha256": "4982b12cadc6168464d12d94837b31d063bc3e9fa587650b56a35bb2e851885e",
+        "source": "Regulatory monitor, hourly PM2.5 (FOIA 26-4646)"
+      },
+      {
+        "sha256": "bae77afc58feec0bbf6e1eac0e6f161ef485fe28894553ad51730a480d5c65c6",
+        "source": "Regulatory monitor, hourly NO2 (FOIA 26-4646)"
+      },
+      {
+        "sha256": "41de935ddfd3dbabd2856d06a624f4d502a1dc887fa469c128d61a11a5d1b55f",
+        "source": "Reference monitor, hourly CO, Arlington County (FOIA 26-4646; outside v1 scope)"
+      },
+      {
+        "sha256": "58051f022fbe2f72021c69791b4b234a3d56b36a9aa6f259fd6f75b304330276",
+        "source": "Regulatory monitor, published daily average PM2.5 (FOIA 26-4646)"
+      }
+    ],
+    "method": "the APEX 5 NO2 regression recomputed over the data freeze inputs instead of the original analysis inputs. It is the only one of the four that moves, because it is the only fit that retains readings of zero and so the only one the Kunak dashboard's all-zero backfill rows can enter (DECISIONS.md D16). DEQ's published coefficients correspond to the original inputs, so this is recorded beside the reported fit and never in place of it",
+    "n": 2746,
+    "precision": 0,
+    "unit": "paired hours",
+    "value": 2746.0,
+    "window": "2026-04-07 22:00:00 to 2026-08-07 07:00:00 EST"
   },
   "colloc.apex-05_NO2.deq_intercept": {
     "inputs": [
@@ -5862,6 +6226,24 @@
     "value": 1.0,
     "window": null
   },
+  "colloc.tolerance_coefficient": {
+    "inputs": [],
+    "method": "agreement tolerance against DEQ's published coefficients, GENARCH_RULES.md section 9, asserted as DEQ_TOLERANCE in site/src/lib/deq-data.ts. A coefficient outside tolerance fails the build, and applies to the intercept and the slope",
+    "n": null,
+    "precision": 2,
+    "unit": "pollutant units",
+    "value": 0.05,
+    "window": null
+  },
+  "colloc.tolerance_r2": {
+    "inputs": [],
+    "method": "agreement tolerance against DEQ's published coefficients, GENARCH_RULES.md section 9, asserted as DEQ_TOLERANCE in site/src/lib/deq-data.ts. A coefficient outside tolerance fails the build, and applies to R-squared",
+    "n": null,
+    "precision": 2,
+    "unit": null,
+    "value": 0.03,
+    "window": null
+  },
   "corr.max": {
     "inputs": [
       {
@@ -6315,6 +6697,42 @@
     "precision": null,
     "unit": null,
     "value": "2026-10-11T13:47:03-04:00",
+    "window": null
+  },
+  "naaqs.annual_standard": {
+    "inputs": [],
+    "method": "level of the annual PM2.5 primary standard, 40 CFR 50.18, as revised in 2024. Evaluated as a three-year average of annual means and not evaluable against a low-cost sensor record",
+    "n": null,
+    "precision": 1,
+    "unit": "µg/m³",
+    "value": 9.0,
+    "window": "annual primary standard, 2024 revision"
+  },
+  "naaqs.averaging_years": {
+    "inputs": [],
+    "method": "consecutive years the 98th percentile is averaged over before the 24-hour standard is evaluated, 40 CFR Part 50 Appendix N",
+    "n": null,
+    "precision": 0,
+    "unit": "years",
+    "value": 3.0,
+    "window": null
+  },
+  "naaqs.daily_standard": {
+    "inputs": [],
+    "method": "level of the 24-hour PM2.5 standard, 40 CFR 50.18. A single hourly reading above this level is not an exceedance of it",
+    "n": null,
+    "precision": 0,
+    "unit": "µg/m³",
+    "value": 35.0,
+    "window": "24-hour standard"
+  },
+  "naaqs.percentile": {
+    "inputs": [],
+    "method": "the percentile of daily 24-hour averages the 24-hour standard is evaluated on, 40 CFR Part 50 Appendix N",
+    "n": null,
+    "precision": 0,
+    "unit": "percentile",
+    "value": 98.0,
     "window": null
   },
   "network.common_window.end": {
@@ -10101,6 +10519,122 @@
     "value": 3.0,
     "window": "2026-06-18 to 2026-08-07, 18 of 24 valid hours, exact zeros treated as missing"
   },
+  "p98.common_clock.rise_max": {
+    "inputs": [
+      {
+        "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+        "source": "Kunak hourly sensor export, DC-01 (data freeze)"
+      },
+      {
+        "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+        "source": "Kunak hourly sensor export, DC-04 (data freeze)"
+      },
+      {
+        "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+        "source": "Kunak hourly sensor export, DC-10 (data freeze)"
+      },
+      {
+        "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+        "source": "Kunak hourly sensor export, DC-02 (data freeze)"
+      },
+      {
+        "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+        "source": "Kunak hourly sensor export, DC-11 (data freeze)"
+      },
+      {
+        "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+        "source": "Kunak hourly sensor export, DC-08 (data freeze)"
+      },
+      {
+        "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+        "source": "Kunak hourly sensor export, DC-09 (data freeze)"
+      },
+      {
+        "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+        "source": "Kunak hourly sensor export, DC-07 (data freeze)"
+      },
+      {
+        "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+        "source": "Kunak hourly sensor export, DC-03 (data freeze)"
+      },
+      {
+        "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+        "source": "Kunak hourly sensor export, DC-06 (data freeze)"
+      },
+      {
+        "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+        "source": "Kunak hourly sensor export, DC-05 (data freeze)"
+      },
+      {
+        "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+        "source": "Kunak hourly sensor export, DC-12 (data freeze)"
+      }
+    ],
+    "method": "largest per-site difference between the local clock time and local standard time 98th percentile on the common window. Clock binning raises every site and reorders none of them",
+    "n": 6,
+    "precision": 3,
+    "unit": "µg/m³",
+    "value": 2.514,
+    "window": "2026-06-18 to 2026-08-07, 18 of 24 valid hours, exact zeros treated as missing"
+  },
+  "p98.common_clock.rise_min": {
+    "inputs": [
+      {
+        "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+        "source": "Kunak hourly sensor export, DC-01 (data freeze)"
+      },
+      {
+        "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+        "source": "Kunak hourly sensor export, DC-04 (data freeze)"
+      },
+      {
+        "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+        "source": "Kunak hourly sensor export, DC-10 (data freeze)"
+      },
+      {
+        "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+        "source": "Kunak hourly sensor export, DC-02 (data freeze)"
+      },
+      {
+        "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+        "source": "Kunak hourly sensor export, DC-11 (data freeze)"
+      },
+      {
+        "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+        "source": "Kunak hourly sensor export, DC-08 (data freeze)"
+      },
+      {
+        "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+        "source": "Kunak hourly sensor export, DC-09 (data freeze)"
+      },
+      {
+        "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+        "source": "Kunak hourly sensor export, DC-07 (data freeze)"
+      },
+      {
+        "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+        "source": "Kunak hourly sensor export, DC-03 (data freeze)"
+      },
+      {
+        "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+        "source": "Kunak hourly sensor export, DC-06 (data freeze)"
+      },
+      {
+        "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+        "source": "Kunak hourly sensor export, DC-05 (data freeze)"
+      },
+      {
+        "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+        "source": "Kunak hourly sensor export, DC-12 (data freeze)"
+      }
+    ],
+    "method": "smallest per-site difference between the local clock time and local standard time 98th percentile on the common window. Clock binning raises every site and reorders none of them",
+    "n": 6,
+    "precision": 3,
+    "unit": "µg/m³",
+    "value": 2.069,
+    "window": "2026-06-18 to 2026-08-07, 18 of 24 valid hours, exact zeros treated as missing"
+  },
   "p98.full.DC-01.clock_zero_kept": {
     "inputs": [
       {
@@ -11792,6 +12326,20 @@
     "unit": "µg/m³",
     "value": 24.882,
     "window": "whole days through 2026-08-07, 18 of 24 valid hours"
+  },
+  "p98.reproduction_tolerance": {
+    "inputs": [
+      {
+        "sha256": "490a1966d7f5bde02eb73ca582512ddaa7c3bb34b0ae81460c283aeddd18558a",
+        "source": "DEQ weekly report, 2026-08-07 (pdf)"
+      }
+    ],
+    "method": "the margin within which a recomputed 98th percentile is treated as reproducing DEQ's published Table 4 value (AUDIT.md Task 5b). DEQ prints that column to one decimal, so this is half of the last printed digit",
+    "n": null,
+    "precision": 2,
+    "unit": "µg/m³",
+    "value": 0.05,
+    "window": null
   },
   "smoke.rule": {
     "inputs": [

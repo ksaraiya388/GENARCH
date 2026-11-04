@@ -102,6 +102,19 @@ def _release_inputs(fz: Freeze) -> list[dict]:
     ]
 
 
+def _individuals(value: float):
+    """An individual count as a count, keeping a genuine half as a half.
+
+    The equal split of a row naming k broad ancestral categories gives each of them
+    a 1/k share of the row's sample, so a cell legitimately carries a half. Every
+    other cell is a whole number of people and is written as one: `round(x, 1)`
+    alone renders 43766190 as "43766190.0", which reads as a precision the count
+    does not have.
+    """
+    rounded = round(value, 1)
+    return int(rounded) if float(rounded).is_integer() else rounded
+
+
 def compute(fz: Freeze) -> dict:
     """Recompute the three ancestry findings from the pinned inputs."""
     release = fz.ancestry_release()
@@ -117,6 +130,7 @@ def compute(fz: Freeze) -> dict:
         "acs_release": acs_release,
         "discovery": discovery,
         "loci": ancestry.loci_by_ancestry(),
+        "trait_scope": ancestry.trait_scope(),
         "acs": ancestry.acs_context(acs_release),
     }
 
@@ -127,6 +141,7 @@ def build_numbers(fz: Freeze, anc: dict, reg: NumberRegistry) -> None:
     discovery = anc["discovery"]
     loci = anc["loci"]
     acs = anc["acs"]
+    scope = anc["trait_scope"]
 
     anc_extract = [e.rel_path for e in fz.ancestry_files("gwas_ancestry_extract")]
     assoc_extract = [e.rel_path for e in fz.ancestry_files("gwas_association_extract")]
@@ -166,6 +181,41 @@ def build_numbers(fz: Freeze, anc: dict, reg: NumberRegistry) -> None:
         "scripts/build_asthma_trait_terms.py. Selection is by ID only: no trait name is "
         "matched as free text anywhere in this module",
         inputs=_inputs(fz, ["pipeline/lookups/asthma_trait_terms.json"]),
+    )
+    reg.add(
+        "ancestry.trait_terms_matching_no_association",
+        scope["terms_matching_no_association"],
+        unit="ontology IDs",
+        precision=0,
+        window=window,
+        method="asthma ontology IDs in the lookup that matched no association in this "
+        "release. An ID matching nothing is kept: the ontology places the term under "
+        "asthma, and its absence is a fact about this release's curation rather than a "
+        "reason to narrow the selection",
+        inputs=_inputs(fz, [*assoc_extract, "pipeline/lookups/asthma_trait_terms.json"]),
+    )
+    reg.add(
+        "ancestry.discovery.association_rows_kept",
+        scope["association_rows_kept"],
+        unit="association rows",
+        precision=0,
+        window=window,
+        method="association rows the ontology-ID selection keeps; the denominator for "
+        "the multi-trait count below",
+        inputs=_inputs(fz, [*assoc_extract, "pipeline/lookups/asthma_trait_terms.json"]),
+    )
+    reg.add(
+        "ancestry.discovery.multi_trait_rows",
+        scope["multi_trait_rows"],
+        unit="association rows",
+        precision=0,
+        window=window,
+        method="kept association rows whose MAPPED_TRAIT_URI names a trait outside the "
+        "asthma term set alongside asthma, recomputed from the frozen extract rather "
+        "than read from the extraction manifest. The selection rule keeps such a row and "
+        "its study contributes its whole sample, so the asthma denominator includes it. "
+        "Most come from multi-trait and pleiotropy analyses",
+        inputs=_inputs(fz, [*assoc_extract, "pipeline/lookups/asthma_trait_terms.json"]),
     )
 
     # ------------------------------------------------- 3a discovery composition
@@ -271,6 +321,15 @@ def build_numbers(fz: Freeze, anc: dict, reg: NumberRegistry) -> None:
         method="genome-wide significance threshold. A convention for declaring an "
         "association, not a measure of effect size (CONTEXT.md X7)",
         inputs=loci_inputs,
+    )
+    reg.add(
+        "ancestry.loci.count",
+        len(loci["loci"]),
+        unit="loci",
+        precision=0,
+        window=window,
+        method="asthma loci in v1 scope, as listed in pipeline/lookups/asthma_loci.json",
+        inputs=_inputs(fz, ["pipeline/lookups/asthma_loci.json"]),
     )
     reg.add(
         "ancestry.loci.associations_significant",
@@ -421,7 +480,7 @@ def build_tables(anc: dict) -> list[tables.Table]:
         [
             [
                 row["category"],
-                round(row["individuals"], 1),
+                _individuals(row["individuals"]),
                 round(row["share"] * 100, 2),
                 round(single[row["category"]] * 100, 2)
                 if row["category"] in single

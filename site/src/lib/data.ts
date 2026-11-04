@@ -239,3 +239,32 @@ export function getAnnualReportByYear(year: string): AnnualReport | null {
   const filePath = path.join(DATA_DIR, "reports", `${year}.json`);
   return readJsonFile<AnnualReport>(filePath);
 }
+
+/* --------------------------------------------------------------- report artifacts
+ *
+ * Raw readers for `data/reports/<year>/`. They resolve through the same DATA_DIR as
+ * every other reader above, so the report page picks up `site/_data/` on Vercel and
+ * `../data/` in local dev without a second resolution rule. The merging and
+ * key-lookup logic sits in `report-registry.ts`; this file only reads bytes.
+ */
+
+/** One JSON artifact under `data/reports/<year>/`, or null when it is absent. */
+export function getReportArtifact<T>(year: string, file: string): T | null {
+  return readJsonFile<T>(path.join(DATA_DIR, "reports", year, file));
+}
+
+/** One text artifact, used for the table CSVs. Null when absent. */
+export function getReportTextArtifact(year: string, file: string): string | null {
+  try {
+    const filePath = path.join(DATA_DIR, "reports", year, file);
+    if (!fs.existsSync(filePath)) return null;
+    return fs.readFileSync(filePath, "utf-8");
+  } catch {
+    return null;
+  }
+}
+
+/** The years with a `data/reports/<year>/index.json`, newest first. */
+export function getReportYears(): string[] {
+  return getAnnualReports().map((r) => r.year);
+}

@@ -267,3 +267,41 @@ if (!fs.existsSync(deqSrc)) {
   }
   console.log(`[copy-data] Copied ${copied} cross-ancestry source file(s) → ${caDest}`);
 }
+
+/*
+ * Report figures and tables, staged into public/reports/<year>/.
+ *
+ * The wholesale data copy above lands these under _data/, which is never served, so a
+ * report page cannot reference a figure from there. The report needs the SVGs at a URL
+ * because the page embeds them as images rather than rendering charts in the browser:
+ * a citable report has to show the same picture every time it is opened, and the same
+ * picture the PDF carries. The CSVs are staged beside them so each table is
+ * downloadable at a stable address.
+ *
+ * Staged rather than committed: they are build output derived from data/, and
+ * public/reports/ is gitignored for the same reason public/data/ is.
+ */
+const REPORT_ASSET_EXT = new Set([".svg", ".png", ".csv"]);
+const reportsSrc = path.resolve(__dirname, "..", "..", "data", "reports");
+const reportsDest = path.resolve(__dirname, "..", "public", "reports");
+
+if (!fs.existsSync(reportsSrc)) {
+  console.log(`[copy-data] ${reportsSrc} not found — skipping report assets.`);
+} else {
+  let staged = 0;
+  for (const year of fs.readdirSync(reportsSrc)) {
+    const yearDir = path.join(reportsSrc, year);
+    if (!fs.statSync(yearDir).isDirectory()) continue;
+    const assets = fs
+      .readdirSync(yearDir)
+      .filter((name) => REPORT_ASSET_EXT.has(path.extname(name).toLowerCase()));
+    if (assets.length === 0) continue;
+    const dest = path.join(reportsDest, year);
+    fs.mkdirSync(dest, { recursive: true });
+    for (const name of assets) {
+      fs.copyFileSync(path.join(yearDir, name), path.join(dest, name));
+      staged++;
+    }
+  }
+  console.log(`[copy-data] Staged ${staged} report asset(s) → ${reportsDest}`);
+}

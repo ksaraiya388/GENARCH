@@ -12,6 +12,11 @@
   --cool-gray-light: #C7D2DA;
   --cool-gray-mid: #94A3B8;
   --white-soft: #F8FAFC;
+  /* Documented design tokens (CLAUDE.md) that the report stylesheet needs as
+     variables. The Tailwind theme already carries all three as colour tokens; these
+     are the same values, exposed to plain CSS. */
+  --navy-light: #1A3A4F;
+  --direction-amplify: #C53030;
 }
 
 @layer base {

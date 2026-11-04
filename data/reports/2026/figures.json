@@ -1,7 +1,7 @@
 {
   "figures": [
     {
-      "alt_text": "A timeline of 12.0 sensor sites across 2026. Coverage is uneven: the longest records run from early March, while the shortest begins in mid-June. All six sensors in the common window were collecting together only from 2026-06-18 to 2026-08-07.",
+      "alt_text": "A timeline of 12 sensor sites across 2026. Coverage is uneven: the longest records run from early March, while the shortest begins in mid-June. All six sensors in the common window were collecting together only from 2026-06-18 to 2026-08-07.",
       "caption": "Coverage by site code. The shaded band is the window in which all six sensors were collecting; the darker band is the wildfire smoke transport weekend. Dotted lines mark the end of the regulatory monitor record and the network reconfiguration.",
       "data_table": "T02_site_key",
       "id": "F01_network_timeline",
@@ -17,7 +17,7 @@
       "title": "Collocation: sensor against the regulatory monitor"
     },
     {
-      "alt_text": "Recomputed daily averages plotted against DEQ's published values for 119.0 comparable days. 118.0 sit on the one-to-one line; the mean absolute difference is 0.0017 micrograms per cubic metre. One day differs.",
+      "alt_text": "Recomputed daily averages plotted against DEQ's published values for 119 comparable days. 118 sit on the one-to-one line; the mean absolute difference is 0.0017 micrograms per cubic metre. One day differs.",
       "caption": "Recomputed 24-hour means against DEQ's published daily file, truncated to one decimal as DEQ truncates. The single marked day is the one that differs, at 23 valid hours. Comparable days are those surviving DEQ's null-code and logger-invalid exclusions and clearing 18 of 24 valid hours.",
       "data_table": "T04_daily_reconciliation",
       "id": "F03_daily_reconciliation",
@@ -25,7 +25,7 @@
       "title": "Daily-average reconciliation, regulatory monitor"
     },
     {
-      "alt_text": "For each site code, the 98th percentile over the site's own record and over the common window, joined by a line. The site with the shortest record, DC-06 at 51 days, carries the highest own-record value; DC-01 has 152 days. On the common window 5.0 of six sites sit above the 35 microgram line.",
+      "alt_text": "For each site code, the 98th percentile over the site's own record and over the common window, joined by a line. The site with the shortest record, DC-06 at 51 days, carries the highest own-record value; DC-01 has 152 days. On the common window 5 of six sites sit above the 35 microgram line.",
       "caption": "Own-record against common-window 98th percentiles, with record days annotated. A 98th percentile read from a 51-day record is a different order statistic from one read from 152 days. The horizontal line marks the level of the 24-hour standard and is not a threshold being crossed: neither these values nor DEQ's are comparable to the NAAQS.",
       "data_table": "T05_p98_common_window",
       "id": "F04_p98_by_site",

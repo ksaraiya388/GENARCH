@@ -45,6 +45,67 @@ gitignored by name under pipeline/sources/gwas-catalog/. D26's rule is unchanged
 everything it already covers: the DEQ raw inputs stay committed byte-for-byte, because each is
 small enough to store and no extract of them would be smaller than the file.
 
+D31 Report references are two sets in one file, `site/src/content/reports/2026/references.json`,
+because the two carry different guarantees. `references` is journal literature and every
+entry has a DOI; a `verification` block records how that DOI was checked rather than
+asserting that it was, with method `crossref` and a date for entries taken from
+`pipeline/sources/cross_ancestry/literature.json` and method `atlas-record` with the
+record path for entries taken from a published brief. A work without a DOI is not added
+to that set: it is cited from the other one or not cited. `sources` is agency documents,
+regulations and dataset releases, which have no DOIs, and every entry carries all five of
+publisher, title, edition or version date, stable URL and retrieved date. DEQ weekly
+reports are cited by edition date and page, 40 CFR by its eCFR address with the date the
+text was current as of, ACS by release, product and table IDs, and FOIA 26-4646 by request
+number and release date. `tests/test_report_source.py` fails on a literature entry without
+a usable DOI or a verification block, and on a source entry missing any of the five
+fields. The single-set reading of the Prompt 3 instruction, "DOI for every entry", is not
+satisfiable: 40 CFR Part 50, DEQ's own weekly editions, the ACS release and the released
+FOIA record have no DOIs and are load-bearing citations.
+
+D32 `numbers.json` gained twelve keys and lost none; every pre-existing entry is unchanged
+value for value, and `tables.json` and T01-T12 are unchanged by the addition. The keys are
+`naaqs.annual_standard`, `naaqs.daily_standard`, `naaqs.percentile` and
+`naaqs.averaging_years`, which carry the regulatory form of the two PM2.5 standards with
+40 CFR 50.18 and Part 50 Appendix N named in each key's own method and no frozen input
+behind them, because they are the regulation rather than a measurement;
+`colloc.tolerance_coefficient` and `colloc.tolerance_r2`, which mirror `DEQ_TOLERANCE` in
+`site/src/lib/deq-data.ts` so the report quotes the tolerance the build actually asserts,
+with a test comparing the two; `p98.common_clock.rise_min` and `.rise_max`, because the
+clock-binning rise recomputed at the freeze is 2.069 to 2.514 µg/m³ and not the 1.3 to 2.6
+CONTEXT.md recorded from the August analysis, and CONTEXT section 4 says the report uses
+values recomputed at the freeze; `colloc.apex-05_NO2.backfill_gx_intercept`, `_gx_slope`,
+`_gx_r2` and `_n_pairs`, the D16 figures, recomputed over the freeze inputs rather than
+transcribed, and reproducing D16's recorded values; `p98.reproduction_tolerance`, the
+margin AUDIT Task 5b treats a Table 4 percentile as reproducing within, which is half of
+DEQ's last printed digit and not the collocation tolerance it numerically equals; and
+`ancestry.discovery.multi_trait_rows`, `ancestry.discovery.association_rows_kept`,
+`ancestry.trait_terms_matching_no_association` and `ancestry.loci.count`. The multi-trait
+count is recomputed from the frozen association extract, not copied from
+`extract_manifest.json`, and a test asserts it equals 1,040 and agrees with the manifest.
+Report prose types no number: `<N>` resolves a key or the build fails.
+
+D33 The report body is TSX under `site/src/content/reports/2026/`, not MDX. D21 is
+unchanged and `@next/mdx` is not configured; the three MDX packages and
+`@react-pdf/renderer` are removed as unused, which closes AUDIT item 21 on its
+author-in-TSX branch. Two reasons beyond D21. The briefs render from structured records
+through TSX components, so TSX is the existing content path rather than a second one. And
+`scripts/check-constraints.mjs` scans `site/src` and the repository-root `content/`, but
+not `site/content/`, so the body the Prompt 3 instruction named would have sat outside the
+C1, C5, C7 and C8 gate; under `site/src/content/` it is linted on every push. Review
+markers are `{/* KIAAN: reason */}`, which is the only comment syntax JSX has, and the
+decimal rule is checked against JSX text nodes with tags, props, comments, `<N>` and
+`<Cite>` removed first.
+
+D34 The draft PDF is not committed and `docs/report-2026/drafts/` is gitignored; `--final`
+is what writes `pdf_path`, `pdf_bytes` and `pdf_sha256` into
+`data/reports/2026/index.json`. A draft is not served, and a `pdf_path` pointing at a file
+the deployment does not carry would offer a reader a download that 404s, which is the
+defect AUDIT item 21 recorded in the first place. The final PDF is committed under
+`site/public/reports/2026/` when it is produced, because Vercel runs only `npm run build`
+and cannot render a PDF. `generate_report()` now preserves the three `pdf_*` fields instead
+of rewriting `index.json` wholesale, so the documented no-freeze invocation
+`python -m pipeline report --year 2026` cannot silently unpublish a PDF that is deployed.
+
 ---
 
 ## Remaining AUDIT items

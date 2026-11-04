@@ -7,3 +7,6 @@ _data/
 # pipeline/sources/ is canonical and a committed copy here would be a second, drifting original.
 public/data/deq/
 public/data/cross-ancestry/
+# Report figures and table CSVs, staged out of data/reports/ by copy-data.js. Build
+# output, like the two directories above: the committed copies live under data/.
+public/reports/

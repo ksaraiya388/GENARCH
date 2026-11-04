@@ -21,6 +21,7 @@ this test has to catch.
 from __future__ import annotations
 
 import csv
+import json
 import os
 import re
 import shutil
@@ -76,10 +77,23 @@ def built_site() -> Path:
         SITE_DIR / "src" / "lib" / "site-codes.ts",
         SITE_DIR / "src" / "app" / "community" / "data-center-alley" / "page.tsx",
         SITE_DIR / "scripts" / "copy-data.js",
+        # The report. Its body is the largest block of user-visible text on the site and
+        # it renders generated captions and table cells straight out of data/reports, so
+        # a stale export would let the checks below pass on a build that predates it.
+        SITE_DIR / "src" / "lib" / "report-registry.ts",
+        SITE_DIR / "src" / "lib" / "report-content.tsx",
+        SITE_DIR / "src" / "app" / "reports" / "page.tsx",
+        SITE_DIR / "src" / "app" / "reports" / "[year]" / "page.tsx",
+        SITE_DIR / "src" / "app" / "reports" / "[year]" / "print" / "page.tsx",
+        *sorted((SITE_DIR / "src" / "content" / "reports" / "2026").glob("*")),
+        *sorted((SITE_DIR / "src" / "components" / "report").glob("*")),
+        *sorted((REPO_ROOT / "data" / "reports" / "2026").glob("*.json")),
+        *sorted((REPO_ROOT / "data" / "reports" / "2026").glob("*.csv")),
     ]
     index = OUT_DIR / "community" / "data-center-alley" / "index.html"
-    if index.is_file():
-        built = index.stat().st_mtime
+    report = OUT_DIR / "reports" / "2026" / "index.html"
+    if index.is_file() and report.is_file():
+        built = min(index.stat().st_mtime, report.stat().st_mtime)
         if all(p.stat().st_mtime <= built for p in inputs if p.exists()):
             return OUT_DIR
 
@@ -155,3 +169,57 @@ def test_the_served_downloads_are_keyed_by_site_code(built_site):
             header = next(csv.reader(handle))
         assert "site_code" in header, f"{path.name} is not keyed by site code: {header}"
         assert "site_id" not in header, f"{path.name} still carries a site_id column"
+
+def test_the_report_pages_are_served_and_carry_their_safeguards(built_site):
+    """The report's three routes, and the two things they must not get wrong.
+
+    The report is the one page on the site that is deliberately unreachable: until its
+    DOI is issued it is noindex, nofollow and linked from nowhere, so that a citation
+    made from it resolves. And a bibliographic tag whose value is still pending must be
+    omitted rather than emitted, because a reference manager that ingests the literal
+    placeholder as a DOI stores a reference that will never resolve.
+    """
+    index = built_site / "reports" / "index.html"
+    report = built_site / "reports" / "2026" / "index.html"
+    printed = built_site / "reports" / "2026" / "print" / "index.html"
+    for path in (index, report, printed):
+        assert path.is_file(), f"{path.relative_to(built_site)} was not exported"
+
+    report_html = report.read_text(encoding="utf-8", errors="replace")
+    assert 'name="robots" content="noindex, nofollow"' in report_html
+
+    # No tag may carry the placeholder, and the two that have no value yet must be gone.
+    assert "citation_title" in report_html
+    assert "citation_doi" not in report_html
+    assert "citation_pdf_url" not in report_html
+    assert "PENDING" not in report_html
+
+    printed_html = printed.read_text(encoding="utf-8", errors="replace")
+    assert 'name="robots"' in printed_html and "noindex" in printed_html
+
+    # The index lists the report but does not link to it while the DOI is pending.
+    index_html = index.read_text(encoding="utf-8", errors="replace")
+    assert "DOI pending" in index_html
+    assert 'href="/reports/2026/"' not in index_html
+
+
+def test_the_report_figures_and_tables_are_served(built_site):
+    """The figures are referenced by URL, so they have to be staged into public/.
+
+    `copy-data.js` copies `data/` into `_data/`, which is never served, so a figure
+    referenced from `_data` would 404 in the browser and print as a blank frame. This
+    checks the staged copies exist and that the page points at them.
+    """
+    report = (built_site / "reports" / "2026" / "index.html").read_text(
+        encoding="utf-8", errors="replace"
+    )
+    figures = json.loads(
+        (REPO_ROOT / "data" / "reports" / "2026" / "figures.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    for figure in figures["figures"]:
+        src = f"/reports/2026/{figure['id']}.svg"
+        assert src in report, f"{figure['id']} is not referenced by the report page"
+        staged = built_site / "reports" / "2026" / f"{figure['id']}.svg"
+        assert staged.is_file(), f"{figure['id']}.svg was not staged into the export"

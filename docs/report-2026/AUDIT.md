@@ -1173,3 +1173,145 @@ Resolution, and what is still open. The report and the page now have one method 
 
 ACS release divergence, open item. The report's T12 and the F06 ACS panel read the 2024 ACS 5-year release, retrieved for this module into pipeline/sources/cross_ancestry/acs_loudoun_2024_*.json. The live page /ancestry-equity reads the 2023 release in pipeline/sources/cross_ancestry/acs_loudoun_2023.json and is unchanged, so the report and the page state county counts from two different vintages. Nothing is wrong with either number on its own terms and both name their vintage, but a reader comparing the two surfaces will find different totals for the same county. Moving the page to the newer release, or stating the vintage more prominently on it, is open.
 
+## Report source, routes and PDF build (2026-11-04)
+
+Prompt 3. The report body, the three routes, the Playwright PDF build and its Python
+post-processor. What follows is what this round measured or changed that was not already
+recorded, including four findings that correct or qualify earlier entries in this file.
+
+### Keys added to numbers.json
+
+Twelve, with every pre-existing entry unchanged value for value and `tables.json` and
+T01-T12 unchanged by the addition (DECISIONS.md D32). Report prose types no number, so a
+figure the prose has to state and the registry does not carry is a missing key rather than
+a licence to type it.
+
+| Key | Value | Why it did not exist |
+|---|---|---|
+| `naaqs.annual_standard` | 9.0 µg/m³ | the standards are the regulation, not a measurement, so nothing computed them |
+| `naaqs.daily_standard` | 35 µg/m³ | as above |
+| `naaqs.percentile` | 98 | as above |
+| `naaqs.averaging_years` | 3 | as above |
+| `colloc.tolerance_coefficient` | 0.05 | the tolerance lived only in `site/src/lib/deq-data.ts` and in prose in GENARCH_RULES section 9 |
+| `colloc.tolerance_r2` | 0.03 | as above |
+| `p98.common_clock.rise_min` | 2.069 µg/m³ | the clock-binning rise was never emitted as a key |
+| `p98.common_clock.rise_max` | 2.514 µg/m³ | as above |
+| `colloc.apex-05_NO2.backfill_gx_intercept` | 1.847 ppb | D16 recorded the backfill figures in prose; nothing recomputed them |
+| `colloc.apex-05_NO2.backfill_gx_slope` | 0.317 ppb | as above |
+| `colloc.apex-05_NO2.backfill_gx_r2` | 0.204 | as above |
+| `colloc.apex-05_NO2.backfill_n_pairs` | 2,746 paired hours | as above |
+| `p98.reproduction_tolerance` | 0.05 µg/m³ | Task 5b's within-0.05 margin was a convention in this file only |
+| `ancestry.discovery.multi_trait_rows` | 1,040 association rows | the count existed only in `extract_manifest.json` |
+| `ancestry.discovery.association_rows_kept` | 4,156 association rows | the denominator for the above |
+| `ancestry.trait_terms_matching_no_association` | 17 ontology IDs | recorded in this file; not emitted |
+| `ancestry.loci.count` | 5 loci | derivable but not stated |
+
+The D16 backfill figures reproduce D16 exactly, recomputed over the freeze inputs rather
+than transcribed from the decision: 1.847 + 0.317x, R-squared 0.204, n 2,746, against the
+reported 1.835 + 0.319x, R-squared 0.207, n 2,745. One paired hour more, which is the whole
+of the effect, and the other three regressions do not move. The multi-trait count is
+recomputed from `asthma_associations_2026-11-02.tsv` by counting kept rows whose
+`MAPPED_TRAIT_URI` names a segment outside the asthma term set; it equals the manifest's
+`rows_also_mapped_to_another_trait`, and a test asserts both.
+
+### Correction: the clock-binning rise in CONTEXT section 4 R3
+
+CONTEXT.md R3 states that clock binning "raises every site by 1.3 to 2.6 µg/m³ and reorders
+nothing", from the August 2026 analysis. Recomputed at the freeze, on the common window, the
+rise is **2.069 to 2.514 µg/m³**. Per-site: DC-01 +2.069, DC-02 +2.283, DC-04 +2.500,
+DC-06 +2.227, DC-08 +2.514, DC-09 +2.497. The direction and the ordering half of the claim
+both hold -- every site rises and the ranking is identical under both definitions, which a
+test now asserts -- and only the range differs. CONTEXT section 4 says the report uses values
+recomputed by `pipeline.report` at the freeze, so the report states the recomputed range
+through the two new keys and does not repeat the August one. No finding changes. CONTEXT.md
+R3's range is superseded for report purposes and is left as written, being the August figure
+it records.
+
+### Correction: "carry no denominator on the page itself"
+
+The entry of 2026-11-03 says the all-trait dashboard bars on `/ancestry-equity` "carry no
+denominator on the page itself". The page does print one: `site/src/app/ancestry-equity/page.tsx`
+renders `Denominator: {gwas.denominatorNote}`, which resolves to "GWAS Diversity Monitor live
+dashboard, September 2024". What it names is the source and the date, not the population, so
+a reader still cannot tell from the page that the share covers every trait in the catalog.
+The substance of the earlier finding stands and the wording does not. Report section 6
+describes the page as stating an all-trait share transcribed from the dashboard at its
+September 2024 snapshot, and says the two measure different things with different
+denominators; it does not claim the page is unlabelled, and it does not present the
+difference as a correction.
+
+### Tension: AUDIT item 16 against commit b6ae4fc
+
+Line 1015 of this file, dated 2026-11-02, says "the D8 rewrites are not approved", and
+`b6ae4fc` of the same day says they were approved on 2026-11-02 and applies all eleven.
+Both are in the record and they cannot both be current. Read as: the rewrites are applied,
+and item 16's separate question -- whether a brief title may be quoted in the module
+inventory -- is still open, which is why T08's caption still states that it names no brief
+and why the test asserting that still passes. The report quotes a brief title in exactly one
+place, the mechanistic-context subsection, and quotes the post-rewrite title. No
+pre-rewrite title appears anywhere in the report.
+
+### Flagged, not changed: CITATION.cff states a count of matching regressions
+
+`CITATION.cff`'s abstract reads "Three of DEQ's four published collocation regressions
+reproduce within 0.05 on coefficients and 0.03 on R-squared". GENARCH_RULES section 9 bars
+describing the four as a count of how many match, and requires describing them as two closed
+windows whose published values cannot drift and two open windows that refit weekly. The
+report follows section 9 and does not state the count; `colloc.match_count` and
+`colloc.near_count` exist in `numbers.json` for the internal tables and are not rendered in
+prose. The abstract is citation metadata and an authorial statement, so it is reported here
+rather than rewritten. It needs Kiaan's ruling.
+
+The ORCID was added to `CITATION.cff` in this round, which completes AUDIT item 22: the field
+was absent rather than carrying a literal placeholder, and the identifier is the one CONTEXT
+section 8 records and the report cover prints.
+
+### Integer display formatting
+
+Four display strings rendered a count as a float, because the registry stores a value rounded
+to precision 0 as a JSON number and an f-string prints `12.0`. Fixed by a `display()` method
+on the registry that formats to the recorded precision, used by every caption and alt text;
+the site's `<N>` applies the same rule to the same field, so a number reads identically in a
+figure and in the sentence beside it.
+
+| Artifact | Was | Now |
+|---|---|---|
+| `figures.json` `F01_network_timeline.alt_text` | "a timeline of 12.0 sensor sites" | "12 sensor sites" |
+| `figures.json` `F03_daily_reconciliation.alt_text` | "119.0 comparable days", "118.0 sit on the one-to-one line" | "119", "118" |
+| `figures.json` `F04_p98_by_site.alt_text` | "5.0 of six sites sit above" | "5 of six sites" |
+| `T10_gwas_ancestry_composition.csv` | "43766190.0" and eight more | "43766190" |
+
+The genuine halves in T10 are kept: a row naming k broad ancestral categories contributes an
+equal 1/k share, so 3604425.5 and 16100.5 are correct as printed. A sweep of every caption,
+alt text, `method` string and CSV cell for the pattern found no other case. What it did find,
+and left alone, is every one-decimal measurement: DEQ truncates its published values to one
+decimal, so "5.0" in the reconciliation table, "26.0" in the Table 4 column and the 9.0
+annual standard are correct. The test is scoped by unit to counts for that reason. No figure
+image changed: all twelve SVG and PNG files are byte-identical across the fix, and
+`numbers.json` values and every other table are unchanged.
+
+### Post-freeze note carried into the report
+
+The APEX 5 collocation window at DC-01 closed 2026-10-22, per DEQ's 2026-10-30 edition, after
+the 2026-10-18 freeze. Report section 5.2 states this once, as a post-freeze note, and no R1
+value or framing changes. GENARCH_RULES section 9's amendment of 2026-10-31 already records
+it on the rules side.
+
+### Page budget
+
+The first draft ran to 105 pages against a 16-page budget for the main body, from two causes.
+The screen stylesheet sizes every margin and gap in `rem`, which does not shrink when the
+print rule drops the body to 10.5pt, so a Letter page was carrying about 1,200 characters
+instead of roughly 3,000; print metrics are now restated in points. And every table was
+rendered two or three times, inline beside the prose, again inside its figure's data-table
+disclosure, and a third time in Appendix B. The disclosure is the copy that stays, being the
+figure's accessibility fallback and already adjacent to the discussion. Appendix B now carries
+only the two tables the body does not show, and Appendix A points at `FREEZE.json` for the
+full hashes rather than reprinting the column. Measured page counts for the rebuilt draft are
+recorded with the draft.
+
+Wide tables were also losing their right-hand columns: `overflow-x: auto` scrolls on screen
+and clips on paper, so the collocation table's status column was absent from the first draft
+entirely. Print now uses a fixed table layout with wrapping inside cells, and a test probes a
+cell of every figure's data table in the extracted PDF text so a silently clipped table fails
+rather than shipping.

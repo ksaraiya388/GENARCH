@@ -49,6 +49,17 @@ DEQ_EDITION_CUTOFF = datetime(2026, 8, 7, 7, 0)
 DEQ_EDITION_CUTOFF_LABEL = "2026-08-07T07:00 EST"
 PM25_24H_LEVEL = 35
 
+# The regulatory form of the two PM2.5 standards, and the agreement tolerance the
+# collocation reproduction is judged against. Both mirror constants the site already
+# carries: PM25_ANNUAL_LEVEL and DEQ_TOLERANCE in site/src/lib/deq-data.ts. They are
+# declared here so report prose can cite them through <N> rather than typing a decimal
+# (CONTEXT.md section 8).
+PM25_ANNUAL_LEVEL = 9.0
+PM25_PERCENTILE = 98
+PM25_AVERAGING_YEARS = 3
+DEQ_TOLERANCE_COEFFICIENT = 0.05
+DEQ_TOLERANCE_R2 = 0.03
+
 # The live manifest and site history, which every weekly ingest rewrites. The
 # report reads the frozen copies FREEZE.json config_inputs pins;
 # `Freeze.config_path` redirects both.
@@ -174,6 +185,18 @@ def generate_report(year: str | int, out_dir: str | Path | None = None) -> Path:
         f"- See /methods for full pipeline documentation\n",
         "pdf_path": None,
     }
+
+    # The PDF build is the only writer of the three pdf_* fields, and it runs long
+    # after this function last ran (DECISIONS.md D21). Rewriting the file wholesale
+    # would set pdf_path back to None on the next no-freeze invocation and the page
+    # would stop offering a PDF that is sitting in site/public, so carry whatever is
+    # already recorded instead of overwriting it.
+    if index_path.exists():
+        existing = json.loads(index_path.read_text(encoding="utf-8"))
+        for field in ("pdf_path", "pdf_bytes", "pdf_sha256"):
+            if existing.get(field) is not None:
+                content[field] = existing[field]
+
     index_path.write_text(
         json.dumps(content, indent=2, ensure_ascii=False),
         encoding="utf-8",
@@ -206,8 +229,20 @@ def compute(fz: Freeze) -> dict:
         fz.verified_path(fz.regulatory_named(REGULATORY_DAILY_FILE).rel_path)
     )
 
+    backfill_spec = next(
+        spec for spec in collocation.DEQ_PUBLISHED if spec.key == "apex-05_NO2"
+    )
     results: dict = {
         "collocation": collocation.fit_all(august_rows, regulatory_rows),
+        # DECISIONS.md D16. The same fit over the freeze inputs rather than the
+        # original analysis inputs. It is the only one of the four that moves,
+        # because it is the only one that retains readings of zero and so the only
+        # one the dashboard's all-zero backfill rows can enter. Reported beside the
+        # August values rather than in place of them: DEQ's published coefficients
+        # correspond to the August inputs.
+        "collocation_backfill": collocation.fit_one(
+            frozen_rows, regulatory_rows, backfill_spec
+        ),
         "reconciliation": reconciliation.reconcile(regulatory_rows, published),
         "correlation": correlation.correlations(august_rows, list(COMMON_WINDOW_SITES)),
     }
@@ -335,6 +370,48 @@ def build_numbers(fz: Freeze, results: dict) -> NumberRegistry:
         method="DEQ builds each weekly edition from data through 07:00 that Friday "
         "(DEQ staff, 2026-08-16)",
         inputs=table4_inputs,
+    )
+
+    # ---- the standards themselves
+    #
+    # Not measurements and not derived from the freeze: these are the levels and the
+    # statistical form the Code of Federal Regulations sets, carried as keys so the
+    # report states them through <N> and types no decimal. The regulatory citation is
+    # the provenance, which is why `inputs` is empty rather than naming a frozen file.
+    reg.add(
+        "naaqs.annual_standard",
+        PM25_ANNUAL_LEVEL,
+        unit="µg/m³",
+        precision=1,
+        window="annual primary standard, 2024 revision",
+        method="level of the annual PM2.5 primary standard, 40 CFR 50.18, as revised in "
+        "2024. Evaluated as a three-year average of annual means and not evaluable "
+        "against a low-cost sensor record",
+    )
+    reg.add(
+        "naaqs.daily_standard",
+        PM25_24H_LEVEL,
+        unit="µg/m³",
+        precision=0,
+        window="24-hour standard",
+        method="level of the 24-hour PM2.5 standard, 40 CFR 50.18. A single hourly "
+        "reading above this level is not an exceedance of it",
+    )
+    reg.add(
+        "naaqs.percentile",
+        PM25_PERCENTILE,
+        unit="percentile",
+        precision=0,
+        method="the percentile of daily 24-hour averages the 24-hour standard is "
+        "evaluated on, 40 CFR Part 50 Appendix N",
+    )
+    reg.add(
+        "naaqs.averaging_years",
+        PM25_AVERAGING_YEARS,
+        unit="years",
+        precision=0,
+        method="consecutive years the 98th percentile is averaged over before the "
+        "24-hour standard is evaluated, 40 CFR Part 50 Appendix N",
     )
 
     # ---- network
@@ -508,6 +585,62 @@ def build_numbers(fz: Freeze, results: dict) -> NumberRegistry:
     reg.add("colloc.match_count", matches, unit="regressions", precision=0, method=count_method)
     reg.add("colloc.near_count", near, unit="regressions", precision=0, method=count_method)
 
+    tolerance_method = (
+        "agreement tolerance against DEQ's published coefficients, GENARCH_RULES.md "
+        "section 9, asserted as DEQ_TOLERANCE in site/src/lib/deq-data.ts. A coefficient "
+        "outside tolerance fails the build"
+    )
+    reg.add(
+        "colloc.tolerance_coefficient",
+        DEQ_TOLERANCE_COEFFICIENT,
+        unit="pollutant units",
+        precision=2,
+        method=tolerance_method + ", and applies to the intercept and the slope",
+    )
+    reg.add(
+        "colloc.tolerance_r2",
+        DEQ_TOLERANCE_R2,
+        precision=2,
+        method=tolerance_method + ", and applies to R-squared",
+    )
+
+    backfill = results["collocation_backfill"]
+    backfill_method = (
+        "the APEX 5 NO2 regression recomputed over the data freeze inputs instead of "
+        "the original analysis inputs. It is the only one of the four that moves, "
+        "because it is the only fit that retains readings of zero and so the only one "
+        "the Kunak dashboard's all-zero backfill rows can enter (DECISIONS.md D16). "
+        "DEQ's published coefficients correspond to the original inputs, so this is "
+        "recorded beside the reported fit and never in place of it"
+    )
+    for field, unit, precision in (
+        ("gx_intercept", "ppb", 3),
+        ("gx_slope", "ppb", 3),
+        ("gx_r2", None, 3),
+        ("n_pairs", "paired hours", 0),
+    ):
+        reg.add(
+            f"colloc.apex-05_NO2.backfill_{field}",
+            backfill[field],
+            unit=unit,
+            precision=precision,
+            n=backfill["n_pairs"],
+            window=f"{backfill['period_start']} to {backfill['period_end']} EST",
+            method=backfill_method,
+            inputs=kunak_inputs + regulatory_inputs,
+        )
+
+    reg.add(
+        "p98.reproduction_tolerance",
+        DEQ_TOLERANCE_COEFFICIENT,
+        unit="µg/m³",
+        precision=2,
+        method="the margin within which a recomputed 98th percentile is treated as "
+        "reproducing DEQ's published Table 4 value (AUDIT.md Task 5b). DEQ prints that "
+        "column to one decimal, so this is half of the last printed digit",
+        inputs=table4_inputs,
+    )
+
     # ---- daily reconciliation
     rec = results["reconciliation"]
     rec_window = f"{rec['window_start']} to {rec['window_end']}"
@@ -588,6 +721,36 @@ def build_numbers(fz: Freeze, results: dict) -> NumberRegistry:
             f"metre, {binning} day binning. Not a NAAQS comparison",
             inputs=kunak_inputs,
         )
+
+    rises = sorted(
+        results["p98_common_clock"][site]["p98"] - results["p98_common_standard"][site]["p98"]
+        for site in results["p98_common_standard"]
+    )
+    rise_method = (
+        "per-site difference between the local clock time and local standard time "
+        "98th percentile on the common window. Clock binning raises every site and "
+        "reorders none of them"
+    )
+    reg.add(
+        "p98.common_clock.rise_min",
+        rises[0],
+        unit="µg/m³",
+        precision=3,
+        n=len(rises),
+        window=COMMON_WINDOW,
+        method="smallest " + rise_method,
+        inputs=kunak_inputs,
+    )
+    reg.add(
+        "p98.common_clock.rise_max",
+        rises[-1],
+        unit="µg/m³",
+        precision=3,
+        n=len(rises),
+        window=COMMON_WINDOW,
+        method="largest " + rise_method,
+        inputs=kunak_inputs,
+    )
 
     for site, variants in sorted(results["p98_full"].items()):
         code = code_of(site)
@@ -1079,11 +1242,11 @@ def build_figures(
             "id": "F01_network_timeline",
             "title": "Sensor network coverage by site code",
             "alt_text": (
-                f"A timeline of {reg.value('network.sites_total')} sensor sites across 2026. "
+                f"A timeline of {reg.display('network.sites_total')} sensor sites across 2026. "
                 "Coverage is uneven: the longest records run from early March, while the "
                 f"shortest begins in mid-June. All six sensors in the common window were "
-                f"collecting together only from {reg.value('network.common_window.start')} to "
-                f"{reg.value('network.common_window.end')}."
+                f"collecting together only from {reg.display('network.common_window.start')} to "
+                f"{reg.display('network.common_window.end')}."
             ),
             "caption": (
                 "Coverage by site code. The shaded band is the window in which all six "
@@ -1107,10 +1270,10 @@ def build_figures(
                 "axis and regulatory monitor on the vertical. DEQ's published line and the "
                 "recomputed line sit close together in every panel; the two PM2.5 panels "
                 "show the tighter relationship, at R-squared "
-                f"{reg.value('colloc.apex-14_PM2.5.gx_r2')} and "
-                f"{reg.value('colloc.apex-05_PM2.5.gx_r2')}, against "
-                f"{reg.value('colloc.apex-14_NO2.gx_r2')} and "
-                f"{reg.value('colloc.apex-05_NO2.gx_r2')} for NO2."
+                f"{reg.display('colloc.apex-14_PM2.5.gx_r2')} and "
+                f"{reg.display('colloc.apex-05_PM2.5.gx_r2')}, against "
+                f"{reg.display('colloc.apex-14_NO2.gx_r2')} and "
+                f"{reg.display('colloc.apex-05_NO2.gx_r2')} for NO2."
             ),
             "caption": (
                 "Each panel gives DEQ's published equation, the recomputed equation, the "
@@ -1131,9 +1294,9 @@ def build_figures(
             "title": "Daily-average reconciliation, regulatory monitor",
             "alt_text": (
                 f"Recomputed daily averages plotted against DEQ's published values for "
-                f"{reg.value('daily.n_days')} comparable days. "
-                f"{reg.value('daily.n_match')} sit on the one-to-one line; the mean absolute "
-                f"difference is {reg.value('daily.mean_abs_diff')} micrograms per cubic "
+                f"{reg.display('daily.n_days')} comparable days. "
+                f"{reg.display('daily.n_match')} sit on the one-to-one line; the mean absolute "
+                f"difference is {reg.display('daily.mean_abs_diff')} micrograms per cubic "
                 "metre. One day differs."
             ),
             "caption": (
@@ -1173,7 +1336,7 @@ def build_figures(
                 "the common window, joined by a line. The site with the shortest record, "
                 f"{shortest['code']} at {shortest['full_days']} days, carries the highest "
                 f"own-record value; {longest['code']} has {longest['full_days']} days. On the "
-                f"common window {reg.value('p98.common.n_above_35')} of six sites sit above "
+                f"common window {reg.display('p98.common.n_above_35')} of six sites sit above "
                 "the 35 microgram line."
             ),
             "caption": (
@@ -1202,8 +1365,8 @@ def build_figures(
             "title": "Cross-site hourly PM2.5 correlation",
             "alt_text": (
                 "A six-by-six matrix of pairwise correlations, every cell labelled. All "
-                f"fifteen pairs fall between {reg.value('corr.min')} and "
-                f"{reg.value('corr.max')}, so the sensors largely rise and fall together "
+                f"fifteen pairs fall between {reg.display('corr.min')} and "
+                f"{reg.display('corr.max')}, so the sensors largely rise and fall together "
                 "across the network."
             ),
             "caption": (
@@ -1228,7 +1391,7 @@ def build_figures(
         )
         discovery = anc["discovery"]
         largest = discovery["categories"][0]
-        largest_share = reg.value(
+        largest_share = reg.display(
             f"ancestry.discovery.{ancestry.slug(largest['category'])}.share"
         )
         entries.append(

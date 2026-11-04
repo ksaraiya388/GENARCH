@@ -51,6 +51,7 @@ ASSOC_PVALUE = "P-VALUE"
 ASSOC_MAPPED_GENE = "MAPPED_GENE"
 ASSOC_SNPS = "SNPS"
 ASSOC_TRAIT = "MAPPED_TRAIT"
+ASSOC_TRAIT_URI = "MAPPED_TRAIT_URI"
 
 # The catalog records the discovery sample under this stage label.
 INITIAL_STAGE = "initial"
@@ -373,6 +374,55 @@ def discovery_composition() -> dict:
 
 
 # ---------------------------------------------------------- 3b. loci counts
+
+
+def trait_scope() -> dict:
+    """What the asthma denominator contains, recomputed from the association extract.
+
+    The selection rule keeps an association row when any IRI in its
+    ``MAPPED_TRAIT_URI`` ends in one of the asthma ontology IDs, so a row the
+    catalog mapped to asthma *and* another trait is kept and contributes its whole
+    sample. This counts those rows rather than leaving a reader to infer them, and
+    it counts them here rather than reading the figure out of
+    ``extract_manifest.json``: the manifest records what the extraction script saw,
+    and a report number is recomputed from the bytes the freeze pins.
+
+    Also counts the ontology IDs in the lookup that matched no association in this
+    release. An ID matching nothing is kept in the lookup -- the ontology places
+    the term under asthma, and its absence here is a fact about this release's
+    curation, not a reason to narrow the selection.
+    """
+    path = _extract_named("asthma_associations_")
+    header, rows = _read_tsv(path)
+    i_uri = _column(header, ASSOC_TRAIT_URI, path.name)
+    terms = asthma_term_ids()
+
+    kept = 0
+    multi = 0
+    seen: set[str] = set()
+    for row in rows:
+        kept += 1
+        segments = [
+            uri.strip().rstrip("/").rsplit("/", 1)[-1]
+            for uri in row[i_uri].split(",")
+            if uri.strip()
+        ]
+        matched = {seg for seg in segments if seg in terms}
+        if not matched:
+            raise ValueError(
+                f"{path.name}: a kept association row names no asthma ontology ID "
+                f"({row[i_uri]!r}); the extract and the lookup have diverged"
+            )
+        seen |= matched
+        if len(matched) != len(segments):
+            multi += 1
+
+    return {
+        "association_rows_kept": kept,
+        "multi_trait_rows": multi,
+        "single_trait_rows": kept - multi,
+        "terms_matching_no_association": len(terms - seen),
+    }
 
 
 def loci_by_ancestry() -> dict:

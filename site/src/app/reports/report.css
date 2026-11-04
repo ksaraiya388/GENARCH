@@ -1,0 +1,404 @@
+/*
+ * Screen styles for the report routes.
+ *
+ * Kept out of `globals.css` because nothing else on the site renders a long-form
+ * document: the report needs a measure, numbered sections, dense data tables and a
+ * citation block, and none of that belongs in the global component layer where every
+ * page would carry it. The print stylesheet overrides what it needs for paper.
+ *
+ * Colours are the project tokens, referenced through the CSS variables `globals.css`
+ * already defines rather than restated as hex, so a token change reaches this file.
+ */
+
+.report-article {
+  max-width: 46rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--cool-gray-light);
+}
+
+/* A general-purpose set-apart block. `callout` is used by the report components and
+   is defined here because the global stylesheet has no such class yet. */
+.callout {
+  background-color: rgba(45, 212, 191, 0.06);
+  border: 1px solid rgba(45, 212, 191, 0.18);
+  border-radius: 6px;
+  padding: 1rem 1.125rem;
+  margin: 1.5rem 0;
+}
+
+.report-callout-title {
+  font-weight: 600;
+  color: var(--white-soft);
+  margin-bottom: 0.5rem;
+}
+
+/* ----------------------------------------------------------------------- cover */
+
+.report-cover {
+  border-bottom: 1px solid var(--navy-light);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.report-cover-kicker {
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-primary);
+}
+
+.report-cover-title {
+  color: var(--white-soft);
+  font-size: 1.75rem;
+  line-height: 1.25;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.report-cover-meta {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 0.5rem 1.5rem;
+}
+
+.report-cover-meta dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cool-gray-mid);
+}
+
+.report-cover-meta dd {
+  margin: 0;
+  color: var(--cool-gray-light);
+}
+
+.report-cover-status,
+.report-pending {
+  color: var(--direction-amplify);
+  font-weight: 600;
+}
+
+.report-cover-apa,
+.report-cover-credit {
+  font-size: 0.875rem;
+}
+
+.report-cover-credit {
+  margin-top: 1rem;
+  color: var(--cool-gray-mid);
+}
+
+/* -------------------------------------------------------------------- structure */
+
+.report-masthead {
+  border-bottom: 1px solid var(--navy-light);
+  padding-bottom: 1.5rem;
+}
+
+.report-status {
+  color: var(--direction-amplify);
+  font-weight: 600;
+}
+
+.report-hash {
+  font-family: var(--font-mono, monospace);
+  word-break: break-all;
+}
+
+.report-toc ol {
+  margin-top: 0.75rem;
+  list-style: none;
+  padding: 0;
+  columns: 2;
+  column-gap: 2rem;
+}
+
+.report-toc a {
+  color: var(--teal-primary);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+
+.report-toc a:hover {
+  text-decoration: underline;
+}
+
+.report-section {
+  margin-top: 2.5rem;
+  scroll-margin-top: 5rem;
+}
+
+.report-subsection {
+  margin-top: 1.75rem;
+  scroll-margin-top: 5rem;
+}
+
+.report-h2 {
+  color: var(--white-soft);
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+.report-h3 {
+  color: var(--white-soft);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.report-section-number {
+  color: var(--teal-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.report-p,
+.report-lead,
+.report-li {
+  margin-bottom: 0.875rem;
+  line-height: 1.7;
+}
+
+.report-lead {
+  font-size: 1.0625rem;
+}
+
+.report-ol,
+.report-ul {
+  margin: 0 0 1rem 1.25rem;
+  padding: 0;
+}
+
+.report-ol {
+  list-style: decimal;
+}
+
+.report-ul {
+  list-style: disc;
+}
+
+/* -------------------------------------------------------------------- numbers */
+
+.report-number {
+  font-variant-numeric: tabular-nums;
+  color: var(--white-soft);
+}
+
+/* -------------------------------------------------------------- DEQ limitation */
+
+.report-deq-box {
+  background-color: rgba(45, 212, 191, 0.06);
+  border: 1px solid rgba(45, 212, 191, 0.18);
+}
+
+.report-deq-quote {
+  border-left: 3px solid var(--teal-soft);
+  padding-left: 0.875rem;
+  margin: 0;
+}
+
+.report-deq-quote p {
+  font-style: italic;
+}
+
+.report-deq-attribution {
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--cool-gray-mid);
+  font-style: normal;
+}
+
+.report-deq-pairing {
+  margin-top: 0.875rem;
+}
+
+.report-deq-credit,
+.report-figure-limitation {
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--cool-gray-mid);
+}
+
+/* ---------------------------------------------------------------------- tables */
+
+.report-table-figure {
+  margin: 1.75rem 0;
+  overflow-x: auto;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+}
+
+.report-table-caption {
+  caption-side: top;
+  text-align: left;
+  padding-bottom: 0.5rem;
+  color: var(--cool-gray-light);
+}
+
+.report-table-label,
+.report-table-title,
+.report-figure-label,
+.report-figure-title {
+  color: var(--white-soft);
+  font-weight: 600;
+}
+
+.report-table th,
+.report-table td {
+  border: 1px solid var(--navy-light);
+  padding: 0.3rem 0.5rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.report-table thead th {
+  background-color: var(--navy-mid);
+  color: var(--white-soft);
+  font-weight: 600;
+}
+
+.report-table-rowhead {
+  font-weight: 500;
+  color: var(--white-soft);
+  white-space: nowrap;
+}
+
+.report-table-num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.report-table-unit {
+  font-weight: 400;
+  color: var(--cool-gray-mid);
+}
+
+.report-table-source,
+.report-references-note,
+.report-references-verification {
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--cool-gray-mid);
+}
+
+.report-source-label {
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------- figures */
+
+.report-figure {
+  margin: 2rem 0;
+}
+
+.report-figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+  border-radius: 4px;
+}
+
+.report-figure-caption {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.report-figure-details {
+  margin-top: 0.75rem;
+}
+
+.report-figure-details > summary {
+  cursor: pointer;
+  color: var(--teal-primary);
+  font-size: 0.875rem;
+}
+
+/* ------------------------------------------------------------------ references */
+
+.report-cite {
+  color: var(--teal-primary);
+  text-decoration: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.report-references-list {
+  margin: 0.75rem 0 1.5rem 1.5rem;
+  padding: 0;
+}
+
+.report-references-list li {
+  margin-bottom: 0.625rem;
+  line-height: 1.6;
+  font-size: 0.875rem;
+}
+
+.report-references-lettered {
+  list-style: upper-alpha;
+}
+
+.report-doi {
+  color: var(--teal-primary);
+  word-break: break-all;
+}
+
+/* -------------------------------------------------------------------- glossary */
+
+.report-glossary {
+  margin-top: 1rem;
+}
+
+.report-glossary-entry {
+  margin-bottom: 1rem;
+}
+
+.report-glossary dt {
+  color: var(--white-soft);
+  font-weight: 600;
+}
+
+.report-glossary dd {
+  margin: 0.25rem 0 0 0;
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------------- citations */
+
+.report-citeblock + .report-citeblock {
+  margin-top: 1rem;
+}
+
+.report-citeblock-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cool-gray-mid);
+}
+
+.report-citeblock-text {
+  margin: 0.25rem 0 0.5rem 0;
+  font-size: 0.875rem;
+}
+
+.report-pre {
+  background-color: var(--navy-deep);
+  border: 1px solid var(--navy-light);
+  border-radius: 4px;
+  padding: 0.75rem;
+  overflow-x: auto;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+}
+
+.report-orcid {
+  color: var(--teal-primary);
+}

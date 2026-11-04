@@ -1,0 +1,305 @@
+{
+  "description": "References for the GENARCH Annual Report 2026, in two sets, because they carry different guarantees. The references set is journal literature: every entry has a DOI, and a verification block records how that DOI was checked rather than asserting that it was. The sources set is agency documents, regulations and dataset releases, which have no DOIs; every entry names a publisher, a title, the edition or version date, a stable URL and the date it was retrieved, so a reader can reach the same bytes.",
+  "policy": "A literature entry without a DOI is not added: the work is cited as a source entry or not cited. A source entry missing any of its five required fields fails tests/test_report_source.py. A DOI taken from the Crossref-verified bibliography carries method crossref and that check's date; a DOI taken from a published atlas record carries method atlas-record and the record path, and is not claimed as independently verified here.",
+  "required_source_fields": [
+    "publisher",
+    "title",
+    "edition_date",
+    "url",
+    "retrieved"
+  ],
+  "references": [
+    {
+      "id": "martin2019",
+      "title": "Clinical use of current polygenic risk scores may exacerbate health disparities",
+      "authors": "Martin, Alicia R.",
+      "year": 2019,
+      "journal": "Nature Genetics",
+      "doi": "10.1038/s41588-019-0379-x",
+      "verification": {
+        "method": "crossref",
+        "source": "pipeline/sources/cross_ancestry/literature.json",
+        "checked_at": "2026-10-07"
+      }
+    },
+    {
+      "id": "duncan2019",
+      "title": "Analysis of polygenic risk score usage and performance in diverse human populations",
+      "authors": "Duncan, L.",
+      "year": 2019,
+      "journal": "Nature Communications",
+      "doi": "10.1038/s41467-019-11112-0",
+      "verification": {
+        "method": "crossref",
+        "source": "pipeline/sources/cross_ancestry/literature.json",
+        "checked_at": "2026-10-07"
+      }
+    },
+    {
+      "id": "prive2022",
+      "title": "Portability of 245 polygenic scores when derived from the UK Biobank and applied to 9 ancestry groups from the same cohort",
+      "authors": "Privé, Florian",
+      "year": 2022,
+      "journal": "The American Journal of Human Genetics",
+      "doi": "10.1016/j.ajhg.2021.11.008",
+      "verification": {
+        "method": "crossref",
+        "source": "pipeline/sources/cross_ancestry/literature.json",
+        "checked_at": "2026-10-07"
+      }
+    },
+    {
+      "id": "ding2023",
+      "title": "Polygenic scoring accuracy varies across the genetic ancestry continuum",
+      "authors": "Ding, Yi",
+      "year": 2023,
+      "journal": "Nature",
+      "doi": "10.1038/s41586-023-06079-4",
+      "verification": {
+        "method": "crossref",
+        "source": "pipeline/sources/cross_ancestry/literature.json",
+        "checked_at": "2026-10-07"
+      }
+    },
+    {
+      "id": "kachuri2024",
+      "title": "Principles and methods for transferring polygenic risk scores across global populations",
+      "authors": "Kachuri, Linda",
+      "year": 2023,
+      "journal": "Nature Reviews Genetics",
+      "doi": "10.1038/s41576-023-00637-2",
+      "verification": {
+        "method": "crossref",
+        "source": "pipeline/sources/cross_ancestry/literature.json",
+        "checked_at": "2026-10-07"
+      }
+    },
+    {
+      "id": "fatumo2022",
+      "title": "A roadmap to increase diversity in genomic studies",
+      "authors": "Fatumo, Segun",
+      "year": 2022,
+      "journal": "Nature Medicine",
+      "doi": "10.1038/s41591-021-01672-4",
+      "verification": {
+        "method": "crossref",
+        "source": "pipeline/sources/cross_ancestry/literature.json",
+        "checked_at": "2026-10-07"
+      }
+    },
+    {
+      "id": "mills2020",
+      "title": "The GWAS Diversity Monitor tracks diversity by disease in real time",
+      "authors": "Mills, Melinda C.",
+      "year": 2020,
+      "journal": "Nature Genetics",
+      "doi": "10.1038/s41588-020-0580-y",
+      "verification": {
+        "method": "crossref",
+        "source": "pipeline/sources/cross_ancestry/literature.json",
+        "checked_at": "2026-10-07"
+      }
+    },
+    {
+      "id": "nasem2023",
+      "title": "Using Population Descriptors in Genetics and Genomics Research",
+      "authors": "Committee on the Use of Race, Ethnicity, and Ancestry as Population Descriptors in Genomics Research",
+      "year": 2023,
+      "journal": null,
+      "doi": "10.17226/26902",
+      "verification": {
+        "method": "crossref",
+        "source": "pipeline/sources/cross_ancestry/literature.json",
+        "checked_at": "2026-10-07"
+      }
+    },
+    {
+      "id": "hodgson2024",
+      "title": "Genetic basis of early onset and progression of type 2 diabetes in South Asians",
+      "authors": "Hodgson, Sam",
+      "year": 2024,
+      "journal": "Nature Medicine",
+      "doi": "10.1038/s41591-024-03317-8",
+      "verification": {
+        "method": "crossref",
+        "source": "pipeline/sources/cross_ancestry/literature.json",
+        "checked_at": "2026-10-07"
+      }
+    },
+    {
+      "id": "li2017",
+      "title": "Exposure to PM2.5 induces aberrant activation of NF-κB in human airway epithelial cells by downregulating miR-331 expression",
+      "authors": "Li R, et al.",
+      "year": 2017,
+      "journal": "Environmental Toxicology and Pharmacology",
+      "doi": "10.1016/j.etap.2017.02.011",
+      "verification": {
+        "method": "atlas-record",
+        "source": "data/briefs/pm25-il33-nfkb-asthma.json references[ref1]",
+        "checked_at": null
+      }
+    },
+    {
+      "id": "shadie2014",
+      "title": "Ambient particulate matter induces an exacerbation of airway inflammation in experimental asthma: role of interleukin-33",
+      "authors": "Shadie AM, Herbert C, Kumar RK",
+      "year": 2014,
+      "journal": "Clinical & Experimental Immunology",
+      "doi": "10.1111/cei.12348",
+      "verification": {
+        "method": "atlas-record",
+        "source": "data/briefs/pm25-il33-nfkb-asthma.json references[ref2]",
+        "checked_at": null
+      }
+    },
+    {
+      "id": "alvarez2021",
+      "title": "Asthma-associated genetic variants induce IL33 differential expression through an enhancer-blocking regulatory region",
+      "authors": "Alvarez M, et al.",
+      "year": 2021,
+      "journal": "Nature Communications",
+      "doi": "10.1038/s41467-021-26347-z",
+      "verification": {
+        "method": "atlas-record",
+        "source": "data/briefs/pm25-il33-nfkb-asthma.json references[ref3]",
+        "checked_at": null
+      }
+    },
+    {
+      "id": "islam2014",
+      "title": "GSTP1 and TNF Gene Variants and Associations between Air Pollution and Incident Childhood Asthma",
+      "authors": "Islam T, et al.",
+      "year": 2014,
+      "journal": "Environmental Health Perspectives",
+      "doi": "10.1289/ehp.1307459",
+      "verification": {
+        "method": "atlas-record",
+        "source": "data/briefs/pm25-il33-nfkb-asthma.json references[ref4]",
+        "checked_at": null
+      }
+    },
+    {
+      "id": "cayrol2018",
+      "title": "The IL-33/ST2 axis: Role in health and disease",
+      "authors": "Cayrol C, Girard JP",
+      "year": 2018,
+      "journal": "Cytokine & Growth Factor Reviews",
+      "doi": "10.1016/j.cytogfr.2018.01.001",
+      "verification": {
+        "method": "atlas-record",
+        "source": "data/briefs/pm25-il33-nfkb-asthma.json references[ref5]",
+        "checked_at": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "deq2026aug07",
+      "publisher": "Virginia Department of Environmental Quality, Office of Air Quality Monitoring",
+      "title": "Data Center Air Quality Analysis, Table 4",
+      "edition_date": "2026-08-07",
+      "url": "https://www.deq.virginia.gov/news-info/shortcuts/topics-of-interest/data-center-air-monitoring-project",
+      "retrieved": "2026-08-11",
+      "note": "The edition whose Table 4 the record-length comparison in section 5.4 is set beside. Archived in the data freeze."
+    },
+    {
+      "id": "deq2026oct09",
+      "publisher": "Virginia Department of Environmental Quality, Office of Air Quality Monitoring",
+      "title": "Data Center Air Monitoring Project weekly report, page 2",
+      "edition_date": "2026-10-09",
+      "url": "https://www.deq.virginia.gov/news-info/shortcuts/topics-of-interest/data-center-air-monitoring-project",
+      "retrieved": "2026-10-10",
+      "note": "The edition the quoted limitation and its page reference come from, and the newest edition inside the freeze."
+    },
+    {
+      "id": "deq2026oct30",
+      "publisher": "Virginia Department of Environmental Quality, Office of Air Quality Monitoring",
+      "title": "Data Center Air Monitoring Project weekly report",
+      "edition_date": "2026-10-30",
+      "url": "https://www.deq.virginia.gov/news-info/shortcuts/topics-of-interest/data-center-air-monitoring-project",
+      "retrieved": "2026-10-31",
+      "note": "Published after the freeze. Cited once, for the post-freeze note that the collocation window closed on 2026-10-22."
+    },
+    {
+      "id": "deqdashboard",
+      "publisher": "Virginia Department of Environmental Quality",
+      "title": "Data Center Air Monitoring Project public dashboard, Information tab",
+      "edition_date": "2026-08-11",
+      "url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
+      "retrieved": "2026-08-11",
+      "note": "Source of the hourly sensor exports and of the notice that values are published as soon as they are detected."
+    },
+    {
+      "id": "foia264646",
+      "publisher": "Virginia Department of Environmental Quality",
+      "title": "Virginia Freedom of Information Act request 26-4646: regulatory monitor hourly and daily-average files, released in full",
+      "edition_date": "2026-08-11",
+      "url": "https://vadeq.nextrequest.com/requests/26-4646",
+      "retrieved": "2026-08-11",
+      "note": "No redactions and no cost. The released record ends 2026-08-10, which caps the collocation and the daily reconciliation."
+    },
+    {
+      "id": "cfr5018",
+      "publisher": "United States Government Publishing Office",
+      "title": "40 CFR 50.18: national primary and secondary ambient air quality standards for PM2.5",
+      "edition_date": "2026-10-01",
+      "url": "https://www.ecfr.gov/current/title-40/section-50.18",
+      "retrieved": "2026-11-03",
+      "note": "Cited for the levels of the annual and 24-hour standards. eCFR text current as of 2026-10-01."
+    },
+    {
+      "id": "cfr50appn",
+      "publisher": "United States Government Publishing Office",
+      "title": "40 CFR Part 50, Appendix N: interpretation of the national ambient air quality standards for PM2.5",
+      "edition_date": "2026-10-01",
+      "url": "https://www.ecfr.gov/current/title-40/appendix-Appendix%20N%20to%20Part%2050",
+      "retrieved": "2026-11-03",
+      "note": "Cited for the statistical form of the 24-hour standard and for daily binning in local standard time. eCFR text current as of 2026-10-01."
+    },
+    {
+      "id": "gwascatalog2026",
+      "publisher": "European Bioinformatics Institute and National Human Genome Research Institute",
+      "title": "GWAS Catalog, release of 2026-11-02: ontology-annotated associations and ancestries files",
+      "edition_date": "2026-11-02",
+      "url": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02",
+      "retrieved": "2026-11-02",
+      "note": "Both full downloads are attested by SHA-256 in FREEZE.json; the committed asthma extracts reproduce from them byte for byte."
+    },
+    {
+      "id": "acs2024",
+      "publisher": "United States Census Bureau",
+      "title": "American Community Survey, 2024 5-year estimates (acs/acs5), tables B02001, B02015 and DP05, state 51 county 107",
+      "edition_date": "2024",
+      "url": "https://api.census.gov/data/2024/acs/acs5",
+      "retrieved": "2026-11-03",
+      "note": "The county composition in Table 12 and the lower panel of Figure 6. The atlas page on ancestry and equity still reads the 2023 release."
+    },
+    {
+      "id": "ols2026",
+      "publisher": "European Bioinformatics Institute",
+      "title": "Ontology Lookup Service: EFO release 3.95.0 and MONDO release 2026-10-06",
+      "edition_date": "2026-11-03",
+      "url": "https://www.ebi.ac.uk/ols4",
+      "retrieved": "2026-11-03",
+      "note": "Resolved the asthma trait set. Both ontology versions are recorded in pipeline/lookups/asthma_trait_terms.json."
+    },
+    {
+      "id": "pec2026cobra",
+      "publisher": "Piedmont Environmental Council",
+      "title": "Modelled health impacts of data center emissions in Virginia, using the EPA CO-Benefits Risk Assessment (COBRA) screening tool",
+      "edition_date": "2026",
+      "url": "https://www.pecva.org/work/energy/data-centers/",
+      "retrieved": "2026-11-03",
+      "note": "Emissions modelling rather than measurement reprocessing. Described in section 5.8 as adjacent work on a different question."
+    },
+    {
+      "id": "genarchatlas",
+      "publisher": "GENARCH",
+      "title": "GENARCH: a gene-environment interaction atlas for Loudoun County, Virginia",
+      "edition_date": "2026-11-02",
+      "url": "https://genarch.org/",
+      "retrieved": "2026-11-02",
+      "note": "The atlas this report describes, at the atlas freeze date. Software DOI pending."
+    }
+  ]
+}

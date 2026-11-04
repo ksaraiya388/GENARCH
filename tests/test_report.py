@@ -1238,3 +1238,206 @@ def test_the_extract_is_reproducible_from_the_full_download(freeze):
         for rel, expected in pinned.items():
             actual = sha256_of(freeze_lib.REPO_ROOT / rel)
             assert actual == expected, f"run {run} changed {rel}"
+
+# ------------------------------------------------- keys the report prose needs
+
+
+def test_the_naaqs_keys_state_the_standards_and_cite_the_regulation(numbers):
+    """The standards are keys so prose can state them without typing a decimal.
+
+    They are not measurements and are not derived from the freeze, so each one's
+    provenance is the regulation rather than a frozen file, and that is what the
+    method string has to carry.
+    """
+    assert numbers["naaqs.annual_standard"]["value"] == 9.0
+    assert numbers["naaqs.daily_standard"]["value"] == 35
+    assert numbers["naaqs.percentile"]["value"] == 98
+    assert numbers["naaqs.averaging_years"]["value"] == 3
+    for key in (
+        "naaqs.annual_standard",
+        "naaqs.daily_standard",
+        "naaqs.percentile",
+        "naaqs.averaging_years",
+    ):
+        assert "40 CFR" in numbers[key]["method"], key
+        assert numbers[key]["inputs"] == [], key
+
+
+def test_the_collocation_tolerances_match_the_site_constant(numbers):
+    """The tolerance the report quotes is the tolerance the build asserts.
+
+    `DEQ_TOLERANCE` in `site/src/lib/deq-data.ts` is what fails the site build when a
+    coefficient drifts. If the report quoted a different figure, it would be
+    describing a gate that does not exist.
+    """
+    deq_data = (
+        Path(__file__).resolve().parents[1] / "site" / "src" / "lib" / "deq-data.ts"
+    ).read_text(encoding="utf-8")
+    match = re.search(
+        r"DEQ_TOLERANCE\s*=\s*\{\s*coefficient:\s*([0-9.]+),\s*r2:\s*([0-9.]+)",
+        deq_data,
+    )
+    assert match is not None, "DEQ_TOLERANCE not found in site/src/lib/deq-data.ts"
+    assert numbers["colloc.tolerance_coefficient"]["value"] == float(match.group(1))
+    assert numbers["colloc.tolerance_r2"]["value"] == float(match.group(2))
+
+
+def test_the_clock_binning_rise_is_positive_at_every_site(numbers, results):
+    """R3's claim is that clock binning raises every site and reorders none.
+
+    The report states the range through these two keys rather than the range CONTEXT
+    recorded from the August analysis, because the freeze recomputes it. The ordering
+    half of the claim is asserted here too: it is the half a reader is most likely to
+    rely on and the easiest to break by changing a day definition.
+    """
+    rises = [
+        results["p98_common_clock"][site]["p98"] - results["p98_common_standard"][site]["p98"]
+        for site in results["p98_common_standard"]
+    ]
+    assert all(rise > 0 for rise in rises), rises
+    assert numbers["p98.common_clock.rise_min"]["value"] == half_up(min(rises), 3)
+    assert numbers["p98.common_clock.rise_max"]["value"] == half_up(max(rises), 3)
+
+    standard = sorted(
+        results["p98_common_standard"], key=lambda s: -results["p98_common_standard"][s]["p98"]
+    )
+    clock = sorted(
+        results["p98_common_clock"], key=lambda s: -results["p98_common_clock"][s]["p98"]
+    )
+    assert standard == clock, "clock binning reordered the sites"
+
+
+def test_the_backfill_variant_matches_the_recorded_decision(numbers):
+    """DECISIONS.md D16 records what the dashboard's backfill does to one fit.
+
+    Recomputed here rather than transcribed. These four values are the only figures in
+    the report that describe an input set DEQ's published coefficients do not
+    correspond to, which is why they are reported beside the fit and never in place
+    of it.
+    """
+    assert numbers["colloc.apex-05_NO2.backfill_gx_intercept"]["value"] == 1.847
+    assert numbers["colloc.apex-05_NO2.backfill_gx_slope"]["value"] == 0.317
+    assert numbers["colloc.apex-05_NO2.backfill_gx_r2"]["value"] == 0.204
+    assert numbers["colloc.apex-05_NO2.backfill_n_pairs"]["value"] == 2746
+    # One hour more than the reported fit, which is the whole of the effect.
+    assert (
+        numbers["colloc.apex-05_NO2.backfill_n_pairs"]["value"]
+        - numbers["colloc.apex-05_NO2.n_pairs"]["value"]
+        == 1
+    )
+
+
+def test_the_trait_scope_is_recomputed_and_agrees_with_the_extract_manifest(numbers):
+    """The multi-trait row count is recomputed from the extract, not read from it.
+
+    The manifest records what the extraction script saw. A report number is
+    recomputed from the bytes the freeze pins, and then checked against the manifest:
+    if the two ever disagree, one of them is describing a file that has changed.
+    """
+    manifest = json.loads(
+        (
+            Path(__file__).resolve().parents[1]
+            / "pipeline"
+            / "sources"
+            / "gwas-catalog"
+            / "extract_manifest.json"
+        ).read_text(encoding="utf-8")
+    )
+    accounting = manifest["multi_trait_accounting"]
+    assert numbers["ancestry.discovery.multi_trait_rows"]["value"] == 1040
+    assert (
+        numbers["ancestry.discovery.multi_trait_rows"]["value"]
+        == accounting["rows_also_mapped_to_another_trait"]
+    )
+    kept = numbers["ancestry.discovery.association_rows_kept"]["value"]
+    assert kept == manifest["association_rows_kept"]
+    assert (
+        accounting["rows_also_mapped_to_another_trait"]
+        + accounting["rows_mapped_to_asthma_terms_only"]
+        == kept
+    )
+    assert numbers["ancestry.trait_terms_matching_no_association"]["value"] == 17
+    assert numbers["ancestry.loci.count"]["value"] == 5
+
+
+def test_the_obsolete_asthma_seed_is_kept_and_matched_nothing(numbers):
+    """EFO's retired asthma term stays in the set and found nothing in this release.
+
+    Both halves matter to section 6. It is kept so a catalog row still carrying the
+    retired identifier would be matched rather than dropped; that it matched nothing
+    is a fact about this release's curation and not a reason to narrow the selection.
+    """
+    terms = json.loads(
+        (
+            Path(__file__).resolve().parents[1]
+            / "pipeline"
+            / "lookups"
+            / "asthma_trait_terms.json"
+        ).read_text(encoding="utf-8")
+    )
+    obsolete = [t for t in terms["terms"] if t["id"] == "EFO_0000270"]
+    assert obsolete and obsolete[0]["is_obsolete"] is True
+    assert terms["term_count"] == numbers["ancestry.trait_terms"]["value"] == 23
+
+
+# ------------------------------------------- integers render as integers
+
+
+def test_no_display_string_renders_a_count_as_a_float(report_dir):
+    """A count rounded to precision 0 is stored as 12.0 and must not print as "12.0".
+
+    The registry stores every rounded value as a JSON number, so a count comes back
+    with a trailing ".0" and interpolates into a caption that way. Alt text read "a
+    timeline of 12.0 sensor sites" until the display formatter was introduced. This
+    checks the strings a reader sees, not the stored values, which are numbers and are
+    meant to be.
+
+    One-decimal measurements are untouched: DEQ truncates its published values to one
+    decimal, so "5.0" in the reconciliation table and the 9.0 annual standard are
+    correct as printed. The check is scoped to counts, by unit.
+    """
+    count_units = {
+        "sites",
+        "days",
+        "residents",
+        "records",
+        "studies",
+        "individuals",
+        "associations",
+        "variants",
+        "links",
+        "references",
+        "hours",
+        "paired hours",
+        "ancestry rows",
+        "association rows",
+        "ontology IDs",
+        "loci",
+        "regressions",
+        "rank",
+        "percentile",
+        "years",
+    }
+    numbers = json.loads((report_dir / "numbers.json").read_text(encoding="utf-8"))
+    for key, record in numbers.items():
+        if record["unit"] in count_units and record["precision"] == 0:
+            rendered = f"{record['value']:.0f}"
+            assert "." not in rendered, key
+
+    pattern = re.compile(r"(?<![\d.])\d+\.0(?![\d])")
+    figures = json.loads((report_dir / "figures.json").read_text(encoding="utf-8"))
+    for figure in figures["figures"]:
+        for field in ("alt_text", "caption", "title"):
+            hits = pattern.findall(figure[field])
+            # The annual standard is genuinely 9.0, and it appears in the limitation
+            # block that every sensor figure carries verbatim.
+            hits = [h for h in hits if h != "9.0"]
+            assert hits == [], f"{figure['id']}.{field} renders {hits} as a float"
+
+    table10 = (report_dir / "T10_gwas_ancestry_composition.csv").read_text(
+        encoding="utf-8"
+    )
+    for row in table10.splitlines()[1:]:
+        cell = row.rsplit(",", 3)[0].rsplit(",", 1)[-1] if "," in row else ""
+        if cell.endswith(".0"):
+            raise AssertionError(f"T10 renders an individual count as a float: {cell}")

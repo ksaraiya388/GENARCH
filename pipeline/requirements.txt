@@ -16,6 +16,12 @@ matplotlib==3.11.1
 # even though no module imports it.
 xlrd==2.0.2
 
+# The report PDF post-processor (pipeline/report_pdf_post.py). pikepdf writes the
+# Info dictionary and the XMP packet and asserts the file is tagged; pypdf extracts
+# the rendered text the content-constraint audit runs against.
+pikepdf==10.17.0
+pypdf==6.21.4
+
 # Tooling: pytest runs tests/, ruff is the pipeline lint gate.
 pytest==9.1.1
 ruff==0.11.13

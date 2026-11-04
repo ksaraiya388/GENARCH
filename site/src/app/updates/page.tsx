@@ -77,7 +77,18 @@ export default function UpdatesPage() {
 
         <section>
           <h2 className="text-h2 text-surface-white mb-3">Annual Reports</h2>
-          <p className="text-cool-light">Coming soon!</p>
+          <p className="text-cool-light">
+            Each annual report states what the atlas contained at a fixed date, how it
+            was built, and what an independent recomputation of the published monitoring
+            data shows.{" "}
+            <Link
+              href="/reports/"
+              className="text-teal-primary hover:text-teal-soft hover:underline"
+            >
+              Browse the reports
+            </Link>
+            .
+          </p>
         </section>
       </div>
     </div>

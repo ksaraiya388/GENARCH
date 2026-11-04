@@ -1,0 +1,19 @@
+{
+  "year": "2026",
+  "title": "GENARCH Annual Report 2026: Atlas Scope, Methods, and an Independent Reprocessing of Virginia DEQ Data Center Air Monitoring Project Sensor Data",
+  "shortTitle": "GENARCH Annual Report 2026",
+  "version": "1.0",
+  "date": "2026-11-04",
+  "doi": "PENDING",
+  "softwareDoi": "PENDING",
+  "status": "Not peer reviewed",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "author": {
+    "name": "Kiaan Saraiya",
+    "orcid": "0009-0005-1913-0870",
+    "affiliation": "Independent; GENARCH project"
+  },
+  "deqCredit": "Sensor data: Virginia Department of Environmental Quality, Data Center Air Monitoring Project.",
+  "note": "Read by the report route and by pipeline/report_pdf_post.py, which is why it is JSON rather than a TypeScript object: the PDF metadata and the page metadata must come from one file, and the post-processor cannot parse TypeScript. Both PENDING fields suppress their metadata tag until a real identifier replaces them, and --final refuses to build while either is PENDING."
+}

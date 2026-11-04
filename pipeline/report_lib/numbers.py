@@ -52,6 +52,23 @@ class NumberRegistry:
     def value(self, key: str):
         return self._records[key]["value"]
 
+    def display(self, key: str) -> str:
+        """The value as prose renders it, at the precision it was rounded to.
+
+        `value()` returns the stored JSON number, so a count rounded to precision 0
+        comes back as `12.0` and interpolates into a caption as "12.0 sensor sites".
+        Every display string -- caption, alt text, table cell -- goes through here
+        instead, which formats to the recorded precision and so renders a count as a
+        count. The site's `<N>` component applies the same rule to the same field, so
+        a number reads identically in the figures and in the report prose.
+        """
+        record = self._records[key]
+        value = record["value"]
+        precision = record["precision"]
+        if precision is None:
+            return str(value)
+        return f"{value:.{precision}f}"
+
     def __contains__(self, key: str) -> bool:
         return key in self._records
 

@@ -43,3 +43,9 @@ outputs/repro/limitations_block.txt
 # with scripts/fetch_gwas_catalog.py.
 pipeline/sources/gwas-catalog/gwas-catalog-associations_ontology-annotated-full.zip
 pipeline/sources/gwas-catalog/gwas-catalog-download-ancestries-v1.0.3.1.tsv
+
+# Draft report PDFs and their sidecars, per DECISIONS.md D34. A draft is built for
+# review, is never served, and leaves pdf_path in data/reports/2026/index.json alone.
+# The final PDF is committed under site/public/reports/<year>/ when --final produces
+# it, because Vercel runs only the site build and cannot render one.
+docs/report-2026/drafts/

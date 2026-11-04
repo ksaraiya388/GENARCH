@@ -9,13 +9,15 @@
     "site:lint": "npm run lint --prefix site",
     "check:constraints": "node scripts/check-constraints.mjs",
     "figures:export": "node scripts/export-figures.mjs",
-    "test:brief-publish": "node scripts/test-brief-publish.mjs"
+    "test:brief-publish": "node scripts/test-brief-publish.mjs",
+    "report:pdf": "node site/scripts/build-report-pdf.mjs"
   },
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
     "@vercel/analytics": "^1.6.1"
   },
   "devDependencies": {
-    "playwright": "^1.48.0"
+    "playwright": "1.61.1",
+    "@playwright/test": "1.61.1"
   }
 }

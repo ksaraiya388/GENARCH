@@ -20,6 +20,7 @@ type: software
 authors:
   - family-names: Saraiya
     given-names: Kiaan
+    orcid: "https://orcid.org/0009-0005-1913-0870"
 version: 1.0.0
 date-released: "2026-08-15"
 repository-code: "https://github.com/ksaraiya388/GENARCH"
