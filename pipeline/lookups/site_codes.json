@@ -30,7 +30,7 @@
           "unit_label": "APEX 5"
         },
         {
-          "end_date": null,
+          "end_date": "2026-11-05",
           "start_date": "2026-10-22",
           "unit_id": "apex-08",
           "unit_id_confidence": "confirmed",
@@ -311,6 +311,27 @@
           "unit_id": "apex-09",
           "unit_id_confidence": "confirmed",
           "unit_label": "APEX 9"
+        }
+      ]
+    },
+    {
+      "area": null,
+      "code": "DC-15",
+      "collocated_regulatory": false,
+      "county": "Loudoun County",
+      "county_source": "DEQ 2026-11-06 edition: figure panels list Discovery ES under 'Loudoun County'; §1 counts 2 operating Loudoun sensors, which with Broad Run HS closed and the 5 Prince William sites named in §2 can only be Belfort Park Dr and Discovery ES. No sentence names its county.",
+      "deq_published_name": "Discovery ES",
+      "in_v1_scope": true,
+      "kunak_label": "Discovery ES",
+      "pm25_end_date": null,
+      "site_id": "discovery-es",
+      "units": [
+        {
+          "end_date": null,
+          "start_date": "2026-11-05",
+          "unit_id": "apex-08",
+          "unit_id_confidence": "confirmed",
+          "unit_label": "APEX 8"
         }
       ]
     }

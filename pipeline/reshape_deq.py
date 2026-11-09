@@ -6,7 +6,8 @@ applies only to the low-cost sensors, and a merged series would make that
 language false on its face (docs/GENARCH_RULES.md section 6).
 
 Kunak sensor CSVs are semicolon-delimited with a ``sep=;`` preamble line, are
-reverse-chronological, hour-ending and DST-adjusted, and carry no QC flags.
+reverse-chronological, hour-ending local time (America/New_York), and carry
+no QC flags.
 Regulatory monitor files are OLE2 ``.xls``, hour-beginning, always EST, and
 carry AQS null codes and flags.
 
@@ -16,6 +17,16 @@ All DEQ calendar-date rules -- occupancy windows, the PM2.5 void window and
 ``pm25_end_date`` -- are evaluated on ``ts_raw``, the dashboard's local wall
 clock, which is the clock those published dates are written in. All analysis
 operations -- daily averaging and every join -- use ``ts_est``.
+
+``ts_est`` is computed through zoneinfo America/New_York (DECISIONS.md D35):
+the hour-ending local label is read as America/New_York wall time and turned
+into the hour-beginning EST hour. A label that names the repeated hour at a
+fall-back change is ambiguous, because the export carries no offset, so it is
+never assigned to either hour: such rows emit no reading and both hours they
+could stand for are listed in ``deq_missing_hours.csv`` as
+``dst_fallback_unordered``. A label inside the spring-forward gap names no
+hour at all and is a hard failure; the gap itself is listed as
+``dst_spring_forward``.
 
 Usage::
 
@@ -29,9 +40,10 @@ import csv
 import sys
 from collections import defaultdict
 from dataclasses import dataclass
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from decimal import ROUND_DOWN, Decimal
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import pandas as pd
 
@@ -47,20 +59,21 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 SOURCES_DIR = REPO_ROOT / "pipeline" / "sources"
 SITE_HISTORY = SOURCES_DIR / "deq_sensor_site_history.csv"
 
-# Every datetime here is deliberately naive. ts_raw is a local wall-clock
+# Every datetime the module stores is naive. ts_raw is a local wall-clock
 # reading off DEQ's dashboard and ts_est is fixed-offset EST that never
-# observes DST; the shift between them is applied explicitly below. Attaching
-# a tzinfo would invite a library to re-apply a DST correction DEQ has already
-# accounted for.
+# observes DST. A tzinfo is attached only inside to_est() and
+# local_label_kind(), for the one conversion between them.
 
-# Kunak values are hour-ending and DST-adjusted; shift back to hour-beginning
-# EST. DEQ supplied the boundary; see GENARCH_RULES section 4.
-DST_CUTOVER = datetime.fromisoformat("2026-03-08T03:00:00")
-SHIFT_BEFORE_CUTOVER = 1
-SHIFT_FROM_CUTOVER = 2
+# Kunak values are hour-ending America/New_York wall time; ts_est is the
+# hour-beginning EST hour (GENARCH_RULES section 4, amendment of 2026-11-08).
+# Through 2026-10-31 this reproduces DEQ's instruction exactly: back 1 hour
+# before 2026-03-08 03:00, back 2 hours from it.
+LOCAL_TZ = ZoneInfo("America/New_York")
+EST = timezone(timedelta(hours=-5), "EST")
 
-# 2026-03-08 02:00 does not exist in local time (spring forward).
-DST_MISSING_HOUR = datetime.fromisoformat("2026-03-08T02:00:00")
+# Labels the export cannot place on one hour (DECISIONS.md D35).
+DST_FALLBACK_UNORDERED = "dst_fallback_unordered"
+DST_SPRING_FORWARD = "dst_spring_forward"
 
 SENSOR_CLASS = "low_cost_sensor_kunak_apex"
 REGULATORY_CLASS = "regulatory_fem"
@@ -172,14 +185,38 @@ class Occupancy:
 # --------------------------------------------------------------------------
 
 
-def shift_hours_for(ts_raw: datetime) -> int:
-    """Return the DEQ-instructed hour shift for a Kunak timestamp."""
-    return SHIFT_BEFORE_CUTOVER if ts_raw < DST_CUTOVER else SHIFT_FROM_CUTOVER
+def local_label_kind(ts_raw: datetime) -> str:
+    """Classify a naive America/New_York wall-clock label.
+
+    ``"unique"`` names one instant; ``"ambiguous"`` is the repeated hour at a
+    fall-back change, which names two; ``"nonexistent"`` falls in the
+    spring-forward gap and names none.
+    """
+    first = ts_raw.replace(tzinfo=LOCAL_TZ, fold=0)
+    second = ts_raw.replace(tzinfo=LOCAL_TZ, fold=1)
+    if first.utcoffset() == second.utcoffset():
+        return "unique"
+    round_trip = first.astimezone(timezone.utc).astimezone(LOCAL_TZ)
+    if round_trip.replace(tzinfo=None) == ts_raw:
+        return "ambiguous"
+    return "nonexistent"
 
 
-def to_est(ts_raw: datetime) -> datetime:
-    """Normalise a Kunak hour-ending local timestamp to hour-beginning EST."""
-    return ts_raw - timedelta(hours=shift_hours_for(ts_raw))
+def to_est(ts_raw: datetime, fold: int = 0) -> datetime:
+    """Normalise a Kunak hour-ending local label to hour-beginning EST.
+
+    ``fold`` selects the instant only for an ambiguous label, and only the
+    missing-hour inventory passes 1: a reading at an ambiguous label is never
+    placed (DECISIONS.md D35). A nonexistent label resolves with the offset in
+    force before the gap, which is the hour DEQ's 1-hour rule gave it.
+    """
+    local = ts_raw.replace(tzinfo=LOCAL_TZ, fold=fold)
+    return (local.astimezone(EST) - timedelta(hours=1)).replace(tzinfo=None)
+
+
+def shift_hours_for(ts_raw: datetime, fold: int = 0) -> int:
+    """Hours between the local label and its ts_est, as emitted per row."""
+    return int((ts_raw - to_est(ts_raw, fold)) / timedelta(hours=1))
 
 
 def truncate_1dp(values: list[Decimal]) -> Decimal:
@@ -387,6 +424,16 @@ def build_sensor_rows(
 
     for record in records:
         ts_raw: datetime = record["_ts_raw"]
+        kind = local_label_kind(ts_raw)
+        if kind == "ambiguous":
+            # No offset in the export says which of the two hours this is, so
+            # it is placed on neither; missing_hour_inventory lists both.
+            continue
+        if kind == "nonexistent":
+            raise DeqReshapeError(
+                f"{site_id}: reading labelled {ts_raw} falls in the "
+                f"spring-forward gap, a local time that did not occur"
+            )
         ts_est = to_est(ts_raw)
         shift = shift_hours_for(ts_raw)
         occ = resolve_interval(intervals, ts_raw)
@@ -741,35 +788,48 @@ def missing_hour_inventory(
     instrument_class: str,
     observed: list[datetime],
     pollutants: list[str],
+    unordered: frozenset[datetime] = frozenset(),
 ) -> tuple[list[dict], int, int]:
-    """Return missing-hour rows plus (expected, missing) counts for a site."""
+    """Return missing-hour rows plus (expected, missing) counts for a site.
+
+    For sensors ``observed`` holds the placed labels only. A repeated
+    fall-back label stands for two hours, so it counts twice in the expected
+    and missing totals and yields a row for each hour; ``unordered`` holds the
+    repeated labels the export did carry readings for, which are listed as
+    ``dst_fallback_unordered`` rather than as unexplained.
+    """
     expected = hour_range(min(observed), max(observed))
     gaps = sorted(set(expected) - set(observed))
+    sensor = instrument_class == SENSOR_CLASS
 
     rows: list[dict] = []
+    extra = 0
     for ts_raw in gaps:
-        if instrument_class == SENSOR_CLASS:
-            ts_est = to_est(ts_raw)
-        else:
-            ts_est = ts_raw
-        for pollutant in pollutants:
-            if ts_raw == DST_MISSING_HOUR:
-                category = "dst_spring_forward"
-            elif void_window_reason(
-                instrument_class, site_id, pollutant, ts_raw.date()
-            ):
-                category = "documented_outage"
-            else:
-                category = "unexplained"
-            rows.append(
-                {
-                    "site_id": site_id,
-                    "pollutant": pollutant,
-                    "ts_est": ts_est.isoformat(sep=" "),
-                    "category": category,
-                }
-            )
-    return rows, len(expected), len(gaps)
+        kind = local_label_kind(ts_raw) if sensor else "unique"
+        folds = (0, 1) if kind == "ambiguous" else (0,)
+        extra += len(folds) - 1
+        for fold in folds:
+            ts_est = to_est(ts_raw, fold) if sensor else ts_raw
+            for pollutant in pollutants:
+                if kind == "nonexistent":
+                    category = DST_SPRING_FORWARD
+                elif kind == "ambiguous" and ts_raw in unordered:
+                    category = DST_FALLBACK_UNORDERED
+                elif void_window_reason(
+                    instrument_class, site_id, pollutant, ts_raw.date()
+                ):
+                    category = "documented_outage"
+                else:
+                    category = "unexplained"
+                rows.append(
+                    {
+                        "site_id": site_id,
+                        "pollutant": pollutant,
+                        "ts_est": ts_est.isoformat(sep=" "),
+                        "category": category,
+                    }
+                )
+    return rows, len(expected) + extra, len(gaps) + extra
 
 
 def daily_pm25(rows: list[dict], instrument_class: str) -> list[dict]:
@@ -917,6 +977,7 @@ def main(argv: list[str] | None = None) -> int:
         raise DeqReshapeError(f"no sensor CSVs in {sensor_dir}")
 
     parsed: dict[str, list[dict]] = {}
+    unordered: dict[str, list[dict]] = {}
     raw_counts: dict[str, int] = {}
     source_of: dict[str, Path] = {}
     for path in sensor_files:
@@ -940,7 +1001,16 @@ def main(argv: list[str] | None = None) -> int:
                 f"{path.name}: Location {sorted(labels)} does not match "
                 f"kunak_label {sorted(expected_labels)} in the site history"
             )
-        timestamps = [r["_ts_raw"] for r in records]
+        # A repeated fall-back label legitimately carries two readings; they
+        # are excluded below, never deduplicated, so they are left out here.
+        ambiguous = [
+            r for r in records if local_label_kind(r["_ts_raw"]) == "ambiguous"
+        ]
+        timestamps = [
+            r["_ts_raw"]
+            for r in records
+            if local_label_kind(r["_ts_raw"]) != "ambiguous"
+        ]
         if len(set(timestamps)) != len(timestamps):
             raise DeqReshapeError(
                 f"{path.name}: duplicate site-timestamp pairs survive "
@@ -949,8 +1019,19 @@ def main(argv: list[str] | None = None) -> int:
         parsed[site_id] = records
         source_of[site_id] = path
         raw_counts[site_id] = len(records)
+        if ambiguous:
+            unordered[site_id] = ambiguous
 
-    observed = {s: [r["_ts_raw"] for r in recs] for s, recs in parsed.items()}
+    # Placed labels only: an unordered reading belongs to no hour, so it
+    # neither fills an hour nor counts as a reading in an occupancy check.
+    observed = {
+        s: [
+            r["_ts_raw"]
+            for r in recs
+            if local_label_kind(r["_ts_raw"]) != "ambiguous"
+        ]
+        for s, recs in parsed.items()
+    }
 
     conflicts, conflict_warnings = check_unit_conflicts(history, observed)
     transit_sites, transit_notes = find_transit_sites(
@@ -1008,7 +1089,11 @@ def main(argv: list[str] | None = None) -> int:
             {r["pollutant"] for r in sensor_rows if r["site_id"] == site_id}
         )
         rows, expected, gaps = missing_hour_inventory(
-            site_id, SENSOR_CLASS, timestamps, pollutants
+            site_id,
+            SENSOR_CLASS,
+            timestamps,
+            pollutants,
+            frozenset(r["_ts_raw"] for r in unordered.get(site_id, [])),
         )
         missing_rows.extend(rows)
         gap_list = sorted(
@@ -1126,12 +1211,27 @@ def main(argv: list[str] | None = None) -> int:
         print(f"  {label:<24}{gaps:>4} of {expected:>5} expected ({pct:.2f}%)")
         if 0 < len(gap_list) < 20:
             for ts_raw in gap_list:
-                note = (
-                    " [dst_spring_forward]"
-                    if ts_raw == DST_MISSING_HOUR
-                    else ""
-                )
+                kind = local_label_kind(ts_raw)
+                note = {
+                    "nonexistent": f" [{DST_SPRING_FORWARD}]",
+                    "ambiguous": f" [{DST_FALLBACK_UNORDERED}, two hours]",
+                }.get(kind, "")
                 print(f"      {ts_raw}{note}")
+
+    print(f"\n--- REPEATED FALL-BACK HOURS ({DST_FALLBACK_UNORDERED}) ---")
+    if unordered:
+        for site_id, recs in sorted(unordered.items()):
+            labels = sorted({r["_ts_raw"] for r in recs})
+            hours = ", ".join(
+                f"{to_est(t, 0)} and {to_est(t, 1)}" for t in labels
+            )
+            print(
+                f"  {site_id:<20}{len(recs)} reading(s) at "
+                f"{', '.join(str(t) for t in labels)} local, excluded; "
+                f"hours {hours} EST listed as missing"
+            )
+    else:
+        print("  none")
 
     print("\n--- SITES IN HISTORY WITH NO EXPORT ---")
     absent = sorted(set(by_site) - set(parsed))

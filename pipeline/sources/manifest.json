@@ -140,7 +140,7 @@
       ]
     },
     {
-      "filename": "pipeline/sources/deq-raw/ashburn-collocated_multi_2026-03-03_2026-08-28.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/ashburn-collocated_multi_2026-03-03_2026-08-28.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-08-28",
       "report_date": "2026-08-28",
@@ -168,10 +168,13 @@
       "data_first_timestamp_local": "2026-03-03 00:00",
       "data_last_timestamp_local": "2026-08-28 23:00",
       "rows_as_exported": 5154,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-09-04",
+      "superseded_by": "pipeline/sources/deq-raw/_superseded/ashburn-collocated_multi_2026-03-03_2026-09-11.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-09-11. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/belfort-park_multi_2026-03-03_2026-08-28.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/belfort-park_multi_2026-03-03_2026-08-28.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-08-28",
       "report_date": "2026-08-28",
@@ -199,10 +202,13 @@
       "data_first_timestamp_local": "2026-05-14 11:00",
       "data_last_timestamp_local": "2026-08-28 23:00",
       "rows_as_exported": 2556,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-09-04",
+      "superseded_by": "pipeline/sources/deq-raw/_superseded/belfort-park_multi_2026-03-03_2026-09-11.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-09-11. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/dulles-area_multi_2026-03-03_2026-08-28.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/dulles-area_multi_2026-03-03_2026-08-28.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-08-28",
       "report_date": "2026-08-28",
@@ -230,10 +236,13 @@
       "data_first_timestamp_local": "2026-03-03 00:00",
       "data_last_timestamp_local": "2026-08-28 23:00",
       "rows_as_exported": 4295,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-09-04",
+      "superseded_by": "pipeline/sources/deq-raw/_superseded/dulles-area_multi_2026-03-03_2026-09-11.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-09-11. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/farmwell-middle_multi_2026-03-03_2026-08-28.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/farmwell-middle_multi_2026-03-03_2026-08-28.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-08-28",
       "report_date": "2026-08-28",
@@ -261,10 +270,13 @@
       "data_first_timestamp_local": "2026-04-08 00:00",
       "data_last_timestamp_local": "2026-08-28 23:00",
       "rows_as_exported": 3430,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-09-04",
+      "superseded_by": "pipeline/sources/deq-raw/_superseded/farmwell-middle_multi_2026-03-03_2026-09-11.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-09-11. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/golf-course_multi_2026-03-03_2026-08-28.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/golf-course_multi_2026-03-03_2026-08-28.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-08-28",
       "report_date": "2026-08-28",
@@ -292,10 +304,13 @@
       "data_first_timestamp_local": "2026-04-08 00:00",
       "data_last_timestamp_local": "2026-08-28 23:00",
       "rows_as_exported": 3432,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-09-04",
+      "superseded_by": "pipeline/sources/deq-raw/_superseded/golf-course_multi_2026-03-03_2026-09-11.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-09-11. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/sterling-ms_multi_2026-03-03_2026-08-28.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/sterling-ms_multi_2026-03-03_2026-08-28.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-08-28",
       "report_date": "2026-08-28",
@@ -323,7 +338,10 @@
       "data_first_timestamp_local": "2026-06-17 11:00",
       "data_last_timestamp_local": "2026-08-28 23:00",
       "rows_as_exported": 1740,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-09-04",
+      "superseded_by": "pipeline/sources/deq-raw/_superseded/sterling-ms_multi_2026-03-03_2026-09-11.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-09-11. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
       "filename": "pipeline/sources/deq-raw/_superseded/ashburn-collocated_multi_2026-03-03_2026-08-10.csv",
@@ -673,7 +691,7 @@
       ]
     },
     {
-      "filename": "pipeline/sources/deq-raw/ashburn-collocated_multi_2026-03-03_2026-10-10.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/ashburn-collocated_multi_2026-03-03_2026-10-10.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-11",
       "report_date": "2026-10-09",
@@ -702,10 +720,13 @@
       "data_first_timestamp_local": "2026-03-03 00:00",
       "data_last_timestamp_local": "2026-10-10 23:00",
       "rows_as_exported": 6186,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-10-31",
+      "superseded_by": "pipeline/sources/deq-raw/_superseded/ashburn-collocated_multi_2026-03-03_2026-10-29.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-10-29. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/belfort-park_multi_2026-03-03_2026-10-10.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/belfort-park_multi_2026-03-03_2026-10-10.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-11",
       "report_date": "2026-10-09",
@@ -734,10 +755,13 @@
       "data_first_timestamp_local": "2026-05-14 11:00",
       "data_last_timestamp_local": "2026-10-10 23:00",
       "rows_as_exported": 3588,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-10-31",
+      "superseded_by": "pipeline/sources/deq-raw/_superseded/belfort-park_multi_2026-03-03_2026-10-29.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-10-29. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/camp-snyder_multi_2026-03-03_2026-10-10.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/camp-snyder_multi_2026-03-03_2026-10-10.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-11",
       "report_date": "2026-10-09",
@@ -766,10 +790,13 @@
       "data_first_timestamp_local": "2026-09-17 13:00",
       "data_last_timestamp_local": "2026-10-10 23:00",
       "rows_as_exported": 563,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-10-31",
+      "superseded_by": "pipeline/sources/deq-raw/_superseded/camp-snyder_multi_2026-03-03_2026-10-29.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-10-29. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/dulles-area_multi_2026-03-03_2026-10-10.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/dulles-area_multi_2026-03-03_2026-10-10.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-11",
       "report_date": "2026-10-09",
@@ -798,10 +825,13 @@
       "data_first_timestamp_local": "2026-03-03 00:00",
       "data_last_timestamp_local": "2026-10-10 23:00",
       "rows_as_exported": 5327,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-10-31",
+      "superseded_by": "pipeline/sources/deq-raw/_superseded/dulles-area_multi_2026-03-03_2026-10-29.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-10-29. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/evergreen-cc_multi_2026-03-03_2026-10-10.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/evergreen-cc_multi_2026-03-03_2026-10-10.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-11",
       "report_date": "2026-10-09",
@@ -830,10 +860,13 @@
       "data_first_timestamp_local": "2026-09-17 13:00",
       "data_last_timestamp_local": "2026-10-10 23:00",
       "rows_as_exported": 563,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-10-31",
+      "superseded_by": "pipeline/sources/deq-raw/_superseded/evergreen-cc_multi_2026-03-03_2026-10-29.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-10-29. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/farmwell-middle_multi_2026-03-03_2026-10-10.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/farmwell-middle_multi_2026-03-03_2026-10-10.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-11",
       "report_date": "2026-10-09",
@@ -862,10 +895,13 @@
       "data_first_timestamp_local": "2026-04-08 00:00",
       "data_last_timestamp_local": "2026-09-17 11:00",
       "rows_as_exported": 3898,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-10-31",
+      "superseded_by": "pipeline/sources/deq-raw/_superseded/farmwell-middle_multi_2026-03-03_2026-10-29.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-10-29. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/golf-course_multi_2026-03-03_2026-10-10.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/golf-course_multi_2026-03-03_2026-10-10.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-11",
       "report_date": "2026-10-09",
@@ -894,10 +930,13 @@
       "data_first_timestamp_local": "2026-04-08 00:00",
       "data_last_timestamp_local": "2026-09-17 10:00",
       "rows_as_exported": 3899,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-10-31",
+      "superseded_by": "pipeline/sources/deq-raw/_superseded/golf-course_multi_2026-03-03_2026-10-29.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-10-29. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/heritage-farm_multi_2026-03-03_2026-10-10.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/heritage-farm_multi_2026-03-03_2026-10-10.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-11",
       "report_date": "2026-10-09",
@@ -926,10 +965,13 @@
       "data_first_timestamp_local": "2026-03-03 00:00",
       "data_last_timestamp_local": "2026-06-17 12:00",
       "rows_as_exported": 2555,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-10-31",
+      "superseded_by": "pipeline/sources/deq-raw/_superseded/heritage-farm_multi_2026-03-03_2026-10-29.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-10-29. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/newberry-condo_multi_2026-03-03_2026-10-10.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/newberry-condo_multi_2026-03-03_2026-10-10.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-11",
       "report_date": "2026-10-09",
@@ -958,10 +1000,13 @@
       "data_first_timestamp_local": "2026-03-03 00:00",
       "data_last_timestamp_local": "2026-05-14 10:00",
       "rows_as_exported": 1738,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-10-31",
+      "superseded_by": "pipeline/sources/deq-raw/_superseded/newberry-condo_multi_2026-03-03_2026-10-29.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-10-29. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/sterling-ms_multi_2026-03-03_2026-10-10.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/sterling-ms_multi_2026-03-03_2026-10-10.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-11",
       "report_date": "2026-10-09",
@@ -990,10 +1035,13 @@
       "data_first_timestamp_local": "2026-06-17 11:00",
       "data_last_timestamp_local": "2026-09-17 11:00",
       "rows_as_exported": 2208,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-10-31",
+      "superseded_by": "pipeline/sources/deq-raw/_superseded/sterling-ms_multi_2026-03-03_2026-10-29.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-10-29. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/steuart-weller_multi_2026-03-03_2026-10-10.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/steuart-weller_multi_2026-03-03_2026-10-10.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-11",
       "report_date": "2026-10-09",
@@ -1022,10 +1070,13 @@
       "data_first_timestamp_local": "2026-03-03 00:00",
       "data_last_timestamp_local": "2026-06-17 10:00",
       "rows_as_exported": 2554,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-10-31",
+      "superseded_by": "pipeline/sources/deq-raw/_superseded/steuart-weller_multi_2026-03-03_2026-10-29.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-10-29. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/vdot-mkc_multi_2026-03-03_2026-10-10.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/vdot-mkc_multi_2026-03-03_2026-10-10.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-11",
       "report_date": "2026-10-09",
@@ -1054,7 +1105,10 @@
       "data_first_timestamp_local": "2026-09-17 10:00",
       "data_last_timestamp_local": "2026-10-10 23:00",
       "rows_as_exported": 566,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-10-31",
+      "superseded_by": "pipeline/sources/deq-raw/_superseded/vdot-mkc_multi_2026-03-03_2026-10-29.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-10-29. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
       "filename": "pipeline/sources/deq/deq_dcamp_weekly_2026-10-22.pdf",
@@ -1097,7 +1151,7 @@
       ]
     },
     {
-      "filename": "pipeline/sources/deq-raw/ashburn-collocated_multi_2026-03-03_2026-10-29.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/ashburn-collocated_multi_2026-03-03_2026-10-29.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-30",
       "report_date": "2026-10-30",
@@ -1126,10 +1180,13 @@
       "data_first_timestamp_local": "2026-03-03 00:00",
       "data_last_timestamp_local": "2026-10-29 23:00",
       "rows_as_exported": 6639,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-11-08",
+      "superseded_by": "pipeline/sources/deq-raw/ashburn-collocated_multi_2026-03-03_2026-11-06.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-11-06. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/belfort-park_multi_2026-03-03_2026-10-29.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/belfort-park_multi_2026-03-03_2026-10-29.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-30",
       "report_date": "2026-10-30",
@@ -1158,10 +1215,13 @@
       "data_first_timestamp_local": "2026-05-14 11:00",
       "data_last_timestamp_local": "2026-10-29 23:00",
       "rows_as_exported": 4044,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-11-08",
+      "superseded_by": "pipeline/sources/deq-raw/belfort-park_multi_2026-03-03_2026-11-06.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-11-06. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/camp-snyder_multi_2026-03-03_2026-10-29.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/camp-snyder_multi_2026-03-03_2026-10-29.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-30",
       "report_date": "2026-10-30",
@@ -1190,10 +1250,13 @@
       "data_first_timestamp_local": "2026-09-17 14:00",
       "data_last_timestamp_local": "2026-10-29 23:00",
       "rows_as_exported": 1018,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-11-08",
+      "superseded_by": "pipeline/sources/deq-raw/camp-snyder_multi_2026-03-03_2026-11-06.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-11-06. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/dulles-area_multi_2026-03-03_2026-10-29.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/dulles-area_multi_2026-03-03_2026-10-29.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-30",
       "report_date": "2026-10-30",
@@ -1222,10 +1285,13 @@
       "data_first_timestamp_local": "2026-03-03 00:00",
       "data_last_timestamp_local": "2026-10-22 10:00",
       "rows_as_exported": 5602,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-11-08",
+      "superseded_by": "pipeline/sources/deq-raw/dulles-area_multi_2026-03-03_2026-11-06.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-11-06. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/evergreen-cc_multi_2026-03-03_2026-10-29.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/evergreen-cc_multi_2026-03-03_2026-10-29.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-30",
       "report_date": "2026-10-30",
@@ -1254,10 +1320,13 @@
       "data_first_timestamp_local": "2026-09-17 14:00",
       "data_last_timestamp_local": "2026-10-29 23:00",
       "rows_as_exported": 1018,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-11-08",
+      "superseded_by": "pipeline/sources/deq-raw/evergreen-cc_multi_2026-03-03_2026-11-06.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-11-06. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/farmwell-middle_multi_2026-03-03_2026-10-29.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/farmwell-middle_multi_2026-03-03_2026-10-29.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-30",
       "report_date": "2026-10-30",
@@ -1286,10 +1355,13 @@
       "data_first_timestamp_local": "2026-04-08 00:00",
       "data_last_timestamp_local": "2026-09-17 11:00",
       "rows_as_exported": 3898,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-11-08",
+      "superseded_by": "pipeline/sources/deq-raw/farmwell-middle_multi_2026-03-03_2026-11-06.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-11-06. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/golf-course_multi_2026-03-03_2026-10-29.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/golf-course_multi_2026-03-03_2026-10-29.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-30",
       "report_date": "2026-10-30",
@@ -1318,10 +1390,13 @@
       "data_first_timestamp_local": "2026-04-08 00:00",
       "data_last_timestamp_local": "2026-09-17 10:00",
       "rows_as_exported": 3899,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-11-08",
+      "superseded_by": "pipeline/sources/deq-raw/golf-course_multi_2026-03-03_2026-11-06.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-11-06. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/heritage-farm_multi_2026-03-03_2026-10-29.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/heritage-farm_multi_2026-03-03_2026-10-29.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-30",
       "report_date": "2026-10-30",
@@ -1350,10 +1425,13 @@
       "data_first_timestamp_local": "2026-03-03 00:00",
       "data_last_timestamp_local": "2026-06-17 12:00",
       "rows_as_exported": 2555,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-11-08",
+      "superseded_by": "pipeline/sources/deq-raw/heritage-farm_multi_2026-03-03_2026-11-06.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-11-06. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/meadows-farms_multi_2026-03-03_2026-10-29.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/meadows-farms_multi_2026-03-03_2026-10-29.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-30",
       "report_date": "2026-10-30",
@@ -1382,10 +1460,13 @@
       "data_first_timestamp_local": "2026-10-22 14:00",
       "data_last_timestamp_local": "2026-10-29 23:00",
       "rows_as_exported": 178,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-11-08",
+      "superseded_by": "pipeline/sources/deq-raw/meadows-farms_multi_2026-03-03_2026-11-06.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-11-06. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/newberry-condo_multi_2026-03-03_2026-10-29.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/newberry-condo_multi_2026-03-03_2026-10-29.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-30",
       "report_date": "2026-10-30",
@@ -1414,10 +1495,13 @@
       "data_first_timestamp_local": "2026-03-03 00:00",
       "data_last_timestamp_local": "2026-05-14 10:00",
       "rows_as_exported": 1738,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-11-08",
+      "superseded_by": "pipeline/sources/deq-raw/newberry-condo_multi_2026-03-03_2026-11-06.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-11-06. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/pw-police-west_multi_2026-03-03_2026-10-29.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/pw-police-west_multi_2026-03-03_2026-10-29.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-30",
       "report_date": "2026-10-30",
@@ -1446,10 +1530,13 @@
       "data_first_timestamp_local": "2026-10-22 14:00",
       "data_last_timestamp_local": "2026-10-29 23:00",
       "rows_as_exported": 178,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-11-08",
+      "superseded_by": "pipeline/sources/deq-raw/pw-police-west_multi_2026-03-03_2026-11-06.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-11-06. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/sterling-ms_multi_2026-03-03_2026-10-29.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/sterling-ms_multi_2026-03-03_2026-10-29.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-30",
       "report_date": "2026-10-30",
@@ -1478,10 +1565,13 @@
       "data_first_timestamp_local": "2026-06-17 11:00",
       "data_last_timestamp_local": "2026-09-17 11:00",
       "rows_as_exported": 2208,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-11-08",
+      "superseded_by": "pipeline/sources/deq-raw/sterling-ms_multi_2026-03-03_2026-11-06.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-11-06. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/steuart-weller_multi_2026-03-03_2026-10-29.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/steuart-weller_multi_2026-03-03_2026-10-29.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-30",
       "report_date": "2026-10-30",
@@ -1510,10 +1600,13 @@
       "data_first_timestamp_local": "2026-03-03 00:00",
       "data_last_timestamp_local": "2026-06-17 10:00",
       "rows_as_exported": 2554,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-11-08",
+      "superseded_by": "pipeline/sources/deq-raw/steuart-weller_multi_2026-03-03_2026-11-06.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-11-06. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
-      "filename": "pipeline/sources/deq-raw/vdot-mkc_multi_2026-03-03_2026-10-29.csv",
+      "filename": "pipeline/sources/deq-raw/_superseded/vdot-mkc_multi_2026-03-03_2026-10-29.csv",
       "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
       "download_date": "2026-10-30",
       "report_date": "2026-10-30",
@@ -1542,7 +1635,10 @@
       "data_first_timestamp_local": "2026-09-17 12:00",
       "data_last_timestamp_local": "2026-10-29 23:00",
       "rows_as_exported": 1020,
-      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est.",
+      "superseded_on": "2026-11-08",
+      "superseded_by": "pipeline/sources/deq-raw/vdot-mkc_multi_2026-03-03_2026-11-06.csv",
+      "superseded_reason": "Replaced by a later full re-pull covering 2026-03-03 to 2026-11-06. Retained unmodified for provenance. reshape_deq.py globs deq-raw/ non-recursively, so files under _superseded/ are not ingested and cannot double-count overlapping hours."
     },
     {
       "file": "gwas-catalog/gwas-catalog-associations_ontology-annotated-full.zip",
@@ -1688,6 +1784,506 @@
       "status": "SHIPPED. Read by the report only. The live page /ancestry-equity reads the earlier acs_loudoun_2023.json and is unchanged; the release divergence is an open item in docs/report-2026/AUDIT.md.",
       "description": "The API returns a large negative sentinel in place of a statistic it does not publish for a cell. Values are preserved verbatim and 'published' says whether the cell carries a real statistic. A false value must not be rendered as a number. Race and Hispanic origin in these tables are self-identified social categories. They are not genetic ancestry and must never be presented as a genetic-ancestry composition.",
       "limitations": "Race and Hispanic origin here are self-identified social categories, not genetic ancestry, and must never be presented as a genetic-ancestry composition. Hispanic or Latino origin cross-cuts every race category, so it is never a segment of a race stack. Margins of error are published per cell and a cell whose margin is absent carries a sentinel, not a number."
+    },
+    {
+      "filename": "pipeline/sources/deq/deq_dcamp_weekly_2026-11-06.pdf",
+      "origin_url": "https://www.deq.virginia.gov/home/showpublisheddocument/39963",
+      "download_date": "2026-11-08",
+      "report_date": "2026-11-06",
+      "license": "Public record. Virginia DEQ confirmed redistributable with credit to Virginia DEQ.",
+      "attribution": "Virginia Department of Environmental Quality",
+      "format": "pdf",
+      "sha256": "7d2266c54c03f61b8ec6f5f60d26971d9111b4efba304acdb5b21a63ad42568f",
+      "size_bytes": 3621178,
+      "pages": 31,
+      "tables_extracted": 57,
+      "text_normalization": "NFKC",
+      "description": "Virginia DEQ Data Center Air Monitoring Project weekly analysis report. Reference artifact for reproduction of published collocation regressions, daily-average QA, and daily PM2.5 98th-percentile values. Not a data source; hourly Kunak CSV exports are the data source.",
+      "expected_columns": null,
+      "derived_files": [
+        "pipeline/sources/deq/deq_dcamp_weekly_2026-11-06.txt",
+        "pipeline/sources/deq/deq_dcamp_weekly_2026-11-06_tables.json"
+      ]
+    },
+    {
+      "filename": "pipeline/sources/deq-raw/ashburn-collocated_multi_2026-03-03_2026-11-06.csv",
+      "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
+      "download_date": "2026-11-08",
+      "report_date": "2026-11-06",
+      "license": "Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ staff, 2026-08-10). Preferred attribution line pending from DEQ Communications.",
+      "attribution": "Virginia Department of Environmental Quality",
+      "format": "CSV, semicolon-delimited, UTF-8 without BOM, sep=; preamble on line 1",
+      "sha256": "f2daf9b03c2a532d4eaecdad0691e279ca10497c24643cd751767cbe948a61b2",
+      "size_bytes": 480303,
+      "site_id": "ashburn-collocated",
+      "kunak_location": "Broad Run HS",
+      "coverage": "2026-03-03 00:00 to 2026-11-04 10:00 local wall clock as exported, 6771 rows before dedup",
+      "description": "Raw hourly Kunak Cloud export for one Data Center Air Monitoring Project sensor site. Timestamps are hour-ending and DST-adjusted as exported; reshape_deq normalises them to hour-beginning EST and never edits this file. Exports contain exact-duplicate row blocks from dashboard pagination, collapsed on read. Ingested by pipeline/reshape_deq.py, which globs deq-raw/ non-recursively. The export recorded its own date and the SHA-256 of every file in _provenance.txt, so export_date is the recorded export timestamp rather than a commit-time upper bound.",
+      "expected_columns": [
+        "Location",
+        "Date",
+        "AQI",
+        "NO2 (ppb)",
+        "CO (ppm)",
+        "VOCs (ppb)",
+        "PM2.5 (µg/m³)"
+      ],
+      "export_date": "2026-11-08T13:01:46.2291894-05:00",
+      "export_date_source": "recorded in the export's _provenance.txt",
+      "requested_range_start": "2026-03-03",
+      "requested_range_end": "2026-11-06",
+      "data_first_timestamp_local": "2026-03-03 00:00",
+      "data_last_timestamp_local": "2026-11-04 10:00",
+      "rows_as_exported": 6771,
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+    },
+    {
+      "filename": "pipeline/sources/deq-raw/belfort-park_multi_2026-03-03_2026-11-06.csv",
+      "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
+      "download_date": "2026-11-08",
+      "report_date": "2026-11-06",
+      "license": "Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ staff, 2026-08-10). Preferred attribution line pending from DEQ Communications.",
+      "attribution": "Virginia Department of Environmental Quality",
+      "format": "CSV, semicolon-delimited, UTF-8 without BOM, sep=; preamble on line 1",
+      "sha256": "4f9b2b813805d86d5cdc4dd285a71c172f9e539001001774082756a0b2d837ed",
+      "size_bytes": 326118,
+      "site_id": "belfort-park",
+      "kunak_location": "Belfort Park Dr",
+      "coverage": "2026-05-14 11:00 to 2026-11-06 23:00 local wall clock as exported, 4237 rows before dedup",
+      "description": "Raw hourly Kunak Cloud export for one Data Center Air Monitoring Project sensor site. Timestamps are hour-ending and DST-adjusted as exported; reshape_deq normalises them to hour-beginning EST and never edits this file. Exports contain exact-duplicate row blocks from dashboard pagination, collapsed on read. Ingested by pipeline/reshape_deq.py, which globs deq-raw/ non-recursively. The export recorded its own date and the SHA-256 of every file in _provenance.txt, so export_date is the recorded export timestamp rather than a commit-time upper bound.",
+      "expected_columns": [
+        "Location",
+        "Date",
+        "AQI",
+        "NO2 (ppb)",
+        "CO (ppm)",
+        "VOCs (ppb)",
+        "PM2.5 (µg/m³)"
+      ],
+      "export_date": "2026-11-08T13:01:46.2291894-05:00",
+      "export_date_source": "recorded in the export's _provenance.txt",
+      "requested_range_start": "2026-03-03",
+      "requested_range_end": "2026-11-06",
+      "data_first_timestamp_local": "2026-05-14 11:00",
+      "data_last_timestamp_local": "2026-11-06 23:00",
+      "rows_as_exported": 4237,
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+    },
+    {
+      "filename": "pipeline/sources/deq-raw/camp-snyder_multi_2026-03-03_2026-11-06.csv",
+      "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
+      "download_date": "2026-11-08",
+      "report_date": "2026-11-06",
+      "license": "Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ staff, 2026-08-10). Preferred attribution line pending from DEQ Communications.",
+      "attribution": "Virginia Department of Environmental Quality",
+      "format": "CSV, semicolon-delimited, UTF-8 without BOM, sep=; preamble on line 1",
+      "sha256": "5eb0082ce68b8949c05bcebb3dde62da2a135b874849c5dbd4da18eb927413ff",
+      "size_bytes": 98290,
+      "site_id": "camp-snyder",
+      "kunak_location": "Camp William B Snyder",
+      "coverage": "2026-09-17 14:00 to 2026-11-06 23:00 local wall clock as exported, 1211 rows before dedup",
+      "description": "Raw hourly Kunak Cloud export for one Data Center Air Monitoring Project sensor site. Timestamps are hour-ending and DST-adjusted as exported; reshape_deq normalises them to hour-beginning EST and never edits this file. Exports contain exact-duplicate row blocks from dashboard pagination, collapsed on read. Ingested by pipeline/reshape_deq.py, which globs deq-raw/ non-recursively. The export recorded its own date and the SHA-256 of every file in _provenance.txt, so export_date is the recorded export timestamp rather than a commit-time upper bound.",
+      "expected_columns": [
+        "Location",
+        "Date",
+        "AQI",
+        "NO2 (ppb)",
+        "CO (ppm)",
+        "VOCs (ppb)",
+        "PM2.5 (µg/m³)"
+      ],
+      "export_date": "2026-11-08T13:01:46.2291894-05:00",
+      "export_date_source": "recorded in the export's _provenance.txt",
+      "requested_range_start": "2026-03-03",
+      "requested_range_end": "2026-11-06",
+      "data_first_timestamp_local": "2026-09-17 14:00",
+      "data_last_timestamp_local": "2026-11-06 23:00",
+      "rows_as_exported": 1211,
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+    },
+    {
+      "filename": "pipeline/sources/deq-raw/discovery-es_multi_2026-03-03_2026-11-06.csv",
+      "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
+      "download_date": "2026-11-08",
+      "report_date": "2026-11-06",
+      "license": "Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ staff, 2026-08-10). Preferred attribution line pending from DEQ Communications.",
+      "attribution": "Virginia Department of Environmental Quality",
+      "format": "CSV, semicolon-delimited, UTF-8 without BOM, sep=; preamble on line 1",
+      "sha256": "a97d8abd42cc0d8341c4c069ddefba1b4154eabb408cc3b45fe0c8b2adf1df71",
+      "size_bytes": 4292,
+      "site_id": "discovery-es",
+      "kunak_location": "Discovery ES",
+      "coverage": "2026-11-04 12:00 to 2026-11-06 23:00 local wall clock as exported, 60 rows before dedup",
+      "description": "Raw hourly Kunak Cloud export for one Data Center Air Monitoring Project sensor site. Timestamps are hour-ending and DST-adjusted as exported; reshape_deq normalises them to hour-beginning EST and never edits this file. Exports contain exact-duplicate row blocks from dashboard pagination, collapsed on read. Ingested by pipeline/reshape_deq.py, which globs deq-raw/ non-recursively. The export recorded its own date and the SHA-256 of every file in _provenance.txt, so export_date is the recorded export timestamp rather than a commit-time upper bound.",
+      "expected_columns": [
+        "Location",
+        "Date",
+        "AQI",
+        "NO2 (ppb)",
+        "CO (ppm)",
+        "VOCs (ppb)",
+        "PM2.5 (µg/m³)"
+      ],
+      "export_date": "2026-11-08T13:01:46.2291894-05:00",
+      "export_date_source": "recorded in the export's _provenance.txt",
+      "requested_range_start": "2026-03-03",
+      "requested_range_end": "2026-11-06",
+      "data_first_timestamp_local": "2026-11-04 12:00",
+      "data_last_timestamp_local": "2026-11-06 23:00",
+      "rows_as_exported": 60,
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+    },
+    {
+      "filename": "pipeline/sources/deq-raw/dulles-area_multi_2026-03-03_2026-11-06.csv",
+      "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
+      "download_date": "2026-11-08",
+      "report_date": "2026-11-06",
+      "license": "Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ staff, 2026-08-10). Preferred attribution line pending from DEQ Communications.",
+      "attribution": "Virginia Department of Environmental Quality",
+      "format": "CSV, semicolon-delimited, UTF-8 without BOM, sep=; preamble on line 1",
+      "sha256": "64d4ff4a4b05fbe3aa2ef6fb91e0d4493fcc8f60de0cf6c0d34819f7c9cbb9f0",
+      "size_bytes": 426516,
+      "site_id": "dulles-area",
+      "kunak_location": "Dulles Airport",
+      "coverage": "2026-03-03 00:00 to 2026-10-22 10:00 local wall clock as exported, 5602 rows before dedup",
+      "description": "Raw hourly Kunak Cloud export for one Data Center Air Monitoring Project sensor site. Timestamps are hour-ending and DST-adjusted as exported; reshape_deq normalises them to hour-beginning EST and never edits this file. Exports contain exact-duplicate row blocks from dashboard pagination, collapsed on read. Ingested by pipeline/reshape_deq.py, which globs deq-raw/ non-recursively. The export recorded its own date and the SHA-256 of every file in _provenance.txt, so export_date is the recorded export timestamp rather than a commit-time upper bound.",
+      "expected_columns": [
+        "Location",
+        "Date",
+        "AQI",
+        "NO2 (ppb)",
+        "CO (ppm)",
+        "VOCs (ppb)",
+        "PM2.5 (µg/m³)"
+      ],
+      "export_date": "2026-11-08T13:01:46.2291894-05:00",
+      "export_date_source": "recorded in the export's _provenance.txt",
+      "requested_range_start": "2026-03-03",
+      "requested_range_end": "2026-11-06",
+      "data_first_timestamp_local": "2026-03-03 00:00",
+      "data_last_timestamp_local": "2026-10-22 10:00",
+      "rows_as_exported": 5602,
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+    },
+    {
+      "filename": "pipeline/sources/deq-raw/evergreen-cc_multi_2026-03-03_2026-11-06.csv",
+      "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
+      "download_date": "2026-11-08",
+      "report_date": "2026-11-06",
+      "license": "Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ staff, 2026-08-10). Preferred attribution line pending from DEQ Communications.",
+      "attribution": "Virginia Department of Environmental Quality",
+      "format": "CSV, semicolon-delimited, UTF-8 without BOM, sep=; preamble on line 1",
+      "sha256": "092894da7d2032d231eb04094650fc2aed509855af5524a27affe4cafb50a965",
+      "size_bytes": 102233,
+      "site_id": "evergreen-cc",
+      "kunak_location": "Evergreen Country Club",
+      "coverage": "2026-09-17 14:00 to 2026-11-06 23:00 local wall clock as exported, 1211 rows before dedup",
+      "description": "Raw hourly Kunak Cloud export for one Data Center Air Monitoring Project sensor site. Timestamps are hour-ending and DST-adjusted as exported; reshape_deq normalises them to hour-beginning EST and never edits this file. Exports contain exact-duplicate row blocks from dashboard pagination, collapsed on read. Ingested by pipeline/reshape_deq.py, which globs deq-raw/ non-recursively. The export recorded its own date and the SHA-256 of every file in _provenance.txt, so export_date is the recorded export timestamp rather than a commit-time upper bound.",
+      "expected_columns": [
+        "Location",
+        "Date",
+        "AQI",
+        "NO2 (ppb)",
+        "CO (ppm)",
+        "VOCs (ppb)",
+        "PM2.5 (µg/m³)"
+      ],
+      "export_date": "2026-11-08T13:01:46.2291894-05:00",
+      "export_date_source": "recorded in the export's _provenance.txt",
+      "requested_range_start": "2026-03-03",
+      "requested_range_end": "2026-11-06",
+      "data_first_timestamp_local": "2026-09-17 14:00",
+      "data_last_timestamp_local": "2026-11-06 23:00",
+      "rows_as_exported": 1211,
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+    },
+    {
+      "filename": "pipeline/sources/deq-raw/farmwell-middle_multi_2026-03-03_2026-11-06.csv",
+      "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
+      "download_date": "2026-11-08",
+      "report_date": "2026-11-06",
+      "license": "Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ staff, 2026-08-10). Preferred attribution line pending from DEQ Communications.",
+      "attribution": "Virginia Department of Environmental Quality",
+      "format": "CSV, semicolon-delimited, UTF-8 without BOM, sep=; preamble on line 1",
+      "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+      "size_bytes": 309516,
+      "site_id": "farmwell-middle",
+      "kunak_location": "Farmwell Station MS",
+      "coverage": "2026-04-08 00:00 to 2026-09-17 11:00 local wall clock as exported, 3898 rows before dedup",
+      "description": "Raw hourly Kunak Cloud export for one Data Center Air Monitoring Project sensor site. Timestamps are hour-ending and DST-adjusted as exported; reshape_deq normalises them to hour-beginning EST and never edits this file. Exports contain exact-duplicate row blocks from dashboard pagination, collapsed on read. Ingested by pipeline/reshape_deq.py, which globs deq-raw/ non-recursively. The export recorded its own date and the SHA-256 of every file in _provenance.txt, so export_date is the recorded export timestamp rather than a commit-time upper bound.",
+      "expected_columns": [
+        "Location",
+        "Date",
+        "AQI",
+        "NO2 (ppb)",
+        "CO (ppm)",
+        "VOCs (ppb)",
+        "PM2.5 (µg/m³)"
+      ],
+      "export_date": "2026-11-08T13:01:46.2291894-05:00",
+      "export_date_source": "recorded in the export's _provenance.txt",
+      "requested_range_start": "2026-03-03",
+      "requested_range_end": "2026-11-06",
+      "data_first_timestamp_local": "2026-04-08 00:00",
+      "data_last_timestamp_local": "2026-09-17 11:00",
+      "rows_as_exported": 3898,
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+    },
+    {
+      "filename": "pipeline/sources/deq-raw/golf-course_multi_2026-03-03_2026-11-06.csv",
+      "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
+      "download_date": "2026-11-08",
+      "report_date": "2026-11-06",
+      "license": "Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ staff, 2026-08-10). Preferred attribution line pending from DEQ Communications.",
+      "attribution": "Virginia Department of Environmental Quality",
+      "format": "CSV, semicolon-delimited, UTF-8 without BOM, sep=; preamble on line 1",
+      "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+      "size_bytes": 297563,
+      "site_id": "golf-course",
+      "kunak_location": "1757 Golf Club",
+      "coverage": "2026-04-08 00:00 to 2026-09-17 10:00 local wall clock as exported, 3899 rows before dedup",
+      "description": "Raw hourly Kunak Cloud export for one Data Center Air Monitoring Project sensor site. Timestamps are hour-ending and DST-adjusted as exported; reshape_deq normalises them to hour-beginning EST and never edits this file. Exports contain exact-duplicate row blocks from dashboard pagination, collapsed on read. Ingested by pipeline/reshape_deq.py, which globs deq-raw/ non-recursively. The export recorded its own date and the SHA-256 of every file in _provenance.txt, so export_date is the recorded export timestamp rather than a commit-time upper bound.",
+      "expected_columns": [
+        "Location",
+        "Date",
+        "AQI",
+        "NO2 (ppb)",
+        "CO (ppm)",
+        "VOCs (ppb)",
+        "PM2.5 (µg/m³)"
+      ],
+      "export_date": "2026-11-08T13:01:46.2291894-05:00",
+      "export_date_source": "recorded in the export's _provenance.txt",
+      "requested_range_start": "2026-03-03",
+      "requested_range_end": "2026-11-06",
+      "data_first_timestamp_local": "2026-04-08 00:00",
+      "data_last_timestamp_local": "2026-09-17 10:00",
+      "rows_as_exported": 3899,
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+    },
+    {
+      "filename": "pipeline/sources/deq-raw/heritage-farm_multi_2026-03-03_2026-11-06.csv",
+      "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
+      "download_date": "2026-11-08",
+      "report_date": "2026-11-06",
+      "license": "Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ staff, 2026-08-10). Preferred attribution line pending from DEQ Communications.",
+      "attribution": "Virginia Department of Environmental Quality",
+      "format": "CSV, semicolon-delimited, UTF-8 without BOM, sep=; preamble on line 1",
+      "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+      "size_bytes": 206629,
+      "site_id": "heritage-farm",
+      "kunak_location": "Heritage Farm Museum",
+      "coverage": "2026-03-03 00:00 to 2026-06-17 12:00 local wall clock as exported, 2555 rows before dedup",
+      "description": "Raw hourly Kunak Cloud export for one Data Center Air Monitoring Project sensor site. Timestamps are hour-ending and DST-adjusted as exported; reshape_deq normalises them to hour-beginning EST and never edits this file. Exports contain exact-duplicate row blocks from dashboard pagination, collapsed on read. Ingested by pipeline/reshape_deq.py, which globs deq-raw/ non-recursively. The export recorded its own date and the SHA-256 of every file in _provenance.txt, so export_date is the recorded export timestamp rather than a commit-time upper bound.",
+      "expected_columns": [
+        "Location",
+        "Date",
+        "AQI",
+        "NO2 (ppb)",
+        "CO (ppm)",
+        "VOCs (ppb)",
+        "PM2.5 (µg/m³)"
+      ],
+      "export_date": "2026-11-08T13:01:46.2291894-05:00",
+      "export_date_source": "recorded in the export's _provenance.txt",
+      "requested_range_start": "2026-03-03",
+      "requested_range_end": "2026-11-06",
+      "data_first_timestamp_local": "2026-03-03 00:00",
+      "data_last_timestamp_local": "2026-06-17 12:00",
+      "rows_as_exported": 2555,
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+    },
+    {
+      "filename": "pipeline/sources/deq-raw/meadows-farms_multi_2026-03-03_2026-11-06.csv",
+      "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
+      "download_date": "2026-11-08",
+      "report_date": "2026-11-06",
+      "license": "Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ staff, 2026-08-10). Preferred attribution line pending from DEQ Communications.",
+      "attribution": "Virginia Department of Environmental Quality",
+      "format": "CSV, semicolon-delimited, UTF-8 without BOM, sep=; preamble on line 1",
+      "sha256": "2007cebd7d544049eeb42382548998f9bfbc29f9a480e7eb1a4e3cf3b299906d",
+      "size_bytes": 27541,
+      "site_id": "meadows-farms",
+      "kunak_location": "Meadows Farms",
+      "coverage": "2026-10-22 14:00 to 2026-11-06 23:00 local wall clock as exported, 371 rows before dedup",
+      "description": "Raw hourly Kunak Cloud export for one Data Center Air Monitoring Project sensor site. Timestamps are hour-ending and DST-adjusted as exported; reshape_deq normalises them to hour-beginning EST and never edits this file. Exports contain exact-duplicate row blocks from dashboard pagination, collapsed on read. Ingested by pipeline/reshape_deq.py, which globs deq-raw/ non-recursively. The export recorded its own date and the SHA-256 of every file in _provenance.txt, so export_date is the recorded export timestamp rather than a commit-time upper bound.",
+      "expected_columns": [
+        "Location",
+        "Date",
+        "AQI",
+        "NO2 (ppb)",
+        "CO (ppm)",
+        "VOCs (ppb)",
+        "PM2.5 (µg/m³)"
+      ],
+      "export_date": "2026-11-08T13:01:46.2291894-05:00",
+      "export_date_source": "recorded in the export's _provenance.txt",
+      "requested_range_start": "2026-03-03",
+      "requested_range_end": "2026-11-06",
+      "data_first_timestamp_local": "2026-10-22 14:00",
+      "data_last_timestamp_local": "2026-11-06 23:00",
+      "rows_as_exported": 371,
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+    },
+    {
+      "filename": "pipeline/sources/deq-raw/newberry-condo_multi_2026-03-03_2026-11-06.csv",
+      "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
+      "download_date": "2026-11-08",
+      "report_date": "2026-11-06",
+      "license": "Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ staff, 2026-08-10). Preferred attribution line pending from DEQ Communications.",
+      "attribution": "Virginia Department of Environmental Quality",
+      "format": "CSV, semicolon-delimited, UTF-8 without BOM, sep=; preamble on line 1",
+      "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+      "size_bytes": 139971,
+      "site_id": "newberry-condo",
+      "kunak_location": "Newberry Condo Assoc",
+      "coverage": "2026-03-03 00:00 to 2026-05-14 10:00 local wall clock as exported, 1738 rows before dedup",
+      "description": "Raw hourly Kunak Cloud export for one Data Center Air Monitoring Project sensor site. Timestamps are hour-ending and DST-adjusted as exported; reshape_deq normalises them to hour-beginning EST and never edits this file. Exports contain exact-duplicate row blocks from dashboard pagination, collapsed on read. Ingested by pipeline/reshape_deq.py, which globs deq-raw/ non-recursively. The export recorded its own date and the SHA-256 of every file in _provenance.txt, so export_date is the recorded export timestamp rather than a commit-time upper bound.",
+      "expected_columns": [
+        "Location",
+        "Date",
+        "AQI",
+        "NO2 (ppb)",
+        "CO (ppm)",
+        "VOCs (ppb)",
+        "PM2.5 (µg/m³)"
+      ],
+      "export_date": "2026-11-08T13:01:46.2291894-05:00",
+      "export_date_source": "recorded in the export's _provenance.txt",
+      "requested_range_start": "2026-03-03",
+      "requested_range_end": "2026-11-06",
+      "data_first_timestamp_local": "2026-03-03 00:00",
+      "data_last_timestamp_local": "2026-05-14 10:00",
+      "rows_as_exported": 1738,
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+    },
+    {
+      "filename": "pipeline/sources/deq-raw/pw-police-west_multi_2026-03-03_2026-11-06.csv",
+      "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
+      "download_date": "2026-11-08",
+      "report_date": "2026-11-06",
+      "license": "Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ staff, 2026-08-10). Preferred attribution line pending from DEQ Communications.",
+      "attribution": "Virginia Department of Environmental Quality",
+      "format": "CSV, semicolon-delimited, UTF-8 without BOM, sep=; preamble on line 1",
+      "sha256": "aa9bed8d3fb1d7597e69ef8024546ea8c33602391f6d9f41569b9791e4167b56",
+      "size_bytes": 30609,
+      "site_id": "pw-police-west",
+      "kunak_location": "PW Police Dept. West",
+      "coverage": "2026-10-22 14:00 to 2026-11-06 23:00 local wall clock as exported, 371 rows before dedup",
+      "description": "Raw hourly Kunak Cloud export for one Data Center Air Monitoring Project sensor site. Timestamps are hour-ending and DST-adjusted as exported; reshape_deq normalises them to hour-beginning EST and never edits this file. Exports contain exact-duplicate row blocks from dashboard pagination, collapsed on read. Ingested by pipeline/reshape_deq.py, which globs deq-raw/ non-recursively. The export recorded its own date and the SHA-256 of every file in _provenance.txt, so export_date is the recorded export timestamp rather than a commit-time upper bound.",
+      "expected_columns": [
+        "Location",
+        "Date",
+        "AQI",
+        "NO2 (ppb)",
+        "CO (ppm)",
+        "VOCs (ppb)",
+        "PM2.5 (µg/m³)"
+      ],
+      "export_date": "2026-11-08T13:01:46.2291894-05:00",
+      "export_date_source": "recorded in the export's _provenance.txt",
+      "requested_range_start": "2026-03-03",
+      "requested_range_end": "2026-11-06",
+      "data_first_timestamp_local": "2026-10-22 14:00",
+      "data_last_timestamp_local": "2026-11-06 23:00",
+      "rows_as_exported": 371,
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+    },
+    {
+      "filename": "pipeline/sources/deq-raw/sterling-ms_multi_2026-03-03_2026-11-06.csv",
+      "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
+      "download_date": "2026-11-08",
+      "report_date": "2026-11-06",
+      "license": "Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ staff, 2026-08-10). Preferred attribution line pending from DEQ Communications.",
+      "attribution": "Virginia Department of Environmental Quality",
+      "format": "CSV, semicolon-delimited, UTF-8 without BOM, sep=; preamble on line 1",
+      "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+      "size_bytes": 163784,
+      "site_id": "sterling-ms",
+      "kunak_location": "Sterling MS",
+      "coverage": "2026-06-17 11:00 to 2026-09-17 11:00 local wall clock as exported, 2208 rows before dedup",
+      "description": "Raw hourly Kunak Cloud export for one Data Center Air Monitoring Project sensor site. Timestamps are hour-ending and DST-adjusted as exported; reshape_deq normalises them to hour-beginning EST and never edits this file. Exports contain exact-duplicate row blocks from dashboard pagination, collapsed on read. Ingested by pipeline/reshape_deq.py, which globs deq-raw/ non-recursively. The export recorded its own date and the SHA-256 of every file in _provenance.txt, so export_date is the recorded export timestamp rather than a commit-time upper bound.",
+      "expected_columns": [
+        "Location",
+        "Date",
+        "AQI",
+        "NO2 (ppb)",
+        "CO (ppm)",
+        "VOCs (ppb)",
+        "PM2.5 (µg/m³)"
+      ],
+      "export_date": "2026-11-08T13:01:46.2291894-05:00",
+      "export_date_source": "recorded in the export's _provenance.txt",
+      "requested_range_start": "2026-03-03",
+      "requested_range_end": "2026-11-06",
+      "data_first_timestamp_local": "2026-06-17 11:00",
+      "data_last_timestamp_local": "2026-09-17 11:00",
+      "rows_as_exported": 2208,
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+    },
+    {
+      "filename": "pipeline/sources/deq-raw/steuart-weller_multi_2026-03-03_2026-11-06.csv",
+      "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
+      "download_date": "2026-11-08",
+      "report_date": "2026-11-06",
+      "license": "Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ staff, 2026-08-10). Preferred attribution line pending from DEQ Communications.",
+      "attribution": "Virginia Department of Environmental Quality",
+      "format": "CSV, semicolon-delimited, UTF-8 without BOM, sep=; preamble on line 1",
+      "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+      "size_bytes": 200800,
+      "site_id": "steuart-weller",
+      "kunak_location": "Steuart Weller ES",
+      "coverage": "2026-03-03 00:00 to 2026-06-17 10:00 local wall clock as exported, 2554 rows before dedup",
+      "description": "Raw hourly Kunak Cloud export for one Data Center Air Monitoring Project sensor site. Timestamps are hour-ending and DST-adjusted as exported; reshape_deq normalises them to hour-beginning EST and never edits this file. Exports contain exact-duplicate row blocks from dashboard pagination, collapsed on read. Ingested by pipeline/reshape_deq.py, which globs deq-raw/ non-recursively. The export recorded its own date and the SHA-256 of every file in _provenance.txt, so export_date is the recorded export timestamp rather than a commit-time upper bound.",
+      "expected_columns": [
+        "Location",
+        "Date",
+        "AQI",
+        "NO2 (ppb)",
+        "CO (ppm)",
+        "VOCs (ppb)",
+        "PM2.5 (µg/m³)"
+      ],
+      "export_date": "2026-11-08T13:01:46.2291894-05:00",
+      "export_date_source": "recorded in the export's _provenance.txt",
+      "requested_range_start": "2026-03-03",
+      "requested_range_end": "2026-11-06",
+      "data_first_timestamp_local": "2026-03-03 00:00",
+      "data_last_timestamp_local": "2026-06-17 10:00",
+      "rows_as_exported": 2554,
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
+    },
+    {
+      "filename": "pipeline/sources/deq-raw/vdot-mkc_multi_2026-03-03_2026-11-06.csv",
+      "origin_url": "https://kunakcloud.com/websites/VirginiaDEQ.html",
+      "download_date": "2026-11-08",
+      "report_date": "2026-11-06",
+      "license": "Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ staff, 2026-08-10). Preferred attribution line pending from DEQ Communications.",
+      "attribution": "Virginia Department of Environmental Quality",
+      "format": "CSV, semicolon-delimited, UTF-8 without BOM, sep=; preamble on line 1",
+      "sha256": "19f0d04a84f631afead53edd1715140d263d7cc8d71a3b00a3475e7b52946339",
+      "size_bytes": 86468,
+      "site_id": "vdot-mkc",
+      "kunak_location": "VDOT MKC",
+      "coverage": "2026-09-17 12:00 to 2026-11-06 23:00 local wall clock as exported, 1213 rows before dedup",
+      "description": "Raw hourly Kunak Cloud export for one Data Center Air Monitoring Project sensor site. Timestamps are hour-ending and DST-adjusted as exported; reshape_deq normalises them to hour-beginning EST and never edits this file. Exports contain exact-duplicate row blocks from dashboard pagination, collapsed on read. Ingested by pipeline/reshape_deq.py, which globs deq-raw/ non-recursively. The export recorded its own date and the SHA-256 of every file in _provenance.txt, so export_date is the recorded export timestamp rather than a commit-time upper bound.",
+      "expected_columns": [
+        "Location",
+        "Date",
+        "AQI",
+        "NO2 (ppb)",
+        "CO (ppm)",
+        "VOCs (ppb)",
+        "PM2.5 (µg/m³)"
+      ],
+      "export_date": "2026-11-08T13:01:46.2291894-05:00",
+      "export_date_source": "recorded in the export's _provenance.txt",
+      "requested_range_start": "2026-03-03",
+      "requested_range_end": "2026-11-06",
+      "data_first_timestamp_local": "2026-09-17 12:00",
+      "data_last_timestamp_local": "2026-11-06 23:00",
+      "rows_as_exported": 1213,
+      "timestamp_convention": "Hour-ending local clock time as exported, DST-adjusted by the dashboard. reshape_deq normalises to hour-beginning EST in ts_est."
     }
   ]
 }

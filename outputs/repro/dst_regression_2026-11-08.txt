@@ -1,0 +1,23 @@
+DST regression, 2026-11-08: zoneinfo America/New_York conversion against the committed output
+reference: pipeline/sources/deq_data_center_air_monitoring_hourly.csv at commit 70dd279 2026-10-31 (2026-10-29 ingest)
+range: Kunak ts_raw 2026-03-03 00:00:00 through 2026-10-31 23:00:00 local, every staged pipeline/sources/deq-raw/*.csv (export 2026-11-08)
+compared: ts_est and shift_hours per (site_id, ts_raw); hours absent from the committed output against DEQ's rule (back 1 h before 2026-03-08 03:00, back 2 h from it)
+
+ashburn-collocated_multi_2026-03-03_2026-11-06.csv        5828 timestamps    5780 vs committed    48 vs DEQ rule  0 differences
+belfort-park_multi_2026-03-03_2026-11-06.csv              4092 timestamps    4044 vs committed    48 vs DEQ rule  0 differences
+camp-snyder_multi_2026-03-03_2026-11-06.csv               1066 timestamps    1018 vs committed    48 vs DEQ rule  0 differences
+discovery-es_multi_2026-03-03_2026-11-06.csv                 0 timestamps       0 vs committed     0 vs DEQ rule  0 differences
+dulles-area_multi_2026-03-03_2026-11-06.csv               5602 timestamps    5602 vs committed     0 vs DEQ rule  0 differences
+evergreen-cc_multi_2026-03-03_2026-11-06.csv              1066 timestamps    1018 vs committed    48 vs DEQ rule  0 differences
+farmwell-middle_multi_2026-03-03_2026-11-06.csv           3898 timestamps    3898 vs committed     0 vs DEQ rule  0 differences
+golf-course_multi_2026-03-03_2026-11-06.csv               3899 timestamps    3899 vs committed     0 vs DEQ rule  0 differences
+heritage-farm_multi_2026-03-03_2026-11-06.csv             2555 timestamps    2555 vs committed     0 vs DEQ rule  0 differences
+meadows-farms_multi_2026-03-03_2026-11-06.csv              226 timestamps     178 vs committed    48 vs DEQ rule  0 differences
+newberry-condo_multi_2026-03-03_2026-11-06.csv            1738 timestamps    1738 vs committed     0 vs DEQ rule  0 differences
+pw-police-west_multi_2026-03-03_2026-11-06.csv             226 timestamps     178 vs committed    48 vs DEQ rule  0 differences
+sterling-ms_multi_2026-03-03_2026-11-06.csv               2208 timestamps    2208 vs committed     0 vs DEQ rule  0 differences
+steuart-weller_multi_2026-03-03_2026-11-06.csv            2554 timestamps    2554 vs committed     0 vs DEQ rule  0 differences
+vdot-mkc_multi_2026-03-03_2026-11-06.csv                  1068 timestamps    1020 vs committed    48 vs DEQ rule  0 differences
+
+total timestamps 36026: 35690 vs committed output, 336 vs DEQ rule; differences 0
+spring-forward gap 2026-03-08 02:00 local: committed ts_est ['2026-03-08 01:00:00'], new 2026-03-08 01:00:00, same

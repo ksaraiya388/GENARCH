@@ -4,7 +4,7 @@ from datetime import date
 from pathlib import Path
 
 SRC = Path(sys.argv[1])
-START, END = "2026-03-03", "2026-10-29"
+START, END = "2026-03-03", "2026-11-06"
 DEST = Path("pipeline/sources/deq-raw")
 SUPERSEDED = DEST / "_superseded"
 
@@ -27,6 +27,7 @@ LOCS = {
     "Sterling MS": "sterling-ms",
     "Meadows Farms": "meadows-farms",
     "PW Police Dept. West": "pw-police-west",
+    "Discovery ES": "discovery-es",
 
     "Heritage Farm Museum": "heritage-farm",
 

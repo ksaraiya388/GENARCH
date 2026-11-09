@@ -1315,3 +1315,48 @@ and clips on paper, so the collocation table's status column was absent from the
 entirely. Print now uses a fixed table layout with wrapping inside cells, and a test probes a
 cell of every figure's data table in the extracted PDF text so a silently clipped table fails
 rather than shipping.
+
+## Weekly DEQ ingest, edition 2026-11-06, export 2026-11-08 (2026-11-08)
+
+2026-11-08: Broad Run HS (collocation site) closed 2026-11-04 per DEQ 2026-11-06 §2; Discovery ES deployed 2026-11-04. Post-freeze; the 2026 report is unaffected. Candidate §8 roadmap note.
+
+2026-11-08: the 2026-11-08 Kunak export carries two different readings labelled
+"Nov 1, 2026, 01:00:00", the repeated hour at the fall-back change, at the seven sites
+transmitting that night, and no offset column to tell them apart. Continuity check, run
+before any handling rule was adopted: for each ordering of the two rows, the sum of |Δ| over
+PM2.5, NO2 and CO across the sequence 00:00 → 01:00 → 01:00 → 02:00 local. "File order"
+places the row nearer 00:00 in the reverse-chronological file as the earlier hour.
+
+| Site | File order | Reversed | Smaller |
+|---|---|---|---|
+| ashburn-collocated | 7.70 | 5.42 | reversed |
+| belfort-park | 6.73 | 8.81 | file order |
+| camp-snyder | 5.11 | 5.11 | tied |
+| evergreen-cc | 1.65 | 2.81 | file order |
+| meadows-farms | 4.31 | 6.71 | file order |
+| pw-police-west | 7.98 | 8.56 | file order |
+| vdot-mkc | 4.02 | 4.16 | file order |
+
+Five of seven favour file order, one is reversed and one is tied, so the export cannot
+order the hour. Both readings at every site are excluded as `dst_fallback_unordered`, and
+ts_est 2026-10-31 23:00 and 2026-11-01 00:00 are listed in `deq_missing_hours.csv` under
+that category (56 rows: 7 sites, 2 hours, 4 pollutants) (DECISIONS.md D35; GENARCH_RULES
+section 4, amendment of 2026-11-08). The conversion now runs through zoneinfo
+America/New_York; against the committed 2026-10-29 output it changes no ts_est from
+2026-03-03 to 2026-10-31 (`outputs/repro/dst_regression_2026-11-08.txt`, 0 differences in
+36,026 timestamps). The frozen report inputs end 2026-10-10, so the 2026 report is
+unaffected.
+
+2026-11-08: Discovery ES (discovery-es, DC-15) is placed in Loudoun County by derivation,
+recorded verbatim in the site history notes and in `site_codes.json` `county_source`: "DEQ
+2026-11-06 edition: figure panels list Discovery ES under 'Loudoun County'; §1 counts 2
+operating Loudoun sensors, which with Broad Run HS closed and the 5 Prince William sites
+named in §2 can only be Belfort Park Dr and Discovery ES. No sentence names its county."
+`in_v1_scope` is true; area stays TO_CONFIRM. On /community/data-center-alley it appears
+under DC-15 only, and every correlation pair with it is reported as insufficient overlap
+(at most 48 hours).
+
+### DEQ correspondence queue
+
+- 2026-11-08: ask whether Kunak exports can be pulled in UTC or with an offset column, so
+  that the repeated hour at a fall-back change can be ordered (D35).
