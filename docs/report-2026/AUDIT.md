@@ -1360,3 +1360,29 @@ under DC-15 only, and every correlation pair with it is reported as insufficient
 
 - 2026-11-08: ask whether Kunak exports can be pulled in UTC or with an offset column, so
   that the repeated hour at a fall-back change can be ordered (D35).
+
+## Rulings on page length, CITATION abstract, R3 range (2026-11-09)
+
+2026-11-09: the 23-page main body is accepted and figure data tables stay beside their
+figures (DECISIONS.md D36). This settles the page budget entry of 2026-11-04 above.
+
+2026-11-09: `CITATION.cff`'s abstract no longer states a count of matching regressions,
+which settles "Flagged, not changed: CITATION.cff states a count of matching regressions"
+above. Its collocation sentence is now the report summary's own, taken from the rendered
+page (`site/src/content/reports/2026/summary.tsx`, keys `colloc.tolerance_coefficient`,
+`colloc.tolerance_r2`, `deq.edition_cutoff`): "The four collocation regressions at the
+collocated site agree with DEQ's published coefficients within 0.05 on slope and intercept
+and 0.03 on R-squared, computed through DEQ's 2026-08-07T07:00 EST edition cutoff." Repo
+grep of README*, CITATION.cff, docs/, site/src, data/ and outputs/ for "three of", "three
+exact", "one near" and "of four" applied to the collocation result: `CITATION.cff:14`
+(public, rewritten); `docs/report-2026/AUDIT.md:263`, `:504`, `:606`, `:1256` and
+`docs/report-2026/DECISIONS.md:128` (history, left as written under D23);
+`site/src/app/community/data-center-alley/page.tsx:197` and `site/src/lib/deq-data.ts:808`
+(code comments on which comparisons the build asserts, not rendered, left). Every other
+hit concerns something else (sites, brief entries, evidence classes, exemption
+conditions). README.md has none.
+
+2026-11-09: CONTEXT section 4 R3 keeps its August line, "raises every site by 1.3 to 2.6
+µg/m³ and reorders nothing", and carries a dated amendment beneath it with the freeze
+values from numbers.json: 2.069–2.514 µg/m³ (p98.common_clock.rise_min, p98.common_clock.rise_max; ordering from p98.common.rank.* against p98.common_clock.rank.*; the six ranks are equal under both day
+definitions). This carries the 2026-11-04 correction above into CONTEXT itself.

@@ -108,6 +108,8 @@ of rewriting `index.json` wholesale, so the documented no-freeze invocation
 
 D35 Kunak local hour-ending labels are converted through America/New_York (zoneinfo). The repeated fall-back hour is excluded at every site as dst_fallback_unordered: the export carries no offset label, and a cross-site continuity check (5 of 7 favour file order, 1 reversed, 1 tied) cannot order it. Restore only if Kunak or DEQ confirms the order or supplies a UTC export.
 
+D36 Main-body length is not capped; each figure keeps its data table beside it.
+
 ---
 
 ## Remaining AUDIT items

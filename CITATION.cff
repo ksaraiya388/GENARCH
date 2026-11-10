@@ -11,11 +11,12 @@ abstract: >-
   Environmental Quality's Data Center Air Monitoring analysis for the Loudoun
   data center corridor, computed from DEQ's raw sensor exports and from
   regulatory monitor records released under Virginia FOIA request 26-4646.
-  Three of DEQ's four published collocation regressions reproduce within 0.05
-  on coefficients and 0.03 on R-squared, and recomputed 24-hour PM2.5 averages
-  match DEQ's published daily file on 118 of 119 comparable days with a mean
-  absolute difference of 0.0017 micrograms per cubic metre. Both checks are
-  asserted at build time.
+  The four collocation regressions at the collocated site agree with DEQ's
+  published coefficients within 0.05 on slope and intercept and 0.03 on
+  R-squared, computed through DEQ's 2026-08-07T07:00 EST edition cutoff.
+  Recomputed 24-hour PM2.5 averages match DEQ's published daily file on 118 of
+  119 comparable days with a mean absolute difference of 0.0017 micrograms per
+  cubic metre. Both checks are asserted at build time.
 type: software
 authors:
   - family-names: Saraiya
