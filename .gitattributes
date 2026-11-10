@@ -27,6 +27,9 @@ pipeline/sources/manifest.json text eol=lf
 pipeline/sources/loudoun_tract_foodaccess_diabetes.README.md text eol=lf
 pipeline/lookups/*.json text eol=lf
 
+# Written LF by pipeline validate; pinned so a Windows checkout matches the regenerated file.
+docs/CITATION_GAPS.csv text eol=lf
+
 # Generated data, written by Python with newline="\n" throughout (CONTEXT §1).
 # Pinning LF keeps a Windows checkout byte-identical to a fresh pipeline run,
 # which is what the report reproducibility step in CI compares.

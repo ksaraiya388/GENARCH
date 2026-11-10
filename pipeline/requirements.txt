@@ -16,6 +16,9 @@ matplotlib==3.11.1
 # even though no module imports it.
 xlrd==2.0.2
 
+# Required on Windows for zoneinfo (D35); Linux uses system tz data.
+tzdata==2026.3
+
 # The report PDF post-processor (pipeline/report_pdf_post.py). pikepdf writes the
 # Info dictionary and the XMP packet and asserts the file is tagged; pypdf extracts
 # the rendered text the content-constraint audit runs against.
