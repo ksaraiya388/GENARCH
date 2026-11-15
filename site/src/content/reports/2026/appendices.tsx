@@ -37,8 +37,12 @@ export function AppendixA() {
       <Sub number="A.2" id="appendix-a-environment" title="Commit and environment">
         <P>
           The data freeze was taken at commit <N k="freeze.commit" group={false} /> on the
-          report branch, and the atlas half was frozen on{" "}
-          <N k="inventory.frozen_at" />. The interpreter is CPython 3.14 with UTF-8 mode
+          report branch. That hash is the one recorded when the freeze was taken; a
+          history rewrite on 2026-10-25 changed commit identifiers and no file content,
+          and the same tree is now commit{" "}
+          <N k="freeze.commit_rewritten" group={false} />. The atlas half was frozen on{" "}
+          <N k="inventory.frozen_at" /> and the ancestry inputs on{" "}
+          <N k="ancestry.frozen_at" />. The interpreter is CPython 3.14 with UTF-8 mode
           enabled, and the package set is pinned exactly in the pipeline requirements
           file, because an unpinned numerical library can move a percentile in the last
           decimal. The site is built with Node 20.

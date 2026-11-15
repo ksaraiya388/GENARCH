@@ -35,6 +35,224 @@
   text-decoration: none;
 }
 
+/* ------------------------------------------------------------- print colours
+ *
+ * report.css colours every .report-* class with the screen theme's tokens, which are
+ * light inks for a navy page. On a white page those inks are unreadable (draft-1
+ * printed body text at #c7d2da on white). Every class report.css colours is restated
+ * here for a white page, and the rules sit outside `@media print` on purpose: the
+ * print route on screen shows exactly the colours the PDF carries, so a reviewer
+ * reading the route reads the artifact (DECISIONS.md D37).
+ *
+ * Four inks and one fill:
+ *   #111111  body text, list items, table cells, glossary definitions
+ *   #0f172a  headings, section numbers, figure and table titles, cover title
+ *   #475569  captions, source lines, verification notes, cover meta labels
+ *   #0f766e  accents: links, citation labels, callout rules
+ *   #0b1f2f  table header fill (navy-deep), with #ffffff text
+ * build-report-pdf.mjs fails the build on any text below 4.5:1 against its
+ * background, and below 7:1 for body paragraphs and list items. */
+body:has(.report-print-page) {
+  background: #ffffff;
+  color: #111111;
+}
+
+.report-print-page .report-article,
+.report-print-page .report-p,
+.report-print-page .report-lead,
+.report-print-page .report-li,
+.report-print-page .report-number,
+.report-print-page .report-cover-meta dd,
+.report-print-page .report-cover-apa,
+.report-print-page .report-cover-status,
+.report-print-page .report-pending,
+.report-print-page .report-status,
+.report-print-page .report-glossary dd,
+.report-print-page .report-references-list li,
+.report-print-page .report-deq-pairing,
+.report-print-page .report-deq-quote p,
+.report-print-page .report-citeblock-text,
+.report-print-page .report-table-text,
+.report-print-page .report-table td,
+.report-print-page .report-table tbody th,
+.report-print-page .report-table-rowhead,
+.report-print-page .report-pre {
+  color: #111111;
+}
+
+/* "Not peer reviewed" and "Pending" keep their weight on paper but not the screen
+ * theme's red, which is outside the four print inks above. */
+.report-print-page .report-cover-status,
+.report-print-page .report-pending,
+.report-print-page .report-status {
+  font-weight: 700;
+}
+
+/* Headings the components render without a report class (the References headings)
+ * take the site's global heading colour, which is the screen theme's near-white. */
+.report-print-page h1,
+.report-print-page h2,
+.report-print-page h3,
+.report-print-page h4,
+.report-print-page .report-h2,
+.report-print-page .report-h3,
+.report-print-page .report-section-number,
+.report-print-page .report-cover-title,
+.report-print-page .report-callout-title,
+.report-print-page .report-table-label,
+.report-print-page .report-table-title,
+.report-print-page .report-figure-label,
+.report-print-page .report-figure-title,
+.report-print-page .report-glossary dt {
+  color: #0f172a;
+}
+
+.report-print-page .report-table-caption,
+.report-print-page .report-table-source,
+.report-print-page .report-table-unit,
+.report-print-page .report-references-note,
+.report-print-page .report-references-verification,
+.report-print-page .report-figure-caption,
+.report-print-page .report-figure-text,
+.report-print-page .report-figure-limitation,
+.report-print-page .report-deq-attribution,
+.report-print-page .report-deq-credit,
+.report-print-page .report-cover-meta dt,
+.report-print-page .report-cover-credit,
+.report-print-page .report-citeblock-label,
+.report-print-page .report-table-note {
+  color: #475569;
+}
+
+.report-print-page .report-cover-kicker,
+.report-print-page .report-cite,
+.report-print-page .report-doi,
+.report-print-page .report-toc a,
+.report-print-page .report-figure-details > summary,
+.report-print-page .report-cover-meta a,
+.report-print-page .report-orcid {
+  color: #0f766e;
+}
+
+.report-print-page .report-table thead th {
+  background-color: #0b1f2f;
+  color: #ffffff;
+}
+
+.report-print-page .report-table thead th .report-table-unit {
+  color: #ffffff;
+}
+
+.report-print-page .report-table td,
+.report-print-page .report-table tbody th {
+  background-color: #ffffff;
+}
+
+.report-print-page .report-table th,
+.report-print-page .report-table td {
+  border: 0.5pt solid #999999;
+}
+
+.report-print-page .callout,
+.report-print-page .report-callout,
+.report-print-page .report-deq-box {
+  background-color: #f1f5f9;
+  border: 0.5pt solid #0f766e;
+  color: #111111;
+}
+
+.report-print-page .report-deq-quote {
+  border-left-color: #0f766e;
+}
+
+.report-print-page .report-pre {
+  background-color: #f1f5f9;
+  border-color: #999999;
+}
+
+.report-print-page .report-cover,
+.report-print-page .report-masthead {
+  border-bottom-color: #0f172a;
+}
+
+/* ------------------------------------------------------------------ prose
+ *
+ * Every block of prose is set in the body style, flush left, whatever box it sits
+ * in: callout, limitation box, figure limitation or glossary. */
+.report-print-page .report-p,
+.report-print-page .report-lead,
+.report-print-page .report-li,
+.report-print-page .report-deq-pairing,
+.report-print-page .report-deq-quote p,
+.report-print-page .report-glossary dd {
+  text-align: left;
+}
+
+.report-print-page .report-ul {
+  list-style: disc outside;
+}
+
+.report-print-page .report-ol {
+  list-style: decimal outside;
+}
+
+.report-print-page .report-li {
+  display: list-item;
+}
+
+/* -------------------------------------------------------- tables, print route
+ *
+ * A table that declares column widths (ReportTable's render config) is laid out at
+ * those widths on this route, so a fifteen-column table fits the 6.5in measure
+ * instead of taking its minimum content width and running off the page. */
+.report-print-page .report-table-fixed table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.report-print-page .report-table-fixed col {
+  width: var(--col-w);
+}
+
+.report-print-page .report-table-fixed th,
+.report-print-page .report-table-fixed td {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.report-print-page .report-table-fixed .report-table-num {
+  white-space: nowrap;
+}
+
+.report-print-page .report-cell-mono {
+  font-family: "Fira Code", ui-monospace, Consolas, monospace;
+  word-break: break-all;
+}
+
+.report-print-page .report-cell-break {
+  word-break: break-all;
+}
+
+/* Caption: the label and title in bold on one line, the description below. */
+.report-print-page .report-table-label,
+.report-print-page .report-table-title,
+.report-print-page .report-figure-label,
+.report-print-page .report-figure-title {
+  font-weight: 700;
+}
+
+.report-print-page .report-table-text,
+.report-print-page .report-figure-text {
+  display: block;
+  margin-top: 2pt;
+  font-weight: 400;
+}
+
+.report-print-page .report-table-note {
+  display: block;
+  margin-top: 2pt;
+}
+
 @media print {
   /* Body text in a print document needs a light background whatever the site theme
      is: the screen theme is a dark navy, which would print as a solid ink field. */
@@ -94,7 +312,15 @@
   h3 {
     break-after: avoid;
     page-break-after: avoid;
-    color: #111111;
+  }
+
+  /* A heading must not be stranded at the foot of a page. `break-after: avoid` on
+   * the heading alone is not honoured when the next block is a table or a figure
+   * that cannot split, so the heading is also kept with the first block after it. */
+  .report-h2 + *,
+  .report-h3 + * {
+    break-before: avoid;
+    page-break-before: avoid;
   }
 
   /* Print metrics, in points.
@@ -328,5 +554,19 @@
   .report-table-source,
   .report-references-verification {
     font-size: 8.5pt;
+  }
+}
+
+/* Header cells of a fixed-width table break only at spaces, hyphens and the soft
+ * hyphens ReportTable inserts, never mid-syllable; the width gate fails the build if
+ * a header word still does not fit its column. */
+.report-print-page .report-table-fixed thead th {
+  overflow-wrap: normal;
+  hyphens: manual;
+}
+
+@media print {
+  .report-print-page .report-table-small table {
+    font-size: 6.5pt;
   }
 }

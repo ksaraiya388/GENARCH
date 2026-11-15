@@ -8,11 +8,11 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 ## Totals
 
-- Sentences inventoried: **378**
-- Carrying at least one key or citation: **59**; carrying neither: **319**
-- Distinct registry keys cited: **83**
-- Distinct references cited: **24**
-- Review markers awaiting the author: **8**
+- Sentences inventoried: **393**
+- Carrying at least one key or citation: **66**; carrying neither: **327**
+- Distinct registry keys cited: **86**
+- Distinct references cited: **25**
+- Review markers awaiting the author: **0**
 
 ## `cover.tsx`
 
@@ -34,7 +34,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Four results are reported. |  |
 | The four collocation regressions at the collocated site agree with DEQ's published coefficients within {colloc.tolerance_coefficient} on slope and intercept and {colloc.tolerance_r2} on R-squared, computed through DEQ's {deq.edition_cutoff} edition cutoff. | `{colloc.tolerance_coefficient}` `{colloc.tolerance_r2}` `{deq.edition_cutoff}` |
 | Recomputed daily averages for the regulatory monitor match DEQ's published daily file on {daily.n_match} of {daily.n_days} comparable days, with a mean absolute difference of {daily.mean_abs_diff} µg/m³. | `{daily.n_match}` `{daily.n_days}` `{daily.mean_abs_diff}` |
-| On the window when all six sensors were collecting, {p98.common.n_above_35} of six exceed {naaqs.daily_standard} µg/m³ and the sensor DEQ's Table 4 of [deq2026aug07] identifies as the only one above that level, site DC-06 in the site key, ranks fourth — which is a statement about unequal record length and season and not about any site being polluted, and neither DEQ's figure nor this one is comparable to the national standards. | `{p98.common.n_above_35}` `{naaqs.daily_standard}` `[deq2026aug07]` |
+| On the window when all six sensors were collecting, {p98.common.n_above_35} of the {p98.common.n_sites} exceed {naaqs.daily_standard} µg/m³ and the sensor DEQ's Table 4 of [deq2026aug07] identifies as the only one above that level, site DC-06 in the site key, ranks {p98.common.rank.DC-06} — which is a statement about unequal record length and season and not about any site being polluted, and neither DEQ's figure nor this one is comparable to the national standards. | `{p98.common.n_above_35}` `{p98.common.n_sites}` `{naaqs.daily_standard}` `{p98.common.rank.DC-06}` `[deq2026aug07]` |
 | Hourly PM2.5 correlates between {corr.min} and {corr.max} across every pair of the six sensors outside the smoke window, which is descriptive and does not establish that local sources contribute nothing. | `{corr.min}` `{corr.max}` |
 | No cross-ancestry gene-environment effect estimates are reported in this version; they are planned for a later phase. |  |
 | The paired-site analysis of the two units that shared a location is not included. |  |
@@ -48,20 +48,20 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 | Sentence | Sources |
 |---|---|
-| GENARCH is a static, read-only web atlas that assembles published, aggregate-level evidence about how environmental conditions and genetic variation are jointly associated with disease at the population level, for one county. |  |
-| It curates disease, exposure, gene and pathway records, links them in a knowledge graph, writes short mechanism briefs, and carries a community module describing modelled exposure burden by region. |  |
+| GENARCH is a public, read-only web atlas that uses published, aggregate-level evidence about how environmental conditions and genetic variation are associated with disease. |  |
+| The atlas works at the population level and covers one county, Loudoun County, Virginia. |  |
+| It curates disease, exposure, gene and pathway records, links them in a knowledge graph, writes short mechanism briefs about selected gene, disease and exposure pathways, and carries a community module describing modelled exposure burden by region. |  |
 | Every record is traceable to a source class, with citation records under active backfill; the methods pages carry the current state of that backfill. |  |
-| What GENARCH is not is as load-bearing as what it is. |  |
 | It has no accounts, no logins and no user storage of any kind. |  |
-| It accepts no genotype file, no variant call file and no personal information, and there is nothing to upload anywhere on it. |  |
-| It produces no individual-level output, no personalised summary and no per-person score. |  |
+| It never accepts genotype files, variant call files or personal information, and there is nothing to upload anywhere on the site. |  |
+| It produces no individual-level output, no personalised summary and no per-person risk score. |  |
 | It makes no statement about any individual's chance of developing any condition, offers no clinical guidance and is not a diagnostic instrument. |  |
-| Every figure it publishes is a population or site aggregate. |  |
-| The geographic scope is Loudoun County, Virginia, with the neighbouring county appearing only where a published dataset covers both. |  |
+| Every figure it publishes is a population-level or site-level aggregate. |  |
+| The geographic scope is Loudoun County, Virginia, with the neighbouring county appearing only if a published dataset covers both. |  |
 | The atlas content in this report is as of its atlas freeze date, {inventory.frozen_at}. | `{inventory.frozen_at}` |
-| The reprocessed monitoring data run from the first sensor hour in early March 2026 to the data freeze at {freeze.cutoff} local clock time, and the regulatory monitor record ends earlier, on 2026-08-10, where the released public-records request stops [foia264646]. | `{freeze.cutoff}` `[foia264646]` |
+| The reprocessed monitoring data run from the first sensor hour in early March 2026 to the freeze's data cutoff at {freeze.cutoff} local clock time, and the regulatory monitor record ends earlier, on 2026-08-10, where the released public-records request stops [foia264646]. | `{freeze.cutoff}` `[foia264646]` |
 | The monitoring scope is narrower than DEQ's. |  |
-| DEQ retitled the project study area to cover Loudoun County and Prince William County in its [deq2026oct09] edition, and three sites outside Loudoun joined the network in September and October 2026: sites DC-10, DC-11 and DC-12 in the site key. | `[deq2026oct09]` |
+| DEQ retitled the project study area to cover Loudoun County and Prince William County in its [deq2026oct09] edition, and three sites outside Loudoun joined the network in September 2026: sites DC-10, DC-11 and DC-12 in the site key. | `[deq2026oct09]` |
 | They are named here and in the network description so the count of sites is honest, and no reading from any of them is reported. |  |
 | Every value in this report comes from the nine Loudoun County sites and the one regulatory monitor. |  |
 | The report is written for four kinds of reader: |  |
@@ -78,7 +78,6 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Sentence | Sources |
 |---|---|
 | Every input the analysis reads is listed in Appendix A with its origin, its licence, its export date, its data cutoff and its SHA-256. |  |
-| Nothing outside that list is read. |  |
 | The sensor exports are named there by neutral site code rather than by filename, because the published filenames carry a site identifier that the project's content constraints keep out of public output. |  |
 | There are twenty-six inputs in three groups: the hourly sensor exports, in two sets because the collocation reproduction reads the exports the original analysis was computed from rather than the later ones; the regulatory monitor files released under the records request; and the DEQ weekly editions the published figures are taken from. |  |
 | The sensor data are hourly exports from the Kunak dashboard DEQ publishes the network through [deqdashboard]. | `[deqdashboard]` |
@@ -86,13 +85,14 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | The first is that values appear as soon as they are detected, before any quality assurance, which the dashboard states itself; the files carry no null code, no flag and no qualifier column, so there is no way to tell a suspect hour from a good one on the sensor side. |  |
 | The second is that the dashboard backfills hours that were previously absent, and it does so without notice. |  |
 | Every export in the freeze therefore records its own export date and its own data cutoff, and the report states which of the two input sets each result was computed from. |  |
-| The backfill is not hypothetical. |  |
 | Comparing the exports taken for the original August analysis against those taken for the freeze, nine hours that had been missing have since been filled with rows in which every pollutant channel reads zero. |  |
 | A row in which every channel reads zero is treated as missing throughout this work, so those nine hours stay missing, and the one place where that decision changes a published figure is recorded with the figure rather than folded into it. |  |
 | The regulatory monitor data came through a Virginia Freedom of Information Act request, 26-4646, released in full with no redactions and at no cost [foia264646]. | `[foia264646]` |
 | That release is the binding constraint on two of the four results: the hourly files end 2026-08-10 and the last complete day is 2026-08-09, so no collocation fit and no daily reconciliation can extend past that date, whatever the sensor record does. |  |
-| A follow-up request for a longer range is pending. |  |
-| The freeze itself was taken on 2026-10-18 at commit {freeze.commit}, and the atlas half was frozen separately on {inventory.frozen_at} once the atlas records had settled. | `{freeze.commit}` `{inventory.frozen_at}` |
+| A follow-up request for a longer range is pending with Virginia DEQ. |  |
+| The freeze itself was taken on 2026-10-18 at commit {freeze.commit}. | `{freeze.commit}` |
+| That hash is the one recorded when the freeze was taken; a history rewrite on 2026-10-25 changed commit identifiers and no file content, and the same tree is now commit {freeze.commit_rewritten}. | `{freeze.commit_rewritten}` |
+| The atlas half was frozen separately on {inventory.frozen_at} once the atlas records had settled, and the ancestry inputs on {ancestry.frozen_at}. | `{inventory.frozen_at}` `{ancestry.frozen_at}` |
 | The freeze pins each input by hash and the generator refuses to read a file whose hash no longer matches, which is what makes the weekly DEQ ingest safe: new editions keep arriving and keep being recorded, and none of them moves a number in this report. |  |
 | The three configuration inputs the generator needs (the source manifest, the sensor site history and the site-code lookup) are pinned as frozen copies for the same reason. |  |
 
@@ -239,7 +239,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | The network grew and shrank over the record. |  |
 | Across 2026 it covered {network.sites_total} sites, of which {network.sites_active_at_cutoff} were collecting at DEQ's {deq.edition_cutoff} edition cutoff. | `{network.sites_total}` `{network.sites_active_at_cutoff}` `{deq.edition_cutoff}` |
 | Three Loudoun sites retired before that cutoff and three sites outside Loudoun joined after it. |  |
-| The records differ enormously in length: site DC-01 carries {network.record_days.DC-01} complete days and site DC-06 carries {network.record_days.DC-06}, which is the fact behind the record-length result below. | `{network.record_days.DC-01}` `{network.record_days.DC-06}` |
+| The records differ enormously in length: through DEQ's 2026-08-07 edition, site DC-01 carries {network.record_days.DC-01} complete days and site DC-06 carries {network.record_days.DC-06}, which is the fact behind the record-length result below. | `{network.record_days.DC-01}` `{network.record_days.DC-06}` |
 | The window in which all six of the then-live sensors were collecting together runs from {network.common_window.start} to {network.common_window.end}. | `{network.common_window.start}` `{network.common_window.end}` |
 | Sensors are identified throughout by neutral site code. |  |
 | Four of the nine Loudoun sites are hosted at schools, and setting a school name beside a concentration figure invites an inference about children at that school which none of these data support. |  |
@@ -273,8 +273,11 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Its coefficients move when the dashboard's backfilled all-zero rows are admitted to a zero-retaining fit: the intercept goes from {colloc.apex-05_NO2.gx_intercept} to {colloc.apex-05_NO2.backfill_gx_intercept}, the slope from {colloc.apex-05_NO2.gx_slope} to {colloc.apex-05_NO2.backfill_gx_slope}, the R-squared from {colloc.apex-05_NO2.gx_r2} to {colloc.apex-05_NO2.backfill_gx_r2} and the paired-hour count from {colloc.apex-05_NO2.n_pairs} to {colloc.apex-05_NO2.backfill_n_pairs}, on the one backfilled hour that only that fit readmits. | `{colloc.apex-05_NO2.gx_intercept}` `{colloc.apex-05_NO2.backfill_gx_intercept}` `{colloc.apex-05_NO2.gx_slope}` `{colloc.apex-05_NO2.backfill_gx_slope}` `{colloc.apex-05_NO2.gx_r2}` `{colloc.apex-05_NO2.backfill_gx_r2}` `{colloc.apex-05_NO2.n_pairs}` `{colloc.apex-05_NO2.backfill_n_pairs}` |
 | The other three regressions are unchanged. |  |
 | The values reported here are computed from the original analysis inputs, which is the input set DEQ's own published coefficients correspond to. |  |
-| The collocation window at site DC-01 closed on 2026-10-22, when the unit there was replaced, as DEQ's [deq2026oct30] edition records. | `[deq2026oct30]` |
-| That is after the 2026-10-18 freeze this report is computed at, so it changes no value and no framing above; it is stated once, here, so a reader comparing this report against a current DEQ edition knows why the window ends. |  |
+| The collocation window at site DC-01 closed on 2026-10-22, when the unit there was replaced, as DEQ's 2026-10-30 edition records [deq2026oct30]. | `[deq2026oct30]` |
+| Site DC-01, the collocation site, then closed on 2026-11-04, as DEQ's 2026-11-06 edition records in its section 2 [deq2026nov06], and the replacement unit's collocation window ended that day. | `[deq2026nov06]` |
+| Of the other sites Table 2 shows as open at the freeze, site DC-02 has since closed, on 2026-10-22, as the 2026-10-30 edition records in its section 2; the 2026-11-06 edition records no closure at sites DC-04, DC-10, DC-11 or DC-12. |  |
+| All of this is after the 2026-10-18 freeze this report is computed at, so it changes no value and no framing above. |  |
+| It is stated once, here, so a reader comparing this report against a current DEQ edition knows why the window ends and why the network looks different. |  |
 
 #### 5.3 Reconciling the daily averages
 
@@ -292,7 +295,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Sentence | Sources |
 |---|---|
 | Table 4 of DEQ's [deq2026aug07] edition identifies one sensor, site DC-06 in the site key, as the only sensor in the network whose daily PM2.5 98th percentile exceeded {naaqs.daily_standard} µg/m³. | `{naaqs.daily_standard}` `[deq2026aug07]` |
-| Restricted to the window when all six then-live sensors were collecting, {p98.common.n_above_35} of the six exceed that level under the local standard time day definition and the same number under local clock time, and site DC-06 ranks {p98.common.rank.DC-06} under both. | `{p98.common.n_above_35}` `{p98.common.rank.DC-06}` |
+| Restricted to the window when all six then-live sensors were collecting, {p98.common.n_above_35} of the {p98.common.n_sites} exceed that level under the local standard time day definition and the same number under local clock time, and site DC-06 ranks {p98.common.rank.DC-06} under both. | `{p98.common.n_above_35}` `{p98.common.n_sites}` `{p98.common.rank.DC-06}` |
 | Its record was {network.record_days.DC-06} complete days, falling entirely in high summer and including the wildfire smoke weekend, against {network.record_days.DC-04} to {network.record_days.DC-01} days for the other five. | `{network.record_days.DC-06}` `{network.record_days.DC-04}` `{network.record_days.DC-01}` |
 | Neither DEQ's figure nor the figure here is comparable to the national standards. |  |
 | DEQ's table reported each sensor's value over that sensor's own record, and every figure in the series is DEQ's own; the comparison between sensors did not hold because the records differed in length and in season, and the resolution came from DEQ's own lengthening record, with the agency's [deq2026oct09] edition listing no site above that level. | `[deq2026oct09]` |
@@ -529,36 +532,38 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Sentence | Sources |
 |---|---|
 | What follows is the planned work, in the order the data allow rather than the order of interest. |  |
-| Two items are blocked on someone else: the carbon monoxide analysis waits on an answer from DEQ, and the collocation and reconciliation windows wait on a public-records release. |  |
-| March 2027. |  |
-| The first twelve-month sensor record, counting from the first sensor hour on 2026-03-03, becomes available. |  |
-| A percentile read over a full year is the first one in this project not dominated by the season its record happens to cover, and it is what makes the record-length result in this version obsolete rather than merely qualified. |  |
-| _Review marker:_ confirm the March 2027 date. It assumes the network keeps collecting at the Loudoun sites through the winter with no further reconfiguration, which the September 2026 changes make less than certain. | _author judgement_ |
-| Paired-site analysis. |  |
-| One unit occupied two sites over the record, which makes a within-unit comparison across locations possible and a cleaner instrument-versus-location test than any cross-unit comparison. |  |
-| It is outside this version and needs the unit occupancy periods confirmed first. |  |
-| Carbon monoxide, after the averaging period is resolved. |  |
-| The published sensor series cannot be described or compared until DEQ confirms whether it is an hourly or an eight-hour average. |  |
-| The regulatory comparison and the published statistics follow immediately once it is settled. |  |
-| _Review marker:_ no date proposed. The paired-site analysis needs the two units' periods settled, and the unit attribution is recorded as unreliable within a day of any swap, so this may need DEQ's occupancy record rather than the dashboard's. | _author judgement_ |
-| Scope of the second county. |  |
-| Prince William County sites (deployed 2026-09-17 and 2026-10-22) are outside v1 scope (D5); scope decision for v2. |  |
-| Cross-ancestry phase. |  |
-| Effect estimates across ancestry groups for the gene-environment relationships the atlas carries. |  |
-| This version reports the composition of the evidence base and computes no such estimate; the phase that does needs a method for transferability stated and reviewed before any number is published. |  |
-| _Review marker:_ this one is not ours to schedule. The date should be stated as "after DEQ confirms", not as a month, unless you have an expected reply. | _author judgement_ |
-| Page and report alignment. |  |
-| Page/report alignment: denominator labelling on /ancestry-equity and ACS release alignment (2023 vs 2024). |  |
+| Three items are blocked on someone else: the carbon monoxide analysis and the paired-site analysis wait on DEQ, and the collocation and reconciliation windows wait on a public-records release. |  |
 | Knowledge graph reproducibility. |  |
 | Repair the graph builder and curate the missing gene records so that a clean rebuild reproduces the published node and edge counts, then rebaseline the editorial lint against the rebuilt graph. |  |
 | Until then the graph stays outside the reproducibility claim. |  |
-| _Review marker:_ the scope decision is a judgement about what GENARCH is for, not a technical one. Loudoun-only is the atlas's stated frame; taking in a second county changes the subtitle and the community module as well as this report. | _author judgement_ |
+| May 2027. |  |
+| The first twelve-month record at a single Loudoun site. |  |
+| The two sites that had collected since 2026-03-03, DC-01 and DC-02, both closed after the freeze [deq2026oct30] [deq2026nov06], so no site reaches twelve months in March 2027. | `[deq2026oct30]` `[deq2026nov06]` |
+| Site DC-04 has collected since 2026-05-14 and reaches twelve months in May 2027 if it keeps collecting. |  |
+| A percentile read over a full year is the first one in this project not dominated by the season its record happens to cover. |  |
+| Collocation series status. |  |
+| The collocation site closed on 2026-11-04 [deq2026nov06], so the weekly collocation series has ended unless DEQ places a sensor beside a regulatory monitor again. | `[deq2026nov06]` |
+| Any later collocation analysis depends on that and on the pending records request. |  |
+| Paired-site analysis. |  |
+| One unit occupied two sites over the record, which makes a within-unit comparison across locations possible and a cleaner instrument-versus-location test than any cross-unit comparison. |  |
+| It is outside this version and needs the unit occupancy periods confirmed first. |  |
+| It has no date: it needs DEQ's occupancy record for the unit rather than the dashboard's. |  |
+| Carbon monoxide, after the averaging period is resolved. |  |
+| The published sensor series cannot be described or compared until DEQ confirms whether it is an hourly or an eight-hour average. |  |
+| The regulatory comparison and the published statistics follow immediately once it is settled. |  |
+| Scope of the second county. |  |
+| DEQ's network now includes sites in Prince William County, deployed on 2026-09-17 and 2026-10-22. |  |
+| They are outside the scope of this version. |  |
+| Whether the atlas and this report take in a second county is a decision about what GENARCH is for, and it will be made for the next report. |  |
+| Cross-ancestry phase. |  |
+| Effect estimates across ancestry groups for the gene-environment relationships the atlas carries. |  |
+| This version reports the composition of the evidence base and computes no such estimate; the phase that does needs a method for transferability stated and reviewed before any number is published. |  |
+| It will be its own artifact with its own methods review, not a section of an annual report. |  |
+| Page and report alignment. |  |
+| The ancestry and equity page labels its denominator differently from this report and reads the 2023 ACS release where this report reads 2024. |  |
+| Both will be aligned ahead of the next report. |  |
 | October 2027. |  |
-| The Annual Report 2027, covering the first full year of the sensor record, the atlas as it then stands, and whichever of the open items above have closed. |  |
-| _Review marker:_ confirm whether the cross-ancestry phase is a report section or its own artifact. It is the one planned item that would produce new estimates rather than reprocess published ones, and it needs its own review. | _author judgement_ |
-| _Review marker:_ both halves of this are small and could ship before the next report. The ACS half is a two-part edit, because the page finds its ACS file by name. | _author judgement_ |
-| _Review marker:_ this is the one item that is a correctness fix rather than new work. It should probably precede everything above it. | _author judgement_ |
-| _Review marker:_ October 2027 assumes an annual cadence anchored on the report rather than on the data year. If the twelve-month record in March 2027 is the headline, an earlier date may suit the material better. | _author judgement_ |
+| The Annual Report 2027, covering the first full year of the network's record, the atlas as it then stands, and whichever of the open items above have closed. |  |
 
 ## `appendices.tsx`
 
@@ -579,7 +584,9 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 | Sentence | Sources |
 |---|---|
-| The data freeze was taken at commit {freeze.commit} on the report branch, and the atlas half was frozen on {inventory.frozen_at}. | `{freeze.commit}` `{inventory.frozen_at}` |
+| The data freeze was taken at commit {freeze.commit} on the report branch. | `{freeze.commit}` |
+| That hash is the one recorded when the freeze was taken; a history rewrite on 2026-10-25 changed commit identifiers and no file content, and the same tree is now commit {freeze.commit_rewritten}. | `{freeze.commit_rewritten}` |
+| The atlas half was frozen on {inventory.frozen_at} and the ancestry inputs on {ancestry.frozen_at}. | `{inventory.frozen_at}` `{ancestry.frozen_at}` |
 | The interpreter is CPython 3.14 with UTF-8 mode enabled, and the package set is pinned exactly in the pipeline requirements file, because an unpinned numerical library can move a percentile in the last decimal. |  |
 | The site is built with Node 20. |  |
 | Continuous integration runs the generator again on a pinned Linux runner and compares the keyed values, the tables and the two atlas artifacts against the committed ones byte for byte. |  |

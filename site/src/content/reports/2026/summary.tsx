@@ -51,10 +51,12 @@ export function Summary() {
         regulatory monitor match DEQ&apos;s published daily file on{" "}
         <N k="daily.n_match" /> of <N k="daily.n_days" /> comparable days, with a mean
         absolute difference of <N k="daily.mean_abs_diff" /> µg/m³. On the window when
-        all six sensors were collecting, <N k="p98.common.n_above_35" /> of six exceed{" "}
+        all six sensors were collecting, <N k="p98.common.n_above_35" /> of the{" "}
+        <N k="p98.common.n_sites" /> exceed{" "}
         <N k="naaqs.daily_standard" /> µg/m³ and the sensor DEQ&apos;s Table 4 of{" "}
         <Cite id="deq2026aug07" /> identifies as the only one above that level, site
-        DC-06 in the site key, ranks fourth — which is a statement about unequal record length and season and
+        DC-06 in the site key, ranks <N k="p98.common.rank.DC-06" fmt="ordinal" /> — which
+        is a statement about unequal record length and season and
         not about any site being polluted, and neither DEQ&apos;s figure nor this one is
         comparable to the national standards. Hourly PM2.5 correlates between{" "}
         <N k="corr.min" /> and <N k="corr.max" /> across every pair of the six sensors

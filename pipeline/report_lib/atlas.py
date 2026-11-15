@@ -26,8 +26,12 @@ from pipeline.report_lib.freeze import ATLAS_MODULES, Freeze
 GRAPH_MODULE = "knowledge_graph"
 GRAPH_PATH = "data/graph/graph.json"
 
-# D25, verbatim: the status the inventory and T08 both carry for the graph.
-GRAPH_STATUS = "live; not reproducible from current pipeline (D25)"
+# D25, verbatim: the status the inventory keys carry for the graph. T08 prints the
+# same status without the decision identifier, which is an internal reference and
+# not reader-facing text; the inventory keys keep it, so their values stay
+# byte-identical to the frozen ones.
+GRAPH_STATUS_TEXT = "live; not reproducible from current pipeline"
+GRAPH_STATUS = f"{GRAPH_STATUS_TEXT} (D25)"
 MODULE_STATUS = "live; emitted by the current pipeline"
 
 MODULE_LABELS = {

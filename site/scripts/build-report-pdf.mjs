@@ -153,6 +153,163 @@ function escapeHtml(value) {
     .replace(/>/g, "&gt;");
 }
 
+/**
+ * Gate 1: text contrast on the print route.
+ *
+ * Draft-1 printed its body text at #c7d2da on a white page, because the screen
+ * theme's colours reached the PDF and nothing measured them. This walks every
+ * visible text node on the route, takes its computed colour and the background it
+ * actually sits on (the nearest painted ancestor, alpha-composited down to the
+ * white page), and computes the WCAG contrast ratio. Body paragraphs and list items
+ * must reach 7:1; everything else 4.5:1. A link inside a paragraph is an accent and
+ * is held to 4.5:1, because its colour is a distinct ink chosen as one.
+ *
+ * Generated content (the printed URL after an external link) is not a text node and
+ * is not measured; it inherits the link's colour, which is.
+ */
+async function contrastGate(page) {
+  return page.evaluate(() => {
+    const parse = (value) => {
+      const m = /rgba?\(([^)]+)\)/.exec(value);
+      if (!m) return null;
+      const parts = m[1].split(/[ ,/]+/).filter(Boolean).map(Number);
+      return { r: parts[0], g: parts[1], b: parts[2], a: parts.length > 3 ? parts[3] : 1 };
+    };
+    const over = (top, bottom) => ({
+      r: top.r * top.a + bottom.r * (1 - top.a),
+      g: top.g * top.a + bottom.g * (1 - top.a),
+      b: top.b * top.a + bottom.b * (1 - top.a),
+      a: 1,
+    });
+    const channel = (c) => {
+      const s = c / 255;
+      return s <= 0.03928 ? s / 12.92 : Math.pow((s + 0.055) / 1.055, 2.4);
+    };
+    const luminance = (c) => 0.2126 * channel(c.r) + 0.7152 * channel(c.g) + 0.0722 * channel(c.b);
+    const ratio = (a, b) => {
+      const [hi, lo] = [luminance(a), luminance(b)].sort((x, y) => y - x);
+      return (hi + 0.05) / (lo + 0.05);
+    };
+    const hex = (c) =>
+      "#" + [c.r, c.g, c.b].map((v) => Math.round(v).toString(16).padStart(2, "0")).join("");
+
+    const background = (element) => {
+      const layers = [];
+      for (let el = element; el; el = el.parentElement) {
+        const bg = parse(getComputedStyle(el).backgroundColor);
+        if (bg && bg.a > 0) {
+          layers.push(bg);
+          if (bg.a >= 1) break;
+        }
+      }
+      let result = { r: 255, g: 255, b: 255, a: 1 };
+      for (const layer of layers.reverse()) result = over(layer, result);
+      return result;
+    };
+
+    const root = document.querySelector(".report-print-page");
+    if (!root) {
+      return {
+        checked: 0,
+        offenders: [{ text: "no .report-print-page on the route", ratio: 0, floor: 7 }],
+      };
+    }
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const offenders = [];
+    let checked = 0;
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      const text = node.textContent.replace(/\s+/g, " ").trim();
+      if (!text) continue;
+      const el = node.parentElement;
+      const style = getComputedStyle(el);
+      if (style.visibility === "hidden" || style.display === "none") continue;
+      if (el.getClientRects().length === 0) continue;
+      const bg = background(el);
+      const fg = over(parse(style.color), bg);
+      const body = el.closest(".report-p, .report-li") && !el.closest("a");
+      const floor = body ? 7 : 4.5;
+      const r = ratio(fg, bg);
+      checked += 1;
+      if (r < floor) {
+        offenders.push({
+          text: text.slice(0, 60),
+          element: el.tagName.toLowerCase() + (el.className ? `.${el.className}` : ""),
+          color: hex(fg),
+          background: hex(bg),
+          ratio: Math.round(r * 100) / 100,
+          floor,
+        });
+      }
+    }
+    return { checked, offenders };
+  });
+}
+
+/**
+ * Gate 2: every table inside its container, and every element inside the measure.
+ *
+ * Draft-1 clipped two tables at the right page edge, and Chromium prints whatever
+ * falls outside the page box as nothing at all, so the only symptom in the PDF is a
+ * missing column. Measured on the print route under print media, where the measure
+ * is the 6.5in the PDF lays out at.
+ */
+async function widthGate(page) {
+  return page.evaluate(() => {
+    const tolerance = 0.5;
+    const root = document.querySelector(".report-print-page");
+    const offenders = [];
+    const label = (el) =>
+      el.closest("[data-table-id]")?.getAttribute("data-table-id") ??
+      el.closest("[data-figure-id]")?.getAttribute("data-figure-id") ??
+      el.closest("[id]")?.id ??
+      el.tagName.toLowerCase();
+    let tables = 0;
+    for (const table of root.querySelectorAll("table")) {
+      tables += 1;
+      const container = table.parentElement;
+      const width = table.getBoundingClientRect().width;
+      const available = container.clientWidth;
+      if (width > available + tolerance) {
+        offenders.push(
+          `table ${label(table)}: ${width.toFixed(1)}px wide in a ${available.toFixed(1)}px container`
+        );
+      }
+    }
+    // A fixed-width table can hold its width while a word in one cell runs past the
+    // cell edge and over its neighbour. That is the same defect at a smaller scale.
+    for (const cell of root.querySelectorAll("th, td")) {
+      if (cell.scrollWidth > cell.clientWidth + 1) {
+        const column = cell.cellIndex;
+        offenders.push(
+          `cell in ${label(cell)}, column ${column + 1}: content ${cell.scrollWidth}px ` +
+            `in a ${cell.clientWidth}px cell ("${cell.textContent.trim().slice(0, 40)}")`
+        );
+      }
+    }
+    // Only the outermost offender is reported: a table outside the measure takes its
+    // rows and cells with it, and listing every one buries the table's own line.
+    const measure = root.getBoundingClientRect();
+    const outside = (el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.width === 0 || rect.height === 0) return false;
+      return rect.right > measure.right + tolerance || rect.left < measure.left - tolerance;
+    };
+    for (const el of root.querySelectorAll("*")) {
+      const rect = el.getBoundingClientRect();
+      if (!outside(el)) continue;
+      if (el.parentElement && el.parentElement !== root && outside(el.parentElement)) continue;
+      {
+        offenders.push(
+          `${el.tagName.toLowerCase()} in ${label(el)} sits outside the measure ` +
+            `(${rect.left.toFixed(1)} to ${rect.right.toFixed(1)}px against ` +
+            `${measure.left.toFixed(1)} to ${measure.right.toFixed(1)}px)`
+        );
+      }
+    }
+    return { tables, offenders };
+  });
+}
+
 function headerTemplate(fm) {
   return (
     '<div style="width:100%;font-family:Helvetica,Arial,sans-serif;font-size:7pt;' +
@@ -267,6 +424,30 @@ async function main() {
     await page.waitForTimeout(600);
 
     await page.emulateMedia({ media: "print" });
+
+    // The two gates run on the route exactly as it will print, before any file is
+    // written, so a failing build leaves no PDF behind to be mistaken for a good one.
+    const contrast = await contrastGate(page);
+    if (contrast.offenders.length > 0) {
+      const lines = contrast.offenders.map(
+        (o) =>
+          `  ${o.ratio}:1 < ${o.floor}:1  ${o.color} on ${o.background}  ${o.element}  "${o.text}"`
+      );
+      throw new Error(
+        `contrast gate: ${contrast.offenders.length} text node(s) below the floor\n` +
+          lines.join("\n")
+      );
+    }
+    console.log(`[pdf] contrast gate: ${contrast.checked} text nodes, none below the floor`);
+
+    const widths = await widthGate(page);
+    if (widths.offenders.length > 0) {
+      throw new Error(
+        `width gate: ${widths.offenders.length} element(s) outside their container\n  ` +
+          widths.offenders.join("\n  ")
+      );
+    }
+    console.log(`[pdf] width gate: ${widths.tables} tables inside their containers`);
 
     const pdfOptions = {
       path: target,

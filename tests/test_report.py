@@ -868,11 +868,18 @@ def test_every_inventory_count_carries_the_atlas_freeze_date(freeze, report_dir)
 
 
 def test_t08_marks_the_knowledge_graph_with_the_d25_status(report_dir):
-    """The graph row carries the D25 status verbatim; no other row does."""
+    """The graph row carries the D25 status; no other row does.
+
+    T08 is reader-facing, so it prints the status without the decision identifier
+    (AUDIT.md, 2026-11-14, item E5). The inventory keys keep the identifier, so their
+    values are byte-identical to the frozen ones.
+    """
     header, rows = _read_csv(report_dir / "T08_module_inventory.csv")
     status = header.index("Status")
-    carrying = [row for row in rows if row[status] == atlas.GRAPH_STATUS]
+    carrying = [row for row in rows if row[status] == atlas.GRAPH_STATUS_TEXT]
     assert atlas.GRAPH_STATUS == "live; not reproducible from current pipeline (D25)"
+    assert atlas.GRAPH_STATUS_TEXT == "live; not reproducible from current pipeline"
+    assert not any("(D25)" in cell for row in rows for cell in row)
     assert len(carrying) == 1, "exactly one row is the knowledge graph"
     assert carrying[0][header.index("Module")] == atlas.MODULE_LABELS[atlas.GRAPH_MODULE]
 

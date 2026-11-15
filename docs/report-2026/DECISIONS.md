@@ -110,6 +110,54 @@ D35 Kunak local hour-ending labels are converted through America/New_York (zonei
 
 D36 Main-body length is not capped; each figure keeps its data table beside it.
 
+D37 Print colours (2026-11-14, author review of draft-1). The PDF keeps its white page,
+and every `.report-*` class that `report.css` colours is restated for paper in
+`site/src/app/reports/[year]/print/print.css`: body text, list items, table cells and
+glossary definitions #111111; headings, section numbers, figure and table titles and the
+cover title #0f172a; captions, source lines, verification notes and cover meta labels
+#475569; accents (links, citation labels, callout rules) #0f766e; table header row navy
+#0b1f2f with #ffffff text; body cells white with 0.5pt #999999 borders; callouts and the
+DEQ limitation box #f1f5f9 with #111111 text. The rules are scoped to `.report-print-page`
+and sit outside `@media print`, so the print route on screen shows the PDF's colours.
+"Not peer reviewed" and "Pending" on the cover print in #111111 bold rather than the
+screen red, which is outside these inks. `site/scripts/build-report-pdf.mjs` fails the
+build before `page.pdf()` on any visible text node below 4.5:1 against its effective
+background, or below 7:1 for `.report-p` and `.report-li` text that is not a link, and on
+any table wider than its container, any table cell whose content overflows it, and any
+element outside the 6.5in measure.
+
+D38 Figure font (2026-11-14). `pipeline/report_lib/figures.py` `configure()` uses
+["Calibri", "Carlito", "DejaVu Sans"]. On Windows, where the committed figures are built,
+the family must resolve to Calibri or the generator stops; the run log prints the family.
+A Linux runner falls back to Carlito or DejaVu Sans, which is acceptable because figures
+are excluded from the byte comparison. Glyphs are written as paths; matplotlib names
+each glyph path after its family (`Calibri-44`) inside the SVGs, as it did for DejaVu
+Sans before, and no byte-compared artifact carries the name.
+
+D39 Roadmap, March 2027 item (G1). The date no longer holds: DC-02 closed 2026-10-22
+(DEQ 2026-10-30 edition, section 2) and DC-01 closed 2026-11-04 (DEQ 2026-11-06 edition,
+section 2). The item becomes May 2027, the first twelve-month record at DC-04, collecting
+since 2026-05-14.
+
+D40 Roadmap, paired-site analysis (G2). No date: it needs DEQ's occupancy record for the
+unit rather than the dashboard's.
+
+D41 Roadmap, carbon monoxide (G3). No month; the item stands as written.
+
+D42 Roadmap, second county (G4). v1 stays Loudoun-only; whether the atlas and the report
+take in Prince William County is decided for the next report.
+
+D43 Roadmap, cross-ancestry phase (G5). Its own artifact with its own methods review, not
+a section of an annual report.
+
+D44 Roadmap, page and report alignment (G6). The /ancestry-equity denominator label and
+its ACS release (2023 against the report's 2024) are aligned ahead of the next report.
+
+D45 Roadmap, knowledge graph reproducibility (G7). A correctness fix; it heads the list.
+
+D46 Roadmap, October 2027 (G8). October 2027 and the annual cadence stand; the report
+covers "the first full year of the network's record".
+
 ---
 
 ## Remaining AUDIT items

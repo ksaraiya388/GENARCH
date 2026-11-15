@@ -7,9 +7,27 @@ import { formatNumber, reportNumber } from "@/lib/report-registry";
  * unit usually reads better as part of the sentence. `with-unit` appends the
  * recorded unit for a standalone figure. `n` is the sample size behind the value and
  * `window` the period and day definition it was computed on, both of which appear in
- * methods prose where the value itself is beside the point.
+ * methods prose where the value itself is beside the point. `ordinal` renders a
+ * whole-number rank as a word ("fourth"), because "ranks 4" reads as a typo.
  */
-export type NFormat = "value" | "with-unit" | "n" | "window";
+export type NFormat = "value" | "with-unit" | "n" | "window" | "ordinal";
+
+const ORDINALS = [
+  "zeroth", "first", "second", "third", "fourth", "fifth", "sixth", "seventh",
+  "eighth", "ninth", "tenth", "eleventh", "twelfth",
+];
+
+/** A whole-number rank as an ordinal word; fails the build outside the table. */
+function ordinal(year: string, k: string, value: unknown): string {
+  if (typeof value !== "number" || !Number.isInteger(value) || value < 1 ||
+      value >= ORDINALS.length) {
+    throw new Error(
+      `report ${year} key "${k}" is ${String(value)}, which fmt="ordinal" cannot render ` +
+        `as a word (whole numbers 1 to ${ORDINALS.length - 1})`
+    );
+  }
+  return ORDINALS[value];
+}
 
 export interface NProps {
   /** Report year, bound once by the content directory rather than typed per use. */
@@ -59,6 +77,9 @@ export function N({ year, k, fmt = "value", group = true }: NProps) {
         );
       }
       text = record.window;
+      break;
+    case "ordinal":
+      text = ordinal(year, k, record.value);
       break;
     default:
       text = formatNumber(record, group);

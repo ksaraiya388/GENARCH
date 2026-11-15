@@ -5,15 +5,14 @@ export function DataAndProvenance() {
     <Section number="2" id="data" title="Data and provenance">
       <P>
         Every input the analysis reads is listed in Appendix A with its origin, its
-        licence, its export date, its data cutoff and its SHA-256. Nothing outside that
-        list is read. The sensor exports are named there by neutral site code rather
-        than by filename, because the published filenames carry a site identifier that
-        the project&apos;s content constraints keep out of public output. There are
-        twenty-six inputs in three groups: the hourly sensor exports, in two sets
-        because the collocation reproduction reads the exports the original analysis
-        was computed from rather than the later ones; the regulatory monitor files
-        released under the records request; and the DEQ weekly editions the published
-        figures are taken from.
+        licence, its export date, its data cutoff and its SHA-256. The sensor exports are
+        named there by neutral site code rather than by filename, because the published
+        filenames carry a site identifier that the project&apos;s content constraints keep
+        out of public output. There are twenty-six inputs in three groups: the hourly
+        sensor exports, in two sets because the collocation reproduction reads the
+        exports the original analysis was computed from rather than the later ones; the
+        regulatory monitor files released under the records request; and the DEQ weekly
+        editions the published figures are taken from.
       </P>
 
       <P>
@@ -30,10 +29,9 @@ export function DataAndProvenance() {
       </P>
 
       <P>
-        The backfill is not hypothetical. Comparing the exports taken for the original
-        August analysis against those taken for the freeze, nine hours that had been
-        missing have since been filled with rows in which every pollutant channel reads
-        zero. A row in which every channel reads zero is treated as missing throughout
+        Comparing the exports taken for the original August analysis against those
+        taken for the freeze, nine hours that had been missing have since been filled
+        with rows in which every pollutant channel reads zero. A row in which every channel reads zero is treated as missing throughout
         this work, so those nine hours stay missing, and the one place where that
         decision changes a published figure is recorded with the figure rather than
         folded into it.
@@ -46,13 +44,17 @@ export function DataAndProvenance() {
         four results: the hourly files end 2026-08-10 and the last complete day is
         2026-08-09, so no collocation fit and no daily reconciliation can extend past
         that date, whatever the sensor record does. A follow-up request for a longer
-        range is pending.
+        range is pending with Virginia DEQ.
       </P>
 
       <P>
         The freeze itself was taken on 2026-10-18 at commit{" "}
-        <N k="freeze.commit" group={false} />, and the atlas half was frozen separately
-        on <N k="inventory.frozen_at" /> once the atlas records had settled. The freeze
+        <N k="freeze.commit" group={false} />. That hash is the one recorded when the
+        freeze was taken; a history rewrite on 2026-10-25 changed commit identifiers and
+        no file content, and the same tree is now commit{" "}
+        <N k="freeze.commit_rewritten" group={false} />. The atlas half was frozen
+        separately on <N k="inventory.frozen_at" /> once the atlas records had settled,
+        and the ancestry inputs on <N k="ancestry.frozen_at" />. The freeze
         pins each input by hash and the generator refuses to read a file whose hash no
         longer matches, which is what makes the weekly DEQ ingest safe: new editions
         keep arriving and keep being recorded, and none of them moves a number in this

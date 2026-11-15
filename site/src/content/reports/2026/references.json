@@ -218,7 +218,16 @@
       "edition_date": "2026-10-30",
       "url": "https://www.deq.virginia.gov/news-info/shortcuts/topics-of-interest/data-center-air-monitoring-project",
       "retrieved": "2026-10-31",
-      "note": "Published after the freeze. Cited once, for the post-freeze note that the collocation window closed on 2026-10-22."
+      "note": "Published after the freeze. Cited for the post-freeze note that the collocation window closed on 2026-10-22; its section 2 also records that site DC-02 closed that day."
+    },
+    {
+      "id": "deq2026nov06",
+      "publisher": "Virginia Department of Environmental Quality, Office of Air Quality Monitoring",
+      "title": "Data Center Air Monitoring Project weekly report",
+      "edition_date": "2026-11-06",
+      "url": "https://www.deq.virginia.gov/news-info/shortcuts/topics-of-interest/data-center-air-monitoring-project",
+      "retrieved": "2026-11-08",
+      "note": "Published after the freeze. Cited once, for the post-freeze note that site DC-01, the collocation site, closed on 2026-11-04, which its section 2 records. Changes no value in this report."
     },
     {
       "id": "deqdashboard",

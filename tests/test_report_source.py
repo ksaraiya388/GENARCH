@@ -242,11 +242,17 @@ REQUIRED_SENTENCES = {
         "does not say, and must not be read to say, that the locus is absent, inactive",
         "This is not a correction of the page.",
     ],
+    # The author's rulings on the draft-1 roadmap markers (AUDIT.md, 2026-11-14).
     "s8-roadmap.tsx": [
-        "Prince William County sites (deployed 2026-09-17 and 2026-10-22) are "
-        "outside v1 scope (D5); scope decision for v2.",
-        "Page/report alignment: denominator labelling on /ancestry-equity and ACS "
-        "release alignment (2023 vs 2024).",
+        "Whether the atlas and this report take in a second county is a decision "
+        "about what GENARCH is for, and it will be made for the next report.",
+        "reads the 2023 ACS release where this report reads 2024. Both will be aligned "
+        "ahead of the next report.",
+        "It has no date: it needs DEQ&apos;s occupancy record for the unit rather than "
+        "the dashboard&apos;s.",
+        "It will be its own artifact with its own methods review, not a section of an "
+        "annual report.",
+        "covering the first full year of the network&apos;s record",
     ],
     "s5-dca.tsx": [
         "To our knowledge, no independent reprocessing of the Project",
@@ -286,15 +292,16 @@ def test_the_deq_limitation_block_appears_in_the_summary_and_the_limitations() -
         )
 
 
-def test_the_roadmap_items_are_marked_for_review() -> None:
-    """Every dated roadmap item carries a marker, because the dates are judgements."""
-    text = read(CONTENT_DIR / "s8-roadmap.tsx")
-    markers = re.findall(r"\{/\*\s*KIAAN", text)
-    items = re.findall(r"<Item>", text)
-    assert len(markers) == len(items), (
-        f"{len(items)} roadmap item(s) but {len(markers)} review marker(s); each dated "
-        "item needs one."
-    )
+def test_no_review_marker_is_left_in_the_report_source() -> None:
+    """The author ruled on every roadmap marker after draft-1; none may come back unruled.
+
+    The roadmap's dates were pre-filled and each carried a KIAAN marker until the
+    author confirmed or moved it. The rulings are applied (AUDIT.md, 2026-11-14), so a
+    marker anywhere in the report source now means an open question shipped in print.
+    """
+    for path in sorted(CONTENT_DIR.glob("*.tsx")):
+        markers = re.findall(r"\{/\*\s*KIAAN", read(path))
+        assert not markers, f"{path.name} carries {len(markers)} unresolved KIAAN marker(s)"
 
 
 def test_the_chain_description_says_where_each_evidence_class_comes_from() -> None:

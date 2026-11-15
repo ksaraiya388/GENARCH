@@ -1301,6 +1301,60 @@
     "value": 49391706.0,
     "window": "GWAS Catalog release 2026-11-02, asthma studies selected by ontology ID, initial-stage samples"
   },
+  "ancestry.frozen_at": {
+    "inputs": [
+      {
+        "sha256": "813f5ae1a7f24a8b4a8d32515cc0825e068dad9f48af22dd2a536dba5c344f40",
+        "source": "pipeline/lookups/asthma_loci.json"
+      },
+      {
+        "sha256": "98d4e277a7aec5ece11f4185927fd69151eb441d359c7a584852f698ea0b27bd",
+        "source": "pipeline/lookups/asthma_trait_terms.json"
+      },
+      {
+        "sha256": "fa1b23c284e7e492a3f5a4277c59cf09e538f619f39f005b9af188d22dd01937",
+        "source": "pipeline/lookups/gwas_ancestry_categories.json"
+      },
+      {
+        "sha256": "4358f838bd266376da6422bf320b4be6d36b6ba16350c4ca08f5a56e99e79744",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02001.json"
+      },
+      {
+        "sha256": "a381a95e313be6b62b4da362e1ec7ea767d11c1038061307e3131e46bbf9ae57",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_b02015.json"
+      },
+      {
+        "sha256": "e0132c240fb7fcbcf4ed954324ce173535515aa3d6e0e8f4c85cea78b755e6b1",
+        "source": "pipeline/sources/cross_ancestry/acs_loudoun_2024_dp05.json"
+      },
+      {
+        "sha256": "0295487d8f0462dcce85f6c94b97bd9eba7974636b080d76ee017cb098a97628",
+        "source": "pipeline/sources/gwas-catalog/asthma_ancestries_2026-11-02.tsv"
+      },
+      {
+        "sha256": "5668f12cf202674cc0a5a8e1eac3230fdfc24c6d36032f8eccc6fc7ef3d1898a",
+        "source": "pipeline/sources/gwas-catalog/asthma_associations_2026-11-02.tsv"
+      },
+      {
+        "sha256": "c4e9be7231d98a45b444b668a52c988c04f00f2341318d1ed0fdf00ae65c1de1",
+        "source": "pipeline/sources/gwas-catalog/extract_manifest.json"
+      },
+      {
+        "sha256": "d24750b05a62aafee399616b068286054d2fae4713d53003725e565910bd9a23",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-associations_ontology-annotated-full.zip (full download, not stored; D30)"
+      },
+      {
+        "sha256": "0060f99f0d4a5ef8ec02175d39efb14270204fba6985262e1d60d89063ed5fa9",
+        "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
+      }
+    ],
+    "method": "date the ancestry inputs were pinned, as FREEZE.json ancestry_inputs records it; the third freeze date, beside the data freeze and the atlas freeze",
+    "n": null,
+    "precision": null,
+    "unit": null,
+    "value": "2026-11-03",
+    "window": null
+  },
   "ancestry.gwas_release_date": {
     "inputs": [
       {
@@ -1346,7 +1400,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -1380,7 +1434,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -1448,7 +1502,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -1482,7 +1536,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -1516,7 +1570,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -1550,7 +1604,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -1584,7 +1638,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -1618,7 +1672,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -1652,7 +1706,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at 17q12-21 (ORMDL3/GSDMB) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -1720,7 +1774,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -1754,7 +1808,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -1822,7 +1876,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -1856,7 +1910,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -1890,7 +1944,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -1924,7 +1978,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -1958,7 +2012,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -1992,7 +2046,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2026,7 +2080,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at 5q31 (RAD50/IL13) whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2142,7 +2196,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2176,7 +2230,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2244,7 +2298,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2278,7 +2332,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2312,7 +2366,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2346,7 +2400,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2380,7 +2434,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2414,7 +2468,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2448,7 +2502,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at IL1RL1 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2516,7 +2570,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2550,7 +2604,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2618,7 +2672,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2652,7 +2706,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2686,7 +2740,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2720,7 +2774,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2754,7 +2808,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2788,7 +2842,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2822,7 +2876,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at IL33 whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2924,7 +2978,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -2958,7 +3012,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -3026,7 +3080,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -3060,7 +3114,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -3094,7 +3148,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -3128,7 +3182,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -3162,7 +3216,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -3196,7 +3250,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -3230,7 +3284,7 @@
         "source": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/2026/11/02/gwas-catalog-download-ancestries-v1.0.3.1.tsv (full download, not stored; D30)"
       }
     ],
-    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in associations_without_initial_stage_category only.",
+    "method": "genome-wide-significant associations at TSLP whose study's initial-stage sample names this category. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only.",
     "n": null,
     "precision": 0,
     "unit": "associations",
@@ -6473,6 +6527,15 @@
     "value": "c2101b3d766dcaa29821448c8929ded5a1f2787f",
     "window": null
   },
+  "freeze.commit_rewritten": {
+    "inputs": [],
+    "method": "the commit that carries the freeze's tree after the 2026-10-25 authorship rewrite, which changed every commit identifier and no file content (docs/report-2026/AUDIT.md, rewrite map). Checked with git on every run: the commit must exist and be an ancestor of HEAD",
+    "n": null,
+    "precision": null,
+    "unit": null,
+    "value": "782c1dc6b4b55f126e1dbfc5cced97daf483bd56",
+    "window": null
+  },
   "freeze.cutoff": {
     "inputs": [
       {
@@ -9067,6 +9130,64 @@
     "precision": 0,
     "unit": "sites",
     "value": 5.0,
+    "window": "2026-06-18 to 2026-08-07, 18 of 24 valid hours, exact zeros treated as missing"
+  },
+  "p98.common.n_sites": {
+    "inputs": [
+      {
+        "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+        "source": "Kunak hourly sensor export, DC-01 (data freeze)"
+      },
+      {
+        "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+        "source": "Kunak hourly sensor export, DC-04 (data freeze)"
+      },
+      {
+        "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+        "source": "Kunak hourly sensor export, DC-10 (data freeze)"
+      },
+      {
+        "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+        "source": "Kunak hourly sensor export, DC-02 (data freeze)"
+      },
+      {
+        "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+        "source": "Kunak hourly sensor export, DC-11 (data freeze)"
+      },
+      {
+        "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+        "source": "Kunak hourly sensor export, DC-08 (data freeze)"
+      },
+      {
+        "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+        "source": "Kunak hourly sensor export, DC-09 (data freeze)"
+      },
+      {
+        "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+        "source": "Kunak hourly sensor export, DC-07 (data freeze)"
+      },
+      {
+        "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+        "source": "Kunak hourly sensor export, DC-03 (data freeze)"
+      },
+      {
+        "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+        "source": "Kunak hourly sensor export, DC-06 (data freeze)"
+      },
+      {
+        "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+        "source": "Kunak hourly sensor export, DC-05 (data freeze)"
+      },
+      {
+        "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+        "source": "Kunak hourly sensor export, DC-12 (data freeze)"
+      }
+    ],
+    "method": "sensors collecting across the whole common window, the set every common-window percentile, rank and count is computed over",
+    "n": null,
+    "precision": 0,
+    "unit": "sites",
+    "value": 6.0,
     "window": "2026-06-18 to 2026-08-07, 18 of 24 valid hours, exact zeros treated as missing"
   },
   "p98.common.rank.DC-01": {

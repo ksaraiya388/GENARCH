@@ -32,10 +32,10 @@ export function DataCenterAlley() {
           <N k="network.sites_active_at_cutoff" /> were collecting at DEQ&apos;s{" "}
           <N k="deq.edition_cutoff" /> edition cutoff. Three Loudoun sites retired
           before that cutoff and three sites outside Loudoun joined after it. The
-          records differ enormously in length: site DC-01 carries{" "}
-          <N k="network.record_days.DC-01" /> complete days and site DC-06 carries{" "}
-          <N k="network.record_days.DC-06" />, which is the fact behind the record-length
-          result below. The window in which all six of the then-live sensors were
+          records differ enormously in length: through DEQ&apos;s 2026-08-07 edition, site
+          DC-01 carries <N k="network.record_days.DC-01" /> complete days and site DC-06
+          carries <N k="network.record_days.DC-06" />, which is the fact behind the
+          record-length result below. The window in which all six of the then-live sensors were
           collecting together runs from <N k="network.common_window.start" /> to{" "}
           <N k="network.common_window.end" />.
         </P>
@@ -114,10 +114,20 @@ export function DataCenterAlley() {
         <Callout title="After the freeze">
           <P>
             The collocation window at site DC-01 closed on 2026-10-22, when the unit
-            there was replaced, as DEQ&apos;s <Cite id="deq2026oct30" /> edition records.
-            That is after the 2026-10-18 freeze this report is computed at, so it changes
-            no value and no framing above; it is stated once, here, so a reader comparing
-            this report against a current DEQ edition knows why the window ends.
+            there was replaced, as DEQ&apos;s 2026-10-30 edition records{" "}
+            <Cite id="deq2026oct30" />. Site DC-01, the collocation site, then closed on
+            2026-11-04, as DEQ&apos;s 2026-11-06 edition records in its section 2{" "}
+            <Cite id="deq2026nov06" />, and the replacement unit&apos;s collocation window
+            ended that day. Of the other sites Table 2 shows as open at the freeze, site
+            DC-02 has since closed, on 2026-10-22, as the 2026-10-30 edition records in
+            its section 2; the 2026-11-06 edition records no closure at sites DC-04,
+            DC-10, DC-11 or DC-12.
+          </P>
+          <P>
+            All of this is after the 2026-10-18 freeze this report is computed at, so it
+            changes no value and no framing above. It is stated once, here, so a reader
+            comparing this report against a current DEQ edition knows why the window
+            ends and why the network looks different.
           </P>
         </Callout>
       </Sub>
@@ -152,9 +162,10 @@ export function DataCenterAlley() {
           site DC-06 in the site key, as the only sensor in the network whose daily
           PM2.5 98th percentile exceeded <N k="naaqs.daily_standard" /> µg/m³. Restricted
           to the window when all six then-live sensors were collecting,{" "}
-          <N k="p98.common.n_above_35" /> of the six exceed that level under the local
-          standard time day definition and the same number under local clock time, and
-          site DC-06 ranks <N k="p98.common.rank.DC-06" /> under both. Its record was{" "}
+          <N k="p98.common.n_above_35" /> of the <N k="p98.common.n_sites" /> exceed that
+          level under the local standard time day definition and the same number under
+          local clock time, and site DC-06 ranks{" "}
+          <N k="p98.common.rank.DC-06" fmt="ordinal" /> under both. Its record was{" "}
           <N k="network.record_days.DC-06" /> complete days, falling entirely in high
           summer and including the wildfire smoke weekend, against{" "}
           <N k="network.record_days.DC-04" /> to <N k="network.record_days.DC-01" /> days

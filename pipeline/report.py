@@ -357,6 +357,15 @@ def build_numbers(fz: Freeze, results: dict) -> NumberRegistry:
         method="git HEAD recorded in FREEZE.json when the freeze was taken",
         inputs=[],
     )
+    reg.add(
+        "freeze.commit_rewritten",
+        freeze_lib.checked_rewritten_freeze_commit(),
+        method="the commit that carries the freeze's tree after the 2026-10-25 authorship "
+        "rewrite, which changed every commit identifier and no file content "
+        "(docs/report-2026/AUDIT.md, rewrite map). Checked with git on every run: the "
+        "commit must exist and be an ancestor of HEAD",
+        inputs=[],
+    )
     for entry in fz.kunak_exports():
         reg.add(
             f"freeze.export_dates.{code_of(entry.site_id)}",
@@ -721,6 +730,17 @@ def build_numbers(fz: Freeze, results: dict) -> NumberRegistry:
             f"metre, {binning} day binning. Not a NAAQS comparison",
             inputs=kunak_inputs,
         )
+
+    reg.add(
+        "p98.common.n_sites",
+        len(results["p98_common_standard"]),
+        unit="sites",
+        precision=0,
+        window=COMMON_WINDOW,
+        method="sensors collecting across the whole common window, the set every "
+        "common-window percentile, rank and count is computed over",
+        inputs=kunak_inputs,
+    )
 
     rises = sorted(
         results["p98_common_clock"][site]["p98"] - results["p98_common_standard"][site]["p98"]
@@ -1192,7 +1212,8 @@ def build_figures(
     anc: dict | None = None,
 ) -> list[dict]:
     code_of = site_codes.code_for
-    figures.configure()
+    family = figures.configure()
+    print(f"figures: font family {family}")
     entries: list[dict] = []
     limitation = figures.deq_limitation_block()
 
@@ -1249,7 +1270,7 @@ def build_figures(
                 f"{reg.display('network.common_window.end')}."
             ),
             "caption": (
-                "Coverage by site code. The shaded band is the window in which all six "
+                "The shaded band is the window in which all six "
                 "sensors were collecting; the darker band is the wildfire smoke transport "
                 "weekend. Dotted lines mark the end of the regulatory monitor record and the "
                 "network reconfiguration."
@@ -1562,7 +1583,9 @@ def build_inventory(fz: Freeze, out_dir: Path) -> dict:
                 module["record_count"],
                 inv["graph"]["node_count"] if module["module"] == atlas.GRAPH_MODULE else "",
                 inv["graph"]["edge_count"] if module["module"] == atlas.GRAPH_MODULE else "",
-                module["status"],
+                atlas.GRAPH_STATUS_TEXT
+                if module["module"] == atlas.GRAPH_MODULE
+                else module["status"],
                 frozen_at,
             ]
             for module in inv["modules"]

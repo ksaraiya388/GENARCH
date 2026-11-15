@@ -21,8 +21,7 @@ from pipeline.report_lib.numbers import NumberRegistry
 # transferability prose that does report per-group metrics from the literature.
 ANCESTRY_CAVEAT = (
     "Descriptive only. These are counts of people enrolled and associations declared, "
-    "not effect estimates: no cross-ancestry gene-environment effect is computed in v1 "
-    "(CONTEXT.md X7)."
+    "not effect estimates: no cross-ancestry gene-environment effect is computed in v1."
 )
 
 # Required verbatim on F06 and repeated on every ACS surface in this module.
@@ -55,7 +54,7 @@ COUNTY_FIPS_LABEL = "107 (Loudoun)"
 FIGURE_LIMITATION = (
     "Descriptive only, and not an effect estimate: these are counts of people "
     "enrolled and associations declared, and v1 computes no cross-ancestry "
-    "gene-environment effect (CONTEXT.md X7). The discovery composition is the "
+    "gene-environment effect. The discovery composition is the "
     "composition of the published evidence base, not of any population: a category "
     "with few individuals means the evidence was measured in few people from it, "
     "which is a property of who was studied and not of anyone's genome. Because the "
@@ -165,6 +164,14 @@ def build_numbers(fz: Freeze, anc: dict, reg: NumberRegistry) -> None:
         "`latest` alias is re-pointed every month, so it is never recorded as an "
         "origin (DECISIONS.md D30)",
         inputs=_release_inputs(fz),
+    )
+    reg.add(
+        "ancestry.frozen_at",
+        fz.ancestry_inputs()["frozen_at"],
+        method="date the ancestry inputs were pinned, as FREEZE.json ancestry_inputs "
+        "records it; the third freeze date, beside the data freeze and the atlas freeze",
+        inputs=_inputs(fz, [f["path"] for f in fz.ancestry_inputs()["files"]])
+        + _release_inputs(fz),
     )
     reg.add(
         "ancestry.method_divergence",
@@ -561,7 +568,7 @@ def build_tables(anc: dict) -> list[tables.Table]:
         f"{acs['dataset']}, {acs['geography']}. "
         + ACS_CATEGORY_SENTENCE
         + " The race categories are mutually exclusive and sum to the table total, which "
-        "is what lets them stack in F06. Hispanic or Latino origin cross-cuts every race "
+        "is what lets them stack in Figure 6. Hispanic or Latino origin cross-cuts every race "
         "category and is listed with 'In race stack' set to no: adding it to the stack "
         "would count the same residents twice. "
         + ANCESTRY_CAVEAT,

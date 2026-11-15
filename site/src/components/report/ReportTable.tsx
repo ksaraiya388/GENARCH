@@ -1,5 +1,6 @@
 import { reportTable, reportTableRows } from "@/lib/report-registry";
 import { isNumericCell, tableLabel } from "./labels";
+import { TABLE_RENDER, checkRender, formatCell, softHyphenate } from "./table-render";
 
 export interface ReportTableProps {
   year: string;
@@ -54,7 +55,9 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
   // the table pays for that at its right edge, and the last column's heading was
   // rendering as a few letters per line. They are stated under the table instead,
   // which is where an unmatched unit already goes.
-  const unitsInHeader = !extraWide;
+  const render = TABLE_RENDER[manifest.id] ?? {};
+  checkRender(manifest.id, header, render);
+  const unitsInHeader = !extraWide && !render.unitsBelow;
   const unitFor = (column: string): string | null => {
     if (!unitsInHeader) return null;
     const unit = manifest.units[column];
@@ -82,6 +85,21 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
     }, new Map<string, string[]>())
   );
 
+  const colIndex = (columns: string[] | undefined) =>
+    new Set((columns ?? []).map((column) => header.indexOf(column)));
+  const monoCols = colIndex(render.mono);
+  const breakCols = colIndex(render.breakAnywhere);
+  const formatAt = new Map(
+    Object.entries(render.format ?? {}).map(([column, f]) => [header.indexOf(column), f])
+  );
+  const emptyAt = new Map(
+    Object.entries(render.emptyAs ?? {}).map(([column, text]) => [header.indexOf(column), text])
+  );
+  const labelCol = render.shortLabels ? header.indexOf(render.shortLabels.column) : -1;
+  // Each long sentence the short labels stand for, in order of first appearance, so
+  // the note prints each one once.
+  const labelled = new Map<string, string>();
+
   let truncated = false;
 
   const renderCell = (value: string, column: number): string => {
@@ -89,8 +107,29 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
       truncated = true;
       return `${value.slice(0, HASH_PREFIX)}…`;
     }
-    return value;
+    if (column === labelCol && render.shortLabels) {
+      const short = render.shortLabels.labels[value];
+      if (!short) {
+        throw new Error(
+          `table ${manifest.id}: no short label for ${render.shortLabels.column} "${value}"`
+        );
+      }
+      if (!labelled.has(short)) labelled.set(short, value);
+      return short;
+    }
+    if (value.trim() === "" && emptyAt.has(column)) return emptyAt.get(column)!;
+    const format = formatAt.get(column);
+    return format ? formatCell(value, format) : value;
   };
+
+  const cellClass = (cell: string, c: number): string | undefined =>
+    [
+      isNumericCell(cell) ? "report-table-num" : "",
+      monoCols.has(c) ? "report-cell-mono" : "",
+      breakCols.has(c) ? "report-cell-break" : "",
+    ]
+      .filter(Boolean)
+      .join(" ") || undefined;
 
   const body = rows.map((row, r) => (
     <tr key={r}>
@@ -100,16 +139,26 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
             {renderCell(cell, c)}
           </th>
         ) : (
-          <td
-            key={c}
-            className={isNumericCell(cell) ? "report-table-num" : undefined}
-          >
+          <td key={c} className={cellClass(cell, c)}>
             {renderCell(cell, c)}
           </td>
         )
       )}
     </tr>
   ));
+
+  const notes = [
+    ...(labelCol >= 0 && render.shortLabels
+      ? [
+          `${render.shortLabels.column}: ` +
+            Array.from(labelled.entries())
+              .map(([short, sentence]) => `${short}: ${sentence}`)
+              .join(" "),
+        ]
+      : []),
+    ...(render.notes ?? []),
+  ];
+  const fixed = render.widths !== undefined;
 
   return (
     <figure
@@ -118,6 +167,8 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
           "report-table-figure",
           wide ? "report-table-wide" : "",
           extraWide ? "report-table-xwide" : "",
+          fixed ? "report-table-fixed" : "",
+          render.small ? "report-table-small" : "",
         ]
           .filter(Boolean)
           .join(" ")
@@ -132,13 +183,23 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
           <span className="report-table-title">{manifest.title}</span>
           {!compact && <span className="report-table-text"> {manifest.caption}</span>}
         </caption>
+        {fixed && (
+          <colgroup>
+            {header.map((column) => (
+              <col
+                key={column}
+                style={{ ["--col-w" as string]: render.widths![column] }}
+              />
+            ))}
+          </colgroup>
+        )}
         <thead>
           <tr>
             {header.map((column, c) => {
               const unit = unitFor(column);
               return (
                 <th key={c} scope="col">
-                  {column}
+                  {fixed ? softHyphenate(column) : column}
                   {unit && <span className="report-table-unit"> ({unit})</span>}
                 </th>
               );
@@ -149,18 +210,25 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
       </table>
       <figcaption className="report-table-source">
         <span className="report-source-label">Source:</span> {manifest.source_note}
-        {unmatchedUnits.length > 0 && (
+        {render.unitsNote ? (
           <>
             {" "}
-            <span className="report-source-label">Units:</span>{" "}
-            {groupedUnits.map(([unit, columns], i) => (
-              <span key={unit}>
-                {i > 0 && "; "}
-                {columns.join(", ")} in {unit}
-              </span>
-            ))}
-            .
+            <span className="report-source-label">Units:</span> {render.unitsNote}.
           </>
+        ) : (
+          unmatchedUnits.length > 0 && (
+            <>
+              {" "}
+              <span className="report-source-label">Units:</span>{" "}
+              {groupedUnits.map(([unit, columns], i) => (
+                <span key={unit}>
+                  {i > 0 && "; "}
+                  {columns.join(", ")} in {unit}
+                </span>
+              ))}
+              .
+            </>
+          )
         )}
         {truncated && (
           <>
@@ -169,6 +237,11 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
             carries them in full.
           </>
         )}
+        {notes.map((note) => (
+          <span key={note} className="report-table-note">
+            <span className="report-source-label">Note:</span> {note}
+          </span>
+        ))}
       </figcaption>
     </figure>
   );

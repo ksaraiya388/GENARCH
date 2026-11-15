@@ -522,7 +522,8 @@ def loci_by_ancestry() -> dict:
             "initial-stage sample, so the per-category counts do not sum to the "
             "association total when a discovery sample names more than one category. "
             "An association whose study has no initial-stage ancestry row is counted in "
-            "the locus total and in associations_without_initial_stage_category only."
+            "the locus total and in the column 'Associations with no initial-stage "
+            "ancestry row' only."
         ),
         "locus_rule": json.loads(LOCI_PATH.read_text(encoding="utf-8"))["selection_rule"],
     }

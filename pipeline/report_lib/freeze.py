@@ -625,6 +625,27 @@ def head_contains(commit: str) -> bool:
     return _git("merge-base", "--is-ancestor", commit, "HEAD").returncode == 0
 
 
+# FREEZE.json `git_head` records the commit the freeze was taken at, and stays as it
+# was recorded. The 2026-10-25 authorship rewrite changed every commit identifier and
+# no file content, so that hash no longer resolves; AUDIT.md's rewrite map gives the
+# commit now carrying the same tree. This is the one place the report's prose gets
+# that hash from, and the generator checks it with git on every run.
+FREEZE_COMMIT_REWRITTEN = "782c1dc6b4b55f126e1dbfc5cced97daf483bd56"
+
+
+def checked_rewritten_freeze_commit() -> str:
+    """FREEZE_COMMIT_REWRITTEN, after checking it exists and is an ancestor of HEAD."""
+    commit = FREEZE_COMMIT_REWRITTEN
+    if not commit_is_present(commit):
+        raise FreezeError(
+            f"freeze commit {commit} (post-rewrite) is not in this repository; a shallow "
+            "clone cannot check it, so fetch full history"
+        )
+    if not head_contains(commit):
+        raise FreezeError(f"freeze commit {commit} (post-rewrite) is not an ancestor of HEAD")
+    return commit
+
+
 def audit_records_graph_reproducibility() -> bool:
     """Whether AUDIT.md carries the 2026-10-24 graph reproducibility entry (D25)."""
     audit = REPO_ROOT / AUDIT_PATH

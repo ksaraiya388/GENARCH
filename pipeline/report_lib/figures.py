@@ -13,6 +13,7 @@ from __future__ import annotations
 import io
 import json
 import struct
+import sys
 from datetime import date, datetime, timedelta
 from functools import lru_cache
 from pathlib import Path
@@ -58,17 +59,36 @@ def deq_limitation_block() -> str:
     return deq_limitation()["rendered"]
 
 
+# Calibri first, Carlito (metric-compatible with Calibri) where Calibri is not
+# installed, DejaVu Sans last because matplotlib always ships it. The committed figures
+# are built on Windows, where the family must be Calibri, and `configure` refuses to
+# draw them in anything else there. A Linux CI runner falls back to Carlito or DejaVu
+# Sans; that is acceptable because figures are excluded from the byte comparison. The
+# family name reaches no byte-compared artifact: glyphs are written as paths.
+FONT_FAMILIES = ["Calibri", "Carlito", "DejaVu Sans"]
+REQUIRED_FAMILY_ON_WINDOWS = "Calibri"
+
+
+class FontError(RuntimeError):
+    pass
+
+
 def configure() -> str:
     """Set deterministic rcParams. Returns the font family actually used."""
     installed = {f.name for f in font_manager.fontManager.ttflist}
-    family = "Inter" if "Inter" in installed else "DejaVu Sans"
+    family = next((name for name in FONT_FAMILIES if name in installed), FONT_FAMILIES[-1])
+    if sys.platform == "win32" and family != REQUIRED_FAMILY_ON_WINDOWS:
+        raise FontError(
+            f"figures resolve to {family!r} on Windows; the committed figures must be "
+            f"drawn in {REQUIRED_FAMILY_ON_WINDOWS!r}. Install it or build elsewhere."
+        )
     plt.rcdefaults()
     matplotlib.rcParams.update(
         {
             "svg.hashsalt": "genarch",
             "svg.fonttype": "path",
             "font.family": "sans-serif",
-            "font.sans-serif": [family],
+            "font.sans-serif": [family, *[f for f in FONT_FAMILIES if f != family]],
             "figure.dpi": 100,
             "savefig.dpi": 300,
             "figure.facecolor": "white",
@@ -157,9 +177,12 @@ def f01_network_timeline(out_dir: Path, spans: list[dict], marks: dict) -> list[
             ax.annotate(
                 move["label"],
                 xy=(mdates.date2num(move["on"]), row),
-                xytext=(0, 11),
+                # Right of the tick, not centred on it: a unit move falls on the
+                # same day as a window edge or a dotted line at two sites, and a
+                # centred label sat across that line.
+                xytext=(3, 8),
                 textcoords="offset points",
-                ha="center",
+                ha="left",
                 fontsize=6.5,
                 color=palette.series()[1],
             )
@@ -205,28 +228,39 @@ def f01_network_timeline(out_dir: Path, spans: list[dict], marks: dict) -> list[
             linewidth=1.0,
             zorder=1,
         )
+    # The smoke label and the two dotted-line labels sit in the foot of the axes,
+    # in the rows the third-wave sites leave empty before they start. Placed there,
+    # none of them crosses a bar or another line. The smoke label is wrapped to fit
+    # between the common window's left edge and the smoke band; the reconfiguration
+    # label sits left of its line because the sites to its right start on it.
+    foot = len(codes) - 0.48
     ax.annotate(
-        SMOKE_WINDOW_LABEL,
-        xy=(mdates.date2num(marks["smoke_end"]) + 1, -0.72),
-        xytext=(4, 0),
+        SMOKE_WINDOW_LABEL.replace(": ", ":\n", 1).replace(" (", "\n(", 1),
+        xy=(mdates.date2num(marks["smoke_start"]), foot),
+        xytext=(-3, 0),
         textcoords="offset points",
-        ha="left",
-        va="top",
+        ha="right",
+        va="bottom",
         fontsize=6.8,
+        linespacing=1.15,
         color=palette.ink(),
+        zorder=4,
     )
-    for when, text in marks["lines"]:
+    for index, (when, text) in enumerate(marks["lines"]):
         ax.axvline(
             mdates.date2num(when), color=palette.ink(), linestyle=":", linewidth=1.1, zorder=3
         )
+        last = index == len(marks["lines"]) - 1
         ax.annotate(
             text,
-            xy=(mdates.date2num(when), len(codes) - 0.3),
-            xytext=(3, 0),
+            xy=(mdates.date2num(when), foot),
+            xytext=(-3 if last else 3, 0),
             textcoords="offset points",
             rotation=90,
-            va="top",
+            ha="right" if last else "left",
+            va="bottom",
             fontsize=6.5,
+            zorder=4,
         )
 
     ax.set_yticks(range(len(codes)))
@@ -398,22 +432,28 @@ def f04_p98_by_site(out_dir: Path, rows: list[dict]) -> list[Path]:
         zorder=3,
         label="Common window",
     )
+    # Record-day labels sit beside their marker, clear of the stem joining the two
+    # markers, which a label above or below a marker would sit on: own-record to the
+    # left and common-window to the right, so the two stay apart where a site's two
+    # values coincide.
     for pos, row in zip(positions, ordered):
         ax.annotate(
             f"{row['full_days']} d",
             xy=(pos, row["full_p98"]),
-            xytext=(0, 9),
+            xytext=(-7, 0),
             textcoords="offset points",
-            ha="center",
+            ha="right",
+            va="center",
             fontsize=6.8,
             color=primary["color"],
         )
         ax.annotate(
             f"{row['common_days']} d",
             xy=(pos, row["common_p98"]),
-            xytext=(0, -14),
+            xytext=(7, 0),
             textcoords="offset points",
-            ha="center",
+            ha="left",
+            va="center",
             fontsize=6.8,
             color=secondary["color"],
         )
@@ -432,6 +472,8 @@ def f04_p98_by_site(out_dir: Path, rows: list[dict]) -> list[Path]:
         textcoords="offset points",
         fontsize=7,
         color=palette.ink(),
+        zorder=4,
+        bbox={"facecolor": "white", "edgecolor": "none", "boxstyle": "square,pad=0.15"},
     )
     ax.set_xticks(positions)
     ax.set_xticklabels([r["code"] for r in ordered])
@@ -514,8 +556,30 @@ def _share_label(share: float) -> str:
     return f"{percent:.1f}%"
 
 
-def _stacked_share_panel(ax, segments: list[dict], title: str, subtitle: str) -> None:
-    """One horizontal 100 percent bar. `segments` is [{label, share}] in order.
+# F06 is laid out top-down in inches, each element placed from the measured extent of
+# the one above it, so the clear space between them is a stated quantity rather than
+# a by-product of subplot spacing. The figure is drawn on a tall canvas and the unused
+# foot is cropped by the tight bounding box at save.
+_F06_WIDTH_IN = 8.6
+_F06_CANVAS_IN = 12.0
+_F06_LEFT_IN = 0.2
+_F06_BAR_AXES_IN = 0.62
+_F06_GAP_TEXT_PT = 5.0  # title to subtitle, and subtitle to axes: at least 4pt clear
+_F06_GAP_LEGEND_PT = 8.0  # tick labels to legend
+_F06_GAP_PANELS_IN = 0.34
+
+
+def _pt(points: float) -> float:
+    return points / 72.0
+
+
+def _stacked_share_panel(
+    fig, renderer, top_in: float, segments: list[dict], title: str, subtitle: str
+) -> float:
+    """One horizontal 100 percent bar, with its title, subtitle and legend.
+
+    `segments` is [{label, share}] in order. Drawn from `top_in` inches below the top
+    of the canvas; returns the depth, in inches, of the panel's lowest element.
 
     Fills come from the sequential ramp and each segment takes an ink outline and
     a hatch, the same treatment the F05 heatmap cells get: a fill a reader does
@@ -523,6 +587,43 @@ def _stacked_share_panel(ax, segments: list[dict], title: str, subtitle: str) ->
     but its boundary has to be legible and its identity has to survive
     greyscale.
     """
+    height = _F06_CANVAS_IN
+    inches = fig.dpi_scale_trans
+
+    def depth_of(artist) -> float:
+        """Depth below the canvas top, in inches, of an artist's lowest pixel."""
+        box = artist.get_window_extent(renderer).transformed(inches.inverted())
+        return height - box.y0
+
+    title_text = fig.text(
+        _F06_LEFT_IN / _F06_WIDTH_IN,
+        1 - top_in / height,
+        title,
+        fontsize=10.5,
+        ha="left",
+        va="top",
+        color=palette.ink(),
+    )
+    subtitle_top = depth_of(title_text) + _pt(_F06_GAP_TEXT_PT)
+    subtitle_text = fig.text(
+        _F06_LEFT_IN / _F06_WIDTH_IN,
+        1 - subtitle_top / height,
+        subtitle,
+        fontsize=7.8,
+        ha="left",
+        va="top",
+        color=palette.ink(),
+    )
+    axes_top = depth_of(subtitle_text) + _pt(_F06_GAP_TEXT_PT)
+    ax = fig.add_axes(
+        (
+            _F06_LEFT_IN / _F06_WIDTH_IN,
+            1 - (axes_top + _F06_BAR_AXES_IN) / height,
+            (_F06_WIDTH_IN - 2 * _F06_LEFT_IN) / _F06_WIDTH_IN,
+            _F06_BAR_AXES_IN / height,
+        )
+    )
+
     left = 0.0
     n = max(len(segments) - 1, 1)
     for index, segment in enumerate(segments):
@@ -533,7 +634,7 @@ def _stacked_share_panel(ax, segments: list[dict], title: str, subtitle: str) ->
             0,
             share,
             left=left,
-            height=0.52,
+            height=0.8,
             facecolor=fill,
             edgecolor=palette.ink(),
             linewidth=0.6,
@@ -547,9 +648,14 @@ def _stacked_share_panel(ax, segments: list[dict], title: str, subtitle: str) ->
                 _share_label(share),
                 ha="center",
                 va="center",
-                fontsize=8.2,
+                fontsize=8.6,
                 color=palette.readable_on(fill),
                 zorder=3,
+                bbox={
+                    "facecolor": fill,
+                    "edgecolor": "none",
+                    "boxstyle": "square,pad=0.25",
+                },
             )
         left += share
 
@@ -560,17 +666,7 @@ def _stacked_share_panel(ax, segments: list[dict], title: str, subtitle: str) ->
     ax.set_xticklabels(["0%", "20%", "40%", "60%", "80%", "100%"])
     for side in ("left", "right", "top"):
         ax.spines[side].set_visible(False)
-    ax.set_title(title, fontsize=10, loc="left", pad=10)
-    ax.annotate(
-        subtitle,
-        xy=(0, 1),
-        xycoords="axes fraction",
-        xytext=(0, 2),
-        textcoords="offset points",
-        fontsize=7.6,
-        color=palette.ink(),
-        va="bottom",
-    )
+
     handles = [
         plt.Rectangle(
             (0, 0),
@@ -584,22 +680,29 @@ def _stacked_share_panel(ax, segments: list[dict], title: str, subtitle: str) ->
         for i in range(len(segments))
     ]
     labels = [f"{s['label']}  {_share_label(s['share'])}" for s in segments]
-    ax.legend(
+    ticks_bottom = max(
+        depth_of(label) for label in ax.get_xticklabels() if label.get_text()
+    )
+    legend_top = ticks_bottom + _pt(_F06_GAP_LEGEND_PT)
+    legend = fig.legend(
         handles,
         labels,
         loc="upper left",
-        bbox_to_anchor=(0, -0.45),
+        bbox_to_anchor=(_F06_LEFT_IN / _F06_WIDTH_IN, 1 - legend_top / height),
+        bbox_transform=fig.transFigure,
         ncol=2,
-        fontsize=7.2,
+        fontsize=7.4,
         frameon=True,
         framealpha=1,
         edgecolor=palette.grid(),
         handlelength=1.6,
         handleheight=1.1,
         borderpad=0.6,
+        borderaxespad=0.0,
         labelspacing=0.5,
         columnspacing=1.4,
     )
+    return depth_of(legend)
 
 
 def f06_ancestry_composition(
@@ -617,17 +720,20 @@ def f06_ancestry_composition(
     self-identified race. They are different measurements of different
     populations, and a shared axis would invite reading one against the other.
     """
-    fig, (top, bottom) = plt.subplots(
-        2, 1, figsize=(8.6, 7.4), gridspec_kw={"hspace": 2.1}
-    )
-    _stacked_share_panel(
-        top,
+    fig = plt.figure(figsize=(_F06_WIDTH_IN, _F06_CANVAS_IN))
+    renderer = fig.canvas.get_renderer()
+    bottom = _stacked_share_panel(
+        fig,
+        renderer,
+        0.1,
         discovery,
         "Asthma GWAS discovery samples, by broad ancestral category",
         discovery_subtitle,
     )
     _stacked_share_panel(
-        bottom,
+        fig,
+        renderer,
+        bottom + _F06_GAP_PANELS_IN,
         acs,
         "Loudoun County residents, by self-identified race",
         acs_subtitle,
