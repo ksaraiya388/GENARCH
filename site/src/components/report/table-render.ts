@@ -168,9 +168,9 @@ export const TABLE_RENDER: Record<string, TableRender> = {
   },
   T11_loci_by_ancestry: {
     widths: {
-      Locus: "0.58in",
-      Cytoband: "0.42in",
-      Genes: "0.54in",
+      Locus: "0.52in",
+      Cytoband: "0.5in",
+      Genes: "0.52in",
       Associations: "0.5in",
       "Distinct variants": "0.42in",
       European: "0.42in",
