@@ -12,6 +12,7 @@ import {
   N as NBase,
   ReportTable as ReportTableBase,
   ReportFigure as ReportFigureBase,
+  TableRef as TableRefBase,
 } from "@/components/report";
 import type { NProps, ReportFigureProps, ReportTableProps } from "@/components/report";
 
@@ -29,8 +30,13 @@ export function ReportFigure(props: Omit<ReportFigureProps, "year">) {
   return <ReportFigureBase year={YEAR} {...props} />;
 }
 
+export function TableRef({ id }: { id: string }) {
+  return <TableRefBase year={YEAR} id={id} />;
+}
+
 export {
   Cite,
+  EditionDate,
   References,
   DeqLimitation,
   Section,

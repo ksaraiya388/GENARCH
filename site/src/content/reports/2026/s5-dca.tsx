@@ -1,6 +1,7 @@
 import {
   Callout,
   Cite,
+  EditionDate,
   List,
   Item,
   N,
@@ -9,6 +10,7 @@ import {
   ReportTable,
   Section,
   Sub,
+  TableRef,
 } from "./bound";
 
 export function DataCenterAlley() {
@@ -29,10 +31,11 @@ export function DataCenterAlley() {
         <P>
           The network grew and shrank over the record. Across 2026 it covered{" "}
           <N k="network.sites_total" /> sites, of which{" "}
-          <N k="network.sites_active_at_cutoff" /> were collecting at DEQ&apos;s{" "}
+          <N k="network.sites_active_at_deq_cutoff" /> were collecting at DEQ&apos;s{" "}
           <N k="deq.edition_cutoff" /> edition cutoff. Three Loudoun sites retired
           before that cutoff and three sites outside Loudoun joined after it. The
-          records differ enormously in length: through DEQ&apos;s 2026-08-07 edition, site
+          records differ enormously in length: through DEQ&apos;s{" "}
+          <EditionDate id="deq2026aug07" /> edition, site
           DC-01 carries <N k="network.record_days.DC-01" /> complete days and site DC-06
           carries <N k="network.record_days.DC-06" />, which is the fact behind the
           record-length result below. The window in which all six of the then-live sensors were
@@ -114,14 +117,15 @@ export function DataCenterAlley() {
         <Callout title="After the freeze">
           <P>
             The collocation window at site DC-01 closed on 2026-10-22, when the unit
-            there was replaced, as DEQ&apos;s 2026-10-30 edition records{" "}
-            <Cite id="deq2026oct30" />. Site DC-01, the collocation site, then closed on
-            2026-11-04, as DEQ&apos;s 2026-11-06 edition records in its section 2{" "}
-            <Cite id="deq2026nov06" />, and the replacement unit&apos;s collocation window
-            ended that day. Of the other sites Table 2 shows as open at the freeze, site
-            DC-02 has since closed, on 2026-10-22, as the 2026-10-30 edition records in
-            its section 2; the 2026-11-06 edition records no closure at sites DC-04,
-            DC-10, DC-11 or DC-12.
+            there was replaced, as DEQ&apos;s <EditionDate id="deq2026oct30" /> edition
+            records <Cite id="deq2026oct30" />. Site DC-01, the collocation site, then
+            closed on 2026-11-04, as DEQ&apos;s <EditionDate id="deq2026nov06" /> edition
+            records in its section 2 <Cite id="deq2026nov06" />, and the replacement
+            unit&apos;s collocation window ended that day. Of the other sites{" "}
+            <TableRef id="T02" /> shows as open at the freeze, site DC-02 has since closed,
+            on 2026-10-22, as the <EditionDate id="deq2026oct30" /> edition records in its
+            section 2; the <EditionDate id="deq2026nov06" /> edition records no closure at
+            sites DC-04, DC-10, DC-11 or DC-12.
           </P>
           <P>
             All of this is after the 2026-10-18 freeze this report is computed at, so it
@@ -138,7 +142,7 @@ export function DataCenterAlley() {
           comparing them against the daily-average file DEQ publishes, gives agreement
           on <N k="daily.n_match" /> of <N k="daily.n_days" /> comparable days, with a
           mean absolute difference of <N k="daily.mean_abs_diff" /> µg/m³ and a maximum
-          of <N k="daily.max_abs_diff" /> µg/m³, over{" "}
+          of <N k="daily.max_abs_diff" digits={1} /> µg/m³, over{" "}
           <N k="daily.n_days" fmt="window" />. Comparable has a precise meaning here: the
           published day has to survive DEQ&apos;s null-code and logger-invalid
           exclusions, and the recomputed day has to clear 18 of 24 valid hours. DEQ
@@ -147,7 +151,8 @@ export function DataCenterAlley() {
         </P>
         <P>
           The single day that differs is 2026-03-10, recomputed{" "}
-          <N k="daily.max_abs_diff" /> µg/m³ below the published one at 23 valid hours. An earlier figure for
+          <N k="daily.max_abs_diff" digits={1} /> µg/m³ below the published one at 23 valid
+          hours. An earlier figure for
           this reconciliation covered a wider set of days by applying no completeness
           threshold and reading the published file unfiltered; the threshold is DEQ&apos;s
           own, so that figure is superseded and the narrower comparison is what is
@@ -158,7 +163,8 @@ export function DataCenterAlley() {
 
       <Sub number="5.4" id="dca-record-length" title="Record length moves a percentile">
         <P>
-          Table 4 of DEQ&apos;s <Cite id="deq2026aug07" /> edition identifies one sensor,
+          Table 4 of DEQ&apos;s <EditionDate id="deq2026aug07" /> edition{" "}
+          <Cite id="deq2026aug07" /> identifies one sensor,
           site DC-06 in the site key, as the only sensor in the network whose daily
           PM2.5 98th percentile exceeded <N k="naaqs.daily_standard" /> µg/m³. Restricted
           to the window when all six then-live sensors were collecting,{" "}
@@ -175,7 +181,8 @@ export function DataCenterAlley() {
           DEQ&apos;s own; the comparison between sensors did not hold because the records
           differed in length and in season, and the resolution came from DEQ&apos;s own
           lengthening record, with the agency&apos;s{" "}
-          <Cite id="deq2026oct09" /> edition listing no site above that level. This is a
+          <EditionDate id="deq2026oct09" /> edition <Cite id="deq2026oct09" /> listing no
+          site above that level. This is a
           statement about record length, not a claim that DEQ&apos;s figures were wrong
           or that any site is polluted.
         </P>
@@ -187,8 +194,10 @@ export function DataCenterAlley() {
           edition from data through <N k="deq.edition_cutoff" />, and the table carries
           that cutoff as its own column so both day sets are visible. Under DEQ&apos;s
           cutoff the record lengths shorten by a day at several sites and the result is
-          unchanged: the same number of sites sit above the level and site DC-06 still
-          ranks fourth under both day definitions.
+          unchanged: the same number of sites sit above the level, and site DC-06 still
+          ranks <N k="p98.common.rank.DC-06.deq_cutoff" fmt="ordinal" /> under local
+          standard time days and <N k="p98.common_clock.rank.DC-06.deq_cutoff" fmt="ordinal" />{" "}
+          under local clock time days.
         </P>
         <P>
           Over each site&apos;s own record the reproduction of that table is partial, and

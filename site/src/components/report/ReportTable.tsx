@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import { reportTable, reportTableRows } from "@/lib/report-registry";
 import { isNumericCell, tableLabel } from "./labels";
 import { TABLE_RENDER, checkRender, formatCell, softHyphenate } from "./table-render";
@@ -18,6 +20,55 @@ export interface ReportTableProps {
 
 const HASH_PREFIX = 12;
 
+// A date, a time of day, or a time with its offset. None of these may break inside a
+// cell; an ISO timestamp may break only between its date and its time.
+const DATE_OR_TIME = /\d{4}-\d{2}-\d{2}|\d{2}:\d{2}(?::\d{2})?(?:[+-]\d{2}:\d{2})?/g;
+
+function noBreak(text: string, key: string | number): ReactNode {
+  return (
+    <span key={key} className="report-nobreak">
+      {text}
+    </span>
+  );
+}
+
+/** Wrap every date and time token in a span that cannot break. */
+function protectDates(text: string): ReactNode {
+  const parts: ReactNode[] = [];
+  let last = 0;
+  for (const m of Array.from(text.matchAll(DATE_OR_TIME))) {
+    const at = m.index ?? 0;
+    if (at > last) parts.push(text.slice(last, at));
+    parts.push(noBreak(m[0], at));
+    last = at + m[0].length;
+    // The T of an ISO timestamp is the one place it may break.
+    if (text[last] === "T") {
+      parts.push("T");
+      parts.push(<wbr key={`w${last}`} />);
+      last += 1;
+    }
+  }
+  if (parts.length === 0) return text;
+  if (last < text.length) parts.push(text.slice(last));
+  return parts;
+}
+
+/** Tokens split on spaces and after slashes, each unbreakable. */
+function atomicTokens(text: string): ReactNode {
+  const parts: ReactNode[] = [];
+  text.split(/(\s+)/).forEach((word, i) => {
+    if (/^\s+$/.test(word)) {
+      parts.push(word);
+      return;
+    }
+    word.split(/(?<=\/)/).forEach((piece, j) => {
+      if (j > 0) parts.push(<wbr key={`w${i}-${j}`} />);
+      parts.push(noBreak(piece, `${i}-${j}`));
+    });
+  });
+  return parts;
+}
+
 /**
  * One report table, rendered from its CSV as an accessible table.
  *
@@ -35,7 +86,7 @@ const HASH_PREFIX = 12;
 export function ReportTable({ year, id, hashColumns = [], compact = false }: ReportTableProps) {
   const manifest = reportTable(year, id);
   const { header, rows } = reportTableRows(year, manifest);
-  const label = tableLabel(manifest.id);
+  const label = tableLabel(year, manifest.id);
 
   // The manifest's `units` map is keyed by column name, but not every entry names a
   // column: T03 records units for "Intercept and slope" and "n", which are concepts
@@ -95,6 +146,7 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
   const emptyAt = new Map(
     Object.entries(render.emptyAs ?? {}).map(([column, text]) => [header.indexOf(column), text])
   );
+  const atomicCols = colIndex(render.atomic);
   const labelCol = render.shortLabels ? header.indexOf(render.shortLabels.column) : -1;
   // Each long sentence the short labels stand for, in order of first appearance, so
   // the note prints each one once.
@@ -102,7 +154,7 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
 
   let truncated = false;
 
-  const renderCell = (value: string, column: number): string => {
+  const cellText = (value: string, column: number): string => {
     if (hashCols.has(column) && value.length > HASH_PREFIX) {
       truncated = true;
       return `${value.slice(0, HASH_PREFIX)}…`;
@@ -120,6 +172,11 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
     if (value.trim() === "" && emptyAt.has(column)) return emptyAt.get(column)!;
     const format = formatAt.get(column);
     return format ? formatCell(value, format) : value;
+  };
+
+  const renderCell = (value: string, column: number): ReactNode => {
+    const text = cellText(value, column);
+    return atomicCols.has(column) ? atomicTokens(text) : protectDates(text);
   };
 
   const cellClass = (cell: string, c: number): string | undefined =>
@@ -209,7 +266,8 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
         <tbody>{body}</tbody>
       </table>
       <figcaption className="report-table-source">
-        <span className="report-source-label">Source:</span> {manifest.source_note}
+        <span className="report-source-label">Source:</span> {manifest.source_note}{" "}
+        <span className="report-source-label">Archive file:</span> {manifest.file}.
         {render.unitsNote ? (
           <>
             {" "}

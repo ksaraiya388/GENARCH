@@ -400,15 +400,40 @@ async function main() {
     // on the artifact rather than on a timer.
     await page.waitForSelector(".report-figure-image", { timeout: 30000 });
 
-    await page
+    // Only the report's figures are waited on. The wait used to cover every image on
+    // the page, and the site footer's logo is lazy-loaded: it sits far below the
+    // viewport, never comes into view, and so never loads, which held every build for
+    // the full 30 seconds and then continued anyway. The figures are eager and resolve
+    // in well under a second. A figure that loads with no natural width (a missing
+    // file, a wrong media type) is a broken figure, and the build stops on it.
+    const figureWait = await page
       .waitForFunction(
-        () => Array.from(document.images).every((img) => img.complete),
+        () => {
+          const figures = Array.from(document.querySelectorAll("img.report-figure-image"));
+          return figures.length > 0 && figures.every((img) => img.complete);
+        },
         undefined,
         { timeout: 30000 }
       )
-      .catch(() => {
-        console.log("[pdf] not every image reported complete in 30s; continuing");
-      });
+      .then(() => true)
+      .catch(() => false);
+    const figureState = await page.evaluate(() =>
+      Array.from(document.querySelectorAll("img.report-figure-image")).map((img) => ({
+        src: img.getAttribute("src"),
+        complete: img.complete,
+        width: img.naturalWidth,
+      }))
+    );
+    const broken = figureState.filter((f) => !f.complete || f.width === 0);
+    if (!figureWait || broken.length > 0) {
+      throw new Error(
+        "figure images did not load: " +
+          (broken.length > 0
+            ? broken.map((f) => `${f.src} (complete ${f.complete}, width ${f.width})`).join(", ")
+            : "no figure image on the route")
+      );
+    }
+    console.log(`[pdf] ${figureState.length} figure images loaded`);
 
     const fontsSettled = await page.evaluate(async () => {
       if (!document.fonts) return true;

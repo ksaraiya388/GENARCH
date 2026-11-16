@@ -1,4 +1,4 @@
-import { Cite, List, Item, N, P, Section } from "./bound";
+import { Cite, EditionDate, List, Item, N, P, Section } from "./bound";
 
 export function Scope() {
   return (
@@ -38,7 +38,8 @@ export function Scope() {
       <P>
         The monitoring scope is narrower than DEQ&apos;s. DEQ retitled the project study
         area to cover Loudoun County and Prince William County in its{" "}
-        <Cite id="deq2026oct09" /> edition, and three sites outside Loudoun joined the
+        <EditionDate id="deq2026oct09" /> edition <Cite id="deq2026oct09" />, and three
+        sites outside Loudoun joined the
         network in September 2026: sites DC-10, DC-11 and DC-12 in the site key. They are
         named here and in the network description so the count of sites is honest, and
         no reading from any of them is reported. Every value in this report comes from

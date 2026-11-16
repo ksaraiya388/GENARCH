@@ -1,4 +1,4 @@
-import { Callout, Cite, DeqLimitation, Lead, N, P, Section } from "./bound";
+import { Callout, Cite, DeqLimitation, EditionDate, Lead, N, P, Section } from "./bound";
 
 /**
  * The summary, held to one page.
@@ -53,8 +53,9 @@ export function Summary() {
         absolute difference of <N k="daily.mean_abs_diff" /> µg/m³. On the window when
         all six sensors were collecting, <N k="p98.common.n_above_35" /> of the{" "}
         <N k="p98.common.n_sites" /> exceed{" "}
-        <N k="naaqs.daily_standard" /> µg/m³ and the sensor DEQ&apos;s Table 4 of{" "}
-        <Cite id="deq2026aug07" /> identifies as the only one above that level, site
+        <N k="naaqs.daily_standard" /> µg/m³ and the sensor that Table 4 of DEQ&apos;s{" "}
+        <EditionDate id="deq2026aug07" /> edition <Cite id="deq2026aug07" /> identifies
+        as the only one above that level, site
         DC-06 in the site key, ranks <N k="p98.common.rank.DC-06" fmt="ordinal" /> — which
         is a statement about unequal record length and season and
         not about any site being polluted, and neither DEQ&apos;s figure nor this one is

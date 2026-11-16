@@ -12,7 +12,7 @@
  * screen report keeps its automatic layout and its horizontal scroll.
  */
 
-export type CellFormat = "count" | "share2";
+export type CellFormat = "count" | "share2" | "trailing1";
 
 export interface TableRender {
   /** Print-route column widths, by column name. Every column must be named. */
@@ -39,6 +39,11 @@ export interface TableRender {
   small?: boolean;
   /** State units under the table rather than in the header row. */
   unitsBelow?: boolean;
+  /**
+   * Columns whose space- or slash-separated tokens never break inside (gene symbols,
+   * locus labels). A line may break only between tokens or after a slash.
+   */
+  atomic?: string[];
 }
 
 /**
@@ -95,17 +100,22 @@ const DEQ_REPORT_LICENCE =
 export const TABLE_RENDER: Record<string, TableRender> = {
   T01_sources: {
     widths: {
-      Source: "1.55in",
+      Source: "1.49in",
       Origin: "1.35in",
       Licence: "0.62in",
-      "Export date": "0.78in",
+      "Export date": "0.84in",
       "Data cutoff": "0.7in",
       "SHA-256": "1.46in",
     },
     mono: ["SHA-256"],
     small: true,
     unitsBelow: true,
-    breakAnywhere: ["Origin", "Export date"],
+    breakAnywhere: ["Origin"],
+    emptyAs: { "Export date": "not applicable" },
+    notes: [
+      "Export date does not apply to the DEQ weekly editions, which are downloads " +
+        "rather than dashboard exports; their retrieval dates are in the Sources list.",
+    ],
     shortLabels: {
       column: "Licence",
       labels: {
@@ -117,20 +127,20 @@ export const TABLE_RENDER: Record<string, TableRender> = {
   },
   T03_collocation: {
     widths: {
-      Comparison: "0.52in",
+      Comparison: "0.48in",
       "DEQ intercept": "0.44in",
-      "DEQ slope": "0.38in",
-      "DEQ R-squared": "0.44in",
+      "DEQ slope": "0.36in",
+      "DEQ R-squared": "0.42in",
       "GENARCH intercept": "0.44in",
-      "GENARCH slope": "0.4in",
+      "GENARCH slope": "0.38in",
       "GENARCH R-squared": "0.44in",
       "Difference, intercept": "0.44in",
-      "Difference, slope": "0.4in",
+      "Difference, slope": "0.38in",
       "Difference, R-squared": "0.44in",
-      "Paired hours": "0.38in",
-      "Period start": "0.56in",
-      "Period end": "0.56in",
-      Status: "0.6in",
+      "Paired hours": "0.36in",
+      "Period start": "0.62in",
+      "Period end": "0.62in",
+      Status: "0.62in",
     },
   },
   T02_site_key: {
@@ -139,6 +149,11 @@ export const TABLE_RENDER: Record<string, TableRender> = {
       "Record days is the site total, repeated on each unit row of a site that had " +
         "more than one unit.",
     ],
+  },
+  T04s_daily_summary: {
+    // DEQ truncates to one decimal, so a difference of two published-precision values
+    // has one meaningful decimal. The key keeps its recorded precision.
+    format: { "Maximum absolute difference (µg/m³)": "trailing1" },
   },
   T08_module_inventory: {
     emptyAs: { "Graph nodes": "n/a", "Graph edges": "n/a" },
@@ -150,8 +165,8 @@ export const TABLE_RENDER: Record<string, TableRender> = {
       To: "0.95in",
       "Evidence class": "0.68in",
       "Class read from an atlas record": "0.66in",
-      "Source of the evidence class": "2.08in",
-      "As of (atlas freeze)": "0.72in",
+      "Source of the evidence class": "1.96in",
+      "As of (atlas freeze)": "0.84in",
     },
     breakAnywhere: ["Source of the evidence class"],
   },
@@ -169,8 +184,8 @@ export const TABLE_RENDER: Record<string, TableRender> = {
   T11_loci_by_ancestry: {
     widths: {
       Locus: "0.52in",
-      Cytoband: "0.5in",
-      Genes: "0.52in",
+      Cytoband: "0.54in",
+      Genes: "0.48in",
       Associations: "0.5in",
       "Distinct variants": "0.42in",
       European: "0.42in",
@@ -185,6 +200,7 @@ export const TABLE_RENDER: Record<string, TableRender> = {
       "Associations with no initial-stage ancestry row": "0.5in",
     },
     unitsNote: "counts",
+    atomic: ["Locus", "Cytoband", "Genes"],
   },
   T12_loudoun_acs_context: {
     format: { Residents: "count", Share: "share2", "Margin of error": "count" },
@@ -202,6 +218,14 @@ export function formatCell(value: string, format: CellFormat): string {
   const trimmed = value.trim();
   if (!NUMERIC.test(trimmed)) return value;
   if (format === "share2") return Number(trimmed).toFixed(2);
+  if (format === "trailing1") {
+    // One decimal, dropping trailing zeros only; a value that would round is an error.
+    const scaled = Number(trimmed) * 10;
+    if (Math.abs(scaled - Math.round(scaled)) > 1e-9) {
+      throw new Error(`cell ${trimmed}: one decimal would round it, not drop trailing zeros`);
+    }
+    return Number(trimmed).toFixed(1);
+  }
   const [whole, fraction] = trimmed.split(".");
   const sign = whole.startsWith("-") || whole.startsWith("+") ? whole[0] : "";
   const grouped = groupThousands(sign ? whole.slice(1) : whole);
@@ -220,6 +244,7 @@ export function checkRender(tableId: string, header: string[], render: TableRend
     ...Object.keys(render.emptyAs ?? {}),
     ...Object.keys(render.format ?? {}),
     ...(render.shortLabels ? [render.shortLabels.column] : []),
+    ...(render.atomic ?? []),
   ];
   const missing = named.filter((column) => !header.includes(column));
   if (missing.length > 0) {

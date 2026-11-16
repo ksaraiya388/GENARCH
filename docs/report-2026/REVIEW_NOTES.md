@@ -9,8 +9,8 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 ## Totals
 
 - Sentences inventoried: **393**
-- Carrying at least one key or citation: **66**; carrying neither: **327**
-- Distinct registry keys cited: **86**
+- Carrying at least one key or citation: **67**; carrying neither: **326**
+- Distinct registry keys cited: **88**
 - Distinct references cited: **25**
 - Review markers awaiting the author: **0**
 
@@ -34,7 +34,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Four results are reported. |  |
 | The four collocation regressions at the collocated site agree with DEQ's published coefficients within {colloc.tolerance_coefficient} on slope and intercept and {colloc.tolerance_r2} on R-squared, computed through DEQ's {deq.edition_cutoff} edition cutoff. | `{colloc.tolerance_coefficient}` `{colloc.tolerance_r2}` `{deq.edition_cutoff}` |
 | Recomputed daily averages for the regulatory monitor match DEQ's published daily file on {daily.n_match} of {daily.n_days} comparable days, with a mean absolute difference of {daily.mean_abs_diff} µg/m³. | `{daily.n_match}` `{daily.n_days}` `{daily.mean_abs_diff}` |
-| On the window when all six sensors were collecting, {p98.common.n_above_35} of the {p98.common.n_sites} exceed {naaqs.daily_standard} µg/m³ and the sensor DEQ's Table 4 of [deq2026aug07] identifies as the only one above that level, site DC-06 in the site key, ranks {p98.common.rank.DC-06} — which is a statement about unequal record length and season and not about any site being polluted, and neither DEQ's figure nor this one is comparable to the national standards. | `{p98.common.n_above_35}` `{p98.common.n_sites}` `{naaqs.daily_standard}` `{p98.common.rank.DC-06}` `[deq2026aug07]` |
+| On the window when all six sensors were collecting, {p98.common.n_above_35} of the {p98.common.n_sites} exceed {naaqs.daily_standard} µg/m³ and the sensor that Table 4 of DEQ's edition [deq2026aug07] identifies as the only one above that level, site DC-06 in the site key, ranks {p98.common.rank.DC-06} — which is a statement about unequal record length and season and not about any site being polluted, and neither DEQ's figure nor this one is comparable to the national standards. | `{p98.common.n_above_35}` `{p98.common.n_sites}` `{naaqs.daily_standard}` `{p98.common.rank.DC-06}` `[deq2026aug07]` |
 | Hourly PM2.5 correlates between {corr.min} and {corr.max} across every pair of the six sensors outside the smoke window, which is descriptive and does not establish that local sources contribute nothing. | `{corr.min}` `{corr.max}` |
 | No cross-ancestry gene-environment effect estimates are reported in this version; they are planned for a later phase. |  |
 | The paired-site analysis of the two units that shared a location is not included. |  |
@@ -61,7 +61,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | The atlas content in this report is as of its atlas freeze date, {inventory.frozen_at}. | `{inventory.frozen_at}` |
 | The reprocessed monitoring data run from the first sensor hour in early March 2026 to the freeze's data cutoff at {freeze.cutoff} local clock time, and the regulatory monitor record ends earlier, on 2026-08-10, where the released public-records request stops [foia264646]. | `{freeze.cutoff}` `[foia264646]` |
 | The monitoring scope is narrower than DEQ's. |  |
-| DEQ retitled the project study area to cover Loudoun County and Prince William County in its [deq2026oct09] edition, and three sites outside Loudoun joined the network in September 2026: sites DC-10, DC-11 and DC-12 in the site key. | `[deq2026oct09]` |
+| DEQ retitled the project study area to cover Loudoun County and Prince William County in its edition [deq2026oct09], and three sites outside Loudoun joined the network in September 2026: sites DC-10, DC-11 and DC-12 in the site key. | `[deq2026oct09]` |
 | They are named here and in the network description so the count of sites is honest, and no reading from any of them is reported. |  |
 | Every value in this report comes from the nine Loudoun County sites and the one regulatory monitor. |  |
 | The report is written for four kinds of reader: |  |
@@ -218,7 +218,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Seven of the eight modules are emitted by the current pipeline and reproduce from it. |  |
 | The graph does not, for the reason given in the methods and repeated in the limitations, and its row records that status rather than hiding it behind a count. |  |
 | The brief total counts every brief record under the briefs directory, including one that is not published and so is not routable or linkable on the site. |  |
-| _Renders table_ `T08` | _generated artifact_ |
+| _Renders Table 1, `T08_module_inventory`_ | _generated artifact_ |
 
 ## `s5-dca.tsx`
 
@@ -237,15 +237,15 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Sentence | Sources |
 |---|---|
 | The network grew and shrank over the record. |  |
-| Across 2026 it covered {network.sites_total} sites, of which {network.sites_active_at_cutoff} were collecting at DEQ's {deq.edition_cutoff} edition cutoff. | `{network.sites_total}` `{network.sites_active_at_cutoff}` `{deq.edition_cutoff}` |
+| Across 2026 it covered {network.sites_total} sites, of which {network.sites_active_at_deq_cutoff} were collecting at DEQ's {deq.edition_cutoff} edition cutoff. | `{network.sites_total}` `{network.sites_active_at_deq_cutoff}` `{deq.edition_cutoff}` |
 | Three Loudoun sites retired before that cutoff and three sites outside Loudoun joined after it. |  |
-| The records differ enormously in length: through DEQ's 2026-08-07 edition, site DC-01 carries {network.record_days.DC-01} complete days and site DC-06 carries {network.record_days.DC-06}, which is the fact behind the record-length result below. | `{network.record_days.DC-01}` `{network.record_days.DC-06}` |
+| The records differ enormously in length: through DEQ's edition, site DC-01 carries {network.record_days.DC-01} complete days and site DC-06 carries {network.record_days.DC-06}, which is the fact behind the record-length result below. | `{network.record_days.DC-01}` `{network.record_days.DC-06}` |
 | The window in which all six of the then-live sensors were collecting together runs from {network.common_window.start} to {network.common_window.end}. | `{network.common_window.start}` `{network.common_window.end}` |
 | Sensors are identified throughout by neutral site code. |  |
 | Four of the nine Loudoun sites are hosted at schools, and setting a school name beside a concentration figure invites an inference about children at that school which none of these data support. |  |
 | The site key, printed with the coverage figure below, maps each code to the name DEQ publishes for that location. |  |
 | It carries no reading value of any kind, by design, so the reproduction against DEQ's documents stays checkable without the two ever appearing in one row. |  |
-| _Renders figure_ `F01` | _generated artifact_ |
+| _Renders figure `F01`_ | _generated artifact_ |
 
 #### 5.2 Reproducing the collocation regressions
 
@@ -260,7 +260,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Two of them run over a closed window, so their published values cannot move in any later edition. |  |
 | The other two remain open and are refit every week as more data arrive, which means their published coefficients move in every edition, and any comparison against one of them has to align cutoffs before it means anything. |  |
 | That is the right way to describe the set, and it is the reason this report does not report how many of the four currently agree. |  |
-| _Renders figure_ `F02` | _generated artifact_ |
+| _Renders figure `F02`_ | _generated artifact_ |
 | One of the four does not round to DEQ's printed value. |  |
 | The NO2 fit on the first unit gives an R-squared of {colloc.apex-14_NO2.gx_r2} against DEQ's published {colloc.apex-14_NO2.deq_r2}, a difference of {colloc.apex-14_NO2.diff_r2} that sits inside tolerance but rounds to a different second decimal. | `{colloc.apex-14_NO2.gx_r2}` `{colloc.apex-14_NO2.deq_r2}` `{colloc.apex-14_NO2.diff_r2}` |
 | Leave-one-out resampling on that fit moves the R-squared across a span wide enough to cross that boundary, and removing any of several single observations pushes it over. |  |
@@ -273,9 +273,9 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Its coefficients move when the dashboard's backfilled all-zero rows are admitted to a zero-retaining fit: the intercept goes from {colloc.apex-05_NO2.gx_intercept} to {colloc.apex-05_NO2.backfill_gx_intercept}, the slope from {colloc.apex-05_NO2.gx_slope} to {colloc.apex-05_NO2.backfill_gx_slope}, the R-squared from {colloc.apex-05_NO2.gx_r2} to {colloc.apex-05_NO2.backfill_gx_r2} and the paired-hour count from {colloc.apex-05_NO2.n_pairs} to {colloc.apex-05_NO2.backfill_n_pairs}, on the one backfilled hour that only that fit readmits. | `{colloc.apex-05_NO2.gx_intercept}` `{colloc.apex-05_NO2.backfill_gx_intercept}` `{colloc.apex-05_NO2.gx_slope}` `{colloc.apex-05_NO2.backfill_gx_slope}` `{colloc.apex-05_NO2.gx_r2}` `{colloc.apex-05_NO2.backfill_gx_r2}` `{colloc.apex-05_NO2.n_pairs}` `{colloc.apex-05_NO2.backfill_n_pairs}` |
 | The other three regressions are unchanged. |  |
 | The values reported here are computed from the original analysis inputs, which is the input set DEQ's own published coefficients correspond to. |  |
-| The collocation window at site DC-01 closed on 2026-10-22, when the unit there was replaced, as DEQ's 2026-10-30 edition records [deq2026oct30]. | `[deq2026oct30]` |
-| Site DC-01, the collocation site, then closed on 2026-11-04, as DEQ's 2026-11-06 edition records in its section 2 [deq2026nov06], and the replacement unit's collocation window ended that day. | `[deq2026nov06]` |
-| Of the other sites Table 2 shows as open at the freeze, site DC-02 has since closed, on 2026-10-22, as the 2026-10-30 edition records in its section 2; the 2026-11-06 edition records no closure at sites DC-04, DC-10, DC-11 or DC-12. |  |
+| The collocation window at site DC-01 closed on 2026-10-22, when the unit there was replaced, as DEQ's edition records [deq2026oct30]. | `[deq2026oct30]` |
+| Site DC-01, the collocation site, then closed on 2026-11-04, as DEQ's edition records in its section 2 [deq2026nov06], and the replacement unit's collocation window ended that day. | `[deq2026nov06]` |
+| Of the other sites shows as open at the freeze, site DC-02 has since closed, on 2026-10-22, as the edition records in its section 2; the edition records no closure at sites DC-04, DC-10, DC-11 or DC-12. |  |
 | All of this is after the 2026-10-18 freeze this report is computed at, so it changes no value and no framing above. |  |
 | It is stated once, here, so a reader comparing this report against a current DEQ edition knows why the window ends and why the network looks different. |  |
 
@@ -288,29 +288,29 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | DEQ truncates published values to one decimal rather than rounding them, and the comparison truncates the same way. |  |
 | The single day that differs is 2026-03-10, recomputed {daily.max_abs_diff} µg/m³ below the published one at 23 valid hours. | `{daily.max_abs_diff}` |
 | An earlier figure for this reconciliation covered a wider set of days by applying no completeness threshold and reading the published file unfiltered; the threshold is DEQ's own, so that figure is superseded and the narrower comparison is what is reported. |  |
-| _Renders figure_ `F03` | _generated artifact_ |
+| _Renders figure `F03`_ | _generated artifact_ |
 
 #### 5.4 Record length moves a percentile
 
 | Sentence | Sources |
 |---|---|
-| Table 4 of DEQ's [deq2026aug07] edition identifies one sensor, site DC-06 in the site key, as the only sensor in the network whose daily PM2.5 98th percentile exceeded {naaqs.daily_standard} µg/m³. | `{naaqs.daily_standard}` `[deq2026aug07]` |
+| Table 4 of DEQ's edition [deq2026aug07] identifies one sensor, site DC-06 in the site key, as the only sensor in the network whose daily PM2.5 98th percentile exceeded {naaqs.daily_standard} µg/m³. | `{naaqs.daily_standard}` `[deq2026aug07]` |
 | Restricted to the window when all six then-live sensors were collecting, {p98.common.n_above_35} of the {p98.common.n_sites} exceed that level under the local standard time day definition and the same number under local clock time, and site DC-06 ranks {p98.common.rank.DC-06} under both. | `{p98.common.n_above_35}` `{p98.common.n_sites}` `{p98.common.rank.DC-06}` |
 | Its record was {network.record_days.DC-06} complete days, falling entirely in high summer and including the wildfire smoke weekend, against {network.record_days.DC-04} to {network.record_days.DC-01} days for the other five. | `{network.record_days.DC-06}` `{network.record_days.DC-04}` `{network.record_days.DC-01}` |
 | Neither DEQ's figure nor the figure here is comparable to the national standards. |  |
-| DEQ's table reported each sensor's value over that sensor's own record, and every figure in the series is DEQ's own; the comparison between sensors did not hold because the records differed in length and in season, and the resolution came from DEQ's own lengthening record, with the agency's [deq2026oct09] edition listing no site above that level. | `[deq2026oct09]` |
+| DEQ's table reported each sensor's value over that sensor's own record, and every figure in the series is DEQ's own; the comparison between sensors did not hold because the records differed in length and in season, and the resolution came from DEQ's own lengthening record, with the agency's edition [deq2026oct09] listing no site above that level. | `[deq2026oct09]` |
 | This is a statement about record length, not a claim that DEQ's figures were wrong or that any site is polluted. |  |
 | Moving from standard-time to clock-time binning raises the percentile at every site, by between {p98.common_clock.rise_min} and {p98.common_clock.rise_max} µg/m³ on the common window, and reorders nothing. | `{p98.common_clock.rise_min}` `{p98.common_clock.rise_max}` |
 | Counts and values use whole days through 2026-08-07; DEQ built the edition from data through {deq.edition_cutoff}, and the table carries that cutoff as its own column so both day sets are visible. | `{deq.edition_cutoff}` |
-| Under DEQ's cutoff the record lengths shorten by a day at several sites and the result is unchanged: the same number of sites sit above the level and site DC-06 still ranks fourth under both day definitions. |  |
+| Under DEQ's cutoff the record lengths shorten by a day at several sites and the result is unchanged: the same number of sites sit above the level, and site DC-06 still ranks {p98.common.rank.DC-06.deq_cutoff} under local standard time days and {p98.common_clock.rank.DC-06.deq_cutoff} under local clock time days. | `{p98.common.rank.DC-06.deq_cutoff}` `{p98.common_clock.rank.DC-06.deq_cutoff}` |
 | Over each site's own record the reproduction of that table is partial, and it stays described as partial. |  |
 | The day boundary accounts for most of a one to two microgram offset: local clock time with zero readings treated as missing brings five of the six live sites within {p98.reproduction_tolerance} µg/m³ of DEQ's published value, leaving one at a fifth of a microgram. | `{p98.reproduction_tolerance}` |
 | Zero handling is a secondary effect and is inconsistent in direction, closing one site and opening another. |  |
 | The three sites whose record ended before that edition reproduce only under standard-time binning, although their record-day counts and end dates agree with DEQ under both definitions, and no end date brings them within tolerance under clock days. |  |
 | That difference is unexplained. |  |
 | No single combination of day definition and zero handling reproduces all nine rows, which is why this is reported as a partial reproduction and never as fully explained. |  |
-| _Renders table_ `T06` | _generated artifact_ |
-| _Renders figure_ `F04` | _generated artifact_ |
+| _Renders Table 5, `T06_p98_full_record_variants`_ | _generated artifact_ |
+| _Renders figure `F04`_ | _generated artifact_ |
 
 #### 5.5 Cross-site correlation
 
@@ -319,7 +319,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Hourly PM2.5 correlates between {corr.min} and {corr.max} across all fifteen pairs of the six sensors, over {corr.n_hours} hours outside the smoke window, with zero readings treated as missing. | `{corr.min}` `{corr.max}` `{corr.n_hours}` |
 | This is descriptive and nothing more. |  |
 | High spatial correlation does not establish that local sources contribute nothing: the network may sit largely upwind, and a local increment can be masked by a dominant regional signal. |  |
-| _Renders figure_ `F05` | _generated artifact_ |
+| _Renders figure `F05`_ | _generated artifact_ |
 
 #### 5.6 Hypotheses tested and not supported
 
@@ -348,7 +348,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Steps two, three and four are classes assigned by the figure definition rather than read from any atlas record, and one of them carries the inferred class, meaning the atlas holds no direct evidence for it. |  |
 | The chain states a mechanism: it describes a sequence that is understood to operate in airway tissue, link by link, each link carrying its own evidence class. |  |
 | No link in it asserts that one step brings about the next in any population, and nothing in this report connects the corridor, its facilities or any reading to a health outcome in Loudoun County. |  |
-| _Renders table_ `T09` | _generated artifact_ |
+| _Renders Table 8, `T09_chain_evidence`_ | _generated artifact_ |
 
 #### 5.8 Relation to existing work
 
@@ -400,7 +400,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | What the shares describe is how the field's accumulated asthma evidence is distributed across ancestry groups, which is the question this module asks. |  |
 | A row naming one broad ancestral category contributes all its individuals to that category; a row naming several contributes an equal share to each, because the catalog publishes no per-category count within a row. |  |
 | That assumption applies to {ancestry.discovery.multi_category_rows} of {ancestry.discovery.rows} ancestry rows, carrying {ancestry.discovery.multi_category_share} percent of the total, and the table repeats every share with those rows dropped so the weight it carries is visible rather than asserted. | `{ancestry.discovery.multi_category_rows}` `{ancestry.discovery.rows}` `{ancestry.discovery.multi_category_share}` |
-| _Renders figure_ `F06` | _generated artifact_ |
+| _Renders figure `F06`_ | _generated artifact_ |
 
 #### 6.3 The in-scope loci, by ancestry of the discovery sample
 
@@ -413,7 +413,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | It does not say, and must not be read to say, that the locus is absent, inactive or irrelevant in any population. |  |
 | No study has looked there in a South Asian discovery sample, so the record is silent, and silence is not evidence of absence. |  |
 | The same holds for every other zero in the table. |  |
-| _Renders table_ `T11` | _generated artifact_ |
+| _Renders Table 10, `T11_loci_by_ancestry`_ | _generated artifact_ |
 | One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total where a discovery sample names more than one category. |  |
 | An association is assigned to a locus when any symbol in the catalog's own mapped-gene annotation for that association matches one of the locus's gene symbols; the authors' own reported-gene field is deliberately not used, because it is not a controlled field. |  |
 | No genomic window is applied, because a window needs a genome build the extract does not state per row. |  |
@@ -431,7 +431,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | ACS categories are self-identified race and ethnicity, which are social categories and not genetic ancestry. |  |
 | They are shown only to describe the population the atlas is meant to serve, and the county counts cannot be set against the discovery shares above as two values of one quantity: one counts residents grouped by a social category, the other counts enrolments grouped by genetic ancestry. |  |
 | The figure gives the two panels separate axes for that reason. |  |
-| _Renders table_ `T12` | _generated artifact_ |
+| _Renders Table 11, `T12_loudoun_acs_context`_ | _generated artifact_ |
 | Two release notes belong with that table. |  |
 | It reads the ACS {ancestry.acs.release} 5-year release, retrieved for this module. | `{ancestry.acs.release}` |
 | The atlas page on ancestry and equity still reads the 2023 release, so the report and that page state county counts from two different vintages; both name their vintage, and aligning them is on the roadmap. |  |
@@ -599,7 +599,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Every input the analysis reads, with its origin, its licence, its export date, its data cutoff and its full SHA-256. |  |
 | This is the only copy of the table in the report: it is a provenance manifest rather than part of an argument, and it belongs with the reproducibility instructions above rather than inside the narrative. |  |
 | The same hashes are in data/reports/2026/FREEZE.json , which is committed, and that file rather than this rendering is what to compare bytes against. |  |
-| _Renders table_ `T01` | _generated artifact_ |
+| _Renders Table 12, `T01_sources`_ | _generated artifact_ |
 
 ### B Tables in full
 
@@ -611,8 +611,8 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Every other table is printed where it is discussed, inside the data-table disclosure of the figure it belongs to or beside the paragraph that reads it. |  |
 | Reprinting all twelve here would double the length of the report without adding a number to it. |  |
 | All twelve are published together as a CSV archive beside the PDF, which is the form to use for anything beyond reading. |  |
-| _Renders table_ `T04` | _generated artifact_ |
-| _Renders table_ `T07` | _generated artifact_ |
+| _Renders Table 13, `T04_daily_reconciliation`_ | _generated artifact_ |
+| _Renders Table 7, `T07_correlation_matrix`_ | _generated artifact_ |
 
 ### C Glossary
 

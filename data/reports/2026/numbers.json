@@ -8364,6 +8364,40 @@
     "value": 6.0,
     "window": null
   },
+  "network.sites_active_at_deq_cutoff": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "sites in the original analysis inputs carrying at least one valid PM2.5 reading in the 24 hours before DEQ's edition cutoff, exclusion flags applied: DC-01, DC-02, DC-04, DC-06, DC-08, DC-09",
+    "n": null,
+    "precision": 0,
+    "unit": "sites",
+    "value": 6.0,
+    "window": "24 hours ending 2026-08-07T07:00 EST"
+  },
   "network.sites_total": {
     "inputs": [
       {
@@ -9248,6 +9282,64 @@
     "value": 5.0,
     "window": "2026-06-18 to 2026-08-07, 18 of 24 valid hours, exact zeros treated as missing"
   },
+  "p98.common.rank.DC-01.deq_cutoff": {
+    "inputs": [
+      {
+        "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+        "source": "Kunak hourly sensor export, DC-01 (data freeze)"
+      },
+      {
+        "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+        "source": "Kunak hourly sensor export, DC-04 (data freeze)"
+      },
+      {
+        "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+        "source": "Kunak hourly sensor export, DC-10 (data freeze)"
+      },
+      {
+        "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+        "source": "Kunak hourly sensor export, DC-02 (data freeze)"
+      },
+      {
+        "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+        "source": "Kunak hourly sensor export, DC-11 (data freeze)"
+      },
+      {
+        "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+        "source": "Kunak hourly sensor export, DC-08 (data freeze)"
+      },
+      {
+        "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+        "source": "Kunak hourly sensor export, DC-09 (data freeze)"
+      },
+      {
+        "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+        "source": "Kunak hourly sensor export, DC-07 (data freeze)"
+      },
+      {
+        "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+        "source": "Kunak hourly sensor export, DC-03 (data freeze)"
+      },
+      {
+        "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+        "source": "Kunak hourly sensor export, DC-06 (data freeze)"
+      },
+      {
+        "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+        "source": "Kunak hourly sensor export, DC-05 (data freeze)"
+      },
+      {
+        "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+        "source": "Kunak hourly sensor export, DC-12 (data freeze)"
+      }
+    ],
+    "method": "rank under DEQ's stated edition cutoff, local standard time day binning, highest first",
+    "n": 6,
+    "precision": 0,
+    "unit": "rank",
+    "value": 5.0,
+    "window": "2026-06-18 to 2026-08-07T07:00 EST, 18 of 24 valid hours, exact zeros treated as missing"
+  },
   "p98.common.rank.DC-02": {
     "inputs": [
       {
@@ -9305,6 +9397,64 @@
     "unit": "rank",
     "value": 6.0,
     "window": "2026-06-18 to 2026-08-07, 18 of 24 valid hours, exact zeros treated as missing"
+  },
+  "p98.common.rank.DC-02.deq_cutoff": {
+    "inputs": [
+      {
+        "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+        "source": "Kunak hourly sensor export, DC-01 (data freeze)"
+      },
+      {
+        "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+        "source": "Kunak hourly sensor export, DC-04 (data freeze)"
+      },
+      {
+        "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+        "source": "Kunak hourly sensor export, DC-10 (data freeze)"
+      },
+      {
+        "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+        "source": "Kunak hourly sensor export, DC-02 (data freeze)"
+      },
+      {
+        "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+        "source": "Kunak hourly sensor export, DC-11 (data freeze)"
+      },
+      {
+        "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+        "source": "Kunak hourly sensor export, DC-08 (data freeze)"
+      },
+      {
+        "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+        "source": "Kunak hourly sensor export, DC-09 (data freeze)"
+      },
+      {
+        "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+        "source": "Kunak hourly sensor export, DC-07 (data freeze)"
+      },
+      {
+        "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+        "source": "Kunak hourly sensor export, DC-03 (data freeze)"
+      },
+      {
+        "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+        "source": "Kunak hourly sensor export, DC-06 (data freeze)"
+      },
+      {
+        "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+        "source": "Kunak hourly sensor export, DC-05 (data freeze)"
+      },
+      {
+        "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+        "source": "Kunak hourly sensor export, DC-12 (data freeze)"
+      }
+    ],
+    "method": "rank under DEQ's stated edition cutoff, local standard time day binning, highest first",
+    "n": 6,
+    "precision": 0,
+    "unit": "rank",
+    "value": 6.0,
+    "window": "2026-06-18 to 2026-08-07T07:00 EST, 18 of 24 valid hours, exact zeros treated as missing"
   },
   "p98.common.rank.DC-04": {
     "inputs": [
@@ -9364,6 +9514,64 @@
     "value": 2.0,
     "window": "2026-06-18 to 2026-08-07, 18 of 24 valid hours, exact zeros treated as missing"
   },
+  "p98.common.rank.DC-04.deq_cutoff": {
+    "inputs": [
+      {
+        "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+        "source": "Kunak hourly sensor export, DC-01 (data freeze)"
+      },
+      {
+        "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+        "source": "Kunak hourly sensor export, DC-04 (data freeze)"
+      },
+      {
+        "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+        "source": "Kunak hourly sensor export, DC-10 (data freeze)"
+      },
+      {
+        "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+        "source": "Kunak hourly sensor export, DC-02 (data freeze)"
+      },
+      {
+        "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+        "source": "Kunak hourly sensor export, DC-11 (data freeze)"
+      },
+      {
+        "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+        "source": "Kunak hourly sensor export, DC-08 (data freeze)"
+      },
+      {
+        "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+        "source": "Kunak hourly sensor export, DC-09 (data freeze)"
+      },
+      {
+        "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+        "source": "Kunak hourly sensor export, DC-07 (data freeze)"
+      },
+      {
+        "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+        "source": "Kunak hourly sensor export, DC-03 (data freeze)"
+      },
+      {
+        "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+        "source": "Kunak hourly sensor export, DC-06 (data freeze)"
+      },
+      {
+        "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+        "source": "Kunak hourly sensor export, DC-05 (data freeze)"
+      },
+      {
+        "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+        "source": "Kunak hourly sensor export, DC-12 (data freeze)"
+      }
+    ],
+    "method": "rank under DEQ's stated edition cutoff, local standard time day binning, highest first",
+    "n": 6,
+    "precision": 0,
+    "unit": "rank",
+    "value": 2.0,
+    "window": "2026-06-18 to 2026-08-07T07:00 EST, 18 of 24 valid hours, exact zeros treated as missing"
+  },
   "p98.common.rank.DC-06": {
     "inputs": [
       {
@@ -9421,6 +9629,64 @@
     "unit": "rank",
     "value": 4.0,
     "window": "2026-06-18 to 2026-08-07, 18 of 24 valid hours, exact zeros treated as missing"
+  },
+  "p98.common.rank.DC-06.deq_cutoff": {
+    "inputs": [
+      {
+        "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+        "source": "Kunak hourly sensor export, DC-01 (data freeze)"
+      },
+      {
+        "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+        "source": "Kunak hourly sensor export, DC-04 (data freeze)"
+      },
+      {
+        "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+        "source": "Kunak hourly sensor export, DC-10 (data freeze)"
+      },
+      {
+        "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+        "source": "Kunak hourly sensor export, DC-02 (data freeze)"
+      },
+      {
+        "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+        "source": "Kunak hourly sensor export, DC-11 (data freeze)"
+      },
+      {
+        "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+        "source": "Kunak hourly sensor export, DC-08 (data freeze)"
+      },
+      {
+        "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+        "source": "Kunak hourly sensor export, DC-09 (data freeze)"
+      },
+      {
+        "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+        "source": "Kunak hourly sensor export, DC-07 (data freeze)"
+      },
+      {
+        "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+        "source": "Kunak hourly sensor export, DC-03 (data freeze)"
+      },
+      {
+        "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+        "source": "Kunak hourly sensor export, DC-06 (data freeze)"
+      },
+      {
+        "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+        "source": "Kunak hourly sensor export, DC-05 (data freeze)"
+      },
+      {
+        "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+        "source": "Kunak hourly sensor export, DC-12 (data freeze)"
+      }
+    ],
+    "method": "rank under DEQ's stated edition cutoff, local standard time day binning, highest first",
+    "n": 6,
+    "precision": 0,
+    "unit": "rank",
+    "value": 4.0,
+    "window": "2026-06-18 to 2026-08-07T07:00 EST, 18 of 24 valid hours, exact zeros treated as missing"
   },
   "p98.common.rank.DC-08": {
     "inputs": [
@@ -9480,6 +9746,64 @@
     "value": 1.0,
     "window": "2026-06-18 to 2026-08-07, 18 of 24 valid hours, exact zeros treated as missing"
   },
+  "p98.common.rank.DC-08.deq_cutoff": {
+    "inputs": [
+      {
+        "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+        "source": "Kunak hourly sensor export, DC-01 (data freeze)"
+      },
+      {
+        "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+        "source": "Kunak hourly sensor export, DC-04 (data freeze)"
+      },
+      {
+        "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+        "source": "Kunak hourly sensor export, DC-10 (data freeze)"
+      },
+      {
+        "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+        "source": "Kunak hourly sensor export, DC-02 (data freeze)"
+      },
+      {
+        "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+        "source": "Kunak hourly sensor export, DC-11 (data freeze)"
+      },
+      {
+        "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+        "source": "Kunak hourly sensor export, DC-08 (data freeze)"
+      },
+      {
+        "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+        "source": "Kunak hourly sensor export, DC-09 (data freeze)"
+      },
+      {
+        "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+        "source": "Kunak hourly sensor export, DC-07 (data freeze)"
+      },
+      {
+        "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+        "source": "Kunak hourly sensor export, DC-03 (data freeze)"
+      },
+      {
+        "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+        "source": "Kunak hourly sensor export, DC-06 (data freeze)"
+      },
+      {
+        "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+        "source": "Kunak hourly sensor export, DC-05 (data freeze)"
+      },
+      {
+        "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+        "source": "Kunak hourly sensor export, DC-12 (data freeze)"
+      }
+    ],
+    "method": "rank under DEQ's stated edition cutoff, local standard time day binning, highest first",
+    "n": 6,
+    "precision": 0,
+    "unit": "rank",
+    "value": 1.0,
+    "window": "2026-06-18 to 2026-08-07T07:00 EST, 18 of 24 valid hours, exact zeros treated as missing"
+  },
   "p98.common.rank.DC-09": {
     "inputs": [
       {
@@ -9537,6 +9861,64 @@
     "unit": "rank",
     "value": 3.0,
     "window": "2026-06-18 to 2026-08-07, 18 of 24 valid hours, exact zeros treated as missing"
+  },
+  "p98.common.rank.DC-09.deq_cutoff": {
+    "inputs": [
+      {
+        "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+        "source": "Kunak hourly sensor export, DC-01 (data freeze)"
+      },
+      {
+        "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+        "source": "Kunak hourly sensor export, DC-04 (data freeze)"
+      },
+      {
+        "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+        "source": "Kunak hourly sensor export, DC-10 (data freeze)"
+      },
+      {
+        "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+        "source": "Kunak hourly sensor export, DC-02 (data freeze)"
+      },
+      {
+        "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+        "source": "Kunak hourly sensor export, DC-11 (data freeze)"
+      },
+      {
+        "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+        "source": "Kunak hourly sensor export, DC-08 (data freeze)"
+      },
+      {
+        "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+        "source": "Kunak hourly sensor export, DC-09 (data freeze)"
+      },
+      {
+        "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+        "source": "Kunak hourly sensor export, DC-07 (data freeze)"
+      },
+      {
+        "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+        "source": "Kunak hourly sensor export, DC-03 (data freeze)"
+      },
+      {
+        "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+        "source": "Kunak hourly sensor export, DC-06 (data freeze)"
+      },
+      {
+        "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+        "source": "Kunak hourly sensor export, DC-05 (data freeze)"
+      },
+      {
+        "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+        "source": "Kunak hourly sensor export, DC-12 (data freeze)"
+      }
+    ],
+    "method": "rank under DEQ's stated edition cutoff, local standard time day binning, highest first",
+    "n": 6,
+    "precision": 0,
+    "unit": "rank",
+    "value": 3.0,
+    "window": "2026-06-18 to 2026-08-07T07:00 EST, 18 of 24 valid hours, exact zeros treated as missing"
   },
   "p98.common_clock.DC-01": {
     "inputs": [
@@ -10350,6 +10732,64 @@
     "value": 5.0,
     "window": "2026-06-18 to 2026-08-07, 18 of 24 valid hours, exact zeros treated as missing"
   },
+  "p98.common_clock.rank.DC-01.deq_cutoff": {
+    "inputs": [
+      {
+        "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+        "source": "Kunak hourly sensor export, DC-01 (data freeze)"
+      },
+      {
+        "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+        "source": "Kunak hourly sensor export, DC-04 (data freeze)"
+      },
+      {
+        "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+        "source": "Kunak hourly sensor export, DC-10 (data freeze)"
+      },
+      {
+        "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+        "source": "Kunak hourly sensor export, DC-02 (data freeze)"
+      },
+      {
+        "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+        "source": "Kunak hourly sensor export, DC-11 (data freeze)"
+      },
+      {
+        "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+        "source": "Kunak hourly sensor export, DC-08 (data freeze)"
+      },
+      {
+        "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+        "source": "Kunak hourly sensor export, DC-09 (data freeze)"
+      },
+      {
+        "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+        "source": "Kunak hourly sensor export, DC-07 (data freeze)"
+      },
+      {
+        "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+        "source": "Kunak hourly sensor export, DC-03 (data freeze)"
+      },
+      {
+        "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+        "source": "Kunak hourly sensor export, DC-06 (data freeze)"
+      },
+      {
+        "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+        "source": "Kunak hourly sensor export, DC-05 (data freeze)"
+      },
+      {
+        "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+        "source": "Kunak hourly sensor export, DC-12 (data freeze)"
+      }
+    ],
+    "method": "rank under DEQ's stated edition cutoff, local clock time day binning, highest first",
+    "n": 6,
+    "precision": 0,
+    "unit": "rank",
+    "value": 5.0,
+    "window": "2026-06-18 to 2026-08-07T07:00 EST, 18 of 24 valid hours, exact zeros treated as missing"
+  },
   "p98.common_clock.rank.DC-02": {
     "inputs": [
       {
@@ -10407,6 +10847,64 @@
     "unit": "rank",
     "value": 6.0,
     "window": "2026-06-18 to 2026-08-07, 18 of 24 valid hours, exact zeros treated as missing"
+  },
+  "p98.common_clock.rank.DC-02.deq_cutoff": {
+    "inputs": [
+      {
+        "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+        "source": "Kunak hourly sensor export, DC-01 (data freeze)"
+      },
+      {
+        "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+        "source": "Kunak hourly sensor export, DC-04 (data freeze)"
+      },
+      {
+        "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+        "source": "Kunak hourly sensor export, DC-10 (data freeze)"
+      },
+      {
+        "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+        "source": "Kunak hourly sensor export, DC-02 (data freeze)"
+      },
+      {
+        "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+        "source": "Kunak hourly sensor export, DC-11 (data freeze)"
+      },
+      {
+        "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+        "source": "Kunak hourly sensor export, DC-08 (data freeze)"
+      },
+      {
+        "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+        "source": "Kunak hourly sensor export, DC-09 (data freeze)"
+      },
+      {
+        "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+        "source": "Kunak hourly sensor export, DC-07 (data freeze)"
+      },
+      {
+        "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+        "source": "Kunak hourly sensor export, DC-03 (data freeze)"
+      },
+      {
+        "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+        "source": "Kunak hourly sensor export, DC-06 (data freeze)"
+      },
+      {
+        "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+        "source": "Kunak hourly sensor export, DC-05 (data freeze)"
+      },
+      {
+        "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+        "source": "Kunak hourly sensor export, DC-12 (data freeze)"
+      }
+    ],
+    "method": "rank under DEQ's stated edition cutoff, local clock time day binning, highest first",
+    "n": 6,
+    "precision": 0,
+    "unit": "rank",
+    "value": 6.0,
+    "window": "2026-06-18 to 2026-08-07T07:00 EST, 18 of 24 valid hours, exact zeros treated as missing"
   },
   "p98.common_clock.rank.DC-04": {
     "inputs": [
@@ -10466,6 +10964,64 @@
     "value": 2.0,
     "window": "2026-06-18 to 2026-08-07, 18 of 24 valid hours, exact zeros treated as missing"
   },
+  "p98.common_clock.rank.DC-04.deq_cutoff": {
+    "inputs": [
+      {
+        "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+        "source": "Kunak hourly sensor export, DC-01 (data freeze)"
+      },
+      {
+        "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+        "source": "Kunak hourly sensor export, DC-04 (data freeze)"
+      },
+      {
+        "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+        "source": "Kunak hourly sensor export, DC-10 (data freeze)"
+      },
+      {
+        "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+        "source": "Kunak hourly sensor export, DC-02 (data freeze)"
+      },
+      {
+        "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+        "source": "Kunak hourly sensor export, DC-11 (data freeze)"
+      },
+      {
+        "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+        "source": "Kunak hourly sensor export, DC-08 (data freeze)"
+      },
+      {
+        "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+        "source": "Kunak hourly sensor export, DC-09 (data freeze)"
+      },
+      {
+        "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+        "source": "Kunak hourly sensor export, DC-07 (data freeze)"
+      },
+      {
+        "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+        "source": "Kunak hourly sensor export, DC-03 (data freeze)"
+      },
+      {
+        "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+        "source": "Kunak hourly sensor export, DC-06 (data freeze)"
+      },
+      {
+        "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+        "source": "Kunak hourly sensor export, DC-05 (data freeze)"
+      },
+      {
+        "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+        "source": "Kunak hourly sensor export, DC-12 (data freeze)"
+      }
+    ],
+    "method": "rank under DEQ's stated edition cutoff, local clock time day binning, highest first",
+    "n": 6,
+    "precision": 0,
+    "unit": "rank",
+    "value": 2.0,
+    "window": "2026-06-18 to 2026-08-07T07:00 EST, 18 of 24 valid hours, exact zeros treated as missing"
+  },
   "p98.common_clock.rank.DC-06": {
     "inputs": [
       {
@@ -10523,6 +11079,64 @@
     "unit": "rank",
     "value": 4.0,
     "window": "2026-06-18 to 2026-08-07, 18 of 24 valid hours, exact zeros treated as missing"
+  },
+  "p98.common_clock.rank.DC-06.deq_cutoff": {
+    "inputs": [
+      {
+        "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+        "source": "Kunak hourly sensor export, DC-01 (data freeze)"
+      },
+      {
+        "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+        "source": "Kunak hourly sensor export, DC-04 (data freeze)"
+      },
+      {
+        "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+        "source": "Kunak hourly sensor export, DC-10 (data freeze)"
+      },
+      {
+        "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+        "source": "Kunak hourly sensor export, DC-02 (data freeze)"
+      },
+      {
+        "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+        "source": "Kunak hourly sensor export, DC-11 (data freeze)"
+      },
+      {
+        "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+        "source": "Kunak hourly sensor export, DC-08 (data freeze)"
+      },
+      {
+        "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+        "source": "Kunak hourly sensor export, DC-09 (data freeze)"
+      },
+      {
+        "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+        "source": "Kunak hourly sensor export, DC-07 (data freeze)"
+      },
+      {
+        "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+        "source": "Kunak hourly sensor export, DC-03 (data freeze)"
+      },
+      {
+        "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+        "source": "Kunak hourly sensor export, DC-06 (data freeze)"
+      },
+      {
+        "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+        "source": "Kunak hourly sensor export, DC-05 (data freeze)"
+      },
+      {
+        "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+        "source": "Kunak hourly sensor export, DC-12 (data freeze)"
+      }
+    ],
+    "method": "rank under DEQ's stated edition cutoff, local clock time day binning, highest first",
+    "n": 6,
+    "precision": 0,
+    "unit": "rank",
+    "value": 4.0,
+    "window": "2026-06-18 to 2026-08-07T07:00 EST, 18 of 24 valid hours, exact zeros treated as missing"
   },
   "p98.common_clock.rank.DC-08": {
     "inputs": [
@@ -10582,6 +11196,64 @@
     "value": 1.0,
     "window": "2026-06-18 to 2026-08-07, 18 of 24 valid hours, exact zeros treated as missing"
   },
+  "p98.common_clock.rank.DC-08.deq_cutoff": {
+    "inputs": [
+      {
+        "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+        "source": "Kunak hourly sensor export, DC-01 (data freeze)"
+      },
+      {
+        "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+        "source": "Kunak hourly sensor export, DC-04 (data freeze)"
+      },
+      {
+        "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+        "source": "Kunak hourly sensor export, DC-10 (data freeze)"
+      },
+      {
+        "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+        "source": "Kunak hourly sensor export, DC-02 (data freeze)"
+      },
+      {
+        "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+        "source": "Kunak hourly sensor export, DC-11 (data freeze)"
+      },
+      {
+        "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+        "source": "Kunak hourly sensor export, DC-08 (data freeze)"
+      },
+      {
+        "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+        "source": "Kunak hourly sensor export, DC-09 (data freeze)"
+      },
+      {
+        "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+        "source": "Kunak hourly sensor export, DC-07 (data freeze)"
+      },
+      {
+        "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+        "source": "Kunak hourly sensor export, DC-03 (data freeze)"
+      },
+      {
+        "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+        "source": "Kunak hourly sensor export, DC-06 (data freeze)"
+      },
+      {
+        "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+        "source": "Kunak hourly sensor export, DC-05 (data freeze)"
+      },
+      {
+        "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+        "source": "Kunak hourly sensor export, DC-12 (data freeze)"
+      }
+    ],
+    "method": "rank under DEQ's stated edition cutoff, local clock time day binning, highest first",
+    "n": 6,
+    "precision": 0,
+    "unit": "rank",
+    "value": 1.0,
+    "window": "2026-06-18 to 2026-08-07T07:00 EST, 18 of 24 valid hours, exact zeros treated as missing"
+  },
   "p98.common_clock.rank.DC-09": {
     "inputs": [
       {
@@ -10639,6 +11311,64 @@
     "unit": "rank",
     "value": 3.0,
     "window": "2026-06-18 to 2026-08-07, 18 of 24 valid hours, exact zeros treated as missing"
+  },
+  "p98.common_clock.rank.DC-09.deq_cutoff": {
+    "inputs": [
+      {
+        "sha256": "6ccc7c854653e98d06981d13ff6385fe31081e2d5e2aa5b54ce31513d42930ed",
+        "source": "Kunak hourly sensor export, DC-01 (data freeze)"
+      },
+      {
+        "sha256": "8d715318849b2962218f4b4300e5ef847b72063c16d061a0d318092d1120b9ce",
+        "source": "Kunak hourly sensor export, DC-04 (data freeze)"
+      },
+      {
+        "sha256": "a7e16e9a467b9a6d8f7e4dfe3ddd20f6924942fa6a7525f64fb25ac1ee036810",
+        "source": "Kunak hourly sensor export, DC-10 (data freeze)"
+      },
+      {
+        "sha256": "ecb932919bb204bfffc7bdaf37cf0b2a1599bd21d440d2386ccf0007ed59c7c7",
+        "source": "Kunak hourly sensor export, DC-02 (data freeze)"
+      },
+      {
+        "sha256": "628fd839b5bbd43bd35bb80139777f52eb3298bc7f1891ccc3be43a9949508d7",
+        "source": "Kunak hourly sensor export, DC-11 (data freeze)"
+      },
+      {
+        "sha256": "f76edc540d2efb7d12d8fc1b6770b6c1dfb77df7b8f4ae5e4d99074798cbab96",
+        "source": "Kunak hourly sensor export, DC-08 (data freeze)"
+      },
+      {
+        "sha256": "675a68cd55ee51b8b9df961abc6e429e5dd5ae73be4fae1381845ea2166de67c",
+        "source": "Kunak hourly sensor export, DC-09 (data freeze)"
+      },
+      {
+        "sha256": "8187f0681e11977acd8f432d5bebfec48c146b08e0c3c980e269c118d38cce91",
+        "source": "Kunak hourly sensor export, DC-07 (data freeze)"
+      },
+      {
+        "sha256": "2a1b144fce4398530c3f82aa46ef056852c40a992131d7646c6657f337314cab",
+        "source": "Kunak hourly sensor export, DC-03 (data freeze)"
+      },
+      {
+        "sha256": "71f00995adafc21ec899b6cdcf4bfb5bd3db3a34c06c7dd5cd75b510bcb554b3",
+        "source": "Kunak hourly sensor export, DC-06 (data freeze)"
+      },
+      {
+        "sha256": "76f3b08c5edab94837534117e6190c8f8ccfab90bbfdd8e9894e9f15247403f8",
+        "source": "Kunak hourly sensor export, DC-05 (data freeze)"
+      },
+      {
+        "sha256": "811edeaf4466fafa533c9ec4e35d7ee73f6feee279ab45dc50657531e1fa523d",
+        "source": "Kunak hourly sensor export, DC-12 (data freeze)"
+      }
+    ],
+    "method": "rank under DEQ's stated edition cutoff, local clock time day binning, highest first",
+    "n": 6,
+    "precision": 0,
+    "unit": "rank",
+    "value": 3.0,
+    "window": "2026-06-18 to 2026-08-07T07:00 EST, 18 of 24 valid hours, exact zeros treated as missing"
   },
   "p98.common_clock.rise_max": {
     "inputs": [

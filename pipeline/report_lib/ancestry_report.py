@@ -507,7 +507,10 @@ def build_tables(anc: dict) -> list[tables.Table]:
         "ancestral category of each study's initial-stage sample. "
         + loci["counting_rule"]
         + " "
-        + loci["locus_rule"]
+        # The rule is read from pipeline/lookups/asthma_loci.json, which the freeze
+        # pins by hash, so the record's field name is replaced here, in the caption
+        # only, rather than in the pinned file.
+        + loci["locus_rule"].replace("gene_symbols", "gene symbols")
         + " "
         + ANCESTRY_CAVEAT,
         source_note,

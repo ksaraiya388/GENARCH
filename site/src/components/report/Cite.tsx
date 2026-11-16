@@ -72,6 +72,28 @@ export function Cite({ id }: { id: string }) {
   );
 }
 
+/**
+ * The edition date of a lettered source, as its own reference entry records it.
+ *
+ * Prose that names "DEQ's 2026-10-09 edition" takes the date from here rather than
+ * typing it, so the date in a sentence and the date in the Sources list are one
+ * value. Throws on an id that is not a source, which fails the build.
+ */
+export function EditionDate({ id }: { id: string }) {
+  const entry = SOURCES.find((source) => source.id === id);
+  if (entry === undefined || !entry.edition_date) {
+    throw new Error(
+      `report source "${id}" has no edition_date in references.json, so EditionDate ` +
+        "has nothing to render"
+    );
+  }
+  return (
+    <span className="report-edition-date" data-edition-of={id}>
+      {entry.edition_date}
+    </span>
+  );
+}
+
 function doiUrl(doi: string): string {
   return `https://doi.org/${doi}`;
 }

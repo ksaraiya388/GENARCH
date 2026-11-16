@@ -158,6 +158,27 @@ D45 Roadmap, knowledge graph reproducibility (G7). A correctness fix; it heads t
 D46 Roadmap, October 2027 (G8). October 2027 and the annual cadence stand; the report
 covers "the first full year of the network's record".
 
+D47 Table numbering (2026-11-15). Tables are numbered by order of first appearance in
+the report body, not by generator file ID. Document order is
+`site/src/content/reports/2026/body-order.json`, which `site/src/lib/report-table-order.ts`
+and `scripts/gen_review_notes.py` both read; a figure counts as the first appearance of
+its data table. The order is T08, T02, T03, T04s, T06, T05, T07, T09, T10, T11, T12, T01,
+T04 (Tables 1 to 13). CSV names and the IDs in tables.json are unchanged, every table's
+source line names its archive file, and prose cites the report's own tables through
+`<TableRef>`, never a typed number. References to DEQ's Table 4 are DEQ's numbering and
+are untouched.
+
+D48 Display precision of the maximum daily difference (2026-11-15). Section 5.3 and the
+reconciliation summary table print `daily.max_abs_diff` at one decimal, the precision
+DEQ's truncation gives a difference of two published values. Render layer only: the key
+keeps its value and its precision of four. `<N digits>` and the table format refuse to
+drop any digit that is not a trailing zero.
+
+D49 Edition dates in prose (2026-11-15). A sentence naming a DEQ edition states its
+date before the citation, rendered by `<EditionDate>` from the source's own
+`edition_date` in references.json, so the date in the sentence and the date in the
+Sources list are one value.
+
 ---
 
 ## Remaining AUDIT items

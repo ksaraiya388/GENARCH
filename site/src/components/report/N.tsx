@@ -37,6 +37,12 @@ export interface NProps {
   fmt?: NFormat;
   /** Thousands separators. Off for a year, an id, or anything read as a code. */
   group?: boolean;
+  /**
+   * Print at fewer decimals than the key records, without changing the key. Only
+   * trailing zeros may be dropped: a value that would round fails the build, so this
+   * shortens a display and never alters a number.
+   */
+  digits?: number;
 }
 
 /**
@@ -51,8 +57,22 @@ export interface NProps {
  * notes and the source tests read: a reviewer can map any figure on the page back to
  * the registry entry and its input hashes without consulting the prose.
  */
-export function N({ year, k, fmt = "value", group = true }: NProps) {
-  const record = reportNumber(year, k);
+export function N({ year, k, fmt = "value", group = true, digits }: NProps) {
+  const stored = reportNumber(year, k);
+  let record = stored;
+  if (digits !== undefined) {
+    if (typeof stored.value !== "number" || stored.precision === null) {
+      throw new Error(`report ${year} key "${k}" is not a rounded number; digits does not apply`);
+    }
+    const scaled = stored.value * 10 ** digits;
+    if (Math.abs(scaled - Math.round(scaled)) > 1e-9) {
+      throw new Error(
+        `report ${year} key "${k}" is ${stored.value}; printing it at ${digits} decimal(s) ` +
+          "would round it rather than drop trailing zeros"
+      );
+    }
+    record = { ...stored, precision: Math.min(digits, stored.precision) };
+  }
 
   let text: string;
   switch (fmt) {

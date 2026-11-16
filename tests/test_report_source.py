@@ -256,7 +256,9 @@ REQUIRED_SENTENCES = {
     ],
     "s5-dca.tsx": [
         "To our knowledge, no independent reprocessing of the Project",
-        "ranks fourth",
+        'k="p98.common.rank.DC-06.deq_cutoff" fmt="ordinal"',
+        'k="p98.common_clock.rank.DC-06.deq_cutoff" fmt="ordinal"',
+        'k="network.sites_active_at_deq_cutoff"',
     ],
     "summary.tsx": [
         "Nothing here establishes that any exposure brought about any health outcome",
@@ -365,3 +367,49 @@ def test_the_prose_avoids_significance_inflation(path: Path) -> None:
     text = jsx_text(read(path)).lower()
     hits = [word for word in INFLATION if word in text]
     assert hits == [], f"{path.name} uses {hits} (CONTEXT.md section 8)"
+
+
+def test_body_order_matches_the_rendered_body() -> None:
+    """body-order.json lists the files whose components ReportBody renders, in order.
+
+    Table numbers are assigned by first appearance in that order, so a file out of
+    place would renumber every table after it without anyone editing a table.
+    """
+    index = read(CONTENT_DIR / "index.tsx")
+    imports = dict(
+        (name.strip(), f"{module}.tsx")
+        for names, module in re.findall(r'import \{([^}]+)\} from "\./([^"]+)";', index)
+        for name in names.split(",")
+    )
+    body = index[index.index("export function ReportBody"):]
+    rendered: list[str] = []
+    for component in re.findall(r"<([A-Z][A-Za-z]+)\s*/>", body):
+        module = imports.get(component)
+        if module and module != "bound.tsx" and module not in rendered:
+            rendered.append(module)
+    listed = json.loads((CONTENT_DIR / "body-order.json").read_text(encoding="utf-8"))
+    assert listed["files"] == rendered
+
+
+def test_tables_are_numbered_by_first_appearance() -> None:
+    """The ruled numbering (DECISIONS.md D47): first appearance in the body."""
+    import sys
+
+    sys.path.insert(0, str(REPO_ROOT / "scripts"))
+    from gen_review_notes import table_numbers
+
+    assert list(table_numbers()) == [
+        "T08_module_inventory",
+        "T02_site_key",
+        "T03_collocation",
+        "T04s_daily_summary",
+        "T06_p98_full_record_variants",
+        "T05_p98_common_window",
+        "T07_correlation_matrix",
+        "T09_chain_evidence",
+        "T10_gwas_ancestry_composition",
+        "T11_loci_by_ancestry",
+        "T12_loudoun_acs_context",
+        "T01_sources",
+        "T04_daily_reconciliation",
+    ]

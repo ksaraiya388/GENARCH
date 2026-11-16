@@ -570,3 +570,39 @@ body:has(.report-print-page) {
     font-size: 6.5pt;
   }
 }
+
+/* A date, a time, a gene symbol or a locus token is one unit and never breaks inside
+ * a cell; ReportTable wraps each in this class. */
+.report-print-page .report-nobreak {
+  white-space: nowrap;
+}
+
+@media print {
+  /* No glossary entry sits alone on a page: the first two stay together and so do
+   * the last two, so a break inside the glossary always leaves at least two entries
+   * on each side. */
+  .report-print-page .report-glossary-entry:first-child,
+  .report-print-page .report-glossary-entry:nth-last-child(2) {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .report-print-page .report-glossary-entry:nth-child(2),
+  .report-print-page .report-glossary-entry:last-child {
+    break-before: avoid;
+    page-break-before: avoid;
+  }
+}
+
+/* Body cells of a fixed-width table break between words only. A word that does not
+ * fit its column then overflows the cell, which the width gate fails on, instead of
+ * printing split mid-word. Hash and URL columns keep their break-anywhere class. */
+.report-print-page .report-table-fixed td,
+.report-print-page .report-table-fixed tbody th {
+  overflow-wrap: normal;
+}
+
+.report-print-page .report-table-fixed td.report-cell-break,
+.report-print-page .report-table-fixed td.report-cell-mono {
+  overflow-wrap: anywhere;
+}

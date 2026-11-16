@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import html
+import json
 import re
 import sys
 from pathlib import Path
@@ -29,21 +30,45 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 CONTENT = REPO_ROOT / "site" / "src" / "content" / "reports" / "2026"
 OUTPUT = REPO_ROOT / "docs" / "report-2026" / "REVIEW_NOTES.md"
 
-# Document order. Mirrors SECTIONS in the content index; a file missing from here is
-# reported rather than silently skipped.
-ORDER = (
-    "cover.tsx",
-    "summary.tsx",
-    "s1-scope.tsx",
-    "s2-data.tsx",
-    "s3-methods.tsx",
-    "s4-inventory.tsx",
-    "s5-dca.tsx",
-    "s6-ancestry.tsx",
-    "s7-limitations.tsx",
-    "s8-roadmap.tsx",
-    "appendices.tsx",
+# Document order, from the same file the site numbers its tables by; a file missing
+# from it is reported rather than silently skipped.
+ORDER = tuple(
+    json.loads((CONTENT / "body-order.json").read_text(encoding="utf-8"))["files"]
 )
+REPORT_DATA = REPO_ROOT / "data" / "reports" / "2026"
+
+
+def table_numbers() -> dict[str, int]:
+    """Printed table numbers by first appearance, as site/src/lib/report-table-order.ts.
+
+    A figure counts as the first appearance of its data table (its `tableId`, or the
+    `data_table` its manifest names). Keys are full table ids.
+    """
+    figures = {
+        f["id"].split("_")[0]: f["data_table"]
+        for f in json.loads((REPORT_DATA / "figures.json").read_text(encoding="utf-8"))[
+            "figures"
+        ]
+    }
+    manifests = [t["id"] for t in json.loads(
+        (REPORT_DATA / "tables.json").read_text(encoding="utf-8"))["tables"]]
+    for name in ("inventory.json", "chain.json"):
+        manifests.append(
+            json.loads((REPORT_DATA / name).read_text(encoding="utf-8"))["table"]["id"]
+        )
+    full = {m.split("_")[0]: m for m in manifests} | {m: m for m in manifests}
+    order: list[str] = []
+    for name in ORDER:
+        body = strip_comments((CONTENT / name).read_text(encoding="utf-8"))
+        hits = [(m.start(), m.group(1)) for m in TABLE.finditer(body)]
+        for m in re.finditer(r"<ReportFigure\s([^>]*?)/>", body):
+            fid = re.search(r'\bid="([^"]+)"', m.group(1)).group(1)
+            explicit = re.search(r'\btableId="([^"]+)"', m.group(1))
+            hits.append((m.start(), explicit.group(1) if explicit else figures[fid]))
+        for _, table in sorted(hits):
+            if full[table] not in order:
+                order.append(full[table])
+    return {table: i + 1 for i, table in enumerate(order)}
 
 NUMBER = re.compile(r'<N\s+[^>]*?k="([^"]+)"[^>]*?/>')
 CITE = re.compile(r'<Cite\s+id="([^"]+)"\s*/>')
@@ -131,6 +156,7 @@ def sentences_of(text: str) -> list[str]:
 def render() -> tuple[str, dict]:
     lines: list[str] = []
     stats = {"sentences": 0, "supported": 0, "keys": set(), "cites": set(), "markers": 0}
+    numbers = table_numbers()
 
     lines.append("# Annual Report 2026: review notes")
     lines.append("")
@@ -181,7 +207,13 @@ def render() -> tuple[str, dict]:
                 body.append(f"| _Review marker:_ {event['text']} | _author judgement_ |")
                 continue
             if kind in ("table", "figure"):
-                body.append(f"| _Renders {kind}_ `{event['id']}` | _generated artifact_ |")
+                if kind == "table":
+                    table = next(t for t in numbers if t.split("_")[0] == event["id"]
+                                 or t == event["id"])
+                    label = f"Table {numbers[table]}, `{table}`"
+                else:
+                    label = f"figure `{event['id']}`"
+                body.append(f"| _Renders {label}_ | _generated artifact_ |")
                 continue
 
             for sentence in sentences_of(event["text"]):

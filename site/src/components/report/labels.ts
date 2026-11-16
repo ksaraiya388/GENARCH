@@ -1,32 +1,25 @@
 /**
  * Human labels for the report's table and figure ids.
  *
- * The ids are the generator's, and they are not quite a sequence: the daily
- * reconciliation ships as a 119-row table and a one-row summary, numbered T04 and
- * T04s, so a label cannot be a fixed-width slice of the id. Everything else is
- * T<nn> or F<nn>.
+ * Figures are numbered by their id (F02 is Figure 2), because the generator writes
+ * them in reading order. Tables are numbered by order of first appearance in the
+ * report body, which the generator's ids do not follow: the inventory table is the
+ * first a reader meets and the input manifest the last (DECISIONS.md D47). The ids
+ * and the CSV names stay as they are; only the printed label is derived here.
  */
 
-const TABLE_SUFFIX: Record<string, string> = {
-  s: ", summary",
-};
+import { tableNumber } from "@/lib/report-table-order";
 
-function label(kind: string, id: string, suffixes: Record<string, string>): string {
-  const short = id.split("_")[0];
-  const match = /^[TF](\d+)([a-z]*)$/.exec(short);
-  if (!match) return short;
-  const [, digits, suffix] = match;
-  return `${kind} ${Number(digits)}${suffixes[suffix] ?? ""}`;
-}
-
-/** "T03_collocation" or "T03" to "Table 3"; "T04s_daily_summary" to "Table 4, summary". */
-export function tableLabel(id: string): string {
-  return label("Table", id, TABLE_SUFFIX);
+/** "T08_module_inventory" or "T08" to "Table 1", by order of first appearance. */
+export function tableLabel(year: string, id: string): string {
+  return `Table ${tableNumber(year, id)}`;
 }
 
 /** "F02_collocation" or "F02" to "Figure 2". */
 export function figureLabel(id: string): string {
-  return label("Figure", id, {});
+  const short = id.split("_")[0];
+  const match = /^F(\d+)$/.exec(short);
+  return match ? `Figure ${Number(match[1])}` : short;
 }
 
 /**

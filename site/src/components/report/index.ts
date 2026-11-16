@@ -6,7 +6,8 @@ export { ReportFigure } from "./ReportFigure";
 export type { ReportFigureProps } from "./ReportFigure";
 export { DeqLimitation, FigureLimitation, DEQ_LIMITATION } from "./DeqLimitation";
 export type { DeqLimitationProps } from "./DeqLimitation";
-export { Cite, References, citationIds } from "./Cite";
+export { Cite, EditionDate, References, citationIds } from "./Cite";
+export { TableRef } from "./TableRef";
 export type { LiteratureEntry, SourceEntry } from "./Cite";
 export {
   Section,

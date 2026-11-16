@@ -1,0 +1,16 @@
+{
+  "note": "The report body's source files in document order: the order ReportBody in index.tsx renders them. Table numbers are assigned by first appearance in this order (site/src/lib/report-table-order.ts), and scripts/gen_review_notes.py walks the same list. tests/test_report_source.py checks it against ReportBody.",
+  "files": [
+    "cover.tsx",
+    "summary.tsx",
+    "s1-scope.tsx",
+    "s2-data.tsx",
+    "s3-methods.tsx",
+    "s4-inventory.tsx",
+    "s5-dca.tsx",
+    "s6-ancestry.tsx",
+    "s7-limitations.tsx",
+    "s8-roadmap.tsx",
+    "appendices.tsx"
+  ]
+}

@@ -18,7 +18,7 @@ import argparse
 import hashlib
 import json
 import sys
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 from pipeline.report_lib import (
@@ -222,6 +222,16 @@ def compute(fz: Freeze) -> dict:
     site_history = fz.config_path(SITE_HISTORY_PATH)
     august_rows = build_rows(august, site_history)
     frozen_rows = build_rows(frozen, site_history)
+    active_at_deq_cutoff = sorted(
+        {
+            row["site_id"]
+            for row in august_rows
+            if row["pollutant"] == "PM2.5"
+            and not row["excluded"]
+            and row["value"] not in (None, "")
+            and DEQ_EDITION_CUTOFF - timedelta(hours=24) <= row["ts_est"] < DEQ_EDITION_CUTOFF
+        }
+    )
     regulatory_rows = build_regulatory_rows(
         lambda name: fz.verified_path(fz.regulatory_named(name).rel_path)
     )
@@ -245,6 +255,7 @@ def compute(fz: Freeze) -> dict:
         ),
         "reconciliation": reconciliation.reconcile(regulatory_rows, published),
         "correlation": correlation.correlations(august_rows, list(COMMON_WINDOW_SITES)),
+        "active_at_deq_cutoff": active_at_deq_cutoff,
     }
 
     # Percentiles, both day definitions, whole days and DEQ's edition cutoff.
@@ -442,6 +453,18 @@ def build_numbers(fz: Freeze, results: dict) -> NumberRegistry:
         precision=0,
         method="sites whose frozen export still carries data at the freeze cutoff",
         inputs=kunak_inputs,
+    )
+    deq_active = [code_of(site) for site in results["active_at_deq_cutoff"]]
+    reg.add(
+        "network.sites_active_at_deq_cutoff",
+        len(deq_active),
+        unit="sites",
+        precision=0,
+        window=f"24 hours ending {DEQ_EDITION_CUTOFF_LABEL}",
+        method="sites in the original analysis inputs carrying at least one valid PM2.5 "
+        "reading in the 24 hours before DEQ's edition cutoff, exclusion flags applied: "
+        + ", ".join(sorted(deq_active)),
+        inputs=august_inputs,
     )
     for site, rec in sorted(results["record"].items()):
         code = code_of(site)
@@ -682,6 +705,10 @@ def build_numbers(fz: Freeze, results: dict) -> NumberRegistry:
         ("local clock time", "p98.common_clock", "p98_common_clock"),
     ):
         ranked = sorted(results[key].items(), key=lambda kv: -kv[1]["p98"])
+        cut_ranked = sorted(
+            results[key + "_deq_cutoff"].items(), key=lambda kv: -kv[1]["p98"]
+        )
+        cut_rank = {site: rank for rank, (site, _) in enumerate(cut_ranked, start=1)}
         for rank, (site, got) in enumerate(ranked, start=1):
             code = code_of(site)
             reg.add(
@@ -706,6 +733,18 @@ def build_numbers(fz: Freeze, results: dict) -> NumberRegistry:
                 inputs=kunak_inputs,
             )
             cut = results[key + "_deq_cutoff"][site]
+            reg.add(
+                f"{prefix}.rank.{code}.deq_cutoff",
+                cut_rank[site],
+                unit="rank",
+                precision=0,
+                n=len(ranked),
+                window=f"{COMMON_WINDOW_START.isoformat()} to {DEQ_EDITION_CUTOFF_LABEL}, "
+                "18 of 24 valid hours, exact zeros treated as missing",
+                method=f"rank under DEQ's stated edition cutoff, {binning} day binning, "
+                "highest first",
+                inputs=kunak_inputs,
+            )
             reg.add(
                 f"{prefix}.{code}.deq_cutoff",
                 cut["p98"],
@@ -1348,6 +1387,16 @@ def build_figures(
     figures.f04_p98_by_site(out_dir, f04_rows)
     shortest = min(f04_rows, key=lambda r: r["full_days"])
     longest = max(f04_rows, key=lambda r: r["full_days"])
+    # The caption's record lengths come from the network.record_days keys, and the
+    # keys must agree with the days the figure annotates.
+    shortest_days = reg.display(f"network.record_days.{shortest['code']}")
+    longest_days = reg.display(f"network.record_days.{longest['code']}")
+    for row, shown in ((shortest, shortest_days), (longest, longest_days)):
+        if int(shown) != row["full_days"]:
+            raise ValueError(
+                f"F04 caption: network.record_days.{row['code']} is {shown} but the figure "
+                f"annotates {row['full_days']} days"
+            )
     entries.append(
         {
             "id": "F04_p98_by_site",
@@ -1362,8 +1411,9 @@ def build_figures(
             ),
             "caption": (
                 "Own-record against common-window 98th percentiles, with record days "
-                "annotated. A 98th percentile read from a 51-day record is a different order "
-                "statistic from one read from 152 days. The horizontal line marks the level "
+                f"annotated. A 98th percentile read from a {shortest_days}-day record is a "
+                f"different order statistic from one read from {longest_days} days. "
+                "The horizontal line marks the level "
                 "of the 24-hour standard and is not a threshold being crossed: neither these "
                 "values nor DEQ's are comparable to the NAAQS."
             ),
