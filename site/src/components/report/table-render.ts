@@ -35,6 +35,12 @@ export interface TableRender {
   notes?: string[];
   /** Replaces the generated "Units:" sentence. */
   unitsNote?: string;
+  /** A printed heading in place of the CSV column name, which stays unchanged. */
+  headerLabels?: Record<string, string>;
+  /** Replace a cell's text when another cell in its row has a given value. */
+  whenRow?: { column: string; matchColumn: string; matchValue: string; text: string }[];
+  /** Append a marker to listed values of one column, keyed to a table note. */
+  suffix?: { column: string; values: Record<string, string> };
   /** Set the table at 6.5pt on the print route, whatever its column count. */
   small?: boolean;
   /** State units under the table rather than in the header row. */
@@ -97,6 +103,9 @@ const FOIA_LICENCE =
 const DEQ_REPORT_LICENCE =
   "Public record. Virginia DEQ confirmed redistributable with credit to Virginia DEQ.";
 
+const NR_NOTE =
+  "NR is the catalogue's own label for a sample whose ancestry was not reported.";
+
 export const TABLE_RENDER: Record<string, TableRender> = {
   T01_sources: {
     widths: {
@@ -138,13 +147,26 @@ export const TABLE_RENDER: Record<string, TableRender> = {
       "Difference, slope": "0.38in",
       "Difference, R-squared": "0.44in",
       "Paired hours": "0.36in",
-      "Period start": "0.62in",
-      "Period end": "0.62in",
+      "First paired hour (EST)": "0.62in",
+      "Last paired hour (EST)": "0.62in",
       Status: "0.62in",
     },
+    format: { "Paired hours": "count" },
+    // The APEX 5 NO2 DEQ values are staff-supplied, not printed (note †, B7).
+    suffix: { column: "Comparison", values: { "APEX 5 NO2": " †" } },
   },
   T02_site_key: {
     emptyAs: { "Active end": "open at freeze" },
+    headerLabels: { "DEQ published name": "Name on DEQ's dashboard" },
+    // Outside v1 scope: the record-day count is withheld for these sites (D5, S13).
+    whenRow: [
+      {
+        column: "Record days",
+        matchColumn: "County",
+        matchValue: "Prince William County",
+        text: "outside scope",
+      },
+    ],
     notes: [
       "Record days is the site total, repeated on each unit row of a site that had " +
         "more than one unit.",
@@ -179,6 +201,7 @@ export const TABLE_RENDER: Record<string, TableRender> = {
     notes: [
       "A half-count arises where a sample naming two categories is split equally " +
         "between them.",
+      NR_NOTE + " Other is the catalogue's own residual category.",
     ],
   },
   T11_loci_by_ancestry: {
@@ -201,6 +224,17 @@ export const TABLE_RENDER: Record<string, TableRender> = {
     },
     unitsNote: "counts",
     atomic: ["Locus", "Cytoband", "Genes"],
+    notes: [NR_NOTE],
+  },
+  // A site code is one token and never breaks (DC-01, not DC- / 01).
+  T05_p98_common_window: {
+    atomic: ["Site code"],
+  },
+  T06_p98_full_record_variants: {
+    atomic: ["Site code"],
+  },
+  T07_correlation_matrix: {
+    format: { "Overlapping hours": "count" },
   },
   T12_loudoun_acs_context: {
     format: { Residents: "count", Share: "share2", "Margin of error": "count" },
@@ -245,6 +279,9 @@ export function checkRender(tableId: string, header: string[], render: TableRend
     ...Object.keys(render.format ?? {}),
     ...(render.shortLabels ? [render.shortLabels.column] : []),
     ...(render.atomic ?? []),
+    ...Object.keys(render.headerLabels ?? {}),
+    ...(render.whenRow ?? []).flatMap((rule) => [rule.column, rule.matchColumn]),
+    ...(render.suffix ? [render.suffix.column] : []),
   ];
   const missing = named.filter((column) => !header.includes(column));
   if (missing.length > 0) {

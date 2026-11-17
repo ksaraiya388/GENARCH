@@ -179,6 +179,102 @@ date before the citation, rendered by `<EditionDate>` from the source's own
 `edition_date` in references.json, so the date in the sentence and the date in the
 Sources list are one value.
 
+D50 Numbers that stay as text (2026-11-16, audit S1). Report prose, captions and alt text
+reach a number only through a key, except: counts that describe the document's own
+structure (sections, tables, the commands in Appendix A.1, "four results"); months and
+years in the roadmap that are plans, not measurements; software versions; the name of a
+regulatory statistic ("98th percentile"), although the standard's own percentile, level
+and averaging years are keyed wherever a sentence states them; and citation metadata in
+the reference list. Every other number binds to an existing or a
+new key; new keys are added, never existing values changed.
+
+D51 Display rules (2026-11-16, audit S2). An ISO date-time prints with a space, not a "T",
+in prose, captions and tables alike, so DEQ's edition cutoff reads "2026-08-07 07:00 EST"
+everywhere. A figure label for a share below 0.1 percent prints "<0.1%", never "0.0%" and
+never rounded up. Counts in tables carry thousands separators, as they do in prose. Render
+layer only: the keys keep their values and precision.
+
+D52 Prince William rows in the provenance manifest (2026-11-16, audit S13). An exception to
+D5: Table 12 [T01] keeps one row per frozen export, including the three Prince William
+sites, because a provenance manifest that drops pinned inputs no longer lists what the
+freeze hashed. Those rows carry a file name, dates and a SHA-256, never a reading. A
+record-day count is treated as a value: Table 2 prints "outside scope" for those sites, and
+the section 5.2 callout no longer names them.
+
+D53 Dates and citations corrected at source (2026-11-16, audit B1, B3, B4).
+- B1: the report is dated 2026-11-16, the build date of draft-4, after the latest edition it
+  cites (2026-11-06, retrieved 2026-11-08). The cover, changelog and APA citation follow
+  from frontmatter.json.
+- B3: the standards are cited to 40 CFR 50.20, "National primary ambient air quality
+  standards for PM2.5" (89 FR 16380), which sets 9.0 µg/m³ annual and 35 µg/m³ 24-hour,
+  read through the eCFR versioner API at 2026-10-01. Section 50.18 still sets 12.0 and is
+  no longer cited. Method strings of naaqs.annual_standard and naaqs.daily_standard name
+  section 50.20; their values are unchanged.
+- B4: first authors corrected from Crossref (Song L, Aneas I, MacIntyre EA, with
+  MacIntyre's full subtitle). The IL-33/ST2 review the brief attributed to Cayrol and
+  Girard (2018) with DOI 10.1016/j.cytogfr.2018.01.001 is replaced by the Crossref exact
+  title match, De la Fuente M, MacDonald TT, Hermoso MA (2015), Cytokine and Growth Factor
+  Reviews, 10.1016/j.cytogfr.2015.07.017; the old DOI resolves to an unrelated IL-38
+  paper. All five brief-derived entries are verified by Crossref (checked 2026-11-16).
+  Correcting the published brief record is a roadmap item, not done here.
+
+D54 APEX 5 NO2 DEQ coefficients are staff correspondence (2026-11-16, audit B7, S37). The
+DEQ column for APEX 5 NO2 in Table 3 and Figure 2 (1.8 + 0.32x, R-squared 0.21) is the
+coefficient set DEQ staff supplied on 2026-08-19 for the 2026-08-07 window, marked † and
+cited to the correspondence source. DEQ's printed correction, in the 2026-08-21 edition
+p. 14 (1.8 + 0.31x, R-squared 0.2), is transcribed as deq.aug21.apex-05_NO2.* and is not
+compared, because its window runs past the regulatory record this report holds. That
+edition has no manifest entry; its retrieved date is the archive commit date, 2026-08-22,
+stated as an upper bound. No sentence says who asked DEQ or why it revised.
+
+D55 Site key conventions (2026-11-16, audit S14). The site key's Active end is the first
+day with no data, so DEQ's editions give a date one day earlier; a table note says so. The
+APEX unit column stays as frozen, and a note names the units DEQ's 2026-10-09 edition,
+section 2, gives at DC-07, DC-08 and DC-09, checked against the ingested edition text at
+generation. The name column is the name on DEQ's dashboard, and its header says so.
+
+D56 Per-edition source addresses (2026-11-16, audit S21). A DEQ edition is cited by the
+document title "Data Center Air Quality Analysis" with its edition date. Its address is
+the per-edition document the source manifest recorded at download; where the manifest
+records none, the project page plus the archived file's repository path and SHA-256. The
+manifest's fallback entry, which gave the 2026-08-07 file the 2026-10-09 edition's
+document ID 39287, is not used. The DEQ hosts return 403 to automated clients, so the
+addresses are to be checked by hand in a browser.
+
+D57 Figure 3 carries a regulatory-data note (2026-11-16, audit M2). Figure 3 plots only the
+regulatory monitor, so it carries a note naming the instrument and the public-records
+release in place of DEQ's sensor limitation. The sensor limitation goes on every figure
+that plots sensor data (Figures 1, 2, 4 and 5); the PDF post-check declares those four.
+CONTEXT.md section 3 is amended to match.
+
+D58 The common-window result is stated both ways (2026-11-16, audit S12). Every
+common-window statement gives the result with the smoke window (2026-07-16 to 2026-07-19)
+and without it, in the same paragraph. With the window excluded no site's common-window
+98th percentile is above 35 µg/m³ under either day definition, DC-06 ranks fourth either
+way, and the two days each percentile is read from fall in the smoke window at all six
+sites under both definitions (p98.common.sites_set_by_smoke_days,
+p98.common_clock.sites_set_by_smoke_days). All 11 Loudoun site-days at or above 35 fall in
+the window (the generator fails if that stops holding). A zero count renders "none"
+through `<N fmt="count">` and the generator's count_word. Table 5 gains smoke-excluded
+record days, percentile and rank for both day definitions; Table 6 gains the own-record
+local standard time percentile with the window excluded; Figure 4 gains the
+smoke-excluded common-window value as a third marker series; section 5.5 gives the
+correlation range with the window included (corr.with_smoke.*). Section 5.4 is retitled
+"Record length and one smoke weekend move a percentile", and the changelog describes the
+result as the record-length and smoke-window effect on a percentile. CONTEXT.md section 4
+R3 carries a dated amendment. Statistics still given one way only are listed in AUDIT.md
+and not changed in this round.
+
+D59 inventory.graph.status keeps its value (2026-11-16, audit M11). The "(D25)" inside the
+value is not rendered anywhere, and the ruling that every existing inventory.json value
+stays byte-identical outranks the clean-up; no change.
+
+D60 Spelling (2026-11-16, audit M13). The report uses British spelling (licence, modelled,
+analysed, catalogue, data centre corridor). Proper names, quoted text and text read from
+hash-pinned inputs keep their own spelling: DEQ's "Data Center Air Monitoring Project",
+the GWAS Catalog's name, and the T11 caption sentence taken from
+pipeline/lookups/asthma_loci.json.
+
 ---
 
 ## Remaining AUDIT items

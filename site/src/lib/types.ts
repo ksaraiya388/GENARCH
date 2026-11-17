@@ -469,6 +469,8 @@ export interface ReportTableManifest {
   source_note: string;
   /** Column name to unit. Columns absent from the map carry no unit. */
   units: Record<string, string>;
+  /** Notes the generator composed from keys, printed under the table. */
+  notes?: string[];
 }
 
 /** A report figure's manifest entry. The image itself is `<id>.svg` beside it. */

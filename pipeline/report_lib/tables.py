@@ -22,6 +22,7 @@ class Table:
         units: dict[str, str],
         columns: list[str],
         rows: list[list],
+        notes: list[str] | None = None,
     ):
         self.id = table_id
         self.title = title
@@ -30,6 +31,9 @@ class Table:
         self.units = units
         self.columns = columns
         self.rows = rows
+        # Notes printed under the table. Generated with the table, so every number in
+        # one comes from a key rather than being typed into the render layer.
+        self.notes = list(notes or [])
 
     @property
     def filename(self) -> str:
@@ -45,7 +49,7 @@ class Table:
         return path
 
     def manifest_entry(self) -> dict:
-        return {
+        entry = {
             "id": self.id,
             "title": self.title,
             "caption": self.caption,
@@ -55,6 +59,9 @@ class Table:
             "columns": self.columns,
             "row_count": len(self.rows),
         }
+        if self.notes:
+            entry["notes"] = self.notes
+        return entry
 
 
 def write_tables(tables: list[Table], out_dir: Path) -> list[Path]:

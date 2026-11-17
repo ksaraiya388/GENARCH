@@ -44,13 +44,21 @@ export function isCitable(): boolean {
   return !isPending(frontmatter.doi);
 }
 
+/** "Kiaan Saraiya" to "Saraiya, K.", the APA 7 author form. */
+export function apaAuthor(name: string): string {
+  const parts = name.trim().split(/\s+/);
+  const family = parts.pop() ?? name;
+  const initials = parts.map((given) => `${given[0]}.`).join(" ");
+  return initials ? `${family}, ${initials}` : family;
+}
+
 /** APA 7 reference for this report, as the cover's recommended citation. */
 export function apaCitation(): string {
   const { author, date, title, version, doi } = frontmatter;
   const year = date.slice(0, 4);
   const identifier = isPending(doi) ? "DOI pending" : `https://doi.org/${doi}`;
   return (
-    `${author.name}. (${year}). ${title} (Version ${version}). ` +
+    `${apaAuthor(author.name)} (${year}). ${title} (Version ${version}). ` +
     `GENARCH. ${identifier}`
   );
 }

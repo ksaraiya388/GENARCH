@@ -345,9 +345,21 @@
   list-style: upper-alpha;
 }
 
+/* The literature list prints its own [n] label, the form the inline citation takes,
+   so a reader can match [11] in the text to the entry (AUDIT_FINDINGS B5). */
+.report-references-numbered {
+  list-style: none;
+  margin-left: 0;
+}
+
+.report-reference-label {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
 .report-doi {
   color: var(--teal-primary);
-  word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 /* -------------------------------------------------------------------- glossary */

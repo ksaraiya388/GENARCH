@@ -8,9 +8,11 @@ import { formatNumber, reportNumber } from "@/lib/report-registry";
  * recorded unit for a standalone figure. `n` is the sample size behind the value and
  * `window` the period and day definition it was computed on, both of which appear in
  * methods prose where the value itself is beside the point. `ordinal` renders a
- * whole-number rank as a word ("fourth"), because "ranks 4" reads as a typo.
+ * whole-number rank as a word ("fourth"), because "ranks 4" reads as a typo. `count`
+ * renders a whole-number count of zero as "none" and any other count as its value
+ * (DECISIONS.md D58), so "none of the six" never prints as "0 of the six".
  */
-export type NFormat = "value" | "with-unit" | "n" | "window" | "ordinal";
+export type NFormat = "value" | "with-unit" | "n" | "window" | "ordinal" | "count";
 
 const ORDINALS = [
   "zeroth", "first", "second", "third", "fourth", "fifth", "sixth", "seventh",
@@ -100,6 +102,16 @@ export function N({ year, k, fmt = "value", group = true, digits }: NProps) {
       break;
     case "ordinal":
       text = ordinal(year, k, record.value);
+      break;
+    case "count":
+      if (typeof record.value !== "number" || !Number.isInteger(record.value) ||
+          record.value < 0) {
+        throw new Error(
+          `report ${year} key "${k}" is ${String(record.value)}, which fmt="count" cannot ` +
+            "render (whole numbers from 0)"
+        );
+      }
+      text = record.value === 0 ? "none" : formatNumber(record, group);
       break;
     default:
       text = formatNumber(record, group);

@@ -36,6 +36,73 @@ def recomputed_days(rows: list[dict]) -> dict[date, dict]:
     }
 
 
+def excluded_days(
+    regulatory_rows: list[dict],
+    published: dict[date, Decimal],
+    recomputed: dict[date, dict],
+    comparable: list[date],
+    min_hours: int,
+) -> dict:
+    """Why each calendar day in the comparison window is not comparable.
+
+    Every day between the first and last comparable day is classified once: the
+    published day failed DEQ's null-code and "<" exclusions, the recomputed day fell
+    short of the completeness threshold, or both. The longest run of days on which
+    every hourly reading carries an AQS null code is reported with its code, because
+    it accounts for the one long gap in the comparison.
+    """
+    if not comparable:
+        return {}
+    start, end = comparable[0], comparable[-1]
+    counts = {"both": 0, "published_only": 0, "recomputed_only": 0}
+    day = start
+    while day <= end:
+        if day not in comparable:
+            published_ok = day in published
+            recomputed_ok = recomputed.get(day, {}).get("valid_hours", 0) >= min_hours
+            if not published_ok and not recomputed_ok:
+                counts["both"] += 1
+            elif not published_ok:
+                counts["published_only"] += 1
+            elif not recomputed_ok:
+                counts["recomputed_only"] += 1
+        day = date.fromordinal(day.toordinal() + 1)
+
+    # Days on which every hourly PM2.5 row carries an AQS null code, and the code.
+    codes_by_day: dict[date, set[str]] = defaultdict(set)
+    rows_by_day: dict[date, int] = defaultdict(int)
+    null_by_day: dict[date, int] = defaultdict(int)
+    prefix = "regulatory_invalid:null_code="
+    for row in regulatory_rows:
+        if row["site_id"] != REGULATORY_SITE or row["pollutant"] != "PM2.5":
+            continue
+        d = row["ts_est"].date()
+        rows_by_day[d] += 1
+        reason = row.get("exclusion_reason") or ""
+        if row["excluded"] and reason.startswith(prefix):
+            null_by_day[d] += 1
+            codes_by_day[d].add(reason[len(prefix):])
+    all_null = sorted(d for d in rows_by_day if null_by_day[d] == rows_by_day[d] > 0)
+    best: list[date] = []
+    run: list[date] = []
+    for d in all_null:
+        if run and d.toordinal() == run[-1].toordinal() + 1:
+            run.append(d)
+        else:
+            run = [d]
+        if len(run) > len(best):
+            best = list(run)
+    run_codes = sorted(set().union(*(codes_by_day[d] for d in best))) if best else []
+    return {
+        "calendar_days": end.toordinal() - start.toordinal() + 1,
+        "counts": counts,
+        "null_run_start": best[0].isoformat() if best else None,
+        "null_run_end": best[-1].isoformat() if best else None,
+        "null_run_days": len(best),
+        "null_run_codes": run_codes,
+    }
+
+
 def reconcile(
     regulatory_rows: list[dict],
     published: dict[date, Decimal],
@@ -70,7 +137,10 @@ def reconcile(
             }
         )
 
+    excluded = excluded_days(regulatory_rows, published, recomputed, days, min_hours)
+
     return {
+        "excluded": excluded,
         "rows": rows,
         "n_days": len(days),
         "n_match": matches,

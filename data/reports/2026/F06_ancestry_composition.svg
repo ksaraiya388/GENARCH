@@ -3913,10 +3913,10 @@ z
   <g id="legend_2">
    <g id="patch_39">
     <path d="M 14.177734 352.1 
-L 370.098078 352.1 
-Q 371.578078 352.1 371.578078 350.62 
-L 371.578078 301.928 
-Q 371.578078 300.448 370.098078 300.448 
+L 373.784203 352.1 
+Q 375.264203 352.1 375.264203 350.62 
+L 375.264203 301.928 
+Q 375.264203 300.448 373.784203 300.448 
 L 14.177734 300.448 
 Q 12.697734 300.448 12.697734 301.928 
 L 12.697734 350.62 
@@ -4173,7 +4173,7 @@ z
 " style="fill: url(#h62780bda06); stroke: #0b1f2f; stroke-width: 0.6; stroke-linejoin: miter"/>
    </g>
    <g id="text_35">
-    <!-- Native Hawaiian and Other Pacific Islander alone  0.1% -->
+    <!-- Native Hawaiian and Other Pacific Islander alone  &lt;0.1% -->
     <g style="fill: #0b1f2f" transform="translate(203.386484 310.956) scale(0.074 -0.074)">
      <defs>
       <path id="Calibri-1c1" d="M 4413 2897 
@@ -4286,10 +4286,11 @@ z
      <use xlink:href="#Calibri-11e" transform="translate(1919.78125 0)"/>
      <use xlink:href="#Calibri-3" transform="translate(1969.53125 0)"/>
      <use xlink:href="#Calibri-3" transform="translate(1992.140625 0)"/>
-     <use xlink:href="#Calibri-3ec" transform="translate(2014.75 0)"/>
-     <use xlink:href="#Calibri-358" transform="translate(2065.4375 0)"/>
-     <use xlink:href="#Calibri-3ed" transform="translate(2090.6875 0)"/>
-     <use xlink:href="#Calibri-439" transform="translate(2141.375 0)"/>
+     <use xlink:href="#Calibri-444" transform="translate(2014.75 0)"/>
+     <use xlink:href="#Calibri-3ec" transform="translate(2064.5625 0)"/>
+     <use xlink:href="#Calibri-358" transform="translate(2115.25 0)"/>
+     <use xlink:href="#Calibri-3ed" transform="translate(2140.5 0)"/>
+     <use xlink:href="#Calibri-439" transform="translate(2191.1875 0)"/>
     </g>
    </g>
    <g id="patch_45">

@@ -1412,3 +1412,72 @@ definitions). This carries the 2026-11-04 correction above into CONTEXT itself.
 2026-11-15 9: dates, times, gene symbols, cytobands and locus tokens never break inside a cell; fixed-width body cells break between words only, so the width gate fails any column too narrow for a word; the glossary keeps its first two and last two entries together.
 2026-11-15 10: the PDF build waited on every image, and the site footer's lazy-loaded logo never enters the viewport, so the wait always ran to 30 seconds; it now waits on the six figure images only and fails on any with zero natural width.
 2026-11-15 11: generator rerun, existing values byte-identical; validate, constraint lint (52 baselined, 0 new), mojibake, pytest, ruff, tsc and ESLint pass; review markers 0; draft-3 built, 47 pages, 14 tables inside their containers, DEQ verbatim limitation 7 times.
+
+## Audit fixes for draft-3 (2026-11-16)
+
+Findings from docs/report-2026/AUDIT_FINDINGS.md (61: B1-B9, S1-S39, M1-M13), one line each.
+
+2026-11-16 B1: frontmatter date 2026-11-16, after the latest cited edition (2026-11-06, retrieved 2026-11-08); cover, changelog and APA citation follow (D53).
+2026-11-16 B2: print.css hid every <footer> on the print route, including DeqLimitation's attribution; the rule now targets the site banner, header and contentinfo footer only, and the attribution prints in a <p> after the quote in the summary and section 7 boxes.
+2026-11-16 B3: cfr5018 re-pointed to 40 CFR 50.20 (cfr5020), eCFR URL and title, read through the eCFR versioner API at 2026-10-01 (9.0 annual, 35 24-hour, 89 FR 16380); naaqs.annual_standard and naaqs.daily_standard method text names section 50.20, values unchanged (D53).
+2026-11-16 B4: first authors Song L, Aneas I, MacIntyre EA (with the TAG Study subtitle) from Crossref; the IL-33/ST2 review replaced by its Crossref exact-title match, De la Fuente, MacDonald and Hermoso 2015, 10.1016/j.cytogfr.2015.07.017; all five brief entries method crossref, checked 2026-11-16; section 7.4 sentence and roadmap item for the brief record (D53).
+2026-11-16 B5: the literature list prints its [n] labels in the order Cite numbers them.
+2026-11-16 B6: hodgson2024 removed; genarchatlas cited in section 1.
+2026-11-16 B7: Table 3 and Figure 2 mark the APEX 5 NO2 DEQ values † as staff correspondence of 2026-08-19; the 2026-08-21 edition p. 14 correction (1.8 + 0.31x, R-squared 0.2) is transcribed as deq.aug21.apex-05_NO2.*, stated in the table note, the figure and section 5.2, and not compared; deq2026aug21 added to Sources with retrieved date 2026-08-22 as an upper bound (archive commit fc6a0a8) (D54).
+2026-11-16 B8: section 5.2 names the APEX 14 NO2 regression and its R-squared against DEQ's, without a count.
+2026-11-16 B9: section 6.3 callout reworded as the fix gives, with ancestry.discovery.south_asian.share and ancestry.loci.17q12-21.south_asian.associations bound through <N>.
+2026-11-16 S1: numbers bound to existing or new keys in every section, caption and alt text; exemptions recorded (D50); numbers.json gains 136 keys (114 before the S12 ruling, 22 after), inventory.json and chain.json 2 each; the T11 caption's locus count now comes from the same record as ancestry.loci.count.
+2026-11-16 S2: ISO date-times print with a space, figure shares below 0.1 percent print "<0.1%", table counts carry thousands separators (D51).
+2026-11-16 S3: Table 5 carries a note that the section 5.4 rise is computed from unrounded percentiles.
+2026-11-16 S4: the summary R3 sentence, section 5.4 first paragraph and section 5.2 first paragraph name whole days through network.common_window.end and DEQ's edition cutoff deq.edition_cutoff.
+2026-11-16 S5: summary R3 carries the full caveat 2, worded per the S12 ruling (records differed in length and in how much weight the smoke weekend carried).
+2026-11-16 S6: section 5.1 gives whole-day counts with the DEQ-cutoff counts in brackets.
+2026-11-16 S7: section 5.4 states that keeping zeros closes p98.full.zero_kept.n_closed site and opens p98.full.zero_kept.n_opened.
+2026-11-16 S8: section 7.2 states that DEQ's printed correction (2026-08-21 edition) covers a longer window than the regulatory record this report holds and is not compared.
+2026-11-16 S9: section 5.5 gives per-pair overlapping hours (corr.pair_hours_min to corr.pair_hours_max), distinct hours corr.n_hours, and the window through freeze.original_cutoff_date.
+2026-11-16 S10: Table 3 note: DEQ voided sensor PM2.5 2026-03-03 to 2026-03-08 for high humidity (2026-10-09 edition footnote 3), 143 APEX 14 hours (keys sensor.pm25_void.*, colloc.apex-14_PM2.5.void_hours).
+2026-11-16 S11: the reconciliation table carries the excluded-day breakdown by reason from keys: 160 calendar days, 119 comparable, 38 excluded on both sides, 2 published only, 1 recomputed only; the longest gap, 2026-06-17 to 2026-07-13 (27 days), is AQS null code AS.
+2026-11-16 S12: ruling applied (D58): EPA exceptional-event sentence in section 3.5 and the Figure 1 in-figure label; summary share and R3 sentences replaced as ruled; section 5.4 retitled, smoke paragraph inserted, clock-binning sentence replaced; section 7.2 season sentence replaced; Table 5 smoke-excluded record days, percentile and rank for both day definitions; Table 6 own-record local standard time percentile with the window excluded; Figure 4 third marker series (drawn, not caption-only), title "Record length and one smoke weekend move the 98th percentile"; section 5.5 with-smoke correlation range 0.959 to 0.991; changelog wording; CONTEXT section 4 R3 amendment; new N format count renders zero as "none".
+2026-11-16 S12 values: Loudoun complete site-days below 35 with the window excluded 1,207 of 1,207 (100.00 percent) against 1,220 of 1,231 (99.11) with it; all 11 site-days at or above 35 fall in the window. Common window, window excluded, local standard time: DC-01 24.356, DC-04 21.294, DC-08 21.267, DC-06 21.059, DC-09 20.703, DC-02 16.644; local clock time: DC-01 24.131, DC-08 21.283, DC-04 21.267, DC-06 20.879, DC-09 20.678, DC-02 16.732; none above 35 under either. Largest clock-minus-standard difference 0.225; DC-04 minus DC-08 under standard time 0.028 from unrounded values. At all six sites under both definitions the two days each common-window percentile is read from are smoke days. Own record, local standard time, window excluded: DC-06 21.059 against 38.215 with it.
+2026-11-16 S12 one-way list (GENARCH_RULES section 6), reported and not changed: summary correlation sentence, Table 7 and Figure 5 (smoke excluded only); R1 collocation fits and the APEX 5 NO2 backfill fit (Table 3, Figure 2, summary, section 5.2; smoke hours included); R2 daily reconciliation (Tables 4 and 4s, Figure 3, summary, section 5.3; regulatory monitor, smoke days included); Table 5 DEQ-cutoff columns and ranks and the section 5.4 DEQ-cutoff ranking sentence (smoke included); Table 6 clock-time columns and all three difference columns, the section 5.4 own-record reproduction statements (p98.full.lst_offset_live.*, n_within_live, zero_kept.*, DC-08 difference) and the section 7.3 item (smoke included, as in DEQ's table); Figure 4 own-record series (smoke included; Table 6 gives the standard-time value both ways); record-day counts (network.record_days.*), which count smoke days.
+2026-11-16 S12 community page: /community/data-center-alley says "{Word(aboveLevel.length)} of {word(commonWindow.length)} sites sit above 35 µg/m³ on matched windows, and site {shortest.key} ranks {ordinal(shortestRank)} rather than first" and that the common window "contains the smoke window"; it notes the percentiles include that window and DEQ staff's pre-smoke figure of about 20 µg/m³, but gives no smoke-excluded common-window value; its own-record against common-window chart and table are with smoke only. Not edited.
+2026-11-16 S13: DC-10 to DC-12 dropped from the section 5.2 callout; Table 2 prints "outside scope" for Prince William record days; Table 12 keeps the three export rows under a D5 exception (D52).
+2026-11-16 S14: site key notes give the Active end convention and the DEQ 2026-10-09 unit assignments (sensor 8 DC-07, 10 DC-08, 13 DC-09), checked against the edition text at generation; name column headed "Name on DEQ's dashboard" (D55).
+2026-11-16 S15: summary callout and section 8 both describe the one unit that occupied two sites.
+2026-11-16 S16: section 5.1 bounds the site count by the data cutoff; F01 alt text says the shortest Loudoun record begins in mid-June.
+2026-11-16 S17: section 8 Prince William dates keyed, with the post-freeze date labelled and cited to the 2026-10-30 edition.
+2026-11-16 S18: section 5.2 callout and section 8 say sensor collection at DC-01 ended and the unit moved; the regulatory monitor continues; section 8 item retitled "Collocated comparison, after the freeze".
+2026-11-16 S19: the after-the-freeze callout records the two Prince William sites and the new Loudoun site, without codes or values, cited to the 2026-10-30 and 2026-11-06 editions.
+2026-11-16 S20: section 7.3 item now says the backfill treatment will be reported to DEQ in the pre-publication review.
+2026-11-16 S21: DEQ editions titled "Data Center Air Quality Analysis" with their edition dates and per-edition addresses (oct09 document 39287 retrieved 2026-10-11, oct30 39902, nov06 39963); the 2026-08-07 edition has no manifest entry and now gives the project page with its archive path and SHA-256 instead of the 2026-10-09 document ID it had borrowed through the manifest fallback (D56). DEQ hosts return 403 to automated clients: check by hand.
+2026-11-16 S22: PEC source is Cork and Dominici, EmPower Analytics Group, for PEC, 2026-02-27, at its PDF URL (resolves, 200).
+2026-11-16 S23: ACS edition date 2026-01-29 (Census release page); genarchatlas title "GENARCH — Genetic Epidemiology Atlas"; new source diversitymonitor2024 (snapshot 2024-09, retrieved 2026-07-13).
+2026-11-16 S24: the ACS source note names its table through {table:T12}.
+2026-11-16 S25: section 5.7 citations matched to claims, with [10] and [11] named as cell and animal evidence; section 6.3 reads "the measure the cited reviews give most weight".
+2026-11-16 S26: two summary sentences on the ancestry composition and the 17q12-21 gap, keyed, with the not-a-headcount qualifier; the lead says the report does three things.
+2026-11-16 S27: section 6.2 reads "sum to ... (a total of study sample sizes, not of distinct people)".
+2026-11-16 S28: the T12 caption no longer carries the effect-estimate sentence.
+2026-11-16 S29: glossary entry retitled "Federal reference or equivalent method monitor" and states the regulatory monitor is FEM.
+2026-11-16 S30: no script on disk reproduces the X2-X4 quantities, so the numbers are removed and section 5.6 says the readings were examined in the August analysis.
+2026-11-16 S31: glossary defines "Functional (evidence class)"; section 3.6 says the step 1 and step 5 classes come from gene-level links; keys chain.steps_from_records and chain.steps_from_figure.
+2026-11-16 S32: section 7.4 and section 1 state the Fairfax County comparison region (inventory.community_regions.records).
+2026-11-16 S33: Table 12 note gives export date as an upper bound, the commit time of the ingest (D10).
+2026-11-16 S34: section 2 and Appendix A say every DEQ and sensor input is listed and the atlas, ancestry and configuration inputs are pinned in the freeze file.
+2026-11-16 S35: Table 7 printed once (section 5.5); Appendix B reads "thirteen".
+2026-11-16 S36: Appendix A.1 describes all six commands.
+2026-11-16 S37: the zero-retention point reads "DEQ staff confirmed" with a correspondence source and no revision narrative; the correction is cited to the 2026-08-21 edition (D54).
+2026-11-16 S38: the summary sentence is replaced as ruled under S12, naming the freeze.cutoff_date data cutoff.
+2026-11-16 S39: Figure 4 reference-line label in the right margin, common-window markers hollow so the DC-06 own-record dot shows; legend moved to the upper left for the third series.
+2026-11-16 M1: section 3.2 states the shift as America/New_York wall time and notes the autumn transition does not arise in this record.
+2026-11-16 M2: Figure 3 carries a regulatory-data note; the PDF post-check declares the four sensor figures (F01, F02, F04, F05), so the required verbatim count is 6 (D57).
+2026-11-16 M3: correspondence facts cited to the new deqcorrespondence source; the "follow-up request is pending" statement has no request record on disk and is left as written, unverified.
+2026-11-16 M4: the listed phrases removed or reworded.
+2026-11-16 M5: summary opens "This is GENARCH's annual report for 2026." as ruled.
+2026-11-16 M6: Table 3 columns "First/Last paired hour (EST)" with a note tying them to the unit assignment and the site key date.
+2026-11-16 M7: URLs, DOIs and break-anywhere cells (Table 8 source, Table 12 origin) break after separators through <wbr> with overflow-wrap anywhere, replacing word-break break-all; Tables 3 and 10 header hyphenation not resolved: the columns are at their fixed widths inside the 6.5 in measure, the small table size did not change it, and the print route has no landscape page; Figure 1 labels 8 pt (were 6.5 and 6.8), reconfiguration label on two lines; Table 10's Locus column keeps the record's label, which is read from hash-pinned asthma_loci.json; the T10 caption is present in tables.json.
+2026-11-16 M8: NR and Other defined in the Table 9 and 10 notes.
+2026-11-16 M9: the T10 caption's pointer to an internal path removed.
+2026-11-16 M10: APA citation reads "Saraiya, K. (2026)."
+2026-11-16 M11: no change (D59).
+2026-11-16 M12: summary callout adds "(see section 7.5)".
+2026-11-16 M13: British spelling throughout (D60); proper names, quotations and the hash-pinned T11 caption sentence keep theirs.

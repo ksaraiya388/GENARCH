@@ -1,4 +1,4 @@
-import { Cite, List, Item, P, Section } from "./bound";
+import { Cite, EditionDate, List, Item, N, P, Section } from "./bound";
 
 /**
  * The roadmap.
@@ -28,20 +28,30 @@ export function Roadmap() {
         </Item>
 
         <Item>
+          <strong>Mechanism brief references.</strong> Correct the citation errors this
+          report&apos;s reference check found in the published mechanism brief, so that the
+          brief&apos;s record matches the corrected reference list here.
+        </Item>
+
+        <Item>
           <strong>May 2027.</strong> The first twelve-month record at a single Loudoun
-          site. The two sites that had collected since 2026-03-03, DC-01 and DC-02, both
-          closed after the freeze <Cite id="deq2026oct30" />
+          site. After the freeze, sensor collection ended at the two sites that had
+          collected since <N k="network.first_start" />, DC-01 and DC-02{" "}
+          <Cite id="deq2026oct30" />
           <Cite id="deq2026nov06" />, so no site reaches twelve months in March 2027.
-          Site DC-04 has collected since 2026-05-14 and reaches twelve months in May 2027
-          if it keeps collecting. A percentile read over a full year is the first one in
+          Site DC-04 has collected since <N k="network.start.DC-04" /> and reaches twelve
+          months in May 2027 if it keeps collecting. A percentile read over a full year is the first one in
           this project not dominated by the season its record happens to cover.
         </Item>
 
         <Item>
-          <strong>Collocation series status.</strong> The collocation site closed on
-          2026-11-04 <Cite id="deq2026nov06" />, so the weekly collocation series has
-          ended unless DEQ places a sensor beside a regulatory monitor again. Any later
-          collocation analysis depends on that and on the pending records request.
+          <strong>Collocated comparison, after the freeze.</strong> Sensor collection at
+          the collocated site ended on <N k="deq.postfreeze.dc01_collection_end" /> and
+          the unit moved to a new Loudoun County site <Cite id="deq2026nov06" />;
+          DEQ&apos;s regulatory monitor there continues. The weekly collocated comparison
+          has therefore ended unless DEQ places a sensor beside a regulatory monitor again.
+          Any later collocation analysis depends on that and on the pending records
+          request.
         </Item>
 
         <Item>
@@ -62,7 +72,10 @@ export function Roadmap() {
 
         <Item>
           <strong>Scope of the second county.</strong> DEQ&apos;s network now includes
-          sites in Prince William County, deployed on 2026-09-17 and 2026-10-22. They are
+          sites in Prince William County, deployed in{" "}
+          <N k="network.reconfiguration_month" /> and, after the freeze, on{" "}
+          <N k="deq.postfreeze.pw_sites_added" /> (DEQ&apos;s{" "}
+          <EditionDate id="deq2026oct30" /> edition <Cite id="deq2026oct30" />). They are
           outside the scope of this version. Whether the atlas and this report take in a
           second county is a decision about what GENARCH is for, and it will be made for
           the next report.
@@ -79,8 +92,9 @@ export function Roadmap() {
 
         <Item>
           <strong>Page and report alignment.</strong> The ancestry and equity page labels
-          its denominator differently from this report and reads the 2023 ACS release
-          where this report reads 2024. Both will be aligned ahead of the next report.
+          its denominator differently from this report and reads the{" "}
+          <N k="ancestry.page_acs_release" /> ACS release where this report reads{" "}
+          <N k="ancestry.acs.release" />. Both will be aligned ahead of the next report.
         </Item>
 
         <Item>

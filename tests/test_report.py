@@ -392,14 +392,10 @@ def test_the_cited_deq_report_is_frozen_and_hash_pinned(freeze):
     freeze.verified_path(cited[0].rel_path)
 
 
-# F01-F05 plot DEQ sensor data; F06 plots a study population and a census table.
-DEQ_FIGURE_IDS = (
-    "F01_network_timeline",
-    "F02_collocation",
-    "F03_daily_reconciliation",
-    "F04_p98_by_site",
-    "F05_correlation_heatmap",
-)
+# F01, F02, F04 and F05 plot DEQ sensor data. F03 plots only the regulatory monitor
+# and carries a regulatory-data note instead (DECISIONS.md D57); F06 plots a study
+# population and a census table.
+from pipeline.report_pdf_post import SENSOR_FIGURE_IDS as DEQ_FIGURE_IDS  # noqa: E402
 
 
 def test_every_sensor_figure_limitation_equals_the_constant(report_dir):
@@ -410,6 +406,14 @@ def test_every_sensor_figure_limitation_equals_the_constant(report_dir):
     assert len(deq) == len(DEQ_FIGURE_IDS)
     for entry in deq:
         assert entry["limitation"] == constant, entry["id"]
+
+
+def test_the_regulatory_figure_carries_a_regulatory_note_not_the_sensor_limitation(report_dir):
+    """F03 plots no sensor reading; DEQ's sensor limitation does not describe it (D57)."""
+    manifest = json.loads((report_dir / "figures.json").read_text(encoding="utf-8"))
+    entry = next(e for e in manifest["figures"] if e["id"] == "F03_daily_reconciliation")
+    assert figures.deq_limitation()["limitation"] not in entry["limitation"]
+    assert entry["limitation"].startswith("Regulatory monitor data only")
 
 
 def test_the_ancestry_figure_does_not_carry_the_sensor_limitation(report_dir):

@@ -1,4 +1,4 @@
-import { Cite, DeqLimitation, List, Item, N, P, Section, Sub } from "./bound";
+import { Cite, DeqLimitation, EditionDate, List, Item, N, P, Section, Sub } from "./bound";
 
 export function Limitations() {
   return (
@@ -12,7 +12,7 @@ export function Limitations() {
           <N k="naaqs.averaging_years" /> consecutive years, at a level of{" "}
           <N k="naaqs.daily_standard" /> µg/m³; the separate annual standard is{" "}
           <N k="naaqs.annual_standard" /> µg/m³ as revised in 2024{" "}
-          <Cite id="cfr5018" />
+          <Cite id="cfr5020" />
           <Cite id="cfr50appn" />. Neither form can be evaluated against a low-cost
           sensor record, and neither is evaluated anywhere in this report. Every
           percentile reported here is the statistic DEQ publishes for these sensors, not
@@ -35,25 +35,32 @@ export function Limitations() {
 
       <Sub number="7.2" id="limitations-record" title="Record length, season and the end of the regulatory data">
         <P>
-          The sensor records differ by a factor of three in length and are not
-          contemporaneous, which is the subject of one of the four results rather than a
-          footnote to it. A 98th percentile read from{" "}
+          The sensor records differ in length, from{" "}
+          <N k="network.record_days.DC-06" /> to <N k="network.record_days.DC-01" />{" "}
+          complete days, and are not contemporaneous, which is the subject of one of the
+          four results rather than a footnote to it. A 98th percentile read from{" "}
           <N k="network.record_days.DC-06" /> days of high summer is a different order
-          statistic from one read from <N k="network.record_days.DC-01" /> days spanning
-          three seasons, and the two cannot be ranked against each other. Restricting to
-          the common window removes the unequal-length problem; it does not remove the
-          unequal-season one, because the common window falls entirely in high summer and
-          contains the wildfire smoke period.
+          statistic from one read from <N k="network.record_days.DC-01" /> days running
+          from <N k="network.first_start" /> into high summer, and the two cannot be ranked
+          against each other. Restricting to the common window removes the unequal-length
+          problem. It does not remove the season problem: the common window falls entirely
+          in high summer and contains the wildfire smoke window, and the count of sites
+          above <N k="naaqs.daily_standard" /> µg/m³ on it goes from{" "}
+          <N k="p98.common.n_above_35" fmt="count" /> to{" "}
+          <N k="p98.common_exsmoke.n_above_35" fmt="count" /> when that window is
+          excluded.
         </P>
         <P>
-          The regulatory monitor record ends 2026-08-10 under the released public-records
-          request <Cite id="foia264646" />, with the last complete day 2026-08-09. That
+          The regulatory monitor record ends <N k="regulatory.record_end" /> under the
+          released public-records request <Cite id="foia264646" />, with the last complete
+          day <N k="regulatory.last_complete_day" />. That
           caps the collocation fits and the daily reconciliation at a date the sensor
           record runs well past, and no later cutoff is computable for either, because
-          both sides of each hourly pair are needed. A follow-up request is pending. One
-          consequence is specific and worth naming: DEQ&apos;s corrected coefficients for
-          one regression were computed over a window that runs past this report&apos;s
-          cutoff, and that comparison cannot be aligned from this side at all.
+          both sides of each hourly pair are needed. A follow-up request is pending.
+          DEQ&apos;s printed correction for one regression (the{" "}
+          <EditionDate id="deq2026aug21" /> edition <Cite id="deq2026aug21" />) covers a
+          longer window than the regulatory record this report holds, so it is not
+          compared.
         </P>
       </Sub>
 
@@ -87,23 +94,28 @@ export function Limitations() {
             values.
           </Item>
           <Item>
-            Nine hours that had been missing were backfilled with rows in which every
-            pollutant channel reads zero. Those rows are treated as missing. The treatment
-            is a judgement about an instrument floor rather than a fact established from
-            the data, and it is reported to DEQ as such.
+            <N k="freeze.backfilled_zero_hours" /> hours that had been missing were
+            backfilled with rows in which every pollutant channel reads zero. Those rows
+            are treated as missing. The treatment is a judgement about an instrument floor
+            rather than a fact established from the data, and it will be reported to DEQ
+            as such in the pre-publication review.
           </Item>
           <Item>
-            The network was reconfigured in September 2026: three Loudoun sites went
-            offline and three sites joined outside Loudoun County, as determined from
-            DEQ&apos;s own site history and recorded in the site key. Those three sites are
-            outside this version&apos;s scope and no reading from them is reported.
+            The network was reconfigured in <N k="network.reconfiguration_month" />:{" "}
+            <N k="network.sites_ended_at_reconfiguration" /> Loudoun sites went offline
+            and <N k="network.sites_outside_scope" /> sites joined outside Loudoun County,
+            as determined from DEQ&apos;s own site history and recorded in the site key.
+            The sites outside Loudoun County are outside this version&apos;s scope and no
+            reading from them is reported.
           </Item>
           <Item>
             The reproduction of DEQ&apos;s Table 4 over each site&apos;s own record is
             partial. The day boundary accounts for most of the offset and zero handling is
-            a minor and inconsistent effect, but no single combination reproduces all nine
-            rows, and the three retired sites reproduce only under the standard-time
-            definition for reasons that remain unexplained. It is reported as a partial
+            a minor and inconsistent effect, but no single combination reproduces all{" "}
+            <N k="p98.full.n_sites" /> rows, and the{" "}
+            <N k="network.sites_retired_before_deq_cutoff" /> sites retired before that
+            edition reproduce only under the standard-time definition for reasons that
+            remain unexplained. It is reported as a partial
             reproduction and is not described as fully explained.
           </Item>
         </List>
@@ -117,7 +129,10 @@ export function Limitations() {
           ones. It was repaired in place for an encoding fault rather than regenerated,
           its status is recorded in the module inventory, it is excluded from this
           report&apos;s reproducibility claim, and the fix is on the roadmap. No number in
-          this report is derived from it.
+          this report is derived from it. The report&apos;s reference check found citation
+          errors in the published mechanism brief, in the first authors of several
+          references and in one reference&apos;s identifier; they are corrected in this
+          report&apos;s reference list, and the brief record is scheduled for correction.
         </P>
         <P>
           Pathway and gene-environment relationships in the atlas are often inferred from
@@ -125,13 +140,15 @@ export function Limitations() {
           not guarantee relevance in human tissue. The strength and confidence scores
           reflect the quality of the evidence, not certainty about what brings about what. One link of the published
           mechanism chain carries the inferred class, meaning the atlas holds no direct
-          evidence for it, and three of the five classes are assigned by the figure
-          definition rather than read from an atlas record.
+          evidence for it, and <N k="chain.steps_from_figure" /> of the{" "}
+          <N k="chain.steps" /> classes are assigned by the figure definition rather than
+          read from an atlas record.
         </P>
         <P>
-          The community module is modelled at county resolution: one county boundary and
-          one county-level value per exposure layer, with no sub-county variation drawn
-          and none synthesised. Its model is trained on national data and is not validated
+          The community module carries <N k="inventory.community_regions.records" />{" "}
+          region records, for Loudoun County and Fairfax County, each modelled at county
+          resolution: one county boundary and one county-level value per exposure layer,
+          with no sub-county variation drawn and none synthesised. Its model is trained on national data and is not validated
           outside that distribution.
         </P>
       </Sub>

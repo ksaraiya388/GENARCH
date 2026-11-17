@@ -14,11 +14,19 @@
 
 /* The chrome is hidden on screen as well as in print. This route exists to be
    rendered, and a reader who opens it should see what the PDF will contain rather
-   than a page that looks different from the artifact it produces. */
-.report-print-page .disclaimer-banner,
-.report-print-page nav[aria-label="Main navigation"],
-.report-print-page footer {
+   than a page that looks different from the artifact it produces. The site's banner,
+   navigation and footer are siblings of <main>, outside the print wrapper, so they are
+   selected from <body> on any page that carries the wrapper. A bare `footer` selector
+   is not used: the DEQ limitation's attribution is set inside the report, and a rule
+   matching every footer element hid it (AUDIT_FINDINGS B2). */
+body:has(.report-print-page) > .disclaimer-banner,
+body:has(.report-print-page) > header[role="banner"],
+body:has(.report-print-page) > footer[role="contentinfo"] {
   display: none !important;
+}
+
+body:has(.report-print-page) {
+  background-color: #ffffff !important;
 }
 
 .report-print-page {
@@ -229,8 +237,10 @@ body:has(.report-print-page) {
   word-break: break-all;
 }
 
+/* Break after a separator (the <wbr> ReportTable inserts), and inside a part only when
+ * the part alone is wider than the column. */
 .report-print-page .report-cell-break {
-  word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 /* Caption: the label and title in bold on one line, the description below. */
@@ -263,8 +273,8 @@ body:has(.report-print-page) {
   }
 
   .disclaimer-banner,
-  nav,
-  footer,
+  body > header[role="banner"],
+  body > footer[role="contentinfo"],
   .report-toc,
   .report-citebox,
   .report-copy {

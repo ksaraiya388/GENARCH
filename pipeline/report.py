@@ -20,6 +20,7 @@ import json
 import sys
 from datetime import date, datetime, timedelta
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from pipeline.report_lib import (
     ancestry,
@@ -37,8 +38,14 @@ from pipeline.report_lib import (
 from pipeline.report_lib import freeze as freeze_lib
 from pipeline.report_lib.freeze import Freeze, FreezeError
 from pipeline.report_lib.numbers import NumberRegistry
+from pipeline.report_lib.rounding import half_up
 from pipeline.report_lib.rows import build_regulatory_rows, build_rows
-from pipeline.reshape_deq import REGULATORY_DAILY_FILE, read_published_daily
+from pipeline.reshape_deq import (
+    DAILY_MIN_VALID_HOURS,
+    REGULATORY_DAILY_FILE,
+    VOID_WINDOWS,
+    read_published_daily,
+)
 
 # site/src/lib/deq-data.ts. RECORD_END is date-level and drives the percentile
 # windows; DEQ_EDITION_CUTOFF is hour-level and drives the collocation fits. The
@@ -336,7 +343,167 @@ def compute(fz: Freeze) -> dict:
             share["loudoun"][0] += below
             share["loudoun"][1] += total
     results["share_below_35"] = share
+
+    # The same share and the common-window percentiles with the smoke window left
+    # out, under both day definitions (GENARCH_RULES.md section 6: every summary
+    # statistic is reported with and without the smoke window). A day is dropped
+    # when its date, under the day definition in use, falls in the window.
+    def drop_smoke(days: dict) -> dict:
+        return {
+            d: v
+            for d, v in days.items()
+            if not (correlation.SMOKE_START <= d <= correlation.SMOKE_END)
+        }
+
+    ex_share = [0, 0]
+    for site, days in means[("standard", False, None)].items():
+        if site not in loudoun:
+            continue
+        below, total = daily.days_below(drop_smoke(days), PM25_24H_LEVEL)
+        ex_share[0] += below
+        ex_share[1] += total
+    results["share_below_35_ex_smoke"] = ex_share
+    for binning, key in (("standard", "p98_common_standard"), ("clock", "p98_common_clock")):
+        results[key + "_ex_smoke"] = {}
+        for site in COMMON_WINDOW_SITES:
+            whole = drop_smoke(
+                daily.window_days(
+                    means[(binning, False, None)].get(site, {}),
+                    COMMON_WINDOW_START,
+                    RECORD_END,
+                )
+            )
+            results[key + "_ex_smoke"][site] = {
+                "p98": daily.p98(whole.values()),
+                "days": len(whole),
+            }
+
+    # The days that set each common-window percentile (the two order statistics the
+    # linear interpolation reads), and whether all of them fall in the smoke window,
+    # per site and day definition (D58).
+    set_by_smoke = {}
+    for binning in ("standard", "clock"):
+        n_sites = 0
+        for site in COMMON_WINDOW_SITES:
+            days = daily.window_days(
+                means[(binning, False, None)].get(site, {}), COMMON_WINDOW_START, RECORD_END
+            )
+            ordered = sorted(days, key=lambda d: days[d])
+            k = (len(ordered) - 1) * 0.98
+            setting = {ordered[int(k)], ordered[min(int(k) + 1, len(ordered) - 1)]}
+            if all(correlation.SMOKE_START <= d <= correlation.SMOKE_END for d in setting):
+                n_sites += 1
+        set_by_smoke[binning] = n_sites
+    results["p98_common_set_by_smoke"] = set_by_smoke
+
+    # Site-days at or above the level, with the smoke window included, and how many
+    # of them fall inside it (D58).
+    at_or_above = [
+        d
+        for site, days in means[("standard", False, None)].items()
+        if site in loudoun
+        for d, v in days.items()
+        if v >= PM25_24H_LEVEL
+    ]
+    results["at_or_above_35"] = {
+        "total": len(at_or_above),
+        "in_smoke": sum(
+            1 for d in at_or_above if correlation.SMOKE_START <= d <= correlation.SMOKE_END
+        ),
+    }
+
+    # Each site's own-record percentile with the smoke window excluded, local standard
+    # time, zeros missing (D58).
+    results["p98_full_lst_ex_smoke"] = {}
+    for site in sorted(DEQ_TABLE4_P98):
+        days = drop_smoke(
+            {
+                d: v
+                for d, v in means[("standard", False, None)].get(site, {}).items()
+                if d <= RECORD_END
+            }
+        )
+        results["p98_full_lst_ex_smoke"][site] = {
+            "p98": daily.p98(days.values()),
+            "days": len(days),
+        }
+
+    # The correlation with the smoke window included, beside the reported one (D58).
+    results["correlation_with_smoke"] = correlation.correlations(
+        august_rows, list(COMMON_WINDOW_SITES), exclude_smoke=False
+    )
+
+    results["backfill_hours"] = backfilled_all_zero_hours(august_rows, frozen_rows)
+
+    # The regulatory record: the last hour carrying a value, and the last day that
+    # clears the completeness threshold.
+    pm25_reg = [
+        row
+        for row in regulatory_rows
+        if row["site_id"] == reconciliation.REGULATORY_SITE
+        and row["pollutant"] == "PM2.5"
+        and row["value"] not in (None, "")
+    ]
+    complete = [
+        d
+        for d, rec in reconciliation.recomputed_days(regulatory_rows).items()
+        if rec["valid_hours"] >= DAILY_MIN_VALID_HOURS
+    ]
+    results["regulatory"] = {
+        "record_end": max(row["ts_est"] for row in pm25_reg).date().isoformat(),
+        "last_complete_day": max(complete).isoformat(),
+    }
+
+    # Sensor PM2.5 readings DEQ voided, inside the first unit's collocation period.
+    void = next(w for w in VOID_WINDOWS if w[-1] == "kunak_pm25_void_window")
+    results["pm25_void"] = {
+        "start": void[3].isoformat(),
+        "end": void[4].isoformat(),
+        "apex14_hours": sum(
+            1
+            for row in august_rows
+            if row["site_id"] == collocation.COLLOCATED_SITE
+            and row["pollutant"] == "PM2.5"
+            and row["unit_id"] == "apex-14"
+            and row["exclusion_reason"] == "kunak_pm25_void_window"
+        ),
+    }
     return results
+
+
+def backfilled_all_zero_hours(august_rows: list[dict], frozen_rows: list[dict]) -> list[tuple]:
+    """Hours the dashboard filled after the original analysis, every channel zero.
+
+    An hour is counted when the freeze exports carry it, the original analysis
+    exports do not, and it lies inside the span the original export covered for that
+    site. Every such hour is expected to read zero on every channel (AUDIT.md round 2,
+    Task 1b); one that does not raises, because it would be a different finding.
+    """
+
+    def by_hour(rows: list[dict]) -> dict:
+        out: dict = {}
+        for row in rows:
+            out.setdefault((row["site_id"], row["ts_raw"]), {})[row["pollutant"]] = row["value"]
+        return out
+
+    august = by_hour(august_rows)
+    frozen = by_hour(frozen_rows)
+    span: dict[str, tuple] = {}
+    for site, ts in august:
+        lo, hi = span.get(site, (ts, ts))
+        span[site] = (min(lo, ts), max(hi, ts))
+    added = []
+    for (site, ts), values in sorted(frozen.items()):
+        if site not in span or (site, ts) in august:
+            continue
+        lo, hi = span[site]
+        if not lo <= ts <= hi:
+            continue
+        readings = [v for v in values.values() if v not in (None, "")]
+        if not readings or any(float(v) != 0.0 for v in readings):
+            raise ValueError(f"backfilled hour {site} {ts} is not all-zero: {values}")
+        added.append((site, ts))
+    return added
 
 
 # ------------------------------------------------------------------ numbers
@@ -404,8 +571,8 @@ def build_numbers(fz: Freeze, results: dict) -> NumberRegistry:
         unit="µg/m³",
         precision=1,
         window="annual primary standard, 2024 revision",
-        method="level of the annual PM2.5 primary standard, 40 CFR 50.18, as revised in "
-        "2024. Evaluated as a three-year average of annual means and not evaluable "
+        method="level of the annual PM2.5 primary standard, 40 CFR 50.20, as revised in "
+        "2024 (89 FR 16380). Evaluated as a three-year average of annual means and not evaluable "
         "against a low-cost sensor record",
     )
     reg.add(
@@ -414,7 +581,7 @@ def build_numbers(fz: Freeze, results: dict) -> NumberRegistry:
         unit="µg/m³",
         precision=0,
         window="24-hour standard",
-        method="level of the 24-hour PM2.5 standard, 40 CFR 50.18. A single hourly "
+        method="level of the 24-hour PM2.5 primary standard, 40 CFR 50.20. A single hourly "
         "reading above this level is not an exceedance of it",
     )
     reg.add(
@@ -557,10 +724,19 @@ def build_numbers(fz: Freeze, results: dict) -> NumberRegistry:
             else " exact zeros treated as missing"
         )
         window = f"{fit['period_start']} to {fit['period_end']} EST"
+        # DECISIONS.md D54: the APEX 5 NO2 DEQ values are the coefficients DEQ staff
+        # supplied for the 2026-08-07 edition window, not a printed value.
+        deq_note = (
+            "DEQ staff correspondence of 2026-08-19, coefficients for the 2026-08-07 edition "
+            "window, two significant figures; not printed in an edition. DEQ's printed "
+            "correction is deq.aug21.apex-05_NO2.*, over a longer window"
+            if fit["key"] == "apex-05_NO2"
+            else "DEQ published, two significant figures"
+        )
         for field, value, precision, note in (
-            ("deq_intercept", fit["deq_intercept"], None, "DEQ published, two significant figures"),
-            ("deq_slope", fit["deq_slope"], None, "DEQ published, two significant figures"),
-            ("deq_r2", fit["deq_r2"], None, "DEQ published, two significant figures"),
+            ("deq_intercept", fit["deq_intercept"], None, deq_note),
+            ("deq_slope", fit["deq_slope"], None, deq_note),
+            ("deq_r2", fit["deq_r2"], None, deq_note),
             ("gx_intercept", fit["gx_intercept"], 3, method + ";" + zeros),
             ("gx_slope", fit["gx_slope"], 3, method + ";" + zeros),
             ("gx_r2", fit["gx_r2"], 3, method + ";" + zeros),
@@ -881,7 +1057,831 @@ def build_numbers(fz: Freeze, results: dict) -> NumberRegistry:
         "window",
         inputs=august_inputs,
     )
+    add_audit_keys(fz, results, reg)
     return reg
+
+
+# DEQ's 2026-08-21 edition, p. 14: the APEX 5 NO2 regression as DEQ first printed it
+# after the 2026-08-19 correction, over that edition's own window. Transcribed from the
+# archived PDF and read from the rendered page; not computed. The edition is not a
+# freeze input, so its hash is pinned here and checked on every run.
+DEQ_AUG21_PATH = "docs/deq-reports/2026-08-21_data_center_air_quality_analysis.pdf"
+DEQ_AUG21_SHA256 = "20083d8629dccce2a2e834054b0aaaa3d8cabc9ab446d55a5748aa843de5eabd"
+DEQ_AUG21_APEX05_NO2 = {"intercept": 1.8, "slope": 0.31, "r2": 0.2}
+
+# Events DEQ records after the freeze, transcribed from the ingested edition text and
+# checked against it on every run. None of them enters a computation.
+POSTFREEZE_EVENTS = (
+    (
+        "deq.postfreeze.collocated_unit_swap",
+        "2026-10-22",
+        "pipeline/sources/deq/deq_dcamp_weekly_2026-10-30.txt",
+        "APEX/Kunak sensor 5 at Broad Run HS was swapped out",
+        "the collocated unit at site DC-01 was replaced, DEQ 2026-10-30 edition, section 2",
+    ),
+    (
+        "deq.postfreeze.dc02_collection_end",
+        "2026-10-22",
+        "pipeline/sources/deq/deq_dcamp_weekly_2026-10-30.txt",
+        "On October 22, 2026, data collection at Dulles Airport (sensor 9) ended",
+        "data collection at site DC-02 ended, DEQ 2026-10-30 edition, section 2",
+    ),
+    (
+        "deq.postfreeze.pw_sites_added",
+        "2026-10-22",
+        "pipeline/sources/deq/deq_dcamp_weekly_2026-10-30.txt",
+        "Prince William Police Department West",
+        "two sensors placed at new Prince William County sites, DEQ 2026-10-30 edition, "
+        "section 2",
+    ),
+    (
+        "deq.postfreeze.dc01_collection_end",
+        "2026-11-04",
+        "pipeline/sources/deq/deq_dcamp_weekly_2026-11-06.txt",
+        "On November 4, 2026, data collection at Broad Run HS (sensor 8) ended",
+        "sensor data collection at site DC-01 ended and the unit moved to a new Loudoun "
+        "County site, DEQ 2026-11-06 edition, section 2; the regulatory monitor continues",
+    ),
+)
+
+# DEQ's instruction of 2026-08-11 for the hour-ending, daylight-saving Kunak labels,
+# which the America/New_York conversion reproduces for every frozen hour (D35).
+KUNAK_SHIFT_HOURS = {"before_dst": 1, "after_dst": 2}
+HOURS_PER_DAY = 24
+DEQ_SIGNIFICANT_FIGURES = 2
+
+
+def _file_input(rel_path: str, expected_sha256: str | None = None) -> list[dict]:
+    path = Path(__file__).resolve().parent.parent / rel_path
+    digest = hashlib.sha256(path.read_bytes()).hexdigest()
+    if expected_sha256 is not None and digest != expected_sha256:
+        raise ValueError(f"{rel_path}: SHA-256 {digest} does not match the pinned {expected_sha256}")
+    return [{"source": rel_path, "sha256": digest}]
+
+
+def add_audit_keys(fz: Freeze, results: dict, reg: NumberRegistry) -> None:
+    """Keys added for the draft-3 audit (docs/report-2026/AUDIT_FINDINGS.md).
+
+    Every value the report states in prose, a caption, alt text or a table note comes
+    through a key (DECISIONS.md D50). None of these changes a pre-existing key.
+    """
+    code_of = site_codes.code_for
+    kunak_inputs = inputs_for(fz, fz.kunak_exports())
+    august_inputs = inputs_for(fz, fz.original_analysis_inputs())
+    regulatory_inputs = inputs_for(fz, fz.regulatory())
+    table4_inputs = inputs_for(
+        fz,
+        [
+            e
+            for e in fz.weekly_reports()
+            if e.rel_path.endswith("2026-08-07_data_center_air_quality_analysis.pdf")
+        ],
+    )
+    history_inputs = inputs_for(fz, [fz.config_input(SITE_HISTORY_PATH)])
+
+    # ---- freeze
+    taken = datetime.fromisoformat(fz.frozen_at_utc).astimezone(
+        ZoneInfo("America/New_York")
+    )
+    reg.add(
+        "freeze.taken_at",
+        taken.date().isoformat(),
+        method="date the data freeze was taken, FREEZE.json frozen_at_utc converted to "
+        "America/New_York",
+        inputs=[],
+    )
+    reg.add(
+        "freeze.rewrite_date",
+        freeze_lib.AUTHORSHIP_REWRITE_DATE,
+        method="date of the authorship history rewrite that changed every commit "
+        "identifier and no file content (DECISIONS.md D27)",
+        inputs=[],
+    )
+    n_inputs = (
+        len(fz.original_analysis_inputs())
+        + len(fz.kunak_exports())
+        + len(fz.regulatory())
+        + len(fz.weekly_reports())
+    )
+    reg.add(
+        "freeze.n_deq_inputs",
+        n_inputs,
+        unit="files",
+        precision=0,
+        method="sensor exports (original analysis and data freeze), regulatory monitor "
+        "files and DEQ weekly-edition files pinned in FREEZE.json; the rows of the "
+        "frozen-inputs table",
+        inputs=[],
+    )
+    original_cutoff = max(e.data_cutoff for e in fz.original_analysis_inputs() if e.data_cutoff)
+    reg.add(
+        "freeze.original_cutoff_date",
+        original_cutoff[:10],
+        method="last day carrying a sensor value in the original analysis exports, local clock",
+        inputs=august_inputs,
+    )
+    reg.add(
+        "freeze.backfilled_zero_hours",
+        len(results["backfill_hours"]),
+        unit="hours",
+        precision=0,
+        method="hours present in the data-freeze exports and absent from the original "
+        "analysis exports, inside the span each original export covered, every channel "
+        "reading zero (AUDIT.md round 2, Task 1b): "
+        + "; ".join(f"{code_of(site)} {ts:%Y-%m-%d %H:%M}" for site, ts in results["backfill_hours"]),
+        inputs=august_inputs + kunak_inputs,
+    )
+
+    # ---- thresholds and conventions
+    reg.add(
+        "completeness.valid_hours",
+        DAILY_MIN_VALID_HOURS,
+        unit="hours",
+        precision=0,
+        method="valid hours a 24-hour average requires, DEQ's own threshold (DEQ staff, "
+        "2026-08-12; GENARCH_RULES.md section 3)",
+    )
+    reg.add(
+        "completeness.hours_per_day",
+        HOURS_PER_DAY,
+        unit="hours",
+        precision=0,
+        method="hours in a day, the denominator of the completeness threshold",
+    )
+    for key, hours in KUNAK_SHIFT_HOURS.items():
+        reg.add(
+            f"kunak.shift_hours.{key}",
+            hours,
+            unit="hours",
+            precision=0,
+            method="hours the Kunak hour-ending label is moved back to reach hour-beginning "
+            "EST, DEQ staff instruction of 2026-08-11, " + key.replace("_", " ")
+            + " (reproduced by the America/New_York conversion, DECISIONS.md D35)",
+        )
+    reg.add(
+        "colloc.deq_significant_figures",
+        DEQ_SIGNIFICANT_FIGURES,
+        unit="significant figures",
+        precision=0,
+        method="precision of DEQ's printed collocation coefficients (GENARCH_RULES.md "
+        "section 9)",
+        inputs=table4_inputs,
+    )
+    reg.add(
+        "deq.table4_edition_date",
+        "2026-08-07",
+        method="edition date of the DEQ report whose Table 4 the own-record percentiles are "
+        "compared against",
+        inputs=table4_inputs,
+    )
+    oct09 = [e for e in fz.doc["deq_weekly_reports"] if e["report_date"] == "2026-10-09"]
+    reg.add(
+        "deq.edition_date.oct09",
+        oct09[0]["report_date"],
+        method="edition date of the newest DEQ edition inside the freeze, the source of the "
+        "quoted limitation and of the sensor timeline the site key note cites",
+        inputs=inputs_for(fz, [e for e in fz.weekly_reports() if "2026-10-09" in e.rel_path]),
+    )
+    reg.add(
+        "deq.edition_date.aug21",
+        "2026-08-21",
+        method="edition date of the DEQ report that first printed the corrected APEX 5 NO2 "
+        "regression (archived PDF, title page)",
+        inputs=_file_input(DEQ_AUG21_PATH, DEQ_AUG21_SHA256),
+    )
+    reg.add(
+        "deq.correspondence.collocation_correction",
+        "2026-08-19",
+        method="date of the DEQ staff correspondence supplying the APEX 5 NO2 coefficients for "
+        "the 2026-08-07 edition window and confirming exact-zero retention in that fit "
+        "(GENARCH_RULES.md section 10)",
+        inputs=[],
+    )
+    page_acs = "pipeline/sources/cross_ancestry/acs_loudoun_2023.json"
+    page_acs_doc = json.loads(
+        (Path(__file__).resolve().parent.parent / page_acs).read_text(encoding="utf-8")
+    )
+    reg.add(
+        "ancestry.page_acs_release",
+        page_acs_doc["api_base"].split("/data/")[1].split("/")[0],
+        method="ACS 5-year release the atlas page on ancestry and equity reads, from the "
+        "api_base of the file that page loads (" + page_acs_doc["vintage"] + ")",
+        inputs=_file_input(page_acs),
+    )
+    ashburn = site_codes.by_site_id(collocation.COLLOCATED_SITE)
+    reg.add(
+        "network.unit_change.DC-01",
+        ashburn.units[1].start_date,
+        method="date the frozen site history gives for the change from the first to the "
+        "second collocated unit at site DC-01",
+        inputs=history_inputs,
+    )
+
+    # ---- network
+    in_scope = [s for s in site_codes.load() if s.in_v1_scope]
+    out_scope = [s for s in site_codes.load() if not s.in_v1_scope]
+    active = set(results["active_at_deq_cutoff"])
+    reg.add(
+        "network.loudoun_sites",
+        len(in_scope),
+        unit="sites",
+        precision=0,
+        method="Loudoun County sites in the frozen site-code lookup, in v1 scope: "
+        + ", ".join(s.code for s in in_scope),
+        inputs=history_inputs,
+    )
+    reg.add(
+        "network.sites_outside_scope",
+        len(out_scope),
+        unit="sites",
+        precision=0,
+        method="sites outside Loudoun County in the frozen site-code lookup, outside v1 "
+        "scope: " + ", ".join(s.code for s in out_scope),
+        inputs=history_inputs,
+    )
+    retired = [s.code for s in in_scope if s.site_id not in active]
+    reg.add(
+        "network.sites_retired_before_deq_cutoff",
+        len(retired),
+        unit="sites",
+        precision=0,
+        window=f"before {DEQ_EDITION_CUTOFF_LABEL}",
+        method="Loudoun County sites with no valid PM2.5 reading in the 24 hours before DEQ's "
+        "edition cutoff: " + ", ".join(retired),
+        inputs=august_inputs,
+    )
+    joined = min(unit.start_date for s in out_scope for unit in s.units)
+    reconfig_month = joined[:7]
+    ended = [
+        s.code
+        for s in in_scope
+        if s.units[-1].end_date and s.units[-1].end_date[:7] == reconfig_month
+    ]
+    reg.add(
+        "network.sites_ended_at_reconfiguration",
+        len(ended),
+        unit="sites",
+        precision=0,
+        method="Loudoun County sites whose last unit period ends in the month the first site "
+        "outside Loudoun County started, frozen site history: " + ", ".join(ended),
+        inputs=history_inputs,
+    )
+    reg.add(
+        "network.reconfiguration_month",
+        date.fromisoformat(joined).strftime("%B %Y"),
+        method="month the first site outside Loudoun County started, frozen site history",
+        inputs=history_inputs,
+    )
+    reg.add(
+        "network.first_start",
+        min(unit.start_date for s in in_scope for unit in s.units),
+        method="first day of any Loudoun County unit period in the frozen site history, the "
+        "first day of the record DEQ analyses after the sensors' stabilisation period",
+        inputs=history_inputs,
+    )
+    for site in in_scope:
+        reg.add(
+            f"network.start.{site.code}",
+            min(unit.start_date for unit in site.units),
+            method="first day of the site's first unit period, frozen site history",
+            inputs=history_inputs,
+        )
+
+    # ---- regulatory record and the daily reconciliation's excluded days
+    reg_rec = results["regulatory"]
+    reg.add(
+        "regulatory.record_end",
+        reg_rec["record_end"],
+        method="date of the last hour carrying a PM2.5 value in the regulatory monitor's "
+        "hourly file released under FOIA 26-4646, EST",
+        inputs=regulatory_inputs,
+    )
+    reg.add(
+        "regulatory.last_complete_day",
+        reg_rec["last_complete_day"],
+        method="last day on which the regulatory monitor's hourly PM2.5 file carries at "
+        f"least {DAILY_MIN_VALID_HOURS} valid hours",
+        inputs=regulatory_inputs,
+    )
+    rec = results["reconciliation"]
+    excluded = rec["excluded"]
+    rec_window = f"{rec['window_start']} to {rec['window_end']}"
+    mismatch = next(r for r in rec["rows"] if not r["match"])
+    reg.add(
+        "daily.mismatch_date",
+        mismatch["date"],
+        window=rec_window,
+        method="the comparable day on which the truncated recomputed mean differs from DEQ's "
+        "published value",
+        inputs=regulatory_inputs,
+    )
+    reg.add(
+        "daily.mismatch_valid_hours",
+        mismatch["valid_hours"],
+        unit="hours",
+        precision=0,
+        window=rec_window,
+        method="valid hourly readings behind the recomputed mean on the one day that differs",
+        inputs=regulatory_inputs,
+    )
+    reg.add(
+        "daily.calendar_days",
+        excluded["calendar_days"],
+        unit="days",
+        precision=0,
+        window=rec_window,
+        method="calendar days from the first to the last comparable day, inclusive",
+        inputs=regulatory_inputs,
+    )
+    for name, text in (
+        ("both", "the published day carries a null code or a \"<\" flag and the recomputed "
+         "day falls short of the completeness threshold"),
+        ("published_only", "the published day carries a null code or a \"<\" flag; the "
+         "recomputed day is complete"),
+        ("recomputed_only", "the recomputed day falls short of the completeness threshold; "
+         "the published day survives the exclusions"),
+    ):
+        reg.add(
+            f"daily.excluded.{name}",
+            excluded["counts"][name],
+            unit="days",
+            precision=0,
+            window=rec_window,
+            method="calendar days in the window that are not comparable because " + text,
+            inputs=regulatory_inputs,
+        )
+    reg.add(
+        "daily.null_run.start",
+        excluded["null_run_start"],
+        window=rec_window,
+        method="first day of the longest run of days on which every hourly regulatory PM2.5 "
+        "reading carries an AQS null code",
+        inputs=regulatory_inputs,
+    )
+    reg.add(
+        "daily.null_run.end",
+        excluded["null_run_end"],
+        window=rec_window,
+        method="last day of that run",
+        inputs=regulatory_inputs,
+    )
+    reg.add(
+        "daily.null_run.days",
+        excluded["null_run_days"],
+        unit="days",
+        precision=0,
+        window=rec_window,
+        method="length of that run",
+        inputs=regulatory_inputs,
+    )
+    reg.add(
+        "daily.null_run.code",
+        ", ".join(excluded["null_run_codes"]),
+        window=rec_window,
+        method="AQS null code(s) carried by every hour of that run",
+        inputs=regulatory_inputs,
+    )
+
+    # ---- collocation
+    void = results["pm25_void"]
+    reg.add(
+        "sensor.pm25_void.start",
+        void["start"],
+        method="first day of the sensor PM2.5 readings DEQ voided for high humidity and data "
+        "quality issues (DEQ 2026-10-09 edition, footnote 3, p. 16)",
+        inputs=august_inputs,
+    )
+    reg.add(
+        "sensor.pm25_void.end",
+        void["end"],
+        method="last day of that voided period",
+        inputs=august_inputs,
+    )
+    reg.add(
+        "colloc.apex-14_PM2.5.void_hours",
+        void["apex14_hours"],
+        unit="hours",
+        precision=0,
+        method="APEX 14 PM2.5 sensor hours at the collocated site excluded because DEQ voided "
+        "them; the reason the PM2.5 fit's first paired hour is later than the NO2 fit's",
+        inputs=august_inputs,
+    )
+    aug21 = _file_input(DEQ_AUG21_PATH, DEQ_AUG21_SHA256)
+    for field, value in DEQ_AUG21_APEX05_NO2.items():
+        reg.add(
+            f"deq.aug21.apex-05_NO2.{field}",
+            value,
+            method="APEX 5 NO2 regression as printed in DEQ's 2026-08-21 edition, p. 14, over "
+            "that edition's own window, which runs past the regulatory record this report "
+            "holds; transcribed, not computed, and not compared",
+            inputs=aug21,
+        )
+
+    # ---- percentiles over each site's own record
+    tolerance = DEQ_TOLERANCE_COEFFICIENT
+    full = results["p98_full"]
+    reg.add(
+        "p98.full.n_sites",
+        len(full),
+        unit="sites",
+        precision=0,
+        method="sites in Table 4 of DEQ's 2026-08-07 edition, the rows the own-record "
+        "percentiles are compared against",
+        inputs=table4_inputs,
+    )
+    within: dict[str, set] = {}
+    for label in ("lst_zero_missing", "clock_zero_missing", "clock_zero_kept"):
+        within[label] = set()
+        for site, variants in sorted(full.items()):
+            diff = variants[label]["p98"] - variants["deq_table4"]
+            reg.add(
+                f"p98.full.{code_of(site)}.diff_{label}",
+                diff,
+                unit="µg/m³",
+                precision=3,
+                n=variants[label]["days"],
+                window=WHOLE_DAY_WINDOW,
+                method=f"98th percentile over the site's own record, variant {label}, minus "
+                "the value in Table 4 of DEQ's 2026-08-07 edition",
+                inputs=kunak_inputs + table4_inputs,
+            )
+            if abs(half_up(diff, 3)) <= tolerance:
+                within[label].add(site)
+    live = active & set(full)
+    reg.add(
+        "p98.full.clock_zero_missing.n_within_live",
+        len(within["clock_zero_missing"] & live),
+        unit="sites",
+        precision=0,
+        n=len(live),
+        window=WHOLE_DAY_WINDOW,
+        method="sites live at DEQ's edition cutoff whose local clock time, zeros-missing "
+        "percentile is within the reproduction tolerance of DEQ's Table 4 value",
+        inputs=kunak_inputs + table4_inputs,
+    )
+    reg.add(
+        "p98.full.zero_kept.n_closed",
+        len(within["clock_zero_kept"] - within["clock_zero_missing"]),
+        unit="sites",
+        precision=0,
+        n=len(full),
+        window=WHOLE_DAY_WINDOW,
+        method="sites that move inside the reproduction tolerance when zero readings are "
+        "kept, local clock time: "
+        + ", ".join(sorted(code_of(s) for s in within["clock_zero_kept"] - within["clock_zero_missing"])),
+        inputs=kunak_inputs + table4_inputs,
+    )
+    reg.add(
+        "p98.full.zero_kept.n_opened",
+        len(within["clock_zero_missing"] - within["clock_zero_kept"]),
+        unit="sites",
+        precision=0,
+        n=len(full),
+        window=WHOLE_DAY_WINDOW,
+        method="sites that move outside the reproduction tolerance when zero readings are "
+        "kept, local clock time: "
+        + ", ".join(sorted(code_of(s) for s in within["clock_zero_missing"] - within["clock_zero_kept"])),
+        inputs=kunak_inputs + table4_inputs,
+    )
+
+    # ---- correlation
+    corr = results["correlation"]
+    reg.add(
+        "corr.n_pairs",
+        len(corr["pairs"]),
+        unit="site pairs",
+        precision=0,
+        window="full record of the original analysis inputs, smoke window excluded",
+        method="site pairs among the six sensors with a correlation",
+        inputs=august_inputs,
+    )
+    for key, value, what in (
+        ("corr.pair_hours_min", corr["n_min"], "fewest"),
+        ("corr.pair_hours_max", corr["n_max"], "most"),
+    ):
+        reg.add(
+            key,
+            value,
+            unit="hours",
+            precision=0,
+            n=len(corr["pairs"]),
+            window="full record of the original analysis inputs, smoke window excluded",
+            method=f"{what} overlapping non-smoke hours behind any one pair's correlation",
+            inputs=august_inputs,
+        )
+
+    # ---- with the smoke window excluded (S12)
+    smoke_days = (
+        f"days from {correlation.SMOKE_START.isoformat()} to {correlation.SMOKE_END.isoformat()} "
+        "excluded under the day definition in use"
+    )
+    below, total = results["share_below_35_ex_smoke"]
+    reg.add(
+        "summary.share_site_days_below_35.ex_smoke",
+        100 * below / total,
+        unit="percent",
+        precision=2,
+        n=total,
+        window="full frozen record, 18 of 24 valid hours, exact zeros treated as missing, "
+        + smoke_days,
+        method=f"{below} of {total} complete site-days strictly below 35 microgram per cubic "
+        "metre across the nine Loudoun County sites, smoke window excluded",
+        inputs=kunak_inputs,
+    )
+    for binning, prefix, key in (
+        ("local standard time", "p98.common_exsmoke", "p98_common_standard_ex_smoke"),
+        ("local clock time", "p98.common_clock_exsmoke", "p98_common_clock_ex_smoke"),
+    ):
+        window = COMMON_WINDOW + ", " + smoke_days
+        ranked = sorted(results[key].items(), key=lambda kv: -kv[1]["p98"])
+        for rank, (site, got) in enumerate(ranked, start=1):
+            code = code_of(site)
+            reg.add(
+                f"{prefix}.{code}",
+                got["p98"],
+                unit="µg/m³",
+                precision=3,
+                n=got["days"],
+                window=window,
+                method=f"98th percentile of daily averages by linear interpolation, {binning} "
+                "day binning, smoke window excluded",
+                inputs=kunak_inputs,
+            )
+            reg.add(
+                f"{prefix}.rank.{code}",
+                rank,
+                unit="rank",
+                precision=0,
+                n=len(ranked),
+                window=window,
+                method=f"rank on the common window with the smoke window excluded, {binning} "
+                "day binning, highest first",
+                inputs=kunak_inputs,
+            )
+        reg.add(
+            f"{prefix}.n_above_35",
+            sum(1 for v in results[key].values() if v["p98"] > PM25_24H_LEVEL),
+            unit="sites",
+            precision=0,
+            n=len(ranked),
+            window=window,
+            method=f"sites whose common-window 98th percentile exceeds 35 microgram per cubic "
+            f"metre with the smoke window excluded, {binning} day binning. Not a NAAQS "
+            "comparison",
+            inputs=kunak_inputs,
+        )
+
+    # ---- the common-window result both ways, and the rest of D58
+    reg.add(
+        "freeze.cutoff_date",
+        fz.kunak_cutoff()[:10],
+        method="date of the latest hour carrying a non-empty pollutant value across the "
+        "frozen sensor exports (freeze.cutoff), local clock",
+        inputs=kunak_inputs,
+    )
+    above = results["at_or_above_35"]
+    if above["in_smoke"] != above["total"]:
+        raise ValueError(
+            f"{above['total'] - above['in_smoke']} Loudoun site-days at or above 35 fall "
+            "outside the smoke window; the summary sentence that all of them fall inside it "
+            "no longer holds"
+        )
+    for key, value, what in (
+        ("summary.site_days_at_or_above_35", above["total"], "complete site-days"),
+        (
+            "summary.site_days_at_or_above_35.in_smoke",
+            above["in_smoke"],
+            "of those site-days whose local standard time date falls in the smoke window",
+        ),
+    ):
+        reg.add(
+            key,
+            value,
+            unit="site-days",
+            precision=0,
+            n=results["share_below_35"]["loudoun"][1],
+            window="full frozen record, 18 of 24 valid hours, exact zeros treated as missing",
+            method=f"{what} at or above 35 microgram per cubic metre across the nine Loudoun "
+            "County sites, local standard time days",
+            inputs=kunak_inputs,
+        )
+
+    for binning, key in (
+        ("local standard time", "p98.common.sites_set_by_smoke_days"),
+        ("local clock time", "p98.common_clock.sites_set_by_smoke_days"),
+    ):
+        reg.add(
+            key,
+            results["p98_common_set_by_smoke"]["standard" if "standard" in binning else "clock"],
+            unit="sites",
+            precision=0,
+            n=len(COMMON_WINDOW_SITES),
+            window=COMMON_WINDOW,
+            method="sites whose common-window 98th percentile is read, by linear "
+            "interpolation, from two daily averages that both fall in the smoke window, "
+            f"{binning} day binning",
+            inputs=kunak_inputs,
+        )
+    live = [
+        s for s in results["active_at_deq_cutoff"] if s in results["p98_full"]
+    ]
+    offsets = [
+        abs(
+            results["p98_full"][s]["lst_zero_missing"]["p98"]
+            - results["p98_full"][s]["deq_table4"]
+        )
+        for s in live
+    ]
+    for key, value, what in (
+        ("p98.full.lst_offset_live.min_abs", min(offsets), "smallest"),
+        ("p98.full.lst_offset_live.max_abs", max(offsets), "largest"),
+    ):
+        reg.add(
+            key,
+            value,
+            unit="µg/m³",
+            precision=3,
+            n=len(live),
+            window="each site's own record through " + RECORD_END.isoformat(),
+            method=f"{what} absolute difference between the local standard time, "
+            "zeros-missing own-record 98th percentile and DEQ's Table 4 value, among the "
+            "sites live at DEQ's edition cutoff",
+            inputs=kunak_inputs,
+        )
+
+    std_ex = results["p98_common_standard_ex_smoke"]
+    clk_ex = results["p98_common_clock_ex_smoke"]
+    window = COMMON_WINDOW + ", " + smoke_days
+    for key, value, what in (
+        ("p98.common_exsmoke.min", min(v["p98"] for v in std_ex.values()), "lowest"),
+        ("p98.common_exsmoke.max", max(v["p98"] for v in std_ex.values()), "highest"),
+    ):
+        reg.add(
+            key,
+            value,
+            unit="µg/m³",
+            precision=3,
+            n=len(std_ex),
+            window=window,
+            method=f"{what} common-window 98th percentile among the six sensors, local "
+            "standard time day binning, smoke window excluded",
+            inputs=kunak_inputs,
+        )
+    reg.add(
+        "p98.common_clock_exsmoke.max_abs_diff",
+        max(abs(clk_ex[s]["p98"] - std_ex[s]["p98"]) for s in std_ex),
+        unit="µg/m³",
+        precision=3,
+        n=len(std_ex),
+        window=window,
+        method="largest absolute per-site difference between the local clock time and local "
+        "standard time 98th percentile on the common window, smoke window excluded, from "
+        "unrounded values",
+        inputs=kunak_inputs,
+    )
+    by_code = {code_of(s): v for s, v in std_ex.items()}
+    reg.add(
+        "p98.common_exsmoke.diff.DC-04_DC-08",
+        by_code["DC-04"]["p98"] - by_code["DC-08"]["p98"],
+        unit="µg/m³",
+        precision=3,
+        n=2,
+        window=window,
+        method="DC-04 minus DC-08 common-window 98th percentile, local standard time day "
+        "binning, smoke window excluded, from unrounded values",
+        inputs=kunak_inputs,
+    )
+
+    for site, got in sorted(results["p98_full_lst_ex_smoke"].items(), key=lambda kv: code_of(kv[0])):
+        reg.add(
+            f"p98.full.{code_of(site)}.lst_zero_missing_exsmoke",
+            got["p98"],
+            unit="µg/m³",
+            precision=3,
+            n=got["days"],
+            window="each site's own record through " + RECORD_END.isoformat() + ", 18 of 24 "
+            "valid hours, exact zeros treated as missing, " + smoke_days,
+            method="98th percentile of daily averages by linear interpolation, local standard "
+            "time day binning, smoke window excluded",
+            inputs=kunak_inputs,
+        )
+
+    corr_ws = results["correlation_with_smoke"]
+    for key, value, what in (
+        ("corr.with_smoke.min", corr_ws["r_min"], "lowest"),
+        ("corr.with_smoke.max", corr_ws["r_max"], "highest"),
+    ):
+        reg.add(
+            key,
+            value,
+            unit="Pearson r",
+            precision=3,
+            n=len(corr_ws["pairs"]),
+            window="full record of the original analysis inputs, smoke window included",
+            method=f"{what} pairwise-complete Pearson r of hourly PM2.5 among the six sensors, "
+            "exact zeros treated as missing, smoke window included",
+            inputs=august_inputs,
+        )
+
+    # ---- events after the freeze, transcribed from the ingested editions
+    for key, value, rel_path, phrase, what in POSTFREEZE_EVENTS:
+        text = (Path(__file__).resolve().parent.parent / rel_path).read_text(encoding="utf-8")
+        if phrase not in text:
+            raise ValueError(f"{key}: {rel_path} no longer carries {phrase!r}")
+        reg.add(
+            key,
+            value,
+            method="after the freeze: " + what + ". Changes no frozen value",
+            inputs=_file_input(rel_path),
+        )
+
+
+DEQ_PROJECT_PAGE = (
+    "https://www.deq.virginia.gov/news-info/shortcuts/topics-of-interest/"
+    "data-center-air-monitoring-project"
+)
+
+
+def weekly_origin(entry, report_date: str, by_basename: dict) -> str:
+    """Where a frozen DEQ edition file came from (DECISIONS.md D56).
+
+    The per-edition address the source manifest recorded at download, when it recorded
+    one for this file. A text or table file GENARCH extracted from an edition names the
+    edition it was derived from. Otherwise the project page, which carries only the
+    current edition, with the archived copy named by its path (the SHA-256 is its own
+    column). The manifest's fallback entry, which once supplied a later edition's
+    address for the 2026-08-07 file, is not used.
+    """
+    for manifest_entry in by_basename.get(entry.path.name, []):
+        url = manifest_entry.get("origin_url")
+        if url and "PASTE" not in url:
+            return url
+    if entry.path.suffix in (".txt", ".json"):
+        pdf = entry.path.with_suffix(".pdf").name.replace("_tables", "")
+        return f"derived by GENARCH from the {report_date} edition PDF ({pdf})"
+    return f"{DEQ_PROJECT_PAGE}; archived in the project repository at {entry.rel_path}"
+
+
+def site_key_notes(reg: NumberRegistry) -> list[str]:
+    """Notes for the site key (S14). The text is checked against DEQ's edition."""
+    edition = "pipeline/sources/deq/deq_dcamp_weekly_2026-10-09.txt"
+    text = (Path(__file__).resolve().parent.parent / edition).read_text(encoding="utf-8")
+    for phrase in (
+        "APEX/Kunak sensor 8 was removed for maintenance",
+        "1757 Golf Course (sensor 13), Farmwell",
+        "MS (sensor 10), and Sterling MS (sensor 6) ended",
+    ):
+        if phrase not in text.replace("\r\n", "\n"):
+            raise ValueError(f"site key note: {edition} no longer carries {phrase!r}")
+    return [
+        "Active end is the first day with no data, so DEQ's editions give a date one day "
+        "earlier.",
+        "The APEX unit column reflects the site history as frozen. DEQ's "
+        + reg.display("deq.edition_date.oct09")
+        + " edition, section 2, names the units at three sites the history leaves "
+        "unconfirmed: sensor 8 at DC-07, sensor 10 at DC-08 and sensor 13 at DC-09.",
+    ]
+
+
+def collocation_notes(reg: NumberRegistry) -> list[str]:
+    """Notes for the collocation table (B7, S10, M6), every value from a key."""
+    return [
+        "† The DEQ values for APEX 5 NO2 are the coefficients DEQ staff supplied on "
+        + reg.display("deq.correspondence.collocation_correction")
+        + " for the same window as the other three, after DEQ traced its "
+        + reg.display("deq.table4_edition_date")
+        + " figures to axis limits in its plotting call. DEQ's own printed correction, in "
+        "its " + reg.display("deq.edition_date.aug21") + " edition (p. 14), is y = "
+        + reg.display("deq.aug21.apex-05_NO2.intercept")
+        + " + "
+        + reg.display("deq.aug21.apex-05_NO2.slope")
+        + "x, R-squared "
+        + reg.display("deq.aug21.apex-05_NO2.r2")
+        + ", over a longer window than the regulatory record this report holds, and is "
+        "not compared.",
+        "The APEX 14 PM2.5 fit begins later than the APEX 14 NO2 fit because DEQ voided "
+        "the sensor PM2.5 readings from "
+        + reg.display("sensor.pm25_void.start")
+        + " to "
+        + reg.display("sensor.pm25_void.end")
+        + " for high humidity and data quality issues ("
+        + reg.display("colloc.apex-14_PM2.5.void_hours")
+        + " hours of this unit).",
+        "First and last paired hour are the hours that enter each fit. Readings are "
+        "assigned to a unit by the occupancy table (section 3.4), so the change from "
+        "APEX 14 to APEX 5 falls between "
+        + reg.display("colloc.apex-14_NO2.period_end")
+        + " and "
+        + reg.display("colloc.apex-05_NO2.period_start")
+        + " EST, the evening before "
+        + reg.display("network.unit_change.DC-01")
+        + ", the date the site key gives.",
+    ]
+
+
+def count_word(shown: str) -> str:
+    """A displayed count, with zero as "none" (DECISIONS.md D58), as N fmt="count" does."""
+    return "none" if shown == "0" else shown
 
 
 def _codes_for_common_window() -> list[str]:
@@ -959,7 +1959,8 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
             for e in fz.doc["deq_weekly_reports"]
             if e["frozen_path"] == entry.rel_path
         )
-        origin, licence = provenance(entry.path.name, weekly_fallback)
+        _, licence = provenance(entry.path.name, weekly_fallback)
+        origin = weekly_origin(entry, report_date, by_basename)
         t01_rows.append(
             [
                 source_label(fz, entry),
@@ -971,17 +1972,30 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
             ]
         )
 
+    if len(t01_rows) != int(reg.value("freeze.n_deq_inputs")):
+        raise ValueError("T01 rows and freeze.n_deq_inputs disagree")
     t01 = tables.Table(
         "T01_sources",
         "Frozen inputs",
-        "Every file the report's analysis reads, as pinned in the data freeze. Sensor "
-        "exports are named by site code; each row is identified by its SHA-256 so the "
-        "reproduction stays checkable without printing a filename that carries a site "
-        "identifier.",
+        "Every DEQ and sensor input the report's analysis reads, as pinned in the data "
+        "freeze. Sensor exports are named by site code; each row is identified by its "
+        "SHA-256 so the reproduction stays checkable without printing a filename that "
+        "carries a site identifier. The atlas, ancestry and configuration inputs are pinned "
+        "in FREEZE.json under atlas_inputs, ancestry_inputs and config_inputs.",
         "data/reports/2026/FREEZE.json and pipeline/sources/manifest.json.",
         {"Data cutoff": "local clock for sensors, EST for the regulatory monitor"},
         ["Source", "Origin", "Licence", "Export date", "Data cutoff", "SHA-256"],
         t01_rows,
+        notes=[
+            "Export date for the data-freeze sensor exports ("
+            + reg.display("freeze.export_dates.DC-01")
+            + ") is an upper bound: the time the exports were committed to the project "
+            "repository. The dashboard records no export time.",
+            "A DEQ edition's Origin is the per-edition address the source manifest "
+            "recorded at download. Where none was recorded, it is the project page, which "
+            "carries only the current edition, and the archived copy in the project "
+            "repository is identified by its path and SHA-256.",
+        ],
     )
 
     # ---- T02 site key. Identifiers only; carries no reading value.
@@ -1018,6 +2032,7 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
             "Record days",
         ],
         t02_rows,
+        notes=site_key_notes(reg),
     )
 
     # ---- T03 collocation
@@ -1045,12 +2060,14 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
         "T03_collocation",
         "Collocation regressions",
         "The four regressions at the collocated site, sensor on x and regulatory monitor on "
-        "y, each fit stopping at DEQ's 2026-08-07 07:00 EST edition cutoff. DEQ publishes "
-        "its coefficients to two significant figures, so status reports whether each "
-        "recomputed value, rounded to the decimals DEQ printed, equals DEQ's. Exact zeros "
-        "are retained in the APEX 5 NO2 fit and in nothing else.",
-        "Frozen original analysis inputs and FOIA 26-4646, against DEQ's published "
-        "coefficients.",
+        "y, each fit stopping at DEQ's " + reg.display("deq.edition_cutoff") + " edition "
+        "cutoff. DEQ publishes its coefficients to "
+        + reg.display("colloc.deq_significant_figures")
+        + " significant figures, so status reports whether each recomputed value, rounded "
+        "to the decimals DEQ printed, equals DEQ's. Exact zeros are retained in the APEX 5 "
+        "NO2 fit and in nothing else.",
+        "Frozen original analysis inputs and FOIA 26-4646, against DEQ's coefficients for "
+        "the window of its " + reg.display("deq.table4_edition_date") + " edition.",
         {"Intercept and slope": "pollutant units", "n": "paired hours"},
         [
             "Comparison",
@@ -1064,11 +2081,12 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
             "Difference, slope",
             "Difference, R-squared",
             "Paired hours",
-            "Period start",
-            "Period end",
+            "First paired hour (EST)",
+            "Last paired hour (EST)",
             "Status",
         ],
         t03_rows,
+        notes=collocation_notes(reg),
     )
 
     # ---- T04 daily reconciliation
@@ -1077,7 +2095,8 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
         "T04_daily_reconciliation",
         "Daily-average reconciliation, by day",
         "Recomputed 24-hour means of the regulatory monitor against DEQ's published daily "
-        "file, truncated to one decimal as DEQ truncates. One row per comparable day.",
+        "file, truncated to one decimal as DEQ truncates. One row per comparable day; the "
+        "summary table's note gives the reason for every day that is not comparable.",
         "FOIA 26-4646 hourly and published daily average files.",
         {"Recomputed": "µg/m³", "Published": "µg/m³"},
         [
@@ -1104,8 +2123,11 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
         "T04s_daily_summary",
         "Daily-average reconciliation, summary",
         "The reconciliation in one row. Comparable means the published day survives DEQ's "
-        "null-code and logger-invalid exclusions and the recomputed day clears 18 of 24 "
-        "valid hours.",
+        "null-code and logger-invalid exclusions and the recomputed day clears "
+        + reg.display("completeness.valid_hours")
+        + " of "
+        + reg.display("completeness.hours_per_day")
+        + " valid hours.",
         "FOIA 26-4646 hourly and published daily average files.",
         {"Mean absolute difference": "µg/m³"},
         [
@@ -1128,6 +2150,28 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
                 "; ".join(rec["mismatch_dates"]),
             ]
         ],
+        notes=[
+            "Of the "
+            + reg.display("daily.calendar_days")
+            + " calendar days in the window, "
+            + reg.display("daily.n_days")
+            + " are comparable. "
+            + reg.display("daily.excluded.both")
+            + " are not because DEQ's published day carries a null code or a \"<\" flag "
+            "and the recomputed day falls short of the completeness threshold; "
+            + reg.display("daily.excluded.published_only")
+            + " because the published day alone fails those exclusions; and "
+            + reg.display("daily.excluded.recomputed_only")
+            + " because the recomputed day alone falls short. The longest gap, "
+            + reg.display("daily.null_run.start")
+            + " to "
+            + reg.display("daily.null_run.end")
+            + " ("
+            + reg.display("daily.null_run.days")
+            + " days), is a run in which every hourly reading carries AQS null code "
+            + reg.display("daily.null_run.code")
+            + ".",
+        ],
     )
 
     # ---- T05 common-window percentiles
@@ -1138,9 +2182,12 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
     ):
         ranked = sorted(results[key].items(), key=lambda kv: -kv[1]["p98"])
         ranks = {site: i for i, (site, _) in enumerate(ranked, start=1)}
+        ranked_ex = sorted(results[key + "_ex_smoke"].items(), key=lambda kv: -kv[1]["p98"])
+        ranks_ex = {site: i for i, (site, _) in enumerate(ranked_ex, start=1)}
         for site in sorted(results[key], key=code_of):
             whole = results[key][site]
             cut = results[key + "_deq_cutoff"][site]
+            ex = results[key + "_ex_smoke"][site]
             t05_rows.append(
                 [
                     code_of(site),
@@ -1150,6 +2197,9 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
                     cut["days"],
                     f"{cut['p98']:.3f}",
                     ranks[site],
+                    ex["days"],
+                    f"{ex['p98']:.3f}",
+                    ranks_ex[site],
                 ]
             )
     t05 = tables.Table(
@@ -1160,7 +2210,9 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
         "unequal-record-length difference; it does not remove the unequal-seasonality one, "
         "because the window is entirely high summer and contains the smoke period. Neither "
         "these values nor DEQ's are comparable to the NAAQS.",
-        "Frozen sensor exports; DEQ's edition cutoff is 2026-08-07 07:00 EST.",
+        "Frozen sensor exports; DEQ's edition cutoff is "
+        + reg.display("deq.edition_cutoff")
+        + ".",
         {"98th percentile": "µg/m³"},
         [
             "Site code",
@@ -1170,19 +2222,43 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
             "DEQ-cutoff record days",
             "DEQ-cutoff 98th percentile (µg/m³)",
             "Rank",
+            "Smoke window excluded: record days",
+            "Smoke window excluded: 98th percentile (µg/m³)",
+            "Smoke window excluded: rank",
         ],
         t05_rows,
+        notes=[
+            "The rise from local standard time to local clock time quoted in section 5.4 is "
+            "computed from the unrounded percentiles, so it can differ in the last decimal "
+            "from a difference of the rounded values printed here.",
+            "The last three columns use whole days with every day from "
+            + reg.display("smoke.window_start")
+            + " to "
+            + reg.display("smoke.window_end")
+            + " left out under the day definition in use (section 3.5). With the window "
+            "included the count of sites above "
+            + reg.display("naaqs.daily_standard")
+            + " µg/m³ is "
+            + reg.display("p98.common.n_above_35")
+            + "; with it excluded it is "
+            + count_word(reg.display("p98.common_exsmoke.n_above_35"))
+            + " under local standard time and "
+            + count_word(reg.display("p98.common_clock_exsmoke.n_above_35"))
+            + " under local clock time.",
+        ],
     )
 
     # ---- T06 full-record variants
     t06_rows = []
     for site in sorted(results["p98_full"], key=code_of):
         v = results["p98_full"][site]
+        ex = results["p98_full_lst_ex_smoke"][site]
         t06_rows.append(
             [
                 code_of(site),
                 v["lst_zero_missing"]["days"],
                 f"{v['lst_zero_missing']['p98']:.3f}",
+                f"{ex['p98']:.3f}",
                 f"{v['clock_zero_missing']['p98']:.3f}",
                 f"{v['clock_zero_kept']['p98']:.3f}",
                 f"{v['deq_table4']:.1f}",
@@ -1195,16 +2271,22 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
         "T06_p98_full_record_variants",
         "98th percentiles over each site's own record",
         "The same statistic under three defensible method combinations, against the value "
-        "DEQ published in Table 4 of its 2026-08-07 report. No single combination reproduces "
-        "all nine rows, which is why this is reported as a partial reproduction. The day "
+        "DEQ published in Table 4 of its " + reg.display("deq.table4_edition_date")
+        + " report. No single combination reproduces all "
+        + reg.display("p98.full.n_sites")
+        + " rows, which is why this is reported as a partial reproduction. The day "
         "boundary accounts for most of the offset; zero handling is minor and inconsistent "
         "in direction.",
-        "Frozen sensor exports and DEQ's 2026-08-07 report, Table 4.",
+        "Frozen sensor exports and DEQ's "
+        + reg.display("deq.table4_edition_date")
+        + " report, Table 4.",
         {"98th percentile": "µg/m³"},
         [
             "Site code",
             "Record days",
             "98th percentile, local standard time, zeros missing (µg/m³)",
+            "98th percentile, local standard time, zeros missing, smoke window excluded "
+            "(µg/m³)",
             "98th percentile, local clock time, zeros missing (µg/m³)",
             "98th percentile, local clock time, zeros kept (µg/m³)",
             "DEQ Table 4, 2026-08-07 (µg/m³)",
@@ -1213,6 +2295,14 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
             "Difference, local clock time, zeros kept (µg/m³)",
         ],
         t06_rows,
+        notes=[
+            "The fourth column leaves out every day from "
+            + reg.display("smoke.window_start")
+            + " to "
+            + reg.display("smoke.window_end")
+            + " (section 3.5). DEQ's table includes them, so the differences are taken "
+            "against the columns that include them.",
+        ],
     )
 
     # ---- T07 correlation
@@ -1293,7 +2383,7 @@ def build_figures(
         "smoke_end": correlation.SMOKE_END,
         "lines": [
             (date(2026, 8, 10), "regulatory data end"),
-            (date(2026, 9, 17), "network reconfiguration"),
+            (date(2026, 9, 17), "network\nreconfiguration"),
         ],
     }
     figures.f01_network_timeline(out_dir, spans, marks)
@@ -1302,17 +2392,23 @@ def build_figures(
             "id": "F01_network_timeline",
             "title": "Sensor network coverage by site code",
             "alt_text": (
-                f"A timeline of {reg.display('network.sites_total')} sensor sites across 2026. "
-                "Coverage is uneven: the longest records run from early March, while the "
-                f"shortest begins in mid-June. All six sensors in the common window were "
+                f"A timeline of {reg.display('network.sites_total')} sensor sites through the "
+                f"{reg.display('freeze.cutoff')[:10]} data cutoff. Coverage is uneven: the "
+                f"longest records run from {reg.display('network.first_start')}, while the "
+                "shortest Loudoun County record begins on "
+                f"{reg.display('network.start.DC-06')} and the "
+                f"{reg.display('network.sites_outside_scope')} sites outside Loudoun County "
+                f"begin in {reg.display('network.reconfiguration_month')}. All "
+                f"{reg.display('p98.common.n_sites')} sensors in the common window were "
                 f"collecting together only from {reg.display('network.common_window.start')} to "
                 f"{reg.display('network.common_window.end')}."
             ),
             "caption": (
-                "The shaded band is the window in which all six "
+                f"The shaded band is the window in which all {reg.display('p98.common.n_sites')} "
                 "sensors were collecting; the darker band is the wildfire smoke transport "
-                "weekend. Dotted lines mark the end of the regulatory monitor record and the "
-                "network reconfiguration."
+                "weekend, which DEQ's IF qualifier identifies; whether it is an exceptional "
+                "event is a determination for the US EPA and is unresolved. Dotted lines mark "
+                "the end of the regulatory monitor record and the network reconfiguration."
             ),
             "limitation": limitation,
             "data_table": "T02_site_key",
@@ -1327,7 +2423,7 @@ def build_figures(
             "title": "Collocation: sensor against the regulatory monitor",
             "alt_text": (
                 "Four scatter panels of paired hourly readings, sensor on the horizontal "
-                "axis and regulatory monitor on the vertical. DEQ's published line and the "
+                "axis and regulatory monitor on the vertical. DEQ's line and the "
                 "recomputed line sit close together in every panel; the two PM2.5 panels "
                 "show the tighter relationship, at R-squared "
                 f"{reg.display('colloc.apex-14_PM2.5.gx_r2')} and "
@@ -1336,10 +2432,17 @@ def build_figures(
                 f"{reg.display('colloc.apex-05_NO2.gx_r2')} for NO2."
             ),
             "caption": (
-                "Each panel gives DEQ's published equation, the recomputed equation, the "
-                "number of paired hours and whether the recomputed values match DEQ at "
-                "DEQ's own published precision. Every fit stops at the 2026-08-07 07:00 EST "
-                "edition cutoff."
+                "Each panel gives DEQ's equation, the recomputed equation, the number of "
+                "paired hours and whether the recomputed values match DEQ at DEQ's own "
+                "published precision. Every fit stops at the "
+                + reg.display("deq.edition_cutoff")
+                + " edition cutoff. DEQ's equations are those for the window of its "
+                + reg.display("deq.table4_edition_date")
+                + " edition; for APEX 5 NO2 (marked †) they are the coefficients DEQ staff "
+                "supplied on "
+                + reg.display("deq.correspondence.collocation_correction")
+                + " for that window, and DEQ's later printed correction is given in the "
+                "collocation table's note."
             ),
             "limitation": limitation,
             "data_table": "T03_collocation",
@@ -1362,10 +2465,18 @@ def build_figures(
             "caption": (
                 "Recomputed 24-hour means against DEQ's published daily file, truncated to "
                 "one decimal as DEQ truncates. The single marked day is the one that "
-                "differs, at 23 valid hours. Comparable days are those surviving DEQ's "
-                "null-code and logger-invalid exclusions and clearing 18 of 24 valid hours."
+                f"differs, at {reg.display('daily.mismatch_valid_hours')} valid hours. "
+                "Comparable days are those surviving DEQ's null-code and logger-invalid "
+                f"exclusions and clearing {reg.display('completeness.valid_hours')} of "
+                f"{reg.display('completeness.hours_per_day')} valid hours."
             ),
-            "limitation": limitation,
+            # Regulatory data only: no sensor is plotted, so DEQ's sensor limitation does
+            # not apply here (DECISIONS.md D57; CONTEXT.md section 3, amended 2026-11-16).
+            "limitation": (
+                "Regulatory monitor data only, no sensor data: Virginia DEQ's federal "
+                "equivalent method PM2.5 monitor at site DC-01, released under Virginia FOIA "
+                f"request 26-4646, hourly record ending {reg.display('regulatory.record_end')}."
+            ),
             "data_table": "T04_daily_reconciliation",
         }
     )
@@ -1375,6 +2486,7 @@ def build_figures(
     for site in COMMON_WINDOW_SITES:
         full = results["p98_full"][site]["lst_zero_missing"]
         common = results["p98_common_standard"][site]
+        exsmoke = results["p98_common_standard_ex_smoke"][site]
         f04_rows.append(
             {
                 "code": code_of(site),
@@ -1382,6 +2494,8 @@ def build_figures(
                 "full_days": full["days"],
                 "common_p98": common["p98"],
                 "common_days": common["days"],
+                "exsmoke_p98": exsmoke["p98"],
+                "exsmoke_days": exsmoke["days"],
             }
         )
     figures.f04_p98_by_site(out_dir, f04_rows)
@@ -1400,20 +2514,27 @@ def build_figures(
     entries.append(
         {
             "id": "F04_p98_by_site",
-            "title": "Record length moves the 98th percentile",
+            "title": "Record length and one smoke weekend move the 98th percentile",
             "alt_text": (
                 "For each site code, the 98th percentile over the site's own record and over "
-                "the common window, joined by a line. The site with the shortest record, "
-                f"{shortest['code']} at {shortest['full_days']} days, carries the highest "
-                f"own-record value; {longest['code']} has {longest['full_days']} days. On the "
-                f"common window {reg.display('p98.common.n_above_35')} of six sites sit above "
-                "the 35 microgram line."
+                "the common window, joined by a line, and below them the common-window value "
+                "with the smoke window excluded, joined by a dotted line. The site with the "
+                f"shortest record, {shortest['code']} at {shortest_days} days, carries the "
+                f"highest own-record value; {longest['code']} has {longest_days} days. On the "
+                f"common window {reg.display('p98.common.n_above_35')} of "
+                f"{reg.display('p98.common.n_sites')} sites sit above the "
+                f"{reg.display('naaqs.daily_standard')} microgram line; with the smoke window "
+                f"excluded, {count_word(reg.display('p98.common_exsmoke.n_above_35'))} do, the "
+                f"values running from {reg.display('p98.common_exsmoke.min')} to "
+                f"{reg.display('p98.common_exsmoke.max')}."
             ),
             "caption": (
                 "Own-record against common-window 98th percentiles, with record days "
                 f"annotated. A 98th percentile read from a {shortest_days}-day record is a "
                 f"different order statistic from one read from {longest_days} days. "
-                "The horizontal line marks the level "
+                "Triangles give the common-window value with every day from "
+                f"{reg.display('smoke.window_start')} to {reg.display('smoke.window_end')} "
+                "excluded, local standard time days. The horizontal line marks the level "
                 "of the 24-hour standard and is not a threshold being crossed: neither these "
                 "values nor DEQ's are comparable to the NAAQS."
             ),
@@ -1435,8 +2556,9 @@ def build_figures(
             "id": "F05_correlation_heatmap",
             "title": "Cross-site hourly PM2.5 correlation",
             "alt_text": (
-                "A six-by-six matrix of pairwise correlations, every cell labelled. All "
-                f"fifteen pairs fall between {reg.display('corr.min')} and "
+                f"A {reg.display('p98.common.n_sites')}-by-{reg.display('p98.common.n_sites')} "
+                "matrix of pairwise correlations, every cell labelled. All "
+                f"{reg.display('corr.n_pairs')} pairs fall between {reg.display('corr.min')} and "
                 f"{reg.display('corr.max')}, so the sensors largely rise and fall together "
                 "across the network."
             ),
@@ -1481,7 +2603,7 @@ def build_figures(
                 ),
                 "caption": (
                     "Upper panel: initial-stage discovery individuals across the asthma "
-                    f"studies in GWAS Catalog release {anc['release']}, by the catalog's "
+                    f"studies in GWAS Catalog release {anc['release']}, by the catalogue's "
                     "broad ancestral category. Lower panel: Loudoun County residents by "
                     f"self-identified race, {anc['acs']['dataset']}, table B02001. "
                     + ancestry_report.ACS_CATEGORY_SENTENCE
@@ -1569,6 +2691,23 @@ def build_inventory(fz: Freeze, out_dir: Path) -> dict:
             window=as_of,
             method="module status as of the atlas freeze",
         )
+    reg.add(
+        "inventory.module_count",
+        len(inv["modules"]),
+        unit="modules",
+        precision=0,
+        window=as_of,
+        method="atlas modules counted in the inventory, the knowledge graph included",
+    )
+    reg.add(
+        "inventory.reproducible_module_count",
+        sum(1 for module in inv["modules"] if module["module"] != atlas.GRAPH_MODULE),
+        unit="modules",
+        precision=0,
+        window=as_of,
+        method="modules emitted by the current pipeline and reproducible from it: every module "
+        "but the knowledge graph (DECISIONS.md D25)",
+    )
     reg.add(
         "inventory.record_total",
         inv["record_total"],
@@ -1699,6 +2838,26 @@ def build_chain(fz: Freeze, out_dir: Path) -> dict:
         window=as_of,
         method="links carrying the inferred evidence class, which have no direct evidence in "
         "the atlas and are drawn dashed in the figure",
+        inputs=record_inputs,
+    )
+    from_records = sum(1 for step in chn["steps"] if step["from_an_atlas_record"])
+    reg.add(
+        "chain.steps_from_records",
+        from_records,
+        unit="links",
+        precision=0,
+        window=as_of,
+        method="links whose evidence class is read from an atlas record",
+        inputs=record_inputs,
+    )
+    reg.add(
+        "chain.steps_from_figure",
+        len(chn["steps"]) - from_records,
+        unit="links",
+        precision=0,
+        window=as_of,
+        method="links whose evidence class the figure definition assigns rather than an atlas "
+        "record",
         inputs=record_inputs,
     )
     reg.add(

@@ -1,4 +1,8 @@
+import type { ReactNode } from "react";
+
 import referencesDoc from "@/content/reports/2026/references.json";
+import { separatorBreaks } from "./breaks";
+import { tableLabel } from "./labels";
 
 export interface LiteratureEntry {
   id: string;
@@ -94,6 +98,24 @@ export function EditionDate({ id }: { id: string }) {
   );
 }
 
+/**
+ * A source note, with each `{table:T12}` token rendered as the table's printed label.
+ * Tables are numbered by first appearance, so a number typed into a note would go
+ * stale when a table moved (D47); this is the reference-list form of <TableRef>.
+ */
+function noteText(note: string): ReactNode {
+  const parts = note.split(/\{table:([A-Za-z0-9_]+)\}/);
+  return parts.map((part, i) =>
+    i % 2 === 1 ? (
+      <span key={i} className="report-table-ref" data-table-ref={part}>
+        {tableLabel("2026", part)}
+      </span>
+    ) : (
+      part
+    )
+  );
+}
+
 function doiUrl(doi: string): string {
   return `https://doi.org/${doi}`;
 }
@@ -106,17 +128,17 @@ export function References() {
 
       <h3 id="references-literature-heading">Literature</h3>
       <p className="report-references-note">
-        Every entry carries a DOI. The verification note records how that DOI was
-        checked: against Crossref for the entries taken from the project bibliography,
-        or against the published atlas record that carries it.
+        Every entry carries a DOI, checked against Crossref on the date given: the title,
+        first author and year of the record the DOI resolves to match the entry.
       </p>
-      <ol className="report-references-list">
-        {LITERATURE.map((entry) => (
+      <ol className="report-references-list report-references-numbered">
+        {LITERATURE.map((entry, i) => (
           <li key={entry.id} id={`reference-${entry.id}`}>
-            {entry.authors} ({entry.year}). {entry.title}.
+            <span className="report-reference-label">[{i + 1}]</span> {entry.authors} (
+            {entry.year}). {entry.title}.
             {entry.journal ? <> <em>{entry.journal}</em>.</> : null}{" "}
             <a href={doiUrl(entry.doi)} className="report-doi">
-              {doiUrl(entry.doi)}
+              {separatorBreaks(doiUrl(entry.doi))}
             </a>
             <span className="report-references-verification">
               {" "}
@@ -138,10 +160,12 @@ export function References() {
           <li key={entry.id} id={`reference-${entry.id}`}>
             {entry.publisher}. {entry.title}. {entry.edition_date}.{" "}
             <a href={entry.url} className="report-doi">
-              {entry.url}
+              {separatorBreaks(entry.url)}
             </a>{" "}
             Retrieved {entry.retrieved}.
-            {entry.note ? <span className="report-references-note"> {entry.note}</span> : null}
+            {entry.note ? (
+              <span className="report-references-note"> {noteText(entry.note)}</span>
+            ) : null}
           </li>
         ))}
       </ol>

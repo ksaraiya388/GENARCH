@@ -1,6 +1,6 @@
 {
   "description": "References for the GENARCH Annual Report 2026, in two sets, because they carry different guarantees. The references set is journal literature: every entry has a DOI, and a verification block records how that DOI was checked rather than asserting that it was. The sources set is agency documents, regulations and dataset releases, which have no DOIs; every entry names a publisher, a title, the edition or version date, a stable URL and the date it was retrieved, so a reader can reach the same bytes.",
-  "policy": "A literature entry without a DOI is not added: the work is cited as a source entry or not cited. A source entry missing any of its five required fields fails tests/test_report_source.py. A DOI taken from the Crossref-verified bibliography carries method crossref and that check's date; a DOI taken from a published atlas record carries method atlas-record and the record path, and is not claimed as independently verified here.",
+  "policy": "A literature entry without a DOI is not added: the work is cited as a source entry or not cited. A source entry missing any of its five required fields fails tests/test_report_source.py. Every literature DOI is resolved through Crossref and its title, first author and year checked against the entry; the verification block records the check and its date.",
   "required_source_fields": [
     "publisher",
     "title",
@@ -18,8 +18,8 @@
       "doi": "10.1038/s41588-019-0379-x",
       "verification": {
         "method": "crossref",
-        "source": "pipeline/sources/cross_ancestry/literature.json",
-        "checked_at": "2026-10-07"
+        "source": "https://api.crossref.org/works/10.1038/s41588-019-0379-x",
+        "checked_at": "2026-11-16"
       }
     },
     {
@@ -31,8 +31,8 @@
       "doi": "10.1038/s41467-019-11112-0",
       "verification": {
         "method": "crossref",
-        "source": "pipeline/sources/cross_ancestry/literature.json",
-        "checked_at": "2026-10-07"
+        "source": "https://api.crossref.org/works/10.1038/s41467-019-11112-0",
+        "checked_at": "2026-11-16"
       }
     },
     {
@@ -44,8 +44,8 @@
       "doi": "10.1016/j.ajhg.2021.11.008",
       "verification": {
         "method": "crossref",
-        "source": "pipeline/sources/cross_ancestry/literature.json",
-        "checked_at": "2026-10-07"
+        "source": "https://api.crossref.org/works/10.1016/j.ajhg.2021.11.008",
+        "checked_at": "2026-11-16"
       }
     },
     {
@@ -57,8 +57,8 @@
       "doi": "10.1038/s41586-023-06079-4",
       "verification": {
         "method": "crossref",
-        "source": "pipeline/sources/cross_ancestry/literature.json",
-        "checked_at": "2026-10-07"
+        "source": "https://api.crossref.org/works/10.1038/s41586-023-06079-4",
+        "checked_at": "2026-11-16"
       }
     },
     {
@@ -70,8 +70,8 @@
       "doi": "10.1038/s41576-023-00637-2",
       "verification": {
         "method": "crossref",
-        "source": "pipeline/sources/cross_ancestry/literature.json",
-        "checked_at": "2026-10-07"
+        "source": "https://api.crossref.org/works/10.1038/s41576-023-00637-2",
+        "checked_at": "2026-11-16"
       }
     },
     {
@@ -83,8 +83,8 @@
       "doi": "10.1038/s41591-021-01672-4",
       "verification": {
         "method": "crossref",
-        "source": "pipeline/sources/cross_ancestry/literature.json",
-        "checked_at": "2026-10-07"
+        "source": "https://api.crossref.org/works/10.1038/s41591-021-01672-4",
+        "checked_at": "2026-11-16"
       }
     },
     {
@@ -96,8 +96,8 @@
       "doi": "10.1038/s41588-020-0580-y",
       "verification": {
         "method": "crossref",
-        "source": "pipeline/sources/cross_ancestry/literature.json",
-        "checked_at": "2026-10-07"
+        "source": "https://api.crossref.org/works/10.1038/s41588-020-0580-y",
+        "checked_at": "2026-11-16"
       }
     },
     {
@@ -109,34 +109,21 @@
       "doi": "10.17226/26902",
       "verification": {
         "method": "crossref",
-        "source": "pipeline/sources/cross_ancestry/literature.json",
-        "checked_at": "2026-10-07"
+        "source": "https://api.crossref.org/works/10.17226/26902",
+        "checked_at": "2026-11-16"
       }
     },
     {
-      "id": "hodgson2024",
-      "title": "Genetic basis of early onset and progression of type 2 diabetes in South Asians",
-      "authors": "Hodgson, Sam",
-      "year": 2024,
-      "journal": "Nature Medicine",
-      "doi": "10.1038/s41591-024-03317-8",
-      "verification": {
-        "method": "crossref",
-        "source": "pipeline/sources/cross_ancestry/literature.json",
-        "checked_at": "2026-10-07"
-      }
-    },
-    {
-      "id": "li2017",
+      "id": "song2017",
       "title": "Exposure to PM2.5 induces aberrant activation of NF-κB in human airway epithelial cells by downregulating miR-331 expression",
-      "authors": "Li R, et al.",
+      "authors": "Song L, et al.",
       "year": 2017,
       "journal": "Environmental Toxicology and Pharmacology",
       "doi": "10.1016/j.etap.2017.02.011",
       "verification": {
-        "method": "atlas-record",
-        "source": "data/briefs/pm25-il33-nfkb-asthma.json references[ref1]",
-        "checked_at": null
+        "method": "crossref",
+        "source": "https://api.crossref.org/works/10.1016/j.etap.2017.02.011",
+        "checked_at": "2026-11-16"
       }
     },
     {
@@ -147,48 +134,48 @@
       "journal": "Clinical & Experimental Immunology",
       "doi": "10.1111/cei.12348",
       "verification": {
-        "method": "atlas-record",
-        "source": "data/briefs/pm25-il33-nfkb-asthma.json references[ref2]",
-        "checked_at": null
+        "method": "crossref",
+        "source": "https://api.crossref.org/works/10.1111/cei.12348",
+        "checked_at": "2026-11-16"
       }
     },
     {
-      "id": "alvarez2021",
+      "id": "aneas2021",
       "title": "Asthma-associated genetic variants induce IL33 differential expression through an enhancer-blocking regulatory region",
-      "authors": "Alvarez M, et al.",
+      "authors": "Aneas I, et al.",
       "year": 2021,
       "journal": "Nature Communications",
       "doi": "10.1038/s41467-021-26347-z",
       "verification": {
-        "method": "atlas-record",
-        "source": "data/briefs/pm25-il33-nfkb-asthma.json references[ref3]",
-        "checked_at": null
+        "method": "crossref",
+        "source": "https://api.crossref.org/works/10.1038/s41467-021-26347-z",
+        "checked_at": "2026-11-16"
       }
     },
     {
-      "id": "islam2014",
-      "title": "GSTP1 and TNF Gene Variants and Associations between Air Pollution and Incident Childhood Asthma",
-      "authors": "Islam T, et al.",
+      "id": "macintyre2014",
+      "title": "GSTP1 and TNF Gene Variants and Associations between Air Pollution and Incident Childhood Asthma: The Traffic, Asthma and Genetics (TAG) Study",
+      "authors": "MacIntyre EA, et al.",
       "year": 2014,
       "journal": "Environmental Health Perspectives",
       "doi": "10.1289/ehp.1307459",
       "verification": {
-        "method": "atlas-record",
-        "source": "data/briefs/pm25-il33-nfkb-asthma.json references[ref4]",
-        "checked_at": null
+        "method": "crossref",
+        "source": "https://api.crossref.org/works/10.1289/ehp.1307459",
+        "checked_at": "2026-11-16"
       }
     },
     {
-      "id": "cayrol2018",
+      "id": "delafuente2015",
       "title": "The IL-33/ST2 axis: Role in health and disease",
-      "authors": "Cayrol C, Girard JP",
-      "year": 2018,
+      "authors": "De la Fuente M, MacDonald TT, Hermoso MA",
+      "year": 2015,
       "journal": "Cytokine & Growth Factor Reviews",
-      "doi": "10.1016/j.cytogfr.2018.01.001",
+      "doi": "10.1016/j.cytogfr.2015.07.017",
       "verification": {
-        "method": "atlas-record",
-        "source": "data/briefs/pm25-il33-nfkb-asthma.json references[ref5]",
-        "checked_at": null
+        "method": "crossref",
+        "source": "https://api.crossref.org/works/10.1016/j.cytogfr.2015.07.017",
+        "checked_at": "2026-11-16"
       }
     }
   ],
@@ -196,38 +183,56 @@
     {
       "id": "deq2026aug07",
       "publisher": "Virginia Department of Environmental Quality, Office of Air Quality Monitoring",
-      "title": "Data Center Air Quality Analysis, Table 4",
+      "title": "Data Center Air Quality Analysis",
       "edition_date": "2026-08-07",
       "url": "https://www.deq.virginia.gov/news-info/shortcuts/topics-of-interest/data-center-air-monitoring-project",
       "retrieved": "2026-08-11",
-      "note": "The edition whose Table 4 the record-length comparison in section 5.4 is set beside. Archived in the data freeze."
+      "note": "Weekly edition. The edition whose Table 4 the record-length comparison in section 5.4 is set beside. The project page carries only the current edition; this one is archived in the project repository at pipeline/sources/freeze-2026/2026-08-07_data_center_air_quality_analysis.pdf, SHA-256 490a1966d7f5bde02eb73ca582512ddaa7c3bb34b0ae81460c283aeddd18558a."
+    },
+    {
+      "id": "deq2026aug21",
+      "publisher": "Virginia Department of Environmental Quality, Office of Air Quality Monitoring",
+      "title": "Data Center Air Quality Analysis",
+      "edition_date": "2026-08-21",
+      "url": "https://www.deq.virginia.gov/news-info/shortcuts/topics-of-interest/data-center-air-monitoring-project",
+      "retrieved": "2026-08-22",
+      "note": "Weekly edition. Cited for DEQ's printed correction of the APEX 5 NO2 regression (p. 14). The project page carries only the current edition; this one is archived in the project repository at docs/deq-reports/2026-08-21_data_center_air_quality_analysis.pdf, SHA-256 20083d8629dccce2a2e834054b0aaaa3d8cabc9ab446d55a5748aa843de5eabd. Retrieved is the date it was archived there, an upper bound on the download date."
     },
     {
       "id": "deq2026oct09",
       "publisher": "Virginia Department of Environmental Quality, Office of Air Quality Monitoring",
-      "title": "Data Center Air Monitoring Project weekly report, page 2",
+      "title": "Data Center Air Quality Analysis",
       "edition_date": "2026-10-09",
-      "url": "https://www.deq.virginia.gov/news-info/shortcuts/topics-of-interest/data-center-air-monitoring-project",
-      "retrieved": "2026-10-10",
-      "note": "The edition the quoted limitation and its page reference come from, and the newest edition inside the freeze."
+      "url": "https://www.deq.virginia.gov/home/showpublisheddocument/39287",
+      "retrieved": "2026-10-11",
+      "note": "Weekly edition. The source of the quoted limitation (p. 2), of the sensor timeline in its section 2 and of the voided first week of sensor PM2.5 (footnote 3, p. 16); the newest edition inside the freeze."
     },
     {
       "id": "deq2026oct30",
       "publisher": "Virginia Department of Environmental Quality, Office of Air Quality Monitoring",
-      "title": "Data Center Air Monitoring Project weekly report",
+      "title": "Data Center Air Quality Analysis",
       "edition_date": "2026-10-30",
-      "url": "https://www.deq.virginia.gov/news-info/shortcuts/topics-of-interest/data-center-air-monitoring-project",
+      "url": "https://www.deq.virginia.gov/home/showpublisheddocument/39902",
       "retrieved": "2026-10-30",
-      "note": "Published after the freeze. Cited for the post-freeze note that the collocation window closed on 2026-10-22; its section 2 also records that site DC-02 closed that day."
+      "note": "Weekly edition, published after the freeze. Cited for events its section 2 records: the replacement of the collocated unit, the end of collection at site DC-02 and two new sites in Prince William County. Changes no value in this report."
     },
     {
       "id": "deq2026nov06",
       "publisher": "Virginia Department of Environmental Quality, Office of Air Quality Monitoring",
-      "title": "Data Center Air Monitoring Project weekly report",
+      "title": "Data Center Air Quality Analysis",
       "edition_date": "2026-11-06",
-      "url": "https://www.deq.virginia.gov/news-info/shortcuts/topics-of-interest/data-center-air-monitoring-project",
+      "url": "https://www.deq.virginia.gov/home/showpublisheddocument/39963",
       "retrieved": "2026-11-08",
-      "note": "Published after the freeze. Cited once, for the post-freeze note that site DC-01, the collocation site, closed on 2026-11-04, which its section 2 records. Changes no value in this report."
+      "note": "Weekly edition, published after the freeze. Cited for the end of sensor collection at site DC-01, and the unit's move to a new Loudoun County site, which its section 2 records. Changes no value in this report."
+    },
+    {
+      "id": "deqcorrespondence",
+      "publisher": "Virginia Department of Environmental Quality, Office of Air Quality Monitoring staff",
+      "title": "Correspondence with the GENARCH project on the Data Center Air Monitoring Project data",
+      "edition_date": "2026-08-10 to 2026-08-19",
+      "url": "https://github.com/ksaraiya388/GENARCH/blob/main/docs/GENARCH_RULES.md#10-correspondence-and-edition-log",
+      "retrieved": "2026-08-19",
+      "note": "Staff correspondence, not a publication, logged by date in the project's standing rules. Cited only where no DEQ edition states the fact."
     },
     {
       "id": "deqdashboard",
@@ -245,16 +250,16 @@
       "edition_date": "2026-08-11",
       "url": "https://vadeq.nextrequest.com/requests/26-4646",
       "retrieved": "2026-08-11",
-      "note": "No redactions and no cost. The released record ends 2026-08-10, which caps the collocation and the daily reconciliation."
+      "note": "No redactions and no cost. The released record caps the collocation and the daily reconciliation."
     },
     {
-      "id": "cfr5018",
-      "publisher": "United States Government Publishing Office",
-      "title": "40 CFR 50.18: national primary and secondary ambient air quality standards for PM2.5",
+      "id": "cfr5020",
+      "publisher": "United States Government Publishing Office, Electronic Code of Federal Regulations",
+      "title": "40 CFR 50.20: National primary ambient air quality standards for PM2.5",
       "edition_date": "2026-10-01",
-      "url": "https://www.ecfr.gov/current/title-40/section-50.18",
-      "retrieved": "2026-11-03",
-      "note": "Cited for the levels of the annual and 24-hour standards. eCFR text current as of 2026-10-01."
+      "url": "https://www.ecfr.gov/current/title-40/section-50.20",
+      "retrieved": "2026-11-16",
+      "note": "Cited for the levels of the annual and 24-hour primary standards as revised in 2024 (89 FR 16380). eCFR text current as of 2026-10-01."
     },
     {
       "id": "cfr50appn",
@@ -277,11 +282,11 @@
     {
       "id": "acs2024",
       "publisher": "United States Census Bureau",
-      "title": "American Community Survey, 2024 5-year estimates (acs/acs5), tables B02001, B02015 and DP05, state 51 county 107",
-      "edition_date": "2024",
+      "title": "American Community Survey, 2020-2024 5-year estimates (acs/acs5), tables B02001, B02015 and DP05, state 51 county 107",
+      "edition_date": "2026-01-29",
       "url": "https://api.census.gov/data/2024/acs/acs5",
       "retrieved": "2026-11-03",
-      "note": "The county composition in Table 12 and the lower panel of Figure 6. The atlas page on ancestry and equity still reads the 2023 release."
+      "note": "The county composition in {table:T12} and the lower panel of Figure 6; the edition date is the release date on the Census Bureau's data release page."
     },
     {
       "id": "ols2026",
@@ -293,22 +298,31 @@
       "note": "Resolved the asthma trait set. Both ontology versions are recorded in pipeline/lookups/asthma_trait_terms.json."
     },
     {
-      "id": "pec2026cobra",
-      "publisher": "Piedmont Environmental Council",
-      "title": "Modelled health impacts of data center emissions in Virginia, using the EPA CO-Benefits Risk Assessment (COBRA) screening tool",
-      "edition_date": "2026",
-      "url": "https://www.pecva.org/work/energy/data-centers/",
-      "retrieved": "2026-11-03",
-      "note": "Emissions modelling rather than measurement reprocessing. Described in section 5.8 as adjacent work on a different question."
+      "id": "corkdominici2026",
+      "publisher": "Cork M, Dominici F; EmPower Analytics Group LLC, prepared for the Piedmont Environmental Council",
+      "title": "Air Quality, Health, and Economic Impacts of the Vantage Data Center Facility",
+      "edition_date": "2026-02-27",
+      "url": "https://www.pecva.org/wp-content/uploads/Health-Impacts-Vantage-Data-Center-Report-2.pdf",
+      "retrieved": "2026-11-16",
+      "note": "An assessment of modelled emissions from one facility's permitted on-site power system, using the EPA COBRA screening tool. Described in section 5.8 as adjacent work on a different question."
+    },
+    {
+      "id": "diversitymonitor2024",
+      "publisher": "GWAS Diversity Monitor (Mills MC, Rahal C)",
+      "title": "GWAS Diversity Monitor, live dashboard",
+      "edition_date": "2024-09",
+      "url": "https://gwasdiversitymonitor.com/",
+      "retrieved": "2026-07-13",
+      "note": "The snapshot the atlas page on ancestry and equity transcribes (pipeline/sources/gwas_ancestry_breakdown.csv). The dashboard is introduced in literature entry Mills 2020."
     },
     {
       "id": "genarchatlas",
       "publisher": "GENARCH",
-      "title": "GENARCH: a gene-environment interaction atlas for Loudoun County, Virginia",
+      "title": "GENARCH — Genetic Epidemiology Atlas",
       "edition_date": "2026-11-02",
       "url": "https://genarch.org/",
       "retrieved": "2026-11-02",
-      "note": "The atlas this report describes, at the atlas freeze date. Software DOI pending."
+      "note": "The atlas this report describes, at the atlas freeze date. Title as the live site gives it. Software DOI pending."
     }
   ]
 }

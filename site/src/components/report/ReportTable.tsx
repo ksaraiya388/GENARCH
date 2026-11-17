@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import { reportTable, reportTableRows } from "@/lib/report-registry";
+import { separatorBreaks } from "./breaks";
 import { isNumericCell, tableLabel } from "./labels";
 import { TABLE_RENDER, checkRender, formatCell, softHyphenate } from "./table-render";
 
@@ -154,7 +155,21 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
 
   let truncated = false;
 
-  const cellText = (value: string, column: number): string => {
+  const headerLabel = (column: string): string => render.headerLabels?.[column] ?? column;
+  const rowRules = (render.whenRow ?? []).map((rule) => ({
+    ...rule,
+    at: header.indexOf(rule.column),
+    matchAt: header.indexOf(rule.matchColumn),
+  }));
+  const suffixAt = render.suffix ? header.indexOf(render.suffix.column) : -1;
+
+  const cellText = (value: string, column: number, row: string[]): string => {
+    for (const rule of rowRules) {
+      if (rule.at === column && row[rule.matchAt] === rule.matchValue) return rule.text;
+    }
+    if (column === suffixAt && render.suffix && value in render.suffix.values) {
+      return value + render.suffix.values[value];
+    }
     if (hashCols.has(column) && value.length > HASH_PREFIX) {
       truncated = true;
       return `${value.slice(0, HASH_PREFIX)}…`;
@@ -174,9 +189,12 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
     return format ? formatCell(value, format) : value;
   };
 
-  const renderCell = (value: string, column: number): ReactNode => {
-    const text = cellText(value, column);
-    return atomicCols.has(column) ? atomicTokens(text) : protectDates(text);
+  const renderCell = (value: string, column: number, row: string[]): ReactNode => {
+    const text = cellText(value, column, row);
+    if (atomicCols.has(column)) return atomicTokens(text);
+    // Paths and identifiers break after a separator, never mid-token (M7).
+    if (breakCols.has(column)) return separatorBreaks(text);
+    return protectDates(text);
   };
 
   const cellClass = (cell: string, c: number): string | undefined =>
@@ -193,11 +211,11 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
       {row.map((cell, c) =>
         c === 0 ? (
           <th key={c} scope="row" className="report-table-rowhead">
-            {renderCell(cell, c)}
+            {renderCell(cell, c, row)}
           </th>
         ) : (
           <td key={c} className={cellClass(cell, c)}>
-            {renderCell(cell, c)}
+            {renderCell(cell, c, row)}
           </td>
         )
       )}
@@ -214,6 +232,8 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
         ]
       : []),
     ...(render.notes ?? []),
+    // Notes the generator composed from keys, so a number in one is never typed here.
+    ...(manifest.notes ?? []),
   ];
   const fixed = render.widths !== undefined;
 
@@ -256,7 +276,7 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
               const unit = unitFor(column);
               return (
                 <th key={c} scope="col">
-                  {fixed ? softHyphenate(column) : column}
+                  {fixed ? softHyphenate(headerLabel(column)) : headerLabel(column)}
                   {unit && <span className="report-table-unit"> ({unit})</span>}
                 </th>
               );

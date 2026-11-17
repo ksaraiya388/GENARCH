@@ -631,6 +631,7 @@ def head_contains(commit: str) -> bool:
 # commit now carrying the same tree. This is the one place the report's prose gets
 # that hash from, and the generator checks it with git on every run.
 FREEZE_COMMIT_REWRITTEN = "782c1dc6b4b55f126e1dbfc5cced97daf483bd56"
+AUTHORSHIP_REWRITE_DATE = "2026-10-25"
 
 
 def checked_rewritten_freeze_commit() -> str:

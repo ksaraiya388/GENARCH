@@ -138,12 +138,25 @@ def extract_text(pdf: Path) -> str:
     return text.strip()
 
 
-def count_sensor_figures(year: str) -> int:
-    """Figures carrying DEQ's limitation: the sensor figures, not every figure.
+# The figures that plot DEQ sensor data, declared rather than inferred from which
+# figures happen to carry the quotation: inferring it would let a sensor figure that
+# lost its limitation lower the bar it is checked against. F03 plots only the
+# regulatory monitor and F06 a study population and a census table, so neither is
+# here (DECISIONS.md D57; CONTEXT.md section 3, amended 2026-11-16).
+SENSOR_FIGURE_IDS = (
+    "F01_network_timeline",
+    "F02_collocation",
+    "F04_p98_by_site",
+    "F05_correlation_heatmap",
+)
 
-    The ancestry figure is not sensor data and carries its own descriptive-only
-    limitation instead, so counting figures in the manifest would overcount by one and
-    the expected occurrence count would never be met.
+
+def count_sensor_figures(year: str) -> int:
+    """The sensor figures, each of which must carry DEQ's limitation verbatim.
+
+    Raises when a declared sensor figure is missing from the manifest or does not carry
+    the limitation, so the required count below cannot be met by a figure that dropped
+    it.
     """
     figures = json.loads((REPORTS_DATA / year / "figures.json").read_text(encoding="utf-8"))
     limitation = json.loads(
@@ -151,8 +164,11 @@ def count_sensor_figures(year: str) -> int:
             encoding="utf-8"
         )
     )["limitation"]
-    first_sentence = limitation.split(". ")[0]
-    return sum(1 for fig in figures["figures"] if first_sentence in fig["limitation"])
+    by_id = {fig["id"]: fig for fig in figures["figures"]}
+    for figure_id in SENSOR_FIGURE_IDS:
+        if figure_id not in by_id or limitation not in by_id[figure_id]["limitation"]:
+            raise ValueError(f"sensor figure {figure_id} does not carry DEQ's limitation")
+    return len(SENSOR_FIGURE_IDS)
 
 
 def audit(text: str, year: str, fm: dict, final: bool) -> list[str]:

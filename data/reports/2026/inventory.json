@@ -510,6 +510,15 @@
       "value": "live; emitted by the current pipeline",
       "window": "atlas as frozen 2026-11-02"
     },
+    "inventory.module_count": {
+      "inputs": [],
+      "method": "atlas modules counted in the inventory, the knowledge graph included",
+      "n": null,
+      "precision": 0,
+      "unit": "modules",
+      "value": 8.0,
+      "window": "atlas as frozen 2026-11-02"
+    },
     "inventory.pathways.records": {
       "inputs": [
         {
@@ -589,6 +598,15 @@
       "precision": 0,
       "unit": "records",
       "value": 88.0,
+      "window": "atlas as frozen 2026-11-02"
+    },
+    "inventory.reproducible_module_count": {
+      "inputs": [],
+      "method": "modules emitted by the current pipeline and reproducible from it: every module but the knowledge graph (DECISIONS.md D25)",
+      "n": null,
+      "precision": 0,
+      "unit": "modules",
+      "value": 7.0,
       "window": "atlas as frozen 2026-11-02"
     }
   },

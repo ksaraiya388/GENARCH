@@ -8,10 +8,10 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 ## Totals
 
-- Sentences inventoried: **393**
-- Carrying at least one key or citation: **67**; carrying neither: **326**
-- Distinct registry keys cited: **88**
-- Distinct references cited: **25**
+- Sentences inventoried: **422**
+- Carrying at least one key or citation: **119**; carrying neither: **303**
+- Distinct registry keys cited: **151**
+- Distinct references cited: **29**
 - Review markers awaiting the author: **0**
 
 ## `cover.tsx`
@@ -24,22 +24,29 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 | Sentence | Sources |
 |---|---|
-| This is the first annual report of GENARCH, a read-only scientific atlas of gene-environment interactions for Loudoun County, Virginia. |  |
-| It does two things. |  |
-| It states what the atlas contains at its freeze date and how the atlas is built, and it reprocesses the sensor and regulatory monitoring data that Virginia DEQ publishes for its Data Center Air Monitoring Project in Loudoun County, recomputing the agency's published statistics from the source files. |  |
+| This is GENARCH's annual report for 2026. |  |
+| GENARCH is a read-only scientific atlas of gene-environment interactions for Loudoun County, Virginia. |  |
+| It does three things. |  |
+| It states what the atlas contains at its freeze date and how the atlas is built, it describes who the asthma evidence the atlas draws on was measured in, and it reprocesses the sensor and regulatory monitoring data that Virginia DEQ publishes for its Data Center Air Monitoring Project in Loudoun County, recomputing the agency's published statistics from the source files. |  |
 | Everything here describes co-location and biological mechanism. |  |
 | Nothing here establishes that any exposure brought about any health outcome in any population, and no statement in this report should be read that way. |  |
-| Against that standard, the record is mostly unremarkable: {summary.share_site_days_below_35} percent of the {summary.share_site_days_below_35} complete site-days across the nine Loudoun County sensor sites sit below {naaqs.daily_standard} µg/m³, the level of the 24-hour standard [cfr5018]. | `{summary.share_site_days_below_35}` `{summary.share_site_days_below_35}` `{naaqs.daily_standard}` `[cfr5018]` |
+| Through the {freeze.cutoff_date} data cutoff, {summary.share_site_days_below_35} percent of the {summary.share_site_days_below_35} complete site-days across the nine Loudoun County sensor sites sit below {naaqs.daily_standard} µg/m³, the level of the 24-hour standard [cfr5020]. | `{freeze.cutoff_date}` `{summary.share_site_days_below_35}` `{summary.share_site_days_below_35}` `{naaqs.daily_standard}` `[cfr5020]` |
+| All {summary.site_days_at_or_above_35} site-days at or above that level fall in the wildfire smoke window of {smoke.window_start} to {smoke.window_end}; with that window excluded, all {summary.share_site_days_below_35.ex_smoke} site-days sit below it. | `{summary.site_days_at_or_above_35}` `{smoke.window_start}` `{smoke.window_end}` `{summary.share_site_days_below_35.ex_smoke}` |
 | That level is not a line a daily reading crosses or fails: the standard is evaluated as the {naaqs.percentile} th percentile of daily averages, averaged over {naaqs.averaging_years} consecutive years [cfr50appn], and a low-cost sensor record cannot be evaluated against it at all. | `{naaqs.percentile}` `{naaqs.averaging_years}` `[cfr50appn]` |
 | Four results are reported. |  |
 | The four collocation regressions at the collocated site agree with DEQ's published coefficients within {colloc.tolerance_coefficient} on slope and intercept and {colloc.tolerance_r2} on R-squared, computed through DEQ's {deq.edition_cutoff} edition cutoff. | `{colloc.tolerance_coefficient}` `{colloc.tolerance_r2}` `{deq.edition_cutoff}` |
 | Recomputed daily averages for the regulatory monitor match DEQ's published daily file on {daily.n_match} of {daily.n_days} comparable days, with a mean absolute difference of {daily.mean_abs_diff} µg/m³. | `{daily.n_match}` `{daily.n_days}` `{daily.mean_abs_diff}` |
-| On the window when all six sensors were collecting, {p98.common.n_above_35} of the {p98.common.n_sites} exceed {naaqs.daily_standard} µg/m³ and the sensor that Table 4 of DEQ's edition [deq2026aug07] identifies as the only one above that level, site DC-06 in the site key, ranks {p98.common.rank.DC-06} — which is a statement about unequal record length and season and not about any site being polluted, and neither DEQ's figure nor this one is comparable to the national standards. | `{p98.common.n_above_35}` `{p98.common.n_sites}` `{naaqs.daily_standard}` `{p98.common.rank.DC-06}` `[deq2026aug07]` |
+| On the window when all six sensors were collecting, on whole days through {network.common_window.end} (DEQ's edition cutoff {deq.edition_cutoff}), {p98.common.n_above_35} of the {p98.common.n_sites} have a daily PM2.5 98th percentile above {naaqs.daily_standard} µg/m³, and the sensor that Table 4 of DEQ's edition [deq2026aug07] identifies as the only one above that level, site DC-06 in the site key, ranks {p98.common.rank.DC-06}. | `{network.common_window.end}` `{deq.edition_cutoff}` `{p98.common.n_above_35}` `{p98.common.n_sites}` `{naaqs.daily_standard}` `{p98.common.rank.DC-06}` `[deq2026aug07]` |
+| With the smoke window excluded, {p98.common_exsmoke.n_above_35} of the {p98.common.n_sites} is above that level and site DC-06 still ranks {p98.common_exsmoke.rank.DC-06}. | `{p98.common_exsmoke.n_above_35}` `{p98.common.n_sites}` `{p98.common_exsmoke.rank.DC-06}` |
+| DEQ's table reported each sensor's value over its own record; the comparison between sensors did not hold because the records differed in length and in how much weight the smoke weekend carried in each. |  |
+| This is not a claim that DEQ's figures were wrong or that any site is polluted, and neither DEQ's figure nor this one is comparable to the national standards. |  |
 | Hourly PM2.5 correlates between {corr.min} and {corr.max} across every pair of the six sensors outside the smoke window, which is descriptive and does not establish that local sources contribute nothing. | `{corr.min}` `{corr.max}` |
+| The asthma evidence the atlas draws on was measured overwhelmingly in one ancestry group: {ancestry.discovery.european.share} percent of the initial-stage discovery total across {ancestry.discovery.studies} asthma studies in the GWAS Catalog falls in the catalogue's European category, where that total is a sum of study sample sizes and not a headcount of people. | `{ancestry.discovery.european.share}` `{ancestry.discovery.studies}` |
+| At the locus at 17q12-21, {ancestry.loci.17q12-21.european.associations} of {ancestry.loci.17q12-21.associations} associations have a European discovery sample and {ancestry.loci.17q12-21.south_asian.associations} a South Asian one, which is a gap in the discovery record and not evidence that the locus is absent or inactive in any population. | `{ancestry.loci.17q12-21.european.associations}` `{ancestry.loci.17q12-21.associations}` `{ancestry.loci.17q12-21.south_asian.associations}` |
 | No cross-ancestry gene-environment effect estimates are reported in this version; they are planned for a later phase. |  |
-| The paired-site analysis of the two units that shared a location is not included. |  |
+| The analysis of the one sensor unit that occupied two sites in turn is not included. |  |
 | Carbon monoxide is not analysed, because the averaging period of the published sensor series is unresolved. |  |
-| No association between tract-level exposure and tract-level prevalence is reported anywhere in this report or on the atlas. |  |
+| No association between tract-level exposure and tract-level prevalence is reported anywhere in this report or on the atlas (see section 7.5). |  |
 
 ## `s1-scope.tsx`
 
@@ -48,22 +55,21 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 | Sentence | Sources |
 |---|---|
-| GENARCH is a public, read-only web atlas that uses published, aggregate-level evidence about how environmental conditions and genetic variation are associated with disease. |  |
-| The atlas works at the population level and covers one county, Loudoun County, Virginia. |  |
+| GENARCH is a public, read-only web atlas [genarchatlas] that uses published, aggregate-level evidence about how environmental conditions and genetic variation are associated with disease. | `[genarchatlas]` |
+| The atlas works at the population level and focuses on Loudoun County, Virginia, and its community module also carries Fairfax County. |  |
 | It curates disease, exposure, gene and pathway records, links them in a knowledge graph, writes short mechanism briefs about selected gene, disease and exposure pathways, and carries a community module describing modelled exposure burden by region. |  |
 | Every record is traceable to a source class, with citation records under active backfill; the methods pages carry the current state of that backfill. |  |
-| It has no accounts, no logins and no user storage of any kind. |  |
+| It has no accounts, logins or user storage of any kind. |  |
 | It never accepts genotype files, variant call files or personal information, and there is nothing to upload anywhere on the site. |  |
-| It produces no individual-level output, no personalised summary and no per-person risk score. |  |
+| It produces no individual-level output, personalised summary or per-person risk score. |  |
 | It makes no statement about any individual's chance of developing any condition, offers no clinical guidance and is not a diagnostic instrument. |  |
 | Every figure it publishes is a population-level or site-level aggregate. |  |
-| The geographic scope is Loudoun County, Virginia, with the neighbouring county appearing only if a published dataset covers both. |  |
 | The atlas content in this report is as of its atlas freeze date, {inventory.frozen_at}. | `{inventory.frozen_at}` |
-| The reprocessed monitoring data run from the first sensor hour in early March 2026 to the freeze's data cutoff at {freeze.cutoff} local clock time, and the regulatory monitor record ends earlier, on 2026-08-10, where the released public-records request stops [foia264646]. | `{freeze.cutoff}` `[foia264646]` |
+| The reprocessed monitoring data run from {network.first_start} to the freeze's data cutoff at {freeze.cutoff} local clock time, and the regulatory monitor record ends earlier, on {regulatory.record_end}, where the released public-records request stops [foia264646]. | `{network.first_start}` `{freeze.cutoff}` `{regulatory.record_end}` `[foia264646]` |
 | The monitoring scope is narrower than DEQ's. |  |
-| DEQ retitled the project study area to cover Loudoun County and Prince William County in its edition [deq2026oct09], and three sites outside Loudoun joined the network in September 2026: sites DC-10, DC-11 and DC-12 in the site key. | `[deq2026oct09]` |
-| They are named here and in the network description so the count of sites is honest, and no reading from any of them is reported. |  |
-| Every value in this report comes from the nine Loudoun County sites and the one regulatory monitor. |  |
+| DEQ retitled the project study area to cover Loudoun County and Prince William County in its edition [deq2026oct09], and {network.sites_outside_scope} sites outside Loudoun joined the network in {network.reconfiguration_month}: sites DC-10, DC-11 and DC-12 in the site key. | `{network.sites_outside_scope}` `{network.reconfiguration_month}` `[deq2026oct09]` |
+| They are named here and in the network description so that the site count is complete, and no reading from any of them is reported. |  |
+| Every value in this report comes from the {network.loudoun_sites} Loudoun County sites and the regulatory monitor. | `{network.loudoun_sites}` |
 | The report is written for four kinds of reader: |  |
 | Residents and local civic groups who want to know what the published monitoring data do and do not show about the monitored corridor. |  |
 | Air quality staff at Virginia DEQ, for whom this is an outside check on statistics the agency already publishes weekly, together with a list of questions the published documents left open. |  |
@@ -77,24 +83,24 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 | Sentence | Sources |
 |---|---|
-| Every input the analysis reads is listed in Appendix A with its origin, its licence, its export date, its data cutoff and its SHA-256. |  |
+| Every DEQ and sensor input the analysis reads is listed in Appendix A with its origin, its licence, its export date, its data cutoff and its SHA-256; the atlas, ancestry and configuration inputs are pinned by hash in the same freeze file. |  |
 | The sensor exports are named there by neutral site code rather than by filename, because the published filenames carry a site identifier that the project's content constraints keep out of public output. |  |
-| There are twenty-six inputs in three groups: the hourly sensor exports, in two sets because the collocation reproduction reads the exports the original analysis was computed from rather than the later ones; the regulatory monitor files released under the records request; and the DEQ weekly editions the published figures are taken from. |  |
+| There are {freeze.n_deq_inputs} such inputs: the hourly sensor exports, as two input sets because the collocation reproduction reads the exports the original analysis was computed from rather than the later ones; the regulatory monitor files released under the records request; and the DEQ weekly editions the published figures are taken from. | `{freeze.n_deq_inputs}` |
 | The sensor data are hourly exports from the Kunak dashboard DEQ publishes the network through [deqdashboard]. | `[deqdashboard]` |
 | Two properties of that dashboard shape how it has to be read. |  |
-| The first is that values appear as soon as they are detected, before any quality assurance, which the dashboard states itself; the files carry no null code, no flag and no qualifier column, so there is no way to tell a suspect hour from a good one on the sensor side. |  |
+| The first is that values appear as soon as they are detected, before any quality assurance, which the dashboard states itself; the files carry no null code, flag or qualifier column, so a suspect hour cannot be told from a good one on the sensor side. |  |
 | The second is that the dashboard backfills hours that were previously absent, and it does so without notice. |  |
 | Every export in the freeze therefore records its own export date and its own data cutoff, and the report states which of the two input sets each result was computed from. |  |
-| Comparing the exports taken for the original August analysis against those taken for the freeze, nine hours that had been missing have since been filled with rows in which every pollutant channel reads zero. |  |
-| A row in which every channel reads zero is treated as missing throughout this work, so those nine hours stay missing, and the one place where that decision changes a published figure is recorded with the figure rather than folded into it. |  |
+| Comparing the exports taken for the original August analysis against those taken for the freeze, {freeze.backfilled_zero_hours} hours that had been missing have since been filled with rows in which every pollutant channel reads zero. | `{freeze.backfilled_zero_hours}` |
+| A row in which every channel reads zero is treated as missing throughout this work, so those hours stay missing, and the one place where that decision changes a published figure is recorded with the figure rather than folded into it. |  |
 | The regulatory monitor data came through a Virginia Freedom of Information Act request, 26-4646, released in full with no redactions and at no cost [foia264646]. | `[foia264646]` |
-| That release is the binding constraint on two of the four results: the hourly files end 2026-08-10 and the last complete day is 2026-08-09, so no collocation fit and no daily reconciliation can extend past that date, whatever the sensor record does. |  |
+| That release is the binding constraint on two of the four results: the hourly files end {regulatory.record_end} and the last complete day is {regulatory.last_complete_day}, so no collocation fit and no daily reconciliation can extend past that date, whatever the sensor record does. | `{regulatory.record_end}` `{regulatory.last_complete_day}` |
 | A follow-up request for a longer range is pending with Virginia DEQ. |  |
-| The freeze itself was taken on 2026-10-18 at commit {freeze.commit}. | `{freeze.commit}` |
-| That hash is the one recorded when the freeze was taken; a history rewrite on 2026-10-25 changed commit identifiers and no file content, and the same tree is now commit {freeze.commit_rewritten}. | `{freeze.commit_rewritten}` |
+| The freeze itself was taken on {freeze.taken_at} at commit {freeze.commit}. | `{freeze.taken_at}` `{freeze.commit}` |
+| That hash is the one recorded when the freeze was taken; a history rewrite on {freeze.rewrite_date} changed commit identifiers and no file content, and the same tree is now commit {freeze.commit_rewritten}. | `{freeze.rewrite_date}` `{freeze.commit_rewritten}` |
 | The atlas half was frozen separately on {inventory.frozen_at} once the atlas records had settled, and the ancestry inputs on {ancestry.frozen_at}. | `{inventory.frozen_at}` `{ancestry.frozen_at}` |
 | The freeze pins each input by hash and the generator refuses to read a file whose hash no longer matches, which is what makes the weekly DEQ ingest safe: new editions keep arriving and keep being recorded, and none of them moves a number in this report. |  |
-| The three configuration inputs the generator needs (the source manifest, the sensor site history and the site-code lookup) are pinned as frozen copies for the same reason. |  |
+| The configuration inputs the generator needs (the source manifest, the sensor site history and the site-code lookup) are pinned as frozen copies for the same reason. |  |
 
 ## `s3-methods.tsx`
 
@@ -121,14 +127,16 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 | Sentence | Sources |
 |---|---|
-| The two data sources do not agree on what an hour is, and reconciling them is the single most consequential methodological step in this report. |  |
+| The two data sources do not agree on what an hour is, and every comparison in this report depends on reconciling them. |  |
 | Sensor timestamps from the Kunak dashboard are hour-ending and adjusted for daylight saving. |  |
 | The regulatory files are hour-beginning and always in Eastern Standard Time. |  |
-| Before any comparison or any daily average, sensor timestamps are shifted back by one hour before the spring transition and by two hours after it, and both the raw and the normalised stamp are kept, with the shift recorded per row. |  |
-| Pairing on unnormalised stamps degrades every regression substantially and is wrong. |  |
+| Before any comparison or any daily average, each sensor label is read as America/New_York wall time and converted to the hour-beginning Eastern Standard Time hour, and both the raw and the converted stamp are kept, with the shift recorded per row. |  |
+| For every hour in the frozen record this is DEQ's own instruction: a shift of {kunak.shift_hours.before_dst} hour before the spring transition and {kunak.shift_hours.after_dst} hours after it [deqcorrespondence]. | `{kunak.shift_hours.before_dst}` `{kunak.shift_hours.after_dst}` `[deqcorrespondence]` |
+| The record ends before the autumn transition, so the hour that transition repeats, which the export cannot order, does not arise here. |  |
+| Pairing on unconverted stamps misaligns every pair. |  |
 | Daily averages are binned in local standard time, which is the convention the federal regulation uses for the 24-hour standard [cfr50appn], and that is the pipeline default. | `[cfr50appn]` |
 | DEQ's published sensor tables bin by local clock time instead. |  |
-| Through the winter the two agree; during daylight saving they differ by one hour, which moves the last hour of each local day into the previous day. |  |
+| Through the winter the two agree; during daylight saving they differ by an hour, which moves the last hour of each local day into the previous day. |  |
 | GENARCH does not change its binning to match. |  |
 | The finding is that the two conventions diverge, not that either is wrong, and because the divergence is material for one statistic and immaterial for the others, every comparison in this report against a DEQ published table carries both column sets so a reader can check either. |  |
 
@@ -136,22 +144,22 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 | Sentence | Sources |
 |---|---|
-| A 24-hour average requires 18 of 24 valid hours, which is DEQ's own threshold, confirmed by agency staff. |  |
+| A 24-hour average requires {completeness.valid_hours} of {completeness.hours_per_day} valid hours, which is DEQ's own threshold, confirmed by agency staff [deqcorrespondence]. | `{completeness.valid_hours}` `{completeness.hours_per_day}` `[deqcorrespondence]` |
 | A day below that threshold is absent rather than estimated, and no gap is interpolated or rendered as a zero anywhere. |  |
 | On the regulatory side a reading is excluded when its value is absent, when a null code is present, or when its flag string contains the less-than character that marks the logger invalid. |  |
 | A letter code alone never excludes a reading: the letter identifies the event and the comparator decides validity. |  |
 | Flags are compared case-sensitively, because the published table pairs different meanings on the same letter in different cases. |  |
 | Sensor rows in which every pollutant channel reads zero are treated as missing. |  |
 | A zero on one channel while the others carry values is read as per-channel floor clamping rather than an outage, and those readings are excluded as a fault mode throughout the pipeline and throughout the site. |  |
-| One documented exception exists: the NO2 regression for the second collocated unit retains them, because DEQ confirmed in correspondence of 2026-08-19 that the agency retains them in that one fit and supplied the paired data it runs on. |  |
+| One documented exception exists: the NO2 regression for the second collocated unit retains them, because DEQ staff confirmed on {deq.correspondence.collocation_correction} that the agency retains them in that one fit [deqcorrespondence]. | `{deq.correspondence.collocation_correction}` `[deqcorrespondence]` |
 | The exception is scoped to that single comparison and is not extended, because extending it moves two coefficients that currently agree with DEQ back outside tolerance. |  |
 
 #### 3.4 Collocation method
 
 | Sentence | Sources |
 |---|---|
-| One sensor sits beside the regulatory monitor, and comparing the two is what DEQ publishes weekly as the network's own validation. |  |
-| The reproduction pairs readings on the normalised Eastern Standard Time stamp, applies the exclusion flags on both sides, assigns readings to collocation periods by unit from the occupancy table, and fits ordinary least squares with the sensor on the horizontal axis and the regulatory monitor on the vertical, which is DEQ's own plotting convention. |  |
+| One sensor sat beside the regulatory monitor throughout the frozen record, and comparing the two is what DEQ publishes weekly as the network's own validation. |  |
+| The reproduction pairs readings on the converted Eastern Standard Time stamp, applies the exclusion flags on both sides, assigns readings to collocation periods by unit from the occupancy table, and fits ordinary least squares with the sensor on the horizontal axis and the regulatory monitor on the vertical, the orientation of DEQ's own collocation plots [deq2026oct09]. | `[deq2026oct09]` |
 | Every fit stops at the {deq.edition_cutoff} edition cutoff, because the coefficients being reproduced were computed over that span and no other. | `{deq.edition_cutoff}` |
 | Regulatory exclusions are mandatory rather than optional here: unexcluded regulatory rows carry missing values behind a null code and produce coefficients that are not numbers. |  |
 | An alternative exists and is not adopted. |  |
@@ -164,6 +172,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Sentence | Sources |
 |---|---|
 | Canadian wildfire smoke reached the area over the weekend of {smoke.window_start} to {smoke.window_end}, and DEQ's own qualifier code identifies the episode in the regulatory record. | `{smoke.window_start}` `{smoke.window_end}` |
+| Whether the episode is an exceptional event is a determination for the US Environmental Protection Agency, not for DEQ, and it is unresolved [deqcorrespondence]. | `[deqcorrespondence]` |
 | Hours whose local standard time day falls in that window are excluded from the cross-site correlation, because a regional smoke plume raises every sensor at once and would inflate every pairwise correlation toward one without telling a reader anything about the network. |  |
 | The window is not excluded from the percentile work, where its presence inside a short record is the finding rather than a nuisance. |  |
 
@@ -172,13 +181,13 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Sentence | Sources |
 |---|---|
 | The published mechanism chain has {chain.steps} links. | `{chain.steps}` |
-| Each link carries an evidence class, and the classes do not all come from the same place. |  |
-| Two are read from atlas records: the first link's class comes from the exposure link on the gene record, and the last link's class comes from the disease link on the same record. |  |
-| The middle three, steps two, three and four, are classes assigned by the figure definition itself rather than read from any atlas record, and they are marked as such in the evidence table, in the generated provenance for each key and everywhere the chain is described in this report. |  |
-| One link carries the inferred class, which means the atlas holds no direct evidence for it. |  |
-| Stating this is not a formality. |  |
-| A reader looking at a five-step chain with an evidence class beside every step will reasonably assume all five classes were curated the same way, and three of them were not: they are the figure author's classification of textbook intermediate steps. |  |
-| Reporting the chain without that distinction would overstate how much of it the atlas actually grades. |  |
+| Each link carries an evidence class, and the classes do not all come from the same place. {chain.steps_from_records} are read from atlas records: the first link's class comes from the exposure link on the IL33 gene record, and the last link's class comes from the asthma link on the same record. | `{chain.steps_from_records}` |
+| Both are classes of gene-level links that the figure attaches to those steps, not evidence graded for the step itself. |  |
+| The other {chain.steps_from_figure}, the middle links, are classes assigned by the figure definition itself rather than read from any atlas record, and they are marked as such in the evidence table, in the generated provenance for each key and everywhere the chain is described in this report. | `{chain.steps_from_figure}` |
+| Among them is the class functional, which the figure definition uses and no atlas record carries. |  |
+| The inferred class, carried by {chain.inferred_steps} of the links, means the atlas holds no direct evidence for that link. | `{chain.inferred_steps}` |
+| The distinction matters because a reader who sees an evidence class beside every step will assume all of them were curated the same way, and most were not: they are the figure author's classification of textbook intermediate steps. |  |
+| Reporting the chain without that distinction would overstate how much of it the atlas grades. |  |
 
 #### 3.7 Editorial constraints and lint
 
@@ -187,7 +196,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | The project runs a lexicon lint over every user-visible string on the site and in the emitted data, including the captions, alt text and method notes in this report's artifacts. |  |
 | It enforces the content constraints mechanically: no framing in which an exposure brings about a population health outcome; no company, operator, campus or facility name; no school name within range of a reading value or a health term; no individual-level language; no policy position. |  |
 | A separate tier covers clinical vocabulary in titles, questions, headings and labels, where a term like treatment or diagnosis would describe the atlas rather than a disease. |  |
-| Two deliberate limits are worth stating. |  |
+| Two limits are deliberate. |  |
 | Nothing inside a citation is ever linted, because a published title is quoted material and enforcing a lexicon on it would pressure an author to falsify it. |  |
 | And a pre-existing baseline records the violations the lint already knew about, so the gate fails on a new violation rather than on the backlog; report prose is not eligible for that baseline, so a violation introduced here has to be rewritten. |  |
 
@@ -197,7 +206,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 |---|---|
 | The commands, the commit, the environment and the input hashes are in Appendix A. |  |
 | In outline: the generator reads the freeze, verifies every input hash, recomputes every number, writes the keyed values, the tables and the figures, and fails rather than adjusting anything if a value computed on an original window no longer reproduces. |  |
-| Report prose cites the keyed values and types no number of its own, so prose and data cannot disagree. |  |
+| Report prose cites the keyed values and types no data value of its own, so prose and data cannot disagree. |  |
 | Two parts of the atlas are outside that claim and are named here rather than left to be discovered. |  |
 | The knowledge graph is published at its committed node and edge counts, {inventory.graph.nodes} and {inventory.graph.edges}, and a clean rebuild from the current pipeline does not reproduce them; the graph is repaired in place, its status is recorded with the inventory, and the repair is scheduled. | `{inventory.graph.nodes}` `{inventory.graph.edges}` |
 | The figures are excluded from byte comparison because their bytes depend on the plotting library version and on which fonts the host has installed; they are compared between two runs on one machine instead, and the values behind them are compared everywhere. |  |
@@ -214,8 +223,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 | Sentence | Sources |
 |---|---|
-| At the atlas freeze date, {inventory.frozen_at}, the atlas held {inventory.record_total} records across eight modules: {inventory.diseases.records} disease records, {inventory.exposures.records} exposure records, {inventory.genes.records} gene records, {inventory.pathways.records} pathway records, {inventory.mechanism_briefs.records} mechanism briefs, {inventory.community_regions.records} community regions, {inventory.ancestry_modules.records} cross-ancestry modules and the knowledge graph, which carries {inventory.graph.nodes} nodes and {inventory.graph.edges} edges. | `{inventory.frozen_at}` `{inventory.record_total}` `{inventory.diseases.records}` `{inventory.exposures.records}` `{inventory.genes.records}` `{inventory.pathways.records}` `{inventory.mechanism_briefs.records}` `{inventory.community_regions.records}` `{inventory.ancestry_modules.records}` `{inventory.graph.nodes}` `{inventory.graph.edges}` |
-| Seven of the eight modules are emitted by the current pipeline and reproduce from it. |  |
+| At the atlas freeze date, {inventory.frozen_at}, the atlas held {inventory.record_total} records across {inventory.module_count} modules: {inventory.diseases.records} disease records, {inventory.exposures.records} exposure records, {inventory.genes.records} gene records, {inventory.pathways.records} pathway records, {inventory.mechanism_briefs.records} mechanism briefs, {inventory.community_regions.records} community regions (Loudoun County and Fairfax County), {inventory.ancestry_modules.records} cross-ancestry modules and the knowledge graph, which carries {inventory.graph.nodes} nodes and {inventory.graph.edges} edges. {inventory.reproducible_module_count} of the modules are emitted by the current pipeline and reproduce from it. | `{inventory.frozen_at}` `{inventory.record_total}` `{inventory.module_count}` `{inventory.diseases.records}` `{inventory.exposures.records}` `{inventory.genes.records}` `{inventory.pathways.records}` `{inventory.mechanism_briefs.records}` `{inventory.community_regions.records}` `{inventory.ancestry_modules.records}` `{inventory.graph.nodes}` `{inventory.graph.edges}` `{inventory.reproducible_module_count}` |
 | The graph does not, for the reason given in the methods and repeated in the limitations, and its row records that status rather than hiding it behind a count. |  |
 | The brief total counts every brief record under the briefs directory, including one that is not published and so is not routable or linkable on the site. |  |
 | _Renders Table 1, `T08_module_inventory`_ | _generated artifact_ |
@@ -227,7 +235,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 | Sentence | Sources |
 |---|---|
-| Virginia DEQ operates a low-cost sensor network across the data center corridor in eastern Loudoun County and publishes a weekly analysis of it, alongside a regulatory monitor at one of the sensor sites. |  |
+| Virginia DEQ operates a low-cost sensor network across the data centre corridor in eastern Loudoun County and publishes a weekly analysis of it, alongside a regulatory monitor at one of the sensor sites. |  |
 | This section recomputes the statistics that analysis publishes, from the source files, and reports where the recomputation agrees and where it does not. |  |
 | It describes co-location between a monitored corridor and a set of readings, and biological mechanism elsewhere in the atlas. |  |
 | It establishes nothing about what produced any reading and nothing about anyone's health. |  |
@@ -237,12 +245,12 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Sentence | Sources |
 |---|---|
 | The network grew and shrank over the record. |  |
-| Across 2026 it covered {network.sites_total} sites, of which {network.sites_active_at_deq_cutoff} were collecting at DEQ's {deq.edition_cutoff} edition cutoff. | `{network.sites_total}` `{network.sites_active_at_deq_cutoff}` `{deq.edition_cutoff}` |
-| Three Loudoun sites retired before that cutoff and three sites outside Loudoun joined after it. |  |
-| The records differ enormously in length: through DEQ's edition, site DC-01 carries {network.record_days.DC-01} complete days and site DC-06 carries {network.record_days.DC-06}, which is the fact behind the record-length result below. | `{network.record_days.DC-01}` `{network.record_days.DC-06}` |
-| The window in which all six of the then-live sensors were collecting together runs from {network.common_window.start} to {network.common_window.end}. | `{network.common_window.start}` `{network.common_window.end}` |
+| Through the {freeze.cutoff} data cutoff it covered {network.sites_total} sites, of which {network.sites_active_at_deq_cutoff} were collecting at DEQ's {deq.edition_cutoff} edition cutoff. | `{freeze.cutoff}` `{network.sites_total}` `{network.sites_active_at_deq_cutoff}` `{deq.edition_cutoff}` |
+| Of the Loudoun sites, {network.sites_retired_before_deq_cutoff} retired before that cutoff, and {network.sites_outside_scope} sites outside Loudoun joined after it. | `{network.sites_retired_before_deq_cutoff}` `{network.sites_outside_scope}` |
+| The records differ widely in length: on whole days through {network.common_window.end}, site DC-01 carries {network.record_days.DC-01} complete days and site DC-06 carries {network.record_days.DC-06} ({network.record_days.DC-01.deq_cutoff} and {network.record_days.DC-06.deq_cutoff} under DEQ's edition cutoff), which is the fact behind the record-length result below. | `{network.common_window.end}` `{network.record_days.DC-01}` `{network.record_days.DC-06}` `{network.record_days.DC-01.deq_cutoff}` `{network.record_days.DC-06.deq_cutoff}` |
+| The window in which all {p98.common.n_sites} of the then-live sensors were collecting together runs from {network.common_window.start} to {network.common_window.end}. | `{p98.common.n_sites}` `{network.common_window.start}` `{network.common_window.end}` |
 | Sensors are identified throughout by neutral site code. |  |
-| Four of the nine Loudoun sites are hosted at schools, and setting a school name beside a concentration figure invites an inference about children at that school which none of these data support. |  |
+| Several of the {network.loudoun_sites} Loudoun sites are hosted at schools, and setting a school name beside a concentration figure invites an inference about children at that school which none of these data support. | `{network.loudoun_sites}` |
 | The site key, printed with the coverage figure below, maps each code to the name DEQ publishes for that location. |  |
 | It carries no reading value of any kind, by design, so the reproduction against DEQ's documents stays checkable without the two ever appearing in one row. |  |
 | _Renders figure `F01`_ | _generated artifact_ |
@@ -252,63 +260,71 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Sentence | Sources |
 |---|---|
 | DEQ publishes four regressions of the collocated sensor against the regulatory monitor, two per pollutant, one for each of the two units that occupied the site. |  |
-| Recomputing them from the source tables gives coefficients that agree with DEQ's within {colloc.tolerance_coefficient} on slope and intercept and {colloc.tolerance_r2} on R-squared. | `{colloc.tolerance_coefficient}` `{colloc.tolerance_r2}` |
+| Recomputing them from the source tables, on hours through DEQ's {deq.edition_cutoff} edition cutoff, gives coefficients that agree with DEQ's within {colloc.tolerance_coefficient} on slope and intercept and {colloc.tolerance_r2} on R-squared. | `{deq.edition_cutoff}` `{colloc.tolerance_coefficient}` `{colloc.tolerance_r2}` |
 | Drift outside that tolerance fails the build, so the agreement is asserted continuously rather than claimed once. |  |
-| This is classified as validated at DEQ's published precision, and the qualification matters: DEQ publishes these coefficients to two significant figures, so the claim is that the recomputed values round to DEQ's at DEQ's own precision. |  |
-| Agreement to three decimals is not verifiable against the source and is not claimed here. |  |
-| The four are not four instances of one thing. |  |
-| Two of them run over a closed window, so their published values cannot move in any later edition. |  |
-| The other two remain open and are refit every week as more data arrive, which means their published coefficients move in every edition, and any comparison against one of them has to align cutoffs before it means anything. |  |
-| That is the right way to describe the set, and it is the reason this report does not report how many of the four currently agree. |  |
+| This is classified as validated at DEQ's published precision, and the qualification matters: DEQ publishes these coefficients to {colloc.deq_significant_figures} significant figures, so the claim is that the recomputed values round to DEQ's at DEQ's own precision. | `{colloc.deq_significant_figures}` |
+| Agreement beyond that precision is not verifiable against the source and is not claimed here. |  |
+| The four regressions differ in how they behave from edition to edition. |  |
+| The first unit's two run over a closed window, so their published values cannot move in any later edition. |  |
+| The second unit's two were open at the freeze and were refit every week as more data arrived, so their published coefficients moved in every edition, and any comparison against one of them has to align cutoffs before it means anything. |  |
+| The set is described in those terms rather than as a count of how many currently agree. |  |
 | _Renders figure `F02`_ | _generated artifact_ |
-| One of the four does not round to DEQ's printed value. |  |
 | The NO2 fit on the first unit gives an R-squared of {colloc.apex-14_NO2.gx_r2} against DEQ's published {colloc.apex-14_NO2.deq_r2}, a difference of {colloc.apex-14_NO2.diff_r2} that sits inside tolerance but rounds to a different second decimal. | `{colloc.apex-14_NO2.gx_r2}` `{colloc.apex-14_NO2.deq_r2}` `{colloc.apex-14_NO2.diff_r2}` |
 | Leave-one-out resampling on that fit moves the R-squared across a span wide enough to cross that boundary, and removing any of several single observations pushes it over. |  |
 | The intercept and slope on that fit are stable and do reproduce. |  |
 | The R-squared sits close enough to a boundary that a small methodological difference flips it, which is why it is reported as near rather than as a reproduction. |  |
 | The NO2 fit on the second unit carries two complications that are recorded rather than resolved. |  |
-| Its published coefficients are a correction DEQ issued on 2026-08-19: the agency traced its earlier figures to axis limits in its plotting call that had bounded the model fit as well as the plotted view, and refitting on the full data gave the corrected coefficients. |  |
-| The correction is in print in DEQ's own later edition, which is what this report cites for the fact of it. |  |
+| Its DEQ coefficients, marked † in , are those DEQ staff supplied on {deq.correspondence.collocation_correction} for the same window as the other three [deqcorrespondence], not values printed in an edition. | `{deq.correspondence.collocation_correction}` `[deqcorrespondence]` |
+| DEQ's own printed correction, in its edition [deq2026aug21], is y = {deq.aug21.apex-05_NO2.intercept} + {deq.aug21.apex-05_NO2.slope}x, R-squared {deq.aug21.apex-05_NO2.r2}, over a longer window than the regulatory record this report holds, so it is not compared. | `{deq.aug21.apex-05_NO2.intercept}` `{deq.aug21.apex-05_NO2.slope}` `{deq.aug21.apex-05_NO2.r2}` `[deq2026aug21]` |
 | That fit is also the single comparison in which readings of zero are retained, on DEQ's confirmation that the agency retains them there. |  |
 | Its coefficients move when the dashboard's backfilled all-zero rows are admitted to a zero-retaining fit: the intercept goes from {colloc.apex-05_NO2.gx_intercept} to {colloc.apex-05_NO2.backfill_gx_intercept}, the slope from {colloc.apex-05_NO2.gx_slope} to {colloc.apex-05_NO2.backfill_gx_slope}, the R-squared from {colloc.apex-05_NO2.gx_r2} to {colloc.apex-05_NO2.backfill_gx_r2} and the paired-hour count from {colloc.apex-05_NO2.n_pairs} to {colloc.apex-05_NO2.backfill_n_pairs}, on the one backfilled hour that only that fit readmits. | `{colloc.apex-05_NO2.gx_intercept}` `{colloc.apex-05_NO2.backfill_gx_intercept}` `{colloc.apex-05_NO2.gx_slope}` `{colloc.apex-05_NO2.backfill_gx_slope}` `{colloc.apex-05_NO2.gx_r2}` `{colloc.apex-05_NO2.backfill_gx_r2}` `{colloc.apex-05_NO2.n_pairs}` `{colloc.apex-05_NO2.backfill_n_pairs}` |
-| The other three regressions are unchanged. |  |
-| The values reported here are computed from the original analysis inputs, which is the input set DEQ's own published coefficients correspond to. |  |
-| The collocation window at site DC-01 closed on 2026-10-22, when the unit there was replaced, as DEQ's edition records [deq2026oct30]. | `[deq2026oct30]` |
-| Site DC-01, the collocation site, then closed on 2026-11-04, as DEQ's edition records in its section 2 [deq2026nov06], and the replacement unit's collocation window ended that day. | `[deq2026nov06]` |
-| Of the other sites shows as open at the freeze, site DC-02 has since closed, on 2026-10-22, as the edition records in its section 2; the edition records no closure at sites DC-04, DC-10, DC-11 or DC-12. |  |
-| All of this is after the 2026-10-18 freeze this report is computed at, so it changes no value and no framing above. |  |
-| It is stated once, here, so a reader comparing this report against a current DEQ edition knows why the window ends and why the network looks different. |  |
+| The other regressions are unchanged. |  |
+| The values reported here are computed from the original analysis inputs, which is the input set DEQ's coefficients correspond to. |  |
+| DEQ's edition records in its section 2 [deq2026oct30] that on {deq.postfreeze.collocated_unit_swap} the collocated unit at site DC-01 was replaced, data collection at site DC-02 ended, and two sensors were placed at new sites in Prince William County. | `{deq.postfreeze.collocated_unit_swap}` `[deq2026oct30]` |
+| DEQ's edition records in its section 2 [deq2026nov06] that sensor data collection at site DC-01 ended on {deq.postfreeze.dc01_collection_end} and the unit moved to a new Loudoun County site, which ended the collocated comparison; DEQ's regulatory monitor at the site continues. | `{deq.postfreeze.dc01_collection_end}` `[deq2026nov06]` |
+| The same edition records no end of collection at site DC-04, the other Loudoun site shows as open at the freeze. |  |
+| All of this is after the {freeze.taken_at} freeze this report is computed at, so it changes no value and no framing above. | `{freeze.taken_at}` |
+| It is stated once, here, so a reader comparing this report against a current DEQ edition knows why the comparison ends and why the network looks different. |  |
 
 #### 5.3 Reconciling the daily averages
 
 | Sentence | Sources |
 |---|---|
 | Recomputing 24-hour means for the regulatory monitor from the hourly file, and comparing them against the daily-average file DEQ publishes, gives agreement on {daily.n_match} of {daily.n_days} comparable days, with a mean absolute difference of {daily.mean_abs_diff} µg/m³ and a maximum of {daily.max_abs_diff} µg/m³, over {daily.n_days}. | `{daily.n_match}` `{daily.n_days}` `{daily.mean_abs_diff}` `{daily.max_abs_diff}` `{daily.n_days}` |
-| Comparable has a precise meaning here: the published day has to survive DEQ's null-code and logger-invalid exclusions, and the recomputed day has to clear 18 of 24 valid hours. |  |
+| Comparable has a precise meaning here: the published day has to survive DEQ's null-code and logger-invalid exclusions, and the recomputed day has to clear {completeness.valid_hours} of {completeness.hours_per_day} valid hours. | `{completeness.valid_hours}` `{completeness.hours_per_day}` |
 | DEQ truncates published values to one decimal rather than rounding them, and the comparison truncates the same way. |  |
-| The single day that differs is 2026-03-10, recomputed {daily.max_abs_diff} µg/m³ below the published one at 23 valid hours. | `{daily.max_abs_diff}` |
+| The note to gives the reason each of the other days in the window is not comparable. |  |
+| The single day that differs is {daily.mismatch_date}, recomputed {daily.max_abs_diff} µg/m³ below the published one at {daily.mismatch_valid_hours} valid hours. | `{daily.mismatch_date}` `{daily.max_abs_diff}` `{daily.mismatch_valid_hours}` |
 | An earlier figure for this reconciliation covered a wider set of days by applying no completeness threshold and reading the published file unfiltered; the threshold is DEQ's own, so that figure is superseded and the narrower comparison is what is reported. |  |
 | _Renders figure `F03`_ | _generated artifact_ |
 
-#### 5.4 Record length moves a percentile
+#### 5.4 Record length and one smoke weekend move a percentile
 
 | Sentence | Sources |
 |---|---|
 | Table 4 of DEQ's edition [deq2026aug07] identifies one sensor, site DC-06 in the site key, as the only sensor in the network whose daily PM2.5 98th percentile exceeded {naaqs.daily_standard} µg/m³. | `{naaqs.daily_standard}` `[deq2026aug07]` |
-| Restricted to the window when all six then-live sensors were collecting, {p98.common.n_above_35} of the {p98.common.n_sites} exceed that level under the local standard time day definition and the same number under local clock time, and site DC-06 ranks {p98.common.rank.DC-06} under both. | `{p98.common.n_above_35}` `{p98.common.n_sites}` `{p98.common.rank.DC-06}` |
+| Restricted to the window when all six then-live sensors were collecting, on whole days through {network.common_window.end} (DEQ's edition cutoff {deq.edition_cutoff}), {p98.common.n_above_35} of the {p98.common.n_sites} exceed that level under the local standard time day definition and {p98.common_clock.n_above_35} under local clock time, and site DC-06 ranks {p98.common.rank.DC-06} under both. | `{network.common_window.end}` `{deq.edition_cutoff}` `{p98.common.n_above_35}` `{p98.common.n_sites}` `{p98.common_clock.n_above_35}` `{p98.common.rank.DC-06}` |
 | Its record was {network.record_days.DC-06} complete days, falling entirely in high summer and including the wildfire smoke weekend, against {network.record_days.DC-04} to {network.record_days.DC-01} days for the other five. | `{network.record_days.DC-06}` `{network.record_days.DC-04}` `{network.record_days.DC-01}` |
 | Neither DEQ's figure nor the figure here is comparable to the national standards. |  |
-| DEQ's table reported each sensor's value over that sensor's own record, and every figure in the series is DEQ's own; the comparison between sensors did not hold because the records differed in length and in season, and the resolution came from DEQ's own lengthening record, with the agency's edition [deq2026oct09] listing no site above that level. | `[deq2026oct09]` |
-| This is a statement about record length, not a claim that DEQ's figures were wrong or that any site is polluted. |  |
-| Moving from standard-time to clock-time binning raises the percentile at every site, by between {p98.common_clock.rise_min} and {p98.common_clock.rise_max} µg/m³ on the common window, and reorders nothing. | `{p98.common_clock.rise_min}` `{p98.common_clock.rise_max}` |
-| Counts and values use whole days through 2026-08-07; DEQ built the edition from data through {deq.edition_cutoff}, and the table carries that cutoff as its own column so both day sets are visible. | `{deq.edition_cutoff}` |
+| DEQ's table reported each sensor's value over that sensor's own record, and every figure in the series is DEQ's own; the comparison between sensors did not hold because the records differed in length, in season and in how much weight the smoke weekend carried in each, and the resolution came from DEQ's own lengthening record, with the agency's edition [deq2026oct09] listing no site above that level. | `[deq2026oct09]` |
+| This is a statement about record length and one smoke weekend, not a claim that DEQ's figures were wrong or that any site is polluted. |  |
+| The smoke weekend accounts for that count. |  |
+| With the hours of the smoke window excluded (section 3.5), {p98.common_exsmoke.n_above_35} of the sites has a common-window 98th percentile above {naaqs.daily_standard} µg/m³ under local standard time days and {p98.common_clock_exsmoke.n_above_35} under local clock time days; under local standard time the values run from {p98.common_exsmoke.min} to {p98.common_exsmoke.max} µg/m³. | `{p98.common_exsmoke.n_above_35}` `{naaqs.daily_standard}` `{p98.common_clock_exsmoke.n_above_35}` `{p98.common_exsmoke.min}` `{p98.common_exsmoke.max}` |
+| Site DC-06 ranks {p98.common_exsmoke.rank.DC-06} with the window excluded, as it does with it included, so its position among the six does not depend on the smoke days. | `{p98.common_exsmoke.rank.DC-06}` |
+| Whether any site is above the level does. |  |
+| A 98th percentile over a record this short is set by its highest days, and in this window those are smoke days at every site: at {p98.common.sites_set_by_smoke_days} of the {p98.common.n_sites} under local standard time and {p98.common_clock.sites_set_by_smoke_days} under local clock time, both days the percentile is read from fall in the window. | `{p98.common.sites_set_by_smoke_days}` `{p98.common.n_sites}` `{p98.common_clock.sites_set_by_smoke_days}` |
+| Whether those days qualify as an exceptional event is a determination that rests with EPA and has not been made. |  |
+| With the smoke window included, moving from standard-time to clock-time binning raises the percentile at every site, by between {p98.common_clock.rise_min} and {p98.common_clock.rise_max} µg/m³ on the common window, and reorders nothing. | `{p98.common_clock.rise_min}` `{p98.common_clock.rise_max}` |
+| With the window excluded the two day definitions differ by at most {p98.common_clock_exsmoke.max_abs_diff} µg/m³ at any site, in either direction, and sites DC-04 and DC-08 exchange second and third place; their values differ by {p98.common_exsmoke.diff.DC-04_DC-08} µg/m³ under standard time. | `{p98.common_clock_exsmoke.max_abs_diff}` `{p98.common_exsmoke.diff.DC-04_DC-08}` |
+| Counts and values use whole days through {network.common_window.end}; DEQ built the edition from data through {deq.edition_cutoff}, and the table carries that cutoff as its own column so both day sets are visible. | `{network.common_window.end}` `{deq.edition_cutoff}` |
 | Under DEQ's cutoff the record lengths shorten by a day at several sites and the result is unchanged: the same number of sites sit above the level, and site DC-06 still ranks {p98.common.rank.DC-06.deq_cutoff} under local standard time days and {p98.common_clock.rank.DC-06.deq_cutoff} under local clock time days. | `{p98.common.rank.DC-06.deq_cutoff}` `{p98.common_clock.rank.DC-06.deq_cutoff}` |
 | Over each site's own record the reproduction of that table is partial, and it stays described as partial. |  |
-| The day boundary accounts for most of a one to two microgram offset: local clock time with zero readings treated as missing brings five of the six live sites within {p98.reproduction_tolerance} µg/m³ of DEQ's published value, leaving one at a fifth of a microgram. | `{p98.reproduction_tolerance}` |
-| Zero handling is a secondary effect and is inconsistent in direction, closing one site and opening another. |  |
-| The three sites whose record ended before that edition reproduce only under standard-time binning, although their record-day counts and end dates agree with DEQ under both definitions, and no end date brings them within tolerance under clock days. |  |
+| Under local standard time days with zero readings treated as missing, the live sites sit between {p98.full.lst_offset_live.min_abs} and {p98.full.lst_offset_live.max_abs} µg/m³ from DEQ's published value, and the day boundary accounts for most of that offset: local clock time with zero readings treated as missing brings {p98.full.clock_zero_missing.n_within_live} of the {network.sites_active_at_deq_cutoff} live sites within {p98.reproduction_tolerance} µg/m³ of DEQ's value, leaving site DC-08 at {p98.full.DC-08.diff_clock_zero_missing} µg/m³. | `{p98.full.lst_offset_live.min_abs}` `{p98.full.lst_offset_live.max_abs}` `{p98.full.clock_zero_missing.n_within_live}` `{network.sites_active_at_deq_cutoff}` `{p98.reproduction_tolerance}` `{p98.full.DC-08.diff_clock_zero_missing}` |
+| Zero handling is a secondary effect and is inconsistent in direction: keeping zero readings closes {p98.full.zero_kept.n_closed} site and opens {p98.full.zero_kept.n_opened}. | `{p98.full.zero_kept.n_closed}` `{p98.full.zero_kept.n_opened}` |
+| The {network.sites_retired_before_deq_cutoff} sites whose record ended before that edition reproduce only under standard-time binning, although their record-day counts and end dates agree with DEQ under both definitions, and no end date brings them within tolerance under clock days. | `{network.sites_retired_before_deq_cutoff}` |
 | That difference is unexplained. |  |
-| No single combination of day definition and zero handling reproduces all nine rows, which is why this is reported as a partial reproduction and never as fully explained. |  |
+| No single combination of day definition and zero handling reproduces all {p98.full.n_sites} rows, which is why this is reported as a partial reproduction and never as fully explained. | `{p98.full.n_sites}` |
+| Site DC-06's own record lies wholly inside the common window, and its own-record 98th percentile under local standard time is {p98.full.DC-06.lst_zero_missing} µg/m³ with the smoke window included and {p98.full.DC-06.lst_zero_missing_exsmoke} µg/m³ with it excluded. | `{p98.full.DC-06.lst_zero_missing}` `{p98.full.DC-06.lst_zero_missing_exsmoke}` |
 | _Renders Table 5, `T06_p98_full_record_variants`_ | _generated artifact_ |
 | _Renders figure `F04`_ | _generated artifact_ |
 
@@ -316,8 +332,9 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 | Sentence | Sources |
 |---|---|
-| Hourly PM2.5 correlates between {corr.min} and {corr.max} across all fifteen pairs of the six sensors, over {corr.n_hours} hours outside the smoke window, with zero readings treated as missing. | `{corr.min}` `{corr.max}` `{corr.n_hours}` |
-| This is descriptive and nothing more. |  |
+| Hourly PM2.5 correlates between {corr.min} and {corr.max} across all {corr.n_pairs} pairs of the {p98.common.n_sites} sensors, each pair over {corr.pair_hours_min} to {corr.pair_hours_max} overlapping hours ({corr.n_hours} distinct hours in all), from the original analysis inputs through {freeze.original_cutoff_date}, with the smoke window excluded and zero readings treated as missing. | `{corr.min}` `{corr.max}` `{corr.n_pairs}` `{p98.common.n_sites}` `{corr.pair_hours_min}` `{corr.pair_hours_max}` `{corr.n_hours}` `{freeze.original_cutoff_date}` |
+| With the smoke window included, the same pairs correlate between {corr.with_smoke.min} and {corr.with_smoke.max}. | `{corr.with_smoke.min}` `{corr.with_smoke.max}` |
+| It is descriptive. |  |
 | High spatial correlation does not establish that local sources contribute nothing: the network may sit largely upwind, and a local increment can be masked by a dominant regional signal. |  |
 | _Renders figure `F05`_ | _generated artifact_ |
 
@@ -325,8 +342,9 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 | Sentence | Sources |
 |---|---|
-| Four readings of this record were tested and are not supported by it. |  |
+| Four readings of this record were examined in the August analysis and are not supported by it. |  |
 | They are listed because a reader may arrive with any of them, and because the reason each one fails is more informative than the result. |  |
+| No figure from that examination is reported here, because none of it is reproduced by this report's generator. |  |
 | That the sensor under-reported during the smoke episode. |  |
 | Both the sensor and the regulatory monitor are optical instruments and neither is gravimetric, so the comparison cannot separate a sensor artifact from a real difference in what the two instruments saw. |  |
 | That no localised elevation exists anywhere in the record. |  |
@@ -334,7 +352,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | That a nocturnal inversion pattern holds across the network. |  |
 | The diurnal shapes differ by site, so there is no single network-wide pattern to report. |  |
 | That the ratio between the highest and lowest simultaneous readings discriminates between sources. |  |
-| The median ratio is near two, but at low concentrations the ratio becomes unstable and reaches values up to ten on hours where every reading is small, so below roughly thirty micrograms it carries no information about origin. |  |
+| At low concentrations the ratio becomes unstable, because every reading is small and a small difference makes a large ratio, so on those hours it carries no information about origin. |  |
 | A fifth reading should also be set aside: that comparing a sensor against a reference monitor is itself novel. |  |
 | DEQ publishes that comparison every week. |  |
 | What this section adds is an independent recomputation of it from the source files, with the method and the inputs stated. |  |
@@ -343,9 +361,10 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 | Sentence | Sources |
 |---|---|
-| The atlas carries a published mechanism chain for fine particulate matter and asthma, in {chain.steps} links from particulate exposure through bronchial epithelial injury, release of the cytokine IL-33, engagement of its receptor on innate lymphoid cells, and type 2 inflammation, to asthma exacerbation [li2017] [shadie2014] [cayrol2018]. | `{chain.steps}` `[li2017]` `[shadie2014]` `[cayrol2018]` |
-| The brief carrying it holds {chain.reference_count} references, and the atlas grades the exposure link on the gene record as literature evidence and the disease link as association evidence from genome-wide studies [alvarez2021] [islam2014]. | `{chain.reference_count}` `[alvarez2021]` `[islam2014]` |
-| Steps two, three and four are classes assigned by the figure definition rather than read from any atlas record, and one of them carries the inferred class, meaning the atlas holds no direct evidence for it. |  |
+| The atlas carries a published mechanism chain for fine particulate matter and asthma, in {chain.steps} links from particulate exposure through bronchial epithelial injury, release of the cytokine IL-33, engagement of its receptor on innate lymphoid cells, and type 2 inflammation, to asthma exacerbation [song2017] [shadie2014] [delafuente2015]. | `{chain.steps}` `[song2017]` `[shadie2014]` `[delafuente2015]` |
+| Of these, [song2017] is a study in cultured human airway cells and [shadie2014] a study in mice: cell and animal evidence, which does not establish that the steps operate in people. | `[song2017]` `[shadie2014]` |
+| The brief carrying the chain holds {chain.reference_count} references [song2017] [shadie2014] [aneas2021] [macintyre2014] [delafuente2015], and the atlas grades the exposure link on the gene record as literature evidence [shadie2014] and the disease link as association evidence from genome-wide studies [aneas2021]. | `{chain.reference_count}` `[song2017]` `[shadie2014]` `[aneas2021]` `[macintyre2014]` `[delafuente2015]` `[shadie2014]` `[aneas2021]` |
+| The middle links' classes are assigned by the figure definition rather than read from any atlas record, and {chain.inferred_steps} of them carries the inferred class, meaning the atlas holds no direct evidence for it. | `{chain.inferred_steps}` |
 | The chain states a mechanism: it describes a sequence that is understood to operate in airway tissue, link by link, each link carrying its own evidence class. |  |
 | No link in it asserts that one step brings about the next in any population, and nothing in this report connects the corridor, its facilities or any reading to a health outcome in Loudoun County. |  |
 | _Renders Table 8, `T09_chain_evidence`_ | _generated artifact_ |
@@ -356,8 +375,8 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 |---|---|
 | Two bodies of work sit next to this one and answer different questions. |  |
 | DEQ publishes a weekly analysis of the same network, which is the source of every published coefficient and percentile this section recomputes; it is the authority here, and this report is a check on it rather than an alternative to it. |  |
-| The Piedmont Environmental Council has published a health-impact assessment for data center emissions in Virginia built on the EPA's screening tool for emissions co-benefits [pec2026cobra]. | `[pec2026cobra]` |
-| That work models emissions and their modelled consequences; this report reprocesses measurements and reports where a recomputation of published statistics agrees with them. |  |
+| An assessment prepared for the Piedmont Environmental Council models the permitted emissions of one facility's on-site power system and their estimated consequences, using the EPA's COBRA screening tool [corkdominici2026]. | `[corkdominici2026]` |
+| That work models emissions; this report reprocesses measurements and reports where a recomputation of published statistics agrees with them. |  |
 | The two are not comparable and neither substitutes for the other. |  |
 | To our knowledge, no independent reprocessing of the Project's sensor data has been published. |  |
 
@@ -378,27 +397,27 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 | Sentence | Sources |
 |---|---|
-| The trait set is the union of the hierarchical descendants of the MONDO asthma term in the MONDO ontology and in EFO, plus both seed terms, plus one retired identifier: {ancestry.trait_terms} ontology IDs in all [ols2026]. | `{ancestry.trait_terms}` `[ols2026]` |
+| The trait set is the union of the hierarchical descendants of the MONDO asthma term in the MONDO ontology and in EFO, plus both seed terms, plus a retired identifier: {ancestry.trait_terms} ontology IDs in all [ols2026]. | `{ancestry.trait_terms}` `[ols2026]` |
 | The union is used because the two ontologies disagree about the subtree, MONDO's being larger while EFO carries asthma subtypes MONDO does not, and nothing was hand-filtered out of either. |  |
-| Selection against the catalog is by identifier only: a row is kept when the last segment of any trait URI it names matches one of the set, and no trait name is matched as free text anywhere in this module. |  |
+| Selection against the catalogue is by identifier only: a row is kept when the last segment of any trait URI it names matches one of the set, and no trait name is matched as free text anywhere in this module. |  |
 | Two properties of that set should be read together with any share below. |  |
-| The retired identifier, the obsolete EFO asthma term, is kept as a seed so that a catalog row still carrying it would be matched rather than dropped; in the release used it matched nothing. |  |
+| The retired identifier, the obsolete EFO asthma term, is kept as a seed so that a catalogue row still carrying it would be matched rather than dropped; in the release used it matched nothing. |  |
 | It is one of {ancestry.trait_terms_matching_no_association} identifiers in the set that matched no association in this release, which are kept so the set stays reviewable rather than looking complete: an identifier matching nothing is a fact about this release's curation, not a reason to narrow the selection. | `{ancestry.trait_terms_matching_no_association}` |
-| And of the {ancestry.discovery.association_rows_kept} association rows the selection keeps, {ancestry.discovery.multi_trait_rows} are rows the catalog mapped to asthma alongside another trait, mostly from multi-trait and pleiotropy analyses. | `{ancestry.discovery.association_rows_kept}` `{ancestry.discovery.multi_trait_rows}` |
+| And of the {ancestry.discovery.association_rows_kept} association rows the selection keeps, {ancestry.discovery.multi_trait_rows} are rows the catalogue mapped to asthma alongside another trait, mostly from multi-trait and pleiotropy analyses. | `{ancestry.discovery.association_rows_kept}` `{ancestry.discovery.multi_trait_rows}` |
 | The selection rule keeps those rows and their studies contribute their whole samples, so the asthma denominator includes them. |  |
 
 #### 6.2 Who the evidence was measured in
 
 | Sentence | Sources |
 |---|---|
-| Across {ancestry.discovery.studies} asthma studies in the GWAS Catalog release of {ancestry.gwas_release_date} [gwascatalog2026], the initial-stage discovery samples total {ancestry.discovery.total_individuals} individuals, of whom {ancestry.discovery.european.share} percent fall in the catalog's European category. | `{ancestry.discovery.studies}` `{ancestry.gwas_release_date}` `{ancestry.discovery.total_individuals}` `{ancestry.discovery.european.share}` `[gwascatalog2026]` |
+| Across {ancestry.discovery.studies} asthma studies in the GWAS Catalog release of {ancestry.gwas_release_date} [gwascatalog2026], the initial-stage discovery samples sum to {ancestry.discovery.total_individuals} (a total of study sample sizes, not of distinct people), and {ancestry.discovery.european.share} percent of that total falls in the catalogue's European category. | `{ancestry.discovery.studies}` `{ancestry.gwas_release_date}` `{ancestry.discovery.total_individuals}` `{ancestry.discovery.european.share}` `[gwascatalog2026]` |
 | The next largest is East Asian at {ancestry.discovery.east_asian.share} percent, then African American or Afro-Caribbean at {ancestry.discovery.african_american_or_afro_caribbean.share} percent. | `{ancestry.discovery.east_asian.share}` `{ancestry.discovery.african_american_or_afro_caribbean.share}` |
 | South Asian ancestry accounts for {ancestry.discovery.south_asian.share} percent of the discovery total. | `{ancestry.discovery.south_asian.share}` |
 | The discovery total is a sum of study sample sizes, not a count of distinct people. |  |
 | Asthma studies draw repeatedly on the same large cohorts, so a participant enrolled in several studies is counted once per study, and a study mapped to asthma alongside another trait contributes its whole sample. |  |
 | The total is therefore much larger than the number of people who have ever been in an asthma study, and it must never be reported as a headcount. |  |
 | What the shares describe is how the field's accumulated asthma evidence is distributed across ancestry groups, which is the question this module asks. |  |
-| A row naming one broad ancestral category contributes all its individuals to that category; a row naming several contributes an equal share to each, because the catalog publishes no per-category count within a row. |  |
+| A row naming one broad ancestral category contributes all its individuals to that category; a row naming several contributes an equal share to each, because the catalogue publishes no per-category count within a row. |  |
 | That assumption applies to {ancestry.discovery.multi_category_rows} of {ancestry.discovery.rows} ancestry rows, carrying {ancestry.discovery.multi_category_share} percent of the total, and the table repeats every share with those rows dropped so the weight it carries is visible rather than asserted. | `{ancestry.discovery.multi_category_rows}` `{ancestry.discovery.rows}` `{ancestry.discovery.multi_category_share}` |
 | _Renders figure `F06`_ | _generated artifact_ |
 
@@ -409,18 +428,18 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Narrowing from the whole evidence base to the {ancestry.loci.count} asthma loci the atlas carries gives the same picture at higher resolution. | `{ancestry.loci.count}` |
 | Counting associations below the genome-wide significance threshold by the broad ancestral category of each study's initial-stage sample, the locus at 17q12-21 carries {ancestry.loci.17q12-21.associations} associations across {ancestry.loci.17q12-21.variants} distinct variants, of which {ancestry.loci.17q12-21.european.associations} have a European discovery sample, {ancestry.loci.17q12-21.east_asian.associations} East Asian, {ancestry.loci.17q12-21.hispanic_or_latin_american.associations} Hispanic or Latin American, and {ancestry.loci.17q12-21.south_asian.associations} South Asian. | `{ancestry.loci.17q12-21.associations}` `{ancestry.loci.17q12-21.variants}` `{ancestry.loci.17q12-21.european.associations}` `{ancestry.loci.17q12-21.east_asian.associations}` `{ancestry.loci.17q12-21.hispanic_or_latin_american.associations}` `{ancestry.loci.17q12-21.south_asian.associations}` |
 | That last figure is a gap in the discovery record and nothing else. |  |
-| It says that no study declaring an association at this locus had a South Asian initial-stage sample, which is a property of who has been studied. |  |
-| It does not say, and must not be read to say, that the locus is absent, inactive or irrelevant in any population. |  |
-| No study has looked there in a South Asian discovery sample, so the record is silent, and silence is not evidence of absence. |  |
+| It says that no study in this release declared a genome-wide-significant association at this locus from a South Asian initial-stage sample. |  |
+| South Asian samples are {ancestry.discovery.south_asian.share} percent of the discovery total, so the record has little power to show one. | `{ancestry.discovery.south_asian.share}` |
+| It does not say, and must not be read to say, that the locus is absent, inactive or irrelevant in any population: a zero of {ancestry.loci.17q12-21.south_asian.associations} here is not evidence of absence. | `{ancestry.loci.17q12-21.south_asian.associations}` |
 | The same holds for every other zero in the table. |  |
 | _Renders Table 10, `T11_loci_by_ancestry`_ | _generated artifact_ |
 | One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total where a discovery sample names more than one category. |  |
-| An association is assigned to a locus when any symbol in the catalog's own mapped-gene annotation for that association matches one of the locus's gene symbols; the authors' own reported-gene field is deliberately not used, because it is not a controlled field. |  |
+| An association is assigned to a locus when any symbol in the catalogue's own mapped-gene annotation for that association matches one of the locus's gene symbols; the authors' own reported-gene field is deliberately not used, because it is not a controlled field. |  |
 | No genomic window is applied, because a window needs a genome build the extract does not state per row. |  |
 | What this implies for the atlas is a transferability caveat, not a correction to any locus. |  |
 | An evidence base measured overwhelmingly in one ancestry group yields effect estimates whose portability to other groups is uncertain, and polygenic scores built on it lose accuracy as the target population's ancestry moves away from the discovery sample's [martin2019] [duncan2019] [prive2022] [ding2023]. | `[martin2019]` `[duncan2019]` `[prive2022]` `[ding2023]` |
 | The loss is continuous rather than categorical, so it cannot be fixed by a correction factor per group [ding2023]. | `[ding2023]` |
-| Increasing the diversity of discovery samples is the only measure that addresses it [fatumo2022] [kachuri2024], and population descriptors used in genomics are social as well as genetic categories, which is a further reason not to read a category label as a biological fact [nasem2023]. | `[fatumo2022]` `[kachuri2024]` `[nasem2023]` |
+| Increasing the diversity of discovery samples is the measure the cited reviews give most weight [fatumo2022] [kachuri2024], and population descriptors used in genomics are social as well as genetic categories, which is a further reason not to read a category label as a biological fact [nasem2023]. | `[fatumo2022]` `[kachuri2024]` `[nasem2023]` |
 
 #### 6.4 The county the atlas serves
 
@@ -434,12 +453,12 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | _Renders Table 11, `T12_loudoun_acs_context`_ | _generated artifact_ |
 | Two release notes belong with that table. |  |
 | It reads the ACS {ancestry.acs.release} 5-year release, retrieved for this module. | `{ancestry.acs.release}` |
-| The atlas page on ancestry and equity still reads the 2023 release, so the report and that page state county counts from two different vintages; both name their vintage, and aligning them is on the roadmap. |  |
+| The atlas page on ancestry and equity still reads the {ancestry.page_acs_release} release, so the report and that page state county counts from two different vintages; both name their vintage, and aligning them is on the roadmap. | `{ancestry.page_acs_release}` |
 | The second note concerns the GWAS shares rather than the county counts. |  |
-| The atlas page states an all-trait participant share transcribed from the GWAS Diversity Monitor dashboard at its September 2024 snapshot [mills2020]. | `[mills2020]` |
-| The share in this report is computed from the catalog release named above, over asthma studies only, counting initial-stage discovery individuals. |  |
+| The atlas page states an all-trait participant share transcribed from the GWAS Diversity Monitor dashboard at its snapshot [diversitymonitor2024], a dashboard introduced in [mills2020]. | `[diversitymonitor2024]` `[mills2020]` |
+| The share in this report is computed from the catalogue release named above, over asthma studies only, counting initial-stage discovery individuals. |  |
 | The two measure different things: the denominators differ in trait scope, in stage, in provenance and in the category framework, so a difference between them measures the distance between two definitions and nothing else. |  |
-| Neither can be substituted for the other, and the comparison is tabulated in the project audit. |  |
+| Neither can be substituted for the other. |  |
 | This is not a correction of the page. |  |
 
 ## `s7-limitations.tsx`
@@ -454,7 +473,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 | Sentence | Sources |
 |---|---|
-| The regulatory form of the 24-hour standard is the {naaqs.percentile}th percentile of daily 24-hour averages, averaged over {naaqs.averaging_years} consecutive years, at a level of {naaqs.daily_standard} µg/m³; the separate annual standard is {naaqs.annual_standard} µg/m³ as revised in 2024 [cfr5018] [cfr50appn]. | `{naaqs.percentile}` `{naaqs.averaging_years}` `{naaqs.daily_standard}` `{naaqs.annual_standard}` `[cfr5018]` `[cfr50appn]` |
+| The regulatory form of the 24-hour standard is the {naaqs.percentile}th percentile of daily 24-hour averages, averaged over {naaqs.averaging_years} consecutive years, at a level of {naaqs.daily_standard} µg/m³; the separate annual standard is {naaqs.annual_standard} µg/m³ as revised in 2024 [cfr5020] [cfr50appn]. | `{naaqs.percentile}` `{naaqs.averaging_years}` `{naaqs.daily_standard}` `{naaqs.annual_standard}` `[cfr5020]` `[cfr50appn]` |
 | Neither form can be evaluated against a low-cost sensor record, and neither is evaluated anywhere in this report. |  |
 | Every percentile reported here is the statistic DEQ publishes for these sensors, not a compliance determination. |  |
 | Both the sensors and the regulatory monitor measure fine particulate matter optically rather than gravimetrically. |  |
@@ -465,13 +484,14 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 | Sentence | Sources |
 |---|---|
-| The sensor records differ by a factor of three in length and are not contemporaneous, which is the subject of one of the four results rather than a footnote to it. |  |
-| A 98th percentile read from {network.record_days.DC-06} days of high summer is a different order statistic from one read from {network.record_days.DC-01} days spanning three seasons, and the two cannot be ranked against each other. | `{network.record_days.DC-06}` `{network.record_days.DC-01}` |
-| Restricting to the common window removes the unequal-length problem; it does not remove the unequal-season one, because the common window falls entirely in high summer and contains the wildfire smoke period. |  |
-| The regulatory monitor record ends 2026-08-10 under the released public-records request [foia264646], with the last complete day 2026-08-09. | `[foia264646]` |
+| The sensor records differ in length, from {network.record_days.DC-06} to {network.record_days.DC-01} complete days, and are not contemporaneous, which is the subject of one of the four results rather than a footnote to it. | `{network.record_days.DC-06}` `{network.record_days.DC-01}` |
+| A 98th percentile read from {network.record_days.DC-06} days of high summer is a different order statistic from one read from {network.record_days.DC-01} days running from {network.first_start} into high summer, and the two cannot be ranked against each other. | `{network.record_days.DC-06}` `{network.record_days.DC-01}` `{network.first_start}` |
+| Restricting to the common window removes the unequal-length problem. |  |
+| It does not remove the season problem: the common window falls entirely in high summer and contains the wildfire smoke window, and the count of sites above {naaqs.daily_standard} µg/m³ on it goes from {p98.common.n_above_35} to {p98.common_exsmoke.n_above_35} when that window is excluded. | `{naaqs.daily_standard}` `{p98.common.n_above_35}` `{p98.common_exsmoke.n_above_35}` |
+| The regulatory monitor record ends {regulatory.record_end} under the released public-records request [foia264646], with the last complete day {regulatory.last_complete_day}. | `{regulatory.record_end}` `{regulatory.last_complete_day}` `[foia264646]` |
 | That caps the collocation fits and the daily reconciliation at a date the sensor record runs well past, and no later cutoff is computable for either, because both sides of each hourly pair are needed. |  |
 | A follow-up request is pending. |  |
-| One consequence is specific and worth naming: DEQ's corrected coefficients for one regression were computed over a window that runs past this report's cutoff, and that comparison cannot be aligned from this side at all. |  |
+| DEQ's printed correction for one regression (the edition [deq2026aug21]) covers a longer window than the regulatory record this report holds, so it is not compared. | `[deq2026aug21]` |
 
 #### 7.3 Open items
 
@@ -488,13 +508,13 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Both cannot be right, and until the agency confirms which, the sensor rows are not described as hourly concentrations and are not published. |  |
 | The Kunak dashboard backfills published hours without notice, so a figure computed from one export is not guaranteed to be reproducible from a later one. |  |
 | Every input in the freeze records its own export date and data cutoff for that reason, and the one regression a backfill moves is reported with both values. |  |
-| Nine hours that had been missing were backfilled with rows in which every pollutant channel reads zero. |  |
+| {freeze.backfilled_zero_hours} hours that had been missing were backfilled with rows in which every pollutant channel reads zero. | `{freeze.backfilled_zero_hours}` |
 | Those rows are treated as missing. |  |
-| The treatment is a judgement about an instrument floor rather than a fact established from the data, and it is reported to DEQ as such. |  |
-| The network was reconfigured in September 2026: three Loudoun sites went offline and three sites joined outside Loudoun County, as determined from DEQ's own site history and recorded in the site key. |  |
-| Those three sites are outside this version's scope and no reading from them is reported. |  |
+| The treatment is a judgement about an instrument floor rather than a fact established from the data, and it will be reported to DEQ as such in the pre-publication review. |  |
+| The network was reconfigured in {network.reconfiguration_month}: {network.sites_ended_at_reconfiguration} Loudoun sites went offline and {network.sites_outside_scope} sites joined outside Loudoun County, as determined from DEQ's own site history and recorded in the site key. | `{network.reconfiguration_month}` `{network.sites_ended_at_reconfiguration}` `{network.sites_outside_scope}` |
+| The sites outside Loudoun County are outside this version's scope and no reading from them is reported. |  |
 | The reproduction of DEQ's Table 4 over each site's own record is partial. |  |
-| The day boundary accounts for most of the offset and zero handling is a minor and inconsistent effect, but no single combination reproduces all nine rows, and the three retired sites reproduce only under the standard-time definition for reasons that remain unexplained. |  |
+| The day boundary accounts for most of the offset and zero handling is a minor and inconsistent effect, but no single combination reproduces all {p98.full.n_sites} rows, and the {network.sites_retired_before_deq_cutoff} sites retired before that edition reproduce only under the standard-time definition for reasons that remain unexplained. | `{p98.full.n_sites}` `{network.sites_retired_before_deq_cutoff}` |
 | It is reported as a partial reproduction and is not described as fully explained. |  |
 
 #### 7.4 Limits of the atlas itself
@@ -505,10 +525,11 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | It is served at its committed counts, {inventory.graph.nodes} nodes and {inventory.graph.edges} edges, and a clean rebuild yields different ones. | `{inventory.graph.nodes}` `{inventory.graph.edges}` |
 | It was repaired in place for an encoding fault rather than regenerated, its status is recorded in the module inventory, it is excluded from this report's reproducibility claim, and the fix is on the roadmap. |  |
 | No number in this report is derived from it. |  |
+| The report's reference check found citation errors in the published mechanism brief, in the first authors of several references and in one reference's identifier; they are corrected in this report's reference list, and the brief record is scheduled for correction. |  |
 | Pathway and gene-environment relationships in the atlas are often inferred from correlative or indirect evidence, and evidence from cell or animal models does not guarantee relevance in human tissue. |  |
 | The strength and confidence scores reflect the quality of the evidence, not certainty about what brings about what. |  |
-| One link of the published mechanism chain carries the inferred class, meaning the atlas holds no direct evidence for it, and three of the five classes are assigned by the figure definition rather than read from an atlas record. |  |
-| The community module is modelled at county resolution: one county boundary and one county-level value per exposure layer, with no sub-county variation drawn and none synthesised. |  |
+| One link of the published mechanism chain carries the inferred class, meaning the atlas holds no direct evidence for it, and {chain.steps_from_figure} of the {chain.steps} classes are assigned by the figure definition rather than read from an atlas record. | `{chain.steps_from_figure}` `{chain.steps}` |
+| The community module carries {inventory.community_regions.records} region records, for Loudoun County and Fairfax County, each modelled at county resolution: one county boundary and one county-level value per exposure layer, with no sub-county variation drawn and none synthesised. | `{inventory.community_regions.records}` |
 | Its model is trained on national data and is not validated outside that distribution. |  |
 
 #### 7.5 Limits of inference
@@ -536,13 +557,16 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Knowledge graph reproducibility. |  |
 | Repair the graph builder and curate the missing gene records so that a clean rebuild reproduces the published node and edge counts, then rebaseline the editorial lint against the rebuilt graph. |  |
 | Until then the graph stays outside the reproducibility claim. |  |
+| Mechanism brief references. |  |
+| Correct the citation errors this report's reference check found in the published mechanism brief, so that the brief's record matches the corrected reference list here. |  |
 | May 2027. |  |
 | The first twelve-month record at a single Loudoun site. |  |
-| The two sites that had collected since 2026-03-03, DC-01 and DC-02, both closed after the freeze [deq2026oct30] [deq2026nov06], so no site reaches twelve months in March 2027. | `[deq2026oct30]` `[deq2026nov06]` |
-| Site DC-04 has collected since 2026-05-14 and reaches twelve months in May 2027 if it keeps collecting. |  |
+| After the freeze, sensor collection ended at the two sites that had collected since {network.first_start}, DC-01 and DC-02 [deq2026oct30] [deq2026nov06], so no site reaches twelve months in March 2027. | `{network.first_start}` `[deq2026oct30]` `[deq2026nov06]` |
+| Site DC-04 has collected since {network.start.DC-04} and reaches twelve months in May 2027 if it keeps collecting. | `{network.start.DC-04}` |
 | A percentile read over a full year is the first one in this project not dominated by the season its record happens to cover. |  |
-| Collocation series status. |  |
-| The collocation site closed on 2026-11-04 [deq2026nov06], so the weekly collocation series has ended unless DEQ places a sensor beside a regulatory monitor again. | `[deq2026nov06]` |
+| Collocated comparison, after the freeze. |  |
+| Sensor collection at the collocated site ended on {deq.postfreeze.dc01_collection_end} and the unit moved to a new Loudoun County site [deq2026nov06]; DEQ's regulatory monitor there continues. | `{deq.postfreeze.dc01_collection_end}` `[deq2026nov06]` |
+| The weekly collocated comparison has therefore ended unless DEQ places a sensor beside a regulatory monitor again. |  |
 | Any later collocation analysis depends on that and on the pending records request. |  |
 | Paired-site analysis. |  |
 | One unit occupied two sites over the record, which makes a within-unit comparison across locations possible and a cleaner instrument-versus-location test than any cross-unit comparison. |  |
@@ -552,7 +576,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | The published sensor series cannot be described or compared until DEQ confirms whether it is an hourly or an eight-hour average. |  |
 | The regulatory comparison and the published statistics follow immediately once it is settled. |  |
 | Scope of the second county. |  |
-| DEQ's network now includes sites in Prince William County, deployed on 2026-09-17 and 2026-10-22. |  |
+| DEQ's network now includes sites in Prince William County, deployed in {network.reconfiguration_month} and, after the freeze, on {deq.postfreeze.pw_sites_added} (DEQ's edition [deq2026oct30]). | `{network.reconfiguration_month}` `{deq.postfreeze.pw_sites_added}` `[deq2026oct30]` |
 | They are outside the scope of this version. |  |
 | Whether the atlas and this report take in a second county is a decision about what GENARCH is for, and it will be made for the next report. |  |
 | Cross-ancestry phase. |  |
@@ -560,7 +584,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | This version reports the composition of the evidence base and computes no such estimate; the phase that does needs a method for transferability stated and reviewed before any number is published. |  |
 | It will be its own artifact with its own methods review, not a section of an annual report. |  |
 | Page and report alignment. |  |
-| The ancestry and equity page labels its denominator differently from this report and reads the 2023 ACS release where this report reads 2024. |  |
+| The ancestry and equity page labels its denominator differently from this report and reads the {ancestry.page_acs_release} ACS release where this report reads {ancestry.acs.release}. | `{ancestry.page_acs_release}` `{ancestry.acs.release}` |
 | Both will be aligned ahead of the next report. |  |
 | October 2027. |  |
 | The Annual Report 2027, covering the first full year of the network's record, the atlas as it then stands, and whichever of the open items above have closed. |  |
@@ -578,14 +602,16 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Sentence | Sources |
 |---|---|
 | Run from the repository root. |  |
-| The first command regenerates every keyed value, table and figure this report states; the second checks the editorial and encoding gates; the third rebuilds the site, which is where the report prose is rendered and where a missing key fails the build. |  |
+| The first command regenerates every keyed value, table and figure this report states. |  |
+| The next four are the gates: schema and cross-link validation, the editorial lint, the encoding check and the test suite. |  |
+| The last rebuilds the site, which is where the report prose is rendered and where a missing key fails the build. |  |
 
 #### A.2 Commit and environment
 
 | Sentence | Sources |
 |---|---|
 | The data freeze was taken at commit {freeze.commit} on the report branch. | `{freeze.commit}` |
-| That hash is the one recorded when the freeze was taken; a history rewrite on 2026-10-25 changed commit identifiers and no file content, and the same tree is now commit {freeze.commit_rewritten}. | `{freeze.commit_rewritten}` |
+| That hash is the one recorded when the freeze was taken; a history rewrite on {freeze.rewrite_date} changed commit identifiers and no file content, and the same tree is now commit {freeze.commit_rewritten}. | `{freeze.rewrite_date}` `{freeze.commit_rewritten}` |
 | The atlas half was frozen on {inventory.frozen_at} and the ancestry inputs on {ancestry.frozen_at}. | `{inventory.frozen_at}` `{ancestry.frozen_at}` |
 | The interpreter is CPython 3.14 with UTF-8 mode enabled, and the package set is pinned exactly in the pipeline requirements file, because an unpinned numerical library can move a percentile in the last decimal. |  |
 | The site is built with Node 20. |  |
@@ -596,7 +622,8 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 | Sentence | Sources |
 |---|---|
-| Every input the analysis reads, with its origin, its licence, its export date, its data cutoff and its full SHA-256. |  |
+| Every DEQ and sensor input the analysis reads, with its origin, its licence, its export date, its data cutoff and its full SHA-256. |  |
+| The atlas, ancestry and configuration inputs are pinned by hash in the same freeze file. |  |
 | This is the only copy of the table in the report: it is a provenance manifest rather than part of an argument, and it belongs with the reproducibility instructions above rather than inside the narrative. |  |
 | The same hashes are in data/reports/2026/FREEZE.json , which is committed, and that file rather than this rendering is what to compare bytes against. |  |
 | _Renders Table 12, `T01_sources`_ | _generated artifact_ |
@@ -605,43 +632,44 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 | Sentence | Sources |
 |---|---|
-| Two tables appear here rather than in the body. |  |
+| One table appears here rather than in the body. |  |
 | The per-day reconciliation runs to one row per comparable day, which is longer than the finding it supports and reads better as a reference than as part of an argument. |  |
-| The correlation matrix is in long form, one row per sensor pair, so each pair can carry its own overlapping-hour count. |  |
 | Every other table is printed where it is discussed, inside the data-table disclosure of the figure it belongs to or beside the paragraph that reads it. |  |
-| Reprinting all twelve here would double the length of the report without adding a number to it. |  |
-| All twelve are published together as a CSV archive beside the PDF, which is the form to use for anything beyond reading. |  |
+| Reprinting them all here would double the length of the report without adding a number to it. |  |
+| All thirteen are published together as a CSV archive beside the PDF, which is the form to use for anything beyond reading. |  |
 | _Renders Table 13, `T04_daily_reconciliation`_ | _generated artifact_ |
-| _Renders Table 7, `T07_correlation_matrix`_ | _generated artifact_ |
 
 ### C Glossary
 
 | Sentence | Sources |
 |---|---|
-| The statistic the 24-hour PM2.5 standard is evaluated on: the value below which 98 percent of a year's daily 24-hour averages fall, then averaged over three consecutive years. |  |
+| The statistic the 24-hour PM2.5 standard is evaluated on: the value below which {naaqs.percentile} percent of a year's daily 24-hour averages fall, then averaged over {naaqs.averaging_years} consecutive years. | `{naaqs.percentile}` `{naaqs.averaging_years}` |
 | A single day, a single hour or a single short record cannot be compared against it. |  |
 | The GWAS Catalog's own classification of a study sample's genetic ancestry. |  |
-| It is the catalog's vocabulary, not a biological partition, and it is not interchangeable with a census race or ethnicity category. |  |
+| It is the catalogue's vocabulary, not a biological partition, and it is not interchangeable with a census race or ethnicity category. |  |
 | Operating a low-cost sensor beside a reference monitor at one location so the two can be compared hour by hour. |  |
 | The comparison DEQ publishes weekly for this network, and the one this report recomputes. |  |
-| One site's calendar day that carries at least 18 of 24 valid hours, which is the threshold a 24-hour average requires. |  |
+| One site's day that carries at least {completeness.valid_hours} of {completeness.hours_per_day} valid hours, which is the threshold a 24-hour average requires. | `{completeness.valid_hours}` `{completeness.hours_per_day}` |
 | A day below it is absent rather than estimated. |  |
 | The participants in a study's initial stage, as opposed to a later replication stage. |  |
 | Counts in this report are initial-stage counts, and the total is a sum of study sample sizes rather than a count of distinct people. |  |
 | Inferring something about individuals from a statistic computed over an area. |  |
 | Pairing an area's exposure with its disease prevalence cannot establish that the exposed people in it are the affected people. |  |
 | The instant a DEQ weekly edition was built from. |  |
-| DEQ produces each edition from data through 07:00 on the Friday, so an edition covers less than the full last calendar day, and a comparison against it has to state which day set it used. |  |
+| DEQ produces each edition from data through early on the Friday of publication; the edition was built from data through {deq.edition_cutoff} [deqcorrespondence]. | `{deq.edition_cutoff}` `[deqcorrespondence]` |
+| An edition therefore covers less than the full last day, and a comparison against it has to state which day set it used. |  |
+| An instrument designated under federal regulation for determining whether an area meets the national standards. |  |
+| The regulatory PM2.5 monitor in this network is a federal equivalent method monitor; none of the low-cost sensors is either. |  |
+| A class the published figure definition assigns to some steps of the mechanism chain. |  |
+| It is not one of the evidence types an atlas record carries (GWAS, eQTL, pathway, literature, inferred), and no atlas record grades the steps it labels, which is why the evidence table marks them as not read from a record. |  |
 | Two conventions for labelling an averaged hour. |  |
 | The sensor dashboard labels an hour by the time it ended and adjusts for daylight saving; the regulatory files label it by the time it began and never leave standard time. |  |
-| Comparing the two without normalising is the single easiest way to get every result in this report wrong. |  |
+| Comparing the two without converting one to the other misaligns every pair. |  |
 | Two rules for which hours belong to which day. |  |
 | Standard time is the regulatory convention and the pipeline default; clock time follows the wall clock through daylight saving and is what DEQ's published sensor tables use. |  |
 | They agree in winter and differ by one hour otherwise. |  |
 | In the atlas, an exposure that carries a direction and an evidence grade. |  |
 | Reserved for that: a condition without an evidence grade is named specifically rather than called a modifier. |  |
-| An instrument designated under federal regulation for determining whether an area meets the national standards. |  |
-| The regulatory monitor in this network is one; none of the low-cost sensors is. |  |
 | The neutral identifier each sensor location carries in every value table and figure here. |  |
 | The site key maps codes to the names DEQ publishes and carries no reading value. |  |
 
@@ -653,7 +681,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | First release. . |  |
 | This version establishes: |  |
 | The atlas scope, the module inventory at the atlas freeze date and the pipeline and validation gates behind it. |  |
-| Four results from reprocessing the Loudoun County sites of the DEQ Data Center Air Monitoring Project: the collocation reproduction, the daily-average reconciliation, the record-length effect on a percentile, and the cross-site correlation. |  |
+| Four results from reprocessing the Loudoun County sites of the DEQ Data Center Air Monitoring Project: the collocation reproduction, the daily-average reconciliation, the record-length and smoke-window effect on a percentile, and the cross-site correlation. |  |
 | The ancestry composition of the asthma evidence base the atlas draws on, descriptively, with the discovery-record gap at each in-scope locus. |  |
 | A data freeze pinning every input by hash, and a reproducibility check that runs the generator again on a different operating system and compares the output byte for byte. |  |
 | No earlier version was published. |  |

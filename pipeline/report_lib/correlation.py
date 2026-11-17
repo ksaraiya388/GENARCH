@@ -42,14 +42,20 @@ def pearson(xs: list[float], ys: list[float]) -> float:
     return sxy / ((sxx * syy) ** 0.5)
 
 
-def correlations(rows: list[dict], site_ids: list[str]) -> dict:
-    """Upper-triangle Pearson r for every site pair, on non-smoke hours."""
+def correlations(rows: list[dict], site_ids: list[str], *, exclude_smoke: bool = True) -> dict:
+    """Upper-triangle Pearson r for every site pair, on non-smoke hours.
+
+    `exclude_smoke=False` keeps the smoke window, for the with-smoke statistic
+    GENARCH_RULES.md section 6 asks for beside the reported one.
+    """
     wanted = set(site_ids)
     by_site: dict[str, dict[datetime, float]] = defaultdict(dict)
     for row in rows:
         if row["pollutant"] != "PM2.5" or row["excluded"] or row["value"] == "":
             continue
-        if row["site_id"] not in wanted or in_smoke_window(row["ts_est"]):
+        if row["site_id"] not in wanted:
+            continue
+        if exclude_smoke and in_smoke_window(row["ts_est"]):
             continue
         by_site[row["site_id"]][row["ts_est"]] = float(row["value"])
 

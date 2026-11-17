@@ -1,7 +1,7 @@
 {
   "tables": [
     {
-      "caption": "Every file the report's analysis reads, as pinned in the data freeze. Sensor exports are named by site code; each row is identified by its SHA-256 so the reproduction stays checkable without printing a filename that carries a site identifier.",
+      "caption": "Every DEQ and sensor input the report's analysis reads, as pinned in the data freeze. Sensor exports are named by site code; each row is identified by its SHA-256 so the reproduction stays checkable without printing a filename that carries a site identifier. The atlas, ancestry and configuration inputs are pinned in FREEZE.json under atlas_inputs, ancestry_inputs and config_inputs.",
       "columns": [
         "Source",
         "Origin",
@@ -12,6 +12,10 @@
       ],
       "file": "T01_sources.csv",
       "id": "T01_sources",
+      "notes": [
+        "Export date for the data-freeze sensor exports (2026-10-11 13:47:03-04:00) is an upper bound: the time the exports were committed to the project repository. The dashboard records no export time.",
+        "A DEQ edition's Origin is the per-edition address the source manifest recorded at download. Where none was recorded, it is the project page, which carries only the current edition, and the archived copy in the project repository is identified by its path and SHA-256."
+      ],
       "row_count": 26,
       "source_note": "data/reports/2026/FREEZE.json and pipeline/sources/manifest.json.",
       "title": "Frozen inputs",
@@ -32,6 +36,10 @@
       ],
       "file": "T02_site_key.csv",
       "id": "T02_site_key",
+      "notes": [
+        "Active end is the first day with no data, so DEQ's editions give a date one day earlier.",
+        "The APEX unit column reflects the site history as frozen. DEQ's 2026-10-09 edition, section 2, names the units at three sites the history leaves unconfirmed: sensor 8 at DC-07, sensor 10 at DC-08 and sensor 13 at DC-09."
+      ],
       "row_count": 13,
       "source_note": "pipeline/sources/deq_sensor_site_history.csv and pipeline/lookups/site_codes.json.",
       "title": "Site key",
@@ -40,7 +48,7 @@
       }
     },
     {
-      "caption": "The four regressions at the collocated site, sensor on x and regulatory monitor on y, each fit stopping at DEQ's 2026-08-07 07:00 EST edition cutoff. DEQ publishes its coefficients to two significant figures, so status reports whether each recomputed value, rounded to the decimals DEQ printed, equals DEQ's. Exact zeros are retained in the APEX 5 NO2 fit and in nothing else.",
+      "caption": "The four regressions at the collocated site, sensor on x and regulatory monitor on y, each fit stopping at DEQ's 2026-08-07 07:00 EST edition cutoff. DEQ publishes its coefficients to 2 significant figures, so status reports whether each recomputed value, rounded to the decimals DEQ printed, equals DEQ's. Exact zeros are retained in the APEX 5 NO2 fit and in nothing else.",
       "columns": [
         "Comparison",
         "DEQ intercept",
@@ -53,14 +61,19 @@
         "Difference, slope",
         "Difference, R-squared",
         "Paired hours",
-        "Period start",
-        "Period end",
+        "First paired hour (EST)",
+        "Last paired hour (EST)",
         "Status"
       ],
       "file": "T03_collocation.csv",
       "id": "T03_collocation",
+      "notes": [
+        "† The DEQ values for APEX 5 NO2 are the coefficients DEQ staff supplied on 2026-08-19 for the same window as the other three, after DEQ traced its 2026-08-07 figures to axis limits in its plotting call. DEQ's own printed correction, in its 2026-08-21 edition (p. 14), is y = 1.8 + 0.31x, R-squared 0.2, over a longer window than the regulatory record this report holds, and is not compared.",
+        "The APEX 14 PM2.5 fit begins later than the APEX 14 NO2 fit because DEQ voided the sensor PM2.5 readings from 2026-03-03 to 2026-03-08 for high humidity and data quality issues (143 hours of this unit).",
+        "First and last paired hour are the hours that enter each fit. Readings are assigned to a unit by the occupancy table (section 3.4), so the change from APEX 14 to APEX 5 falls between 2026-04-07 21:00:00 and 2026-04-07 22:00:00 EST, the evening before 2026-04-08, the date the site key gives."
+      ],
       "row_count": 4,
-      "source_note": "Frozen original analysis inputs and FOIA 26-4646, against DEQ's published coefficients.",
+      "source_note": "Frozen original analysis inputs and FOIA 26-4646, against DEQ's coefficients for the window of its 2026-08-07 edition.",
       "title": "Collocation regressions",
       "units": {
         "Intercept and slope": "pollutant units",
@@ -68,7 +81,7 @@
       }
     },
     {
-      "caption": "Recomputed 24-hour means of the regulatory monitor against DEQ's published daily file, truncated to one decimal as DEQ truncates. One row per comparable day.",
+      "caption": "Recomputed 24-hour means of the regulatory monitor against DEQ's published daily file, truncated to one decimal as DEQ truncates. One row per comparable day; the summary table's note gives the reason for every day that is not comparable.",
       "columns": [
         "Date",
         "Recomputed daily mean (µg/m³)",
@@ -100,6 +113,9 @@
       ],
       "file": "T04s_daily_summary.csv",
       "id": "T04s_daily_summary",
+      "notes": [
+        "Of the 160 calendar days in the window, 119 are comparable. 38 are not because DEQ's published day carries a null code or a \"<\" flag and the recomputed day falls short of the completeness threshold; 2 because the published day alone fails those exclusions; and 1 because the recomputed day alone falls short. The longest gap, 2026-06-17 to 2026-07-13 (27 days), is a run in which every hourly reading carries AQS null code AS."
+      ],
       "row_count": 1,
       "source_note": "FOIA 26-4646 hourly and published daily average files.",
       "title": "Daily-average reconciliation, summary",
@@ -116,10 +132,17 @@
         "Whole-day 98th percentile (µg/m³)",
         "DEQ-cutoff record days",
         "DEQ-cutoff 98th percentile (µg/m³)",
-        "Rank"
+        "Rank",
+        "Smoke window excluded: record days",
+        "Smoke window excluded: 98th percentile (µg/m³)",
+        "Smoke window excluded: rank"
       ],
       "file": "T05_p98_common_window.csv",
       "id": "T05_p98_common_window",
+      "notes": [
+        "The rise from local standard time to local clock time quoted in section 5.4 is computed from the unrounded percentiles, so it can differ in the last decimal from a difference of the rounded values printed here.",
+        "The last three columns use whole days with every day from 2026-07-16 to 2026-07-19 left out under the day definition in use (section 3.5). With the window included the count of sites above 35 µg/m³ is 5; with it excluded it is none under local standard time and none under local clock time."
+      ],
       "row_count": 12,
       "source_note": "Frozen sensor exports; DEQ's edition cutoff is 2026-08-07 07:00 EST.",
       "title": "98th percentiles on the common window",
@@ -128,11 +151,12 @@
       }
     },
     {
-      "caption": "The same statistic under three defensible method combinations, against the value DEQ published in Table 4 of its 2026-08-07 report. No single combination reproduces all nine rows, which is why this is reported as a partial reproduction. The day boundary accounts for most of the offset; zero handling is minor and inconsistent in direction.",
+      "caption": "The same statistic under three defensible method combinations, against the value DEQ published in Table 4 of its 2026-08-07 report. No single combination reproduces all 9 rows, which is why this is reported as a partial reproduction. The day boundary accounts for most of the offset; zero handling is minor and inconsistent in direction.",
       "columns": [
         "Site code",
         "Record days",
         "98th percentile, local standard time, zeros missing (µg/m³)",
+        "98th percentile, local standard time, zeros missing, smoke window excluded (µg/m³)",
         "98th percentile, local clock time, zeros missing (µg/m³)",
         "98th percentile, local clock time, zeros kept (µg/m³)",
         "DEQ Table 4, 2026-08-07 (µg/m³)",
@@ -142,6 +166,9 @@
       ],
       "file": "T06_p98_full_record_variants.csv",
       "id": "T06_p98_full_record_variants",
+      "notes": [
+        "The fourth column leaves out every day from 2026-07-16 to 2026-07-19 (section 3.5). DEQ's table includes them, so the differences are taken against the columns that include them."
+      ],
       "row_count": 9,
       "source_note": "Frozen sensor exports and DEQ's 2026-08-07 report, Table 4.",
       "title": "98th percentiles over each site's own record",
@@ -167,7 +194,7 @@
       }
     },
     {
-      "caption": "Initial-stage discovery individuals across the asthma studies in the GWAS Catalog 2026-11-02 release, by the catalog's own broad ancestral category. The total is a sum of study sample sizes, not a count of distinct people. Asthma GWAS draw repeatedly on the same large cohorts, so a participant enrolled in several studies is counted once per study, and studies mapped to asthma alongside another trait contribute their whole sample. The total is therefore much larger than the number of people who have ever been in an asthma GWAS, and must never be reported as a headcount. What the shares describe is how the field's accumulated asthma evidence is distributed across ancestry groups, which is the question this module asks. A row naming one broad ancestral category contributes all its individuals to that category; a row naming k categories contributes an equal 1/k share to each. The catalog publishes no per-category count within a row, so the equal split is an assumption. It preserves the total, so the shares describe one denominator. The category cell is consumed by longest match against the controlled vocabulary in pipeline/lookups/gwas_ancestry_categories.json, not split on a comma: one vocabulary label, 'Greater Middle Eastern (Middle Eastern, North African or Persian)', contains commas of its own. Any residue the vocabulary cannot account for fails the run. The last column repeats each share with multi-category rows dropped, so the weight the equal split carries is visible rather than asserted. Descriptive only. These are counts of people enrolled and associations declared, not effect estimates: no cross-ancestry gene-environment effect is computed in v1. The atlas page /ancestry-equity states an all-trait GWAS participant share transcribed from the GWAS Diversity Monitor dashboard. The share here is computed from the GWAS Catalog release named below, over asthma studies only, counting initial-stage discovery individuals. The two are different quantities with different denominators and are not comparable; the comparison is tabulated in docs/report-2026/AUDIT.md.",
+      "caption": "Initial-stage discovery individuals across the asthma studies in the GWAS Catalog 2026-11-02 release, by the catalogue's own broad ancestral category. The total is a sum of study sample sizes, not a count of distinct people. Asthma GWAS draw repeatedly on the same large cohorts, so a participant enrolled in several studies is counted once per study, and studies mapped to asthma alongside another trait contribute their whole sample. The total is therefore much larger than the number of people who have ever been in an asthma GWAS, and must never be reported as a headcount. What the shares describe is how the field's accumulated asthma evidence is distributed across ancestry groups, which is the question this module asks. A row naming one broad ancestral category contributes all its individuals to that category; a row naming k categories contributes an equal 1/k share to each. The catalog publishes no per-category count within a row, so the equal split is an assumption. It preserves the total, so the shares describe one denominator. The category cell is consumed by longest match against the controlled vocabulary in pipeline/lookups/gwas_ancestry_categories.json, not split on a comma: one vocabulary label, 'Greater Middle Eastern (Middle Eastern, North African or Persian)', contains commas of its own. Any residue the vocabulary cannot account for fails the run. The last column repeats each share with multi-category rows dropped, so the weight the equal split carries is visible rather than asserted. Descriptive only. These are counts of people enrolled and associations declared, not effect estimates: no cross-ancestry gene-environment effect is computed in v1. The atlas page /ancestry-equity states an all-trait GWAS participant share transcribed from the GWAS Diversity Monitor dashboard. The share here is computed from the GWAS Catalog release named below, over asthma studies only, counting initial-stage discovery individuals. The two are different quantities with different denominators and are not comparable.",
       "columns": [
         "Broad ancestral category",
         "Discovery individuals",
@@ -186,7 +213,7 @@
       }
     },
     {
-      "caption": "Associations with P-VALUE below 5e-08 at the five asthma loci in v1 scope, from the GWAS Catalog 2026-11-02 release, counted by the broad ancestral category of each study's initial-stage sample. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only. An association is assigned to a locus when any symbol in the GWAS Catalog's own MAPPED_GENE cell for that association equals one of the locus's gene symbols, compared case-sensitively after splitting the cell on its separators and trimming. MAPPED_GENE is the catalog's gene annotation, so the match is against a curated identifier and never against free text in a trait or study title. REPORTED GENE(S) is deliberately not used: it carries the authors' own wording, which is not a controlled field. No genomic window is applied, because a window needs a genome build the extract does not state per row. Descriptive only. These are counts of people enrolled and associations declared, not effect estimates: no cross-ancestry gene-environment effect is computed in v1.",
+      "caption": "Associations with P-VALUE below 5e-08 at the 5 asthma loci in v1 scope, from the GWAS Catalog 2026-11-02 release, counted by the broad ancestral category of each study's initial-stage sample. One association counts once per broad ancestral category of its study's initial-stage sample, so the per-category counts do not sum to the association total when a discovery sample names more than one category. An association whose study has no initial-stage ancestry row is counted in the locus total and in the column 'Associations with no initial-stage ancestry row' only. An association is assigned to a locus when any symbol in the GWAS Catalog's own MAPPED_GENE cell for that association equals one of the locus's gene symbols, compared case-sensitively after splitting the cell on its separators and trimming. MAPPED_GENE is the catalog's gene annotation, so the match is against a curated identifier and never against free text in a trait or study title. REPORTED GENE(S) is deliberately not used: it carries the authors' own wording, which is not a controlled field. No genomic window is applied, because a window needs a genome build the extract does not state per row. Descriptive only. These are counts of people enrolled and associations declared, not effect estimates: no cross-ancestry gene-environment effect is computed in v1.",
       "columns": [
         "Locus",
         "Cytoband",
@@ -225,7 +252,7 @@
       }
     },
     {
-      "caption": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia. ACS categories are self-identified race and ethnicity, which are social categories and not genetic ancestry. They are shown only to describe the population the atlas is meant to serve. The race categories are mutually exclusive and sum to the table total, which is what lets them stack in Figure 6. Hispanic or Latino origin cross-cuts every race category and is listed with 'In race stack' set to no: adding it to the stack would count the same residents twice. Descriptive only. These are counts of people enrolled and associations declared, not effect estimates: no cross-ancestry gene-environment effect is computed in v1.",
+      "caption": "ACS 2024 5-year estimates (acs/acs5), Loudoun County, Virginia. ACS categories are self-identified race and ethnicity, which are social categories and not genetic ancestry. They are shown only to describe the population the atlas is meant to serve. The race categories are mutually exclusive and sum to the table total, which is what lets them stack in Figure 6. Hispanic or Latino origin cross-cuts every race category and is listed with 'In race stack' set to no: adding it to the stack would count the same residents twice. Descriptive only.",
       "columns": [
         "Category",
         "Residents",

@@ -12,9 +12,21 @@ as JSON numbers. Dates, labels and statuses are strings with a null precision.
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 from pipeline.report_lib.rounding import half_up
+
+
+# An ISO date-time label prints with a space, not a "T" (DECISIONS.md D51): the edition
+# cutoff reads "2026-08-07 07:00 EST" everywhere it appears. The stored value keeps
+# its ISO form. The site's formatNumber() applies the same rule.
+_ISO_DATETIME = re.compile(r"^(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2})")
+
+
+def display_text(value) -> str:
+    text = str(value)
+    return _ISO_DATETIME.sub(lambda m: f"{m.group(1)} {m.group(2)}", text)
 
 
 class NumberRegistry:
@@ -66,7 +78,7 @@ class NumberRegistry:
         value = record["value"]
         precision = record["precision"]
         if precision is None:
-            return str(value)
+            return display_text(value)
         return f"{value:.{precision}f}"
 
     def __contains__(self, key: str) -> bool:

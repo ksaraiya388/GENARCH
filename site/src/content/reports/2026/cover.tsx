@@ -62,7 +62,7 @@ export function Cover() {
           <dd className="report-cover-status">{status}</dd>
         </div>
         <div>
-          <dt>License</dt>
+          <dt>Licence</dt>
           <dd>
             <a href={licenseUrl}>{license}</a>
           </dd>

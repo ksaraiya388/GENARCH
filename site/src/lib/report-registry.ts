@@ -94,7 +94,11 @@ export function reportNumber(year: string, key: string): ReportNumber {
  * to precision 0 is stored as 12.0 and must render as "12".
  */
 export function formatNumber(record: ReportNumber, group = true): string {
-  if (typeof record.value === "string") return record.value;
+  // An ISO date-time prints with a space for the "T", the rule
+  // NumberRegistry.display() applies in the pipeline (DECISIONS.md D51).
+  if (typeof record.value === "string") {
+    return record.value.replace(/^(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2})/, "$1 $2");
+  }
   if (record.precision === null) return String(record.value);
   const fixed = record.value.toFixed(record.precision);
   if (!group) return fixed;

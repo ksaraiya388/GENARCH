@@ -332,6 +332,50 @@
       "unit": "links",
       "value": 5.0,
       "window": "atlas as frozen 2026-11-02"
+    },
+    "chain.steps_from_figure": {
+      "inputs": [
+        {
+          "sha256": "3c9371b52335eaacd70a2d28f4e3496acbcf39d01c4c07bbf7f92ab57edca54c",
+          "source": "data/genes/il33.json"
+        },
+        {
+          "sha256": "4fa4e0ab76c437e2b6f9cf894ff999fe7ac64f29ebf26d0572417f3d88e8fb82",
+          "source": "data/diseases/asthma.json"
+        },
+        {
+          "sha256": "34c83639f4957018ed5b85cb5d735d08d531ca1eb20a1e1aeb22759ecacb7e9c",
+          "source": "data/briefs/pm25-il33-nfkb-asthma.json"
+        }
+      ],
+      "method": "links whose evidence class the figure definition assigns rather than an atlas record",
+      "n": null,
+      "precision": 0,
+      "unit": "links",
+      "value": 3.0,
+      "window": "atlas as frozen 2026-11-02"
+    },
+    "chain.steps_from_records": {
+      "inputs": [
+        {
+          "sha256": "3c9371b52335eaacd70a2d28f4e3496acbcf39d01c4c07bbf7f92ab57edca54c",
+          "source": "data/genes/il33.json"
+        },
+        {
+          "sha256": "4fa4e0ab76c437e2b6f9cf894ff999fe7ac64f29ebf26d0572417f3d88e8fb82",
+          "source": "data/diseases/asthma.json"
+        },
+        {
+          "sha256": "34c83639f4957018ed5b85cb5d735d08d531ca1eb20a1e1aeb22759ecacb7e9c",
+          "source": "data/briefs/pm25-il33-nfkb-asthma.json"
+        }
+      ],
+      "method": "links whose evidence class is read from an atlas record",
+      "n": null,
+      "precision": 0,
+      "unit": "links",
+      "value": 2.0,
+      "window": "atlas as frozen 2026-11-02"
     }
   },
   "note": "The atlas half of the report. Keys are namespaced inventory.* and chain.* and live here rather than in numbers.json, which holds the DEQ half and is gated on byte-identity. Every count is reported against the atlas freeze date and computed from the records FREEZE.json pins under atlas_inputs.",

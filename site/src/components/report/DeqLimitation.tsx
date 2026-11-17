@@ -53,7 +53,9 @@ export function DeqLimitation({ variant = "box", id }: DeqLimitationProps) {
     >
       <blockquote className="report-deq-quote">
         <p>{DEQ_LIMITATION.limitation}</p>
-        <footer className="report-deq-attribution">{DEQ_LIMITATION.citation}</footer>
+        {/* A paragraph, not a <footer>: print stylesheets hide footer elements as
+            site chrome, and the attribution is part of the quotation (D24). */}
+        <p className="report-deq-attribution">({DEQ_LIMITATION.citation})</p>
       </blockquote>
       <p className="report-deq-pairing">{DEQ_LIMITATION.pairing}</p>
       <p className="report-deq-credit">{DEQ_LIMITATION.credit}</p>

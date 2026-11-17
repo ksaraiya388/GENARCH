@@ -31,65 +31,71 @@ export function Methods() {
 
       <Sub number="3.2" id="methods-timestamps" title="Timestamps and day binning">
         <P>
-          The two data sources do not agree on what an hour is, and reconciling them is
-          the single most consequential methodological step in this report. Sensor
-          timestamps from the Kunak dashboard are hour-ending and adjusted for daylight
-          saving. The regulatory files are hour-beginning and always in Eastern
-          Standard Time. Before any comparison or any daily average, sensor timestamps
-          are shifted back by one hour before the spring transition and by two hours
-          after it, and both the raw and the normalised stamp are kept, with the shift
-          recorded per row. Pairing on unnormalised stamps degrades every regression
-          substantially and is wrong.
+          The two data sources do not agree on what an hour is, and every comparison in
+          this report depends on reconciling them. Sensor timestamps from the Kunak
+          dashboard are hour-ending and adjusted for daylight saving. The regulatory files
+          are hour-beginning and always in Eastern Standard Time. Before any comparison or
+          any daily average, each sensor label is read as America/New_York wall time and
+          converted to the hour-beginning Eastern Standard Time hour, and both the raw and
+          the converted stamp are kept, with the shift recorded per row. For every hour in
+          the frozen record this is DEQ&apos;s own instruction: a shift of{" "}
+          <N k="kunak.shift_hours.before_dst" /> hour before the spring transition and{" "}
+          <N k="kunak.shift_hours.after_dst" /> hours after it{" "}
+          <Cite id="deqcorrespondence" />. The record ends before the autumn transition, so
+          the hour that transition repeats, which the export cannot order, does not arise
+          here. Pairing on unconverted stamps misaligns every pair.
         </P>
         <P>
           Daily averages are binned in local standard time, which is the convention the
           federal regulation uses for the 24-hour standard{" "}
           <Cite id="cfr50appn" />, and that is the pipeline default. DEQ&apos;s published
           sensor tables bin by local clock time instead. Through the winter the two
-          agree; during daylight saving they differ by one hour, which moves the last
-          hour of each local day into the previous day. GENARCH does not change its
-          binning to match. The finding is that the two conventions diverge, not that
-          either is wrong, and because the divergence is material for one statistic and
-          immaterial for the others, every comparison in this report against a DEQ
-          published table carries both column sets so a reader can check either.
+          agree; during daylight saving they differ by an hour, which moves the last hour
+          of each local day into the previous day. GENARCH does not change its binning to
+          match. The finding is that the two conventions diverge, not that either is
+          wrong, and because the divergence is material for one statistic and immaterial
+          for the others, every comparison in this report against a DEQ published table
+          carries both column sets so a reader can check either.
         </P>
       </Sub>
 
       <Sub number="3.3" id="methods-completeness" title="Completeness and readings of zero">
         <P>
-          A 24-hour average requires 18 of 24 valid hours, which is DEQ&apos;s own
-          threshold, confirmed by agency staff. A day below that threshold is absent
-          rather than estimated, and no gap is interpolated or rendered as a zero
-          anywhere. On the regulatory side a reading is excluded when its value is
-          absent, when a null code is present, or when its flag string contains the
-          less-than character that marks the logger invalid. A letter code alone never
+          A 24-hour average requires <N k="completeness.valid_hours" /> of{" "}
+          <N k="completeness.hours_per_day" /> valid hours, which is DEQ&apos;s own
+          threshold, confirmed by agency staff <Cite id="deqcorrespondence" />. A day below
+          that threshold is absent rather than estimated, and no gap is interpolated or
+          rendered as a zero anywhere. On the regulatory side a reading is excluded when its
+          value is absent, when a null code is present, or when its flag string contains
+          the less-than character that marks the logger invalid. A letter code alone never
           excludes a reading: the letter identifies the event and the comparator decides
-          validity. Flags are compared case-sensitively, because the published table
-          pairs different meanings on the same letter in different cases.
+          validity. Flags are compared case-sensitively, because the published table pairs
+          different meanings on the same letter in different cases.
         </P>
         <P>
           Sensor rows in which every pollutant channel reads zero are treated as
           missing. A zero on one channel while the others carry values is read as
           per-channel floor clamping rather than an outage, and those readings are
           excluded as a fault mode throughout the pipeline and throughout the site. One
-          documented exception exists: the NO2 regression for the second collocated
-          unit retains them, because DEQ confirmed in correspondence of 2026-08-19 that
-          the agency retains them in that one fit and supplied the paired data it runs
-          on. The exception is scoped to that single comparison and is not extended,
-          because extending it moves two coefficients that currently agree with DEQ
-          back outside tolerance.
+          documented exception exists: the NO2 regression for the second collocated unit
+          retains them, because DEQ staff confirmed on{" "}
+          <N k="deq.correspondence.collocation_correction" /> that the agency retains them
+          in that one fit <Cite id="deqcorrespondence" />. The exception is scoped to that
+          single comparison and is not extended, because extending it moves two
+          coefficients that currently agree with DEQ back outside tolerance.
         </P>
       </Sub>
 
       <Sub number="3.4" id="methods-collocation" title="Collocation method">
         <P>
-          One sensor sits beside the regulatory monitor, and comparing the two is what
-          DEQ publishes weekly as the network&apos;s own validation. The reproduction
-          pairs readings on the normalised Eastern Standard Time stamp, applies the
-          exclusion flags on both sides, assigns readings to collocation periods by
-          unit from the occupancy table, and fits ordinary least squares with the sensor
-          on the horizontal axis and the regulatory monitor on the vertical, which is
-          DEQ&apos;s own plotting convention. Every fit stops at the{" "}
+          One sensor sat beside the regulatory monitor throughout the frozen record, and
+          comparing the two is what DEQ publishes weekly as the network&apos;s own
+          validation. The reproduction pairs readings on the converted Eastern Standard
+          Time stamp, applies the exclusion flags on both sides, assigns readings to
+          collocation periods by unit from the occupancy table, and fits ordinary least
+          squares with the sensor on the horizontal axis and the regulatory monitor on the
+          vertical, the orientation of DEQ&apos;s own collocation plots{" "}
+          <Cite id="deq2026oct09" />. Every fit stops at the{" "}
           <N k="deq.edition_cutoff" /> edition cutoff, because the coefficients being
           reproduced were computed over that span and no other. Regulatory exclusions are
           mandatory rather than optional here: unexcluded regulatory rows carry missing
@@ -113,13 +119,15 @@ export function Methods() {
         <P>
           Canadian wildfire smoke reached the area over the weekend of{" "}
           <N k="smoke.window_start" /> to <N k="smoke.window_end" />, and DEQ&apos;s own
-          qualifier code identifies the episode in the regulatory record. Hours whose
-          local standard time day falls in that window are excluded from the cross-site
-          correlation, because a regional smoke plume raises every sensor at once and
-          would inflate every pairwise correlation toward one without telling a reader
-          anything about the network. The window is not excluded from the percentile
-          work, where its presence inside a short record is the finding rather than a
-          nuisance.
+          qualifier code identifies the episode in the regulatory record. Whether the
+          episode is an exceptional event is a determination for the US Environmental
+          Protection Agency, not for DEQ, and it is unresolved{" "}
+          <Cite id="deqcorrespondence" />. Hours whose local standard time day falls in
+          that window are excluded from the cross-site correlation, because a regional
+          smoke plume raises every sensor at once and would inflate every pairwise
+          correlation toward one without telling a reader anything about the network. The
+          window is not excluded from the percentile work, where its presence inside a
+          short record is the finding rather than a nuisance.
         </P>
       </Sub>
 
@@ -127,22 +135,25 @@ export function Methods() {
         <P>
           The published mechanism chain has <N k="chain.steps" /> links. Each link
           carries an evidence class, and the classes do not all come from the same
-          place. Two are read from atlas records: the first link&apos;s class comes from
-          the exposure link on the gene record, and the last link&apos;s class comes from
-          the disease link on the same record. The middle three, steps two, three and
-          four, are classes assigned by the figure definition itself rather than read from
-          any atlas record, and they are marked as such in the evidence table, in the
-          generated provenance for each key and everywhere the chain is described in
-          this report. One link carries the inferred class, which means the atlas holds
-          no direct evidence for it.
+          place. <N k="chain.steps_from_records" /> are read from atlas records: the first
+          link&apos;s class comes from the exposure link on the IL33 gene record, and the
+          last link&apos;s class comes from the asthma link on the same record. Both are
+          classes of gene-level links that the figure attaches to those steps, not
+          evidence graded for the step itself. The other{" "}
+          <N k="chain.steps_from_figure" />, the middle links, are classes assigned by the
+          figure definition itself rather than read from any atlas record, and they are
+          marked as such in the evidence table, in the generated provenance for each key
+          and everywhere the chain is described in this report. Among them is the class
+          functional, which the figure definition uses and no atlas record carries. The
+          inferred class, carried by <N k="chain.inferred_steps" /> of the links, means the
+          atlas holds no direct evidence for that link.
         </P>
         <P>
-          Stating this is not a formality. A reader looking at a five-step chain with an
-          evidence class beside every step will reasonably assume all five classes were
-          curated the same way, and three of them were not: they are the figure
-          author&apos;s classification of textbook intermediate steps. Reporting the
-          chain without that distinction would overstate how much of it the atlas
-          actually grades.
+          The distinction matters because a reader who sees an evidence class beside every
+          step will assume all of them were curated the same way, and most were not: they
+          are the figure author&apos;s classification of textbook intermediate steps.
+          Reporting the chain without that distinction would overstate how much of it the
+          atlas grades.
         </P>
       </Sub>
 
@@ -159,12 +170,12 @@ export function Methods() {
           rather than a disease.
         </P>
         <P>
-          Two deliberate limits are worth stating. Nothing inside a citation is ever
-          linted, because a published title is quoted material and enforcing a lexicon
-          on it would pressure an author to falsify it. And a pre-existing baseline
-          records the violations the lint already knew about, so the gate fails on a new
-          violation rather than on the backlog; report prose is not eligible for that
-          baseline, so a violation introduced here has to be rewritten.
+          Two limits are deliberate. Nothing inside a citation is ever linted, because a
+          published title is quoted material and enforcing a lexicon on it would pressure
+          an author to falsify it. And a pre-existing baseline records the violations the
+          lint already knew about, so the gate fails on a new violation rather than on the
+          backlog; report prose is not eligible for that baseline, so a violation
+          introduced here has to be rewritten.
         </P>
       </Sub>
 
@@ -175,7 +186,7 @@ export function Methods() {
           recomputes every number, writes the keyed values, the tables and the figures,
           and fails rather than adjusting anything if a value computed on an original
           window no longer reproduces. Report prose cites the keyed values and types no
-          number of its own, so prose and data cannot disagree.
+          data value of its own, so prose and data cannot disagree.
         </P>
         <P>
           Two parts of the atlas are outside that claim and are named here rather than

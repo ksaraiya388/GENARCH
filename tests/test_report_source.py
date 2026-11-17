@@ -246,8 +246,10 @@ REQUIRED_SENTENCES = {
     "s8-roadmap.tsx": [
         "Whether the atlas and this report take in a second county is a decision "
         "about what GENARCH is for, and it will be made for the next report.",
-        "reads the 2023 ACS release where this report reads 2024. Both will be aligned "
-        "ahead of the next report.",
+        # The two ACS releases render from keys (D50); the ruling's wording is kept.
+        'reads the{" "} <N k="ancestry.page_acs_release" /> ACS release where this report '
+        'reads{" "} <N k="ancestry.acs.release" />. Both will be aligned ahead of the next '
+        "report.",
         "It has no date: it needs DEQ&apos;s occupancy record for the unit rather than "
         "the dashboard&apos;s.",
         "It will be its own artifact with its own methods review, not a section of an "

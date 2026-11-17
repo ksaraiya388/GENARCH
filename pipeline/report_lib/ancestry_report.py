@@ -43,6 +43,15 @@ METHOD_DIVERGENCE = (
     "docs/report-2026/AUDIT.md."
 )
 
+# The same, for the T10 caption, without the pointer to the project audit, which a
+# reader cannot reach (AUDIT_FINDINGS M9). The key that records METHOD_DIVERGENCE keeps
+# its value.
+METHOD_DIVERGENCE_CAPTION = METHOD_DIVERGENCE.replace(
+    "are not comparable; the comparison is tabulated in docs/report-2026/AUDIT.md.",
+    "are not comparable.",
+)
+assert METHOD_DIVERGENCE_CAPTION != METHOD_DIVERGENCE
+
 STATE_FIPS_LABEL = "51 (Virginia)"
 COUNTY_FIPS_LABEL = "107 (Loudoun)"
 
@@ -61,7 +70,7 @@ FIGURE_LIMITATION = (
     "asthma evidence base is predominantly European, every locus count here rests "
     "mostly on European-ancestry discovery samples, and findings from that base "
     "transfer unevenly to other groups. A study sample naming several broad ancestral "
-    "categories is split equally across them, because the catalog publishes no "
+    "categories is split equally across them, because the catalogue publishes no "
     "per-category count within a row. The discovery total is a sum of study sample "
     "sizes and not a headcount: asthma studies draw repeatedly on the same cohorts, so "
     "a participant in several studies is counted once per study. "
@@ -461,7 +470,7 @@ def build_tables(anc: dict) -> list[tables.Table]:
         "T10_gwas_ancestry_composition",
         "Asthma GWAS discovery samples by broad ancestral category",
         "Initial-stage discovery individuals across the asthma studies in the GWAS "
-        f"Catalog {release} release, by the catalog's own broad ancestral category. "
+        f"Catalog {release} release, by the catalogue's own broad ancestral category. "
         + discovery["denominator_note"]
         + " "
         + discovery["split_rule"]
@@ -471,7 +480,7 @@ def build_tables(anc: dict) -> list[tables.Table]:
         "weight the equal split carries is visible rather than asserted. "
         + ANCESTRY_CAVEAT
         + " "
-        + METHOD_DIVERGENCE,
+        + METHOD_DIVERGENCE_CAPTION,
         source_note,
         {
             "Discovery individuals": "count",
@@ -502,7 +511,10 @@ def build_tables(anc: dict) -> list[tables.Table]:
         "T11_loci_by_ancestry",
         "Genome-wide-significant associations at the in-scope asthma loci, by ancestry "
         "of the discovery sample",
-        f"Associations with P-VALUE below {loci['threshold']:g} at the five asthma loci "
+        # Threshold and locus count are the values of ancestry.loci.threshold and
+        # ancestry.loci.count, read from the same record (D50).
+        f"Associations with P-VALUE below {loci['threshold']:g} at the {len(loci['loci'])} "
+        "asthma loci "
         f"in v1 scope, from the GWAS Catalog {release} release, counted by the broad "
         "ancestral category of each study's initial-stage sample. "
         + loci["counting_rule"]
@@ -573,8 +585,7 @@ def build_tables(anc: dict) -> list[tables.Table]:
         + " The race categories are mutually exclusive and sum to the table total, which "
         "is what lets them stack in Figure 6. Hispanic or Latino origin cross-cuts every race "
         "category and is listed with 'In race stack' set to no: adding it to the stack "
-        "would count the same residents twice. "
-        + ANCESTRY_CAVEAT,
+        "would count the same residents twice. Descriptive only.",
         "US Census Bureau, American Community Survey, "
         f"{acs['dataset']}, tables {', '.join(acs['tables'])}, state "
         f"{STATE_FIPS_LABEL} county {COUNTY_FIPS_LABEL}.",

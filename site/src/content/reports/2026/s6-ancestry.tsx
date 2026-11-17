@@ -1,6 +1,7 @@
 import {
   Callout,
   Cite,
+  EditionDate,
   N,
   P,
   ReportFigure,
@@ -26,19 +27,19 @@ export function AncestryEvidenceBase() {
       <Sub number="6.1" id="ancestry-selection" title="How the asthma studies were selected">
         <P>
           The trait set is the union of the hierarchical descendants of the MONDO asthma
-          term in the MONDO ontology and in EFO, plus both seed terms, plus one retired
+          term in the MONDO ontology and in EFO, plus both seed terms, plus a retired
           identifier: <N k="ancestry.trait_terms" /> ontology IDs in all{" "}
           <Cite id="ols2026" />. The union is used because the two ontologies disagree
           about the subtree, MONDO&apos;s being larger while EFO carries asthma subtypes
           MONDO does not, and nothing was hand-filtered out of either. Selection against
-          the catalog is by identifier only: a row is kept when the last segment of any
+          the catalogue is by identifier only: a row is kept when the last segment of any
           trait URI it names matches one of the set, and no trait name is matched as free
           text anywhere in this module.
         </P>
         <P>
           Two properties of that set should be read together with any share below. The
           retired identifier, the obsolete EFO asthma term, is kept as a seed so that a
-          catalog row still carrying it would be matched rather than dropped; in the
+          catalogue row still carrying it would be matched rather than dropped; in the
           release used it matched nothing. It is one of{" "}
           <N k="ancestry.trait_terms_matching_no_association" /> identifiers in the set
           that matched no association in this release, which are kept so the set stays
@@ -46,7 +47,7 @@ export function AncestryEvidenceBase() {
           fact about this release&apos;s curation, not a reason to narrow the selection.
           And of the <N k="ancestry.discovery.association_rows_kept" /> association rows
           the selection keeps, <N k="ancestry.discovery.multi_trait_rows" /> are rows the
-          catalog mapped to asthma alongside another trait, mostly from multi-trait and
+          catalogue mapped to asthma alongside another trait, mostly from multi-trait and
           pleiotropy analyses. The selection rule keeps those rows and their studies
           contribute their whole samples, so the asthma denominator includes them.
         </P>
@@ -56,10 +57,10 @@ export function AncestryEvidenceBase() {
         <P>
           Across <N k="ancestry.discovery.studies" /> asthma studies in the GWAS Catalog
           release of <N k="ancestry.gwas_release_date" />{" "}
-          <Cite id="gwascatalog2026" />, the initial-stage discovery samples total{" "}
-          <N k="ancestry.discovery.total_individuals" /> individuals, of whom{" "}
-          <N k="ancestry.discovery.european.share" /> percent fall in the catalog&apos;s
-          European category. The next largest is East Asian at{" "}
+          <Cite id="gwascatalog2026" />, the initial-stage discovery samples sum to{" "}
+          <N k="ancestry.discovery.total_individuals" /> (a total of study sample sizes,
+          not of distinct people), and <N k="ancestry.discovery.european.share" /> percent
+          of that total falls in the catalogue&apos;s European category. The next largest is East Asian at{" "}
           <N k="ancestry.discovery.east_asian.share" /> percent, then African American or
           Afro-Caribbean at <N k="ancestry.discovery.african_american_or_afro_caribbean.share" />{" "}
           percent. South Asian ancestry accounts for{" "}
@@ -76,7 +77,7 @@ export function AncestryEvidenceBase() {
             describe is how the field&apos;s accumulated asthma evidence is distributed
             across ancestry groups, which is the question this module asks. A row naming
             one broad ancestral category contributes all its individuals to that category;
-            a row naming several contributes an equal share to each, because the catalog
+            a row naming several contributes an equal share to each, because the catalogue
             publishes no per-category count within a row. That assumption applies to{" "}
             <N k="ancestry.discovery.multi_category_rows" /> of{" "}
             <N k="ancestry.discovery.rows" /> ancestry rows, carrying{" "}
@@ -106,12 +107,14 @@ export function AncestryEvidenceBase() {
         <Callout title="How to read a zero in that row">
           <P>
             That last figure is a gap in the discovery record and nothing else. It says
-            that no study declaring an association at this locus had a South Asian
-            initial-stage sample, which is a property of who has been studied. It does
-            not say, and must not be read to say, that the locus is absent, inactive or
-            irrelevant in any population. No study has looked there in a South Asian
-            discovery sample, so the record is silent, and silence is not evidence of
-            absence. The same holds for every other zero in the table.
+            that no study in this release declared a genome-wide-significant association
+            at this locus from a South Asian initial-stage sample. South Asian samples are{" "}
+            <N k="ancestry.discovery.south_asian.share" /> percent of the discovery total,
+            so the record has little power to show one. It does not say, and must not be
+            read to say, that the locus is absent, inactive or irrelevant in any
+            population: a zero of{" "}
+            <N k="ancestry.loci.17q12-21.south_asian.associations" /> here is not evidence
+            of absence. The same holds for every other zero in the table.
           </P>
         </Callout>
         <ReportTable id="T11" />
@@ -119,7 +122,7 @@ export function AncestryEvidenceBase() {
           One association counts once per broad ancestral category of its study&apos;s
           initial-stage sample, so the per-category counts do not sum to the association
           total where a discovery sample names more than one category. An association is
-          assigned to a locus when any symbol in the catalog&apos;s own mapped-gene
+          assigned to a locus when any symbol in the catalogue&apos;s own mapped-gene
           annotation for that association matches one of the locus&apos;s gene symbols;
           the authors&apos; own reported-gene field is deliberately not used, because it
           is not a controlled field. No genomic window is applied, because a window needs
@@ -137,7 +140,7 @@ export function AncestryEvidenceBase() {
           <Cite id="ding2023" />. The loss is continuous rather than categorical, so it
           cannot be fixed by a correction factor per group{" "}
           <Cite id="ding2023" />. Increasing the diversity of discovery samples is the
-          only measure that addresses it{" "}
+          measure the cited reviews give most weight{" "}
           <Cite id="fatumo2022" />
           <Cite id="kachuri2024" />, and population descriptors used in genomics are
           social as well as genetic categories, which is a further reason not to read a
@@ -174,21 +177,22 @@ export function AncestryEvidenceBase() {
         <P>
           Two release notes belong with that table. It reads the ACS{" "}
           <N k="ancestry.acs.release" /> 5-year release, retrieved for this module. The
-          atlas page on ancestry and equity still reads the 2023 release, so the report
+          atlas page on ancestry and equity still reads the{" "}
+          <N k="ancestry.page_acs_release" /> release, so the report
           and that page state county counts from two different vintages; both name their
           vintage, and aligning them is on the roadmap.
         </P>
         <P>
           The second note concerns the GWAS shares rather than the county counts. The
           atlas page states an all-trait participant share transcribed from the GWAS
-          Diversity Monitor dashboard at its September 2024 snapshot{" "}
-          <Cite id="mills2020" />. The share in this report is computed from the catalog
+          Diversity Monitor dashboard at its <EditionDate id="diversitymonitor2024" />{" "}
+          snapshot <Cite id="diversitymonitor2024" />, a dashboard introduced in{" "}
+          <Cite id="mills2020" />. The share in this report is computed from the catalogue
           release named above, over asthma studies only, counting initial-stage discovery
           individuals. The two measure different things: the denominators differ in trait
           scope, in stage, in provenance and in the category framework, so a difference
           between them measures the distance between two definitions and nothing else.
-          Neither can be substituted for the other, and the comparison is tabulated in
-          the project audit. This is not a correction of the page.
+          Neither can be substituted for the other. This is not a correction of the page.
         </P>
       </Sub>
     </Section>
