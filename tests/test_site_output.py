@@ -21,6 +21,7 @@ this test has to catch.
 from __future__ import annotations
 
 import csv
+import html
 import json
 import os
 import re
@@ -223,3 +224,30 @@ def test_the_report_figures_and_tables_are_served(built_site):
         assert src in report, f"{figure['id']} is not referenced by the report page"
         staged = built_site / "reports" / "2026" / f"{figure['id']}.svg"
         assert staged.is_file(), f"{figure['id']}.svg was not staged into the export"
+
+
+def test_the_corridor_page_smoke_excluded_result_equals_the_report_keys(built_site):
+    """The page's smoke-excluded common-window result is the report's (D58).
+
+    The page computes it from its own data path; the annual report computes
+    p98.common_exsmoke.* from the frozen exports. The values, the count above 35 and
+    the ranks must agree exactly at the report's precision.
+    """
+    page = (built_site / "community" / "data-center-alley" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    match = re.search(r'data-common-window-ex-smoke="([^"]+)"', page)
+    assert match, "the corridor page no longer carries the smoke-excluded record"
+    shown = json.loads(html.unescape(match.group(1)))
+    numbers = json.loads(
+        (REPO_ROOT / "data" / "reports" / "2026" / "numbers.json").read_text(encoding="utf-8")
+    )
+    assert shown["n_above_35"] == numbers["p98.common_exsmoke.n_above_35"]["value"]
+    assert set(shown["p98"]) == {
+        k.rsplit(".", 1)[-1]
+        for k in numbers
+        if k.startswith("p98.common_exsmoke.DC-")
+    }
+    for code, value in shown["p98"].items():
+        assert value == numbers[f"p98.common_exsmoke.{code}"]["value"], code
+        assert shown["rank"][code] == numbers[f"p98.common_exsmoke.rank.{code}"]["value"], code

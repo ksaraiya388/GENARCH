@@ -616,3 +616,10 @@ body:has(.report-print-page) {
 .report-print-page .report-table-fixed td.report-cell-mono {
   overflow-wrap: anywhere;
 }
+
+/* A block that must not split across pages: the summary's last paragraph and its
+ * exclusions box print together. */
+.report-print-page .report-keep-together {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}

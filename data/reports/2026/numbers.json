@@ -6582,6 +6582,1026 @@
     "value": 1139.0,
     "window": "full record of the original analysis inputs, smoke window excluded"
   },
+  "corr.with_smoke.DC-01_DC-02.n_hours": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "overlapping hours behind the correlation between DC-01 and DC-02, exact zeros treated as missing, smoke window included",
+    "n": 3591,
+    "precision": 0,
+    "unit": "hours",
+    "value": 3591.0,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-01_DC-02.r": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "pairwise-complete Pearson r of hourly PM2.5 between DC-01 and DC-02, exact zeros treated as missing, smoke window included",
+    "n": 3591,
+    "precision": 3,
+    "unit": "Pearson r",
+    "value": 0.959,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-01_DC-04.n_hours": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "overlapping hours behind the correlation between DC-01 and DC-04, exact zeros treated as missing, smoke window included",
+    "n": 2090,
+    "precision": 0,
+    "unit": "hours",
+    "value": 2090.0,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-01_DC-04.r": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "pairwise-complete Pearson r of hourly PM2.5 between DC-01 and DC-04, exact zeros treated as missing, smoke window included",
+    "n": 2090,
+    "precision": 3,
+    "unit": "Pearson r",
+    "value": 0.974,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-01_DC-06.n_hours": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "overlapping hours behind the correlation between DC-01 and DC-06, exact zeros treated as missing, smoke window included",
+    "n": 1282,
+    "precision": 0,
+    "unit": "hours",
+    "value": 1282.0,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-01_DC-06.r": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "pairwise-complete Pearson r of hourly PM2.5 between DC-01 and DC-06, exact zeros treated as missing, smoke window included",
+    "n": 1282,
+    "precision": 3,
+    "unit": "Pearson r",
+    "value": 0.978,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-01_DC-08.n_hours": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "overlapping hours behind the correlation between DC-01 and DC-08, exact zeros treated as missing, smoke window included",
+    "n": 2956,
+    "precision": 0,
+    "unit": "hours",
+    "value": 2956.0,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-01_DC-08.r": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "pairwise-complete Pearson r of hourly PM2.5 between DC-01 and DC-08, exact zeros treated as missing, smoke window included",
+    "n": 2956,
+    "precision": 3,
+    "unit": "Pearson r",
+    "value": 0.974,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-01_DC-09.n_hours": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "overlapping hours behind the correlation between DC-01 and DC-09, exact zeros treated as missing, smoke window included",
+    "n": 2958,
+    "precision": 0,
+    "unit": "hours",
+    "value": 2958.0,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-01_DC-09.r": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "pairwise-complete Pearson r of hourly PM2.5 between DC-01 and DC-09, exact zeros treated as missing, smoke window included",
+    "n": 2958,
+    "precision": 3,
+    "unit": "Pearson r",
+    "value": 0.976,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-02_DC-04.n_hours": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "overlapping hours behind the correlation between DC-02 and DC-04, exact zeros treated as missing, smoke window included",
+    "n": 2023,
+    "precision": 0,
+    "unit": "hours",
+    "value": 2023.0,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-02_DC-04.r": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "pairwise-complete Pearson r of hourly PM2.5 between DC-02 and DC-04, exact zeros treated as missing, smoke window included",
+    "n": 2023,
+    "precision": 3,
+    "unit": "Pearson r",
+    "value": 0.97,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-02_DC-06.n_hours": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "overlapping hours behind the correlation between DC-02 and DC-06, exact zeros treated as missing, smoke window included",
+    "n": 1235,
+    "precision": 0,
+    "unit": "hours",
+    "value": 1235.0,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-02_DC-06.r": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "pairwise-complete Pearson r of hourly PM2.5 between DC-02 and DC-06, exact zeros treated as missing, smoke window included",
+    "n": 1235,
+    "precision": 3,
+    "unit": "Pearson r",
+    "value": 0.972,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-02_DC-08.n_hours": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "overlapping hours behind the correlation between DC-02 and DC-08, exact zeros treated as missing, smoke window included",
+    "n": 2872,
+    "precision": 0,
+    "unit": "hours",
+    "value": 2872.0,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-02_DC-08.r": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "pairwise-complete Pearson r of hourly PM2.5 between DC-02 and DC-08, exact zeros treated as missing, smoke window included",
+    "n": 2872,
+    "precision": 3,
+    "unit": "Pearson r",
+    "value": 0.969,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-02_DC-09.n_hours": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "overlapping hours behind the correlation between DC-02 and DC-09, exact zeros treated as missing, smoke window included",
+    "n": 2886,
+    "precision": 0,
+    "unit": "hours",
+    "value": 2886.0,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-02_DC-09.r": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "pairwise-complete Pearson r of hourly PM2.5 between DC-02 and DC-09, exact zeros treated as missing, smoke window included",
+    "n": 2886,
+    "precision": 3,
+    "unit": "Pearson r",
+    "value": 0.974,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-04_DC-06.n_hours": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "overlapping hours behind the correlation between DC-04 and DC-06, exact zeros treated as missing, smoke window included",
+    "n": 1269,
+    "precision": 0,
+    "unit": "hours",
+    "value": 1269.0,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-04_DC-06.r": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "pairwise-complete Pearson r of hourly PM2.5 between DC-04 and DC-06, exact zeros treated as missing, smoke window included",
+    "n": 1269,
+    "precision": 3,
+    "unit": "Pearson r",
+    "value": 0.988,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-04_DC-08.n_hours": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "overlapping hours behind the correlation between DC-04 and DC-08, exact zeros treated as missing, smoke window included",
+    "n": 2077,
+    "precision": 0,
+    "unit": "hours",
+    "value": 2077.0,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-04_DC-08.r": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "pairwise-complete Pearson r of hourly PM2.5 between DC-04 and DC-08, exact zeros treated as missing, smoke window included",
+    "n": 2077,
+    "precision": 3,
+    "unit": "Pearson r",
+    "value": 0.982,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-04_DC-09.n_hours": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "overlapping hours behind the correlation between DC-04 and DC-09, exact zeros treated as missing, smoke window included",
+    "n": 2090,
+    "precision": 0,
+    "unit": "hours",
+    "value": 2090.0,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-04_DC-09.r": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "pairwise-complete Pearson r of hourly PM2.5 between DC-04 and DC-09, exact zeros treated as missing, smoke window included",
+    "n": 2090,
+    "precision": 3,
+    "unit": "Pearson r",
+    "value": 0.989,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-06_DC-08.n_hours": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "overlapping hours behind the correlation between DC-06 and DC-08, exact zeros treated as missing, smoke window included",
+    "n": 1272,
+    "precision": 0,
+    "unit": "hours",
+    "value": 1272.0,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-06_DC-08.r": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "pairwise-complete Pearson r of hourly PM2.5 between DC-06 and DC-08, exact zeros treated as missing, smoke window included",
+    "n": 1272,
+    "precision": 3,
+    "unit": "Pearson r",
+    "value": 0.991,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-06_DC-09.n_hours": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "overlapping hours behind the correlation between DC-06 and DC-09, exact zeros treated as missing, smoke window included",
+    "n": 1282,
+    "precision": 0,
+    "unit": "hours",
+    "value": 1282.0,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-06_DC-09.r": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "pairwise-complete Pearson r of hourly PM2.5 between DC-06 and DC-09, exact zeros treated as missing, smoke window included",
+    "n": 1282,
+    "precision": 3,
+    "unit": "Pearson r",
+    "value": 0.986,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-08_DC-09.n_hours": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "overlapping hours behind the correlation between DC-08 and DC-09, exact zeros treated as missing, smoke window included",
+    "n": 2943,
+    "precision": 0,
+    "unit": "hours",
+    "value": 2943.0,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
+  "corr.with_smoke.DC-08_DC-09.r": {
+    "inputs": [
+      {
+        "sha256": "cdffc873ed1be17cb3571f15374905d78d03e5d3897119ed2b7eee0fae4a858e",
+        "source": "Kunak hourly sensor export, DC-01 (original analysis inputs)"
+      },
+      {
+        "sha256": "415914d26c2e085fb02a7b0b6c60e5d96e56890846c1e608ed5cd0ce167f0699",
+        "source": "Kunak hourly sensor export, DC-04 (original analysis inputs)"
+      },
+      {
+        "sha256": "72dfe6ca5d944f23b7e61e8fe096d926b6f1923a0a3b28d9e442fe79f07fbf35",
+        "source": "Kunak hourly sensor export, DC-02 (original analysis inputs)"
+      },
+      {
+        "sha256": "9374946d2a8b34bcb9341fd0972ab0ecd4555a151f85664c7cd7eddd512c7b30",
+        "source": "Kunak hourly sensor export, DC-08 (original analysis inputs)"
+      },
+      {
+        "sha256": "ddf15993971c6a904b8bdbe4e61494b27a56d1bc3e4994863fa7cb51a48ce42a",
+        "source": "Kunak hourly sensor export, DC-09 (original analysis inputs)"
+      },
+      {
+        "sha256": "cb06a9afc1a5244576419efb02d417ebebded465297f4589db6fda01446e715f",
+        "source": "Kunak hourly sensor export, DC-06 (original analysis inputs)"
+      }
+    ],
+    "method": "pairwise-complete Pearson r of hourly PM2.5 between DC-08 and DC-09, exact zeros treated as missing, smoke window included",
+    "n": 2943,
+    "precision": 3,
+    "unit": "Pearson r",
+    "value": 0.982,
+    "window": "full record of the original analysis inputs, smoke window included"
+  },
   "corr.with_smoke.max": {
     "inputs": [
       {

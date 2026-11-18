@@ -1109,6 +1109,12 @@ export interface PercentileRow {
    */
   commonP98: number | null;
   commonPosition: RankPosition | null;
+  /**
+   * The common-window percentile with every smoke-window day left out, local standard time
+   * days, as the report computes p98.common_exsmoke.* (DECISIONS.md D58). Null as above.
+   */
+  commonDaysExSmoke: number;
+  commonP98ExSmoke: number | null;
   /** Share of the site's full record falling in the smoke window, as a percentage. */
   smokeShare: number;
   firstDay: string;
@@ -1149,7 +1155,9 @@ export function getPercentiles(): PercentileRow[] {
     const days = Array.from(means.keys()).filter((d) => d <= RECORD_END).sort();
     if (days.length === 0) continue;
     const common = days.filter((d) => d >= COMMON_WINDOW_START);
-    const smokeDays = days.filter((d) => d >= SMOKE_WINDOW.start && d <= SMOKE_WINDOW.end);
+    const inSmoke = (d: string) => d >= SMOKE_WINDOW.start && d <= SMOKE_WINDOW.end;
+    const smokeDays = days.filter(inSmoke);
+    const commonExSmoke = common.filter((d) => !inSmoke(d));
     out.push({
       key: site.code,
       label: site.label,
@@ -1161,6 +1169,10 @@ export function getPercentiles(): PercentileRow[] {
         ? percentile(common.map((d) => means.get(d)!), 0.98)
         : null,
       commonPosition: common.length ? percentilePosition(common.length) : null,
+      commonDaysExSmoke: commonExSmoke.length,
+      commonP98ExSmoke: commonExSmoke.length
+        ? percentile(commonExSmoke.map((d) => means.get(d)!), 0.98)
+        : null,
       smokeShare: (smokeDays.length / days.length) * 100,
       firstDay: days[0],
       lastDay: days[days.length - 1],

@@ -1481,3 +1481,12 @@ Findings from docs/report-2026/AUDIT_FINDINGS.md (61: B1-B9, S1-S39, M1-M13), on
 2026-11-16 M11: no change (D59).
 2026-11-16 M12: summary callout adds "(see section 7.5)".
 2026-11-16 M13: British spelling throughout (D60); proper names, quotations and the hash-pinned T11 caption sentence keep theirs.
+
+## Draft-4 follow-up (2026-11-17)
+
+2026-11-17 1: GENARCH_RULES section 6 amended (DECISIONS.md D61): the smoke rule covers GENARCH's own descriptive statistics; reproductions of DEQ statistics and record-day counts are exempt and unchanged. Summary correlation sentence gives both ranges (0.886 to 0.966 excluded, 0.959 to 0.991 included); the correlation table adds smoke-included Pearson r and overlapping hours per pair from 30 new keys corr.with_smoke.<A>_<B>.r and .n_hours; the Figure 5 caption states the smoke-included range from keys; the Figure 4 caption points to the smoke-excluded own-record values in the own-record table.
+2026-11-17 2: /community/data-center-alley gives the smoke-excluded common-window result beside the existing sentence, computed in lib/deq-data.ts on the report's window and local standard time days; the rendered values equal p98.common_exsmoke.* (all six values, ranks, count above 35), asserted by tests/test_site_output.py; the page fails its build if the shortest record's rank differs between the two.
+2026-11-17 3: the summary's last paragraph and the exclusions box print together (break-inside avoid); no line of the summary is printed twice verbatim; the box's pairing sentence and the summary's sentences on the form of the standard overlap in content, and both are ruled (CONTEXT section 3, S12 item 1), so neither is cut; summary spans pages 1 to 3.
+2026-11-17 4: Tables 3 and 10 printed transposed in the render layer (DECISIONS.md D62); CSVs, IDs and archive names unchanged; header cells carry no soft hyphens and break between words or after a slash between gene symbols; width gate passes.
+2026-11-17 5: DEQ document IDs in report outputs: 39287 twice (2026-10-09 Sources entry and its frozen-inputs row), 39902 once (2026-10-30), 39963 once (2026-11-06); no ID belongs to another edition; 2026-08-07 and 2026-08-21 carry the project page and their archive paths.
+2026-11-17 6: held: the request number supplied for the follow-up records request is the placeholder 26-NNNN; no Sources entry added and neither pending sentence changed until the number is given.

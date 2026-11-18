@@ -50,6 +50,15 @@ export interface TableRender {
    * locus labels). A line may break only between tokens or after a slash.
    */
   atomic?: string[];
+  /**
+   * Print the table transposed: each CSV column becomes a row headed by its column
+   * name, and each CSV row becomes a column headed by its first cell. Render layer
+   * only; the CSV, its columns and its archive name are unchanged (DECISIONS.md D62).
+   * `corner` heads the row-label column; `widths` gives the print width of that
+   * column (under `corner`) and of each CSV row's column (under its first cell).
+   * Headers then break between words only: no soft hyphens are inserted.
+   */
+  transpose?: { corner: string; widths: Record<string, string> };
 }
 
 /**
@@ -135,21 +144,16 @@ export const TABLE_RENDER: Record<string, TableRender> = {
     },
   },
   T03_collocation: {
-    widths: {
-      Comparison: "0.48in",
-      "DEQ intercept": "0.44in",
-      "DEQ slope": "0.36in",
-      "DEQ R-squared": "0.42in",
-      "GENARCH intercept": "0.44in",
-      "GENARCH slope": "0.38in",
-      "GENARCH R-squared": "0.44in",
-      "Difference, intercept": "0.44in",
-      "Difference, slope": "0.38in",
-      "Difference, R-squared": "0.44in",
-      "Paired hours": "0.36in",
-      "First paired hour (EST)": "0.62in",
-      "Last paired hour (EST)": "0.62in",
-      Status: "0.62in",
+    // Printed transposed: statistics as rows, the four regressions as columns (D62).
+    transpose: {
+      corner: "Statistic",
+      widths: {
+        Statistic: "2in",
+        "APEX 14 PM2.5": "1.1in",
+        "APEX 5 PM2.5": "1.1in",
+        "APEX 14 NO2": "1.1in",
+        "APEX 5 NO2": "1.1in",
+      },
     },
     format: { "Paired hours": "count" },
     // The APEX 5 NO2 DEQ values are staff-supplied, not printed (note †, B7).
@@ -205,22 +209,17 @@ export const TABLE_RENDER: Record<string, TableRender> = {
     ],
   },
   T11_loci_by_ancestry: {
-    widths: {
-      Locus: "0.52in",
-      Cytoband: "0.54in",
-      Genes: "0.48in",
-      Associations: "0.5in",
-      "Distinct variants": "0.42in",
-      European: "0.42in",
-      "African American or Afro-Caribbean": "0.42in",
-      "African unspecified": "0.42in",
-      "East Asian": "0.34in",
-      "South Asian": "0.34in",
-      "Central Asian": "0.4in",
-      "Hispanic or Latin American": "0.4in",
-      "Greater Middle Eastern (Middle Eastern, North African or Persian)": "0.5in",
-      NR: "0.26in",
-      "Associations with no initial-stage ancestry row": "0.5in",
+    // Printed transposed: ancestry categories as rows, the loci as columns (D62).
+    transpose: {
+      corner: "Locus",
+      widths: {
+        Locus: "2.2in",
+        "17q12-21 (ORMDL3/GSDMB)": "0.84in",
+        IL33: "0.84in",
+        TSLP: "0.84in",
+        IL1RL1: "0.84in",
+        "5q31 (RAD50/IL13)": "0.84in",
+      },
     },
     unitsNote: "counts",
     atomic: ["Locus", "Cytoband", "Genes"],
@@ -234,7 +233,10 @@ export const TABLE_RENDER: Record<string, TableRender> = {
     atomic: ["Site code"],
   },
   T07_correlation_matrix: {
-    format: { "Overlapping hours": "count" },
+    format: {
+      "Overlapping hours": "count",
+      "Overlapping hours, smoke window included": "count",
+    },
   },
   T12_loudoun_acs_context: {
     format: { Residents: "count", Share: "share2", "Margin of error": "count" },

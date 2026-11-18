@@ -73,34 +73,38 @@ export function Summary() {
         that any site is polluted, and neither DEQ&apos;s figure nor this one is
         comparable to the national standards. Hourly PM2.5 correlates between{" "}
         <N k="corr.min" /> and <N k="corr.max" /> across every pair of the six sensors
-        outside the smoke window, which is descriptive and does not establish that
-        local sources contribute nothing.
+        outside the smoke window, and between <N k="corr.with_smoke.min" /> and{" "}
+        <N k="corr.with_smoke.max" /> with it included, which is descriptive and does not
+        establish that local sources contribute nothing.
       </P>
 
-      <P>
-        The asthma evidence the atlas draws on was measured overwhelmingly in one
-        ancestry group: <N k="ancestry.discovery.european.share" /> percent of the
-        initial-stage discovery total across <N k="ancestry.discovery.studies" /> asthma
-        studies in the GWAS Catalog falls in the catalogue&apos;s European category, where
-        that total is a sum of study sample sizes and not a headcount of people. At the
-        locus at 17q12-21, <N k="ancestry.loci.17q12-21.european.associations" /> of{" "}
-        <N k="ancestry.loci.17q12-21.associations" /> associations have a European
-        discovery sample and <N k="ancestry.loci.17q12-21.south_asian.associations" fmt="count" />{" "}
-        a South Asian one, which is a gap in the discovery record and not evidence that
-        the locus is absent or inactive in any population.
-      </P>
-
-      <Callout title="What this version does not contain">
+      {/* The exclusions box never sits alone on a page: it keeps with this paragraph. */}
+      <div className="report-keep-together">
         <P>
-          No cross-ancestry gene-environment effect estimates are reported in this
-          version; they are planned for a later phase. The analysis of the one sensor unit
-          that occupied two sites in turn is not included. Carbon monoxide is not
-          analysed, because the averaging period of the published sensor series is
-          unresolved. No association between tract-level exposure and tract-level
-          prevalence is reported anywhere in this report or on the atlas (see section
-          7.5).
+          The asthma evidence the atlas draws on was measured overwhelmingly in one
+          ancestry group: <N k="ancestry.discovery.european.share" /> percent of the
+          initial-stage discovery total across <N k="ancestry.discovery.studies" /> asthma
+          studies in the GWAS Catalog falls in the catalogue&apos;s European category, where
+          that total is a sum of study sample sizes and not a headcount of people. At the
+          locus at 17q12-21, <N k="ancestry.loci.17q12-21.european.associations" /> of{" "}
+          <N k="ancestry.loci.17q12-21.associations" /> associations have a European
+          discovery sample and <N k="ancestry.loci.17q12-21.south_asian.associations" fmt="count" />{" "}
+          a South Asian one, which is a gap in the discovery record and not evidence that
+          the locus is absent or inactive in any population.
         </P>
-      </Callout>
+
+        <Callout title="What this version does not contain">
+          <P>
+            No cross-ancestry gene-environment effect estimates are reported in this
+            version; they are planned for a later phase. The analysis of the one sensor unit
+            that occupied two sites in turn is not included. Carbon monoxide is not
+            analysed, because the averaging period of the published sensor series is
+            unresolved. No association between tract-level exposure and tract-level
+            prevalence is reported anywhere in this report or on the atlas (see section
+            7.5).
+          </P>
+        </Callout>
+      </div>
     </Section>
   );
 }

@@ -1782,6 +1782,24 @@ def add_audit_keys(fz: Freeze, results: dict, reg: NumberRegistry) -> None:
             "exact zeros treated as missing, smoke window included",
             inputs=august_inputs,
         )
+    # Per pair, with the smoke window included (D61), beside the reported pair values.
+    for pair in corr_ws["pairs"]:
+        a, b = sorted((code_of(pair["a"]), code_of(pair["b"])))
+        for suffix, value, unit, precision, what in (
+            ("r", pair["r"], "Pearson r", 3, "pairwise-complete Pearson r of hourly PM2.5"),
+            ("n_hours", pair["n"], "hours", 0, "overlapping hours behind the correlation"),
+        ):
+            reg.add(
+                f"corr.with_smoke.{a}_{b}.{suffix}",
+                value,
+                unit=unit,
+                precision=precision,
+                n=pair["n"],
+                window="full record of the original analysis inputs, smoke window included",
+                method=f"{what} between {a} and {b}, exact zeros treated as missing, smoke "
+                "window included",
+                inputs=august_inputs,
+            )
 
     # ---- events after the freeze, transcribed from the ingested editions
     for key, value, rel_path, phrase, what in POSTFREEZE_EVENTS:
@@ -2307,24 +2325,44 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
 
     # ---- T07 correlation
     corr = results["correlation"]
-    t07_rows = sorted(
-        (
-            [code_of(p["a"]), code_of(p["b"]), f"{p['r']:.3f}", p["n"]]
-            for p in corr["pairs"]
-        ),
-        key=lambda r: (r[0], r[1]),
-    )
+    with_smoke = {
+        tuple(sorted((code_of(p["a"]), code_of(p["b"])))): p
+        for p in results["correlation_with_smoke"]["pairs"]
+    }
+    t07_rows = []
+    for p in corr["pairs"]:
+        a, b = sorted((code_of(p["a"]), code_of(p["b"])))
+        ws = with_smoke[(a, b)]
+        t07_rows.append(
+            [
+                a,
+                b,
+                f"{p['r']:.3f}",
+                p["n"],
+                reg.display(f"corr.with_smoke.{a}_{b}.r"),
+                reg.display(f"corr.with_smoke.{a}_{b}.n_hours").replace(",", ""),
+            ]
+        )
+        assert ws["n"] == int(t07_rows[-1][-1])
+    t07_rows.sort(key=lambda r: (r[0], r[1]))
     t07 = tables.Table(
         "T07_correlation_matrix",
         "Cross-site hourly correlation",
         "Pearson correlation of hourly PM2.5 between each pair of the six sensors, "
-        "pairwise-complete, with the smoke window excluded and exact zeros treated as "
-        "missing. Long form rather than a grid so each pair carries its own overlapping-hour "
-        "count. Descriptive only: high spatial correlation does not establish that local "
+        "pairwise-complete, with exact zeros treated as missing, with the smoke window "
+        "excluded and, in the last two columns, included. Long form rather than a grid so "
+        "each pair carries its own overlapping-hour count. Descriptive only: high spatial correlation does not establish that local "
         "sources contribute nothing.",
         "Frozen original analysis inputs.",
         {"Pearson r": "dimensionless"},
-        ["Site code A", "Site code B", "Pearson r", "Overlapping hours"],
+        [
+            "Site code A",
+            "Site code B",
+            "Pearson r",
+            "Overlapping hours",
+            "Pearson r, smoke window included",
+            "Overlapping hours, smoke window included",
+        ],
         t07_rows,
     )
 
@@ -2534,7 +2572,8 @@ def build_figures(
                 f"different order statistic from one read from {longest_days} days. "
                 "Triangles give the common-window value with every day from "
                 f"{reg.display('smoke.window_start')} to {reg.display('smoke.window_end')} "
-                "excluded, local standard time days. The horizontal line marks the level "
+                "excluded, local standard time days; the own-record values with that window "
+                "excluded are in the own-record table. The horizontal line marks the level "
                 "of the 24-hour standard and is not a threshold being crossed: neither these "
                 "values nor DEQ's are comparable to the NAAQS."
             ),
@@ -2565,6 +2604,9 @@ def build_figures(
             "caption": (
                 "Pearson correlation of hourly PM2.5 between each pair of sensors, "
                 "pairwise-complete, smoke window excluded, exact zeros treated as missing. "
+                f"With the smoke window included the pairs fall between "
+                f"{reg.display('corr.with_smoke.min')} and {reg.display('corr.with_smoke.max')} "
+                "(the data table gives each pair both ways). "
                 "Descriptive only: high spatial correlation does not establish that local "
                 "sources contribute nothing, since the network may sit largely upwind and a "
                 "local increment can be masked by a dominant regional signal."

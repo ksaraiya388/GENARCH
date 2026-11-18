@@ -177,12 +177,14 @@
       }
     },
     {
-      "caption": "Pearson correlation of hourly PM2.5 between each pair of the six sensors, pairwise-complete, with the smoke window excluded and exact zeros treated as missing. Long form rather than a grid so each pair carries its own overlapping-hour count. Descriptive only: high spatial correlation does not establish that local sources contribute nothing.",
+      "caption": "Pearson correlation of hourly PM2.5 between each pair of the six sensors, pairwise-complete, with exact zeros treated as missing, with the smoke window excluded and, in the last two columns, included. Long form rather than a grid so each pair carries its own overlapping-hour count. Descriptive only: high spatial correlation does not establish that local sources contribute nothing.",
       "columns": [
         "Site code A",
         "Site code B",
         "Pearson r",
-        "Overlapping hours"
+        "Overlapping hours",
+        "Pearson r, smoke window included",
+        "Overlapping hours, smoke window included"
       ],
       "file": "T07_correlation_matrix.csv",
       "id": "T07_correlation_matrix",

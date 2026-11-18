@@ -155,6 +155,25 @@ export default function DataCenterCorridorPage() {
   const shortest = percentiles.reduce((a, b) => (a.fullDays <= b.fullDays ? a : b));
   const longest = percentiles.reduce((a, b) => (a.fullDays >= b.fullDays ? a : b));
   const shortestRank = commonWindow.findIndex((p) => p.key === shortest.key) + 1;
+  // The same window and day definition with the smoke-window days left out, as the annual
+  // report computes it (p98.common_exsmoke.*); tests/test_site_output.py asserts equality.
+  const exSmoke = [...commonWindow].sort(
+    (a, b) => (b.commonP98ExSmoke ?? -Infinity) - (a.commonP98ExSmoke ?? -Infinity)
+  );
+  const exSmokeValues = exSmoke.map((p) => p.commonP98ExSmoke!);
+  const aboveLevelExSmoke = exSmoke.filter((p) => p.commonP98ExSmoke! > PM25_24H_LEVEL);
+  const shortestRankExSmoke = exSmoke.findIndex((p) => p.key === shortest.key) + 1;
+  if (shortestRankExSmoke !== shortestRank) {
+    throw new Error(
+      "The shortest record ranks differently with the smoke window excluded; the sentence " +
+      "below says its position does not depend on the smoke days. Rewrite it."
+    );
+  }
+  const exSmokeRecord = JSON.stringify({
+    n_above_35: aboveLevelExSmoke.length,
+    rank: Object.fromEntries(exSmoke.map((p, i) => [p.key, i + 1])),
+    p98: Object.fromEntries(exSmoke.map((p) => [p.key, Number(n3(p.commonP98ExSmoke!))])),
+  });
   if (shortestRank === 0) {
     throw new Error(
       "The shortest record has no common-window percentile, so it cannot be ranked against " +
@@ -867,12 +886,20 @@ export default function DataCenterCorridorPage() {
               everywhere (DEQ staff, correspondence, 2026-08-16). The percentiles in the table
               below include that window.
             </p>
-            <p>
+            <p data-common-window-ex-smoke={exSmokeRecord}>
               Restricting every sensor to the window in which all {word(commonWindow.length)}{" "}
               of them were collecting, {COMMON_WINDOW_START} to {RECORD_END}, changes the
               ordering. {Word(aboveLevel.length)} of {word(commonWindow.length)} sites sit above{" "}
               {PM25_24H_LEVEL} µg/m³ on matched windows, and site {shortest.key} ranks{" "}
-              {ordinal(shortestRank)} rather than first. The common window is not a clean control
+              {ordinal(shortestRank)} rather than first. With the smoke-window days of{" "}
+              {SMOKE_WINDOW.start} to {SMOKE_WINDOW.end} left out, on the same window and day
+              definition,{" "}
+              {aboveLevelExSmoke.length === 0 ? "none" : word(aboveLevelExSmoke.length)} of{" "}
+              {word(commonWindow.length)} sites sit above {PM25_24H_LEVEL} µg/m³: their 98th
+              percentiles run from {n3(Math.min(...exSmokeValues))} to{" "}
+              {n3(Math.max(...exSmokeValues))} µg/m³, and site {shortest.key} ranks{" "}
+              {ordinal(shortestRankExSmoke)}. Whether any site sits above the level depends on
+              the smoke days; site {shortest.key}&apos;s position does not. The common window is not a clean control
               on its own: it falls entirely in high summer and contains the smoke window, so it
               removes the unequal-length difference and leaves the unequal-seasonality one in
               place.

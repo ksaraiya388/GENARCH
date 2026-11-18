@@ -208,6 +208,8 @@ FOIA 26-4646 and the released records are public at `vadeq.nextrequest.com/reque
 
 **Every summary statistic is reported twice**, with and without the smoke window, both stated.
 
+2026-11-17 amendment (docs/report-2026/DECISIONS.md D61): the with-and-without-smoke rule applies to GENARCH's own descriptive statistics. A statistic that reproduces a DEQ-published statistic is computed as DEQ computes it, over all hours, and is reported that way only. Record-day counts are counts of days and are exempt.
+
 **Separate instrument classes physically.** Regulatory data in `deq-regulatory/`, sensor data in `deq-raw/`, separate tables downstream with an explicit `instrument_class` field. If they ever merge into one series, the DEQ CFR language becomes false on its face. Carry `Parameter`, `AQS Method Code`, and `Average Interval` through to the final table as the documentary basis for the distinction — the export supplies `PM25_T640X` / method 638, NO2 / method 212, CO / method 54.
 
 **The NO2 result is a result, not a limitation.** It has an n and a correlation coefficient and you produced it. It belongs in the results section alongside the PM2.5 comparison. The limitations box holds DEQ's two verbatim paragraphs, the ecological-fallacy disclosure, and the sub-threshold framing.

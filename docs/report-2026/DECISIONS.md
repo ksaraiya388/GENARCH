@@ -275,6 +275,24 @@ hash-pinned inputs keep their own spelling: DEQ's "Data Center Air Monitoring Pr
 the GWAS Catalog's name, and the T11 caption sentence taken from
 pipeline/lookups/asthma_loci.json.
 
+D61 Scope of the smoke-window rule (2026-11-17). GENARCH_RULES.md section 6, amended: the
+with-and-without-smoke rule applies to GENARCH's own descriptive statistics. A statistic
+that reproduces a DEQ-published statistic is computed as DEQ computes it, over all hours,
+and is reported that way only; record-day counts are counts of days and are exempt.
+Exempt, unchanged: the R1 collocation fits, the APEX 5 NO2 backfill fit, the R2 daily
+reconciliation, the DEQ-cutoff columns of the common-window table and the section 5.4
+sentence on them, the own-record table's reproduction and difference columns, the section
+7.3 reproduction item, and record-day counts. Changed: the summary correlation sentence
+gives both ranges; the correlation table adds smoke-included Pearson r and overlapping
+hours per pair, as new keys; the Figure 5 caption states the smoke-included range from
+keys; the Figure 4 caption points to the smoke-excluded own-record values in the
+own-record table.
+
+D62 Tables 3 and 10 are transposed in the render layer (2026-11-17). The collocation table
+prints statistics as rows and the four regressions as columns; the loci table prints
+ancestry categories as rows and loci as columns. CSVs, table IDs and archive names are
+unchanged. Header cells break between words only, never by hyphenation.
+
 ---
 
 ## Remaining AUDIT items

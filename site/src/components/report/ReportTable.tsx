@@ -97,8 +97,11 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
   // wrap its headings; one of thirteen or more is narrow enough per column that its
   // first column has to wrap too, and its caption has to be pinned to the page
   // measure rather than following a table that is wider than the page.
-  const wide = header.length >= 8;
-  const extraWide = header.length >= 13;
+  // A transposed table prints one column per CSV row, plus its row-label column.
+  const transpose = TABLE_RENDER[manifest.id]?.transpose;
+  const printedColumns = transpose ? rows.length + 1 : header.length;
+  const wide = printedColumns >= 8;
+  const extraWide = printedColumns >= 13;
 
   //
   // On the widest tables the units come out of the headers entirely. Twelve of the
@@ -235,7 +238,41 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
     // Notes the generator composed from keys, so a number in one is never typed here.
     ...(manifest.notes ?? []),
   ];
-  const fixed = render.widths !== undefined;
+  const fixed = render.widths !== undefined || transpose !== undefined;
+
+  // Transposed: each CSV column after the first is a printed row, each CSV row a
+  // printed column headed by its first cell (D62). Cell text goes through the same
+  // formatting as the untransposed table.
+  const transposedHeads = transpose ? rows.map((row) => cellText(row[0], 0, row)) : [];
+  if (transpose) {
+    const unset = [transpose.corner, ...rows.map((row) => row[0])].filter(
+      (name) => !(name in transpose.widths)
+    );
+    if (unset.length > 0) {
+      throw new Error(
+        `table ${manifest.id}: no print width for transposed column(s): ${unset.join(", ")}`
+      );
+    }
+  }
+  const transposedBody = transpose
+    ? header.slice(1).map((column, i) => {
+        const c = i + 1;
+        const unit = unitFor(column);
+        return (
+          <tr key={c}>
+            <th scope="row" className="report-table-rowhead">
+              {headerLabel(column)}
+              {unit && <span className="report-table-unit"> ({unit})</span>}
+            </th>
+            {rows.map((row, r) => (
+              <td key={r} className={cellClass(row[c], c)}>
+                {renderCell(row[c], c, row)}
+              </td>
+            ))}
+          </tr>
+        );
+      })
+    : null;
 
   return (
     <figure
@@ -252,7 +289,7 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
       }
       id={`table-${manifest.id}`}
       data-table-id={manifest.id}
-      data-table-columns={header.length}
+      data-table-columns={printedColumns}
     >
       <table className="report-table">
         <caption className="report-table-caption">
@@ -260,7 +297,14 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
           <span className="report-table-title">{manifest.title}</span>
           {!compact && <span className="report-table-text"> {manifest.caption}</span>}
         </caption>
-        {fixed && (
+        {transpose && (
+          <colgroup>
+            {[transpose.corner, ...rows.map((row) => row[0])].map((name) => (
+              <col key={name} style={{ ["--col-w" as string]: transpose.widths[name] }} />
+            ))}
+          </colgroup>
+        )}
+        {fixed && !transpose && (
           <colgroup>
             {header.map((column) => (
               <col
@@ -271,6 +315,17 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
           </colgroup>
         )}
         <thead>
+          {transpose ? (
+            <tr>
+              <th scope="col">{transpose.corner}</th>
+              {transposedHeads.map((head, r) => (
+                <th key={r} scope="col">
+                  {/* Breaks only between words or after a slash between gene symbols. */}
+                  {atomicTokens(head)}
+                </th>
+              ))}
+            </tr>
+          ) : (
           <tr>
             {header.map((column, c) => {
               const unit = unitFor(column);
@@ -282,8 +337,9 @@ export function ReportTable({ year, id, hashColumns = [], compact = false }: Rep
               );
             })}
           </tr>
+          )}
         </thead>
-        <tbody>{body}</tbody>
+        <tbody>{transpose ? transposedBody : body}</tbody>
       </table>
       <figcaption className="report-table-source">
         <span className="report-source-label">Source:</span> {manifest.source_note}{" "}
