@@ -19,6 +19,7 @@ import {
   COMMON_WINDOW_START,
   COMPLETENESS_MIN_HOURS,
   DEQ_EDITION_CUTOFF_LABEL,
+  DEQ_TOLERANCE,
   DEQ_UPWIND_SITE_CODES,
   DEQ_WEEKLY_EDITIONS,
   MIN_OVERLAP_HOURS,
@@ -30,7 +31,9 @@ import {
   getCorrelations,
   getDailyReconciliation,
   getHourlySeries,
+  P98_SENSITIVITY_CUTOFF,
   getNo2Diagnostics,
+  getP98Sensitivity,
   getPercentiles,
   getProvenance,
   getSiteKey,
@@ -140,6 +143,7 @@ export default function DataCenterCorridorPage() {
   const no2 = getNo2Diagnostics();
   const reconciliation = getDailyReconciliation();
   const percentiles = getPercentiles();
+  const sensitivity = getP98Sensitivity();
   const correlations = getCorrelations();
   const siteKey = getSiteKey();
   const provenance = getProvenance();
@@ -155,6 +159,34 @@ export default function DataCenterCorridorPage() {
   const shortest = percentiles.reduce((a, b) => (a.fullDays <= b.fullDays ? a : b));
   const longest = percentiles.reduce((a, b) => (a.fullDays >= b.fullDays ? a : b));
   const shortestRank = commonWindow.findIndex((p) => p.key === shortest.key) + 1;
+  // The same window and day definition with the smoke-window days left out, as the annual
+  // report computes it (p98.common_exsmoke.*); tests/test_site_output.py asserts equality.
+  const exSmoke = [...commonWindow].sort(
+    (a, b) => (b.commonP98ExSmoke ?? -Infinity) - (a.commonP98ExSmoke ?? -Infinity)
+  );
+  const exSmokeValues = exSmoke.map((p) => p.commonP98ExSmoke!);
+  const aboveLevelExSmoke = exSmoke.filter((p) => p.commonP98ExSmoke! > PM25_24H_LEVEL);
+  const shortestRankExSmoke = exSmoke.findIndex((p) => p.key === shortest.key) + 1;
+  if (shortestRankExSmoke !== shortestRank) {
+    throw new Error(
+      "The shortest record ranks differently with the smoke window excluded; the sentence " +
+      "below says its position does not depend on the smoke days. Rewrite it."
+    );
+  }
+  // Every own-record value with the smoke window excluded, for tests/test_site_output.py
+  // to hold against p98.full.<code>.lst_zero_missing_exsmoke (audit round 2, S3).
+  const fullExSmokeRecord = JSON.stringify(
+    Object.fromEntries(
+      percentiles
+        .filter((p) => p.fullP98ExSmoke !== null)
+        .map((p) => [p.key, Number(n3(p.fullP98ExSmoke!))])
+    )
+  );
+  const exSmokeRecord = JSON.stringify({
+    n_above_35: aboveLevelExSmoke.length,
+    rank: Object.fromEntries(exSmoke.map((p, i) => [p.key, i + 1])),
+    p98: Object.fromEntries(exSmoke.map((p) => [p.key, Number(n3(p.commonP98ExSmoke!))])),
+  });
   if (shortestRank === 0) {
     throw new Error(
       "The shortest record has no common-window percentile, so it cannot be ranked against " +
@@ -205,16 +237,66 @@ export default function DataCenterCorridorPage() {
       "describe one, so remove them together with the DEQ_PUBLISHED nonComparable block."
     );
   }
-  // The one comparison whose DEQ coefficients arrived by correspondence rather than in the
-  // August 7 report. getCollocation() carries that provenance on the row itself.
+  // The recorded row's paragraph says the GENARCH fit falls inside the build's tolerance of the
+  // supplied values. Held here so that sentence cannot outlive the arithmetic.
+  if (
+    Math.abs(recordedFit.genarch.intercept - recordedFit.deq.intercept) > DEQ_TOLERANCE.coefficient ||
+    Math.abs(recordedFit.genarch.slope - recordedFit.deq.slope) > DEQ_TOLERANCE.coefficient ||
+    Math.abs(recordedFit.genarch.r2 - recordedFit.deq.r2) > DEQ_TOLERANCE.r2
+  ) {
+    throw new Error(
+      `The ${recordedFit.unitLabel} ${recordedFit.pollutant} fit is no longer inside tolerance ` +
+      "of the values beside it. The recorded-row paragraph says it is; rewrite it."
+    );
+  }
+  // How far the 98th percentile moves on a choice of convention and of day boundary, both
+  // ways (GENARCH_RULES.md section 6). tests/test_site_output.py recomputes every value.
+  const sensShortest = sensitivity.find((r) => r.key === shortest.key);
+  const sensOthers = sensitivity.filter((r) => r.key !== shortest.key);
+  if (!sensShortest || sensOthers.length === 0) {
+    throw new Error(
+      "The sensitivity measurements no longer cover the shortest record and the others. The " +
+      "two paragraphs in the record-length section are built on both; rewrite them."
+    );
+  }
+  type SensCell = (typeof sensitivity)[number]["withSmoke"];
+  const spreadRange = (pick: (r: (typeof sensitivity)[number]) => SensCell) => {
+    const v = sensOthers.map((r) => pick(r).conventionSpread);
+    return [Math.min(...v), Math.max(...v)] as const;
+  };
+  const maxAbs = (pick: (r: (typeof sensitivity)[number]) => number) =>
+    Math.max(...sensitivity.map((r) => Math.abs(pick(r))));
+  const spreadWith = spreadRange((r) => r.withSmoke);
+  const spreadEx = spreadRange((r) => r.exSmoke);
+  const sensitivityRecord = JSON.stringify({
+    cutoff: P98_SENSITIVITY_CUTOFF,
+    sites: Object.fromEntries(
+      sensitivity.map((r) => [
+        r.key,
+        Object.fromEntries(
+          (["withSmoke", "exSmoke"] as const).map((w) => [
+            w,
+            {
+              days: r[w].days,
+              conventionSpread: Number(n3(r[w].conventionSpread)),
+              dayShift: Number(n3(r[w].dayShift)),
+              meanShift: Number(n3(r[w].meanShift)),
+            },
+          ])
+        ),
+      ])
+    ),
+  });
+  // The one comparison whose values are unpublished values supplied by agency staff rather
+  // than figures in the August 7 report. getCollocation() carries that provenance on the row.
   const corrected = collocation.find((c) => c.correction);
   if (!corrected?.correction) {
     throw new Error(
-      "No collocation row carries a DEQ correction. The APEX 5 NO2 paragraph and the table " +
+      "No collocation row carries agency staff values. The APEX 5 NO2 paragraph and the table " +
       "footnote below both describe one, so remove them together with the DEQ_PUBLISHED entry."
     );
   }
-  // getDailyReconciliation() fails the build unless this is the one day DEQ staff have reviewed.
+  // getDailyReconciliation() fails the build unless this is the one day agency staff reviewed.
   const reviewed = reconciliation.mismatches[0];
   // Weekly editions, oldest first. The row order and the edition order are the same tuple
   // length, so an edition added without its figures is a typecheck failure, not a short column.
@@ -238,10 +320,10 @@ export default function DataCenterCorridorPage() {
           <h1 className="text-h1 text-surface-white">Data Center Corridor Air Monitoring</h1>
           <div className="mt-3 max-w-3xl space-y-3 text-cool-light leading-relaxed">
             <p>
-              DEQ describes the goal of the project as an exploratory trend analysis of the sensor
-              measurements, meant to establish whether areas with high numbers of data centers need
-              additional regulatory air monitoring (DEQ staff, correspondence, 2026-08-16). The
-              network exists to answer that question. It was not built to measure compliance, and
+              Agency staff describe the goal of the project as an exploratory trend analysis of
+              the sensor measurements, meant to establish whether areas with high numbers of data
+              centers need additional regulatory air monitoring. The network exists to answer that
+              question. It was not built to measure compliance, and
               most misreadings of these numbers start by treating it as though it were.
             </p>
             <p>
@@ -299,9 +381,8 @@ export default function DataCenterCorridorPage() {
               analysis makes the same point about hourly values.
             </p>
             <p>
-              Sensor measurements come from the public Kunak Cloud export, by the download method
-              DEQ staff confirmed on 2026-08-10, and are redistributable with credit to Virginia
-              DEQ. Regulatory monitor measurements were released under Virginia FOIA request
+              Sensor measurements come from the public Kunak Cloud export, by a download method
+              confirmed by agency staff, and are redistributable with credit to Virginia DEQ. Regulatory monitor measurements were released under Virginia FOIA request
               26-4646 on 2026-08-11, in full, and are public at{" "}
               <ExternalLink href={DEQ_SOURCES.foia.sourceUrl!}>
                 vadeq.nextrequest.com/requests/26-4646
@@ -522,8 +603,8 @@ export default function DataCenterCorridorPage() {
               <caption className="sr-only">
                 DEQ&apos;s regression coefficients beside coefficients computed by GENARCH, for
                 each hardware unit and pollutant. Sensor on the x axis, regulatory monitor on the
-                y axis. A dagger marks the one DEQ row that came from correspondence rather than
-                from a report.
+                y axis. A dagger marks the one row whose comparison values are unpublished values
+                supplied by agency staff rather than figures from a report.
               </caption>
               <thead>
                 <tr className="border-b border-white/[0.08] text-left text-cool-mid">
@@ -557,7 +638,8 @@ export default function DataCenterCorridorPage() {
                           <span aria-hidden="true">†</span>
                           <span className="sr-only">
                             {" "}
-                            corrected by DEQ; see the note below the table
+                            unpublished values supplied by agency staff; see the note below the
+                            table
                           </span>
                         </a>
                       )}
@@ -593,27 +675,25 @@ export default function DataCenterCorridorPage() {
             className="mt-2 max-w-3xl text-xs text-cool-mid leading-relaxed"
           >
             <span aria-hidden="true">† </span>
-            {corrected.unitLabel} {corrected.pollutant}: the{" "}
-            {longDate(corrected.correction.supersedesEdition)} edition published y ={" "}
-            {corrected.correction.published.intercept} +{" "}
-            {corrected.correction.published.slope}x, R² = {corrected.correction.published.r2}.
-            DEQ later corrected that fit, and the{" "}
-            {longDate(corrected.correction.inPrint.edition)} edition prints the corrected form at
-            y = {corrected.correction.inPrint.coefficients.intercept} +{" "}
+            {corrected.unitLabel} {corrected.pollutant}: the column above holds unpublished
+            values supplied by agency staff for the same window, the{" "}
+            {longDate(corrected.correction.supersedesEdition)} window the GENARCH column is
+            computed on. The {longDate(corrected.correction.supersedesEdition)} edition printed y
+            = {corrected.correction.published.intercept} +{" "}
+            {corrected.correction.published.slope}x, R² = {corrected.correction.published.r2}{" "}
+            for that regression. DEQ&apos;s {corrected.correction.inPrint.edition} edition prints
+            a different fit for that regression over a longer window: y ={" "}
+            {corrected.correction.inPrint.coefficients.intercept} +{" "}
             {corrected.correction.inPrint.coefficients.slope}x, R² ={" "}
-            {corrected.correction.inPrint.coefficients.r2} over that edition&apos;s longer record
-            ({DEQ_SOURCES.reportAug21.citation}). The column above holds the corrected fit over
-            the {longDate(corrected.correction.supersedesEdition)} window instead, because that is
-            the window the GENARCH column is computed on. DEQ supplied those coefficients by
-            correspondence on {corrected.correction.correspondenceDate}.
+            {corrected.correction.inPrint.coefficients.r2} ({DEQ_SOURCES.reportAug21.citation}).
           </p>
 
           <div className="mt-4 max-w-3xl space-y-3 text-cool-light leading-relaxed">
             <p>
               The DEQ column is the August 7 edition apart from the daggered row, and the GENARCH
-              column stops at {DEQ_EDITION_CUTOFF_LABEL}. DEQ produces each edition on Friday
-              morning from data through 07:00 that day. The cutoff is the agency&apos;s
-              specification, not an assumption made here (DEQ staff, correspondence, 2026-08-16).
+              column stops at {DEQ_EDITION_CUTOFF_LABEL}. Each edition is produced on Friday
+              morning from data through 07:00 that day, confirmed by agency staff, so the cutoff
+              is not an assumption made here.
               DEQ reissues this analysis every week, so a comparison that names no edition is
               measured against a target that moves.
             </p>
@@ -649,14 +729,12 @@ export default function DataCenterCorridorPage() {
             </p>
             <p>
               The {recordedFit.unitLabel} {recordedFit.pollutant} row is recorded rather than
-              checked. Its DEQ side is the {recordedFit.nonComparable.deqCutoff}, while the
-              GENARCH fit beside it stops at {recordedFit.nonComparable.genarchCutoff}. The fit
-              cannot be extended to meet it, because a collocation fit needs both sides of each
-              hourly pair and the regulatory record released under FOIA 26-4646 ends 2026-08-10.
-              Neither side can be moved, so no change here makes the comparison valid, and a
-              check that passed on it would not mean what the other{" "}
-              {word(assertedFits.length)} mean. Both figures stay in the table and the check
-              returns when the extended regulatory record arrives.
+              checked by the build. Its comparison values are{" "}
+              {recordedFit.nonComparable.deqCutoff}, not figures printed in a DEQ edition, and the
+              build holds only printed coefficients to a tolerance. The GENARCH fit beside them
+              stops at {recordedFit.nonComparable.genarchCutoff} and falls inside the same
+              tolerance of them as the checked rows. The check returns when a DEQ edition prints
+              coefficients for that window.
             </p>
             <p>
               The rows do not carry equal weight. The two {collocation[0].unitLabel} rows
@@ -668,22 +746,19 @@ export default function DataCenterCorridorPage() {
               than they can support.
             </p>
             <p>
-              The {ordinal(collocation.length)} took a round of correspondence to get there. The{" "}
+              The {ordinal(collocation.length)} is compared differently. The{" "}
               {corrected.unitLabel} {corrected.pollutant} figure printed in the August 7 edition
-              did not reproduce here, so the question went to DEQ. DEQ traced it to the plotting
-              call behind the chart: the axis limits there bounded the model fit as well as the
-              plotted view, so points outside them never entered the regression. Refitting without
-              the limits over the August 7 window gives y = {corrected.deq.intercept} +{" "}
-              {corrected.deq.slope}x, R² = {corrected.deq.r2}, and DEQ sent the paired hourly
-              measurements the regression runs on (DEQ staff, correspondence,{" "}
-              {corrected.correction.correspondenceDate}).
+              did not reproduce here. The comparison values in the column above are unpublished
+              values supplied by agency staff for the same window, y = {corrected.deq.intercept}{" "}
+              + {corrected.deq.slope}x, R² = {corrected.deq.r2}, together with the paired hourly
+              measurements the regression runs on.
             </p>
             <p>
-              The correction is now in print. The{" "}
-              {longDate(corrected.correction.inPrint.edition)} edition carries the unbounded fit,
-              at y = {corrected.correction.inPrint.coefficients.intercept} +{" "}
+              DEQ&apos;s {corrected.correction.inPrint.edition} edition prints a different fit for
+              that regression over a longer window, y ={" "}
+              {corrected.correction.inPrint.coefficients.intercept} +{" "}
               {corrected.correction.inPrint.coefficients.slope}x, R² ={" "}
-              {corrected.correction.inPrint.coefficients.r2} over a record two weeks longer than
+              {corrected.correction.inPrint.coefficients.r2}, over a record two weeks longer than
               the one this table compares on. Those coefficients describe that longer window, so
               this page cites them here rather than setting them in the column above.
             </p>
@@ -691,11 +766,10 @@ export default function DataCenterCorridorPage() {
               The same fit computed from the source tables gives y ={" "}
               {n3(corrected.genarch.intercept)} + {n3(corrected.genarch.slope)}x, R² ={" "}
               {n3(corrected.genarch.r2)} on {n0(corrected.genarch.n)} paired hours, inside
-              tolerance of the corrected coefficients. That fit keeps the sensor&apos;s exact-zero
+              tolerance of the values agency staff supplied. That fit keeps the sensor&apos;s exact-zero
               readings, {n1(no2.zeroSharePct)} percent of the {corrected.unitLabel} window&apos;s{" "}
-              {corrected.pollutant} hours in runs as long as {no2.maxZeroRun} hours, because DEQ
-              keeps them (DEQ staff, correspondence,{" "}
-              {corrected.correction.correspondenceDate}). Everywhere else on this page they stay
+              {corrected.pollutant} hours in runs as long as {no2.maxZeroRun} hours, because they
+              are retained in this regression, confirmed by agency staff. Everywhere else on this page they stay
               excluded as a per-pollutant floor clamp. Dropping them here returns slope{" "}
               {n3(no2.zerosDropped.slope)} and R² {n3(no2.zerosDropped.r2)} on{" "}
               {n0(no2.zerosDropped.n)} pairs, the figure this page carried before, which left zero
@@ -718,10 +792,10 @@ export default function DataCenterCorridorPage() {
             </p>
             <p>
               The single day that differs is {reviewed.date}, where the recomputation gives{" "}
-              {n1(reviewed.truncated)} against a published {n1(reviewed.published)}. DEQ staff
-              reviewed that date, said that recomputing from hourly values also gives{" "}
-              {n1(reviewed.truncated)}, and noted that they were unsure why the invalid hour at 10:00 was not excluded from
-              the published daily export (DEQ staff, correspondence, 2026-08-16).
+              {n1(reviewed.truncated)} against a published {n1(reviewed.published)}. That
+              recomputing from hourly values also gives {n1(reviewed.truncated)} was confirmed by
+              agency staff, who were unsure why the invalid hour at 10:00 was not excluded from
+              the published daily export.
             </p>
             <p className="text-sm">
               DEQ&apos;s analysis:{" "}
@@ -755,27 +829,33 @@ export default function DataCenterCorridorPage() {
               drawn from a denser part of the distribution. Setting one beside the other compares
               a near-maximum against a genuine upper-tail quantile.
             </p>
-            <p>
-              How much that matters can be measured. Holding the data fixed and changing only the
-              interpolation convention moves the shortest record&apos;s 98th percentile by 13.27
-              µg/m³, against 0.35 to 2.33 µg/m³ for the longer records (sensor cutoff 2026-08-28,
-              Kunak export 2026-08-28,{" "}
+            <p data-p98-sensitivity={sensitivityRecord}>
+              How much that matters can be measured, on each site&apos;s own record through{" "}
+              {P98_SENSITIVITY_CUTOFF}, the record these measurements were first made on (
               <span className="font-mono text-xs">
                 outputs/repro/p98_common_window_2026-08-28.csv
               </span>
-              ). A statistic that moves that far on a choice of convention is not measuring a
-              difference between sites.
+              ). Holding the data fixed and changing only the interpolation convention moves the
+              shortest record&apos;s 98th percentile by{" "}
+              {n2(sensShortest.withSmoke.conventionSpread)} µg/m³ with the smoke window, against{" "}
+              {n2(spreadWith[0])} to {n2(spreadWith[1])} µg/m³ for the longer records. With the
+              smoke-window days of {SMOKE_WINDOW.start} to {SMOKE_WINDOW.end} left out, it moves
+              by {n2(sensShortest.exSmoke.conventionSpread)} µg/m³, against {n2(spreadEx[0])} to{" "}
+              {n2(spreadEx[1])} µg/m³ for the longer records. A statistic that moves that far on a
+              choice of convention is not measuring a difference between sites.
             </p>
             <p>
-              The instability is not confined to the short record. At every site the 98th
-              percentile of daily PM2.5 falls inside a wide gap between the bulk of the
-              distribution and the July smoke days, and the two daily values it is interpolated
-              between are themselves smoke days. Moving the day boundary by one hour, which is
-              the difference between binning days on local standard time and on local clock time,
-              shifts the statistic by up to 2.12 µg/m³ while leaving the mean unchanged to within
-              0.05 (sensor cutoff 2026-08-27, Kunak export 2026-08-28,{" "}
-              <span className="font-mono text-xs">docs/PERCENTILE_METHOD.md</span>). At these
-              sample sizes the 98th percentile of daily PM2.5 is sensitive to defensible
+              The instability is not confined to the short record. With the smoke window, the 98th
+              percentile of daily PM2.5 at every site falls inside a wide gap between the bulk of
+              the distribution and the July smoke days, and the two daily values it is
+              interpolated between are themselves smoke days. Moving the day boundary by one hour,
+              which is the difference between binning days on local standard time and on local
+              clock time, shifts the statistic by up to {n2(maxAbs((r) => r.withSmoke.dayShift))}{" "}
+              µg/m³ with the smoke window and by up to {n2(maxAbs((r) => r.exSmoke.dayShift))}{" "}
+              µg/m³ without it, while leaving the mean unchanged to within{" "}
+              {n2(Math.max(maxAbs((r) => r.withSmoke.meanShift), maxAbs((r) => r.exSmoke.meanShift)))}{" "}
+              either way, on the same records. With the smoke days in the record, the 98th
+              percentile of daily PM2.5 at these sample sizes is sensitive to defensible
               methodological choices at every site, not only at the shortest-record one.
             </p>
             <p>
@@ -855,24 +935,37 @@ export default function DataCenterCorridorPage() {
               {dailyP98.values.map((v, i) => `${n1(v)} on ${editions[i].short}`).join(", ")}.
               The {lastEdition.label} edition drops that sentence and states instead that no
               site&apos;s 98th percentile of daily averages sits above the {PM25_24H_LEVEL} µg/m³
-              level. DEQ staff said they expected the figure to keep falling as the record
-              lengthened (DEQ staff, correspondence, 2026-08-16). The first{" "}
+              level. Agency staff stated that they expected the figure to keep falling as the
+              record lengthened. The first{" "}
               {word(editions.length - 1)} editions are archived under docs/deq-reports/ and the{" "}
               {lastEdition.short} edition under pipeline/sources/deq/, because DEQ&apos;s
               published page carries only the current one.
             </p>
             <p>
-              DEQ staff note that the wildfire smoke data heavily skews the 98th percentiles at
-              every site, and that before the smoke arrived they sat at or below about 20 µg/m³
-              everywhere (DEQ staff, correspondence, 2026-08-16). The percentiles in the table
-              below include that window.
+              Agency staff state that wildfire data heavily skews the 98th percentiles at all
+              sites, and that pre-wildfire 98th percentiles were around or below 20 µg/m³
+              everywhere. That figure covers each
+              site&apos;s record before the smoke arrived on {SMOKE_WINDOW.start}. The table
+              below gives every percentile both ways. With the smoke window, it covers each
+              site&apos;s record through {RECORD_END} and the common window of{" "}
+              {COMMON_WINDOW_START} to {RECORD_END}. Without it, it covers the same days less{" "}
+              {SMOKE_WINDOW.start} to {SMOKE_WINDOW.end}, so it keeps the days after the smoke,
+              which the pre-wildfire figure does not include.
             </p>
-            <p>
+            <p data-common-window-ex-smoke={exSmokeRecord}>
               Restricting every sensor to the window in which all {word(commonWindow.length)}{" "}
               of them were collecting, {COMMON_WINDOW_START} to {RECORD_END}, changes the
               ordering. {Word(aboveLevel.length)} of {word(commonWindow.length)} sites sit above{" "}
               {PM25_24H_LEVEL} µg/m³ on matched windows, and site {shortest.key} ranks{" "}
-              {ordinal(shortestRank)} rather than first. The common window is not a clean control
+              {ordinal(shortestRank)} rather than first. With the smoke-window days of{" "}
+              {SMOKE_WINDOW.start} to {SMOKE_WINDOW.end} left out, on the same window and day
+              definition,{" "}
+              {aboveLevelExSmoke.length === 0 ? "none" : word(aboveLevelExSmoke.length)} of{" "}
+              {word(commonWindow.length)} sites sit above {PM25_24H_LEVEL} µg/m³: their 98th
+              percentiles run from {n3(Math.min(...exSmokeValues))} to{" "}
+              {n3(Math.max(...exSmokeValues))} µg/m³, and site {shortest.key} ranks{" "}
+              {ordinal(shortestRankExSmoke)}. Whether any site sits above the level depends on
+              the smoke days; site {shortest.key}&apos;s position does not. The common window is not a clean control
               on its own: it falls entirely in high summer and contains the smoke window, so it
               removes the unequal-length difference and leaves the unequal-seasonality one in
               place.
@@ -880,11 +973,15 @@ export default function DataCenterCorridorPage() {
           </div>
 
           <div className="mt-5 overflow-x-auto rounded-lg border border-white/[0.08] bg-navy-mid/50">
-            <table className="w-full min-w-[780px] border-collapse text-sm">
+            <table
+              className="w-full min-w-[980px] border-collapse text-sm"
+              data-own-record-ex-smoke={fullExSmokeRecord}
+            >
               <caption className="sr-only">
                 For each site: days, 98th percentile of daily PM2.5 averages, and the ranked
                 observation that percentile is read from, over the site&apos;s own record and over
-                the common window in which all deployed sensors were collecting.
+                the common window in which all deployed sensors were collecting, then both
+                percentiles again with the smoke window excluded.
               </caption>
               <thead>
                 <tr className="border-b border-white/[0.08] text-left text-cool-mid">
@@ -895,6 +992,12 @@ export default function DataCenterCorridorPage() {
                   <th scope="col" className="py-2 px-3 text-right font-medium">Days, common</th>
                   <th scope="col" className="py-2 px-3 text-right font-medium">p98, common</th>
                   <th scope="col" className="py-2 px-3 text-right font-medium">Rank, common</th>
+                  <th scope="col" className="py-2 px-3 text-right font-medium">
+                    p98, own record, smoke excluded
+                  </th>
+                  <th scope="col" className="py-2 px-3 text-right font-medium">
+                    p98, common, smoke excluded
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -914,6 +1017,12 @@ export default function DataCenterCorridorPage() {
                     </td>
                     <td className="py-2 px-3 text-right font-mono text-xs text-cool-light">
                       {p.commonPosition === null ? "—" : rankLabel(p.commonPosition)}
+                    </td>
+                    <td className="py-2 px-3 text-right font-mono text-cool-light">
+                      {p.fullP98ExSmoke === null ? "—" : n2(p.fullP98ExSmoke)}
+                    </td>
+                    <td className="py-2 px-3 text-right font-mono text-cool-light">
+                      {p.commonP98ExSmoke === null ? "—" : n2(p.commonP98ExSmoke)}
                     </td>
                   </tr>
                 ))}

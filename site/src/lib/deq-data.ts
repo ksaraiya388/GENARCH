@@ -37,10 +37,10 @@ export const SMOKE_WINDOW = { start: "2026-07-16", end: "2026-07-19" } as const;
 export const RECORD_END = "2026-08-07";
 
 /**
- * Cutoff for the collocation reproduction, hour-level. DEQ produces each weekly edition on
- * Friday morning from data through 07:00 that day, so the August 7 edition covers the record
- * to this instant rather than to the end of the released files (DEQ staff, correspondence,
- * 2026-08-16). This is DEQ's specification, not an inference from where the data stops.
+ * Cutoff for the collocation reproduction, hour-level. Each weekly edition is produced on
+ * Friday morning from data through 07:00 that day, confirmed by agency staff, so the August 7
+ * edition covers the record to this instant rather than to the end of the released files. It
+ * is not an inference from where the data stops.
  *
  * `RECORD_END` above is date-level and drives the percentile common window. The two are not
  * interchangeable and neither should be rewritten in terms of the other.
@@ -256,7 +256,7 @@ function pearson(xs: number[], ys: number[]): number {
 /* --------------------------------------------------------------- source loading */
 
 /**
- * Validity, as confirmed by DEQ staff on 2026-08-12: exclude a reading if and only if the
+ * Validity, confirmed by agency staff: exclude a reading if and only if the
  * value is missing, an AQS Null Code is present, or the Flags field contains `<`. No letter
  * code alone excludes a reading, and flags are case-sensitive -- `I` (Invalidated By Edit) and
  * `l` (Low Alarm) are different codes and are never folded together.
@@ -630,24 +630,22 @@ export function getSmokeSplitStats(): SplitStat[] {
 /* ------------------------------------------------------------ collocation panel */
 
 /**
- * A coefficient set DEQ issued by correspondence in place of one it had already published.
- * Carried in the data rather than only in the page's prose, so the provenance difference
- * between a figure read off a published report and a figure supplied by email survives any
- * later rewrite of the surrounding paragraphs.
+ * Unpublished values supplied by agency staff for the window of an edition whose printed
+ * figures for the same regression differ. Carried in the data rather than only in the page's
+ * prose, so the provenance difference between a figure read off a published report and an
+ * unpublished one survives any later rewrite of the surrounding paragraphs. From 2026-11-20,
+ * at agency staff's request, these are attributed to agency staff and not to DEQ.
  */
 export interface DeqCorrection {
-  /** Date of the DEQ correspondence carrying the corrected coefficients. */
-  correspondenceDate: string;
-  /** Report edition whose coefficients the correction replaces. */
+  /** Report edition whose window the supplied values cover. */
   supersedesEdition: string;
   /** What that edition printed. */
   published: { intercept: number; slope: number; r2: number };
   /**
-   * The first edition to carry the corrected regression in print, and the coefficients it
-   * printed. Those coefficients are not the ones in `deq` above and are not meant to be: the
-   * edition refits on a longer record, so it answers a different question than the row does.
-   * Held here so the page can cite a published edition for the fact that DEQ corrected the
-   * regression, rather than resting that fact on correspondence alone.
+   * DEQ's 2026-08-21 edition, which prints a different fit for that regression over a longer
+   * window, and the coefficients it printed. Those coefficients are not the ones in `deq` above
+   * and are not meant to be: the edition fits a longer record, so it answers a different
+   * question than the row does.
    */
   inPrint: {
     edition: string;
@@ -696,17 +694,16 @@ export interface NonComparable {
 }
 
 /**
- * DEQ retains exact-zero sensor measurements in the APEX 5 NO2 collocation regression, and
- * confirmed that in correspondence on 2026-08-19 along with the corrected coefficients and the
- * underlying paired-hourly data. The pipeline excludes those readings globally as a
+ * Exact-zero sensor measurements are retained in the APEX 5 NO2 collocation regression,
+ * confirmed by agency staff. The pipeline excludes those readings globally as a
  * per-pollutant floor clamp (docs/GENARCH_RULES.md section 4), so this one fit has to readmit
- * them to be the same calculation DEQ ran.
+ * them to be the same calculation.
  *
  * The flag is per comparison rather than per function, and deliberately so. Readmitting zeros
  * into the other three moves coefficients that currently reproduce back outside tolerance --
  * APEX 14 PM2.5 intercept to 1.368 against a published 1.3, APEX 14 NO2 R² to 0.549 against a
- * published 0.49. DEQ's confirmation covers the regression it was asked about; extending it to
- * regressions the agency did not speak to would be an inference, and the arithmetic says it
+ * published 0.49. The confirmation covers the regression agency staff were asked about; extending it
+ * to regressions they did not speak to would be an inference, and the arithmetic says it
  * would be the wrong one.
  *
  * Nothing outside `getCollocation()` reads this flag. Percentiles, daily averages, smoke-window
@@ -714,14 +711,15 @@ export interface NonComparable {
  * of retaining zeros there is untested and is a separate question.
  */
 const RETAIN_ZEROS_NOTE =
-  "DEQ staff confirmed on 2026-08-19 that exact-zero measurements are retained in this regression.";
+  "Exact-zero measurements are retained in this regression, confirmed by agency staff.";
 
 /**
  * DEQ's regressions at the collocated site. External ground truth: the build-time fits are
  * asserted against these, not against any figure produced by a GENARCH analysis script.
  *
- * Three come from the August 7 2026 report. The APEX 5 NO2 entry carries DEQ's 2026-08-19
- * correction instead, with the August 7 figures preserved in `correction.published`.
+ * Three come from the August 7 2026 report. The APEX 5 NO2 entry carries unpublished values
+ * supplied by agency staff for the same window instead, with the August 7 figures preserved in
+ * `correction.published`.
  *
  * Every entry stays pinned to the August 7 window even though later editions have shipped,
  * because the GENARCH column is computed over exactly that span and the record itself stops
@@ -737,14 +735,13 @@ const DEQ_PUBLISHED: readonly DeqPublishedSpec[] = [
     intercept: -4.7, slope: 1.7, r2: 0.84, assertAgainstDeq: true },
   { key: "apex-14-no2", unitId: "apex-14", pollutant: "NO2", unit: "ppb",
     intercept: 2.2, slope: 1.1, r2: 0.49, assertAgainstDeq: true },
-  // Not asserted. See `nonComparable` below: the two sides are pinned to windows that
-  // cannot be aligned in either direction, so the gate was demoted on 2026-08-29.
+  // Not asserted. See `nonComparable` below: the comparison values are not published, so the
+  // build holds only published coefficients to a tolerance.
   { key: "apex-05-no2", unitId: "apex-05", pollutant: "NO2", unit: "ppb",
     intercept: 1.8, slope: 0.32, r2: 0.21, assertAgainstDeq: false,
     // RETAIN_ZEROS_NOTE above carries the reason and the scope of this one flag.
     retainExactZeros: true,
     correction: {
-      correspondenceDate: "2026-08-19",
       supersedesEdition: "2026-08-07",
       published: { intercept: 1.9, slope: 0.29, r2: 0.17 },
       inPrint: {
@@ -753,20 +750,16 @@ const DEQ_PUBLISHED: readonly DeqPublishedSpec[] = [
       },
     },
     nonComparable: {
-      deqCutoff: "2026-08-19 correspondence, refit over DEQ's record to that date",
+      deqCutoff: "unpublished values supplied by agency staff for the same window",
       genarchCutoff: DEQ_EDITION_CUTOFF_LABEL,
       reason:
-        "DEQ's corrected coefficients were computed over a window that runs past the " +
-        "2026-08-07 edition cutoff the GENARCH fit stops at. The fit cannot be extended " +
-        "to meet them: a collocation fit needs both sides of each hourly pair, and the " +
-        "regulatory monitor released under FOIA 26-4646 ends 2026-08-10. Neither side " +
-        "can be moved, so no change on this side makes the comparison valid. A gate that " +
-        "passes on a comparison known to be non-comparable is worse than no gate.",
+        "The comparison values for this regression are unpublished values supplied by " +
+        "agency staff for the window of the 2026-08-07 edition, not figures printed in a " +
+        "DEQ edition. The build holds only printed coefficients to a tolerance.",
       restoreWhen:
-        "The follow-up FOIA request extends the regulatory record past 2026-08-10 and " +
-        "the GENARCH fit can be recomputed over DEQ's own correction window. Set " +
-        "assertAgainstDeq back to true and drop this block.",
-      blockedOn: "FOIA 26-4646 follow-up request, pending",
+        "A DEQ edition prints coefficients for this regression over the window of the " +
+        "2026-08-07 edition. Set assertAgainstDeq back to true and drop this block.",
+      blockedOn: "a printed figure for the 2026-08-07 window",
     } },
 ];
 
@@ -964,10 +957,10 @@ export interface DailyReconciliation {
 }
 
 /**
- * The days DEQ staff have reviewed. The page names this date and reports what DEQ said about it,
- * so a mismatch set that no longer matches makes an attributed sentence false. Reviewing a new
- * date means adding it here and writing what DEQ said; it is not a constant to widen until the
- * check passes.
+ * The days agency staff have reviewed. The page names this date and reports what agency staff
+ * confirmed about it, so a mismatch set that no longer matches makes an attributed sentence
+ * false. Reviewing a new date means adding it here and writing what was confirmed; it is not a
+ * constant to widen until the check passes.
  */
 const DEQ_REVIEWED_MISMATCHES = ["2026-03-10"];
 
@@ -1002,9 +995,9 @@ export function getDailyReconciliation(): DailyReconciliation {
   if (dates.join(",") !== DEQ_REVIEWED_MISMATCHES.join(",")) {
     throw new Error(
       `DEQ daily reconciliation: the days that differ are now ${dates.join(", ") || "(none)"}, ` +
-      `but the collocation section attributes a review to DEQ staff for ${DEQ_REVIEWED_MISMATCHES.join(", ")}. ` +
+      `but the collocation section attributes a review to agency staff for ${DEQ_REVIEWED_MISMATCHES.join(", ")}. ` +
       `Update that paragraph and DEQ_REVIEWED_MISMATCHES together, so the page does not attribute ` +
-      `a statement to DEQ about a day the agency has not been asked about.`
+      `a statement to agency staff about a day they have not been asked about.`
     );
   }
 
@@ -1109,18 +1102,46 @@ export interface PercentileRow {
    */
   commonP98: number | null;
   commonPosition: RankPosition | null;
+  /**
+   * The common-window percentile with every smoke-window day left out, local standard time
+   * days, as the report computes p98.common_exsmoke.* (DECISIONS.md D58). Null as above.
+   */
+  commonDaysExSmoke: number;
+  commonP98ExSmoke: number | null;
+  /**
+   * The own-record percentile with every smoke-window day left out, local standard time
+   * days, as the report computes p98.full.<code>.lst_zero_missing_exsmoke (audit round 2,
+   * S3).
+   */
+  fullDaysExSmoke: number;
+  fullP98ExSmoke: number | null;
   /** Share of the site's full record falling in the smoke window, as a percentage. */
   smokeShare: number;
   firstDay: string;
   lastDay: string;
 }
 
+/**
+ * The local clock time day of an hour-ending Kunak label: the label less one hour, which is the
+ * hour-beginning local clock time the hour started in. `pipeline/report_lib/daily.py` `day_key()`
+ * reads it the same way. Split rather than passed to `Date` as a local time, so the host's
+ * timezone cannot move it.
+ */
+function clockDayOf(tsRaw: string): string {
+  const [d, t] = tsRaw.split(" ");
+  const [y, m, day] = d.split("-").map(Number);
+  const [h] = t.split(":").map(Number);
+  return new Date(Date.UTC(y, m - 1, day, h - 1)).toISOString().slice(0, 10);
+}
+
+export type DayBinning = "standard" | "clock";
+
 /** Daily 24-hour means per site, subject to the 18-of-24 completeness rule. */
-function dailyMeans(siteId: string): Map<string, number> {
+function dailyMeans(siteId: string, binning: DayBinning = "standard"): Map<string, number> {
   const buckets = new Map<string, number[]>();
   for (const r of validSensor("PM2.5")) {
     if (r.site_id !== siteId) continue;
-    const day = dayOf(r.ts_est);
+    const day = binning === "standard" ? dayOf(r.ts_est) : clockDayOf(r.ts_raw);
     const b = buckets.get(day);
     if (b) b.push(Number(r.value));
     else buckets.set(day, [Number(r.value)]);
@@ -1149,7 +1170,10 @@ export function getPercentiles(): PercentileRow[] {
     const days = Array.from(means.keys()).filter((d) => d <= RECORD_END).sort();
     if (days.length === 0) continue;
     const common = days.filter((d) => d >= COMMON_WINDOW_START);
-    const smokeDays = days.filter((d) => d >= SMOKE_WINDOW.start && d <= SMOKE_WINDOW.end);
+    const inSmoke = (d: string) => d >= SMOKE_WINDOW.start && d <= SMOKE_WINDOW.end;
+    const smokeDays = days.filter(inSmoke);
+    const commonExSmoke = common.filter((d) => !inSmoke(d));
+    const fullExSmoke = days.filter((d) => !inSmoke(d));
     out.push({
       key: site.code,
       label: site.label,
@@ -1161,6 +1185,14 @@ export function getPercentiles(): PercentileRow[] {
         ? percentile(common.map((d) => means.get(d)!), 0.98)
         : null,
       commonPosition: common.length ? percentilePosition(common.length) : null,
+      commonDaysExSmoke: commonExSmoke.length,
+      commonP98ExSmoke: commonExSmoke.length
+        ? percentile(commonExSmoke.map((d) => means.get(d)!), 0.98)
+        : null,
+      fullDaysExSmoke: fullExSmoke.length,
+      fullP98ExSmoke: fullExSmoke.length
+        ? percentile(fullExSmoke.map((d) => means.get(d)!), 0.98)
+        : null,
       smokeShare: (smokeDays.length / days.length) * 100,
       firstDay: days[0],
       lastDay: days[days.length - 1],
@@ -1169,6 +1201,73 @@ export function getPercentiles(): PercentileRow[] {
   // Ranked on the common window, the comparison the section is about. A site with no common
   // window has no place in that ranking and sorts to the end rather than to the top.
   return out.sort((a, b) => (b.commonP98 ?? -Infinity) - (a.commonP98 ?? -Infinity));
+}
+
+/**
+ * How far the 98th percentile moves on two defensible choices, each site's own record to
+ * `P98_SENSITIVITY_CUTOFF`, with the smoke window and without it (GENARCH_RULES.md section 6).
+ *
+ *   conventionSpread  the largest minus the smallest value NumPy's linear, lower, higher, nearest
+ *                     and midpoint conventions give. Every one of them reads between the same two
+ *                     order statistics, so the spread is the gap between those two daily values.
+ *   dayShift          the local standard time percentile minus the local clock time one.
+ *   meanShift         the same difference on the mean.
+ *
+ * The cutoff is the 2026-08-28 edition's, the record these two measurements were first made on
+ * (`outputs/repro/p98_common_window_2026-08-28.csv`), not the page's RECORD_END. At RECORD_END the
+ * shortest record has 51 days, where (n - 1) x 0.98 is a whole index and every convention reads
+ * the same observation. tests/test_site_output.py recomputes every value through
+ * `pipeline/report_lib/daily.py`.
+ */
+export const P98_SENSITIVITY_CUTOFF = "2026-08-28";
+
+export interface P98SensitivityCell {
+  days: number;
+  conventionSpread: number;
+  dayShift: number;
+  meanShift: number;
+}
+
+export interface P98SensitivityRow {
+  key: string;
+  withSmoke: P98SensitivityCell;
+  exSmoke: P98SensitivityCell;
+}
+
+function sensitivityCell(
+  standard: Map<string, number>,
+  clock: Map<string, number>,
+  keep: (d: string) => boolean
+): P98SensitivityCell {
+  const lst = Array.from(standard.entries()).filter(([d]) => keep(d)).map(([, v]) => v);
+  const clk = Array.from(clock.entries()).filter(([d]) => keep(d)).map(([, v]) => v);
+  const sorted = [...lst].sort((a, b) => a - b);
+  const k = (sorted.length - 1) * 0.98;
+  const mean = (v: number[]) => v.reduce((a, b) => a + b, 0) / v.length;
+  return {
+    days: lst.length,
+    conventionSpread: sorted[Math.ceil(k)] - sorted[Math.floor(k)],
+    dayShift: percentile(lst, 0.98) - percentile(clk, 0.98),
+    meanShift: mean(lst) - mean(clk),
+  };
+}
+
+/** The sites in the common window, which are the ones the two measurements describe. */
+export function getP98Sensitivity(): P98SensitivityRow[] {
+  const inSmoke = (d: string) => d >= SMOKE_WINDOW.start && d <= SMOKE_WINDOW.end;
+  const within = (d: string) => d <= P98_SENSITIVITY_CUTOFF;
+  return getPercentiles()
+    .filter((p) => p.commonP98 !== null)
+    .map((p) => {
+      const slug = slugForCode(p.key);
+      const standard = dailyMeans(slug, "standard");
+      const clock = dailyMeans(slug, "clock");
+      return {
+        key: p.key,
+        withSmoke: sensitivityCell(standard, clock, within),
+        exSmoke: sensitivityCell(standard, clock, (d) => within(d) && !inSmoke(d)),
+      };
+    });
 }
 
 /* ------------------------------------------------------- cross-site correlation */
@@ -1394,6 +1493,26 @@ function downloadCoverage(file: string): string {
   return parts.join(", ");
 }
 
+/**
+ * The manifest records who confirmed a licence or a retrieval method, with the date of the
+ * message. From 2026-11-20, at agency staff's request, staff answers are attributed to agency
+ * staff rather than to DEQ, with no date or message reference (docs/report-2026/DECISIONS.md).
+ * The manifest is the pipeline's record and keeps its wording; the page renders it this way,
+ * and fails the build on any attribution form it does not know how to render.
+ */
+function asStaffAttribution(text: string): string {
+  const out = text
+    .replace(/\s*\(per DEQ staff, \d{4}-\d{2}-\d{2}\)/g, ", confirmed by agency staff")
+    .replace(/confirmed by DEQ staff \d{4}-\d{2}-\d{2}/g, "confirmed by agency staff");
+  if (/DEQ staff|correspondence/i.test(out)) {
+    throw new Error(
+      `A provenance string still attributes a staff answer to DEQ: "${out}". Render it as ` +
+      "confirmed by agency staff, with no date, in asStaffAttribution()."
+    );
+  }
+  return out;
+}
+
 export function getProvenance(): ProvenanceEntry[] {
   const candidates = [
     path.join(SOURCES_DIR, "manifest.json"),
@@ -1424,9 +1543,9 @@ export function getProvenance(): ProvenanceEntry[] {
       download,
       purpose: entry?.purpose ?? "",
       originUrl: entry?.origin_urls?.[0] ?? "",
-      retrievalMethod: entry?.retrieval_method ?? "",
+      retrievalMethod: asStaffAttribution(entry?.retrieval_method ?? ""),
       downloadDate: entry?.download_date ?? "",
-      license: entry?.license ?? "",
+      license: asStaffAttribution(entry?.license ?? ""),
       coverage: downloadCoverage(download),
       bytes: fs.existsSync(onDisk) ? fs.statSync(onDisk).size : 0,
     };

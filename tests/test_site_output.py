@@ -155,3 +155,86 @@ def test_the_served_downloads_are_keyed_by_site_code(built_site):
             header = next(csv.reader(handle))
         assert "site_code" in header, f"{path.name} is not keyed by site code: {header}"
         assert "site_id" not in header, f"{path.name} still carries a site_id column"
+
+
+def test_the_corridor_page_p98_sensitivity_equals_the_pipeline_computation(built_site):
+    """The two sensitivity measurements on the corridor page, both ways (GENARCH_RULES section 6).
+
+    The page computes the convention spread and the day-boundary shift for each site's own
+    record through its stated cutoff, with the smoke window and without it. This recomputes
+    every value through `pipeline/report_lib/daily.py`, the module the annual report's
+    `p98.full.*` keys come from. No report key exists at the page's cutoff of 2026-08-28; the
+    with-smoke convention spreads are also held against the repro file the page names.
+    """
+    import html
+    import json
+    from datetime import date, datetime
+
+    import numpy as np
+
+    from pipeline.report_lib import daily, site_codes
+
+    page = (built_site / "community" / "data-center-alley" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    match = re.search(r'data-p98-sensitivity="([^"]+)"', page)
+    assert match, "the corridor page no longer carries the p98 sensitivity record"
+    shown = json.loads(html.unescape(match.group(1)))
+    cutoff = date.fromisoformat(shown["cutoff"])
+    smoke = (date(2026, 7, 16), date(2026, 7, 19))
+
+    rows = []
+    source = REPO_ROOT / "pipeline" / "sources" / "deq_data_center_air_monitoring_hourly.csv"
+    with open(source, encoding="utf-8", newline="") as handle:
+        for r in csv.DictReader(handle):
+            if r["pollutant"] != "PM2.5":
+                continue
+            rows.append(
+                {
+                    "site_id": r["site_id"],
+                    "pollutant": r["pollutant"],
+                    "value": r["value"],
+                    "excluded": r["excluded"] == "true",
+                    "exclusion_reason": r["exclusion_reason"],
+                    "ts_est": datetime.fromisoformat(r["ts_est"]),
+                    "ts_raw": datetime.fromisoformat(r["ts_raw"]),
+                }
+            )
+    standard = daily.daily_means(rows, daily.STANDARD)
+    clock = daily.daily_means(rows, daily.CLOCK)
+
+    def cell(site_id: str, ex_smoke: bool) -> dict:
+        def keep(d: date) -> bool:
+            return d <= cutoff and not (ex_smoke and smoke[0] <= d <= smoke[1])
+
+        lst = [v for d, v in standard[site_id].items() if keep(d)]
+        clk = [v for d, v in clock[site_id].items() if keep(d)]
+        conventions = [
+            float(np.percentile(lst, 98, method=m))
+            for m in ("linear", "lower", "higher", "nearest", "midpoint")
+        ]
+        return {
+            "days": len(lst),
+            "conventionSpread": max(conventions) - min(conventions),
+            "dayShift": daily.p98(lst) - daily.p98(clk),
+            "meanShift": float(np.mean(lst)) - float(np.mean(clk)),
+        }
+
+    assert shown["sites"], "the sensitivity record lists no site"
+    for code, cells in shown["sites"].items():
+        site_id = site_codes.by_code(code).site_id
+        for which, ex_smoke in (("withSmoke", False), ("exSmoke", True)):
+            expected = cell(site_id, ex_smoke)
+            got = cells[which]
+            assert got["days"] == expected["days"], (code, which)
+            for field in ("conventionSpread", "dayShift", "meanShift"):
+                assert abs(got[field] - expected[field]) <= 0.0015, (code, which, field)
+
+    repro = REPO_ROOT / "outputs" / "repro" / "p98_common_window_2026-08-28.csv"
+    if shown["cutoff"] == "2026-08-28" and repro.is_file():
+        with open(repro, encoding="utf-8", newline="") as handle:
+            spreads = [float(r["full_record_p98_method_spread"]) for r in csv.DictReader(handle)]
+        page_spreads = sorted(
+            round(c["withSmoke"]["conventionSpread"], 2) for c in shown["sites"].values()
+        )
+        assert page_spreads == sorted(spreads)

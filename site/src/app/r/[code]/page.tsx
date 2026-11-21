@@ -6,7 +6,7 @@ import { OutreachRedirect } from "./OutreachRedirect";
  * Outreach attribution redirects. Every code lands on the same page; the code exists
  * only so the send it came from is identifiable in Vercel Analytics as a distinct path.
  *
- * One code per recipient, never reused — see docs/GENARCH_RULES.md §11. Adding a code
+ * One code per recipient, never reused — see docs/GENARCH_RULES.md §12. Adding a code
  * here is the whole of the work; the route is otherwise generic.
  */
 const OUTREACH_CODES = [
