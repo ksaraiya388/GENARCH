@@ -283,9 +283,9 @@ def f01_network_timeline(out_dir: Path, spans: list[dict], marks: dict) -> list[
 # --------------------------------------------------------------------- F02
 
 
-# The one comparison whose DEQ coefficients come from staff correspondence rather than
-# a printed edition (DECISIONS.md D54); its panel says so, and the table note gives
-# DEQ's printed correction.
+# The one comparison whose values are unpublished values supplied by agency staff rather
+# than a printed edition (DECISIONS.md D54, D67); its panel says so, and the table note
+# gives the different fit DEQ's 2026-08-21 edition prints over a longer window.
 CORRESPONDENCE_FIT = "apex-05_NO2"
 
 
@@ -306,7 +306,7 @@ def f02_collocation(out_dir: Path, fits: list[dict]) -> list[Path]:
             linestyle=primary["linestyle"],
             linewidth=1.8,
             label=(
-                "DEQ, staff correspondence"
+                "Agency staff values"
                 if fit["key"] == CORRESPONDENCE_FIT
                 else "DEQ published"
             ),
@@ -325,7 +325,7 @@ def f02_collocation(out_dir: Path, fits: list[dict]) -> list[Path]:
         ax.set_title(f"{unit_label} {fit['pollutant']}", loc="left")
         ax.set_xlabel(f"Sensor ({fit['unit']})")
         ax.set_ylabel(f"Regulatory monitor ({fit['unit']})")
-        deq_tag = "DEQ†:    " if fit["key"] == CORRESPONDENCE_FIT else "DEQ:     "
+        deq_tag = "Staff†:  " if fit["key"] == CORRESPONDENCE_FIT else "DEQ:     "
         text = (
             f"{deq_tag}y = {fit['deq_intercept']} + {fit['deq_slope']}x, "
             f"R² = {fit['deq_r2']}\n"

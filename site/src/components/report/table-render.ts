@@ -104,13 +104,13 @@ export function softHyphenate(text: string): string {
 }
 
 const KUNAK_LICENCE =
-  "Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ " +
-  "staff, 2026-08-10). Preferred attribution line pending from DEQ Communications.";
+  "Fully redistributable with credit that the data belong to Virginia DEQ, confirmed by " +
+  "agency staff. Preferred attribution line pending from DEQ Communications.";
 const FOIA_LICENCE =
   "Public records released in full under the Virginia Freedom of Information Act, no " +
   "redactions, no cost. Credit Virginia DEQ.";
 const DEQ_REPORT_LICENCE =
-  "Public record. Virginia DEQ confirmed redistributable with credit to Virginia DEQ.";
+  "Public record. Redistributable with credit to Virginia DEQ, confirmed by agency staff.";
 
 const NR_NOTE =
   "NR is the catalogue's own label for a sample whose ancestry was not reported.";

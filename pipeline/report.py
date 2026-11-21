@@ -593,8 +593,8 @@ def build_numbers(fz: Freeze, results: dict) -> NumberRegistry:
     reg.add(
         "deq.edition_cutoff",
         DEQ_EDITION_CUTOFF_LABEL,
-        method="DEQ builds each weekly edition from data through 07:00 that Friday "
-        "(DEQ staff, 2026-08-16)",
+        method="each weekly edition is built from data through 07:00 that Friday, "
+        "confirmed by agency staff",
         inputs=table4_inputs,
     )
 
@@ -758,17 +758,18 @@ def build_numbers(fz: Freeze, results: dict) -> NumberRegistry:
     for fit in results["collocation"]:
         base = f"colloc.{fit['key']}"
         zeros = (
-            " exact zeros retained in this fit only (DEQ staff, 2026-08-19)"
+            " exact zeros retained in this fit only, confirmed by agency staff"
             if fit["retains_exact_zeros"]
             else " exact zeros treated as missing"
         )
         window = f"{fit['period_start']} to {fit['period_end']} EST"
-        # DECISIONS.md D54: the APEX 5 NO2 DEQ values are the coefficients DEQ staff
-        # supplied for the 2026-08-07 edition window, not a printed value.
+        # DECISIONS.md D54, D67: the APEX 5 NO2 comparison values are unpublished values
+        # supplied by agency staff for the 2026-08-07 edition window, not a printed value.
         deq_note = (
-            "DEQ staff correspondence of 2026-08-19, coefficients for the 2026-08-07 edition "
-            "window, two significant figures; not printed in an edition. DEQ's printed "
-            "correction is deq.aug21.apex-05_NO2.*, over a longer window"
+            "unpublished values supplied by agency staff for the same window, the "
+            "2026-08-07 edition window, two significant figures; not printed in an edition. "
+            "DEQ's 2026-08-21 edition prints a different fit for that regression over a "
+            "longer window, deq.aug21.apex-05_NO2.*"
             if fit["key"] == "apex-05_NO2"
             else "DEQ published, two significant figures"
         )
@@ -1296,8 +1297,8 @@ def add_audit_keys(fz: Freeze, results: dict, reg: NumberRegistry) -> None:
         DAILY_MIN_VALID_HOURS,
         unit="hours",
         precision=0,
-        method="valid hours a 24-hour average requires, DEQ's own threshold (DEQ staff, "
-        "2026-08-12; GENARCH_RULES.md section 3)",
+        method="valid hours a 24-hour average requires, the threshold DEQ applies, "
+        "confirmed by agency staff (GENARCH_RULES.md section 3)",
     )
     reg.add(
         "completeness.hours_per_day",
@@ -1313,7 +1314,7 @@ def add_audit_keys(fz: Freeze, results: dict, reg: NumberRegistry) -> None:
             unit="hours",
             precision=0,
             method="hours the Kunak hour-ending label is moved back to reach hour-beginning "
-            "EST, DEQ staff instruction of 2026-08-11, " + key.replace("_", " ")
+            "EST, the instruction confirmed by agency staff, " + key.replace("_", " ")
             + " (reproduced by the America/New_York conversion, DECISIONS.md D35)",
         )
     reg.add(
@@ -1343,16 +1344,16 @@ def add_audit_keys(fz: Freeze, results: dict, reg: NumberRegistry) -> None:
     reg.add(
         "deq.edition_date.aug21",
         "2026-08-21",
-        method="edition date of the DEQ report that first printed the corrected APEX 5 NO2 "
-        "regression (archived PDF, title page)",
+        method="edition date of the DEQ report that prints a different fit for the APEX 5 "
+        "NO2 regression over a longer window (archived PDF, title page)",
         inputs=_file_input(DEQ_AUG21_PATH, DEQ_AUG21_SHA256),
     )
     reg.add(
         "deq.correspondence.collocation_correction",
         "2026-08-19",
-        method="date of the DEQ staff correspondence supplying the APEX 5 NO2 coefficients for "
-        "the 2026-08-07 edition window and confirming exact-zero retention in that fit "
-        "(GENARCH_RULES.md section 10)",
+        method="date on which agency staff supplied unpublished APEX 5 NO2 values for the "
+        "2026-08-07 edition window and confirmed exact-zero retention in that fit; kept as "
+        "a record and not cited in the report (DECISIONS.md D67)",
         inputs=[],
     )
     page_acs = "pipeline/sources/cross_ancestry/acs_loudoun_2023.json"
@@ -2119,12 +2120,11 @@ def site_key_notes(reg: NumberRegistry) -> list[str]:
 def collocation_notes(reg: NumberRegistry) -> list[str]:
     """Notes for the collocation table (B7, S10, M6), every value from a key."""
     return [
-        "† The DEQ values for APEX 5 NO2 are the coefficients DEQ staff supplied on "
-        + reg.display("deq.correspondence.collocation_correction")
-        + " for the same window as the other three. DEQ's printed figures for that "
-        "regression are in its "
+        "† The comparison values for APEX 5 NO2 are unpublished values supplied by agency "
+        "staff for the same window as the other three. DEQ's "
         + reg.display("deq.edition_date.aug21")
-        + " edition (p. 14): y = "
+        + " edition prints a different fit for that regression over a longer window "
+        "(p. 14): y = "
         + reg.display("deq.aug21.apex-05_NO2.intercept")
         + " + "
         + reg.display("deq.aug21.apex-05_NO2.slope")
@@ -2152,19 +2152,38 @@ def collocation_notes(reg: NumberRegistry) -> list[str]:
     ]
 
 
+def staff_attribution(text: str) -> str:
+    """A frozen manifest string with staff answers attributed to agency staff (D67).
+
+    The frozen manifest keeps its wording, which dates the message and names DEQ staff.
+    From 2026-11-20, at agency staff's request, a staff answer is attributed to agency
+    staff with no date; site/src/lib/deq-data.ts asStaffAttribution() renders the live
+    manifest the same way. Any other attribution form fails the run.
+    """
+    out = re.sub(r"\s*\(per DEQ staff, \d{4}-\d{2}-\d{2}\)", ", confirmed by agency staff", text)
+    out = re.sub(r"confirmed by DEQ staff \d{4}-\d{2}-\d{2}", "confirmed by agency staff", out)
+    out = out.replace(
+        "Virginia DEQ confirmed redistributable with credit to Virginia DEQ.",
+        "Redistributable with credit to Virginia DEQ, confirmed by agency staff.",
+    )
+    if re.search(r"DEQ staff|DEQ confirmed|correspondence", out, flags=re.IGNORECASE):
+        raise ValueError(f"unrendered staff attribution in a provenance string: {out!r}")
+    return out
+
+
 def staff_status(fit: dict) -> str:
     """The T03 status cell (audit round 2, B2).
 
-    The APEX 5 NO2 DEQ values are the coefficients DEQ staff supplied for the window
-    (D54), not values DEQ printed, so that cell names them as staff values. The key
-    colloc.apex-05_NO2.status keeps its value; only the rendered cell differs.
+    The APEX 5 NO2 comparison values are unpublished values supplied by agency staff for
+    the window (D54, D67), not values DEQ printed, so that cell names them as staff values.
+    The key colloc.apex-05_NO2.status keeps its value; only the rendered cell differs.
     """
     if (
         fit["unit_id"] == "apex-05"
         and fit["pollutant"] == "NO2"
         and fit["status"] == collocation.STATUS_MATCH
     ):
-        return "matches DEQ staff values at DEQ's precision"
+        return "matches agency staff values at DEQ's precision"
     return fit["status"]
 
 
@@ -2207,7 +2226,7 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
         """
         for name in (filename, fallback):
             for entry in by_basename.get(name, []):
-                return origin_of(entry), entry.get("license", "")
+                return origin_of(entry), staff_attribution(entry.get("license", ""))
         return "", ""
 
     kunak_fallback = "deq_data_center_air_monitoring_hourly.csv"
@@ -2798,10 +2817,10 @@ def build_figures(
                 + reg.display("deq.edition_cutoff")
                 + " edition cutoff. DEQ's equations are those for the window of its "
                 + reg.display("deq.table4_edition_date")
-                + " edition; for APEX 5 NO2 (marked †) they are the coefficients DEQ staff "
-                "supplied on "
-                + reg.display("deq.correspondence.collocation_correction")
-                + " for that window, and DEQ's later printed correction is given in the "
+                + " edition; for APEX 5 NO2 (marked †) they are unpublished values supplied "
+                "by agency staff for the same window, and the different fit DEQ's "
+                + reg.display("deq.edition_date.aug21")
+                + " edition prints for that regression over a longer window is given in the "
                 "collocation table's note."
             ),
             "limitation": limitation,

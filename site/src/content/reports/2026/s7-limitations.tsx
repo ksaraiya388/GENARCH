@@ -58,9 +58,10 @@ export function Limitations() {
           record runs well past, and no later cutoff is computable for either, because
           both sides of each hourly pair are needed. A follow-up request (26-6715, filed{" "}
           <EditionDate id="foia266715" />) is open <Cite id="foia266715" />.
-          DEQ&apos;s printed correction for one regression (the{" "}
-          <EditionDate id="deq2026aug21" /> edition <Cite id="deq2026aug21" />) covers a
-          longer window than the regulatory record this report holds, so it is not
+          For one regression the comparison values are unpublished values supplied by
+          agency staff for the same window. DEQ&apos;s <EditionDate id="deq2026aug21" />{" "}
+          edition <Cite id="deq2026aug21" /> prints a different fit for that regression over
+          a longer window than the regulatory record this report holds, so it is not
           compared.
         </P>
       </Sub>
@@ -68,22 +69,12 @@ export function Limitations() {
       <Sub number="7.3" id="limitations-open" title="Open items">
         <P>
           Each of these is unresolved at the freeze. They are listed rather than
-          summarised because each one bounds a specific claim.
+          summarised because each one bounds a specific claim. Two items listed in earlier
+          drafts are closed. Agency staff state that the collocation plots carry no axis
+          limits. Agency staff state that the CO series in the weekly editions are 1-hour
+          averages; the CO series is not analysed in this version (section 8).
         </P>
         <List>
-          <Item>
-            Whether DEQ&apos;s published collocation plots carried axis limits that also
-            bounded the fit. Asked of DEQ; awaiting an answer.
-          </Item>
-          <Item>
-            The carbon monoxide series DEQ began publishing is not analysed here. Its
-            averaging period is unresolved: a standing note recorded the sensor series as
-            an 8-hour average against a 1-hour regulatory monitor, while DEQ&apos;s own
-            table is captioned as hourly and places the sensor rows beside that same
-            hourly monitor. Both cannot be right, and until the agency confirms which,
-            the sensor rows are not described as hourly concentrations and are not
-            published.
-          </Item>
           <Item>
             The Kunak dashboard backfills published hours without notice, so a figure
             computed from one export is not guaranteed to be reproducible from a later

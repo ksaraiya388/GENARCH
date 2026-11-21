@@ -307,6 +307,16 @@ body:has(.report-print-page) {
     page-break-inside: avoid;
   }
 
+  /* Table 12 runs past a page, and Chromium keeps neither a figure's nor its notes'
+     break-inside: avoid once the figure cannot fit, so the last note fell alone at the head
+     of the next page. The page is broken before the table's last two rows instead, so the
+     notes follow table rows (DEQ review, item 12). Recheck the page after Table 12 whenever
+     a row is added to it. */
+  .report-table-figure[data-table-id="T01_sources"] tbody tr:nth-last-child(2) {
+    break-before: page;
+    page-break-before: always;
+  }
+
   /* A long table does break, and when it does every page needs its header row. */
   thead {
     display: table-header-group;

@@ -6,8 +6,8 @@ sides; assign collocation periods by `unit_id` from the occupancy table; ordinar
 least squares with the sensor on x and the regulatory monitor on y, matching DEQ's
 orientation; every fit stops at the 2026-08-07 07:00 EST edition cutoff.
 
-Exact zeros are retained in the APEX 5 NO2 fit and in nothing else (DEQ staff,
-2026-08-19). Readmitting them into the other three moves coefficients that
+Exact zeros are retained in the APEX 5 NO2 fit and in nothing else, confirmed by
+agency staff. Readmitting them into the other three moves coefficients that
 currently reproduce back outside tolerance.
 
 DEQ publishes these coefficients to two significant figures, so the comparison is

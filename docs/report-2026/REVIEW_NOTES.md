@@ -8,10 +8,10 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 ## Totals
 
-- Sentences inventoried: **427**
-- Carrying at least one key or citation: **123**; carrying neither: **304**
-- Distinct registry keys cited: **162**
-- Distinct references cited: **30**
+- Sentences inventoried: **426**
+- Carrying at least one key or citation: **120**; carrying neither: **306**
+- Distinct registry keys cited: **161**
+- Distinct references cited: **29**
 - Review markers awaiting the author: **0**
 
 ## `cover.tsx`
@@ -34,7 +34,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | All {summary.site_days_at_or_above_35} site-days at or above that level fall in the wildfire smoke window of {smoke.window_start} to {smoke.window_end}; with that window excluded, all {summary.share_site_days_below_35.ex_smoke} site-days sit below it. | `{summary.site_days_at_or_above_35}` `{smoke.window_start}` `{smoke.window_end}` `{summary.share_site_days_below_35.ex_smoke}` |
 | That level is not a line a daily reading crosses or fails: the standard is evaluated as the {naaqs.percentile} th percentile of daily averages, averaged over {naaqs.averaging_years} consecutive years [cfr50appn], and a low-cost sensor record cannot be evaluated against it at all. | `{naaqs.percentile}` `{naaqs.averaging_years}` `[cfr50appn]` |
 | Four results are reported. |  |
-| Recomputed through DEQ's {deq.edition_cutoff} edition cutoff, the PM2.5 regressions on both units and the NO2 regression on the first unit agree with the coefficients DEQ printed for that window, and the NO2 regression on the second unit agrees with the coefficients DEQ staff supplied for the same window [deqcorrespondence], each within {colloc.tolerance_coefficient} on slope and intercept and {colloc.tolerance_r2} on R-squared. | `{deq.edition_cutoff}` `{colloc.tolerance_coefficient}` `{colloc.tolerance_r2}` `[deqcorrespondence]` |
+| Recomputed through DEQ's {deq.edition_cutoff} edition cutoff, the PM2.5 regressions on both units and the NO2 regression on the first unit agree with the coefficients DEQ printed for that window, and the NO2 regression on the second unit agrees with the unpublished values supplied by agency staff for the same window, each within {colloc.tolerance_coefficient} on slope and intercept and {colloc.tolerance_r2} on R-squared. | `{deq.edition_cutoff}` `{colloc.tolerance_coefficient}` `{colloc.tolerance_r2}` |
 | The first unit's NO2 R-squared lies inside that tolerance but rounds to a different second decimal from DEQ's. |  |
 | Recomputed daily averages for the regulatory monitor match DEQ's published daily file on {daily.n_match} of {daily.n_days} comparable days, with a mean absolute difference of {daily.mean_abs_diff} µg/m³. | `{daily.n_match}` `{daily.n_days}` `{daily.mean_abs_diff}` |
 | On the window when all {p98.common.n_sites} sensors were collecting, on whole days through {network.common_window.end} (DEQ's edition cutoff {deq.edition_cutoff}), {p98.common.n_above_35} of the {p98.common.n_sites} have a daily PM2.5 98th percentile above {naaqs.daily_standard} µg/m³, and the sensor that Table 4 of DEQ's edition [deq2026aug07] identifies as the only one above that level, site DC-06 in the site key, ranks {p98.common.rank.DC-06}. | `{p98.common.n_sites}` `{network.common_window.end}` `{deq.edition_cutoff}` `{p98.common.n_above_35}` `{p98.common.n_sites}` `{naaqs.daily_standard}` `{p98.common.rank.DC-06}` `[deq2026aug07]` |
@@ -46,7 +46,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | At the locus at 17q12-21, {ancestry.loci.17q12-21.european.associations} of {ancestry.loci.17q12-21.associations} associations have a European discovery sample and {ancestry.loci.17q12-21.south_asian.associations} a South Asian one, which is a gap in the discovery record and not evidence that the locus is absent or inactive in any population. | `{ancestry.loci.17q12-21.european.associations}` `{ancestry.loci.17q12-21.associations}` `{ancestry.loci.17q12-21.south_asian.associations}` |
 | No cross-ancestry gene-environment effect estimates are reported in this version; they are planned for a later phase. |  |
 | The analysis of the one sensor unit that occupied two sites in turn is not included. |  |
-| Carbon monoxide is not analysed, because the averaging period of the published sensor series is unresolved. |  |
+| Carbon monoxide is not analysed in this version; a comparison is planned for the next. |  |
 | No association between tract-level exposure and tract-level prevalence is reported anywhere in this report or on the atlas (see section 7.5). |  |
 
 ## `s1-scope.tsx`
@@ -87,7 +87,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Every DEQ and sensor input the analysis reads is listed in Appendix A with its origin, its licence, its export date, its data cutoff and its SHA-256; the atlas, ancestry and configuration inputs are pinned by hash in the same freeze file. |  |
 | The sensor exports are named there by neutral site code rather than by filename, because the published filenames carry a site identifier that the project's content constraints keep out of public output. |  |
 | There are {freeze.n_deq_inputs} such inputs pinned in the freeze: the hourly sensor exports, as two input sets because the collocation reproduction reads the exports the original analysis was computed from rather than the later ones; the regulatory monitor files released under the records request; and the DEQ weekly editions the published figures are taken from. | `{freeze.n_deq_inputs}` |
-| A further {freeze.n_inputs_pinned_in_keys}, the edition whose printed correction is transcribed for section 5.2, is pinned by hash in the keys that read it rather than in the freeze, and is listed in Appendix A beside the others. | `{freeze.n_inputs_pinned_in_keys}` |
+| A further {freeze.n_inputs_pinned_in_keys}, DEQ's 2026-08-21 edition, which prints a different fit for one regression over a longer window and is transcribed for section 5.2, is pinned by hash in the keys that read it rather than in the freeze, and is listed in Appendix A beside the others. | `{freeze.n_inputs_pinned_in_keys}` |
 | The sensor data are hourly exports from the Kunak dashboard DEQ publishes the network through [deqdashboard]. | `[deqdashboard]` |
 | Two properties of that dashboard shape how it has to be read. |  |
 | The first is that values appear as soon as they are detected, before any quality assurance, which the dashboard states itself; the files carry no null code, flag or qualifier column, so a suspect hour cannot be told from a good one on the sensor side. |  |
@@ -133,7 +133,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Sensor timestamps from the Kunak dashboard are hour-ending and adjusted for daylight saving. |  |
 | The regulatory files are hour-beginning and always in Eastern Standard Time. |  |
 | Before any comparison or any daily average, each sensor label is read as America/New_York wall time and converted to the hour-beginning Eastern Standard Time hour, and both the raw and the converted stamp are kept, with the shift recorded per row. |  |
-| For every hour in the frozen record this is DEQ's own instruction: a shift of {kunak.shift_hours.before_dst} hour before the spring transition and {kunak.shift_hours.after_dst} hours after it [deqcorrespondence]. | `{kunak.shift_hours.before_dst}` `{kunak.shift_hours.after_dst}` `[deqcorrespondence]` |
+| For every hour in the frozen record this is the instruction confirmed by agency staff: a shift of {kunak.shift_hours.before_dst} hour before the spring transition and {kunak.shift_hours.after_dst} hours after it. | `{kunak.shift_hours.before_dst}` `{kunak.shift_hours.after_dst}` |
 | The record ends before the autumn transition, so the hour that transition repeats, which the export cannot order, does not arise here. |  |
 | Pairing on unconverted stamps misaligns every pair. |  |
 | Daily averages are binned in local standard time, which is the convention the federal regulation uses for the 24-hour standard [cfr50appn], and that is the pipeline default. | `[cfr50appn]` |
@@ -146,14 +146,14 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 
 | Sentence | Sources |
 |---|---|
-| A 24-hour average requires {completeness.valid_hours} of {completeness.hours_per_day} valid hours, which is DEQ's own threshold, confirmed by agency staff [deqcorrespondence]. | `{completeness.valid_hours}` `{completeness.hours_per_day}` `[deqcorrespondence]` |
+| A 24-hour average requires {completeness.valid_hours} of {completeness.hours_per_day} valid hours, the threshold DEQ applies, confirmed by agency staff. | `{completeness.valid_hours}` `{completeness.hours_per_day}` |
 | A day below that threshold is absent rather than estimated, and no gap is interpolated or rendered as a zero anywhere. |  |
 | On the regulatory side a reading is excluded when its value is absent, when a null code is present, or when its flag string contains the less-than character that marks the logger invalid. |  |
 | A letter code alone never excludes a reading: the letter identifies the event and the comparator decides validity. |  |
 | Flags are compared case-sensitively, because the published table pairs different meanings on the same letter in different cases. |  |
 | Sensor rows in which every pollutant channel reads zero are treated as missing. |  |
 | A zero on one channel while the others carry values is read as per-channel floor clamping rather than an outage, and those readings are excluded as a fault mode throughout the pipeline and throughout the site. |  |
-| One documented exception exists: the NO2 regression for the second collocated unit retains them, because DEQ staff confirmed on {deq.correspondence.collocation_correction} that the agency retains them in that one fit [deqcorrespondence]. | `{deq.correspondence.collocation_correction}` `[deqcorrespondence]` |
+| One documented exception exists: the NO2 regression for the second collocated unit retains them, because they are retained in that one fit, confirmed by agency staff. |  |
 | The exception is scoped to that single comparison and is not extended, because extending it moves two coefficients that currently agree with DEQ back outside tolerance. |  |
 
 #### 3.4 Collocation method
@@ -174,7 +174,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Sentence | Sources |
 |---|---|
 | Canadian wildfire smoke reached the area over the weekend of {smoke.window_start} to {smoke.window_end}, and DEQ's own qualifier code identifies the episode in the regulatory record. | `{smoke.window_start}` `{smoke.window_end}` |
-| Whether the episode is an exceptional event is a determination for the US Environmental Protection Agency, not for DEQ, and it is unresolved [deqcorrespondence]. | `[deqcorrespondence]` |
+| Whether the episode is an exceptional event is a determination for the US Environmental Protection Agency, not for DEQ, and it is unresolved, confirmed by agency staff. |  |
 | Every descriptive statistic of GENARCH's own is reported both ways, with the window and without it. |  |
 | For the cross-site correlation the excluded set is the hours whose local standard time day falls in the window, because a regional smoke plume raises every sensor at once and pulls every pairwise correlation toward one. |  |
 | For the percentiles and the share of site-days below the level of the 24-hour standard, the excluded set is the whole days {smoke.window_start} to {smoke.window_end} under the day definition in use, so a local clock time percentile leaves out local clock time days. | `{smoke.window_start}` `{smoke.window_end}` |
@@ -279,9 +279,9 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | The intercept and slope on that fit are stable and do reproduce. |  |
 | The R-squared sits close enough to a boundary that a small methodological difference flips it, which is why it is reported as near rather than as a reproduction. |  |
 | The NO2 fit on the second unit carries two complications that are recorded rather than resolved. |  |
-| Its DEQ coefficients, marked † in , are those DEQ staff supplied on {deq.correspondence.collocation_correction} for the same window as the other three [deqcorrespondence], not values printed in an edition. | `{deq.correspondence.collocation_correction}` `[deqcorrespondence]` |
-| DEQ's own printed correction, in its edition [deq2026aug21], is y = {deq.aug21.apex-05_NO2.intercept} + {deq.aug21.apex-05_NO2.slope}x, R-squared {deq.aug21.apex-05_NO2.r2}, over a longer window than the regulatory record this report holds, so it is not compared. | `{deq.aug21.apex-05_NO2.intercept}` `{deq.aug21.apex-05_NO2.slope}` `{deq.aug21.apex-05_NO2.r2}` `[deq2026aug21]` |
-| That fit is also the single comparison in which readings of zero are retained, on DEQ's confirmation that the agency retains them there. |  |
+| Its comparison values, marked † in , are unpublished values supplied by agency staff for the same window as the other three, not values printed in an edition. |  |
+| DEQ's edition [deq2026aug21] prints a different fit for that regression over a longer window, y = {deq.aug21.apex-05_NO2.intercept} + {deq.aug21.apex-05_NO2.slope}x, R-squared {deq.aug21.apex-05_NO2.r2}, longer than the regulatory record this report holds, so it is not compared. | `{deq.aug21.apex-05_NO2.intercept}` `{deq.aug21.apex-05_NO2.slope}` `{deq.aug21.apex-05_NO2.r2}` `[deq2026aug21]` |
+| That fit is also the single comparison in which readings of zero are retained, as confirmed by agency staff. |  |
 | Its coefficients move when the dashboard's backfilled all-zero rows are admitted to a zero-retaining fit: the intercept goes from {colloc.apex-05_NO2.gx_intercept} to {colloc.apex-05_NO2.backfill_gx_intercept}, the slope from {colloc.apex-05_NO2.gx_slope} to {colloc.apex-05_NO2.backfill_gx_slope}, the R-squared from {colloc.apex-05_NO2.gx_r2} to {colloc.apex-05_NO2.backfill_gx_r2} and the paired-hour count from {colloc.apex-05_NO2.n_pairs} to {colloc.apex-05_NO2.backfill_n_pairs}, on the one backfilled hour that only that fit readmits. | `{colloc.apex-05_NO2.gx_intercept}` `{colloc.apex-05_NO2.backfill_gx_intercept}` `{colloc.apex-05_NO2.gx_slope}` `{colloc.apex-05_NO2.backfill_gx_slope}` `{colloc.apex-05_NO2.gx_r2}` `{colloc.apex-05_NO2.backfill_gx_r2}` `{colloc.apex-05_NO2.n_pairs}` `{colloc.apex-05_NO2.backfill_n_pairs}` |
 | The other regressions are unchanged. |  |
 | The values reported here are computed from the original analysis inputs, which is the input set DEQ's coefficients correspond to. |  |
@@ -498,7 +498,8 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | The regulatory monitor record ends {regulatory.record_end} under the released public-records request [foia264646], with the last complete day {regulatory.last_complete_day}. | `{regulatory.record_end}` `{regulatory.last_complete_day}` `[foia264646]` |
 | That caps the collocation fits and the daily reconciliation at a date the sensor record runs well past, and no later cutoff is computable for either, because both sides of each hourly pair are needed. |  |
 | A follow-up request (26-6715, filed ) is open [foia266715]. | `[foia266715]` |
-| DEQ's printed correction for one regression (the edition [deq2026aug21]) covers a longer window than the regulatory record this report holds, so it is not compared. | `[deq2026aug21]` |
+| For one regression the comparison values are unpublished values supplied by agency staff for the same window. |  |
+| DEQ's edition [deq2026aug21] prints a different fit for that regression over a longer window than the regulatory record this report holds, so it is not compared. | `[deq2026aug21]` |
 
 #### 7.3 Open items
 
@@ -506,11 +507,9 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 |---|---|
 | Each of these is unresolved at the freeze. |  |
 | They are listed rather than summarised because each one bounds a specific claim. |  |
-| Whether DEQ's published collocation plots carried axis limits that also bounded the fit. |  |
-| Asked of DEQ; awaiting an answer. |  |
-| The carbon monoxide series DEQ began publishing is not analysed here. |  |
-| Its averaging period is unresolved: a standing note recorded the sensor series as an 8-hour average against a 1-hour regulatory monitor, while DEQ's own table is captioned as hourly and places the sensor rows beside that same hourly monitor. |  |
-| Both cannot be right, and until the agency confirms which, the sensor rows are not described as hourly concentrations and are not published. |  |
+| Two items listed in earlier drafts are closed. |  |
+| Agency staff state that the collocation plots carry no axis limits. |  |
+| Agency staff state that the CO series in the weekly editions are 1-hour averages; the CO series is not analysed in this version (section 8). |  |
 | The Kunak dashboard backfills published hours without notice, so a figure computed from one export is not guaranteed to be reproducible from a later one. |  |
 | Every input in the freeze records its own export date and data cutoff for that reason, and the one regression a backfill moves is reported with both values. |  |
 | {freeze.backfilled_zero_hours} hours that had been missing were backfilled with rows in which every pollutant channel reads zero. | `{freeze.backfilled_zero_hours}` |
@@ -558,7 +557,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Sentence | Sources |
 |---|---|
 | What follows is the planned work, in the order the data allow rather than the order of interest. |  |
-| Three items are blocked on someone else: the carbon monoxide analysis and the paired-site analysis wait on DEQ, and the collocation and reconciliation windows wait on a public-records release. |  |
+| Two items are blocked on someone else: the paired-site analysis waits on DEQ, and the collocation and reconciliation windows wait on a public-records release. |  |
 | Knowledge graph reproducibility. |  |
 | Repair the graph builder and curate the missing gene records so that a clean rebuild reproduces the published node and edge counts, then rebaseline the editorial lint against the rebuilt graph. |  |
 | Until then the graph stays outside the reproducibility claim. |  |
@@ -577,9 +576,9 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | One unit occupied two sites over the record, which makes a within-unit comparison across locations possible and a cleaner instrument-versus-location test than any cross-unit comparison. |  |
 | It is outside this version and needs the unit occupancy periods confirmed first. |  |
 | It has no date: it needs DEQ's occupancy record for the unit rather than the dashboard's. |  |
-| Carbon monoxide, after the averaging period is resolved. |  |
-| The published sensor series cannot be described or compared until DEQ confirms whether it is an hourly or an eight-hour average. |  |
-| The regulatory comparison and the published statistics follow immediately once it is settled. |  |
+| Carbon monoxide, next version. |  |
+| The averaging period is answered: agency staff state that the CO series in the weekly editions are 1-hour averages. |  |
+| A CO comparison is planned for the next version. |  |
 | Scope of the second county. |  |
 | DEQ's network now includes sites in Prince William County, deployed in {network.reconfiguration_month} and, after the freeze, on {deq.postfreeze.pw_sites_added} (DEQ's edition [deq2026oct30]). | `{network.reconfiguration_month}` `{deq.postfreeze.pw_sites_added}` `[deq2026oct30]` |
 | They are outside the scope of this version. |  |
@@ -661,7 +660,7 @@ Every number in report prose is rendered from a key, so a sentence carrying a fi
 | Inferring something about individuals from a statistic computed over an area. |  |
 | Pairing an area's exposure with its disease prevalence cannot establish that the exposed people in it are the affected people. |  |
 | The instant a DEQ weekly edition was built from. |  |
-| DEQ produces each edition from data through early on the Friday of publication; the edition was built from data through {deq.edition_cutoff} [deqcorrespondence]. | `{deq.edition_cutoff}` `[deqcorrespondence]` |
+| Each edition is produced from data through early on the Friday of publication, confirmed by agency staff; the edition was built from data through {deq.edition_cutoff}. | `{deq.edition_cutoff}` |
 | An edition therefore covers less than the full last day, and a comparison against it has to state which day set it used. |  |
 | An instrument designated under federal regulation for determining whether an area meets the national standards. |  |
 | The regulatory PM2.5 monitor in this network is a federal equivalent method monitor; none of the low-cost sensors is either. |  |

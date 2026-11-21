@@ -100,18 +100,16 @@ export function DataCenterAlley() {
         </P>
         <P>
           The NO2 fit on the second unit carries two complications that are recorded
-          rather than resolved. Its DEQ coefficients, marked † in{" "}
-          <TableRef id="T03" />, are those DEQ staff supplied on{" "}
-          <N k="deq.correspondence.collocation_correction" /> for the same window as the
-          other three <Cite id="deqcorrespondence" />, not values printed in an edition.
-          DEQ&apos;s own printed correction, in its <EditionDate id="deq2026aug21" />{" "}
-          edition <Cite id="deq2026aug21" />, is y ={" "}
+          rather than resolved. Its comparison values, marked † in{" "}
+          <TableRef id="T03" />, are unpublished values supplied by agency staff for the
+          same window as the other three, not values printed in an edition. DEQ&apos;s{" "}
+          <EditionDate id="deq2026aug21" /> edition <Cite id="deq2026aug21" /> prints a
+          different fit for that regression over a longer window, y ={" "}
           <N k="deq.aug21.apex-05_NO2.intercept" /> +{" "}
           <N k="deq.aug21.apex-05_NO2.slope" />x, R-squared{" "}
-          <N k="deq.aug21.apex-05_NO2.r2" />, over a longer window than the regulatory
-          record this report holds, so it is not compared. That fit is also the single
-          comparison in which readings of zero are retained, on DEQ&apos;s confirmation
-          that the agency retains them there. Its coefficients move when the
+          <N k="deq.aug21.apex-05_NO2.r2" />, longer than the regulatory record this report
+          holds, so it is not compared. That fit is also the single comparison in which
+          readings of zero are retained, as confirmed by agency staff. Its coefficients move when the
           dashboard&apos;s backfilled all-zero
           rows are admitted to a zero-retaining fit: the intercept goes from{" "}
           <N k="colloc.apex-05_NO2.gx_intercept" /> to{" "}

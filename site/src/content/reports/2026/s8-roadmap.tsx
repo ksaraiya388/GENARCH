@@ -14,9 +14,9 @@ export function Roadmap() {
     <Section number="8" id="roadmap" title="Roadmap">
       <P>
         What follows is the planned work, in the order the data allow rather than the
-        order of interest. Three items are blocked on someone else: the carbon monoxide
-        analysis and the paired-site analysis wait on DEQ, and the collocation and
-        reconciliation windows wait on a public-records release.
+        order of interest. Two items are blocked on someone else: the paired-site
+        analysis waits on DEQ, and the collocation and reconciliation windows wait on a
+        public-records release.
       </P>
 
       <List>
@@ -65,10 +65,9 @@ export function Roadmap() {
         </Item>
 
         <Item>
-          <strong>Carbon monoxide, after the averaging period is resolved.</strong> The
-          published sensor series cannot be described or compared until DEQ confirms
-          whether it is an hourly or an eight-hour average. The regulatory comparison and
-          the published statistics follow immediately once it is settled.
+          <strong>Carbon monoxide, next version.</strong> The averaging period is
+          answered: agency staff state that the CO series in the weekly editions are
+          1-hour averages. A CO comparison is planned for the next version.
         </Item>
 
         <Item>

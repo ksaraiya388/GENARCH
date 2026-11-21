@@ -3719,7 +3719,7 @@
         "source": "Regulatory monitor, published daily average PM2.5 (FOIA 26-4646)"
       }
     ],
-    "method": "DEQ staff correspondence of 2026-08-19, coefficients for the 2026-08-07 edition window, two significant figures; not printed in an edition. DEQ's printed correction is deq.aug21.apex-05_NO2.*, over a longer window",
+    "method": "unpublished values supplied by agency staff for the same window, the 2026-08-07 edition window, two significant figures; not printed in an edition. DEQ's 2026-08-21 edition prints a different fit for that regression over a longer window, deq.aug21.apex-05_NO2.*",
     "n": 2745,
     "precision": null,
     "unit": "ppb",
@@ -3769,7 +3769,7 @@
         "source": "Regulatory monitor, published daily average PM2.5 (FOIA 26-4646)"
       }
     ],
-    "method": "DEQ staff correspondence of 2026-08-19, coefficients for the 2026-08-07 edition window, two significant figures; not printed in an edition. DEQ's printed correction is deq.aug21.apex-05_NO2.*, over a longer window",
+    "method": "unpublished values supplied by agency staff for the same window, the 2026-08-07 edition window, two significant figures; not printed in an edition. DEQ's 2026-08-21 edition prints a different fit for that regression over a longer window, deq.aug21.apex-05_NO2.*",
     "n": 2745,
     "precision": null,
     "unit": null,
@@ -3819,7 +3819,7 @@
         "source": "Regulatory monitor, published daily average PM2.5 (FOIA 26-4646)"
       }
     ],
-    "method": "DEQ staff correspondence of 2026-08-19, coefficients for the 2026-08-07 edition window, two significant figures; not printed in an edition. DEQ's printed correction is deq.aug21.apex-05_NO2.*, over a longer window",
+    "method": "unpublished values supplied by agency staff for the same window, the 2026-08-07 edition window, two significant figures; not printed in an edition. DEQ's 2026-08-21 edition prints a different fit for that regression over a longer window, deq.aug21.apex-05_NO2.*",
     "n": 2745,
     "precision": null,
     "unit": "ppb",
@@ -4019,7 +4019,7 @@
         "source": "Regulatory monitor, published daily average PM2.5 (FOIA 26-4646)"
       }
     ],
-    "method": "OLS with the sensor on x and the regulatory monitor on y; paired on ts_est; excluded flags applied on both sides; collocation period assigned by unit_id from the occupancy table; the fit stops at 2026-08-07T07:00 EST; exact zeros retained in this fit only (DEQ staff, 2026-08-19)",
+    "method": "OLS with the sensor on x and the regulatory monitor on y; paired on ts_est; excluded flags applied on both sides; collocation period assigned by unit_id from the occupancy table; the fit stops at 2026-08-07T07:00 EST; exact zeros retained in this fit only, confirmed by agency staff",
     "n": 2745,
     "precision": 3,
     "unit": "ppb",
@@ -4069,7 +4069,7 @@
         "source": "Regulatory monitor, published daily average PM2.5 (FOIA 26-4646)"
       }
     ],
-    "method": "OLS with the sensor on x and the regulatory monitor on y; paired on ts_est; excluded flags applied on both sides; collocation period assigned by unit_id from the occupancy table; the fit stops at 2026-08-07T07:00 EST; exact zeros retained in this fit only (DEQ staff, 2026-08-19)",
+    "method": "OLS with the sensor on x and the regulatory monitor on y; paired on ts_est; excluded flags applied on both sides; collocation period assigned by unit_id from the occupancy table; the fit stops at 2026-08-07T07:00 EST; exact zeros retained in this fit only, confirmed by agency staff",
     "n": 2745,
     "precision": 3,
     "unit": null,
@@ -4119,7 +4119,7 @@
         "source": "Regulatory monitor, published daily average PM2.5 (FOIA 26-4646)"
       }
     ],
-    "method": "OLS with the sensor on x and the regulatory monitor on y; paired on ts_est; excluded flags applied on both sides; collocation period assigned by unit_id from the occupancy table; the fit stops at 2026-08-07T07:00 EST; exact zeros retained in this fit only (DEQ staff, 2026-08-19)",
+    "method": "OLS with the sensor on x and the regulatory monitor on y; paired on ts_est; excluded flags applied on both sides; collocation period assigned by unit_id from the occupancy table; the fit stops at 2026-08-07T07:00 EST; exact zeros retained in this fit only, confirmed by agency staff",
     "n": 2745,
     "precision": 3,
     "unit": "ppb",
@@ -6371,7 +6371,7 @@
   },
   "completeness.valid_hours": {
     "inputs": [],
-    "method": "valid hours a 24-hour average requires, DEQ's own threshold (DEQ staff, 2026-08-12; GENARCH_RULES.md section 3)",
+    "method": "valid hours a 24-hour average requires, the threshold DEQ applies, confirmed by agency staff (GENARCH_RULES.md section 3)",
     "n": null,
     "precision": 0,
     "unit": "hours",
@@ -8112,7 +8112,7 @@
   },
   "deq.correspondence.collocation_correction": {
     "inputs": [],
-    "method": "date of the DEQ staff correspondence supplying the APEX 5 NO2 coefficients for the 2026-08-07 edition window and confirming exact-zero retention in that fit (GENARCH_RULES.md section 10)",
+    "method": "date on which agency staff supplied unpublished APEX 5 NO2 values for the 2026-08-07 edition window and confirmed exact-zero retention in that fit; kept as a record and not cited in the report (DECISIONS.md D67)",
     "n": null,
     "precision": null,
     "unit": null,
@@ -8126,7 +8126,7 @@
         "source": "DEQ weekly report, 2026-08-07 (pdf)"
       }
     ],
-    "method": "DEQ builds each weekly edition from data through 07:00 that Friday (DEQ staff, 2026-08-16)",
+    "method": "each weekly edition is built from data through 07:00 that Friday, confirmed by agency staff",
     "n": null,
     "precision": null,
     "unit": null,
@@ -8140,7 +8140,7 @@
         "source": "docs/deq-reports/2026-08-21_data_center_air_quality_analysis.pdf"
       }
     ],
-    "method": "edition date of the DEQ report that first printed the corrected APEX 5 NO2 regression (archived PDF, title page)",
+    "method": "edition date of the DEQ report that prints a different fit for the APEX 5 NO2 regression over a longer window (archived PDF, title page)",
     "n": null,
     "precision": null,
     "unit": null,
@@ -8765,7 +8765,7 @@
   },
   "kunak.shift_hours.after_dst": {
     "inputs": [],
-    "method": "hours the Kunak hour-ending label is moved back to reach hour-beginning EST, DEQ staff instruction of 2026-08-11, after dst (reproduced by the America/New_York conversion, DECISIONS.md D35)",
+    "method": "hours the Kunak hour-ending label is moved back to reach hour-beginning EST, the instruction confirmed by agency staff, after dst (reproduced by the America/New_York conversion, DECISIONS.md D35)",
     "n": null,
     "precision": 0,
     "unit": "hours",
@@ -8774,7 +8774,7 @@
   },
   "kunak.shift_hours.before_dst": {
     "inputs": [],
-    "method": "hours the Kunak hour-ending label is moved back to reach hour-beginning EST, DEQ staff instruction of 2026-08-11, before dst (reproduced by the America/New_York conversion, DECISIONS.md D35)",
+    "method": "hours the Kunak hour-ending label is moved back to reach hour-beginning EST, the instruction confirmed by agency staff, before dst (reproduced by the America/New_York conversion, DECISIONS.md D35)",
     "n": null,
     "precision": 0,
     "unit": "hours",

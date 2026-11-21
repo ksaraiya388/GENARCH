@@ -68,7 +68,7 @@
       "file": "T03_collocation.csv",
       "id": "T03_collocation",
       "notes": [
-        "† The DEQ values for APEX 5 NO2 are the coefficients DEQ staff supplied on 2026-08-19 for the same window as the other three. DEQ's printed figures for that regression are in its 2026-08-21 edition (p. 14): y = 1.8 + 0.31x, R-squared 0.2, over a longer window than the regulatory record this report holds, and is not compared.",
+        "† The comparison values for APEX 5 NO2 are unpublished values supplied by agency staff for the same window as the other three. DEQ's 2026-08-21 edition prints a different fit for that regression over a longer window (p. 14): y = 1.8 + 0.31x, R-squared 0.2, over a longer window than the regulatory record this report holds, and is not compared.",
         "The APEX 14 PM2.5 fit begins later than the APEX 14 NO2 fit because DEQ voided the sensor PM2.5 readings from 2026-03-03 to 2026-03-08 for high humidity and data quality issues (143 hours of this unit).",
         "First and last paired hour are the hours that enter each fit. Readings are assigned to a unit by the occupancy table (section 3.4), so the change from APEX 14 to APEX 5 falls between 2026-04-07 21:00:00 and 2026-04-07 22:00:00 EST, the evening before 2026-04-08, the date the site key gives."
       ],

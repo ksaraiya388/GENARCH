@@ -38,10 +38,9 @@ export function Methods() {
           any daily average, each sensor label is read as America/New_York wall time and
           converted to the hour-beginning Eastern Standard Time hour, and both the raw and
           the converted stamp are kept, with the shift recorded per row. For every hour in
-          the frozen record this is DEQ&apos;s own instruction: a shift of{" "}
+          the frozen record this is the instruction confirmed by agency staff: a shift of{" "}
           <N k="kunak.shift_hours.before_dst" /> hour before the spring transition and{" "}
-          <N k="kunak.shift_hours.after_dst" /> hours after it{" "}
-          <Cite id="deqcorrespondence" />. The record ends before the autumn transition, so
+          <N k="kunak.shift_hours.after_dst" /> hours after it. The record ends before the autumn transition, so
           the hour that transition repeats, which the export cannot order, does not arise
           here. Pairing on unconverted stamps misaligns every pair.
         </P>
@@ -62,8 +61,8 @@ export function Methods() {
       <Sub number="3.3" id="methods-completeness" title="Completeness and readings of zero">
         <P>
           A 24-hour average requires <N k="completeness.valid_hours" /> of{" "}
-          <N k="completeness.hours_per_day" /> valid hours, which is DEQ&apos;s own
-          threshold, confirmed by agency staff <Cite id="deqcorrespondence" />. A day below
+          <N k="completeness.hours_per_day" /> valid hours, the threshold DEQ applies,
+          confirmed by agency staff. A day below
           that threshold is absent rather than estimated, and no gap is interpolated or
           rendered as a zero anywhere. On the regulatory side a reading is excluded when its
           value is absent, when a null code is present, or when its flag string contains
@@ -78,9 +77,8 @@ export function Methods() {
           per-channel floor clamping rather than an outage, and those readings are
           excluded as a fault mode throughout the pipeline and throughout the site. One
           documented exception exists: the NO2 regression for the second collocated unit
-          retains them, because DEQ staff confirmed on{" "}
-          <N k="deq.correspondence.collocation_correction" /> that the agency retains them
-          in that one fit <Cite id="deqcorrespondence" />. The exception is scoped to that
+          retains them, because they are retained in that one fit, confirmed by agency
+          staff. The exception is scoped to that
           single comparison and is not extended, because extending it moves two
           coefficients that currently agree with DEQ back outside tolerance.
         </P>
@@ -121,8 +119,8 @@ export function Methods() {
           <N k="smoke.window_start" /> to <N k="smoke.window_end" />, and DEQ&apos;s own
           qualifier code identifies the episode in the regulatory record. Whether the
           episode is an exceptional event is a determination for the US Environmental
-          Protection Agency, not for DEQ, and it is unresolved{" "}
-          <Cite id="deqcorrespondence" />. Every descriptive statistic of GENARCH&apos;s
+          Protection Agency, not for DEQ, and it is unresolved, confirmed by agency staff.
+          Every descriptive statistic of GENARCH&apos;s
           own is reported both ways, with the window and without it. For the cross-site
           correlation the excluded set is the hours whose local standard time day falls in
           the window, because a regional smoke plume raises every sensor at once and pulls

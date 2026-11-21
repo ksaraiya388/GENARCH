@@ -336,6 +336,36 @@ The follow-up records request 26-6715 was filed 2026-11-17 and its status read
 frontmatter.json moves from 2026-11-16 to 2026-11-20, the build date of draft-6. The
 cover, changelog and APA citation follow.
 
+D67 Agency staff answers are attributed to agency staff and are not a source (2026-11-21,
+DEQ review). Agency staff replied on 2026-11-20 and asked that their answers not be
+attributed to DEQ as an agency and that their emails not be cited as DEQ correspondence.
+From 2026-11-20, staff answers are attributed to agency staff, not to DEQ, and are not
+listed as a source. Where an ingested DEQ edition states the fact, the edition is cited;
+otherwise the sentence reads "confirmed by agency staff" (or "agency staff state" for a
+statement that is not a confirmation) with no date, no message reference and no citation.
+The deqcorrespondence source entry is removed from references.json, so the sources after
+it move up one letter. D64 is superseded; the on_file support in Cite.tsx and
+tests/test_report_source.py stays and no entry uses it. The APEX 5 NO2 comparison values
+are "unpublished values supplied by agency staff for the same window". Keys are unchanged:
+deq.correspondence.collocation_correction keeps its name and value as a record, its method
+string is reworded and no sentence or note renders it. The corridor page renders the
+manifest's licence and retrieval strings in the same form (asStaffAttribution in
+site/src/lib/deq-data.ts); pipeline/sources/manifest.json and the freeze's copy keep their
+wording. The correspondence rows of GENARCH_RULES.md section 10 are moved verbatim to the
+private file of D63 (main b255b74, report-2026 3535eb6).
+
+D68 DEQ's 2026-08-21 edition is described without a correction (2026-11-21, DEQ review).
+Every "printed correction" and every account of DEQ's 2026-08-07 APEX 5 NO2 figures as
+corrected or bounded reads "DEQ's 2026-08-21 edition prints a different fit for that
+regression over a longer window", in the report, the generated captions and notes, the
+references.json note, the corridor page and GENARCH_RULES.md section 9. The axis-limit
+account is withdrawn: agency staff state that the collocation plots carry no axis limits,
+and section 7.3 no longer lists the question.
+
+D69 D66 is accepted until release (2026-11-21, DEQ review). The report stays dated
+2026-11-20 through the remaining drafts. If release falls later, or a later item is cited,
+D66's rule applies again at release.
+
 ---
 
 ## Remaining AUDIT items

@@ -15,9 +15,10 @@ export function DataAndProvenance() {
         the original analysis was computed from rather than the later ones; the regulatory
         monitor files released under the records request; and the DEQ weekly editions the
         published figures are taken from. A further{" "}
-        <N k="freeze.n_inputs_pinned_in_keys" />, the edition whose printed correction is
-        transcribed for section 5.2, is pinned by hash in the keys that read it rather than
-        in the freeze, and is listed in Appendix A beside the others.
+        <N k="freeze.n_inputs_pinned_in_keys" />, DEQ&apos;s 2026-08-21 edition, which
+        prints a different fit for one regression over a longer window and is transcribed
+        for section 5.2, is pinned by hash in the keys that read it rather than in the
+        freeze, and is listed in Appendix A beside the others.
       </P>
 
       <P>

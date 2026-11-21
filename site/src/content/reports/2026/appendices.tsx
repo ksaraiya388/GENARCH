@@ -138,10 +138,10 @@ export function AppendixC() {
           the exposed people in it are the affected people.
         </Term>
         <Term term="Edition cutoff">
-          The instant a DEQ weekly edition was built from. DEQ produces each edition from
-          data through early on the Friday of publication; the{" "}
-          <EditionDate id="deq2026aug07" /> edition was built from data through <N k="deq.edition_cutoff" />{" "}
-          <Cite id="deqcorrespondence" />. An edition therefore covers less than the full
+          The instant a DEQ weekly edition was built from. Each edition is produced from
+          data through early on the Friday of publication, confirmed by agency staff; the{" "}
+          <EditionDate id="deq2026aug07" /> edition was built from data through{" "}
+          <N k="deq.edition_cutoff" />. An edition therefore covers less than the full
           last day, and a comparison against it has to state which day set it used.
         </Term>
         <Term term="Federal reference or equivalent method monitor">

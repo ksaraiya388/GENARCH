@@ -52,8 +52,7 @@ export function Summary() {
         <N k="deq.edition_cutoff" /> edition cutoff, the PM2.5 regressions on both units
         and the NO2 regression on the first unit agree with the coefficients DEQ printed
         for that window, and the NO2 regression on the second unit agrees with the
-        coefficients DEQ staff supplied for the same window{" "}
-        <Cite id="deqcorrespondence" />, each within{" "}
+        unpublished values supplied by agency staff for the same window, each within{" "}
         <N k="colloc.tolerance_coefficient" /> on slope and intercept and{" "}
         <N k="colloc.tolerance_r2" /> on R-squared. The first unit&apos;s NO2 R-squared
         lies inside that tolerance but rounds to a different second decimal from
@@ -104,8 +103,7 @@ export function Summary() {
             No cross-ancestry gene-environment effect estimates are reported in this
             version; they are planned for a later phase. The analysis of the one sensor unit
             that occupied two sites in turn is not included. Carbon monoxide is not
-            analysed, because the averaging period of the published sensor series is
-            unresolved. No association between tract-level exposure and tract-level
+            analysed in this version; a comparison is planned for the next. No association between tract-level exposure and tract-level
             prevalence is reported anywhere in this report or on the atlas (see section
             7.5).
           </P>
