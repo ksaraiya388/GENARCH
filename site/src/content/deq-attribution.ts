@@ -102,10 +102,10 @@ export const DEQ_SOURCES: Record<
 };
 
 /**
- * Licence line for the sensor export, per DEQ staff on 2026-08-10. The preferred attribution
+ * Licence line for the sensor export, confirmed by agency staff. The preferred attribution
  * wording is still pending from DEQ Communications; DEQ_ATTRIBUTION_PENDING carries that gap
  * so it is disclosed on the page rather than quietly omitted.
  */
-export const DEQ_SENSOR_LICENSE = `Fully redistributable with credit that the data belong to Virginia DEQ (per DEQ staff, 2026-08-10).`;
+export const DEQ_SENSOR_LICENSE = `Fully redistributable with credit that the data belong to Virginia DEQ, confirmed by agency staff.`;
 
 export const DEQ_ATTRIBUTION_PENDING = `A preferred attribution line is pending from DEQ Communications and will be added here when it is received.`;

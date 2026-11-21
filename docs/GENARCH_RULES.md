@@ -121,7 +121,7 @@ Emit the shift applied per row in provenance.
 
 Hard-fail validation if any comparison joins a Kunak reading to a regulatory reading on unnormalized timestamps.
 
-Applying the shift raises PM2.5 correlation from 0.861 to 0.889. Adjacent shifts score within 0.001 of each other, so the improvement confirms a shift is needed but does not independently validate the specific boundary. Use DEQ's instruction and cite DEQ.
+Applying the shift raises PM2.5 correlation from 0.861 to 0.889. Adjacent shifts score within 0.001 of each other, so the improvement confirms a shift is needed but does not independently validate the specific boundary. Use the instruction, confirmed by agency staff, and attribute it to agency staff.
 
 **Amendment, 2026-11-08: conversion through America/New_York; the repeated fall-back hour is excluded.** The two-step rule above names only the spring change, so it would have kept shifting Kunak hours back 2 hours after clocks fell back on 2026-11-01. `pipeline/reshape_deq.py` now reads each hour-ending Kunak label as America/New_York wall time through zoneinfo and converts it to the hour-beginning EST hour. Through 2026-10-31 this is DEQ's rule exactly: all 36,026 staged timestamps from 2026-03-03 to 2026-10-31 keep the ts_est and shift the committed 2026-10-29 output gave them, with no difference (`outputs/repro/dst_regression_2026-11-08.txt`). From the fall-back the shift is 1 hour. The label 2026-11-01 01:00 stands for two hours, ts_est 2026-10-31 23:00 and 2026-11-01 00:00, and the export carries no offset to say which reading is which, so neither reading is placed: both hours are listed in `deq_missing_hours.csv` as `dst_fallback_unordered` and no value from them enters any statistic (DECISIONS.md D35). The spring-forward gap is handled the same way: a label inside it is a hard failure, and the missing 2026-03-08 02:00 stays listed as `dst_spring_forward` at ts_est 2026-03-08 01:00. The text above is left as written; it held for every record up to the fall-back.
 
@@ -131,15 +131,15 @@ Kunak files carry no null code, flag, or qualifier column. DEQ's dashboard state
 
 ### Zeros
 
-As of the 2026-08-10 export, Broad Run HS reports exact `0.0` on PM2.5 (53 rows), NO2 (780 rows, 20.2%), and VOCs (194 rows). A zero on one channel while the other channels carry values is read as per-pollutant floor clamping rather than device outage. Excluding those shifts the sensor mean by roughly 0.1 µg/m³. Whichever treatment you choose, state it.
+As of the 2026-08-10 export, DC-01 reports exact `0.0` on PM2.5 (53 rows), NO2 (780 rows, 20.2%), and VOCs (194 rows). A zero on one channel while the other channels carry values is read as per-pollutant floor clamping rather than device outage. Excluding those shifts the sensor mean by roughly 0.1 µg/m³. Whichever treatment you choose, state it.
 
 The Kunak dashboard has backfilled previously missing hours with rows in which every channel (NO2, CO, VOCs, PM2.5) is exactly zero: 9 hours as of the 2026-10-10 exports, listed in `docs/report-2026/AUDIT.md` round 2.
 
-Rows in which every pollutant channel is exactly zero are treated as missing in all computations. Exception: reproductions of DEQ fits that DEQ confirmed use zero retention (APEX 5 NO2) are computed from the inputs DEQ used (`FREEZE.json` `original_analysis_inputs`).
+Rows in which every pollutant channel is exactly zero are treated as missing in all computations. Exception: reproductions of DEQ fits that agency staff confirmed use zero retention (APEX 5 NO2) are computed from the inputs DEQ used (`FREEZE.json` `original_analysis_inputs`).
 
 ### Duplicates
 
-The Broad Run HS export returned 4,721 rows against 3,862 unique timestamps. All 1,718 duplicate rows are exact across every column, confined to 2026-03-03 through 2026-04-07, 48 rows per day. Pagination artifact. Deduplicate on all columns. Check every file for this pattern, not just this one.
+The DC-01 export returned 4,721 rows against 3,862 unique timestamps. All 1,718 duplicate rows are exact across every column, confined to 2026-03-03 through 2026-04-07, 48 rows per day. Pagination artifact. Deduplicate on all columns. Check every file for this pattern, not just this one.
 
 ### Known gaps
 
@@ -165,7 +165,7 @@ Aurora Hills remains in Arlington, not Loudoun, and remains out of v1 scope as `
 
 ### VOCs
 
-Broad Run HS VOC readings range from 0.27 ppb in March to 884.78 ppb in August. Three orders of magnitude, cause unknown. Record it. Do not use it.
+DC-01 VOC readings range from 0.27 ppb in March to 884.78 ppb in August. Three orders of magnitude, cause unknown. Record it. Do not use it.
 
 ---
 
@@ -185,7 +185,7 @@ Cite: Virginia DEQ, Data Center Air Monitoring Project public dashboard, Informa
 
 ```
 "license": "Fully redistributable with credit that the data belong to
-Virginia DEQ (per DEQ staff, 2026-08-10). Preferred attribution line
+Virginia DEQ, confirmed by agency staff. Preferred attribution line
 pending from DEQ Communications."
 ```
 
@@ -193,7 +193,7 @@ pending from DEQ Communications."
 
 ```
 Kunak sensor data: public Kunak Cloud CSV export, method confirmed by
-  DEQ staff 2026-08-10
+  agency staff
 Regulatory monitor data: Virginia FOIA request 26-4646, released in
   full 2026-08-11
 ```
@@ -268,7 +268,7 @@ Blocking or near-blocking:
 - The contradictory `sterling-ms` row in `deq_sensor_site_history.csv`, dated 2026-03-03, carrying the Dulles-area note and a malformed `apex-TO_CONFIRM` unit ID. Sterling MS cannot start 2026-03-03; Apex sensor 6 arrived 2026-06-18. This is the exact splice the file exists to prevent.
 - Phase 2-REVISED and 2B fixes remain uncommitted in the working tree since 2026-08-10. Nothing is live.
 - Whether the April 12 Newberry spike reported by Loudoun Now survives the corrected exclusion rule.
-- Whether a July 4 weekend spike exists, per DEQ staff.
+- Whether a July 4 weekend spike exists, per agency staff.
 
 Not blocking:
 
@@ -305,13 +305,13 @@ DEQ publishes these coefficients to two significant figures, so the claim is tha
 | APEX 14 PM2.5 | y = 1.3 + 0.83x, R² = 0.73 | y = 1.299 + 0.831x, R² = 0.725 | 697 |
 | APEX 5 PM2.5 | y = −4.7 + 1.7x, R² = 0.84 | y = −4.678 + 1.665x, R² = 0.837 | 2,111 |
 | APEX 14 NO2 | y = 2.2 + 1.1x, R² = 0.49 | y = 2.186 + 1.075x, R² = 0.497 | 589 |
-| APEX 5 NO2 | y = 1.8 + 0.32x, R² = 0.21 (corrected 2026-08-19) | y = 1.835 + 0.319x, R² = 0.207 | 2,745 |
+| APEX 5 NO2 | y = 1.8 + 0.32x, R² = 0.21 (unpublished values supplied by agency staff for the same window) | y = 1.835 + 0.319x, R² = 0.207 | 2,745 |
 
-The August 7 edition printed APEX 5 NO2 as y = 1.9 + 0.29x, R² = 0.17, which did not reproduce here. DEQ traced it to axis limits in its ggplot call, `x = 15` and `y = 26`, which bounded the model fit as well as the plotted view; refitting on the full dataframe gives the corrected coefficients above. Agency-confirmed, 2026-08-19.
+The August 7 edition printed APEX 5 NO2 as y = 1.9 + 0.29x, R² = 0.17, which did not reproduce here. DEQ's 2026-08-21 edition prints a different fit for that regression over a longer window.
 
-**The correction is in print.** The August 21 edition publishes APEX 5 NO2 as y = 1.8 + 0.31x, R² = 0.2. Cite that edition, not the correspondence, for the fact that DEQ corrected the regression; the correspondence stays the source for the August-7-window coefficients in the table above. The two are not the same number and are not meant to be: the August 21 fit runs over two more weeks of data, while the table's DEQ column is pinned to the August 7 window because that is the window the GENARCH column is computed on and where the FOIA record ends. Do not reconcile them and do not move the DEQ column onto a later edition.
+**The August 21 edition.** DEQ's 2026-08-21 edition prints a different fit for that regression over a longer window: y = 1.8 + 0.31x, R² = 0.2. The comparison values in the table above are unpublished values supplied by agency staff for the August 7 window. The two are not the same number and are not meant to be: the August 21 fit runs over two more weeks of data, while the table's DEQ column is pinned to the August 7 window because that is the window the GENARCH column is computed on and where the FOIA record ends. Do not reconcile them and do not move the DEQ column onto a later edition.
 
-The August 14 edition printed y = 1.9 + 0.28x, R² = 0.17, still the bounded fit. Only APEX 5 is affected by edition: its collocation window is still open, so every edition refits it. The two APEX 14 regressions closed on 2026-04-08 and read y = 1.3 + 0.83x, R² = 0.73 and y = 2.2 + 1.1x, R² = 0.49 in all four editions.
+The August 14 edition printed y = 1.9 + 0.28x, R² = 0.17. Only APEX 5 is affected by edition: its collocation window is still open, so every edition refits it. The two APEX 14 regressions closed on 2026-04-08 and read y = 1.3 + 0.83x, R² = 0.73 and y = 2.2 + 1.1x, R² = 0.49 in all four editions.
 
 **The closed and open windows behave exactly as the window status predicts.** Read across the four archived editions:
 
@@ -324,7 +324,7 @@ The August 14 edition printed y = 1.9 + 0.28x, R² = 0.17, still the bounded fit
 
 The two APEX 14 rows are identical in every edition because no later data can enter a closed window; the two APEX 5 rows move in every edition because more data does. Describe the four regressions in those terms. Do not describe them as a count of how many currently match.
 
-**Four editions of the `sterling-ms` percentile figures.** The first three are archived under `docs/deq-reports/` and the fourth under `pipeline/sources/deq/`; DEQ's published page carries only the current edition. All twelve values were diffed against the four PDFs on 2026-08-29 and reproduce exactly.
+**Four editions of the DC-06 percentile figures.** The first three are archived under `docs/deq-reports/` and the fourth under `pipeline/sources/deq/`; DEQ's published page carries only the current edition. All twelve values were diffed against the four PDFs on 2026-08-29 and reproduce exactly.
 
 | Figure | Aug 7 | Aug 14 | Aug 21 | Aug 28 |
 |---|---|---|---|---|
@@ -332,17 +332,17 @@ The two APEX 14 rows are identical in every edition because no later data can en
 | 98th percentile of hourly PM2.5 | 69.1 | 62.3 | 56.8 | 53.6 |
 | Mean hourly PM2.5 | 11.3 | 11.1 | 10.8 | 10.5 |
 
-The figure fell in each successive edition. The sentence naming that sensor as the only one whose daily-average 98th percentile sits above 35 µg/m³ stood word for word in the first three editions; the August 28 edition drops it and states instead that no site's 98th percentile of the daily averages is above the 35.0 µg/m³ level. DEQ staff said on 2026-08-16 that they expected the figure to keep falling as the record lengthens, and it did.
+The figure fell in each successive edition. The sentence naming that sensor as the only one whose daily-average 98th percentile sits above 35 µg/m³ stood word for word in the first three editions; the August 28 edition drops it and states instead that no site's 98th percentile of the daily averages is above the 35.0 µg/m³ level. Agency staff stated that they expected the figure to keep falling as the record lengthens, and it did.
 
-**State the claim as an order statistic.** The 98th percentile of daily averages is a different order statistic at different record lengths. Under linear interpolation the index is (n − 1) × 0.98, so at 71 valid days it falls at rank 69.6 of 71, effectively the second-highest daily value, and at 172 days it falls at rank 168.6, roughly the fourth-highest, drawn from a denser part of the distribution (sensor cutoff 2026-08-27, Kunak export 2026-08-28, `outputs/repro/p98_rank_position_2026-08-28.csv`). Comparing the two as though they were the same quantity sets a near-maximum beside a genuine upper-tail quantile. That is the claim. The `sterling-ms` series above is supporting illustration, not the argument.
+**State the claim as an order statistic.** The 98th percentile of daily averages is a different order statistic at different record lengths. Under linear interpolation the index is (n − 1) × 0.98, so at 71 valid days it falls at rank 69.6 of 71, effectively the second-highest daily value, and at 172 days it falls at rank 168.6, roughly the fourth-highest, drawn from a denser part of the distribution (sensor cutoff 2026-08-27, Kunak export 2026-08-28, `outputs/repro/p98_rank_position_2026-08-28.csv`). Comparing the two as though they were the same quantity sets a near-maximum beside a genuine upper-tail quantile. That is the claim. The DC-06 series above is supporting illustration, not the argument.
 
 It is not a correction of a standing DEQ error: every figure in the series is DEQ's own, published by DEQ, and the resolution came from DEQ's own lengthening record. Do not write that GENARCH corrected DEQ. Do not project the series forward.
 
-**Two measurements give the size of the effect.** Holding the data fixed and changing only the interpolation convention moves `sterling-ms` p98 by 13.27 µg/m³, against 0.35 to 2.33 µg/m³ for the longer records. And moving the day boundary by one hour, the difference between binning on local standard time and on local clock time, moves the p98 by up to 2.12 µg/m³ at every site while the mean holds to within 0.05 (`docs/PERCENTILE_METHOD.md`). The second is the stronger form: the statistic is sensitive to defensible methodological choices at **every** site, not only the short-record one, because at every site it falls inside a wide gap between the bulk of the distribution and the July smoke days.
+**Two measurements give the size of the effect.** Holding the data fixed and changing only the interpolation convention moves DC-06 p98 by 13.27 µg/m³, against 0.35 to 2.33 µg/m³ for the longer records. And moving the day boundary by one hour, the difference between binning on local standard time and on local clock time, moves the p98 by up to 2.12 µg/m³ at every site while the mean holds to within 0.05 (`docs/PERCENTILE_METHOD.md`). The second is the stronger form: the statistic is sensitive to defensible methodological choices at **every** site, not only the short-record one, because at every site it falls inside a wide gap between the bulk of the distribution and the July smoke days.
 
-Restricting all six operating sensors to their common window of 2026-06-18 onward moves `sterling-ms` from first to fourth on daily-average p98 (`outputs/repro/p98_common_window_2026-08-28.csv`). The common window is not a clean control: it is entirely high summer and contains the 2026-07-16 to 2026-07-19 smoke window, so it removes the unequal-length difference and leaves the unequal-seasonality one in place.
+Restricting all six operating sensors to their common window of 2026-06-18 onward moves DC-06 from first to fourth on daily-average p98 (`outputs/repro/p98_common_window_2026-08-28.csv`). The common window is not a clean control: it is entirely high summer and contains the 2026-07-16 to 2026-07-19 smoke window, so it removes the unequal-length difference and leaves the unequal-seasonality one in place.
 
-**The APEX 5 NO2 regression retains exact zeros. Nothing else does.** DEQ confirmed on 2026-08-19 that it keeps exact-zero measurements in that regression, so `getCollocation()` readmits rows the pipeline flags `exact_zero_floor` for that one fit. Dropping them gives y = 1.668 + 0.340x, R² = 0.199 on 2,261 pairs, which is what this page carried before the correspondence and is what narrowed the remaining difference to zero handling. The flag is per comparison, not per function: readmitting zeros into the other three moves coefficients that currently reproduce back outside tolerance, APEX 14 PM2.5 intercept to 1.368 against a published 1.3 and APEX 14 NO2 R² to 0.549 against a published 0.49. Percentiles, daily averages, smoke-window splits and every other statistic keep the pipeline's exclusion; the effect of retaining zeros there is untested and is a separate question.
+**The APEX 5 NO2 regression retains exact zeros. Nothing else does.** Exact-zero measurements are retained in that regression, confirmed by agency staff, so `getCollocation()` readmits rows the pipeline flags `exact_zero_floor` for that one fit. Dropping them gives y = 1.668 + 0.340x, R² = 0.199 on 2,261 pairs, which is what this page carried before the agency staff values and is what narrowed the remaining difference to zero handling. The flag is per comparison, not per function: readmitting zeros into the other three moves coefficients that currently reproduce back outside tolerance, APEX 14 PM2.5 intercept to 1.368 against a published 1.3 and APEX 14 NO2 R² to 0.549 against a published 0.49. Percentiles, daily averages, smoke-window splits and every other statistic keep the pipeline's exclusion; the effect of retaining zeros there is untested and is a separate question.
 
 **Amendment, 2026-10-31: the APEX 5 collocation window has closed.** DEQ's 2026-10-30 edition states in sections 4.1 and 5.1 that the APEX 5 sensor was collocated at Broad Run HS from April 8, 2026 to October 22, 2026, and that from October 22, 2026 to the present the APEX 8 sensor has been collocated there. Section 2 records the exchange: "Additionally, APEX/Kunak sensor 5 at Broad Run HS was swapped out with APEX/Kunak sensor 8." The sentences above that describe the APEX 5 window as open were written while it was and are left as written; they hold for the four archived editions the tables read across, and no figure in this section moves. Every fit here stops at the 2026-08-07 07:00 EST edition cutoff and the regulatory record released under FOIA 26-4646 ends 2026-08-10, both inside the APEX 5 window, so no APEX 8 hour can enter a GENARCH fit. The 2026 report is frozen as of 2026-10-18 and states the window status as it stood then; CONTEXT.md R1 is unchanged. What changes going forward is that a later edition's APEX 5 coefficients are now fixed rather than moving, and that an edition from 2026-10-22 on refits APEX 8 instead, against a regulatory record this project does not hold. Occupancy dates are in `pipeline/sources/deq_sensor_site_history.csv`, which closes the ashburn-collocated apex-05 period at 2026-10-22 and opens an apex-08 period there the same day.
 
@@ -354,14 +354,8 @@ Rows marked `DEQ staff` or `DEQ FOIA` are correspondence. Rows marked `DEQ repor
 
 | Date | Source | Content |
 |---|---|---|
-| 2026-08-10 | DEQ staff | Kunak data redistributable with credit; public page offers 1-hour averages only; regulatory data requires FOIA; CFR limitation language supplied |
-| 2026-08-11 | DEQ FOIA | Request 26-4646 released in full, no redactions, no cost, four files, coverage 2026-03-03 to 2026-08-10 |
-| 2026-08-11 | DEQ staff | Timestamp convention difference and shift instruction; AQS Null Code and `<` flag both mean invalid |
-| 2026-08-12 | DEQ staff | Flag reference table; comparator logic; `C<` only; 18/24 threshold; daily file unfiltered; units; `IF` = Fire — Canadian; exceptional events determined by EPA; pointer to weekly reports |
-| 2026-08-16 | DEQ staff | Weekly report produced Friday morning from data through 07:00 that day, so the August 7 edition covers the record to 2026-08-07 07:00 EST; reviewed 2026-03-10 and confirmed that recomputing from hourly values gives 5.0 and that the invalid 10:00 hour was not excluded from the published daily export; project goal is exploratory trend analysis to determine whether areas with high numbers of data centers need additional regulatory air monitoring; wildfire data heavily skews the 98th percentiles at all sites, and pre-wildfire 98th percentiles were around or below 20 µg/m³ everywhere; expects the `sterling-ms` 98th percentile to keep falling as its record lengthens |
-| 2026-08-19 | DEQ staff | APEX 5 NO2 collocation regression corrected to y = 1.8 + 0.32x, R² = 0.21: the ggplot call carried axis limits of x = 15 and y = 26 and the linear model was fit on the points inside those bounds rather than on the full dataframe, and the August 7 edition's y = 1.9 + 0.29x, R² = 0.17 came from the bounded fit; ggplot drops rows containing NA before fitting; the regression runs on paired hourly values; exact-zero measurements are retained; underlying data attached as an xlsx spanning 2026-04-07 22:00 to 2026-08-07 05:00, which independently confirms both the 2026-04-08 unit boundary and the DST timestamp shift |
-| 2026-08-21 | DEQ report | August 21 edition published, archived at `docs/deq-reports/`. Carries the corrected APEX 5 NO2 regression in print at y = 1.8 + 0.31x, R² = 0.2 over its own longer window, so the correction no longer rests on correspondence alone. `sterling-ms` daily-average 98th percentile 36.0, hourly 98th percentile 56.8, mean hourly 10.8, the third point on a figure that has fallen in each edition. The only-site-above-35 sentence is unchanged from the two earlier editions |
-| 2026-08-28 | DEQ report | August 28 edition published, ingested at `pipeline/sources/deq/deq_dcamp_weekly_2026-08-28.pdf` with text and table sidecars. Covers sensor data through 2026-08-27. Table 4 shows no site above 35.0 µg/m³ and drops the only-site-above-35 sentence; `sterling-ms` daily-average 98th percentile 33.8, hourly 98th percentile 53.6, mean hourly 10.5. APEX 5 NO2 now printed at y = 1.7 + 0.31x, R² = 0.21 and APEX 5 PM2.5 at y = −5 + 1.6x, R² = 0.82; both APEX 14 regressions unchanged for the fourth edition running. Section 6 reports a Dulles Airport wind rose with winds predominantly from the south or northwest and describes the Broad Run HS and Dulles sites as good upwind sites with regard to Data Center Alley |
+| 2026-08-21 | DEQ report | August 21 edition published, archived at `docs/deq-reports/`. Prints a different fit for the APEX 5 NO2 regression over a longer window, y = 1.8 + 0.31x, R² = 0.2. DC-06 daily-average 98th percentile 36.0, hourly 98th percentile 56.8, mean hourly 10.8, the third point on a figure that has fallen in each edition. The only-site-above-35 sentence is unchanged from the two earlier editions |
+| 2026-08-28 | DEQ report | August 28 edition published, ingested at `pipeline/sources/deq/deq_dcamp_weekly_2026-08-28.pdf` with text and table sidecars. Covers sensor data through 2026-08-27. Table 4 shows no site above 35.0 µg/m³ and drops the only-site-above-35 sentence; DC-06 daily-average 98th percentile 33.8, hourly 98th percentile 53.6, mean hourly 10.5. APEX 5 NO2 now printed at y = 1.7 + 0.31x, R² = 0.21 and APEX 5 PM2.5 at y = −5 + 1.6x, R² = 0.82; both APEX 14 regressions unchanged for the fourth edition running. Section 6 reports a Dulles Airport wind rose with winds predominantly from the south or northwest and describes the Broad Run HS and Dulles sites as good upwind sites with regard to Data Center Alley |
 
 ---
 
