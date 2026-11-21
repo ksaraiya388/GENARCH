@@ -229,16 +229,7 @@ Apply edits only to items the Phase 4 audit flagged. For each:
     to Data Center Alley. Attribute to DEQ as DEQ's own characterization of its
     network geometry. Do not extend it into any inference about which sites are
     downwind of which facilities.
-5.5 Record, in docs/ only and not on any public page, the internal inconsistency
-    in the 2026-08-28 report: Section 4 states the PM2.5 standards correctly
-    (98th percentile of 24-hour averages not to exceed 35.0 ug/m3 averaged over
-    three years, plus a separate annual standard), while the Section 5
-    conclusion refers to a "24-hr (daily) average PM2.5 NAAQS limit of
-    9.0 ug/m3". There is no 9.0 daily limit; 9.0 is the annual primary standard
-    from the 2024 revision, and the values exceeding it in that table are the
-    mean column. Record it as an observation for correspondence. Do not publish
-    it, do not adopt DEQ's Section 5 wording anywhere, and do not characterize
-    it as an error on any public page.
+5.5 An observation on this edition's wording is held for correspondence with DEQ.
 
 ## PHASE 6 — Constraint enforcement
 

@@ -226,18 +226,9 @@ Center Alley. The page carries this as DEQ's characterisation of its own network
 geometry and states explicitly that it does not establish any site as downwind
 of any facility.
 
-### 5.5 the report's internal inconsistency
+### 5.5
 
-Recorded in `docs/GENARCH_RULES.md` section 11, which is marked not for
-publication. Section 4 of the 2026-08-28 report states both PM2.5 standards
-correctly. The Section 5 conclusion then refers to a "24-hr (daily) average
-PM2.5 NAAQS limit of 9.0 µg/m3" and names two sensors as above it. There is no
-9.0 daily limit; 9.0 is the annual primary standard from the 2024 revision, and
-the column in which those sites exceed 9.0 is the mean column. DEQ's next
-sentence notes the standards rest on three-year averages and that no violation
-can be inferred, so the conclusion is internally inconsistent rather than
-misleading in effect. Held for correspondence. Not published, not adopted, not
-characterised as an error anywhere public.
+An observation on this edition's wording is held for correspondence with DEQ.
 
 ## Phase 6, constraint checks
 

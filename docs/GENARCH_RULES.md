@@ -365,40 +365,6 @@ Rows marked `DEQ staff` or `DEQ FOIA` are correspondence. Rows marked `DEQ repor
 
 ---
 
-## 11. Observations on DEQ reports, held for correspondence
-
-Not for publication. Nothing in this section appears on any public page, and none of DEQ's
-wording here is adopted anywhere in the repo. These are points to raise with DEQ, recorded so
-they are not lost and not acted on unilaterally.
-
-**The August 28 edition states the PM2.5 standards two different ways.** Section 4 states them
-correctly: the yearly mean of 24-hour average concentrations may not exceed 9.0 µg/m³ averaged
-over three years, and the 98th percentile of 24-hour average concentrations may not exceed
-35.0 µg/m³ averaged over three years. The Section 5 conclusion then refers to a "24-hr (daily)
-average PM2.5 NAAQS limit of 9.0 µg/m3" and names two sensors as above it. There is no 9.0
-µg/m³ daily limit. The 9.0 figure is the annual primary standard from the 2024 revision, and
-the column in which those two sites exceed 9.0 in Table 4 is the mean column, not a daily
-maximum or a percentile. DEQ's own sentence immediately afterwards notes that the standards
-rest on three-year averages and that no violation can be inferred, so the conclusion is
-internally inconsistent rather than misleading in effect.
-
-Raise it with DEQ as a wording question. Do not characterise it as an error on any public page,
-do not quote the Section 5 sentence, and do not adopt the phrase "daily average PM2.5 NAAQS
-limit of 9.0" anywhere. Where this repo states the standards, it states them as Section 4 does.
-
-**DEQ's supplied APEX 5 data begins before the date boundary.** The xlsx DEQ attached on
-2026-08-19 spans 2026-04-07 22:00 to 2026-08-07 05:00, so DEQ's own APEX 5 regression includes
-the two hours of 2026-04-07 22:00 and 23:00. Assigning collocation periods strictly by date
-from 2026-04-08 excludes those two hours and assigns them to APEX 14 instead. The two
-selections differ by exactly those two paired NO2 rows, and the difference is not neutral: on
-the closed APEX 14 NO2 window, date-window selection gives R² 0.4908, which rounds to DEQ's
-published 0.49, while unit_id selection gives 0.4965, which rounds to 0.50. The date-window
-choice reproduces DEQ's published R² and DEQ's own supplied data range supports the other
-choice. Both cannot be right, the discrepancy is unresolved, and it is another reason the
-APEX 14 NO2 R² must not be presented as a clean reproduction. See `docs/COLLOCATION_METHOD.md`.
-
----
-
 ## 12. Outreach links
 
 **One `/r/<code>` per recipient, never reused.** A forwarded link then stays attributable to the original send rather than merging two recipients into one path in Analytics. Codes live in `OUTREACH_CODES` in `site/src/app/r/[code]/page.tsx`; retire a code by leaving it in place, not by reassigning it.
