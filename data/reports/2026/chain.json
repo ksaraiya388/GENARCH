@@ -380,7 +380,7 @@
   },
   "note": "The atlas half of the report. Keys are namespaced inventory.* and chain.* and live here rather than in numbers.json, which holds the DEQ half and is gated on byte-identity. Every count is reported against the atlas freeze date and computed from the records FREEZE.json pins under atlas_inputs.",
   "table": {
-    "caption": "Each link of the published five-step chain with its evidence class and where that class comes from. Two classes are read from atlas records; three are assigned by the figure definition and are marked as such, so a reader does not take every class for a record value. A link marked inferred has no direct evidence in the atlas. Every association here is population-level, and the chain states a mechanism: no link asserts that one step brings about the next.",
+    "caption": "Each link of the published 5-step chain with its evidence class and where that class comes from. 2 classes are read from atlas records; 3 are assigned by the figure definition and are marked as such, so a reader does not take every class for a record value. A link marked inferred has no direct evidence in the atlas. Every association here is population-level, and the chain states a mechanism: no link asserts that one step brings about the next.",
     "columns": [
       "Step",
       "From",

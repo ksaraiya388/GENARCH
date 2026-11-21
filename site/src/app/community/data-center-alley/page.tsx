@@ -169,6 +169,15 @@ export default function DataCenterCorridorPage() {
       "below says its position does not depend on the smoke days. Rewrite it."
     );
   }
+  // Every own-record value with the smoke window excluded, for tests/test_site_output.py
+  // to hold against p98.full.<code>.lst_zero_missing_exsmoke (audit round 2, S3).
+  const fullExSmokeRecord = JSON.stringify(
+    Object.fromEntries(
+      percentiles
+        .filter((p) => p.fullP98ExSmoke !== null)
+        .map((p) => [p.key, Number(n3(p.fullP98ExSmoke!))])
+    )
+  );
   const exSmokeRecord = JSON.stringify({
     n_above_35: aboveLevelExSmoke.length,
     rank: Object.fromEntries(exSmoke.map((p, i) => [p.key, i + 1])),
@@ -881,10 +890,15 @@ export default function DataCenterCorridorPage() {
               published page carries only the current one.
             </p>
             <p>
-              DEQ staff note that the wildfire smoke data heavily skews the 98th percentiles at
-              every site, and that before the smoke arrived they sat at or below about 20 µg/m³
-              everywhere (DEQ staff, correspondence, 2026-08-16). The percentiles in the table
-              below include that window.
+              DEQ staff note that wildfire data heavily skews the 98th percentiles at all
+              sites, and that pre-wildfire 98th percentiles were around or below 20 µg/m³
+              everywhere (DEQ staff, correspondence, 2026-08-16). That figure covers each
+              site&apos;s record before the smoke arrived on {SMOKE_WINDOW.start}. The table
+              below gives every percentile both ways. With the smoke window, it covers each
+              site&apos;s record through {RECORD_END} and the common window of{" "}
+              {COMMON_WINDOW_START} to {RECORD_END}. Without it, it covers the same days less{" "}
+              {SMOKE_WINDOW.start} to {SMOKE_WINDOW.end}, so it keeps the days after the smoke,
+              which DEQ&apos;s pre-wildfire figure does not include.
             </p>
             <p data-common-window-ex-smoke={exSmokeRecord}>
               Restricting every sensor to the window in which all {word(commonWindow.length)}{" "}
@@ -907,11 +921,15 @@ export default function DataCenterCorridorPage() {
           </div>
 
           <div className="mt-5 overflow-x-auto rounded-lg border border-white/[0.08] bg-navy-mid/50">
-            <table className="w-full min-w-[780px] border-collapse text-sm">
+            <table
+              className="w-full min-w-[980px] border-collapse text-sm"
+              data-own-record-ex-smoke={fullExSmokeRecord}
+            >
               <caption className="sr-only">
                 For each site: days, 98th percentile of daily PM2.5 averages, and the ranked
                 observation that percentile is read from, over the site&apos;s own record and over
-                the common window in which all deployed sensors were collecting.
+                the common window in which all deployed sensors were collecting, then both
+                percentiles again with the smoke window excluded.
               </caption>
               <thead>
                 <tr className="border-b border-white/[0.08] text-left text-cool-mid">
@@ -922,6 +940,12 @@ export default function DataCenterCorridorPage() {
                   <th scope="col" className="py-2 px-3 text-right font-medium">Days, common</th>
                   <th scope="col" className="py-2 px-3 text-right font-medium">p98, common</th>
                   <th scope="col" className="py-2 px-3 text-right font-medium">Rank, common</th>
+                  <th scope="col" className="py-2 px-3 text-right font-medium">
+                    p98, own record, smoke excluded
+                  </th>
+                  <th scope="col" className="py-2 px-3 text-right font-medium">
+                    p98, common, smoke excluded
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -941,6 +965,12 @@ export default function DataCenterCorridorPage() {
                     </td>
                     <td className="py-2 px-3 text-right font-mono text-xs text-cool-light">
                       {p.commonPosition === null ? "—" : rankLabel(p.commonPosition)}
+                    </td>
+                    <td className="py-2 px-3 text-right font-mono text-cool-light">
+                      {p.fullP98ExSmoke === null ? "—" : n2(p.fullP98ExSmoke)}
+                    </td>
+                    <td className="py-2 px-3 text-right font-mono text-cool-light">
+                      {p.commonP98ExSmoke === null ? "—" : n2(p.commonP98ExSmoke)}
                     </td>
                   </tr>
                 ))}

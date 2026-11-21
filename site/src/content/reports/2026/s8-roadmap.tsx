@@ -35,8 +35,9 @@ export function Roadmap() {
 
         <Item>
           <strong>May 2027.</strong> The first twelve-month record at a single Loudoun
-          site. After the freeze, sensor collection ended at the two sites that had
-          collected since <N k="network.first_start" />, DC-01 and DC-02{" "}
+          site. After the freeze, sensor collection ended at sites DC-01 and DC-02, the
+          sites still collecting that had collected since{" "}
+          <N k="network.first_start" />{" "}
           <Cite id="deq2026oct30" />
           <Cite id="deq2026nov06" />, so no site reaches twelve months in March 2027.
           Site DC-04 has collected since <N k="network.start.DC-04" /> and reaches twelve

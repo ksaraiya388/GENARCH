@@ -112,9 +112,7 @@ export function AncestryEvidenceBase() {
             <N k="ancestry.discovery.south_asian.share" /> percent of the discovery total,
             so the record has little power to show one. It does not say, and must not be
             read to say, that the locus is absent, inactive or irrelevant in any
-            population: a zero of{" "}
-            <N k="ancestry.loci.17q12-21.south_asian.associations" /> here is not evidence
-            of absence. The same holds for every other zero in the table.
+            population: that count is not evidence of absence. The same holds for every other zero in the table.
           </P>
         </Callout>
         <ReportTable id="T11" />

@@ -433,7 +433,9 @@ def test_the_ancestry_figure_does_not_carry_the_sensor_limitation(report_dir):
     for part in (constant["limitation"], constant["citation"], constant["credit"]):
         assert part not in entry["limitation"]
     assert "not an effect estimate" in entry["limitation"]
-    assert ancestry_report.ACS_CATEGORY_SENTENCE in entry["limitation"]
+    # The ACS sentence prints once, in the caption (audit round 2, M5).
+    shown = entry["caption"] + " " + entry["limitation"]
+    assert shown.count(ancestry_report.ACS_CATEGORY_SENTENCE) == 1
 
 
 def test_no_caption_repeats_any_part_of_the_constant(report_dir):
@@ -989,7 +991,11 @@ def test_every_table_is_listed_in_a_manifest(report_dir):
 def test_sources_table_names_sources_by_code_and_hash(report_dir):
     header, rows = _read_csv(report_dir / "T01_sources.csv")
     assert header == ["Source", "Origin", "Licence", "Export date", "Data cutoff", "SHA-256"]
-    assert len(rows) == 26, "one row per frozen DEQ input"
+    # One row per frozen DEQ input, plus the 2026-08-21 edition, which is pinned by hash
+    # in the keys that read it rather than in the freeze (audit round 2, S9).
+    assert len(rows) == 27, "one row per DEQ input read"
+    assert sum("pinned in its keys, not in the freeze" in row[0] for row in rows) == 1
+    assert not any("T" in row[3] for row in rows), "export dates print with a space (D51)"
     for row in rows:
         assert len(row[5]) == 64, f"missing hash: {row}"
         assert row[2], f"missing licence: {row}"

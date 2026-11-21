@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import sys
 from datetime import date, datetime, timedelta
 from pathlib import Path
@@ -37,7 +38,7 @@ from pipeline.report_lib import (
 )
 from pipeline.report_lib import freeze as freeze_lib
 from pipeline.report_lib.freeze import Freeze, FreezeError
-from pipeline.report_lib.numbers import NumberRegistry
+from pipeline.report_lib.numbers import NumberRegistry, display_text
 from pipeline.report_lib.rounding import half_up
 from pipeline.report_lib.rows import build_regulatory_rows, build_rows
 from pipeline.reshape_deq import (
@@ -377,10 +378,28 @@ def compute(fz: Freeze) -> dict:
                 "p98": daily.p98(whole.values()),
                 "days": len(whole),
             }
+        # The same under DEQ's edition cutoff (audit round 2, S2): the DEQ-cutoff
+        # common-window percentile is GENARCH's own statistic, not a reproduction of a
+        # DEQ-published one, so it is stated both ways (GENARCH_RULES.md section 6).
+        results[key + "_ex_smoke_deq_cutoff"] = {}
+        for site in COMMON_WINDOW_SITES:
+            cut = drop_smoke(
+                daily.window_days(
+                    means[(binning, False, "cut")].get(site, {}),
+                    COMMON_WINDOW_START,
+                    RECORD_END,
+                )
+            )
+            results[key + "_ex_smoke_deq_cutoff"][site] = {
+                "p98": daily.p98(cut.values()),
+                "days": len(cut),
+            }
 
-    # The days that set each common-window percentile (the two order statistics the
-    # linear interpolation reads), and whether all of them fall in the smoke window,
-    # per site and day definition (D58).
+    # The days that set each common-window percentile, and whether all of them fall in
+    # the smoke window, per site and day definition (D58). Under linear interpolation
+    # the index is (n - 1) x 0.98; the days that set the value are the order statistics
+    # carrying non-zero weight: one when the index is whole (51 days gives exactly 49),
+    # two otherwise (audit round 2, S4).
     set_by_smoke = {}
     for binning in ("standard", "clock"):
         n_sites = 0
@@ -390,11 +409,31 @@ def compute(fz: Freeze) -> dict:
             )
             ordered = sorted(days, key=lambda d: days[d])
             k = (len(ordered) - 1) * 0.98
-            setting = {ordered[int(k)], ordered[min(int(k) + 1, len(ordered) - 1)]}
+            lower = int(k)
+            if abs(k - round(k)) < 1e-9:
+                setting = {ordered[int(round(k))]}
+            else:
+                setting = {ordered[lower], ordered[min(lower + 1, len(ordered) - 1)]}
             if all(correlation.SMOKE_START <= d <= correlation.SMOKE_END for d in setting):
                 n_sites += 1
         set_by_smoke[binning] = n_sites
     results["p98_common_set_by_smoke"] = set_by_smoke
+    # The common-window record lengths at which the interpolation index is whole, so a
+    # single day sets the percentile (audit round 2, S4).
+    whole_index = set()
+    for binning in ("standard", "clock"):
+        for site in COMMON_WINDOW_SITES:
+            n = len(
+                daily.window_days(
+                    means[(binning, False, None)].get(site, {}),
+                    COMMON_WINDOW_START,
+                    RECORD_END,
+                )
+            )
+            k = (n - 1) * 0.98
+            if abs(k - round(k)) < 1e-9:
+                whole_index.add(n)
+    results["p98_common_whole_index_days"] = sorted(whole_index)
 
     # Site-days at or above the level, with the smoke window included, and how many
     # of them fall inside it (D58).
@@ -1058,7 +1097,56 @@ def build_numbers(fz: Freeze, results: dict) -> NumberRegistry:
         inputs=august_inputs,
     )
     add_audit_keys(fz, results, reg)
+    scope_sensor_inputs(reg)
     return reg
+
+
+_EXPORT_LABEL = re.compile(r"^Kunak hourly sensor export, (DC-\d{2}) \(")
+_SITE_IN_KEY = re.compile(r"\.(DC-\d{2})(?:\.|$)")
+
+
+def scope_sensor_inputs(reg: NumberRegistry) -> None:
+    """List only the sensor exports a key reads (audit round 2, M7).
+
+    The registry records every frozen sensor export as the input of each sensor key. A
+    key whose value reads one site, the six common-window sensors or the nine Loudoun
+    County sites keeps only those exports, so no Loudoun-only value names a Prince
+    William County export as its input (D5, D52). Values are untouched.
+    """
+    common = {code_of_site(s) for s in COMMON_WINDOW_SITES}
+    loudoun = {s.code for s in site_codes.load() if s.in_v1_scope}
+    for key in reg.keys():
+        inputs = reg.inputs(key)
+        if not any(_EXPORT_LABEL.match(i["source"]) for i in inputs):
+            continue
+        if key.startswith("p98.common_exsmoke.diff."):
+            scope = set(re.findall(r"DC-\d{2}", key))
+        elif ".rank." in key:
+            scope = common
+        elif key.startswith(("p98.full.", "network.record_days.", "summary.share_site_days")):
+            site = _SITE_IN_KEY.search(key)
+            scope = {site.group(1)} if site else loudoun
+            if key == "summary.share_site_days_below_35.all_sites":
+                continue
+        elif key.startswith(("p98.common", "network.common_window.")):
+            site = _SITE_IN_KEY.search(key)
+            scope = {site.group(1)} if site else common
+        elif key.startswith("summary.site_days_at_or_above_35"):
+            scope = loudoun
+        else:
+            continue
+        reg.set_inputs(
+            key,
+            [
+                i
+                for i in inputs
+                if not (m := _EXPORT_LABEL.match(i["source"])) or m.group(1) in scope
+            ],
+        )
+
+
+def code_of_site(site_id: str) -> str:
+    return site_codes.code_for(site_id)
 
 
 # DEQ's 2026-08-21 edition, p. 14: the APEX 5 NO2 regression as DEQ first printed it
@@ -1170,6 +1258,16 @@ def add_audit_keys(fz: Freeze, results: dict, reg: NumberRegistry) -> None:
         precision=0,
         method="sensor exports (original analysis and data freeze), regulatory monitor "
         "files and DEQ weekly-edition files pinned in FREEZE.json; the rows of the "
+        "frozen-inputs table",
+        inputs=[],
+    )
+    reg.add(
+        "freeze.n_inputs_pinned_in_keys",
+        len(_file_input(DEQ_AUG21_PATH, DEQ_AUG21_SHA256)),
+        unit="files",
+        precision=0,
+        method="DEQ inputs read by report keys and pinned by hash in those keys rather than "
+        "in FREEZE.json: the 2026-08-21 edition behind deq.aug21.*; a row of the "
         "frozen-inputs table",
         inputs=[],
     )
@@ -1555,6 +1653,16 @@ def add_audit_keys(fz: Freeze, results: dict, reg: NumberRegistry) -> None:
         method="site pairs among the six sensors with a correlation",
         inputs=august_inputs,
     )
+    reg.add(
+        "corr.n_sensors",
+        len({site for pair in corr["pairs"] for site in (pair["a"], pair["b"])}),
+        unit="sensors",
+        precision=0,
+        window="full record of the original analysis inputs, smoke window excluded",
+        method="sensors entering the cross-site correlation, the distinct sites across its "
+        "pairs",
+        inputs=august_inputs,
+    )
     for key, value, what in (
         ("corr.pair_hours_min", corr["n_min"], "fewest"),
         ("corr.pair_hours_max", corr["n_max"], "most"),
@@ -1631,6 +1739,82 @@ def add_audit_keys(fz: Freeze, results: dict, reg: NumberRegistry) -> None:
             inputs=kunak_inputs,
         )
 
+    # Section 5.4 says site DC-06 holds the same rank with the smoke window excluded as
+    # with it included, under both day definitions; fail if that stops holding.
+    for with_key, ex_key in (
+        ("p98.common.rank.DC-06", "p98.common_exsmoke.rank.DC-06"),
+        ("p98.common_clock.rank.DC-06", "p98.common_clock_exsmoke.rank.DC-06"),
+    ):
+        if with_key in reg and reg.value(with_key) != reg.value(ex_key):
+            raise ValueError(
+                f"{with_key} and {ex_key} differ; section 5.4 says DC-06's rank does not "
+                "depend on the smoke days. Rewrite it."
+            )
+
+    # ---- the DEQ-cutoff common-window result both ways (audit round 2, S2)
+    cut_window = (
+        f"{COMMON_WINDOW_START.isoformat()} to {DEQ_EDITION_CUTOFF_LABEL}, 18 of 24 valid "
+        "hours, exact zeros treated as missing"
+    )
+    for binning, with_prefix, ex_prefix, key in (
+        ("local standard time", "p98.common", "p98.common_exsmoke", "p98_common_standard"),
+        ("local clock time", "p98.common_clock", "p98.common_clock_exsmoke", "p98_common_clock"),
+    ):
+        reg.add(
+            f"{with_prefix}.n_above_35.deq_cutoff",
+            sum(
+                1
+                for v in results[key + "_deq_cutoff"].values()
+                if v["p98"] > PM25_24H_LEVEL
+            ),
+            unit="sites",
+            precision=0,
+            n=len(results[key + "_deq_cutoff"]),
+            window=cut_window,
+            method=f"sites whose common-window 98th percentile under DEQ's stated edition "
+            f"cutoff exceeds 35 microgram per cubic metre, smoke window included, {binning} "
+            "day binning. Not a NAAQS comparison",
+            inputs=kunak_inputs,
+        )
+        ex = results[key + "_ex_smoke_deq_cutoff"]
+        ranked = sorted(ex.items(), key=lambda kv: -kv[1]["p98"])
+        for rank, (site, got) in enumerate(ranked, start=1):
+            code = code_of(site)
+            reg.add(
+                f"{ex_prefix}.{code}.deq_cutoff",
+                got["p98"],
+                unit="µg/m³",
+                precision=3,
+                n=got["days"],
+                window=cut_window + ", " + smoke_days,
+                method=f"98th percentile under DEQ's stated edition cutoff, {binning} day "
+                "binning, smoke window excluded",
+                inputs=kunak_inputs,
+            )
+            reg.add(
+                f"{ex_prefix}.rank.{code}.deq_cutoff",
+                rank,
+                unit="rank",
+                precision=0,
+                n=len(ranked),
+                window=cut_window + ", " + smoke_days,
+                method=f"rank under DEQ's stated edition cutoff with the smoke window "
+                f"excluded, {binning} day binning, highest first",
+                inputs=kunak_inputs,
+            )
+        reg.add(
+            f"{ex_prefix}.n_above_35.deq_cutoff",
+            sum(1 for v in ex.values() if v["p98"] > PM25_24H_LEVEL),
+            unit="sites",
+            precision=0,
+            n=len(ex),
+            window=cut_window + ", " + smoke_days,
+            method=f"sites whose common-window 98th percentile under DEQ's stated edition "
+            f"cutoff exceeds 35 microgram per cubic metre with the smoke window excluded, "
+            f"{binning} day binning. Not a NAAQS comparison",
+            inputs=kunak_inputs,
+        )
+
     # ---- the common-window result both ways, and the rest of D58
     reg.add(
         "freeze.cutoff_date",
@@ -1677,11 +1861,30 @@ def add_audit_keys(fz: Freeze, results: dict, reg: NumberRegistry) -> None:
             precision=0,
             n=len(COMMON_WINDOW_SITES),
             window=COMMON_WINDOW,
-            method="sites whose common-window 98th percentile is read, by linear "
-            "interpolation, from two daily averages that both fall in the smoke window, "
+            method="sites whose common-window 98th percentile is set, by linear "
+            "interpolation, only by daily averages that fall in the smoke window: the "
+            "order statistic or statistics carrying non-zero weight, one at a whole index "
+            "(51 days) and two otherwise, "
             f"{binning} day binning",
             inputs=kunak_inputs,
         )
+    whole_index = results["p98_common_whole_index_days"]
+    if len(whole_index) != 1:
+        raise ValueError(
+            f"common-window record lengths with a whole interpolation index: {whole_index}; "
+            "the section 5.4 wording names exactly one"
+        )
+    reg.add(
+        "p98.common.whole_index_days",
+        whole_index[0],
+        unit="days",
+        precision=0,
+        window=COMMON_WINDOW,
+        method="common-window record length, in whole days, at which the linear "
+        "interpolation index (n - 1) x 0.98 is a whole number, so a single daily average "
+        "sets the 98th percentile; at every other record length two days set it",
+        inputs=kunak_inputs,
+    )
     live = [
         s for s in results["active_at_deq_cutoff"] if s in results["p98_full"]
     ]
@@ -1801,6 +2004,48 @@ def add_audit_keys(fz: Freeze, results: dict, reg: NumberRegistry) -> None:
                 inputs=august_inputs,
             )
 
+    # ---- the APEX units DEQ's 2026-10-09 edition names at the three sites the frozen
+    # site history leaves unconfirmed (S14; audit round 2, S5). Transcribed from the
+    # edition's section 2; site_key_notes() checks the phrases at generation.
+    oct09_text = "pipeline/sources/deq/deq_dcamp_weekly_2026-10-09.txt"
+    for code, unit in OCT09_UNIT_ASSIGNMENTS:
+        reg.add(
+            f"deq.oct09.unit.{code}",
+            unit,
+            unit="APEX sensor number",
+            precision=0,
+            method="APEX/Kunak sensor number DEQ's 2026-10-09 edition, section 2, gives at "
+            "this site, which the frozen site history leaves unconfirmed; transcribed",
+            inputs=_file_input(oct09_text),
+        )
+    reg.add(
+        "deq.oct09.units_named",
+        len(OCT09_UNIT_ASSIGNMENTS),
+        unit="sites",
+        precision=0,
+        method="sites whose APEX unit DEQ's 2026-10-09 edition, section 2, names and the "
+        "frozen site history leaves unconfirmed",
+        inputs=_file_input(oct09_text),
+    )
+
+    # ---- the count of new Prince William County sites in the 2026-10-30 edition,
+    # section 2 (audit round 2, S5): each site's phrase is checked in the edition text.
+    oct30_text = "pipeline/sources/deq/deq_dcamp_weekly_2026-10-30.txt"
+    oct30 = (Path(__file__).resolve().parent.parent / oct30_text).read_text(encoding="utf-8")
+    pw_new = ("Prince William Police Department West", "Meadows Farms")
+    for phrase in pw_new:
+        if phrase not in oct30:
+            raise ValueError(f"{oct30_text} no longer carries {phrase!r}")
+    reg.add(
+        "deq.postfreeze.pw_sites_added_count",
+        len(pw_new),
+        unit="sites",
+        precision=0,
+        method="after the freeze: sensors placed at new Prince William County sites on "
+        "2026-10-22, DEQ 2026-10-30 edition, section 2. Changes no frozen value",
+        inputs=_file_input(oct30_text),
+    )
+
     # ---- events after the freeze, transcribed from the ingested editions
     for key, value, rel_path, phrase, what in POSTFREEZE_EVENTS:
         text = (Path(__file__).resolve().parent.parent / rel_path).read_text(encoding="utf-8")
@@ -1840,6 +2085,9 @@ def weekly_origin(entry, report_date: str, by_basename: dict) -> str:
     return f"{DEQ_PROJECT_PAGE}; archived in the project repository at {entry.rel_path}"
 
 
+OCT09_UNIT_ASSIGNMENTS = (("DC-07", 8), ("DC-08", 10), ("DC-09", 13))
+
+
 def site_key_notes(reg: NumberRegistry) -> list[str]:
     """Notes for the site key (S14). The text is checked against DEQ's edition."""
     edition = "pipeline/sources/deq/deq_dcamp_weekly_2026-10-09.txt"
@@ -1856,8 +2104,15 @@ def site_key_notes(reg: NumberRegistry) -> list[str]:
         "earlier.",
         "The APEX unit column reflects the site history as frozen. DEQ's "
         + reg.display("deq.edition_date.oct09")
-        + " edition, section 2, names the units at three sites the history leaves "
-        "unconfirmed: sensor 8 at DC-07, sensor 10 at DC-08 and sensor 13 at DC-09.",
+        + " edition, section 2, names the units at "
+        + count_word(reg.display("deq.oct09.units_named"))
+        + " sites the history leaves unconfirmed: sensor "
+        + reg.display("deq.oct09.unit.DC-07")
+        + " at DC-07, sensor "
+        + reg.display("deq.oct09.unit.DC-08")
+        + " at DC-08 and sensor "
+        + reg.display("deq.oct09.unit.DC-09")
+        + " at DC-09.",
     ]
 
 
@@ -1866,10 +2121,10 @@ def collocation_notes(reg: NumberRegistry) -> list[str]:
     return [
         "† The DEQ values for APEX 5 NO2 are the coefficients DEQ staff supplied on "
         + reg.display("deq.correspondence.collocation_correction")
-        + " for the same window as the other three, after DEQ traced its "
-        + reg.display("deq.table4_edition_date")
-        + " figures to axis limits in its plotting call. DEQ's own printed correction, in "
-        "its " + reg.display("deq.edition_date.aug21") + " edition (p. 14), is y = "
+        + " for the same window as the other three. DEQ's printed figures for that "
+        "regression are in its "
+        + reg.display("deq.edition_date.aug21")
+        + " edition (p. 14): y = "
         + reg.display("deq.aug21.apex-05_NO2.intercept")
         + " + "
         + reg.display("deq.aug21.apex-05_NO2.slope")
@@ -1895,6 +2150,22 @@ def collocation_notes(reg: NumberRegistry) -> list[str]:
         + reg.display("network.unit_change.DC-01")
         + ", the date the site key gives.",
     ]
+
+
+def staff_status(fit: dict) -> str:
+    """The T03 status cell (audit round 2, B2).
+
+    The APEX 5 NO2 DEQ values are the coefficients DEQ staff supplied for the window
+    (D54), not values DEQ printed, so that cell names them as staff values. The key
+    colloc.apex-05_NO2.status keeps its value; only the rendered cell differs.
+    """
+    if (
+        fit["unit_id"] == "apex-05"
+        and fit["pollutant"] == "NO2"
+        and fit["status"] == collocation.STATUS_MATCH
+    ):
+        return "matches DEQ staff values at DEQ's precision"
+    return fit["status"]
 
 
 def count_word(shown: str) -> str:
@@ -1954,7 +2225,7 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
                     source_label(fz, entry),
                     origin,
                     licence,
-                    entry.export_date,
+                    display_text(entry.export_date),
                     entry.data_cutoff,
                     entry.sha256,
                 ]
@@ -1990,13 +2261,35 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
             ]
         )
 
-    if len(t01_rows) != int(reg.value("freeze.n_deq_inputs")):
-        raise ValueError("T01 rows and freeze.n_deq_inputs disagree")
+    # The 2026-08-21 edition is read by the deq.aug21.* keys and pinned by hash in
+    # them, not in the freeze (audit round 2, S9). FREEZE.json stays unchanged.
+    aug21 = _file_input(DEQ_AUG21_PATH, DEQ_AUG21_SHA256)[0]
+    _, licence = provenance("deq_dcamp_weekly_2026-08-21.pdf", weekly_fallback)
+    t01_rows.append(
+        [
+            "DEQ weekly report, 2026-08-21 (pdf), pinned in its keys, not in the freeze",
+            f"{DEQ_PROJECT_PAGE}; archived in the project repository at {DEQ_AUG21_PATH}",
+            licence,
+            "",
+            reg.value("deq.edition_date.aug21"),
+            aug21["sha256"],
+        ]
+    )
+    expected_rows = int(reg.value("freeze.n_deq_inputs")) + int(
+        reg.value("freeze.n_inputs_pinned_in_keys")
+    )
+    if len(t01_rows) != expected_rows:
+        raise ValueError(
+            "T01 rows and freeze.n_deq_inputs + freeze.n_inputs_pinned_in_keys disagree"
+        )
     t01 = tables.Table(
         "T01_sources",
         "Frozen inputs",
-        "Every DEQ and sensor input the report's analysis reads, as pinned in the data "
-        "freeze. Sensor exports are named by site code; each row is identified by its "
+        "Every DEQ and sensor input the report's analysis reads: "
+        + reg.display("freeze.n_deq_inputs")
+        + " pinned in the data freeze and "
+        + reg.display("freeze.n_inputs_pinned_in_keys")
+        + " pinned by hash in the keys that read it. Sensor exports are named by site code; each row is identified by its "
         "SHA-256 so the reproduction stays checkable without printing a filename that "
         "carries a site identifier. The atlas, ancestry and configuration inputs are pinned "
         "in FREEZE.json under atlas_inputs, ancestry_inputs and config_inputs.",
@@ -2070,7 +2363,7 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
             f["n_pairs"],
             f["period_start"],
             f["period_end"],
-            f["status"],
+            staff_status(f),
         ]
         for f in results["collocation"]
     ]
@@ -2202,6 +2495,16 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
         ranks = {site: i for i, (site, _) in enumerate(ranked, start=1)}
         ranked_ex = sorted(results[key + "_ex_smoke"].items(), key=lambda kv: -kv[1]["p98"])
         ranks_ex = {site: i for i, (site, _) in enumerate(ranked_ex, start=1)}
+        # One rank column serves both day sets (audit round 2, M8): fail if they differ.
+        ranked_cut = sorted(
+            results[key + "_deq_cutoff"].items(), key=lambda kv: -kv[1]["p98"]
+        )
+        ranks_cut = {site: i for i, (site, _) in enumerate(ranked_cut, start=1)}
+        if ranks_cut != ranks:
+            raise ValueError(
+                f"{label}: whole-day and DEQ-cutoff ranks differ; the common-window table's "
+                "single rank column no longer serves both"
+            )
         for site in sorted(results[key], key=code_of):
             whole = results[key][site]
             cut = results[key + "_deq_cutoff"][site]
@@ -2223,7 +2526,9 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
     t05 = tables.Table(
         "T05_p98_common_window",
         "98th percentiles on the common window",
-        "The six sensors restricted to the window in which all six were collecting, under "
+        "The "
+        + reg.display("p98.common.n_sites")
+        + " sensors restricted to the window in which all of them were collecting, under "
         "both day definitions and both cutoffs. Restricting to a common window removes the "
         "unequal-record-length difference; it does not remove the unequal-seasonality one, "
         "because the window is entirely high summer and contains the smoke period. Neither "
@@ -2239,16 +2544,22 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
             "Whole-day 98th percentile (µg/m³)",
             "DEQ-cutoff record days",
             "DEQ-cutoff 98th percentile (µg/m³)",
-            "Rank",
+            "Rank (whole days and DEQ cutoff)",
             "Smoke window excluded: record days",
             "Smoke window excluded: 98th percentile (µg/m³)",
             "Smoke window excluded: rank",
         ],
         t05_rows,
         notes=[
-            "The rise from local standard time to local clock time quoted in section 5.4 is "
-            "computed from the unrounded percentiles, so it can differ in the last decimal "
+            "Every difference section 5.4 quotes between values in this table, including the "
+            "rise from local standard time to local clock time and the gap between two sites, "
+            "is computed from the unrounded percentiles, so it can differ in the last decimal "
             "from a difference of the rounded values printed here.",
+            "Under DEQ's cutoff a site loses its partial last day, and its percentile rises "
+            "rather than falls. With linear interpolation, one day fewer moves the "
+            "interpolation point toward the highest day in the record, which in this window "
+            "is a smoke day. This is the order-statistic sensitivity section 5.4 describes, "
+            "not a difference in the data.",
             "The last three columns use whole days with every day from "
             + reg.display("smoke.window_start")
             + " to "
@@ -2262,7 +2573,13 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
             + count_word(reg.display("p98.common_exsmoke.n_above_35"))
             + " under local standard time and "
             + count_word(reg.display("p98.common_clock_exsmoke.n_above_35"))
-            + " under local clock time.",
+            + " under local clock time. Under DEQ's cutoff the count is "
+            + reg.display("p98.common.n_above_35.deq_cutoff")
+            + " with the window included and "
+            + count_word(reg.display("p98.common_exsmoke.n_above_35.deq_cutoff"))
+            + " under local standard time and "
+            + count_word(reg.display("p98.common_clock_exsmoke.n_above_35.deq_cutoff"))
+            + " under local clock time with it excluded.",
         ],
     )
 
@@ -2276,6 +2593,7 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
                 code_of(site),
                 v["lst_zero_missing"]["days"],
                 f"{v['lst_zero_missing']['p98']:.3f}",
+                ex["days"],
                 f"{ex['p98']:.3f}",
                 f"{v['clock_zero_missing']['p98']:.3f}",
                 f"{v['clock_zero_kept']['p98']:.3f}",
@@ -2288,8 +2606,9 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
     t06 = tables.Table(
         "T06_p98_full_record_variants",
         "98th percentiles over each site's own record",
-        "The same statistic under three defensible method combinations, against the value "
-        "DEQ published in Table 4 of its " + reg.display("deq.table4_edition_date")
+        "The same statistic under three defensible method combinations, plus the first of "
+        "them with the smoke window excluded, against the value DEQ published in Table 4 of "
+        "its " + reg.display("deq.table4_edition_date")
         + " report. No single combination reproduces all "
         + reg.display("p98.full.n_sites")
         + " rows, which is why this is reported as a partial reproduction. The day "
@@ -2303,6 +2622,7 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
             "Site code",
             "Record days",
             "98th percentile, local standard time, zeros missing (µg/m³)",
+            "Record days, smoke window excluded",
             "98th percentile, local standard time, zeros missing, smoke window excluded "
             "(µg/m³)",
             "98th percentile, local clock time, zeros missing (µg/m³)",
@@ -2314,7 +2634,7 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
         ],
         t06_rows,
         notes=[
-            "The fourth column leaves out every day from "
+            "The fourth and fifth columns leave out every day from "
             + reg.display("smoke.window_start")
             + " to "
             + reg.display("smoke.window_end")
@@ -2348,8 +2668,10 @@ def build_tables(fz: Freeze, results: dict, reg: NumberRegistry) -> list[tables.
     t07 = tables.Table(
         "T07_correlation_matrix",
         "Cross-site hourly correlation",
-        "Pearson correlation of hourly PM2.5 between each pair of the six sensors, "
-        "pairwise-complete, with exact zeros treated as missing, with the smoke window "
+        "Pearson correlation of hourly PM2.5 between each pair of the "
+        + reg.display("corr.n_sensors")
+        + " sensors, pairwise-complete, with exact zeros treated as missing, with the smoke "
+        "window "
         "excluded and, in the last two columns, included. Long form rather than a grid so "
         "each pair carries its own overlapping-hour count. Descriptive only: high spatial correlation does not establish that local "
         "sources contribute nothing.",
@@ -2931,9 +3253,13 @@ def build_chain(fz: Freeze, out_dir: Path) -> dict:
     table = tables.Table(
         "T09_chain_evidence",
         "Mechanism chain evidence by link",
-        "Each link of the published five-step chain with its evidence class and where that "
-        "class comes from. Two classes are read from atlas records; three are assigned by the "
-        "figure definition and are marked as such, so a reader does not take every class for "
+        "Each link of the published "
+        + reg.display("chain.steps")
+        + "-step chain with its evidence class and where that class comes from. "
+        + reg.display("chain.steps_from_records")
+        + " classes are read from atlas records; "
+        + reg.display("chain.steps_from_figure")
+        + " are assigned by the figure definition and are marked as such, so a reader does not take every class for "
         "a record value. A link marked inferred has no direct evidence in the atlas. Every "
         "association here is population-level, and the chain states a mechanism: no link "
         "asserts that one step brings about the next.",

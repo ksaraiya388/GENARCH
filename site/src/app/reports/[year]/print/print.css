@@ -623,3 +623,16 @@ body:has(.report-print-page) {
   break-inside: avoid;
   page-break-inside: avoid;
 }
+
+/* break-inside on the wrapper is not honoured when a child is itself an unsplittable
+ * figure, so each later child is also kept with the one before it (audit round 2, M6:
+ * section 5.2's second paragraph prints with Figure 2). */
+.report-print-page .report-keep-together > * {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.report-print-page .report-keep-together > * + * {
+  break-before: avoid;
+  page-break-before: avoid;
+}

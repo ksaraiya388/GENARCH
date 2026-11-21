@@ -1,4 +1,4 @@
-import { Cite, N, P, Section } from "./bound";
+import { Cite, EditionDate, N, P, Section } from "./bound";
 
 export function DataAndProvenance() {
   return (
@@ -10,11 +10,14 @@ export function DataAndProvenance() {
         sensor exports are named there by neutral site code rather than by filename,
         because the published filenames carry a site identifier that the project&apos;s
         content constraints keep out of public output. There are{" "}
-        <N k="freeze.n_deq_inputs" /> such inputs: the hourly sensor exports, as two input
-        sets because the collocation reproduction reads the exports the original analysis
-        was computed from rather than the later ones; the regulatory monitor files
-        released under the records request; and the DEQ weekly editions the published
-        figures are taken from.
+        <N k="freeze.n_deq_inputs" /> such inputs pinned in the freeze: the hourly sensor
+        exports, as two input sets because the collocation reproduction reads the exports
+        the original analysis was computed from rather than the later ones; the regulatory
+        monitor files released under the records request; and the DEQ weekly editions the
+        published figures are taken from. A further{" "}
+        <N k="freeze.n_inputs_pinned_in_keys" />, the edition whose printed correction is
+        transcribed for section 5.2, is pinned by hash in the keys that read it rather than
+        in the freeze, and is listed in Appendix A beside the others.
       </P>
 
       <P>
@@ -47,7 +50,8 @@ export function DataAndProvenance() {
         four results: the hourly files end <N k="regulatory.record_end" /> and the last
         complete day is <N k="regulatory.last_complete_day" />, so no collocation fit and
         no daily reconciliation can extend past that date, whatever the sensor record
-        does. A follow-up request for a longer range is pending with Virginia DEQ.
+        does. A follow-up request (26-6715, filed{" "}
+        <EditionDate id="foia266715" />) is open <Cite id="foia266715" />.
       </P>
 
       <P>

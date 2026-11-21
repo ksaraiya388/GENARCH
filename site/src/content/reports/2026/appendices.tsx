@@ -64,8 +64,11 @@ export function AppendixA() {
       <Sub number="A.3" id="appendix-a-inputs" title="Input hashes">
         <P>
           Every DEQ and sensor input the analysis reads, with its origin, its licence, its
-          export date, its data cutoff and its full SHA-256. The atlas, ancestry and
-          configuration inputs are pinned by hash in the same freeze file. This is the only copy of the table in the
+          export date, its data cutoff and its full SHA-256:{" "}
+          <N k="freeze.n_deq_inputs" /> pinned in the freeze and{" "}
+          <N k="freeze.n_inputs_pinned_in_keys" /> pinned by hash in the keys that read it.
+          The atlas, ancestry and configuration inputs are pinned by hash in the same freeze
+          file. This is the only copy of the table in the
           report: it is a provenance manifest rather than part of an argument, and it
           belongs with the reproducibility instructions above rather than inside the
           narrative. The same hashes are in <code>data/reports/2026/FREEZE.json</code>,

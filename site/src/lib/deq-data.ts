@@ -1115,6 +1115,13 @@ export interface PercentileRow {
    */
   commonDaysExSmoke: number;
   commonP98ExSmoke: number | null;
+  /**
+   * The own-record percentile with every smoke-window day left out, local standard time
+   * days, as the report computes p98.full.<code>.lst_zero_missing_exsmoke (audit round 2,
+   * S3).
+   */
+  fullDaysExSmoke: number;
+  fullP98ExSmoke: number | null;
   /** Share of the site's full record falling in the smoke window, as a percentage. */
   smokeShare: number;
   firstDay: string;
@@ -1158,6 +1165,7 @@ export function getPercentiles(): PercentileRow[] {
     const inSmoke = (d: string) => d >= SMOKE_WINDOW.start && d <= SMOKE_WINDOW.end;
     const smokeDays = days.filter(inSmoke);
     const commonExSmoke = common.filter((d) => !inSmoke(d));
+    const fullExSmoke = days.filter((d) => !inSmoke(d));
     out.push({
       key: site.code,
       label: site.label,
@@ -1172,6 +1180,10 @@ export function getPercentiles(): PercentileRow[] {
       commonDaysExSmoke: commonExSmoke.length,
       commonP98ExSmoke: commonExSmoke.length
         ? percentile(commonExSmoke.map((d) => means.get(d)!), 0.98)
+        : null,
+      fullDaysExSmoke: fullExSmoke.length,
+      fullP98ExSmoke: fullExSmoke.length
+        ? percentile(fullExSmoke.map((d) => means.get(d)!), 0.98)
         : null,
       smokeShare: (smokeDays.length / days.length) * 100,
       firstDay: days[0],

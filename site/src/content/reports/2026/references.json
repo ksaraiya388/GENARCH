@@ -1,6 +1,6 @@
 {
   "description": "References for the GENARCH Annual Report 2026, in two sets, because they carry different guarantees. The references set is journal literature: every entry has a DOI, and a verification block records how that DOI was checked rather than asserting that it was. The sources set is agency documents, regulations and dataset releases, which have no DOIs; every entry names a publisher, a title, the edition or version date, a stable URL and the date it was retrieved, so a reader can reach the same bytes.",
-  "policy": "A literature entry without a DOI is not added: the work is cited as a source entry or not cited. A source entry missing any of its five required fields fails tests/test_report_source.py. Every literature DOI is resolved through Crossref and its title, first author and year checked against the entry; the verification block records the check and its date.",
+  "policy": "A literature entry without a DOI is not added: the work is cited as a source entry or not cited. A source entry missing any of its five required fields fails tests/test_report_source.py, except an entry marked on_file: correspondence held by the author, which carries publisher, title and edition date and no address (DECISIONS.md D64). Every literature DOI is resolved through Crossref and its title, first author and year checked against the entry; the verification block records the check and its date.",
   "required_source_fields": [
     "publisher",
     "title",
@@ -227,12 +227,10 @@
     },
     {
       "id": "deqcorrespondence",
-      "publisher": "Virginia Department of Environmental Quality, Office of Air Quality Monitoring staff",
-      "title": "Correspondence with the GENARCH project on the Data Center Air Monitoring Project data",
+      "publisher": "DEQ staff",
+      "title": "correspondence with the author",
       "edition_date": "2026-08-10 to 2026-08-19",
-      "url": "https://github.com/ksaraiya388/GENARCH/blob/main/docs/GENARCH_RULES.md#10-correspondence-and-edition-log",
-      "retrieved": "2026-08-19",
-      "note": "Staff correspondence, not a publication, logged by date in the project's standing rules. Cited only where no DEQ edition states the fact."
+      "on_file": true
     },
     {
       "id": "deqdashboard",
@@ -251,6 +249,15 @@
       "url": "https://vadeq.nextrequest.com/requests/26-4646",
       "retrieved": "2026-08-11",
       "note": "No redactions and no cost. The released record caps the collocation and the daily reconciliation."
+    },
+    {
+      "id": "foia266715",
+      "publisher": "Virginia Department of Environmental Quality",
+      "title": "Virginia Freedom of Information Act request 26-6715: follow-up request to 26-4646",
+      "edition_date": "2026-11-17",
+      "url": "https://vadeq.nextrequest.com/requests/26-6715",
+      "retrieved": "2026-11-20",
+      "note": "Status Open when retrieved."
     },
     {
       "id": "cfr5020",
@@ -313,7 +320,7 @@
       "edition_date": "2024-09",
       "url": "https://gwasdiversitymonitor.com/",
       "retrieved": "2026-07-13",
-      "note": "The snapshot the atlas page on ancestry and equity transcribes (pipeline/sources/gwas_ancestry_breakdown.csv). The dashboard is introduced in literature entry Mills 2020."
+      "note": "The snapshot the atlas page on ancestry and equity transcribes (pipeline/sources/gwas_ancestry_breakdown.csv). The dashboard is introduced in {cite:mills2020}."
     },
     {
       "id": "genarchatlas",

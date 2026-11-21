@@ -293,6 +293,49 @@ prints statistics as rows and the four regressions as columns; the loci table pr
 ancestry categories as rows and loci as columns. CSVs, table IDs and archive names are
 unchanged. Header cells break between words only, never by hyphenation.
 
+D50, 2026-11-20 (audit round 2, S5): the text exemption extends to structural references
+inside a table or a set of results ("the other three" regressions, "the last three
+columns", "the fourth and fifth columns", "two per pollutant", "both units") and to page
+locators in a citation of a printed document ("(p. 14)"). A request identifier, such as
+FOIA 26-4646 or 26-6715, is an identifier and prints as text. Data counts are not
+exempt: sites, sensors, pairs, unit numbers and record lengths bind to keys.
+
+D61, 2026-11-20 (audit round 2, S2): the exemption list is corrected; D61's scope is not
+amended. The DEQ-cutoff columns of the common-window table and the section 5.4 sentence
+on them are not reproductions of a DEQ-published statistic (DEQ publishes no
+common-window percentile), so they are GENARCH's own and are stated both ways: keys
+p98.common*.n_above_35.deq_cutoff and p98.common*_exsmoke.*.deq_cutoff, in the section
+5.4 sentence and the common-window table's note. The rest of the list stands.
+
+D63 Held DEQ observations leave the repository, and history is not rewritten
+(2026-11-20, audit round 2, B3). GENARCH_RULES.md section 11, the matching paragraph and
+heading of outputs/repro/refresh_report_2026-08-28.md and item 5.5 of
+.claude/prompts/kunak_refresh_2026-08-28.md are moved verbatim to a private file outside
+the repository (main 8527566, report-2026 5320c4c). The removed text remains in earlier
+commits. History is not rewritten for it: the 2026-10-25 authorship rewrite (AUDIT.md,
+"Authorship rewrite") already changed every SHA once, the freeze records c2101b3 as its
+git_head with 782c1dc as the rewritten identifier, and the report and AUDIT.md cite that
+mapping. A second rewrite would break those citations and the frozen git_head's
+resolution again, to remove text that was public only as a file in the repository.
+
+D64 Correspondence is cited as on file (2026-11-20, audit round 2, B3). The DEQ staff
+correspondence source carries no address and no retrieval date. It renders "DEQ staff,
+correspondence with the author, 2026-08-10 to 2026-08-19, on file." An on-file source
+carries publisher, title and edition date and is marked on_file in references.json;
+tests/test_report_source.py accepts that set for on_file entries only. Every [F]
+citation keeps pointing at it.
+
+D65 A quoted title in a reference entry is permitted under C2 (2026-11-20, audit round 2,
+M10). Source N's title names a company beside "Health ... Impacts". It is the published
+title, quoted as citation material (CONTENT_CONSTRAINTS.md sections 3 and 8), and
+GENARCH's own prose names no company. No change.
+
+D66 The report date follows the latest item it cites (2026-11-20, audit round 2, S11).
+The follow-up records request 26-6715 was filed 2026-11-17 and its status read
+2026-11-20. Under D53 (B1) the report cannot be dated before a document it cites, so
+frontmatter.json moves from 2026-11-16 to 2026-11-20, the build date of draft-6. The
+cover, changelog and APA citation follow.
+
 ---
 
 ## Remaining AUDIT items

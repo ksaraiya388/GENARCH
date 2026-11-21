@@ -55,7 +55,7 @@ export function ReportFigure({ year, id, tableId, hashColumns }: ReportFigurePro
           <span className="report-figure-title">{manifest.title}</span>{" "}
           <span className="report-figure-text">{manifest.caption}</span>
         </p>
-        <FigureLimitation text={manifest.limitation} />
+        <FigureLimitation text={manifest.limitation} cite="deq2026oct09" />
       </figcaption>
       <details className="report-figure-details">
         <summary>Data table</summary>

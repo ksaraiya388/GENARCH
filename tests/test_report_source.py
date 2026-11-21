@@ -190,6 +190,14 @@ def test_every_source_entry_carries_all_five_required_fields() -> None:
     required = doc["required_source_fields"]
     assert required == ["publisher", "title", "edition_date", "url", "retrieved"]
     for entry in doc["sources"]:
+        if entry.get("on_file"):
+            # Correspondence held by the author (D64): no address, no retrieval date.
+            missing = [f for f in ("publisher", "title", "edition_date") if not entry.get(f)]
+            assert missing == [], f"source {entry['id']} is missing {missing}"
+            assert "url" not in entry and "retrieved" not in entry, (
+                f"on-file source {entry['id']} carries an address"
+            )
+            continue
         missing = [field for field in required if not entry.get(field)]
         assert missing == [], f"source {entry['id']} is missing {missing}"
         assert entry["url"].startswith("http"), f"source {entry['id']} has no usable URL"

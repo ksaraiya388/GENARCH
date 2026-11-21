@@ -73,6 +73,8 @@ export function DataCenterAlley() {
           Agreement beyond that precision is not verifiable against the source and is not
           claimed here.
         </P>
+        {/* This paragraph prints with Figure 2 rather than alone on a page (audit round 2, M6). */}
+        <div className="report-keep-together">
         <P>
           The four regressions differ in how they behave from edition to edition. The
           first unit&apos;s two run over a closed window, so their published values cannot
@@ -83,6 +85,7 @@ export function DataCenterAlley() {
           than as a count of how many currently agree.
         </P>
         <ReportFigure id="F02" />
+        </div>
         <P>
           The NO2 fit on the first unit gives an R-squared of{" "}
           <N k="colloc.apex-14_NO2.gx_r2" /> against DEQ&apos;s published{" "}
@@ -128,8 +131,8 @@ export function DataCenterAlley() {
             DEQ&apos;s <EditionDate id="deq2026oct30" /> edition records in its section 2{" "}
             <Cite id="deq2026oct30" /> that on{" "}
             <N k="deq.postfreeze.collocated_unit_swap" /> the collocated unit at site
-            DC-01 was replaced, data collection at site DC-02 ended, and two sensors were
-            placed at new sites in Prince William County. DEQ&apos;s{" "}
+            DC-01 was replaced, data collection at site DC-02 ended, and{" "}
+            <N k="deq.postfreeze.pw_sites_added_count" /> sensors were placed at new sites in Prince William County. DEQ&apos;s{" "}
             <EditionDate id="deq2026nov06" /> edition records in its section 2{" "}
             <Cite id="deq2026nov06" /> that sensor data collection at site DC-01 ended on{" "}
             <N k="deq.postfreeze.dc01_collection_end" /> and the unit moved to a new
@@ -179,45 +182,48 @@ export function DataCenterAlley() {
           Table 4 of DEQ&apos;s <EditionDate id="deq2026aug07" /> edition{" "}
           <Cite id="deq2026aug07" /> identifies one sensor, site DC-06 in the site key, as
           the only sensor in the network whose daily PM2.5 98th percentile exceeded{" "}
-          <N k="naaqs.daily_standard" /> µg/m³. Restricted to the window when all six
-          then-live sensors were collecting, on whole days through{" "}
+          <N k="naaqs.daily_standard" /> µg/m³. Restricted to the window when all{" "}
+          <N k="p98.common.n_sites" /> then-live sensors were collecting, on whole days through{" "}
           <N k="network.common_window.end" /> (DEQ&apos;s edition cutoff{" "}
           <N k="deq.edition_cutoff" />), <N k="p98.common.n_above_35" fmt="count" /> of
           the <N k="p98.common.n_sites" /> exceed that level under the local standard time
           day definition and <N k="p98.common_clock.n_above_35" fmt="count" /> under local
           clock time, and site DC-06 ranks{" "}
-          <N k="p98.common.rank.DC-06" fmt="ordinal" /> under both. Its record was{" "}
+          <N k="p98.common.rank.DC-06" fmt="ordinal" /> under both. With the smoke window
+          excluded, <N k="p98.common_exsmoke.n_above_35" fmt="count" /> of the{" "}
+          <N k="p98.common.n_sites" /> is above that level under local standard time days
+          and <N k="p98.common_clock_exsmoke.n_above_35" fmt="count" /> under local clock
+          time days, and site DC-06 ranks{" "}
+          <N k="p98.common_exsmoke.rank.DC-06" fmt="ordinal" /> under local standard time
+          and <N k="p98.common_clock_exsmoke.rank.DC-06" fmt="ordinal" /> under local
+          clock time. Its record was{" "}
           <N k="network.record_days.DC-06" /> complete days, falling entirely in high
           summer and including the wildfire smoke weekend, against{" "}
           <N k="network.record_days.DC-04" /> to <N k="network.record_days.DC-01" /> days
-          for the other five. Neither DEQ&apos;s figure nor the figure here is comparable
+          for the other sites. Neither DEQ&apos;s figure nor the figure here is comparable
           to the national standards. DEQ&apos;s table reported each sensor&apos;s value
           over that sensor&apos;s own record, and every figure in the series is
           DEQ&apos;s own; the comparison between sensors did not hold because the records
-          differed in length, in season and in how much weight the smoke weekend carried
-          in each, and the resolution came from DEQ&apos;s own lengthening record, with the
+          differed in length and in how much weight the smoke weekend carried in each, and the resolution came from DEQ&apos;s own lengthening record, with the
           agency&apos;s <EditionDate id="deq2026oct09" /> edition{" "}
           <Cite id="deq2026oct09" /> listing no site above that level. This is a statement
           about record length and one smoke weekend, not a claim that DEQ&apos;s figures
           were wrong or that any site is polluted.
         </P>
         <P>
-          The smoke weekend accounts for that count. With the hours of the smoke window
-          excluded (section 3.5), <N k="p98.common_exsmoke.n_above_35" fmt="count" /> of
-          the sites has a common-window 98th percentile above{" "}
-          <N k="naaqs.daily_standard" /> µg/m³ under local standard time days and{" "}
-          <N k="p98.common_clock_exsmoke.n_above_35" fmt="count" /> under local clock
-          time days; under local standard time the values run from{" "}
-          <N k="p98.common_exsmoke.min" /> to <N k="p98.common_exsmoke.max" /> µg/m³. Site
-          DC-06 ranks <N k="p98.common_exsmoke.rank.DC-06" fmt="ordinal" /> with the window
-          excluded, as it does with it included, so its position among the six does not
+          The smoke weekend accounts for that count. With the days of the smoke window
+          excluded (section 3.5), the common-window 98th percentiles under local standard
+          time run from <N k="p98.common_exsmoke.min" /> to{" "}
+          <N k="p98.common_exsmoke.max" /> µg/m³. Site DC-06 holds the same rank with the
+          window excluded as with it included, so its position among the sites does not
           depend on the smoke days. Whether any site is above the level does. A 98th
           percentile over a record this short is set by its highest days, and in this
           window those are smoke days at every site: at{" "}
           <N k="p98.common.sites_set_by_smoke_days" /> of the{" "}
           <N k="p98.common.n_sites" /> under local standard time and{" "}
-          <N k="p98.common_clock.sites_set_by_smoke_days" /> under local clock time, both
-          days the percentile is read from fall in the window. Whether those days qualify
+          <N k="p98.common_clock.sites_set_by_smoke_days" /> under local clock time, the
+          day or days the percentile is interpolated from (one at{" "}
+          <N k="p98.common.whole_index_days" /> days, two otherwise) fall in the window. Whether those days qualify
           as an exceptional event is a determination that rests with EPA and has not been
           made.
         </P>
@@ -234,11 +240,19 @@ export function DataCenterAlley() {
           <N k="network.common_window.end" />; DEQ built the edition from data through{" "}
           <N k="deq.edition_cutoff" />, and the table carries that cutoff as its own column
           so both day sets are visible. Under DEQ&apos;s cutoff the record lengths shorten
-          by a day at several sites and the result is unchanged: the same number of sites
-          sit above the level, and site DC-06 still ranks{" "}
-          <N k="p98.common.rank.DC-06.deq_cutoff" fmt="ordinal" /> under local standard
-          time days and <N k="p98.common_clock.rank.DC-06.deq_cutoff" fmt="ordinal" />{" "}
-          under local clock time days.
+          by a day at several sites and the result is unchanged. With the smoke window
+          included, <N k="p98.common.n_above_35.deq_cutoff" fmt="count" /> of the sites
+          sit above the level under local standard time days and{" "}
+          <N k="p98.common_clock.n_above_35.deq_cutoff" fmt="count" /> under local clock
+          time days, and site DC-06 ranks{" "}
+          <N k="p98.common.rank.DC-06.deq_cutoff" fmt="ordinal" /> and{" "}
+          <N k="p98.common_clock.rank.DC-06.deq_cutoff" fmt="ordinal" />; with it excluded,{" "}
+          <N k="p98.common_exsmoke.n_above_35.deq_cutoff" fmt="count" /> sit above it under
+          local standard time days and{" "}
+          <N k="p98.common_clock_exsmoke.n_above_35.deq_cutoff" fmt="count" /> under local
+          clock time days, and site DC-06 ranks{" "}
+          <N k="p98.common_exsmoke.rank.DC-06.deq_cutoff" fmt="ordinal" /> and{" "}
+          <N k="p98.common_clock_exsmoke.rank.DC-06.deq_cutoff" fmt="ordinal" />.
         </P>
         <P>
           Over each site&apos;s own record the reproduction of that table is partial, and
@@ -347,7 +361,9 @@ export function DataCenterAlley() {
           <Cite id="macintyre2014" />
           <Cite id="delafuente2015" />, and the atlas grades the exposure link on the gene
           record as literature evidence <Cite id="shadie2014" /> and the disease link as
-          association evidence from genome-wide studies <Cite id="aneas2021" />.
+          association evidence from genome-wide studies <Cite id="gwascatalog2026" />.{" "}
+          <Cite id="aneas2021" /> is cited for the regulatory mechanism at the locus only,
+          not for the association.
         </P>
         <P>
           The middle links&apos; classes are assigned by the figure definition rather than

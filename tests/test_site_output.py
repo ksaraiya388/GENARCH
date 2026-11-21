@@ -246,8 +246,33 @@ def test_the_corridor_page_smoke_excluded_result_equals_the_report_keys(built_si
     assert set(shown["p98"]) == {
         k.rsplit(".", 1)[-1]
         for k in numbers
-        if k.startswith("p98.common_exsmoke.DC-")
+        if k.startswith("p98.common_exsmoke.DC-") and not k.endswith(".deq_cutoff")
     }
     for code, value in shown["p98"].items():
         assert value == numbers[f"p98.common_exsmoke.{code}"]["value"], code
         assert shown["rank"][code] == numbers[f"p98.common_exsmoke.rank.{code}"]["value"], code
+
+
+def test_the_corridor_page_own_record_smoke_excluded_values_equal_the_report_keys(built_site):
+    """The page's own-record percentiles without the smoke window are the report's.
+
+    Audit round 2, S3: the percentile table gives every value both ways, and the
+    smoke-excluded own-record value is p98.full.<code>.lst_zero_missing_exsmoke.
+    """
+    page = (built_site / "community" / "data-center-alley" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    match = re.search(r'data-own-record-ex-smoke="([^"]+)"', page)
+    assert match, "the corridor page no longer carries the own-record smoke-excluded values"
+    shown = json.loads(html.unescape(match.group(1)))
+    numbers = json.loads(
+        (REPO_ROOT / "data" / "reports" / "2026" / "numbers.json").read_text(encoding="utf-8")
+    )
+    report = {
+        k.split(".")[2]: v["value"]
+        for k, v in numbers.items()
+        if k.startswith("p98.full.DC-") and k.endswith(".lst_zero_missing_exsmoke")
+    }
+    assert set(shown) == set(report)
+    for code, value in shown.items():
+        assert value == report[code], code

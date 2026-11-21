@@ -3,7 +3,7 @@ import { Cite, DeqLimitation, EditionDate, List, Item, N, P, Section, Sub } from
 export function Limitations() {
   return (
     <Section number="7" id="limitations" title="Limitations">
-      <DeqLimitation id="limitations-deq" />
+      <DeqLimitation id="limitations-deq" cite="deq2026oct09" />
 
       <Sub number="7.1" id="limitations-instruments" title="What the instruments can support">
         <P>
@@ -35,9 +35,9 @@ export function Limitations() {
 
       <Sub number="7.2" id="limitations-record" title="Record length, season and the end of the regulatory data">
         <P>
-          The sensor records differ in length, from{" "}
-          <N k="network.record_days.DC-06" /> to <N k="network.record_days.DC-01" />{" "}
-          complete days, and are not contemporaneous, which is the subject of one of the
+          On whole days through <N k="network.common_window.end" />, the sensor records
+          differ in length, from <N k="network.record_days.DC-06" /> to{" "}
+          <N k="network.record_days.DC-01" /> complete days, and are not contemporaneous, which is the subject of one of the
           four results rather than a footnote to it. A 98th percentile read from{" "}
           <N k="network.record_days.DC-06" /> days of high summer is a different order
           statistic from one read from <N k="network.record_days.DC-01" /> days running
@@ -56,7 +56,8 @@ export function Limitations() {
           day <N k="regulatory.last_complete_day" />. That
           caps the collocation fits and the daily reconciliation at a date the sensor
           record runs well past, and no later cutoff is computable for either, because
-          both sides of each hourly pair are needed. A follow-up request is pending.
+          both sides of each hourly pair are needed. A follow-up request (26-6715, filed{" "}
+          <EditionDate id="foia266715" />) is open <Cite id="foia266715" />.
           DEQ&apos;s printed correction for one regression (the{" "}
           <EditionDate id="deq2026aug21" /> edition <Cite id="deq2026aug21" />) covers a
           longer window than the regulatory record this report holds, so it is not
@@ -71,11 +72,8 @@ export function Limitations() {
         </P>
         <List>
           <Item>
-            Whether DEQ&apos;s published collocation plots carried axis limits. The agency
-            traced one earlier regression to limits in its plotting call that had bounded
-            the model fit as well as the view. If the other plots carried limits too, the
-            agreeing fits may be reproducing fits computed on a clipped range. Asked of
-            DEQ; awaiting an answer.
+            Whether DEQ&apos;s published collocation plots carried axis limits that also
+            bounded the fit. Asked of DEQ; awaiting an answer.
           </Item>
           <Item>
             The carbon monoxide series DEQ began publishing is not analysed here. Its

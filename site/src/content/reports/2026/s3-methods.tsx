@@ -122,12 +122,18 @@ export function Methods() {
           qualifier code identifies the episode in the regulatory record. Whether the
           episode is an exceptional event is a determination for the US Environmental
           Protection Agency, not for DEQ, and it is unresolved{" "}
-          <Cite id="deqcorrespondence" />. Hours whose local standard time day falls in
-          that window are excluded from the cross-site correlation, because a regional
-          smoke plume raises every sensor at once and would inflate every pairwise
-          correlation toward one without telling a reader anything about the network. The
-          window is not excluded from the percentile work, where its presence inside a
-          short record is the finding rather than a nuisance.
+          <Cite id="deqcorrespondence" />. Every descriptive statistic of GENARCH&apos;s
+          own is reported both ways, with the window and without it. For the cross-site
+          correlation the excluded set is the hours whose local standard time day falls in
+          the window, because a regional smoke plume raises every sensor at once and pulls
+          every pairwise correlation toward one. For the percentiles and the share of
+          site-days below the level of the 24-hour standard, the excluded set is the whole
+          days <N k="smoke.window_start" /> to <N k="smoke.window_end" /> under the day
+          definition in use, so a local clock time percentile leaves out local clock time
+          days. In a short record the window&apos;s presence is part of the finding, which
+          is why the percentiles are given with it as well as without it. A statistic that
+          reproduces one DEQ publishes is computed as DEQ computes it, over all hours, and
+          is reported that way only.
         </P>
       </Sub>
 

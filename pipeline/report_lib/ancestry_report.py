@@ -61,8 +61,8 @@ COUNTY_FIPS_LABEL = "107 (Loudoun)"
 # Virginia DEQ a limitation on data it did not publish. CONTEXT.md section 3
 # requires that quotation on every sensor-data figure, and F06 carries none.
 FIGURE_LIMITATION = (
-    "Descriptive only, and not an effect estimate: these are counts of people "
-    "enrolled and associations declared, and v1 computes no cross-ancestry "
+    "Descriptive only, and not an effect estimate: these are study sample sizes and "
+    "resident counts, and v1 computes no cross-ancestry "
     "gene-environment effect. The discovery composition is the "
     "composition of the published evidence base, not of any population: a category "
     "with few individuals means the evidence was measured in few people from it, "
@@ -73,8 +73,7 @@ FIGURE_LIMITATION = (
     "categories is split equally across them, because the catalogue publishes no "
     "per-category count within a row. The discovery total is a sum of study sample "
     "sizes and not a headcount: asthma studies draw repeatedly on the same cohorts, so "
-    "a participant in several studies is counted once per study. "
-    + ACS_CATEGORY_SENTENCE
+    "a participant in several studies is counted once per study."
 )
 
 GWAS_LOOKUPS = (

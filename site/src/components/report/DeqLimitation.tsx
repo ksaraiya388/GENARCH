@@ -1,4 +1,5 @@
 import deqLimitation from "@/content/deq-limitation.json";
+import { Cite } from "./Cite";
 
 /**
  * The single source for the four parts, read from the generated JSON.
@@ -27,6 +28,12 @@ export interface DeqLimitationProps {
   variant?: "box" | "inline";
   /** Anchor id, so the summary can link to the limitations section's copy. */
   id?: string;
+  /**
+   * A reference id to cite after the attribution, so the reader can find the quoted
+   * edition in the Sources list (audit round 2, M3). The report passes it; a page
+   * without a reference list does not.
+   */
+  cite?: string;
 }
 
 /**
@@ -43,7 +50,7 @@ export interface DeqLimitationProps {
  * it, which is the misreading this block exists to prevent. The credit line is
  * DEQ's, pending the agency's own preferred wording.
  */
-export function DeqLimitation({ variant = "box", id }: DeqLimitationProps) {
+export function DeqLimitation({ variant = "box", id, cite }: DeqLimitationProps) {
   return (
     <aside
       id={id}
@@ -55,7 +62,15 @@ export function DeqLimitation({ variant = "box", id }: DeqLimitationProps) {
         <p>{DEQ_LIMITATION.limitation}</p>
         {/* A paragraph, not a <footer>: print stylesheets hide footer elements as
             site chrome, and the attribution is part of the quotation (D24). */}
-        <p className="report-deq-attribution">({DEQ_LIMITATION.citation})</p>
+        <p className="report-deq-attribution">
+          ({DEQ_LIMITATION.citation})
+          {cite ? (
+            <>
+              {" "}
+              <Cite id={cite} />
+            </>
+          ) : null}
+        </p>
       </blockquote>
       <p className="report-deq-pairing">{DEQ_LIMITATION.pairing}</p>
       <p className="report-deq-credit">{DEQ_LIMITATION.credit}</p>
@@ -72,10 +87,23 @@ export function DeqLimitation({ variant = "box", id }: DeqLimitationProps) {
  * than rebuilding it here keeps the count honest: what the caption prints is what
  * the artifact records.
  */
-export function FigureLimitation({ text }: { text: string }) {
+export function FigureLimitation({ text, cite }: { text: string; cite?: string }) {
+  // The citation label follows the attribution, inside the run, without changing a
+  // character of the assembled text (audit round 2, M3).
+  const attribution = `(${DEQ_LIMITATION.citation})`;
+  const at = cite ? text.indexOf(attribution) : -1;
+  if (at < 0) {
+    return (
+      <p className="report-figure-limitation" data-figure-limitation="true">
+        {text}
+      </p>
+    );
+  }
+  const end = at + attribution.length;
   return (
     <p className="report-figure-limitation" data-figure-limitation="true">
-      {text}
+      {text.slice(0, end)} <Cite id={cite as string} />
+      {text.slice(end)}
     </p>
   );
 }

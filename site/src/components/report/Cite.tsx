@@ -23,8 +23,10 @@ export interface SourceEntry {
   publisher: string;
   title: string;
   edition_date: string;
-  url: string;
-  retrieved: string;
+  /** Absent on an on-file entry: correspondence held by the author (D64). */
+  url?: string;
+  retrieved?: string;
+  on_file?: boolean;
   note?: string;
 }
 
@@ -99,21 +101,30 @@ export function EditionDate({ id }: { id: string }) {
 }
 
 /**
- * A source note, with each `{table:T12}` token rendered as the table's printed label.
- * Tables are numbered by first appearance, so a number typed into a note would go
- * stale when a table moved (D47); this is the reference-list form of <TableRef>.
+ * A source note, with each `{table:T12}` token rendered as the table's printed label
+ * and each `{cite:id}` token as that entry's citation label. Tables are numbered by
+ * first appearance and references by list position, so a number typed into a note
+ * would go stale when either moved (D47; audit round 2, M4).
  */
 function noteText(note: string): ReactNode {
-  const parts = note.split(/\{table:([A-Za-z0-9_]+)\}/);
-  return parts.map((part, i) =>
-    i % 2 === 1 ? (
-      <span key={i} className="report-table-ref" data-table-ref={part}>
-        {tableLabel("2026", part)}
-      </span>
-    ) : (
-      part
-    )
-  );
+  const parts = note.split(/\{(table|cite):([A-Za-z0-9_]+)\}/);
+  const out: ReactNode[] = [];
+  for (let i = 0; i < parts.length; i += 3) {
+    out.push(parts[i]);
+    if (i + 2 >= parts.length) break;
+    const kind = parts[i + 1];
+    const ref = parts[i + 2];
+    out.push(
+      kind === "table" ? (
+        <span key={i} className="report-table-ref" data-table-ref={ref}>
+          {tableLabel("2026", ref)}
+        </span>
+      ) : (
+        <Cite key={i} id={ref} />
+      )
+    );
+  }
+  return out;
 }
 
 function doiUrl(doi: string): string {
@@ -158,11 +169,20 @@ export function References() {
       <ol className="report-references-list report-references-lettered">
         {SOURCES.map((entry) => (
           <li key={entry.id} id={`reference-${entry.id}`}>
-            {entry.publisher}. {entry.title}. {entry.edition_date}.{" "}
-            <a href={entry.url} className="report-doi">
-              {separatorBreaks(entry.url)}
-            </a>{" "}
-            Retrieved {entry.retrieved}.
+            {entry.on_file || !entry.url ? (
+              // Correspondence held by the author: named, dated and on file (D64).
+              <>
+                {entry.publisher}, {entry.title}, {entry.edition_date}, on file.
+              </>
+            ) : (
+              <>
+                {entry.publisher}. {entry.title}. {entry.edition_date}.{" "}
+                <a href={entry.url} className="report-doi">
+                  {separatorBreaks(entry.url)}
+                </a>{" "}
+                Retrieved {entry.retrieved}.
+              </>
+            )}
             {entry.note ? (
               <span className="report-references-note"> {noteText(entry.note)}</span>
             ) : null}

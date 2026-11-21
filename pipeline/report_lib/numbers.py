@@ -61,6 +61,13 @@ class NumberRegistry:
             "inputs": inputs or [],
         }
 
+    def inputs(self, key: str) -> list[dict]:
+        return list(self._records[key]["inputs"])
+
+    def set_inputs(self, key: str, inputs: list[dict]) -> None:
+        """Narrow a key's recorded inputs. The value and every other field are untouched."""
+        self._records[key]["inputs"] = list(inputs)
+
     def value(self, key: str):
         return self._records[key]["value"]
 

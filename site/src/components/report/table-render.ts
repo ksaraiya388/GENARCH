@@ -229,8 +229,11 @@ export const TABLE_RENDER: Record<string, TableRender> = {
   T05_p98_common_window: {
     atomic: ["Site code"],
   },
+  // Eleven columns since the smoke-excluded record days joined (audit round 2, S6):
+  // set small so the table stays inside the 6.5in measure.
   T06_p98_full_record_variants: {
     atomic: ["Site code"],
+    small: true,
   },
   T07_correlation_matrix: {
     format: {

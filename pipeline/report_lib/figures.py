@@ -424,6 +424,11 @@ def f04_p98_by_site(out_dir: Path, rows: list[dict]) -> list[Path]:
     primary, secondary = palette.series_styles()
     ordered = sorted(rows, key=lambda r: r["code"])
     positions = list(range(len(ordered)))
+    # The smoke-excluded series sits a little right of the other two, on its own dotted
+    # stem, so where it falls just below the own-record dot (DC-01) neither the stems
+    # nor the markers overlap (audit round 2, M6).
+    ex_offset = 0.16
+    ex_positions = [pos + ex_offset for pos in positions]
     for pos, row in zip(positions, ordered):
         ax.plot(
             [pos, pos],
@@ -433,8 +438,8 @@ def f04_p98_by_site(out_dir: Path, rows: list[dict]) -> list[Path]:
             zorder=2,
         )
         ax.plot(
-            [pos, pos],
-            [row["common_p98"], row["exsmoke_p98"]],
+            [pos, pos + ex_offset, pos + ex_offset],
+            [row["common_p98"], row["common_p98"], row["exsmoke_p98"]],
             color=palette.reference(),
             linewidth=1.0,
             linestyle=":",
@@ -463,7 +468,7 @@ def f04_p98_by_site(out_dir: Path, rows: list[dict]) -> list[Path]:
         label="Common window",
     )
     ax.scatter(
-        positions,
+        ex_positions,
         [r["exsmoke_p98"] for r in ordered],
         s=52,
         marker="v",
@@ -498,7 +503,7 @@ def f04_p98_by_site(out_dir: Path, rows: list[dict]) -> list[Path]:
         )
         ax.annotate(
             f"{row['exsmoke_days']} d",
-            xy=(pos, row["exsmoke_p98"]),
+            xy=(pos + ex_offset, row["exsmoke_p98"]),
             xytext=(7, 0),
             textcoords="offset points",
             ha="left",

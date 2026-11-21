@@ -26,13 +26,13 @@ export function Summary() {
         population, and no statement in this report should be read that way.
       </Lead>
 
-      <DeqLimitation id="summary-deq-limitation" />
+      <DeqLimitation id="summary-deq-limitation" cite="deq2026oct09" />
 
       <P>
         Through the <N k="freeze.cutoff_date" /> data cutoff,{" "}
         <N k="summary.share_site_days_below_35" /> percent of the{" "}
-        <N k="summary.share_site_days_below_35" fmt="n" /> complete site-days across the
-        nine Loudoun County sensor sites sit below{" "}
+        <N k="summary.share_site_days_below_35" fmt="n" /> complete site-days across the{" "}
+        <N k="network.loudoun_sites" /> Loudoun County sensor sites sit below{" "}
         <N k="naaqs.daily_standard" /> µg/m³, the level of the 24-hour standard{" "}
         <Cite id="cfr5020" />. All <N k="summary.site_days_at_or_above_35" /> site-days
         at or above that level fall in the wildfire smoke window of{" "}
@@ -48,15 +48,20 @@ export function Summary() {
       </P>
 
       <P>
-        Four results are reported. The four collocation regressions at the collocated
-        site agree with DEQ&apos;s published coefficients within{" "}
+        Four results are reported. Recomputed through DEQ&apos;s{" "}
+        <N k="deq.edition_cutoff" /> edition cutoff, the PM2.5 regressions on both units
+        and the NO2 regression on the first unit agree with the coefficients DEQ printed
+        for that window, and the NO2 regression on the second unit agrees with the
+        coefficients DEQ staff supplied for the same window{" "}
+        <Cite id="deqcorrespondence" />, each within{" "}
         <N k="colloc.tolerance_coefficient" /> on slope and intercept and{" "}
-        <N k="colloc.tolerance_r2" /> on R-squared, computed through DEQ&apos;s{" "}
-        <N k="deq.edition_cutoff" /> edition cutoff. Recomputed daily averages for the
+        <N k="colloc.tolerance_r2" /> on R-squared. The first unit&apos;s NO2 R-squared
+        lies inside that tolerance but rounds to a different second decimal from
+        DEQ&apos;s. Recomputed daily averages for the
         regulatory monitor match DEQ&apos;s published daily file on{" "}
         <N k="daily.n_match" /> of <N k="daily.n_days" /> comparable days, with a mean
         absolute difference of <N k="daily.mean_abs_diff" /> µg/m³. On the window when
-        all six sensors were collecting, on whole days through{" "}
+        all <N k="p98.common.n_sites" /> sensors were collecting, on whole days through{" "}
         <N k="network.common_window.end" /> (DEQ&apos;s edition cutoff{" "}
         <N k="deq.edition_cutoff" />), <N k="p98.common.n_above_35" fmt="count" /> of the{" "}
         <N k="p98.common.n_sites" /> have a daily PM2.5 98th percentile above{" "}
@@ -72,7 +77,8 @@ export function Summary() {
         weekend carried in each. This is not a claim that DEQ&apos;s figures were wrong or
         that any site is polluted, and neither DEQ&apos;s figure nor this one is
         comparable to the national standards. Hourly PM2.5 correlates between{" "}
-        <N k="corr.min" /> and <N k="corr.max" /> across every pair of the six sensors
+        <N k="corr.min" /> and <N k="corr.max" /> across every pair of the{" "}
+        <N k="corr.n_sensors" /> sensors
         outside the smoke window, and between <N k="corr.with_smoke.min" /> and{" "}
         <N k="corr.with_smoke.max" /> with it included, which is descriptive and does not
         establish that local sources contribute nothing.

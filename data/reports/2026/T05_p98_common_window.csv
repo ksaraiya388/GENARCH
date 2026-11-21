@@ -1,4 +1,4 @@
-Site code,Day definition,Whole-day record days,Whole-day 98th percentile (µg/m³),DEQ-cutoff record days,DEQ-cutoff 98th percentile (µg/m³),Rank,Smoke window excluded: record days,Smoke window excluded: 98th percentile (µg/m³),Smoke window excluded: rank
+Site code,Day definition,Whole-day record days,Whole-day 98th percentile (µg/m³),DEQ-cutoff record days,DEQ-cutoff 98th percentile (µg/m³),Rank (whole days and DEQ cutoff),Smoke window excluded: record days,Smoke window excluded: 98th percentile (µg/m³),Smoke window excluded: rank
 DC-01,local standard time,51,37.097,50,38.167,5,47,24.356,1
 DC-02,local standard time,50,29.500,50,29.500,6,46,16.644,6
 DC-04,local standard time,50,40.189,49,41.278,2,46,21.294,2
