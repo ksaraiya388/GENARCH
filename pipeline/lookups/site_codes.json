@@ -301,7 +301,7 @@
       "county_source": "pipeline/sources/deq_sensor_site_history.csv county column",
       "deq_published_name": "PW Police Dept. West",
       "in_v1_scope": false,
-      "kunak_label": "PW Police Dept. West",
+      "kunak_label": "PW Police Department West",
       "pm25_end_date": null,
       "site_id": "pw-police-west",
       "units": [

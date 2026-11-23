@@ -30,7 +30,6 @@ from pipeline.reshape_deq import (
 
 SOURCES = Path(__file__).resolve().parents[1] / "pipeline" / "sources"
 RAW = SOURCES / "deq-raw"
-BELFORT = RAW / "belfort-park_multi_2026-03-03_2026-11-06.csv"
 
 # The seven sites whose 2026-11-08 export carries two readings at 2026-11-01 01:00.
 FALLBACK_SITES = {
@@ -50,6 +49,26 @@ def deq_rule(ts_raw: datetime) -> datetime:
 
 def t(text: str) -> datetime:
     return datetime.fromisoformat(text)
+
+
+def current_export(site_id: str, dst_hour: datetime) -> tuple[str, list[dict]]:
+    """Read the site's one staged export, as reshape does: deq-raw root, non-recursive.
+
+    Weekly staging retires the previous export, so no test names a dated file. The
+    export must still span the DST hour the calling test checks.
+    """
+    matches = sorted(RAW.glob(f"{site_id}_multi_*.csv"))
+    if len(matches) != 1:
+        pytest.fail(
+            f"expected one {site_id}_multi_*.csv in {RAW}, found {len(matches)}: "
+            f"{[p.name for p in matches]}"
+        )
+    site, records = read_kunak_file(matches[0])
+    stamps = [r["_ts_raw"] for r in records]
+    if not stamps or not min(stamps) <= dst_hour <= max(stamps):
+        span = f"{min(stamps)} to {max(stamps)}" if stamps else "no rows"
+        pytest.fail(f"{matches[0].name} covers {span}, which does not span {dst_hour}")
+    return site, records
 
 
 def test_conversion_reproduces_the_committed_rule_through_october():
@@ -92,7 +111,7 @@ def test_fall_back_label_is_ambiguous_and_names_two_hours():
 def test_fall_back_readings_emit_no_row_and_are_listed_unordered():
     history = load_site_history(SITE_HISTORY)
     by_site = occupancy_by_site(history)
-    site_id, records = read_kunak_file(BELFORT)
+    site_id, records = current_export("belfort-park", t("2026-11-01 01:00"))
     repeated = [r for r in records if r["_ts_raw"] == t("2026-11-01 01:00")]
     assert len(repeated) == 2
 
@@ -156,7 +175,7 @@ def test_spring_forward_gap():
     # A reading labelled inside the gap names no hour and is a hard failure.
     history = load_site_history(SITE_HISTORY)
     by_site = occupancy_by_site(history)
-    site_id, records = read_kunak_file(RAW / "ashburn-collocated_multi_2026-03-03_2026-11-06.csv")
+    site_id, records = current_export("ashburn-collocated", t("2026-03-08 02:00"))
     sample = dict(records[0])
     sample["_ts_raw"] = t("2026-03-08 02:00")
     with pytest.raises(DeqReshapeError, match="spring-forward gap"):
